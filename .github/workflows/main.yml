@@ -40,4 +40,4 @@ jobs:
 
       - name: Deploy HTML to NUL Servers
         run: |
-          aws s3 sync ./public ${{ secrets.AWS_S3_BUCKET_ID }} --delete
+          aws s3 sync ./public ${{ secrets.AWS_S3_BUCKET_NAME }} --delete
