@@ -1,4 +1,6 @@
-.DS_Store
-*.mp4
-.latexcfg
-public
+**/.DS_Store
+**/*.mp4
+**/.latexcfg
+**/public
+**/knowl
+**/*.html
