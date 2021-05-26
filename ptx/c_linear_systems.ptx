@@ -1,0 +1,10 @@
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="c_linear_systems">
+  <title>Linear systems of equations</title>
+  <xi:include  href="s_systems.ptx"/>
+  <xi:include  href="s_ge.ptx"/>
+  <xi:include  href="s_solving.ptx"/>
+  <xi:include  href="s_matrix.ptx"/>
+  <xi:include  href="s_algebraic.ptx"/>
+  <xi:include  href="s_elementary.ptx"/>
+  <xi:include  href="s_invertible.ptx"/>
+</chapter>

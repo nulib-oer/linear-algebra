@@ -1,0 +1,337 @@
+<section xml:id="ss_dimension">
+  <title>Dimension</title>
+  <paragraphs>
+  <title><xref ref="c_vectorspace"></xref>. <xref ref="ss_dimension"></xref>: executive summary</title>
+  <paragraphs>
+    <title>Definitions:</title>
+    <p>
+      dimension of a vector space. \alert{Procedures:} none,
+      but many examples using
+      <q>standard bases</q>
+      for our familiar spaces. \alert{Theorems:} independent set can be extended to basis,
+      spanning set can be contracted to basis;
+      <q>street smarts</q>
+      theorems; if <m>W\subset V</m>,
+      then <m>\dim W\leq \dim V</m>,
+      and <m>\dim W=\dim V</m> iff <m>W=V</m>.
+    </p>
+  </paragraphs>
+  </paragraphs>
+  <paragraphs>
+    <title><xref ref="c_vectorspace"></xref>. <xref ref="ss_dimension"></xref>: dimension</title>
+    <theorem xml:id="th_basiscard">
+      <statement>
+        <p>
+          Suppose <m>S=\{\boldv_1,\dots ,\boldv_n\}</m> is a basis for the vector space <m>V</m>.
+          Then every other basis <m>S'</m> for <m>V</m> contains exactly <m>n</m> elements.
+          In fact:
+          <ol>
+            <li>
+              <p>
+                if <m>S'</m> contains {less} than <m>n</m> elements,
+                then it does not span <m>V</m>;
+              </p>
+            </li>
+            <li>
+              <p>
+                if <m>S'</m> contains {more} than <m>n</m> elements,
+                then it is linearly dependent.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </theorem>
+    <proof>
+      <p>
+        To be sketched in class.
+        Boil everything down to a system of linear equations.
+      </p>
+    </proof>
+    <p>
+      Thanks to the theorem, the following notion of
+      <em>dimension</em> is well-defined.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>V</m> be a vector space.
+          If <m>V</m> does not have a finite basis,
+          then we say <m>V</m> is <term>infinite dimensional</term>
+          and write <m>\dim(V)=\infty</m>.
+          Otherwise we define the dimension of <m>V</m> to be the number <m>n</m> of vectors in a/any basis for <m>V</m>,
+          and write <m>\dim(V)=n</m>.
+        </p>
+      </statement>
+    </definition>
+  </paragraphs>
+  <paragraphs>
+    <title>Standard examples</title>
+    <p>
+      To prove <m>\dim(V)=n</m>,
+      we must <em>EXHIBIT</em> a basis of <m>V</m> containing <m>n</m> elements.
+      <ol>
+        <li>
+          <p>
+            Since we have declared <m>S=\{ \}</m> to be a basis for <m>\{\boldzero\}</m>,
+            we have <m>\dim(\{\boldzero\})=0</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Since the standard basis <m>\{\bolde_1,\dots,\bolde_n\}</m> of <m>\R^n</m> has <m>n</m> elements,
+            we have <m>\dim(\R^n)=n</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Since the standard basis <m>\{1,x,\dots ,x^n\}</m> of <m>P_n</m> has <m>n+1</m> elements,
+            we have <m>\dim(P_n)=n+1</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Since the standard basis <m>\{E_{ij}\colon 1\leq i\leq m, 1\leq j\leq n\}</m> of <m>M_{mn}</m> has <m>mn</m> elements,
+            we have <m>\dim(M_{mn})=mn</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      To prove <m>\dim(V)=\infty</m>,
+      we must prove <m>V</m> has no finite basis.
+      We shown this already for <m>P_\infty, C^\infty(-\infty,\infty), C^{(n)}(-\infty,\infty), C(-\infty,\infty), F(-\infty,\infty)</m>.
+    </p>
+    <p>
+      Thus for each of these spaces <m>V</m> we have <m>\dim(V)=\infty</m>.
+    </p>
+  </paragraphs>
+  <paragraphs>
+    <title>Street smarts</title>
+    <p>
+      For each pair <m>V</m> and <m>S</m> below,
+      show super-super quickly that <m>S</m> is NOT a basis for <m>V</m>.
+      <ol>
+        <li>
+          <p>
+            <m>V=M_{23}</m>.
+            <me>
+              S=\left\{ \begin{bmatrix}1\amp 1\amp 0\\0\amp 0\amp 0 \end{bmatrix} , \begin{bmatrix}0\amp 1\amp 1\\ 0\amp 0\amp 0 \end{bmatrix} , \begin{bmatrix}0\amp 0\amp 1\\ 1\amp 0\amp 0 \end{bmatrix} , \begin{bmatrix}0\amp 0\amp 0\\ 1\amp 1\amp 0 \end{bmatrix} , \begin{bmatrix}0\amp 0\amp 0\\ 0\amp 1\amp 1 \end{bmatrix} \right\}
+            </me>
+            <proof>
+              <p>
+                We have 5 vectors living in a 6-dimensional space.
+                By <xref ref="th_basiscard">Theorem</xref>,
+                these vectors cannot span.
+              </p>
+            </proof>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>V=P_3</m>,
+            <me>
+              S=\{1+\pi x-x^3, 1+\sqrt{e}x^2+x^3, 1+x+x^2+x^3, 1-x^3, x+17x^2+x^3\}
+            </me>.
+            <proof>
+              <p>
+                We have 5 vectors living in a 4-dimensional space.
+                By <xref ref="th_basiscard">Theorem</xref>
+                they must be linearly dependent.
+              </p>
+            </proof>
+          </p>
+        </li>
+      </ol>
+    </p>
+  </paragraphs>
+  <p>
+    Here are some more useful facts about bases,
+    the proofs of which will be done in class and the exercises.
+  </p>
+  <theorem>
+    <statement>
+      <p>
+        Let <m>V</m> be finite dimensional.
+        <ol>
+          <li>
+            <p>
+              If <m>S</m> spans <m>V</m>,
+              then some subset of <m>S</m> is a basis of <m>V</m>. (Basically,
+              throw out the redundant members!).
+            </p>
+          </li>
+          <li>
+            <p>
+              If <m>S</m> is linearly independent,
+              then <m>S</m> can be extended to a basis of <m>V</m>.
+              (Basically, add vectors to <m>S</m> one by one until it spans.)
+            </p>
+          </li>
+          <li>
+            <p>
+              Suppose <m>\dim V=n</m>,
+              and let <m>S=\{\boldv_1,\dots ,\boldv_n\}</m> be any set of <m>n</m> vectors in <m>V</m>.
+              Then
+              <me>
+                S \text{ spans \(V\) } \Leftrightarrow S \text{ is linearly independent }
+              </me>.
+              Thus <em>if we know beforehand</em> that <m>\dim V=n</m>,
+              then to show a given set <m>S=\{\boldv_1,\dots ,\boldv_n\}</m> is a basis it suffices to show either that is spans,
+              or that it is linearly independent.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </theorem>
+  <p>
+    Dimension can be a useful tool for deciding whether a subspace <m>W</m> of <m>V</m> is in fact all of <m>V</m>.
+  </p>
+  <theorem>
+    <statement>
+      <p>
+        Suppose <m>\dim(V)=n</m>,
+        and let <m>W\subset V</m> be a subspace of <m>V</m>.
+        <ol>
+          <li>
+            <p>
+              <m>\dim(W)\leq \dim(V)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\dim(W)=\dim(V)</m> if and only if <m>W=V</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      First we show <m>W</m> is finite-dimensional.
+      Indeed, if not,
+      we could find an infinite set <m>S</m> of linearly independent vectors,
+      contradicting the fact that in an <m>n</m>-dimensional space there can be at most <m>n</m> linearly independent vectors.
+    </p>
+    <p>
+      Thus we have <m>\dim(W)=r</m> for some finite <m>r</m>,
+      which means we can find a basis <m>S=\{\boldv_1,\dots, \boldv_r\}</m> of <m>W</m>.
+      Since these are linearly independent vectors in <m>V</m>,
+      by the previous theorem we can <em>extend</em>
+      <m>S</m> to a basis <m>\{\boldv_1,\dots, \boldv_r,\boldv_{r+1},\dots,\boldv_n\}</m> of <m>V</m>,
+      showing <m>r\leq n</m>, and thus <m>\dim(W)\leq\dim(V)</m>.
+    </p>
+  </proof>
+  <paragraphs>
+  <title>Example</title>
+  <p>
+    Describe all subspaces of <m>\R^3</m>.
+  </p>
+  <p>
+    Since <m>\dim(\R^3)=3</m>,
+    by the previous theorem a subspace
+    <m>W\subset \R^3</m> has dimension 0, 1, 2, or 3.
+  </p>
+  <paragraphs>
+    <title><m>\dim(W)=0</m>.</title>
+    <p>
+      In this case <m>W=\{\boldzero\}</m> is the trivial subspace.
+    </p>
+  </paragraphs>
+  <paragraphs>
+    <title><m>\dim(W)=1</m>.</title>
+    <p>
+      In this case <m>W=\Span\{\boldv\}</m> of a single nonzero vector.
+      We recognize this as a line in 3-space.
+    </p>
+  </paragraphs>
+  <paragraphs>
+    <title><m>\dim(W)=2</m>.</title>
+    <p>
+      In this case <m>W=\Span\{\boldv, \boldw\}</m> is the span of two linearly independent vectors.
+      This means that they are not scalar multiples of one another,
+      hence not colinear.
+      It follows that <m>W</m> is a plane in 3-space.
+    </p>
+  </paragraphs>
+  <paragraphs>
+    <title><m>\dim(W)=3</m>.</title>
+    <p>
+      Since <m>W\subset\R^3</m> and <m>\dim(\R^3)=3</m>,
+      it follows from the previous theorem that <m>W=\R^3</m>.
+    </p>
+  </paragraphs>
+  <p>
+    We have shown that the only subspaces of <m>\R^3</m> are lines, planes,
+    the origin, and <m>\R^3</m> itself.
+  </p>
+  </paragraphs>
+  <paragraphs>
+    <title>Dimension theorem compendium</title>
+    <p>
+      We collect here some of the most important results from this section.
+    </p>
+    <theorem>
+      <statement>
+        <p>
+          {Dimension theorem compendium} Let <m>V</m> be a vector space,
+          and suppose <m>B=\{\boldv_1,\boldv_2,\dots, \boldv_n\}</m> is a basis for <m>V</m>.
+          <ol>
+            <li>
+              <p>
+                (Street smarts) If <m>S</m> is a subset of <m>V</m> containing less than <m>n</m> elements,
+                then <m>S</m> does not span <m>V</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                (Street smarts) If <m>S</m> is a subset of <m>V</m> containing more than <m>n</m> elements,
+                then <m>S</m> is linearly dependent.
+              </p>
+            </li>
+            <li>
+              <p>
+                All bases of <m>V</m> contain exactly <m>n</m> elements.
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>S</m> is linearly independent,
+                then <m>S</m> can be extended to a basis of <m>V</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>S</m> spans <m>V</m>,
+                then some subset of <m>S</m> is a basis for <m>V</m>:
+                i.e., <m>S</m> can be contracted to a basis.
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>\val{S}=n</m>,
+                then <m>S</m> is a basis if and only if <m>S</m> is linearly independent if and only if <m>S</m> spans <m>V</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                (Dimension of subspaces I) Given subspace <m>W\subseteq V</m>,
+                we have <m>\dim W\leq \dim V=n</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                (Dimension of subspaces II) Given subspace <m>W\subseteq V</m>, we have
+                <me>
+                  W=V \text{ if and only if }  \dim W=\dim V
+                </me>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </theorem>
+  </paragraphs>
+</section>

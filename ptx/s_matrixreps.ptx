@@ -1,0 +1,389 @@
+<section xml:id="ss_matrixreps">
+  <title>Matrix representations</title>
+  <paragraphs>
+    <title>Matrix representations of transformations</title>
+    <p>
+      We have seen how the coordinate vector map can be used to translate a linear algebraic question posed about the exotic vector space <m>V</m> into a question about the more familiar vector space <m>\R^n</m>,
+      where we have many computational algorithms at our disposal.
+    </p>
+    <p>
+      We would like to extend this technique to linear transformations <m>T\colon V\rightarrow W</m>,
+      where both <m>V</m> and <m>W</m> are
+      <em>finite-dimensional</em>.
+      The basic idea, to be fleshed out below,
+      can be described as follows:
+      <ol>
+        <li>
+          <p>
+            Pick a basis <m>B</m> for <m>V</m>,
+            and a basis <m>B'</m> for <m>W</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <q>Identify</q>
+            <m>V</m> with <m>\R^n</m> and <m>W</m> with <m>\R^m</m> using the coordinate vector isomorphisms
+            <m>[\hspace{10pt]}_B</m> and <m>[\hspace{10pt}]_{B'}</m>,
+            respectively.
+          </p>
+        </li>
+        <li>
+          <p>
+            <q>Model</q>
+            the linear transformation <m>T\colon V\rightarrow W</m> with a certain linear transformation <m>T_A\colon \R^n\rightarrow \R^m</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      The matrix <m>A</m> defining <m>T_A</m> will be called the
+      <em>matrix representing <m>T</m> with respect to our choice of basis <m>B</m> for <m>V</m> and <m>B'</m> for <m>W</m></em>.
+    </p>
+    <p>
+      In what sense does <m>A</m>
+      <q>model</q>
+      <m>T</m>?
+      All the properties of <m>T</m> we are interested in (<m>\NS T</m>,
+      <m>\nullity T</m>, <m>\CS T</m>, <m>\rank T</m>,
+      etc.) are perfectly mirrored by the matrix <m>A</m>.
+    </p>
+    <p>
+      As a result,
+      this technique allows us to answer questions about the original <m>T</m> essentially by applying a relevant matrix algorithm to <m>A</m>.
+    </p>
+  </paragraphs>
+  <paragraphs>
+    <title>Matrix representations of transformations</title>
+    <p>
+      Given: <m>T\colon V\rightarrow W</m> a linear transformation,
+      <m>\dim V=n</m>, <m>\dim W=m</m>.
+      First <em>choose</em> bases
+      <m>B=\{\boldv_1,\dots,\boldv_n\}</m> for <m>V</m> and <m>B'=\{\boldw_1,\dots,\boldw_m\}</m> for <m>W</m>.
+      These two bases give rise to two coordinate vector isomorphisms:
+      <md>
+        <mrow>_B\colon V\amp \rightarrow \R^n</mrow>
+        <mrow>[\hspace{5pt}]_{B'}\colon W\amp \rightarrow \R^m</mrow>
+      </md>
+    </p>
+    <p>
+      Putting all three of these maps together yields the diagram
+    </p>
+    <image source="images/cc8efd6a97c88e4497f27340c587cf4a67004367.png"/>
+    <p>
+      where the double-headed arrows indicate the fact that the coordinate maps are isomorphisms:
+      i.e., we also have inverse maps <m>([\hspace{5pt}]_B)^{-1}</m>,
+      <m>([\hspace{5pt}]_{B'})^{-1}</m> going up.
+    </p>
+    <p>
+      The <em>matrix <m>A</m> representing <m>T</m> with respect to the bases <m>B</m> and <m>B'</m></em> will be the matrix that
+      <q>completes</q>
+      this diagram by supplying an arrow from <m>\R^n</m> to <m>\R^m</m>.
+    </p>
+    <p>
+      Crucial in our discussion will be the theorem stating that
+      <ol>
+        <li>
+          <p>
+            a linear transformation can be defined simply by declaring where basis elements are sent, and
+          </p>
+        </li>
+        <li>
+          <p>
+            the linear transformation is uniquely determined by this choice.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </paragraphs>
+  <p>
+    So we want a matrix <m>A</m>
+    <q>completing</q>
+    the previous diagram like so:
+  </p>
+  <image source="images/2b72bfb8e47c25a636640e6a074641bbaf5b6ed1.png"/>
+  <p>
+    More precisely, we want the diagram to be <em>commutative</em>.
+    This means that if we start at <m>V</m> and go right with <m>T</m>,
+    then down with <m>[\hspace{5pt}]_{B'}</m>,
+    this is the same as first going down with
+    <m>[\hspace{5pt}]_{B}</m>, then right with <m>A</m>.
+  </p>
+  <p>
+    In terms of function compositions this means we want <m>[\hspace{5pt}]_{B'}\circ T=A\circ[\hspace{5pt}]_{B}</m>,
+    or equivalently
+    <me>
+      [T(\boldv)]_{B'}=A[\boldv]_B, \text{ for all \(\boldv\in V\) }
+    </me>.
+  </p>
+  <paragraphs>
+    <title>Computing the matrix $A$</title>
+    <p>
+      <m>[T(\boldv)]_{B'}=A[\boldv]_B, \text{ for all \(\boldv\in V\) } </m>.
+    </p>
+    <p>
+      We now use the boxed condition to compute <m>A</m> column by column.
+      Let <m>\boldc_j</m> denote the <m>j</m>-th column of <m>A</m>.
+    </p>
+    <p>
+      By the column method of matrix multiplication we have
+      <md>
+        <mrow>\boldc_j\amp =\amp A\bolde_j \text{ (\(\bolde_j\) the \(j\)-th element of standard basis) }</mrow>
+        <mrow>\amp =\amp A[\boldv_j]_B \text{ (\(\boldv_j\) the \(j\)-th element of basis \(B\)) }</mrow>
+        <mrow>\amp =\amp [T\boldv_j]_{B'}</mrow>
+      </md>
+    </p>
+    <p>
+      Thus we have a formula for computing the <m>j</m>-th column of <m>A</m>:
+      <me>
+        \boldc_j=[T[v_j]]_{B'}
+      </me>
+    </p>
+    <p>
+      The matrix <m>A</m> we obtain in this fashion is called the
+      <term>matrix for <m>T</m> relative to the bases <m>B</m> and <m>B'</m></term>,
+      and is denoted <m>A=[T]_{B}^{B'}</m>.
+    </p>
+  </paragraphs>
+  <p>
+    Let's record our results as a theorem.
+  </p>
+  <theorem>
+    <title>Matrix representation theorem</title>
+    <statement>
+      <p>
+        Let <m>V, W</m> be finite-dimensional vector spaces,
+        let <m>T\colon V\rightarrow W</m> be linear,
+        let <m>B=\{\boldv_1,\boldv_2,\dots, \boldv_n\}</m> be a basis for <m>V</m>,
+        and let <m>B'</m> be a basis for <m>W</m>.
+        There is a <em>unique</em> matrix <m>A</m> satisfying the following property:
+        <me>
+          [T(\boldv)]_{B'}=A[\boldv]_B \text{ for all \(\boldv\in V\) }
+        </me>.
+      </p>
+      <p>
+        The matrix is denoted <m>A=[T]_B^{B'}</m> and can be computed column by column using the recipe <m>\bolda_j=[T(\boldv_j)]_{B'}</m>,
+        where <m>\bolda_j</m> is the <m>j</m>-th column of <m>A</m>.
+      </p>
+    </statement>
+  </theorem>
+  <p>
+    The theorem is summed up by the following
+    <em>commutative diagram</em>:
+  </p>
+  <image source="images/339555c2b04a42fa7ebcff9362ead028de75cc56.png"/>
+  <corollary>
+    <title>Computational method</title>
+    <statement>
+      <p>
+        Any question about the <em>linear transformation</em>
+        <m>T</m> can be answered by first answering the analagous question for the
+        <em>matrix</em> <m>A=[T]_B^{B'}</m>,
+        and then translating your results back to <m>V</m> and <m>W</m> using
+        <m>[\hspace{5pt}]_B^{-1}</m> and <m>[\hspace{5pt}]_{B'}^{-1}</m>.
+      </p>
+    </statement>
+  </corollary>
+  <paragraphs>
+    <title>Example</title>
+    <p>
+      Define <m>T\colon P_{3}\rightarrow P_{2}</m> by <m>T(p(x))=p'(x)</m>.
+      Compute <m>A=[T]_{B}^{B'}</m>,
+      where <m>B</m> and <m>B'</m> are the standard bases for <m>P_3</m> and <m>P_2</m>,
+      respectively.
+    </p>
+    <p>
+      Use <m>A</m> to determine <m>\NS T</m> and
+      <m>\range T</m>. \begin{bsolution} The matrix <m>A</m> will be <m>3\times 4</m>.
+      Denote by <m>\boldc_j</m> the <m>j</m>-th column of <m>A</m>.
+      We use the formula for <m>\boldc_j</m>:
+      <md>
+        <mrow>\boldc_1\amp =[T(1)]_{B'}=[0]_{B'}=\begin{bmatrix} 0</mrow>
+        <mrow>0</mrow>
+        <mrow>0 \end{bmatrix} \amp \boldc_2\amp =[T(x)]_{B'}=[1]_{B'}=\begin{bmatrix} 1</mrow>
+        <mrow>0</mrow>
+        <mrow>0 \end{bmatrix}</mrow>
+        <mrow>\boldc_3\amp =[T(x^2)]_{B'}=[2x]_{B'}=\begin{bmatrix} 0</mrow>
+        <mrow>2</mrow>
+        <mrow>0 \end{bmatrix} \amp \boldc_4\amp =[T(x^3)]_{B'}=[3x^2]_{B'}=\begin{bmatrix} 0</mrow>
+        <mrow>0</mrow>
+        <mrow>3 \end{bmatrix}</mrow>
+      </md>
+    </p>
+    <p>
+      Thus <m>A=\begin{bmatrix}0\amp 1\amp 0\amp 0\\ 0\amp 0\amp 2\amp 0\\ 0\amp 0\amp 0\amp 3 \end{bmatrix}</m>.
+    </p>
+    <p>
+      We see easily that <m>\NS A =\Span(\{(1,0,0,0)\})</m> and <m>\range A=\CS A=\R^3</m>.
+      Translating everything back to the original spaces,
+      we see that <m>\NS(T)=\Span(\{1\})=\{\text{ constant poly.'s } \}</m> and <m>\range(T)=P_2</m>. \end{bsolution}
+    </p>
+  </paragraphs>
+  <p>
+    In the special case where <m>T\colon V\rightarrow V</m> maps a space <m>V</m> \alert{to itself}, when representing <m>T</m> with a matrix,
+    we usually just pick a single basis <m>B</m> for <m>V</m> and compute
+    <me>
+      A=[T]_{B}^{B}=:[T]_B \hspace{5pt} \text{ (our notation drops the redundant \(B\)) }
+    </me>
+  </p>
+  <paragraphs>
+    <title>Example</title>
+    <p>
+      Define <m>T\colon M_{22}\rightarrow M_{22}</m> by <m>T(A)=A^T+A</m>.
+      Let <m>B</m> be the standard basis of <m>M_{22}</m>, and let
+    </p>
+  </paragraphs>
+  <me>
+    B'=\{
+    \begin{bmatrix}0\amp 1\\
+    -1\amp 0
+    \end{bmatrix} ,
+    \begin{bmatrix}1\amp 0\\
+    0\amp 0
+    \end{bmatrix} ,
+    \begin{bmatrix}0\amp 1\\
+    1\amp 0
+    \end{bmatrix} ,
+    \begin{bmatrix}0\amp 0\\
+    0\amp 1
+    \end{bmatrix}
+    \}
+  </me>.
+  <ol>
+    <li>
+      <p>
+        Compute <m>A=[T]_B</m>.
+      </p>
+    </li>
+    <li>
+      <p>
+        Compute <m>A'=[T]_{B'}</m>.
+      </p>
+    </li>
+  </ol>
+  <p>
+    \begin{bsolution}
+    <me>
+      A=\begin{bmatrix}2\amp 0\amp 0\amp 0\\ 0\amp 1\amp 1\amp 0\\ 0\amp 1\amp 1\amp 0\\ 0\amp 0\amp 0\amp 2 \end{bmatrix} , A'=\begin{bmatrix}0\amp 0\amp 0\amp 0\\ 0\amp 2\amp 0\amp 0\\ 0\amp 0\amp 2\amp 0\\ 0\amp 0\amp 0\amp 2 \end{bmatrix}
+    </me>
+  </p>
+  <p>
+    \end{bsolution} \alert{Moral:} our choice of basis affects the matrix representing <m>T</m>,
+    and some choices are better than others!
+  </p>
+  <paragraphs>
+    <title>$\R^n$ revisited</title>
+    <p>
+      Consider the <em>special case</em>
+      of the form <m>T\colon \R^n\rightarrow \R^m</m>.
+      We know that in this case we have <m>T=T_A</m>, where
+      <me>
+        A= \begin{bmatrix}\vert\amp \vert\amp \cdots \amp \vert \\ T(\bolde_1)\amp  T(\bolde_2)\amp \cdots \amp T(\bolde_n)\\ \vert\amp \vert\amp \cdots \amp \vert \end{bmatrix}
+      </me>.
+    </p>
+    <p>
+      In light of our recent discussion we recognize this as simply <m>A=[T]_{B}^{B'}</m>,
+      where <m>B,B'</m> are the <em>standard bases</em>
+      of <m>\R^n</m> and <m>\R^m</m>.
+    </p>
+    <p>
+      This is certainly the most direct way of associating a matrix to the transformation <m>T</m> in this case,
+      but it begs the question as to whether another choice of bases gives us a
+      <em>better</em> matrix representation!
+    </p>
+    <p>
+      Example follows.
+    </p>
+  </paragraphs>
+  <paragraphs>
+    <title>Example</title>
+    <p>
+      Let <m>W\colon x+y+z=0</m> be the plane in <m>\R^3</m> perpendicular to <m>\boldn=(1,1,1)</m>,
+      and consider the orthogonal projection transformation <m>T=\text{ proj } _W\colon \R^3\rightarrow \R^3</m>.
+    </p>
+    <p>
+      The recipe in the last slide tells us that
+      <m>\text{ proj } _W=T_A</m> where <m>A=\begin{bmatrix}2/3 \amp -1/3\amp -1/3\\-1/3\amp 2/3\amp -1/3\\ -1/3\amp -1/3\amp 2/3 \end{bmatrix}</m>.
+    </p>
+    <p>
+      This <m>A</m> is nothing more than <m>[T]_B</m>,
+      where <m>B=\{\bolde_1,\bolde_2,\bolde_3\}</m> is the
+      <em>standard basis</em> of <m>\R^3</m>.
+      We ask: Is there another basis <m>B'</m> for which the matrix <m>A'=[T]_{B'}</m> is simpler?
+    </p>
+    <p>
+      Yes!! I'll build a basis that pays more attention to the geometry involved in defining <m>T</m>.
+      Start first with a basis of the plane <m>W</m>:
+      the set <m>\{\boldv_1=(1,-1,0),\boldv_2=(0,1,-1)\}</m> will do.
+      Now <em>extend</em> to a basis of <m>\R^3</m>.
+      We need only add a vector that is not included already in <m>W</m>:
+      the normal vector <m>\boldv_3=(1,1,1)</m> to the plane is a natural choice.
+    </p>
+    <p>
+      Thus we consider the basis
+      <m>B'=\{\boldv_1,\boldv_2, \boldv_3\}</m> and compute <m>A'=[\text{ proj } _W]_{B'}</m>: { $ A'=
+    </p>
+    \begin{bmatrix}\vert\amp \vert\amp \vert\\
+    [T(\boldv_1)]_{B'}\amp [T(\boldv_2)]_{B'}\amp [T(\boldv_3)]_{B'}\\
+    \vert\amp \vert\amp \vert
+    \end{bmatrix}
+    \begin{bmatrix}\vert\amp \vert\amp \vert\\
+    [\boldv_1]_{B'}\amp [\boldv_2]_{B'}\amp [\boldzero]_{B'}\\
+    \vert\amp \vert\amp \vert
+    \end{bmatrix}
+    \begin{bmatrix}1\amp 0\amp 0\\
+    0\amp 1\amp 0\\
+    0\amp 0\amp 0
+    \end{bmatrix}
+    <p>
+      Wow, <m>A'</m> is way simpler!
+      How can both of these matrices
+      <q>represent</q>
+      the same linear transformation?
+    </p>
+  </paragraphs>
+  <p>
+    { Let <m>W\colon x+y+z=0</m> be a the plane in <m>\R^3</m> perpendicular to <m>\boldn=(1,1,1)</m>,
+    and consider the orthogonal projection transformation <m>T=\text{ proj } _W\colon \R^3\rightarrow \R^3</m>.
+  </p>
+  <p>
+    Two different bases:
+    <m>B=\{\bolde_1,\bolde_2,\bolde_3\}</m>,<m>B'=\{\boldv_1=(1,-1,0),\boldv_2=(0,1,-1), \boldv_3=(1,1,1)\}</m>.
+  </p>
+  <p>
+    Two different matrix representations:
+  </p>
+  <p>
+    <m>A=[T]_B=\frac{1}{3}\begin{bmatrix}2 \amp -1\amp -1\\-1\amp 2\amp -1\\ -1\amp -1\amp 2 \end{bmatrix}</m>,
+    <m>A'=[T]_{B'}=\begin{bmatrix}1\amp 0\amp 0\\ 0\amp 1\amp 0\\ 0\amp 0\amp 0 \end{bmatrix}</m>.}
+  </p>
+  <p>
+    The simpler matrix <m>A'</m> gives us a clear <em>conceptual</em>
+    understanding of this orthogonal projection.
+  </p>
+  <p>
+    For example,
+    we see that <m>\CS A'=\Span(\{(1,0,0),(0,1,0)\})</m> and <m>\NS A'=\Span(\{(0,0,1)\}</m>,
+    and furthermore <m>A'</m> acts as the identity on <m>\CS A'</m>,
+    and as the zero transformation on <m>\NS A'</m>.
+  </p>
+  <p>
+    Using <m>[\hspace{5pt}]_{B'}^{-1}</m> we can translate this information back to <m>T=\text{ proj } _W</m>.
+    Namely, <m>\range T=\Span\{(\boldv_1,\boldv_2)\}=W</m>,
+    <m>\NS T=\Span \{\boldv_3\}=\Span \{\boldn\}</m>, and furthermore,
+    <m>T</m> acts as the identity on <m>W</m> and as the zero transformation on <m>\Span\{\boldn\}</m>.
+  </p>
+  <p>
+    However, if we actually want an
+    <em>explicit formula</em>
+    for computing he orthogonal projection of a vector <m>\boldx\in \R^3</m> onto <m>W</m>,
+    we are better off using <m>A</m>,
+    since we have <m>\proj{\boldx}{W}=A\boldx</m>.
+  </p>
+  <p>
+    So both representations have their own particular virtue!
+    In the next section we develop a means for fluidly going back and forth between the two.
+  </p>
+  <p>
+    Wouldn't it have been easier just to compute
+  </p>
+</section>

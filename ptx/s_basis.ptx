@@ -1,0 +1,174 @@
+<section xml:id="ss_basis">
+  <title>Bases</title>
+  <paragraphs>
+  <title><xref ref="c_vectorspace"></xref>. <xref ref="ss_basis"></xref>: executive summary</title>
+  <paragraphs>
+    <title>Definitions:</title>
+    <p>
+      basis. \alert{Procedures:} deciding whether a set is basis. \alert{Theorems:} <m>B</m> is a basis for <m>V</m> iff every vector in <m>V</m> can be written as a linear combination of the vectors in <m>B</m> in <em>a unique way</em>.
+    </p>
+  </paragraphs>
+  </paragraphs>
+  <paragraphs>
+    <title><xref ref="c_vectorspace"></xref>. <xref ref="ss_basis"></xref>: definition of basis</title>
+    <definition>
+      <statement>
+        <p>
+          Let <m>V</m> be a vector a space.
+          A set <m>B=\{\boldv_1,\dots,\boldv_n\}</m> is called a (finite)
+          <term>basis</term> for <m>V</m> if
+          <ol>
+            <li>
+              <p>
+                <m>B</m> spans <m>V</m>, and
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>B</m> is linearly independent.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </definition>
+  </paragraphs>
+  <paragraphs>
+    <title>Some standard bases</title>
+    <ol>
+      <li>
+        <p>
+          Let <m>V=\R^n</m>, and let
+          <m>\bolde_i</m> be the the <m>n</m>-tuple whose <m>i</m>-th entry is 1, and whose every other entry is 0: e.g,
+          <me>
+            \bolde_1=(1,0,\dots,0), \bolde_2=(0,1,0,\dots, 0),\text{ etc. }
+          </me>
+          Then the set <m>B=\{\bolde_1,\bolde_2,\dots \bolde_n\}</m> is a basis for <m>\R^n</m>,
+          called the <term>standard basis</term> for <m>\R^n</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>V=P_n</m>.
+          Then the set <m>B=\{1, x, x^2, \dots x^{n}\}</m> is a basis for <m>V</m>,
+          called the <term>standard basis</term> for <m>P_n</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>V=M_{mn}</m>, and let <m>E_{ij}</m> be the
+          <m>m\times n</m> matrix whose <m>ij</m>-th entry is 1, and whose every other entry is 0.
+          Then <m>B=\{E_{ij}\colon 1\leq i\leq m, 1\leq j\leq n\}</m> is a basis for <m>V</m>,
+          called the <term>standard basis</term> for <m>M_{mn}</m>.
+        </p>
+      </li>
+    </ol>
+  </paragraphs>
+  <paragraphs>
+    <title>Some nonstandard bases</title>
+    <p>
+      For each of the following choices of <m>V</m> and <m>B</m>,
+      prove that <m>B</m> is a basis for <m>V</m>.
+      <ol>
+        <li>
+          <p>
+            <m>V=\R^4</m>,
+            <m>B=\{(1,1,1,1), (1,0,0,-1), (1,0,-1,0), (0,1,-1,0)\}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>V=P_2</m>, <m>B=\{1+x+x^2, -x+x^2, -1+x^2\}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>V=M_{22}</m>,
+            <me>
+              B=\left\{ \begin{bmatrix}3\amp 6\\ 3\amp -6 \end{bmatrix} , \begin{bmatrix}0\amp -1\\ -1\amp 0 \end{bmatrix} , \begin{bmatrix}0\amp -8\\ -12\amp -4 \end{bmatrix} , \begin{bmatrix}1\amp 0\\ -1\amp 2 \end{bmatrix} \right\}
+            </me>.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </paragraphs>
+  <paragraphs>
+    <title>Nonexistence of a finite basis</title>
+    <p>
+      A vector space need not have a finite basis.
+      For example,
+      the space <m>P_\infty</m> of all polynomials does not have a finite basis.
+    </p>
+    <proof>
+      <p>
+        Suppose by contradiction that
+        <m>P_\infty</m> did have a finite basis
+        <m>B=\{p_1,p_2,\dots,
+        p_n\}</m> for some polynomials <m>p_i(x)</m>.
+      </p>
+      <p>
+        Each polynomial <m>p_i</m> has a degree <m>m_i=\deg(p_i)</m>.
+        Let <m>m</m> be the maximum of <m>m_1,m_2,\dots, m_n</m>.
+        Then <m>\Span(S)\subset P_m</m>,
+        the space of polynomials of degree at most <m>m</m>.
+      </p>
+      <p>
+        But then we have
+        <me>
+          \Span(B)\subset P_m\subsetneq P_\infty
+        </me>.
+      </p>
+      <p>
+        Thus <m>B</m> doesn't span <m>P_\infty</m>.
+        A contradiction.
+      </p>
+    </proof>
+    <p>
+      Since
+      <me>
+        P_\infty\subset C^\infty(a,b)
+      </me>
+      it follows that <m>C^\infty(a,b)</m> also fails to have a finite basis.
+    </p>
+  </paragraphs>
+  <paragraphs>
+    <title>Some funny spaces</title>
+    <ol>
+      <li>
+        <p>
+          Let <m>V=\{\boldzero\}</m>.
+          The only subsets of <m>V</m> are the empty set <m>S=\{ \}</m>,
+          and the set <m>S=\{\boldzero\}</m>.
+          The first set doesn't span <m>V</m>;
+          the second set is not linearly independent.
+          So technically the zero space has no basis!
+          This turns out to be a significant inconvenience,
+          so by executive order we declare the empty set <m>B=\{ \}</m> to be a basis of the zero space <m>V=\{\boldzero\}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>V=\R_{>0}</m>.
+          Recall that here vector addition is real number multiplication,
+          and scalar multiplication is real number exponentiation.
+          Let <m>r\ne 1</m> be any element of <m>\R_{>0}</m>, not equal to 1.
+          Claim: <m>B=\{r\}</m> is a basis for <m>\R_{>0}</m>.
+          Proof: homework exercise!
+        </p>
+      </li>
+    </ol>
+  </paragraphs>
+  <theorem xml:id="th_basisunique">
+    <statement>
+      <p>
+        A set <m>B=\{\boldv_1,\dots, \boldv_n\}</m> is a basis of <m>V</m> if and only if every vector
+        <m>\boldv\in V</m> can be written as a linear combination of
+        <m>\boldv_i</m> in a <em>unique way</em>:
+        i.e., for every <m>\boldv\in V</m> there is exactly one choice of scalars <m>c_1,c_2, \dots c_n</m> such that
+        <me>
+          \boldv=c_1\boldv_1+c_2\boldv_2\cdots +c_n\boldv_n
+        </me>.
+      </p>
+    </statement>
+  </theorem>
+</section>

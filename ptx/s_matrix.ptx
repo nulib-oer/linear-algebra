@@ -1,0 +1,338 @@
+<section xml:id="ss_matrix">
+  <title>Matrix arithmetic</title>
+  <paragraphs>
+  <title><xref ref="c_linear_systems"></xref>. <xref ref="ss_matrix"></xref>: executive summary</title>
+  <paragraphs>
+    <title>Definitions</title>
+    <p>
+      : matrix, matrix dimension (size),
+      matrix equality, sum/difference,
+      scalar multiplication, linear combinations, matrix multiplication,
+      transpose. \alert{Procedures}: row method of matrix multiplication,
+      column method of matrix multiplication. \alert{Theorems}: none yet!
+    </p>
+  </paragraphs>
+  </paragraphs>
+  <paragraphs>
+    <title>Matrices</title>
+    <definition>
+      <statement>
+        <p>
+          A <term>matrix</term> is a rectangular array of numbers.
+          <me>
+            A=\genmatrix
+          </me>
+        </p>
+        <p>
+          The <term>size</term>
+          (or <term>dimension</term>)
+          of a matrix is given by the pair <m>m\times n</m>,
+          where <m>m</m> is the number of rows,
+          and <m>n</m> is the number of columns.
+          The matrix <m>A</m> above is an <m>m\times n</m> matrix.
+        </p>
+      </statement>
+    </definition>
+    <notation>
+      <p>
+        We use the notation <m>[a_{ij}]_{m\times n}</m> to define the
+        <m>m\times n</m> matrix whose <m>ij</m>-th entry (<m>i</m>-th {row}, <m>j</m>-th {column}) is <m>a_{ij}</m>.
+      </p>
+      <p>
+        Similarly, given a matrix <m>A</m>,
+        the notation <m>(A)_{ij}</m> denotes the <m>ij</m>-th entry of <m>A</m>.
+      </p>
+    </notation>
+  </paragraphs>
+  <paragraphs>
+    <title>Specially sized matrices</title>
+    <p>
+      An <m>n\times n</m> matrix is called a
+      <term>square matrix of order <m>n</m></term>.
+      <me>
+        A=\varmatrix{n}{n}{a}
+      </me>.
+    </p>
+    <p>
+      A <m>1\times n</m> matrix is called a <term>row vector</term>:
+      <me>
+        \mathbf{a}=\begin{bmatrix}a_1\amp a_2\amp \cdots \amp a_n \end{bmatrix}
+      </me>.
+    </p>
+    <p>
+      An <m>m\times 1</m> matrix is called a
+      <term>column vector</term>:
+      <me>
+        \mathbf{b}=\begin{bmatrix}b_1\\ b_2\\\vdots \\ b_m \end{bmatrix}
+      </me>
+    </p>
+  </paragraphs>
+  <paragraphs>
+    <title>Equality, sum, difference</title>
+    <definition>
+      <statement>
+        <p>
+          Two matrices <m>A</m> and <m>B</m> are <term>equal</term> when
+          <ol>
+            <li>
+              <p>
+                they have the same size, and
+              </p>
+            </li>
+            <li>
+              <p>
+                their corresponding entries are equal.
+              </p>
+            </li>
+          </ol>
+        </p>
+        <p>
+          In other words,
+          <m>A</m> and <m>B</m> must both be <m>m\times n</m> matrices,
+          and <m>(A)_{ij}=(B)_{ij}</m> for all
+          <m>1\leq i\leq m</m> and <m>1\leq j\leq n</m>.
+        </p>
+      </statement>
+    </definition>
+    <definition>
+      <statement>
+        <p>
+          Suppose <m>A=[a_{ij}]</m> and
+          <m>B=[b_{ij}]</m> are both <m>m\times n</m> matrices.
+          We define
+          <ul>
+            <li>
+              <p>
+                their <term>sum</term> <m>A+B</m> to be the matrix <m>C=[a_{ij}+b_{ij}]</m>;
+              </p>
+            </li>
+            <li>
+              <p>
+                their <term>difference</term> <m>A-B</m> to be the matrix <m>D=[a_{ij}-b_{ij}]</m>.
+              </p>
+            </li>
+          </ul>
+        </p>
+        <p>
+          Equivalently,
+          we <m>A+B</m> and <m>A-B</m> are defined by declaring:
+          <md>
+            <mrow>(A+B)_{ij}\amp =\amp (A)_{ij}+(B)_{ij}</mrow>
+            <mrow>(A-B)_{ij}\amp =\amp (A)_{ij}-B_{ij}</mrow>
+          </md>
+        </p>
+      </statement>
+    </definition>
+  </paragraphs>
+  <paragraphs>
+    <title>Scalar multiplication</title>
+    <definition>
+      <title>Scalar multiplication</title>
+      <statement>
+        <p>
+          Given any matrix <m>A=[a_{ij}]_{m\times n}</m> and any constant <m>c</m>,
+          we define
+          <me>
+            cA=[ca_{ij}]
+          </me>.
+        </p>
+        <p>
+          We call <m>cA</m> a <term>scalar multiple</term> of <m>A</m>.
+        </p>
+      </statement>
+    </definition>
+  </paragraphs>
+  <paragraphs>
+  <title>Matrix multiplication</title>
+  <paragraphs>
+    <title>Warning:</title>
+    <p>
+      after all this,
+      you might guess that we would define multiplication of two
+      <m>m\times n</m> matrices <m>A</m> and <m>B</m> by taking the product of the corresponding entries.
+      <em>NOT SO!</em>
+    </p>
+  </paragraphs>
+  <definition>
+    <statement>
+      <p>
+        Let <m>A=[a_{ij}]_{m\times r}</m> be an {<m>m\times r</m>} matrix,
+        and <m>B=[b_{ij}]_{r\times n}</m> be an {<m>r\times n</m>} matrix.
+      </p>
+      <p>
+        We define their <term>product</term>,
+        <m>A\cdot B</m> to be the {<m>m\times n</m>} matrix <m>C=[c_{ij}]_{m\times n}</m>, where
+        <me>
+          c_{ij}=a_{i1}b_{1j}+a_{i2}b_{2j}+\cdots a_{ir}b_{rj} =\sum_{\ell=1}^ra_{i\ell}b_{\ell j}
+        </me>.
+      </p>
+    </statement>
+  </definition>
+  <p>
+    Note the many peculiarities of this definition:
+    <ol>
+      <li>
+        <p>
+          In general <m>A_{{\color{red}m\times r}}</m>,
+          <m>B_{\color{blue} r\times n}</m> and
+          <m>C_{\color{green} m\times n}</m> all have different sizes!
+        </p>
+      </li>
+      <li>
+        <p>
+          The rule for getting the entries of
+          <m>A\cdot B</m> is nowhere near as simple as we may have hoped!
+        </p>
+      </li>
+    </ol>
+  </p>
+  </paragraphs>
+  <paragraphs>
+    <title>Matrix multiplication</title>
+    <p>
+      For the product of <m>A</m> and <m>B</m> to be defined,
+      we need the number of columns of <m>A</m> to be equal to the number of rows of <m>B</m>.
+      That is, the
+      <q>inside</q>
+      dimensions in the product below must be equal.
+      <me>
+        A_{m\times\color{red} r}\cdot B_{{\color{red}{r}}\times n}=C_{m\times n}
+      </me>
+      <me>
+        A_{{\color{blue}m}\times r}\cdot B_{r\times {\color{blue}n}}=C_{m\times n}
+      </me>
+    </p>
+    <p>
+      The
+      <q>outside</q>
+      dimensions tells us the dimension of the resulting matrix.
+    </p>
+    <p>
+      All of this will make more sense once we begin thinking of matrices <m>A</m> as defining certain functions <m>T_A</m>.
+      It turns out that the product of two matrices
+      <m>A\cdot B</m> will represent the <em>composition</em>
+      of their corresponding functions:
+      i.e., <m>T_A\circ T_B</m>.
+    </p>
+    <p>
+      The peculiar restriction on the dimensions of the matrices ensures that the two functions <m>T_A</m> and <m>T_B</m> can be composed:
+      that is, that the range of <m>T_B</m> lies within the domain of <m>T_A</m>.
+      More on this later!
+    </p>
+  </paragraphs>
+  <paragraphs>
+    <title>Alternative methods of multiplication</title>
+    <p>
+      In addition to the straightforward definition of matrix multiplication,
+      we will make <em>heavy use</em>
+      of a couple of alternative methods to computing products.
+    </p>
+    <p>
+      To articulate these other methods,
+      we need the following notion.
+    </p>
+    <definition>
+      <title>Linear combination of matrices</title>
+      <statement>
+        <p>
+          Let <m>A_1,A_2,\dots, A_r</m> be matrices of the same size,
+          and let <m>c_1,c_2, \dots ,c_r</m> be scalars.
+          The matrix
+          <me>
+            c_1A_1+c_2A_2\cdots +c_rA_r
+          </me>
+          is called a <term>linear combination</term> of the <m>A_i</m>,
+          with <term>coefficients</term> <m>c_i</m>.
+        </p>
+      </statement>
+    </definition>
+  </paragraphs>
+  <paragraphs>
+    <title>Column method of $AB$</title>
+    <p>
+      Given a matrix <m>A_{m\times n}</m>,
+      we will think of <m>A</m> as a sequence of <m>n</m> column vectors:
+      <me>
+        \begin{bmatrix}a_{11}\amp a_{12}\amp \cdots \amp a_{1n}\\ a_{21}\amp a_{22}\amp \cdots \amp a_{2n}\\ \vdots\amp \vdots \amp \cdots\amp \vdots \\ a_{m1}\amp a_{m2}\amp \cdots\amp a_{mn} \end{bmatrix} = \begin{bmatrix}\vert \amp \vert \amp  \amp  \vert\\ \bolda_1\amp \bolda_2\amp \cdots \amp \bolda_n\\ \vert\amp \vert \amp  \amp \vert \end{bmatrix}
+      </me>
+    </p>
+    <p>
+      Then for any column vector <m>\boldb=[b_{i}]</m> we have
+      <me>
+        A\boldb=A\cdot\begin{bmatrix}b_1\\b_2\\ \vdots \\b_n \end{bmatrix} = b_1\bolda_1+b_2\bolda_2+\cdots +b_n\bolda_n
+      </me>.
+    </p>
+    <p>
+      Next, we treat any <m>n\times r</m> matrix
+      <m>B_{n\times r}</m> as a sequence of column vectors <m>B=\begin{bmatrix}\vert \amp \vert \amp  \amp \vert \\ \boldb_1\amp \boldb_2\amp \cdots\amp \boldb_r\\ \vert \amp \vert \amp  \amp \vert \end{bmatrix}</m>.
+      Then we have
+      <me>
+        AB=A\begin{bmatrix}\vert \amp \vert \amp  \amp \vert \\ \boldb_1\amp \boldb_2\amp \cdots\amp \boldb_r\\ \vert \amp \vert \amp  \amp \vert \end{bmatrix} =\begin{bmatrix}\vert \amp \vert \amp  \amp \vert \\ A\boldb_1\amp A\boldb_2\amp \cdots\amp A\boldb_r\\ \vert \amp  \vert \amp  \amp  \vert \end{bmatrix}
+      </me>.
+    </p>
+  </paragraphs>
+  <paragraphs>
+    <title>Row method of $AB$</title>
+    <p>
+      Given a matrix <m>B_{n\times r}</m>,
+      we will think of <m>B</m> as a sequence of <m>m</m> row vectors:
+      <me>
+        \begin{bmatrix}b_{11}\amp b_{12}\amp \cdots \amp b_{1r}\\ \hline b_{21}\amp b_{22}\amp \cdots \amp b_{2r}\\ \hline \vdots\amp \vdots \amp \cdots\amp \vdots \\ \hline b_{n1}\amp b_{n2}\amp \cdots\amp b_{nr} \end{bmatrix} = \begin{bmatrix}-\boldb_1-\\ -\boldb_2- \\ \vdots \\ -\boldb_n- \end{bmatrix}
+      </me>
+    </p>
+    <p>
+      Then for any row vector <m>\bolda=\begin{bmatrix}a_1\amp a_2\amp \cdots \amp a_n \end{bmatrix}</m> we have
+      <me>
+        \bolda B=\begin{bmatrix}a_1\amp a_2\amp \cdots \amp a_n \end{bmatrix} B= a_1\boldb_1+a_2\boldb_2+\cdots +a_n\boldb_n
+      </me>.
+    </p>
+    <p>
+      Next, we treat any <m>m\times n</m> matrix
+      <m>A_{m\times n}</m> as a sequence of row vectors and compute
+      <me>
+        AB=\begin{bmatrix}-\bolda_1- \\ -\bolda_2- \\ \vdots \\ -\bolda_m- \end{bmatrix} B = \begin{bmatrix}-\bolda_1B- \\ -\bolda_2B- \\ \vdots \\ -\bolda_mB- \end{bmatrix}
+      </me>
+    </p>
+  </paragraphs>
+  <paragraphs>
+  <title>Transpose of a matrix</title>
+  <definition>
+    <statement>
+      <p>
+        Given an <m>m\times n</m> matrix
+        <m>A=[a_{ij}]</m> its transpose <m>A^T</m> is the matrix whose <m>ij</m>-entry is the <m>ji</m>-th entry of <m>A</m>.
+        Using notation we have <m>A^T=[b_{ij}]_{n\times m}</m>,
+        where <m>b_{ij}=a_{ji}</m>.
+        Note in particular that <m>A^T</m> is <m>n\times m</m>.
+      </p>
+    </statement>
+  </definition>
+  <paragraphs>
+    <title>Examples:</title>
+    <p>
+      let <m>A=\begin{bmatrix}1\amp 2\amp 3\\4\amp 5\amp 6 \end{bmatrix}</m>;
+      then <m>A^T=\begin{bmatrix}1\amp 4\\2\amp 5\\3\amp 6 \end{bmatrix}</m>.
+      Let <m>B=\begin{bmatrix}1\\0\\3 \end{bmatrix}</m>,
+      then <m>B^T=\begin{bmatrix}1\amp 0\amp 3 \end{bmatrix}</m>.
+    </p>
+  </paragraphs>
+  <paragraphs>
+    <title>Comment:</title>
+    <p>
+      there are a couple of equivalent ways of describing <m>A^T</m> that may be more helpful depending on the situation:
+    </p>
+  </paragraphs>
+  <ul>
+    <li>
+      <p>
+        <m>A^T</m> is the matrix whose columns are the rows of <m>A</m>.
+      </p>
+    </li>
+    <li>
+      <p>
+        <m>A^T</m> is the matrix whose rows are the columns of <m>A</m>.
+      </p>
+    </li>
+  </ul>
+  </paragraphs>
+</section>

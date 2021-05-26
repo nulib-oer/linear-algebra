@@ -1,0 +1,442 @@
+<section xml:id="s_ge">
+  <title>Gaussian elimination</title>
+  <introduction>
+    <p>
+      In <xref ref="s_systems"/> we sketched a procedure for solving a linear system <m>L</m>. That procedure involved applying a sequence of row operations to <m>L</m> to obtain a <q>simpler</q> system <m>L'</m>.
+    </p>
+    <p>
+      In this section we will fill out this sketch. Specifically, we will
+      <ol>
+        <li>
+          <p>
+          describe precisely what we mean by a <q>simpler</q> system,
+          </p>
+        </li>
+        <li>
+          <p>
+            provide an algorithm (or recipe) that decides exactly what sequence of row operations to apply to obtain this simpler system,
+          </p>
+        </li>
+        <li>
+          <p>
+            explain how to find <em>all</em> solutions of the resulting simpler system.
+          </p>
+        </li>
+      </ol>
+    </p>
+
+<p>
+    Before we embark on these steps, we introduce a useful bit of notation. As you may have noticed, when performing row operations on a system of equations, we essentially treat the unknowns, as well as the plus and equals symbols, as placeholders; the only things that actually change in a given step are the coefficients in the equations. The <em>augmented matrix associated to a linear system</em> is a formal way of extracting just the information of the coefficients from a linear system. Of course, to be official, we should first define what a matrix is.
+  </p>
+</introduction>
+<definition xml:id="d_matrix">
+  <title>Matrix</title>
+
+  <statement>
+    <p>
+    A <term>matrix</term> is a rectangular array of numbers.
+    </p>
+    <p>
+      A matrix with <m>m</m> rows and <m>n</m> columns is said to have <term>size</term> (or <term>dimension</term>) <m>m\times n</m>.
+    </p>
+  </statement>
+</definition>
+<definition xml:id="d_augmented_matrix">
+  <title>Augmented matrix</title>
+  <!-- <idx><h>augmented matrix</h></idx> -->
+  <statement>
+    <p>
+      Let <m>L</m> be the linear system
+      <me>
+     \eqsys
+      </me>.
+      The <term>augmented matrix associated to</term> <m>L</m> is the matrix
+      <me>
+        \augmatrix
+      </me>.
+
+    </p>
+  </statement>
+</definition>
+<subsection xml:id="ss_ge_row_echelon">
+  <title>Row echelon matrices</title>
+ <p>
+   Here is our precise formulation of a <q>simple</q> linear system; it is a system whose associated augmented matrix is in <em>row echelon form</em>, as described below.
+</p>
+<definition xml:id="d_row_echelon">
+  <title>Row echelon form</title>
+
+  <statement>
+    <p>
+      A <term>zero row</term> of a matrix, is a row whose entries are all equal to zero; a <term>nonzero row</term> is a row that contains at least one nonzero entry.
+    </p>
+    <p>
+      A matrix is in <term>row echelon form</term> if the following conditions hold.
+      <dl>
+        <li><title>(i)</title>
+        <p>
+        In any nonzero row the first (i.e., leftmost) nonzero entry is equal to one. A <term>leading one</term> of a matrix is such an entry: i.e., an entry of a row that is equal to one, and that is also the first nonzero entry of that row.
+        </p>
+        </li>
+        <li><title>(ii)</title>
+    <p> All zero rows are grouped together at the bottom of the matrix.
+            </p>
+          </li>
+          <li><title>(iii)</title>
+            <p>
+              Given any two nonzero rows in the matrix,
+              the leading one of the lower row occurs strictly to the right of the leading one of the row above it.
+            </p>
+          </li>
+        </dl>
+      </p>
+      <p>
+        A matrix is in <term>reduced row echelon form</term>
+        if in addition to conditions (i)-(iii) it also satisfies the following condition.
+        <dl>
+          <li>
+            <title>(iv)</title>
+            Any column of the matrix that contains a leading one of the matrix in one of its rows . In other words, if a column contains a leading one, then that is the only nonzero entry of that column.
+          </li>
+        </dl>
+      </p>
+      <p>
+      A linear system <m>L</m> is in <term>row echelon form</term> (resp. <term>reduced row echelon form</term>) if its augmented matrix is in row echelon form (resp. reduced row echelon form).
+      </p>
+    </statement>
+  </definition>
+  <p>
+    In practice to decide whether a matrix is in in (reduced) row echelon form,
+    follow these steps:
+    <ol>
+      <li>
+        <p>
+          First verify whether all zero rows are at the bottom.
+        </p>
+      </li>
+      <li>
+        <p>
+          For each nonzero row,
+          determine whether the first nonzero entry is a 1, and put a box around it.
+        </p>
+      </li>
+      <li>
+        <p>
+          Make sure your boxes make a staircase pattern.
+        </p>
+      </li>
+      <li>
+        <p>
+          (For reduced row echelon form only.) Decide whether each column with a box has 0's everywhere else.
+        </p>
+      </li>
+    </ol>
+  </p>
+
+<example>
+  <title>Row echelon versus reduced row echelon form</title>
+
+  <statement>
+    <p>
+    For each matrix decide (a) whether it is in row echelon form, and (b) whether it is in reduced row echelon form.
+    </p>
+    <ol>
+      <li>
+        <p>
+          <me>
+            \begin{bmatrix}0\amp 2\amp 1\amp 0\amp 0\\
+            0\amp 0\amp 0\amp 0\amp 0\\
+            0\amp 1\amp 0\amp 0\amp 1\\
+            1\amp 0\amp 0\amp 0\amp 0\\
+            0\amp 0\amp 0\amp 0\amp 0
+            \end{bmatrix}
+          </me>
+        </p>
+      </li>
+      <li>
+        <p>
+          <me>
+            \begin{bmatrix}1\amp 0\amp 0\amp -3\amp -7\\
+            0\amp 0\amp 1\amp 2\amp 0\\
+            0\amp 0\amp 0\amp 0\amp 1\\
+            0\amp 0\amp 0\amp 0\amp 0\\
+            0\amp 0\amp 0\amp 0\amp 0
+            \end{bmatrix}
+          </me>
+        </p>
+      </li>
+    </ol>
+  </statement>
+  <solution>
+      <ol>
+        <li>
+          <p>
+            Below you find the matrix with leading ones boxed. This matrix fails to be in row echelon form (and hence also reduced row echelon form) for a variety of reasons: the zero rows are not all grouped at the bottom; the first row is nonzero, but does not have a leading one; the leading one of the fourth row is to the left of the leading one of the leading one in the row above it.
+            <me>
+              \begin{bmatrix}0\amp 2\amp 1\amp 0\amp 0\\
+              0\amp 0\amp 0\amp 0\amp 0\\
+              0\amp \boxed{1}\amp 0\amp 0\amp 1\\
+              \boxed{1}\amp 0\amp 0\amp 0\amp 0\\
+              0\amp 0\amp 0\amp 0\amp 0
+              \end{bmatrix}
+            </me>
+
+          </p>
+        </li>
+        <li>
+          <p> Below you find the matrix with leading ones boxed. This matrix is in row echelon form: the zero rows (rows 4 and 5) are grouped at the bottom; each nonzero row has a leading one (boxed in the matrix below); the leading ones step strictly to the right as we move down the rows.
+            <me>
+              \begin{bmatrix}\boxed{1}\amp 0\amp 0\amp -3\amp -7\\
+              0\amp 0\amp \boxed{1}\amp 2\amp 0\\
+              0\amp 0\amp 0\amp 0\amp \boxed{1}\\
+              0\amp 0\amp 0\amp 0\amp 0\\
+              0\amp 0\amp 0\amp 0\amp 0
+              \end{bmatrix}
+            </me>
+          The matrix is <em>not</em> in reduced row echelon form, as the last column contains a leading one in its third row, and a nonzero entry in its first row.
+          </p>
+        </li>
+      </ol>
+  </solution>
+</example>
+</subsection>
+
+<subsection xml:id="ss_gaussian_elimination">
+  <title>Gaussian elimination</title>
+  <p>
+  We will now describe a systematic procedure, called <em>Gaussian elimination</em>, that allows us to reduce a given linear system <m>L</m>to a system <m>L'</m>in row echelon form.
+  In keeping with the foregoing discussion, we will identify a system <m>L</m> with its augmented matrix <m>A</m>. Furthermore, reducing a linear system using elementary operations on equations is now cast as performing <em>elementary row operations</em> on matrices. At the risk of redundancy we now officially translate a number of our former notions regarding reduction of linear systems to the setting of matrices.
+  </p>
+  <definition index="elementary row operations" xml:id="d_rowops">
+    <title>Elementary row operations on matrices</title>
+    <idx><h>elementary row operations</h></idx>
+    <idx><h>elementary row operations</h><h>scalar multiplication</h></idx>
+    <idx><h>elementary row operations</h><h>row swap</h></idx>
+    <idx><h>elementary row operations</h><h>row addition</h></idx>
+    <idx><h>row reduction</h><h>of matrices</h></idx>
+    <idx><h>row equivalence</h><h>of matrices</h></idx>
+    <statement>
+      <p>
+        An <term>elementary row operation</term> is one of the three following types of matrix operations. Let <m>A</m> be a given <m>m\times n</m> matrix, and denote by <m>r_i</m> the <m>i</m>-th row of <m>A</m>.
+      </p>
+        <dl>
+          <li xml:id="d_row_scale">
+            <title>Scalar multplication</title>
+            <p>
+              Multiply a row by a <em>nonzero</em> number <m>c\ne 0</m>:
+              i.e., replace <m>r_i</m> with <m>c\,r_i</m>, the result of multiplying all entries of the row by <m>c</m>.
+            </p>
+          </li>
+          <li xml:id="d_row_swap">
+            <title>Row swap</title>
+            <p>
+              Swap two rows of <m>A</m>.
+            </p>
+          </li>
+          <li xml:id="d_row_add">
+            <title>Row addition</title>
+            <p>Add a multiple of one row to another: i.e.,
+              replace <m>r_i</m> with <m>r_i+cr_j</m> for some <m>c</m>, <m>i</m>, and <m>j</m>.
+            </p>
+          </li>
+        </dl>
+    <p>
+      The act of transforming a matrix using elementary row operations is called <term>row reduction</term>
+    </p>
+    <p>
+      Two matrices are <term>row equivalent</term> if the one can be obtained from the other by performing a finite sequence of elementary row operations.
+    </p>
+    </statement>
+  </definition>
+  <remark xml:id="s_ge_notation">
+    <title>Notation</title> Our former elementary operation notation easily transfers to row operations on matrices. The expressions
+    <md>
+      <mrow>A\amp \xrightarrow{c\,r_i} B \amp A\amp \xrightarrow{r_i\leftrightarrow r_j} B\amp A\amp\xrightarrow{r_i+c\,r_j} B</mrow>
+    </md>
+    denote the operations that replace row <m>r_i</m> in <m>A</m> with <m>c\, r_i</m>, swap rows <m>r_i</m> and <m>r_j</m> in <m>A</m>, and replace <m>r_i</m> in <m>A</m> with <m>r_i+c\, r_j</m>, respectively.
+  </remark>
+  <p>
+  At last we are ready to define Gaussian elimination. This is a procedure, or <em>algorithm</em>, that takes an input matrix <m>A</m> and row reduces it to a matrix <m>B</m> in row echelon form.
+  </p>
+  <principle xml:id="pr_GE-has-many-uses">
+  <title>Gaussian elimination has many uses</title>
+  <statement>
+    <p>
+      You should think of Gaussian elimination as having a life independent of its role in solving systems of linear equations. In essence it is simply a certain procedure performed on matrices. As you will see, Gaussian elimination is the true workhorse of linear algebra; simplifying linear systems is but one of its many useful applications.
+    </p>
+  </statement>
+</principle>
+
+  <definition xml:id="d_GE">
+  <title>Gaussian elimination</title>
+    <idx><h>Gaussian elimination</h></idx>
+    <statement>
+      <p>
+        <term>Gaussian elimination</term>
+        is the algorithm described below. It takes as an input a matrix <m>A</m> and returns as an output a row equivalent matrix <m>B</m> in row echelon form.
+      </p>
+
+  <dl>
+    <li>
+      <title>Step 1</title>
+      <p>
+        Find the leftmost nonzero column and perform a row swap to move the row with this nonzero entry to the top of the matrix.
+      </p>
+    </li>
+    <li>
+      <title>Step 2</title>
+      <p>
+        Scale the new top row to produce a leading one in the row. Call this new row <m>r</m>.
+      </p>
+    </li>
+    <li>
+      <title>Step 3</title>
+      <p>
+        For each row <m>r_i</m> below <m>r</m> perform a row operation of the form <m>r_i+c\,r</m> to replace all entries below the leading one of <m>r</m> with zeros.
+      </p>
+    </li>
+    <li>
+      <title>Step 4</title>
+      <p>
+        Begin again with Step 1 applied to the matrix consisting of all rows below <m>r</m>.
+        Continue until the matrix is in row echelon form.
+      </p>
+    </li>
+  </dl>
+  </statement>
+</definition>
+
+  <paragraphs>
+    <title> Model example</title>
+    <p>
+    Use the following example as a model of how to both perform and annotate the steps in Gaussian elimination. When first learning this procedure, make sure to follow it <em>to the letter</em>. In particular, in the spirit of the mandate issued in <xref ref="s_systems_rm_oneoperation"/>, you should only perform one row operation at a time, and only in the sequence prescribed in Steps 1-4 of <xref ref="d_GE"/>.
+    </p>
+    <md>
+      <mrow>
+      \begin{bmatrix}0\amp 0\amp -2\amp 0\amp 7\amp 12\\
+      2\amp 4\amp -10\amp 6\amp 12\amp 28\\
+      2\amp 4\amp -5\amp 6\amp -5\amp -1
+      \end{bmatrix}
+      \amp \xrightarrow[\hspace{35pt}]{r_1\leftrightarrow r_2}
+      \begin{bmatrix}2\amp 4\amp -10\amp 6\amp 12\amp 28\\
+      0\amp 0\amp -2\amp 0\amp 7\amp 12\\
+      2\amp 4\amp -5\amp 6\amp -5\amp -1
+      \end{bmatrix}</mrow>
+      <mrow>\amp \xrightarrow[\hspace{35pt}]{\frac{1}{2}r_1}
+      \begin{bmatrix}1\amp 2\amp -5\amp 3\amp 6\amp 14\\
+      0\amp 0\amp -2\amp 0\amp 7\amp 12\\
+      2\amp 4\amp -5\amp 6\amp -5\amp -1
+      \end{bmatrix}</mrow>
+      <mrow>\amp \xrightarrow[\hspace{35pt}]{r_3-2r_1}
+      \begin{bmatrix}1\amp 2\amp -5\amp 3\amp 6\amp 14\\
+      0\amp 0\amp -2\amp 0\amp 7\amp 12\\
+      0\amp 0\amp 5\amp 0\amp -17\amp -29
+      \end{bmatrix}\amp
+      \text{ (now done with first row) }</mrow>
+      <mrow>\amp \xrightarrow[\hspace{35pt}]{-\frac{1}{2}r_2}
+      \begin{bmatrix}1\amp 2\amp -5\amp 3\amp 6\amp 14\\
+      0\amp 0\amp 1\amp 0\amp -7/2\amp -6\\
+      0\amp 0\amp 5\amp 0\amp -17\amp -29
+      \end{bmatrix}</mrow>
+      <mrow>\amp \xrightarrow[\hspace{35pt}]{r_3+(-5)r_2}
+      \begin{bmatrix}1\amp 2\amp -5\amp 3\amp 6\amp 14\\
+      0\amp 0\amp 1\amp 0\amp -7/2\amp -6\\
+      0\amp 0\amp 0\amp 0\amp 1/2\amp 1
+      \end{bmatrix}\amp
+      \text{ (now done with 2nd row)}</mrow>
+      <mrow>\amp \xrightarrow[\hspace{35pt}]{2r_3}
+      \begin{bmatrix}1\amp 2\amp -5\amp 3\amp 6\amp 14\\
+      0\amp 0\amp 1\amp 0\amp -7/2\amp -6\\
+      0\amp 0\amp 0\amp 0\amp 1\amp 2
+      \end{bmatrix}</mrow>
+    </md>
+  <p>
+  The matrix outputed by Gaussian elimination is guaranteed to be in row echelon form, but it may not be in <em>reduced</em> row echelon form. <em>Gauss-Jordan elimination</em> describes how a systematic way to continue reducing to this even simpler state.
+</p>
+</paragraphs>
+<definition xml:id="d_GaussJordan">
+      <title>Gauss-Jordan elimination</title>
+      <statement>
+        <p>
+        <term>Gauss-Jordan elimination</term> is the algorithm described below. It takes which as an input a matrix <m>A</m> and returns a row equivalent matrix <m>B</m> in reduced row echelon form.
+        </p>
+        <dl>
+          <li>
+            <title>Steps 1-4</title>
+            <p>
+              Apply Gaussian elimination to transform <m>A</m> to a matrix in row echelon form.
+            </p>
+          </li>
+          <li>
+            <title>Step 5</title>
+            <p>
+            Find the rightmost column of the matrix containing a leading one. Let <m>r_i</m> be the row containing this leading one. For each row <m>r_j</m> above <m>r_i</m> perform a row operation of the form <m>r_i+c\,r_j</m> to replace all entries above the leading one with zeros.
+            </p>
+          </li>
+          <li>
+            <title>Step 6</title>
+            <p>
+            Begin again with Step 5 applied to the next column to the left that contains a leading one. Continue until the matrix is in reduced row echelon form.
+            </p>
+          </li>
+        </dl>
+      </statement>
+    </definition>
+    <p>
+      Continuing our previous example:
+      <md>
+        <mrow>\begin{bmatrix}1\amp 2\amp -5\amp 3\amp 6\amp 14\\ 0\amp 0\amp 1\amp 0\amp -7/2\amp -6\\ 0\amp 0\amp 0\amp 0\amp 1\amp 2 \end{bmatrix} .  \amp \xrightarrow[\hspace{35pt}]{r_2+7/2r_3}\amp \begin{bmatrix}1\amp 2\amp -5\amp 3\amp 6\amp 14\\ 0\amp 0\amp 1\amp 0\amp 0\amp 1\\ 0\amp 0\amp 0\amp 0\amp 1\amp 2 \end{bmatrix} .</mrow>
+        <mrow>\amp \xrightarrow[\hspace{35pt}]{r_1-6r_3}\amp \begin{bmatrix}1\amp 2\amp -5\amp 3\amp 0\amp 2\\ 0\amp 0\amp 1\amp 0\amp 0\amp 1\\ 0\amp 0\amp 0\amp 0\amp 1\amp 2 \end{bmatrix} .</mrow>
+        <mrow>\amp \xrightarrow[\hspace{35pt}]{r_1+5r_2}\amp \begin{bmatrix}1\amp 2\amp 0\amp 3\amp 0\amp 7\\ 0\amp 0\amp 1\amp 0\amp 0\amp 1\\ 0\amp 0\amp 0\amp 0\amp 1\amp 2 \end{bmatrix} </mrow>
+      </md>.
+    </p>
+  <p>
+   <xref ref="d_GE"/> and <xref ref="d_GaussJordan"/> are really theorems in disguise, and we make this official in <xref ref="s_ge_th_matrixforms"/>.
+ </p>
+<theorem xml:id="s_ge_th_matrixforms">
+  <title>Row equivalent matrix forms</title>
+  <statement>
+    <dl>
+      <li xml:id="th_REexistence">
+        <title>Row echelon forms exist</title>
+        <p>
+        Any matrix <m>A</m> is row equivalent to a matrix <m>B</m> in row echelon form. Indeed, Gaussian elimination row reduces <m>A</m> to a matrix in row echelon form.
+        </p>
+      </li>
+      <li xml:id="th_RREexistence">
+        <title>Reduced row echelon forms exist</title>
+        <p>
+        Any matrix <m>A</m> is row equivalent to a matrix <m>B</m> in reduced row echelon form. Indeed, Gauss-Jordan elimination row reduces <m>A</m> to a matrix in reduced row echelon form.
+        </p>
+      </li>
+      <li xml:id="th_RREuniqueness">
+        <title>Reduced row echelon forms are unique</title>
+        <p>
+        Given any matrix <m>A</m> there is a <em>unique</em> matrix <m>B</m> in reduced row echelon form that is row equivalent to <m>A</m>.
+        </p>
+      </li>
+    </dl>
+  </statement>
+</theorem>
+
+<p>We will make heavy use of the first two results of <xref ref="s_ge_th_matrixforms"/>. The proofs of these statements are not difficult, but not especially illuminating. Accordingly we omit them here, and point the interested reader to Robert Beezer's <url href="http://linear.ups.edu/fcla"><em>A First Course in Linear Algebra </em></url> (<url href="http://linear.ups.edu/fcla/section-RREF.html#theorem-REMEF">Theorem REMEF</url>).
+</p>
+<p>The third statement of <xref ref="s_ge_th_matrixforms"/>, that every matrix is row equivalent to a <em>unique</em> matrix in reduced row echelon form, does in fact have an enlightening proof. We will postpone this proof, however, until we have a little more theory at our disposal. (See <xref provisional="RREFuniqueness"/>.) Until then we will conscientiously <em>not</em> make use of this result in developing any of our further theory.</p>
+<example xml:id="s_ge_ex_REFnotunique">
+  <title>Row echelon form is not unique</title>
+  <statement>
+    <p>Show that a matrix <m>A</m> may be row equivalent to two or more matrices in row echelon form.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      Take <m>A=\begin{bmatrix} 1 \amp 1 \\
+      1 \amp 2  \end{bmatrix}</m>. This row reduces to <m>B=\begin{bmatrix} 1 \amp 1  \\
+      0 \amp 1  \end{bmatrix}</m> using Gaussian elimination; and it row reduces further to <m>C=\begin{bmatrix}1\amp 0\\ 0\amp 1\end{bmatrix}</m> using Gauss-Jordan elimination. Thus we see that <m>A</m> is row equivalent to two different matrices in row echelon form. (According to <xref ref="s_ge_th_matrixforms"/>, the matrix <m>C</m> is the only matrix in <em>reduced</em> row echelon that is row equivalent to <m>A</m>.)
+    </p>
+  </solution>
+</example>
+
+</subsection>
+
+</section>

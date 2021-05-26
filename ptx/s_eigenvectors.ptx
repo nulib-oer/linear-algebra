@@ -1,0 +1,389 @@
+<section xml:id="ss_eigenvectors">
+  <title>Eigenvectors and eigenvalues</title>
+  <paragraphs>
+  <title>Eigenvectors</title>
+  <p>
+    Let <m>T\colon V\rightarrow V</m> be linear.
+    We have seen that some choices of bases of <m>V</m> are better than others for representing <m>T</m> as a matrix.
+  </p>
+  <p>
+    The ideal situation is when <m>V</m> happens to have a basis
+    <m>B=\{\boldv_1,\dots, \boldv_n\}</m> where <m>T(\boldv_i)=c_i\boldv_i</m> for all <m>i</m>.
+    The matrix <m>[T]_B</m> in this case is diagonal!
+    <me>
+      [T]_B=\begin{bmatrix}c_1\amp 0\amp \dots\\ 0\amp c_2\amp 0\amp \dots\\ \vdots \amp \\ 0\amp 0\amp \dots\amp c_n \end{bmatrix}
+    </me>
+  </p>
+  <p>
+    This motivates us to find as many vectors as we can satisfying <m>T(\boldv)=c\boldv</m> for some <m>c</m>.
+    Such vectors are called <em>eigenvectors</em>.
+  </p>
+  <definition>
+    <statement>
+      <p>
+        Let <m>T\colon V\rightarrow V</m> be linear.
+        An <term>eigenvector</term> of <m>T</m> is a <term>nonzero</term>
+        vector <m>\boldv\ne\boldzero</m> such that
+        <m>T(\boldv)=\lambda\boldv</m> for some constant <m>\lambda\in\R</m>.
+      </p>
+    </statement>
+  </definition>
+  <paragraphs>
+    <title>Comment:</title>
+    <p>
+      why the switch to <m>\lambda</m> all of a sudden?
+      Tradition!
+    </p>
+  </paragraphs>
+  </paragraphs>
+  <paragraphs>
+    <title>Examples by inspection</title>
+    <p>
+      Define <m>T\colon M_{22}\rightarrow M_{22}</m> as <m>T(A)=A^T+A</m>.
+    </p>
+    <p>
+      We have seen that
+      <md>
+        <mrow>T\left(\begin{bmatrix}0\amp 1\\ -1\amp 0 \end{bmatrix} \right)\amp =\amp \begin{bmatrix}0\amp 0\\ 0\amp 0 \end{bmatrix} =0\begin{bmatrix}0\amp 1\\ -1\amp 0 \end{bmatrix}</mrow>
+        <mrow>T\left(\begin{bmatrix}0\amp 1\\ 1\amp 0 \end{bmatrix} \right)\amp =\amp \begin{bmatrix}0\amp 2\\ 2\amp 0 \end{bmatrix} =2\begin{bmatrix}0\amp 1\\ 1\amp 0 \end{bmatrix} </mrow>
+      </md>.
+    </p>
+    <p>
+      Thus <m>\begin{bmatrix}0\amp 1\\ -1\amp 0 \end{bmatrix}</m> is an eigenvector with eigenvalue 0, and
+      <m>\begin{bmatrix}0\amp 1\\ 1\amp 0 \end{bmatrix}</m> is an eigenvector with eigenvalue 2.
+    </p>
+  </paragraphs>
+  <paragraphs>
+    <title>Examples by inspection</title>
+    <p>
+      Let <m>T_\theta\colon\R^2\rightarrow\R^2</m> be rotation counterclockwise by <m>\theta</m>,
+      <m>0\lt \theta\lt 2\pi</m>.
+    </p>
+    <p>
+      What are the eigenvectors/eigenvalues of
+      <m>T_\theta</m>. (Think geometrically,
+      do not use a matrix representation of
+      <m>T_\theta</m>!) \begin{bsolution} Is there any vector <m>\boldv</m> such that when we rotate it by <m>\theta</m> we get a scalar multiple of <m>\boldv</m>?
+      Our answer actually depends on exactly what <m>\theta</m> is.
+    </p>
+    <p>
+      If <m>\theta=\pi</m>, then <m>T_\pi</m> is rotation by 180<m>^\circ</m>,
+      and so <m>T_\pi(\boldv)=-\boldv</m> for all <m>\boldv</m>.
+      Thus everything is an eigenvector of <m>T_\pi</m> with eigenvalue <m>-1</m>.
+      If <m>\theta\ne\pi</m>, then we see easily that
+      <m>T_\theta</m> has no eigenvectors. \end{bsolution}
+    </p>
+  </paragraphs>
+  <paragraphs>
+    <title>Examples by inspection</title>
+    <p>
+      Fix <m>\alpha</m> with <m>0\leq \alpha\lt \pi</m>,
+      let <m>\ell_\alpha</m> be the line making an angle <m>\alpha</m> with the positive <m>x</m>-axis,
+      and let <m>T_\theta\colon\R^2\rightarrow\R^2</m> be reflection through <m>\ell_\alpha</m>.
+    </p>
+    <p>
+      What are the eigenvectors/eigenvalues of
+      <m>T_\alpha</m>. (Think geometrically,
+      do not use a matrix representation of
+      <m>T_\alpha</m>!) \begin{bsolution} If <m>\boldv</m> lies along <m>\ell_\alpha</m> to begin with,
+      then its reflection through <m>\ell_\alpha</m> is itself.
+      This means <m>T_\alpha(\boldv)=\boldv</m>.
+      Thus all vectors along <m>\ell_\alpha</m> are eigenvectors with eigenvalue 1.
+      If <m>\boldv</m> lies along the line perpendicular to <m>\ell_\alpha</m>,
+      then its reflection is just <m>-\boldv</m>
+      (draw a picture).
+      Thus all vectors along this line are eigenvectors with eigenvalue <m>-1</m>.
+      Vectors pointing along any other line will not be eigenvectors.
+      Draw a picture!
+    </p>
+    <p>
+      \end{bsolution}
+    </p>
+  </paragraphs>
+  <paragraphs>
+    <title>Finding eigenvalues of $T$ systematically</title>
+    <p>
+      Let <m>T\colon V\rightarrow V</m> be linear, <m>\dim(V)=n</m>.
+    </p>
+    <p>
+      Our first step for finding eigenvalues and eigenvectors of <m>T</m> is to pick a basis <m>B</m> for <m>V</m> and represent <m>T</m> with the matrix <m>A=[T]_B</m>.
+    </p>
+    <p>
+      You get to choose the basis <m>B</m> yourself,
+      though typically we start with the standard basis of <m>V</m>.
+      It is usually only after our eigenvector analysis that we can provide a cleverer choice of basis.
+    </p>
+    <p>
+      Once we have chosen an <m>A</m> to represent <m>T</m>,
+      we perform our analysis on <m>A</m>.
+      As usual, anything we discover about <m>A</m> will be true of <m>T</m>.
+      For example:
+      <ol>
+        <li>
+          <p>
+            <m>A</m> and <m>T</m> have precisely the same eigenvalues.
+          </p>
+        </li>
+        <li>
+          <p>
+            Eigenvectors of <m>A</m> can be translated back to <m>V</m> to get eigenvectors of <m>T</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </paragraphs>
+  <paragraphs>
+    <title>Finding eigenvalues of $A$</title>
+    <p>
+      We now focus on finding eigenvalues of an <m>n\times n</m> matrix <m>A</m>.
+      Follow this chain of equivalences:
+      <md>
+        <mrow>\text{ \(\lambda\in\R\) is an eigenvalue of \(A\) } \amp \Leftrightarrow\amp  A\boldx=\lambda\boldx \text{ for some \(\boldx\ne 0\) } \ \text{ (by def.) }</mrow>
+        <mrow>\amp \Leftrightarrow\amp \lambda\boldx-A\boldx=\boldzero</mrow>
+        <mrow>\amp \Leftrightarrow\amp (\lambda I_n)\boldx-A\boldx=\boldzero \ \text{ (since \(\lambda\boldx=(\lambda I_n)\boldx\)) }</mrow>
+        <mrow>\amp \Leftrightarrow\amp (\lambda I_n-A)\boldx=\boldzero \text{ for some \(\boldx\ne \boldzero\) }</mrow>
+        <mrow>\amp \Leftrightarrow\amp \lambda I_n-A \text{ is noninvertible }</mrow>
+        <mrow>\amp \Leftrightarrow\amp \det(\lambda I_n-A)=0 \ \text{ (invertibility theorem) }</mrow>
+      </md>
+    </p>
+    <p>
+      Thus we see that <m>\lambda</m> is an eigenvalue if and only if <m>\det(\lambda I_n-A)=0</m>.
+    </p>
+    <p>
+      Set <m>p(t)=\det(tI_n-A)</m>.
+      This is polynomial function in <m>t</m>, as you will see shortly.
+      We have just shown that the eigenvalues of <m>A</m> are precisely the
+      <em>real roots</em> of <m>p(t)</m>.
+      Better give this important object a name!
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>A</m> be <m>n\times n</m>.
+          The <term>characteristic polynomial</term>
+          of <m>A</m> is the polynomial
+          <me>
+            p(t)=\det(tI_n-A)
+          </me>.
+        </p>
+      </statement>
+    </definition>
+  </paragraphs>
+  <paragraphs>
+    <title>Example</title>
+    <p>
+      Find all eigenvalues of <m>A=\begin{bmatrix}1\amp 1\\ 2\amp -1 \end{bmatrix}</m>. \begin{bsolution} Compute:
+    </p>
+  </paragraphs>
+  <p>
+    <m>p(t)=\det(tI-A)=\val{\begin{array}{cc}t-1\amp -1\\ -2\amp t+1 \end{array} }=t^2-3</m>.
+  </p>
+  <p>
+    The eigenvalues are the roots of <m>p(t)</m>:
+    <m>\lambda_1=\sqrt{3}, \lambda_2=-\sqrt{3}</m>. \end{bsolution}
+  </p>
+  <paragraphs>
+    <title>Example</title>
+    <p>
+      Find all eigenvalues of <m>A=\begin{bmatrix}2\amp -1\amp -1\\ -1\amp 2\amp -1\\ -1\amp -1\amp 2 \end{bmatrix}</m>. \begin{bsolution} Compute:
+    </p>
+  </paragraphs>
+  <p>
+    <m>p(t)=\det(tI-A)=\val{\begin{array}{ccc}t-2\amp 1\amp 1\\ 1\amp t-2\amp 1\\ 1\amp 1\amp t-2 \end{array} }=t^3-6t^2+9t=t(t-3)^2</m>.
+  </p>
+  <p>
+    The eigenvalues are the roots of <m>p(t)</m>:
+    <m>\lambda_1=0</m>, <m>\lambda_2=3</m>. \end{bsolution}
+  </p>
+  <paragraphs>
+    <title>Facts about the characteristic polynomial</title>
+    <p>
+      Let <m>A</m> be <m>n\times n</m> and let
+      <m>p(t)=\det(tI-A)</m> be the characteristic polynomial.
+      <ol>
+        <li>
+          <p>
+            <m>p(t)=t^n+a_{n-1}t^{n-1}+\cdots +a_1t+a_0</m>;
+            in particular, <m>p(t)</m> is <em>monic</em>
+            (leading coefficient is 1),
+            of degree <m>n</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>p(t)</m> has at most <m>n</m> distinct roots.
+            Some of these roots may be complex.
+            Thus it is possible to have less than <m>n</m> eigenvalues.
+            Indeed, there may be no eigenvalues.
+            What about the possible complex roots?
+            Let's call these <em>complex eigenvalues</em>.
+            For now they do not count as eigenvalues for us,
+            as it is impossible to find a nonzero
+            <m>\boldx\in\R^n</m> with a complex eigenvalue.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </paragraphs>
+  <paragraphs>
+    <title>Fancy facts about $p(t)$</title>
+    <p>
+      Let <m>p(t)=\det(tI-A)=t^n+a_{n-1}t^{n-1}+\cdots +a_1t+a_0</m> be the characteristic polynomial.
+    </p>
+    <p>
+      Over <m>\C</m> we can factor <m>p(t)=(t-\lambda_1)(t-\lambda_2)\cdots (t-\lambda_n)</m>,
+      where some of the <m>\lambda_i</m> may be complex numbers.
+    </p>
+    <p>
+      Then we have:
+      <md>
+        <mrow>-(\lambda_1+\lambda_2+\cdots +\lambda_n)\amp =\amp a_{n-1}=-\tr(A)</mrow>
+        <mrow>(-1)^n\lambda_1\lambda_2\cdots\lambda_n\amp =\amp a_0=(-1)^n\det(A)</mrow>
+      </md>
+    </p>
+    <p>
+      An easy consequence of these equalities is the following:
+      <md>
+        <mrow>\tr(A)\amp =\amp \lambda_1+\lambda_2+\cdots +\lambda_n</mrow>
+        <mrow>\det(A)\amp =\amp \lambda_1\lambda_2\cdots\lambda_n</mrow>
+      </md>
+    </p>
+    <p>
+      In plain English: <m>\tr(A)</m> is the sum of the eigenvalues;
+      <m>\det(A)</m> is the product of the eigenvalues.
+    </p>
+    <p>
+      When <m>A</m> is <m>2\times 2</m>,
+      the above implies <m>p(t)=t^2-\tr(A)t+\det(A)</m>:
+      a useful shortcut when having to compute eigenvalues of <m>2\times 2</m> matrices!
+    </p>
+  </paragraphs>
+  <p>
+    Let's make our list of facts official.
+  </p>
+  <theorem>
+    <title>Characteristic polynomial theorem</title>
+    <statement>
+      <p>
+        Let <m>A\in M_{nn}</m>, and let
+        <m>p(t)=\det(tI_n-A)</m> be its characteristic polynomial.
+        <ol>
+          <li>
+            <p>
+              <m>p(t)=t^n+a_{n-1}t^{n-1}+\cdots +a_1t+a_0</m>;
+              in particular, <m>p(t)</m> is <em>monic</em>
+              (leading coefficient is 1),
+              of degree <m>n</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              The real roots of <m>p(t)</m> are the (real) eigenvalues of <m>A</m>.
+              Since <m>\deg p(t)=n</m>,
+              there are at most <m>n</m> distinct eigenvalues of <m>A</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Let <m>\lambda_1, \lambda_2, \dots, \lambda_n</m> be the roots of <m>p(t)</m>.
+              Then
+              <md>
+                <mrow>\tr(A)\amp =\sum_{i=1}^n\lambda_i=-a_{n-1}</mrow>
+                <mrow>\det(A)\amp =\prod_{i=1}^n\lambda_i=(-1)^na_0</mrow>
+              </md>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </theorem>
+  <paragraphs>
+    <title>Finding eigenvectors of $A$</title>
+    <p>
+      Now suppose we have found an eigenvalue <m>\lambda</m> of <m>A</m>.
+    </p>
+    <p>
+      Our chain of equivalences from earlier told us that the eigenvectors of <m>A</m> with eigenvalue <m>\lambda</m> are precisely the <em>nonzero</em>
+      solutions to the matrix equation <m>(\lambda I_n-A)\boldx=\boldzero</m>.
+    </p>
+    <p>
+      Thus to find all eigenvectors with eigenvalue <m>\lambda</m> we simply compute
+      <m>\NS(\lambda I_n-A)</m> using Gaussian elimination.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>\lambda</m> be an eigenvalue of <m>A</m>.
+          We define the <m>\lambda</m>-eigenspace of <m>A</m> to be the space
+          <me>
+            W_\lambda:=\NS(\lambda I_n-A)
+          </me>.
+        </p>
+        <p>
+          The nonzero elements of <m>W_\lambda</m> are precisely the eigenvectors of <m>A</m> with eigenvalue <m>\lambda</m>.
+        </p>
+      </statement>
+    </definition>
+  </paragraphs>
+  <p>
+    Let's compute the eigenspaces of our previous examples.
+  </p>
+  <paragraphs>
+    <title>Example</title>
+    <p>
+      <m>A=\begin{bmatrix}1\amp 1\\ 2\amp -1 \end{bmatrix}</m>,
+      <m>\lambda_1=\sqrt{3}</m>, <m>\lambda_2=-\sqrt{3}</m>. \begin{bsolution}
+    </p>
+  </paragraphs>
+  <p>
+    Compute:
+  </p>
+  <p>
+    <m>W_{\sqrt{3}}=\NS(\sqrt{3}I-A)=\NS\left(\begin{bmatrix}\sqrt{3}-1\amp -1\\ -2\amp \sqrt{3}+1 \end{bmatrix} \right) =\Span(\left\{ \begin{bmatrix}\sqrt{3}+1\\2 \end{bmatrix} \right\})</m>
+  </p>
+  <p>
+    <m>W_{-\sqrt{3}}=\NS(-\sqrt{3}I-A)=\NS\left(\begin{bmatrix}-\sqrt{3}-1\amp -1\\ -2\amp -\sqrt{3}+1 \end{bmatrix} \right) =\Span(\left\{ \begin{bmatrix}-\sqrt{3}+1\\ 2 \end{bmatrix} \right\})</m>
+  </p>
+  <p>
+    Thus any multiple of <m>\boldv_1=(\sqrt{3}+1,2)</m> is an eigenvector of <m>A</m> with eigenvalue <m>\sqrt{3}</m>,
+    and any multiple of <m>\boldv_2=(-\sqrt{3}+1,2)</m> is an eigenvector of <m>A</m> with eigenvalue <m>-\sqrt{3}</m>.
+  </p>
+  <p>
+    Check: <m>A\begin{bmatrix}\sqrt{3}+1\\ 2 \end{bmatrix} =\begin{bmatrix}3\sqrt{3}+3\\ 2\sqrt{3} \end{bmatrix} =\sqrt{3}\begin{bmatrix}\sqrt{3}+1\\ 2 \end{bmatrix} \checkmark</m>.
+    <m>A\begin{bmatrix}-\sqrt{3}+1\\ 2 \end{bmatrix} =\begin{bmatrix}-3\sqrt{3}+3\\ -2\sqrt{3} \end{bmatrix} =-\sqrt{3}\begin{bmatrix}-\sqrt{3}+1\\ 2 \end{bmatrix} \checkmark</m>.
+  </p>
+  <p>
+    \end{bsolution}
+  </p>
+  <p>
+    Let's compute the eigenspaces of our previous examples.
+  </p>
+  <paragraphs>
+    <title>Example</title>
+    <p>
+      <m>A=\begin{bmatrix}2\amp -1\amp -1\\ -1\amp 2\amp -1\\ -1\amp -1\amp 2 \end{bmatrix}</m>,
+      <m>\lambda_1=0</m>, <m>\lambda_2=3</m>. \begin{bsolution} Compute:
+    </p>
+  </paragraphs>
+  <p>
+    <m>W_0=\NS(0I-A)=\NS\left(\begin{bmatrix}2\amp -1\amp -1\\ -1\amp 2\amp -1\\ -1\amp -1\amp 2 \end{bmatrix} \right)=\Span\left(\left\{\boldv_1=\begin{bmatrix}1 \\ 1 \\ 1 \end{bmatrix} \right\}\right)</m>.
+  </p>
+  <p>
+    <m>W_3=\NS(3I-A)=\NS(\left( \begin{bmatrix}1\amp 1\amp 1\\ 1\amp 1\amp 1\\ 1\amp 1\amp 1 \end{bmatrix} \right) =\Span\left(\left\{\boldv_2= \begin{bmatrix}1 \\ -1 \\ 0 \end{bmatrix} , \boldv_3=\begin{bmatrix}1 \\ 0 \\ -1 \end{bmatrix} \right\}\right)</m>.
+  </p>
+  <p>
+    Thus the eigenvectors of <m>A</m> with eigenvalue 0 are vectors of the form <m>c\boldv_1</m>,
+    and the eigenvectors of <m>A</m> with eigenvalue 3 are vectors of the form <m>c\boldv_2+d\boldv_3</m>.
+  </p>
+  <paragraphs>
+    <title>Comment</title>
+    <p>
+      Note that in general <m>W_0=\NS(0I-A)=\NS(-A)=\NS(A)</m>.
+      (Think about why the last equality is true.)
+    </p>
+  </paragraphs>
+  <p>
+    Thus the eigenvectors of <m>A</m> with eigenvalue 0 are precisely the nonzero vectors of <m>\NS(A)</m>,
+    should there be any at all! \end{bsolution}
+  </p>
+</section>

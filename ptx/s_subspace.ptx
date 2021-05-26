@@ -1,0 +1,747 @@
+<section xml:id="ss_subspace">
+  <title>Subspaces</title>
+  <introduction>
+    <paragraphs>
+    <title><xref ref="c_vectorspace"></xref>. <xref ref="ss_subspace"></xref>: executive summary</title>
+    <paragraphs>
+      <title>Definitions:</title>
+      <p>
+        subspace, linear combination,
+        span, polynomial spaces <m>P</m> and <m>P_n</m>, <m>\NS T</m>,
+        <m>\range T</m>. \alert{Procedures:} proving something is/isn't a subspace;
+        computing the span of a set of vectors,
+        computing <m>\NS T</m> and
+        <m>\range T</m> for a linear transformation. \alert{Theorems:} intersection of subspaces is a subspace,
+        <m>\Span(\{\boldv_1,\boldv_2,\dots\})</m> is a subspace,
+        <m>\NS T</m> is a subspace, <m>\range T</m> is a subspace.
+      </p>
+    </paragraphs>
+    </paragraphs>
+    <paragraphs>
+    <title><xref ref="c_vectorspace"></xref>. <xref ref="ss_subspace"></xref>: subspaces</title>
+    <definition>
+      <statement>
+        <p>
+          Let <m>V</m> be a vector space.
+          A subset <m>W\subseteq V</m> is a
+          <term>subspace</term> of <m>V</m> if
+          <ol>
+            <li>
+              <p>
+                <m>\boldzero\in W</m>,
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\boldw_1, \boldw_2\in W\Rightarrow \boldw_1+\boldw_2\in W</m>, (i.e., <m>W</m> is
+                <term>closed under addition</term>),
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\boldw\in W\Rightarrow k\boldw\in W</m> for all <m>k\in\R</m> (i.e., <m>W</m> is
+                <term>closed under scalar multiplication</term>).
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </definition>
+    <paragraphs>
+      <title>Comments</title>
+    </paragraphs>
+    <p>
+      (1) You may see slightly different definitions for subspace in the literature:
+      e.g., some define a subspace to be a subset <m>W\subseteq V</m> which,
+      under the operations of addition and scalar multiplication of <m>V</m>,
+      is itself a vector space.
+      I prefer mine as it gives you a hands-on method of deciding whether a given subset of
+      <m>W\subseteq V</m> is in fact a sub{space} of <m>V</m>:
+      namely, determine whether each of properties (i)-(iii) hold for <m>W</m>.
+    </p>
+    <p>
+      (2) Each of properties (ii) and (iii) is stated as an <em>implication</em>.
+      Thus when verifying these,
+      as always we assume the antecedent and prove the consequent.
+    </p>
+    </paragraphs>
+    <paragraphs>
+      <title>Example</title>
+      <p>
+        Let <m>V=\R^2</m> and let <m>W\subseteq V</m> be the subset <m>W=\{(t,t)\in\R^2 \colon t\in\R\}</m>.
+        We claim <m>W</m> is a subspace.
+      </p>
+      <proof>
+        <p>
+          We must show properties (i)-(iii) hold for <m>W</m>.
+        </p>
+        <p>
+          (i) The zero element of <m>V</m> is <m>\boldzero=(0,0)</m>,
+          which is certainly of the form <m>(t,t)</m>.
+          Thus <m>\boldzero\in W</m>.
+        </p>
+        <p>
+          (ii) We must prove the implication <m>\boldw_1, \boldw_2\in W\Rightarrow \boldw_1+\boldw_2\in W</m>.
+          <md>
+            <mrow>\boldw_1,\boldw_2\in W\amp \Rightarrow\amp  \boldw_1=(t,t), \boldw_2=(s,s) \text{ for some \(t,s\in\R\) }</mrow>
+            <mrow>\amp \Rightarrow\amp \boldw_1+\boldw_2=(t+s,t+s)</mrow>
+            <mrow>\amp \Rightarrow\amp \boldw_1+\boldw_2\in W</mrow>
+          </md>.
+        </p>
+        <p>
+          (iii) We must prove the implication <m>\boldw\in W\Rightarrow k\boldw\in W</m>.
+          <md>
+            <mrow>\boldw\in W\amp \Rightarrow\amp  \boldw=(t,t)</mrow>
+            <mrow>\amp \Rightarrow\amp  k\boldw=(kt,kt)</mrow>
+            <mrow>\amp \Rightarrow\amp  k\boldw\in W</mrow>
+          </md>
+        </p>
+      </proof>
+    </paragraphs>
+    <paragraphs>
+      <title>Example</title>
+      <p>
+        Let <m>V=\R^n</m>, and treat elements of <m>V</m> as
+        <em>column vectors</em>.
+        Fix a vector <m>\boldv_0\in V</m>.
+        Let <m>W\subseteq V</m> be the subset <m>W=\{\boldw\in \R^n\colon \boldv_0^T\boldw=0\}</m>.
+        We claim <m>W</m> is a subspace.
+      </p>
+      <proof>
+        <p>
+          We must show properties (i)-(iii) hold for <m>W</m>.
+        </p>
+        <p>
+          (i) The zero element of <m>V</m> is <m>\boldzero=\colvec{0\\ \vdots\\ 0}</m>.
+          Clearly <m>\boldv_0^T\boldzero=0</m>.
+          Thus <m>\boldzero\in W</m>.
+        </p>
+        <p>
+          (ii) We must prove the implication <m>\boldw_1, \boldw_2\in W\Rightarrow \boldw_1+\boldw_2\in W</m>.
+          <md>
+            <mrow>\boldw_1,\boldw_2\in W\amp \Rightarrow\amp  \boldv_0^T\boldw_1=0,\boldv_0^T\boldw_2=0</mrow>
+            <mrow>\amp \Rightarrow\amp \boldv_0^T(\boldw_1+\boldw_2)=\boldv_0^T\boldw_1+\boldv_0^T\boldw_2=0+0=0</mrow>
+            <mrow>\amp \Rightarrow\amp  \boldw_1+\boldw_2\in W</mrow>
+          </md>.
+        </p>
+        <p>
+          (iii) We must prove the implication <m>\boldw\in W\Rightarrow k\boldw\in W</m>.
+          <md>
+            <mrow>\boldw\in W\amp \Rightarrow\amp  \boldv_0^T\boldw=0</mrow>
+            <mrow>\amp \Rightarrow\amp  \boldv_0^T(k\boldw)=k\boldv_0^T\boldw=k0=0</mrow>
+            <mrow>\amp \Rightarrow\amp  k\boldw\in W</mrow>
+          </md>
+        </p>
+      </proof>
+    </paragraphs>
+    <paragraphs>
+      <title>Lines and planes</title>
+      <p>
+        Recall that a line in <m>\R^2</m> \alert{containing the origin <m>(0,0)</m>} can be expressed as the set of solutions
+        <m>(x_1,x_2)\in\R^2</m> to an equation of the form
+        <me>
+          ax_1+bx_2=0, \text{ or }  \colvec{a\\b}^T\colvec{x_1\\ x_2}=0
+        </me>
+      </p>
+      <p>
+        Similarly, a plane in <m>\R^3</m> \alert{containing the origin <m>(0,0,0)</m>} can be expressed as the the set of solutions
+        <m>(x_1,x_2,x_3)</m> to an equation of the form
+        <me>
+          ax_1+bx_2+cx_3=0, \text{ or }  \colvec{a\\b\\c}^T\colvec{x_1\\x_2\\x_3}=0
+        </me>.
+      </p>
+      <p>
+        By the previous example we see that lines in <m>\R^2</m> containing the origin are subspaces,
+        as are planes in <m>\R^3</m> containing the origin!
+        Both can be expressed in the form <m>W=\left\{\boldx\colon \boldv_0^T\boldx=0\right\}</m>:
+        take <m>\boldv_0=(a,b)</m> in the first case,
+        and <m>\boldv_0=(a,b,c)</m> in the second.
+      </p>
+      <p>
+        On the other hand, a line or place that does <em>not</em>
+        contain the origin is not a subspace,
+        since it does not contain <m>\boldzero</m>.
+      </p>
+      <p>
+        We will revisit this example after defining the dot product on <m>\R^n</m>.
+      </p>
+    </paragraphs>
+    In fact these are all sub{spaces} of <m>V</m>. Proof: (i) the zero function, <m>h(x)=0</m> for all <m>x</m>, is <m>\infty</m>-differentiable, and thus is an element of each of these sets; (ii)-(iii) these sets being closed under addition and scalar mult. is a consequence of calculus results about sums and scalar multiples of continuous/differentiable functions.
+    <paragraphs>
+    <title>Polynomials</title>
+    <p>
+      Recall that a <term>polynomial</term>
+      is a function that can be written in the form <m>f(x)=\anpoly</m>,
+      where <m>a_i\in\R</m> are fixed constants and <m>a_n\ne 0</m>.
+      We call <m>n</m> the <term>degree</term>
+      of such a function, denoted <m>\deg f=n</m>.
+    </p>
+    <p>
+      Let <m>P</m> be the set of all polynomial functions,
+      and let <m>P_n=\{f\colon f(x)=\anpoly,
+      a_i\in\R \}</m> be the set of all polynomials of degree
+      <em>at most</em> <m>n</m>.
+    </p>
+    <p>
+      We have the set inclusions <m>P_n\subset P\subset C^\infty(X)</m>,
+      where <m>X</m> is any nontrivial interval. (The second inclusion holds since any polynomial is infinitely differentiable on any interval. )
+    </p>
+    <p>
+      It is easy to see that in fact <m>P_n</m> is a
+      <em>subspace</em> of <m>P</m>,
+      and <m>P</m> is a <em>subspace</em> of <m>C^\infty(X)</m>.
+      Indeed <m>P_n</m> and <m>P</m> both contain the zero polynomial <m>f(x)=0=0x^n+0x^{n-1}+\cdots 0x+0</m>,
+      which is the same thing as the zero function <m>0_X=\boldzero</m>.
+      Furthermore,
+      sums and scalar multiples of polynomials (resp. of polynomials of at most degree <m>n</m>) are polynomials
+      (resp. polynomials of at most degree <m>n</m>).
+    </p>
+    <paragraphs>
+      <title>Important:</title>
+      <p>
+        a fact we will make use of all the time is that for two polynomials
+      </p>
+    </paragraphs>
+    <me>
+      \begin{array}{l}
+      f(x)=\anpoly, \ a_n\ne 0 \\
+      g(x)=\bmpoly, \ b_m\ne 0
+      \end{array}
+    </me>
+    <p>
+      we have <m>f(x)=g(x)</m> if and only if (1) n=m, and (2) <m>a_i=b_i</m> for all <m>0\leq i\leq n</m>.
+    </p>
+    </paragraphs>
+    <paragraphs>
+    <title>Intersections and unions</title>
+    <theorem>
+      <statement>
+        <p>
+          Let <m>V</m> be a vector space,
+          and suppose <m>W_1,W_2,\dots, W_r</m> are each subspaces of <m>V</m>.
+          Then the intersection <m>W=W_1\cap W_2\cdots \cap W_r</m> is a subspace of <m>V</m>.
+        </p>
+      </statement>
+    </theorem>
+    <paragraphs>
+      <title>Comment</title>
+      <p>
+        Thus intersections of subspaces are subspaces.
+        The same is not true of <em>unions</em>.
+      </p>
+    </paragraphs>
+    <p>
+      For example, take <m>V=\R^2</m>,
+      <m>W_1=\{(t,t)\colon t\in\R\}</m> and <m>W_2=\{(t,-t)\colon t\in\R\}</m>.
+      Then each <m>W_i</m> is a subspace,
+      but their union <m>W_1\cup W_2</m> is not.
+      Why?
+    </p>
+    <p>
+      We have <m>\boldw_1=(1,1)\in W_1\subset W_1\cup W_2</m> and <m>\boldw_2=(1,-1)\in W_2\subset W_1\cup W_2</m>,
+      but <m>\boldw_1+\boldw_2=(2,0)\notin W_1\cup W_2</m>.
+    </p>
+    <p>
+      Note that <m>W_1\cup W_2</m> is in fact closed under scalar multiplication.
+    </p>
+    </paragraphs>
+  </introduction>
+  <subsection>
+    <title>Span</title>
+    <paragraphs>
+      <title>Linear combinations and span</title>
+      <p>
+        Recall that a <em>linear combination</em>
+        in a vector space <m>V</m> is a vector of the form
+        <me>
+          \boldv=k_1\boldv_1+k_2\boldv_2\cdots +k_r\boldv_r
+        </me>,
+        where <m>k_i\in \R</m> are scalars.
+      </p>
+      <p>
+        We use this notion to define the
+        <em>span</em> of a set of vectors.
+      </p>
+      <definition>
+        <statement>
+          <p>
+            Let <m>V</m> be a vector space,
+            and let <m>S=\{\boldv_1,\boldv_2,\dots,\boldv_r\}</m> be a set of vectors of <m>V</m>.
+            The <term>span</term> of <m>S</m> is the set
+            <md>
+              <mrow>\Span(\{\boldv_1,\boldv_2,\dots,\boldv_r\})\amp :=\amp \left(\begin{array}{c} \text{ the set of all linear }  \\ \text{ combinations of the \(\boldv_i\) } \end{array} \right)</mrow>
+              <mrow>\amp =\amp \{\boldv\in V\colon \boldv=k_1\boldv_1+k_2\boldv_2\cdots +k_r\boldv_r, \text{ for some }  k_i\in\R \}</mrow>
+            </md>.
+          </p>
+        </statement>
+      </definition>
+    </paragraphs>
+    <theorem>
+      <statement>
+        <p>
+          Let <m>V</m> be a vector space,
+          <m>S=\{\boldv_1,\boldv_2,\dots,\boldv_r\}</m> a set of vectors of <m>V</m>,
+          and <m>W=\Span(S)</m>.
+          Then
+          <ol>
+            <li>
+              <p>
+                <m>W</m> is a subspace of <m>V</m>;
+              </p>
+            </li>
+            <li>
+              <p>
+                if <m>W'</m> is a subspace containing all the vectors <m>\boldv_i</m>,
+                then <m>W\subseteq W'</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+        <p>
+          We paraphrase (ii) by saying <m>W=\Span(S)</m> is the
+          <q>smallest</q>
+          subspace of <m>V</m> containing all the <m>\boldv_i</m>.
+        </p>
+      </statement>
+    </theorem>
+    <paragraphs>
+      <title>More terminology:</title>
+      <p>
+        in the spirit of the last theorem,
+        given a set of vectors <m>S=\{\boldv_1,\dots, \boldv_r\}</m>,
+        we call <m>W=\Span(S)</m> the subspace of <m>V</m> <term>generated by</term>
+        the vectors <m>\boldv_i</m>.
+        Similarly, given a subspace <m>W</m>,
+        a set <m>S=\{\boldv_1,\dots, \boldv_r\}</m> for which <m>W=\Span(S)</m> is called a
+        <term>spanning set</term> of <m>W</m>.
+      </p>
+    </paragraphs>
+    <paragraphs>
+    <title>Examples</title>
+    <p>
+      \alert{<m>M_{mn}</m>}. Define <m>E_{ij}</m> to be the matrix whose <m>(i,j)</m>-th entry is 1, and whose every other entry is 0.
+      Then the set
+      <me>
+        \{ E_{ij}\colon 1\leq i\leq m, 1\leq j\leq n\}
+      </me>
+      is a spanning set for <m>M_{mn}</m>.
+    </p>
+    <paragraphs>
+      <title><m>\R^n</m></title>
+      <p>
+        In a similar vein,
+        define <m>\bolde_i</m> to be the <m>n</m>-tuple whose <m>i</m>-th entry is 1, and whose every other entry is 0.
+      </p>
+    </paragraphs>
+    <p>
+      Then <m>\{\bolde_1, \bolde_2, \dots, \bolde_n\}</m> is a spanning set for <m>\R^n</m>.
+    </p>
+    <paragraphs>
+      <title><m>P</m> and <m>P_n</m></title>
+      <p>
+        The set <m>\{1, x, x^2, \dots, \}</m> is a spanning set for <m>P</m>.
+        The set <m>\{1, x, x^2, \dots,
+        x^n\}</m> is a spanning set for <m>P_n</m>.
+      </p>
+    </paragraphs>
+    <paragraphs>
+      <title><m>\R^\infty</m></title>
+      <p>
+        As above we can define <m>\bolde_i\in \R^\infty</m> to be the infinite sequence whose <m>i</m>-th entry is 1, and whose every other entry is <m>0</m>.
+      </p>
+    </paragraphs>
+    <p>
+      Note, however,
+      that the set <m>\{\bolde_1, \bolde_2, \bolde_3, \dots\}</m> is <em>not</em>
+      a spanning set for <m>\R^\infty</m>.
+    </p>
+    <p>
+      Indeed, the sequence <m>(1,1,1,\dots)</m> is not a (finite!) linear combination of the <m>\bolde_i</m>.
+    </p>
+    <p>
+      \alert{<m>\R_{>0}</m>} Any
+      <m>a\ne 1\in \R_{>0}</m> forms a spanning set for <m>\R_{>0}</m> as a vector space.
+      This is because scalar multiplication by <m>r</m> in <m>\R_{>0}</m> is defined as exponentiation.
+      Thus <m>\Span(\{a\})=\{a^r\colon r\in\R\}=\R_{>0}</m>.
+      The last equality holds since the exponential function
+      <m>f(x)=a^x</m> has range all positive reals for any base <m>a\ne 1</m>.
+    </p>
+    </paragraphs>
+    <paragraphs>
+    <title>Example</title>
+    <p>
+      Let <m>V=P_2</m> and let <m>S=\{p_1, p_2\}</m>,
+      where <m>p_1(x)=x^2-1</m> and <m>p_2(x)=x^2-x</m>.
+      Show that <m>W=\Span(S)</m> is the subspace of all polynomials
+      <m>p(x)=a_2x^2+a_1x+a_0</m> for which <m>p(1)=0</m>.
+      That is:
+      <me>
+        \Span(S)=\{p(x)\in P_2\colon p(1)=0\}
+      </me>
+    </p>
+    <proof>
+      <p>
+        We wish to prove a <em>set equality</em>.
+        We do so by showing the <m>\subseteq</m> and
+        <m>\supseteq</m> relations separately. (See my proof technique guide!)
+      </p>
+      <paragraphs>
+        <title><m>\subseteq</m></title>
+        <p>
+          Note first that <m>p_1(1)=p_2(1)=0</m>.
+          Given an element <m>q(x)\in \Span\left(\{p_1(x), p_2(x)\}\right)</m>,
+          we have <m>q(x)=ap_1(x)+bp_2(x)</m> for some <m>a, b\in \R</m>.
+          But then <m>q(1)=ap_1(1)+bp_2(1)=0+0=0</m>.
+          Thus <m>q(x)\in \{p(x)\colon p(1)=0\}</m>.
+        </p>
+      </paragraphs>
+      <paragraphs>
+        <title><m>\supseteq</m></title>
+        <p>
+          Now take <m>p(x)=a_2x^2+a_1x+a_0\in \{p(x)\in P_2\colon p(1)=0\}</m>.
+          We must find <m>a, b\in \R</m> such that <m>p(x)=ap_1+bp_2</m>.
+        </p>
+      </paragraphs>
+      <p>
+        Since <m>p(1)=0</m>, we have <m>a_2+a_1+a_0=0</m>.
+        I claim <m>p(x)=(-a_0)p_1+(-a_1)p_2</m>.
+        Indeed we have
+        <me>
+          -a_0p_1-a_1p_2=(-a_0-a_1)x^2+a_1x+a_0=a_2x^2+a_1x+a_0
+        </me>,
+        since <m>a_2+a_1+a_0=0</m>.
+        This shows that <m>p(x)\in\Span\left(\{p_1, p_2\}\right)</m>,
+        as desired.
+      </p>
+    </proof>
+    </paragraphs>
+    <paragraphs>
+      <title>Example</title>
+      <p>
+        Let <m>V=P_2</m> and let <m>S=\{p_1, p_2, p_3\}</m> where
+        <me>
+          p_1(x)=x^2+x+1, p_2(x)=x^2+x, p_3(x)=x^2+1
+        </me>.
+      </p>
+      <p>
+        Show that <m>\Span(S)=P_2</m>.
+      </p>
+      <proof>
+        <p>
+          Again, we are tasked with showing a <em>set equality</em>.
+          It is clear that <m>\Span(S)=\{rp_1+sp_2+tp_3\colon r,s,t\in\R\}\subseteq P_2</m>.
+          The harder direction is showing <m>P_2\subseteq \Span(S)</m>:
+          i.e., given <em>any</em> <m>p(x)=a_2x^2+a_1x+a_0</m> we must show there are
+          <m>r,s,t\in\R</m> such that <m>p(x)=rp_1+sp_2+tp_3</m>.
+        </p>
+        <p>
+          We do so by setting up a system of equations.
+          Combining like terms and equating coefficients in the polynomial expression
+          <m>p(x)=rp_1+sp_2+tp_3</m> yields the linear system
+          <md>
+            \begin{linsys}{3} r\amp +\amp s\amp +\amp t\amp =\amp a_2\\ r\amp +\amp s\amp \amp \amp =\amp a_1\\ r\amp \amp \amp +\amp t\amp =\amp a_0 \end{linsys}
+          </md>
+        </p>
+        <p>
+          GE shows that the system has a solution for <em>any</em>
+          choice of <m>a_2, a_1, a_0</m>:
+          namely, <m>r=-a_2+a_1+a_0</m>,
+          <m>s=a_2-a_0</m>, <m>t=a_2-a_1</m>.
+          Thus given any <m>p(x)=a_2x^2+a_1x+a_0</m>,
+          we can find <m>r,s,t</m> such that <m>p=rp_1+sp_2+tp_3</m>,
+          showing <m>P_2\subseteq \Span(S)</m>.
+        </p>
+      </proof>
+    </paragraphs>
+  </subsection>
+  <subsection>
+    <title>Null space</title>
+    <paragraphs>
+      <title>Null space of a linear transformation</title>
+      <p>
+        The notion of span is a useful tool for constructing subspaces inside a space <m>V</m>:
+        given any collection <m>\{\boldv_1, \boldv_2, \dots, \boldv_r\}</m>,
+        we now know that the set <m>W=\Span(\{\boldv_1,\boldv_2,\dots, \boldv_r\})</m> is guaranteed to be a subspace of <m>V</m>.
+      </p>
+      <p>
+        The notion of a <em>null space</em>
+        of a linear transformation
+        <m>T\colon V\rightarrow W</m> provides another useful tool for constructing subspaces.
+      </p>
+      <definition>
+        <statement>
+          <p>
+            The <term>null space</term> of a linear transformation <m>T\colon V\rightarrow W</m> is the set
+            <me>
+              \NS T\colon =\{\boldv\colon T(\boldv)=\boldzero_W \}
+            </me>.
+          </p>
+          <p>
+            In the special case where <m>T\colon \R^n\rightarrow \R^m</m> and <m>T=T_A</m>,
+            we may write <m>\NS A</m> for <m>\NS T_A</m>:
+            by definition this is the set
+            <me>
+              \NS A=\NS T_A=\{\boldx\in \R^n\colon A\boldx=\underset{m\times 1}{\boldzero}\}
+            </me>.
+          </p>
+          <p>
+            In other words,
+            <m>\NS A</m> is the set of solutions to the homogenous matrix equation <m>A\boldx=\boldzero</m>,
+            or equivalently, its associated homogenous system of equations.
+          </p>
+        </statement>
+      </definition>
+      <p>
+        As we see in the next theorem,
+        given linear <m>T\colon V\rightarrow W</m>,
+        its null space <m>\NS T</m> is always a <em>subspace</em> !!
+      </p>
+    </paragraphs>
+    <theorem>
+      <title>Null space theorem</title>
+      <statement>
+        <p>
+          Let <m>T\colon V\rightarrow W</m>.
+          Then <m>\NS T</m> is a subspace of <m>V</m>.
+        </p>
+      </statement>
+    </theorem>
+    <proof>
+      <ol>
+        <li>
+          <p>
+            Since <m>T(\boldzero_V)=\boldzero_W</m>,
+            we see that <m>\boldzero_V\in \NS T</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Suppose <m>\boldv_1, \boldv_2\in \NS T</m>.
+            We have
+            <md>
+              <mrow>T(\boldv_1+\boldv_2)\amp =T(\boldv_1)+T(\boldv_2) \amp \text{ (\(T\) is linear) }</mrow>
+              <mrow>\amp =\boldzero_W+\boldzero_W \amp \text{ (since \(\boldv_1,\boldv_2\in\NS T\)) }</mrow>
+              <mrow>\amp =\boldzero_W</mrow>
+            </md>.
+            Thus <m>\boldv_1+\boldv_2\in \NS T</m>,
+            proving the implication <m>\boldv_1,\boldv_2\in\NS T\Rightarrow \boldv_1+\boldv_2\in\NS T</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Suppose <m>\boldv\in\NS T</m>.
+            We have
+            <md>
+              <mrow>T(c\boldv)\amp =cT(\boldv) \amp \text{ (\(T\) is linear) }</mrow>
+              <mrow>\amp =c\boldzero_W \amp \text{ (since \(\boldv\in\NS T\)) }</mrow>
+              <mrow>\amp =\boldzero_W</mrow>
+            </md>.
+            This shows <m>c\boldv\in\NS T</m>,
+            proving the implication <m>\boldv\in\NS T\Rightarrow c\boldv\in\NS T</m>.
+          </p>
+        </li>
+      </ol>
+      <p>
+        Since <m>\NS T</m> satisfies the conditions (i)-(iii),
+        we see that it is a subspace of <m>V</m>.
+      </p>
+    </proof>
+    <paragraphs>
+      <title>Examples</title>
+      <p>
+        The theorem gives us a clever,
+        indirect way of proving a subset <m>V'\subseteq V</m> is a subspace:
+        namely, find a linear transformation
+        <m>T\colon V\rightarrow W</m> for which <m>V'=\NS T</m> !!
+      </p>
+      <example>
+        <statement>
+          <p>
+            The set <m>W\subseteq\R^3</m> of all vectors <m>(x,y,z)</m> satisfying
+            <m>x+2y+3z=x-y-z=0</m> is a subspace of <m>\R^3</m>.
+          </p>
+          <p>
+            Indeed we have <m>W=\NS A</m> where <m>A=\begin{bmatrix}1\amp 2\amp 3\\ 1\amp -1\amp -1 \end{bmatrix}</m>.
+          </p>
+        </statement>
+      </example>
+      <example>
+        <statement>
+          <p>
+            The set <m>W=\{A\in M_{nn}\colon A^T=A\}</m>,
+            consisting of all symmetric <m>n\times n</m> matrices,
+            is a subspace of <m>M_{nn}</m>.
+          </p>
+          <p>
+            Indeed, we have <m>W=\NS T</m>,
+            where <m>T\colon M_{nn}\rightarrow M_{nn}</m> is the linear transformation defined as <m>T(A)=A^T-A</m>.
+          </p>
+          <p>
+            (I leave it to you to show <m>T</m> is linear.)
+          </p>
+        </statement>
+      </example>
+      <example>
+        <statement>
+          <p>
+            The set <m>W</m> of all infinitely differentiable functions <m>f</m> satisfying the differential equation
+            <m>f''(x)+xf'(x)=3f(x)</m> is a subspace of <m>C^\infty(\R)</m>.
+          </p>
+          <p>
+            Indeed <m>W</m> is <m>\NS T</m>,
+            where <m>T\colon C^\infty(\R)\rightarrow C^\infty(\R)</m> is the linear transformation defined as <m>T(f)=f''+xf'-3f</m>.
+          </p>
+          <p>
+            (I leave it to you to show <m>T</m> is linear.)
+          </p>
+        </statement>
+      </example>
+    </paragraphs>
+  </subsection>
+  <subsection>
+    <title>Range of a linear transformation</title>
+    <paragraphs>
+      <title>Range</title>
+      <definition>
+        <statement>
+          <p>
+            In general given a function
+            <m>f\colon A\rightarrow B</m> with domain <m>A</m> and codomain <m>B</m>,
+            its <term>range</term> is the set
+            <me>
+              \range f=\{b\in B\colon b=f(a) \text{ for some \(a\in A\) } \}=f(A)
+            </me>,
+            where the last equality makes use of our
+            <q>image of a set</q>
+            notation <m>f(A)</m>.
+          </p>
+        </statement>
+      </definition>
+      <p>
+        We will use the same notation for a linear transformation <m>T\colon V\rightarrow W</m>.
+        The range of <m>T</m> is a subset of the codomain <m>W</m>.
+        Not surprisingly, it is in fact a
+        <em>subspace</em> of <m>W</m>.
+      </p>
+    </paragraphs>
+    <paragraphs>
+      <title>Range</title>
+      <theorem>
+        <title>Range is a subspace</title>
+        <statement>
+          <p>
+            Let <m>T\colon V\rightarrow W</m> be a linear transformation.
+            Then <m>\range T</m> is a subspace of <m>W</m>.
+          </p>
+        </statement>
+      </theorem>
+      <proof>
+        <ol>
+          <li>
+            <p>
+              We must show <m>\boldzero_W\in \range(T)</m>.
+              But <m>\boldzero_W=T(\boldzero_V)</m>.
+              Thus <m>\boldzero_W\in\range(T)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Suppose <m>\boldw_1,\boldw_2\in \range(T)</m>.
+              This means there are <m>\boldv_1, \boldv_2\in V</m> such that <m>T(\boldv_i)=\boldw_i</m> for <m>i=1,2</m>.
+              We must show <m>\boldw=\boldw_1+\boldw_2\in\range(T)</m>.
+              Set <m>\boldv=\boldv_1+\boldv_2</m>.
+              Then
+              <md>
+                <mrow>T(\boldv)\amp =\amp T(\boldv_1+\boldv_2)</mrow>
+                <mrow>\amp =\amp T(\boldv_1)+T(\boldv_2) \ \text{ (since \(T\) is a linear transformation) }</mrow>
+                <mrow>\amp =\amp \boldw_1+\boldw_2=\boldw</mrow>
+              </md>.
+              Since we have provided a <m>\boldv</m> with <m>T(\boldv)=\boldw_1+\boldw_2</m>,
+              we see that <m>\boldw_1+\boldw_2\in\range(T)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Suppose <m>\boldw\in\range(T)</m>.
+              Then there is a <m>\boldv\in V</m> with <m>T(\boldv)=\boldw</m>.
+              Then <m>T(k\boldv)=kT(\boldv)=k\boldw</m>,
+              showing <m>k\boldw\in\range(T)</m>.
+            </p>
+          </li>
+        </ol>
+      </proof>
+    </paragraphs>
+    <paragraphs>
+      <title>Example</title>
+      <p>
+        Let <m>T=T_A\colon \R^2\rightarrow\R^3</m>,
+        where <m>A=\begin{bmatrix}1\amp 1\\ 2\amp 1\\ 3\amp 5 \end{bmatrix}</m>.
+        According to the theorem, <m>\range T_A</m> is a subspace of <m>\R^3</m>.
+        Can we identify this subspace as a familiar geometric object?
+      </p>
+      <p>
+        By definition <m>\range T_A</m> is the set
+        <me>
+          \{\boldy\in\R^3\colon \boldy=T_A(\boldx) \text{ for some \(\boldx\in \R^3\) } \}=\left\{\boldy=\begin{bmatrix}a\\ b\\ c \end{bmatrix} \colon \boldy=A\boldx \text{ for some \(\boldx\in\R^2\) } \right\}
+        </me>.
+      </p>
+      <p>
+        Thus to compute <m>\range T_A</m> we must determine which choice of
+        <m>\boldy=(a,b,c)</m> makes the system <m>A\boldx=\boldy</m> consistent.
+        We answer this using our good,
+        old friend Gaussian elimination!
+        <me>
+          \begin{bmatrix}1\amp 1\amp a\\ 2\amp 1\amp b\\ 3\amp 5\amp c \end{bmatrix} \xrightarrow{\text{ row reduction } }\begin{bmatrix}1\amp 1\amp a\\ 0\amp 1\amp 2a-b\\ 0\amp 0\amp -7a+2b+c \end{bmatrix}
+        </me>
+      </p>
+      <p>
+        To be consistent we need <m>-7a+2b+c=0</m>.
+        We conclude that <m>\range T</m> is the set of all <m>(a,b,c)</m> satisfying <m>-7a+2b+c=0</m>.
+        Geometrically this is the plane passing through <m>O</m> with normal vector <m>\boldn=(-7,2,1)</m>.
+      </p>
+    </paragraphs>
+    <paragraphs>
+      <title>Example</title>
+      <p>
+        Consider again the linear transformation <m>T\colon M_{nn}\rightarrow M_{nn}</m>,
+        <m>T(A)=A^T-A</m>.
+        We saw that <m>\NS T</m> was the space of symmetric matrices.
+        The theorem above tells us that
+        <m>\range T</m> is also a subspace of <m>M_{nn}</m>.
+        What is it?
+      </p>
+      <p>
+        Take <m>B\in \range T</m>.
+        By definition this means <m>B=T(A)=A^T-A</m> for some <m>A</m>.
+        So one, somewhat unsatisfying way of describing
+        <m>\range T</m> is as the set of all matrices of the form <m>A^T-A</m>.
+      </p>
+      <p>
+        Let's investigate further.
+        Notice that if <m>B=A^T-A</m>,
+        then <m>B^T=(A^T-A)^T=(A^T)^T-A^T=A-A^T=-B</m>.
+        Thus every element <m>B\in \range T</m> satisfies <m>B^T=-B</m>.
+        Such matrices are called <term>skew-symmetric</term>.
+      </p>
+      <p>
+        I claim further that in fact <m>\range T</m> is the the set of
+        <em>all</em> skew-symmetric matrices.
+        To prove this, I need to show that given a skew-symmetric matrix <m>B</m>,
+        there is a matrix <m>A</m> such that <m>T(A)=B</m>.
+      </p>
+      <p>
+        Suppose I have a <m>B</m> such that <m>B^T=-B</m>.
+        Let <m>A=-\frac{1}{2}B</m>.
+        Then
+        <me>
+          T(A)=T(-\frac{1}{2}B)=-\frac{1}{2}(B^T-B)=-\frac{1}{2}(-B-B)=B
+        </me>.
+      </p>
+      <p>
+        This shows that <m>B\in \range T</m>,
+        and concludes the proof that
+        <m>\range T</m> is the set of all skew-symmetric matrices.
+      </p>
+    </paragraphs>
+  </subsection>
+</section>

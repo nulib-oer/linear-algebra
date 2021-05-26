@@ -1,0 +1,167 @@
+<section xml:id="ss_rowops">
+  <title>Row operations and the determinant</title>
+  <paragraphs>
+    <title><xref ref="c_det"></xref>. <xref ref="ss_rowops"></xref>: row operations and the determinant</title>
+    <p>
+      We denote our various elementary row operations as
+      <me>
+        \rho_{c\cdot r_i}, \rho_{r_i\leftrightarrow r_j},\text{ and }  \rho_{r_i+cr_j}
+      </me>,
+      as usual.
+    </p>
+    <theorem>
+      <statement>
+        <p>
+          Let <m>A</m> be <m>n\times n</m>.
+          Then:
+          <ol>
+            <li>
+              <p>
+                <m>\det(\rho_{c\cdot r_i}(A))=c\det(A)</m>,
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\det(\rho_{r_i\leftrightarrow r_j}(A))=-\det(A)</m>,
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\det(\rho_{r_i+cr_j}(A))=\det(A)</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+        <p>
+          Equivalently, we have:
+          <ol>
+            <li>
+              <p>
+                <m>\det(\underset{c\cdot r_i}{E}\cdot A)=c\det(A)</m>,
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\det(\underset{r_i\leftrightarrow r_j}{E}\cdot A)=-\det(A)</m>,
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\det(\underset{r_i+cr_j}{E}\cdot A)=\det(A)</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </theorem>
+  </paragraphs>
+  <theorem>
+    <statement>
+      <p>
+        Let <m>A</m> be <m>n\times n</m>.
+        Then:
+        <ol>
+          <li>
+            <p>
+              <m>\det(\underset{c\cdot r_i}{E}\cdot A)=c\det(A)</m>,
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\det(\underset{r_i\leftrightarrow r_j}{E}\cdot A)=-\det(A)</m>,
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\det(\underset{r_i+cr_j}{E}\cdot A)=\det(A)</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </theorem>
+  <p>
+    Setting <m>A=I_n</m> in the last theorem,
+    we get formulas for the determinant of an elementary matrix.
+  </p>
+  <corollary>
+    <statement>
+      <ol>
+        <li>
+          <p>
+            <m>\det(\underset{c\cdot r_i}{E})=c</m>,
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\det(\underset{r_i\leftrightarrow r_j}{E})=-1</m>,
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\det(\underset{r_i+cr_j}{E})=1</m>.
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </corollary>
+  <p>
+    We can now use row operations to simplify the computation of <m>\det(A)</m> as follows.
+    We row reduce <m>A</m> to some simpler matrix <m>B</m>,
+    yielding a matrix equation of the form
+    <me>
+      E_rE_{r-1}\cdots E_1A=B
+    </me>.
+  </p>
+  <p>
+    From our theorem above, it follows that
+    <md>
+      <mrow>\det(B)\amp =\amp \det(E_r)\det(E_{r-1}\cdots E_1A)</mrow>
+      <mrow>\amp =\amp \det(E_r)\det(E_{r-1})\det(E_{r-2}\cdots E_1A)</mrow>
+      <mrow>\amp =\amp \vdots</mrow>
+      <mrow>\amp =\amp \det(E_r)\det(E_r{-1})\cdots \det(E_1)\det(A)</mrow>
+    </md>
+    and thus that
+    <me>
+      \det(A)=\frac{\det(B)}{\det(E_r)\det(E_{r-1})\cdots \det(E_1)}
+    </me>.
+  </p>
+  <p>
+    As an example of this method we can easily prove the following corollary.
+  </p>
+  <corollary>
+    <statement>
+      <p>
+        Let <m>A</m> be <m>n\times n</m>,
+        and denote the rows of <m>A</m> by <m>\boldr_i</m>.
+        If <m>\boldr_i=c\boldr_j</m> for some <m>i\ne j</m> and some scalar <m>c</m>,
+        then <m>\det(A)=0</m>.
+      </p>
+      <p>
+        Similarly if <m>A</m> has two columns that are scalar multiples of one another,
+        then <m>\det(A)=0</m>.
+      </p>
+    </statement>
+  </corollary>
+  <proof>
+    <p>
+      We assume <m>\boldr_i=c\boldr_j</m> for some <m>i\ne j</m> and some scalar <m>c</m>.
+    </p>
+    <p>
+      Using the row method of matrix multiplication, we see that the matrix
+      <me>
+        \tilde{A}=\underset{\boldr_i-cr_j}{E}\ \cdot A
+      </me>
+      has a row of zeros in the <m>i</m>-th row.
+      We conclude that <m>\det(\tilde{A})=0</m>.
+    </p>
+    <p>
+      It follows that <m>0=\det(\underset{\boldr_i-cr_j}{E}\ \cdot A)=\det \underset{\boldr_i-cr_j}{E}\det A</m>.
+      Since <m>\det \underset{\boldr_i-cr_j}{E}\ne 0</m>,
+      we must have <m>\det A=0</m>.
+    </p>
+    <p>
+      The statement about columns follows from the statement about rows and the fact that <m>\det(A^T)=\det(A)</m>.
+    </p>
+  </proof>
+</section>

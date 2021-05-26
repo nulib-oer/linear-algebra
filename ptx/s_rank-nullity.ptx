@@ -1,0 +1,176 @@
+<section xml:id="ss_rank-nullity">
+  <title>Linear transformations and bases</title>
+  <paragraphs>
+    <title>Linear transformations and bases</title>
+    <p>
+      As the next theorem articulates,
+      a linear transformation <m>T\colon V\rightarrow W</m> is
+      <em>uniquely determined</em>
+      by how it acts on the elements of a basis for <m>V</m>.
+    </p>
+    <theorem xml:id="th_Tbasis">
+      <statement>
+        <p>
+          Let <m>B=\{\boldv_1,\dots,\boldv_n\}</m> be a basis for <m>V</m>,
+          and let <m>W</m> be any space.
+          <ol>
+            <li>
+              <p>
+                Given any choice of <m>n</m> elements
+                <m>\boldw_1,\boldw_2,\dots, \boldw_n\in W</m> there is a <em>unique</em>
+                linear transformation <m>T\colon V\rightarrow W</m> such that <m>T(\boldv_i)=\boldw_i</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Given linear transformations <m>T_1,T_2\colon V\rightarrow W</m>,
+                <m>T_1=T_2</m> if and only if
+                <m>T_1(\boldv_i)=T_2(\boldv_i)</m> for <m>1\leq i\leq n</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      This is an extremely useful theorem as it allows us,
+      given a basis <m>B</m> of <m>V</m>, to
+      <ol>
+        <li>
+          <p>
+            easily define linear transformations simply by declaring where
+            <m>\boldv_i</m> gets sent for each <m>i</m>, and
+          </p>
+        </li>
+        <li>
+          <p>
+            easily check whether two linear transformations are equal simply by checking that they agree on the basis elements <m>\boldv_i</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </paragraphs>
+  <proof>
+    <p>
+      First observe that given any <m>\boldv=c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n</m>,
+      if <m>T</m> is a linear transformation satisfying
+      <m>T(\boldv_i)=\boldw_i</m> for all <m>\boldv_i\in B</m>,
+      then we must have
+      <md>
+        <mrow>T(\boldv)\amp =T(c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n)</mrow>
+        <mrow>\amp =c_1T(\boldv_1)+c_2T(\boldv_2)+\cdots +c_nT(\boldv_n)</mrow>
+        <mrow>\amp =c_1\boldw_1+c_2\boldw_2+\cdots +c_n\boldw_n</mrow>
+      </md>
+    </p>
+    <p>
+      This shows that there is <em>at most</em> one such <m>T</m>,
+      and furthermore that <m>T_1=T_2</m> if and only if
+      <m>T_1(\boldv_i)=T_2(\boldv_i)</m> for all <m>\boldv_i\in B</m>.
+    </p>
+    <p>
+      Thus we have proven (b),
+      and the proof of (a) is completed by showing that the formula <m>T(\boldv)=c_1\boldw_1+c_2\boldw_2+\cdots +c_n\boldw_n</m>,
+      where <m>\boldv=c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n</m>,
+      defines a linear transformation satisfying <m>T(\boldv_i)=\boldw_i</m>.
+    </p>
+    <p>
+      The latter property is obvious,
+      since <m>\boldv_i=1\boldv_i+\sum_{j\ne i}0\boldv_j</m> implies <m>T(\boldv_i)=1\boldw_i+\sum_{i\ne j}0\boldw_j=\boldw_i</m>.
+    </p>
+    <p>
+      Now let's show <m>T</m> is linear:
+      given <m>\boldv=\sum_{i=1}^n c_i\boldv_i</m> and <m>\boldv'=\sum_{i=1}^nc_i'\boldv_i</m>,
+      we have <m>r\boldv+s\boldv'=\sum_{i=1}^n(rc_i+sc_i')\boldv_i</m>,
+      in which case
+      <md>
+        <mrow>T(r\boldv+s\boldv')\amp =\sum_{i=1}^n(rc_i+sc_i')\boldw_i \amp \text{ (def. of \(T\)) }</mrow>
+        <mrow>\amp =r\sum_{i=1}^n c_i\boldw_i+s\sum_{i=1}^nc_i'\boldw_i=rT(\boldv)+sT(\boldv')\ \checkmark \amp \text{ (def. of \(T\)) }</mrow>
+      </md>
+    </p>
+  </proof>
+  <paragraphs>
+    <title>Transformations of $\R^n$</title>
+    <corollary>
+      <statement>
+        <p>
+          Let <m>T\colon \R^n\rightarrow \R^m</m> be a linear transformation.
+          Then <m>T=T_A</m> for some <m>\underset{m\times n}{A}</m>.
+        </p>
+        <p>
+          In other words,
+          <em>any</em> linear transformation whose domain is <m>\R^n</m> for some <m>n</m> and whose codomain is <m>\R^m</m> for some <m>m</m>,
+          is in fact a matrix transformation <m>T=T_A</m>.
+        </p>
+      </statement>
+    </corollary>
+    <proof>
+      <p>
+        Our proof includes a <em>recipe</em>
+        for computing the matrix <m>A</m> such that <m>T=T_A</m>.
+      </p>
+      <p>
+        Namely, given a linear <m>T\colon\R^n\rightarrow \R^m</m>,
+        let <m>A</m> be the matrix whose <m>j</m>-th column is <m>\boldc_j=T(\bolde_j)</m>,
+        where <m>\bolde_j</m> is the <m>j</m>-th element of the standard basis of <m>\R^n</m>.
+      </p>
+      <p>
+        I claim <m>T=T_A</m>.
+      </p>
+      <p>
+        According to the <xref ref="th_Tbasis">Theorem</xref>, I only need to show that <m>T</m> and <m>T_A</m> agree on a basis for <m>\R^n</m>.
+        Let's take the standard basis <m>B=\{\bolde_1,\dots,\bolde_n\}</m>.
+      </p>
+      <p>
+        Then
+        <md>
+          <mrow>T_A(\bolde_j)\amp =A\bolde_j \amp \text{ (def. of \(T_A\)) }</mrow>
+          <mrow>\amp =\boldc_j \amp \text{ (column expansion) }</mrow>
+          <mrow>\amp =T(\bolde_j) \amp \text{ (def. of \(A\)) }</mrow>
+        </md>
+      </p>
+      <p>
+        We've shown that <m>T_A(\bolde_j)=T(\bolde_j)</m> for all <m>\bolde_j\in B</m>.
+        <xref ref="th_Tbasis">Theorem</xref> implies <m>T=T_A</m>.
+      </p>
+    </proof>
+  </paragraphs>
+  <paragraphs>
+    <title>Linear transformations of $\R^n$</title>
+    <p>
+      Once we know a given function <m>T\colon \R^n\rightarrow\R^m</m> is linear,
+      the recipe provided in the previous proof allows us to quickly compute the matrix
+      <m>\underset{m\times n}{A}</m> such that <m>T=T_A</m>:
+      simply set the <m>j</m>-th column of <m>A</m> equal to <m>T(\bolde_j)</m>.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Consider again rotation by <m>\theta</m>,
+          <m>T_\theta\colon \R^2\rightarrow \R^2</m>,
+          where <m>\theta</m> is a fixed angle.
+        </p>
+        <p>
+          Once we know <m>T_\theta</m> is linear
+          (we do now, but this wasn't obvious),
+          then we easily come up with the matrix
+          <m>A_\theta</m> that defines <m>T_\theta</m>.
+        </p>
+        <p>
+          The <em>first column</em> of <m>A_\theta</m> is
+          <me>
+            T_\theta(\bolde_1)=T_\theta (\cos(0),\sin(0))=(\cos(\theta),\sin(\theta))
+          </me>.
+        </p>
+        <p>
+          The <em>second column</em> of <m>A_\theta</m> is
+          <me>
+            T_\theta(\bolde_2)=T_\theta (\cos(\pi/2),\sin(\pi/2))=(\cos(\pi/2+\theta),\sin(\pi/2+\theta))=(-\sin(\theta), \cos(\theta))
+          </me>.
+        </p>
+        <p>
+          Thus <m>A_\theta=\begin{bmatrix}\cos\theta\amp -\sin\theta \\ \sin\theta\amp \cos\theta \end{bmatrix}</m>.
+        </p>
+      </statement>
+    </example>
+  </paragraphs>
+</section>

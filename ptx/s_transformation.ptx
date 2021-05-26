@@ -1,0 +1,467 @@
+<section xml:id="ss_transformation">
+  <title>Linear transformations</title>
+  <paragraphs>
+  <title><xref ref="c_vectorspace"></xref>. <xref ref="ss_transformation"></xref>: executive summary</title>
+  <paragraphs>
+    <title>Definitions:</title>
+    <p>
+      linear transformation. \alert{Procedures:} none. \alert{Theorems:} none,
+      but plenty of examples!
+    </p>
+  </paragraphs>
+  </paragraphs>
+  <paragraphs>
+    <title><xref ref="c_vectorspace"></xref>. <xref ref="ss_transformation"></xref>: introduction</title>
+    <p>
+      <xref ref="c_vectorspace">In</xref>.
+      <xref ref="ss_vectorspace"></xref>
+      we introduced the general notion of a vector space <m>V</m>.
+      In this section we study special functions between vector spaces,
+      called <em>linear transformations</em>.
+    </p>
+    <p>
+      This manner of theorizing is typical in mathematics:
+      first we introduce a special class of objects (e.g. vector spaces,
+      manifolds, groups,
+      etc.), then we introduce special functions or maps between these objects.
+      Since the original objects of study (e.g. vector spaces) come equipped with a certain structure (e.g. vector scalar multiplication and addition),
+      the functions between these objects should in some sense
+      <em>respect</em> this structure.
+    </p>
+    <p>
+      You have already seen this principle at work in your study of calculus.
+      First we give <m>\R</m> some structure by defining a notion of proximity (i.e., <m>x</m> is close to <m>y</m> if <m>\val{x-y}</m> is small),
+      then we introduce a special family of functions that somehow respects this structure:
+      these are precisely the <em>continuous</em> functions!
+    </p>
+    <p>
+      The definition of linear transformation will make explicit what I mean by respecting the vector space structure.
+    </p>
+    <p>
+      In the meantime rejoice in the fact that we can now give a succinct,
+      general definition of linear algebra:
+      it is the theory of vector spaces and the linear transformations between them.
+      Go shout it from the rooftops!
+    </p>
+  </paragraphs>
+  <paragraphs>
+  <title><xref ref="c_vectorspace"></xref>. <xref ref="ss_transformation"></xref>: linear transformations</title>
+  <definition>
+    <statement>
+      <p>
+        Let <m>V</m> and <m>W</m> be vector spaces.
+        A <term>linear transformation</term>
+        is a function <m>T\colon V\rightarrow W</m> that satisfies the following properties:
+        <ol>
+          <li>
+            <p>
+              <m>T(\boldv_1+\boldv_2)=T(\boldv_1)+T(\boldv_2)</m> for all <m>\boldv_1,\boldv_2\in V</m>;
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>T(k\boldv)=kT(\boldv)</m> for all <m>k\in\R</m> and <m>\boldv\in V</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </definition>
+  <paragraphs>
+    <title>Comments</title>
+  </paragraphs>
+  <ol>
+    <li>
+      <p>
+        If <m>T\colon V\rightarrow W</m> is linear it follows automatically that <m>T(\boldzero_V)=\boldzero_W</m>.
+        Indeed, we have <m>T(\boldzero_V)=T(0\cdot\boldzero_V)=0T(\boldzero_V)=\boldzero_W</m>.
+      </p>
+    </li>
+    <li>
+      <p>
+        Useful shortcut:
+        we can prove both properties (i) and (ii) hold in one shot by showing
+        <m>T(c_1\boldv_1+c_2\boldv_2)=c_1T(\boldv_1)+c_2T(\boldv_2)</m> for all <m>c_1,c_2\in\R</m>,
+        <m>\boldv_1,\boldv_2\in V</m>.
+      </p>
+    </li>
+    <li>
+      <p>
+        We can combine properties (i)-(ii) and use induction to conclude that if <m>T</m> is linear,
+        then <m>T(c_1\boldv_1+c_2\boldv_2+\cdots+c_r\boldv_r)=c_1T(\boldv_1)+c_2T(\boldv_2)+\cdots+c_rT(\boldv_r)</m> for all
+        <m>c_i\in\R</m> and <m>\boldv_i\in V</m>.
+      </p>
+    </li>
+    <li>
+      <p>
+        How does <m>T</m> respect the vector space structure?
+        In plain English: the image of a sum is the sum of the images,
+        and the image of a scalar multiple is the scalar multiple of the image.
+        Alternatively, a linear transformation <em>distributes</em>
+        over linear combinations of vectors,
+        as we saw in the previous comment.
+      </p>
+    </li>
+  </ol>
+  </paragraphs>
+  <paragraphs>
+    <title>Function terminology and notation</title>
+    <p>
+      Now is a good time to review some concepts and notations related to functions.
+    </p>
+    <p>
+      A <term>function</term> with <term>domain</term>
+      the set <m>A</m> and <term>codomain</term>
+      the set <m>B</m> is a <em>rule</em> that,
+      given an <term>input</term> <m>a\in A</m>,
+      returns an <term>output</term> <m>b=f(a)\in B</m>.
+      We write <m>f\colon A\rightarrow B</m>,
+      or <m>A\xrightarrow{f} B</m>, to indicate this.
+    </p>
+    <p>
+      The
+      <q>maps to</q>
+      symbol <m>a\mapsto f(a)</m> can be used in conjunction with the notation above to give more detail about what <m>f</m> is.
+      For example
+      <md>
+        <mrow>f\colon \R\amp \rightarrow \R</mrow>
+        <mrow>x\amp \xmapsto{\hspace{10pt}} f(x)=x^2</mrow>
+      </md>
+      denotes the squaring function from <m>\R</m> to <m>\R</m>.
+    </p>
+    <p>
+      Given <m>b=f(a)</m>, we call <m>b</m> the
+      <term>image of <m>a</m> under <m>f</m></term>,
+      or the <term>value of <m>f</m> at <m>a</m></term>.
+      Similarly, given a subset <m>X\subseteq A</m>,
+      we define the <term>image of <m>X</m> under <m>f</m></term> to the be
+      <me>
+        f(X):=\{f(a)\colon a\in X\}=\{b\in B\colon b=f(a) \text{ for some } a\in X\}
+      </me>.
+    </p>
+  </paragraphs>
+  <paragraphs>
+  <title>Example: \alert{the zero transformation}</title>
+  <p>
+    Given any vector spaces <m>V</m> and <m>W</m>,
+    the <term>zero transformation</term>
+    <m>T_0\colon V\rightarrow W</m> is defined as
+    <m>T_0(\boldv)=\boldzero_W</m> for all <m>\boldv\in V</m>.
+  </p>
+  <paragraphs>
+    <title>Claim</title>
+    <p>
+      : <m>T_0\colon V\rightarrow W</m> is a linear transformation.
+    </p>
+  </paragraphs>
+  <proof>
+    <p>
+      We must show
+      <me>
+        T_0(c_1\boldv_1+c_2\boldv_2)=c_1T_0(\boldv_1)+c_2T_0(\boldv_2)
+      </me>
+      for all <m>c_i\in\R</m> and <m>\boldv_i\in V</m>.
+    </p>
+    <p>
+      This is obvious:
+      since <m>T_0(\boldv)=\boldzero_W</m> for all <m>\boldv\in V</m>,
+      the LHS and RHS of the equation above are both equal to <m>\boldzero_W</m>.
+    </p>
+  </proof>
+  </paragraphs>
+  <paragraphs>
+  <title>Example: \alert{the identity transformation}</title>
+  <p>
+    Given a vector space <m>V</m> the
+    <term>identity transformation (on <m>V</m>)</term>
+    <m>I_V\colon V\rightarrow V</m> is defined as
+    <m>I_V(\boldv)=\boldv</m> for all <m>\boldv\in V</m>.
+  </p>
+  <paragraphs>
+    <title>Claim</title>
+    <p>
+      : <m>I_V\colon V\rightarrow V</m> is a linear transformation.
+    </p>
+  </paragraphs>
+  <proof>
+    <p>
+      We must show
+      <me>
+        I_V(c_1\boldv_1+c_2\boldv_2)=c_1I_V(\boldv_1)+c_2I_V(\boldv_2)
+      </me>
+      for all <m>c_i\in\R</m> and <m>\boldv_i\in V</m>.
+    </p>
+    <p>
+      Again, this is fairly obvious.
+    </p>
+    <p>
+      The LHS of the above equation is <m>I_V(c_1\boldv_1+c_2\boldv_2)=c_1\boldv_1+c_2\boldv_2</m>,
+      by definition of the function <m>I_V</m>.
+    </p>
+    <p>
+      The RHS of the equation is <m>c_1I_V(\boldv_1)+c_2I_V(\boldv_2)=c_1\boldv_1+c_2\boldv_2</m>,
+      again by definition of the function <m>I_V</m>.
+    </p>
+    <p>
+      This shows LHS=RHS, as desired.
+    </p>
+  </proof>
+  </paragraphs>
+  <paragraphs>
+    <title>Important example: \alert{matrix transformations}</title>
+    <definition>
+      <statement>
+        <p>
+          Let <m>A</m> be an <m>m\times n</m> matrix.
+          The <term>linear transformation associated to <m>A</m></term>,
+          denoted <m>T_A</m>,
+          is the function <m>T_A\colon\R^n\rightarrow \R^m</m> defined as <m>T_A(\boldx)=A\boldx</m>.
+        </p>
+        <p>
+          Note: here we treat <m>\R^n</m> and <m>\R^m</m> as collections of column vectors.
+        </p>
+      </statement>
+    </definition>
+    <theorem>
+      <statement>
+        <p>
+          Let <m>A</m> be an <m>m\times n</m> matrix.
+          Then <m>T_A\colon \R^n\rightarrow\R^m</m> is a linear transformation from <m>\R^n</m> to <m>\R^m</m>.
+        </p>
+      </statement>
+    </theorem>
+    <proof>
+      <p>
+        As usual, we must show <m>T_A(c_1\boldx_1+c_2\boldx_2)=c_1T_A(\boldx_1)+c_2T_A(\boldx_2)</m>.
+        We do so via a chain of equalities:
+        <md>
+          <mrow>T_A(c_1\boldx_1+c_2\boldx_2)\amp =\amp A(c_1\boldx_1+c_2\boldx_2) \ \text{ (def. of \(T_A\)) }</mrow>
+          <mrow>\amp =\amp c_1A\boldx_1+c_2A\boldx_2 \ \text{ (prop. of matrix mult.) }</mrow>
+          <mrow>\amp =\amp c_1T_A(\boldx_1)+c_2T_A(\boldx_2) \ \text{ (def. of \(T_A\)) }</mrow>
+        </md>
+      </p>
+      <p>
+        This shows <m>T_A</m> is a linear transformation.
+      </p>
+    </proof>
+  </paragraphs>
+  <paragraphs>
+    <title>Important example: \alert{matrix transformations}</title>
+    <p>
+      We will show later that in fact <em>all</em>
+      linear transformations from <m>\R^n</m> to <m>\R^m</m> are of the form <m>T_A</m> for some <m>m\times n</m> matrix <m>A</m>!
+      In other words,
+      matrices gives us the full picture in terms of linear transformations.
+    </p>
+    <p>
+      In the meantime,
+      matrix transformations give us a way of <em>retroactively</em>
+      justifying our definition of matrix multiplication!
+      Here's how.
+    </p>
+    <p>
+      Given <m>A\in M_{mn}</m> and <m>B\in M_{np}</m>,
+      let <m>C=AB</m> be their product. (Note that <m>C\in M_{mp}</m>).
+    </p>
+    <p>
+      We have associated functions
+      <m>T_A\colon \R^n\rightarrow \R^m</m> and <m>T_B\colon \R^p\rightarrow\R^n</m>.
+      These functions can be <em>composed</em>
+      to form a new function <m>T=T_A\circ T_B\colon \R^p\rightarrow \R^m</m>!
+      Here is a diagram of the situation:
+    </p>
+    <image source="images/b4eb52bfe174fb5fb20b08e96e8629964ba3aade.png"/>
+    <p>
+      I claim that <m>T</m> is none other than the matrix transformation <m>T_C</m>.
+      In other words,
+      the definition of matrix multiplication was chosen precisely in order to model the composition of matrix transformations!
+    </p>
+    <p>
+      I leave the proof as an exercise.
+    </p>
+  </paragraphs>
+  <paragraphs>
+    <title>Geometric example: \alert{rotation in the plane}</title>
+    <p>
+      Fix an angle <m>\alpha</m> and define <m>T\colon \R^2\rightarrow \R^2</m> to be
+      <term>rotation by <m>\alpha</m></term>:
+      in other words,
+      <m>T</m> takes a point <m>P=(x,y)</m> in <m>\R^2</m> with polar coordinates
+      <m>(r, \theta)</m> and maps it to the point <m>T(P)=Q</m> with polar coordinates <m>(r, \theta+\alpha)</m>.
+    </p>
+    <p>
+      Treating elements of <m>\R^2</m> as column vectors we have
+      <me>
+        T\left (\begin{bmatrix}x \\ y \end{bmatrix} \right)=T\left( \begin{bmatrix}r\cos \theta\\ r\sin \theta \end{bmatrix} \right)=\begin{bmatrix}r\cos(\theta+\alpha)\\ r\sin(\theta+\alpha) \end{bmatrix}
+      </me>,
+      where <m>(x,y)</m> has polar coordinates <m>(r,\theta)</m>.
+    </p>
+    <p>
+      Somewhat surprisingly, <m>T</m> is a linear transformation!
+    </p>
+    <p>
+      You can either show this directly,
+      by proving <m>T(\boldx_1+\boldx_2)=T(\boldx_1)+T(\boldx_2)</m> and <m>T(c\boldx)=cT(\boldx)</m>,
+      or indirectly,
+      by proving that <m>T=T_A</m> where <m>A=\begin{bmatrix}\cos\alpha\amp -\sin\alpha\\ \sin\alpha\amp \cos\alpha \end{bmatrix}</m>.
+      I leave this as an exercise.
+    </p>
+  </paragraphs>
+  <paragraphs>
+  <title>Exotic example: \alert{transposition}</title>
+  <p>
+    Let <m>V=M_{mn}</m>, <m>W=M_{nm}</m>.
+    Define <m>S\colon M_{mn}\rightarrow M_{nm}</m> as <m>S(A)=A^T</m>.
+    In other words, <m>S</m> takes an input
+    <m>m\times n</m> matrix and returns as an output its transpose.
+  </p>
+  <p>
+    (Note: I name the function <m>S</m> so as not to conflict with <sq>T</sq> in our transpose notation.)
+  </p>
+  <paragraphs>
+    <title>Claim</title>
+    <p>
+      : <m>S</m> is a linear transformation.
+    </p>
+  </paragraphs>
+  <proof>
+    <p>
+      We must show <m>S(cA+dB)=cS(A)+dS(B)</m> for all scalars
+      <m>c,d\in\R</m> and all matrices <m>A, B\in M_{mn}</m>.
+      This follows easily from properties of transpose:
+      <md>
+        <mrow>S(cA+dB)\amp =(cA+dB)^T \amp \text{ (def. of \(S\)) }</mrow>
+        <mrow>\amp =(cA)^T+(dB)^T \amp \text{ (addition prop. of transpose) }</mrow>
+        <mrow>\amp =cA^T+dB^T \amp \text{ (scalar prop. of transpose) }</mrow>
+        <mrow>\amp =cS(A)+dS(B)</mrow>
+      </md>
+    </p>
+  </proof>
+  </paragraphs>
+  <p>
+    Note further, that if we let <m>\phi</m> be the angle between
+    <m>\boldy=(y_1,y_2)</m> and <m>(1,0)</m>, then
+    <paragraphs>
+    <title>Exotic example: \alert{shift transformations}</title>
+    <p>
+      Let <m>V=\R^\infty</m>, the vector space of all infinite sequences.
+    </p>
+    <p>
+      The <term>left-shift transformation</term>,
+      denoted <m>T_\ell</m> is the function <m>T_\ell\colon \R^\infty\rightarrow\R^\infty</m> defined as
+      <me>
+        T_\ell\left( (a_1,a_2,a_3,\dots)\right)=(a_2,a_3,\dots)
+      </me>.
+    </p>
+    <p>
+      The <term>right-shift transformation</term>,
+      denoted <m>T_r</m> is the function <m>T_r\colon \R^\infty\rightarrow\R^\infty</m> defined as
+      <me>
+        T_r\left( (a_1,a_2,a_3,\dots)\right)=(0,a_1,a_2,a_3,\dots)
+      </me>.
+    </p>
+    <p>
+      In other words,
+      <m>T_\ell</m> takes an input sequence and returns as an output the sequence obtained by shifting all terms one to the left;
+      <m>T_r</m> takes an input sequence and returns as an output the sequence obtained by shifting all terms one to the right and setting the first term equal to 0.
+    </p>
+    <paragraphs>
+      <title>Claim</title>
+      <p>
+        : <m>T_\ell</m> and <m>T_r</m> are both linear transformations.
+      </p>
+    </paragraphs>
+    <proof>
+      <p>
+        Exercise.
+      </p>
+    </proof>
+    </paragraphs>
+    <paragraphs>
+    <title>Exotic example: \alert{differentiaton}</title>
+    <p>
+      Let <m>V=C^\infty(\R)</m>,
+      the vector space of all infinitely differentiable functions on <m>\R</m>.
+      Define <m>T\colon C^\infty(\R)\rightarrow C^\infty(\R)</m> by <m>T(f)=f'</m>.
+      In other words, <m>T</m> takes as an input a function <m>f</m>,
+      and returns as an output its derivative function <m>f'</m>.
+    </p>
+    <paragraphs>
+      <title>Claim</title>
+      <p>
+        : <m>T</m> is a linear transformation.
+      </p>
+    </paragraphs>
+    <proof>
+      <p>
+        We must show <m>T(cf+dg)=cT(f)+dT(g)</m> for any scalars
+        <m>c,d\in\R</m> and any functions <m>f, g\in C^\infty(\R)</m>.
+      </p>
+      <p>
+        This follows easily from certain properties of the derivative:
+        <md>
+          <mrow>T(cf+dg)\amp =(cf+dg)' \amp \text{ (def. of \(T\)) }</mrow>
+          <mrow>\amp =(cf)'+(dg)'\amp \text{ (addition prop. of derivative) }</mrow>
+          <mrow>\amp =cf'+dg' \amp \text{ (scalar prop. of derivative) }</mrow>
+          <mrow>\amp =cT(f)+dT(g) \amp \text{ (def. of \(T\)) }</mrow>
+        </md>
+      </p>
+    </proof>
+    </paragraphs>
+    \item Let <m>V=P_n</m> and <m>W=P_{n+1}</m>,
+    the function \item Let <m>V=M_{mn}</m>, <m>W=M_{nm}</m>.
+    The function \item Let <m>V=C^1(-\infty,\infty)</m>,
+    <m>W=C(-\infty,\infty)</m>.
+    The function
+  </p>
+  <p>
+    \item Both <m>\NS(T)</m> and
+    <m>\range(T)</m> are indeed <em>subspaces</em>.
+    Note that they live in different spaces:
+    <m>\NS(T)\subseteq V</m> and <m>\range(T)\subseteq W</m>. \item We define
+    <m>\nullity(T)=\dim(\NS(T))</m> and <m>\rank(T)=\dim(\range(T))</m>.
+  </p>
+  <p>
+    \item We must show <m>\boldzero_W\in \range(T)</m>.
+    But <m>\boldzero_W=T(\boldzero_V)</m>.
+    Thus there is a <m>\boldv\in V</m> with <m>T(\boldv)=\boldzero_W</m>,
+    which proves that <m>\boldzero_W\in\range(T)</m>. \item Suppose <m>\boldw_1,\boldw_2\in \range(T)</m>.
+    This means there are <m>\boldv_1, \boldv_2\in V</m> such that <m>T(\boldv_i)=\boldw_i</m> for <m>i=1,2</m>.
+    We must show <m>\boldw=\boldw_1+\boldw_2\in\range(T)</m>.
+  </p>
+  <p>
+    \item Suppose <m>\boldw\in\range(T)</m>.
+    Then there is a <m>\boldv\in V</m> with <m>T(\boldv)=\boldw</m>.
+    Then <m>T(k\boldv)=kT(\boldv)=k\boldw</m>,
+    showing <m>k\boldw\in\range(T)</m>.
+  </p>
+  <p>
+    Let <m>S=\{\boldv_1,\boldv_2,\dots, \boldv_r\}</m> be a basis of <m>\NS(T)</m>; \alert{extend} this basis to a full basis <m>\{\boldv_1,\boldv_2,\dots, \boldv_r, \boldu_{1},\dots \boldu_{n-r}\}</m> of <m>V</m>.
+    Claim: <m>S'=\{T(\boldu_{1}),\dots, T(\boldu_{n-r})\}</m> is a basis of <m>\range(T)</m>.
+    If this is true we are done,
+    since we have <m>\dim(\NS(T))=\#S=r</m> and <m>\dim(\range(T))=\#S'=n-r</m>,
+    and thus Now ask your professor to prove the claim.
+  </p>
+  <p>
+    \item easily check whether two linear transformations are equal simply by checking that they agree on the basis elements <m>\boldv_i</m>.
+  </p>
+  <p>
+    Then
+  </p>
+  <p>
+    A simple drawing on the unit circle tells us what happens to these vectors when we rotate them by <m>\theta</m>.
+    We get:
+  </p>
+  <p>
+    Note further, that if we let <m>\phi</m> be the angle between
+    <m>\boldy=(y_1,y_2)</m> and <m>(1,0)</m>, then
+  </p>
+  <p>
+    Thus <m>\text{ proj } _W=T_A</m>,
+    where $A=\frac{1}{a^2+b^2+c^2}\begin{bmatrix}
+  </p>
+  <p>
+    Thus $\text{ proj } _W=T_A<m>,
+    where</m>A=\frac{1}{a^2+b^2+c^2}\begin{bmatrix}
+  </p>
+</section>

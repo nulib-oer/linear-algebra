@@ -1,0 +1,312 @@
+<section xml:id="ss_invertible">
+  <title>More on invertibility</title>
+  <paragraphs>
+  <title><xref ref="c_linear_systems"></xref>: <xref ref="ss_invertible"></xref>: executive summary</title>
+  <paragraphs>
+    <title>Definitions:</title>
+    <p>
+      none. \alert{Procedures:} deciding when a linear system
+      <m>A\boldx=\boldb</m> is consistent. \alert{Theorems:} invertibility theorem (expanded),
+      <m>AB</m> invertible if and only if <m>A</m> and <m>B</m> are invertible,
+      <m>A</m> is a left inverse of <m>B</m> if and only if <m>A</m> is a right inverse of <m>B</m>.
+    </p>
+  </paragraphs>
+  </paragraphs>
+  <paragraphs>
+    <title><xref ref="c_linear_systems"></xref>: <xref ref="ss_invertible"></xref>: expanded invertibility theorem</title>
+    <p>
+      We add two more equivalent statements of invertibility to our invertibility theorem (IT).
+    </p>
+    <theorem>
+      <title>Expanded invertibility theorem</title>
+      <statement>
+        <p>
+          Let <m>A=[a_{ij}]</m> be a square <m>n\times n</m> matrix.
+          The following statements are equivalent.
+          <ol>
+            <li>
+              <p>
+                <m>A</m> is invertible.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>A\boldx=\boldzero</m> has a unique solution
+                (the trivial one).
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>A</m> is row equivalent to <m>I_n</m>,
+                the <m>n\times n</m> identity matrix.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>A</m> is a product of elementary matrices.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>A\boldx=\boldb</m> has a <em>unique</em>
+                solution for every <m>n\times 1</m> column vector <m>\boldb</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>A\boldx=\boldb</m> has a solution for every
+                <m>n\times 1</m> column vector <m>\boldb</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </theorem>
+    <proof>
+      <p>
+        We already know statements (a)-(d) are equivalent.
+        Adding (e) and (f) to this list is left as an exercise.
+      </p>
+    </proof>
+  </paragraphs>
+  <corollary>
+    <statement>
+      <p>
+        Let <m>A</m> and <m>B</m> be <m>n\times n</m>.
+        Then <m>AB</m> is invertible if and only if <m>A</m> and <m>B</m> are both invertible.
+      </p>
+    </statement>
+  </corollary>
+  <proof>
+    <p>
+      We have already proved the
+      <m>\Leftarrow</m> direction of this equivalnce.
+    </p>
+    <p>
+      For the <m>\Rightarrow</m> direction,
+      assume <m>AB</m> is invertible and let <m>C</m> be its inverse,
+      so that <m>C(AB)=(AB)C=I_n</m>.
+    </p>
+    <p>
+      We first prove <m>B</m> is invertible,
+      using equivalent statement (b) of IT; that is we will prove the implication <m>B\boldx=\boldzero\Rightarrow \boldx=\boldzero</m>.
+      <md>
+        <mrow>B\boldx=\boldzero\amp \Rightarrow \amp  AB\boldx=\boldzero</mrow>
+        <mrow>\amp \Rightarrow\amp  \boldx=\boldzero \ \text{ (since \(AB\) invertible) } </mrow>
+      </md>.
+    </p>
+    <p>
+      This proves <m>B</m> is invertible,
+      and hence that <m>B^{-1}</m> exists.
+    </p>
+    <p>
+      Next we prove <m>A</m> is invertible,
+      by explicitly exhibiting an inverse:
+      namely, <m>A^{-1}=BC</m>.
+    </p>
+    <p>
+      Indeed we have <m>A(BC)=(AB)C=I_n</m>, from above.
+      For the other direction we have
+      <md>
+        <mrow>C(AB)=I\amp \Leftrightarrow\amp  CA=B^{-1} \ \text{ (mult. both sides on right by \(B^{-1}\))}</mrow>
+        <mrow>\amp \Leftrightarrow\amp  (BC)A=I_n \text{ (mult. both sides on left by \(B\)) } </mrow>
+      </md>.
+    </p>
+    <p>
+      This proves <m>A</m> and <m>B</m> are both invertible,
+      and completes our proof.
+    </p>
+  </proof>
+  <corollary>
+    <statement>
+      <p>
+        Let <m>A</m> and <m>B</m> be <m>n\times n</m>.
+        <ol>
+          <li>
+            <p>
+              <m>BA=I_n\Rightarrow AB=I_n</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>AB=I_n\Rightarrow BA=I_n</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </corollary>
+  <p>
+    In other words,
+    to show <m>B</m> is the inverse of <m>A</m> it is enough to show either that it is a left-inverse (<m>BA=I_n</m>),
+    or a right-inverse
+    (<m>AB=I_n</m>).
+  </p>
+  <proof>
+    <p>
+      It is enough to prove the first implication:
+      the second then follows by exchanging the roles of <m>A</m> and <m>B</m>!
+    </p>
+    <p>
+      Suppose <m>BA=I_n</m>.
+      I will first show that <m>A</m> is invertible.
+      Indeed, suppose <m>A\boldx=\boldzero</m>.
+      Then <m>BA\boldx=\boldzero</m>.
+      But <m>BA=I_n</m>,
+      and <m>I\boldx=\boldzero</m> implies <m>\boldx=\boldzero</m>.
+      It follows from statement (b) of IT that <m>A</m> is invertible.
+    </p>
+    <p>
+      Now that we know <m>A^{-1}</m> exists we have
+      <md>
+        <mrow>BA=I_n\amp \Rightarrow \amp  B=A^{-1} \ \text{ (mult. both sides on right by \(A^{-1}\))}</mrow>
+        <mrow>\amp \Rightarrow \amp AB=I_n \ \text{ (mult. both sides on left by \(A\)) }</mrow>
+      </md>
+    </p>
+  </proof>
+  <paragraphs>
+  <title>When is a linear system consistent</title>
+  <p>
+    Consider a general linear equation
+    <me>
+      \scriptsize \eqsys
+    </me>
+    which we represent as a matrix equation
+    <me>
+      \underset{m\times n}{A}\cdot \underset{{n\times 1}}{\boldx}=\underset{m\times 1}{\boldb}
+    </me>.
+  </p>
+  <paragraphs>
+    <title>Question:</title>
+    <p>
+      what conditions on <m>A</m> and <m>\boldb</m> guarantee the system is consistent;
+      equivalently, when we can solve the matrix equation above?
+    </p>
+  </paragraphs>
+  <paragraphs>
+    <title>Partial answer:</title>
+    <p>
+      the preceding discussion gives us a partial answer.
+      If <m>A</m> happens to be an <em>invertible matrix</em>
+      (in particular, it must be square!),
+      then the equation is guaranteed to have a (unique) solution.
+      We just solve for <m>\boldx</m> directly in this case:
+      <m>\boldx=A^{-1}\boldb</m>.
+    </p>
+  </paragraphs>
+  <paragraphs>
+    <title>Otherwise:</title>
+    <p>
+      if <m>A</m> is not invertible,
+      then we resort to the theory of Gaussian elimination to answer the question.
+      Take the augmented matrix <m>[A \vert \boldb]</m>,
+      row reduce to row echelon form
+      <m>[U\vert \boldb']</m> and reason from there.
+      The example that follows illustrates this.
+    </p>
+  </paragraphs>
+  </paragraphs>
+  <paragraphs>
+    <title>Example</title>
+    <p>
+      Find all <m>b_1,b_2,b_3</m> for which the following system is consistent:
+      <md>
+        \begin{linsys}{3} x_1\amp +\amp x_2\amp +\amp 2x_3\amp =\amp  b_1\\ x_1\amp  \amp  \amp +\amp x_3\amp =\amp b_2\\ 2x_1\amp +\amp x_2\amp +\amp 3x_3\amp =\amp b_3 \end{linsys}
+      </md>
+    </p>
+    <p>
+      \begin{bsolution} We consider the augmented matrix <m>[A \vert \boldb]</m> and row reduce
+      <me>
+        \begin{bmatrix}1\amp 1\amp 2\amp b_1\\ 1\amp 0\amp 1\amp b_2\\ 2\amp 1\amp 3\amp b_3 \end{bmatrix} \xrightarrow{\text{ row red. } } \begin{bmatrix}1\amp 1\amp 2\amp b_1\\ 0\amp 1\amp 1\amp b_2-b_1\\ 0\amp 0\amp 0\amp b_3-b_2-b_1 \end{bmatrix}
+      </me>
+    </p>
+    <p>
+      Note: since the <m>3\times 3</m> matrix on the left only 2 leading 1's, we know <m>A</m> is not invertible.
+    </p>
+    <p>
+      But of course that doesn't mean that the given system is necessarily inconsistent!
+    </p>
+    <p>
+      Indeed, the theory of Gaussian elimination tells us that the system will be consistent if and only if <m>b_3-b_2-b_1=0</m>.
+    </p>
+    <p>
+      We conclude the original system is consistent if and only if <m>b_3=b_2+b_1</m>:
+      equivalently, iff
+      <me>
+        \boldb=\begin{bmatrix}b_1\\b_2\\b_1+b_2 \end{bmatrix}
+      </me>.
+    </p>
+    <p>
+      \end{bsolution}
+    </p>
+  </paragraphs>
+  <paragraphs>
+    <title>Diagonal, triangular and symmetric matrices</title>
+    <p>
+      Lastly, we officially introduce some special families of square matrices,
+      as well as a corresponding invertibility theorem.
+      The proof of the latter will be done in class.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>A=[a_{ij}]</m> be <m>n\times n</m>.
+          We say
+          <ol type="i">
+            <li>
+              <p>
+                <m>A</m> is <term>diagonal</term>
+                if <m>a_{ij}=0</m> for all <m>(i,j)</m> with <m>i\ne j</m>. (
+                <q><m>A</m> is zero off the diagonal.</q>
+                )
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>A</m> is <term>upper triangular</term>
+                if <m>a_{ij}=0</m> for all <m>(i,j)</m> with <m>j>i</m>. (
+                <q><m>A</m> is zero below the diagonal.</q>
+                )
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>A</m> is <term>lower triangular</term>
+                if <m>a_{ij}=0</m> for all <m>(i,j)</m> with <m>i>j</m>. (
+                <q><m>A</m> is zero above the diagonal.</q>
+                )
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>A</m> is <term>triangular</term>
+                if <m>A</m> is upper triangular or lower triangular.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>A</m> is <term>symmetric</term> if <m>A^T=A</m>.
+                (Equivalently,
+                <m>a_{ij}=a_{ji}</m> for all <m>1\leq i,j\leq n</m>.)
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </definition>
+    <theorem>
+      <title>Invertibility of triangular matrices</title>
+      <statement>
+        <p>
+          Let <m>A=[a_{ij}]</m> be a triangular <m>n\times n</m> matrix.
+          Then <m>A</m> is invertible if and only if
+          <m>a_{ii}\ne 0</m> for all <m>1\leq i\leq n</m>.
+        </p>
+        <p>
+          In other words,
+          <m>A</m> is invertible if and only if the diagonal entries of <m>A</m> are all nonzero.
+        </p>
+      </statement>
+    </theorem>
+  </paragraphs>
+</section>

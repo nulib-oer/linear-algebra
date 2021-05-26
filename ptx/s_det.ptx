@@ -1,0 +1,318 @@
+<section xml:id="ss_det">
+  <title>The determinant</title>
+  <paragraphs>
+  <title><xref ref="c_det"></xref>. <xref ref="ss_det"></xref>- <xref ref="c_det"></xref>. <xref ref="ss_further"></xref>: executive summary</title>
+  <paragraphs>
+    <title>Definitions:</title>
+    <p>
+      determinant, minors,
+      cofactors. \alert{Procedures:} determinant. \alert{Theorems:}
+      <m>\det(A)\ne 0</m> iff <m>A</m> invertible;
+      <m>\det(AB)=\det(A)\det(B)</m>,
+      how row reduction affects determinant,
+      some other determinant properties.
+    </p>
+  </paragraphs>
+  </paragraphs>
+  <paragraphs>
+    <title><xref ref="c_det"></xref>. <xref ref="ss_det"></xref>: determinants</title>
+    <p>
+      The <em>determinant</em> is a map that assigns to a square matrix <m>A</m> a scalar,
+      called <m>\det(A)</m>:
+      <me>
+        A\mapsto \det(A)
+      </me>.
+    </p>
+    <p>
+      As you will see,
+      the definition of the determinant is far from intuitive;
+      nonetheless the determinant will be very useful to us.
+      In particular we shall see that
+      <me>
+        A \text{ is invertible } \Leftrightarrow \det(A)\ne 0
+      </me>.
+    </p>
+    <p>
+      We will define the determinant <em>recursively</em>;
+      this means that when computing <m>\det A</m> for an
+      <m>n\times n</m> matrix will have to compute the determinant of certain smaller matrices.
+      We begin with the smallest cases:
+      <m>n=1</m> and <m>n=2</m>.
+    </p>
+    <definition>
+      <title>Small cases</title>
+      <statement>
+        <p>
+          Let <m>A=[a]</m> be a <m>1\times 1</m> matrix.
+          Then <m>\det(A)=a</m>.
+          Let <m>A=\abcdmatrix{a}{b}{c}{d}</m>.
+          Then <m>\det(A)=ad-bc</m>.
+        </p>
+      </statement>
+    </definition>
+  </paragraphs>
+  <definition>
+    <statement>
+      <p>
+        Let <m>A</m> be <m>n\times n</m>.
+      </p>
+      <p>
+        The <term><m>ij</m>-th minor of <m>A</m></term>, denoted <m>M_{ij}</m>,
+        is the determinant of the submatrix of <m>A</m> obtained by deleting the <m>i</m>-th row and <m>j</m>-th column.
+      </p>
+      <p>
+        The <term><m>ij</m>-th cofactor of <m>A</m></term>,
+        denoted <m>C_{ij}</m>, is defined as
+        <me>
+          C_{ij}=(-1)^{i+j}M_{ij}
+        </me>.
+      </p>
+    </statement>
+  </definition>
+  <definition>
+    <statement>
+      <p>
+        Let <m>A=[a_{ij}]_{n\times n}</m>.
+      </p>
+      <paragraphs>
+        <title>Expansion along row.</title>
+        <p>
+          Pick any <m>i</m>.
+          Then we define
+        </p>
+      </paragraphs>
+      <me>
+        \det(A)=\sum_{j=1}^na_{ij}C_{ij}=a_{i1}C_{i1}+a_{i2}C_{i2}\dots +a_{in}C_{in}
+      </me>
+      <paragraphs>
+        <title>Expansion along column.</title>
+        <p>
+          Pick any <m>j</m>.
+          Then we define
+        </p>
+      </paragraphs>
+      <me>
+        \det(A)=\sum_{i=1}^na_{ij}C_{ij}=a_{1j}C_{1j}+a_{2j}C_{2j}\dots +a_{nj}C_{nj}
+      </me>.
+    </statement>
+  </definition>
+  <p>
+    { Let <m>A=[a_{ij}]_{n\times n}</m>.
+  </p>
+  <paragraphs>
+    <title>Expansion along row.</title>
+    <p>
+      Pick any <m>i</m>.
+      Then we define
+    </p>
+  </paragraphs>
+  <me>
+    \det(A)=\sum_{j=1}^na_{ij}C_{ij}=a_{i1}C_{i1}+a_{i2}C_{i2}\dots +a_{in}C_{in}
+  </me>
+  <paragraphs>
+    <title>Expansion along column.</title>
+    <p>
+      Pick any <m>j</m>.
+      Then we define
+    </p>
+  </paragraphs>
+  <me>
+    \det(A)=\sum_{i=1}^na_{ij}C_{ij}=a_{1j}C_{1j}+a_{2j}C_{2j}\dots +a_{nj}C_{nj}
+  </me>.
+  <paragraphs>
+    <title>Comments</title>
+  </paragraphs>
+  <ol>
+    <li>
+      <p>
+        For this to be well-defined,
+        we should get the same value no matter which column or row we decide to use in order to compute the determinant.
+        <em>This is not at all obvious and technically needs to be proved!</em>
+      </p>
+    </li>
+    <li>
+      <p>
+        The definition <m>\det(A)</m> involves cofactors,
+        which themselves are computed by invoking the definition of the determinant on a smaller submatrix.
+        This means we keep invoking the recursive definition until we get down to <m>2\times 2</m> matrices,
+        where the determinant is given by a formula.
+      </p>
+    </li>
+    <li>
+      <p>
+        When <m>A</m> is written as a rectangular array,
+        we use vertical lines to denote determinant:
+        e.g., <m>\begin{vmatrix} a\amp b\\c\amp d \end{vmatrix} =ad-bc</m>.
+      </p>
+    </li>
+  </ol>
+  <paragraphs>
+    <title>Example</title>
+    <p>
+      Compute <m>\det(A)</m> for
+      <me>
+        A=\begin{bmatrix}2\amp 1\amp 0\amp 3\\ 0\amp 2\amp 1\amp 0\\ 4\amp 2\amp 1\amp 0\\ 0\amp 0\amp 0\amp 2 \end{bmatrix}
+      </me>
+    </p>
+    <p>
+      Choose the row/column along which you wish to expand wisely!
+      I pick the third column for its preponderance of 0's and 1's:
+      <md>
+        <mrow>\det(A)\amp =\amp 0M_{13}-M_{23}+M_{33}-0M_{43}</mrow>
+        <mrow>\amp =\amp -\begin{vmatrix} 2\amp 1\amp 3</mrow>
+        <mrow>4\amp 2\amp 0</mrow>
+        <mrow>0\amp 0\amp 2 \end{vmatrix} + \begin{vmatrix} 2\amp 1\amp 3</mrow>
+        <mrow>0\amp 2\amp 0</mrow>
+        <mrow>0\amp 0\amp 2 \end{vmatrix}</mrow>
+        <mrow>\amp =\amp -2\begin{vmatrix} 2\amp 1</mrow>
+        <mrow>4\amp 2 \end{vmatrix} + 2\begin{vmatrix} 2\amp 1</mrow>
+        <mrow>0\amp 2 \end{vmatrix}</mrow>
+        <mrow>\amp =\amp -0+8=8</mrow>
+      </md>.
+    </p>
+    <p>
+      What was I thinking?
+      I should have picked the last row!
+    </p>
+  </paragraphs>
+  <p>
+    The freedom to compute the determinant using any row or column leads to two important,
+    if obvious,
+    properties.
+  </p>
+  <theorem>
+    <statement>
+      <p>
+        Let <m>A</m> be <m>n\times n</m>.
+        If <m>A</m> has a row or column of zeros, then <m>\det(A)=0</m>.
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      Expand along the row
+      (or column)
+      of zeros.
+    </p>
+  </proof>
+  <theorem>
+    <statement>
+      <p>
+        For any <m>n\times n</m> matrix <m>A</m> we have <m>\det(A^T)=\det(A)</m>.
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      Expanding along the <m>i</m>-th row of <m>A</m> is the same as expanding along the <m>i</m>-th column of <m>A^T</m>.
+    </p>
+  </proof>
+  <p>
+    Because of its recursive definition,
+    we often resort to a proof by induction to show some property of determinants holds.
+  </p>
+  <theorem>
+    <statement>
+      <p>
+        The determinant of a triangular matrix is the the product of its diagonal entries;
+        that is, if <m>A=[a_{ij}]</m> is triangular,
+        then <m>\det(A)=a_{11}\cdot a_{22}\cdots a_{nn}</m>.
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      We will prove this for lower triangular matrices,
+      the proof for upper triangular matrices being exactly similar.
+    </p>
+    <p>
+      We proceed by induction on the size <m>n</m> of the matrix.
+    </p>
+    <paragraphs>
+      <title>Base case: n=1.</title>
+      <p>
+        If <m>A=[a]</m> is <m>1\times 1</m>,
+        then <m>\det(A)=a</m>, which is the product of its diagonal entries.
+      </p>
+    </paragraphs>
+    <paragraphs>
+      <title>Induction step.</title>
+      <p>
+        We assume that the proposition is true for <em>all</em>
+        lower triangular matrices of size <m>n-1</m>.
+      </p>
+    </paragraphs>
+    <p>
+      Let <m>A=[a_{ij}]_{n\times n}</m>.
+      We compute <m>\det(A)</m> by expanding along the top row.
+      Since <m>A</m> is lower triangular all the entries are 0 except <m>a_{11}</m> and we get <m>\det(A)=a_{11}M_{11}</m>.
+    </p>
+    <p>
+      Now <m>M_{11}=\det(\tilde{A})</m>,
+      where <m>\tilde{A}</m> is the submatrix of <m>A</m> obtained by deleting the first row and column.
+      This matrix is also lower triangular with diagonal entries <m>a_{22},a_{33},\dots,
+      a_{nn}</m>.
+      By the induction hypothesis <m>\det(\tilde{A})=a_{22}\cdot a_{33}\cdots a_{nn}</m>.
+    </p>
+    <p>
+      Thus <m>\det(A)=a_{11}\det(\tilde{A})=a_{11}\cdot a_{22}\cdots a_{nn}</m>,
+      as claimed.
+    </p>
+  </proof>
+  <theorem>
+    <statement>
+      <p>
+        Let <m>A</m> be <m>n\times n</m>, with <m>n\geq 2</m>,
+        and let <m>\tilde{A}</m> be the matrix obtained by swapping two rows of <m>A</m>.
+        Then <m>\det(A)=-\det(\tilde{A})</m>.
+      </p>
+      <p>
+        The same is true if <m>\tilde{A}</m> is the result of swapping two columns of <m>A</m>.
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      The second statement about swapping columns follows from the first and the fact that <m>\det A=\det A^T</m>.
+      I leave the details to you.
+    </p>
+    <p>
+      To prove the first statement we proceed by induction on <m>n</m>.
+    </p>
+    <paragraphs>
+      <title>Base case: <m>n=2</m>.</title>
+      <p>
+        Let <m>A=\begin{bmatrix}a\amp b\\c\amp d \end{bmatrix}</m>.
+        Then <m>\tilde{A}=\abcdmatrix{c}{d}{a}{b}</m>.
+        We have <m>\det(A)=ad-cb=-(cb-ad)=-\det(\tilde{A})</m>,
+        as claimed.
+      </p>
+    </paragraphs>
+    <paragraphs>
+      <title>Induction step.</title>
+      <p>
+        Assume <m>n\geq 3</m>.
+        We assume by induction that the result holds for any square matrices of size <m>n-1</m>.
+      </p>
+    </paragraphs>
+    <p>
+      Suppose <m>\tilde{A}</m> is the result of swapping the <m>i</m>-th and <m>j</m>-th rows of <m>A</m>.
+      Compute the determinants of <m>A</m> and <m>\tilde{A}</m> by expanding along
+      <em>any row other than the <m>i</m>-th or <m>j</m>-th rows</em>.
+      This is possible since <m>n\geq 3</m>.
+      Call this the <m>k</m>-th row.
+    </p>
+    <p>
+      The expansions for <m>\det(A)</m> and
+      <m>\det(\tilde{A})</m> differ only in terms of their minors,
+      <m>M_{k\ell}</m> and <m>\tilde{M}_{k\ell}</m>,
+      and these differ only in that the square matrices of size <m>n-1</m> involved have two rows swapped:
+      the ones corresponding the <m>i</m>-th and <m>j</m>-th rows of <m>A</m>!
+    </p>
+    <p>
+      By induction the determinants of these matrices differ by a factor of <m>(-1)</m>.
+      Thus <m>M_{k \ell}=-\tilde{M}_{k\ell}</m> for all <m>(k,\ell)</m>,
+      from which it follows that <m>\det(A)=-\det(\tilde{A})</m>.
+    </p>
+  </proof>
+</section>

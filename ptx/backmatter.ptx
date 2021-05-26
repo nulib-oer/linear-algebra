@@ -1,0 +1,18 @@
+<appendix xml:id="appendix-defs">
+  <title>Definitions</title>
+  <list-of elements="definition" divisions="section" />
+</appendix>
+<appendix xml:id="appendix-thms">
+  <title>Theorems</title>
+  <list-of elements="theorem" divisions="section" />
+</appendix>
+
+<appendix xml:id="appendix-egs">
+  <title>Examples</title>
+  <list-of elements="example" divisions="section" />
+</appendix>
+
+<index>
+    <title>Index</title>
+    <index-list />
+</index>

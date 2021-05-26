@@ -1,0 +1,256 @@
+<section xml:id="ss_independence">
+  <title>Linear independence</title>
+  <paragraphs>
+  <title><xref ref="c_vectorspace"></xref>. <xref ref="ss_independence"></xref>: executive summary</title>
+  <paragraphs>
+    <title>Definitions:</title>
+    <p>
+      linear independence, the Wronskian
+      <m>W(f_1,f_2,\dots,f_n)(x)</m>. \alert{Procedures:} how to determine whether a set of vectors is independent. \alert{Theorems:} if
+      <m>f_1,f_2,\dots,
+      f_n</m> are linearly dependent,
+      then <m>W(f_1,f_2,\dots,f_n)(x)=0</m> for all <m>x</m>.
+    </p>
+  </paragraphs>
+  </paragraphs>
+  <paragraphs>
+    <title><xref ref="c_vectorspace"></xref>. <xref ref="ss_independence"></xref>: linear independence</title>
+    <definition>
+      <statement>
+        <p>
+          Let <m>V</m> be a vector space.
+          A set <m>S=\{\boldv_1,\dots ,\boldv_r\}</m> of elements of <m>V</m> is
+          <term>linear independent</term> if
+          <me>
+            k_1\boldv_1+k_2\boldv_2+\cdots k_r\boldv_r=\boldzero \Rightarrow k_i=0 \text{ for all \(i\) }
+          </me>.
+        </p>
+        <p>
+          In other words, the only linear combination of the
+          <m>\boldv_i</m> yielding <m>\boldzero</m> is the
+          <term>trivial linear combination</term>
+          we get by setting <m>k_i=0</m> for all <m>i</m>.
+        </p>
+        <p>
+          The set <m>S</m> is <term>linearly dependent</term>
+          if it is not linearly independent;
+          i.e., if we can find a nontrivial linear combination of the
+          <m>\boldv_i</m> that yields <m>\boldzero</m>.
+        </p>
+      </statement>
+    </definition>
+    <theorem>
+      <statement>
+        <p>
+          The set <m>S</m> is linearly independent if and only if no element
+          <m>\boldv_i</m> can be written as a linear combination of the other <m>\boldv_j</m>.
+          Similarly, <m>S</m> is linearly dependent if and only if one of the elements
+          <m>\boldv_i</m> can be written as a linear combination of the remaining <m>\boldv_j</m>.
+        </p>
+      </statement>
+    </theorem>
+  </paragraphs>
+  <paragraphs>
+  <title>Example in $P_n$</title>
+  <paragraphs>
+    <title>General procedure:</title>
+    <p>
+      all questions of linear dependence can be boiled down to deciding whether a certain linear system can be solved or not!
+      Let <m>S=\{x^2+x-2, 2x^2+1, x^2-x\}\subset P_2</m>.
+      Decide whether <m>S</m> is linearly independent.
+    </p>
+  </paragraphs>
+  <proof>
+    <p>
+      First observe that <m>\boldzero=0x^2+0x+0</m>, the zero polynomial.
+    </p>
+    <p>
+      We ask whether there is a <em>nontrivial</em> combination
+      <md>
+        <mrow>a(x^2+x-2)+b(2x^2+1)+c(x^2-x)\amp =\amp 0x^2+0x+0</mrow>
+        <mrow>(a+2b+c)x^2+(a-c)x+(-2a+b)\amp =\amp 0x^2+0x+0</mrow>
+      </md>
+    </p>
+    <p>
+      Equating like terms gives us the linear system
+      <md>
+        \begin{linsys}{3} a\amp +\amp 2b\amp +\amp c\amp =\amp 0\\ a\amp \amp \amp -\amp c\amp =\amp 0\\ -2a\amp +\amp b \amp \amp  \amp =\amp 0 \end{linsys}
+      </md>
+    </p>
+    <p>
+      Row reduction shows this system only has the trivial solution <m>a=b=c=0</m>.
+      Thus <m>S</m> is <em>linearly independent</em>.
+    </p>
+  </proof>
+  </paragraphs>
+  <paragraphs>
+  <title>Example in $M_{mn}$</title>
+  <paragraphs>
+    <title>General procedure:</title>
+    <p>
+      all questions of linear dependence can be boiled down to deciding whether a certain linear system can be solved or not!
+      Let <m>S=\left\{ A_1=\begin{bmatrix}3\amp 1\\ 2\amp -3 \end{bmatrix} , A_2= \begin{bmatrix}0\amp 4\\ 2\amp 0 \end{bmatrix} , A_3=\begin{bmatrix}-2\amp -2\\ -2\amp 2 \end{bmatrix} \right\}\subset M_{22}</m>.
+      Decide whether <m>S</m> is linearly independent.
+    </p>
+  </paragraphs>
+  <proof>
+    <p>
+      First observe that <m>\boldzero=\begin{bmatrix}0\amp 0\\0\amp 0 \end{bmatrix}</m>,
+      the zero matrix.
+    </p>
+    <p>
+      We ask whether there is a <em>nontrivial</em> combination
+      <md>
+        <mrow>a\begin{bmatrix}3\amp 1\\ 2\amp -3 \end{bmatrix} +b\begin{bmatrix}0\amp 4\\ 2\amp 0 \end{bmatrix} +c\begin{bmatrix}-2\amp -2\\ -2\amp 2 \end{bmatrix} \amp =\amp \begin{bmatrix}0\amp 0\\0\amp 0 \end{bmatrix} \begin{bmatrix}3a-2c\amp a+4b-2c\\ 2a+2b-2c\amp -3a+2c \end{bmatrix}  \amp =\amp \begin{bmatrix}0\amp 0\\0\amp 0 \end{bmatrix}</mrow>
+      </md>
+    </p>
+    <p>
+      Equating like terms gives us the linear system
+      <md>
+        \begin{linsys}{3} 3a\amp \amp \amp -\amp 2c\amp =\amp 0\\ a\amp +\amp 4b\amp -\amp 2c\amp =\amp 0\\ 2a\amp +\amp 2b \amp -\amp 2c \amp =\amp 0\\ -3a\amp \amp \amp +\amp 2c\amp =\amp 0 \end{linsys}
+      </md>
+    </p>
+    <p>
+      Row reduction shows this system has a free variable,
+      and hence a nontrivial solution<ndash/>in fact infinitely many!
+      One example is <m>a=2</m>, <m>b=-1</m>, <m>c=3</m>.
+      Thus <m>S</m> is <em>linearly dependent</em>.
+    </p>
+  </proof>
+  </paragraphs>
+  <paragraphs>
+  <title>Example in function space</title>
+  <paragraphs>
+    <title>General procedure:</title>
+    <p>
+      all questions of linear dependence can be boiled down to deciding whether a certain linear system can be solved or not!
+      Let <m>S=\{f(x)=x, g(x)=\cos(x),
+      h(x)=\sin(x)\}\subseteq C^\infty(\R)</m>.
+    </p>
+  </paragraphs>
+  <p>
+    Decide whether <m>S</m> is linearly independent.
+  </p>
+  <proof>
+    <p>
+      First observe that <m>\boldzero</m> is the zero function:
+      the function that assigns 0 to all inputs <m>x</m>.
+    </p>
+    <p>
+      We ask whether there is a <em>nontrivial</em>
+      combination <m>af+bg+ch=\boldzero</m>.
+    </p>
+    <p>
+      <em>Key observation:</em> the equality above is an equality of <em>functions</em>.
+      Thus this is true if and only if
+      <m>af(x)+bg(x)+ch(x)=0</m> \alert{for all <m>x</m>}.
+    </p>
+    <p>
+      To get a linear system,
+      we evaluate the above at a few clever choices of <m>x</m>:
+      <md>
+        <mrow>x=0\amp :\amp  a(0)+b\cos(0)+c\sin(0)=0\Rightarrow 0+b+0=0\Rightarrow b=0</mrow>
+        <mrow>x=\pi\amp :\amp  a(\pi)+c\sin(\pi)=0\Rightarrow \pi a+0=0\Rightarrow a=0</mrow>
+      </md>
+    </p>
+    <p>
+      Having shown <m>a=b=0</m>,
+      we are left with the equation <m>c\sin(x)=0</m> for all <m>x</m>,
+      which is true iff <m>c=0</m>.
+    </p>
+    <p>
+      Thus the only linear combination yielding <m>\boldzero</m> is <m>a=b=c=0</m>,
+      the trivial one, showing <m>S</m> is
+      <em>linearly independent</em>.
+    </p>
+  </proof>
+  </paragraphs>
+  <paragraphs>
+  <title>Linear independence in function spaces</title>
+  <p>
+    As the last example illustrates,
+    a set of functions <m>S=\{f_1,f_2, \dots ,f_r\}</m> is linearly independent if
+  </p>
+  <p>
+    <m>k_1f_1+k_2f_2+\cdots k_rf_r=\boldzero</m> implies <m>k_i=0</m> for all <m>i</m>.
+  </p>
+  <p>
+    Recall <m>\boldzero</m> here stands for the <em>zero function</em>.
+    Thus we must treat such a linear combination as a function identity!
+    In other words to say
+    <me>
+      k_1f_1+k_2f_2+\cdots k_rf_r=\boldzero
+    </me>
+    is simply to say that
+    <me>
+      k_1f_1(x)+k_2f_2(x)+\cdots k_rf_r(x)=0
+    </me>
+  </p>
+  <paragraphs>
+    <title>for all <m>x</m></title>
+    <p>
+      in the given domain.
+    </p>
+  </paragraphs>
+  <p>
+    The beauty of this
+    <q>for all <m>x</m></q>
+    is that by picking say <m>r</m> actual examples of <m>x</m> and evaluating above,
+    we generate <m>r</m> linear equations in the unknowns <m>k_i</m>.
+  </p>
+  <p>
+    If this system has no nontrivial solutions,
+    then we know the functions are independent.
+  </p>
+  <p>
+    However, if this system DOES have a nontrivial solution we CANNOT conclude the functions are linearly dependent.
+    Why?
+    We would have shown the identity above holds only for these <m>r</m> choices of <m>x</m>,
+    but not necessarily <em>all</em> <m>x</m>!
+  </p>
+  </paragraphs>
+  <paragraphs>
+  <title>$C^\infty(a,b)$ and the Wronskian</title>
+  <p>
+    Let's consider this observation in the special example of
+    <em>differentiable</em> functions.
+  </p>
+  <definition>
+    <statement>
+      <p>
+        Suppose <m>f_1,f_2,\dots f_n</m> are each <m>(n-1)</m>-differentiable functions on <m>(a,b)</m>.
+        We define the Wronskian of the <m>f_i</m> as the function
+        <md>
+          W(x)=\begin{vmatrix}f_1(x)\amp f_2(x)\amp \cdots \amp f_n(x)\\ f_1'(x)\amp f_2'(x)\amp \cdots \amp f_n'(x)\\ \vdots\amp \cdots \amp  \amp \vdots \\ f_1^{(n-1)}(x)\amp f_2^{(n-1)}(x)\amp \cdots \amp f_n^{(n-1)}(x) \end{vmatrix}.
+        </md>
+      </p>
+    </statement>
+  </definition>
+  <theorem>
+    <title>Wronskian</title>
+    <statement>
+      <p>
+        Let <m>V=C^{\infty}(X)</m>, where <m>X</m> is a fixed interval
+        (usually <m>X=\R</m>),
+        and let <m>S=\{f_1,f_2,\dots ,f_n\}</m> be a set of elements of <m>V</m>.
+        Let <m>W(x)</m> be the Wronskian of the <m>f_i</m>.
+        Then
+        <me>
+          W\ne\boldzero\Rightarrow \text{ \(S\) is linearly indendent }
+        </me>.
+      </p>
+    </statement>
+  </theorem>
+  <paragraphs>
+    <title>Comments</title>
+  </paragraphs>
+  <p>
+    (1) Again <m>\boldzero</m> here is the <em>zero function</em>.
+    So <m>W\ne\boldzero</m> means there is an <m>x</m> in <m>(a,b)</m> such that <m>W(x)\ne 0</m>.
+  </p>
+  <p>
+    (2) This implication only goes one way!! In other words,
+    <m>W(x)=0</m> for all <m>x</m> does not imply <m>S</m> is dependent!!
+  </p>
+  </paragraphs>
+</section>

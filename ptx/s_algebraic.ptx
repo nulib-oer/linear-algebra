@@ -1,0 +1,576 @@
+<section xml:id="ss_algebraic">
+  <title>Algebraic properties</title>
+  <paragraphs>
+  <title><xref ref="c_linear_systems"></xref>. <xref ref="ss_algebraic"></xref>: executive summary</title>
+  <paragraphs>
+    <title>Definitions</title>
+    <p>
+      : zero matrix <m>\boldzero_{m\times n}</m>,
+      identity matrix <m>I_n</m>, inverse matrix <m>A^{-1}</m>,
+      invertibility,
+      <m>A^r</m> and <m>A^{-r}</m> for nonnegative integer <m>r\geq 0</m>. \alert{Procedures}: none! \alert{Theorems}: Many!
+      Lots of familiar rules of real number algebra (associativity,
+      distributivity, etc.) also hold for matrix algebra.
+      However some important properties fail:
+      e.g., commutativity and multiplicative cancellation.
+      We also learn some properties about taking the transpose (<m>A\mapsto A^T</m>) and its relation with taking the inverse
+      (<m>A\mapsto A^{-1}</m>).
+    </p>
+  </paragraphs>
+  </paragraphs>
+  <paragraphs>
+    <title>1.4: algebraic properties of matrices</title>
+    <p>
+      For the most part,
+      the matrix operations of <m>\cdot</m> and <m>+</m> behave in much the same manner as their corresponding real number operations.
+    </p>
+    <theorem xml:id="th_matrix-arith">
+      <title>Properties of matrix arithmetic</title>
+      <statement>
+        <p>
+          The following properties hold for all matrices <m>A, B, C</m> and scalars
+          <m>a,
+          b, c</m> for which the given expression makes sense.
+          <ol>
+            <li>
+              <p>
+                <m>A+B=B+A</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>A+(B+C)=(A+B)+C</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>A(BC)=(AB)C</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>A(B+C)=AB+AC</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(B+C)A=BA+CA</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>A(B-C)=AB-AC</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(B-C)A=BA-CA</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>a(B+C)=aB+aC</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>a(B-C)=aB-aC</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(a+b)C=aC+bC</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(a-b)C=aC-bC</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>a(bC)=(ab)C</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>a(BC)=(aB)C=B(aC)</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      How does one actually prove one of these properties?
+    </p>
+    <p>
+      These are all <em>matrix equalities</em>.
+      Using the definition of matrix equality,
+      we must show (1) the LHS and RHS matrices are of the same size,
+      and (2) that for each <m>(i,j)</m>,
+      the <m>(i,j)</m>-th entry of the LHS is equal to the <m>(i,j)</m>-th entry of the RHS. Let's see how this works on an example.
+    </p>
+  </paragraphs>
+  <proof>
+    <p>
+      Let <m>A=[a_{ij}]_{m\times r}</m>,
+      <m>B=[b_{ij}]_{r\times s}</m>,
+      <m>C=[c_{ij}]_{s\times n}</m>.
+      Then
+      <me>
+        A(BC)=(AB)C
+      </me>.
+    </p>
+    <p>
+      (1) One checks easily that the matrices on the LHS and RHS are both of size <m>m\times n</m>,
+      so we move straight to (2) using our index notation:
+      <md>
+        <mrow>\amp  \amp \Bigl(A(BC)\Bigr)_{ij}=\sum_{\ell=1}^ra_{i\ell}(BC)_{\ell j}  =\sum_{\ell=1}^ra_{i\ell}\left(\sum_{k=1}^sb_{\ell k}c_{kj}\right)</mrow>
+        <mrow>\amp =\amp \sum_{\ell=1}^r\sum_{k=1}^sa_{i\ell}(b_{\ell k}c_{kj}) \ \text{ (dist. prop.) }</mrow>
+        <mrow>\amp =\amp \sum_{k=1}^s\sum_{\ell=1}^r(a_{i\ell}b_{\ell k})c_{kj} \ \text{ (comm.+assoc. prop.) }</mrow>
+        <mrow>\amp =\amp \sum_{k=1}^s\left(\sum_{\ell=1}^ra_{i\ell}b_{\ell k}\right)c_{kj} \ \text{ (dist. prop.) }</mrow>
+        <mrow>\amp =\amp \sum_{k=1}^s(AB)_{ik}c_{kj}  =\Bigl((AB)C\Bigr)_{ij}</mrow>
+      </md>
+    </p>
+    <p>
+      This proves their <m>ij</m>-th entries are equal,
+      and hence <m>A(BC)=(AB)C</m>.
+    </p>
+  </proof>
+  <paragraphs>
+  <title>Zero matrix and additive inverses</title>
+  <p>
+    Another similarity between matrix algebra and real number algebra is the existence of
+    <em>additive inverses</em>.
+  </p>
+  <paragraphs>
+    <title>Definition:</title>
+    <p>
+      the <term><m>m\times n</m> zero matrix</term>
+      is the matrix <m>\boldzero_{m\times n}</m> all of whose entries are 0.
+    </p>
+  </paragraphs>
+  <p>
+    Note we have a different zero matrix for every possible size of matrix.
+  </p>
+  <theorem>
+    <statement>
+      <p>
+        Let <m>A=[a_{ij}]</m> be <m>m\times n</m>.
+        Then the matrix <m>-A:=(-1)A=[-a_{ij}]</m> is an
+        <term>additive inverse</term>
+        of <m>A</m> in the sense that
+        <me>
+          A+(-A)=(-A)+A=\boldzero_{m\times n}
+        </me>.
+      </p>
+    </statement>
+  </theorem>
+  <paragraphs>
+    <title>Comment:</title>
+    <p>
+      thus every <m>m\times n</m> matrix has an additive inverse.
+      This allows us to
+      <q>cancel</q>
+      matrices <em>additively</em>.
+      Example: solve the following equation for <m>B</m>.
+    </p>
+  </paragraphs>
+  <md>
+    <mrow>A+B\amp =\amp 3A</mrow>
+    <mrow>(-A)+A+B\amp =\amp (-A)+3A</mrow>
+    <mrow>\boldzero_{m\times n}+B\amp =\amp (-1)A+3A</mrow>
+    <mrow>B\amp =\amp 2A</mrow>
+  </md>
+  <p>
+    I give all the gory details, but now the point should be clear;
+    we can cancel a multiple of <m>A</m> on both sides,
+    just as we do in normal algebra!
+  </p>
+  </paragraphs>
+  <paragraphs>
+    <title>Abnormalities</title>
+    <p>
+      There are two very important properties that matrix algebra fails to enjoy.
+    </p>
+    <theorem>
+      <statement>
+        <p>
+          Matrix multiplication is NOT \alert{commutative}, and there are nontrivial <em>zero divisors</em>.
+          That is:
+          <ol>
+            <li>
+              <p>
+                Fix <m>n</m>.
+                There are (many) <m>n\times n</m> matrices <m>A, B</m> such that
+                <me>
+                  AB\alert{\ne}BA
+                </me>.
+                \alert{Example:} verify that <m>\begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix} \begin{bmatrix}0\amp 1\\ 0\amp 0 \end{bmatrix} \ne \begin{bmatrix}0\amp 1\\ 0\amp 0 \end{bmatrix} \begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix} </m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Given matrices <m>A_{m\times n}, B_{n\times r}</m>,
+                <me>
+                  AB=0_{m\times r}\alert{\not\Rightarrow} A=0_{m\times n} \text{ or }  B=0_{n\times r}
+                </me>.
+                In English: if the product of two matrices is the zero matrix,
+                we CANNOT conclude that one of them is the zero matrix.   \alert{Example:} verify that <m>\begin{bmatrix}0\amp 1\\ 0\amp 0 \end{bmatrix} \begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix} =\begin{bmatrix}0\amp 0\\ 0\amp 0 \end{bmatrix} </m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </theorem>
+  </paragraphs>
+  <p>
+    It is worth pointing out how important the second failed property is to matrix algebra.
+  </p>
+  <p>
+    In normal real number algebra,
+    if <m>a\ne 0</m> and <m>ab=ac</m>, we may
+    <q>cancel</q>
+    the <m>a</m> and conclude <m>b=c</m>.
+    Not so in matrix algebra!
+  </p>
+  <theorem>
+    <title>Failure of cancellation</title>
+    <statement>
+      <md>
+        <mrow>\text{Suppose \(A\ne 0_{m\times n}\), then  }  AB=AC \amp \alert{\not\Rightarrow}\amp  B=C</mrow>
+        <mrow>\text{Suppose \(D\ne 0_{s\times t}\),  then }  BD=CD \amp \alert{\not\Rightarrow}\amp  B=D</mrow>
+      </md>
+    </statement>
+  </theorem>
+  <p>
+    Let that sink in.
+    Cancellation is one of the most used properties in normal algebra.
+    It is in general no longer available to us when doing matrix algebra.
+  </p>
+  <p>
+    <em>Examples:</em>
+    (you should verify).
+    <me>
+      \begin{bmatrix}1\amp 1\amp 0\\ 0\amp 0\amp 0 \end{bmatrix} \begin{bmatrix}1\amp 0\\ 0\amp 0\\ 0\amp 0 \end{bmatrix} = \begin{bmatrix}1\amp 1\amp 0\\ 0\amp 0\amp 0 \end{bmatrix} \begin{bmatrix}0\amp 0\\ 1\amp 0\\ 0\amp 0 \end{bmatrix}
+    </me>
+    <me>
+      \begin{bmatrix}1\amp 0\amp 0\\ 0\amp 0\amp 0 \end{bmatrix} \begin{bmatrix}1\amp 0\\ 1\amp 0\\ 0\amp 0 \end{bmatrix} = \begin{bmatrix}0\amp 1\amp 0\\ 0\amp 0\amp 0 \end{bmatrix} \begin{bmatrix}1\amp 0\\ 1\amp 0\\ 0\amp 0 \end{bmatrix}
+    </me>
+  </p>
+  <paragraphs>
+    <title>Invertibility</title>
+    <p>
+      What allows cancellation of a nonzero <m>a</m> in the reals is the existence of its
+      <em>multiplicative inverse</em>,
+      the element <m>a^{-1}=\frac{1}{a}</m>,
+      which satisfies <m>a^{-1}a=1</m>.
+    </p>
+    <p>
+      Not all nonzero matrices <m>A</m> have a multiplicative inverse.
+      The ones that do are called <em>invertible</em>.
+      In order to define this properly,
+      we need to identify a matrix that acts as the number one does:
+      i.e., a <em>multiplicative identity</em>.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          The <term>identity matrix of size <m>n\times n</m></term>
+          is the <m>n\times n</m> matrix <m>I_n</m> with 1's along the diagonal (i.e.,
+          <m>a_{ii}=1</m>) and 0's everywhere else (i.e., <m>a_{ij}=0</m> for <m>i\ne j</m>).
+          For example:
+          <me>
+            I_1=\begin{bmatrix}1 \end{bmatrix} , I_2=\begin{bmatrix}1\amp 0\\ 0\amp 1 \end{bmatrix} , I_3=\begin{bmatrix}1\amp 0\amp 0\\ 0\amp 1\amp 0\\ 0\amp 0\amp 1 \end{bmatrix} , \text{ etc. }
+          </me>
+        </p>
+      </statement>
+    </definition>
+    <theorem>
+      <title>Multiplicative identity</title>
+      <statement>
+        <p>
+          For any <m>A_{m\times n}</m> we have
+          <md>
+            <mrow>I_mA\amp =\amp A</mrow>
+            <mrow>AI_n\amp =\amp A</mrow>
+          </md>.
+        </p>
+      </statement>
+    </theorem>
+    <proof>
+      <p>
+        Use either column or row method to perform the multiplications involved!
+      </p>
+    </proof>
+  </paragraphs>
+  <paragraphs>
+  <title>Invertibility</title>
+  <definition>
+    <statement>
+      <p>
+        A square matrix <m>A_{n\times n}</m> is <term>invertible</term>
+        if there is a matrix <m>B_{n\times n}</m> such that
+        <md>
+          <mrow>AB\amp =\amp I_n, \text{ and }</mrow>
+          <mrow>BA\amp =\amp I_n</mrow>
+        </md>
+      </p>
+      <p>
+        In this case we call <m>B</m> an
+        <term>inverse</term> of <m>A</m>,
+        and we say that <m>A</m> and <m>B</m> are
+        <term>inverses</term> of one another.
+      </p>
+    </statement>
+  </definition>
+  <paragraphs>
+    <title>Theorem (uniqueness of inverses):</title>
+    <p>
+      an invertible matrix <m>A</m> has exactly one inverse.
+      That is, if
+    </p>
+  </paragraphs>
+  <me>
+    AB=BA=I_n
+  </me>
+  <p>
+    and
+    <me>
+      AC=CA=I_n
+    </me>,
+    then <m>B=C</m>.
+  </p>
+  <p>
+    We denote by <m>A^{-1}</m> the inverse of <m>A</m>.
+  </p>
+  <proof>
+    <p>
+      Suppose we have such matrices <m>B</m> and <m>C</m>.
+    </p>
+    <p>
+      Then <m>I_n=AB=AC \Rightarrow BAB=BAC \Rightarrow I_nB=I_nC \Rightarrow B=C</m>.
+    </p>
+  </proof>
+  </paragraphs>
+  <paragraphs>
+    <title>$2\times 2$ matrices</title>
+    <p>
+      When is a <m>2\times 2</m> matrix <m>A=\abcdmatrix{a}{b}{c}{d}</m> invertible?
+    </p>
+    <p>
+      If <m>ad-cb\ne 0</m>, then we can easily show that
+      <me>
+        A^{-1}=\frac{1}{ad-bc}\abcdmatrix{d}{-b}{-c}{a}
+      </me>
+      is the inverse.
+    </p>
+    <p>
+      Thus
+      <me>
+        ad-bc\ne 0\Rightarrow  A \text{ invertible }
+      </me>.
+    </p>
+    <p>
+      It turns out that the converse is also true, that is
+      <me>
+        ad-bc\ne 0\Leftrightarrow  A \text{ invertible }
+      </me>.
+    </p>
+    <p>
+      We will prove this a littler further down the line.
+    </p>
+  </paragraphs>
+  <theorem>
+    <statement>
+      <p>
+        Let <m>A,B</m> be <m>n\times n</m> matrices.
+        <me>
+          A \text{ and }  B  \text{ invertible } \Rightarrow AB \text{ invertible }
+        </me>,
+        and in fact <m>(AB)^{-1}=B^{-1}A^{-1}</m>.
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      In the absence of more theory,
+      we can only prove invertibility by providing an inverse.
+      The last statement offers up a candidate:
+      viz., <m>C=B^{-1}A^{-1}</m>.
+      We need only show that <m>C</m> satisfies the relevant properties:
+      <md>
+        <mrow>C(AB)\amp =\amp (B^{-1}A^{-1})AB=B^{-1}A^{-1}AB=B^{-1}IB=B^{-1}B=I</mrow>
+        <mrow>(AB)C\amp =\amp (AB)B^{-1}A^{-1}=ABB^{-1}A^{-1}=AIA^{-1}=AA^{-1}=I</mrow>
+      </md>.
+    </p>
+  </proof>
+  <corollary>
+    <statement>
+      <p>
+        More generally,
+        <me>
+          A_1,A_2,\dots A_r \text{ invertible } \Rightarrow (A_1A_2\cdots A_r)\text{ invertible }
+        </me>,
+        and in fact <m>(A_1A_2\cdots A_r)^{-1}=A_r^{-1}A_{r-1}^{-1}\cdots A_1^{-1}</m>.
+      </p>
+    </statement>
+  </corollary>
+  <p>
+    <em>Question:</em> do the implication arrows above go the other way?
+  </p>
+  <p>
+    <em>Answer:</em> we shall see.
+  </p>
+  <paragraphs>
+  <title>Powers of matrices</title>
+  <definition>
+    <statement>
+      <p>
+        Let <m>A</m> be any <m>n\times n</m> matrix.
+        For any integer <m>r\geq 0</m> we define the <m>r</m>-th power of <m>A</m>,
+        <m>A^{r}</m>,
+        as follows:
+        <ol>
+          <li>
+            <p>
+              <m>A^0=I_n</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\ds A^r=\underbrace{A\cdot A\cdots A}_{r \text{ times } }</m> for <m>r>0</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+      <p>
+        Furthermore, if <m>A</m> is <term>invertible</term>, we define
+        <me>
+          A^{-r}=\left(A^{-1}\right)^r
+        </me>,
+        for any positive integer <m>r>0</m>.
+      </p>
+    </statement>
+  </definition>
+  <theorem>
+    <title>Power rules</title>
+    <statement>
+      <ol>
+        <li>
+          <p>
+            <m>A^{r}A^s=A^{r+s}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(A^r)^s=A^{rs}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left(A^{-1}\right)^{-1}=A</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left(A^n\right)^{-1}=A^{-n}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(kA)^n=k^nA^n</m> for any scalar <m>k</m>.
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </theorem>
+  <paragraphs>
+    <title>Question:</title>
+    <p>
+      <m>A^rB^r\stackrel{{\color{red}?}}{=}(AB)^r</m>
+    </p>
+  </paragraphs>
+  </paragraphs>
+  <paragraphs>
+    <title>Transposes and inverses</title>
+    <theorem>
+      <statement>
+        <ol>
+          <li>
+            <p>
+              <m>\left(A^T\right)^T=A</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>(A+B)^T=A^T+B^T</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>(A-B)^T=A^T-B^T</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>(kA)^T=kA^T</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>(AB)^T=B^TA^T</m>
+            </p>
+          </li>
+        </ol>
+      </statement>
+    </theorem>
+    <theorem>
+      <statement>
+        <p>
+          Let <m>A_{n\times n}</m> be invertible.
+          Then <m>A^T</m> is invertible,
+          and <m>\left(A^T\right)^{-1}=\left(A^{-1}\right)^T</m>.
+        </p>
+      </statement>
+    </theorem>
+  </paragraphs>
+  <paragraphs>
+    <title>More sample proofs</title>
+    <p>
+      Let's prove some of the last two theorems.
+    </p>
+    <proof>
+      <md>
+        <mrow>\left((A+B)^T\right)_{ij}\amp =\amp (A+B)_{ji} \ \text{ (def. of transp.) }</mrow>
+        <mrow>\amp =\amp A_{ji}+B_{ji} \ \text{ (def. of +) }</mrow>
+        <mrow>\amp =\amp (A^T)_{ij}+(B^T)_{ij} \ \text{ (def. of transp.) }</mrow>
+        <mrow>\amp =\amp (A^T+B^T)_{ij} \ \text{ (def. of +) }</mrow>
+      </md>
+      <p>
+        Since <m>ij</m>-entry of LHS and RHS is same for each <m>(i,j)</m>,
+        it follows that <m>(A+B)^T=A^T+B^T</m>.
+      </p>
+    </proof>
+  </paragraphs>
+  <paragraphs>
+    <title>More sample proofs</title>
+    <proof>
+      <p>
+        Suppose <m>A</m> is invertible,
+        and let <m>A^{-1}</m> be its inverse.
+        The claim above is that <m>B=\left(A^{-1}\right)^T</m> is the inverse of <m>A^T</m>.
+        To prove this claim we need only show that <m>BA^T=A^TB=I_n</m>:
+        <md>
+          <mrow>BA^T=\left(A^{-1}\right)^TA^T \amp =\amp \left(AA^{-1}\right)^T \ \text{ (since \((CD)^T=D^TC^T\)) }</mrow>
+          <mrow>\amp =\amp I_n^T=I_n \ \checkmark</mrow>
+        </md>
+        <md>
+          <mrow>A^TB=A^T\left(A^{-1}\right)^T \amp =\amp \left(A^{-1}A\right)^T \ \text{ (since \((CD)^T=D^TC^T\)) }</mrow>
+          <mrow>\amp =\amp I_n^T=I_n \ \checkmark</mrow>
+        </md>
+      </p>
+    </proof>
+  </paragraphs>
+</section>
