@@ -351,10 +351,10 @@
             The row echelon matrix tells us that <m>x_2=t</m> is the only free variable.
             Back substitution then yields the general solution:
             <md>
-              <mrow>x_1\amp =\amp \frac{32}{7}-2t</mrow>
-              <mrow>x_2\amp =\amp t</mrow>
-              <mrow>x_3\amp =\amp 2</mrow>
-              <mrow>x_4\amp =\amp -\frac{3}{7}</mrow>
+              <mrow>x_1\amp = \frac{32}{7}-2t</mrow>
+              <mrow>x_2\amp = t</mrow>
+              <mrow>x_3\amp = 2</mrow>
+              <mrow>x_4\amp = -\frac{3}{7}</mrow>
             </md>.
           </p>
           <p>

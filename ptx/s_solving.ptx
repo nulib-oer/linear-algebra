@@ -1,4 +1,4 @@
-<section xml:id="s_solving">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_solving">
   <title>Solving linear systems</title>
   <introduction>
     <p>Let's continue with our model example from <xref ref="s_ge"/>. Summarizing the various steps, we have
@@ -274,7 +274,7 @@ Alternatively, we can describe the solutions to <m>L</m> with the <em>parametric
       </me>
       Such a system is always consistent. Why? Observe that <m>(x_1,x_2,\dots,
       x_n)=(0,0,\dots, 0)</m> is guaranteed to be a solution. Alternatively,
-      it is easy to see that the corresponding row echelon matrix <m>U</m> for the system will have no leading 1's in the last column. Thus, in the special case of a homoegeous system, <xref ref="th_solveSystem"/> boils down to the following result. </p>
+      it is easy to see that the corresponding row echelon matrix <m>U</m> for the system will have no leading 1's in the last column. Thus, in the special case of a homogeneous system, <xref ref="th_solveSystem"/> boils down to the following result. </p>
     <corollary xml:id="s_solving_homogeneous">
       <title>Solutions to homogeneous equations</title>
       <statement>
@@ -300,42 +300,7 @@ Alternatively, we can describe the solutions to <m>L</m> with the <em>parametric
 
   </subsection>
 
+<xi:include  href="s_solving_ex.ptx"/>
 
 
-  <!-- <paragraphs>
-    <title>Solutions to homogeneous systems</title>
-    <p>
-      Furthermore, we have:
-    </p>
-    <corollary>
-      <statement>
-        <p>
-          Fix a homogeneous linear system.
-          If the system has more variables than equations,
-          then there are <m>\infty</m>-many solutions.
-        </p>
-      </statement>
-    </corollary>
-    <proof>
-      <p>
-        Since any homogeneous system is consistent.
-        We need only show there is a free variable.
-      </p>
-      <p>
-        Let <m>m</m> be the number of equations,
-        or equivalently, the number of rows of the augmented matrix.
-        By assumption <m>m\lt n</m>.
-      </p>
-      <p>
-        Now the definition of a leading 1 implies that there can be <em>at most</em>
-        <m>m</m> leading 1's, since there is at most one leading 1 per row.
-      </p>
-      <p>
-        This implies there are at most <m>m</m> leading variables,
-        and thus at least <m>n-m</m> free variables.
-        Since <m>n-m>0</m> there is at least one free variable,
-        and thus <m>\infty</m>-many solutions.
-      </p>
-    </proof>
-  </paragraphs> -->
 </section>
