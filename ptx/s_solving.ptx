@@ -23,7 +23,7 @@ The new system in row echelon form is undoubtedly simpler, but describing <em>al
 
 <subsection xml:id="ss_workingExample">
   <title>Model example</title>
-<p> We will first illustrate the general method for solving a linear system with our model example; the official description of our solving procedure is found in <xref ref="th_solveSystem"/>.
+<p> We begin by illustrating the general method for solving a linear system using our model example; a careful  description of the procedure, along with a proof of its validity, is found in <xref ref="th_solveSystem"/>.
 </p>
 <p>
   A key first step involves separating the variables of the system into <em>free</em> and <em>leading</em> variables.
@@ -113,7 +113,7 @@ Alternatively, we can describe the solutions to <m>L</m> with the <em>parametric
 <definition xml:id="d_consistent">
   <idx><h>consistent</h></idx>
   <idx><h>inconsistent</h></idx>
-  <title>Consistent systems</title>
+  <title>Consistent and inconsistent systems</title>
 
   <statement>
     <p>
@@ -126,7 +126,7 @@ Alternatively, we can describe the solutions to <m>L</m> with the <em>parametric
       fully describe what solution sets to linear systems look like qualitatively.
     </p>
     <theorem xml:id="th_solveSystem">
-      <title>Solving linear systems algorithm</title>
+      <title>Solving linear systems</title>
 
       <statement>
         <p>
@@ -191,28 +191,30 @@ Alternatively, we can describe the solutions to <m>L</m> with the <em>parametric
           <statement>
             <p>
               Suppose in Step 3 you determine that there are no free variables. Then each of the first <m>n</m> columns of <m>U</m> has a leading one in it. If follows that for each <m>1\leq i \leq n</m> the <m>i</m>-th equation of <m>L'</m> is of the form
-          <me>
+          <men xml:id="s_solving_case1eq">
             x_i+c_{i,i+1}x_{i+1}+\cdots c_{i,n}x_n=b_i.
-          </me>
+          </men>
           Since <m>U</m> does not have a leading one in the last column, it follows that all equations beyond the <m>n</m>-th equation are of the form
           <m>0x_1+0x_2+\cdots 0x_n=0</m>, and as such may be disregarded since they are satisfied by any choice of the <m>x_i</m>.
-          Then back-substitution yields the <em>unique</em> solution <m>(x_1,x_2,\dots, x_n)</m> described iteratively as
+          The remaining system of <m>n</m> equations in <m>n</m> unknowns can be solved by back-substitution, yielding a <em>unique</em> solution <m>(x_1,x_2,\dots, x_n)</m> of the form
           <md>
             <mrow> x_n \amp =b_n </mrow>
-            <mrow>  x_{n-1}\amp =b_{n-1}-c_{n-1,n}x_n </mrow>
-            <mrow>  \amp = b_{n-1}-c_{n-1,n}b_{n} </mrow>
+            <mrow>  x_{n-1}\amp =b_{n-1}-c_{n-1,n}x_n=b_{n-1}-c_{n-1,n}b_n </mrow>
+            <mrow>  x_{n-2}\amp = b_{n-2}-c_{n-2,n}x_{n}-c_{n-2,n-1}x_{n-1}</mrow>
+            <mrow>  \amp =b_{n-2}-c_{n-2,n}b_n-c_{n-2,n-1}(b_{n-1}-c_{n-1,n}b_n)</mrow>
             <mrow>  \amp \vdots </mrow>
           </md>
+          Do not concern yourself overly with the exact formulas. The important point here is that once we know there is a unique choice of <m>x_n, x_{n-1},\dots, x_{i+1}</m> satisfying the system, <xref ref="s_solving_case1eq"/> allows us to solve for <m>x_i</m> in terms of the the <m>x_j</m>, <m>j>i</m>. As such working our way up from the last equation, we find there is a unique <m>(x_1,x_2,\dots, x_n)</m> solving the system.
         </p>
       </statement>
         </case>
         <case>
           <title>Case 2: free variables</title>
           <p>
-            Suppose now that <m>x_{i_1}, x_{i_2},\dots , x_{i_r}</m> are the free variables of <m>L'</m>, and <m>x_{j_1}, x_{j_2},\dots, x_{j_s}</m> are the leading variables. Again, since <m>U</m> does not have a leading one in the last column, there are exactly <m>s</m> nonzero equations in <m>L''</m>: one for each leading variable. After bringing any terms involving free variables to the right, the <m>k</m>-th such equation takes the form
+            Suppose now that <m>x_{i_1}, x_{i_2},\dots , x_{i_r}</m> are the free variables of <m>L'</m>, and <m>x_{j_1}, x_{j_2},\dots, x_{j_s}</m> are the leading variables. Again, since <m>U</m> does not have a leading one in the last column, there are exactly <m>s</m> nonzero equations in <m>L'</m>: one for each leading variable. After bringing any terms involving free variables to the right, the <m>k</m>-th such equation takes the form
             <me>
               x_{j_k}+c_{k,k+1}x_{j_{k+1}}+\cdots c_{k,s}x_{j_{s}}=d_k-G_k(x_{i_1},x_{i_2},\dots, x_{i_r})
-            </me>, for some function <m>G_k</m> of <m>r</m> variables. As in the previous case, back-substitution allows us to solve iteratively for each leading variable as a function of the free variables:
+            </me>, for some function <m>G_k</m> of <m>r</m> variables. As in the previous case, back-substitution now allows us to solve for each leading variable as a function of the free variables:
             <md>
               <mrow> x_{j_s}\amp =d_s-G_s(x_{i_1},x_{i_2},\dots, x_{i_r})</mrow>
               <mrow> \amp =F_s(x_{i_1},x_{i_2},\dots, x_{i_r})</mrow>
@@ -220,8 +222,9 @@ Alternatively, we can describe the solutions to <m>L</m> with the <em>parametric
               <mrow>  \amp = d_{s-1}-c_{s}F_s(x_{i_1},x_{i_2},\dots, x_{i_r})-G_{s-1}(x_{i_1},x_{i_2},\dots, x_{i_r})</mrow>
               <mrow>  \amp =F_{s-1}(x_{i_1},x_{i_2},\dots, x_{i_r})</mrow>
               <mrow>  \amp \vdots </mrow>
+              <mrow> x_1 \amp=F_1(x_{i_1},x_{i_2},\dots, x_{i_s}) </mrow>
             </md>
-            Thus any solution to <m>L</m> is completely determined by the values assigned to the free variables. Furthermore given <em>any</em> choice of values for the free variables there is a corresponding solution to <m>L</m>. We conclude that the set of solutions is described by the parametric equations
+            This shows that solutions <m>(x_1,x_2,\dots, x_n)</m> to <m>L</m> correspond uniquely to choices of values for the free variables <m>x_{i_1}, x_{i_2},\dots, x_{i_r}</m>. We conclude that the set of solutions is precisely the set of all <m>n</m>-tuples <m>(x_1,x_2,\dots, x_n)</m> satisfying
             <md>
             <mrow>\text{Free variables:}\amp \amp x_{i_1}\amp=t_{1}, \ x_{i_2}=t_{2}, \ \dots, \ x_{i_r}=t_{r}</mrow>
             <mrow> \text{Leading variables:}\amp \amp x_{j_1}\amp =F_1(t_1,t_2,\dots, t_r),\   x_{j_2} =F_2(t_1,t_2,\dots, t_r) ,\  \dots,\   x_{j_s} =F_s(t_1,t_2,\dots, t_r) </mrow>.
@@ -232,85 +235,53 @@ Alternatively, we can describe the solutions to <m>L</m> with the <em>parametric
       </proof>
 
     </theorem>
-  </subsection>
-    <!-- <title>Solutions to linear systems</title>
-    <p>
-      We are now in a position to fully describe what solution sets to linear systems look like qualitatively.
-    </p>
-    <theorem>
-      <title>Gaussian elimination theorem</title>
+    <p>Interesting in its own right is the following corollary of <xref ref="th_solveSystem"/>, which tells us that a linear system has either no solutions, exactly one solutions, or infinitely many solutions.
+    <corollary xml:id="c_qualitative">
+      <title><m>0</m>, <m>1</m>, or <m>\infty</m>-many solutions</title>
+
       <statement>
-        <p>
-          Fix a linear system in <m>n</m> unknowns <m>x_1,x_2, \dots, x_n</m>,
-          let <m>A</m> be its corresponding augmented matrix,
-          and let <m>U</m> be the row echelon matrix we get after applying Gaussian elimination to <m>A</m>.
-        </p>
-        <ol>
+        <p>Let <m>L</m> be a linear system of equations, let <m>L'</m> be an equivalent system in row reduced form, and let <m>U</m> be the augmented matrix associated to <m>L'</m>.</p>
+        <p>The system <m>L</m> has either no solutions, exactly one solution, or infinitely-many solutions. In more detail:
+      </p>
+        <ul type="i">
           <li>
             <p>
-              The system is inconsistent if and only if the <em>last column</em>
-              of <m>U</m> has a leading 1.
-              In this case there are <m>0</m> solutions.
+            If <m>U</m> has a leading one in its last column, then <m>L</m> has no solutions.
             </p>
           </li>
           <li>
             <p>
-              Assume the system is consistent.
+              If <m>U</m> does not have a leading one in its last column and <m>L'</m> has no free variables, then <m>L</m> has a unique solution.
             </p>
-            <ol>
-              <li>
-                <p>
-                  If all variables are leading variables,
-                  then after back substituting,
-                  we find there is a unique solution.
-                  That is, in this case there is <m>1</m> solution.
-                </p>
-              </li>
-              <li>
-                <p>
-                  If there is a free variable, say <m>x_i</m>,
-                  then since we can set <m>x_i=t</m> for any <m>t</m>,
-                  there are <m>\infty</m>-many solutions
-                </p>
-              </li>
-            </ol>
           </li>
-        </ol>
-        <p>
-          In particular, we see there are only 3 choices for the
-          <em>number of solutions</em>
-          to a linear system: 0, 1, or <m>\infty</m>-many!
-        </p>
+          <li>
+            <p>
+              If <m>U</m> does not have a leading one in its last column and <m>L'</m> has a free variable, then <m>L</m> has infinitely many solutions.
+            </p>
+          </li>
+        </ul>
       </statement>
-    </theorem>
-  </paragraphs> -->
-  <paragraphs>
-    <title>Solutions to homogenous systems</title>
+    </corollary>
+  </p>
+  </subsection>
+
+  <subsection xml:id="ss_homogeneous">
+    <title>Solutions to homogeneous systems</title>
     <p>
-      Consider the special case of a homogenous system
+      Consider the special case of a homogeneous system
       <me>
         \homsys
       </me>
-    </p>
-    <p>
-      Observe that <m>(x_1,x_2,\dots,
-      x_n)=(0,0,\dots, 0)</m> is a solution to this system.
-      Thus a homogenous system is always consistent! (Alternatively,
-      convince your self that the corresponding row echelon matrix <m>U</m> for the system will have no leading 1's in the last column.)
-    </p>
-  </paragraphs>
-  <paragraphs>
-    <title>Solutions to homogenous systems</title>
-    <p>
-      Since a homogenous system is always consistent,
-      the theorem from before boils down to the following:
-    </p>
-    <corollary>
+      Such a system is always consistent. Why? Observe that <m>(x_1,x_2,\dots,
+      x_n)=(0,0,\dots, 0)</m> is guaranteed to be a solution. Alternatively,
+      it is easy to see that the corresponding row echelon matrix <m>U</m> for the system will have no leading 1's in the last column. Thus, in the special case of a homoegeous system, <xref ref="th_solveSystem"/> boils down to the following result. </p>
+    <corollary xml:id="s_solving_homogeneous">
+      <title>Solutions to homogeneous equations</title>
       <statement>
         <p>
           Fix a <em>homogeneous</em> linear system in <m>n</m> variables.
           There are two possibilities:
-          <ol>
+          <ul>
             <li>
               <p>
                 if all the variables are leading variables,
@@ -322,11 +293,15 @@ Alternatively, we can describe the solutions to <m>L</m> with the <em>parametric
                 if there is a free variable, then the system has <m>\infty</m>-many solutions.
               </p>
             </li>
-          </ol>
+          </ul>
         </p>
       </statement>
     </corollary>
-  </paragraphs>
+
+  </subsection>
+
+
+
   <!-- <paragraphs>
     <title>Solutions to homogeneous systems</title>
     <p>

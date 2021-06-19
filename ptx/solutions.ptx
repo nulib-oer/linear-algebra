@@ -537,7 +537,7 @@
       <p>
         Solve the following system of equations by any method:
         <md>
-          \begin{linsys}{5} \amp  \amp  \amp \amp  Z_3\amp +\amp Z_4\amp +\amp Z_5 \amp =\amp 0\\ -Z_1\amp -\amp Z_2 \amp +\amp 2Z_3 \amp -\amp 3Z_4\amp +\amp Z_5 \amp =\amp 0\\ Z_1\amp + \amp Z_2 \amp -\amp 2Z_3 \amp \amp \amp -\amp Z_5 \amp =\amp 0\\ 2Z_1\amp + \amp 2Z_2 \amp -\amp Z_3 \amp \amp \amp +\amp Z_5 \amp =\amp 0 \end{linsys}
+          \begin{linsys}{5} \amp  \amp  \amp \amp  T_3\amp +\amp T_4\amp +\amp T_5 \amp =\amp 0\\ -T_1\amp -\amp T_2 \amp +\amp 2T_3 \amp -\amp 3T_4\amp +\amp T_5 \amp =\amp 0\\ T_1\amp + \amp T_2 \amp -\amp 2T_3 \amp \amp \amp -\amp T_5 \amp =\amp 0\\ 2T_1\amp + \amp 2T_2 \amp -\amp T_3 \amp \amp \amp +\amp T_5 \amp =\amp 0 \end{linsys}
         </md>
         <solution>
           <md>
@@ -555,11 +555,11 @@
             Now solve.
             We set the free variables <m>x_2=r</m> and <m>x_5 = s</m> and substitute:
             <md>
-              <mrow>Z_1\amp =\amp -r-s</mrow>
-              <mrow>Z_2\amp =\amp r</mrow>
-              <mrow>Z_3\amp =\amp -s</mrow>
-              <mrow>Z_4\amp =\amp 0</mrow>
-              <mrow>Z_5\amp =\amp s</mrow>
+              <mrow>T_1\amp =\amp -r-s</mrow>
+              <mrow>T_2\amp =\amp r</mrow>
+              <mrow>T_3\amp =\amp -s</mrow>
+              <mrow>T_4\amp =\amp 0</mrow>
+              <mrow>T_5\amp =\amp s</mrow>
             </md>
           </p>
         </solution>

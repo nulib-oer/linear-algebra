@@ -1,4 +1,4 @@
-<section xml:id="s_ge">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_ge">
   <title>Gaussian elimination</title>
   <introduction>
     <p>
@@ -26,21 +26,10 @@
     </p>
 
 <p>
-    Before we embark on these steps, we introduce a useful bit of notation. As you may have noticed, when performing row operations on a system of equations, we essentially treat the unknowns, as well as the plus and equals symbols, as placeholders; the only things that actually change in a given step are the coefficients in the equations. The <em>augmented matrix associated to a linear system</em> is a formal way of extracting just the information of the coefficients from a linear system. Of course, to be official, we should first define what a matrix is.
+    Before we embark on these steps, we introduce a useful bit of notation. As you may have noticed, when performing row operations on a system of equations, we essentially treat the unknowns, as well as the plus and equals symbols, as placeholders; the only things that actually change in a given step are the coefficients in the equations. The <em>augmented matrix associated to a linear system</em> is a formal way of extracting just the information of the coefficients from a linear system.
   </p>
 </introduction>
-<definition xml:id="d_matrix">
-  <title>Matrix</title>
 
-  <statement>
-    <p>
-    A <term>matrix</term> is a rectangular array of numbers.
-    </p>
-    <p>
-      A matrix with <m>m</m> rows and <m>n</m> columns is said to have <term>size</term> (or <term>dimension</term>) <m>m\times n</m>.
-    </p>
-  </statement>
-</definition>
 <definition xml:id="d_augmented_matrix">
   <title>Augmented matrix</title>
   <!-- <idx><h>augmented matrix</h></idx> -->
@@ -57,7 +46,18 @@
 
     </p>
   </statement>
+
+
 </definition>
+
+<remark xml:id="s_ge_rm_see_def">
+<statement>
+<p>
+As defined more thoroughly in <xref ref="d_matrix"/>, a matrix is just a rectangular array of numbers.
+</p>
+</statement>
+</remark>
+
 <subsection xml:id="ss_ge_row_echelon">
   <title>Row echelon matrices</title>
  <p>
@@ -204,7 +204,7 @@
 <subsection xml:id="ss_gaussian_elimination">
   <title>Gaussian elimination</title>
   <p>
-  We will now describe a systematic procedure, called <em>Gaussian elimination</em>, that allows us to reduce a given linear system <m>L</m>to a system <m>L'</m>in row echelon form.
+  We will now describe a systematic procedure, called <em>Gaussian elimination</em>, that allows us to reduce a given linear system <m>L</m> to a system <m>L'</m>in row echelon form.
   In keeping with the foregoing discussion, we will identify a system <m>L</m> with its augmented matrix <m>A</m>. Furthermore, reducing a linear system using elementary operations on equations is now cast as performing <em>elementary row operations</em> on matrices. At the risk of redundancy we now officially translate a number of our former notions regarding reduction of linear systems to the setting of matrices.
   </p>
   <definition index="elementary row operations" xml:id="d_rowops">
@@ -351,7 +351,7 @@
       \end{bmatrix}</mrow>
     </md>
   <p>
-  The matrix outputed by Gaussian elimination is guaranteed to be in row echelon form, but it may not be in <em>reduced</em> row echelon form. <em>Gauss-Jordan elimination</em> describes how a systematic way to continue reducing to this even simpler state.
+  The matrix outputed by Gaussian elimination is guaranteed to be in row echelon form, but it may not be in <em>reduced</em> row echelon form. <em>Gauss-Jordan elimination</em> describes a systematic way to continue reducing to this even simpler state.
 </p>
 </paragraphs>
 <definition xml:id="d_GaussJordan">
@@ -438,5 +438,7 @@
 </example>
 
 </subsection>
+
+<xi:include  href="s_ge_ex.ptx"/>
 
 </section>

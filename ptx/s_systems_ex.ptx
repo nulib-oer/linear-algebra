@@ -166,13 +166,11 @@
     <solution>
         <p>
           Let <m>L</m> be the original system with equations <m>e_1,e_2,\dots ,e_m</m>.
-        </p>
-        <p>
           For each specified row operation,
           we will call the resulting new system <m>L'</m> and its equations <m>e'_1,e'_2,\dots , e'_m</m>.
-          <ul>
-            <li>
-              <title>Row swap</title>
+        </p>
+        <case>
+        <title>Row swap</title>
               <p>
                 In this case systems <m>L</m> and <m>L'</m> have exactly the same equations,
                 just written in a different order.
@@ -181,8 +179,8 @@
                 since these are the same equations!
                 It follows that <m>s</m> is a solution of <m>L</m> if and only if it is a solution to <m>L'</m>.
               </p>
-            </li>
-            <li>
+        </case>
+        <case>
               <title>Scalar multiplication</title>
               <p>
                 In this case <m>e_j=e'_j</m> for all <m>j\ne i</m>,
@@ -190,21 +188,30 @@
                 Since only the <m>i</m>-th equation has changed,
                 it suffices to show that <m>s</m> is a solution to <m>e_i</m> if and only if <m>s</m> is a solution to <m>c\cdot e_i</m>.
                 Let's prove each direction of this if and only if separately.
-                <md>
-                  <mrow>s \text{ satisfies }  e_i\amp \Rightarrow  a_{i1}s_1+a_{i2}s_2+\cdots +a_{in}s_n=b_i \amp  \text{ (by def.) }</mrow>
-                  <mrow>\amp \Rightarrow  ca_{i1}s_1+ca_{i2}s_2+\cdots +ca_{in}s_n=cb_i \amp  \text{ (mult both sides by \(c\)) }</mrow>
-                  <mrow>\amp \Rightarrow  s \text{ satisfies }  e'_i \amp \text{ (by def) }</mrow>
-                </md>
-                Now for reverse implication.
-                <md>
-                  <mrow>s \text{ satisfies }  e'_i \amp \Rightarrow ca_{ii}s_1+ca_{i2}s_2+\cdots ca_{in}s_n=cb_i \amp \text{ (by def) }</mrow>
-                  <mrow>\amp \Rightarrow \frac{1}{c}(ca_{i1}s_1+ca_{i2}s_2+\cdots +ca_{in}s_n)=\frac{1}{c}\cdot cb_i \amp  \text{ (mult both sides by \(\frac{1}{c}\))}</mrow>
-                  <mrow>\amp \Rightarrow a_{i1}s_1+a_{i2}s_2+\cdots +a_{in}x_n=b_i \amp  \text{ (distribute \(\frac{1}{c}\))}</mrow>
-                  <mrow>\amp \Rightarrow s \text{ satisfies }  e'_i \amp  \text{ (by def.). }</mrow>
-                </md>
               </p>
-            </li>
-            <li>
+                <p>
+                  If <m>s</m> satisfies <m>e_1</m>, then <m>a_{i1}s_1+a_{i2}s_2+\cdots +a_{in}s_n=b_i</m>. Multiplying both sides by <m>c</m> we see that
+                  <me>
+                    ca_{i1}s_1+ca_{i2}s_2+\cdots +ca_{in}s_n=cb_i,
+                  </me>
+                  and hence that <m>s</m> is also a solution of <m>c\,e_i=e_i'</m>.
+
+                </p>
+                <p>
+                  For the other direction, if <m>s</m> satisfies <m>c e_i=e_i'</m>, then
+                  <me>
+                    ca_{ii}s_1+ca_{i2}s_2+\cdots ca_{in}s_n=cb_i.
+                  </me>
+                  Now, since <m>c\ne 0</m>, we can multiply both sides of this equation by <m>1/c</m> to see that
+                  <me>
+                    a_{i1}s_1+a_{i2}s_2+\cdots +a_{in}s_n=b_i
+                  </me>
+                  and hence that <m>s</m> is a solution to <m>e_i</m>.
+
+                </p>
+
+            </case>
+            <case>
               <title>Row addition</title>
               <p>
                 The only equation of <m>L'</m> that differs from <m>L</m> is
@@ -225,14 +232,16 @@
                 Now suppose <m>s=(s_1,s_2,\dots,
                 s_n)</m> satisfies <m>L'</m>.
                 Since <m>s</m> satisfies <m>e_j'=e_j</m>, we have
-                <me>
-                  a_{j1}s_1+a_{j2}s_2+\cdots +a_{jn}s_n=b_j\tag{\(*\)}
-                </me>.
+                <md>
+                <mrow xml:id="solveeqn" tag="star">
+                  a_{j1}s_1+a_{j2}s_2+\cdots +a_{jn}s_n=b_j
+                </mrow>
+              </md>.
                 Since <m>s</m> satisfies <m>e_i'</m>, we have
                 <me>
                   a_{i1}s_1+a_{i2}s_2+\cdots +a_{in}s_n+c(a_{j1}s_1+a_{j2}s_2+\cdots +a_{jn}s_n)=b_i+cb_j
                 </me>
-                Substituting <m>(*)</m> into the equation above we get
+                Substituting <xref ref="solveeqn"/> into the equation above we get
                 <me>
                   a_{i1}s_1+a_{i2}s_2+\cdots +a_{in}s_n+c(b_j)=b_i+cb_j
                 </me>,
@@ -243,9 +252,7 @@
                 This shows that <m>s</m> satisfies <m>e_i</m>.
                 It follows that <m>s</m> satisfies <m>L</m>.
               </p>
-            </li>
-          </ul>
-        </p>
+          </case>
       </solution>
   </exercise>
 </exercises>

@@ -1,0 +1,7 @@
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="c_matrices">
+  <title>Matrices and their arithmetic</title>
+  <xi:include  href="s_matrix.ptx"/>
+  <xi:include  href="s_algebraic.ptx"/>
+  <xi:include  href="s_elementary.ptx"/>
+  <xi:include  href="s_invertible.ptx"/>
+</chapter>
