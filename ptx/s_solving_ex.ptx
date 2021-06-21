@@ -120,36 +120,25 @@
 <exercise>
   <statement>
     <p>
-      Determine all values of <m>a</m> for which the system has (a) no solutions, (b) exactly one solution,
-      or (c) infinitely-many solutions.
-      <me>
-        \begin{linsys}{3} x\amp +\amp 2y\amp -\amp 3z\amp =\amp 4\\ 3x\amp -\amp y\amp +\amp 5z\amp =\amp 2\\ 4x\amp +\amp y\amp +\amp (a^2-14)z\amp =\amp a+2 \end{linsys}
-      </me>
+      For each system below determine all values of <m>a</m> for which the system below has (a) no solutions,
+      (b) a unique solution, and (c) infinitely many solutions.
     </p>
+    <ol>
+      <li>
+        <me>
+            \begin{linsys}{3} x\amp +\amp 2y\amp +\amp z\amp =\amp 2\\ 2x\amp -\amp 2y\amp +\amp 3z\amp =\amp 1\\ x\amp +\amp 2y\amp -\amp (a^2-3)z\amp =\amp a \end{linsys}
+          </me>
+      </li>
+      <li>
+        <p>
+          <me>
+            \begin{linsys}{3} x\amp +\amp 2y\amp -\amp 3z\amp =\amp 4\\ 3x\amp -\amp y\amp +\amp 5z\amp =\amp 2\\ 4x\amp +\amp y\amp +\amp (a^2-14)z\amp =\amp a+2 \end{linsys}
+          </me>
+        </p>
+      </li>
+    </ol>
   </statement>
-  <!-- <solution>
-    <p>
-      The augmented matrix row reduces to
-      <me>
-        \begin{bmatrix}1\amp 2\amp 3\amp 4\\ 0\amp -7\amp 14\amp -10\\ 0\amp 0\amp (a^2-16)\amp a-4 \end{bmatrix}
-      </me>
-    </p>
-    <p>
-      From this it follows that the system has:
-    </p>
-    <p>
-      a) 0 solutions iff <m>a^2-16=0</m> and <m>a-4\ne 0</m> iff <m>a=-4</m>;
-    </p>
-    <p>
-      (b) exactly one solution iff
-      <m>a^2-16\ne 0</m> iff <m>a\ne\pm 4</m>;
-    </p>
-    <p>
-      (c) infinitely many solutions iff
-      <m>a^2-16=0</m> and <m>a-4=0</m> iff <m>a=4</m>.
-    </p>
-  </solution> -->
-</exercise>
+  </exercise>
 <exercise>
   <statement>
       <p>
@@ -300,17 +289,7 @@
   </statement>
 
 </exercise>
-<exercise>
-  <statement>
-    <p>
-      Determine all values of <m>a</m> for which the system below has (a) no solutions,
-      (b) a unique solution, and (c) infinitely many solutions.
-      <me>
-        \begin{linsys}{3} x\amp +\amp 2y\amp +\amp z\amp =\amp 2\\ 2x\amp -\amp 2y\amp +\amp 3z\amp =\amp 1\\ x\amp +\amp 2y\amp -\amp (a^2-3)z\amp =\amp a \end{linsys}
-      </me>
-    </p>
-  </statement>
-  </exercise>
+
   <exercise>
     <statement>
       <p>
