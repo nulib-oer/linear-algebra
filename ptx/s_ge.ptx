@@ -62,7 +62,7 @@ As defined more thoroughly in <xref ref="d_matrix"/>, a matrix is just a rectang
 </statement>
 </remark>
 
-<subsection xml:id="ss_ge_row_echelon">
+<paragraphs xml:id="ss_ge_row_echelon">
   <title>Row echelon matrices</title>
  <p>
    Here is our precise formulation of a <q>simple</q> linear system; it is a system whose associated augmented matrix is in <em>row echelon form</em>, as described below.
@@ -203,9 +203,9 @@ As defined more thoroughly in <xref ref="d_matrix"/>, a matrix is just a rectang
       </ol>
   </solution>
 </example>
-</subsection>
+</paragraphs>
 
-<subsection xml:id="ss_gaussian_elimination">
+<paragraphs xml:id="ss_gaussian_elimination">
   <title>Gaussian elimination</title>
   <p>
   We will now describe a systematic procedure, called <em>Gaussian elimination</em>, that allows us to reduce a given linear system <m>L</m> to a system <m>L'</m>in row echelon form.
@@ -454,7 +454,7 @@ As defined more thoroughly in <xref ref="d_matrix"/>, a matrix is just a rectang
   </solution>
 </example>
 
-</subsection>
+</paragraphs>
 
 <xi:include  href="s_ge_ex.ptx"/>
 

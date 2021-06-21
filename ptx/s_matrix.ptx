@@ -163,7 +163,7 @@ When introducing a new family of mathematical objects we always have
         </p>
         <p>
           Equivalently,
-          we <m>A+B</m> and <m>A-B</m> are defined by declaring:
+          <m>A+B</m> and <m>A-B</m> are defined by declaring:
           <md>
             <mrow>(A+B)_{ij}\amp =\amp (A)_{ij}+(B)_{ij}</mrow>
             <mrow>(A-B)_{ij}\amp =\amp (A)_{ij}-B_{ij}</mrow>

@@ -21,7 +21,7 @@ The new system in row echelon form is undoubtedly simpler, but describing <em>al
 
 
 
-<subsection xml:id="ss_workingExample">
+<paragraphs xml:id="ss_workingExample">
   <title>Model example</title>
 <p> We begin by illustrating the general method for solving a linear system using our model example; a careful  description of the procedure, along with a proof of its validity, is found in <xref ref="th_solveSystem"/>.
 </p>
@@ -104,8 +104,8 @@ Alternatively, we can describe the solutions to <m>L</m> with the <em>parametric
     </p>
   </statement>
 </remark>
-  </subsection>
-  <subsection xml:id="ss_solveSystem">
+  </paragraphs>
+  <paragraphs xml:id="ss_solveSystem">
     <title>General method for solving linear systems</title>
     <p>
       Before describing a precise algorithm for computing the set of solutions to a linear system, we must address the possibility that there are no solutions to the system whatsoever. Such a system is called <em>inconsistent</em>.
@@ -263,9 +263,9 @@ Alternatively, we can describe the solutions to <m>L</m> with the <em>parametric
       </statement>
     </corollary>
   </p>
-  </subsection>
+  </paragraphs>
 
-  <subsection xml:id="ss_homogeneous">
+  <paragraphs xml:id="ss_homogeneous">
     <title>Solutions to homogeneous systems</title>
     <p>
       Consider the special case of a homogeneous system
@@ -298,7 +298,7 @@ Alternatively, we can describe the solutions to <m>L</m> with the <em>parametric
       </statement>
     </corollary>
 
-  </subsection>
+  </paragraphs>
 
 <xi:include  href="s_solving_ex.ptx"/>
 
