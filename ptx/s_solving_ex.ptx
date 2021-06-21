@@ -57,7 +57,7 @@
       </me>
     </p>
   </statement>
-  <solution>
+  <!-- <solution>
     <p>
       <md>
         <mrow>\begin{bmatrix}1\amp 1\amp -1\amp 1\amp 1\\ -2\amp -2\amp 2\amp -2\amp -2\\ 1\amp 1\amp 1\amp 2\amp 3 \end{bmatrix} \amp \xrightarrow[\hspace{35pt}]{r_2+2r_1}\amp \begin{bmatrix}1\amp 1\amp -1\amp 1\amp 1\\ 0\amp 0\amp 0\amp 0\amp 0\\ 1\amp 1\amp 1\amp 2\amp 3 \end{bmatrix}</mrow>
@@ -82,7 +82,7 @@
         </me>.
       </p>
     </p>
-  </solution>
+  </solution> -->
 </exercise>
 <exercise>
   <statement>
@@ -165,7 +165,7 @@
     </p>
     <p>
       Since <m>U</m> has <m>m</m> rows,
-      there are <em>at most</em> <m>m</m> leading 1's in <m>U</m>,
+      there are <em>at most</em> <m>m</m> leading ones in <m>U</m>,
       which means there are at most <m>m</m> leading variables among the <m>x_i</m>.
       Since <m>n>m</m>, not all the <m>x_i</m> can be leading.
       Thus the system <em>must</em> have a free variable.
@@ -202,13 +202,35 @@
       </li>
       <li>
       <p>
-      The only solution to a homogeneous system of <m>n</m> equations in <m>n</m> unknowns with <m>n</m> leading 1's is the trivial solution <m>s=(0,0,\dots,0)</m>.
+      The only solution to a homogeneous system of <m>n</m> equations in <m>n</m> unknowns with <m>n</m> leading ones is the trivial solution <m>s=(0,0,\dots,0)</m>.
       </p>
+      </li>
+      <li>
+        <p>
+          All leading ones in of a matrix in row echelon form must occur in distinct columns.
+        </p>
+      </li>
+      <li>
+        <p>
+          If a homogeneous linear system of <m>n</m> equations in <m>n</m> unknowns has a corresponding augmented matrix with a reduced row echelon form containing <m>n</m> leading ones, then the linear system has only the trivial solution.
+        </p>
+      </li>
+      <li>
+        <p>
+          If the reduced row echelon form of the augmented matrix for a linear system has a zero row,
+          then the system must have infinitely many solutions.
+        </p>
+      </li>
+      <li>
+        <p>
+          If a linear system has more unknowns than equations,
+          then it must have infinitely many solutions.
+        </p>
       </li>
       </ol>
       </statement>
       <!-- <solution>
-      <ol type="(a)">
+      <ol label="(a)">
         <li>
           <p>
             False.
@@ -241,5 +263,112 @@
       </ol>
 </solution> -->
 </exercise>
+<exercise>
+  <statement>
+    <p>
+      Interpret each matrix below as an augmented matrix of a linear system.
+      Asterisks represent an unspecified real number.
+      For each matrix,
+      determine whether the corresponding system is consistent or inconsistent.
+      If the system is consistent,
+      decide further whether the solution is unique or not.
+      If there is not enough information answer <sq>inconclusive</sq> and back up your claim by giving an explicit example where the system is consistent,
+      and an explicit example where the system is inconsistent.
+      <ol label="(a)">
+        <li>
+          <p>
+            <m>\begin{bmatrix}1\amp *\amp *\amp *\\ 0\amp 1\amp *\amp *\\ 0\amp 0\amp 1\amp 1 \end{bmatrix}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\begin{bmatrix}1\amp 0\amp 0\amp *\\ *\amp 1\amp 0\amp *\\ *\amp *\amp 1\amp * \end{bmatrix}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\begin{bmatrix}1\amp 0\amp 0\amp 0\\ 1\amp 0\amp 0\amp 1\\ 1\amp *\amp *\amp * \end{bmatrix}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\begin{bmatrix}1\amp *\amp *\amp *\\ 1\amp 0\amp 0\amp 1\\ 1\amp 0\amp 0\amp 1 \end{bmatrix}</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
 
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Determine all values of <m>a</m> for which the system below has (a) no solutions,
+      (b) a unique solution, and (c) infinitely many solutions.
+      <me>
+        \begin{linsys}{3} x\amp +\amp 2y\amp +\amp z\amp =\amp 2\\ 2x\amp -\amp 2y\amp +\amp 3z\amp =\amp 1\\ x\amp +\amp 2y\amp -\amp (a^2-3)z\amp =\amp a \end{linsys}
+      </me>
+    </p>
+  </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        What condition must <m>a, b,</m> and <m>c</m> satisfy in order for the system below to be consistent? Express your answer as an equation involving <m>a, b,</m> and <m>c</m>.
+        <me>
+          \begin{linsys}{3} x\amp +\amp 3y\amp +\amp z\amp =\amp a\\ -x\amp -\amp 2y\amp +\amp z\amp =\amp b\\ 3x\amp +\amp 7y\amp -\amp z\amp =\amp c \end{linsys}
+        </me>
+      </p>
+    </statement>
+
+  </exercise>
+<exercise>
+  <statement>
+    <p>
+      Solve the system of equations below for <m>x</m>, <m>y</m>, and <m>z</m>.
+      <me>
+        \begin{linsys}{3} \frac{1}{x}\amp +\amp \frac{2}{y}\amp -\amp \frac{4}{z}\amp =\amp 1\\ \\ \frac{2}{x}\amp +\amp \frac{3}{y}\amp +\amp \frac{8}{z}\amp =\amp 0\\ \\ -\frac{1}{x}\amp +\amp \frac{9}{y}\amp +\amp \frac{10}{z}\amp =\amp 5 \end{linsys}
+      </me>
+    <hint>
+      <p>
+        First replace the given <em>nonlinear</em> system with a linear one using a change of variable substitution.
+      </p>
+    </hint>
+    </p>
+  </statement>
+  </exercise>
+  <exercise>
+  <statement>
+    <p>
+      If <m>A</m> is a matrix with three rows and five columns,
+      then what is the maximum possible number of leading ones in its reduced row echelon form? Justify your answer.
+    </p>
+    <p>
+      Provide an explicit example of a matrix that attains this maximum number of leading ones.
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      If <m>A</m> is a matrix with three rows and six columns,
+      then what is the maximum possible number of free variables in the general solution of the linear system with augmented matrix <m>A</m>? Justify your answer.
+    </p>
+    <p>
+      Provide an explicit example of a matrix that attains this maximal number of free variables.
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      If <m>A</m> is a matrix with five rows and three columns,
+      then what is the minimum possible number of zero rows in any row echelon form of <m>A</m>?
+    </p>
+    <p>
+      Provide an explicit example of a matrix that attains this minimal number of zero rows.
+    </p>
+  </statement>
+
+</exercise>
 </exercises>

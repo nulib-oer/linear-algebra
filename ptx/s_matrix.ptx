@@ -1,4 +1,4 @@
-<section xml:id="s_matrix">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_matrix">
   <title>Matrices</title>
   <introduction>
     <p>
@@ -19,11 +19,12 @@
       </principle>
     </p>
   </introduction>
-  <subsection xml:id="ss_matrix_attributes">
-    <title>Basic attributes</title>
-    As the next definition makes clear, a matrix is just an ordered sequence of numbers arranged in a very particular manner.
+  <paragraphs xml:id="ss_matrix_attributes">
+    <title>The basics</title>
+    We begin with some elementary definitions about matrices, matrix equality, and special types of matrices. As the next definition makes clear, a matrix is just an ordered sequence of numbers arranged in a very particular manner.
     <definition xml:id="d_matrix">
       <title>Matrix</title>
+      <idx><h>matrix</h></idx>
       <statement>
         <p>
         A <term>(real) matrix</term> is a rectangular array of real numbers
@@ -56,6 +57,7 @@
     <dl>
       <li>
         <title>Matrix-building notation</title>
+        <idx><h>matrix</h><h>matrix-building notation</h></idx>
         <p>
           The notation <m>[a_{ij}]_{m\times n}</m> denotes the
           <m>m\times n</m> matrix whose <m>ij</m>-th entry (<m>i</m>-th row, <m>j</m>-th column) is <m>a_{ij}</m>. When there is no danger of confusion, this notation is often shortened to <m>[a_{ij}]</m>.
@@ -63,6 +65,7 @@
       </li>
       <li>
         <title>Matrix entry notation</title>
+        <idx><h>matrix</h><h>matrix entry notation</h></idx>
         <p>
           Given a matrix <m>A</m>,
           the notation <m>(A)_{ij}</m> denotes the <m>ij</m>-th entry of <m>A</m>.
@@ -89,298 +92,402 @@
     </p>
   </statement>
 </remark>
-When introducing a new family of mathematical objects we always have
-</subsection>
-  <paragraphs>
-    <title>Specially sized matrices</title>
+  <p>
+  In everyday language the notion of equality is taken as self-evident. Two things are equal if they are the same. What more is there to say? In mathematics, each time we introduce a new type of mathematical object (e.g., sets, functions, $n$-tuples, etc.) we need to spell out exactly what we mean for two things to be considered equal. We do so now with matrices.
+</p>
+  <definition xml:id="d_matrix_equality">
+    <title>Matrix equality</title>
+    <statement>
+      <p>
+        Let <m>A</m> and <m>B</m> be matrices of dimension <m>m\times n</m> and <m>m'\times n'</m>, respectively.  The two matrices are <term>equal</term> if
+        <ol>
+          <li>
+            <p>
+              <m>m=m'</m> and <m>n=n'</m>;
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>(A)_{ij}=(B)_{ij}</m> for all
+              <m>1\leq i\leq m</m> and <m>1\leq j\leq n</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+      <p>
+        In other words, we have <m>A=B</m> if and only if <m>A</m> and <m>B</m> have the same shape, and each entry of <m>A</m> is equal to the corresponding entry of <m>B</m>.
+      </p>
+    </statement>
+  </definition>
+  <example xml:id="ex_inequality">
+    <statement>
+      <p>
+        The matrix <m>A=\begin{bmatrix}1\amp 2\amp 3\amp 4</m> is not equal to <m>B=\begin{bmatrix} 1\\ 2\\ 3\\ 4</m>, despite their having the same entries roughly in the same order: 1 is first, 2 is second, \<etc /> In this case equality does not hold as <m>A</m> and <m>B</m> have different shapes: <m>A</m> is <m>1\times 4</m>, and <m>B</m> is <m>4\times 1</m>.
+      </p>
+      <p>
+        The matrices <m>A=\begin{bmatrix}1\amp 2 \\3\amp 4 </m> and <m>B=\begin{bmatrix}1\amp 2\\ 5\amp 4</m> have the same dimension, but are not equal since <m>(A)_{21}=3\ne 5=(B)_{21}</m>.
+      </p>
+    </statement>
+  </example>
+  <definition xml:id="d_square_matrices">
+    <title>Square matrices, row vectors, column vectors, zero matrices</title>
+    <idx><h>matrix</h><h>square</h>
+    </idx>
+    <idx><h>matrix</h><h>row vector</h>
+    </idx>
+    <idx><h>matrix</h><h>column vector</h>
+    </idx>
+    <idx><h>matrix</h><h>diagonal of square matrix</h>
+    </idx>
+    <statement>
+      <p>
+        A matrix <m>A</m> is <term>square</term> if its dimension is <m>n\times n</m>. The <term>diagonal</term> of a square matrix <m>A=[a_{ij}]_{n\times n}</m> consists of the entries <m>a_{ii}</m> for <m>1\leq i\leq n</m>.
+      </p>
+      <p>
+      A <m>1\times n</m>, i.e., a matrix of the form <me>\begin{bmatrix}a_1\amp a_2\amp \cdots \amp a_n \end{bmatrix}</me>, is called a <term>row vector</term>.
+      </p>
+      <p>
+        An <m>n\times 1</m> matrix, i.e., a matrix of the form
+        <me>
+          \begin{bmatrix}b_1\\ b_2\\\vdots \\ b_m \end{bmatrix}
+        </me>,
+        is called a <term>column vector</term>.
+      </p>
+      <p>
+        The <term> <m>m\times n</m> zero matrix</term>, denoted <m>\boldzero_{m\times n}</m>, is the matrix of that dimension, all of whose entries are zero: i.e., <m>(\boldzero_{m\times n})_{ij}=0</m> for all <m>1\leq i\leq m</m> and <m>1\leq j\leq n</m>.
+      </p>
+    </statement>
+  </definition>
+</paragraphs>
+  <paragraphs xml:id="ss_matrix_arithmetic">
+    <title>Matrix arithmetic: addition, subtraction and scalar multiplication</title>
     <p>
-      An <m>n\times n</m> matrix is called a
-      <term>square matrix of order <m>n</m></term>.
-      <me>
-        A=\varmatrix{n}{n}{a}
-      </me>.
+      We now lay out the various algebraic operations we will use to combine and transform matrices; we refer to the use of these operations loosely as <em>matrix arithmetic</em>. Some of these operations resemble familiar operations from real arithmetic in terms of their notation and definition. Do not be lulled into complacency! These are new operations defined for a new class of mathematical objects, and must be treated carefully. In particular, pay close attention to (a) exactly what type of mathematical objects serve as inputs for each operation (the <em>ingredients</em> of the operation), and (b) what type of mathematical object is outputted.
     </p>
-    <p>
-      A <m>1\times n</m> matrix is called a <term>row vector</term>:
-      <me>
-        \mathbf{a}=\begin{bmatrix}a_1\amp a_2\amp \cdots \amp a_n \end{bmatrix}
-      </me>.
-    </p>
-    <p>
-      An <m>m\times 1</m> matrix is called a
-      <term>column vector</term>:
-      <me>
-        \mathbf{b}=\begin{bmatrix}b_1\\ b_2\\\vdots \\ b_m \end{bmatrix}
-      </me>
-    </p>
-  </paragraphs>
-  <paragraphs>
-    <title>Equality, sum, difference</title>
-    <definition>
-      <statement>
-        <p>
-          Two matrices <m>A</m> and <m>B</m> are <term>equal</term> when
-          <ol>
-            <li>
-              <p>
-                they have the same size, and
-              </p>
-            </li>
-            <li>
-              <p>
-                their corresponding entries are equal.
-              </p>
-            </li>
-          </ol>
-        </p>
-        <p>
-          In other words,
-          <m>A</m> and <m>B</m> must both be <m>m\times n</m> matrices,
-          and <m>(A)_{ij}=(B)_{ij}</m> for all
-          <m>1\leq i\leq m</m> and <m>1\leq j\leq n</m>.
-        </p>
-      </statement>
-    </definition>
 
-    <definition>
-      <statement>
+
+    <definition xml:id="d_matrix_add_subtract">
+      <title>Matrix addition and subtraction</title>
+      <idx><h>matrix addition</h></idx>
+      <idx><h>matrix subtraction</h></idx>
+      <statement><p>
+      </p>
         <p>
-          Suppose <m>A=[a_{ij}]</m> and
-          <m>B=[b_{ij}]</m> are both <m>m\times n</m> matrices.
-          We define
-          <ul>
-            <li>
-              <p>
-                their <term>sum</term> <m>A+B</m> to be the matrix <m>C=[a_{ij}+b_{ij}]</m>;
-              </p>
-            </li>
-            <li>
-              <p>
-                their <term>difference</term> <m>A-B</m> to be the matrix <m>D=[a_{ij}-b_{ij}]</m>.
-              </p>
-            </li>
-          </ul>
+          <term>Matrix addition</term> is the operation defined as follows: given two <m>m\times n</m> matrices <m>A=[a_{ij}]_{m\times n}</m> and <m>B=[b_{ij}]_{m\times n}</m>, we define their <term>sum</term> to be the matrix <me>A+B\colon =[a_{ij}+b_{ij}]_{m\times n}</me>.
+          In other words <m>A+B</m> is the <m>m\times n</m> matrix satisfying <me>(A+B)_{ij}=(A)_{ij}+(B)_{ij}=a_{ij}+b_{ij}</me> for all <m>1\leq i\leq m</m> and <m>1\leq j\leq n</m>.
         </p>
         <p>
-          Equivalently,
-          <m>A+B</m> and <m>A-B</m> are defined by declaring:
-          <md>
-            <mrow>(A+B)_{ij}\amp =\amp (A)_{ij}+(B)_{ij}</mrow>
-            <mrow>(A-B)_{ij}\amp =\amp (A)_{ij}-B_{ij}</mrow>
-          </md>
+          <term>Matrix subtraction</term> is the operation defined as follows: given two <m>m\times n</m> matrices <m>A=[a_{ij}]_{m\times n}</m> and <m>B=[b_{ij}]_{m\times n}</m>, we define their <term>difference</term> to be the matrix <me>A-B\colon =[a_{ij}-b_{ij}]_{m\times n}</me>.
+          In other words <m>A-B</m> is the <m>m\times n</m> matrix satisfying <me>(A-B)_{ij}=(A)_{ij}-(B)_{ij}=a_{ij}-b_{ij}</me> for all <m>1\leq i\leq m</m> and <m>1\leq j\leq n</m>.
         </p>
       </statement>
     </definition>
-  </paragraphs>
-  <paragraphs>
-    <title>Scalar multiplication</title>
-    <definition>
-      <title>Scalar multiplication</title>
+  <remark>
+  Observe that matrix addition/subtraction is not defined for any old pair of matrices. The ingredients of matrix addition (or subtraction) are two matrices <em>of the same dimension</em>; and the output is a third matrix of this common dimension.
+  </remark>
+  <definition xml:id="d_matrix_scalar_mult">
+      <title>Scalar multiplication of matrices</title>
+      <idx><h>matrix scalar multiplication</h></idx>
       <statement>
         <p>
-          Given any matrix <m>A=[a_{ij}]_{m\times n}</m> and any constant <m>c</m>,
+          Given any matrix <m>A=[a_{ij}]_{m\times n}</m> and any constant <m>c\in \R</m>,
           we define
           <me>
             cA=[ca_{ij}]
           </me>.
+        In other words, <m>cA</m> is the <m>m\times n</m> matrix obtained by <q>scaling</q> each of the entries of <m>A</m> by the constant <m>c</m>.
         </p>
         <p>
-          We call <m>cA</m> a <term>scalar multiple</term> of <m>A</m>.
+          We call <m>cA</m> a <term>scalar multiple</term> of <m>A</m>. Furthermore, to help distinguish between matrices and real numbers, we will refer to elements of <m>\R</m> as <term>scalars</term>.
         </p>
       </statement>
     </definition>
-  </paragraphs>
-  <paragraphs>
-  <title>Matrix multiplication</title>
-  <paragraphs>
-    <title>Warning:</title>
+    <remark> Whereas matrix addition and subtraction closely resemble corresponding operations involving real numbers, there is no obvious real arithmetic analogue to matrix scalar multiplication. In particular, notice how matrix scalar multiplication is a sort of  <em>hybrid</em> operation that combines mathematical objects of two very different natures: a real number (or scalar) on the one hand, and a matrix on the other.</remark>
     <p>
-      after all this,
-      you might guess that we would define multiplication of two
-      <m>m\times n</m> matrices <m>A</m> and <m>B</m> by taking the product of the corresponding entries.
-      <em>NOT SO!</em>
+    We call the result of applying a sequence of matrix additions and scalar multiplications a <em>linear combination of matrices</em>.
     </p>
-  </paragraphs>
-  <definition>
-    <statement>
-      <p>
-        Let <m>A=[a_{ij}]_{m\times r}</m> be an {<m>m\times r</m>} matrix,
-        and <m>B=[b_{ij}]_{r\times n}</m> be an {<m>r\times n</m>} matrix.
-      </p>
-      <p>
-        We define their <term>product</term>,
-        <m>A\cdot B</m> to be the {<m>m\times n</m>} matrix <m>C=[c_{ij}]_{m\times n}</m>, where
-        <me>
-          c_{ij}=a_{i1}b_{1j}+a_{i2}b_{2j}+\cdots a_{ir}b_{rj} =\sum_{\ell=1}^ra_{i\ell}b_{\ell j}
-        </me>.
-      </p>
-    </statement>
-  </definition>
-  <p>
-    Note the many peculiarities of this definition:
-    <ol>
-      <li>
-        <p>
-          In general <m>A_{{\color{red}m\times r}}</m>,
-          <m>B_{\color{blue} r\times n}</m> and
-          <m>C_{\color{green} m\times n}</m> all have different sizes!
-        </p>
-      </li>
-      <li>
-        <p>
-          The rule for getting the entries of
-          <m>A\cdot B</m> is nowhere near as simple as we may have hoped!
-        </p>
-      </li>
-    </ol>
-  </p>
-  </paragraphs>
-  <paragraphs>
-    <title>Matrix multiplication</title>
-    <p>
-      For the product of <m>A</m> and <m>B</m> to be defined,
-      we need the number of columns of <m>A</m> to be equal to the number of rows of <m>B</m>.
-      That is, the
-      <q>inside</q>
-      dimensions in the product below must be equal.
-      <me>
-        A_{m\times\color{red} r}\cdot B_{{\color{red}{r}}\times n}=C_{m\times n}
-      </me>
-      <me>
-        A_{{\color{blue}m}\times r}\cdot B_{r\times {\color{blue}n}}=C_{m\times n}
-      </me>
-    </p>
-    <p>
-      The
-      <q>outside</q>
-      dimensions tells us the dimension of the resulting matrix.
-    </p>
-    <p>
-      All of this will make more sense once we begin thinking of matrices <m>A</m> as defining certain functions <m>T_A</m>.
-      It turns out that the product of two matrices
-      <m>A\cdot B</m> will represent the <em>composition</em>
-      of their corresponding functions:
-      i.e., <m>T_A\circ T_B</m>.
-    </p>
-    <p>
-      The peculiar restriction on the dimensions of the matrices ensures that the two functions <m>T_A</m> and <m>T_B</m> can be composed:
-      that is, that the range of <m>T_B</m> lies within the domain of <m>T_A</m>.
-      More on this later!
-    </p>
-  </paragraphs>
-  <paragraphs>
-    <title>Alternative methods of multiplication</title>
-    <p>
-      In addition to the straightforward definition of matrix multiplication,
-      we will make <em>heavy use</em>
-      of a couple of alternative methods to computing products.
-    </p>
-    <p>
-      To articulate these other methods,
-      we need the following notion.
-    </p>
-    <definition>
+    <definition xml:id="d_matrix_lin_comb">
       <title>Linear combination of matrices</title>
+      <idx><h>linear combination</h><h>of matrices</h></idx>
       <statement>
         <p>
-          Let <m>A_1,A_2,\dots, A_r</m> be matrices of the same size,
+          Let <m>A_1,A_2,\dots, A_r</m> be <m>r</m> matrices of the same dimension,
           and let <m>c_1,c_2, \dots ,c_r</m> be scalars.
           The matrix
           <me>
             c_1A_1+c_2A_2\cdots +c_rA_r
           </me>
-          is called a <term>linear combination</term> of the <m>A_i</m>,
-          with <term>coefficients</term> <m>c_i</m>.
+          is called a <term>linear combination</term> of the <m>A_i</m>; the scalars <m>c_i</m> are called the <term>coefficients</term> of the linear combination.
         </p>
       </statement>
     </definition>
+    <example>
+      <statement>
+        <p>
+          Let <m>A=\begin{amatrix}[rrr]1\amp -1\amp 2\\ 0\amp 0\amp 1\end{amatrix}</m> and <m>B=\begin{amatrix}[rrr]0\amp 1\amp 1\\ -1\amp -1\amp 1\end{amatrix}</m>. Compute <m>2A+(-3)B</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <md>
+            <mrow>2A+(-3)B\amp= \begin{amatrix}[rrr]2\amp -2\amp 4\\ 0\amp 0\amp 2\end{amatrix}+\begin{amatrix}[rrr]0\amp -3\amp -3\\ 3\amp 3\amp -3\end{amatrix}</mrow>
+            <mrow> \amp=\begin{amatrix}[rrr]-2\amp 1\amp -3\\ 3\amp 3\amp -1\end{amatrix} </mrow>
+          </md>.
+        </p>
+      </solution>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Show that <m>B=\begin{amatrix}3\amp -3\amp 3 \end{amatrix}</m> can be expressed as a linear combination of the matrices
+          <me>
+            A_1=\begin{amatrix}[rrr]1\amp 1\amp 1\end{amatrix}, \
+            A_2=\begin{amatrix}[rrr]1\amp -1\amp 0\end{amatrix}, \
+            A_3=\begin{amatrix}[rrr]1\amp 1\amp -2\end{amatrix}
+          </me>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+        We must solve the matrix (or row vector) equation
+        <me>
+          aA_1+bA_2+cA_3=B
+        </me>
+        for the scalars <m>a,b,c</m>. Computing the linear combination on the left yields the matrix equation
+        <me>
+          \begin{amatrix}[rrr]a+b+c\amp a-b+c\amp a-2c\end{amatrix}=\begin{amatrix}[rrr]3\amp -3\amp 3\end{amatrix}
+        </me>.
+        Using the definition of matrix equality (<xref ref="d_matrix_equality"/>), we get the system of equations
+        <me>
+          \begin{linsys}[3] 1a \amp+\amp b\amp +\amp c\amp =\amp 3\\
+            a \amp-\amp b\amp +\amp c\amp =\amp -3\\
+            a \amp \amp \amp -\amp 2c\amp =\amp 3
+          \end{linsys}
+        </me>.
+        Using Gaussian elimination we find that there is a unique solution to this system: namely, <m>(a,b,c)=(1,3,-1)</m>. We conclude that <m>B=A_1+3A_2+(-1)A_3=A_1+3A_2-A_3</m>.
+        </p>
+      </solution>
+    </example>
   </paragraphs>
-  <paragraphs>
-    <title>Column method of $AB$</title>
+  <paragraphs xml:id="ss_matrix_mult">
+  <title>Matrix arithmetic: matrix multiplication</title>
     <p>
-      Given a matrix <m>A_{m\times n}</m>,
-      we will think of <m>A</m> as a sequence of <m>n</m> column vectors:
-      <me>
-        \begin{bmatrix}a_{11}\amp a_{12}\amp \cdots \amp a_{1n}\\ a_{21}\amp a_{22}\amp \cdots \amp a_{2n}\\ \vdots\amp \vdots \amp \cdots\amp \vdots \\ a_{m1}\amp a_{m2}\amp \cdots\amp a_{mn} \end{bmatrix} = \begin{bmatrix}\vert \amp \vert \amp  \amp  \vert\\ \bolda_1\amp \bolda_2\amp \cdots \amp \bolda_n\\ \vert\amp \vert \amp  \amp \vert \end{bmatrix}
-      </me>
+      So how do we define the product of two matrices? Looking at the previous operations, you might have guessed that we should define the product of two <m>m\times n</m> matrices by taking the product of their corresponding entries. Not so!
     </p>
-    <p>
-      Then for any column vector <m>\boldb=[b_{i}]</m> we have
-      <me>
-        A\boldb=A\cdot\begin{bmatrix}b_1\\b_2\\ \vdots \\b_n \end{bmatrix} = b_1\bolda_1+b_2\bolda_2+\cdots +b_n\bolda_n
-      </me>.
+  <definition xml:id="d_matrix_mult">
+    <title>Matrix multiplication</title>
+      <idx><h>matrix multiplication</h></idx>
+    <statement><p>
     </p>
+      <p> <term>Matrix multiplication</term> is the operation defined as follows: given an <m>m\times n</m> matrix
+        <m>A=[a_{ij}]_{m\times n}</m> and an <m>n\times r</m> matrix <m>B=[b_{ij}]_{n\times r}</m>, we define their <term>product</term> to be the <m>m\times r</m> matrix <m>AB</m> whose <m>ij</m>-th entry is given by the formula
+        <me>
+          (AB)_{ij}=a_{i1}b_{1j}+a_{i2}b_{2j}+\cdots a_{ir}b_{rj} =\sum_{\ell=1}^ra_{i\ell}b_{\ell j}
+        </me>
+        for all <m>1\leq i\leq m</m> and <m>1\leq j\leq r</m>.
+      </p>
+    </statement>
+  </definition>
     <p>
-      Next, we treat any <m>n\times r</m> matrix
-      <m>B_{n\times r}</m> as a sequence of column vectors <m>B=\begin{bmatrix}\vert \amp \vert \amp  \amp \vert \\ \boldb_1\amp \boldb_2\amp \cdots\amp \boldb_r\\ \vert \amp \vert \amp  \amp \vert \end{bmatrix}</m>.
-      Then we have
+    The formula for <m>(AB)_{ij}</m> is undoubtedly more complicated than you expected, and seems to come completely out of the blue. We will be able to retroactively motivate this definition once we introduce linear transformations. For now let's focus on understanding how and when we can compute the product of two matrices. In particular, let's concentrate on how matrix dimension comes into play.
+  </p>
+    <p>
+      For the product of <m>A_{mn}</m> and <m>B_{pr}</m> to be defined,
+      we need <m>n=p</m>. In other words for the product below to make sense we need the
+      <q>inner</q> dimensions of <m>A</m> and <m>B</m> to be equal:
       <me>
-        AB=A\begin{bmatrix}\vert \amp \vert \amp  \amp \vert \\ \boldb_1\amp \boldb_2\amp \cdots\amp \boldb_r\\ \vert \amp \vert \amp  \amp \vert \end{bmatrix} =\begin{bmatrix}\vert \amp \vert \amp  \amp \vert \\ A\boldb_1\amp A\boldb_2\amp \cdots\amp A\boldb_r\\ \vert \amp  \vert \amp  \amp  \vert \end{bmatrix}
+        \underset{m\times \boxed{n}}{A}\hspace{5pt} \underset{\boxed{n}\times r}{B}
       </me>.
+        If this condition is met, the dimension of the resulting matrix <m>AB</m> is determined by the <q>outer</q> dimensions of <m>A</m> and <m>B</m>. Schematically, you can think of the inner dimensions as being <q>canceled out</q>:
+        <me>
+          \underset{\boxed{m}\times\cancel{n}}{A}\hspace{5pt}\underset{\cancel{n}\times\boxed{r}}{B}=\underset{m\times r}{AB}.
+        </me>
+      </p>
+      <p>
+      All of this will make more sense once we begin thinking of matrices <m>A</m> as defining certain functions <m>T_A</m>.
+      Our formula for the entries of
+      <m>AB</m> is chosen precisely so that this new matrix corresponds to the <em>composition</em>
+      of the functions <m>T_A</m> and <m>T_B</m>: <ie /> so that
+      <me> T_{AB}=T_A\circ T_B</me>.
+      The ponderous restriction on the dimensions of the ingredient matrices ensures that the two functions <m>T_A</m> and <m>T_B</m> can be composed. (See <xref ref="s_transformation"/>.)
     </p>
   </paragraphs>
-  <paragraphs>
-    <title>Row method of $AB$</title>
+  <paragraphs xml:id="s_column_row_method">
+    <title>Alternative methods of multiplication</title>
     <p>
-      Given a matrix <m>B_{n\times r}</m>,
-      we will think of <m>B</m> as a sequence of <m>m</m> row vectors:
-      <me>
-        \begin{bmatrix}b_{11}\amp b_{12}\amp \cdots \amp b_{1r}\\ \hline b_{21}\amp b_{22}\amp \cdots \amp b_{2r}\\ \hline \vdots\amp \vdots \amp \cdots\amp \vdots \\ \hline b_{n1}\amp b_{n2}\amp \cdots\amp b_{nr} \end{bmatrix} = \begin{bmatrix}-\boldb_1-\\ -\boldb_2- \\ \vdots \\ -\boldb_n- \end{bmatrix}
-      </me>
+      In addition to the given definition of matrix multiplication,
+      we will make <em>heavy use</em>
+      of two further ways of computing matrix products, called the column method and the row method.
     </p>
-    <p>
-      Then for any row vector <m>\bolda=\begin{bmatrix}a_1\amp a_2\amp \cdots \amp a_n \end{bmatrix}</m> we have
-      <me>
-        \bolda B=\begin{bmatrix}a_1\amp a_2\amp \cdots \amp a_n \end{bmatrix} B= a_1\boldb_1+a_2\boldb_2+\cdots +a_n\boldb_n
-      </me>.
-    </p>
-    <p>
-      Next, we treat any <m>m\times n</m> matrix
-      <m>A_{m\times n}</m> as a sequence of row vectors and compute
-      <me>
-        AB=\begin{bmatrix}-\bolda_1- \\ -\bolda_2- \\ \vdots \\ -\bolda_m- \end{bmatrix} B = \begin{bmatrix}-\bolda_1B- \\ -\bolda_2B- \\ \vdots \\ -\bolda_mB- \end{bmatrix}
-      </me>
-    </p>
+    <theorem xml:id="th_column_method">
+      <title>Column method of matrix multiplication</title>
+      <idx><h>matrix multiplication</h><h>column method</h></idx>
+      <statement>
+        <p>
+          Let <m>A=[a_{i}]_{m\times n}</m> and <m>B=[b_{ij}]_{n\times r}</m>. The column method of matrix multiplication computes <m>AB</m> using the two steps below.
+        </p>
+        <dl>
+          <li>
+          <title>Step 1</title>
+            <p>
+
+            Let <m>\boldb_j</m> be the <m>j</m>-th column of <m>B</m>, considered as a column vector.
+            Then
+            <me>
+              AB=A\begin{bmatrix}\vert \amp \vert \amp  \amp \vert \\ \boldb_1\amp \boldb_2\amp \cdots\amp \boldb_r\\ \vert \amp \vert \amp  \amp \vert \end{bmatrix} =\begin{bmatrix}\vert \amp \vert \amp  \amp \vert \\ A\boldb_1\amp A\boldb_2\amp \cdots\amp A\boldb_r\\ \vert \amp  \vert \amp  \amp  \vert \end{bmatrix}
+            </me>.
+          </p>
+          </li>
+          <li>
+          <title>Step 2</title>
+            <p>
+              Let <m>\bolda_j</m> be the <m>j</m>-th column of <m>A</m>, considered as a column vector. Given <em>any</em> column vector <m>\boldb=[b_{i}]_{n\times 1}</m> we have
+              <me>
+                A\,\boldb=A\,\begin{bmatrix}b_1\\b_2\\ \vdots \\b_n \end{bmatrix} = b_1\bolda_1+b_2\bolda_2+\cdots +b_n\bolda_n
+              </me>.
+            </p>
+          </li>
+        </dl>
+      </statement>
+    </theorem>
+    <remark>
+      <p>
+        <xref ref="th_column_method"/> amounts to a two-step process for computing an arbitrary matrix product <m>AB</m>.
+      </p>
+      <p>
+        The first statement (Step 1) tells us that the <m>j</m>-th column of the matrix <m>AB</m> can be obtained by computing the product <m>A\,\boldb_j</m> of <m>A</m> with the <m>j</m>-th column of <m>B</m>.
+      </p>
+      <p>The second statement (Step 2) tells us that each product <m>A\,\boldb_j</m> can itself be computed as a certain linear combination of the columns of <m>A</m> with coefficients drawn from <m>\boldb_j</m>.</p>
+      <p>
+        A similar remark applies to computing matrix products using the row method, as described below in <xref ref="th_row_method"/>.
+      </p>
+    </remark>
+    <theorem xml:id="th_row_method">
+      <title>Row method of matrix multiplication</title>
+      <idx><h>matrix multiplication</h><h>row method</h></idx>
+      <statement>
+      <p>
+        Let <m>A=[a_{i}]_{m\times n}</m> and <m>B=[b_{ij}]_{n\times r}</m>. The row method of matrix multiplication computes <m>AB</m> using the two steps below.
+      </p>
+        <dl>
+          <li>
+          <title>Step 1</title>
+          <p>
+            Let <m>\bolda_i</m> be the <m>i</m>-th row of <m>A</m>.
+            Then
+            <me>
+              AB=\begin{bmatrix}--\bolda_1-- \\ --\bolda_2-- \\ \vdots \\ --\bolda_m-- \end{bmatrix} B = \begin{bmatrix}--\bolda_1B-- \\ --\bolda_2B-- \\ \vdots \\ --\bolda_mB-- \end{bmatrix}
+              </me>.
+            </p>
+
+          </li>
+          <li>
+          <title>Step 2</title>
+            <p>
+              Let <m>\boldb_i</m> be the <m>i</m>-th row of <m>B</m>. Given <em>any</em> row vector <m>\bolda=[a_{j}]_{1\times n}</m> we have
+              <me>
+                \bolda\, B=\begin{bmatrix}a_1\amp a_2\amp \cdots \amp a_n \end{bmatrix} B= a_1\boldb_1+a_2\boldb_2+\cdots +a_n\boldb_n
+              </me>.
+            </p>
+          </li>
+        </dl>
+      </statement>
+    </theorem>
+    <example xml:id="s_matrix_ex_product">
+      <statement>
+        <p>
+          Let $<m>A=\begin{amatrix}[rrr] 1\amp 1 \amp -2 \\ 1\amp 3\amp 2\end{amatrix}</m> and <m>B=\begin{amatrix}[rc]1\amp 1\\ 0\amp 1\amp \\ -2\amp 1 \end{amatrix}</m>
+        </p>
+        <p>
+          Compute <m>AB</m> using (a) the definition of matrix multiplication, (b) the column method, (c) the row method.
+        </p>
+      </statement>
+      <solution>
+        <ol label="(a)">
+          <li>
+            <p>
+              Using the definition, we see easily that
+              <me>
+                AB=\begin{amatrix}[rr]5\amp 0\\ -3\amp 6 \end{amatrix}
+              </me>
+
+            </p>
+          </li>
+        <li>
+          <p>
+            Let <m>\bolda_1, \bolda_2, \bolda_3</m> be the columns of <m>A</m>, and let <m>\boldb_1, \boldb_2</m> be the columns of <m>B</m>. We have
+            <md>
+              <mrow>AB \amp=
+              \begin{amatrix}[cc]\vert \amp \vert \\
+              A\boldb_1\amp A\boldb_2 \\
+              \vert\amp \vert\end{amatrix} \amp \text{(Step 1)} </mrow>
+              <mrow> \amp= \begin{amatrix}[cc]\vert \amp \vert \\
+              (1\bolda_1+0\bolda_2-2\bolda_3)\amp (\bolda_1+\bolda_2+\bolda_3) \\
+              \vert\amp \vert\end{amatrix} \amp \text{(Step 2)}</mrow>
+            <mrow>  \amp= \begin{amatrix}[rr]5\amp 0\\ -3\amp 6 \end{amatrix} \amp \text{(arithmetic)}</mrow>
+            </md>
+          </p>
+        </li>
+        <li>
+          <p>
+            Now let <m>\bolda_1, \bolda_2</m> be the <em>rows</em> of <m>A</m>, and let <m>\boldb_1, \boldb_2, \boldb_3</m> be the <em>rows</em> of <m>B</m>. We have
+            <md>
+              <mrow>AB \amp= \begin{amatrix}[c]--\bolda_1\, B--\\ --\bolda_2\, B-- \end{amatrix}\amp \text{(Step 1)}</mrow>
+              <mrow> \amp= \begin{amatrix}[c]--(1\boldb_1+1\boldb_2-2\boldb_3)-- \\
+              --(1\boldb_1+3\boldb_2+2\boldb_3)-- \end{amatrix} \amp \text{(Step 2)} </mrow>
+              <mrow>  \amp=\begin{amatrix}[rr]5\amp 0\\ -3\amp 6 \end{amatrix} \amp \text{(arithmetic)} </mrow>
+            </md>
+          </p>
+        </li>
+        </ol>
+      </solution>
+    </example>
   </paragraphs>
+
   <paragraphs>
-  <title>Transpose of a matrix</title>
-  <definition>
+  <title>Transpose of a matrix</title> We end this section with one last operation, <em>matrix transposition</em>. We will not make much use of this operation until later, but this is as good a place as any to introduce it.
+  <definition xml:id="d_transpose">
+    <title>Matrix transposition</title>
+    <idx><h>matrix transposition</h></idx>
+    <idx><h>transpose</h></idx>
     <statement>
       <p>
         Given an <m>m\times n</m> matrix
         <m>A=[a_{ij}]</m> its transpose <m>A^T</m> is the matrix whose <m>ij</m>-entry is the <m>ji</m>-th entry of <m>A</m>.
-        Using notation we have <m>A^T=[b_{ij}]_{n\times m}</m>,
-        where <m>b_{ij}=a_{ji}</m>.
-        Note in particular that <m>A^T</m> is <m>n\times m</m>.
+        In other words, <m>A^T</m> is the <m>n\times m</m> matrix satisfying <m>(A^T)_{ij}=(A)_{ji}</m> for all <m>1\leq i\leq n</m> and <m>1\leq j\leq m</m>.
       </p>
     </statement>
   </definition>
-  <paragraphs>
-    <title>Examples:</title>
+  <remark>
     <p>
-      let <m>A=\begin{bmatrix}1\amp 2\amp 3\\4\amp 5\amp 6 \end{bmatrix}</m>;
-      then <m>A^T=\begin{bmatrix}1\amp 4\\2\amp 5\\3\amp 6 \end{bmatrix}</m>.
-      Let <m>B=\begin{bmatrix}1\\0\\3 \end{bmatrix}</m>,
-      then <m>B^T=\begin{bmatrix}1\amp 0\amp 3 \end{bmatrix}</m>.
+      Given a matrix <m>A</m> we can give a column- or row-based description of <m>A^T</m> as follows:
+      <ul>
+        <li>
+          <p>
+            <m>A^T</m> is the matrix whose <m>i</m>-th row is the <m>i</m>-th column of <m>A</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>A^T</m> is the matrix whose <m>j</m>-th column is the <m>j</m>-th row of <m>A</m>.
+          </p>
+        </li>
+      </ul>
     </p>
-  </paragraphs>
-  <paragraphs>
-    <title>Comment:</title>
-    <p>
-      there are a couple of equivalent ways of describing <m>A^T</m> that may be more helpful depending on the situation:
-    </p>
-  </paragraphs>
-  <ul>
-    <li>
+
+ </remark>
+  <example>
+    <statement>
       <p>
-        <m>A^T</m> is the matrix whose columns are the rows of <m>A</m>.
+        Let <m>A=\begin{bmatrix}1\amp 2\amp 3\\4\amp 5\amp 6 \end{bmatrix}</m>;
+        then <m>A^T=\begin{bmatrix}1\amp 4\\2\amp 5\\3\amp 6 \end{bmatrix}</m>.
       </p>
-    </li>
-    <li>
       <p>
-        <m>A^T</m> is the matrix whose rows are the columns of <m>A</m>.
+        Let <m>B=\begin{bmatrix}1\\0\\3 \end{bmatrix}</m>,
+        then <m>B^T=\begin{bmatrix}1\amp 0\amp 3 \end{bmatrix}</m>.
       </p>
-    </li>
-  </ul>
+    </statement>
+  </example>
   </paragraphs>
+<xi:include  href="s_matrix_ex.ptx"/>
 </section>

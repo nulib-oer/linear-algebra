@@ -123,7 +123,7 @@ Alternatively, we can describe the solutions to <m>L</m> with the <em>parametric
 </definition>
     <p>
       We are now in a position to describe an algorithm for computing the set of solutions of a linear system.
-      fully describe what solution sets to linear systems look like qualitatively.
+      
     </p>
     <theorem xml:id="th_solveSystem">
       <title>Solving linear systems</title>
