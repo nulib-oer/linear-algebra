@@ -1,58 +1,48 @@
-<section xml:id="ss_algebraic">
-  <title>Algebraic properties</title>
-  <paragraphs>
-  <title><xref ref="c_linear_systems"></xref>. <xref ref="ss_algebraic"></xref>: executive summary</title>
-  <paragraphs>
-    <title>Definitions</title>
-    <p>
-      : zero matrix <m>\boldzero_{m\times n}</m>,
-      identity matrix <m>I_n</m>, inverse matrix <m>A^{-1}</m>,
-      invertibility,
-      <m>A^r</m> and <m>A^{-r}</m> for nonnegative integer <m>r\geq 0</m>. \alert{Procedures}: none! \alert{Theorems}: Many!
-      Lots of familiar rules of real number algebra (associativity,
-      distributivity, etc.) also hold for matrix algebra.
-      However some important properties fail:
-      e.g., commutativity and multiplicative cancellation.
-      We also learn some properties about taking the transpose (<m>A\mapsto A^T</m>) and its relation with taking the inverse
-      (<m>A\mapsto A^{-1}</m>).
-    </p>
-  </paragraphs>
-  </paragraphs>
-  <paragraphs>
-    <title>1.4: algebraic properties of matrices</title>
-    <p>
-      For the most part,
-      the matrix operations of <m>\cdot</m> and <m>+</m> behave in much the same manner as their corresponding real number operations.
-    </p>
-    <theorem xml:id="th_matrix-arith">
-      <title>Properties of matrix arithmetic</title>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_algebraic">
+  <title>Algebra of matrices</title>
+  <introduction>
+    <p>The last section was devoted to what might be called the <em>arithmetic</em> of matrices. We learned the basic operations of adding, multiplying, scaling, and transposing matrices. In this section we tackle the <em>algebra</em> of matrices. We will investigate the properties enjoyed (and not enjoyed) by our matrix operations, and will show how to use these operations to solve matrix equations.
+  </p>
+  <p>
+  As you learn about matrix algebra, keep in mind your old friend, good old-fashioned real number algebra. For the most part these two algebraic systems closely resemble one another, as <xref ref="th_matrix-arith"/> below makes clear. However, there are two crucial points where they differ (see <xref ref="th_matrix_abnormalities"/>), two important properties of real number algebra that do not hold for matrices; and it is these two simple aberrations that make matrix algebra so fascinating in comparison to real number algebra.
+  </p>
+  </introduction>
+  <theorem xml:id="th_matrix-arith">
+      <title>Properties of matrix addition, multiplication and scalar multiplication</title>
       <statement>
         <p>
           The following properties hold for all matrices <m>A, B, C</m> and scalars
           <m>a,
           b, c</m> for which the given expression makes sense.
-          <ol>
-            <li>
+          <ol label="(i)">
+            <li xml:id="th_matrix_comm">
+            <title>Addition commutative law</title>
               <p>
                 <m>A+B=B+A</m>
               </p>
             </li>
-            <li>
+            <li xml:id="th_matrixadd_assoc">
+              <title>Addition associative law </title>
               <p>
                 <m>A+(B+C)=(A+B)+C</m>
               </p>
             </li>
-            <li>
+            <li xml:id="th_matrixmult_assoc">
+              <title>Multiplication associative law</title>
+
               <p>
                 <m>A(BC)=(AB)C</m>
               </p>
             </li>
-            <li>
+            <li xml:id="th_matrix_leftdist">
+              <title>Left-distributive law</title>
+
               <p>
                 <m>A(B+C)=AB+AC</m>
               </p>
             </li>
-            <li>
+            <li xml:id="th_matrix_rightdist">
+              <title>Right-distributive law</title>
               <p>
                 <m>(B+C)A=BA+CA</m>
               </p>
@@ -67,32 +57,28 @@
                 <m>(B-C)A=BA-CA</m>
               </p>
             </li>
-            <li>
+            <li xml:id="th_matrixscale_dist">
+              <title>Scaling distributive law</title>
+
               <p>
                 <m>a(B+C)=aB+aC</m>
               </p>
             </li>
-            <li>
-              <p>
-                <m>a(B-C)=aB-aC</m>
-              </p>
-            </li>
-            <li>
+            <li xml:id="th_matrixscale_dist2">
+              <title>Another scaling distributive law</title>
+
               <p>
                 <m>(a+b)C=aC+bC</m>
               </p>
             </li>
-            <li>
-              <p>
-                <m>(a-b)C=aC-bC</m>
-              </p>
-            </li>
-            <li>
+            <li xml:id="th_matricscale_assoc">
+              <title>Scaling associative law</title>
               <p>
                 <m>a(bC)=(ab)C</m>
               </p>
             </li>
-            <li>
+            <li xml:id="th_matrixscale_comm">
+              <title>Scaling commutative law</title>
               <p>
                 <m>a(BC)=(aB)C=B(aC)</m>.
               </p>
@@ -103,128 +89,175 @@
     </theorem>
     <p>
       How does one actually prove one of these properties?
+      These are all <em>matrix equalities</em> of the form <m>X=Y</m>, so
+      according to the <xref ref="d_matrix_equality" text='custom'> matrix equality definition</xref>
+      we must show (1) that the matrices <m>X</m> and <m>Y</m> have the same dimension,
+      and (2) that <m>(X)_{ij}=(Y)_{ij}</m> for all <m>(i,j)</m>. The proof below illustrates this technique for the <xref ref="th_matrixmult_assoc" text="custom">multiplication associative law</xref> of <xref ref="th_matrix-arith"/>.
     </p>
-    <p>
-      These are all <em>matrix equalities</em>.
-      Using the definition of matrix equality,
-      we must show (1) the LHS and RHS matrices are of the same size,
-      and (2) that for each <m>(i,j)</m>,
-      the <m>(i,j)</m>-th entry of the LHS is equal to the <m>(i,j)</m>-th entry of the RHS. Let's see how this works on an example.
-    </p>
-  </paragraphs>
+
   <proof>
-    <p>
-      Let <m>A=[a_{ij}]_{m\times r}</m>,
+    <p>We prove only the <xref ref="th_matrixmult_assoc" text="custom">multiplication associative law</xref>.
+    Let <m>A=[a_{ij}]_{m\times r}</m>,
       <m>B=[b_{ij}]_{r\times s}</m>,
       <m>C=[c_{ij}]_{s\times n}</m>.
-      Then
+      To show
       <me>
         A(BC)=(AB)C
-      </me>.
+      </me>,
+      we must show (1) that <m>A(BC)</m> and <m>(AB)C</m> have the same dimension, and (2) that <me>\left(A(BC)\right)_{ij}=\left((AB)C\right)_{ij}</me> for all possible <m>(i,j)</m>.
     </p>
-    <p>
-      (1) One checks easily that the matrices on the LHS and RHS are both of size <m>m\times n</m>,
-      so we move straight to (2) using our index notation:
+      <p>
+      (1) The usual observation about <q>inner</q> and <q>outer</q> dimensions shows that both <m>A(BC)</m> and <m>(AB)C</m> have dimension <m>m\times n</m>.
+    </p><xref ref="d_matrix_mult"/>
+    <p> (2) Given any  <m>(i,j)</m> with <m>1\leq i\leq m</m> and <m>1\leq j\leq n</m>, we have:
       <md>
-        <mrow>\amp  \amp \Bigl(A(BC)\Bigr)_{ij}=\sum_{\ell=1}^ra_{i\ell}(BC)_{\ell j}  =\sum_{\ell=1}^ra_{i\ell}\left(\sum_{k=1}^sb_{\ell k}c_{kj}\right)</mrow>
-        <mrow>\amp =\amp \sum_{\ell=1}^r\sum_{k=1}^sa_{i\ell}(b_{\ell k}c_{kj}) \ \text{ (dist. prop.) }</mrow>
-        <mrow>\amp =\amp \sum_{k=1}^s\sum_{\ell=1}^r(a_{i\ell}b_{\ell k})c_{kj} \ \text{ (comm.+assoc. prop.) }</mrow>
-        <mrow>\amp =\amp \sum_{k=1}^s\left(\sum_{\ell=1}^ra_{i\ell}b_{\ell k}\right)c_{kj} \ \text{ (dist. prop.) }</mrow>
-        <mrow>\amp =\amp \sum_{k=1}^s(AB)_{ik}c_{kj}  =\Bigl((AB)C\Bigr)_{ij}</mrow>
+        <mrow> \Bigl(A(BC)\Bigr)_{ij}\amp=\sum_{\ell=1}^ra_{i\ell}(BC)_{\ell j}  \amp (<xref ref="d_matrix_mult"/>)</mrow>
+        <mrow>\amp=\sum_{\ell=1}^ra_{i\ell}\left(\sum_{k=1}^sb_{\ell k}c_{kj}\right) \amp (<xref ref="d_matrix_mult"/>)</mrow>
+        <mrow>=\amp \sum_{\ell=1}^r\sum_{k=1}^sa_{i\ell}(b_{\ell k}c_{kj}) \amp \text{ (real dist.) }</mrow>
+        <mrow>=\amp \sum_{k=1}^s\sum_{\ell=1}^r(a_{i\ell}b_{\ell k})c_{kj} \amp \text{ (real comm., real assoc.) }</mrow>
+        <mrow>=\amp \sum_{k=1}^s\left(\sum_{\ell=1}^ra_{i\ell}b_{\ell k}\right)c_{kj} \amp \text{ (real dist.) }</mrow>
+        <mrow>=\amp \sum_{k=1}^s(AB)_{ik}c_{kj}  =\Bigl((AB)C\Bigr)_{ij}</mrow>
       </md>
     </p>
     <p>
-      This proves their <m>ij</m>-th entries are equal,
+      This proves that all entries of the two matrices are equal,
       and hence <m>A(BC)=(AB)C</m>.
     </p>
   </proof>
-  <paragraphs>
-  <title>Zero matrix and additive inverses</title>
-  <p>
-    Another similarity between matrix algebra and real number algebra is the existence of
-    <em>additive inverses</em>.
-  </p>
-  <paragraphs>
-    <title>Definition:</title>
+  <p>Like real number algebra, we can identify some special matrices that act as <em>additive identities</em> and <em>multiplciative identities</em>; and every matrix has an <em>additive inverse</em>. What we mean here is spelled out in detail in <xref ref="th_add_mult_ident"/>.
+</p>
+<definition xml:id="d_matrix_add_inverse">
+  <title>Additive inverse of a matrix</title>
+  <idx><h>additive inverse</h><h>of a matrix</h></idx>
+  <statement>
     <p>
-      the <term><m>m\times n</m> zero matrix</term>
-      is the matrix <m>\boldzero_{m\times n}</m> all of whose entries are 0.
+    Given an <m>m\times n</m> matrix <m>A=[a_{ij}]</m>, its <term>additive inverse</term> is the matrix
+    <me>
+      -A:=(-1)A=[-a_{ij}]
+    </me>.
     </p>
-  </paragraphs>
-  <p>
-    Note we have a different zero matrix for every possible size of matrix.
-  </p>
-  <theorem>
+  </statement>
+</definition>
+<definition xml:id="d_identity_matrix">
+  <title>Identity matrix</title>
+  <idx><h>identity matrix</h></idx>
+  <statement>
+    <p>
+      The <term><m>n\times n</m> identity matrix</term>
+      is the square <m>n\times n</m> matrix
+      <me>
+        I_n=\begin{bmatrix}1\amp 0\amp 0 \amp \dots\amp 0\\ 0\amp 1 \amp 0 \amp \dots \amp 0\\
+      \vdots \\
+     0\amp 0\amp \dots \amp 0\amp 1\end{bmatrix}
+      </me>
+        with ones along the diagonal and zeros everywhere else. In other words, for all <m>1\leq i\leq n</m> ans <m>1\leq j\leq n</m>, we have
+      <me>
+        (I_n)_{ij}=\begin{cases} 1 \amp \text{if } i=j \\ 0\amp \text{if } i\ne j.
+      \end{cases}
+      </me>
+    </p>
+  </statement>
+  </definition>
+
+  <theorem xml:id="th_matrix_add_mult_ident">
+    <title>Additive identities, additive inverses, and multiplicative identities</title>
     <statement>
-      <p>
-        Let <m>A=[a_{ij}]</m> be <m>m\times n</m>.
-        Then the matrix <m>-A:=(-1)A=[-a_{ij}]</m> is an
-        <term>additive inverse</term>
-        of <m>A</m> in the sense that
-        <me>
-          A+(-A)=(-A)+A=\boldzero_{m\times n}
-        </me>.
-      </p>
+      <ol>
+        <li>
+          <title>Additive identities</title>
+          <p>The <m>m\times n</m> zero matrix <m>\boldzero_{m\times n}</m> is an <em>additive identity</em> for <m>m\times n</m> matrices in the following sense: for any <m>m\times n</m> matrix <m>A</m> we have
+          <me>
+            \boldzero_{m\times n}+A=A
+          </me>.
+          </p>
+        </li>
+        <li>
+          <title>Additive inverses</title>
+          <p>For any <m>m\times n</m> matrix <m>A</m> we have
+          <me>
+            A+-A=A+(-1)A=\boldzero_{m\times n}
+          </me>.
+          </p>
+        </li>
+        <li>
+          <title>Multiplicative identities</title>
+          <p>The <m>n\times n</m> identity matrix is a <em>multiplicative identity</em> for <m>n\timesn</m> matrices in the following sense: for any <m>n\times n</m> matrix <m>A</m> we have
+          <me>
+            I_n\, A=A\, I_n=A
+          </me>.
+          </p>
+        </li>
+      </ol>
+
     </statement>
   </theorem>
-  <paragraphs>
-    <title>Comment:</title>
+  <corollary xml:id="c_matrix_additive_canc">
+    <title>Additive cancellation of matrices</title>
+
+    <statement>
+      <p>
+        Let <m>A, B</m>, and <m>C</m> be <m>m\times n</m> matrices. If <m>A+B=A+C</m>, then <m>B=C</m>. Using logical implication notation:
+        <me>
+          A+B=A+C\, \Longrightarrow B=C.
+        </me>
+      </p>
+    </statement>
+  </corollary>
+  <remark>
     <p>
-      thus every <m>m\times n</m> matrix has an additive inverse.
-      This allows us to
-      <q>cancel</q>
-      matrices <em>additively</em>.
-      Example: solve the following equation for <m>B</m>.
+      The algebraic importance of <xref ref="c_matrix_additive_canc"/> is that we can perform
+      <em>additive cancellation</em>  in matrix equations just as we do in real number algebra. For example, we can solve the matrix equation <m>A+B=3A</m> for <m>B</m> as follows:
     </p>
-  </paragraphs>
   <md>
-    <mrow>A+B\amp =\amp 3A</mrow>
-    <mrow>(-A)+A+B\amp =\amp (-A)+3A</mrow>
-    <mrow>\boldzero_{m\times n}+B\amp =\amp (-1)A+3A</mrow>
-    <mrow>B\amp =\amp 2A</mrow>
-  </md>
-  <p>
-    I give all the gory details, but now the point should be clear;
-    we can cancel a multiple of <m>A</m> on both sides,
-    just as we do in normal algebra!
-  </p>
-  </paragraphs>
-  <paragraphs>
-    <title>Abnormalities</title>
-    <p>
-      There are two very important properties that matrix algebra fails to enjoy.
-    </p>
-    <theorem>
+    <mrow>A+B\amp = 3A</mrow>
+    <mrow>A+B\amp = (1+2)A</mrow>
+    <mrow>A+B\amp = A+2A</mrow>
+    <mrow>B\amp = 2A \amp (<xref ref="c_matrix_additive_canc"/>)</mrow>
+  </md>.
+</remark>
+<warning>
+<p>Though we can perform additive cancellation in matrix algebra, we can <em>not</em> always perform <em>multiplicative cancellation</em>. For example, consider the matrices
+<me>
+A=\begin{bmatrix}1\amp 1\\ 1\amp 1\end{bmatrix}, B=\begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix}, C=\begin{bmatrix}0\amp 0\\ 1\amp 0 \end{bmatrix}
+</me>.
+Check for yourself that <m>AB=AC</m>, and yet <m>B\ne C</m>. In other words, we cannot multiplicatively cancel <m>A</m> from the matrix equation <m>AB=AC</m>.
+</p>
+</warning>
+<p>
+The example in our warning above is but one instance of the general failure of the principle of multiplicative cancellation in matrix algebra. This in turn is a consequence of the following theorem, which identifies the two crucial places where matrix algebra differs significantly from real number algebra.
+</p>
+    <theorem xml:id="th_matrix_abnormalities">
+      <title>Matrix algebra abnormalities</title>
       <statement>
+        <ol>
+        <li>
+        <title>Matrix multiplication is not commutative</title>
+          <p>
+            For two <m>n\times n</m> matrices <m>A</m> and <m>B</m>, we do <em>not</em> necessarily have <m>AB=BA</m>.
+          </p>
+        </li>
+        <li>
+        <title>Existence of zero divisors</title>
         <p>
-          Matrix multiplication is NOT \alert{commutative}, and there are nontrivial <em>zero divisors</em>.
-          That is:
-          <ol>
-            <li>
-              <p>
-                Fix <m>n</m>.
-                There are (many) <m>n\times n</m> matrices <m>A, B</m> such that
-                <me>
-                  AB\alert{\ne}BA
-                </me>.
-                \alert{Example:} verify that <m>\begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix} \begin{bmatrix}0\amp 1\\ 0\amp 0 \end{bmatrix} \ne \begin{bmatrix}0\amp 1\\ 0\amp 0 \end{bmatrix} \begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix} </m>.
+          Given matrices <m>A_{m\times n}, B_{n\times r}</m>,
+          <me>
+            AB=0_{m\times r}\nRightarrow A=0_{m\times n} \text{ or }  B=0_{n\times r}
+          </me>.
+          In other words, if the product of two matrices is the zero matrix,
+          we <em>cannot</em> conclude that one of matrices is the zero matrix.
               </p>
             </li>
-            <li>
-              <p>
-                Given matrices <m>A_{m\times n}, B_{n\times r}</m>,
-                <me>
-                  AB=0_{m\times r}\alert{\not\Rightarrow} A=0_{m\times n} \text{ or }  B=0_{n\times r}
-                </me>.
-                In English: if the product of two matrices is the zero matrix,
-                we CANNOT conclude that one of them is the zero matrix.   \alert{Example:} verify that <m>\begin{bmatrix}0\amp 1\\ 0\amp 0 \end{bmatrix} \begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix} =\begin{bmatrix}0\amp 0\\ 0\amp 0 \end{bmatrix} </m>.
-              </p>
-            </li>
+
           </ol>
-        </p>
       </statement>
     </theorem>
-  </paragraphs>
+  <example>
+      <p>
+        verify that <m>\begin{bmatrix}0\amp 1\\ 0\amp 0 \end{bmatrix} \begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix} =\begin{bmatrix}0\amp 0\\ 0\amp 0 \end{bmatrix} </m>.
+     </p>
+      <p>verify that <m>\begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix} \begin{bmatrix}0\amp 1\\ 0\amp 0 \end{bmatrix} \ne \begin{bmatrix}0\amp 1\\ 0\amp 0 \end{bmatrix} \begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix} </m>.
+      </p>
+  </example>
   <p>
     It is worth pointing out how important the second failed property is to matrix algebra.
   </p>
