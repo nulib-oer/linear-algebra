@@ -1,26 +1,264 @@
 <section xml:id="ss_elementary">
   <title>Elementary matrices</title>
   <paragraphs>
-  <title><xref ref="c_linear_systems"></xref>: <xref ref="ss_elementary"></xref> executive summary</title>
-  <paragraphs>
-    <title>Definitions</title>
+    <title>Invertibility</title>
     <p>
-      :elementary matrices \alert{Procedures}: finding <m>A^{-1}</m> using row reduction,
-      writing <m>A</m> as a product of elementary matrices. \alert{Theorems}: elementary matrices are invertible,
-      and their inverses are themselves elementary;
-      the invertibility theorem.
+      What allows cancellation of a nonzero <m>a</m> in the reals is the existence of its
+      <em>multiplicative inverse</em>,
+      the element <m>a^{-1}=\frac{1}{a}</m>,
+      which satisfies <m>a^{-1}a=1</m>.
+    </p>
+    <p>
+      Not all nonzero matrices <m>A</m> have a multiplicative inverse.
+      The ones that do are called <em>invertible</em>.
+      In order to define this properly,
+      we need to identify a matrix that acts as the number one does:
+      i.e., a <em>multiplicative identity</em>.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          The <term>identity matrix of size <m>n\times n</m></term>
+          is the <m>n\times n</m> matrix <m>I_n</m> with 1's along the diagonal (i.e.,
+          <m>a_{ii}=1</m>) and 0's everywhere else (i.e., <m>a_{ij}=0</m> for <m>i\ne j</m>).
+          For example:
+          <me>
+            I_1=\begin{bmatrix}1 \end{bmatrix} , I_2=\begin{bmatrix}1\amp 0\\ 0\amp 1 \end{bmatrix} , I_3=\begin{bmatrix}1\amp 0\amp 0\\ 0\amp 1\amp 0\\ 0\amp 0\amp 1 \end{bmatrix} , \text{ etc. }
+          </me>
+        </p>
+      </statement>
+    </definition>
+    <theorem>
+      <title>Multiplicative identity</title>
+      <statement>
+        <p>
+          For any <m>A_{m\times n}</m> we have
+          <md>
+            <mrow>I_mA\amp =\amp A</mrow>
+            <mrow>AI_n\amp =\amp A</mrow>
+          </md>.
+        </p>
+      </statement>
+    </theorem>
+    <proof>
+      <p>
+        Use either column or row method to perform the multiplications involved!
+      </p>
+    </proof>
+  </paragraphs>
+  <paragraphs>
+  <title>Invertibility</title>
+  <definition>
+    <statement>
+      <p>
+        A square matrix <m>A_{n\times n}</m> is <term>invertible</term>
+        if there is a matrix <m>B_{n\times n}</m> such that
+        <md>
+          <mrow>AB\amp =\amp I_n, \text{ and }</mrow>
+          <mrow>BA\amp =\amp I_n</mrow>
+        </md>
+      </p>
+      <p>
+        In this case we call <m>B</m> an
+        <term>inverse</term> of <m>A</m>,
+        and we say that <m>A</m> and <m>B</m> are
+        <term>inverses</term> of one another.
+      </p>
+    </statement>
+  </definition>
+  <paragraphs>
+    <title>Theorem (uniqueness of inverses):</title>
+    <p>
+      an invertible matrix <m>A</m> has exactly one inverse.
+      That is, if
     </p>
   </paragraphs>
+  <me>
+    AB=BA=I_n
+  </me>
+  <p>
+    and
+    <me>
+      AC=CA=I_n
+    </me>,
+    then <m>B=C</m>.
+  </p>
+  <p>
+    We denote by <m>A^{-1}</m> the inverse of <m>A</m>.
+  </p>
+  <proof>
+    <p>
+      Suppose we have such matrices <m>B</m> and <m>C</m>.
+    </p>
+    <p>
+      Then <m>I_n=AB=AC \Rightarrow BAB=BAC \Rightarrow I_nB=I_nC \Rightarrow B=C</m>.
+    </p>
+  </proof>
   </paragraphs>
   <paragraphs>
-    <title><xref ref="c_linear_systems"></xref>: <xref ref="ss_elementary"></xref>: computing inverses with row reduction</title>
+    <title>$2\times 2$ matrices</title>
     <p>
-      Surprisingly row reduction provides a tool for both deciding whether a matrix is invertible,
-      and computing this inverse if it exists.
+      When is a <m>2\times 2</m> matrix <m>A=\abcdmatrix{a}{b}{c}{d}</m> invertible?
     </p>
     <p>
-      First we will construe row operations as certain matrix multiplications.
+      If <m>ad-cb\ne 0</m>, then we can easily show that
+      <me>
+        A^{-1}=\frac{1}{ad-bc}\abcdmatrix{d}{-b}{-c}{a}
+      </me>
+      is the inverse.
     </p>
+    <p>
+      Thus
+      <me>
+        ad-bc\ne 0\Rightarrow  A \text{ invertible }
+      </me>.
+    </p>
+    <p>
+      It turns out that the converse is also true, that is
+      <me>
+        ad-bc\ne 0\Leftrightarrow  A \text{ invertible }
+      </me>.
+    </p>
+    <p>
+      We will prove this a littler further down the line.
+    </p>
+  </paragraphs>
+  <theorem>
+    <statement>
+      <p>
+        Let <m>A,B</m> be <m>n\times n</m> matrices.
+        <me>
+          A \text{ and }  B  \text{ invertible } \Rightarrow AB \text{ invertible }
+        </me>,
+        and in fact <m>(AB)^{-1}=B^{-1}A^{-1}</m>.
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      In the absence of more theory,
+      we can only prove invertibility by providing an inverse.
+      The last statement offers up a candidate:
+      viz., <m>C=B^{-1}A^{-1}</m>.
+      We need only show that <m>C</m> satisfies the relevant properties:
+      <md>
+        <mrow>C(AB)\amp =\amp (B^{-1}A^{-1})AB=B^{-1}A^{-1}AB=B^{-1}IB=B^{-1}B=I</mrow>
+        <mrow>(AB)C\amp =\amp (AB)B^{-1}A^{-1}=ABB^{-1}A^{-1}=AIA^{-1}=AA^{-1}=I</mrow>
+      </md>.
+    </p>
+  </proof>
+  <corollary>
+    <statement>
+      <p>
+        More generally,
+        <me>
+          A_1,A_2,\dots A_r \text{ invertible } \Rightarrow (A_1A_2\cdots A_r)\text{ invertible }
+        </me>,
+        and in fact <m>(A_1A_2\cdots A_r)^{-1}=A_r^{-1}A_{r-1}^{-1}\cdots A_1^{-1}</m>.
+      </p>
+    </statement>
+  </corollary>
+  <p>
+    <em>Question:</em> do the implication arrows above go the other way?
+  </p>
+  <p>
+    <em>Answer:</em> we shall see.
+  </p>
+  <paragraphs>
+  <title>Powers of matrices</title>
+  <definition>
+    <statement>
+      <p>
+        Let <m>A</m> be any <m>n\times n</m> matrix.
+        For any integer <m>r\geq 0</m> we define the <m>r</m>-th power of <m>A</m>,
+        <m>A^{r}</m>,
+        as follows:
+        <ol>
+          <li>
+            <p>
+              <m>A^0=I_n</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\ds A^r=\underbrace{A\cdot A\cdots A}_{r \text{ times } }</m> for <m>r>0</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+      <p>
+        Furthermore, if <m>A</m> is <term>invertible</term>, we define
+        <me>
+          A^{-r}=\left(A^{-1}\right)^r
+        </me>,
+        for any positive integer <m>r>0</m>.
+      </p>
+    </statement>
+  </definition>
+  <theorem>
+    <title>Power rules</title>
+    <statement>
+      <ol>
+        <li>
+          <p>
+            <m>A^{r}A^s=A^{r+s}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(A^r)^s=A^{rs}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left(A^{-1}\right)^{-1}=A</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left(A^n\right)^{-1}=A^{-n}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(kA)^n=k^nA^n</m> for any scalar <m>k</m>.
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </theorem>
+  <paragraphs>
+    <title>Question:</title>
+    <p>
+      <m>A^rB^r\stackrel{{\color{red}?}}{=}(AB)^r</m>
+    </p>
+  </paragraphs>
+
+  <theorem>
+    <statement>
+      <p>
+        Let <m>A_{n\times n}</m> be invertible.
+        Then <m>A^T</m> is invertible,
+        and <m>\left(A^T\right)^{-1}=\left(A^{-1}\right)^T</m>.
+      </p>
+    </statement>
+    <proof>
+      <p>
+        Suppose <m>A</m> is invertible,
+        and let <m>A^{-1}</m> be its inverse.
+        The claim above is that <m>B=\left(A^{-1}\right)^T</m> is the inverse of <m>A^T</m>.
+        To prove this claim we need only show that <m>BA^T=A^TB=I_n</m>:
+        <md>
+          <mrow>BA^T=\left(A^{-1}\right)^TA^T \amp =\amp \left(AA^{-1}\right)^T \ \text{ (since \((CD)^T=D^TC^T\)) }</mrow>
+          <mrow>\amp =\amp I_n^T=I_n \ \checkmark</mrow>
+        </md>
+        <md>
+          <mrow>A^TB=A^T\left(A^{-1}\right)^T \amp =\amp \left(A^{-1}A\right)^T \ \text{ (since \((CD)^T=D^TC^T\)) }</mrow>
+          <mrow>\amp =\amp I_n^T=I_n \ \checkmark</mrow>
+        </md>
+      </p>
+    </proof>
+  </theorem>
     <definition>
       <statement>
         <p>
@@ -30,7 +268,7 @@
         </p>
       </statement>
     </definition>
-  </paragraphs>
+
   <p>
     The <em>row method</em> of multiplication is the key to matching up a row operation with a particular elementary matrix.
   </p>
@@ -85,6 +323,7 @@
       \underset{r_i+cr_j}{E}=\begin{bmatrix}1\amp 0\amp 0\amp \cdots\amp  0\amp 0\\ \vdots\amp  \amp \vdots \amp  \amp  \vdots \\ \cdots\amp c\amp \cdots\amp 1\amp \cdots\amp 0\\ \vdots\amp  \amp \vdots \amp  \amp  \vdots \\ 0\amp 0\amp \cdots\amp 0\amp 0\amp 1 \end{bmatrix}
     </me>
   </p>
+  </paragraphs>
   <paragraphs>
     <title>Row reduction as matrix multiplication</title>
     <p>
