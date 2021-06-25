@@ -166,73 +166,7 @@
   </p>
   <paragraphs>
   <title>Powers of matrices</title>
-  <definition>
-    <statement>
-      <p>
-        Let <m>A</m> be any <m>n\times n</m> matrix.
-        For any integer <m>r\geq 0</m> we define the <m>r</m>-th power of <m>A</m>,
-        <m>A^{r}</m>,
-        as follows:
-        <ol>
-          <li>
-            <p>
-              <m>A^0=I_n</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>\ds A^r=\underbrace{A\cdot A\cdots A}_{r \text{ times } }</m> for <m>r>0</m>.
-            </p>
-          </li>
-        </ol>
-      </p>
-      <p>
-        Furthermore, if <m>A</m> is <term>invertible</term>, we define
-        <me>
-          A^{-r}=\left(A^{-1}\right)^r
-        </me>,
-        for any positive integer <m>r>0</m>.
-      </p>
-    </statement>
-  </definition>
-  <theorem>
-    <title>Power rules</title>
-    <statement>
-      <ol>
-        <li>
-          <p>
-            <m>A^{r}A^s=A^{r+s}</m>
-          </p>
-        </li>
-        <li>
-          <p>
-            <m>(A^r)^s=A^{rs}</m>
-          </p>
-        </li>
-        <li>
-          <p>
-            <m>\left(A^{-1}\right)^{-1}=A</m>
-          </p>
-        </li>
-        <li>
-          <p>
-            <m>\left(A^n\right)^{-1}=A^{-n}</m>
-          </p>
-        </li>
-        <li>
-          <p>
-            <m>(kA)^n=k^nA^n</m> for any scalar <m>k</m>.
-          </p>
-        </li>
-      </ol>
-    </statement>
-  </theorem>
-  <paragraphs>
-    <title>Question:</title>
-    <p>
-      <m>A^rB^r\stackrel{{\color{red}?}}{=}(AB)^r</m>
-    </p>
-  </paragraphs>
+
 
   <theorem>
     <statement>
