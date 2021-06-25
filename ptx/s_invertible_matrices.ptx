@@ -4,13 +4,21 @@
     <p>Picking up the thread of <xref ref="rm_cancel_failure"/>, we observe that the cancellation property enjoyed in real number algebra is a consequence of the fact that every nonzero real number <m>a\ne 0</m> has a <em>multiplicative inverse</em>, denoted <m>a^{-1}</m> or <m>1/a</m>, that satisfies <m>aa^{-1}=1</m>. Indeed, <q>canceling</q> the <m>a</m> in the equation <m>ab=ac</m> (assuming <m>a\ne 0</m>) is really the act of multiplying both sides of this equation by the multiplicative inverse <m>a^{-1}</m>.
   </p>
   <p>
-  Ever on the lookout for connections between real number and matrix algebra, we ask whether the is a sensible analogue of multiplicative inverses for matrices. We have seen already that identity matrices <m>I_n</m> play the role multiplicative identites for <m>n\times n</m> matrices, just as the number <m>1</m> does for real numbers. This suggests we should restrict our attention to <m>n\times n</m> matrices. The following definition is then the desired analogue of the multiplcative inverse of a nonzero real number.
+  Ever on the lookout for connections between real number and matrix algebra, we ask whether the is a sensible analogue of multiplicative inverses for matrices. We have seen already that identity matrices <m>I_n</m> play the role of multiplicative identities for <m>n\times n</m> matrices, just as the number <m>1</m> does for real numbers. This suggests we should restrict our attention to <m>n\times n</m> matrices. The following definition is then the desired analogue of the multiplcative inverse of a nonzero real number.
   </p>
   </introduction>
   <definition>
+    <title>Invertible matrix</title>
+    <idx><h>invertible</h><h>matrix</h></idx>
+    <idx><h>matrix</h><h>inverse</h></idx>
+    <notation>
+      <usage>A^{-1}</usage>
+      <description>inverse of <m>A</m></description>
+    </notation>
+
     <statement>
       <p>
-        An <m>n\times n</m>matrix <m>A</m>  is <term>invertible</term> (or <term>nonsingular</term>)
+        An <m>n\times n</m> matrix <m>A</m>  is <term>invertible</term> (or <term>nonsingular</term>)
         if there is a <m>n\times n</m> matrix <m>B</m> satisfying
         <me>
           AB=BA=I_n
@@ -49,10 +57,13 @@
         <mrow>  \amp \implies I\,B=I\,C </mrow>
         <mrow>  \amp \implies B=C</mrow>
       </md>.
+    Thus we see that <m>B=C</m>, showing that the inverse of <m>A</m>, if it exists, is unique.
     </p>
   </proof>
 <p>
-  Without any additional theory at our disposal, to show a matrix <m>A</m> is invertible we must exhibit an inverse; the onus is on us to find a matrix <m>B</m> satisfying both <m>AB=I</m> and <m>BA=I</m>. (Remember: we cannot assume <m>BA=AB</m>.) By the same token, to show <m>A</m> is <em>not</em> invertible we must show that an inverse does not exist: that is, we must prove that there is no <m>B</m> satisfying <m>AB=BA=I</m>. The next example illustrates this technique for a variety of matrices.
+  Without any additional theory at our disposal, to show a matrix <m>A</m> is invertible we must exhibit an inverse. The onus is on us to find a matrix <m>B</m> satisfying both <m>AB=I</m> and <m>BA=I</m>. (Remember: since we cannot assume <m>BA=AB</m>, we really need to show both equations hold.)</p>
+  <p>
+  By the same token, to show <m>A</m> is <em>not</em> invertible we must show that an inverse does not exist: that is, we must prove that there is no <m>B</m> satisfying <m>AB=BA=I</m>. The next example illustrates this technique for a variety of matrices.
 </p>
 <example>
   <statement>
@@ -107,7 +118,7 @@
   </statement>
 </example>
 <p>
-  As the preceding example illustrates, deciding whether a matrix is invertible is not so straightforward. However, there is a relatively simple test for <m>2\times 2</m> matrices.
+  As the preceding example illustrates, deciding whether a matrix is invertible is not so straightforward, especially if the matrix is large. For the <m>2\times 2</m> case, however, we have a relatively simple test for invertibility. (We will generalize this to the <m>n\times n</m> case in <xref ref="c_det"/>.)
 </p>
 <theorem xml:id="th_2by2_inverse">
   <title>Inverses of <m>2\times 2</m> matrices</title>
@@ -144,73 +155,205 @@
   </p>
 </proof>
 
-  <theorem>
+  <theorem xml:id="th_invertible_prod">
+    <title>Invertibility of products</title>
     <statement>
       <p>
-        Let <m>A,B</m> be <m>n\times n</m> matrices.
-        <me>
-          A \text{ and }  B  \text{ invertible } \Rightarrow AB \text{ invertible }
-        </me>,
-        and in fact <m>(AB)^{-1}=B^{-1}A^{-1}</m>.
+        Let <m>A,B</m> be <m>n\times n</m> matrices. If <m>A</m> and <m>B</m> are both invertible, then so is their product <m>AB</m>. Using logical notation:
+        <men xml:id="eq_inv_implies_prod">
+          A \text{ and }  B  \text{ invertible } \implies AB \text{ invertible }
+        </men>.
+        In fact when this is the case we have
+        <men xml:id="eq_inv_prod_form">(AB)^{-1}=B^{-1}A^{-1}</men>.
       </p>
     </statement>
   </theorem>
   <proof>
     <p>
-      In the absence of more theory,
-      we can only prove invertibility by providing an inverse.
-      The last statement offers up a candidate:
-      viz., <m>C=B^{-1}A^{-1}</m>.
-      We need only show that <m>C</m> satisfies the relevant properties:
+      Assume <m>A</m> and <m>B</m> are invertible. The statment of the theorem proposes a candidate for the inverse of <m>AB</m>: namely, <m>C=B^{-1}A^{-1}</m>.
+      We need only show that <m>C</m> satisfies <m>C(AB)=(AB)C=I</m>. Here goes:
       <md>
         <mrow>C(AB)\amp =\amp (B^{-1}A^{-1})AB=B^{-1}A^{-1}AB=B^{-1}IB=B^{-1}B=I</mrow>
         <mrow>(AB)C\amp =\amp (AB)B^{-1}A^{-1}=ABB^{-1}A^{-1}=AIA^{-1}=AA^{-1}=I</mrow>
       </md>.
     </p>
   </proof>
-  <corollary>
+  <corollary xml:id="c_invertible_prod">
     <statement>
       <p>
-        More generally,
-        <me>
-          A_1,A_2,\dots A_r \text{ invertible } \Rightarrow (A_1A_2\cdots A_r)\text{ invertible }
-        </me>,
-        and in fact <m>(A_1A_2\cdots A_r)^{-1}=A_r^{-1}A_{r-1}^{-1}\cdots A_1^{-1}</m>.
+        More generally, if <m>A_1,A_2,\dots A_r</m> are invertible <m>n\times n</m> matrices, then their product <m>A_1A_2\cdots A_r</m> is invertible. Furthermore, we have in this case
+
+        <men xml:id="eq_inv_prod_arb_form">
+          (A_1A_2\cdots A_r)^{-1}=A_r^{-1}A_{r-1}^{-1}\cdots A_1^{-1}
+        </men>.
       </p>
     </statement>
   </corollary>
-  <p>
-    <em>Question:</em> do the implication arrows above go the other way?
-  </p>
-  <p>
-    <em>Answer:</em> we shall see.
-  </p>
+  <proof>
+    <p>
+      We prove by induction on the number <m>r</m> of matrices, <m>r\geq 1</m>, that if the <m>A_i</m> are invertible, then the proposed inverse formula is valid.
+      <case>
+        <title>Base step: <m>r=1</m></title>
+        <p>
+          For <m>r=1</m>, the inverse formula reads <m>A_1^{-1}=A_1^{-1}</m>, which is clearly true.
+        </p>
+      </case>
+      <case>
+        <title>Induction step</title>
+        <p>
+          For the induction step we assume that the inverse formula is valid for any collection of <m>r-1</m> invertible matrices, and then show it is valid for any collection of <m>r</m> invertible matrices. Let <m>A_1,A_2,\dots, A_r</m> be invertible <m>n\times n</m> matrices. Define <m>A=A_1A_2\cdots A_{r-1}</m>. Then
+          <md>
+            <mrow>(A_1A_2\cdots A_{r-1})^{-1} \amp=\left((A_1A_2\cdots A_{r-1})A_r\right)^{-1} </mrow>
+            <mrow> \amp=(AA_r)^{-1} </mrow>
+            <mrow>  \amp= A_r^{-1}A^{-1} \amp (<xref ref="th_invertible_prod" />)</mrow>
+            <mrow>  \amp =A_r^{-1}(A_{r-1}^{-1}A_{r-2}^{-1}\cdots A_1^{-1}) \amp (\text{induction})</mrow>
+            <mrow>  \amp=A_r^{-1}A_{r-1}^{-1}\cdots A_1^{-1} \amp (\text{assoc.}) </mrow>
+          </md>.
+        </p>
+      </case>
+    </p>
+  </proof>
+  <remark>
+    <p>
+      Whenever confronted with a logical implication of the form <m>\mathcal{P}\implies\mathcal{Q}</m>, where <m>\mathcal{P}</m> and <m>\mathcal{Q}</m> denote arbitrary propositions, you should always ask whether the implication <q>goes the other way</q>. In other words, does the reverse implication  <m> \mathcal{Q}\implies \mathcal{P} </m> also hold?
+    </p>
+   <p>
+     The answer with regard to the implication <xref ref="eq_inv_implies_prod"/> is yes, though the proof of this is more difficult then you think. (See <xref ref="cor_inv_prod_eq"/>.)
+   </p>
+  <p> The following argument is a common <em>invalid</em> proof of the reverse implication:
+     <ol>
+       <li>
+         <p>
+           Assume <m>AB</m> is invertible.
+         </p>
+       </li>
+       <li>
+         <p>
+           Then <m>AB</m> is invertible.
+         </p>
+       </li>
+       <li>
+         <p>
+           Then the inverse of <m>AB</m> is <m>B^{-1}A^{-1}</m>.
+         </p>
+       </li>
+       <li>
+         <p>
+           Then <m>A^{-1}</m> and <m>B^{-1}</m> exist. Hence <m>A</m> and <m>B</m> are invertible.
+         </p>
+       </li>
+     </ol>
+    Where is the flaw in our logic here? The second statement only allows us to conclude that there is some mystery matrix <m>C</m> satisfying <m>(AB)C=C(AB)=I</m>. We cannot yet say that <m>C=B^{-1}A^{-1}</m>, as this formula from <xref ref="th_invertible_prod"/> only applies when we already know that <m>A</m> and <m>B</m> are both invertible. But this is exactly what we are trying to prove! As such we are guilty here of <q>begging the question</q>, or <em>petitio principii</em> in Latin.
+   </p>
+ </remark>
   <paragraphs>
-  <title>Powers of matrices</title>
-
-
-  <theorem>
+  <title>Powers of matrices, matrix polynomials</title>
+  <p>
+    We end this section by exploring how the matrix inverse operation fits into our matrix algebra. First, we can now use the inverse operation to define matrix powers of the form <m>A^r</m> where <m>r</m> is an arbitary integer.
+  </p>
+  <definition xml:id="d_matrix_powers">
+    <title>Matrix powers</title>
+    <idx><h>matrix powers</h></idx>
+    <notation>
+      <usage>A^r</usage>
+      <description>matrix power</description>
+    </notation>
     <statement>
       <p>
-        Let <m>A_{n\times n}</m> be invertible.
-        Then <m>A^T</m> is invertible,
+      Let <m>A</m> be an <m>n\times n</m> matrix, and let <m>r\in\Z</m> be an integer. We define the power matrix <m>A^r</m> as follows:
+      <me>
+        A^r=\begin{cases} I\amp \text{if } r=0;\\[2ex] \underset{r \text{ times}}{\underbrace{AA\cdots A}}\amp \text{if } r>0; \\[2ex] (A^{-1})^s \amp \text{if } r=-s &lt; 0 \text{ and } A \text{ is invertible}.
+       \end{cases}
+      </me>.
+      </p>
+    </statement>
+  </definition>
+<theorem xml:id="th_power_rules">
+  <title>Properties of matrix powers</title>
+
+  <statement>
+    <p>
+      The following properties hold for all matrices <m>A, B</m>, all scalars <m>c\in \R</m>, and all integers <m>r,s\in\Z</m> for which the given expression makes sense.
+      <ol>
+        <li>
+          <p>
+            <m>A^{r+s}=A^rA^s</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(A^r)^s=A^{rs}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(cA)^r=c^rA^r</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(A^{-1})^{-1}=A</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>A^{-r}=(A^{-1})^r</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+</theorem>
+<proof>
+  <p>
+    The proofs of the first three statements are elementary, and closely resemble proofs of similar results in real number algebra. We leave these as an (unassigned) exercise.
+  </p>
+  <p>
+    For the fourth statement to make sense, we must assume that <m>A</m> is invertible. The claim here is that <m>A^{-1}</m> is invertible, and that its inverse is <m>A</m> itself. To prove this we need only show <m>A^{-1}A=AA^{-1}=I</m>, which follows from the definition of the inverse.
+  </p>
+  <p>
+    The fifth statement also tacitly assumes <m>A</m> is invertible. To prove it, we consider the three cases <m>r=0</m>, <m>r>0</m> and <m>r &lt; 0</m>.
+  </p>
+  <p>
+    If <m>r=0</m>, then by definition  <m>A^{-r}=A^0=I=(A^{-1})^0=(A^{-1})^r</m>.
+  </p>
+  <p>
+    If <m>r>0</m>, then by definition <m>A^{-r}=(A^{-1})^r</m>.
+  </p>
+  <p>
+    Suppose <m>r=-s &lt; 0</m>. Then
+    <md>
+      <mrow>(A^{-1})^{r} \amp = ((A^{-1})^{-1})^s \amp (<xref ref="d_matrix_powers"/>) </mrow>
+      <mrow> \amp =A^s \amp ((A^{-1})^{-1}=A)</mrow>
+      <mrow>  \amp=A^{-r} \amp (r=-s) </mrow></md>.
+  </p>
+</proof>
+
+  <theorem xml:id="th_inverse_trans">
+    <statement>
+      <p>
+        Let <m>A</m> be invertible.
+        Then <m>A^T</m> is invertible
         and <m>\left(A^T\right)^{-1}=\left(A^{-1}\right)^T</m>.
       </p>
     </statement>
     <proof>
       <p>
-        Suppose <m>A</m> is invertible,
-        and let <m>A^{-1}</m> be its inverse.
-        The claim above is that <m>B=\left(A^{-1}\right)^T</m> is the inverse of <m>A^T</m>.
-        To prove this claim we need only show that <m>BA^T=A^TB=I_n</m>:
+        Suppose <m>A</m> is invertible with inverse <m>A^{-1}</m>. The theorem claims <m>A^T</m> is invertible, and that in fact <m>(A^T)^{-1}=(A^{-1})^T</m>. To prove this, we need only show that
+        <me>
+          A^T(A^{-1})^T)=(A^{-1})^T)A^T=I
+        </me>.
+        We verify the two equalities separately:
         <md>
-          <mrow>BA^T=\left(A^{-1}\right)^TA^T \amp =\amp \left(AA^{-1}\right)^T \ \text{ (since \((CD)^T=D^TC^T\)) }</mrow>
-          <mrow>\amp =\amp I_n^T=I_n \ \checkmark</mrow>
+          <mrow>A^T(A^{-1})^T\amp =\left(A^{-1}A\right)^T \amp (<xref ref="th_trans_props"/>)</mrow>
+          <mrow>\amp =I_n^T </mrow>
+          <mrow> \amp =I_n  \checkmark</mrow>
         </md>
         <md>
-          <mrow>A^TB=A^T\left(A^{-1}\right)^T \amp =\amp \left(A^{-1}A\right)^T \ \text{ (since \((CD)^T=D^TC^T\)) }</mrow>
-          <mrow>\amp =\amp I_n^T=I_n \ \checkmark</mrow>
-        </md>
+          <mrow>(A^{-1})^TA^T \amp =(AA^{-1})^T \amp (<xref ref="th_trans_props"/>)</mrow>
+          <mrow>\amp =I_n^T=I_n \ \checkmark</mrow>
+        </md>.
+        In both chains of equality we make use of the obvious claim <m>I^T=I</m>.
       </p>
     </proof>
   </theorem>

@@ -69,7 +69,9 @@
       </p>
     </proof>
   </paragraphs>
-  <corollary>
+  <corollary xml:id="cor_inv_prod_eq">
+    <title>Invertibility of product equivalence</title>
+
     <statement>
       <p>
         Let <m>A</m> and <m>B</m> be <m>n\times n</m>.

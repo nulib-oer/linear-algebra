@@ -119,6 +119,11 @@
 <definition xml:id="d_matrix_add_inverse">
   <title>Additive inverse of a matrix</title>
   <idx><h>additive inverse</h><h>of a matrix</h></idx>
+  <idx><h>matrix</h><h>additive inverse</h></idx>
+  <notation>
+    <usage>-A</usage>
+    <description>Additive inverse of <m>A</m></description>
+  </notation>
   <statement>
     <p>
     Given an <m>m\times n</m> matrix <m>A=[a_{ij}]</m>, its <term>additive inverse</term> is the matrix
@@ -131,6 +136,11 @@
 <definition xml:id="d_identity_matrix">
   <title>Identity matrix</title>
   <idx><h>identity matrix</h></idx>
+  <idx><h>matrix</h><h>identity matrix</h></idx>
+  <notation>
+    <usage>I</usage>
+    <description>inverse matrix</description>
+  </notation>
   <statement>
     <p>
       The <term><m>n\times n</m> identity matrix</term>
@@ -145,7 +155,7 @@
         (I_n)_{ij}=\begin{cases} 1 \amp \text{if } i=j \\ 0\amp \text{if } i\ne j
       \end{cases}
       </me>.
-      When the size <m>n</m> of the identity matrix is not important, we will often denote it simply as <m>I</m>. 
+      When the size <m>n</m> of the identity matrix is not important, we will often denote it simply as <m>I</m>.
     </p>
   </statement>
   </definition>
