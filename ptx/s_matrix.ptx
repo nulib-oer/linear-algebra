@@ -156,6 +156,9 @@
       <p>
         The <term> <m>m\times n</m> zero matrix</term>, denoted <m>\boldzero_{m\times n}</m>, is the matrix of that dimension, all of whose entries are zero: i.e., <m>(\boldzero_{m\times n})_{ij}=0</m> for all <m>1\leq i\leq m</m> and <m>1\leq j\leq n</m>.
       </p>
+      <p>
+        When the actual dimension is not significant, we will often drop the subscript and write simply <m>\boldzero</m> for a zero matrix of suitable dimension. 
+      </p>
     </statement>
   </definition>
 </paragraphs>

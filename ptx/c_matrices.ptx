@@ -2,6 +2,6 @@
   <title>Matrices and their arithmetic</title>
   <xi:include  href="s_matrix.ptx"/>
   <xi:include  href="s_algebraic.ptx"/>
-  <xi:include  href="s_elementary.ptx"/>
-  <xi:include  href="s_invertible.ptx"/>
+  <xi:include  href="s_invertible_matrices.ptx"/>
+  <xi:include  href="s_invertibility_theorem.ptx"/>
 </chapter>
