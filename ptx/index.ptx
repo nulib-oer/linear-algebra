@@ -296,7 +296,7 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
     </frontmatter>
     <xi:include href="./c_linear_systems.ptx"/>
     <xi:include href="./c_matrices.ptx"/>
-    <xi:include href="./c_det.ptx"/>
+    <!-- <xi:include href="./c_det.ptx"/>
     <xi:include href="./c_vectorspace.ptx"/>
     <xi:include href="./c_transbasis.ptx"/>
     <xi:include href="./c_innerproductspaces.ptx"/>
@@ -314,10 +314,10 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
         <list-of elements="theorem" divisions="section" />
       </appendix>
 
-      <!-- <appendix xml:id="appendix-egs">
+      <appendix xml:id="appendix-egs">
         <title>Examples</title>
         <list-of elements="example" divisions="section" />
-      </appendix> -->
+      </appendix>
       <xi:include href="./bibliography.ptx"/>
 
       <index>
@@ -325,6 +325,6 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
           <index-list />
       </index>
 
-    </backmatter>
+    </backmatter> -->
   </book>
 </pretext>

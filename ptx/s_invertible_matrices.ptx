@@ -1,4 +1,4 @@
-<section xml:id="ss_elementary">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_invertible_matrices">
   <title>Invertible matrices</title>
   <introduction>
     <p>Picking up the thread of <xref ref="rm_cancel_failure"/>, we observe that the cancellation property enjoyed in real number algebra is a consequence of the fact that every nonzero real number <m>a\ne 0</m> has a <em>multiplicative inverse</em>, denoted <m>a^{-1}</m> or <m>1/a</m>, that satisfies <m>aa^{-1}=1</m>. Indeed, <q>canceling</q> the <m>a</m> in the equation <m>ab=ac</m> (assuming <m>a\ne 0</m>) is really the act of multiplying both sides of this equation by the multiplicative inverse <m>a^{-1}</m>.
@@ -361,4 +361,5 @@
     </proof>
   </theorem>
 </paragraphs>
+<xi:include href="./s_invertible_matrices_ex.ptx"/>
 </section>
