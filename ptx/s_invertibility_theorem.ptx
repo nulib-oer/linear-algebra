@@ -1,74 +1,108 @@
 <section xml:id="s_invertibility_theorem">
   <title>The invertibility theorem</title>
   <introduction>
-    We saw in <xref ref="ex_invertible_matrices"/> that verifying whether a matrix is invertible directly, using only <xref ref="d_invertible_matrix"/>, can be an onerous task. The goal of this section is to develop the theory necessary to prove the <xref ref="th_invertibility" text="title"/>
+    <p>
+    We saw in <xref ref="ex_invertible_matrices"/> that verifying directly whether a matrix is invertible, using only <xref ref="d_invertible_matrix"/>, can be quite an involved task. The goal of this section is to make this less onerous by developing some equivalent methods of testing invertibilty. Our work culminates in <xref ref="th_invertibility"/> and <xref ref="th_invertibility_algorithm"/>, which draw connections between invertiblity, solutions to linear systems, and row echelon forms of a square matrix. Not surprisingly, our old friend Gaussian elimination emerges as the fundamental computational tool.
+    </p>
   </introduction>
 <paragraphs xml:id="ss_elementary_matrix">
   <title>Elementary matrices</title>
-  <definition>
+  <p>
+  We begin with a treatment of <em>elementary matrices</em>, which serve as the basic building blocks for invertible matrices, and provide a crucial link between row reduction and matrix multiplication.
+  </p>
+  <definition xml:id="d_elementary_matrix">
+    <idx><h>elementary matrix</h></idx>
+    <idx><h>matrix</h><h>elementary</h></idx>
+    <notation>
+      <usage>\underset{cr_i}{E}</usage>
+      <description>Scaling elementary matrix</description>
+    </notation>
+    <notation>
+      <usage>\underset{r_i\leftrightarrow r_j}{E}</usage>
+      <description>Row swap elementary matrix</description>
+    </notation>
+    <notation>
+      <usage>\underset{r_i\rightarow r_i+c\,r_j}{E}</usage>
+      <description>Row addition elementary matrix</description>
+    </notation>
     <statement>
       <p>
-        A square matrix <m>E_{m\times m}</m> is an
-        <term>elementary matrix</term>
-        if multiplying any matrix <m>A_{m\times n}</m> on the left by <m>E</m> performs one of our row operations on <m>A</m>.
+        An <m>m\times m</m>  matrix <m>E</m> is
+        <term>elementary</term>
+        if multiplying any <m>m\times n</m> matrix <m>A</m> on the left by <m>E</m> performs one of our row operations on <m>A</m>.
+      </p>
+      <p>
+        We have different types of elementary matrices depending on the type of row operation they perform, and we denote these with an elaboration of our earlier row operation notation:
+        <ul>
+          <li>
+            <p>
+              A <term>scaling elementary matrix </term><m>\underset{c\,r_i}{E}</m> is a matrix such that multiplying a matrix <m>A</m> on the left by <m>\underset{cr_i}{E}</m> scales the <m>i</m>-th row of <m>A</m> by <m>c</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              A <term>row swap elementary matrix </term><m>\underset{r_i\leftrightarrow r_j}{E}</m> is a matrix such that multiplying a matrix <m>A</m> on the left by <m>\underset{r_i\leftrightarrow r_j}{E}</m> swaps the <m>i</m>-th and <m>j</m>-th rows of <m>A</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              A <term>row addition elementary matrix </term><m>\underset{r_i+c\,r_j}{E}</m> is a matrix such that multiplying a matrix <m>A</m> on the left by <m>\underset{r_i+c\,r_j}{E}</m> replaces the <m>i</m>-th row of <m>A</m> with <m>r_i+c\,r_j</m>.
+            </p>
+          </li>
+        </ul>
       </p>
     </statement>
   </definition>
+<p>
+   Naturally, the row method of multiplication is the key to connecting a given row operation with a particular elementary matrix. <xref ref="th_elementary_matrices"/> shows that once you fix the dimension, an elementary matrix is uniquely defined by the row operation it performs.
+</p>
+<theorem xml:id="th_elementary_matrices">
+  <title>Elementary matrix formulas</title>
+  <statement>
+    <p>
+    Fix an integer <m>m\geq 2</m>. The three types of <m>n\times n</m> elementary matrices can be described as follows:
+    </p>
+    <ul>
+      <li>
+        <p>
+          The <m>n\times n </m> scaling matrix <m>\underset{c\,r_i}{E}</m> is the result of scaling the <m>i</m>-th row of <m>I_m</m> by <m>c</m>: i.e.,
+          <me>
+            \underset{c\,r_i}{E}=\begin{bmatrix}1\amp 0\amp 0\amp \cdots\amp  0\amp 0\\ 0\amp 1\amp 0\amp \cdots\amp 0\amp 0\\ \vdots\amp  \amp \vdots \amp  \amp  \vdots \\ 0\amp \cdots\amp 0\amp c\amp 0\amp \cdots\\ \vdots\amp  \amp \vdots \amp  \amp  \vdots \\ 0\amp 0\amp \cdots\amp 0\amp 0\amp 1 \end{bmatrix}
+          </me>
 
-<p>
-  The <em>row method</em> of multiplication is the key to matching up a row operation with a particular elementary matrix.
-</p>
-<p>
-  Suppose the multiplication
-  <me>
-    \underset{m\times m}{E}\cdot\underset{m\times n}{A}=\underset{m\times n}{A'}
-  </me>
-  performs a single row operation on <m>A</m>.
-  What must <m>E</m> be?
-  In what follows let <m>\boldr_i</m> be the <m>i</m>-th row of <m>A</m> for
-  <m>1\leq i\leq m</m>.    \alert{Scale.} Suppose <m>E</m> replaces
-  <m>\boldr_i</m> of <m>A</m> with <m>c\cdot\boldr_i</m> for <m>c\ne 0</m>.
-  Then <m>E</m> is the identity matrix except for the <m>i</m>-th row,
-  where the 1 is replaced with <m>c</m>.
-  <me>
-    \underset{cr_i}{E}=\begin{bmatrix}1\amp 0\amp 0\amp \cdots\amp  0\amp 0\\ 0\amp 1\amp 0\amp \cdots\amp 0\\ \vdots\amp  \amp \vdots \amp  \amp  \vdots \\ 0\amp \cdots\amp 0\amp c\amp 0\amp \cdots\\ \vdots\amp  \amp \vdots \amp  \amp  \vdots \\ 0\amp 0\amp \cdots\amp 0\amp 0\amp 1 \end{bmatrix}
-  </me>
-</p>
-<p>
-  The <em>row method</em> of multiplication is the key to matching up a row operation with a particular elementary matrix.
-</p>
-<p>
-  Suppose the multiplication
-  <me>
-    \underset{m\times m}{E}\cdot\underset{m\times n}{A}=\underset{m\times n}{A'}
-  </me>
-  performs a single row operation on <m>A</m>.
-  What must <m>E</m> be?
-  In what follows let <m>\boldr_i</m> be the <m>i</m>-th row of <m>A</m> for
-  <m>1\leq i\leq m</m>.    \alert{Swap.} Suppose <m>E</m> swaps rows <m>i</m> and <m>j</m> of <m>A</m>.
-  Then <m>E</m> is the identity matrix with the <m>i</m>-th row and <m>j</m>-th rows swapped.
-  <me>
-    \underset{r_i\leftrightarrow r_j}{E}=\begin{bmatrix}1\amp 0\amp 0\amp \cdots\amp  0\amp 0\\ \vdots\amp  \amp \vdots \amp  \amp  \vdots \\ 0\amp 0\amp 0\amp 0\amp 1\amp \cdots\\ \vdots\amp  \amp \vdots \amp  \amp  \vdots \\ 0\amp \cdots\amp 1\amp 0\amp \cdots\amp 0\\ \vdots\amp  \amp \vdots \amp  \amp  \vdots \\ 0\amp 0\amp \cdots\amp 0\amp 0\amp 1 \end{bmatrix}
-  </me>
-</p>
-<p>
-  The <em>row method</em> of multiplication is the key to matching up a row operation with a particular elementary matrix.
-</p>
-<p>
-  Suppose the multiplication
-  <me>
-    \underset{m\times m}{E}\cdot\underset{m\times n}{A}=\underset{m\times n}{A'}
-  </me>
-  performs a single row operation on <m>A</m>.
-  What must <m>E</m> be?
-  In what follows let <m>\boldr_i</m> be the <m>i</m>-th row of <m>A</m> for
-  <m>1\leq i\leq m</m>.    \alert{Row addition.} Suppose <m>E</m> replaces
-  <m>\boldr_i</m> of <m>A</m> with <m>\boldr_i+c\boldr_j</m>.
-  Then <m>E</m> is the identity matrix except for its <m>i</m>-th row.
-  <me>
-    \underset{r_i+cr_j}{E}=\begin{bmatrix}1\amp 0\amp 0\amp \cdots\amp  0\amp 0\\ \vdots\amp  \amp \vdots \amp  \amp  \vdots \\ \cdots\amp c\amp \cdots\amp 1\amp \cdots\amp 0\\ \vdots\amp  \amp \vdots \amp  \amp  \vdots \\ 0\amp 0\amp \cdots\amp 0\amp 0\amp 1 \end{bmatrix}
-  </me>
-</p>
+        </p>
+      </li>
+      <li>
+        <p>
+          The <m>n\times n </m> row swap matrix <m>\underset{r_i\leftrightarrow r_j}{E}</m> is the result of swapping the <m>i</m>-th and <m>j</m>-th rows of <m>I_m</m>: i.e.,
+          <me>
+            \underset{r_i\leftrightarrow r_j}{E}=\begin{bmatrix}1\amp 0\amp 0\amp \cdots\amp  0\amp 0\\ \vdots\amp  \amp \vdots \amp  \amp  \vdots \\ 0\amp 0\amp 0\amp 0\amp 1\amp \cdots\\ \vdots\amp  \amp \vdots \amp  \amp  \vdots \\ 0\amp \cdots\amp 1\amp 0\amp \cdots\amp 0\\ \vdots\amp  \amp \vdots \amp  \amp  \vdots \\ 0\amp 0\amp \cdots\amp 0\amp 0\amp 1 \end{bmatrix}
+          </me>
+
+        </p>
+      </li>
+      <li>
+        <p>
+          The <m>n\times n </m> row addition matrix <m>\underset{r_i+c\,r_j}{E}</m> is the result of swapping the <m>i</m>-th row of <m>I_m</m> with the sum of its <m>i</m>-th row and <m>c</m> times its <m>j</m>-th row: i.e.,
+          <me>
+            \underset{r_i+c\,r_j}{E}=\begin{bmatrix}1\amp 0\amp 0\amp \cdots\amp  0\amp 0\\ \vdots\amp  \amp \vdots \amp  \amp  \vdots \\ \cdots\amp c\amp \cdots\amp 1\amp \cdots\amp 0\\ \vdots\amp  \amp \vdots \amp  \amp  \vdots \\ 0\amp 0\amp \cdots\amp 0\amp 0\amp 1 \end{bmatrix}
+          </me>
+        </p>
+      </li>
+    </ul>
+  </statement>
+  <proof>
+    <p>
+      First we show that if <m>E</m> is one of the <m>m\times m</m> elementary matrices, then it must assume one of the forms described above. Indeed, since multiplying on the left by <m>E</m> performs a certain row operation, and since <m>E=E\,I_m</m>, we see that <m>E</m> itself is the result of performing this particular row operation on the <m>m\times m</m> identity matrix. Thus <m>E</m>  is one of the three types of matrices described above, obtained by performing an elementary row operation on <m>I_m</m>.
+    </p>
+    <p>
+      Next, we must show that any of the <m>m\times m</m> matrices <m>E</m> described above is indeed elementary in the sense of <xref ref="d_elementary_matrix"/>: that is, we must show that multiplying any <m>m\times n</m> matrix <m>A</m> on the left by <m>E</m> performs the relevant row operation on <m>A</m>. This is now a direct consequence of <xref ref="th_row_method"/>.
+    </p>
+    <p> For example, take <m>E=\underset{c\,r_i}{E}</m>. For <m>j\ne i</m>, the <m>j</m>-th row of <m>E\,A</m> is given by the <m>j</m>-th row of <m>E</m> times <m>A</m>. Since the <m>j</m>-th row of <m>E</m> in this case has a one in the <m>j</m>-th entry and zeros elsewhere, the product of this row and <m>A</m> is just the <m>j</m>-th row of <m>A</m>. Similarly, the <m>i</m>-th row of <m>E\, A</m> in this case is <m>c</m> times the <m>i</m>-th row of <m>A</m>. Thus <m>E</m> leaves all the rows of <m>A</m> except for the <m>i</m>-th one, which is scaled by <m>c</m>.
+    </p>
+
+  </proof>
+</theorem>
 </paragraphs>
 <paragraphs>
   <title>Row reduction as matrix multiplication</title>
@@ -96,7 +130,7 @@
   <p>
     We will use our row operation notation to denote the different types of elementary matrices:
     <me>
-      \underset{cr_i}{E}, \underset{r_i\leftrightarrow r_j}{E}, \underset{r_i+cr_j}E
+      \underset{cr_i}{E}, \underset{r_i\leftrightarrow r_j}{E}, \underset{r_i+c\,r_j}E
     </me>.
   </p>
   <theorem>
@@ -110,7 +144,7 @@
         <md>
           <mrow>\underset{cr_i}{E}^{-1}\amp =\amp \underset{\frac{1}{c}r_i}{E}</mrow>
           <mrow>\underset{r_i\leftrightarrow r_j}{E}^{-1}\amp =\amp \underset{r_i\leftrightarrow r_j}{E}</mrow>
-          <mrow>\underset{r_i+cr_j}E^{-1}\amp =\amp \underset{r_i-cr_j}E</mrow>
+          <mrow>\underset{r_i+c\,r_j}E^{-1}\amp =\amp \underset{r_i-cr_j}E</mrow>
         </md>
       </p>
     </statement>

@@ -331,6 +331,8 @@
 
 
   <theorem xml:id="th_inverse_trans">
+    <title>Inverse and transpose</title>
+
     <statement>
       <p>
         Let <m>A</m> be invertible.
