@@ -422,7 +422,7 @@ A homogeneous system is thus typically written as:
         Suppose <m>L'</m> is the result of applying <m>n+1</m> elementary operations to the system <m>L</m>. Let <m>L''</m> be the result of applying the first <m>n</m> of these operations. By the induction hypothesis, systems <m>L</m> and <m>L''</m> have the same set of solutions.
       </p>
       <p>
-        Since the system <m>L'</m> is obtained from <m>L''</m> by applying exactly one elementary operation, <xref ref="solving_ex_row_ops"/> implies <m>L'</m> and <m>L''</m> have the same set of solutions.
+        Since the system <m>L'</m> is obtained from <m>L''</m> by applying exactly one elementary operation, <xref ref="ex_row_ops_preserve"/> implies <m>L'</m> and <m>L''</m> have the same set of solutions.
       </p>
       <p>
         We conclude that <m>L</m> and <m>L'</m> have the same set of solutions, as desired.

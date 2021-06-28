@@ -103,44 +103,17 @@
 
   </proof>
 </theorem>
-</paragraphs>
-<paragraphs>
-  <title>Row reduction as matrix multiplication</title>
-  <p>
-    Suppose we perform a sequence of row operations on a matrix <m>A</m>.
-    Denote the <m>i</m>-th row operation <m>\rho_i</m>,
-    and denote by <m>\rho_i(B)</m> the result of applying <m>\rho_i</m> to a matrix <m>B</m>.
-  </p>
-  <p>
-    Our sequence of operations <m>\rho_i</m> would produce the following sequence of matrices:
-    <me>
-      \begin{array}{c} A\\  \rho_1(A)\\  \rho_2(\rho_1(A))\\  \vdots \\ \rho_r(\rho_{r-1}(\dots \rho_2(\rho_1(A)))) \end{array}
-    </me>
-  </p>
-  <p>
-    Let <m>\rho_i</m> corresponds to the elementary matrix <m>E_i</m>.
-    Then we represent this same sequence using matrix multiplication:
-    <me>
-      \begin{array}{c} A\\  E_1A\\  E_2E_1A\\  \vdots \\ E_rE_{r-1}\cdots E_2E_1A \end{array}
-    </me>
-  </p>
-</paragraphs>
-<paragraphs>
-  <title>Elementary matrices are invertible</title>
-  <p>
-    We will use our row operation notation to denote the different types of elementary matrices:
-    <me>
-      \underset{cr_i}{E}, \underset{r_i\leftrightarrow r_j}{E}, \underset{r_i+c\,r_j}E
-    </me>.
-  </p>
-  <theorem>
-    <title>Elementary matrix theorem</title>
+<p>
+  Elementary matrices provide us a way of understanding row reduction as a series of matrix multiplications (on the left). Recall that wow operations on linear systems are useful in so far as they preserve the set of solutions, and that this is the result of each operation being in some sense  <q>reversible</q>. (See <xref ref="ex_row_ops_preserve"/>.) In terms of matrix multiplication, this reversible attribute is reflected in the fact that elementary matrices are <em>invertible</em>.
+</p>
+  <theorem xml:id="th_inverse_elem">
+    <title>Inverses of elementary matrices</title>
     <statement>
       <p>
         Fix <m>n</m>.
         All elementary matrices are invertible,
         and their inverses are elementary matrices.
-        In fact:
+        In fact, we have the following formulas:
         <md>
           <mrow>\underset{cr_i}{E}^{-1}\amp =\amp \underset{\frac{1}{c}r_i}{E}</mrow>
           <mrow>\underset{r_i\leftrightarrow r_j}{E}^{-1}\amp =\amp \underset{r_i\leftrightarrow r_j}{E}</mrow>
@@ -148,24 +121,65 @@
         </md>
       </p>
     </statement>
+    <proof>
+      <p>
+        These formulas all follow easily from <xref ref="th_row_method"/>, and the fact that the proposed inverse elementary matrix performs the <q>reverse</q>, or inverse, of the row operation corresponding to the given elementary matrix.
+      </p>
+    </proof>
   </theorem>
-  <proof>
-    <p>
-      These are formulas that you can easily check for each type of elementary matrix directly.
-    </p>
-  </proof>
+<example>
+  <statement>
+      <p>
+        Fix <m>n=3</m>.
+        Verify that the following pairs of <m>3\times 3</m> elementary matrices are indeed inverses of one another.
+      </p>
+        <ul>
+          <li>
+            <p>
+              <me>\underset{2r_3}{E},\  \underset{\frac{1}{2}r_3}{E}</me>
+            </p>
+          </li>
+          <li>
+            <p>
+              <me>\underset{r_1\leftrightarrow r_3}{E}, \  \underset{r_1\leftrightarrow r_3}{E}</me>
+            </p>
+          </li>
+          <li>
+            <p>
+              <me>\underset{r_1+3r_3}{E},\  \underset{r_1-3r_3}{E}</me>
+            </p>
+          </li>
+        </ul>
+  </statement>
+  <solution>
+    <ul>
+      <li>
+        <p>
+          We have
+          <me>\underset{2r_3}{E}=\begin{bmatrix}1\amp 0\amp 0\\0\amp 1\amp 0\\ 0\amp 0\amp 2 \end{bmatrix}</me> and <me>\underset{\frac{1}{2}r_3}{E}=\begin{bmatrix}1\amp 0\amp 0\\0\amp 1\amp 0\\ 0\amp 0\amp 1/2 \end{bmatrix}</me>.
+          You can verify for yourself that <me>\underset{2r_3}{E}\ \underset{\frac{1}{2}r_3}{E}=\underset{\frac{1}{2}r_3}{E}\ \underset{2r_3}{E}=I_3</me>.
+        </p>
+      </li>
+      <li>
+        <p>
+          We have
+          <me>\underset{r_1\leftrightarrow r_3}{E}=\begin{bmatrix}0\amp 0\amp 1\\0\amp 1\amp 0\\ 1\amp 0\amp 0 \end{bmatrix}</me>.
+          You can verify for yourself that <me>\underset{r_1\leftrightarrow r_3}{E}\,\underset{r_1\leftrightarrow r_3}{E}=I_3</me>.
+        </p>
+      </li>
+      <li>
+        <p>
+          We have
+          <me>\underset{r_1+3r_3}{E}=\begin{bmatrix}1\amp 0\amp 3\\0\amp 1\amp 0\\ 0\amp 0\amp 1 \end{bmatrix}</me> and <me>\underset{r_1-3r_3}{E}=\begin{amatrix}[rrr]1\amp 0\amp -3\\0\amp 1\amp 0\\ 0\amp 0\amp 1 \end{amatrix}</me>.
+          You can verify for yourself that <me>\underset{r_1+3r_3}{E}\,\underset{r_1-3r_3}{E}=\underset{r_1-3r_3}{E}\,\underset{r_1+3r_3}{E}=I_3</me>.
+        </p>
+      </li>
+    </ul>
+  </solution>
+</example>
+
 </paragraphs>
-<paragraphs>
-  <title>Examples</title>
-  <p>
-    Fix <m>n=3</m>.
-    Verify that the pairs below are indeed inverses.
-    We have <m>\underset{r_1+3r_3}{E}=\begin{bmatrix}1\amp 0\amp 3\\0\amp 1\amp 0\\ 0\amp 0\amp 1 \end{bmatrix}</m> and thus <m>\left(\underset{r_1+3r_3}{E}\right)^{-1}=\begin{bmatrix}1\amp 0\amp -3\\0\amp 1\amp 0\\ 0\amp 0\amp 1 \end{bmatrix}</m> We have
-    <m>\underset{2r_3}{E}=\begin{bmatrix}1\amp 0\amp 0\\0\amp 1\amp 0\\ 0\amp 0\amp 2 \end{bmatrix}</m> and thus <m>\left(\underset{2r_3}{E}\right)^{-1}=\begin{bmatrix}1\amp 0\amp 0\\0\amp 1\amp 0\\ 0\amp 0\amp \frac{1}{2} \end{bmatrix}</m> We have
-    <m>\underset{r_1\leftrightarrow r_3}{E}=\begin{bmatrix}0\amp 0\amp 1\\0\amp 1\amp 0\\ 1\amp 0\amp 0 \end{bmatrix}</m> and thus <m>\left(\underset{r_1\leftrightarrow r_3}{E}\right)^{-1}=\begin{bmatrix}0\amp 0\amp 1\\0\amp 1\amp 0\\ 1\amp 0\amp 0 \end{bmatrix}</m>
-  </p>
-</paragraphs>
-<paragraphs>
+<paragraphs xml:id="ss_systems_to_matrix_eqns" >
   <title>Interlude on matrix equations</title>
   <p>
     We take a moment to make the following simple,
@@ -178,7 +192,7 @@
     <me>
       \genmatrix\begin{bmatrix}x_1\\x_2\\ \vdots \\ x_n \end{bmatrix} =\begin{bmatrix}b_1\\ b_2 \\ \vdots \\ b_m \end{bmatrix} ,\tag{\(**\)}
     </me>
-    or <m>A\boldx=\boldb</m>,where <m>A=[a_{ij}]</m>,
+    or <me>A\boldx=\boldb</me>, where <m>A=[a_{ij}]</m>,
     <m>\boldx=[x_i]</m>, <m>\boldb=[b_i]</m>.
   </p>
   <p>
@@ -194,30 +208,45 @@
     <m>(*)</m> if and only if its corresponding column vector <m>\underset{n\times 1}{\bolds}=[s_i]</m> is a solution to the
     <em>matrix equation</em> <m>A\boldx=\boldb</m>.
   </p>
-</paragraphs>
-<paragraphs>
-  <title>Interlude on matrix equations</title>
   <p>
-    In particular, a homogeneous linear system
+  We have thus recast the problem of solving linear systems to the problem of solving a certain matrix equation of the form
+  <me>
+    A\underset{n\times 1}{\boldx}=\underset{m\times 1}{\boldb}
+  </me>
+  for the unknown column vector <m>\boldx</m>.
+    In particular, a <em>homogeneous</em> linear system
     <me>
       \homsys
     </me>
-    can be represented as the single matrix equation
+    can be represented as a matrix equation of the form
     <me>
-      A\boldx=\underset{m\times 1}{\boldzero}
-    </me>,
-    where <m>A=[a_{ij}]</m> and <m>\boldx=[x_i]</m>;
-    and <m>(s_1,s_2,\dots, s_n)</m> is a solution to the
-    <em>homogenous system</em>
-    if and only if its corresponding column vector
-    <m>\underset{n\times 1}{\bolds}=[s_i]</m> is a solution to the
-    <em>matrix equation</em>
-    <m>A\boldx=\underset{m\times 1}{\boldzero}</m>.
+      A\underset{n\times 1}{\boldx}=\underset{m\times 1}{\boldzero}
+    </me>.
+  </p>
+  <p>
+    Lastly, the use of Gaussian elimination to solve a linear system can now be understood in an <em>algebraic</em> way using matrix multiplication.
+  </p>
+  <p>
+    In more detail, suppose our given linear system has augmented matrix <m>\begin{amatrix}[c|c]A\amp\boldb  \end{amatrix}</m> that row reduces to the row echelon matrix <m>\begin{amatrix}[c|c]U\amp \boldb'  \end{amatrix}</m> after performing a sequence of row operations.
+    Denote the <m>i</m>-th row operation <m>\rho_i</m>,
+    and denote by <m>\rho_i(B)</m> the result of applying <m>\rho_i</m> to a matrix <m>B</m>.
+  </p>
+  <p>
+    Our sequence of operations <m>\rho_i</m> translates to the following sequence of matrix equations:
+    <me>
+      \begin{array}{c} A\boldx=\boldb\\  \rho_1(A)\boldx=\rho_1(\boldb)\\  \rho_2(\rho_1(A))\boldx=\rho_2(\rho_1(\boldb))\\  \vdots \\ \rho_r(\rho_{r-1}(\dots \rho_2(\rho_1(A))))\boldx=\rho_r(\rho_{r-1}(\dots \rho_2(\rho_1(\boldb)))) \\
+      U\boldx=\boldb'\end{array}
+    </me>.
+  </p>
+  <p>
+    Let <m>\rho_i</m> corresponds to the elementary matrix <m>E_i</m>.
+    Then we represent this same sequence using matrix multiplication:
+    <me>
+      \begin{array}{c} A\boldx=\boldb\\  E_1A\boldx=E_1\boldb\\  E_2E_1A\boldx=E_2E_1\boldb\\  \vdots \\ E_rE_{r-1}\cdots E_2E_1A\boldx=E_rE_{r-1}\cdots E_2E_1\boldb \\
+       U\boldx=\boldb' \end{array}
+    </me>.
   </p>
 </paragraphs>
-<p>
-  We are now ready to state a major theorem about invertibility.
-</p>
 <theorem xml:id="th_invertibility">
   <title>Invertibility theorem</title>
   <statement>
@@ -250,25 +279,25 @@
       </ol>
     </p>
   </statement>
+  <proof>
+    <p>
+      Recall that two show two statements <m>P</m> and <m>Q</m> are equivalent,
+      we must show two implications:
+      <m>P\Rightarrow Q</m>, and <m>Q\Rightarrow P</m>.
+    </p>
+    <p>
+      We must show this for each pair of statements above.
+      That would be 6 different pairs and a total of 12 different implications to show!
+      We ease our work load by showing the following
+      <em>cycle</em> of implications:
+      <me>
+        (a)\Rightarrow(b)\Rightarrow(c)\Rightarrow(d)\Rightarrow(a)
+      </me>
+      and using the fact that implication is transitive!
+      We will complete the proof in class.
+    </p>
+  </proof>
 </theorem>
-<proof>
-  <p>
-    Recall that two show two statements <m>P</m> and <m>Q</m> are equivalent,
-    we must show two implications:
-    <m>P\Rightarrow Q</m>, and <m>Q\Rightarrow P</m>.
-  </p>
-  <p>
-    We must show this for each pair of statements above.
-    That would be 6 different pairs and a total of 12 different implications to show!
-    We ease our work load by showing the following
-    <em>cycle</em> of implications:
-    <me>
-      (a)\Rightarrow(b)\Rightarrow(c)\Rightarrow(d)\Rightarrow(a)
-    </me>
-    and using the fact that implication is transitive!
-    We will complete the proof in class.
-  </p>
-</proof>
 <paragraphs>
   <title>Algorithm for inverses</title>
   <p>
@@ -343,6 +372,7 @@
   We conclude that <m>A^{-1}=\begin{bmatrix}-7\amp 6\amp -2\\ 4\amp -3\amp 1\\ -1\amp 1\amp 0 \end{bmatrix}</m>.
   On the next slide I show how <m>A^{-1}</m> and <m>A</m> can be written as products of elementary matrices.
 </p>
+
 <paragraphs>
   <title>Example (contd):</title>
   <p>

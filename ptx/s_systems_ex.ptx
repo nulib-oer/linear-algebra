@@ -129,7 +129,7 @@
       </p>
     </solution>
   </exercise>
-  <exercise xml:id="solving_ex_row_ops">
+  <exercise xml:id="ex_row_ops_preserve">
     <title>Row operations preserve solutions</title>
     <statement>
       <p>
