@@ -191,7 +191,7 @@
     By the same token, an <m>n</m>-tuple
     <m>(s_1,s_2,\dots,
     s_n)</m> is a solution to the <em>system of equations</em>
-    <m>(*)</m> if and only if its corresponding column vector <m>\underset{n\times 1}{\boldsymbol}=[s_i]</m> is a solution to the
+    <m>(*)</m> if and only if its corresponding column vector <m>\underset{n\times 1}{\bolds}=[s_i]</m> is a solution to the
     <em>matrix equation</em> <m>A\boldx=\boldb</m>.
   </p>
 </paragraphs>
@@ -210,7 +210,7 @@
     and <m>(s_1,s_2,\dots, s_n)</m> is a solution to the
     <em>homogenous system</em>
     if and only if its corresponding column vector
-    <m>\underset{n\times 1}{\boldsymbol}=[s_i]</m> is a solution to the
+    <m>\underset{n\times 1}{\bolds}=[s_i]</m> is a solution to the
     <em>matrix equation</em>
     <m>A\boldx=\underset{m\times 1}{\boldzero}</m>.
   </p>
