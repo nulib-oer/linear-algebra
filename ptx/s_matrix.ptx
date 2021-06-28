@@ -1,5 +1,5 @@
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_matrix">
-  <title>Matrices</title>
+  <title>Matrices and their arithmetic</title>
   <introduction>
     <p>
       Matrices played a small supporting role in our discussion of linear systems in <xref ref="c_linear_systems"/>. In this chapter we bring them to center stage and give them a full-blown treatment as independent mathematical objects in their own right.

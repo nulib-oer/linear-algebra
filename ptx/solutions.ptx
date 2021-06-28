@@ -882,8 +882,7 @@
         </me>
         <solution>
           <p>
-            We did this in class using the column method.
-            For kicks, I'll describe the row method here.
+            We will illustrate the row method to compute the matrix.  describe the row method here.
             Call the product <m>AB</m>.
           </p>
           <p>

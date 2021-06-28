@@ -1,5 +1,5 @@
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="c_linear_systems">
-  <title>Linear systems of equations</title>
+  <title>Systems of linear equations</title>
   <xi:include  href="s_systems.ptx"/>
   <xi:include  href="s_ge.ptx"/>
   <xi:include  href="s_solving.ptx"/>

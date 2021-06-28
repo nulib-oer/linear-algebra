@@ -57,32 +57,7 @@
       </me>
     </p>
   </statement>
-  <!-- <solution>
-    <p>
-      <md>
-        <mrow>\begin{bmatrix}1\amp 1\amp -1\amp 1\amp 1\\ -2\amp -2\amp 2\amp -2\amp -2\\ 1\amp 1\amp 1\amp 2\amp 3 \end{bmatrix} \amp \xrightarrow[\hspace{35pt}]{r_2+2r_1}\amp \begin{bmatrix}1\amp 1\amp -1\amp 1\amp 1\\ 0\amp 0\amp 0\amp 0\amp 0\\ 1\amp 1\amp 1\amp 2\amp 3 \end{bmatrix}</mrow>
-        <mrow>\amp \xrightarrow[\hspace{35pt}]{r_3-r_1}\amp \begin{bmatrix}1\amp 1\amp -1\amp 1\amp 1\\ 0\amp 0\amp 0\amp 0\amp 0\\ 0\amp 0\amp 2\amp 1\amp 2 \end{bmatrix}</mrow>
-        <mrow>\amp \xrightarrow[\hspace{35pt}]{r_2\leftrightarrow r_3 }\amp \begin{bmatrix}1\amp 1\amp -1\amp 1\amp 1\\ 0\amp 0\amp 2\amp 1\amp 2\\ 0\amp 0\amp 0\amp 0\amp 0 \end{bmatrix}</mrow>
-        <mrow>\amp \xrightarrow[\hspace{35pt}]{\frac{1}{2}r_2}\amp \begin{bmatrix}\boxed{1}\amp 1\amp -1\amp 1\amp 1\\ 0\amp 0\amp \boxed{1}\amp 1/2\amp 1\\ 0\amp 0\amp 0\amp 0\amp 0 \end{bmatrix}</mrow>
-      </md>
-      <p>
-        The row echelon matrix tells us that <m>x_2=s</m> and <m>x_4=t</m> are the free variables.
-        Back substitution then yields the parametric equation description:
-        <md>
-          <mrow>x_1\amp = 2-s-\frac{3t}{2}</mrow>
-          <mrow>x_2\amp = s</mrow>
-          <mrow>x_3\amp = 1-\frac{t}{2}</mrow>
-          <mrow>x_4\amp = t</mrow>
-        </md>,
-      </p>
-      <p>
-        Alternatively, the set of solutions is
-        <me>
-          S=\left\{\left(2-s-\frac{3t}{2},s,1-\frac{t}{2},t\right)\colon s, t\in\R\right\}
-        </me>.
-      </p>
-    </p>
-  </solution> -->
+
 </exercise>
 <exercise>
   <statement>
@@ -190,20 +165,15 @@
       </p>
       </li>
       <li>
-      <p>
-      The only solution to a homogeneous system of <m>n</m> equations in <m>n</m> unknowns with <m>n</m> leading ones is the trivial solution <m>s=(0,0,\dots,0)</m>.
-      </p>
+        <p>If a homogeneous linear system of <m>n</m> equations in <m>n</m> unknowns has a corresponding augmented matrix with a reduced row echelon form containing <m>n</m> leading ones, then the linear system has the unique solution <m>s=(0,0,\dots, 0)</m>.
+        </p>
       </li>
       <li>
         <p>
           All leading ones in of a matrix in row echelon form must occur in distinct columns.
         </p>
       </li>
-      <li>
-        <p>
-          If a homogeneous linear system of <m>n</m> equations in <m>n</m> unknowns has a corresponding augmented matrix with a reduced row echelon form containing <m>n</m> leading ones, then the linear system has only the trivial solution.
-        </p>
-      </li>
+
       <li>
         <p>
           If the reduced row echelon form of the augmented matrix for a linear system has a zero row,
@@ -218,39 +188,6 @@
       </li>
       </ol>
       </statement>
-      <!-- <solution>
-      <ol label="(a)">
-        <li>
-          <p>
-            False.
-            Let <m>A=\begin{bmatrix}1\amp 1\\ 0\amp 1 \end{bmatrix}</m>.
-            Then <m>A</m> is already in row echelon form,
-            but can be further reduced to <m>I=\begin{bmatrix}1\amp 0\\0\amp 1 \end{bmatrix}</m>,
-            which is also in row echelon form.
-            Thus <m>A</m> and <m>I</m> are two different row echelon forms of <m>A</m>.
-          </p>
-        </li>
-        <li>
-          <p>
-            True.
-                Since its homogeneous, it is consistent:
-                thus 1 or <m>\infty</m>-many solutions.
-                Furthermore,
-                we showed above that a system with more variables than equations has a free variable.
-                Thus it must have infinitely many solutions.
-          </p>
-        </li>
-        <li>
-          <p>
-            True.
-            First note that the given <m>s</m> is always a solution.
-            Since the system has <m>n</m> leading ones,
-            there will be no free variables,
-            which implies this is the only solution.
-          </p>
-        </li>
-      </ol>
-</solution> -->
 </exercise>
 <exercise>
   <statement>
@@ -308,13 +245,13 @@
       <me>
         \begin{linsys}{3} \frac{1}{x}\amp +\amp \frac{2}{y}\amp -\amp \frac{4}{z}\amp =\amp 1\\ \\ \frac{2}{x}\amp +\amp \frac{3}{y}\amp +\amp \frac{8}{z}\amp =\amp 0\\ \\ -\frac{1}{x}\amp +\amp \frac{9}{y}\amp +\amp \frac{10}{z}\amp =\amp 5 \end{linsys}
       </me>
-    <hint>
-      <p>
-        First replace the given <em>nonlinear</em> system with a linear one using a change of variable substitution.
       </p>
-    </hint>
-    </p>
   </statement>
+  <hint>
+    <p>
+      First replace the given <em>nonlinear</em> system with a linear one using a change of variable substitution.
+    </p>
+  </hint>
   </exercise>
   <exercise>
   <statement>

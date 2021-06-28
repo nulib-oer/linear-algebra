@@ -22,7 +22,7 @@
 \newcommand{\boldp}{{\mathbf p}}
 \newcommand{\boldq}{{\mathbf q}}
 \newcommand{\boldr}{{\mathbf r}}
-\newcommand{\boldsymbol}{{\mathbf s}}
+\newcommand{\bolds}{{\mathbf s}}
 \newcommand{\boldt}{{\mathbf t}}
 \newcommand{\boldu}{{\mathbf u}}
 \newcommand{\boldv}{{\mathbf v}}
@@ -199,7 +199,7 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 #1_{#3,1} \amp #1_{#3,2} \amp \ldots  \amp #1_{#3,#2}
 \end{array}
 \right)  }
-\newcommand{\colvec}[2][c]{\begin{bmatrix}[#1] #2 \end{bmatrix}}
+\newcommand{\colvec}[2][c]{\begin{amatrix}[#1] #2 \end{amatrix}}
 \newcommand{\rowvec}[1]{\setlength{\arraycolsep}{3pt}\begin{bmatrix} #1 \end{bmatrix}}
 \DeclareMathOperator{\trace}{tr}
 \newcommand{\isomorphicto}{\cong}
@@ -314,10 +314,10 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
         <list-of elements="theorem" divisions="section" />
       </appendix>
 
-      <appendix xml:id="appendix-egs">
+      <!-- <appendix xml:id="appendix-egs">
         <title>Examples</title>
         <list-of elements="example" divisions="section" />
-      </appendix>
+      </appendix> -->
       <xi:include href="./bibliography.ptx"/>
 
       <index>
