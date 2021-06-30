@@ -61,6 +61,47 @@
     </p>
   </proof>
 <p>
+  The next theorem tells us that we can multiplicatively <q>cancel</q> a matrix if it is <em>invertible</em>.
+</p>
+<theorem xml:id="th_inverse_cancel">
+  <title>Solving with invertible matrices</title>
+
+  <statement>
+    <p>
+      Suppose <m>A</m> is an invertible <m>n\times n</m> matrix. Then
+      <me>
+        AX=Y \iff X=A^{-1}Y
+      </me>
+      for any <m>n\times r</m> matrices <m>X</m> and <m>Y</m>, and
+      <me>
+        ZA=W \iff Z=WA^{-1}
+      </me>
+       for any <m>r\times n</m> matrices <m>Z</m> and <m>W</m>.
+    </p>
+    <p>
+      In other words, matrix equations of this sort have <em>unique</em> solutions obtained by multiplying on the left or right by <m>A^{-1}</m>.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      We give a proof only for the the first equation: <m>AX=Y</m>. To show the equivalence we must show the two implications <m>AX=Y\implies X=A^{-1}Y</m> and <m>X=A^{-1}Y\implies AX=Y</m>. To this end, we have
+      <md>
+        <mrow> AX=Y  \amp\implies A^{-1}AX=A^{-1}Y </mrow>
+        <mrow> \amp\implies IX=A^{-1}Y </mrow>
+        <mrow>  \amp\implies X=A^{-1}Y </mrow>
+      </md>,
+      and
+      <md>
+        <mrow>X=A^{-1}Y \amp\implies AX=AA^{-1}Y </mrow>
+        <mrow> \amp\implies AX=IY </mrow>
+        <mrow>  \amp\implies AX=Y </mrow>
+      </md>.
+    </p>
+  </proof>
+
+</theorem>
+
+<p>
   Without any additional theory at our disposal, to show a matrix <m>A</m> is invertible we must exhibit an inverse. The onus is on us to find a matrix <m>B</m> satisfying both <m>AB=I</m> and <m>BA=I</m>. (Remember: since we cannot assume <m>BA=AB</m>, we really need to show both equations hold.)</p>
   <p>
   By the same token, to show <m>A</m> is <em>not</em> invertible we must show that an inverse does not exist: that is, we must prove that there is no <m>B</m> satisfying <m>AB=BA=I</m>. The next example illustrates this technique for a variety of matrices.
