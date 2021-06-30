@@ -357,7 +357,7 @@
       where <m>A</m> is a <em>square matrix</em>. According to the theorem, if we know <m>A</m> is invertible, then the matrix equation, and hence the linear system, has a unique solution: namely, <m>\boldx=A^{-1}\boldb</m>.
     </p>
     <p>
-      What if <m>A</m> is not invertible? Then the theorem only tells us that there is some column vector <m>\boldc</m>, not necessarily the given <m>b</m>, such that the equation
+      What if <m>A</m> is not invertible? Then the theorem only tells us that there is some column vector <m>\boldc</m>, not necessarily the given <m>\boldb</m>, such that the equation
       <me>
         A\boldx=\boldc
       </me>
@@ -365,6 +365,95 @@
     </p>
   </statement>
 </remark>
+<p>
+  The family of <em>triangular</em> matrices (upper, lower, and diagonal) defined below provides an easy testing ground for our new invertibility theorem.
+</p>
+<definition>
+  <statement>
+    <p>
+      Let <m>A=[a_{ij}]</m> be <m>n\times n</m>.
+      We say
+      <ol type="i">
+        <li>
+          <p>
+            <m>A</m> is <term>diagonal</term>
+            if <m>a_{ij}=0</m> for all <m>(i,j)</m> with <m>i\ne j</m>. (
+            <q><m>A</m> is zero off the diagonal.</q>
+            )
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>A</m> is <term>upper triangular</term>
+            if <m>a_{ij}=0</m> for all <m>(i,j)</m> with <m>i>j</m>. (
+            <q><m>A</m> is zero above the diagonal.</q>
+            )
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>A</m> is <term>lower triangular</term>
+            if <m>a_{ij}=0</m> for all <m>(i,j)</m> with <m>j>i</m>. (
+            <q><m>A</m> is zero below the diagonal.</q>
+            )
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>A</m> is <term>triangular</term>
+            if <m>A</m> is upper triangular or lower triangular.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+</definition>
+<theorem xml:id="th_invertible_triangular">
+  <title>Invertibility of triangular matrices</title>
+  <statement>
+    <p>
+      Let <m>A=[a_{ij}]</m> be a triangular <m>n\times n</m> matrix.
+      Then <m>A</m> is invertible if and only if
+      <m>a_{ii}\ne 0</m> for all <m>1\leq i\leq n</m>.
+    </p>
+    <p>
+      In other words,
+      <m>A</m> is invertible if and only if the diagonal entries of <m>A</m> are all nonzero.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      In this proof we will make use of the following easy consequence of <xref ref="th_inverse_trans"/>: namely, <m>A</m> is invertible if and only if <m>A^T</m> is invertible. (The forward implication follows directly from the theorem; the reverse direction follows from the theorem applied to <m>B=A^T</m>.)
+    </p>
+    <case>
+     <title>Case: <m>A</m> is upper triangular</title>
+    <p>
+    If <m>a_{ii}\ne 0</m> for all <m>i</m>, then it is easy to see that we can row reduce <m>A</m> first to a row echelon matrix with leading ones in every diagonal entry, and then further to the identity matrix. Thus <m>A</m> is row equivalent to <m>I</m> in this case, and we conclude from statement (4) of <xref ref="th_invertibility"/> that <m>A</m> is invertible.
+    </p>
+    <p>
+      For the other implication, we show that if it is not the case that <m>a_{ii}\ne 0</m> for all <m>i</m>, then there is a nonzero solution <m>\boldx\ne \boldzero</m> to the matrix equation <m>A\boldx=\boldzero</m>. If this is the case, then since we have two distinct solutions to <m>A\boldx=\boldzero</m>, <m>A</m> is not invertible by Statement (3) of <xref ref="th_invertibility"/>.
+    </p>
+    <p> To this end, assume it is not the case that <m>a_{ii}\ne 0</m> for all <m>i</m>. Then we can find a smallest index <m>k</m> such that <m>a_{kk}=0</m> and <m>a_{ii}\ne 0</m> for any <m>i &lt;k</m>. It is easy to see that <m>A</m> is row equivalent to a matrix <m>A'=[a'_{ij}]</m>, satisfying <m>a_{jj}=1</m>  for <m>1\leq j\leq k-1</m> and <m>a_{ij}=0</m> for all <m>1\leq i &lt; j\leq k-1</m>: i.e., <m>A'</m> is <q>diagonal up until the <m>k</m>-th column</q>.
+  </p>
+    <p>
+    We now provide a nonzero solution <m>\boldx=[x_i]_{n\times 1}</m>to <m>A'\boldx=\boldzero</m>: namely, set <m>x_k=1</m>, <m>x_{i}=0</m> for all <m>i>k</m>, and <m>x_{i}=-a'_{ik}</m> for all <m>i &lt; k</m>. (Verify this for yourself, using the description above of <m>a'_{ij}</m> for <m>j\leq k-1</m>.) Since <m>A'</m> is row equivalent to <m>A</m>, the linear systems cooresponding to <m>\begin{amatrix}[cc] A\amp \boldzero\end{amatrix}</m> and <m>\begin{amatrix}[cc] A' \amp \boldzero\end{amatrix}</m> have the same solutions. Hence <m>\boldx</m> is also a nonzero solution to <m>A\boldx=\boldzero</m>. We conclude that <m>A</m> is not invertible by Statement (3) of <xref ref="th_invertibility"/>. This concludes the proof of this implication.
+    </p>
+    </case>
+    <case>
+     <title>Case: <m>A</m> is lower triangular</title>
+    <p>
+    Set <m>B=A^T</m>. Then <m>B</m> is upper triangular, and <m>(B)_{ii}=(A)_{ii}=a_{ii}</m> for all <m>i</m>. Then
+    <md>
+      <mrow>A \text{ invertible} \amp \iff B=A^T \text{ invertible} \amp \text{(see statement at top )}</mrow>
+      <mrow> \amp \iff a_{ii}=0 \text{ for all } i \amp \text{(by previous case)} </mrow>
+    </md>.
+    </p>
+    </case>
+  </proof>
+
+</theorem>
+<paragraphs xml:id="ss_invertibility_alg">
+  <title>Invertibility algorithms</title>
   <p>
     The proof of the implication <m>(4)\implies (5)</m> of <xref ref="th_invertibility"/> can be expanded into an algorithm that (1) decides whether a given matrix <m>A</m> is invertible, and (2) computes <m>A^{-1}</m> if <m>A</m> is invertible.
   </p>
@@ -444,7 +533,7 @@
       </p>
     </proof>
   </theorem>
-
+</paragraphs>
 <paragraphs xml:id="ss_inv_alg_example">
   <title>In-depth example</title>
       <p>
@@ -452,7 +541,7 @@
       Combining both algorithms we can decide whether <m>A</m> is invertible, and if so, compute <m>A^{-1}</m> and write <m>A</m> as a product of elementary matrices.
     <md>
       <mrow>\begin{amatrix}[rrr|rrr]1\amp 2\amp 0\amp 1\amp 0\amp 0\\ 1\amp 2\amp 1\amp 0\amp 1\amp 0\\ -1\amp -1\amp 3\amp 0\amp 0\amp 1 \end{amatrix}  \amp \xrightarrow{r_2-r_1} \begin{amatrix}[rrr|rrr]1\amp 2\amp 0\amp 1\amp 0\amp 0\\ 0\amp 0\amp 1\amp -1\amp 1\amp 0\\ -1\amp -1\amp 3\amp 0\amp 0\amp 1 \end{amatrix}</mrow>
-      <mrow>\amp \xrightarrow{r_3+r_1}\amp \begin{amatrix}[rrr|rrr]1\amp 2\amp 0\amp 1\amp 0\amp 0\\ 0\amp 0\amp 1\amp -1\amp 1\amp 0\\ 0\amp 1\amp 3\amp 1\amp 0\amp 1 \end{amatrix}</mrow>
+      <mrow>\amp \xrightarrow{r_3+r_1} \begin{amatrix}[rrr|rrr]1\amp 2\amp 0\amp 1\amp 0\amp 0\\ 0\amp 0\amp 1\amp -1\amp 1\amp 0\\ 0\amp 1\amp 3\amp 1\amp 0\amp 1 \end{amatrix}</mrow>
 
       <mrow>\text{ (three leading ones, thus invertible) }\amp \xrightarrow{r_2\leftrightarrow r_3} \begin{amatrix}[rrr|rrr]\boxed{1}\amp 2\amp 0\amp 1\amp 0\amp 0\\ 0\amp \boxed{1}\amp 3\amp 1\amp 0\amp 1\\ 0\amp 0\amp \boxed{1}\amp -1\amp 1\amp 0 \end{amatrix}</mrow>
 
@@ -508,8 +597,15 @@
         </md>.
     </p>
 </paragraphs>
+<paragraphs xml:id="ss_invertible_loose_ends">
+  <title>Some theoretical loose ends</title>
+
+
 <p>
-The two inveribility algorithms above are nice examples of how a <em>theoretical</em> result like our <xref ref="th_invertibility" text='custom'> invertibility theorem </xref> can pay some serious <em>computational</em> dividends. Namely, thanks to the theory we have discovered a method computing the inverse of a matrix that essentially boils down to row reduction.
+The two inveribility algorithms above are nice examples of how a <em>theoretical</em> result like our <xref ref="th_invertibility" text='custom'> invertibility theorem </xref> can pay some serious <em>computational</em> dividends. Namely, thanks to the theory we have discovered a method of computing the inverse of a matrix that essentially boils down to row reduction.
+</p>
+<p>
+   We finish this section with two further theoretical implications that tie up some loose ends: namely, we complete our understanding of the invertiblility of products of matrices, and we show that to test whether <m>B</m> is an inverse of <m>A</m> it suffices to show <em>just one</em> of the equalities <m>AB=I</m> and <m>BA=I</m>
 </p>
 
   <corollary xml:id="cor_inv_prod_eq">
@@ -521,51 +617,54 @@ The two inveribility algorithms above are nice examples of how a <em>theoretical
         Then <m>AB</m> is invertible if and only if <m>A</m> and <m>B</m> are both invertible.
       </p>
     </statement>
+    <proof>
+      <p>
+        We have already proved the
+        <m>\Leftarrow</m> direction of this equivalnce.
+      </p>
+      <p>
+        For the <m>\implies</m> direction,
+        assume <m>AB</m> is invertible and let <m>C</m> be its inverse,
+        so that <m>C(AB)=(AB)C=I_n</m>.
+      </p>
+      <p>
+        We first prove <m>B</m> is invertible,
+        using equivalent statement (b) of IT; that is we will prove the implication <m>B\boldx=\boldzero\implies \boldx=\boldzero</m>.
+        <md>
+          <mrow>B\boldx=\boldzero\amp \implies \amp  AB\boldx=\boldzero</mrow>
+          <mrow>\amp \implies\amp  \boldx=\boldzero \ \text{ (since \(AB\) invertible) } </mrow>
+        </md>.
+      </p>
+      <p>
+        This proves <m>B</m> is invertible,
+        and hence that <m>B^{-1}</m> exists.
+      </p>
+      <p>
+        Next we prove <m>A</m> is invertible,
+        by explicitly exhibiting an inverse:
+        namely, <m>A^{-1}=BC</m>.
+      </p>
+      <p>
+        Indeed we have <m>A(BC)=(AB)C=I_n</m>, from above.
+        For the other direction we have
+        <md>
+          <mrow>C(AB)=I\amp \Leftrightarrow\amp  CA=B^{-1} \ \text{ (mult. both sides on right by \(B^{-1}\))}</mrow>
+          <mrow>\amp \Leftrightarrow\amp  (BC)A=I_n \text{ (mult. both sides on left by \(B\)) } </mrow>
+        </md>.
+      </p>
+      <p>
+        This proves <m>A</m> and <m>B</m> are both invertible,
+        and completes our proof.
+      </p>
+    </proof>
   </corollary>
-  <proof>
-    <p>
-      We have already proved the
-      <m>\Leftarrow</m> direction of this equivalnce.
-    </p>
-    <p>
-      For the <m>\implies</m> direction,
-      assume <m>AB</m> is invertible and let <m>C</m> be its inverse,
-      so that <m>C(AB)=(AB)C=I_n</m>.
-    </p>
-    <p>
-      We first prove <m>B</m> is invertible,
-      using equivalent statement (b) of IT; that is we will prove the implication <m>B\boldx=\boldzero\implies \boldx=\boldzero</m>.
-      <md>
-        <mrow>B\boldx=\boldzero\amp \implies \amp  AB\boldx=\boldzero</mrow>
-        <mrow>\amp \implies\amp  \boldx=\boldzero \ \text{ (since \(AB\) invertible) } </mrow>
-      </md>.
-    </p>
-    <p>
-      This proves <m>B</m> is invertible,
-      and hence that <m>B^{-1}</m> exists.
-    </p>
-    <p>
-      Next we prove <m>A</m> is invertible,
-      by explicitly exhibiting an inverse:
-      namely, <m>A^{-1}=BC</m>.
-    </p>
-    <p>
-      Indeed we have <m>A(BC)=(AB)C=I_n</m>, from above.
-      For the other direction we have
-      <md>
-        <mrow>C(AB)=I\amp \Leftrightarrow\amp  CA=B^{-1} \ \text{ (mult. both sides on right by \(B^{-1}\))}</mrow>
-        <mrow>\amp \Leftrightarrow\amp  (BC)A=I_n \text{ (mult. both sides on left by \(B\)) } </mrow>
-      </md>.
-    </p>
-    <p>
-      This proves <m>A</m> and <m>B</m> are both invertible,
-      and completes our proof.
-    </p>
-  </proof>
-  <corollary>
+
+  <corollary xml:id="cor_left-right_inverse">
+    <title>Left-inverse if and only if right-inverse</title>
+
     <statement>
       <p>
-        Let <m>A</m> and <m>B</m> be <m>n\times n</m>.
+        Let <m>A</m> and <m>B</m> be <m>n\times n</m>. Then
         <ol>
           <li>
             <p>
@@ -578,38 +677,34 @@ The two inveribility algorithms above are nice examples of how a <em>theoretical
             </p>
           </li>
         </ol>
+        In plain English: a matrix <m>B</m> is a <em>left-inverse</em> of <m>A</m> if and only if it is a <m>right-inverse</m> of <m>A</m>.
       </p>
     </statement>
+    <proof>
+      <p>
+        It is enough to prove the first implication:
+        the second then follows by exchanging the roles of <m>A</m> and <m>B</m>!
+      </p>
+      <p>
+        Suppose <m>BA=I_n</m>.
+        I will first show that <m>A</m> is invertible.
+        Indeed, suppose <m>A\boldx=\boldzero</m>.
+        Then <m>BA\boldx=\boldzero</m>.
+        But <m>BA=I_n</m>,
+        and <m>I\boldx=\boldzero</m> implies <m>\boldx=\boldzero</m>.
+        It follows from statement (b) of IT that <m>A</m> is invertible.
+      </p>
+      <p>
+        Now that we know <m>A^{-1}</m> exists we have
+        <md>
+          <mrow>BA=I_n\amp \implies \amp  B=A^{-1} \ \text{ (mult. both sides on right by \(A^{-1}\))}</mrow>
+          <mrow>\amp \implies \amp AB=I_n \ \text{ (mult. both sides on left by \(A\)) }</mrow>
+        </md>
+      </p>
+    </proof>
   </corollary>
-  <p>
-    In other words,
-    to show <m>B</m> is the inverse of <m>A</m> it is enough to show either that it is a left-inverse (<m>BA=I_n</m>),
-    or a right-inverse
-    (<m>AB=I_n</m>).
-  </p>
-  <proof>
-    <p>
-      It is enough to prove the first implication:
-      the second then follows by exchanging the roles of <m>A</m> and <m>B</m>!
-    </p>
-    <p>
-      Suppose <m>BA=I_n</m>.
-      I will first show that <m>A</m> is invertible.
-      Indeed, suppose <m>A\boldx=\boldzero</m>.
-      Then <m>BA\boldx=\boldzero</m>.
-      But <m>BA=I_n</m>,
-      and <m>I\boldx=\boldzero</m> implies <m>\boldx=\boldzero</m>.
-      It follows from statement (b) of IT that <m>A</m> is invertible.
-    </p>
-    <p>
-      Now that we know <m>A^{-1}</m> exists we have
-      <md>
-        <mrow>BA=I_n\amp \implies \amp  B=A^{-1} \ \text{ (mult. both sides on right by \(A^{-1}\))}</mrow>
-        <mrow>\amp \implies \amp AB=I_n \ \text{ (mult. both sides on left by \(A\)) }</mrow>
-      </md>
-    </p>
-  </proof>
-  <paragraphs>
+</paragraphs>
+  <!-- <paragraphs>
   <title>When is a linear system consistent</title>
   <p>
     Consider a general linear equation
@@ -692,66 +787,6 @@ The two inveribility algorithms above are nice examples of how a <em>theoretical
       as well as a corresponding invertibility theorem.
       The proof of the latter will be done in class.
     </p>
-    <definition>
-      <statement>
-        <p>
-          Let <m>A=[a_{ij}]</m> be <m>n\times n</m>.
-          We say
-          <ol type="i">
-            <li>
-              <p>
-                <m>A</m> is <term>diagonal</term>
-                if <m>a_{ij}=0</m> for all <m>(i,j)</m> with <m>i\ne j</m>. (
-                <q><m>A</m> is zero off the diagonal.</q>
-                )
-              </p>
-            </li>
-            <li>
-              <p>
-                <m>A</m> is <term>upper triangular</term>
-                if <m>a_{ij}=0</m> for all <m>(i,j)</m> with <m>j>i</m>. (
-                <q><m>A</m> is zero below the diagonal.</q>
-                )
-              </p>
-            </li>
-            <li>
-              <p>
-                <m>A</m> is <term>lower triangular</term>
-                if <m>a_{ij}=0</m> for all <m>(i,j)</m> with <m>i>j</m>. (
-                <q><m>A</m> is zero above the diagonal.</q>
-                )
-              </p>
-            </li>
-            <li>
-              <p>
-                <m>A</m> is <term>triangular</term>
-                if <m>A</m> is upper triangular or lower triangular.
-              </p>
-            </li>
-            <li>
-              <p>
-                <m>A</m> is <term>symmetric</term> if <m>A^T=A</m>.
-                (Equivalently,
-                <m>a_{ij}=a_{ji}</m> for all <m>1\leq i,j\leq n</m>.)
-              </p>
-            </li>
-          </ol>
-        </p>
-      </statement>
-    </definition>
-    <theorem>
-      <title>Invertibility of triangular matrices</title>
-      <statement>
-        <p>
-          Let <m>A=[a_{ij}]</m> be a triangular <m>n\times n</m> matrix.
-          Then <m>A</m> is invertible if and only if
-          <m>a_{ii}\ne 0</m> for all <m>1\leq i\leq n</m>.
-        </p>
-        <p>
-          In other words,
-          <m>A</m> is invertible if and only if the diagonal entries of <m>A</m> are all nonzero.
-        </p>
-      </statement>
-    </theorem>
-  </paragraphs>
+
+  </paragraphs> -->
 </section>
