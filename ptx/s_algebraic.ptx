@@ -182,7 +182,7 @@
         </li>
         <li xml:id="th_matrix_mult_ident">
           <title>Multiplicative identities</title>
-          <p>The <m>n\times n</m> identity matrix is a <em>multiplicative identity</em> for <m>n\timesn</m> matrices in the following sense: for any <m>n\times n</m> matrix <m>A</m> we have
+          <p>The <m>n\times n</m> identity matrix is a <em>multiplicative identity</em> for <m>n\times n</m> matrices in the following sense: for any <m>n\times n</m> matrix <m>A</m> we have
           <me>
             I_n\, A=A\, I_n=A
           </me>.

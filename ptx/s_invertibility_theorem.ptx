@@ -1,4 +1,4 @@
-<section xml:id="s_invertibility_theorem">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_invertibility_theorem">
   <title>The invertibility theorem</title>
   <introduction>
     <p>
@@ -22,7 +22,7 @@
       <description>Row swap elementary matrix</description>
     </notation>
     <notation>
-      <usage>\underset{r_i\rightarow r_i+c\,r_j}{E}</usage>
+      <usage>\underset{r_i\rightarrow r_i+c\,r_j}{E}</usage>
       <description>Row addition elementary matrix</description>
     </notation>
     <statement>
@@ -115,9 +115,9 @@
         and their inverses are elementary matrices.
         In fact, we have the following formulas:
         <md>
-          <mrow>\underset{cr_i}{E}^{-1}\amp =\amp \underset{\frac{1}{c}r_i}{E}</mrow>
-          <mrow>\underset{r_i\leftrightarrow r_j}{E}^{-1}\amp =\amp \underset{r_i\leftrightarrow r_j}{E}</mrow>
-          <mrow>\underset{r_i+c\,r_j}E^{-1}\amp =\amp \underset{r_i-cr_j}E</mrow>
+          <mrow>\underset{cr_i}{E}^{-1}\amp = \underset{\frac{1}{c}r_i}{E}</mrow> [2ex]
+          <mrow>\underset{r_i\leftrightarrow r_j}{E}^{-1}\amp = \underset{r_i\leftrightarrow r_j}{E}</mrow>[2ex]
+          <mrow>\underset{r_i+c\,r_j}E^{-1}\amp = \underset{r_i-cr_j}E</mrow>
         </md>
       </p>
     </statement>
@@ -310,9 +310,11 @@
      <title><m>(1)\implies (2)</m></title>
     <p>
     Suppose <m>A^{-1}</m> exists. Given any column vector <m>\boldb</m>, we have
-    <me>
+    <md>
+    <mrow>
       A\boldx=\boldb \iff \boldx=A^{-1}\boldb \amp (<xref ref="th_inverse_cancel"/>)
-    </me>,
+      </mrow>
+    </md>,
     which shows that <m>\boldx=A^{-1}\boldb</m> is the unique solution to <m>A\boldx=\boldb</m>.
     </p>
   </case>
@@ -474,6 +476,7 @@
           </p>
         </li>
         <li>
+          <title>Step 2</title>
           <p>
             If <m>U</m> has <m>n</m> leading ones, row reduce further to a matrix of the form <m>\begin{amatrix}[c|c] I_n\amp C\end{amatrix}</m>. Then <m>A^{-1}=C</m>.
           </p>
@@ -516,6 +519,9 @@
           </p>
         </li>
         <li>
+          <title>Step 2</title>
+
+
           <p>
             If you are able to row reduce <m>A</m> to <m>I_n</m> with a sequence of row operatons corresponding to the elementary matrices <m>E_1, E_2, \dots, E_r</m>, then
             <me>
@@ -607,6 +613,53 @@ The two inveribility algorithms above are nice examples of how a <em>theoretical
 <p>
    We finish this section with two further theoretical implications that tie up some loose ends: namely, we complete our understanding of the invertiblility of products of matrices, and we show that to test whether <m>B</m> is an inverse of <m>A</m> it suffices to show <em>just one</em> of the equalities <m>AB=I</m> and <m>BA=I</m>
 </p>
+<corollary xml:id="cor_left-right_inverse">
+  <title>Left-inverse if and only if right-inverse</title>
+
+  <statement>
+    <p>
+      Let <m>A</m> and <m>B</m> be <m>n\times n</m>. Then
+      <ol>
+        <li>
+          <p>
+            <m>BA=I_n\implies AB=I_n</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>AB=I_n\implies BA=I_n</m>.
+          </p>
+        </li>
+      </ol>
+      In plain English: a matrix <m>B</m> is a <em>left-inverse</em> of <m>A</m> if and only if it is a <em>right-inverse</em> of <m>A</m>.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      It is enough to prove the first implication:
+      the second then follows by exchanging the roles of <m>A</m> and <m>B</m>.
+    </p>
+    <p>
+      Suppose <m>BA=I_n</m>.
+      We first show that <m>A</m> is invertible.
+      We have
+      <md>
+        <mrow> A\boldx=\boldzero\amp\implies BA\boldx=\boldzero </mrow>
+        <mrow> \amp\implies I\boldx=\boldzero </mrow>
+        <mrow>  \amp \implies \boldx=\boldzero </mrow>
+      </md>.
+      By Statement (3) of <xref ref="th_invertibility"/>, we conclude that <m>A</m> is invertible.
+    </p>
+    <p>
+      Now that we know <m>A^{-1}</m> exists we have
+      <md>
+        <mrow>BA=I_n\amp \implies  BAA^{-1}=IA^{-1} </mrow>
+        <mrow>  \amp \implies B=A^{-1}</mrow>
+        <mrow>  \amp \implies AB=AA^{-1}=I_n </mrow>
+      </md>.
+    </p>
+  </proof>
+</corollary>
 
   <corollary xml:id="cor_inv_prod_eq">
     <title>Invertibility of product equivalence</title>
@@ -619,174 +672,37 @@ The two inveribility algorithms above are nice examples of how a <em>theoretical
     </statement>
     <proof>
       <p>
-        We have already proved the
-        <m>\Leftarrow</m> direction of this equivalnce.
+        We know from <xref ref="th_invertible_prod"/>  that if <m>A</m> and <m>B</m> are invertible, then so is <m>AB</m>.
       </p>
       <p>
-        For the <m>\implies</m> direction,
+        For the forward implication,
         assume <m>AB</m> is invertible and let <m>C</m> be its inverse,
         so that <m>C(AB)=(AB)C=I_n</m>.
       </p>
       <p>
-        We first prove <m>B</m> is invertible,
-        using equivalent statement (b) of IT; that is we will prove the implication <m>B\boldx=\boldzero\implies \boldx=\boldzero</m>.
+        We first prove <m>B</m> is invertible. We have
         <md>
-          <mrow>B\boldx=\boldzero\amp \implies \amp  AB\boldx=\boldzero</mrow>
-          <mrow>\amp \implies\amp  \boldx=\boldzero \ \text{ (since \(AB\) invertible) } </mrow>
+          <mrow>B\boldx=\boldzero\amp \implies  AB\boldx=\boldzero </mrow>
+          <mrow>\amp \implies  \boldx=\boldzero</mrow>
         </md>.
+       The last implication uses Statement (3) of <xref ref="th_invertibility"/> and the fact that <m>AB</m> is invertible. We have shown that
+       <me>
+         B\boldx=\boldzero\implies \boldx=\boldzero
+       </me>,
+       and hence that <m>B</m> is invertible, using once again Statement (3) of <xref ref="th_invertibility"/>.
       </p>
       <p>
-        This proves <m>B</m> is invertible,
-        and hence that <m>B^{-1}</m> exists.
+        Next we prove directly that <m>A</m> is invertible. Namely, we claim that <m>A^{-1}=BC</m>.
+        Indeed, since <m>C</m> is the inverse of <m>AB</m>, we have <m>A(BC)=(AB)C=I</m>. Thus <m>BC</m> is a right-inverse of <m>A</m>. <xref ref="cor_left-right_inverse"/> now implies <m>(BC)A=I</m>, and hence that <m>A^{-1}=BC</m>, as claimed.
       </p>
       <p>
-        Next we prove <m>A</m> is invertible,
-        by explicitly exhibiting an inverse:
-        namely, <m>A^{-1}=BC</m>.
-      </p>
-      <p>
-        Indeed we have <m>A(BC)=(AB)C=I_n</m>, from above.
-        For the other direction we have
-        <md>
-          <mrow>C(AB)=I\amp \Leftrightarrow\amp  CA=B^{-1} \ \text{ (mult. both sides on right by \(B^{-1}\))}</mrow>
-          <mrow>\amp \Leftrightarrow\amp  (BC)A=I_n \text{ (mult. both sides on left by \(B\)) } </mrow>
-        </md>.
-      </p>
-      <p>
-        This proves <m>A</m> and <m>B</m> are both invertible,
-        and completes our proof.
+        This completes the proof that if <m>AB</m> is invertible, then <m>A</m> and <m>B</m> are invertible.
       </p>
     </proof>
   </corollary>
 
-  <corollary xml:id="cor_left-right_inverse">
-    <title>Left-inverse if and only if right-inverse</title>
 
-    <statement>
-      <p>
-        Let <m>A</m> and <m>B</m> be <m>n\times n</m>. Then
-        <ol>
-          <li>
-            <p>
-              <m>BA=I_n\implies AB=I_n</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>AB=I_n\implies BA=I_n</m>.
-            </p>
-          </li>
-        </ol>
-        In plain English: a matrix <m>B</m> is a <em>left-inverse</em> of <m>A</m> if and only if it is a <m>right-inverse</m> of <m>A</m>.
-      </p>
-    </statement>
-    <proof>
-      <p>
-        It is enough to prove the first implication:
-        the second then follows by exchanging the roles of <m>A</m> and <m>B</m>!
-      </p>
-      <p>
-        Suppose <m>BA=I_n</m>.
-        I will first show that <m>A</m> is invertible.
-        Indeed, suppose <m>A\boldx=\boldzero</m>.
-        Then <m>BA\boldx=\boldzero</m>.
-        But <m>BA=I_n</m>,
-        and <m>I\boldx=\boldzero</m> implies <m>\boldx=\boldzero</m>.
-        It follows from statement (b) of IT that <m>A</m> is invertible.
-      </p>
-      <p>
-        Now that we know <m>A^{-1}</m> exists we have
-        <md>
-          <mrow>BA=I_n\amp \implies \amp  B=A^{-1} \ \text{ (mult. both sides on right by \(A^{-1}\))}</mrow>
-          <mrow>\amp \implies \amp AB=I_n \ \text{ (mult. both sides on left by \(A\)) }</mrow>
-        </md>
-      </p>
-    </proof>
-  </corollary>
 </paragraphs>
-  <!-- <paragraphs>
-  <title>When is a linear system consistent</title>
-  <p>
-    Consider a general linear equation
-    <me>
-      \scriptsize \eqsys
-    </me>
-    which we represent as a matrix equation
-    <me>
-      \underset{m\times n}{A}\cdot \underset{{n\times 1}}{\boldx}=\underset{m\times 1}{\boldb}
-    </me>.
-  </p>
-  <paragraphs>
-    <title>Question:</title>
-    <p>
-      what conditions on <m>A</m> and <m>\boldb</m> guarantee the system is consistent;
-      equivalently, when we can solve the matrix equation above?
-    </p>
-  </paragraphs>
-  <paragraphs>
-    <title>Partial answer:</title>
-    <p>
-      the preceding discussion gives us a partial answer.
-      If <m>A</m> happens to be an <em>invertible matrix</em>
-      (in particular, it must be square!),
-      then the equation is guaranteed to have a (unique) solution.
-      We just solve for <m>\boldx</m> directly in this case:
-      <m>\boldx=A^{-1}\boldb</m>.
-    </p>
-  </paragraphs>
-  <paragraphs>
-    <title>Otherwise:</title>
-    <p>
-      if <m>A</m> is not invertible,
-      then we resort to the theory of Gaussian elimination to answer the question.
-      Take the augmented matrix <m>[A \vert \boldb]</m>,
-      row reduce to row echelon form
-      <m>[U\vert \boldb']</m> and reason from there.
-      The example that follows illustrates this.
-    </p>
-  </paragraphs>
-  </paragraphs>
-  <paragraphs>
-    <title>Example</title>
-    <p>
-      Find all <m>b_1,b_2,b_3</m> for which the following system is consistent:
-      <md>
-        \begin{linsys}{3} x_1\amp +\amp x_2\amp +\amp 2x_3\amp =\amp  b_1\\ x_1\amp  \amp  \amp +\amp x_3\amp =\amp b_2\\ 2x_1\amp +\amp x_2\amp +\amp 3x_3\amp =\amp b_3 \end{linsys}
-      </md>
-    </p>
-    <p>
-      \begin{bsolution} We consider the augmented matrix <m>[A \vert \boldb]</m> and row reduce
-      <me>
-        \begin{bmatrix}1\amp 1\amp 2\amp b_1\\ 1\amp 0\amp 1\amp b_2\\ 2\amp 1\amp 3\amp b_3 \end{bmatrix} \xrightarrow{\text{ row red. } } \begin{bmatrix}1\amp 1\amp 2\amp b_1\\ 0\amp 1\amp 1\amp b_2-b_1\\ 0\amp 0\amp 0\amp b_3-b_2-b_1 \end{bmatrix}
-      </me>
-    </p>
-    <p>
-      Note: since the <m>3\times 3</m> matrix on the left only 2 leading 1's, we know <m>A</m> is not invertible.
-    </p>
-    <p>
-      But of course that doesn't mean that the given system is necessarily inconsistent!
-    </p>
-    <p>
-      Indeed, the theory of Gaussian elimination tells us that the system will be consistent if and only if <m>b_3-b_2-b_1=0</m>.
-    </p>
-    <p>
-      We conclude the original system is consistent if and only if <m>b_3=b_2+b_1</m>:
-      equivalently, iff
-      <me>
-        \boldb=\begin{bmatrix}b_1\\b_2\\b_1+b_2 \end{bmatrix}
-      </me>.
-    </p>
-    <p>
-      \end{bsolution}
-    </p>
-  </paragraphs>
-  <paragraphs>
-    <title>Diagonal, triangular and symmetric matrices</title>
-    <p>
-      Lastly, we officially introduce some special families of square matrices,
-      as well as a corresponding invertibility theorem.
-      The proof of the latter will be done in class.
-    </p>
-
-  </paragraphs> -->
+<xi:include href="./s_invertibility_theorem_ex.ptx"/>
+  
 </section>

@@ -200,7 +200,7 @@
   <exercise>
     <statement>
       <p>
-        Suppose <m>A</m> is an <m>n\times n</m> matrix satisfying <m>A^r=</m> for some <m>r\geq 1</m>.
+        Suppose <m>A</m> is an <m>n\times n</m> matrix satisfying <m>A^r=\boldzero</m> for some <m>r\geq 1</m>.
       </p>
       <p>
         Show that <m>(A-I)</m> is invertible, and that in fact

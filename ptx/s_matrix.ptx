@@ -122,10 +122,10 @@
   <example xml:id="ex_inequality">
     <statement>
       <p>
-        The matrix <m>A=\begin{bmatrix}1\amp 2\amp 3\amp 4</m> is not equal to <m>B=\begin{bmatrix} 1\\ 2\\ 3\\ 4</m>, despite their having the same entries roughly in the same order: 1 is first, 2 is second, \<etc /> In this case equality does not hold as <m>A</m> and <m>B</m> have different shapes: <m>A</m> is <m>1\times 4</m>, and <m>B</m> is <m>4\times 1</m>.
+        The matrix <m>A=\begin{bmatrix}1\amp 2\amp 3\amp 4 \end{bmatrix}</m> is not equal to <m>B=\begin{bmatrix} 1\\ 2\\ 3\\ 4\end{bmatrix}</m>, despite their having the same entries roughly in the same order: 1 is first, 2 is second, \<etc /> In this case equality does not hold as <m>A</m> and <m>B</m> have different shapes: <m>A</m> is <m>1\times 4</m>, and <m>B</m> is <m>4\times 1</m>.
       </p>
       <p>
-        The matrices <m>A=\begin{bmatrix}1\amp 2 \\3\amp 4 </m> and <m>B=\begin{bmatrix}1\amp 2\\ 5\amp 4</m> have the same dimension, but are not equal since <m>(A)_{21}=3\ne 5=(B)_{21}</m>.
+        The matrices <m>A=\begin{bmatrix}1\amp 2 \\3\amp 4 \end{bmatrix}</m> and <m>B=\begin{bmatrix}1\amp 2\\ 5\amp 4\end{bmatrix}</m> have the same dimension, but are not equal since <m>(A)_{21}=3\ne 5=(B)_{21}</m>.
       </p>
     </statement>
   </example>
@@ -266,7 +266,7 @@
         </me>.
         Using the definition of matrix equality (<xref ref="d_matrix_equality"/>), we get the system of equations
         <me>
-          \begin{linsys}[3] 1a \amp+\amp b\amp +\amp c\amp =\amp 3\\
+          \begin{linsys}{3} 1a \amp +\amp b \amp + \amp c \amp = \amp 3\\
             a \amp-\amp b\amp +\amp c\amp =\amp -3\\
             a \amp \amp \amp -\amp 2c\amp =\amp 3
           \end{linsys}
@@ -403,7 +403,7 @@
     <example xml:id="s_matrix_ex_product">
       <statement>
         <p>
-          Let $<m>A=\begin{amatrix}[rrr] 1\amp 1 \amp -2 \\ 1\amp 3\amp 2\end{amatrix}</m> and <m>B=\begin{amatrix}[rc]1\amp 1\\ 0\amp 1\amp \\ -2\amp 1 \end{amatrix}</m>
+          Let <m>A=\begin{amatrix}[rrr] 1\amp 1 \amp -2 \\ 1\amp 3\amp 2\end{amatrix}</m> and <m>B=\begin{amatrix}[rc]1\amp 1\\ 0\amp 1 \\ -2\amp 1 \end{amatrix}</m>
         </p>
         <p>
           Compute <m>AB</m> using (a) the definition of matrix multiplication, (b) the column method, (c) the row method.

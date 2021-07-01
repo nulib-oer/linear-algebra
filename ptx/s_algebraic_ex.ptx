@@ -10,16 +10,6 @@
           Prove <xref ref="th_matrix_comm"/>.
         </p>
       </li>
-      <solution>
-        <p>
-          We  need both <m>A</m> and <m>B</m> to be <m>m\times n </m> for the expression to make sense. It is easy to see that <m>A+B</m> and <m>B+A</m> are both <m>m\times n</m> matrices. We must show <m>(A+B)_{ij}=(B+A)_{ij}</m> for all <m>1\leq i\leq m</m>, <m>1\leq j\leq n</m>. We have
-          <md>
-            <mrow>(A+B)_{ij} \amp =(A)_{ij}+(B)_{ij}\amp (<xref ref="d_matrix_add_subtract"/>) </mrow>
-            <mrow> \amp =(B)_{ij}+(A)_{ij}\amp \text{(real addition is comm.)} </mrow>
-            <mrow>  \amp =(B+A)_{ij} \amp (<xref ref="d_matrix_add_subtract"/> </mrow>
-          </md>.
-        </p>
-      </solution>
       <li>
         <p>
           Prove <xref ref="th_matrixadd_assoc"/>.
@@ -57,6 +47,23 @@
       </li>
     </ol>
   </statement>
+  <proof>
+    <p>
+      <ol>
+        <li>
+            <p>
+              We  need both <m>A</m> and <m>B</m> to be <m>m\times n </m> for the expression to make sense. It is easy to see that <m>A+B</m> and <m>B+A</m> are both <m>m\times n</m> matrices. We must show <m>(A+B)_{ij}=(B+A)_{ij}</m> for all <m>1\leq i\leq m</m>, <m>1\leq j\leq n</m>. We have
+              <md>
+                <mrow>(A+B)_{ij} \amp =(A)_{ij}+(B)_{ij}\amp (<xref ref="d_matrix_add_subtract"/>) </mrow>
+                <mrow> \amp =(B)_{ij}+(A)_{ij}\amp \text{(real addition is comm.)} </mrow>
+                <mrow>  \amp =(B+A)_{ij} \amp (<xref ref="d_matrix_add_subtract"/> </mrow>
+              </md>.
+            </p>
+        </li>
+      </ol>
+    </p>
+  </proof>
+
 </exercise>
 <exercise>
   <statement>
@@ -110,22 +117,14 @@
           <p>
             Optional: can you describe in a parametric manner the set of <em>all</em> matrices <m>A</m> satisfying <m>A^2=\boldzero_{2\times 2}</m>?
           </p>
-          <hint>
-            <p>
-              Set <m>A=\abcdmatrix{a}{b}{c}{d}</m>, compute <m>A^2</m>, set this matrix equal to <m>\boldzero_{2\times 2}</m>, and try and find some solutions to the corresponding (nonlinear) system of four equations in the unknowns <m>a,b,c,d</m>.
-            </p>
-          </hint>
+
         </li>
         <li>
           <p>
             In real number algebra we know that <m>a^2=a\implies a=0 \text{ or } a=1</m>. By contrast, show
             that there are infinitely many <m>2\times 2</m> matrices <m>A</m> satisfying <m>A^2=A</m>.
           </p>
-          <hint>
-            <p>
-              Similar hint as above, only now set <m>A^2=A</m>.
-            </p>
-          </hint>
+
         </li>
         <li>
           <p>
@@ -138,5 +137,13 @@
         </li>
       </ol>
   </statement>
+  <hint>
+    <p>
+       For (a) set <m>A=\abcdmatrix{a}{b}{c}{d}</m>, compute <m>A^2</m>, set this matrix equal to <m>\boldzero_{2\times 2}</m>, and try and find some solutions to the corresponding (nonlinear) system of four equations in the unknowns <m>a,b,c,d</m>.
+    </p>
+    <p>
+      Similar hint for (b), only now set <m>A^2=A</m>.
+    </p>
+  </hint>
 </exercise>
 </exercises>
