@@ -152,18 +152,141 @@
   <exercise>
     <statement>
       <p>
-        According to Statement (2) of the invertibility theorem, a matrix <m>A</m> is invertible if and only if for all column vectors <m>\boldb</m> the matrix equation <m>A\boldx=\boldb</m> has a <em>unique</em> solution. Show that we can add the following, weaker version of (2) to our list of equivalent statements:
-      </p>
-            <p>
-            (2') The matrix equation <me>A\boldx=\boldb</me> has <em>a</em> solution for any column vector <m>\boldb</m>.
-            </p>
-
+        According to Statement (2) of the invertibility theorem, a matrix <m>A</m> is invertible if and only if for all column vectors <m>\boldb</m> the matrix equation <m>A\boldx=\boldb</m> has a <em>unique</em> solution. Show that we can add the following, weaker-looking version of (2) to our list of equivalent statements:
+        <blockquote>
+            (2') The matrix equation <m>A\boldx=\boldb</m> has <em>a</em> solution for any column vector <m>\boldb</m>.
+        </blockquote>
+        </p>
 
     </statement>
     <hint>
       <p>
         Try to logically weave Statement (2') into our original list of equivalent statements by (a) finding a statement from our original list that implies (2'), and (b) find a statement in our original list that is implied by (2').
       </p>
+      <p>
+        You may make use of <xref ref="cor_left-right_inverse"/> in your argument.
+      </p>
     </hint>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>A</m> be an <m>m\times n</m> matrix, and let <m>Q</m> be an invertible <m>m\times m</m> matrix.
+      </p>
+      <p>
+        Show that the two matrix equations
+        <md>
+          <mrow>A\underset{n\times 1}{\boldx} \amp=\underset{m\times 1}{\boldzero} </mrow>[2ex]
+          <mrow>(QA)\underset{n\times 1}{\boldx} \amp=\underset{m\times 1}{\boldzero} </mrow>
+        </md>
+        have the same set of solutions. In other words show that
+        <me>
+          A\boldx=\boldzero \iff (QA)\boldx=\boldzero
+        </me>.
+      </p>
+    </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Suppose <m>A</m> and <m>B</m> are row equivalent square matrices. Prove: <m>A</m> is invertible if and only if <m>B</m> is invertible.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+        Use the provided information to determine whether the given square matrix <m>A</m> is invertible. Justify your answer using the inveribility theorem or one of its corollaries.
+      </p>
+      <task>
+        <p>
+        There are column vectors <m>\boldx_1\ne \boldx_2</m> such that <m>A\boldx_1=A\boldx_2</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+        <m>A^2</m> is invertible.
+      </p>
+      </task>
+    <task>
+      <p>
+        <m>A^r=\boldzero</m> for some <m>r\geq 1</m>.
+      </p>
+    </task>
+    <task>
+      <p>
+        The sum of the columns of <m>A</m> is equal to the zero column vector.
+      </p>
+    </task>
+      </statement>
+
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Answer true or false.
+          If true, provide a proof; if false,
+          exhibit an explicit counterexample.
+        </p>
+        <task>
+          <p>
+            The product of two <m>n\times n</m> elementary matrices is elementary.
+          </p>
+        </task>
+        <solution>
+          <p>
+            False. The matrices
+            <me>
+              E_1=\begin{amatrix}[rr]1\amp 2\\ 0\amp 1  \end{amatrix},
+              E_2=\begin{amatrix}[rr]1\amp 0\\ 3\amp 1  \end{amatrix}
+            </me>
+            are both elementary, but
+            <me>
+              E_1E_2=\begin{amatrix}[rr]7\amp 2\\ 3\amp 1  \end{amatrix}
+            </me>
+            is not elementary.
+          </p>
+        </solution>
+        <task>
+          <p>
+            The product of two <m>n\times n</m> elementary matrices is invertible.
+          </p>
+        </task>
+        <task>
+          <p>
+            The sum of two invertible <m>n\times n</m> matrices is invertible.
+          </p>
+        </task>
+
+
+        <task>
+          <p>
+            If <m>A</m> is a singular <m>n\times n</m> matrix,
+            then the linear system <m>A\boldx=\boldzero</m> has infinitely many solutions.
+          </p>
+        </task>
+          <task>
+            <p>
+              If <m>B</m> is obtained from the invertible matrix <m>A</m> by replacing its second row with the sum of its first and second rows, then <m>B</m> is invertible.
+            </p>
+          </task>
+            <task>
+              <p>
+                If <m>A</m> is square matrix, and <m>\boldb</m> is a column vector such that the matrix equation <m>A\boldx=\boldb</m> has a unique solution, then <m>A</m> is invertible.
+              </p>
+            </task>
+            <task>
+              <p>
+                If <m>A</m> and <m>B</m> are row equivalent,
+                then the matrix equations <m>Ax=\boldzero</m> and <m>Bx=\boldzero</m> have the same solution set.
+              </p>
+            </task>
+            <task>
+              <p>
+                If <m>A</m> or <m>B</m> is singular, then <m>AB</m> is singular.
+              </p>
+            </task>
+        </statement>
+
   </exercise>
 </exercises>

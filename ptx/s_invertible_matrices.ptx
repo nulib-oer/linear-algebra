@@ -284,7 +284,7 @@
          </p>
        </li>
      </ol>
-    Where is the flaw in our logic here? The second statement only allows us to conclude that there is some mystery matrix <m>C</m> satisfying <m>(AB)C=C(AB)=I</m>. We cannot yet say that <m>C=B^{-1}A^{-1}</m>, as this formula from <xref ref="th_invertible_prod"/> only applies when we already know that <m>A</m> and <m>B</m> are both invertible. But this is exactly what we are trying to prove! As such we are guilty here of <q>begging the question</q>, or <em>petitio principii</em> in Latin.
+    Where is the flaw in our logic here? The second statement only allows us to conclude that there is some mystery matrix <m>C</m> satisfying <m>(AB)C=C(AB)=I</m>. We cannot yet say that <m>C=B^{-1}A^{-1}</m>, as this formula from <xref ref="th_invertible_prod"/> only applies when we already know that <m>A</m> and <m>B</m> are both invertible. But this is exactly what we are trying to prove! As such we are guilty here of <q>begging the question</q>, or <foreign>petitio principii</foreign> in Latin.
    </p>
  </remark>
   <paragraphs>

@@ -310,8 +310,8 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
         <list-of elements="definition" divisions="section" />
       </appendix>
       <appendix xml:id="appendix-thms">
-        <title>Theorems</title>
-        <list-of elements="theorem" divisions="section" />
+        <title>Theorems and corollaries</title>
+        <list-of elements="theorem corollary" divisions="section" />
       </appendix>
 
       <appendix xml:id="appendix-egs">
