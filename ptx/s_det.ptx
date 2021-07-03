@@ -1,21 +1,6 @@
 <section xml:id="ss_det">
   <title>The determinant</title>
-  <paragraphs>
-  <title><xref ref="c_det"></xref>. <xref ref="ss_det"></xref>- <xref ref="c_det"></xref>. <xref ref="ss_further"></xref>: executive summary</title>
-  <paragraphs>
-    <title>Definitions:</title>
-    <p>
-      determinant, minors,
-      cofactors. \alert{Procedures:} determinant. \alert{Theorems:}
-      <m>\det(A)\ne 0</m> iff <m>A</m> invertible;
-      <m>\det(AB)=\det(A)\det(B)</m>,
-      how row reduction affects determinant,
-      some other determinant properties.
-    </p>
-  </paragraphs>
-  </paragraphs>
-  <paragraphs>
-    <title><xref ref="c_det"></xref>. <xref ref="ss_det"></xref>: determinants</title>
+    <introduction>
     <p>
       The <em>determinant</em> is a map that assigns to a square matrix <m>A</m> a scalar,
       called <m>\det(A)</m>:
@@ -39,6 +24,7 @@
       We begin with the smallest cases:
       <m>n=1</m> and <m>n=2</m>.
     </p>
+    </introduction>
     <definition>
       <title>Small cases</title>
       <statement>

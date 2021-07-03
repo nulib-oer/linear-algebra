@@ -89,7 +89,7 @@
           </li>
           <li>
             <p>
-              <m>(A^2A)^T-(A^{-1}(A^{-1})^T)^{-1}=\boldzero_{n\times n}</m>
+              <m>((A^T)^2A)^T-(A^{-1}(A^{-1})^T)^{-1}=\boldzero_{n\times n}</m>
             </p>
           </li>
         </ol>
@@ -197,7 +197,7 @@
 
     </solution>
   </exercise>
-  <exercise> 
+  <exercise>
     <statement>
       <p>
         Suppose <m>A</m> is an <m>n\times n</m> matrix satisfying <m>A^r=\boldzero</m> for some <m>r\geq 1</m>.
