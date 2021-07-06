@@ -62,7 +62,7 @@
       <exercise>
         <statement>
           <p>
-            <m>A=\begin{amatrix}[rrrr]1\amp -1\amp -1\amp 1\\ 2\amp 1\amp -3\amp -1 \\ 3\amp -1\amp -1\amp -1 \\ -1\amp 1\amp -4\amp 2\end{amatrix}</m>
+            <m>A=\begin{amatrix}[rrrr]1\amp -1\amp -1\amp 1\\ 2\amp 1\amp -3\amp 0 \\ 3\amp -1\amp -1\amp -1 \\ 5\amp 1\amp -4\amp -2\end{amatrix}</m>
           </p>
         </statement>
       </exercise>
