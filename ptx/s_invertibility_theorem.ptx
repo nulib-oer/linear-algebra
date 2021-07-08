@@ -260,7 +260,7 @@
   <title>Invertibility theorem</title>
   <statement>
     <p>
-      Let <m>A=[a_{ij}]</m> an <m>n\times n</m> matrix.
+      Let <m>A=[a_{ij}]</m> be an <m>n\times n</m> matrix.
       The following statements are equivalent.
     </p>
       <ol>
@@ -704,5 +704,5 @@ The two inveribility algorithms above are nice examples of how a <em>theoretical
 
 </paragraphs>
 <xi:include href="./s_invertibility_theorem_ex.ptx"/>
-  
+
 </section>
