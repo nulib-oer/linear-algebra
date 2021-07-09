@@ -1,4 +1,4 @@
-<section xml:id="s_det">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_det">
   <title>The determinant</title>
     <introduction>
     <p>
@@ -794,8 +794,6 @@ As a further consequence of <xref ref="th_expansion_row"/> and <xref ref="cor_ex
 
   </statement>
 </theorem>
-
-
-
 </paragraphs>
+<xi:include href="./s_det_ex.ptx"/>
 </section>
