@@ -298,7 +298,7 @@ The following exercises explore the relationship between a square matrix <m>A</m
       Give an explicit example of a square matrix <m>A</m> satisfying <m>A\ne \boldzero_{n\times n}</m> and <m>\adj A=\boldzero_{n\times n}</m>.
     </p>
     <p>
-      In other words, show that it is possible for a nonzero matrix whose adjoint is the zero matrix.
+      In other words, show that it is possible for a nonzero matrix to have a zero adjoint matrix. 
     </p>
   </statement>
 </exercise>

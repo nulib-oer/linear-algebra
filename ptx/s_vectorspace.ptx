@@ -1,372 +1,513 @@
-<section xml:id="ss_vectorspace">
+<section xml:id="s_vectorspace">
   <title>Real vector spaces</title>
-  <paragraphs>
-  <title><xref ref="c_vectorspace"></xref>. <xref ref="ss_vectorspace"></xref>: executive summary</title>
-  <paragraphs>
-    <title>Definitions:</title>
+  <introduction>
     <p>
-      general vector space. \alert{Procedures:} deciding whether something is a vector space \alert{Theorems:} no theorems,
-      but a list of familiar examples to get acquainted with.
-    </p>
-  </paragraphs>
-  </paragraphs>
-  <paragraphs>
-    <title>Interlude on abstraction</title>
-    <p>
-      In our study of matrices,
-      we have seen that operations from real number arithmetic (addition,
-      subtraction, multiplication) have
-      <q>analogues</q>
-      in the world of matrices
-      (matrix addition, matrix subtraction, matrix multiplication).
+      When discussing matrix algebra we saw that operations from real number arithmetic have
+      natural analogues in the world of matrices. Furthermore, the act of comparing these two different algebraic systems brought to light many interesting features of matrix algebra.
     </p>
     <p>
-      The question naturally arises as to what other types of mathematical objects
-      (besides real numbers or matrices)
-      admit analogous operations,
-      and further, what we can say about these analogous systems.
+      Why stop at matrices? Are there other interesting algebraic systems that admit analogous operations? If so, to what degree do these systems agree with or differ from real number or matrix algebra?
     </p>
     <p>
-      A common technique in mathematics to help investigate such questions,
+      A common technique in mathematics for such investigations
       is to distill the important properties of the motivating operations into a list of <em>axioms</em>,
-      and then attempt to prove statements about any system of operations that satisfies these axioms.
+      and then attempt to prove statements that apply to any system that satisfies these axioms.
     </p>
     <p>
-      We now embark on just such an endeavor.
-      In the current setting we are concerned with two important operations defined on matrices:
-      matrix addition (<m>A+B</m>) and scalar multiplication
-      (<m>cA</m>).
-      As you recall from <xref ref="c_linear_systems"></xref>.
-      <xref ref="ss_matrix"></xref>,
+      We now embark on just such an axiomatic approach.
+      The notion of a <em>vector space</em> arises from focusing on just two operations from matrix algebra:
+      matrix addition and matrix scalar multiplication. As we saw in <xref ref="s_algebraic"/>,
       these two operations satisfy many useful properties:
-      e.g, commutativity, associativity, distributivity, etc.
+      e.g, commutativity, associativity, distributivity, etc. Whereas earlier we showed directly that matrix algebra satisfies these properties, now we will come at things the other way: we record these various properties as a list of axioms, and declare <em>any</em> system that satisfies these axioms to be a vector space.
     </p>
     <p>
-      We <em>axiomatize</em> this setting by considering <em>any</em>
-      system admitting two operations like this:
-      our axioms will stipulate the existence of these two operations,
-      as well as the fact that the operations satisfy the relevant properties
-      (commutativity, associativity, etc.).
-      A system satisfying these axioms is called a <em>vector space</em>.
+      Once we've established the definition of a vector space, when we go on to investigate the properties enjoyed by vector spaces we make no assumptions beyond the fact that the basic axioms are satisfied. This approach comes off as somewhat abstract in nature, but has the advantage that our conclusions now apply to any vector space you can think of. You don't have to reinvent the wheel each time you stumble across a new vector space.
     </p>
-  </paragraphs>
-  <paragraphs>
-    <title><xref ref="c_vectorspace"></xref>. <xref ref="ss_vectorspace"></xref>: vector spaces</title>
-    <definition>
+  </introduction>
+  <definition xml:id="d_vector_space">
+    <title>Vector space</title>
+    <idx><h>vector space</h><h>definition</h></idx>
+    <idx><h>vector space</h><h>zero vector</h></idx>
+    <idx><h>vector space</h>vector inverse<h></h></idx>
+    <idx><h>vector space</h><h>vector</h></idx>
       <statement>
         <p>
-          A <term>(real)<fn>
-          There is a notion of <em>complex</em> vector space as well.
-          In this course it is assumed the vector space is real.
-          As such, we will often drop this modifier.
-          </fn> vector space</term>is a set <m>V</m> together with two operations defined on <m>V</m>:
-          a multiplication by (real) scalars
-          <md>
-            <mrow>\R\times V\amp \rightarrow\amp  V</mrow>
-            <mrow>(r,\boldv)\amp \mapsto\amp  r\boldv</mrow>
-          </md>,
-          called <term>scalar multiplication</term>,
-          and an addition of elements of <m>V</m>
-          <md>
-            <mrow>V\times V\amp \rightarrow\amp  V</mrow>
-            <mrow>(\boldv,\boldw)\amp \mapsto\amp  \boldv+\boldw</mrow>
-          </md>,
-          called <term>vector addition</term>.
+          A <term>(real) vector space</term> is a set <m>V</m> together with two operations, <term> scalar multiplication</term> and <term>vector addition</term>, described in detail below.
         </p>
+          <dl>
+            <li>
+              <title>Scalar multiplication</title>
+              <p>
+                This operation takes as input any real number <m>c\in R</m> and any element <m>\boldv\in V</m>, and outputs another element of <m>V</m>, denoted <m>c\boldv</m>. We describe this operation using set notation as follows:
+                <md>
+                  <mrow>\R\times V\amp \rightarrow  V</mrow>
+                  <mrow>(c,\boldv)\amp \mapsto  c\boldv</mrow>
+                </md>.
+              </p>
+            </li>
+            <li>
+              <title>Vector addition</title>
+              <p>
+              This operation takes as input any pair of elements <m>\boldv, \boldw\in V</m> and returns another element of <m>V</m>, denoted <m>\boldv+\boldw</m>.  In set notation:
+              <md>
+                <mrow>V\times V\amp \rightarrow  V</mrow>
+                <mrow>(\boldv,\boldw)\amp \mapsto   \boldv+\boldw</mrow>
+              </md>.
+              </p>
+            </li>
+          </dl>
         <p>
-          Furthermore,
-          these two operations must satisfy the axioms listed on the next slide!
+          Furthermore, these two operations must satisfy the following list of axioms.
         </p>
-      </statement>
-    </definition>
-  </paragraphs>
-  <paragraphs>
-    <title>Definition contd.</title>
-    <ol>
-      <li>
-        <p>
-          <m>\boldv+\boldw=\boldw+\boldv</m> (addition is commutative)
-        </p>
-      </li>
-      <li>
-        <p>
-          <m>\boldu+(\boldv+\boldw)=(\boldu+\boldv)+\boldw</m> (addition is associative)
-        </p>
-      </li>
-      <li>
-        <p>
-          There is an element <m>\boldzero\in V</m> satisfying <m>\boldzero+\boldv=\boldv</m> for all
-          <m>\boldv\in V</m>. (<m>V</m> has an additive identity)
-        </p>
-      </li>
-      <li>
-        <p>
-          For all <m>\boldv\in V</m>, there is an element <m>-\boldv\in V</m> s.t.
-          <m>\boldv+(-\boldv)=\boldzero</m>. (<m>V</m> has additive inverses)
-        </p>
-      </li>
-      <li>
-        <p>
-          <m>r(\boldu+\boldv)=r\boldu+r\boldv</m> (scal. mult. distributes over vector sums)
-        </p>
-      </li>
-      <li>
-        <p>
-          <m>(r+s)\boldv=r\boldv+s\boldv</m> (sum of scalars distributes)
-        </p>
-      </li>
-      <li>
-        <p>
-          <m>r(s\boldv)=(rs)\boldv</m> (scal. mult. is assoc.)
-        </p>
-      </li>
-      <li>
-        <p>
-          <m>1\boldv=\boldv</m> for all
-          <m>\boldv\in V</m> (scalar 1 acts as identity)
-        </p>
-      </li>
-    </ol>
-    <p>
-      Elements of a vector space <m>V</m> are called <term>vectors</term>.
-    </p>
-    <p>
-      A <term>linear combination</term>
-      in a vector space is any expression of the form <m>c_1\boldv_1+c_2\boldv_2+\cdots +c_r\boldv_r</m>,
-      where <m>c_i\in\R</m> and <m>\boldv_i\in V</m> for all <m>1\leq i\leq r</m>.
-    </p>
-  </paragraphs>
-  <paragraphs>
-  <title>Examples: \alert{$M_{mn}$}</title>
-  <p>
-    As mentioned above,
-    our inspiration for the abstract notion of a vector space comes from matrices.
-    Let's make explicit how they constitute an example.
-    Fix an <m>m</m> and <m>n</m> and let
-    <m>V=M_{mn}</m> be the set of all <m>m\times n</m> matrices.
-  </p>
-  <paragraphs>
-    <title>Addition and scalar multiplication</title>
-    <p>
-      Given any <m>A=[a_{ij}]</m>, <m>B=[b_{ij}]</m>, define:
-    </p>
-  </paragraphs>
-  <md>
-    <mrow>rA\amp :=\amp [ra_{ij}],  \text{ (the usual scalar multiplication) }</mrow>
-    <mrow>A+B\amp :=\amp [a_{ij}+b_{ij}],  \text{ (the usual matrix addition) }</mrow>
-  </md>
-  <paragraphs>
-    <title>Additive identity and inverses</title>
-    <p>
-      Set:
-    </p>
-  </paragraphs>
-  <md>
-    <mrow>\boldzero\amp :=\amp 0_{mn}, \text{ the \(m\times n\) zero matrix }</mrow>
-    <mrow>-A\amp :=\amp [-a_{ij}]</mrow>
-  </md>.
-  <p>
-    We have already seen in <xref ref="c_linear_systems"></xref>.
-    <xref ref="ss_matrix"></xref> that these operations,
-    along with our choices of zero vector and additive inverses,
-    satisfy all the axioms of our vector space definition.
-    Thus <m>M_{mn}</m>, along with these operations,
-    constitutes a vector space.
-  </p>
-  </paragraphs>
-  <paragraphs>
-  <title>Examples: \alert{$\R^n$}</title>
-  <p>
-    We define <m>\R^n</m> to be the set of all <m>n</m>-tuples:
-    i.e., <m>\R^n=\{(t_1,t_2,\dots t_n)\colon t_i\in\R \}</m>.
-    We call <m>\R^n</m> <term><m>n</m>-space</term>,
-    call elements of <m>\R^n</m> <term><m>n</m>-vectors</term>,
-    and denote elements of <m>\R^n</m> with bold, lowercase letters:
-    typically, <m>\boldv</m>, <m>\boldw</m>, and <m>\boldu</m>.
-  </p>
-  <p>
-    Define a vector space structure on <m>\R^n</m> as follows.
-  </p>
-  <paragraphs>
-    <title>Addition and scalar multiplication</title>
-    <p>
-      Given any <m>\boldv=(v_1,\dots,v_n)</m> and
-      <m>\boldw=(w_1,\dots,w_n)</m> in <m>\R^n</m> define:
-    </p>
-  </paragraphs>
-  <md>
-    <mrow>r\boldv\amp :=\amp (rv_1,rv_2,\dots ,rv_n) \text{ for all \(r\in\R\) } ,</mrow>
-    <mrow>\boldv+\boldw\amp :=\amp (v_1+w_1,\dots,v_n+w_n)</mrow>
-  </md>
-  <paragraphs>
-    <title>Additive identity and inverses</title>
-    <p>
-      Set:
-    </p>
-  </paragraphs>
-  <md>
-    <mrow>\boldzero\amp :=\amp (0,0,\dots,0)</mrow>
-    <mrow>-\boldv\amp :=\amp (-v_1,-v_2,\dots,-v_n)</mrow>
-  </md>.
-  <p>
-    The difference between <m>\R^n</m> and <m>M_{1n}</m>
-    (row vectors)
-    is simply one of notation
-    (parenthesis instead of bracket).
-    In particular,
-    it follows immediately from the last example that <m>\R^n</m> with these operations is a vector space.
-  </p>
-  <p>
-    Furthermore I reserve the right to identify <m>\R^n</m> with <m>M_{1n}</m>,
-    as well as <m>M_{n1}</m>
-    (column vectors),
-    in any given example.
-    I will always make my choice explicit:
-    e.g. ``Let <m>V=\R^n</m>, with elements treated as column vectors".
-  </p>
-  </paragraphs>
-  <paragraphs>
-  <title>Examples: \alert{the trivial vector space}</title>
-  <p>
-    Vector spaces of the form <m>\R^n</m> will be our main object of study.
-    It is important to observe, however,
-    that there are many other, more exotic vector spaces.
-    In other words, you cannot always assume that a vector is an
-    <em><m>n</m>-vector</em>.
-    We now introduce some of these more exotic examples,
-    starting with the <em>trivial vector space</em>.
-  </p>
-  <p>
-    Let <m>V=\{\boldv\}</m> be a set containing exactly one element.
-  </p>
-  <paragraphs>
-    <title>Addition and scalar multiplication</title>
-    <p>
-      Define:
-    </p>
-  </paragraphs>
-  <md>
-    <mrow>r\boldv\amp :=\amp \boldv \text{ for all \(r\in\R\) } ,</mrow>
-    <mrow>\boldv+\boldv\amp :=\amp \boldv</mrow>
-  </md>
-  <paragraphs>
-    <title>Additive identity and inverses</title>
-    <p>
-      Set:
-    </p>
-  </paragraphs>
-  <md>
-    <mrow>\boldzero\amp :=\amp \boldv</mrow>
-    <mrow>-\boldv\amp :=\amp \boldv</mrow>
-  </md>.
-  <p>
-    It follows easily that <m>V=\{\boldv\}</m>,
-    along with these operations and choices of zero vector and additive inverses,
-    satisfies the definition of a vector space.
-  </p>
-  <p>
-    We call <m>V</m> the <term>trivial
-    (or zero)
-    vector space</term>, and denote it <m>V=\{\boldzero\}</m>.
-    (Note that the single element of the trivial vector space is always the zero vector of the space.
-    Hence the notation.)
-  </p>
-  </paragraphs>
-  <paragraphs>
-  <title>Examples: \alert{$\R^\infty$}</title>
-  <definition>
-    <statement>
+        <ol label="i">
+          <li>
+            <title>Vector addition is commutative</title>
+            <p>
+            For all <m>\boldv, \boldw\in V</m>, we have <me>\boldv+\boldw=\boldw+\boldv</me>.
+            </p>
+          </li>
+          <li>
+            <title>Vector addition is associative</title>
+            <p>
+              For all <m>\boldu, \boldv, \boldw\in V</m>, we have
+              <me>(\boldu+\boldv)+\boldw=\boldu+(\boldv+\boldw)</me>.
+            </p>
+          </li>
+          <li>
+            <title>Existence of additive identity</title>
+            <p>
+              There is an element <m>\boldzero\in V</m> such that for all <m>\boldv\in V</m>, we have
+              <me>
+                \boldzero+\boldv=\boldv
+              </me>.
+              The element <m>\boldzero</m> is called the <term>zero vector of <m>V</m></term>.
+            </p>
+          </li>
+          <li>
+            <title>Existence of additive inverses</title>
+            <p>
+            For all <m>\boldv\in V</m>, there is another element <m>-\boldv</m> satisfying
+            <me>
+              \boldv+(-\boldv)=\boldzero_V
+            </me>.
+            Given <m>\boldv\in V</m>, the element <m>-\boldv</m> is called the <term>vector inverse of <m>\boldv</m></term>.
+            </p>
+          </li>
+          <li>
+            <title>Distribution over vector addition</title>
+            <p>
+            For all <m>c\in \R</m> and <m>\boldv, \boldw\in V</m>, we have
+            <me>
+              c(\boldv+\boldw)=c\boldv+c\boldw
+            </me>.
+            </p>
+          </li>
+          <li>
+            <title>Distribution over scalar addition</title>
+            <p>
+              For all <m>c, d\in \R</m> and <m>\boldv\in V</m>, we have
+              <me>
+                (c+d)\boldv=c\boldv+d\boldv
+              </me>
+            </p>
+          </li>
+          <li>
+            <title>Scalar multiplication is associative</title>
+            <p>
+            For all <m>c,d\in \R</m> and all <m>\boldv\in V</m>, we have
+            <me>
+              c(d\boldv)=(cd)\boldv
+            </me>.
+            </p>
+          </li>
+          <li>
+            <title>Scalar multiplicative identity</title>
+            <p>
+            For all <m>\boldv\in V</m>, we have
+            <me>
+              1\boldv=\boldv
+            </me>.
+            </p>
+          </li>
+        </ol>
       <p>
-        We define <m>\R^\infty</m> to be the set of all infinite sequences of real numbers: i.e.,
-        <me>
-          \R^\infty=\{(t_1,t_2,t_3,\dots)\colon t_i\in\R \}
-        </me>.
+      We call the elements of a vector space <term>vectors</term>.
       </p>
-    </statement>
-  </definition>
-  <p>
-    Define a vector space structure on <m>\R^\infty</m> as follows.
-  </p>
-  <paragraphs>
-    <title>Addition and scalar multiplication</title>
+  </statement>
+    </definition>
+<definition xml:id="d_vector_lin_comb">
+  <title>Linear combination of vectors</title>
+    <idx><h>linear combination</h><h>of vectors</h></idx>
+  <statement>
     <p>
-      Given any <m>\boldv=(v_1,v_2,\dots)</m> and
-      <m>\boldw=(w_1,w_2, \dots )</m> in <m>\R^n</m> define:
+      Let <m>V</m> be a vector space. An expression of the form
+      <me>
+        c_1\boldv_1+c_2\boldv_2+\cdots +c_r\boldv_r
+      </me>,
+      where <m>c_i\in\R</m> and <m>\boldv_i\in V</m> for all <m>i</m>, is called a <term>linear combination</term>. The scalars <m>c_i</m> are called the <term>coefficients</term> of the linear combination.
     </p>
-  </paragraphs>
-  <md>
-    <mrow>r\boldv\amp :=\amp (rv_1,rv_2,\dots) \text{ for all \(r\in\R\) } ,</mrow>
-    <mrow>\boldv+\boldw\amp :=\amp (v_1+w_1,v_2+w_2, \dots)</mrow>
-  </md>
-  <paragraphs>
-    <title>Additive identity and inverses</title>
+  </statement>
+</definition>
+<paragraphs xml:id="ss_vectorspace_examples">
+  <title>Examples</title>
+<p>
+When introducing a new vector space there are many details in <xref ref="d_vector_space"/> that must be verified. To help organize this task, follow this checklist:
+<ol>
+  <li>
     <p>
-      Set:
+      Make explicit the underlying set <m>V</m> of the vector space.
     </p>
-  </paragraphs>
-  <md>
-    <mrow>\boldzero\amp :=\amp (0,0,\dots)</mrow>
-    <mrow>-\boldv\amp :=\amp (-v_1,-v_2,\dots)</mrow>
-  </md>.
-  <p>
-    It is easy to show <m>\R^\infty</m> with these operations forms a vector space.
-  </p>
-  </paragraphs>
-  <paragraphs>
-  <title>Examples: \alert{$C^\infty(X)$}</title>
-  <p>
-    Let <m>X\subset\R</m> be any interval of any sort: e.g.
-    <m>X=[a,b]</m>, <m>X=(-\infty, \infty)</m>,
-    <m>X=(-\infty, b]</m>, etc.
-    Define <m>V=C^\infty(X)</m> to be the set of all infinitely-differentiable real-valued functions with domain <m>X</m>.
-  </p>
-  <paragraphs>
-    <title>Addition and scalar multiplication</title>
+  </li>
+  <li>
     <p>
-      Given any elements <m>f, g\in C^\infty(X)</m>, define:
+      Make explicit what the scalar multiplication and vector addition operations are.
     </p>
-  </paragraphs>
-  <md>
-    <mrow>rf\amp :=\amp \text{ the function defined as \((rf)(x)=rf(x)\) for all \(r\in\R\) } ,</mrow>
-    <mrow>f+g\amp :=\amp \text{ the function defined as \((f+g)(x)=f(x)+g(x)\). }</mrow>
-  </md>
-  <p>
-    In other words,
-    vector scalar multiplication is defined to be scalar multiplication of functions,
-    and vector addition is defined to be function addition.
-  </p>
-  <paragraphs>
-    <title>Additive identity and inverses</title>
+  </li>
+  <li>
     <p>
-      Set:
+      Identify an element of <m>V</m> that serves as the zero vector and indicate the rule that assigns vector inverses to elements of <m>V</m>.
     </p>
-  </paragraphs>
-  <md>
-    <mrow>\boldzero\amp :=\amp \text{ the zero function \(0_X\), defined as \(0_X(x)=0\) for all \(x\in X\). }</mrow>
-    <mrow>-f\amp :=\amp \text{ the function defined as \((-f)(x)=-f(x)\) for all \(x\in X\) } </mrow>
-  </md>.
-  <p>
-    The fact that <m>C^\infty(X)</m> with these operations forms a vector space follows from familiar properties of
-    <em>function arithmetic</em>.
-  </p>
-  <p>
-    Take a moment to let the exotic quality of this example sink in.
-    Our
-    <q>vectors</q>
-    in this example are <em>functions</em>!
-    Whereas we can concretely describe the general element of <m>\R^3</m> (<m>(a,b,c)</m>) or even <m>\R^n</m> (<m>(r_1,r_2,\dots,
-    r_n)</m>),
-    this is not so in <m>C^\infty(X)</m>:
-    the general element is just some infinitely differentiable function <m>f</m>.
-    I can give you plenty of examples of elements (e.g.,
-    <m>f(x)=x^2</m>, <m>f(x)=\sin x-e^x</m>,
-    etc.), but I cannot express the general element in any kind of finite way.
-  </p>
-  </paragraphs>
-  <p>
-    It is now an easy,
-    but interesting exercise to show that these definitions turn <m>\R_{>0}</m> into a vector space.
-  </p>
+  </li>
+  <li>
+    <p>
+      Show that the two vector operations and our choice of zero vector and vector inverses satisfy the axioms of <xref ref="d_vector_space"/>.
+    </p>
+  </li>
+</ol>
+Think of items (1)-(3) of our checklist as official declarations about the makeup of our vector space: <q>The underlying set shall be as stated</q>; <q>We declare the vector operations thusly</q>; <q>The zero vector shall be this element here, and vector inverses shall be assigned in this manner</q>. Item (4) is where we get down to the nitty gritty of showing that the our proposed vector space structure articulated in (1)-(3) does indeed satisfy all the necessary properties.
+</p>
+<p>
+In each of the examples below we carefully lay out the details of items (1)-(3) while often leaving much of the work of item (4) to you. You will meet these vector spaces frequently throughout the rest of your life. Each time you do, it will be helpful for orientation purposes to mentally run through items (1)-(3). Ask yourself: What is the underlying set? What are vector operations? What acts as the zero vector, and how do I assign vector inverses?
+</p>
+</paragraphs>
+<definition xml:id="ex_vs_matrices">
+  <title>Vector space of <m>m\times n</m> matrices</title>
+  <idx><h>vector space</h><h>of matrices</h></idx>
+  <notation>
+    <usage>M_{mn}</usage>
+    <description>vector space of <m>m\times n</m> matrices</description>
+  </notation>
+  <statement>
+    <case>
+     <title>Underlying set</title>
+     <p>
+     The <term>vector space of <m>m\times n</m> matrices</term>, denoted <m>M_{mn}</m>, is the set of all <m>m\times n</m> matrices: i.e.,
+     <me>
+       M_{mn}=\left\{ A=[a_{ij}]_{m\times n}\colon a_{ij}\in \R\right\}
+     </me>.
+     </p>
+    </case>
+    <case>
+     <title>Vector operations</title>
+    <p>
+      Scalar multiplication and vector addition in <m>M_{mn}</m> are defined as matrix scalar multiplication and matrix addition, respectively.
+    </p>
+    </case>
+    <case>
+     <title>Zero vector and vector inverses</title>
+    <p>
+    The zero vector of <m>M_{mn}</m> is the <m>m\times n</m> zero matrix: i.e., <m>\boldzero=\boldzero_{m\times n}</m>.
+    </p>
+    <p>
+    Given an element <m>A=[a_{ij}]\in M_{mn}</m>, its vector inverse is the matrix additive inverse <m>-A=[-a_{ij}]</m>.
+    </p>
+    </case>
+    <case>
+     <title>Verification of axioms</title>
+    <p>
+    We showed in <xref ref="th_matrix_alg_props"/> that matrix scalar multiplication and vector addition, satisfy axioms (i), (ii), (v)-(viii). <xref ref="th_matrix_add_mult_ident"/> implies that our choice of zero vector (<m>\boldzero_{m\times n}</m>) and vector inverses (<m>-A</m>) satisfies axioms (iii)-(iv).
+    </p>
+    </case>
+  </statement>
+</definition>
+
+<definition xml:id="ex_vs_ntuples">
+  <title>Vector space of real <m>n</m>-tuples</title>
+  <idx><h>vector space</h><h>of <m>n</m>-tuples</h></idx>
+<notation>
+  <usage>\R^n</usage>
+  <description>vector space of <m>n</m>-tuples</description>
+</notation>
+  <statement>
+    <case>
+     <title>Underlying set</title>
+     <p>
+     A <term>real <m>n</m>-tuple</term> is an ordered sequence <m>(a_1,a_2,\dots, a_n)</m>, where <m>a_i\in \R</m> for all <m>i</m>. The <term>vector space of real <m>n</m>-tuples</term>, denoted <m>\R^n</m>, is the set of all real <m>n</m>-tuples:
+     <me>
+       \R^n=\{ (a_1,a_2,\dots, a_n) \colon a_i\in \R \}
+     </me>.
+     </p>
+    </case>
+    <case>
+     <title>Vector operations</title>
+     <p>
+       The vector operations on <m>n</m>-tuples are defined entry-wise.
+     </p>
+    <p>
+      <em>Scalar multiplication</em>. Given <m>c\in \R</m> and <m>\boldv=(a_1,a_2,\dots, a_n)\in \R^n</m>, we define <me>
+      c\boldv=(ca_1,ca_2,\dots, ca_n)
+      </me>.
+    </p>
+    <p>
+      <em>Vector addition</em>. Given <m>\boldv=(a_1,a_2,\dots, a_n)</m> and <m>\boldw=(b_1,b_2,\dots, b_n)</m>, we define
+      <me>
+        \boldv+\boldw=(a_1+b_1, a_2+b_2,\dots, a_n+b_n)
+      </me>.
+    </p>
+    </case>
+    <case>
+     <title>Zero vector and vector inverses</title>
+    <p>
+    The zero vector <m>\R^n</m> is the <m>n</m>-tuple of all zeros: i.e., <m>\boldzero=(0,0,\dots, 0)</m>.
+    </p>
+    <p>
+    Given a vector <m>\boldv=(a_1,a_2,\dots, a_n)</m>, we have <m>-\boldv=(-a_1,-a_2,\dots, -a_n)</m>.
+    </p>
+    </case>
+    <case>
+     <title>Verification of axioms</title>
+    <p>
+    It is clear that structurally speaking <m>\R^n</m> behaves exactly like <m>M_{1n}</m>, the vector space of <m>1\times n</m> row vectors: we have essentially just replaced brackets with parentheses. As such it follows from the previous example that <m>\R^n</m>, along with the given operations, constitutes a vector space.
+    </p>
+    </case>
+  </statement>
+</definition>
+<remark>
+  <statement>
+    <p>
+    Why introduce a new vector space, <m>\R^n</m>, if it is essentially the same thing as <m>M_{1n}</m>, or even <m>M_{n1}</m> for that matter? Recall that a matrix is not simply an ordered sequence: it is an ordered sequence arranged in a very particular way. This subtlety is baked into the very definition of matrix equality, and allows us to say that <m>\begin{amatrix}[rr]1\amp 2  \end{amatrix}</m> is not equal to <m>\begin{amatrix}[r]1\\ 2  \end{amatrix}</m>. There are situations, however, where we don't need this extra layer of structure, and want to treat an ordered sequence simply as an ordered sequence: for example, when describing solutions to the linear system
+    <me>
+      \begin{linsys}{2}
+        2x\amp +\amp 7y\amp=\amp 5\\
+        3x\amp-\amp 5y\amp =\amp -2
+      \end{linsys}{2}
+    </me>.
+    In this situation it is most natural to think of a solution simply as an pair <m>(s_1,s_2)\in \R^2</m>, as opposed to a row vector in <m>M_{12}</m> or column vector in <m>M_{21}</m>.
+    </p>
+  </statement>
+</remark>
+<p>
+  We do not end our catalog of vector spaces here, but rather move on to more exotic examples, starting with the <em>zero (or trivial) vector space</em>.
+</p>
+<definition xml:id="ex_vs_zerospace">
+  <title>Zero vector space</title>
+  <idx><h>vector space</h><h>zero vector space</h></idx>
+<notation>
+  <usage>\{\boldzero\}</usage>
+  <description>the zero vector space</description>
+</notation>
+  <statement>
+    <case>
+     <title>Underlying set</title>
+     <p>
+     A <term>zero (or trivial) vector space</term> is a set containing exactly one element: i.e., <m>V=\{\boldv\}</m>.
+     </p>
+    </case>
+    <case>
+     <title>Vector operations</title>
+     <p>
+       Since <m>V=\{\boldv\}</m> contains only one element we have no real choice in defining our vector operations.
+     </p>
+    <p>
+      <em>Scalar multiplication</em>. Define <m>c\boldv=\boldv</m> for any <m>c\in \R</m> and the unique element <m>\boldv\in V</m>.
+    </p>
+    <p>
+      <em>Vector addition</em>. Define <m>\boldv+\boldv=\boldv</m> for the unique element <m>\boldv\in V</m>.
+    </p>
+    </case>
+    <case>
+     <title>Zero vector and vector inverses</title>
+    <p>
+    We declare <m>\boldzero=\boldv</m>. Accordingly we will write <m>V=\{\boldzero\}</m> from now on.
+    </p>
+    <p>
+    We declare <m>-\boldv=\boldv</m>.
+    </p>
+    </case>
+    <case>
+     <title>Verification of axioms</title>
+    <p>
+      It is clear that <m>V=\{\boldzero\}</m> satisfies the axioms of <xref ref="d_vector_space"/>: for axioms (i)-(ii) and (v)-(viii) both sides of the desired equality are equal to <m>\boldzero</m>; axioms (iii)-(iv) boil down to the fact that <m>\boldv+\boldv=\boldv</m> by definition.
+    </p>
+    </case>
+  </statement>
+</definition>
+<definition xml:id="ex_vs_infinitesequences">
+  <title>The vector space of infinite real sequences</title>
+  <idx><h>vector space</h><h>of infinite real sequences</h></idx>
+<notation>
+  <usage>\R^\infty</usage>
+  <description>the vector space of infinite real sequences</description>
+</notation>
+  <statement>
+    <case>
+    <title>Underlying set</title>
+    <p>
+    The <term>vector space of real infinite sequences</term>, denoted <m>\R^\infty</m>, is the set of all infinite sequences <m>(a_i)_{i=1}^\infty=(a_1,a_2,\dots,)</m>, where <m>a_i\in \R</m> for all <m>i</m>: i.e.,
+    <me>
+      \R^\infty=\{ (a_i)_{i=1}^\infty \colon a_i\in \R \}
+    </me>.
+    </p>
+   </case>
+   <case>
+    <title>Vector operations</title>
+    <p>
+      As in <m>\R^n</m> we define our vector operations on infinite sequences entry-wise.
+    </p>
+   <p>
+     <em>Scalar multiplication</em>. Given <m>c\in \R</m> and <m>\boldv=(a_i)_{i=1}^\infty\in \R^\infty</m>, we define <me>
+     c\boldv=(ca_{i})_{i=1}^infty=(ca_1,ca_2,\dots)
+     </me>.
+   </p>
+   <p>
+     <em>Vector addition</em>. Given <m>\boldv=(a_i)_{i=1}^\infty</m> and <m>\boldw=(b_i)_{i=1}^\infty</m>, we define
+     <me>
+       \boldv+\boldw=(a_i+b_i)_{i=1}^\infty=(a_1+b_1, a_2+b_2,\dots)
+     </me>.
+   </p>
+   </case>
+   <case>
+    <title>Zero vector and vector inverses</title>
+   <p>
+   The zero vector <m>\R^\infty</m> is the sequence of all zeros: i.e., <m>\boldzero=(0,0,\dots)</m>.
+   </p>
+   <p>
+   Given a vector <m>\boldv=(a_i)_{i=1}^\infty</m>, we let <m>-\boldv=(-a_i)_{i=1}^\infty=(-a_1,-a_2,\dots )</m>.
+   </p>
+   </case>
+   <case>
+    <title>Verification of axioms</title>
+    <p>
+    Exercise. Observe that since the vector operations are defined entry-wise, the vector arithmetic in <m>\R^\infty</m> not so very different from that of <m>\R^n</m>.
+    </p>
+   </case>
+ </statement>
+</definition>
+<definition xml:id="ex_vs_functions">
+  <title>Real functions</title>
+  <idx><h>vector space</h><h>of real functions on an interval</h></idx>
+  <notation>
+    <usage>F(X,\R)</usage>
+    <description>vector space of functions from <m>X</m> to <m>\R</m></description>
+  </notation>
+  <statement>
+    <case>
+    <title>Underlying set</title>
+    <p>
+    Let <m>X\subseteq \R</m> be an interval. The <term>vector space of functions from <m>X</m> to <m>\R</m></term>, denoted <m>F(X,\R)</m>, is the set of all real-valued functions <m>f(x)</m> with domain <m>X</m>.
+    </p>
+   </case>
+   <case>
+    <title>Vector operations</title>
+    <p>
+      The vector operations in <m>F(X,\R)</m> are none other than the function scaling and addition operations, perhaps familiar to you from calculus.
+    </p>
+   <p>
+     <em>Scalar multiplication</em>. Given <m>c\in \R</m> and a real-valued function <m>f</m> with domain <m>X</m>, we let <m>cf</m> be the function defined as
+     <me>
+       (cf)(x)=c(f(x)) \text{ for all } x\in X
+     </me>.
+   </p>
+   <p>
+     <em>Vector addition</em>. Given real-valued functions <m>f</m> and <m>g</m> with domain <m>X</m>, we let <m>f+g</m> be the function defined as
+     <me>
+       (f+g)(x)=f(x)+g(x) \text{ for all } x\in X
+     </me>.
+   </p>
+   </case>
+   <case>
+    <title>Zero vector and vector inverses</title>
+   <p>
+   The zero vector <m>F(X,\R)</m> is the constant function <m>O_X</m> that assigns a value of 0 to all elements of <m>X</m>: i.e., <m>0_X(x)=0</m> for all <m>x\in X</m>.
+ </p>
+   <p>
+   Given a function <m>f\in F(X,\R)</m>, its vector inverse is the function <m>-f</m> defined as
+   <me>
+     (-f)(x)=-f(x) \text{ for all } x\in X
+   </me>.
+   </p>
+   </case>
+   <case>
+    <title>Verification of axioms</title>
+    Exercise.
+   </case>
+  </statement>
+</definition>
+<remark xml:id="rm_vs_functions">
+  <statement>
+    <p>
+      Take a moment to let the exotic quality of this example sink in. The things we are calling <em>vectors</em> here are entire <em>functions</em>!
+      Furthermore, whereas we can concretely describe the general element of <m>\R^3</m> (<m>(a,b,c)</m>) or even <m>\R^n</m> (<m>(r_1,r_2,\dots,
+      r_n)</m>),
+      there is no comparable way of expressing the general element of <m>F(X,\R)</m>. The general element is just an arbitrary rule taking inputs from the interval <m>X</m> and assigning values in <m>\R</m>. For example, the function <m>f(x)=\sin x-e^x</m> is one of our vectors; and so is the function <m>g</m> defined as
+      <me>
+        g(x)=\begin{cases}
+          1\amp \text{if } x \text{ is rational}\\
+          0\amp \text{if } x \text{ is not rational}.
+      \end{cases}
+      </me>
+    </p>
+  </statement>
+</remark>
+<p>
+  We end with an example that illustrates how we can define the vector operations to be anything we like, as long as they satisfy the axioms of <xref ref="d_vector_space"/>. In this case scalar multiplication will be defined as real number <em>exponentiation</em>, and vector addition will be defined as real number <em>multiplication</em>.
+</p>
+<definition xml:id="ex_vs_positivereals">
+  <title>Vector space of positive real numbers</title>
+    <idx><h>vector space</h><h>of positive real numbers</h></idx>
+    <notation>
+      <usage>\R_>0</usage>
+      <description>vector space of positive real numbers</description>
+    </notation>
+  <statement>
+    <case>
+    <title>Underlying set</title>
+    <p>
+     The <term>vector space of positive real numbers</term>, denoted <m>\R_{>0}</m>, is defined as
+     <me>
+       \R_{>0}=\{x\in \R\colon x>0\}
+     </me>.
+    </p>
+   </case>
+   <case>
+    <title>Vector operations</title>
+    <p>
+      Scalar multiplication is defined via exponentiation and vector addition is defined as multiplication.
+    </p>
+   <p>
+     <em>Scalar multiplication</em>. Given <m>c\in \R</m> and <m>\boldv=a\in \R_{>0}</m> we define
+     <me>
+       c\boldv=a^c
+     </me>.
+   </p>
+   <p>
+     <em>Vector addition</em>. Given <m>\boldv=a, \boldw=b\in \R_{>0}</m>, we define
+     <me>
+       \boldv+\boldw=ab
+     </me>.
+   </p>
+   </case>
+   <case>
+    <title>Zero vector and vector inverses</title>
+   <p>
+   The zero vector of <m>\R_{>0}</m> is the number 1: i.e., we have <m>\boldzero=1</m> in the vector space <m>\R_{>0}</m>.
+ </p>
+   <p>
+   Given <m>\boldv=a\in \R_{>0}</m> the vector inverse is defined as
+   <me>
+     -\boldv=\frac{1}{a}
+   </me>.
+   </p>
+   </case>
+   <case>
+    <title>Verification of axioms</title>
+    <p>
+      Exercise. We point out, however, that in this case the fact that the operations are actually well-defined should be justified. This is where the positivity of elements of <m>\R_{>0}</m> comes into play: since <m>\boldv=a</m> is a positive number, the power <m>c\boldv=a^c</m> is defined for any <m>c\in \R</m>, and is again positive; if <m>\boldv=a</m> and <m>\boldw=b</m> are both positive numbers, then so is <m>\boldv+\boldw=ab</m>.
+    </p>
+   </case>
+  </statement>
+</definition>
+
   <p>
     When proving a general fact about vector spaces we can only invoke the defining axioms the vector space satisfies;
     we cannot assume the vectors of the space are of any particular form.
@@ -429,4 +570,5 @@
       We conclude that <m>\boldzero=0\boldv</m>.
     </p>
   </proof>
+
 </section>

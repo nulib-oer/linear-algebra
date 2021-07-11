@@ -218,13 +218,13 @@
       <idx><h>linear combination</h><h>of matrices</h></idx>
       <statement>
         <p>
-          Let <m>A_1,A_2,\dots, A_r</m> be <m>r</m> matrices of the same dimension,
-          and let <m>c_1,c_2, \dots ,c_r</m> be scalars.
-          The matrix
+          Given matrices <m>A_1,A_2,\dots, A_r</m> of the same dimension,
+          and scalars <m>c_1,c_2, \dots ,c_r</m>,
+          the expression
           <me>
             c_1A_1+c_2A_2\cdots +c_rA_r
           </me>
-          is called a <term>linear combination</term> of the <m>A_i</m>; the scalars <m>c_i</m> are called the <term>coefficients</term> of the linear combination.
+          is called a <term>linear combination of matrices</term>.  The scalars <m>c_i</m> are called the <term>coefficients</term> of the linear combination.
         </p>
       </statement>
     </definition>
