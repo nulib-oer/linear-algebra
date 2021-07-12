@@ -1,32 +1,12 @@
-<section xml:id="s_transformation">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_transformation">
   <title>Linear transformations</title>
-  <paragraphs>
-  <title><xref ref="c_vectorspace"></xref>. <xref ref="ss_transformation"></xref>: executive summary</title>
-  <paragraphs>
-    <title>Definitions:</title>
+  <introduction>
     <p>
-      linear transformation. \alert{Procedures:} none. \alert{Theorems:} none,
-      but plenty of examples!
-    </p>
-  </paragraphs>
-  </paragraphs>
-  <paragraphs>
-    <title><xref ref="c_vectorspace"></xref>. <xref ref="ss_transformation"></xref>: introduction</title>
-    <p>
-      <xref ref="c_vectorspace">In</xref>.
-      <xref ref="ss_vectorspace"></xref>
-      we introduced the general notion of a vector space <m>V</m>.
-      In this section we study special functions between vector spaces,
-      called <em>linear transformations</em>.
+    As detailed in <xref ref="d_linear_trans"/> a <em>linear transformation</em> is a special type of function between two vector spaces: one that <em>respects</em> in some sense the vector operations of both spaces.
     </p>
     <p>
       This manner of theorizing is typical in mathematics:
-      first we introduce a special class of objects (e.g. vector spaces,
-      manifolds, groups,
-      etc.), then we introduce special functions or maps between these objects.
-      Since the original objects of study (e.g. vector spaces) come equipped with a certain structure (e.g. vector scalar multiplication and addition),
-      the functions between these objects should in some sense
-      <em>respect</em> this structure.
+      first we introduce a special class of objects defined axiomatically, then we introduce special functions or maps between these objects. Since the original objects of study (e.g. vector spaces) come equipped with special structural properties (e.g. vector operations), the functions we wish to study are the ones that somehow acknowledge this structre.
     </p>
     <p>
       You have already seen this principle at work in your study of calculus.
@@ -35,18 +15,85 @@
       these are precisely the <em>continuous</em> functions!
     </p>
     <p>
-      The definition of linear transformation will make explicit what I mean by respecting the vector space structure.
+      As you will see, linear transformations are not just interesting objects of study in their own right, they also serve as invaluable tools in our continued exploration of the intrinsic properties of vector spaces.
     </p>
     <p>
-      In the meantime rejoice in the fact that we can now give a succinct,
-      general definition of linear algebra:
-      it is the theory of vector spaces and the linear transformations between them.
-      Go shout it from the rooftops!
+      In the meantime rejoice in the fact that we can now give a succinct definition of linear algebra:
+      it is the theory of vector spaces and the linear transformations between them. Go shout it from the rooftops!
     </p>
+  </introduction>
+  <paragraphs xml:id="ss_functions">
+    <title>Function definitions</title>
+    <p>
+      Before getting to the main attraction, we first establish some basic definitions and notation regarding functions.
+    </p>
+    <definition xml:id="d_functions">
+      <title>Functions</title>
+      <idx><h>function</h></idx>
+      <notation>
+        <usage>f\colon A\rightarrow B</usage>
+        <description>function from <m>A</m> to <m>B</m></description>
+      </notation>
+      <statement>
+        <p>
+        Let <m>A</m> and <m>B</m> be two sets. A <term>function from <m>A</m> to <m>B</m></term>, denoted <m>f\colon A\rightarrow B</m>, is a rule which, given any <term>input</term> <m>a\in A</m>, returns an <term>output</term> <m>b\in B</m>. In this case we write <m>b=f(a)</m> and call <m>b</m> the <term>image of <m>a</m> under <m>f</m></term>, or the <term>value of <m>f</m> at <m>a</m> </term>. Similarly, we say <m>f</m> <term>maps</term> (or <term>sends</term>) the input <m>a</m> to the output <m>b</m>.
+        </p>
+        <p>
+          The set <m>A</m> is called the <term>domain</term> of <m>f</m>; the set <m>B</m> is called the <term>codomain</term> of <m>f</m>.
+        </p>
+        <p>
+          When we wish to indicate what rule defines the function, we use the elaborated notation
+          <md>
+            <mrow>f\colon A \amp\rightarrow B </mrow>
+            <mrow> a \amp\mapsto f(a)</mrow>
+          </md>.
+          This is read as <q>The function <m>f</m> from <m>A</m> to <m>B</m> maps an input <m>a</m> to the output <m>f(a)</m></q>.
+        </p>
+      </statement>
+    </definition>
+    <definition xml:id="d_function_equality">
+      <title>Function equality</title>
+      <idx><h>function</h><h>equality</h></idx>
+      <statement>
+        <p>
+        Functions <m>f</m> and <m>g</m> are <term>equal</term> if
+        <ol>
+          <li>
+            <p>
+              they have the same domain <m>A</m> and codomain <m>B</m>, and
+            </p>
+          </li>
+          <li>
+            <p>
+              for all <m>a\in A</m>, we have <m>f(a)=g(a)</m>.
+            </p>
+          </li>
+        </ol>
+        </p>
+      </statement>
+    </definition>
+    <definition xml:id="d_function_composition">
+      <title>Function composition</title>
+      <idx><h>function</h><h>composition</h></idx>
+      <notation>
+        <usage>f\circ g</usage>
+        <description>the composition of <m>f</m> and <m>g</m></description>
+      </notation>
+      <statement>
+        <p>
+          Suppose <m>f\colon C\rightarrow D</m> and <m>g\colon A\rightarrow B</m> are functions satisfying <m>B\subseteq C</m>.  The <term>composition of <m>f</m> and <m>g</m></term>, is the function <m>f\circ g\colon A\rightarrow D</m> defined as follows:
+          <md>
+            <mrow>f\circ g\colon A \amp\rightarrow D </mrow>
+            <mrow> a\amp\mapsto f(g(a)) </mrow>
+          </md>.
+        In other words, to evaluate <m>f\circ g</m> at the input <m>a</m> we <em>first</em> compute <m>g(a)</m>, and <em>then</em> compute <m>f(g(a))</m>.
+        </p>
+      </statement>
+    </definition>
   </paragraphs>
-  <paragraphs>
-  <title><xref ref="c_vectorspace"></xref>. <xref ref="ss_transformation"></xref>: linear transformations</title>
-  <definition>
+  <paragraphs xml:id="ss_linear_trans">
+    <title>Linear transformations</title>
+  <definition xml:id="d_linear_trans">
     <statement>
       <p>
         Let <m>V</m> and <m>W</m> be vector spaces.
@@ -55,91 +102,106 @@
         <ol>
           <li>
             <p>
-              <m>T(\boldv_1+\boldv_2)=T(\boldv_1)+T(\boldv_2)</m> for all <m>\boldv_1,\boldv_2\in V</m>;
+              For all <m>\boldv, \boldw\in V</m>, we have <m>T(\boldv+\boldw)=T(\boldv)+T(\boldw)</m>.
             </p>
           </li>
           <li>
-            <p>
-              <m>T(k\boldv)=kT(\boldv)</m> for all <m>k\in\R</m> and <m>\boldv\in V</m>.
+            <p> For all <m>c\in \R</m> and <m>\boldv\in V</m> we have
+              <m>T(c\boldv)=cT(\boldv)</m>.
             </p>
           </li>
         </ol>
       </p>
     </statement>
   </definition>
-  <paragraphs>
-    <title>Comments</title>
-  </paragraphs>
-  <ol>
-    <li>
-      <p>
-        If <m>T\colon V\rightarrow W</m> is linear it follows automatically that <m>T(\boldzero_V)=\boldzero_W</m>.
-        Indeed, we have <m>T(\boldzero_V)=T(0\cdot\boldzero_V)=0T(\boldzero_V)=\boldzero_W</m>.
-      </p>
-    </li>
-    <li>
-      <p>
-        Useful shortcut:
-        we can prove both properties (i) and (ii) hold in one shot by showing
-        <m>T(c_1\boldv_1+c_2\boldv_2)=c_1T(\boldv_1)+c_2T(\boldv_2)</m> for all <m>c_1,c_2\in\R</m>,
-        <m>\boldv_1,\boldv_2\in V</m>.
-      </p>
-    </li>
-    <li>
-      <p>
-        We can combine properties (i)-(ii) and use induction to conclude that if <m>T</m> is linear,
-        then <m>T(c_1\boldv_1+c_2\boldv_2+\cdots+c_r\boldv_r)=c_1T(\boldv_1)+c_2T(\boldv_2)+\cdots+c_rT(\boldv_r)</m> for all
-        <m>c_i\in\R</m> and <m>\boldv_i\in V</m>.
-      </p>
-    </li>
-    <li>
-      <p>
-        How does <m>T</m> respect the vector space structure?
-        In plain English: the image of a sum is the sum of the images,
-        and the image of a scalar multiple is the scalar multiple of the image.
-        Alternatively, a linear transformation <em>distributes</em>
-        over linear combinations of vectors,
-        as we saw in the previous comment.
-      </p>
-    </li>
-  </ol>
-  </paragraphs>
-  <paragraphs>
-    <title>Function terminology and notation</title>
+    <remark>
+  <statement>
     <p>
-      Now is a good time to review some concepts and notations related to functions.
+      How does <m>T</m> respect the vector space structure?
+      In plain English: the image of a sum is the sum of the images,
+      and the image of a scalar multiple is the scalar multiple of the image.
+      Alternatively, a linear transformation <em>distributes</em>
+      over linear combinations of vectors,
+      as we saw in the previous comment.
     </p>
+  </statement>
+</remark>
+  <p>
+    As our first examples of linear transformations, we define the <em>zero transformation</em> and <em>identity transformation</em> on a vector space.
+  </p>
+  <definition xml:id="d_trans_zero_identity">
+    <title>Zero and identity transformation</title>
+    <idx><h>linear transformation</h><h>zero transformation</h></idx>
+    <idx><h>linear transformation</h><h>identity transformation</h></idx>
+
+    <statement>
+        <p>
+        Let <m>V</m> and <m>W</m> be vector spaces.
+      </p>
+      <p>
+        The <term>zero transformation from <m>V</m> to <m>W</m></term>, denoted <m>T_0</m>, is defined as follows:
+        <md>
+          <mrow>T_0\colon V \amp\rightarrow W  </mrow>
+          <mrow> \boldv \amp\mapsto T_0(\boldv)=\boldzero_W</mrow>
+        </md>,
+        where <m>\boldzero_W</m> is the zero vector of <m>W</m>. In other words, <m>T_0</m> is the function that maps all elements of <m>V</m> to the zero vector of <m>W</m>.
+      </p>
+      <p>
+        The <term>identity transformation of <m>V</m></term>, denoted <m>\id_V</m>, is defined as follows:
+        <md>
+          <mrow> \id_V\colon V \amp\rightarrow V </mrow>
+          <mrow> \boldv \amp\mapsto \id_V(\boldv)=\boldv</mrow>
+        </md>.
+        In other words, <m>\id_V(\boldv)=\boldv</m> for all <m>\boldv\in V</m>.
+      </p>
+    </statement>
+  </definition>
+  <remark xml:id="rm_trans_zero_identity">
+  <title>Model of linear transformation proof</title>
+  <statement>
     <p>
-      A <term>function</term> with <term>domain</term>
-      the set <m>A</m> and <term>codomain</term>
-      the set <m>B</m> is a <em>rule</em> that,
-      given an <term>input</term> <m>a\in A</m>,
-      returns an <term>output</term> <m>b=f(a)\in B</m>.
-      We write <m>f\colon A\rightarrow B</m>,
-      or <m>A\xrightarrow{f} B</m>, to indicate this.
+    Let's show that <m>T_0\colon V\rightarrow W</m> and <m>\id_V\colon V\rightarrow V</m> are indeed linear transformations.
     </p>
+
+  </statement>
+</remark>
+<theorem xml:id="th_trans_basic_props">
+  <title>Basic properties of linear transformations</title>
+  <statement>
     <p>
-      The
-      <q>maps to</q>
-      symbol <m>a\mapsto f(a)</m> can be used in conjunction with the notation above to give more detail about what <m>f</m> is.
-      For example
-      <md>
-        <mrow>f\colon \R\amp \rightarrow \R</mrow>
-        <mrow>x\amp \xmapsto{\hspace{10pt}} f(x)=x^2</mrow>
-      </md>
-      denotes the squaring function from <m>\R</m> to <m>\R</m>.
+      Let <m>T\colon V\rightarrow W</m> be a linear transformation. Let <m>\boldzero_V</m> and <m>\boldzero_W</m> be the zero vectors of <m>V</m> and <m>W</m>, respectively.
     </p>
-    <p>
-      Given <m>b=f(a)</m>, we call <m>b</m> the
-      <term>image of <m>a</m> under <m>f</m></term>,
-      or the <term>value of <m>f</m> at <m>a</m></term>.
-      Similarly, given a subset <m>X\subseteq A</m>,
-      we define the <term>image of <m>X</m> under <m>f</m></term> to the be
-      <me>
-        f(X):=\{f(a)\colon a\in X\}=\{b\in B\colon b=f(a) \text{ for some } a\in X\}
-      </me>.
-    </p>
-  </paragraphs>
+    <ol>
+      <li>
+        <p>
+          We have <m>T(\boldzero_V)=\boldzero_W</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          For all <m>\boldv\in V</m>, we have <m>T(-\boldv)=-T(\boldv)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          For any linear combination
+          <me>\boldv=c_1\boldv_1+c_2T\boldv_2+\cdots +c_nT\boldv_n\in V</me>
+          we have
+          <me>
+            T(\boldv)=T(c_1\boldv_1+c_2T\boldv_2+\cdots +c_nT\boldv_n)=c_1T(\boldv_1)+c_2T(\boldv_2)+\cdots +c_nT(\boldv_n)
+          </me>.
+        </p>
+      </li>
+    </ol>
+  </statement>
+</theorem>
+</paragraphs>
+
+
+
+
+
+
   <paragraphs>
   <title>Example: \alert{the zero transformation}</title>
   <p>

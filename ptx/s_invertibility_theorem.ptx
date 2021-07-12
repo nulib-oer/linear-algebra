@@ -22,7 +22,7 @@
       <description>Row swap elementary matrix</description>
     </notation>
     <notation>
-      <usage>\underset{r_i\rightarrow r_i+c\,r_j}{E}</usage>
+      <usage>\underset{r_i+c\,r_j}{E}</usage>
       <description>Row addition elementary matrix</description>
     </notation>
     <statement>

@@ -1,4 +1,4 @@
-<section xml:id="s_vectorspace">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_vectorspace">
   <title>Real vector spaces</title>
   <introduction>
     <p>
@@ -78,7 +78,7 @@
             <p>
               There is an element <m>\boldzero\in V</m> such that for all <m>\boldv\in V</m>, we have
               <me>
-                \boldzero+\boldv=\boldv
+                \boldzero+\boldv=\boldv+\boldzero=\boldv
               </me>.
               The element <m>\boldzero</m> is called the <term>zero vector of <m>V</m></term>.
             </p>
@@ -88,7 +88,7 @@
             <p>
             For all <m>\boldv\in V</m>, there is another element <m>-\boldv</m> satisfying
             <me>
-              \boldv+(-\boldv)=\boldzero_V
+              -\boldv+\boldv=\boldv+(-\boldv)=\boldzero
             </me>.
             Given <m>\boldv\in V</m>, the element <m>-\boldv</m> is called the <term>vector inverse of <m>\boldv</m></term>.
             </p>
@@ -135,19 +135,16 @@
       </p>
   </statement>
     </definition>
-<definition xml:id="d_vector_lin_comb">
-  <title>Linear combination of vectors</title>
-    <idx><h>linear combination</h><h>of vectors</h></idx>
+    <remark xml:id="rm_vectorspace_real">
   <statement>
     <p>
-      Let <m>V</m> be a vector space. An expression of the form
-      <me>
-        c_1\boldv_1+c_2\boldv_2+\cdots +c_r\boldv_r
-      </me>,
-      where <m>c_i\in\R</m> and <m>\boldv_i\in V</m> for all <m>i</m>, is called a <term>linear combination</term>. The scalars <m>c_i</m> are called the <term>coefficients</term> of the linear combination.
+      What's the deal with the <sq>real</sq> modifier? The reals are one example of a type of number system called a <em>field</em>. Other examples of fields are given by the complex numbers (<m>\C</m>) and the rational numbers (<m>\Q</m>). If <m>K</m> is a field, and if we replace each mention of <m>\R</m> in <xref ref="d_vector_space"/> with a mention of <m>K</m>, then we are left with the definition of a vector space over <m>K</m>. Setting <m>K=\C</m>, for example, we get the definition of a complex vector space.
+    </p>
+    <p>
+      In our treatment of linear algebra we will largely focus on real vector spaces, and as such will often drop this modifier: hence the parentheses in the definition.
     </p>
   </statement>
-</definition>
+</remark>
 <paragraphs xml:id="ss_vectorspace_examples">
   <title>Examples</title>
 <p>
@@ -356,7 +353,7 @@ In each of the examples below we carefully lay out the details of items (1)-(3) 
     </p>
    <p>
      <em>Scalar multiplication</em>. Given <m>c\in \R</m> and <m>\boldv=(a_i)_{i=1}^\infty\in \R^\infty</m>, we define <me>
-     c\boldv=(ca_{i})_{i=1}^infty=(ca_1,ca_2,\dots)
+     c\boldv=(ca_{i})_{i=1}^\infty=(ca_1,ca_2,\dots)
      </me>.
    </p>
    <p>
@@ -383,6 +380,7 @@ In each of the examples below we carefully lay out the details of items (1)-(3) 
    </case>
  </statement>
 </definition>
+
 <definition xml:id="ex_vs_functions">
   <title>Real functions</title>
   <idx><h>vector space</h><h>of real functions on an interval</h></idx>
@@ -437,8 +435,7 @@ In each of the examples below we carefully lay out the details of items (1)-(3) 
   <statement>
     <p>
       Take a moment to let the exotic quality of this example sink in. The things we are calling <em>vectors</em> here are entire <em>functions</em>!
-      Furthermore, whereas we can concretely describe the general element of <m>\R^3</m> (<m>(a,b,c)</m>) or even <m>\R^n</m> (<m>(r_1,r_2,\dots,
-      r_n)</m>),
+      Furthermore, whereas we can concretely describe the general element of <m>\R^3</m> (<m>\boldv=(a,b,c)</m>) or even <m>\R^n</m> (<m>\boldv=(a_1,a_2,\dots, a_n)</m>),
       there is no comparable way of expressing the general element of <m>F(X,\R)</m>. The general element is just an arbitrary rule taking inputs from the interval <m>X</m> and assigning values in <m>\R</m>. For example, the function <m>f(x)=\sin x-e^x</m> is one of our vectors; and so is the function <m>g</m> defined as
       <me>
         g(x)=\begin{cases}
@@ -456,7 +453,7 @@ In each of the examples below we carefully lay out the details of items (1)-(3) 
   <title>Vector space of positive real numbers</title>
     <idx><h>vector space</h><h>of positive real numbers</h></idx>
     <notation>
-      <usage>\R_>0</usage>
+      <usage>\R_{>0}</usage>
       <description>vector space of positive real numbers</description>
     </notation>
   <statement>
@@ -507,38 +504,79 @@ In each of the examples below we carefully lay out the details of items (1)-(3) 
    </case>
   </statement>
 </definition>
-
+<p>
+  The notion of a linear combination of matrices (<xref ref="d_matrix_lin_comb"/>) generalizes easily to any vector space, and will be an important concept in the further development of our theory.
+</p>
+<definition xml:id="d_vector_lin_comb">
+  <title>Linear combination of vectors</title>
+    <idx><h>linear combination</h><h>of vectors</h></idx>
+  <statement>
+    <p>
+      Let <m>V</m> be a vector space. An expression of the form
+      <me>
+        c_1\boldv_1+c_2\boldv_2+\cdots +c_r\boldv_r
+      </me>,
+      where <m>c_i\in\R</m> and <m>\boldv_i\in V</m> for all <m>i</m>, is called a <term>linear combination</term>. The scalars <m>c_i</m> are called the <term>coefficients</term> of the linear combination.
+    </p>
+  </statement>
+</definition>
+<example>
+  <statement>
+    <p>
+      Let <m>V=\R_{>0}</m>. Given the vectors <m>\boldv=2</m> and <m>\boldw=\frac{1}{2}</m>, compute the linear combination
+      <me>
+        3\boldv+(-1/5)\boldw
+      </me>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      By definition of scalar multiplication in <m>\R_{>0}</m> (<xref ref="ex_vs_positivereals"/>) we have
+      <me>
+        3\boldv=2^3=8 \text{ and }(-1/5)\boldw=(1/2)^{-1/5}=\sqrt[5]{2}
+      </me>.
+      Next, since vector addition in <m>\R_{>0}</m> is defined as real number multiplication (<xref ref="ex_vs_positivereals"/>), we conclude
+      <me>
+        3\boldv+(-1/5)\boldw=8\sqrt[5]{2}
+      </me>.
+    </p>
+  </solution>
+</example>
+<paragraphs xml:id="ss_vectorspace_properties">
+  <title>General properties</title>
   <p>
-    When proving a general fact about vector spaces we can only invoke the defining axioms the vector space satisfies;
-    we cannot assume the vectors of the space are of any particular form.
+    When proving a general fact about vector spaces we can only invoke the defining axioms;
+    we cannot assume the vectors of the space assume any particular form.
     For example,
     we cannot assume vectors of <m>V</m> are <m>n</m>-tuples,
     or matrices, etc.
     We end with an example of such an axiomatic proof.
   </p>
-  <theorem>
+  <theorem xml:id="th_vectorspace_props">
     <statement>
       <p>
         Let <m>V</m> be a vector space.
         <ol>
           <li>
             <p>
-              <m>0\boldv=\boldzero</m> for all <m>\boldv\in V</m>.
+              For all <m>\boldv\in V</m>, we have <m>0\boldv=\boldzero</m>.
             </p>
           </li>
           <li>
             <p>
-              <m>k\boldzero=\boldzero</m> for all <m>k\in \R</m>.
+              For all <m>c\in \R</m>, we have
+              <m>c\boldzero=\boldzero</m>.
             </p>
           </li>
           <li>
             <p>
-              <m>(-1)\boldv=-\boldv</m> for all <m>\boldv\in V</m>.
+              For all <m>\boldv\in V</m>, we have
+              <m>(-1)\boldv=-\boldv</m>.
             </p>
           </li>
           <li>
             <p>
-              If <m>k\boldu=\boldzero</m>, then <m>k=0</m> or <m>\boldu=\boldzero</m>.
+              For all <m>\boldv\in V</m>, if <m>c\boldv=\boldzero</m>, then <m>c=0</m> or <m>\boldv=\boldzero</m>.
             </p>
           </li>
         </ol>
@@ -547,28 +585,32 @@ In each of the examples below we carefully lay out the details of items (1)-(3) 
   </theorem>
   <proof>
     <p>
-      We prove (a), leaving (b)-(d) as an exercise.
+      We prove (1), leaving (2)-(4) as an exercise.
     </p>
     <p>
       First observe that <m>0\boldv=(0+0)\boldv</m>, since <m>0=0+0</m>.
     </p>
     <p>
-      By Axiom (e) we have <m>(0+0)\boldv=0\boldv+0\boldv</m>.
+      By Axiom (vi) we have <m>(0+0)\boldv=0\boldv+0\boldv</m>.
       Thus <m>0\boldv=0\boldv+0\boldv</m>.
     </p>
     <p>
-      Add <m>-0\boldv</m>, the additive inverse of <m>0\boldv</m>,
+      Now add <m>-0\boldv</m>, the vector inverse of <m>0\boldv</m>,
       to both sides of the last equation:
       <me>
-        -0\boldv+0\boldv=-0\boldv+0\boldv+0\boldv.\tag{\(*\)}
-      </me>
+        -0\boldv+0\boldv=-0\boldv+(0\boldv+0\boldv)
+      </me>.
     </p>
     <p>
-      The left-hand side of <m>(*)</m> is <m>\boldzero</m>, by Axiom (d).
-      The right-hand side is <m>\boldzero+0\boldv=0\boldv</m>,
-      by Axiom (c).
-      We conclude that <m>\boldzero=0\boldv</m>.
+    Now simplify this equation step by step using the axioms:
+      <md>
+        <mrow> -0\boldv+0\boldv=-0\boldv+(0\boldv+0\boldv)\amp\implies
+        \boldzero=(-0\boldv+0\boldv)+0\boldv \amp (\text{Axiom (iv) and Axiom (ii)}) </mrow>
+        <mrow> \amp\implies \boldzero=\boldzero+0\boldv \amp (\text{(Axiom (iv))})</mrow>
+        <mrow>  \amp\implies \boldzero=0\boldv </mrow>
+      </md>.
     </p>
   </proof>
-
+</paragraphs>
+<xi:include href="./s_vectorspace_ex.ptx"/>
 </section>

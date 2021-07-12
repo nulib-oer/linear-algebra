@@ -159,7 +159,7 @@
   </statement>
 </example>
 <p>
-  As the preceding example illustrates, deciding whether a matrix is invertible is not so straightforward, especially if the matrix is large. For the <m>2\times 2</m> case, however, we have a relatively simple test for invertibility. (We will generalize this to the <m>n\times n</m> case in <xref ref="c_det"/>.)
+  As the preceding example illustrates, deciding whether a matrix is invertible is not so straightforward, especially if the matrix is large. For the <m>2\times 2</m> case, however, we have a relatively simple test for invertibility. (We will generalize this to the <m>n\times n</m> case in <xref ref="s_det"/>.)
 </p>
 <theorem xml:id="th_2by2_inverse">
   <title>Inverses of <m>2\times 2</m> matrices</title>
