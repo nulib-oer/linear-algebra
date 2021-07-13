@@ -618,12 +618,12 @@
   <md>
     <mrow>T_A\colon \R^n \amp\rightarrow \R^m \amp T_B\colon \R^r \amp\rightarrow \R^n \amp T_C\colon \R^r \amp\rightarrow \R^m  </mrow>
   </md>.
-  According to <xref ref="th_transform_composition"/> the composition <m>T_A\circ T_B</m> is a linear transformation from <m>\R^r</m> (the domain of <m>T_B</m>) to <m>\R^m</m> (the codomain of <m>T_A</m>). We claim that <m>T_A\circ T_B=T_C</m>. Indeed, identifying elements of <m>\R^r</m> with column vectors, we have
+  According to <xref ref="th_transform_composition"/> the composition <m>T_A\circ T_B</m> is a linear transformation from <m>\R^r</m> (the domain of <m>T_B</m>) to <m>\R^m</m> (the codomain of <m>T_A</m>). We claim that <m>T_A\circ T_B=T_C</m>. Indeed, identifying elements of <m>\R^r</m> with column vectors, for all <m>\boldx\in \R^n</m> we have
   <md>
     <mrow> T_A\circ T_B(\boldx) \amp = T_A(T_B(\boldx)) \amp (<xref ref="d_function_composition"/>) </mrow>
-    <mrow> \amp =T_A(B\boldx) </mrow>
-    <mrow> \amp= A(B\boldx) </mrow>
-    <mrow>  \amp = AB\boldx </mrow>
+    <mrow> \amp =T_A(B\boldx) \amp (<xref ref="d_matrix_transform"/>)</mrow>
+    <mrow> \amp= A(B\boldx) \amp (<xref ref="d_matrix_transform"/>)</mrow>
+    <mrow>  \amp = (AB)\boldx \amp (\text{assoc.})</mrow>
     <mrow>  \amp = T_C(\boldx) \amp (\text{since } C=AB)</mrow>
   </md>.
 Thus, we can now understand the definition of matrix multiplication as being chosen precisely to encode how to compute the composition of two matrix transformations. The restriction on the dimension of the ingredient matrices is now understood as guaranteeing that the corresponding matrix transformations can be composed!
