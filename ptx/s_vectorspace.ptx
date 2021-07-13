@@ -553,6 +553,8 @@ In each of the examples below we carefully lay out the details of items (1)-(3) 
     We end with an example of such an axiomatic proof.
   </p>
   <theorem xml:id="th_vectorspace_props">
+    <title>Basic vector space properties</title>
+
     <statement>
       <p>
         Let <m>V</m> be a vector space.
