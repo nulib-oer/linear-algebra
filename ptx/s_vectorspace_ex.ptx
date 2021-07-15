@@ -94,7 +94,7 @@ In each exercise below the provided set, along with proposed vector operations, 
       i.e., <m>V</m> is the set of pairs whose first entry is positive
       and whose second entry is negative.
       <md>
-        <mrow> c(a, b) \amp= (a^c, -\val{b}^c) </mrow>
+        <mrow> c(a, b) \amp= (a^c, -\lvert b\rvert^c) </mrow>
         <mrow> (a_1,b_1)+(a_2,b_2)\amp=(a_1a_2,-b_1b_2) </mrow>
       </md>.
       Verify axioms (iii)-(v), and axiom (viii).
@@ -148,7 +148,7 @@ In each exercise below the provided set, along with proposed vector operations, 
   </statement>
   <hint>
     <p>
-      Assume <m>V</m> contains a nonzero vector <m>\boldv\ne\boldzero</m>. Show that if <m>c\ne d</m>, then <m>c\boldbv\ne d\boldv</m>. You assume the results of <xref ref="th_vectorspace_props"/>.
+      Assume <m>V</m> contains a nonzero vector <m>\boldv\ne\boldzero</m>. Show that if <m>c\ne d</m>, then <m>c\boldv\ne d\boldv</m>. You assume the results of <xref ref="th_vectorspace_props"/>.
     </p>
   </hint>
 </exercise>
