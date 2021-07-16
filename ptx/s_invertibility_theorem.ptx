@@ -2,7 +2,7 @@
   <title>The invertibility theorem</title>
   <introduction>
     <p>
-    We saw in <xref ref="ex_invertible_matrices"/> that verifying directly whether a matrix is invertible, using only <xref ref="d_invertible_matrix"/>, can be quite an involved task. The goal of this section is to make this less onerous by developing some equivalent methods of testing invertibilty. Our work culminates in <xref ref="th_invertibility"/> and <xref ref="th_invertibility_algorithm"/>, which draw connections between invertiblity, solutions to linear systems, and row echelon forms of a square matrix. Not surprisingly, our old friend Gaussian elimination emerges as the fundamental computational tool.
+    We saw in <xref ref="ex_invertible_matrices"/> that verifying directly whether a matrix is invertible, using only <xref ref="d_invertible_matrix"/>, can be quite an involved task. The goal of this section is to make this invertibility less onerous by developing some equivalent methods of testing invertibility. Our work culminates in <xref ref="th_invertibility"/> and <xref ref="th_invertibility_algorithm"/>, which draw connections between invertibility, solutions to linear systems, and row echelon forms of a square matrix. Not surprisingly, our old friend Gaussian elimination emerges as the fundamental computational tool.
     </p>
   </introduction>
 <paragraphs xml:id="ss_elementary_matrix">
@@ -463,7 +463,7 @@
     <title>Inverse algorithm</title>
     <statement>
       <p>
-      Let <m>A</m> be an <m>n\times n</m> matrix. To test for invertiblity of <m>A</m> proceed as follows.
+      Let <m>A</m> be an <m>n\times n</m> matrix. To test for invertibility of <m>A</m> proceed as follows.
       </p>
       <dl>
         <li>

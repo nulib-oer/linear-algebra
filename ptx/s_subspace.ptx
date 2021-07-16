@@ -1,103 +1,293 @@
-<section xml:id="ss_subspace">
+<section xml:id="s_subspace">
   <title>Subspaces</title>
   <introduction>
-    <paragraphs>
-    <title><xref ref="c_vectorspace"></xref>. <xref ref="ss_subspace"></xref>: executive summary</title>
-    <paragraphs>
-      <title>Definitions:</title>
-      <p>
-        subspace, linear combination,
-        span, polynomial spaces <m>P</m> and <m>P_n</m>, <m>\NS T</m>,
-        <m>\range T</m>. \alert{Procedures:} proving something is/isn't a subspace;
-        computing the span of a set of vectors,
-        computing <m>\NS T</m> and
-        <m>\range T</m> for a linear transformation. \alert{Theorems:} intersection of subspaces is a subspace,
-        <m>\Span(\{\boldv_1,\boldv_2,\dots\})</m> is a subspace,
-        <m>\NS T</m> is a subspace, <m>\range T</m> is a subspace.
-      </p>
-    </paragraphs>
-    </paragraphs>
-    <paragraphs>
-    <title><xref ref="c_vectorspace"></xref>. <xref ref="ss_subspace"></xref>: subspaces</title>
-    <definition>
+    <p>
+      The definition of a <em>subspace</em> of a vector space <m>V</m> is very much in the same spirit as our definition of linear transformations. It is a subset of <m>V</m> that in some sense respects the vector space structure: in the language of <xref ref="d_subspace"/>, it is a subset that is <em>closed under addition</em> and <em>closed under scalar multiplication</em>.
+    </p>
+    <p>
+      In fact the connection between linear transformations and subspaces goes deeper than this. As we will see in <xref first="th_nullspace" last="th_image"/>, a linear transformation <m>T\colon V\rightarrow W</m> naturally gives rise to two important subs
+      paces: the <em>null space of <m>T</m></em> and the <em>image of <m>T</m></em>.
+    </p>
+  </introduction>
+    <definition xml:id="d_subspace">
+    <title>Subspace</title>
+    <idx><h>subspace</h></idx>
+    <idx><h>vector space</h><h>subspace</h></idx>
       <statement>
         <p>
           Let <m>V</m> be a vector space.
           A subset <m>W\subseteq V</m> is a
-          <term>subspace</term> of <m>V</m> if
-          <ol>
+          <term>subspace</term> of <m>V</m> if the following conditions hold:
+        </p>
+          <ol label="i">
             <li>
+              <title><m>W</m> contains the zero vector</title>
               <p>
-                <m>\boldzero\in W</m>,
+                We have <m>\boldzero\in W</m>.
               </p>
             </li>
             <li>
-              <p>
-                <m>\boldw_1, \boldw_2\in W\Rightarrow \boldw_1+\boldw_2\in W</m>, (i.e., <m>W</m> is
-                <term>closed under addition</term>),
+              <title><m>W</m> is closed under addition</title>
+              <p> For all <m>\boldv_1,\boldv_2\in V</m>, if <m>\boldv_1,\boldv_2\in W</m>, then <m>\boldv_1+\boldv_2\in W</m>. Using logical notation:
+              <me>
+                \boldv_1,\boldv_2\in W\implies \boldv_1+\boldv_2\in W
+              </me>.
               </p>
             </li>
             <li>
-              <p>
-                <m>\boldw\in W\Rightarrow k\boldw\in W</m> for all <m>k\in\R</m> (i.e., <m>W</m> is
-                <term>closed under scalar multiplication</term>).
+              <title><m>W</m> is closed under scalar multiplication</title>
+              <p> For all <m>c\in \R</m> and <m>\boldv\in V</m>, if <m>\boldv\in W</m>, then <m>c\boldv\in W</m>. In logical notation:
+                <me>\boldv\in W\Rightarrow c\boldv\in W</me>.
               </p>
             </li>
           </ol>
-        </p>
       </statement>
     </definition>
-    <paragraphs>
-      <title>Comments</title>
-    </paragraphs>
-    <p>
-      (1) You may see slightly different definitions for subspace in the literature:
-      e.g., some define a subspace to be a subset <m>W\subseteq V</m> which,
-      under the operations of addition and scalar multiplication of <m>V</m>,
-      is itself a vector space.
-      I prefer mine as it gives you a hands-on method of deciding whether a given subset of
-      <m>W\subseteq V</m> is in fact a sub{space} of <m>V</m>:
-      namely, determine whether each of properties (i)-(iii) hold for <m>W</m>.
-    </p>
-    <p>
-      (2) Each of properties (ii) and (iii) is stated as an <em>implication</em>.
-      Thus when verifying these,
-      as always we assume the antecedent and prove the consequent.
-    </p>
-    </paragraphs>
-    <paragraphs>
-      <title>Example</title>
-      <p>
-        Let <m>V=\R^2</m> and let <m>W\subseteq V</m> be the subset <m>W=\{(t,t)\in\R^2 \colon t\in\R\}</m>.
-        We claim <m>W</m> is a subspace.
-      </p>
-      <proof>
+    <example>
+      <statement>
+        <p>
+          Let <m>V=\R^2</m> and let
+          <me>W=\{(t,t)\in\R^2 \colon t\in\R\}
+          </me>.
+          Prove that <m>W</m> is a subspace.
+        </p>
+      </statement>
+      <solution>
         <p>
           We must show properties (i)-(iii) hold for <m>W</m>.
         </p>
+        <ol label="i">
+          <li>
+            <p>
+              The zero element of <m>V</m> is <m>\boldzero=(0,0)</m>,
+              which is certainly of the form <m>(t,t)</m>.
+              Thus <m>\boldzero\in W</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              We must prove the implication <m>\boldv_1, \boldv_2\in W\Rightarrow \boldv_1+\boldv_2\in W</m>.
+              <md>
+                <mrow>\boldv_1,\boldv_2\in W\amp \Rightarrow\amp  \boldv_1=(t,t), \boldv_2=(s,s) \text{ for some \(t,s\in\R\) }</mrow>
+                <mrow>\amp \Rightarrow\amp \boldv_1+\boldv_2=(t+s,t+s)</mrow>
+                <mrow>\amp \Rightarrow\amp \boldv_1+\boldv_2\in W</mrow>
+              </md>.
+            </p>
+          </li>
+          <li>
+            <p>
+              We must prove the implication <m>\boldv\in W\Rightarrow c\boldv\in W</m>, for any <m>c\in \R</m>. We have
+              <md>
+                <mrow>\boldv\in W\amp \Rightarrow\amp  \boldv=(t,t)</mrow>
+                <mrow>\amp \Rightarrow\amp  c\boldv=(ct,ct)</mrow>
+                <mrow>\amp \Rightarrow\amp  c\boldv\in W</mrow>
+              </md>
+            </p>
+          </li>
+        </ol>
+      </solution>
+    </example>
+    <example>
+      <statement>
         <p>
-          (i) The zero element of <m>V</m> is <m>\boldzero=(0,0)</m>,
-          which is certainly of the form <m>(t,t)</m>.
-          Thus <m>\boldzero\in W</m>.
+          Let <m>V=\R^n</m> and let
+          <me>
+            W=\{(x,y)\in \R^2\colon x, y\geq 0\}
+          </me>.
+          Is <m>W</m> a vector space? Decide which of the of properties (i)-(iii) in <xref ref="d_subspace"/> (if any) are satisfied by <m>W</m>.
+        </p>
+      </statement>
+      <solution>
+        <ol label="i">
+          <li>
+            <p>
+              Clearly <m>\boldzero=(0,0)\in W</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Suppose <m>\boldv_1=(x_1,y_1), \boldv_2=(x_2,y_2)\in W</m>. Then <m>x_1, x_2, y_1, y_2\geq 0</m>, in which case <m>x_1+x_2, y_1+y_2\geq 0</m>, and hence <m>\boldv_1+\boldv_2\in W</m>. Thus <m>W</m> is closed under addition.
+            </p>
+          </li>
+          <li>
+            <p>
+              The set <m>W</m> is <em>not</em> closed under scalar multiplication. Indeed, let <m>\boldv=(1,1)\in W</m>. Then <m>(-2)\boldv=(-2,-2)\notin W</m>.
+            </p>
+          </li>
+        </ol>
+      </solution>
+    </example>
+      <title>Two-step proof for subspaces</title>
+        <remark xml:id="rm_twostep_proof">
+      <statement>
+        <p>
+        As with proofs regarding linearity of functions, we can merge conditions (ii)-(iii) of into a single statement about linear combinations, deriving the following two-step method for proving a set <m>W</m> is a subspace of a vector space <m>V</m>:
+        </p>
+        <ol label="i">
+          <li>
+            <p>
+            Show <m>\boldzero_V\in W</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              Show that
+              <me>
+                \boldv_1, \boldv_2\in W\implies c\boldv_1+d\boldv_2\in W
+              </me>,
+              for all <m>c,d\in\R</m>.
+            </p>
+          </li>
+        </ol>
+      </statement>
+    </remark>
+
+        <remark xml:id="rm_subspace_is_vectorspace">
+          <title>Subspaces are vector spaces</title>
+      <statement>
+        <p>
+          If <m>W</m> is a subspace of a vector space <m>V</m>, then it <em>inherits</em> a vector space structure from <m>V</m> by simply  <em>restricting</em> the vector operations defined on <m>V</m> to the subset <m>W</m>.
         </p>
         <p>
-          (ii) We must prove the implication <m>\boldw_1, \boldw_2\in W\Rightarrow \boldw_1+\boldw_2\in W</m>.
+           It is important to understand how conditions (ii)-(iii) of <xref ref="d_subspace"/> come into play here. Without them we would not be able to say that restricting the vector operations of <m>V</m> to elements of <m>W</m> actually gives rise to well-defined operations on <m>W</m>. To be well-defined the operations must output elements that lie not just in <m>V</m>, but in <m>W</m> itself. This is precisely what being closed under addition and scalar multiplication guarantees.
+        </p>
+        <p>
+        Once we know restriction gives rise to well-defined operations on <m>W</m>, verifying the axioms of  <xref ref="d_vector_space"/> mostly amounts to observing that if a condition is true for all <m>\boldv</m> in <m>V</m>, it is certainly true for all <m>\boldv</m> in the subset <m>W</m>.
+        </p>
+        <p>
+          The <q>existential axioms</q> (iii) and (iv) of <xref ref="d_vector_space"/>, however, require special consideration. By definition, a subspace <m>W</m> contains the zero vector of <m>V</m>, and clearly this still acts as the zero vector when we restrict the vector operations to <m>W</m>. What about vector inverses? We know that for any <m>\boldv\in W</m> there is a vector inverse <m>-\boldv</m> lying somewhere in <m>V</m>. We must show that in fact <m>-\boldv</m> lies in <m>W</m>: <ie /> we need to show that the operation of taking the vector inverse is well-defined on <m>W</m>. We prove this as follows:
           <md>
-            <mrow>\boldw_1,\boldw_2\in W\amp \Rightarrow\amp  \boldw_1=(t,t), \boldw_2=(s,s) \text{ for some \(t,s\in\R\) }</mrow>
-            <mrow>\amp \Rightarrow\amp \boldw_1+\boldw_2=(t+s,t+s)</mrow>
-            <mrow>\amp \Rightarrow\amp \boldw_1+\boldw_2\in W</mrow>
+            <mrow>\boldv\in W \amp\implies (-1)\boldv\in W \amp (<xref ref="d_subspace"/>, \text{(iii) } )</mrow>
+            <mrow> \amp\implies -\boldv\in W \amp (<xref ref="th_vectorspace_props"/>) </mrow>
           </md>.
         </p>
+      </statement>
+    </remark>
+<paragraphs xml:id="ss_nullspace_image">
+  <title>Null space and image of a linear transformation</title>
+  <p>
+    Before looking at more examples, we first show how a linear transformation <m>T\colon V\rightarrow W</m> gives rise to two different subspaces: one insides <m>V</m>, and the other inside <m>W</m>. These are called the <em>null space</em> and <em>image</em> of <m>T</m>, respectively.
+  </p>
+  <definition xml:id="d_nullspace_image">
+    <title>Null space and image</title>
+    <idx><h>linear transformation</h><h>null space</h></idx>
+    <idx><h>linear transformation</h><h>image</h></idx>
+    <idx><h>null space</h></idx>
+    <idx><h>image</h></idx>
+
+    <statement>
+      <p>
+        Let <m>T\colon V\rightarrow W</m> be a linear transformation.
+      </p>
+      <ol>
+        <li>
+          <title>Null space</title>
+          <p>
+            The <term>null space</term> of <m>T</m>, denoted <m>\NS T</m>, is defined as
+            <me>
+              \NS T=\{\boldv\in V\colon T(\boldv)=\boldzero_W\}
+            </me>.
+          </p>
+        </li>
+        <li>
+          <title>Image</title>
+          <p>
+            The <term>image</term> (or <term>range</term>) of <m>T</m>, denoted <m>\im T</m>, is defined as
+            <me>
+              \im T=\{\boldw\in W\colon \boldw=T(\boldv) \text{ for some } \boldv\in V\}
+            </me>.
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </definition>
+    <remark xml:id="rm_nullspace_image">
+  <statement>
+    <p>
+    A few remarks:
+    </p>
+    <ol>
+      <li>
         <p>
-          (iii) We must prove the implication <m>\boldw\in W\Rightarrow k\boldw\in W</m>.
-          <md>
-            <mrow>\boldw\in W\amp \Rightarrow\amp  \boldw=(t,t)</mrow>
-            <mrow>\amp \Rightarrow\amp  k\boldw=(kt,kt)</mrow>
-            <mrow>\amp \Rightarrow\amp  k\boldw\in W</mrow>
-          </md>
+          Let <m>T\colon V\rightarrow W</m>. It is useful to keep in mind where <m>\NS T</m> and <m>\im T</m> <q>live</q> in this picture: we have <m>\NS T\subseteq V</m> and <m>\im T\subseteq W</m>. In other words, the null space is a subset of the domain, and the image is a subset of the codomain.
         </p>
-      </proof>
-    </paragraphs>
+      </li>
+      <li>
+        <p>
+          More generally we can define the image (or range) <m>\im f</m>, for any function of sets <m>f\colon A\rightarrow B</m>: namely,
+          <me>
+            \im f=\{b\in B\colon b=f(a) \text{ for some } a\in A\}
+          </me>.
+          What is special about a linear transformation <m>T\colon V\rightarrow W</m> is that <m>\im T</m> is in fact a subspace, as we will see in <xref ref="th_nullspace_image"/>.
+        </p>
+          <p>
+          Note that to decide whether or not an element <m>b\in B</m> is an element of <m>\im f</m>, we must determine whether there is an element <m>a\in A</m> such that <m>f(a)=b</m>. As a useful English shorthand for this condition, we say <q><m>b</m> is hit by <m>f</m></q>.
+        </p>
+      </li>
+      <li>
+        <p>
+          The notion of a null space is analogous to the set of zeros (or roots) of a real-valued function <m>f\colon X\rightarrow \R</m>,
+          <me>
+            \{x\in X\colon f(x)=0\}
+          </me>,
+          and <q>the zeros of <m>T</m></q> is a useful English shorthand for <m>\NS T</m>. As above, however, there is an important difference between the null space of a linear transformation and the zeros of an arbitrary real-valued function: namely, the null space of a linear transformation comes with the added structure of a vector space.
+        </p>
+      </li>
+    </ol>
+  </statement>
+</remark>
+<theorem xml:id="th_nullspace_image">
+  <title>Null space and image</title>
+
+  <statement>
+    <p>
+    If <m>T\colon V\rightarrow W</m> is a linear transformation, then <m>\NS T</m> is a subspace of <m>V</m>, and <m>\im T</m> is a subspace of <m>W</m>.
+    </p>
+  </statement>
+  <proof>
+      <case>
+       <title>Null space of <m>T</m></title>
+      <p>
+      We use the two-step technique to prove <m>\NS T</m> is a subspace.
+      </p>
+      <ol>
+        <li>
+          <p>
+            Since <m>T(\boldzero_V)=\boldzero_W</m> (<xref ref="th_trans_props"/>), we see that <m>\boldzero_V\in \NS T</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Suppose <m>\boldv_1, \boldv_2\in \NS T</m>. Given any <m>c,d\in \R</m>, we have
+            <md>
+              <mrow>T(c\boldv_1+d\boldv_2) \amp=cT(\boldv_1)+dT(\boldv_2) \amp (T \text{ is linear, } <xref ref="th_trans_props"/>)</mrow>
+              <mrow> \amp=c\boldzero_W+d\boldzero_W \amp (\boldv_1, \boldv_2\in \NS T) </mrow>
+              <mrow>  \amp = \boldzero_W</mrow>
+            </md>.
+            This shows that <m>c\boldv_1+d\boldv_2\in \NS T</m>, completing our proof.
+          </p>
+        </li>
+      </ol>
+      </case>
+      <case>
+       <title>Image of <m>T</m></title>
+      <p>
+        The proof proceeds in a similar manner.
+      </p>
+      <ol>
+        <li>
+          <p>
+            Since <m>T(\boldzero_V)=\boldzero_W</m> (<xref ref="th_trans_props"/>), we see that <m>\boldzero_W</m> is <q>hit</q> by <m>T</m>, and hence is a member of <m>\im T</m>.
+          </p>
+        </li>
+      </ol>
+      </case>
+  </proof>
+
+</theorem>
+
+</paragraphs>
+
     <paragraphs>
       <title>Example</title>
       <p>
@@ -245,7 +435,6 @@
       Note that <m>W_1\cup W_2</m> is in fact closed under scalar multiplication.
     </p>
     </paragraphs>
-  </introduction>
   <subsection>
     <title>Span</title>
     <paragraphs>
@@ -364,7 +553,7 @@
       This is because scalar multiplication by <m>r</m> in <m>\R_{>0}</m> is defined as exponentiation.
       Thus <m>\Span(\{a\})=\{a^r\colon r\in\R\}=\R_{>0}</m>.
       The last equality holds since the exponential function
-      <m>f(x)=a^x</m> has range all positive reals for any base <m>a\ne 1</m>.
+      <m>f(x)=a^x</m> has image all positive reals for any base <m>a\ne 1</m>.
     </p>
     </paragraphs>
     <paragraphs>
@@ -486,8 +675,8 @@
           </p>
           <p>
             In other words,
-            <m>\NS A</m> is the set of solutions to the homogenous matrix equation <m>A\boldx=\boldzero</m>,
-            or equivalently, its associated homogenous system of equations.
+            <m>\NS A</m> is the set of solutions to the homogeneous matrix equation <m>A\boldx=\boldzero</m>,
+            or equivalently, its associated homogeneous system of equations.
           </p>
         </statement>
       </definition>
@@ -497,7 +686,7 @@
         its null space <m>\NS T</m> is always a <em>subspace</em> !!
       </p>
     </paragraphs>
-    <theorem>
+    <theorem xml:id="th_nullspace">
       <title>Null space theorem</title>
       <statement>
         <p>
@@ -599,17 +788,17 @@
     </paragraphs>
   </subsection>
   <subsection>
-    <title>Range of a linear transformation</title>
+    <title>image of a linear transformation</title>
     <paragraphs>
-      <title>Range</title>
+      <title>image</title>
       <definition>
         <statement>
           <p>
             In general given a function
             <m>f\colon A\rightarrow B</m> with domain <m>A</m> and codomain <m>B</m>,
-            its <term>range</term> is the set
+            its <term>image</term> is the set
             <me>
-              \range f=\{b\in B\colon b=f(a) \text{ for some \(a\in A\) } \}=f(A)
+              \im f=\{b\in B\colon b=f(a) \text{ for some \(a\in A\) } \}=f(A)
             </me>,
             where the last equality makes use of our
             <q>image of a set</q>
@@ -619,19 +808,19 @@
       </definition>
       <p>
         We will use the same notation for a linear transformation <m>T\colon V\rightarrow W</m>.
-        The range of <m>T</m> is a subset of the codomain <m>W</m>.
+        The image of <m>T</m> is a subset of the codomain <m>W</m>.
         Not surprisingly, it is in fact a
         <em>subspace</em> of <m>W</m>.
       </p>
     </paragraphs>
     <paragraphs>
-      <title>Range</title>
-      <theorem>
-        <title>Range is a subspace</title>
+      <title>image</title>
+      <theorem xml:id="th_image">
+        <title>image is a subspace</title>
         <statement>
           <p>
             Let <m>T\colon V\rightarrow W</m> be a linear transformation.
-            Then <m>\range T</m> is a subspace of <m>W</m>.
+            Then <m>\im T</m> is a subspace of <m>W</m>.
           </p>
         </statement>
       </theorem>
@@ -639,16 +828,16 @@
         <ol>
           <li>
             <p>
-              We must show <m>\boldzero_W\in \range(T)</m>.
+              We must show <m>\boldzero_W\in \im(T)</m>.
               But <m>\boldzero_W=T(\boldzero_V)</m>.
-              Thus <m>\boldzero_W\in\range(T)</m>.
+              Thus <m>\boldzero_W\in\im(T)</m>.
             </p>
           </li>
           <li>
             <p>
-              Suppose <m>\boldw_1,\boldw_2\in \range(T)</m>.
+              Suppose <m>\boldw_1,\boldw_2\in \im(T)</m>.
               This means there are <m>\boldv_1, \boldv_2\in V</m> such that <m>T(\boldv_i)=\boldw_i</m> for <m>i=1,2</m>.
-              We must show <m>\boldw=\boldw_1+\boldw_2\in\range(T)</m>.
+              We must show <m>\boldw=\boldw_1+\boldw_2\in\im(T)</m>.
               Set <m>\boldv=\boldv_1+\boldv_2</m>.
               Then
               <md>
@@ -657,15 +846,15 @@
                 <mrow>\amp =\amp \boldw_1+\boldw_2=\boldw</mrow>
               </md>.
               Since we have provided a <m>\boldv</m> with <m>T(\boldv)=\boldw_1+\boldw_2</m>,
-              we see that <m>\boldw_1+\boldw_2\in\range(T)</m>.
+              we see that <m>\boldw_1+\boldw_2\in\im(T)</m>.
             </p>
           </li>
           <li>
             <p>
-              Suppose <m>\boldw\in\range(T)</m>.
+              Suppose <m>\boldw\in\im(T)</m>.
               Then there is a <m>\boldv\in V</m> with <m>T(\boldv)=\boldw</m>.
               Then <m>T(k\boldv)=kT(\boldv)=k\boldw</m>,
-              showing <m>k\boldw\in\range(T)</m>.
+              showing <m>k\boldw\in\im(T)</m>.
             </p>
           </li>
         </ol>
@@ -676,17 +865,17 @@
       <p>
         Let <m>T=T_A\colon \R^2\rightarrow\R^3</m>,
         where <m>A=\begin{bmatrix}1\amp 1\\ 2\amp 1\\ 3\amp 5 \end{bmatrix}</m>.
-        According to the theorem, <m>\range T_A</m> is a subspace of <m>\R^3</m>.
+        According to the theorem, <m>\im T_A</m> is a subspace of <m>\R^3</m>.
         Can we identify this subspace as a familiar geometric object?
       </p>
       <p>
-        By definition <m>\range T_A</m> is the set
+        By definition <m>\im T_A</m> is the set
         <me>
           \{\boldy\in\R^3\colon \boldy=T_A(\boldx) \text{ for some \(\boldx\in \R^3\) } \}=\left\{\boldy=\begin{bmatrix}a\\ b\\ c \end{bmatrix} \colon \boldy=A\boldx \text{ for some \(\boldx\in\R^2\) } \right\}
         </me>.
       </p>
       <p>
-        Thus to compute <m>\range T_A</m> we must determine which choice of
+        Thus to compute <m>\im T_A</m> we must determine which choice of
         <m>\boldy=(a,b,c)</m> makes the system <m>A\boldx=\boldy</m> consistent.
         We answer this using our good,
         old friend Gaussian elimination!
@@ -696,7 +885,7 @@
       </p>
       <p>
         To be consistent we need <m>-7a+2b+c=0</m>.
-        We conclude that <m>\range T</m> is the set of all <m>(a,b,c)</m> satisfying <m>-7a+2b+c=0</m>.
+        We conclude that <m>\im T</m> is the set of all <m>(a,b,c)</m> satisfying <m>-7a+2b+c=0</m>.
         Geometrically this is the plane passing through <m>O</m> with normal vector <m>\boldn=(-7,2,1)</m>.
       </p>
     </paragraphs>
@@ -707,24 +896,24 @@
         <m>T(A)=A^T-A</m>.
         We saw that <m>\NS T</m> was the space of symmetric matrices.
         The theorem above tells us that
-        <m>\range T</m> is also a subspace of <m>M_{nn}</m>.
+        <m>\im T</m> is also a subspace of <m>M_{nn}</m>.
         What is it?
       </p>
       <p>
-        Take <m>B\in \range T</m>.
+        Take <m>B\in \im T</m>.
         By definition this means <m>B=T(A)=A^T-A</m> for some <m>A</m>.
         So one, somewhat unsatisfying way of describing
-        <m>\range T</m> is as the set of all matrices of the form <m>A^T-A</m>.
+        <m>\im T</m> is as the set of all matrices of the form <m>A^T-A</m>.
       </p>
       <p>
         Let's investigate further.
         Notice that if <m>B=A^T-A</m>,
         then <m>B^T=(A^T-A)^T=(A^T)^T-A^T=A-A^T=-B</m>.
-        Thus every element <m>B\in \range T</m> satisfies <m>B^T=-B</m>.
+        Thus every element <m>B\in \im T</m> satisfies <m>B^T=-B</m>.
         Such matrices are called <term>skew-symmetric</term>.
       </p>
       <p>
-        I claim further that in fact <m>\range T</m> is the the set of
+        I claim further that in fact <m>\im T</m> is the the set of
         <em>all</em> skew-symmetric matrices.
         To prove this, I need to show that given a skew-symmetric matrix <m>B</m>,
         there is a matrix <m>A</m> such that <m>T(A)=B</m>.
@@ -738,9 +927,9 @@
         </me>.
       </p>
       <p>
-        This shows that <m>B\in \range T</m>,
+        This shows that <m>B\in \im T</m>,
         and concludes the proof that
-        <m>\range T</m> is the set of all skew-symmetric matrices.
+        <m>\im T</m> is the set of all skew-symmetric matrices.
       </p>
     </paragraphs>
   </subsection>
