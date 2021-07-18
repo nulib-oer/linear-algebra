@@ -122,7 +122,7 @@
           <title>Two-step proof for subspaces</title>
       <statement>
         <p>
-        As with proofs regarding linearity of functions, we can merge conditions (ii)-(iii) of into a single statement about linear combinations, deriving the following two-step method for proving a set <m>W</m> is a subspace of a vector space <m>V</m>:
+        As with proofs regarding linearity of functions, we can merge conditions (ii)-(iii) of <xref ref="d_subspace"/> into a single statement about linear combinations, deriving the following two-step method for proving a set <m>W</m> is a subspace of a vector space <m>V</m>:
         </p>
         <ol label="i">
           <li>
@@ -159,7 +159,7 @@
           The <q>existential axioms</q> (iii) and (iv) of <xref ref="d_vector_space"/>, however, require special consideration. By definition, a subspace <m>W</m> contains the zero vector of <m>V</m>, and clearly this still acts as the zero vector when we restrict the vector operations to <m>W</m>. What about vector inverses? We know that for any <m>\boldv\in W</m> there is a vector inverse <m>-\boldv</m> lying somewhere in <m>V</m>. We must show that in fact <m>-\boldv</m> lies in <m>W</m>: <ie /> we need to show that the operation of taking the vector inverse is well-defined on <m>W</m>. We prove this as follows:
           <md>
             <mrow>\boldv\in W \amp\implies (-1)\boldv\in W \amp (<xref ref="d_subspace"/>, \text{(iii) } )</mrow>
-            <mrow> \amp\implies -\boldv\in W \amp (<xref ref="th_vectorspace_props"/>) </mrow>
+            <mrow> \amp\implies -\boldv\in W \amp (<xref ref="th_vectorspace_props"/>, (iii)) </mrow>
           </md>.
         </p>
       </statement>
@@ -219,10 +219,7 @@
           <me>
             \im f=\{b\in B\colon b=f(a) \text{ for some } a\in A\}
           </me>.
-          What is special about a linear transformation <m>T\colon V\rightarrow W</m> is that <m>\im T</m> is in fact a subspace, as we will see in <xref ref="th_nullspace_image"/>.
-        </p>
-          <p>
-          Note that to decide whether or not an element <m>b\in B</m> is an element of <m>\im f</m>, we must determine whether there is an element <m>a\in A</m> such that <m>f(a)=b</m>. As a useful English shorthand for this condition, we say <q><m>b</m> is hit by <m>f</m></q>.
+          To decide whether or not an element <m>b\in B</m> is an element of <m>\im f</m>, we must determine whether there is an element <m>a\in A</m> such that <m>f(a)=b</m>. That is somewhat of a mouthful, and as such we often say simply <q><m>b</m> is hit by <m>f</m></q> (or not) for this condition.
         </p>
       </li>
       <li>
@@ -231,7 +228,11 @@
           <me>
             \{x\in X\colon f(x)=0\}
           </me>,
-          and <q>the zeros of <m>T</m></q> is a useful English shorthand for <m>\NS T</m>. As above, however, there is an important difference between the null space of a linear transformation and the zeros of an arbitrary real-valued function: namely, the null space of a linear transformation comes with the added structure of a vector space.
+          and <q>the zeros of <m>T</m></q> is a useful English shorthand for <m>\NS T</m>.
+           However, there is an important difference between the null space of a linear transformation and the zeros of an arbitrary real-valued function: the null space of a linear transformation comes with the added structure of a vector space (<xref ref="th_nullspace_image"/>), whereas the zeros of an arbitrary function in general do not.
+        </p>
+        <p>
+          The same observation can be made about the image of a linear transformation (<xref ref="th_nullspace_image"/>), in comparison to the image of an arbitrary function.
         </p>
       </li>
     </ol>
@@ -284,80 +285,199 @@
       </ol>
       </case>
   </proof>
-
 </theorem>
+<p>
+  <xref ref="th_nullspace_image"/> provides us a with a useful indirect way of proving a subset <m>W\subseteq V</m> is a subspace:
+  namely, find a linear transformation $T$ for which <m>W=\NS T</m>. (You could also identify <m>W=\im T</m> for some linear transformation <m>T</m>, but this approach tends to be not as convenient.
+</p>
+<example>
+  <statement>
+    <p>
+      Prove that the set <m>W\subseteq\R^3</m> of all vectors <m>(x,y,z)</m> satisfying
+      <m>x+2y+3z=x-y-z=0</m> is a subspace of <m>\R^3</m>.
+    </p>
+    <solution>
+      <p>
+          Let <me>A=\begin{bmatrix}1\amp 2\amp 3\\ 1\amp -1\amp -1 \end{bmatrix}</me>, and let
+          <md>
+            <mrow>T_A\colon \R^3 \amp\rightarrow \R^2 </mrow>
+            <mrow> (x,y,z)\amp\mapsto (x+2y+3z, x-y-z) </mrow>
+          </md>
+          be its associated linear transformation. Then
+          <md>
+            <mrow> \NS T_A \amp =\{(x,y,z)\in\R^3\colon T_A(x,y,z)=(0,0)\} </mrow>
+            <mrow> \amp = \{(x,y,z)\in\R^3\colon (x+2y+3z,x-y-z)=(0,0)\} </mrow>
+            <mrow>  \amp = \{(x,y,z)\in\R^3\colon x+2y+3z=x-y-z=0\}</mrow>
+            <mrow>  \amp = W</mrow>
+          </md>.
+          This shows that <m>W</m> can be identified as the null space of a linear transformation, and hence is a subspace of <m>\R^3</m>.
+      </p>
+    </solution>
+
+  </statement>
+</example>
+<definition xml:id="d_symmetric_skewsymmetric">
+  <title>Symmetric and skew-symmetric matrices</title>
+  <statement>
+    <p>
+    A matrix <m>A\in M_{nn}</m> is <term>symmetric</term> if <m>A^T=A</m>. It is <term>skew-symmetric</term> if <m>A^T=-A</m>.
+    </p>
+  </statement>
+</definition>
+<example xml:id="eg_symmetric_skesymmetric_subspace">
+  <title>Vector spaces of symmetric/skew-symmetric matrices</title>
+
+  <statement>
+    <p>
+      Let <m>V=M_{nn}</m>, let <m>W_1</m> be the set of all symmetric <m>n\times n</m> matrices, and let <m>W_2</m> be the set of all skew-symmetric <m>n\times n</m> matrices. Prove that <m>W_1</m> and <m>W_2</m> are subspaces of <m>V</m>.
+    </p>
+    <solution>
+      <p>
+        Define functions <m>T_i\colon M_{nn}\rightarrow M_{nn}</m>, <m>i=1,2</m>, as follows:
+        <md>
+          <mrow>T_1(A) \amp = A^T-A </mrow>
+          <mrow> T_2(A)\amp = A^T+A</mrow>
+        </md>.
+        Firstly, it is easy to see, using <xref ref="th_trans_props"/> that both <m>T_1</m> and <m>T_2</m> are both linear transformations. For example, for <m>T_1</m> we have
+        <md>
+          <mrow>T_1(cA+dB) \amp=(cA+dB)^T-(cA+dB) </mrow>
+          <mrow> \amp=cA^T+dB^T-cA-cB </mrow>
+          <mrow>  \amp = c(A^T-A)+d(B^T-B)</mrow>
+          <mrow>  \amp = cT_1(A)+dT_1(B)</mrow>
+        </md>.
+        As similar proof applies to <m>T_2</m>.
+      </p>
+      <p>
+        Next, it is easy to see that <m>W_1=\NS T_1</m> and <m>W_2=\NS T_2</m>. Taking <m>W_1</m> for example, we have
+        <md>
+          <mrow>A \text{ symmetric} \amp\iff A^T=A </mrow>
+          <mrow> \amp\iff A^T-A=\boldzero_{n\times n} </mrow>
+          <mrow>  \amp \iff T_1(A)=\boldzero_{n\times n}</mrow>
+          <mrow>  \amp \iff A\in \NS T_1</mrow>
+        </md>.
+        Having identified <m>W_1</m> and <m>W_2</m> as null spaces of linear transformations, we conclude that they are subspaces of <m>M_{nn}</m>.
+      </p>
+    </solution>
+  </statement>
+</example>
+<p>
+  The next two examples illustrate how to compute the image of a given linear transformation <m>T\colon V\rightarrow W</m>. The examples make clear that computing images (i.e., determining the set of elements of <m>W</m> that are hit by <m>T</m>) is often more onerous than computing null spaces.
+</p>
+<example>
+  <statement>
+    <p>
+      Let <m>T=T_A\colon \R^2\rightarrow\R^3</m>,
+      where <m>A=\begin{bmatrix}1\amp 1\\ 2\amp 1\\ 3\amp 5 \end{bmatrix}</m>.
+      According to <xref ref="th_nullspace_image"/>, <m>\im T_A</m> is a subspace of <m>\R^3</m>.
+      Identify this subspace as a familiar geometric object.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      By definition <m>\im T_A</m> is the set
+      <me>
+        \{\boldy\in\R^3\colon \boldy=T_A(\boldx) \text{ for some \(\boldx\in \R^3\) } \}=\left\{\boldy\colon \boldy=A\boldx \text{ for some \(\boldx\in\R^2\) } \right\}
+      </me>.
+    </p>
+    <p>
+      Thus to compute <m>\im T_A</m> we must determine which choice of
+      <m>\boldy=(a,b,c)</m> makes the system <m>A\boldx=\boldy</m> consistent.
+      We answer this using our old friend Gaussian elimination!
+      <md>
+        <mrow> \begin{amatrix}[rr|r] 1\amp 1\amp a\\ 2\amp 1\amp b\\ 3\amp 5\amp c \end{amatrix} \amp \xrightarrow[r_3-3r_1]{r_2-2r_1} \begin{amatrix}[rr|r] 1\amp 1\amp a\\ 0\amp 1\amp 2a-b\\ 0\amp 0\amp -7a+2b+c \end{amatrix}</mrow>
+      </md>.
+      To be consistent we need <m>-7a+2b+c=0</m>.
+      We conclude that <m>\im T</m> is the set of all <m>(a,b,c)</m> satisfying <m>-7a+2b+c=0</m>.
+      Geometrically this is the plane passing through <m>(0,0,0)</m> with normal vector <m>\boldn=(-7,2,1)</m>.
+    </p>
+  </solution>
+</example>
+<example>
+  <statement>
+    <p>
+      Consider again the linear transformation <m>T_1\colon M_{nn}\rightarrow M_{nn}</m>,
+      <m>T_1(A)=A^T-A</m>, from <xref ref="eg_symmetric_skesymmetric_subspace"/>.
+      We saw that <m>\NS T_1</m> was the space of symmetric matrices.
+      Identify <m>\im T_1</m> as a familiar subspace of <m>M_{nn}</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      Take <m>B\in \im T_1</m>.
+      By definition this means <m>B=T(A)=A^T-A</m> for some <m>A</m>.
+      So one, somewhat unsatisfying way of describing
+      <m>\im T_1</m> is as the set of all matrices of the form <m>A^T-A</m>.
+    </p>
+    <p>
+      Let's investigate further.
+      Notice that if <m>B=A^T-A</m>,
+      then <m>B^T=(A^T-A)^T=(A^T)^T-A^T=A-A^T=-B</m>.
+      Thus every element <m>B\in \im T</m> satisfies <m>B^T=-B</m>: i.e., all elements of the image are skew-symmetric!
+    </p>
+    <p>
+      We claim further that in fact <m>\im T_1</m> is the the set of
+      <em>all</em> skew-symmetric matrices.
+      To prove this, we need to show that given a skew-symmetric matrix <m>B</m>, we have <m>B\in \im T_1</m>: <ie />, that
+      there is a matrix <m>A</m> such that <m>T_1(A)=B</m>.
+    </p>
+    <p>
+      Suppose <m>B</m> satisfies <m>B^T=-B</m>.
+      Let <m>A=-\frac{1}{2}B</m>.
+      Then
+      <me>
+        T_1(A)=T_1(-\frac{1}{2}B)=-\frac{1}{2}(B^T-B)=-\frac{1}{2}(-B-B)=B
+      </me>.
+    </p>
+    <p>
+      This shows that <m>B\in \im T_1</m>,
+      and concludes the proof that
+      <m>\im T_1</m> is the set of all skew-symmetric matrices.
+    </p>
+  </solution>
+</example>
+<!-- <example>
+  <statement>
+    <p>
+      The set <m>W</m> of all infinitely differentiable functions <m>f</m> satisfying the differential equation
+      <m>f''(x)+xf'(x)=3f(x)</m> is a subspace of <m>C^\infty(\R)</m>.
+    </p>
+    <p>
+      Indeed <m>W</m> is <m>\NS T</m>,
+      where <m>T\colon C^\infty(\R)\rightarrow C^\infty(\R)</m> is the linear transformation defined as <m>T(f)=f''+xf'-3f</m>.
+    </p>
+    <p>
+      (I leave it to you to show <m>T</m> is linear.)
+    </p>
+  </statement>
+</example> -->
+    <remark xml:id="rm_lines_planes">
+    <title>Lines and planes</title>
+  <statement>
+    <p>
+      Recall that a line <m>\ell</m> in <m>\R^2</m> that <em>passes through the origin </em> can be expressed as the set of solutions
+      <m>(x_1,x_2)\in\R^2</m> to an equation of the form
+      <me>
+      \ell\colon  ax_1+bx_2=0
+      </me>.
+      Similarly, a plane <m>\mathcal{P}</m> in <m>\R^3</m> that <em>passes through the origin</em> can be expressed as the the set of solutions
+      <m>(x_1,x_2,x_3)</m> to an equation of the form
+      <me>
+        \mathcal{P}\colon ax_1+bx_2+cx_3=0
+      </me>.
+    Using the language of linear algebra, we see that the line <m>\ell</m> is precisely <m>\NS T_A</m>, where <m>A=[a\ b]</m>, and the plane <m>\mathcal{P}</m> is precisely <m>\NS T_B</m>, where <m>B=[a \ b\ c]</m>. We conclude from <xref ref="th_nullspace_image"/>
+      that lines in <m>\R^2</m> and planes in <m>\R^3</m> are subspaces, <em>as long as they pass through the origin</em>.
+    </p>
+    <p>
+      On the other hand, a line or plane that does <em>not</em>
+      pass through the origin is not a subspace,
+      since it does not contain the zero vector.
+    </p>
+  </statement>
+</remark>
 
 </paragraphs>
 
-    <paragraphs>
-      <title>Example</title>
-      <p>
-        Let <m>V=\R^n</m>, and treat elements of <m>V</m> as
-        <em>column vectors</em>.
-        Fix a vector <m>\boldv_0\in V</m>.
-        Let <m>W\subseteq V</m> be the subset <m>W=\{\boldw\in \R^n\colon \boldv_0^T\boldw=0\}</m>.
-        We claim <m>W</m> is a subspace.
-      </p>
-      <proof>
-        <p>
-          We must show properties (i)-(iii) hold for <m>W</m>.
-        </p>
-        <p>
-          (i) The zero element of <m>V</m> is <m>\boldzero=\colvec{0\\ \vdots\\ 0}</m>.
-          Clearly <m>\boldv_0^T\boldzero=0</m>.
-          Thus <m>\boldzero\in W</m>.
-        </p>
-        <p>
-          (ii) We must prove the implication <m>\boldw_1, \boldw_2\in W\Rightarrow \boldw_1+\boldw_2\in W</m>.
-          <md>
-            <mrow>\boldw_1,\boldw_2\in W\amp \Rightarrow\amp  \boldv_0^T\boldw_1=0,\boldv_0^T\boldw_2=0</mrow>
-            <mrow>\amp \Rightarrow\amp \boldv_0^T(\boldw_1+\boldw_2)=\boldv_0^T\boldw_1+\boldv_0^T\boldw_2=0+0=0</mrow>
-            <mrow>\amp \Rightarrow\amp  \boldw_1+\boldw_2\in W</mrow>
-          </md>.
-        </p>
-        <p>
-          (iii) We must prove the implication <m>\boldw\in W\Rightarrow k\boldw\in W</m>.
-          <md>
-            <mrow>\boldw\in W\amp \Rightarrow\amp  \boldv_0^T\boldw=0</mrow>
-            <mrow>\amp \Rightarrow\amp  \boldv_0^T(k\boldw)=k\boldv_0^T\boldw=k0=0</mrow>
-            <mrow>\amp \Rightarrow\amp  k\boldw\in W</mrow>
-          </md>
-        </p>
-      </proof>
-    </paragraphs>
-    <paragraphs>
-      <title>Lines and planes</title>
-      <p>
-        Recall that a line in <m>\R^2</m> \alert{containing the origin <m>(0,0)</m>} can be expressed as the set of solutions
-        <m>(x_1,x_2)\in\R^2</m> to an equation of the form
-        <me>
-          ax_1+bx_2=0, \text{ or }  \colvec{a\\b}^T\colvec{x_1\\ x_2}=0
-        </me>
-      </p>
-      <p>
-        Similarly, a plane in <m>\R^3</m> \alert{containing the origin <m>(0,0,0)</m>} can be expressed as the the set of solutions
-        <m>(x_1,x_2,x_3)</m> to an equation of the form
-        <me>
-          ax_1+bx_2+cx_3=0, \text{ or }  \colvec{a\\b\\c}^T\colvec{x_1\\x_2\\x_3}=0
-        </me>.
-      </p>
-      <p>
-        By the previous example we see that lines in <m>\R^2</m> containing the origin are subspaces,
-        as are planes in <m>\R^3</m> containing the origin!
-        Both can be expressed in the form <m>W=\left\{\boldx\colon \boldv_0^T\boldx=0\right\}</m>:
-        take <m>\boldv_0=(a,b)</m> in the first case,
-        and <m>\boldv_0=(a,b,c)</m> in the second.
-      </p>
-      <p>
-        On the other hand, a line or place that does <em>not</em>
-        contain the origin is not a subspace,
-        since it does not contain <m>\boldzero</m>.
-      </p>
-      <p>
-        We will revisit this example after defining the dot product on <m>\R^n</m>.
-      </p>
-    </paragraphs>
-    In fact these are all sub{spaces} of <m>V</m>. Proof: (i) the zero function, <m>h(x)=0</m> for all <m>x</m>, is <m>\infty</m>-differentiable, and thus is an element of each of these sets; (ii)-(iii) these sets being closed under addition and scalar mult. is a consequence of calculus results about sums and scalar multiples of continuous/differentiable functions.
+    <!-- In fact these are all sub{spaces} of <m>V</m>. Proof: (i) the zero function, <m>h(x)=0</m> for all <m>x</m>, is <m>\infty</m>-differentiable, and thus is an element of each of these sets; (ii)-(iii) these sets being closed under addition and scalar mult. is a consequence of calculus results about sums and scalar multiples of continuous/differentiable functions. -->
     <paragraphs>
     <title>Polynomials</title>
     <p>
@@ -644,294 +764,5 @@
       </proof>
     </paragraphs>
   </subsection>
-  <subsection>
-    <title>Null space</title>
-    <paragraphs>
-      <title>Null space of a linear transformation</title>
-      <p>
-        The notion of span is a useful tool for constructing subspaces inside a space <m>V</m>:
-        given any collection <m>\{\boldv_1, \boldv_2, \dots, \boldv_r\}</m>,
-        we now know that the set <m>W=\Span(\{\boldv_1,\boldv_2,\dots, \boldv_r\})</m> is guaranteed to be a subspace of <m>V</m>.
-      </p>
-      <p>
-        The notion of a <em>null space</em>
-        of a linear transformation
-        <m>T\colon V\rightarrow W</m> provides another useful tool for constructing subspaces.
-      </p>
-      <definition>
-        <statement>
-          <p>
-            The <term>null space</term> of a linear transformation <m>T\colon V\rightarrow W</m> is the set
-            <me>
-              \NS T\colon =\{\boldv\colon T(\boldv)=\boldzero_W \}
-            </me>.
-          </p>
-          <p>
-            In the special case where <m>T\colon \R^n\rightarrow \R^m</m> and <m>T=T_A</m>,
-            we may write <m>\NS A</m> for <m>\NS T_A</m>:
-            by definition this is the set
-            <me>
-              \NS A=\NS T_A=\{\boldx\in \R^n\colon A\boldx=\underset{m\times 1}{\boldzero}\}
-            </me>.
-          </p>
-          <p>
-            In other words,
-            <m>\NS A</m> is the set of solutions to the homogeneous matrix equation <m>A\boldx=\boldzero</m>,
-            or equivalently, its associated homogeneous system of equations.
-          </p>
-        </statement>
-      </definition>
-      <p>
-        As we see in the next theorem,
-        given linear <m>T\colon V\rightarrow W</m>,
-        its null space <m>\NS T</m> is always a <em>subspace</em> !!
-      </p>
-    </paragraphs>
-    <theorem xml:id="th_nullspace">
-      <title>Null space theorem</title>
-      <statement>
-        <p>
-          Let <m>T\colon V\rightarrow W</m>.
-          Then <m>\NS T</m> is a subspace of <m>V</m>.
-        </p>
-      </statement>
-    </theorem>
-    <proof>
-      <ol>
-        <li>
-          <p>
-            Since <m>T(\boldzero_V)=\boldzero_W</m>,
-            we see that <m>\boldzero_V\in \NS T</m>.
-          </p>
-        </li>
-        <li>
-          <p>
-            Suppose <m>\boldv_1, \boldv_2\in \NS T</m>.
-            We have
-            <md>
-              <mrow>T(\boldv_1+\boldv_2)\amp =T(\boldv_1)+T(\boldv_2) \amp \text{ (\(T\) is linear) }</mrow>
-              <mrow>\amp =\boldzero_W+\boldzero_W \amp \text{ (since \(\boldv_1,\boldv_2\in\NS T\)) }</mrow>
-              <mrow>\amp =\boldzero_W</mrow>
-            </md>.
-            Thus <m>\boldv_1+\boldv_2\in \NS T</m>,
-            proving the implication <m>\boldv_1,\boldv_2\in\NS T\Rightarrow \boldv_1+\boldv_2\in\NS T</m>.
-          </p>
-        </li>
-        <li>
-          <p>
-            Suppose <m>\boldv\in\NS T</m>.
-            We have
-            <md>
-              <mrow>T(c\boldv)\amp =cT(\boldv) \amp \text{ (\(T\) is linear) }</mrow>
-              <mrow>\amp =c\boldzero_W \amp \text{ (since \(\boldv\in\NS T\)) }</mrow>
-              <mrow>\amp =\boldzero_W</mrow>
-            </md>.
-            This shows <m>c\boldv\in\NS T</m>,
-            proving the implication <m>\boldv\in\NS T\Rightarrow c\boldv\in\NS T</m>.
-          </p>
-        </li>
-      </ol>
-      <p>
-        Since <m>\NS T</m> satisfies the conditions (i)-(iii),
-        we see that it is a subspace of <m>V</m>.
-      </p>
-    </proof>
-    <paragraphs>
-      <title>Examples</title>
-      <p>
-        The theorem gives us a clever,
-        indirect way of proving a subset <m>V'\subseteq V</m> is a subspace:
-        namely, find a linear transformation
-        <m>T\colon V\rightarrow W</m> for which <m>V'=\NS T</m> !!
-      </p>
-      <example>
-        <statement>
-          <p>
-            The set <m>W\subseteq\R^3</m> of all vectors <m>(x,y,z)</m> satisfying
-            <m>x+2y+3z=x-y-z=0</m> is a subspace of <m>\R^3</m>.
-          </p>
-          <p>
-            Indeed we have <m>W=\NS A</m> where <m>A=\begin{bmatrix}1\amp 2\amp 3\\ 1\amp -1\amp -1 \end{bmatrix}</m>.
-          </p>
-        </statement>
-      </example>
-      <example>
-        <statement>
-          <p>
-            The set <m>W=\{A\in M_{nn}\colon A^T=A\}</m>,
-            consisting of all symmetric <m>n\times n</m> matrices,
-            is a subspace of <m>M_{nn}</m>.
-          </p>
-          <p>
-            Indeed, we have <m>W=\NS T</m>,
-            where <m>T\colon M_{nn}\rightarrow M_{nn}</m> is the linear transformation defined as <m>T(A)=A^T-A</m>.
-          </p>
-          <p>
-            (I leave it to you to show <m>T</m> is linear.)
-          </p>
-        </statement>
-      </example>
-      <example>
-        <statement>
-          <p>
-            The set <m>W</m> of all infinitely differentiable functions <m>f</m> satisfying the differential equation
-            <m>f''(x)+xf'(x)=3f(x)</m> is a subspace of <m>C^\infty(\R)</m>.
-          </p>
-          <p>
-            Indeed <m>W</m> is <m>\NS T</m>,
-            where <m>T\colon C^\infty(\R)\rightarrow C^\infty(\R)</m> is the linear transformation defined as <m>T(f)=f''+xf'-3f</m>.
-          </p>
-          <p>
-            (I leave it to you to show <m>T</m> is linear.)
-          </p>
-        </statement>
-      </example>
-    </paragraphs>
-  </subsection>
-  <subsection>
-    <title>image of a linear transformation</title>
-    <paragraphs>
-      <title>image</title>
-      <definition>
-        <statement>
-          <p>
-            In general given a function
-            <m>f\colon A\rightarrow B</m> with domain <m>A</m> and codomain <m>B</m>,
-            its <term>image</term> is the set
-            <me>
-              \im f=\{b\in B\colon b=f(a) \text{ for some \(a\in A\) } \}=f(A)
-            </me>,
-            where the last equality makes use of our
-            <q>image of a set</q>
-            notation <m>f(A)</m>.
-          </p>
-        </statement>
-      </definition>
-      <p>
-        We will use the same notation for a linear transformation <m>T\colon V\rightarrow W</m>.
-        The image of <m>T</m> is a subset of the codomain <m>W</m>.
-        Not surprisingly, it is in fact a
-        <em>subspace</em> of <m>W</m>.
-      </p>
-    </paragraphs>
-    <paragraphs>
-      <title>image</title>
-      <theorem xml:id="th_image">
-        <title>image is a subspace</title>
-        <statement>
-          <p>
-            Let <m>T\colon V\rightarrow W</m> be a linear transformation.
-            Then <m>\im T</m> is a subspace of <m>W</m>.
-          </p>
-        </statement>
-      </theorem>
-      <proof>
-        <ol>
-          <li>
-            <p>
-              We must show <m>\boldzero_W\in \im(T)</m>.
-              But <m>\boldzero_W=T(\boldzero_V)</m>.
-              Thus <m>\boldzero_W\in\im(T)</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              Suppose <m>\boldw_1,\boldw_2\in \im(T)</m>.
-              This means there are <m>\boldv_1, \boldv_2\in V</m> such that <m>T(\boldv_i)=\boldw_i</m> for <m>i=1,2</m>.
-              We must show <m>\boldw=\boldw_1+\boldw_2\in\im(T)</m>.
-              Set <m>\boldv=\boldv_1+\boldv_2</m>.
-              Then
-              <md>
-                <mrow>T(\boldv)\amp =\amp T(\boldv_1+\boldv_2)</mrow>
-                <mrow>\amp =\amp T(\boldv_1)+T(\boldv_2) \ \text{ (since \(T\) is a linear transformation) }</mrow>
-                <mrow>\amp =\amp \boldw_1+\boldw_2=\boldw</mrow>
-              </md>.
-              Since we have provided a <m>\boldv</m> with <m>T(\boldv)=\boldw_1+\boldw_2</m>,
-              we see that <m>\boldw_1+\boldw_2\in\im(T)</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              Suppose <m>\boldw\in\im(T)</m>.
-              Then there is a <m>\boldv\in V</m> with <m>T(\boldv)=\boldw</m>.
-              Then <m>T(k\boldv)=kT(\boldv)=k\boldw</m>,
-              showing <m>k\boldw\in\im(T)</m>.
-            </p>
-          </li>
-        </ol>
-      </proof>
-    </paragraphs>
-    <paragraphs>
-      <title>Example</title>
-      <p>
-        Let <m>T=T_A\colon \R^2\rightarrow\R^3</m>,
-        where <m>A=\begin{bmatrix}1\amp 1\\ 2\amp 1\\ 3\amp 5 \end{bmatrix}</m>.
-        According to the theorem, <m>\im T_A</m> is a subspace of <m>\R^3</m>.
-        Can we identify this subspace as a familiar geometric object?
-      </p>
-      <p>
-        By definition <m>\im T_A</m> is the set
-        <me>
-          \{\boldy\in\R^3\colon \boldy=T_A(\boldx) \text{ for some \(\boldx\in \R^3\) } \}=\left\{\boldy=\begin{bmatrix}a\\ b\\ c \end{bmatrix} \colon \boldy=A\boldx \text{ for some \(\boldx\in\R^2\) } \right\}
-        </me>.
-      </p>
-      <p>
-        Thus to compute <m>\im T_A</m> we must determine which choice of
-        <m>\boldy=(a,b,c)</m> makes the system <m>A\boldx=\boldy</m> consistent.
-        We answer this using our good,
-        old friend Gaussian elimination!
-        <me>
-          \begin{bmatrix}1\amp 1\amp a\\ 2\amp 1\amp b\\ 3\amp 5\amp c \end{bmatrix} \xrightarrow{\text{ row reduction } }\begin{bmatrix}1\amp 1\amp a\\ 0\amp 1\amp 2a-b\\ 0\amp 0\amp -7a+2b+c \end{bmatrix}
-        </me>
-      </p>
-      <p>
-        To be consistent we need <m>-7a+2b+c=0</m>.
-        We conclude that <m>\im T</m> is the set of all <m>(a,b,c)</m> satisfying <m>-7a+2b+c=0</m>.
-        Geometrically this is the plane passing through <m>O</m> with normal vector <m>\boldn=(-7,2,1)</m>.
-      </p>
-    </paragraphs>
-    <paragraphs>
-      <title>Example</title>
-      <p>
-        Consider again the linear transformation <m>T\colon M_{nn}\rightarrow M_{nn}</m>,
-        <m>T(A)=A^T-A</m>.
-        We saw that <m>\NS T</m> was the space of symmetric matrices.
-        The theorem above tells us that
-        <m>\im T</m> is also a subspace of <m>M_{nn}</m>.
-        What is it?
-      </p>
-      <p>
-        Take <m>B\in \im T</m>.
-        By definition this means <m>B=T(A)=A^T-A</m> for some <m>A</m>.
-        So one, somewhat unsatisfying way of describing
-        <m>\im T</m> is as the set of all matrices of the form <m>A^T-A</m>.
-      </p>
-      <p>
-        Let's investigate further.
-        Notice that if <m>B=A^T-A</m>,
-        then <m>B^T=(A^T-A)^T=(A^T)^T-A^T=A-A^T=-B</m>.
-        Thus every element <m>B\in \im T</m> satisfies <m>B^T=-B</m>.
-        Such matrices are called <term>skew-symmetric</term>.
-      </p>
-      <p>
-        I claim further that in fact <m>\im T</m> is the the set of
-        <em>all</em> skew-symmetric matrices.
-        To prove this, I need to show that given a skew-symmetric matrix <m>B</m>,
-        there is a matrix <m>A</m> such that <m>T(A)=B</m>.
-      </p>
-      <p>
-        Suppose I have a <m>B</m> such that <m>B^T=-B</m>.
-        Let <m>A=-\frac{1}{2}B</m>.
-        Then
-        <me>
-          T(A)=T(-\frac{1}{2}B)=-\frac{1}{2}(B^T-B)=-\frac{1}{2}(-B-B)=B
-        </me>.
-      </p>
-      <p>
-        This shows that <m>B\in \im T</m>,
-        and concludes the proof that
-        <m>\im T</m> is the set of all skew-symmetric matrices.
-      </p>
-    </paragraphs>
-  </subsection>
+
 </section>
