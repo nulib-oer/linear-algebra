@@ -117,8 +117,9 @@
         </ol>
       </solution>
     </example>
-      <title>Two-step proof for subspaces</title>
+
         <remark xml:id="rm_twostep_proof">
+          <title>Two-step proof for subspaces</title>
       <statement>
         <p>
         As with proofs regarding linearity of functions, we can merge conditions (ii)-(iii) of into a single statement about linear combinations, deriving the following two-step method for proving a set <m>W</m> is a subspace of a vector space <m>V</m>:
