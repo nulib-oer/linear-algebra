@@ -187,7 +187,7 @@
         <ol>
           <li>
             <p>
-              In a manner similar to <xref ref="ex_transformation_reflection"/>, describe <m>r_\alpha</m> in terms of polar coordinates. However, when defining polar coordinates, take as the <q>polar ray</q> the upper half of <m>\ell_\alpha</m> starting from the origin. Thus if <m>P</m> has polar coordinates <m>(r,\alpha)</m> with respect to this polar ray, it has polar coordinates <m>(r,\theta+\alpha)</m> with respect to the positive <m>x</m>-axis. (<xref ref="ex_transformation_reflection"/>)
+              In a manner similar to <xref ref="ex_transformation_reflection"/>, describe <m>r_\alpha</m> in terms of polar coordinates. However, when defining polar coordinates, take as the <q>polar ray</q> the upper half of <m>\ell_\alpha</m> starting from the origin. Thus if <m>P</m> has polar coordinates <m>(r,\theta)</m> with respect to this polar ray, it has polar coordinates <m>(r,\theta+\alpha)</m> with respect to the positive <m>x</m>-axis. (<xref ref="ex_transformation_reflection"/>)
             </p>
             <p>
               Include a drawing to support your explanation.

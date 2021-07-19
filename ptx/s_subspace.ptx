@@ -362,7 +362,8 @@
 <p>
   The next two examples illustrate how to compute the image of a given linear transformation <m>T\colon V\rightarrow W</m>. The examples make clear that computing images (i.e., determining the set of elements of <m>W</m> that are hit by <m>T</m>) is often more onerous than computing null spaces.
 </p>
-<example>
+<example xml:id="ex_subspace_image">
+  <title>Image computation</title>
   <statement>
     <p>
       Let <m>T=T_A\colon \R^2\rightarrow\R^3</m>,
@@ -617,6 +618,6 @@
       </statement>
     </remark>
   </paragraphs>
-
+<xi:include href="./s_subspace_ex.ptx"/>
 
 </section>

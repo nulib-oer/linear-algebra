@@ -1,0 +1,212 @@
+<exercises xml:id="s_subspace_ex">
+  <exercise>
+    <statement>
+      <p>
+        Let <m>V=\R^4</m> and define
+        <me>W=\{(x_1,x_2,x_3,x_4)\colon x_1-x_4=x_2+x_3=x_1+x_2+x_3=0\}
+        </me>.
+        <ol>
+          <li>
+            <p>
+              Show <m>W</m> is a subspace by identifying it as <m>\NS T</m> for an explicit linear transformation <m>T</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Give a parametric description of <m>\im W</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        In each part below a subset <m>W</m> of <m>\R^2</m> is described. Sketch <m>W</m> as a region of <m>\R^2</m> and determine whether it is a  subspace of <m>\R^2</m>. Justify your answer either with a proof or explicit counterexample.
+      </p>
+      <ol>
+        <li>
+          <p>
+            Let <m>W=\{(x,y)\in \R^2\colon 2x+3y=0\}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Let <m>W=\{(x,y)\in \R^2\colon \val{x}\geq \val{y}\}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Let <m>W=\{(x,y)\in \R^2\colon x^2+2y^2\leq 1\}</m>.
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>n\geq 2</m>. In each part below a subset <m>W</m> of <m>M_{nn}</m> is described. Determine whether the given <m>W</m> is a  subspace of <m>M_{nn}</m>. Justify your answer either with a proof or explicit counterexample.
+        <ol>
+          <li>
+            <p> Let <m>W</m> be the set of all upper triangular <m>n\times n</m> matrices.
+            </p>
+          </li>
+          <li>
+            <p> Let
+              <m>W=\{A\in M_{nn}\colon \det A=0\}</m>.
+            </p>
+          </li>
+          <li>
+            <p> Let
+              <m>W=\{A\in M_{nn}\colon \tr A=0\}</m>. (See <xref ref="ex_transformation_trace"/>.)
+            </p>
+          </li>
+
+          <li>
+            <p>
+              Fix <m>B\in M_{nn}</m> and define
+              <me>
+                W=\{A\in M_{nn} \colon AB=BA\}
+              </me>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+
+  </exercise>
+  <exercise>
+    <statement>
+        <p>
+          Let <m>n\geq 1</m>. In each part below a subset <m>W</m> of <m>P_2</m> is described. Determine whether the given <m>W</m> is a  subspace of <m>P_2</m>. Justify your answer either with a proof or explicit counterexample.
+          </p>
+          <ol>
+            <li>
+              <p>
+                Let <m>\ds W=\{f(x)=ax^2+bx+c \colon c=0\}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Let <m>\ds W=\{f(x)=ax^2+bx+c \colon abc=0\}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Let <m>\ds W=\{f(x)\in P_2 \colon xf'(x)=f(x) \}</m>.
+              </p>
+            </li>
+          </ol>
+
+    </statement>
+
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        In each part below a subset <m>W</m> of <m>C(\R)</m> is described. Determine whether the given <m>W</m> is a  subspace of <m>C(\R)</m>. Justify your answer either with a proof or explicit counterexample.
+      </p>
+      <ol>
+        <li>
+          <p>
+            Let <m>W=\{f\in C(\R)\colon f(4)=0\} </m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Let <m>W=\{f\in C(\R)\colon f(0)=4\} </m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Let <m>W=\{f\in C(\R)\colon f(x)=f(-x)\} </m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Let <m>W=\{f\in C(\R)\colon f(x+\pi)=f(x)\} </m>.
+          </p>
+        </li>
+         <li>
+           <p>
+             Let <m>W=\{f\in C(\R)\colon f\in P \text{ and } \deg f=5\}. </m>
+           </p>
+         </li>
+      </ol>
+    </statement>
+
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Each function <m>T</m> below is linear. Give parametric descriptions of <m>\NS T</m> and <m>\im T</m>. To do so, you will want to relate each computation to a system of linear equations. (See <xref ref="ex_subspace_image"/> for an example of computing an image.)
+      </p>
+      <ol>
+        <li>
+          <p>
+            <md>
+              <mrow>T\colon \R^4 \amp \rightarrow \R^3 </mrow>
+              <mrow> (x,y,z,w)\amp\mapsto (x+z+w, x-y-z,-2x+y-w) </mrow>
+            </md>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <md>
+              <mrow> T\colon M_{22}\amp \rightarrow M_{22} </mrow>
+              <mrow> A \amp\mapsto \begin{amatrix}[rr]1\amp 1\\ 1\amp 1  \end{amatrix}A </mrow>
+            </md>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <md>
+              <mrow> T\colon P_2\amp \rightarrow P_2 </mrow>
+              <mrow> f \amp\mapsto f(x)+f'(x)</mrow>
+            </md>.
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+      In each part below a linear transformation <m>T</m> is given, and a claim is made about <m>\im T</m>. Prove the claim.
+      </p>
+      <ol>
+        <li>
+          <p>
+            <md>
+              <mrow>T\colon \R^\infty \amp \rightarrow \R^\infty </mrow>
+              <mrow> (a_1,a_2,\dots)\amp\mapsto (a_2,a_3,\dots) </mrow>
+            </md> .
+            Claim: <m>\im T=\R^\infty</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <md>
+              <mrow>T\colon C(\R) \amp \rightarrow C(\R) </mrow>
+              <mrow> f(x)\amp\mapsto g(x)=f(x)+f(-x)</mrow>
+            </md>.
+            Claim: <m>\im T</m> is the set of all continuous symmetric polynomials. In other words,
+            <me>
+              \im T=\{f\in C(x)\colon f(-x)=f(x)\}.
+            </me>
+
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Prove <xref ref="th_subspace_intersection"/>.
+      </p>
+    </statement>
+  </exercise>
+</exercises>
