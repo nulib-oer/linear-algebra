@@ -546,41 +546,73 @@
       <title>Polynomial equality</title>
       <statement>
         <p>
-          An important fact that we will make frequent use of is that for two polynomials <m>f(x)=\anpoly</m> and <m>g(x)=bmpoly</m> on an interval <m>X</m> of degree <m>n</m> and <m>m</m>,respectively, we have <m>f(x)=g(x)</m> if and only if (1) n=m, and (2) <m>a_i=b_i</m> for all <m>0\leq i\leq n</m>.
+          An important fact that we will make frequent use of is that for two polynomials <m>f(x)=\anpoly</m> and <m>g(x)=\bmpoly</m> of degree <m>n</m> and <m>m</m>,respectively,  we have <m>f(x)=g(x)</m> on an interval <m>X</m> if and only if (1) <m>n=m</m>, and (2) <m>a_i=b_i</m> for all <m>0\leq i\leq n</m>.
         </p>
         <p>
-          In particular, we have <m>f(x)=\boldzero</m> (the zero function) if and only if <m>a_i=0</m> for all <m>1\leq i\leq n</m>.
+          In particular, we have <m>f(x)=\boldzero</m> (the zero function) on <m>X</m> if and only if <m>a_i=0</m> for all <m>1\leq i\leq n</m>.
         </p>
       </statement>
     </remark>
-    <!-- <remark xml:id="rm_subspaces_differential_equations">
-  <title>Differential equations and subspaces</title>
-  <statement>
     <p>
-    Certain differential equations and their solutions can be phrased in the language of linear algebra.
+      Our new wealth of function spaces allows us at last to introduce an important family of linear transformations: <em>differential operators</em>.
     </p>
-  </statement>
-</remark> -->
-<!-- <example>
-  <statement>
-    <p>
-      The set <m>W</m> of all infinitely differentiable functions <m>f</m> satisfying the differential equation
-      <m>f''(x)+xf'(x)=3f(x)</m> is a subspace of <m>C^\infty(\R)</m>.
-    </p>
-    <p>
-      Indeed <m>W</m> is <m>\NS T</m>,
-      where <m>T\colon C^\infty(\R)\rightarrow C^\infty(\R)</m> is the linear transformation defined as <m>T(f)=f''+xf'-3f</m>.
-    </p>
-    <p>
-      (I leave it to you to show <m>T</m> is linear.)
-    </p>
-  </statement>
-</example> -->
+    <remark xml:id="rm_subspaces_derivatives">
+    <title>Differential operators</title>
+    <statement>
+      <p>
+        Let <m>X\subseteq \R</m> be an interval. Define <m>T_1\colon C^1(X)\rightarrow C(X)</m> as <m>T(f)=f'</m>: <ie />, <m>T_1</m> takes as input a <m>C^1</m> function on the interval <m>X</m>, and returns its (first) derivative. Note that the definition of <m>C^1</m> ensures that <m>f'</m> exists and is continuous on <m>X</m>: hence <m>f'
+        \in C(X)</m>, as claimed.
+      </p>
+      <p>
+        The operator <m>T_1</m> is a linear transformation. Indeed, given <m>c,d\in \R</m> and <m>f,g\in C^1(X)</m>, we have
+        <md>
+          <mrow>T_1(cf+dg)   \amp = (cf+dg)' \amp \text{(by def.)} </mrow>
+          <mrow> \amp =(cf)'+(dg)' \amp \text{(derivative prop.)} </mrow>
+          <mrow>  \amp =cf'+dg' \amp \text{(derivative prop.)}</mrow>
+          <mrow>  \amp = cT_1(f)+dT_1(g)</mrow>
+        </md>.
+      </p>
+      <p>
+        Since taking <m>n</m>-th derivatives amounts to <em>composing</em> the derivative operator <m>T_1</m> with itself <m>n</m> times, it follows from <xref ref="th_transform_composition"/> that for any <m>n\geq 1</m> the  map
+        <md>
+          <mrow>T_n\colon C^n(X) \amp \rightarrow C(X) </mrow>
+          <mrow> f \amp\mapsto f^{(n)} </mrow>
+        </md>,
+        which takes a function <m>f</m> to its <m>n</m>-th derivative, is also linear. (Note that we are careful to pick the domain <m>C^n(X)</m> to guarantee this operation is well-defined!)
+      </p>
+      <p>
+        Lastly, by <xref ref="ex_transformation_add_scale"/>, we can add and scale these various operators to obtain more general linear transformations of the form
+        <me>
+          T(f)=c_nf^{(n)}+c_{n-1}f^{(n-1)}+\cdots c_1f'+c_0f
+        </me>.
+        We call such a function a <em>linear differential operator</em>. Understanding the linear algebraic properties of these operators is crucial to the theory of linear differential equations, as the following basic example illustrates.
+      </p>
+    </statement>
+  </remark>
+  <example xml:id="ex_diff_eq_ex">
+    <title>A differential equation</title>
+    <statement>
+      <p>
+      Fix an interval <m>X\subseteq \R</m>. Let <m>S</m> be the set of functions of <m>C^1(X)</m> satisfying the differential equation
+      <men tag='star' xml:id="eq_diff_eq_ex">
+        f'=f
+      </men>.
+      Then
+      <me>
+        S=\{f\in C^1(X)\colon f'-f=\boldzero\}=\NS T
+      </me>,
+      where <m>T\colon C^1(X)\rightarrow C(X)</m> is the linear transformation <m>T(f)=f'-f</m>.
+      </p>
+      <p>
+        Having identified the set of solution to <xref ref="eq_diff_eq_ex"/> with the subspace <m>\NS T</m>, we can now bring some linear algebra to the table. For example, since <m>\NS T</m> is closed under vector addition and scalar multiplication, we know that if <m>f</m> and <m>g</m> are solutions to <xref ref="eq_diff_eq_ex"/>, then so is <m>cf+dg</m> for any <m>c,d\in\R</m>.
+      </p>
+    </statement>
+  </example>
 
     <paragraphs xml:id="ss_subspace_intersection_union">
     <title>Intersections and unions</title>
     <p>
-      We end with some simple observations about how the property of being a subspace relates to basic set operations like intersection and union.
+      We end this section with some simple observations about how the property of being a subspace relates to basic set operations like intersection and union.
     </p>
     <theorem xml:id="th_subspace_intersection">
       <title>Intersection of subspaces</title>
