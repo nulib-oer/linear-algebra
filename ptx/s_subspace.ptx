@@ -587,6 +587,7 @@
         </me>.
         We call such a function a <em>linear differential operator</em>. Understanding the linear algebraic properties of these operators is crucial to the theory of linear differential equations, as the following basic example illustrates.
       </p>
+
     </statement>
   </remark>
   <example xml:id="ex_diff_eq_ex">
@@ -605,6 +606,13 @@
       </p>
       <p>
         Having identified the set of solution to <xref ref="eq_diff_eq_ex"/> with the subspace <m>\NS T</m>, we can now bring some linear algebra to the table. For example, since <m>\NS T</m> is closed under vector addition and scalar multiplication, we know that if <m>f</m> and <m>g</m> are solutions to <xref ref="eq_diff_eq_ex"/>, then so is <m>cf+dg</m> for any <m>c,d\in\R</m>.
+      </p>
+      <p>
+        It is an interesting exercise to try and understand what <m>\im T</m> means in terms of differential equations. By definition, <m>\im T</m> is the set of <m>g\in C(X)</m> such that <m>g=T(f)=f'-f</m>, for some <m>f\in C^1(X)</m>. In the language of differential equations, this is the set of all continuous functions on <m>X</m> for which the differential equation
+        <me>
+          f'-f=g
+        </me>
+        has a solution.
       </p>
     </statement>
   </example>
