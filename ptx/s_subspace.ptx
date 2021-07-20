@@ -560,7 +560,7 @@
     <title>Differential operators</title>
     <statement>
       <p>
-        Let <m>X\subseteq \R</m> be an interval. Define <m>T_1\colon C^1(X)\rightarrow C(X)</m> as <m>T(f)=f'</m>: <ie />, <m>T_1</m> takes as input a <m>C^1</m> function on the interval <m>X</m>, and returns its (first) derivative. Note that the definition of <m>C^1</m> ensures that <m>f'</m> exists and is continuous on <m>X</m>: hence <m>f'
+        Let <m>X\subseteq \R</m> be an interval. Define <m>T_1\colon C^1(X)\rightarrow C(X)</m> as <m>T_1(f)=f'</m>: <ie />, <m>T_1</m> takes as input a <m>C^1</m> function on the interval <m>X</m>, and returns its (first) derivative. Note that the definition of <m>C^1</m> ensures that <m>f'</m> exists and is continuous on <m>X</m>: hence <m>f'
         \in C(X)</m>, as claimed.
       </p>
       <p>
