@@ -3,7 +3,7 @@
   <xi:include  href="s_vectorspace.ptx"/>
   <xi:include  href="s_transformation.ptx"/>
   <xi:include  href="s_subspace.ptx"/>
-  <xi:include  href="s_independence.ptx"/>
+  <xi:include  href="s_span_independence.ptx"/>
   <xi:include  href="s_basis.ptx"/>
   <xi:include  href="s_dimension.ptx"/>
 </chapter>

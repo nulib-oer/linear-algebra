@@ -140,7 +140,7 @@ In each exercise below the provided set, along with proposed vector operations, 
     </p>
   </statement>
 </exercise>
-<exercise>
+<exercise xml:id="ex_vs_zero_or_infinite">
   <statement>
     <p>
       Let <m>V</m> be a vector space. Prove that either <m>V=\{\boldzero\}</m> (<ie />, <m>V</m> is the zero space) or <m>V</m> is infinite. In other words, a vector space contains either exactly one element or infinitely many elements.

@@ -1,63 +1,260 @@
-<section xml:id="ss_independence">
-  <title>Linear independence</title>
-  <subsection>
+<section xml:id="s_span_independence">
+  <title>Span and linear independence</title>
+  <introduction>
+    <p>
+      There are many situations in mathematics where we want to describe an infinite set in a concise manner. We saw this at work already in <xref ref="s_solving"/>, where infinite sets of solutions to linear systems were neatly described with parametric expressions.
+    </p>
+    <p>
+      A similar issue arises when describing vector spaces and their subspaces. As we know, any vector space is either the zero space or infinite (<xref ref="ex_vs_zero_or_infinite"/>). If we happen to be dealing with a subspace of <m>\R^n</m>, then there is the possibility of giving a parametric description; but how do we proceed when working in one of our more exotic vector spaces like <m>C^1(\R)</m>?
+    </p>
+    <p>
+    As we will see in <xref ref="s_basis_dimension"/> the relevant linear algebraic tool for this purpose is the concept of a <em>basis</em>. Loosely speaking, a basis for a vector space <m>V</m> is a set of vectors that is large enough to <em>generate</em> the entire space, and small enough to contain <em>no redundancies</em>. What exactly we mean by <q>generate</q> is captured by the rigorous notion of <em>span</em>; and what we mean by <q>no redundancies</q> is captured by <em>linear independence</em>.
+    </p>
+  </introduction>
+
+  <paragraphs>
     <title>Span</title>
-    <paragraphs>
-      <title>Linear combinations and span</title>
-      <p>
-        Recall that a <em>linear combination</em>
-        in a vector space <m>V</m> is a vector of the form
-        <me>
-          \boldv=k_1\boldv_1+k_2\boldv_2\cdots +k_r\boldv_r
-        </me>,
-        where <m>k_i\in \R</m> are scalars.
-      </p>
-      <p>
-        We use this notion to define the
-        <em>span</em> of a set of vectors.
-      </p>
-      <definition>
+    <p>
+      Recall that a linear combination
+      in a vector space <m>V</m> is a vector of the form
+      <me>
+        \boldv=c_1\boldv_1+c_2\boldv_2\cdots +c_r\boldv_r
+      </me>,
+      where <m>c_i\in \R</m> are scalars.
+      We use this notion to define the
+      <em>span</em> of a set of vectors.
+    </p>
+    <definition>
+      <title>Span</title>
+      <idx><h>span</h><h>of a set of vectors</h></idx>
+      <notation>
+        <usage>\Span S</usage>
+        <description>the span of <m>S</m></description>
+      </notation>
         <statement>
           <p>
-            Let <m>V</m> be a vector space,
-            and let <m>S=\{\boldv_1,\boldv_2,\dots,\boldv_r\}</m> be a set of vectors of <m>V</m>.
-            The <term>span</term> of <m>S</m> is the set
-            <md>
-              <mrow>\Span(\{\boldv_1,\boldv_2,\dots,\boldv_r\})\amp :=\amp \left(\begin{array}{c} \text{ the set of all linear }  \\ \text{ combinations of the \(\boldv_i\) } \end{array} \right)</mrow>
-              <mrow>\amp =\amp \{\boldv\in V\colon \boldv=k_1\boldv_1+k_2\boldv_2\cdots +k_r\boldv_r, \text{ for some }  k_i\in\R \}</mrow>
-            </md>.
+            Let <m>V</m> be a vector space, and let <m>S\subseteq V</m> be any subset of <m>V</m>. The <term>span of <m>S</m></term>, denoted <m>\Span S</m>, is the subset of <m>V</m> defined as follows:
+            <ul>
+              <li>
+                <p>
+                  If <m>S=\emptyset</m>, then <m>\Span S=\{\boldzero_V\}</m>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Otherwise we define <m>\Span S</m> to be the set of all linear combinations of elements of <m>S</m>: <ie />,
+                  <me>
+                    \Span S=\{\boldv\in V\colon \boldv=c_1\boldv_1+c_2\boldv_2\cdots +c_r\boldv_r \text{ for some } \boldv_i\in S \text{ and } c_i\in \R\}
+                  </me>.
+                </p>
+              </li>
+            </ul>
           </p>
         </statement>
       </definition>
-    </paragraphs>
-    <theorem>
-      <statement>
-        <p>
-          Let <m>V</m> be a vector space,
-          <m>S=\{\boldv_1,\boldv_2,\dots,\boldv_r\}</m> a set of vectors of <m>V</m>,
-          and <m>W=\Span(S)</m>.
-          Then
+          <remark xml:id="rm_span">
+        <statement>
+          <p>
+          Let <m>S</m> be a subset of <m>V</m>. Some simple observations:
           <ol>
             <li>
               <p>
-                <m>W</m> is a subspace of <m>V</m>;
+                The zero vector is always an element of <m>\Span S</m>.  Indeed, if <m>S=\emptyset</m>, then <m>\Span S=\{\boldzero\}</m> by definition. Otherwise, given any <m>\boldv\in S</m>, the linear combination <m>0\boldv=\boldzero</m> is an element of <m>\Span S</m>.
+              </p>
+            </li>
+            <li>
+                <p>
+                  We have <m>S\subseteq \Span S</m>: <ie />, <m>\Span S</m> includes <m>S</m> itself. Indeed, given any <m>\boldv\in S</m>, the linear combination <m>1\boldv=\boldv</m> is an element of <m>\Span S</m>.
+                </p>
+            </li>
+
+            <li>
+              <p>
+                If <m>S=\{\boldv\}</m> contains exactly one element, then <m>\Span S=\{c\boldv\colon c\in \R\}</m> is simply the set of all scalar multiples of <m>\boldv</m>.
+              </p>
+              <p>
+                If <m>\boldv\ne \boldzero</m>, then we know that this set is infinite (<xref ref="ex_vs_zero_or_infinite"/>). Thus even when <m>S</m> is <em>finite</em>, <m>\Span S</m> will be <em>infinite</em>, as long as <m>S</m> contains nonzero vectors.
+              </p>
+            </li>
+          </ol>
+          </p>
+        </statement>
+      </remark>
+    <example>
+      <statement>
+        <p>
+        Let <m>V=\R^2</m>. For each <m>S</m>, identify <m>\Span S</m> as a familiar geometric object.
+        </p>
+        <ol>
+          <li>
+            <p>
+              <m>S=\{ \}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>S=\{(0,0)\}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>S=\{\boldv\}</m>, <m>\boldv=(a,b)\ne (0,0)</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>S=\{ (1,0), (0,1)\}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>S=\{ (1,1), (2,2)\}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>S=\{(1,1),(1,2)\}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>S=\R^2</m>
+            </p>
+          </li>
+        </ol>
+      </statement>
+      <solution>
+        <p>
+        <ol>
+          <li>
+            <p>
+              <m>\Span S=\{\boldzero\}</m>, the set containing just the origin, by definition.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\Span S</m> is the set of all scalar multiples of <m>(0,0)</m>. Thus <m>\Span S=\{\boldzero\}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\Span S</m> is the set of all scalar multiples of the nonzero vector <m>(a,b)</m>. Geometrically, this is the line that passes through the the origin and the point <m>(a,b)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              By definition
+              <me>
+                S=\{a(1,0)+b(0,1)\colon a,b\in \R\}=\{(a,b)\colon a,b\in\R\}
+              </me>.
+              Thus <m>S=\R^2</m>, the entire <m>xy</m>-plane.
+            </p>
+          </li>
+          <li>
+            <p>
+              By definition
+              <me>
+                S=\{a(1,1)+b(2,2)\colon a,b\in \R\}=\{(a+2b,a+2b)\colon a,b\in\R\}
+              </me>.
+              It is easy to see that <m>S=\{(c,c)\colon t\in \R\}</m>, the line with equation <m>y=x</m>. Note that in this case we have
+              <me>
+                S=\Span\{(1,1), (2,2)\}=\Span \{(1,1)\}
+              </me>,
+              and thus that the vector <m>(2,2)</m> is in some sense redundant.
+            </p>
+          </li>
+          <li>
+            <p>
+              By definition
+              <me>
+                S=\{a(1,1)+b(1,2)\colon a,b\in \R\}=\{(a+b,a+2b)\colon a,b\in\R\}
+              </me>.
+              Claim: <m>\Span S=\R^2</m>. Proving the claim amounts to showing that for all <m>(c,d)\in \R^2</m> there exist <m>a,b\in \R</m> such that
+              <me>
+                \begin{array}[ccccc]
+                  a \amp +\amp b \amp =\amp c\\
+                  a \amp +\amp 2b \amp =\amp d
+                \end{array}[ccccc]
+              </me>.
+                Equivalently, we must show that the system corresponding to
+                <me>
+                  \begin{amatrix}[rr|r] 1\amp 1 \amp c\\ 1\amp 2 \amp d \end{amatrix}
+                </me>
+                has a solution for <em>any</em> choice of <m>c,d\in \R</m>. The usual Gaussian elimination procedure can be applied to this end.
               </p>
             </li>
             <li>
               <p>
-                if <m>W'</m> is a subspace containing all the vectors <m>\boldv_i</m>,
-                then <m>W\subseteq W'</m>.
+                By <xref ref="rm_span"/>, we have <m>S\subseteq \Span S</m>. Thus <m>\R^2\subseteq \Span \R^2</m>. Since <m>\Span \R^2\subseteq \R^2</m> by definition, we conclude that <m>\Span S=\R^2</m>.
+              </p>
+            </li>
+        </ol>
+      </p>
+      </solution>
+    </example>
+    <p>
+      You may have noticed that each span computation in the previous example produced a subspace of <m>\R^2</m>. This is no accident!
+    </p>
+    <theorem>
+      <statement>
+        <p>
+          Let <m>S</m> be a subset of the vector space <m>V</m>.
+          <ol>
+            <li>
+              <p>
+               The set <m>\Span S</m> is a subspace of <m>V</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>W</m> is any subspace containing <m>S</m>, then <m>\Span S\subseteq W</m>.
               </p>
             </li>
           </ol>
-        </p>
-        <p>
-          We paraphrase (ii) by saying <m>W=\Span(S)</m> is the
-          <q>smallest</q>
-          subspace of <m>V</m> containing all the <m>\boldv_i</m>.
+          Taken together, (1) and (2) imply that <m>\Span S</m> is the <em>smallest subspace of <m>V</m> containing <m>S</m></em>.
         </p>
       </statement>
+      <proof>
+        <p>
+          We prove each statement separately.
+        </p>
+        <case>
+         <title>Statement (1)</title>
+        <p>
+        To show <m>\Span S</m> is a subspace, we use the two-step technique.
+        <ol>
+          <li>
+            <p>
+              By <xref ref="rm_span"/> we know that <m>\boldzero\in \Span S </m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Suppose <m>\boldv, \boldw\in S</m>. By definition we have
+              <md>
+                <mrow>\boldv \amp =c_1\boldv_1+c_2\boldv_2+\cdots +c_r\boldv_r \amp \boldw \amp = c_{r+1}\boldv_{r+1}+c_{r+2}\boldv_{r+2}+\cdots +c_{r+s}\boldv_{r+s}</mrow>
+              </md>
+              for some vectors <m>\boldv_1, \boldv_2, \dots, \boldv_{r+s}\in S</m> and scalars <m>c_1,c_2,\dots, c_{r+s}</m>. Then for any <m>c,d\in \R</m> we have
+              <me>
+              c\boldv+d\boldw=cc_1\boldv_1+cc_2\boldv_2+\cdots +cc_r\boldv_r+dc_{r+1}\boldv_{r+1}+dc_{r+2}\boldv_{r+2}+\cdots +dc_{r+s}\boldv_{r+s}
+              </me>,
+              which is clearly a linear combination of elements of <m>S</m>. Thus <m>c\boldv+d\boldw\in \Span S</m>, as desired.
+            </p>
+          </li>
+        </ol>
+        </p>
+        </case>
+        <case>
+         <title>Statement (2)</title>
+        <p>
+        Let <m>W\subseteq V</m> be a subspace that contains all elements of <m>S</m>. Since <m>W</m> is closed under arbitrary linear combinations, it must contain any linear combination of elements of <m>S</m>, and thus <m>\Span S\subseteq W</m>.
+        </p>
+        </case>
+      </proof>
+
     </theorem>
+    </paragraphs>
+
     <paragraphs>
       <title>More terminology:</title>
       <p>
@@ -207,7 +404,6 @@
         </p>
       </proof>
     </paragraphs>
-  </subsection>
   <paragraphs>
     <title><xref ref="c_vectorspace"></xref>. <xref ref="ss_independence"></xref>: linear independence</title>
     <definition>
