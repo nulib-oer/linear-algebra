@@ -120,11 +120,10 @@
 
   </exercise>
   <exercise xml:id="ex_transformation_function_scale">
-    <title>Function scale operators</title>
+    <title>Function scaling operators</title>
     <statement>
       <p>
-      Let <m>X\subseteq \R</m> be an interval. Fix <m>c\in \R</m>.
-      Define the functions <m>T,S \colon F(X,\R)\rightarrow F(X,\R)</m> as follows:
+      Fix <m>c\in \R</m> and define the functions <m>T,S \colon F(\R,\R)\rightarrow F(\R,\R)</m> as follows:
         <md>
           <mrow>T(f) \amp =g, \text{ where } g(x)=f(cx) </mrow>
           <mrow> S(f)\amp =g, \text{ where } g(x)=cf(x)  </mrow>
@@ -132,11 +131,6 @@
         Show that <m>T</m> and <m>S</m> are linear transformations.
       </p>
     </statement>
-    <hint>
-      <p>
-        Instead of a direct proof, use <xref ref="th_transform_composition"/> and <xref ref="ex_transformation_vector_scale"/>.
-      </p>
-    </hint>
 
   </exercise>
   <exercise xml:id="ex_transformation_add_scale">
@@ -187,7 +181,7 @@
         <ol>
           <li>
             <p>
-              In a manner similar to <xref ref="ex_transformation_reflection"/>, describe <m>r_\alpha</m> in terms of polar coordinates. However, when defining polar coordinates, take as the <q>polar ray</q> the upper half of <m>\ell_\alpha</m> starting from the origin. Thus if <m>P</m> has polar coordinates <m>(r,\theta)</m> with respect to this polar ray, it has polar coordinates <m>(r,\theta+\alpha)</m> with respect to the positive <m>x</m>-axis. (<xref ref="ex_transformation_reflection"/>)
+              In a manner similar to <xref ref="th_transform_rotation"/>, describe <m>r_\alpha</m> in terms of the polar coordinates <m>(r,\theta)</m> of the input point <m>P</m>. Additionally, it helps to write <m>\theta=\alpha+\phi</m>, where <m>\phi</m> is the angle line segment from the origin to <m>P</m> makes with the line <m>\ell_\alpha</m>. 
             </p>
             <p>
               Include a drawing to support your explanation.

@@ -284,46 +284,51 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 \usetikzlibrary{through,intersections,decorations,shadows,fadings}
 \usepackage{pgfplots}
 </latex-image-preamble>
-  </docinfo>
-  <book>
-    <title>Linear algebra: the theory of vector spaces and linear transformations</title>
-    <frontmatter>
-      <titlepage>
-        <author>
-          <personname>Aaron Greicius</personname>
-        </author>
-      </titlepage>
-    </frontmatter>
-    <xi:include href="./c_linear_systems.ptx"/>
-    <xi:include href="./c_matrices.ptx"/>
-    <xi:include href="./c_vectorspace.ptx"/>
-    <xi:include href="./c_transbasis.ptx"/>
-    <xi:include href="./c_innerproductspaces.ptx"/>
-    <backmatter>
-      <appendix xml:id="appendix-notation">
-        <title>Notation</title>
-        <notation-list/>
-      </appendix>
-      <appendix xml:id="appendix-defs">
-        <title>Definitions</title>
-        <list-of elements="definition" divisions="section" />
-      </appendix>
-      <appendix xml:id="appendix-thms">
-        <title>Theorems and corollaries</title>
-        <list-of elements="theorem corollary" divisions="section" />
-      </appendix>
 
-      <appendix xml:id="appendix-egs">
-        <title>Examples</title>
-        <list-of elements="example" divisions="section" />
-      </appendix>
-      <!-- <xi:include href="./bibliography.ptx"/> -->
+<!-- Renamings -->
+<rename element="algorithm">Procedure</rename>
+<rename element="principle">Mantra</rename>
+</docinfo>
 
-      <index>
-          <title>Index</title>
-          <index-list />
-      </index>
+<book>
+  <title>Linear algebra: the theory of vector spaces and linear transformations</title>
+  <frontmatter>
+    <titlepage>
+      <author>
+        <personname>Aaron Greicius</personname>
+      </author>
+    </titlepage>
+  </frontmatter>
+  <xi:include href="./c_linear_systems.ptx"/>
+  <xi:include href="./c_matrices.ptx"/>
+  <xi:include href="./c_vectorspace.ptx"/>
+  <xi:include href="./c_transbasis.ptx"/>
+  <xi:include href="./c_innerproductspaces.ptx"/>
+  <backmatter>
+    <appendix xml:id="appendix-notation">
+      <title>Notation</title>
+      <notation-list/>
+    </appendix>
+    <appendix xml:id="appendix-defs">
+      <title>Definitions</title>
+      <list-of elements="definition" divisions="section" />
+    </appendix>
+    <appendix xml:id="appendix-thms">
+      <title>Theory and procedures</title>
+      <list-of elements="theorem corollary algorithm" divisions="section" />
+    </appendix>
 
-    </backmatter>
-  </book>
+    <appendix xml:id="appendix-egs">
+      <title>Examples</title>
+      <list-of elements="example" divisions="section" />
+    </appendix>
+    <!-- <xi:include href="./bibliography.ptx"/> -->
+
+    <index>
+      <title>Index</title>
+      <index-list />
+    </index>
+
+  </backmatter>
+</book>
 </pretext>

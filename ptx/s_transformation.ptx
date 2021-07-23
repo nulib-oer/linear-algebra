@@ -81,11 +81,10 @@
       </notation>
       <statement>
         <p>
-          Suppose <m>f\colon C\rightarrow D</m> and <m>g\colon A\rightarrow B</m> are functions satisfying <m>B\subseteq C</m>.  The <term>composition of <m>f</m> and <m>g</m></term>, is the function <m>f\circ g\colon A\rightarrow D</m> defined as follows:
-          <md>
-            <mrow>f\circ g\colon A \amp\rightarrow D </mrow>
-            <mrow> a\amp\mapsto f(g(a)) </mrow>
-          </md>.
+          Suppose <m>f\colon C\rightarrow D</m> and <m>g\colon A\rightarrow B</m> are functions satisfying <m>B\subseteq C</m>.  The <term>composition of <m>f</m> and <m>g</m></term>, denoted <m>f\circ g</m>, is the function from <m>A</m> to <m>D</m> defined as
+          <me>
+            f\circ g(a)=f(g(a))
+          </me>.
         In other words, to evaluate <m>f\circ g</m> at the input <m>a</m> we <em>first</em> compute <m>g(a)</m>, and <em>then</em> compute <m>f(g(a))</m>.
         </p>
       </statement>
