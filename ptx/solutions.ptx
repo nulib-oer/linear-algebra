@@ -3962,7 +3962,7 @@
         Given a fixed angle <m>\alpha</m>,
         <m>0\leq \alpha\lt \pi</m>,
         let <m>\ell_{\alpha}</m> be the line through the origin that makes an angle of <m>\alpha</m> with the positive <m>x</m>-axis.
-        We define <m>T_{\alpha}\colon\R^2\rightarrow \R^2</m> as <m>T_\alpha(P)=\text{ the reflection \(P'\) of \(P\) through \(\ell_\alpha\) }</m> In more detail,
+        We define <m>T_{\alpha}\colon\R^2\rightarrow \R^2</m> as <m>T_\alpha(P)=\text{ the reflection of \(P\) through \(\ell_\alpha\) }</m> In more detail,
         given point <m>P\in\R^2</m>,
         let <m>\ell'</m> be the line passing through <m>P</m> that is perpendicular to <m>\ell_{\alpha}</m>,
         and let <m>Q</m> be the intersection of <m>\ell</m> and <m>\ell_\alpha</m>.

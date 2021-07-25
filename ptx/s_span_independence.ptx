@@ -1,4 +1,4 @@
-<section xml:id="s_span_independence">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_span_independence">
   <title>Span and linear independence</title>
   <introduction>
     <p>
@@ -878,6 +878,7 @@
   </solution>
 </example>
   </paragraphs>
+<xi:include href="./s_span_independence_ex.ptx"/>
   <!-- <p>
     Decide whether <m>S</m> is linearly independent.
   </p>

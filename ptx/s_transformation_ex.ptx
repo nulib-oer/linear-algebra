@@ -167,6 +167,17 @@
       </p>
     </statement>
   </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>T\colon V\rightarrow W</m> be a linear transformation, and let <m>V'\subseteq V</m> be a subspace. Define <m>W'\subseteq W</m> as
+        <me>
+          W'=\{\boldw\colon \boldw=T(\boldv) \text{ for some } \boldv\in V'\}
+        </me>.
+        Prove: <m>W'</m> is a subspace of <m>W</m>.
+      </p>
+    </statement>
+  </exercise>
   <exercise xml:id="ex_transformation_reflection">
     <title>Reflection through a line</title>
     <statement>
@@ -181,7 +192,7 @@
         <ol>
           <li>
             <p>
-              In a manner similar to <xref ref="th_transform_rotation"/>, describe <m>r_\alpha</m> in terms of the polar coordinates <m>(r,\theta)</m> of the input point <m>P</m>. Additionally, it helps to write <m>\theta=\alpha+\phi</m>, where <m>\phi</m> is the angle line segment from the origin to <m>P</m> makes with the line <m>\ell_\alpha</m>. 
+              In a manner similar to <xref ref="th_transform_rotation"/>, describe <m>r_\alpha</m> in terms of the polar coordinates <m>(r,\theta)</m> of the input point <m>P</m>. Additionally, it helps to write <m>\theta=\alpha+\phi</m>, where <m>\phi</m> is the angle line segment from the origin to <m>P</m> makes with the line <m>\ell_\alpha</m>.
             </p>
             <p>
               Include a drawing to support your explanation.
