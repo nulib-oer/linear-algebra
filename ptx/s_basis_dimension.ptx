@@ -1,0 +1,279 @@
+<section xml:id="s_basis_dimension">
+  <title>Bases and dimension</title>
+<introduction>
+  <p>
+    Now that we have the notions of span and linear independence in place, we simply combine them to define a <em>basis</em> of a vector space. In the spirit of <xref ref="s_span_independence"/>, a basis of a vector space <m>V</m> should be understood as a <em>minimal</em> spanning set.
+  </p>
+  <p>
+   This section includes many theoretical results. There are two in particular that are worth highlighting, especially in regard to computational techniques for abstract vector spaces:
+   <ol>
+     <li>
+       <p>
+         If <m>B</m> is a basis for <m>V</m>, then every element of <m>V</m> can be written as a linear combination of elements of <m>B</m> in a <em>unique way</em>. (<xref ref="th_basis_equivalence"/>)
+       </p>
+     </li>
+     <li>
+       <p>
+         If <m>B</m> is a basis of <m>V</m> containing exactly <m>n</m> elements, then any other basis <m>B'</m> also contains exactly <m>n</m> elements. (<xref ref="th_dimension_welldefined"/>)
+       </p>
+     </li>
+   </ol>
+   The second result allows us to define a notion of <em>dimension</em> on  a vector space; the first result allows us to take any vector space of dimension <m>n</m>, no matter how exotic, and identify it with <m>\R^n</m>.
+  </p>
+</introduction>
+
+  <paragraphs xml:id="ss_bases">
+    <title>Bases of vector spaces</title>
+    <definition xml:id="d_basis">
+      <title>Basis</title>
+      <idx><h>basis</h><h>of a vector space</h></idx>
+      <statement>
+        <p>
+          A subset <m>B</m> of a vector space <m>V</m> is called a <term>basis</term> if
+          <ol label="i">
+            <li>
+              <p>
+                <m>B</m> spans <m>V</m>, and
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>B</m> is linearly independent.
+              </p>
+            </li>
+          </ol>
+          If the basis <m>B</m> comes equipped with an ordering (<ie />, <m>B</m> is an ordered set), then we call <m>B</m> and <term>ordered basis</term>
+        </p>
+      </statement>
+    </definition>
+        <remark xml:id="rm_standard_bases">
+        <title>Some standard bases</title>
+      <statement>
+        <p>
+          The examples of standard spanning sets in <xref ref="rm_spanning_sets"/> are easily seen to be linearly independent, and hence are in fact bases. We list them again here, using the same notation, and refer to these as <m>standard bases</m> for the given spaces.
+        </p>
+        <ol>
+        <li>
+          <title>Zero space</title>
+          <p>
+          Let <m>V=\{\boldzero\}</m>. The empty <m>S=\emptyset=\{ \}</m> is a basis for <m>V</m>. Note that <m>S=\emptyset</m> spans <m>V</m> by definition (<xref ref="d_span"/>), and it satisfies the defining implication of linear independence (<xref ref="d_linear_independence"/>) trivially.
+          </p>
+        </li>
+        <li>
+          <title><m>\R^n</m></title>
+          <p>
+          The set <m>B=\{\bolde_1, \bolde_2,\dots, \bolde_n\}</m> is the standard basis of <m>\R^n</m>.
+          </p>
+        </li>
+        <li>
+          <title><m>M_{mn}</m></title>
+          <p>
+          The set <m>B=\{E_{ij}\colon 1\leq i\leq m, 1\leq j\leq n\}</m> is the standard basis of <m>M_{mn}</m>.
+          </p>
+        </li>
+        <li>
+          <title><m>P_n</m></title>
+          <p>
+          The set <m>B=\{x^n, x^{n-1}, \dots, x, 1\}</m> is the standard basis of <m>P_n</m>.
+          </p>
+        </li>
+        <li>
+          <title><m>P</m></title>
+          <p>
+          The set
+          <me>S=\{1, x, x^2, \dots\}=\{x^i\colon i\geq 0\} </me>
+          is the standard basis of <m>P</m>.
+          </p>
+        </li>
+      </ol>
+      </statement>
+    </remark>
+<p>
+  Just as with spanning sets, bases are not in general unique: in fact, for any nonzero vector space there are infinitely many different bases.
+</p>
+<example>
+  <title>Some nonstandard bases</title>
+  <statement>
+    <p>
+      For each <m>V</m> and <m>B</m> below, verify that <m>B</m> is a basis of <m>V</m>.
+      <ol>
+        <li>
+          <p>
+            <m>V=\R^4</m>,
+            <m>B=\{(1,1,1,1), (1,0,0,-1), (1,0,-1,0), (0,1,-1,0)\}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>V=P_2</m>, <m>B=\{1+x+x^2, -x+x^2, -1+x^2\}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>V=M_{22}</m>,
+            <me>
+              B=\left\{ \begin{bmatrix}3\amp 6\\ 3\amp -6 \end{bmatrix} , \begin{bmatrix}0\amp -1\\ -1\amp 0 \end{bmatrix} , \begin{bmatrix}0\amp -8\\ -12\amp -4 \end{bmatrix} , \begin{bmatrix}1\amp 0\\ -1\amp 2 \end{bmatrix} \right\}
+            </me>.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+  <solution>
+    <p>
+    Each verification amounts to showing that the given <m>B</m> spans the given <m>V</m> and is linearly independent. We leave the details to you, using the techniques from <xref ref="s_span_independence"/>.
+    </p>
+  </solution>
+</example>
+<p>
+ Not every vector space has a finite basis, as we show in the next example.
+</p>
+<example>
+  <title><m>P</m> has no finite basis</title>
+
+  <statement>
+    <p>
+      Prove that <m>P</m>, the space of all real polynomials, does not have a finite basis.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      We show that no finite set of polynomials can span all of <m>P</m>; it follows that <m>P</m> does not have a finite basis.
+    </p>
+    <p>
+    Indeed let <m>S=\{p_1, p_2, \dots, p_r\}</m> be a finite set of polynomials, and let <m>n</m> be the maximal degree of all the polynomials <m>p_i\in S</m>. Then <m>p_i\in P_n</m> for all <m>i</m>, in which case <m>\Span S\subseteq P_n</m>: <ie />, <m>\Span S</m> is a subspace of the space of polynomials of degree at most <m>n</m>. Since <m>P_n\subsetne P</m>, we conclude that <m>\Span S\ne P</m>, as claimed.
+    </p>
+  </solution>
+</example>
+    <remark xml:id="rm_dimension_functionspaces">
+  <statement>
+    <p>
+      By <xref ref="th_dimension_compendium"/> and its corollaries, we know that if <m>V</m> has a finite basis, then and subspace of <m>V</m> also has a finite basis. Let <m>X\subseteq \R</m> be an interval. Since
+      <me>
+        P\subseteq C^\infty(X)\subseteq C^n(X)\subseteq C(X)\subseteq F(X,\R)
+      </me>
+      is a chain of subspaces, and since <m>P</m> does not have a finite basis, we conclude that none of these other function spaces has a finite basis.
+    </p>
+  </statement>
+</remark>
+<example>
+  <title>Basis for <m>\R_{>0}</m></title>
+  <statement>
+    <p>
+    Let <m>V=\R_{>0}</m>, and let <m>S=\{\boldv\}</m>, where <m>\boldv=a</m> is any positive real number. Prove: <m>S</m> is a basis if and only if <m>a\ne 1</m>.
+    </p>
+  </statement>
+  <solution>
+    <case>
+     <title><m>(a=1\implies S \text{ not a basis})</m></title>
+    <p>
+    Suppose <m>a=1</m>. Since <m>1=\boldzero\in V</m>, we have <m>S=\{\boldzero\}</m>. Any set containing the zero vector is linearly dependent (<xref ref="rm_linear_independence"/>). Thus <m>S</m> is not a basis.
+    </p>
+    </case>
+    <case>
+     <title><m>(a\ne 1 \implies S \text{ is a basis})</m></title>
+    <p>
+    Since <m>S=\{\boldv\}</m> consists of one nonzero element, it is linearly independent (<xref ref="rm_linear_independence"/>). It remains only to show that <m>S</m> spans <m>\R_{>0}</m>, which amounts to showing that every <m>b\in \R_{>0}</m> is a scalar multiple of <m>\boldv=a</m>. Since by definition scalar multiplication in <m>\R_{>0}</m> is defined as <m>c\boldv=a^c</m>, this is equivalent to showing that every <m>b\in \R_{>0}</m> can be written in the form <m>b=a^c</m>. This fact is a familiar result from calculus, where you learn that the range (or image) of any exponential function <m>f(x)=a^x</m> is the set of all positive real numbers.
+    </p>
+    </case>
+  </solution>
+</example>
+<p>
+  Proceeding directly from the definition, to show a set <m>B</m> is a basis of <m>V</m> we have to do two steps: (i) show <m>\Span B= V</m>; (ii) show that <m>B</m> is linearly independent. The following theorem offers gives rise to a one-step technique for proving <m>B</m> is a basis: show that every element of <m>V</m> can be written as a linear combination of elements of <m>B</m> in a <em>unique way</em>.
+</p>
+<theorem xml:id="th_basis_equivalence">
+  <statement>
+    <p>
+    Let <m>B</m> be a subset of the vector space <m>V</m>. The following statements are equivalent:
+    </p>
+    <ol>
+      <li>
+        <p>
+          The set <m>B</m> is a basis of <m>V</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          Every element of <m>V</m> can be written as a linear combination of elements of <m>B</m> in a unique way: <ie /> if we have
+          <me>
+            \boldv=c_1\boldv_1+c_2\boldv_2+\cdots +c_r\boldv_r=d_1\boldw_1+d_2\boldw_2+\cdots +d_s\boldw_s
+          </me>,
+          then <m>r=s</m>, and after a reordering we have <m>\boldv_i=\boldw_i</m> and <m>c_i=d_i</m> for any <m>1\leq i\leq r</m>.
+        </p>
+      </li>
+    </ol>
+  </statement>
+  <proof>
+    <p>
+      Coming soon!
+    </p>
+  </proof>
+
+</theorem>
+<example>
+  <title>One-step technique for bases</title>
+  <statement>
+    <p>
+    Let <m>V=P_1</m>.  Use the one-step technique to verify whether the given <m>S</m> is a basis of <m>V</m>.
+    </p>
+    <ol>
+      <li>
+        <p>
+          <m>S=\{p(x)=2x+1, x+1\}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>S=\{p(x)=x+1, q(x)=x-1, r(x)=7x+4\}</m>
+        </p>
+      </li>
+    </ol>
+  </statement>
+  <solution>
+    <p>
+      <ol>
+        <li>
+          <p>
+            Take an arbitrary element <m>ax+b\in P_1</m> and consider the polynomial equation
+            <me>
+              c_1p(x)+c_2q(x)=ax+b
+            </me>
+            The usual remark about polynomial equality implies that this is equivalent to the matrix equation
+            <me>
+            \begin{bmatrix}
+            2\amp 1\\ 1\amp 1
+            \end{bmatrix}
+            \begin{bmatrix}
+              c_1 \\ c_2
+            \end{bmatrix}
+            =
+            \begin{bmatrix}
+              a\\ b
+            \end{bmatrix}
+            =\boldy
+            </me>.
+            The matrix on the left is invertible, allowing us to solve
+            <me>
+            \begin{bmatrix}
+              c_1 \\ c_2
+            \end{bmatrix}
+            =\begin{bmatrix}
+            1\amp -1\\ -1\amp 2
+            \end{bmatrix}
+            \begin{bmatrix}
+              a\\ b
+            \end{bmatrix}
+            =\begin{bmatrix}
+              a-b\\ -a+2b
+            \end{bmatrix}
+            </me>.
+            We conclude that any <m>ax+b\in P_1</m> can be written as <m>c_1p+c_2q</m> in a unique way: namely, with <m>c_1=a-b</m> and <m>c_2=-a+2b</m>. Thus <m>S</m> is a basis. 
+          </p>
+        </li>
+      </ol>
+    </p>
+  </solution>
+</example>
+</paragraphs>
+
+</section>
