@@ -295,25 +295,24 @@
       Prove that the set <m>W\subseteq\R^3</m> of all vectors <m>(x,y,z)</m> satisfying
       <m>x+2y+3z=x-y-z=0</m> is a subspace of <m>\R^3</m>.
     </p>
-    <solution>
-      <p>
-          Let <me>A=\begin{bmatrix}1\amp 2\amp 3\\ 1\amp -1\amp -1 \end{bmatrix}</me>, and let
-          <md>
-            <mrow>T_A\colon \R^3 \amp\rightarrow \R^2 </mrow>
-            <mrow> (x,y,z)\amp\mapsto (x+2y+3z, x-y-z) </mrow>
-          </md>
-          be its associated linear transformation. Then
-          <md>
-            <mrow> \NS T_A \amp =\{(x,y,z)\in\R^3\colon T_A(x,y,z)=(0,0)\} </mrow>
-            <mrow> \amp = \{(x,y,z)\in\R^3\colon (x+2y+3z,x-y-z)=(0,0)\} </mrow>
-            <mrow>  \amp = \{(x,y,z)\in\R^3\colon x+2y+3z=x-y-z=0\}</mrow>
-            <mrow>  \amp = W</mrow>
-          </md>.
-          This shows that <m>W</m> can be identified as the null space of a linear transformation, and hence is a subspace of <m>\R^3</m>.
-      </p>
-    </solution>
-
   </statement>
+  <solution>
+    <p>
+        Let <me>A=\begin{bmatrix}1\amp 2\amp 3\\ 1\amp -1\amp -1 \end{bmatrix}</me>, and let
+        <md>
+          <mrow>T_A\colon \R^3 \amp\rightarrow \R^2 </mrow>
+          <mrow> (x,y,z)\amp\mapsto (x+2y+3z, x-y-z) </mrow>
+        </md>
+        be its associated linear transformation. Then
+        <md>
+          <mrow> \NS T_A \amp =\{(x,y,z)\in\R^3\colon T_A(x,y,z)=(0,0)\} </mrow>
+          <mrow> \amp = \{(x,y,z)\in\R^3\colon (x+2y+3z,x-y-z)=(0,0)\} </mrow>
+          <mrow>  \amp = \{(x,y,z)\in\R^3\colon x+2y+3z=x-y-z=0\}</mrow>
+          <mrow>  \amp = W</mrow>
+        </md>.
+        This shows that <m>W</m> can be identified as the null space of a linear transformation, and hence is a subspace of <m>\R^3</m>.
+    </p>
+  </solution>
 </example>
 <definition xml:id="d_symmetric_skewsymmetric">
   <title>Symmetric and skew-symmetric matrices</title>
@@ -330,34 +329,35 @@
     <p>
       Let <m>V=M_{nn}</m>, let <m>W_1</m> be the set of all symmetric <m>n\times n</m> matrices, and let <m>W_2</m> be the set of all skew-symmetric <m>n\times n</m> matrices. Prove that <m>W_1</m> and <m>W_2</m> are subspaces of <m>V</m>.
     </p>
-    <solution>
-      <p>
-        Define functions <m>T_i\colon M_{nn}\rightarrow M_{nn}</m>, <m>i=1,2</m>, as follows:
-        <md>
-          <mrow>T_1(A) \amp = A^T-A </mrow>
-          <mrow> T_2(A)\amp = A^T+A</mrow>
-        </md>.
-        Firstly, it is easy to see, using <xref ref="th_trans_props"/> that both <m>T_1</m> and <m>T_2</m> are both linear transformations. For example, for <m>T_1</m> we have
-        <md>
-          <mrow>T_1(cA+dB) \amp=(cA+dB)^T-(cA+dB) </mrow>
-          <mrow> \amp=cA^T+dB^T-cA-cB </mrow>
-          <mrow>  \amp = c(A^T-A)+d(B^T-B)</mrow>
-          <mrow>  \amp = cT_1(A)+dT_1(B)</mrow>
-        </md>.
-        As similar proof applies to <m>T_2</m>.
-      </p>
-      <p>
-        Next, it is easy to see that <m>W_1=\NS T_1</m> and <m>W_2=\NS T_2</m>. Taking <m>W_1</m> for example, we have
-        <md>
-          <mrow>A \text{ symmetric} \amp\iff A^T=A </mrow>
-          <mrow> \amp\iff A^T-A=\boldzero_{n\times n} </mrow>
-          <mrow>  \amp \iff T_1(A)=\boldzero_{n\times n}</mrow>
-          <mrow>  \amp \iff A\in \NS T_1</mrow>
-        </md>.
-        Having identified <m>W_1</m> and <m>W_2</m> as null spaces of linear transformations, we conclude that they are subspaces of <m>M_{nn}</m>.
-      </p>
-    </solution>
+
   </statement>
+  <solution>
+    <p>
+      Define functions <m>T_i\colon M_{nn}\rightarrow M_{nn}</m>, <m>i=1,2</m>, as follows:
+      <md>
+        <mrow>T_1(A) \amp = A^T-A </mrow>
+        <mrow> T_2(A)\amp = A^T+A</mrow>
+      </md>.
+      Firstly, it is easy to see, using <xref ref="th_trans_props"/> that both <m>T_1</m> and <m>T_2</m> are both linear transformations. For example, for <m>T_1</m> we have
+      <md>
+        <mrow>T_1(cA+dB) \amp=(cA+dB)^T-(cA+dB) </mrow>
+        <mrow> \amp=cA^T+dB^T-cA-cB </mrow>
+        <mrow>  \amp = c(A^T-A)+d(B^T-B)</mrow>
+        <mrow>  \amp = cT_1(A)+dT_1(B)</mrow>
+      </md>.
+      As similar proof applies to <m>T_2</m>.
+    </p>
+    <p>
+      Next, it is easy to see that <m>W_1=\NS T_1</m> and <m>W_2=\NS T_2</m>. Taking <m>W_1</m> for example, we have
+      <md>
+        <mrow>A \text{ symmetric} \amp\iff A^T=A </mrow>
+        <mrow> \amp\iff A^T-A=\boldzero_{n\times n} </mrow>
+        <mrow>  \amp \iff T_1(A)=\boldzero_{n\times n}</mrow>
+        <mrow>  \amp \iff A\in \NS T_1</mrow>
+      </md>.
+      Having identified <m>W_1</m> and <m>W_2</m> as null spaces of linear transformations, we conclude that they are subspaces of <m>M_{nn}</m>.
+    </p>
+  </solution>
 </example>
 <p>
   The next two examples illustrate how to compute the image of a given linear transformation <m>T\colon V\rightarrow W</m>. The examples make clear that computing images (i.e., determining the set of elements of <m>W</m> that are hit by <m>T</m>) is often more onerous than computing null spaces.

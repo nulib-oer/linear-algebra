@@ -233,20 +233,6 @@
             The product of two <m>n\times n</m> elementary matrices is elementary.
           </p>
         </task>
-        <solution>
-          <p>
-            False. The matrices
-            <me>
-              E_1=\begin{amatrix}[rr]1\amp 2\\ 0\amp 1  \end{amatrix},
-              E_2=\begin{amatrix}[rr]1\amp 0\\ 3\amp 1  \end{amatrix}
-            </me>
-            are both elementary, but
-            <me>
-              E_1E_2=\begin{amatrix}[rr]7\amp 2\\ 3\amp 1  \end{amatrix}
-            </me>
-            is not elementary.
-          </p>
-        </solution>
         <task>
           <p>
             The product of two <m>n\times n</m> elementary matrices is invertible.
@@ -287,6 +273,23 @@
               </p>
             </task>
         </statement>
-
+        <solution>
+          <ol>
+            <li>
+              <p>
+                False. The matrices
+                <me>
+                E_1=\begin{amatrix}[rr]1\amp 2\\ 0\amp 1  \end{amatrix},
+                E_2=\begin{amatrix}[rr]1\amp 0\\ 3\amp 1  \end{amatrix}
+                </me>
+                are both elementary, but
+                <me>
+                E_1E_2=\begin{amatrix}[rr]7\amp 2\\ 3\amp 1  \end{amatrix}
+                </me>
+                is not elementary.
+              </p>
+            </li>
+          </ol>
+        </solution>
   </exercise>
 </exercises>

@@ -1,4 +1,4 @@
-<section xml:id="s_basis_dimension">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_basis_dimension">
   <title>Bases and dimension</title>
 <introduction>
   <p>
@@ -14,7 +14,7 @@
      </li>
      <li>
        <p>
-         If <m>B</m> is a basis of <m>V</m> containing exactly <m>n</m> elements, then any other basis <m>B'</m> also contains exactly <m>n</m> elements. (<xref ref="th_dimension_welldefined"/>)
+         If <m>B</m> is a basis of <m>V</m> containing exactly <m>n</m> elements, then any other basis <m>B'</m> also contains exactly <m>n</m> elements. (<xref ref="th_basis_dimension"/>)
        </p>
      </li>
    </ol>
@@ -52,40 +52,40 @@
         <p>
           The examples of standard spanning sets in <xref ref="rm_spanning_sets"/> are easily seen to be linearly independent, and hence are in fact bases. We list them again here, using the same notation, and refer to these as <m>standard bases</m> for the given spaces.
         </p>
-        <ol>
+        <ul>
         <li>
           <title>Zero space</title>
           <p>
-          Let <m>V=\{\boldzero\}</m>. The empty <m>S=\emptyset=\{ \}</m> is a basis for <m>V</m>. Note that <m>S=\emptyset</m> spans <m>V</m> by definition (<xref ref="d_span"/>), and it satisfies the defining implication of linear independence (<xref ref="d_linear_independence"/>) trivially.
+          Let <m>V=\{\boldzero\}</m>. The empty <m>B=\emptyset=\{ \}</m> is a basis for <m>V</m>. Note that <m>B=\emptyset</m> spans <m>V</m> by definition (<xref ref="d_span"/>), and it satisfies the defining implication of linear independence (<xref ref="d_linear_independence"/>) trivially.
           </p>
         </li>
         <li>
-          <title><m>\R^n</m></title>
-          <p>
+          <title>Tuples</title>
+          <p> Let <m>V=\R^n</m>.
           The set <m>B=\{\bolde_1, \bolde_2,\dots, \bolde_n\}</m> is the standard basis of <m>\R^n</m>.
           </p>
         </li>
         <li>
-          <title><m>M_{mn}</m></title>
+          <title>Matrices</title>
           <p>
-          The set <m>B=\{E_{ij}\colon 1\leq i\leq m, 1\leq j\leq n\}</m> is the standard basis of <m>M_{mn}</m>.
+          Let <m>V=M_{mn}</m>. The set <m>B=\{E_{ij}\colon 1\leq i\leq m, 1\leq j\leq n\}</m> is the standard basis of <m>M_{mn}</m>.
           </p>
         </li>
         <li>
-          <title><m>P_n</m></title>
+          <title>Polynomials of bounded degree</title>
           <p>
-          The set <m>B=\{x^n, x^{n-1}, \dots, x, 1\}</m> is the standard basis of <m>P_n</m>.
+          Let <m>V=P_n</m>. The set <m>B=\{x^n, x^{n-1}, \dots, x, 1\}</m> is the standard basis of <m>P_n</m>.
           </p>
         </li>
         <li>
-          <title><m>P</m></title>
+          <title>Polynomials</title>
           <p>
-          The set
-          <me>S=\{1, x, x^2, \dots\}=\{x^i\colon i\geq 0\} </me>
+          Let <m>V=P</m>, the space of all polynomials. The set
+          <me>B=\{1, x, x^2, \dots\}=\{x^i\colon i\geq 0\} </me>
           is the standard basis of <m>P</m>.
           </p>
         </li>
-      </ol>
+      </ul>
       </statement>
     </remark>
 <p>
@@ -196,9 +196,9 @@
         <p>
           Every element of <m>V</m> can be written as a linear combination of elements of <m>B</m> in a unique way: <ie /> if we have
           <me>
-            \boldv=c_1\boldv_1+c_2\boldv_2+\cdots +c_r\boldv_r=d_1\boldw_1+d_2\boldw_2+\cdots +d_s\boldw_s
+            \boldv=c_1\boldv_1+c_2\boldv_2+\cdots +c_r\boldv_r=d_1\boldv_1+d_2\boldv_2+\cdots +d_s\boldv_r
           </me>,
-          then <m>r=s</m>, and after a reordering we have <m>\boldv_i=\boldw_i</m> and <m>c_i=d_i</m> for any <m>1\leq i\leq r</m>.
+          where <m>\boldv_i\ne \boldv_j</m> for all <m>1\leq i, j\leq r</m>, then <m>c_i=d_i</m> for all <m>1\leq i\leq r</m>.
         </p>
       </li>
     </ol>
@@ -210,7 +210,7 @@
   </proof>
 
 </theorem>
-<example>
+<example xml:id="ex_basis_onestep">
   <title>One-step technique for bases</title>
   <statement>
     <p>
@@ -267,7 +267,7 @@
               a-b\\ -a+2b
             \end{bmatrix}
             </me>.
-            We conclude that any <m>ax+b\in P_1</m> can be written as <m>c_1p+c_2q</m> in a unique way: namely, with <m>c_1=a-b</m> and <m>c_2=-a+2b</m>. Thus <m>S</m> is a basis. 
+            We conclude that any <m>ax+b\in P_1</m> can be written as <m>c_1p+c_2q</m> in a unique way: namely, with <m>c_1=a-b</m> and <m>c_2=-a+2b</m>. Thus <m>S</m> is a basis.
           </p>
         </li>
       </ol>
@@ -275,5 +275,286 @@
   </solution>
 </example>
 </paragraphs>
+<paragraphs xml:id="ss_dimension">
+  <title>Dimension of a a vector space</title>
+  <p>
+    The next few results are all in the service of establishing a notion of <em>dimension</em> for a vector space <m>V</m>, which we define to be the number of elements in a basis for <m>V</m>. For this to be a well-defined quantity, we need to show that any two bases for a vector space have the same number of elements.
+  </p>
+  <definition xml:id="d_cardinality">
+    <title>Cardinality of a set</title>
+    <idx><h>cardinality</h><h>of a set</h></idx>
+    <notation>
+      <usage>\val{X}</usage>
+      <description>the cardinality of the set <m>X</m></description>
+    </notation>
+    <statement>
+      <p>
+      Let <m>X</m> be a set. The <term>cardinality of <m>X</m></term>, denoted <m>\val{X}</m> is defined as follows:
+      <ul>
+        <li>
+          <p>
+            If <m>X</m> is finite, then its cardinality is the number <m>n</m> of distinct elements it contains, written <m>\val{X}=n</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>X</m> is infinite, then we say it has <term>infinite cardinality</term>, and write <m>\val{X}=\infty</m>.
+          </p>
+        </li>
+      </ul>
+      </p>
+    </statement>
+  </definition>
+  <theorem xml:id="th_basis_dimension">
+    <statement>
+      <p>
+      Let <m>B</m> be a basis of the vector space <m>V</m>, and suppose <m>\val{B}=n</m>
+      </p>
+      <ol>
+        <li>
+          <p>
+            If <m>S</m> spans <m>V</m>, then <m>\val{S}\geq n</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>S</m> is linearly independent, then <m>\val{S}\leq n</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>B'</m> is a basis for <m>V</m>, then <m>\val{B'}=n</m>.
+          </p>
+        </li>
+      </ol>
+    </statement>
+    <proof>
+      <p>
+        Coming soon!
+      </p>
+    </proof>
+  </theorem>
+  <definition xml:id="d_dimension">
+    <title>Dimension of a vector space</title>
+    <idx><h>dimension</h><h>of a vector space</h></idx>
+    <notation>
+      <usage>\dim V</usage>
+      <description>dimension of <m>V</m></description>
+    </notation>
+    <statement>
+      <p>
+        Let <m>V</m> be a vector space. The <term>dimension of <m>V</m></term>, denoted <m>\dim V</m>, is defined as follows:
+        <ul>
+          <li>
+            <p>
+            If <m>V</m> has a finite basis <m>B</m>, then the dimension of <m>V</m> is the number of elements of <m>B</m>: <ie />, <m>\dim V=\val{B}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              If <m>V</m> does not have a finite basis, then we say <m>V</m> is <term>infinite dimensional</term>, and write <m>\dim V=\infty</m>.
+            </p>
+          </li>
+        </ul>
+      </p>
+    </statement>
+  </definition>
+      <remark xml:id="rm_basis_existence">
+    <statement>
+      <p>
+      It is a general fact that any vector space <m>V</m> has a basis <m>B</m>. We don't really need this for our treatment of dimension, and so will not prove it. As a result, a vector space not having a finite basis is equivalent to it having an infinite basis.
+      </p>
+    </statement>
+  </remark>
+    <remark xml:id="rm_computing_dimension">
+  <title>Computing dimension</title>
+  <statement>
+    <p>
+      By definition, to show a vector space <m>V</m> has dimension <m>n</m>, we must exhibit a basis <m>B</m> with <m>\val{B}=n</m>. Similarly to show <m>V</m> is infinite dimensional, we must show that it does not have a finite basis: equivalently, if you believe <xref ref="rm_basis_existence"/>, we must exhibit an infinite basis of <m>V</m>.
+    </p>
+    <p>
+      Consider our list of familiar vector spaces, for example. Since each vector spaces on this list comes equipped with a standard basis, we compute its dimension simply by counting the elements in the given standard basis.  For each <m>V</m> below we provide its standard basis <m>B</m> and compute <m>\dim V=\val{B}</m>.
+    </p>
+    <ul>
+    <li>
+      <title>Zero space</title>
+      <p>
+      <m>V=\{\boldzero\}</m>, <m>B=\emptyset=\{ \}</m>, <m>\dim V=0</m>
+      </p>
+    </li>
+    <li>
+      <title>Tuples</title>
+      <p>
+      <m>V=\R^n</m>, <m>B=\{\bolde_1, \bolde_2,\dots, \bolde_n\}</m>, <m>\dim V=\val{B}=n</m>
+      </p>
+    </li>
+    <li>
+      <title>Matrices</title>
+      <p>
+      <m>V=M_{mn}</m>, <m>B=\{E_{ij}\colon 1\leq i\leq m, 1\leq j\leq n\}</m>, <m>\dim V=\val{B}=m\, n</m>
+      </p>
+    </li>
+    <li>
+      <title>Polynomials of bounded degree</title>
+      <p>
+      <m>V=P_n</m>, <m>B=\{x^n, x^{n-1}, \dots, x, 1\}</m>, <m>\dim V=\val{B}=n+1</m>
+      </p>
+    </li>
+    <li>
+      <title>Polynomials</title>
+      <p>
+      <m>V=P</m>, <m>B=\{1,x, x^2, \dots\}</m>, <m>\dim V=\val{B}=\infty</m>
+      </p>
+    </li>
+    </ul>
+  </statement>
+</remark>
+<theorem xml:id="th_basis_contract_expand">
+  <statement>
+    <p>
+    Let <m>V</m> be a vector space of dimension <m>n</m>, and let <m>S\subseteq V</m> be a subset.
+    </p>
+    <ol>
+      <li>
+        <title>Contract to basis</title>
+        <p>
+          If <m>S</m> spans <m>V</m>, then there is a subset of <m>S</m> that is a basis of <m>V</m>: <ie />, we can <em>contract</em> a spanning set to a basis.
+        </p>
+      </li>
+      <li>
+      <title>Extend to basis</title>
+        <p>
+          If <m>S</m> is linearly independent, then <m>S</m> is contained in a basis of <m>V</m>: <ie />, we can <em>extend</em> a linearly independent set to a basis.
+        </p>
+      </li>
+    </ol>
+  </statement>
+</theorem>
 
+<corollary xml:id="cor_street_smarts">
+  <title>Street smarts</title>
+  <statement>
+    <p>
+    Let <m>V</m> be a vector space of dimension <m>n</m>, and let <m>S\subseteq V</m> be a subset.
+    </p>
+    <ol>
+      <li>
+        <p>
+          If <m>\val{S} &lt; n</m>, then <m>S</m> does not span <m>V</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>\val{S}>n</m>, then <m>S</m> is linearly dependent.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>\val{S}=n</m>, then the following are equivalent:
+          <ol label="i">
+            <li>
+              <p>
+                The set <m>S</m> is a basis.
+              </p>
+            </li>
+            <li>
+              <p>
+                The set <m>S</m> spans <m>V</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The set <m>S</m> is linearly independent.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+    </ol>
+  </statement>
+</corollary>
+<p>
+  Dimension can be a useful tool for deciding whether a subspace <m>W</m> of <m>V</m> is in fact all of <m>V</m>.
+</p>
+<corollary xml:id="cor_dimension_subspace">
+  <title>Dimension of subspaces</title>
+  <statement>
+    <p>
+    Let  <m>V</m> be a vector space.
+    </p>
+    <ol>
+      <li>
+        <p>
+          If <m>W\subseteq V</m> is a subspace, then <m>\dim W\leq \dim V</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>W\subseteq V</m> is a subspace, then <m>\dim W=\dim V</m> if and only if <m>W=V</m>.
+        </p>
+      </li>
+    </ol>
+  </statement>
+</corollary>
+<theorem xml:id="th_dimension_compendium">
+  <title>Dimension theory compendium</title>
+  <statement>
+    <p>
+    Let <m>V</m> be a vector space of dimension <m>n</m>.
+    </p>
+    <ol>
+      <li>
+        <title>Contract</title>
+        <p>
+        If <m>S</m> spans <m>V</m>, then <m>S</m> can be contracted to a basis of <m>V</m>.
+        </p>
+      </li>
+      <li>
+        <title>Expand</title>
+        <p>
+        If <m>S</m> is linearly independent, then <m>S</m> can be extended to a basis of <m>V</m>.
+        </p>
+      </li>
+      <li>
+        <title>Street smarts</title>
+        <p>
+        If <m>S\subseteq V</m> and <m>\val{S} &lt; n</m>, then <m>S</m> does not span <m>V</m>.
+        </p>
+      </li>
+      <li>
+        <title>Street smarts</title>
+        <p>
+        If <m>S\subseteq V</m> and <m>\val{S} > n</m>, then <m>S</m> is linearly dependent.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>S\subseteq V</m> and <m>\val{S}=n</m>, then <m>S</m> is a basis if and only if <m>S</m> spans if and only if <m>S</m> is linearly independent.
+        </p>
+      </li>
+      <li>
+        <title>Dimension of subspaces</title>
+        <p>
+        If <m>W\subseteq V</m> is a subspace, then
+        <ol>
+          <li>
+            <p>
+              <m>\dim W\leq \dim V</m>, and
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\dim W=\dim V</m> if and only if <m>W=V</m>.
+            </p>
+          </li>
+        </ol>
+        </p>
+      </li>
+
+    </ol>
+  </statement>
+</theorem>
+
+</paragraphs>
+<xi:include href="./s_basis_dimension_ex.ptx"/>
 </section>

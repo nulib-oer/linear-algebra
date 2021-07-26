@@ -279,7 +279,7 @@
     <statement>
         <p>
         For most of the vector spaces we've met a natural spanning set springs to mind. We will refer to these loosely as <em>standard</em> spanning sets. Some examples:
-        <ol>
+        <ul>
           <li>
             <title>Zero space</title>
             <p>
@@ -287,32 +287,32 @@
             </p>
           </li>
           <li>
-            <title><m>\R^n</m></title>
+            <title>Tuples</title>
             <p>
-            For <m>1\leq i\leq n</m>, define <m>\bolde_i</m> to be the <m>n</m>-tuple with a one in the <m>i</m>-th entry, and zeros elsewhere. Then <m>S=\{\bolde_1, \bolde_2,\dots, \bolde_n\}</m> is a spanning set for <m>\R^n</m>.
+            Let <m>V=\R^n</m>. For <m>1\leq i\leq n</m>, define <m>\bolde_i</m> to be the <m>n</m>-tuple with a one in the <m>i</m>-th entry, and zeros elsewhere. Then <m>S=\{\bolde_1, \bolde_2,\dots, \bolde_n\}</m> is a spanning set for <m>\R^n</m>.
             </p>
           </li>
           <li>
-            <title><m>M_{mn}</m></title>
+            <title>Matrices</title>
             <p>
-            For each <m>(i,j)</m> with <m>1\leq i\leq m</m> and <m>1\leq j\leq n</m>, define <m>E_{ij}</m> to be the <m>m\times n</m> matrix with a one in the <m>ij</m>-th entry, and zeros elsewhere. Then <m>S=\{E_{ij}\colon 1\leq i\leq m, 1\leq j\leq n\}</m> is a spanning set for <m>M_{mn}</m>.
+            Let <m>V=M_{mn}</m>. For each <m>(i,j)</m> with <m>1\leq i\leq m</m> and <m>1\leq j\leq n</m>, define <m>E_{ij}</m> to be the <m>m\times n</m> matrix with a one in the <m>ij</m>-th entry, and zeros elsewhere. Then <m>S=\{E_{ij}\colon 1\leq i\leq m, 1\leq j\leq n\}</m> is a spanning set for <m>M_{mn}</m>.
             </p>
           </li>
           <li>
-            <title><m>P_n</m></title>
+            <title>Polynomials of bounded degree</title>
             <p>
-            The set <m>S=\{x^n, x^{n-1}, \dots, x, 1\}</m> clearly spans <m>P_n</m>. This is just another way of saying that the <em>monomials</em> of degree at most <m>n</m> generate the polynomials of degree at most <m>n</m>.
+            Let <m>V=P_n</m>. The set <m>S=\{x^n, x^{n-1}, \dots, x, 1\}</m> clearly spans <m>P_n</m>. This is just another way of saying that the <em>monomials</em> of degree at most <m>n</m> generate the polynomials of degree at most <m>n</m>.
             </p>
           </li>
           <li>
-            <title><m>P</m></title>
+            <title>Polynomials</title>
             <p>
-            In a similar vein, the set
+            Let <m>V=P</m>, the space of <em>all</em> polynomials. In a similar vein, the set
             <me>S=\{1, x, x^2, \dots\}=\{x^i\colon i\geq 0\} </me>
-            of <em>all</em> monomials generates the space <m>P</m> of <em>all</em> polynomials.
+            of <em>all</em> monomials is a spanning set for <m>P</m>.
             </p>
           </li>
-        </ol>
+        </ul>
         Note the glaring difference between items (1)-(3) and item (4). Our standard spanning set of <m>P</m> is <em>infinite</em>, whereas the previous examples are all finite spanning sets. You suspect, no doubt, that there is no finite spanning set for <m>P</m>. We will be able to prove this shortly.
         </p>
       </statement>
@@ -543,7 +543,7 @@
           A subset <m>S</m> of a vector space <m>V</m> is
           <term>linear independent</term> if the following condition holds:
           <me>
-            \text{if } c_1\boldv_1+c_2\boldv_2+\cdots +c_r\boldv_r=\boldzero \text{ for some } \boldv_i\in S \text{ and } c_i\in \R , \text{ then } c_i=0 \text{ for all } i
+            \text{if } c_1\boldv_1+c_2\boldv_2+\cdots +c_r\boldv_r=\boldzero \text{ for some distinct vectors } \boldv_i\in S \text{ and scalars } c_i\in \R , \text{ then } c_i=0 \text{ for all } i
           </me>.
           The set <m>S</m> is <term>linearly dependent</term>
           if it is not linearly independent;
@@ -551,7 +551,7 @@
           <me>
             c_1\boldv_1+c_2\boldv_2+\cdots +c_r\boldv_r=\boldzero
           </me>
-          for some <m>\boldv_i\in S</m> and <m>c_i\in \R</m>, <em>and</em> we have <m>c_i\ne 0</m> for some <m>i</m>.
+          for some distinct <m>\boldv_i\in S</m> and <m>c_i\in \R</m>, <em>and</em> we have <m>c_i\ne 0</m> for some <m>i</m>.
         </p>
         <p>
           We call a linear combination <m>c_1\boldv_1+c_2\boldv_2+\cdots c_r\boldv_r</m>  <term>trivial</term> if <m>c_i=0</m> for all <m>i</m>, and <term>nontrivial</term> if <m>c_i\ne 0</m> for some <m>i</m>. Using this terminology, a set <m>S</m> is linearly independent if the only linear combination of elements of <m>S</m> yielding the zero vector is the trivial one.
@@ -594,7 +594,7 @@
             <p>
               If <m>S=\{\boldv\}</m>, then <m>S</m> is linearly independent if and only if <m>\boldv\ne \boldzero</m>. The previous comment shows why <m>\boldv\ne \boldzero</m> is a necessary condition. Let's see why it is sufficient.
             </p>
-            <p> Suppose <m>\boldv\ne\boldzero</m>, and suppose we have <m>c\boldv=\boldzero</m>. By <xref ref="th_vectorspace_props"/> we have <m>c=0</m> or <m>\boldv=\boldzero</m> (<xref ref="th_vectorspace_props"/>). Since <m>\boldv\ne 0</m>, we conclude <m>c=0</m>. This shows that the only linear combination of <m>S</m> yielding <m>\boldzero</m> is the trivial one. 
+            <p> Suppose <m>\boldv\ne\boldzero</m>, and suppose we have <m>c\boldv=\boldzero</m>. By <xref ref="th_vectorspace_props"/> we have <m>c=0</m> or <m>\boldv=\boldzero</m> (<xref ref="th_vectorspace_props"/>). Since <m>\boldv\ne 0</m>, we conclude <m>c=0</m>. This shows that the only linear combination of <m>S</m> yielding <m>\boldzero</m> is the trivial one.
             </p>
           </li>
           <li>
@@ -855,18 +855,18 @@
           </me>,
           for all <m>x\in (-2\pi, 2\pi)</m>. In particular, the equality is true when evaluated at <m>x=0, \pi/2, \pi</m>, yielding the following linear system:
           <me>
-            \begin{linsys}{rrrr}
-            x\amp =0 \colon \amp 0c_1\amp +\amp \cos(0)c_2\amp +\amp \sin(0) c_3\amp=0\\
-            x\amp =\pi/2 \colon \amp (\pi/2)c_1\amp +\amp \cos(\pi/2)c_2\amp +\amp \sin(\pi/2)c_3 \amp=0\\
-            x\amp =\pi \colon \amp \pi c_1\amp +\amp \cos(\pi)c_2\amp +\amp \sin(\pi)c_3 \amp=0
+            \begin{linsys}{4}
+            x=0 \colon \amp \amp 0c_1\amp +\amp \cos(0)c_2\amp +\amp \sin(0) c_3\amp= \amp 0\\
+            x=\pi/2 \colon \amp \amp (\pi/2)c_1\amp +\amp \cos(\pi/2)c_2\amp +\amp \sin(\pi/2)c_3 \amp = \amp 0\\
+            x=\pi \colon \amp  \amp \pi c_1\amp +\amp \cos(\pi)c_2\amp +\amp \sin(\pi)c_3 \amp= \amp 0
             \end{linsys}
           </me>,
           or
           <me>
-          \begin{linsys}{rrrr}
-          x\amp =0 \colon \amp \amp \amp c_2\amp \amp \amp=0\\
-          x\amp =\pi/2 \colon \amp (\pi/2)c_1\amp +\amp \amp +\amp c_3 \amp=0\\
-          x\amp =\pi \colon \amp \pi c_1\amp - \amp c_2 \amp \amp  \amp=0
+          \begin{linsys}{4}
+          x=0 \colon  \amp \amp \amp \amp c_2\amp \amp \amp = \amp 0\\
+          x=\pi/2 \colon \amp  \amp (\pi/2)c_1\amp +\amp \amp +\amp c_3 \amp = \amp 0\\
+          x=\pi \colon \amp  \amp \pi c_1\amp - \amp c_2 \amp \amp  \amp= \amp 0
           \end{linsys}
           </me>.
           This system can be now be solved essentially by inspection: the first equation implies <m>c_2=0</m>; setting <m>c_2=0</m>, in the third equation, we conclude <m>c_1=0</m>; the second equation now implies <m>c_3=0</m>. We conclude that <m>c_1=c_2=c_3=0</m>. Thus the only linear combination of <m>f, g, h</m> yielding the zero function is the trivial one, showing that <m>S</m> is linearly independent.
@@ -897,88 +897,8 @@
 </example>
   </paragraphs>
 <xi:include href="./s_span_independence_ex.ptx"/>
-  <!-- <p>
-    Decide whether <m>S</m> is linearly independent.
-  </p>
-  <proof>
-    <p>
-      First observe that <m>\boldzero</m> is the zero function:
-      the function that assigns 0 to all inputs <m>x</m>.
-    </p>
-    <p>
-      We ask whether there is a <em>nontrivial</em>
-      combination <m>af+bg+ch=\boldzero</m>.
-    </p>
-    <p>
-      <em>Key observation:</em> the equality above is an equality of <em>functions</em>.
-      Thus this is true if and only if
-      <m>af(x)+bg(x)+ch(x)=0</m> \alert{for all <m>x</m>}.
-    </p>
-    <p>
-      To get a linear system,
-      we evaluate the above at a few clever choices of <m>x</m>:
-      <md>
-        <mrow>x=0\amp :\amp  a(0)+b\cos(0)+c\sin(0)=0\Rightarrow 0+b+0=0\Rightarrow b=0</mrow>
-        <mrow>x=\pi\amp :\amp  a(\pi)+c\sin(\pi)=0\Rightarrow \pi a+0=0\Rightarrow a=0</mrow>
-      </md>
-    </p>
-    <p>
-      Having shown <m>a=b=0</m>,
-      we are left with the equation <m>c\sin(x)=0</m> for all <m>x</m>,
-      which is true iff <m>c=0</m>.
-    </p>
-    <p>
-      Thus the only linear combination yielding <m>\boldzero</m> is <m>a=b=c=0</m>,
-      the trivial one, showing <m>S</m> is
-      <em>linearly independent</em>.
-    </p>
-  </proof>
-  </paragraphs>
-  <paragraphs>
-  <title>Linear independence in function spaces</title>
-  <p>
-    As the last example illustrates,
-    a set of functions <m>S=\{f_1,f_2, \dots ,f_r\}</m> is linearly independent if
-  </p>
-  <p>
-    <m>k_1f_1+k_2f_2+\cdots k_rf_r=\boldzero</m> implies <m>k_i=0</m> for all <m>i</m>.
-  </p>
-  <p>
-    Recall <m>\boldzero</m> here stands for the <em>zero function</em>.
-    Thus we must treat such a linear combination as a function identity!
-    In other words to say
-    <me>
-      k_1f_1+k_2f_2+\cdots k_rf_r=\boldzero
-    </me>
-    is simply to say that
-    <me>
-      k_1f_1(x)+k_2f_2(x)+\cdots k_rf_r(x)=0
-    </me>
-  </p>
-  <paragraphs>
-    <title>for all <m>x</m></title>
-    <p>
-      in the given domain.
-    </p>
-  </paragraphs>
-  <p>
-    The beauty of this
-    <q>for all <m>x</m></q>
-    is that by picking say <m>r</m> actual examples of <m>x</m> and evaluating above,
-    we generate <m>r</m> linear equations in the unknowns <m>k_i</m>.
-  </p>
-  <p>
-    If this system has no nontrivial solutions,
-    then we know the functions are independent.
-  </p>
-  <p>
-    However, if this system DOES have a nontrivial solution we CANNOT conclude the functions are linearly dependent.
-    Why?
-    We would have shown the identity above holds only for these <m>r</m> choices of <m>x</m>,
-    but not necessarily <em>all</em> <m>x</m>!
-  </p>
-  </paragraphs>
-  <paragraphs>
+
+  <!-- <paragraphs>
   <title>$C^\infty(a,b)$ and the Wronskian</title>
   <p>
     Let's consider this observation in the special example of
@@ -1005,21 +925,10 @@
         Let <m>W(x)</m> be the Wronskian of the <m>f_i</m>.
         Then
         <me>
-          W\ne\boldzero\Rightarrow \text{ \(S\) is linearly indendent }
+          W\ne\boldzero\Rightarrow \text{ \(S\) is linearly independent }
         </me>.
       </p>
     </statement>
-  </theorem>
-  <paragraphs>
-    <title>Comments</title>
-  </paragraphs>
-  <p>
-    (1) Again <m>\boldzero</m> here is the <em>zero function</em>.
-    So <m>W\ne\boldzero</m> means there is an <m>x</m> in <m>(a,b)</m> such that <m>W(x)\ne 0</m>.
-  </p>
-  <p>
-    (2) This implication only goes one way!! In other words,
-    <m>W(x)=0</m> for all <m>x</m> does not imply <m>S</m> is dependent!!
-  </p>
-  </paragraphs> -->
+  </theorem> -->
+
 </section>
