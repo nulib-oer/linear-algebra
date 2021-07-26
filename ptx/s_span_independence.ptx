@@ -313,7 +313,7 @@
             </p>
           </li>
         </ul>
-        Note the glaring difference between items (1)-(3) and item (4). Our standard spanning set of <m>P</m> is <em>infinite</em>, whereas the previous examples are all finite spanning sets. You suspect, no doubt, that there is no finite spanning set for <m>P</m>. We will be able to prove this shortly.
+        Note the glaring difference between the first three examples, and the last: our standard spanning set for <m>P</m> is <em>infinite</em>, whereas the previous examples are all finite spanning sets. You suspect, no doubt, that there is no finite spanning set for <m>P</m>. We will be able to prove this shortly.
         </p>
       </statement>
     </remark>
