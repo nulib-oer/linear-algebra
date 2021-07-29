@@ -204,7 +204,7 @@ In each exercise, determine whether the given subset <m>S</m> of the vector spac
   </statement>
   <hint>
     <p>
-      Use the column method (<xref ref="th_column_method"/>) and the invertibilty theorem (<xref ref="th_invertibility"/>)
+      Use the column method (<xref ref="th_column_method"/>) and the invertibilty theorem (<xref ref="th_invertibility_expanded"/>)
     </p>
   </hint>
 </exercise>
@@ -212,7 +212,7 @@ In each exercise, determine whether the given subset <m>S</m> of the vector spac
   <title>Linear transformations, span, and independence</title>
   <statement>
     <p>
-      Suppose <m>T\colon V\rightarrow W</m> is a linear transformation.   Let <m>S=\{\boldv_1,\boldv_2,\dots ,\boldv_r\}</m> be a subset of <m>V</m>, and let <m>S'=\{\boldw_1, \boldw_2, \dots, \boldw_r\}</m>, where <m>\boldw_i=T(\boldw_i)</m>.
+      Suppose <m>T\colon V\rightarrow W</m> is a linear transformation.   Let <m>S=\{\boldv_1,\boldv_2,\dots ,\boldv_r\}</m> be a subset of <m>V</m>, and let <m>S'=\{\boldw_1, \boldw_2, \dots, \boldw_r\}</m>, where <m>\boldw_i=T(\boldv_i)</m>.
     </p>
     <p>
       Answer true or false. If true, provide a proof; if false, provide an explicit counterexample. Note: for a complete counterexample you need to specify <m>V</m>, <m>W</m>, <m>T\colon V\rightarrow W</m>, and <m>S</m>.
