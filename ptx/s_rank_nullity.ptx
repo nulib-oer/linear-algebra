@@ -1,0 +1,126 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_rank_nullity">
+  <title>Rank-nullity theorem and fundamental spaces</title>
+  <introduction>
+    In a sense, this section is just a long-format example of how to compute bases and dimensions of subspaces. Along the way, however we meet the <xref ref="th_rank-nullity" text="custom">rank-nullity theorem</xref> (sometimes called the <q>fundamental theorem of linear algebra</q>), and apply this theorem in the context of <em>fundamental spaces of matrices</em> (<xref ref="d_fundamental_space"/>)
+  </introduction>
+
+<definition xml:id="d_rank_nullity">
+  <title>Rank and nullity</title>
+  <idx><h>rank</h><h>of a linear transformation</h></idx>
+  <idx><h>nullity</h><h>of a linear transformation</h></idx>
+  <notation>
+    <usage>\rank T</usage>
+    <description>the rank of <m>T</m></description>
+  </notation>
+  <notation>
+    <usage>\nullity T</usage>
+    <description>the nullity of <m>T</m></description>
+  </notation>
+  <statement>
+    <p>
+      Let <m>T\colon V\rightarrow W</m> be a linear transformation.
+      <ul>
+        <li>
+          <p>
+            The <term>rank</term> of <m>T</m>, denoted <m>\rank T</m>, is the dimension of <m>\im T</m>: <ie />,
+            <me>
+              \rank T=\dim\im T
+            </me>.
+          </p>
+        </li>
+        <li>
+          <p>
+            The <term>nullity</term> of <m>T</m>, denoted <m>\nullity T</m>, is the dimension of <m>\NS T</m>: <ie />,
+            <me>
+              \nullity T=\dim\NS T
+            </me>.
+          </p>
+        </li>
+      </ul>
+    </p>
+  </statement>
+</definition>
+<theorem xml:id="th_rank-nullity">
+  <title>Rank-nullity</title>
+  <idx><h>rank-nullity theorem</h></idx>
+  <statement>
+    <p>
+    Let <m>V</m> be a vector space of dimension <m>n</m>, and let <m>T\colon V\rightarrow W</m> be a linear transformation. Then
+    <me>
+      n=\dim\NS T+\dim\im T
+    </me>,
+      or alternatively,
+      <me>
+        n=\nullity T+\rank T
+      </me>.
+
+    </p>
+  </statement>
+</theorem>
+
+<definition xml:id="d_fundamental_space">
+  <title>Fundamental spaces</title>
+  <idx><h>fundamental space</h><h>of a matrix</h></idx>
+  <idx><h>null space</h><h>of a matrix</h></idx>
+  <idx><h>row space</h><h>of a matrix</h></idx>
+  <idx><h>column space</h><h>of a matrix</h></idx>
+  <idx><h>rank</h><h>of a matrix</h></idx>
+  <idx><h>nullity</h><h>of a matrix</h></idx>
+  <notation>
+    <usage>\NS A</usage>
+    <description>the null space of matrix <m>A</m></description>
+  </notation>
+  <notation>
+    <usage>\RS A</usage>
+    <description>the row space of a matrix <m>A</m></description>
+  </notation>
+  <notation>
+    <usage>\CS A</usage>
+    <description>the column space of a matrix <m>A</m></description>
+  </notation>
+  <notation>
+    <usage>\rank A</usage>
+    <description>the rank of a matrix <m>A</m></description>
+  </notation>
+  <notation>
+    <usage>\nullity A</usage>
+    <description>the nullity of a matrix <m>A</m></description>
+  </notation>
+  <statement>
+    <p>
+      Let <m>A</m> be a an <m>m\times n</m> matrix. Let <m>\boldr_1,\dots, \boldr_m</m> be the <m>m</m> rows of <m>A</m>, and let <m>\boldc_1,\dots \boldc_n</m> be its <m>n</m> columns. The following subspaces are called the <term>fundamental subspaces of $A$</term>.
+    </p>
+    <ul>
+      <li>
+        <p>
+          The <term>null space of <m>A</m></term>, denoted <m>\NS A</m> is defined as
+          <me>
+          \NS A =\{\boldx\in\R^n\colon A\boldx=\boldzero\}\subseteq \R^n.
+          </me>.
+
+        </p>
+      </li>
+      <li>
+        <p>
+          The <term>row space of <m>A</m></term>, denoted <m>\RS A</m>, is defined as
+          <me>
+            \RS A=\Span \{\boldr_1, \boldr_2, \dots, \boldr_m\}\subseteq \R^n
+          </me>.
+
+        </p>
+      </li>
+      <li>
+        <p>
+          The <term>column space of <m>A</m></term>, denoted <m>\CS A</m>, is defined as
+          <me>
+            \CS A=\Span \{\boldc_1, \boldc_2, \dots, \boldc_n\}\subseteq \R^m
+          </me>.
+        </p>
+      </li>
+    </ul>
+    <p>
+      The <term>rank</term> and <term>nullity</term> of <m>A</m>, denoted <m>\rank A</m> and <m>\nullity A</m>, respectively, are defined as <m>\rank A=\dim \CS A</m> and <m>\nullity A=\dim\NS A</m>.
+    </p>
+  </statement>
+</definition>
+</section>
