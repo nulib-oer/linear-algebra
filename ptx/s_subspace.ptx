@@ -459,7 +459,7 @@
       since it does not contain the zero vector.
     </p>
     <p>
-      The question arises: Can we describe <em>all</em> the subspaces of <m>\R^2</m> or <m>\R^3</m>? The answer is yes, as we will see in <xref ref="s_dimension"/>
+      The question arises: Can we describe <em>all</em> the subspaces of <m>\R^2</m> or <m>\R^3</m>? The answer is yes, as we will see in <xref ref="s_basis_dimension"/>
     </p>
   </statement>
 </remark>
