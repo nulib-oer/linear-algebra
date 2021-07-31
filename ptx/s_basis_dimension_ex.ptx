@@ -2,7 +2,7 @@
 <exercisegroup>
 <introduction>
 <p>
-For each vector space <m>V</m> and subset <m>S</m>, use the one-step technique (<xref ref="rm_ones"/>to decide whether <m>S</m> is a basis for <m>V</m>. (See <xref ref="ex_basis_onestep"/>.)
+For each vector space <m>V</m> and subset <m>S</m>, use the one-step technique (<xref ref="eg_basis_onestep"/>to decide whether <m>S</m> is a basis for <m>V</m>. 
 </p>
 </introduction>
 <exercise>

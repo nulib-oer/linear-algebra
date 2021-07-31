@@ -199,23 +199,47 @@
       </li>
       <li>
         <p>
-          Every element of <m>V</m> can be written as a linear combination of elements of <m>B</m> in a unique way: <ie /> if we have
+          Every element <m>\boldv\in V</m> can be written as a linear combination of elements of <m>B</m>, and furthermore this linear combination is unique: <ie /> if we have
           <me>
             \boldv=c_1\boldv_1+c_2\boldv_2+\cdots +c_r\boldv_r=d_1\boldv_1+d_2\boldv_2+\cdots +d_s\boldv_r
           </me>,
-          where <m>\boldv_i\ne \boldv_j</m> for all <m>1\leq i, j\leq r</m>, then <m>c_i=d_i</m> for all <m>1\leq i\leq r</m>.
+          where <m>\boldv_i\in B</m> and <m>\boldv_i\ne \boldv_j</m> for all <m>1\leq i, j\leq r</m>, then <m>c_i=d_i</m> for all <m>1\leq i\leq r</m>.
         </p>
       </li>
     </ol>
   </statement>
   <proof>
-    <p>
-      Coming soon!
-    </p>
+      <p>
+        Since clearly (1) and (2) imply that <m>B</m> spans <m>V</m>, it is enough to show that <m>B</m> is linearly independent if and only if whenever
+        <me>
+          c_1\boldv_1+c_2\boldv_2+\cdots +c_r\boldv_r=d_1\boldv_1+d_2\boldv_2+\cdots +d_s\boldv_r
+        </me>,
+        where <m>\boldv_i\in B</m> and <m>\boldv_i\ne \boldv_j</m> for all <m>1\leq i, j\leq r</m>, then <m>c_i=d_i</m> for all <m>1\leq i\leq r</m>.
+        We prove each implication separately.
+      </p>
+        <p>
+          Assume <m>B</m> is linearly independent. Then
+          <md>
+            <mrow> c_1\boldv_1+c_2\boldv_2+\cdots +c_r\boldv_r=d_1\boldv_1+d_2\boldv_2+\cdots +d_r\boldv_r \amp \implies
+            c_1\boldv_1+c_2\boldv_2+\cdots +c_r\boldv_r-(d_1\boldv_1+d_2\boldv_2+\cdots +d_r\boldv_r)=\boldzero </mrow>
+            <mrow> \amp\implies (c_1-d_1)\boldv_1+(c_2-d_2)\boldv_2+\cdots +(c_r-d_r)\boldv_r=\boldzero </mrow>
+            <mrow>  \amp \implies c_i-d_i=0 \text{ for all } i \amp (B \text{ lin. independent}, \boldv_i\ne \boldv_j) </mrow>
+            <mrow>  \amp \implies c_i=d_i \text{ for all } i </mrow>
+          </md>.
+        </p>
+        <p>
+          Going the other way, assume linear combinations of <m>B</m> are unique in the sense described. Then
+          <md>
+            <mrow>c_1\boldv_1+c_2\boldv_2+\cdots c_r\boldv_r=\boldzero \amp \implies
+             c_1\boldv_1+c_2\boldv_2+\cdots c_r\boldv_r=0\boldv_1+0\boldv_2+\cdots 0\boldv_r</mrow>
+             <mrow>  \amp \implies c_1=0, c_2=0, \dots, c_r=0 \amp \text{(by uniqueness condition)}</mrow>
+          </md>.
+          We conclude <m>B</m> is linearly independent in this case, as desired.
+        </p>
   </proof>
 
 </theorem>
-<example xml:id="ex_basis_onestep">
+<example xml:id="eg_basis_onestep">
   <title>One-step technique for bases</title>
   <statement>
     <p>
@@ -310,7 +334,43 @@
       </p>
     </statement>
   </definition>
+  The following theorem is the crucial result needed to show that any two finite bases of a vector space have the same cardinality.
+  <theorem xml:id="th_basis_span_bounds">
+    <statement>
+      <p>
+        Suppose <m>S</m> is a finite spanning set for the vector space <m>V</m> and let <m>\val{S}=n</m>. If <m>S'</m> is a finite set with <m>\val{S'}=r>n</m>, then <m>S'</m> is linearly dependent.
+      </p>
+    </statement>
+    <proof>
+      <p>
+        Let <m>S=\{\boldv_1, \boldv_2, \dots, \boldv_n\}</m>, and let <m>S'=\{\boldw_1, \boldw_2, \dots, \boldw_r\}</m>. Since <m>S</m> spans <m>V</m>, each element of <m>S'</m> is a linear combination of elements of <m>S</m>: <ie />, we have
+        <men xml:id="eq_basis_bound">
+          \boldw_j=a_{1j}\boldv_1+a_{2j}\boldv_2+\cdots a_{nj}\boldv_n=\sum_{i=1}^n\boldv_{ij}
+        </men>
+        for all <m>1\leq j\leq r</m>. Now consider the following chain of equivalences:
+        <md>
+          <mrow>c_1\boldw_1+c_2\boldw_2+\cdots c_r\boldw_r=\boldzero \amp \iff c_1(\sum_{i=1}^n\boldv_{i1})+c_2(\sum_{i=1}^n\boldv_{i2})+\cdots +c_r\sum_{i=1}^n\boldv_{in}=\boldzero\amp (<xref ref="eq_basis_bound"/>) </mrow>
+          <mrow>  \amp \iff \sum_{j=1}^rc_j\sum_{i=1}^na_{ij}\boldv_i=\boldzero</mrow>
+          <mrow> \amp\iff \sum_{i=1}^n(\sum_{j=1}^ra_{ij}c_j)\boldv_i=\boldzero  </mrow>
+          <mrow>  \amp \iff (\sum_{j=1}^ra_{1j}c_j)\boldv_1+(\sum_{j=1}^ra_{2j}c_j)\boldv_2+\cdots (\sum_{j=1}^ra_{nj}c_j)\boldv_n=\boldzero </mrow>
+        </md>.
+        From the last vector equation, we see that if we can find a nonzero sequence <m>(c_1,c_2,\dots, c_r)</m> satisfying
+        <me>
+          \sum_{j=1}^ra_{ij}c_j=0
+        </me>
+        for all <m>1\leq i\leq n</m>, then there is a nontrivial combination of the <m>\boldw_i</m> equal to the zero vector, and hence that <m>S'</m> is linearly dependent. Such a sequence <m>(c_1,c_2,\dots, c_n)</m> corresponds to a solution to the homogeneous linear with augmented matrix
+        <me>
+          \begin{amatrix}[r|r]
+          A\amp \boldzero
+          \end{amatrix}
+        </me>,
+        where <m>A=[a_{ij}]_{n\times r}</m>. Since this is a homogeneous system of <m>n</m> equations in <m>r</m> unknowns, and since <m>r>n</m>, there are in fact infinitely many solutions. (The system has at most <m>n</m> leading ones, and so there must be a free variable since one of the <m>r</m> columns in the equivalent row echelon matrix must fail to contain a leading one.) In particular there is a nonzero solution <m>(c_1,c_2,\dots, c_n)\ne \boldzero</m>, and we conclude that <m>S'</m> is linearly dependent.
+      </p>
+    </proof>
+  </theorem>
+  The next theorem not only ensures that our definition of dimension (<xref text="local" ref="d_dimension"/>) is well-defined, it also characterizes dimension as the minimal cardinality of a spanning set, and the maximal cardinality of a linearly independent set.
   <theorem xml:id="th_basis_dimension">
+    <title>Basis bounds</title>
     <statement>
       <p>
       Let <m>B</m> be a basis of the vector space <m>V</m>, and suppose <m>\val{B}=n</m>
@@ -335,7 +395,23 @@
     </statement>
     <proof>
       <p>
-        Coming soon!
+        <ol>
+          <li>
+            <p>
+              Suppose by contradiction that <m>\Span S=V</m> and <m>\val{S} &lt; n</m>. Then <xref ref="th_basis_span_bounds"/> would imply <m>B</m> is linearly dependent. Since this is a contradiction, we conclude that <m>\val{S}\geq n</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              This also follows from <xref ref="th_basis_span_bounds"/>: since <m>B</m> is a spanning set of <m>V</m> any set containing more than <m>n=\val{B}</m> elements must be linearly dependent.
+            </p>
+          </li>
+          <li>
+            <p>
+              This follows from (1) and (2): if <m>B'</m> is a basis, then since <m>B'</m> spans, we have <m>\val{B'}\geq n</m> (1); and since <m>B</m> is linearly independent we have <m>\val{B'}\leq n</m> (2). We conclude that <m>\val{B'}=n</m>.
+            </p>
+          </li>
+        </ol>
       </p>
     </proof>
   </theorem>
@@ -367,7 +443,7 @@
       <remark xml:id="rm_basis_existence">
     <statement>
       <p>
-      It is a general fact that any vector space <m>V</m> has a basis <m>B</m>. We don't really need this for our treatment of dimension, and so will not prove it. As a result, a vector space not having a finite basis is equivalent to it having an infinite basis.
+      Wouldn't it have been more natural to simply say <m>V</m> is infinite dimensional if it has an infinite basis? As it turns out this is indeed equivalent to not having a finite basis, but to prove this we need to establish the general fact that we can always find a basis for a given vector space <m>V</m>. As intuitive as that claim may sound (<ie />, that bases always exist), its proof requires some set theory methods that are not covered in this text. As such we will not include it in our treatment of dimension, and so will have to make do with our slightly awkward definition of infinite-dimensional vector spaces.
       </p>
     </statement>
   </remark>
@@ -414,10 +490,12 @@
     </ul>
   </statement>
 </remark>
+The <q>contracting and expanding</q> theorem below is very useful theoretical consequence of <xref ref="th_basis_dimension"/>. It allows us to construct a customized basis from a given set <m>S</m>. This method is used prominently in the proof of the <xref ref="th_rank-nullity" text="custom">rank-nullity theorem </xref>.
 <theorem xml:id="th_basis_contract_expand">
+  <title>Contracting and expanding to bases</title>
   <statement>
     <p>
-    Let <m>V</m> be a vector space of dimension <m>n</m>, and let <m>S\subseteq V</m> be a subset.
+    Let <m>V</m> be a vector space of dimension <m>n</m>, and let <m>S\subseteq V</m> be a finite subset.
     </p>
     <ol>
       <li>
@@ -434,8 +512,59 @@
       </li>
     </ol>
   </statement>
+  <proof>
+    <p> Let <m>S=\{\boldv_1, \boldv_2, \dots , \boldv_r\}</m>.
+      <ol>
+        <li>
+          <p>
+          Assume <m>\Span S=V</m>. Let <m>S'</m> be a subset of <m>S</m> of <em>minimal cardinality</em> such that <m>\Span S'</m> is still equal to <m>V</m>. Such a set is guaranteed to exist: since <m>S</m> is finite, it has a finite number of subsets; of these subsets some will span, others will not; of the subsets that do span, there will be one (or more) that has the least number of elements.
+          </p>
+          <p>
+            We claim that such a spanning subset <m>S'</m> of minimal cardinality is linearly independent, and hence is a basis for <m>V</m>, as desired. We give a proof by contradiction. Suppose <m>S'</m> is linearly dependent. Then some element of <m>S'</m>, call it <m>\boldv_0</m>, can be expressed as a linear combination of the other elements (<xref ref="rm_linear_independence"/>). Then in terms of span, the element <m>\boldv_0</m> is <q>redundant</q>. In other words, if we let <m>S''=S'-\{\boldv_0\}</m>, the set obtained by <q>throwing out</q> <m>\boldv_0</m>, then we have <m>\Span S''=\Span S'=V</m>. Since <m>\val{S''} &lt; \val{S}</m>, this contradicts our choice of <m>S'</m> as a spanning set of minimal cardinality. We conclude that <m>S'</m> is linearly independent, completing the proof.
+          </p>
+        </li>
+        <li>
+          <p>
+            Assume <m>S</m> is linearly independent. The procedure below constructs a finite chain of sets
+            <me>
+              S=S_0\subseteq S_1\dots \subseteq S_k
+            </me>
+            that ends with a basis <m>B=S_k</m>.
+            <ul>
+              <li>
+                <title>Initialization</title>
+                <p>
+                Let <m>S=S_0</m>
+                </p>
+              </li>
+              <li>
+              <title>Expansion loop</title>
+              <p>
+              If <m>\Span S_i=V</m>, return <m>B=S_i</m>. Otherwise set <m>S_{i+1}=S_i\cup \{\boldv\}</m>, where <m>\boldv</m> is any element of <m>V</m> that is not contained in <m>\Span S_i</m> and repeat.
+              </p>
+            </li>
+            </ul>
+            Some observations:
+            <ol label="i">
+              <li>
+                <p>
+                Each <m>S_i</m> is linearly independent. This can be shown by induction, the crucial point being that if <m>S_i</m> is linearly independent, and if <m>\boldv\notin \Span S_i</m>, then <m>S_{i+1}=S_i\cup \{\boldv_0\}</m> is linearly independent. The proof is left as an exercise.
+                </p>
+              </li>
+              <li>
+                <p>
+                  The procedure must halt. Why? Since <m>\dim V=n</m>, and since each <m>S_i</m> is linearly independent, we must have <m>\val{S_i}\leq n</m> for all <m>i</m> by <xref ref="th_basis_dimension"/>. Since <m>\val{S_i}&lt; \val{S_{i+1}}</m> and <m>\val{S_{i}}\leq n</m>, the procedure must halt in at most <m>n</m> steps.
+                </p>
+              </li>
+            </ol>
+            From (ii) we may assume the procedure halts at <m>S_k</m> for some <m>k\geq 0</m>. From (i) we know that <m>S_k</m> is linearly independent. Furthermore, since the procedure halts at <m>S_k</m>, we know that <m>\Span S_k=V</m>. It follows that <m>B=S_k</m> is a basis containing <m>S</m>, as desired.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </proof>
 </theorem>
-
+The following corollary follows from <xref ref="th_basis_dimension"/> and <xref ref="th_basis_contract_expand"/>. We call it a <q>street smarts</q> result as the first two statements give us a quick and dirty way of dashing a set's hopes of being a basis. The third statement asserts that when a finite set's cardinality matches the dimension of a space, then to prove it is a basis it suffices to prove either one of the two defining properties of <xref ref="d_basis"/>.
 <corollary xml:id="cor_street_smarts">
   <title>Street smarts</title>
   <statement>
@@ -477,6 +606,12 @@
       </li>
     </ol>
   </statement>
+  <proof>
+    <p>
+      Statements (1) and (2) follow directly from <xref ref="th_basis_dimension"/>. Statement (3) is an easy consequence of <xref ref="th_basis_contract_expand"/>. For example, if <m>S</m> spans <m>V</m>, then there is a subset <m>S'</m> of <m>S</m> that is a basis of <m>V</m>; since all bases of <m>V</m> have <m>n</m> elements, and since <m>\val{S}=n</m>, we must have <m>S'=S</m>; thus <m>S</m> is a basis. The proof for a linear independent set <m>S</m> is similar, and is left to the reader.
+    </p>
+  </proof>
+
 </corollary>
 <p>
   Dimension can be a useful tool for deciding whether a subspace <m>W</m> of <m>V</m> is in fact all of <m>V</m>.
