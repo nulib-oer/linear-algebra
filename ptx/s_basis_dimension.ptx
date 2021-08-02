@@ -368,7 +368,7 @@
       </p>
     </proof>
   </theorem>
-  The next theorem not only ensures that our definition of dimension (<xref text="local" ref="d_dimension"/>) is well-defined, it also characterizes dimension as the minimal cardinality of a spanning set, and the maximal cardinality of a linearly independent set.
+  The next theorem not only ensures that our definition of dimension (<xref text="global" ref="d_dimension"/>) is well-defined, it also characterizes dimension as the minimal cardinality of a spanning set, and the maximal cardinality of a linearly independent set.
   <theorem xml:id="th_basis_dimension">
     <title>Basis bounds</title>
     <statement>
@@ -614,7 +614,7 @@ The following corollary follows from <xref ref="th_basis_dimension"/> and <xref 
 
 </corollary>
 <p>
-  Dimension can be a useful tool for deciding whether a subspace <m>W</m> of <m>V</m> is in fact all of <m>V</m>.
+  We are often in a situation where we wish to show a given subspace of a vector space is in fact the entire space. For example, when deciding whether a set <m>S</m> spans a vector space <m>V</m>, we are asking whether <m>W=\Span S</m> is all of <m>V</m>. As another example, given a linear transformation <m>T\colon V\rightarrow W</m>, one of the first things we wish to determine is whether the subspace <m>\im T</m> is in fact all of <m>W</m>. As the next result illustrates, dimension is a very useful tool in this regard.
 </p>
 <corollary xml:id="cor_dimension_subspace">
   <title>Dimension of subspaces</title>
@@ -635,7 +635,31 @@ The following corollary follows from <xref ref="th_basis_dimension"/> and <xref 
       </li>
     </ol>
   </statement>
+  <proof>
+    <p>
+      <ol>
+        <li>
+          <p>
+            Firstly, if <m>\dim V=\infty</m>, then clearly <m>\dim W\leq \dim V</m> for any subspace <m>W\subseteq V</m>.
+          </p>
+          <p>
+            Now assume <m>\dim V=n</m>. Apply the <q>extending to a basis</q> procedure described in the proof of <xref ref="th_basis_contract_expand"/> to the emptyset <m>S=\{\}</m>, which is lienarly independent, considered as a subset of <m>W</m>: <ie />, at each stage, if the current set <m>S_i</m> is not a basis of <m>W</m>, add any element <m>\boldb\notin \Span S_i</m>. Since <m>W\subseteq V</m>, and since <m>\dim V\leq n</m>, the linearly independent sets <m>S_i</m> cannot have more than <m>n</m> elements; thus the procedure must halt with a basis <m>B</m> of <m>W</m> satisfying <m>\val{B}\leq n</m>. We conclude that <m>\dim W\leq \dim V</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Clearly, if <m>W=V</m>, then <m>\dim W=\dim V</m>. For the other direction, assume <m>\dim W=\dim V=n</m>. Let <m>B</m> be a basis for <m>W</m>. Since <m>B</m> is lienarly independent, it can be extended to a basis <m>B'</m> of <m>V</m> (<xref ref="th_basis_contract_expand" text="global"/>). Since <m>\val{B}=\dim W=\dim V</m>, and since all bases of <m>V</m> have cardinality <m>n</m>, we must have <m>B=B'</m>. It follows that <m>B</m> is also a basis of <m>V</m>, and hence that
+            <me>
+              V=\Span B=W
+            </me>.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </proof>
+
 </corollary>
+That was quite a dose of theory! For your convenience, we collect the various results on dimension, together with their nicknames, in one omnibus theorem.
 <theorem xml:id="th_dimension_compendium">
   <title>Dimension theory compendium</title>
   <statement>
@@ -668,6 +692,7 @@ The following corollary follows from <xref ref="th_basis_dimension"/> and <xref 
         </p>
       </li>
       <li>
+        <title>Street smarts</title>
         <p>
           If <m>S\subseteq V</m> and <m>\val{S}=n</m>, then <m>S</m> is a basis if and only if <m>S</m> spans if and only if <m>S</m> is linearly independent.
         </p>

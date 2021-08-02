@@ -123,5 +123,85 @@
     </p>
   </statement>
 </definition>
+<theorem xml:id="th_fundamental_spaces">
+  <title>Fundamental spaces</title>
+  <statement>
+    <p>
+    Let <m>A</m> be an <m>m\times n</m> matrix. Suppose <m>A</m> is row equivalent to the row echelon matrix <m>U</m>.
+    </p>
+    <ol>
+      <li>
+        <p>
+          We have
+          <ul>
+            <li>
+              <p>
+                <m>\NS A=\NS U</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\RS A=\RS U</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\CS A\ne \CS U</m>, in general.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+        Let <m>\ell </m> be the number of leading ones in <m>U</m>, and let <m>k=n-\ell</m>; <ie />, <m>\ell</m> and <m>k</m> are the number of leading and free variables, respectively, of the system corresponding to <m>\begin{amatrix}[r|r]U\amp \boldzero]\end{amatrix}</m>. Then
+        <md>
+          <mrow>\rank A\amp =\dim\CS A=\dim RS A=\ell </mrow>
+          <mrow> \nullity A\amp=\dim\NS A=k </mrow>
+        </md>.
+        </p>
+      </li>
+      <li>
+        <title>Rank-nullity for matrices</title>
+        <p>
+          We have
+          <me>
+            n=\dim\NS A+\dim\CS A=\dim\NS A+\dim\RS A
+          </me>.
+        </p>
+      </li>
+    </ol>
+  </statement>
+</theorem>
+<algorithm xml:id="proc_fund_spaces">
+  <title>Computing bases of fundamental spaces</title>
+  <statement>
+    <p>
+      To compute bases for the fundamental spaces of an <m>m\times n</m> matrix <m>A</m>, proceed as follow.
+    </p>
+    <ol>
+      <li>
+        <p>
+          Row reduce <m>A</m> to a matrix <m>U</m> in row echelon form.
+        </p>
+      </li>
+      <li>
+        <p>
+        We have <m>\NS A=\NS U</m>. Compute a parametric description of the solutions to the linear system <m>U\boldx=\boldzero</m> following <xref ref="th_solveSystem"/>. If the free variables are <m>t_1, t_2, \dots, t_k </m>, a basis <m>B=\{\boldv_1, \boldv_2, \dots, \boldv_k\}</m> of <m>\NS A</m> is obtained by letting <m>\boldv_i</m> be the solution corresponding to the choice <m>t_i=1</m> and <m>t_j=0</m> for <m>j\ne i</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          We have <m>\RS A=\RS U</m>. The set of nonzero rows of <m>U</m> is a basis for <m>\RS A</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          In general <m>\CS A\ne \CS U</m>. However, the columns of <m>U</m> containing leading ones form a basis of <m>\CS U</m>, and the <em>corresponding columns</em> of <m>A</m> form a basis for <m>\CS A</m>.
+        </p>
+      </li>
+    </ol>
+  </statement>
+</algorithm>
 
 </section>
