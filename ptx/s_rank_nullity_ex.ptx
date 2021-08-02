@@ -62,6 +62,35 @@
   <exercise>
     <statement>
       <p>
+        For each linear transformation <m>T\colon V\rightarrow W</m> use the rank-nullity theorem to decide whether <m>\im T=W</m>.
+      </p>
+      <ol>
+        <li>
+          <p>
+            <m>T\colon \R^4\rightarrow \R^5</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>T\colon M_{22}\rightarrow P_2</m>, <m>\nullity T=2</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>T\colon M_{23}\rightarrow M_{32}</m>, <m>\NS T=\{\boldzero\}</m>
+          </p>
+        </li>
+      </ol>
+    </statement>
+    <solution>
+      <p>
+
+      </p>
+    </solution>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
         Let <m>A</m> be <m>m\times n</m> with <m>n\lt m</m>.
         Prove, using <xref ref="th_fundamental_spaces"/> that there is a
         <m>\boldb\in\R^m</m> such that the system <m>A\boldx=\boldb</m> is inconsistent.
