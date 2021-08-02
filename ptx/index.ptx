@@ -302,8 +302,9 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
   <xi:include href="./c_linear_systems.ptx"/>
   <xi:include href="./c_matrices.ptx"/>
   <xi:include href="./c_vectorspace.ptx"/>
+  <xi:include href="./c_innerproductspaces.ptx"/>
   <!-- <xi:include href="./c_transbasis.ptx"/> -->
-  <!-- <xi:include href="./c_innerproductspaces.ptx"/> -->
+
   <backmatter>
     <appendix xml:id="appendix-notation">
       <title>Notation</title>
