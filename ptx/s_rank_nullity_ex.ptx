@@ -1,0 +1,381 @@
+<exercises xml:id="s_rank_nullity_ex">
+  <exercise>
+    <statement>
+      <p>
+       In this exercise we will show that for any <m>(a,b,c,d)\in \R^4</m>, there is a polynomial <m>p(x)\in P_3</m> satisfying
+        <me>
+          p(-1)=a, p(0)=b, p(1)=c, p(2)=d
+        </me>.
+        In other words given any list of values <m>a, b, c, d</m>, we can find a polynomial that evaluates to these values at the inputs <m>x=-1, 0, 1, 2</m>.
+      </p>
+      <ol>
+        <li>
+          <p>
+            Define <m>T\colon P_3\rightarrow \R^4</m> by <m>T(p(x))=(p(-1), p(0), p(1), p(2))</m>. Show that <m>T</m> is linear.
+          </p>
+        </li>
+        <li>
+          <p>
+            Compute <m>\NS T</m>. You may use the fact that a polynomial of degree <m>n</m> has at most <m>n</m> roots.
+          </p>
+        </li>
+        <li>
+          <p>
+            Use the rank-nullity theorem to compute <m>\dim \im T</m>. Explain why this implies <m>\im T=\R^4</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Explain why the equality <m>\im T=\R^4</m> is equivalent to the claim we wish to prove.
+          </p>
+        </li>
+      </ol>
+
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        <p>
+          Use the rank-nullity theorem to compute the rank of the linear transformation <m>T</m> described.
+        </p>
+        <ol>
+          <li>
+            <p>
+              <m>T\colon\R^7\rightarrow M_{32}</m>, <m>\nullity T=2</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>T\colon P_3\rightarrow \R^5</m>, <m>\NS T=\{\boldzero\}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>T\colon P_5 \rightarrow P_5</m>, <m>\NS T=P_4</m>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>A</m> be <m>m\times n</m> with <m>n\lt m</m>.
+        Prove, using <xref ref="th_fundamental_spaces"/> that there is a
+        <m>\boldb\in\R^m</m> such that the system <m>A\boldx=\boldb</m> is inconsistent.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        For each matrix <m>A</m> (i) row reduce <m>A</m> to a matrix <m>U</m> in row echelon form, (ii) compute bases for <m>\CS A</m> and <m>\CS U</m>, (iii) compute <m>\dim \CS A</m> and <m>\dim \CS U</m>,and (iv) decide whether <m>\CS A=\CS U</m>.
+      </p>
+      <ol>
+        <li>
+          <p>
+            <me>A=\boldzero_{n\times n}</me>
+          </p>
+        </li>
+        <li>
+          <p>
+            <me>A=\begin{amatrix}[rr]-2 \amp 1\\ 1\amp 5  \end{amatrix}</me>
+          </p>
+        </li>
+        <li>
+          <p>
+            <me>A=\begin{amatrix}[rrr]1 \amp 1 \amp 3 \\ 1 \amp 2 \amp 1 \\ 1 \amp 3 \amp -1  \end{amatrix}</me>
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Assume <m>A</m> is invertible, and is row equivalent to the row echelon matrix <m>U</m>. Prove: <m>\CS A=\CS U</m>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        (ii) identify these spaces as familiar geometric objects in <m>\R^2</m> or <m>\R^3</m>, and (iii) provide sketches of each space. The sketches of <m>\NS A</m> and <m>\RS A</m> should be combined in the same coordinate system.
+      </p>
+    </statement>
+
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+      For each <m>A</m> compute bases for each fundamental space. In each case, you can find bases for one of the fundamental spaces by inspection, and then use the rank-nullity theorem to reduce your workload for the other spaces. See first solution for a model example.
+      </p>
+        <ol>
+          <li>
+            <p>
+              <me>A=\begin{amatrix}[rrrr]1\amp 1\amp 1\amp 1\\ 1\amp 1\amp 1\amp 1\\ \end{amatrix}</me>
+            </p>
+          </li>
+          <li>
+            <p>
+              <me>A=\begin{bmatrix}1\amp 1\amp 1\amp 1\\ 2\amp 1\amp 2\amp 1\\ 1\amp 1\amp 1\amp 1 \end{bmatrix}</me>
+            </p>
+          </li>
+        </ol>
+    </statement>
+    <solution>
+    <ol>
+      <li>
+      <p>
+        Clearly, <m>B=\{(1,1)\}</m> is a basis for <m>\CS A</m>, and <m>B'=\{(1,1,1,1)\}</m> is a basis for <m>\RS A</m>. It follows that <m>\rank A=1</m> and hence <m>\nullity A=4-1=3</m>. Thus we need to find three linearly independent elements of <m>\NS A</m> to find a basis. We can do so by inspection with the help of the column method. Namely, observe that <m>\boldv_1=(1,-1,0,0), \boldv_2=(0,1,-1,0), \boldv_3=(0,0,1,-1)</m> are all in <m>\NS A</m> (column method). The location of zeros in these vectors make it clear that <m>B''=\{\boldv_1,\boldv_2, \bolv_3\}</m> are linearly independent. Since <m>\dim NS A=3</m>, and <m>\val{B''}=3</m>, we conclude that <m>B''</m> is a basis of <m>\NS A</m> (<xref ref="cor_dimension_subspace" text="global"/>).
+      </p>
+    </li>
+  </ol>
+    </solution>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        For each <m>A</m> use <xref ref="proc_fund_spaces"/> to compute bases for each fundamental space.
+      </p>
+      <ol>
+        <li>
+          <p>
+            <me>
+              A= \begin{bmatrix}1\amp 2\amp 4\amp 5\\ 0\amp 1\amp -3\amp 0\\ 0\amp 0\amp 1\amp -3\\ 0\amp 0\amp 0\amp 0 \end{bmatrix}
+            </me>
+          </p>
+        </li>
+        <li>
+          <p>
+            <me>
+              A= \begin{bmatrix}1\amp 2\amp -1\amp 5\\ 0\amp 1\amp 4\amp 3\\ 0\amp 0\amp 1\amp -7\\ 0\amp 0\amp 0\amp 1 \end{bmatrix}
+            </me>
+          </p>
+        </li>
+        <li>
+          <p>
+            <me>
+              A = \begin{bmatrix}1\amp 4\amp 5\amp 6\amp 9\\ 3\amp -2\amp 1\amp 4\amp -1\\ -1\amp 0\amp -1\amp -2\amp -1\\ 2\amp 3\amp 5\amp 7\amp 8 \end{bmatrix}
+            </me>
+          </p>
+        </li>
+      </ol>
+    </statement>
+
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Find the rank and nullity of each matrix by reducing it to row echelon form.
+      </p>
+      <ol>
+          <li>
+            <p>
+              <me>
+                A = \begin{amatrix}[rrrrr] 1\amp 0\amp -2\amp 1\amp 0\\ 0\amp -1\amp -3\amp 1\amp 3\\ -2\amp -1\amp 1\amp -1\amp 3\\ 0\amp 1\amp 3\amp 0\amp -4 \end{amatrix}
+              </me>
+            </p>
+          </li>
+          <li>
+            <p>
+              <me>
+                A = \begin{amatrix}[rrrr] 1\amp 3\amp 1\amp 3\\ 0\amp 1\amp 1\amp 0\\ -3\amp 0\amp 6\amp -1\\ 3\amp 4\amp -2\amp 1\\ 2\amp 0\amp -4\amp -2 \end{amatrix}
+              </me>
+            </p>
+          </li>
+        </ol>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>A</m> be an <m>n\times n</m> matrix.
+      </p>
+      <ol>
+        <li>
+          <p>
+            Prove: <m>A^2=\boldzero_{n\times n}</m> if and only if <m>\CS A\subseteq \NS A</m>.
+          </p>
+        </li>
+        <li>
+          Construct a <m>2\times 2</m> matrix <m>A</m> with <m>\NS A=\CS A=\Span\{(1,2)\}</m>. Verify that your <m>A</m> satisfies <m>A^2=\boldzero_{2\times 2}</m>.
+        </li>
+      </ol>
+
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Suppose <m>A</m> is <m>m\times n</m> with <m>m\ne n</m>.
+      </p>
+      <p>
+        Prove: either the rows of <m>A</m> are linearly dependent or the columns of <m>A</m> are linearly dependent.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Prove: <m>\nullity A=\nullity A^T</m> if and only if <m>A</m> is a square matrix.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Suppose <m>\underset{m\times n}{A}</m> reduces to the row echelon matrix <m>\underset{m\times n}{U}</m>.
+        <ol>
+          <li>
+            <p>
+              Prove: the columns <m>\boldu_{i_1}, \boldu_{i_2}, \dots, \boldu_{i_r}</m> of <m>U</m> form a basis for <m>\CS U</m> if and only if the corresponding columns
+              <m>\bolda_{i_1}, \bolda_{i_2}, \dots, \bolda_{i_r}</m> of <m>A</m> form a basis for <m>\CS A</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Prove: the columns of <m>U</m> with leading ones form a basis for <m>\CS U</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Prove: <m>\dim \NS U=\#(\text{ free variables } )</m> in the linear system <m>U\boldx=\boldzero</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Suppose <m>x_{j_1}=t_{j_1}, x_{j_2}=t_{j_2}, \dots,
+              x_{j_s}=t_{j_s}</m> are the free variables of the system <m>U\boldx=\boldzero</m>.
+              Let <m>\boldv_{j_k}</m> be the element of <m>\NS U</m> obtained by setting
+              <m>t_{j_k}=1</m> and <m>t_{j_\ell}=0</m> for
+              <m>\ell\ne k</m> in our parametric description of solutions to <m>U\boldx=\boldzero</m>.
+              Prove: <m>\{\boldv_{j_1}, \boldv_{j_2}, \dots, \boldv_{j_s}\}</m> is a basis for <m>\NS U</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+      <solution>
+        <p>
+          Recall that <m>A</m> being row equivalent to <m>U</m> is equivalent to there being an invertible matrix <m>Q</m> such that
+          <me>
+            QA=U\tag{\(*\)}
+          </me>.
+          We will use this fact repeatedly.
+        </p>
+        <ol>
+          <li>
+            <p>
+              By the column method of matrix multiplication we have <m>\boldu_i=Q\bolda_i</m>:
+              i.e., the <m>i</m>-th column of <m>U</m> is obtained by multiplying the <m>i</m>-th column of <m>A</m> on the left by <m>Q</m>.
+              First observe that
+              <md>
+                <mrow>\boldzero=c_1\bolda_{i_1}+\cdots +c_r\bolda_{i_r}\amp \Leftrightarrow Q\boldzero=Q(c_1\bolda_{i_1}+\cdots +c_r\bolda_{i_r}) \amp \text{ (since \(Q\) is invertible) }</mrow>
+                <mrow>\amp \Leftrightarrow \boldzero=c_1Q\bolda_{i_1}+\cdots +c_rQ\bolda_{i_r} \amp \text{ (matrix arithmetic) }</mrow>
+                <mrow>\amp \Leftrightarrow \boldzero=c_1\boldu_{i_1}+\cdots +c_r\boldu_{i_r}</mrow>
+              </md>
+            </p>
+            <p>
+              In particular,
+              there is a nontrivial linear combination of the <m>\bolda_{i_k}</m> equal to
+              <m>\boldzero</m> if and only if there is a nontrivial linear combination of the
+              <m>\boldu_{i_k}</m> equal to <m>\boldzero</m>.
+              Thus the <m>\bolda_{i_k}</m> are independent if and only if the <m>\boldu_{i_k}</m> are independent.
+            </p>
+            <p>
+              Next, we claim the <m>\bolda_{i_k}</m> span <m>\CS A</m> if and only if the <m>\boldu_{i_k}</m> span <m>\CS U</m>.
+              Indeed, suppose the <m>\bolda_{i_k}</m> span <m>\CS A</m>.
+              Take <m>\boldy\in \CS U</m>.
+              we will show that <m>\boldy</m> is a linear combination of the <m>\boldu_{i_k}</m>.
+            </p>
+            <p>
+              Since <m>\boldy\in \CS U</m>,
+              there is an <m>\boldx\in\R^n</m> such that <m>\boldy=U\boldx</m>
+              (since <m>\CS U=\range U</m>).
+              We have <m>U=QA</m>, and thus <m>\boldy=QA(\boldx)=Q(\boldw)</m>,
+              where <m>\boldw=A\boldx</m>.
+              Then <m>\boldw\in \CS A</m>,
+              and we can write <m>\boldw=c_1\bolda_{i_1}+\cdots +c_r\bolda_{i_r}</m>.
+              It then follows that
+              <me>
+                \boldy=Q\boldw=Q(c_1\bolda_{i_1}+\cdots +c_r\bolda_{i_r})=c_1Q\bolda_{i_1}+\cdots +c_rQ\bolda_{i_r}=c_1\boldu_{i_1}+\cdots +c_r\boldu_{i_r}
+              </me>.
+            </p>
+            <p>
+              Since <m>\boldy</m> was any element of <m>\CS U</m>,
+              we see that the <m>\boldu_{i_k}</m> span <m>\CS U</m>,
+              as desired.
+            </p>
+            <p>
+              To go the other way (i.e., that if the <m>\boldu_{i_k}</m> span <m>\CS U</m>,
+              the <m>\bolda_{i_k}</m> span <m>\CS A</m>),
+              note that <m>(*)</m> implies <m>A=Q^{-1}U</m>,
+              and we can use the same argument above with the roles of
+              <m>\bolda_{i_k}</m> and <m>\boldu_{i_k}</m> swapped!
+            </p>
+            <p>
+              We have shown that the <m>\bolda_{i_k}</m> are independent if and only if the <m>\boldu_{i_k}</m>,
+              and that they span <m>\CS A</m> if and only if the <m>\boldu_{i_k}</m> span <m>\CS U</m>.
+              It follows that the <m>\bolda_{i_k}</m> form a basis for <m>\CS A</m> if and only if the
+              <m>\boldu_{i_k}</m> form a basis for <m>\CS U</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Let <m>\boldu_{i_1},\dots, \boldu_{i_r}</m> be the columns of <m>U</m> with leading ones, and let
+              <m>\boldu_{j_1}, \boldu_{j_2}, \dots, \boldu_{j_s}</m> be the columns without leading ones.
+              To prove the <m>\boldu_{i_k}</m> form a basis for <m>\CS U</m>, we will show that given any
+              <m>\boldy\in \CS U</m> there is a <em>unique</em>
+              choice of scalars <m>c_1, c_2,\dots,
+              c_r</m> such that <m>c_1\boldu_{i_1}+\cdots +c_r\boldu_{i_r}=\boldy</m>.
+              (Recall that the uniqueness of this choice implies linear independence.)
+            </p>
+            <p>
+              So assume <m>\boldy\in \CS U</m>.
+              Then we can find <m>\boldx\in\R^n</m> such that <m>U\boldx=\boldy</m>,
+              which means the linear system with augmented matrix <m>[\ U\ \vert \ \boldy]</m> is consistent.
+              Using our Gaussian elimination theory,
+              we know that the solutions
+              <m>\boldx=(x_1,x_2,\dots,
+              x_n)</m> to this system are in 1-1 correspondence with choices for the free variables <m>x_{j_1}=t_{j_1}, x_{j_2}=t_{j_2}, \dots,
+              x_{j_s}=t_{j_s}</m>.
+              (Remember that the columns
+              <m>\boldu_{j_k}</m> without leading ones correspond to the free variables.)
+              In particular, there is a unique solution to
+              <m>U\boldx=\boldy</m> where we set all the free variables equal to 0.
+              By the column method,
+              this gives us a unique linear combination of only the columns
+              <m>\boldu_{i_k}</m> with leading ones equal to <m>\boldy</m>.
+              This proves the claim.
+            </p>
+          </li>
+          <li>
+            <p>
+              Using the notation and result from (b) we see that <m>\rank U=\dim\range U=\dim\CS U=r</m>,
+              the number of columns of <m>U</m> with leading ones.
+              By the rank-nullity theorem,
+              <m>\dim\NS U=n-r=s</m>, the number of columns without leading ones.
+              This is also equal to the number of free variables in the corresponding system of equations.
+            </p>
+          </li>
+          <li>
+            <p>
+              (d) The given recipe produces a list of <m>s</m> distinct vectors in <m>\NS U</m>.
+              Since <m>s=\dim\NS U</m>, by part (c),
+              it suffice to show the <m>\boldv_i</m> are linearly independent.
+              This is easy to see.
+              Indeed suppose we have <m>c_1\boldv_1+c_2\boldv_2+\cdots +c_s\boldv_s=\boldzero</m>.
+              Since for each <m>1\leq i\leq s</m>,
+              <m>\boldv_i</m> is the <em>only</em>
+              vector with a nonzero entry for the <m>i</m>-th component,
+              we must have <m>c_i=0</m> for all <m>1\leq i\leq s</m>.
+              Thus we see that the set is linearly independent.
+            </p>
+          </li>
+        </ol>
+      </solution>
+  </exercise>
+</exercises>

@@ -187,6 +187,7 @@
   Proceeding directly from the definition, to show a set <m>B</m> is a basis of <m>V</m> we have to do two steps: (i) show <m>\Span B= V</m>; (ii) show that <m>B</m> is linearly independent. The following theorem offers gives rise to a one-step technique for proving <m>B</m> is a basis: show that every element of <m>V</m> can be written as a linear combination of elements of <m>B</m> in a <em>unique way</em>.
 </p>
 <theorem xml:id="th_basis_equivalence">
+  <title>Basis equivalence</title>
   <statement>
     <p>
     Let <m>B</m> be a subset of the vector space <m>V</m>. The following statements are equivalent:

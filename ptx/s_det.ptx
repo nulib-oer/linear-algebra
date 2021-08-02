@@ -749,7 +749,7 @@ As a further consequence of <xref ref="th_expansion_row"/> and <xref ref="cor_ex
   <title>Invertibilty theorem (extended cut)</title>
   <statement>
     <p>
-      Let <m>A=[a_{ij}]</m> be an <m>n\times n</m> matrix.
+      Let <m>A=</m> be an <m>n\times n</m> matrix.
       The following statements are equivalent.
     </p>
       <ol>

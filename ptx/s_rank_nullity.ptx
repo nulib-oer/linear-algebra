@@ -1,8 +1,11 @@
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_rank_nullity">
   <title>Rank-nullity theorem and fundamental spaces</title>
   <introduction>
-    In a sense, this section is just a long-format example of how to compute bases and dimensions of subspaces. Along the way, however we meet the <xref ref="th_rank-nullity" text="custom">rank-nullity theorem</xref> (sometimes called the <q>fundamental theorem of linear algebra</q>), and apply this theorem in the context of <em>fundamental spaces of matrices</em> (<xref ref="d_fundamental_space"/>)
+    This section is in one sense just a long-format example of how to compute bases and dimensions of subspaces. Along the way, however we meet the <xref ref="th_rank-nullity" text="custom">rank-nullity theorem</xref> (sometimes called the <q>fundamental theorem of linear algebra</q>), and apply this theorem in the context of <em>fundamental spaces of matrices</em> (<xref ref="d_fundamental_space"/>)
   </introduction>
+<paragraphs xml:id="ss_rank-nullity">
+  <title>The rank-nullity theorem</title>
+
 
 <definition xml:id="d_rank_nullity">
   <title>Rank and nullity</title>
@@ -57,6 +60,11 @@
     </p>
   </statement>
 </theorem>
+
+</paragraphs>
+<paragraphs xml:id="ss_fundamental_spaces">
+  <title>Fundamental spaces of matrices</title>
+
 
 <definition xml:id="d_fundamental_space">
   <title>Fundamental spaces</title>
@@ -173,6 +181,8 @@
     </ol>
   </statement>
 </theorem>
+
+
 <algorithm xml:id="proc_fund_spaces">
   <title>Computing bases of fundamental spaces</title>
   <statement>
@@ -203,5 +213,173 @@
     </ol>
   </statement>
 </algorithm>
+<p>
+  <xref ref="th_fundamental_spaces"/> allows us to add seven more equivalent statements to our invertibility theorem, bringing us to a total of fourteen! We have tried to sandwich in the new statements in places where the equivalence with a neighbor is fairly straightforward to show, or else already established.
+</p>
+<theorem xml:id="th_invertibility_supersized">
+  <title>Invertibility theorem (supersized)</title>
+  <statement>
+    <p>
+      Let <m>A</m> be an <m>n\times n</m> matrix.
+      The following statements are equivalent.
+    </p>
+      <ol>
+        <li>
+          <p>
+            <m>A</m> is invertible.
+          </p>
+        </li>
 
+        <li>
+          <p>
+            The matrix equation <me>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldb}</me> has a <em>unique solution</em> for <em>any</em> column vector  <m>\boldb</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\NS A=\{\boldzero\}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\nullity A=0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\rank A=0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\RS A=\R^n</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\CS A=\R^n</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            The matrix equation <me>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldb}</me> has a solution for <em>any</em> column vector  <m>\boldb</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            The matrix equation <me>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldzero}</me> has a <em>unique solution</em>: namely, <m>\boldx=\boldzero_{n\times 1}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Any of the following equivalent conditions about the set <m>S</m> of <em>columns</em> of <m>A</m> hold: <m>S</m> is a basis of <m>\R^n</m>; <m>S</m> spans <m>\R^n</m>; <m>S</m> is linearly independent.
+          </p>
+        </li>
+        <li>
+          <p>
+            Any of the following equivalent conditions about the set <m>S</m> of <em>rows</em> of <m>A</m> hold: <m>S</m> is a basis of <m>\R^n</m>; <m>S</m> spans <m>\R^n</m>; <m>S</m> is linearly independent.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>A</m> is row equivalent to <m>I_n</m>,
+            the <m>n\times n</m> identity matrix.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>A</m> is a product of elementary matrices.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\det A\ne 0</m>.
+          </p>
+        </li>
+      </ol>
+  </statement>
+</theorem>
+</paragraphs>
+<paragraphs xml:id="ss_expand_contract">
+  <title>Contracting and expanding to bases</title>
+  <p>
+    Thanks to <xref ref="th_basis_dimension"/> we know that spanning sets can be contracted to bases, and linearly independent sets can be extended to bases; and we have already seen a few instances where this result has been put to good use. However, neither the theorem nor its proof provide a practical means of performing this contraction or extension. We would like a systematic way of determining which vectors to throw out (when contracting), or which vectors to chuck in (when extending). In the special case where <m>V=\R^n</m> for some <m>n</m>, we can adapt <xref ref="proc_fund_spaces"/> to our needs.
+  </p>
+<algorithm xml:id="proc_contract_extend">
+  <title>Contracting and extending to bases of <m>\R^n</m></title>
+  <statement>
+    <p>
+      Let <m>S=\{\boldv_1, \boldv_2,\dots, \boldv_r\}\subseteq \R^n</m>.
+    </p>
+    <dl>
+      <li>
+      <title>Contracting to a basis</title>
+        <p>
+        Assume <m>S</m> spans <m>\R^n</m>. To contract <m>S</m> to a basis <m>B\subseteq S</m>, proceed as follows.
+      </p>
+        <ol>
+          <li>
+            <p>
+              Let <m>A</m> be the <m>n\times r</m> matrix whose <m>j</m>-th column is given by <m>\boldv_j</m> for all <m>1\leq j\leq r</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Use the column space procedure (<xref ref="proc_fund_spaces" text="global"/>) to compute a basis <m>B</m> of <m>\CS A</m>, chosen from among the original columns of <m>A</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              The subset <m>B\subseteq S</m> is a basis for <m>\R^n</m>.
+            </p>
+          </li>
+        </ol>
+      </li>
+    <li>
+      <title>Extending to a basis</title>
+      <p>
+      Assume <m>S</m> is linearly independent. To extend <m>S</m> to a basis <m>B</m> of <m>\R^n</m> proceed as follows.
+      </p>
+      <ol>
+        <li>
+          <p>
+            Let <m>A</m> be the <m>n\times (r+n)</m> matrix whose first <m>r</m> columns are the elements of <m>S</m>, and whose remaining <m>n</m> columns consist of <m>\bolde_1, \bolde_2, \dots, \bolde_n</m>, the standard basis elements of <m>\R^n</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Use the column space procedure (<xref ref="proc_fund_spaces" text="global"/>) to compute a basis <m>B</m> of <m>\CS A</m>, chosen from among the original columns of <m>A</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            The set <m>B</m> is a basis for <m>\R^n</m> containing <m>S</m>.
+          </p>
+        </li>
+      </ol>
+    </li>
+  </dl>
+  </statement>
+  <proof>
+    <p>
+      Let's see why in both cases the procedure produces a basis of <m>\R^n</m> that is either a sub- or superset of <m>S</m>.
+    </p>
+    <case>
+     <title>Contracting to a basis</title>
+    <p>
+    In this case we have <m>\CS A=\Span S=\R^n</m>. Thus <m>B</m> is a basis for <m>\R^n</m>. Since the column space procedure selects columns <em>from among</em> the original columns of <m>A</m>, we have <m>B\subseteq S</m>, as desired.
+    </p>
+    </case>
+    <case>
+     <title>Extending to a basis</title>
+    <p>
+    Since <m>\CS A</m> contains <m>\bolde_j</m> for all <m>1\leq j\leq n</m>, we have <m>\CS A=\R^n</m>. Thus <m>B</m> is a basis for <m>\R^n</m>. Since the first <m>r</m> columns of <m>A</m> are linearly independent (they are the elements of <m>S</m>), when we row reduce <m>A</m> to a matrix <m>U</m> in row echelon form, the first <m>r</m> columns of <m>U</m> will contain leading ones. (To see this, imagine row reducing the <m>n\times r</m> submatrix <m>A'</m> consisting of the first <m>r</m> columns of <m>A</m> to a row echelon matrix <m>U'</m>. Since these columns are linearly independent, they already form a basis for <m>\CS A'</m>. Thus the corresponding colmns of <m>U'</m> must all have leading ones. )
+    It follows that the first <m>r</m> columns of <m>A</m> are selected to be in the basis <m>B</m>, and hence that <m>S\subseteq B</m>, as desired.
+    </p>
+    </case>
+  </proof>
+
+</algorithm>
+</paragraphs>
+<xi:include href="./s_rank_nullity_ex.ptx"/>
 </section>
