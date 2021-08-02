@@ -746,7 +746,7 @@ As a further consequence of <xref ref="th_expansion_row"/> and <xref ref="cor_ex
   We end this section (and chapter) by adding the results of <xref ref="th_inv_iff_det"/> and one of our homework exercises to our invertibility theorem.
 </p>
 <theorem xml:id="th_invertibility_expanded">
-  <title>Invertibilty theorem (extended cut)</title>
+  <title>Invertibility theorem (extended cut)</title>
   <statement>
     <p>
       Let <m>A=</m> be an <m>n\times n</m> matrix.

@@ -101,9 +101,33 @@
   </exercise>
   <exercise>
     <statement>
-      <p>
-        (ii) identify these spaces as familiar geometric objects in <m>\R^2</m> or <m>\R^3</m>, and (iii) provide sketches of each space. The sketches of <m>\NS A</m> and <m>\RS A</m> should be combined in the same coordinate system.
+      <p> For each matrix below, (i) compute bases for each fundamental space, (ii) identify these spaces as familiar geometric objects in <m>\R^2</m> or <m>\R^3</m>, and (iii) provide sketches of each space. The sketches of <m>\NS A</m> and <m>\RS A</m> should be combined in the same coordinate system.
       </p>
+      <ol>
+        <li>
+          <p>
+            <me>
+              A=\begin{amatrix}[rrr]1\amp 0\amp 0\\ 0\amp 1\amp 0  \end{amatrix}
+            </me>
+
+          </p>
+        </li>
+        <li>
+          <p>
+            <me>
+              A=\begin{amatrix}[rrr]1\amp 1\amp -2\\ 3\amp -4\amp 1  \end{amatrix}
+            </me>
+          </p>
+        </li>
+        <li>
+          <p>
+            <me>
+              A=\begin{amatrix}[rr] 1\amp 2\\ 0\amp 0 \\ -1\amp -2  \end{amatrix}
+            </me>
+
+          </p>
+        </li>
+      </ol>
     </statement>
 
   </exercise>
