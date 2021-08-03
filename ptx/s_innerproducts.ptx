@@ -1,7 +1,6 @@
 <section xml:id="ss_innerproducts">
-  <title>Inner products, norms, angles</title>
-  <paragraphs>
-    <title>Inner product spaces</title>
+  <title>Inner product spaces</title>
+  <introduction>
     <p>
       We now define the notion of an inner product
       <m>\langle v,w \rangle</m> on a vector space <m>V</m>.
@@ -31,12 +30,13 @@
         </li>
       </ol>
     </p>
-  </paragraphs>
-  <paragraphs>
-    <title>Definition of inner product</title>
-    <definition>
-      <statement>
-        <p>
+  </introduction>
+<definition>
+  <title>Inner product</title>
+
+
+  <statement>
+    <p>
           Let <m>V</m> be a vector space.
           An <term>inner product</term> on <m>V</m> is an operation
           <md>
