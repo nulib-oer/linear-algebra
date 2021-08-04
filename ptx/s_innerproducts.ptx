@@ -3,429 +3,571 @@
   <introduction>
     <p>
       An <em>inner product</em> is an additional layer of structure we can define on a vector space <m>V</m>. It takes a pair of elements <m>\boldv, \boldw\in V</m> and returns a scalar
-      <m>\langle v,w \rangle\in \R</m>.
-      As with the vector addition and scalar multiplication, we define inner products axiomatically, taking as our model the dot product on <m>\R^2</m> and <m>\R^3</m>. Our definition (<xref ref="d_innerproduct" text="global"/>) simply promulgates a few important properties enjoyed by the dot product that may be familiar to you from studying calculus. 
+      <m>\langle \boldv,\boldw \rangle\in \R</m>.
+      As with the vector addition and scalar multiplication, we define inner products axiomatically, taking as our model the dot product on <m>\R^2</m> and <m>\R^3</m>. Our definition (<xref ref="d_innerproduct" text="global"/>) simply promulgates a few important properties enjoyed by the dot product that may be familiar to you from studying calculus.
     </p>
     <p>
-      The main virtues of an inner product are:
-      <ol>
+      The addition of an inner product enriches the structure of a vector space considerably, and gives rise to a number of additional useful analytic tools. We highlight a few below.
+      <dl>
         <li>
+          <title>Distance and angle</title>
           <p>
-            it allows us to define notions of orthogonality,
-            distance and angle on <m>V</m>;
+            A notion of <em>distance</em> and <em>angle</em> between two vectors can be defined relative to a given inner product. These provide a numeric measurement of how <q>close</q> (distance) or <q>closely oriented</q> (angle) two vectors in our space are.
           </p>
         </li>
         <li>
+          <title>Orthogonality</title>
           <p>
-            it allows us to construct <em>orthonormal</em> bases of <m>V</m>,
-            which are computationally very easy to work with.
+          Two vectors <m>\boldv, \boldw\in V</m> are <em>orthogonal</em>, relative to a given inner product, if <m>\langle \boldv, \boldw\rangle=0</m>. Orthogonality leads further to a general notion of <em>orthogonal projection</em> onto a subspace <m>W\subseteq V</m>.
           </p>
         </li>
-      </ol>
+        <li>
+          <title>Orthogonal bases</title>
+          <p>
+          An <em>orthogonal basis</em> of a vector space <m>V</m>, relative to a given inner product, is one whose elements are pairwise orthogonal. As we will see there are many computational advantages of working with an orthogonal basis.
+          </p>
+        </li>
+      </dl>
     </p>
   </introduction>
-  <definition>
+  <definition xml:id="d_innerproduct">
     <title>Inner product</title>
     <statement>
       <p>
         Let <m>V</m> be a vector space.
-        An <term>inner product</term> on <m>V</m> is an operation
+        An <term>inner product</term> on <m>V</m> is an operation that takes as input a pair of vectors <m>\boldv, \boldw\in V</m> and outputs a scalar <m>\langle \boldv, \boldw \rangle \in \R</m>. Using function notation:
         <md>
         <mrow>\langle \ , \rangle \colon \amp V\times V\rightarrow \R</mrow>
         <mrow>(\boldv_1,\boldv_2)\amp \mapsto \langle \boldv_1,\boldv_2\rangle</mrow>
-        </md>
-        satisfying the following axioms:
-        <md>
-        <mrow>\langle \boldv,\boldw\rangle\amp =\langle \boldw,\boldv\rangle \amp \text{ (Symmetry) }</mrow>
-        <mrow>\langle c\boldu+d\boldv,\boldw\rangle\amp =c\langle\boldu,\boldw\rangle+d\langle\boldv,\boldw\rangle \amp \text{ (Linearity in first variable) }</mrow>
-        <mrow>\langle \boldv,\boldv\rangle\geq 0\text{ and } \langle \boldv,\boldv\rangle \amp =0 \text{ iff  } \boldv=\boldzero \amp \text{ (Positivity) }</mrow>
-        </md>
-      </p>
-      <p>
+        </md>.
+        Furthermore, this operation must satisfy the following axioms.
+        <ol label="i">
+          <li>
+            <title>Symmetry</title>
+            <p>
+            For all <m>\boldv, \boldw\in V</m> we have
+            <me>
+              \langle \boldv, \boldw \rangle =\langle \boldw, \boldv \rangle
+            </me>.
+            </p>
+          </li>
+          <li>
+            <title>Linearity</title>
+            <p>
+              For all <m>\boldv, \boldw, \boldu\in V</m> and <m>c, d\in \R</m> we have :
+              <me>
+                \langle c\boldv+d\boldw, \boldu \rangle =c \langle \boldv, \boldu \rangle +d \langle \boldw, \boldu \rangle
+              </me>.
+              It follows by (i) (symmetry) that
+              <me>
+                \langle \boldu, c\boldv+d\boldw \rangle =c \langle \boldu, \boldv \rangle +d \langle \boldu, \boldw \rangle
+              </me>.
+            </p>
+          </li>
+          <li>
+            <title>Positivity</title>
+            <p>
+              For all <m>\boldv\in V</m> we have
+              <me>
+                \langle \boldv, \boldv \rangle \geq 0
+              </me>
+              and
+              <me>
+                \langle \boldv, \boldv \rangle =0 \text{ if and only if } \boldv=\boldzero
+              </me>.
+            </p>
+          </li>
+        </ol>
         A vector space <m>V</m> along with a choice of inner product <m>\langle \ , \rangle</m> is called an
         <term>inner product space</term>.
       </p>
     </statement>
   </definition>
+    <remark xml:id="rm_innerproduct_algebra">
+    <title>Inner products of linear combinations</title>
+    <statement>
+      <p>
+      We will have many opportunities to <q>expand out</q> an inner product of two linear combinations of vectors. Using axioms (i) and (ii) in series, this process resembles the procedure for multiplying two polynomials. For example, we have
+      <md>
+        <mrow>\langle c\boldv+d\boldw, e\boldv+f\boldw\rangle
+        \amp = c \langle \boldv,  e\boldv+f\boldw \rangle +d \langle \boldw, e\boldv+f\boldw \rangle \amp (<xref ref="d_innerproduct" text="global"/>, \text{(ii)})</mrow>
+        <mrow> \amp=ce \langle \boldv, \boldv\rangle+cf\langle \boldv,\boldw \rangle +de \langle \boldw, \boldv\rangle+df\langle \boldw, \boldw\rangle \amp (<xref ref="d_innerproduct" text="global"/>, \text{(ii)}) </mrow>
+        <mrow>  \amp = ce\langle \boldv, \boldv\rangle +(cf+de)\langle \boldv, \boldw\rangle +df\langle \boldw, \boldw\rangle
+        \amp (<xref ref="d_innerproduct" text="global"/>, \text{(i)})</mrow>
+      </md>.
+      Note how in the last step we are able to group the <q>cross terms</q>, <m>\langle \boldv, \boldw\rangle=\langle \boldw, \boldv\rangle</m> using the symmetry axiom.
+    </p>
+      <p>
+        More generally, given linear combinations
+      <md>
+        <mrow>
+        \boldv \amp = c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n=\sum_{i=1}^n c_i\boldv_i </mrow>
+        <mrow> \boldw \amp =d_1\boldv_1+d_2\boldv_2+\cdots +d_n\boldv_n=\sum_{i=1}^nd_i\boldv_i </mrow>
+      </md>,
+      the same reasoning shows that
+      <md>
+        <mrow>\langle \boldv, \boldw \rangle   \amp=
+        c_1d_1 \langle \boldv_1, \boldv_1  \rangle+c_2d_2 \langle \boldv_2, \boldv_2 \rangle +\cdots+c_nd_n \langle \boldv_n, \boldv_n \rangle +\underset{\text{cross terms}}{\underbrace{(c_1d_2+c_2d_1)\langle \boldv_1,\boldv_2  \rangle +\cdots}}  </mrow>
+        <mrow> \amp= \sum_{i=1}^nc_id_i \langle \boldv_i, \boldv_i \rangle +\underset{\text{cross terms}}{\underbrace{\sum_{1\leq i\lt j\leq n}(c_{i}d_j+c_jd_i)\langle \boldv_i, \boldv_j \rangle}}  </mrow>
+      </md>.
+      In particular, we have
+      <me>
+        \langle \boldv, \boldv\rangle =\sum_{i=1}^nc_i^2 \langle \boldv_i, \boldv_i \rangle +\sum_{1\leq i\lt j\leq n}2c_ic_j \langle \boldv_i, \boldv_j \rangle
+      </me>.
+      </p>
+    </statement>
+  </remark>
+
+  <p>
+    We now present a series of important examples of inner products defined on our various inner product spaces. Each is presented as a theorem, as we must prove that the proposed operation satisfies the axios of an inner product. The first example, the <em>weighted dot product</em> is itself a vast generalization of the familiar dot product operations defined on <m>\R^2</m> and <m>\R^3</m>.
+  </p>
+  <theorem xml:id="th_weighted_dotproduct">
+    <title>Weighted dot product</title>
+    <statement>
+      <p>
+      Let <m>V=\R^n</m>. Let <m>k_1, k_2, \dots , k_n</m> be any list of real numbers. Define an operation on <m>\R^n</m> as follows: given <m>\boldx=(x_1,x_2,\dots, x_n), \boldy=(y_1, y_2, \dots, y_n)\in\R^n</m>, let
+      <me>
+        \langle \boldx, \boldy \rangle=k_1x_1y_1+k_2x_2y_2+\cdots k_nx_ny_n=\sum_{i=1}^nk_ix_iy_i
+      </me>.
+      This operation is an inner product if and only if <m>k_i>0</m> for all <m>i</m>.
+      </p>
+      <p>
+      We call this inner product a <term>weighted dot product</term> on <m>\R^n</m>, or more specifically, the <term>dot product with weights <m>k_1, k_2,\dots, k_n</m></term>.
+      In the special case where <m>k_i=1</m> for all <m>i</m> we call this the <term>(standard) dot product</term> and write <m>\boldx\cdot \boldy</m> instead of <m> \langle \boldx, \boldy \rangle </m>.
+      </p>
+    </statement>
+    <proof>
+      <p>
+       First we show that axioms (i) and (ii) are satsified for <em>any</em> choice of <m>k_i</m>. Let
+       <me>
+         K=\begin{amatrix}[rrrr]k_1\amp 0\amp \dots \amp 0 \\ 0\amp k_2\amp 0\amp \dots \\ \vdots \\ 0\amp \dots\amp 0\amp k_n \end{amatrix}
+       </me>,
+       the diagonal matrix whose <m>i</m>-th diagonal entry is <m>k_i</m>. Then for all <m>\boldx=(x_1,x_2,\dots, x_n), \boldy=(y_1,y_2,\dots, y_n)\in \R^n</m> we have
+       <me>
+         \langle \boldx, \boldy  \rangle=\boldx^TK\boldy=\begin{amatrix}[cccc]x_1\amp x_2\amp \dots\amp x_n \end{amatrix} K\begin{bmatrix}y_1\\ y_2\\ \vdots \\ y_n\end{bmatrix}
+       </me>.
+        Here we treat <m>\boldx, \boldy</m> as column vectors, and we treat the resulting <m>1\times 1</m> matrix <m>\boldx^T K\boldy</m> as a scalar. Axioms (i)-(ii) now follow from various matrix properties. For linearity, for example, we have
+       <md>
+         <mrow> \langle c\boldx_1+d\boldx_2, \boldy \rangle \amp = (c\boldx_1+d\boldx_2)^TK\boldy</mrow>
+         <mrow> \amp =(c\boldx_1^T+d\boldx_2^T)K\boldy \amp (<xref ref="th_trans_props" text="global"/>)</mrow>
+         <mrow>  \amp =c\boldx_1^TK\boldy+d\boldx_2^TK\boldy </mrow>
+         <mrow>  \amp =c \langle \boldx_1, \boldy \rangle +d \langle \boldx_2,\boldy  \rangle </mrow>
+       </md>.
+       Symmetry requires a little more trickery:
+       <md>
+         <mrow> \langle \boldy, \boldx  \rangle   \amp = \boldy^TK\boldx </mrow>
+         <mrow> \amp = \boldy^TK^T\boldx \amp (K^T=K) </mrow>
+         <mrow>  \amp = (\boldx^T K\boldy)^T \amp (<xref ref="th_trans_props"/>)</mrow>
+         <mrow> \amp =\boldx^T K \boldy \amp </mrow>
+         <mrow>  \amp = \langle \boldx, \boldy \rangle </mrow>
+       </md>.
+       Note that <m>(\boldx^T K\boldy)^T=\boldx^T K\boldy</m> as <m>\boldx^T K\boldy</m> is just a <m>1\times 1</m> matrix.
+      </p>
+      <p>
+      Lastly, we show that axiom (iii) is satisfied if and only if <m>k_i>0</m> for all <m>i</m>. To this end consider the formula
+      <me>
+        \langle \boldx, \boldx \rangle=k_1x_1^2+k_2x_2^2+\cdots k_nx_n^2
+      </me>.
+      If <m>k_i>0</m>, then since <m>x_i^2\geq 0</m> for all <m>i</m>, we have <m>\langle \boldx, \boldx \rangle\geq 0</m> for any <m>\boldx</m>, and <m>\langle \boldx, \boldx \rangle=0</m> if and only if <m>x_i=0</m> for all <m>i</m> if and only if <m>\boldx=\boldzero</m>.
+      </p>
+      <p>
+        For the other direction suppose <m>k_i\leq 0</m> for some <m>i</m>. Let <m>\boldx=\bolde_i</m>, the  <m>i</m>-th element of the standard basis of <m>\R^n</m>. Then <m>\langle \boldx, \boldx \rangle=k_i\leq 0</m>, in contradiction to the positivity axiom.
+      </p>
+
+    </proof>
+  </theorem>
+
+
+<example>
+  <title>Dot product on <m>\R^4</m></title>
+  <statement>
+    <p>
+    Let <m>\boldx=(-1,2,0,1), \boldy=(1,2,1,1)</m>. Then
+    <me>
+      \boldx\cdot \boldy=-1+4+0+1=4
+    </me>,
+    and
+    <me>
+      \boldx\cdot\boldx=1+4+0+1=6
+    </me>.
+
+
+    </p>
+  </statement>
+</example>
+<example>
+<title>Weighted dot product</title>
+  <statement>
+    <p>
+    The dot product with weights <m>2, 1, 3</m> on <m>\R^3</m> is defined as
+    <me>
+      \langle \boldx, \boldy  \rangle= 2x_1y_1+x_2y_2+3x_3y_3
+    </me>.
+    Let <m>\boldx=(-1,-1,-1)</m> and <m>\boldy=(1,0,1)</m>. We have
+    <me>
+      \langle \boldx, \boldy \rangle =2(-1)+0-3=-5
+    </me>,
+    and
+    <me>
+      \langle \boldx, \boldx \rangle =2(-1)^2+1(-1)^2+3(-1)^2=2+1+3=6
+    </me>.
+
+
+    </p>
+  </statement>
+</example>
+<example>
+  <title>Why the weights must be positive</title>
+  <statement>
+    <p>
+    Define
+    <me>
+      \langle \boldx, \boldy \rangle =(-1)x_1y_1+2x_2y_2
+    </me>
+    for vectors <m>\boldx=(x_1,x_2), \boldy=(y_1,y_2)\in \R^2</m>. Then <me>\langle (3,1), (3,1)  \rangle=-9+2=-7\lt 0
+    </me>.
+    </p>
+  </statement>
+</example>
+<remark xml:id="rm_dotproduct">
+<statement>
+  <p>
+    It is worth highlighting the obersvation in the proof above that a dot product with weights <m>k_1, k_2, \dots, k_n</m> can be expressed as a matrix product:
+    <me>
+      \langle \boldx, \boldy \rangle=\sum_{i=1}^nk_ix_iy_i=\boldx^TK\boldy
+    </me>,
+  where <m>K</m> is the diagonal <m>n\times n</m> matrix whose <m>i</m>-th diagonal entry is <m>k_i</m>. Here <m>\boldx, \boldy</m> are treated as column vectors, and we identify the resulting <m>1\times 1</m> matrix <m>\boldx^T K \boldy</m> with a scalar.
+  </p>
+  <p>
+    In particular for the standard dot product this matrix formula reduces to
+    <me>
+      \boldx\cdot \boldy=\boldx^T I \boldy=\boldx^T\boldy
+    </me>.
+    Conversely, the dot product gives another way to formulate general matrix multiplication, as the next theorem articulates.
+  </p>
+</statement>
+</remark>
+<theorem xml:id="th_dotproduct_method">
+<title>Dot product method of matrix multiplication</title>
+<statement>
+<p>
+  Let <m>A</m> be an <m>m\times n</m> matrix, and let <m>B</m> be a <m>n\times r</m> matrix. Let <m>\boldr_i\in \R^n</m> be the <m>i</m>-th row of <m>A</m>, and let <m>\boldc_j\in \R^n</m> be the <m>j</m>-th column of <m>B</m>. Then
+  <me>
+    (AB)_{ij}=\boldr_i\cdot \boldc_j
+  </me>.
+  In other words, the <m>ij</m>-th entry of <m>AB</m> is the dot product of the <m>i</m>-th row of <m>A</m> and the <m>j</m>-th column of <m>B</m>.
+</p>
+</statement>
+<proof>
+<p>
+  Let <m>A=[a_{ij}]_{m\times n}</m> and <m>B=[b_{ij}]_{n\times r}</m>. Then
+  <me>
+    (AB)_{ij}=\sum_{k=1}^na_{ik}b_{kj}=\boldr_i\cdot \boldc_j
+  </me>,
+  since
+  <m>\bolr_i=(a_{i1}, a_{i2}, \dots, a_{in})</m> and <m>\boldc_j=(b_{j1}, b_{2j},\dots, b_{nj})</m>.
+</p>
+</proof>
+</theorem>
+<p>
+  Next we introduce an important family of inner products defined on polynomials spaces called <em>evaluation inner products</em>. These are useful when we wish to compare polynomials by how they behave at a specified list of inputs.
+</p>
+<theorem xml:id="th_evaluation_innerproduct">
+  <title>Evaluation inner products on <m>P_n</m></title>
+  <statement>
+    <p>
+    Let <m>V=P_n</m>, and let <m>c_0, c_1, \dots, c_n</m> be any list of <m>n+1</m> distinct real numbers. For any <m>p(x), q(x)\in P_n</m> define
+    <me>
+      \langle p(x), q(x) \rangle =p(c_0)q(c_0)+p(c_1)q(c_1)+\cdots +p(c_n)q(c_n)
+    </me>.
+    This defines an inner product on <m>P_n</m> called an <term>evaluation inner product</term>, or more precisely, <term>evaluation at the inputs <m>c_0, c_1, \dots, c_n</m></term>.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      That axioms (i)-(ii) are satisfied is left as an exercise. For axiom (iii), note that
+      <me>
+        \langle p(x), p(x) \rangle =p(c_0)^2+p(c_1)^2+\cdots +p(c_n)^2\geq 0
+      </me>,
+      and we have equality if and only if <m>p(c_0)=p(c_1)=\dots p(c_n)=0</m>. Since a nonzero polynomial of degree <m>n</m> or less has <em>at most</em> <m>n</m> distinct roots, we conclude that <m>p(x)=\boldzero</m>, the zero polynomial.
+    </p>
+  </proof>
+
+</theorem>
+<example>
+  <title>Evaluation at <m>-1, 0, 1</m></title>
+  <statement>
+    <p>
+    Let <m>V=P_2</m>, and let <m>\langle p(x),q(x)  \rangle </m> be the evaluation at <m>-1, 0, 1</m> inner product. Compute <m>\langle x^2-1,x^2+2x+1  \rangle </m> and <m>\langle x^2-1, x^2-1  \rangle. </m>
+    </p>
+  </statement>
+  <solution>
+    <p>
+    Let <m>p(x)=x^2-1</m>, <m>q(x)=x^2+2x+1</m>. We have
+    <me>
+      \langle p(x), q(x)  \rangle=p(-1)q(-1)+p(0)q(0)+p(1)q(1)=0+(-1)1+0=-1
+    </me>
+    and
+    <me>
+      \langle p(x), p(x) \rangle =p(-1)^2+p(0)^2+p(1)^2=0+(-1)^2+0=1
+    </me>.
+    </p>
+  </solution>
+</example>
+<p>
+  Our last example defines an <em>integral inner product</em> on the space <m>C([a,b])</m> of continuous functions on an interval <m>[a,b]</m>. This inner product plays an important role in Fourier analysis, which studies the approximation of arbibitrary continuous functions with linear combinations of certain trigonometric funtions.
+</p>
+<theorem xml:id="th_integral_innerproduct">
+  <statement>
+    <p>
+    Fix an interval <m>[a,b]</m>, and let <m>V=C([a,b])</m>, the space of all continuous functions on <m>[a,b]</m>. For any <m>f,g\in C([a,b])</m> define
+    <me>
+      \langle f,g \rangle=\int_a^bf(x)g(x)\ dx
+    </me>.
+    This defines an inner product on <m>C([a,b])</m> called the <term>integral inner product</term>.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      First observe that the integral defining the inner product always exists since the product <m>fg</m> is a continuous function on the closed interval <m>[a,b]</m>.
+    </p>
+    <p>
+      Axioms (i)-(ii) follow directly from the definition and various properties of the integral. This is left as an exercise. As for (iii), we have
+      <me>
+        \langle f, f   \rangle=\int_{a}^b f^2(x) \ dx \geq 0
+      </me>,
+      since <m>f^2(x)\geq 0</m> for all <m>x\in [a,b]</m>. (This is a property of integration.) Furthermore, since <m>f^2</m> is continuous and <m>f^2(x)\geq 0</m>, we have
+      <me>\langle f, f \rangle=\int_a^b f^2(x) \ dx=0 </me>
+      if and only if <m>f^2(x)=0</m> for all <m>x\in [a,b]</m> (a property of integrals of <em>continuous</em> functions) if and only if <m>f(x)=0</m> for all <m>x\in [a,b]</m> if and only if <m>\boldf=\boldzero</m>, the zero function.
+    </p>
+  </proof>
+</theorem>
+<example>
+  <title>Integral inner product</title>
+  <statement>
+    <p>
+    Let <m>V=C([0,1])</m>, equipped with integral inner product. Let  <m>f(x)=x</m>, <m>g(x)=e^x</m>. Compute <m>\langle f,g  \rangle </m> and <m>\langle f,f  \rangle </m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+    We have
+    <me>
+      \langle f,g  \rangle=\int_0^1xe^x\ dx=(xe^x\Bigr\vert_0^1-\int_0^1 e^x\ dx)=e-(e-1)=1
+    </me>
+    and
+    <me>
+      \langle f, f \rangle=\int_0^1 x^2 \ dx=\frac{1}{3}
+    </me>.
+    </p>
+  </solution>
+</example>
   <paragraphs>
-    <title>Example: the dot product on $\R^n$</title>
-    <definition>
+    <title>Norm and distance</title>
+    <p>
+      As mentioned at the top, once an inner product is established, we can define further notions of norm (or length), distance, angle, <etc />.  When the inner product in question is the standard dot product on <m>\R^2</m> or <m>\R^3</m>, then these are precisely the standard notions you have met in multivariable calculus. For more exotic inner products, however, the corresponding notions of length, distance, <etc />, are to be a useful generalization of these notions.
+    </p>
+    <definition xml:id="d_norm">
+      <title>Norm (or length) of a vector</title>
+      <idx><h>norm</h><h>of a vector</h></idx>
+      <notation>
+        <usage>\norm{\boldv}</usage>
+        <description>norm of <m>\boldv</m></description>
+      </notation>
       <statement>
         <p>
-          Given <m>\boldv=(v_1,\dots,v_n), \boldw=(w_1,\dots,w_n)\in\R^n</m>,
-          we define the <term>dot product</term> as
+          Let <m>(V, \langle ,  \rangle )</m> be an inner product space. Given <m>\boldv\in V</m> we define its <term>norm</term> (or <term>length</term>), denoted <m>\normal{\boldv}, </m> as
           <me>
-          \boldv\cdot\boldw=v_1w_1+v_2w_2+\cdots +v_nw_n
+            \norm{\boldv}=\sqrt{\langle \boldv, \boldv  \rangle }
           </me>.
+          A <term>unit vector</term> is a vector <m>\boldv</m> of length one: <ie />, a vector  <m>\boldv</m> satisfying <m>\norm{\boldv}=1</m>.
         </p>
       </statement>
     </definition>
+        <remark xml:id="rm_unit_vectors">
+      <title>Unit vectors</title>
+
+      <statement>
+        <p>
+          Given any <m>\boldv\ne \boldzero\in V</m>, the vector <m>\boldu=\frac{1}{\norm{\boldv}}\boldv</m> is a unit vector. To verify this, let <m>c=\norm{\boldv}</m> and compute
+          <md>
+            <mrow>\norm{\boldu} \amp \sqrt{\langle \frac{1}{c}\boldv,\frac{1}{c}\boldv   \rangle }</mrow>
+            <mrow> \amp =\sqrt{\frac{1}{c^2}\langle \boldv,\boldv  \rangle} \amp (<xref ref="d_innerproduct"/>, \text{(ii)})  </mrow>
+            <mrow>  \amp=\frac{1}{c}\sqrt{\langle \boldv,\boldv  \rangle } </mrow>
+            <mrow>  \amp =\frac{\norm{\boldv}}{\norm{\boldv}}=1</mrow>
+          </md>.
+        </p>
+      </statement>
+    </remark>
     <p>
-      It is easy to see that the dot product satisfies the axioms of an inner product on <m>\R^n</m>
+    Next, the distance between two vectors in an inner product space is defined as the length of their difference.
     </p>
-    <p>
-      In fact, if we identify <m>n</m>-tuples with column vectors
-      (or row vectors),
-      then we can express the dot product as a certain matrix multiplication,
-      in which case the inner product axioms follow simply from properties of matrix multiplication!
-    </p>
-    <paragraphs>
-      <title>Columns:</title>
-      <p>
-        think of <m>\boldv</m> and <m>\boldw</m> as <m>n\times 1</m> column vectors.
-        Then
-      </p>
-    </paragraphs>
-    <me>
-    \boldv\cdot\boldw=\boldv^T\boldw
-    </me>.
-    <paragraphs>
-      <title>Rows:</title>
-      <p>
-        think of <m>\boldv</m> and <m>\boldw</m> as <m>1\times n</m> row vectors.
-        Then
-      </p>
-    </paragraphs>
-    <me>
-    \boldv\cdot\boldw=\boldv\boldw^T
-    </me>
-  </paragraphs>
+    <definition xml:id="d_distance">
+      <idx><h>distance</h><h>between two vectors</h></idx>
+      <notation>
+        <usage>d(\boldv, \boldw)</usage>
+        <description>the distance between <m>\boldv</m> and <m>\boldw</m></description>
+      </notation>
+      <title>Distance between vectors</title>
+      <statement>
+        <p>
+        Let <m>(V,\langle ,  \rangle )</m> be an inner product space. The <term>distance between <m>\boldv, \boldw\in V</m></term>, denoted <m>d(\boldv, \boldw)</m>, is defined as
+        <me>
+          d(\boldv, \boldw)=\norm{\boldv-\boldw}=\sqrt{\langle \boldv-\boldw,\boldv-\boldw  \rangle }
+        </me>.
+        </p>
+      </statement>
+    </definition>
+    <theorem xml:id="th_norm_basic_props">
+      <title>Basic properties of norm and distance</title>
+      <statement>
+        <p>
+        Let <m>(V,\langle ,  \rangle)</m> be an inner product space.
+        </p>
+        <ol>
+          <li>
+            <p>
+              For all <m>\boldv\in V</m> we have
+              <me>
+                \norm{\boldv}\geq 0
+              </me>,
+              and equality holds if and only if <m>\boldv=0</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              For all <m>c\in \R</m> and <m>\boldv\in V</m> we have
+              <me>
+                \norm{c\boldv}=\val{c}\norm{\boldv}
+              </me>.
+            </p>
+          </li>
+          <li>
+            <p>
+              For all <m>\boldv, \boldw\in V</m> we have
+              <me>
+                d(\boldv,\boldw)=d(\boldw,\boldv)\geq 0
+              </me>,
+              and equality holds if and only if <m>\boldv=\boldw</m>.
+            </p>
+          </li>
+        </ol>
+      </statement>
+      <proof>
+        <p>
+          This is an elementary exercise of unpacking the various definitions, and is left to the reader.
+        </p>
+      </proof>
+
+    </theorem>
+</paragraphs>
   <paragraphs>
-    <title>Dot product method of matrix multiplication</title>
+    <title>Cauchy-Schwarz inequality, triangle inequalities, and angles between vectors</title>
     <p>
-      The last observations also give us yet another way of looking at matrix multiplication!
-      Take <m>A=[a_{ij}]_{m\times n}</m> and <m>B=[b_{ij}]_{n\times r}</m>.
-      Think of <m>A=\begin{bmatrix}-\bolda_1-\\ \vdots \\ -\bolda_m- \end{bmatrix}</m> as a collection of <m>m</m> {row} vectors in <m>\R^n</m>,
-      and <m>B=\begin{bmatrix}\vert \amp \amp \vert\\ \boldb_1\amp \cdots \amp \boldb_r\\ \vert \amp \amp \vert \end{bmatrix}</m> as a collection of <m>r</m> {column} vectors in <m>\R^n</m>.
+      The famous <em>Cauchy-Schwarz inequality</em> has a knack of cropping up all over the world of science: from properties of covariance in statistics, to the Heisenberg uncertainty principle of quantum mechanics. More directly pertinent to our discussion, the Cauchy-Schwarz inequality implies the triangle inequalities (<xref ref="th_triangle_inequalities" text="global"/>) and ensures that our notion of the angle between two nonzero vectors <xref ref="d_angle"/>) is well-defined.
     </p>
-    <p>
-      Set <m>AB=C=[c_{ij}]_{m\times r}</m>.
-      It follows directly from the original definition of matrix multiplication that
-      <me>
-      c_{ij}=\bolda_i\cdot\boldb_j
-      </me>.
-    </p>
-    <p>
-      That is, the <m>ij</m>-th entry of <m>AB</m> is simply the dot product of the <m>i</m>-th row of <m>A</m> and the <m>j</m>-th column of <m>B</m>!
-    </p>
-  </paragraphs>
-  <paragraphs>
-    <title>Inner products on $\R^n$</title>
-    <p>
-      Let <m>\boldx=(x_1,x_2,\dots ,x_n)</m> and <m>y=(y_1,y_2,\dots y_n)</m> throughout.
-      We consider <m>\boldx</m> and <m>\boldy</m> as columns by default.
-    </p>
-    <paragraphs>
-      <title>Example 1</title>
-      <p>
-        The <em>dot product</em> <m>\langle\boldx,\boldy\rangle:=x_1y_1+x_2y_2+\cdots x_ny_n</m> is an inner product on <m>\R^n</m>.
-      </p>
-    </paragraphs>
-    <paragraphs>
-      <title>Example 2</title>
-      <p>
-        For any choice of <em>positive constants</em>
-        <m>c_1,c_2,\dots c_n>0</m>,
-        the <em>weighted dot product</em>
-        <m>\langle \boldx,\boldy\rangle:=c_1x_1y_1+c_2x_2y_2+\cdots +c_nx_ny_n</m> is an inner product on <m>\R^n</m>.
-      </p>
-    </paragraphs>
-    <paragraphs>
-      <title>Example 3</title>
-      <p>
-        (Why we need <m>c_i>0</m>).
-        The operation <m>\langle\boldx,\boldy\rangle=2x_1y_1+(-1)x_2y_2</m> is NOT an inner product on <m>\R^2</m> as <m>\langle (1,\sqrt{2}), (1,\sqrt{2})\rangle=2-2=0</m>,
-        in violation of positivity.
-      </p>
-    </paragraphs>
-    <paragraphs>
-      <title>Example 4</title>
-      <p>
-        Looking forward a bit,
-        it turns out that Examples 1 and 2 are cases of the following more general construction.
-      </p>
-    </paragraphs>
-    <p>
-      Let <m>A</m> be any symmetric <m>n\times n</m> matrix,
-      all of whose eigenvalues are <em>positive</em>.
-      Then the operation
-      <me>
-      \langle \boldx, \boldy\rangle:=\boldx^TA\boldy
-      </me>
-      defines an inner product on <m>\R^n</m>.
-    </p>
-    <p>
-      Example 1 is the case where <m>A=I</m>.
-    </p>
-    <p>
-      Example 2 is the case where <m>A=\begin{bmatrix}c_1\amp 0\amp 0\amp \dots\\ 0\amp c_2\amp 0\amp \dots \\ \vdots \amp \\ 0\amp 0\amp \dots\amp c_n \end{bmatrix}</m>
-    </p>
-  </paragraphs>
-  <paragraphs>
-    <title>Inner products on $P_n$</title>
-    <p>
-      Throughout we let <m>p(x)=a_nx^n+\cdots +a_1x+a_0</m> and <m>q(x)=b_nx^n+\cdots +b_1x+b_0</m>.
-    </p>
-    <paragraphs>
-      <title>Example 1</title>
-      <p>
-        The operation <m>\langle p(x),q(x)\rangle :=a_0b_0+a_1b_1+\cdots +a_nb_n</m> defines an inner product on <m>P_n</m>. (This is just the dot product in disguise!)
-      </p>
-    </paragraphs>
-    <paragraphs>
-      <title>Example 2</title>
-      <p>
-        Fix any distinct constants <m>c_0,c_1,\dots ,c_n</m>.
-        Then the operation <m>\langle p(x),
-        q(x)\rangle=p(c_0)q(c_0)+p(c_1)q(c_1)+\cdots +p(c_n)q(c_n)</m> defines an inner product,
-        called an <em>evaluation inner product</em>.
-      </p>
-    </paragraphs>
-    <proof>
-      <p>
-        It is fairly clear that the evaluation product is symmetric and linear in each variable.
-      </p>
-      <p>
-        Consider positivity.
-        We have <m>\langle p(x),
-        p(x)\rangle:=p(c_0)^2+p(c_1)^2+\cdots +p(c_n)^2\geq 0</m>,
-        since each term is a square.
-      </p>
-      <p>
-        Furthermore we see this sum is equal to 0 iff <m>p(c_i)=0</m> for all <m>i</m>.
-        But this is the case iff <m>p(x)=\boldzero</m> is the zero polynomial,
-        as no other polynomial in <m>P_n</m> can have <m>n+1</m> distinct roots!
-      </p>
-    </proof>
-  </paragraphs>
-  <paragraphs>
-    <title>Standard inner product on $M_{mn}$</title>
-    <p>
-      Given <m>A, B\in M_{mn}</m>, we define <m>\langle A, B\rangle=\tr (A^TB)</m>.
-      Recall: the trace <m>\tr(C)</m> of a matrix is the sum of its diagonal entries.
-    </p>
-    <p>
-      It is an interesting exercise to show the operation thus defined does indeed satisfy three axioms.
-    </p>
-    <p>
-      (i) The fact that <m>\langle A,B\rangle=\langle B,A \rangle</m> follows from the fact that <m>\tr(A^TB)=\tr(B^TA)</m>.
-      Can you prove the latter?
-      Hint: what is the relation between <m>A^TB</m> and <m>B^TA</m>?
-    </p>
-    <p>
-      (ii) Bilinearity follows easily from <em>three</em>
-      different distributive properties: (a) for matrix multiplication, (b) for taking transposes,
-      and (c) for taking the trace.
-    </p>
-    <p>
-      (iii) Positivity is the most challenging.
-      The most direct way of proving that this property holds is to let
-      <m>A=[a_{ij}]</m> and actually compute a formula for
-      <m>\tr(A^TA)</m> in terms of the <m>a_{ij}</m>.
-      I leave it to you.
-    </p>
-  </paragraphs>
-  <paragraphs>
-    <title>Standard inner product on function spaces</title>
-    <p>
-      Let <m>V=C([a,b])</m> where <m>[a,b]</m> is some fixed interval.
-    </p>
-    <p>
-      The <em>standard inner product</em>
-      on <m>C([a,b])</m> is defined via an integral:
-      <me>
-      \langle f(x), g(x)\rangle:=\int_a^b f(x)g(x) \, dx
-      </me>.
-    </p>
-    <p>
-      (Note that continuity of <m>f</m> and <m>g</m> ensures this integral exists and is finite!)
-    </p>
-    <proof>
-      <p>
-        <term>Symmetry</term>:
-        <m>\langle f,g\rangle=\int_a^b fg\, dx=\int_a^b gf\, dx=\langle g,f\rangle</m>
-      </p>
-      <p>
-        <term>Linearity</term>:
-        <m>\langle cf+dg,h\rangle=\int_a^b(cf(x)+dg(x))h(x)\, dx=c\int_a^bf(x)h(x)\, dx+d\int_a^bg(x)h(x)\, dx=c\langle f,h\rangle + d\langle g,h \rangle</m>
-      </p>
-      <p>
-        <term>Positivity</term>:
-        we have <m>\langle f, f\rangle=\int_a^b f^2(x)\, dx</m>.
-      </p>
-      <p>
-        We have <m>f^2(x)\geq 0</m> for all <m>x</m>;
-        i.e., <m>f^2</m> is nonnegative.
-        It follows from some basic calculus that the integral of <m>f^2</m> is always nonnegative.
-        Furthermore, since <m>f^2</m> is also <em>continuous</em>
-        the integral is 0 iff <m>f^2=0</m> iff <m>f=0</m>.
-        This proves positivity.
-      </p>
-    </proof>
-  </paragraphs>
-  <paragraphs>
-    <title>Further properties of inner products</title>
-    <p>
-      The following properties follow formally from the defining axioms of an inner product space.
-      <md>
-      <mrow>\langle\boldu,c\boldv+d\boldw\rangle\amp =c\langle\boldu,\boldv\rangle+d\langle\boldu,\boldw\rangle \amp \text{ (Linearity in second variable) }</mrow>
-      <mrow>\langle\boldzero,\boldv\rangle\amp =\langle\boldv,\boldzero\rangle=0</mrow>
-      </md>
-    </p>
-    <p>
-      The first property follows easily from linearity in the first variable and symmetry.
-    </p>
-    <p>
-      Note: the fact that the inner product is linear in both variables is an important property that we call <em>bilinearity</em>.
-    </p>
-    <p>
-      To prove the second property it is enough by symmetry to prove
-      <m>\langle\boldzero,\boldv\rangle=0</m>. (Note the two different types of zero here!)
-    </p>
-    <p>
-      We have
-      <md>
-      <mrow>\langle\boldzero,\boldv\rangle\amp =\langle 0\cdot\boldzero,\boldv\rangle \amp \text{ (since \(0\cdot\boldzero=\boldzero\)) }</mrow>
-      <mrow>\amp =0\langle\boldzero,\boldv\rangle \amp \text{ (linearity in first variable) }</mrow>
-      <mrow>\amp =0</mrow>
-      </md>
-    </p>
-  </paragraphs>
-  <paragraphs>
-    <title>Orthogonality, norm, distance, angle</title>
-    <p>
-      Given an inner product space
-      <m>(V, \langle \ , \rangle)</m> we define the following notions.
-    </p>
-    <paragraphs>
-      <title>Orthogonality</title>
-      <p>
-        : vectors <m>\boldv</m> and <m>\boldw</m> are <term>orthogonal</term>
-        if <m>\langle \boldv,\boldw\rangle=0</m>.
-      </p>
-    </paragraphs>
-    <paragraphs>
-      <title>Norm</title>
-      <p>
-        : the <term>norm</term>
-        (or <term>length</term>)
-        of a vector <m>\boldv</m> is defined as
-      </p>
-    </paragraphs>
-    <me>
-    \norm{\boldv}:=\sqrt{\langle\boldv,\boldv\rangle}
-    </me>.
-    <p>
-      A <term>unit vector</term> is a vector <m>\boldv</m> with <m>\norm{\boldv}=1</m>.
-      Given any vector <m>\boldv</m>,
-      one can show that <m>\boldu=(\frac{1}{\norm{\boldv}})\boldv</m>
-      (or <m>\frac{\boldv}{\norm{\boldv}}</m> by slight abuse of notation)
-      is a unit vector.
-    </p>
-    <paragraphs>
-      <title>Distance:</title>
-      <p>
-        the <term>distance</term> between two vectors <m>\boldv</m> and <m>\boldw</m> is defined as
-      </p>
-    </paragraphs>
-    <me>
-    d(\boldv,\boldw)=\norm{\boldv-\boldw}
-    </me>.
-    <paragraphs>
-      <title>Angle:</title>
-      <p>
-        the <term>angle</term> between two vectors <m>\boldv</m> and <m>\boldw</m> is defined as the unique <m>0\leq \theta \leq \pi</m> satisfying
-      </p>
-    </paragraphs>
-    <me>
-    \cos(\theta)=\frac{\langle\boldv,\boldw\rangle}{\norm{\boldv}\norm{\boldw}}
-    </me>.
-    <p>
-      Of course for this to make sense we better have
-      <me>
-      \val{\langle\boldv,\boldw\rangle}\leq\norm{\boldv}\norm{\boldw}
-      </me>
-    </p>
-    <p>
-      This is the content of the Cauchy-Schwarz inequality!
-    </p>
-  </paragraphs>
-  <paragraphs>
-    <title>Cauchy-Schwarz Inequality</title>
-    <theorem>
+    <theorem xml:id="th_Cauchy-Schwarz">
       <title>Cauchy-Schwarz inequality</title>
       <statement>
         <p>
           Let <m>(V,\langle \ , \rangle)</m> be an inner product space.
-          Then for all <m>\boldv,\boldw\in V</m>
+          For all <m>\boldv,\boldw\in V</m> we have
           <me>
           \val{\langle\boldv,\boldw\rangle}\leq\norm{\boldv}\norm{\boldw}
-          </me>.
-        </p>
-        <p>
-          Furthermore, we have an actual equality above iff
-          <m>\boldv=c\boldw</m> for some <m>c\in\R</m>.
+          </me>,
+          and equality holds if and only if <m>\boldv=c\boldw</m> for some <m>c\in\R</m>.
         </p>
       </statement>
     </theorem>
     <proof>
       <p>
-        Fix any two vectors <m>\boldv</m> and <m>\boldw</m>.
+        Fix vectors <m>\boldv</m> and <m>\boldw</m>.
         For any <m>t\in\R</m> we have by positivity
         <me>
-        0\leq \langle t\boldv-\boldw,t\boldv-\boldw\rangle=\langle\boldv,\boldv\rangle t^2-2\langle\boldv,\boldw\rangle t+\langle\boldw,\boldw\rangle=at^2-2bt+c=f(t)
+        0\leq \langle t\boldv-\boldw,t\boldv-\boldw\rangle=\langle\boldv,\boldv\rangle t^2-2\langle\boldv,\boldw\rangle t+\langle\boldw,\boldw\rangle=at^2-2bt+c
         </me>,
-        where <m>a=\langle\boldv,\boldv\rangle=\norm{v}^2</m>,
-        <m>b=\langle\boldv,\boldw\rangle</m> and <m>c=\langle\boldw,\boldw\rangle=\norm{w}^2</m>.
-      </p>
-      <p>
-        The inequality <m>f(t)\geq 0</m> tells us that the quadratic polynomial <m>f(t)</m> has
-        <em>at most</em> one root.
-        This means its discriminant <m>4b^2-4ac\leq 0</m>,
-        since otherwise there would be two roots.
-      </p>
-      <p>
-        Subbing back in for <m>a,b,c</m> and rearranging yields
+        where
+        <men xml:id="eq_cauchy_schwarz">
+         a=\langle\boldv,\boldv\rangle, \ b=\langle\boldv,\boldw\rangle, \   c=\langle\boldw,\boldw\rangle=\norm{w}^2
+       </men>.
+
+        Since <m>at^2-2b\,t+c\geq 0</m> for all <m>t\in \R</m> the quadratic polynomial <m>p(t)=at^2-2b\,t+c</m> has
+        <em>at most</em> one root. Using the quadratic formula for we conclude that we must have <m>4b^2-4ac\leq 0</m>,
+        since otherwise <m>p(t)</m> would have two distinct roots.
+        Substituting back in for <m>a,b,c</m> using <xref ref="eq_cauchy_schwarz"/>, we see after a bit of algebra that
         <me>
         (\langle\boldv,\boldw\rangle)^2\leq \norm{\boldv}^2\norm{\boldw}^2
         </me>.
-      </p>
-      <p>
         Taking square-roots yields the desired inequality.
       </p>
       <p>
-        The same reasoning shows that the Cauchy-Schwarz inequality is an actual equality iff <m>f(t)=0</m> for some <m>t</m> iff
-        <m>0=\langle t\boldv-\boldw,t\boldv-\boldw\rangle</m> iff <m>\boldv=t\boldw</m> for some <m>t</m>
+        The same reasoning shows that the Cauchy-Schwarz inequality is an actual equality if and only if  <m>p(t)=0</m> for some <m>t</m> if and only if
+        <m>0=\langle t\boldv-\boldw,t\boldv-\boldw\rangle</m> if and only if  <m>\boldv=t\boldw</m> for some <m>t</m>
         (by positivity).
       </p>
     </proof>
-  </paragraphs>
-  <paragraphs>
-    <title>Triangle Inequalities</title>
     <p>
-      The following so-called triangle inequalities are now just formal consequences of Cauchy-Schwarz.
+      The following triangle inequalities are more or less direct consequences of the Cauchy-Schwarz inequality.
     </p>
-    <theorem>
+    <theorem xml:id="th_triangle_inequalities">
       <title>Triangle Inequalities</title>
       <statement>
         <p>
-          Let <m>(V, \langle \ , \rangle)</m> be any inner product space.
-          Then
+          Let <m>(V, \langle \ , \rangle)</m> be an inner product space.
           <ol>
             <li>
               <p>
-                <m>\norm{\boldv+\boldw}\leq \norm{\boldv}+\norm{\boldw}</m>
+                For all <m>\boldv, \boldw\in V</m> we have <me>\norm{\boldv+\boldw}\leq \norm{\boldv}+\norm{\boldw}</me>.
               </p>
             </li>
             <li>
               <p>
-                <m>d(\boldv,\boldw)\leq d(\boldv,\boldu)+d(\boldu,\boldw)</m>
+                For all <m>\boldv, \boldw, \boldu\in V</m> we have
+                <me>d(\boldv,\boldw)\leq d(\boldv,\boldu)+d(\boldu,\boldw)</me>
               </p>
             </li>
           </ol>
         </p>
       </statement>
+      <proof>
+        <p>
+          This is an elementary exercise of unpacking the definitions of norm and distance in terms of the inner product, and then applying the Cauchy-Schwarz inequality appropriately. The proof is left as an exercise.
+        </p>
+      </proof>
     </theorem>
+    <p>
+      Let <m>(V, \langle ,  \rangle )</m> be an inner product space. For any <em>nonzero</em> vectors <m>\boldv, \boldw</m>, the Cauchy-Schwarz inequality tells us that
+      <me>
+        \val{\langle \boldv, \boldw \rangle }\leq \norm{\boldv}\, \norm{\boldw}
+      </me>,
+      or equivalently,
+      <me>
+        -1\leq \frac{\langle \boldv, \boldw \rangle}{\norm{\boldv}\, \norm{\boldw}} \leq 1
+      </me>.
+      It follows that there is a unique real number <m>\theta\in [0,\pi]</m> satisfying
+      <me>
+        \cos\theta=\frac{\langle \boldv, \boldw \rangle}{\norm{\boldv}\, \norm{\boldw}}
+      </me>.
+      We define the <em>angle between <m>\boldv</m> and <m>\boldw</m></em> to be this <m>\theta</m>.
+    </p>
+    <definition xml:id="d_angle">
+      <title>Angle between vectors</title>
+      <idx><h>angle</h><h>between vectors</h></idx>
+      <statement>
+        <p>
+          Let <m>(V,\langle ,  \rangle )</m> be an inner product space. Given nonzero vectors <m>\boldv, \boldw\in V</m>, the <term>angle between <m>\boldv</m> and <m>\boldw</m></term> is defined to be the unique <m>\theta\in [0,\pi]</m> satisfying
+          <me>
+            \cos\theta=\frac{\langle \boldv, \boldw \rangle}{\norm{\boldv}\, \norm{\boldw}}
+          </me>.
+          Equivalently, we have
+          <me>
+            \theta=\cos^{-1}\left(
+              \frac{\langle \boldv, \boldw \rangle}{\norm{\boldv}\, \norm{\boldw}}
+            \right)
+          </me>.
+        </p>
+      </statement>
+    </definition>
   </paragraphs>
   <paragraphs>
     <title>Choosing your inner product</title>
@@ -464,7 +606,7 @@
         <q>is small</q>
         ) if the <em>integral</em> of <m>f^2</m> is small.
         This notion is useful in settings where integrals of functions represent quantities we are interested in (e.g. in probability theory,
-        thermodynamics, wave and quantum mechanics).
+        thermodynamics, and quantum mechanics).
       </p>
     </paragraphs>
   </paragraphs>
