@@ -78,11 +78,11 @@
             </p>
           </li>
         </ol>
-        A vector space <m>V</m> along with a choice of inner product <m>\langle \ , \rangle</m> is called an
-        <term>inner product space</term>.
+        An <term>inner product space</term> is a pair <m>(V, \langle , \rangle )</m>, where <m>V</m> is a vector space, and <m>\langle , \rangle </m> is a choice of inner product on <m>V</m>.
       </p>
     </statement>
   </definition>
+
     <remark xml:id="rm_innerproduct_algebra">
     <title>Inner products of linear combinations</title>
     <statement>

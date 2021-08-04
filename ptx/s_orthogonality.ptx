@@ -1,29 +1,42 @@
-<section xml:id="ss_orthogonality">
-  <title>Orthogonality, Gram-Schmidt, orthogonal projection</title>
+<section xml:id="s_orthogonality">
+  <title>Orthogonal bases and orthogonal projection</title>
   <paragraphs>
     <title>Orthogonal sets</title>
     <definition>
+      <title>Orthogonal</title>
+      <idx><h>orthogonal</h><h>vectors</h></idx>
+      <idx><h>orthogonal</h><h>sets</h></idx>
+      <idx><h>orthonormal</h><h>basis</h></idx>
       <statement>
         <p>
-          Let <m>(V,\langle \ , \rangle)</m> be an inner product space.
+          Let <m>(V,\langle \ , \rangle)</m> be an inner product space. Vectors <m>\boldv, \boldw\in V</m> are <term>orthogonal</term> if <m>\langle \boldv, \boldw\rangle =0</m>.
         </p>
         <p>
-          A set <m>S=\{\boldv_1,\boldv_2,\dots,\boldv_r\}</m> of
-          <term>nonzero vectors</term> is <term>orthogonal</term>
-          if <m>\langle\boldv_i,\boldv_j\rangle=0</m> for all <m>i\ne j</m>:
-          i.e., the elements are pairwise orthogonal.
-        </p>
-        <p>
-          An orthogonal set that further satisfies
-          <m>\norm{\boldv_i}=1</m> for all <m>i</m> is called <term>orthonormal</term>.
+          Let <m>S\subseteq V</m> be a subset of <em>nonzero</em> vectors.
+          <ul>
+            <li>
+              <p>
+                The set <m>S</m> is <term>orthogonal</term>
+                if <m>\langle\boldv,\boldw \rangle=0</m> for all <m>\boldv\ne\boldw\in S</m>. We say that the elements of <m>S</m>
+                are <term>pairwise orthogonal</term> in this case.
+              </p>
+            </li>
+            <li>
+              <p>
+                The set <m>S</m> is <term>orthonormal</term> if it is both orthogonal and satisfies
+                <m>\norm{\boldv}=1</m> for all <m>\boldv\in S</m>: <ie />, <m>S</m> consists of pairwise orthogonal unit vectors.
+              </p>
+            </li>
+          </ul>
         </p>
       </statement>
     </definition>
-    <theorem>
+    <theorem xml:id="th_orthogonal">
+      <title>Orthogonal implies linearly independent</title>
       <statement>
         <p>
           Let <m>(V,\langle\ , \rangle)</m> be an inner product space.
-          If <m>S=\{\boldv_1,\boldv_2,\dots,\boldv_r\}</m> is orthogonal,
+          If <m>S</m> is orthogonal,
           then <m>S</m> is linearly independent.
         </p>
       </statement>
@@ -77,65 +90,113 @@
     </p>
   </paragraphs>
   <paragraphs>
-    <title>Orthogonal basis</title>
-    <definition>
+    <title>Orthogonal bases</title>
+
+
+    <definition xml:id="d_orthogonal_basis">
+      <title>Orthogonal and orthonormal bases</title>
+      <idx><h>orthogonal</h><h>basis</h></idx>
+      <idx><h>orthonormal</h><h>basis</h></idx>
       <statement>
         <p>
-          Let <m>(V,\langle \ , \rangle)</m> be an inner product space,
-          <m>\dim V=n</m>.
-        </p>
-        <p>
-          An <term>orthogonal basis</term> is a basis
-          <m>B=\{\boldv_1,\dots,\boldv_n\}</m> that is an orthogonal set;
-          an orthogonal basis <m>B</m> is <term>orthonormal</term>
-          if <m>B</m> is orthonormal.
+          Let <m>(V,\langle \ , \rangle)</m> be an inner product space. An <term>orthogonal basis</term> (resp., <term>orthonormal basis</term>) of <m>V</m> is a basis <m>B</m> that is orthogonal (resp., orthonormal) as a set.
         </p>
       </statement>
     </definition>
-    <theorem>
-      <title>Existence/extension of orthonormal bases</title>
+    <theorem xml:id="th_orthonormal_existence">
+      <title>Existence of orthonormal bases</title>
       <statement>
         <p>
-          Let <m>(V,\langle \ , \rangle)</m> be a finite-dimensional inner product vector space.
+          Let <m>(V,\langle \ , \rangle)</m> be a vector space of dimension <m>n</m>.
         </p>
-        <p>
-          Then <em>(1)</em> <m>V</m> has an ortho(gonal/normal) basis.
-          (Proof is the <em>Gram-Schmidt</em> process.
-          See two slides on.)
-        </p>
-        <p>
-          Furthermore,
-          <em>(2)</em> any ortho(gonal/normal) set can be <em>extended</em>
-          to an ortho(gonal/normal) basis of <m>V</m>.
-        </p>
+        <ol>
+          <li>
+            <p>
+            There is an orthonormal basis for <m>V</m>. In fact, any basis of <m>V</m> can be converted to an orthonormal basis using the <xref ref="proc_gram-schmidt" text="custom">Gram-Schmidt procedure</xref>.
+            </p>
+          </li>
+          <li>
+            <p>
+              If <m>S\subseteq V</m> is an orthogonal set, then there is an orthogonal basis <m>B</m> containing <m>S</m>: <ie />, any orthogonal set can be extended to an orthogonal basis.
+            </p>
+          </li>
+        </ol>
       </statement>
     </theorem>
+    <p>
+      The proof that every finite-dimensional vector space has an orthogonal basis is actually a procedure,
+      called the <em>Gram-Schmidt procedure</em>,
+      for converting an arbitrary basis for an inner product space to an orthogonal basis.
+    </p>
+    <algorithm xml:id="proc_gram-schmidt">
+      <title>Gram-Schmidt procedure</title>
+      <idx><h>Gram-Schmidt procedure</h></idx>
+      <statement>
+        <p>
+          Let <m>(V, \langle \ , \ \rangle)</m> be an inner product space,
+          and let <m>B=\{\boldv_1, \boldv_2, \dots, \boldv_n\}</m> be a basis for <m>V</m>.
+          We can convert <m>B</m> into an orthogonal basis
+          <m>B'=\{\boldw_1, \boldw_2, \dots, \boldw_n\}</m>, and further to an orthonormal basis <m>B''=\{\boldu_1, \boldu_2, \dots, \boldu_n\}</m>, as follows:
+          <ol>
+            <li>
+              <p>
+                Set <m>\boldw_1=\boldv_1</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                For <m>2\leq r\leq n</m> replace <m>\boldv_r</m> with
+                <me>
+                  \boldw_r:=\boldv_r-\frac{\angvec{\boldv_r, \boldw_{r-1}}}{\angvec{\boldw_{r-1},\boldw_{r-1}}}\boldw_{r-1}-\frac{\angvec{\boldv_r, \boldw_{r-2}}}{\angvec{\boldw_{r-2},\boldw_{r-2}}}\boldw_{r-2}-\cdots -\frac{\angvec{\boldv_r, \boldw_{1}}}{\angvec{\boldw_{1},\boldw_{1}}}\boldw_1
+                </me>.
+                The resulting set <m>B'=\{\boldw_1, \boldw_2, \dots, \boldw_n\}</m> is an orthogonal basis of <m>V</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                For each <m>1\leq i\leq n</m> let
+                <me>
+                  \boldu_i=\frac{1}{\norm{\boldw_i}}\,\boldw_i
+                </me>.
+                The set <m>B''=\{\boldu_1, \boldu_2, \dots, \boldu_n\}</m> is an orthonormal basis of <m>V</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </algorithm>
   </paragraphs>
-  <theorem>
-    <title>Calculating with ortho(gonal/normal) bases</title>
+  <theorem xml:id="th_orthogonal_basis_formula">
+    <title>Calculating with orthogonal bases</title>
     <statement>
       <p>
-        Let <m>B=\{\boldv_1,\dots,\boldv_n\}</m> be an
-        <em>orthogonal basis</em> for <m>V</m>.
+        Let <m>(V, \langle , \rangle )</m> be an inner product space, and let <m>B=\{\boldv_1,\dots,\boldv_n\}\subseteq V</m> be an
+        orthogonal basis.
       </p>
-      <p>
-        Given any <m>\boldv\in V</m> we have
-        <m>\boldv=a_1\boldv_1+a_2\boldb_2+\cdots +a_n\boldv_n</m> where <m>a_i=\frac{\langle \boldv,\boldv_i\rangle}{\langle\boldv_i,\boldv_i\rangle}</m>.
-      </p>
-      <p>
-        Equivalently,
-        <me>
-          [\boldv]_B=\begin{bmatrix}\frac{\langle \boldv,\boldv_1\rangle}{\langle\boldv_1,\boldv_1\rangle}\\ \frac{\langle \boldv,\boldv_2\rangle}{\langle\boldv_2,\boldv_2\rangle}\\ \vdots \\ \frac{\langle \boldv,\boldv_n\rangle}{\langle\boldv_n,\boldv_n\rangle} \end{bmatrix}
-        </me>
-      </p>
-      <p>
-        If <m>B</m> is ortho\alert{normal} then these formulas simplify to
-        <me>
-          a_i=\langle\boldv,\boldv_i\rangle \text{ for all \(i\) }
-        </me>.
-      </p>
+      <ol>
+        <li>
+          <p>
+            Given any <m>\boldv\in V</m> we have
+            <me>
+            \boldv=a_1\boldv_1+a_2\boldb_2+\cdots +a_n\boldv_n
+            </me> where
+            <me>
+            a_i=\frac{\langle \boldv,\boldv_i\rangle}{\langle\boldv_i,\boldv_i\rangle}</me>.
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>B</m> is further assumed to be orthonormal, then
+            <me>
+              a_i=\langle\boldv,\boldv_i\rangle
+            </me>
+            for each <m>1\leq i\leq n</m>.
+          </p>
+        </li>
+      </ol>
     </statement>
   </theorem>
+
   <paragraphs>
   <title>Example</title>
   <p>
@@ -167,83 +228,74 @@
     (put elements of <m>B'</m> in as columns).
     Hence <m>\underset{B\rightarrow B'}{P}=(\underset{B'\rightarrow B}{P})^{-1}=\begin{bmatrix}\sqrt{3}/2\amp 1/2\\-1/2\amp \sqrt{3}/2 \end{bmatrix}</m> \end{bsolution}
   </p>
-  <paragraphs>
-    <title>Useful fact</title>
-    <p>
-      If the columns of an <m>n\times n</m> matrix <m>P</m> are orthonormal,
-      then <m>P</m> is invertible, and <m>P^{-1}=P^T</m>.
-    </p>
-  </paragraphs>
-  <paragraphs>
-    <title>Proof</title>
-    <p>
-      Let <m>\boldp_j</m> be the <m>j</m>-th column of <m>P</m>.
-      By the <em>dot product method</em>
-      of matrix multiplication,
-      we have <m>P^TP=[\boldp_i\cdot\boldp_j]=I_n</m>,
-      since the <m>\boldp_i</m> are orthonormal.
-      This proves <m>P^T=P^{-1}</m>.
-    </p>
-  </paragraphs>
-  </paragraphs>
+</paragraphs>
+  <theorem xml:id="th_orthogonal_matrices">
+    <title>Orthogonal matrices</title>
+    <statement>
+      <p>
+        Let <m>A</m> be an <m>n\times n</m> matrix. The following statements are equivalent.
+      </p>
+      <ol>
+        <li>
+          <p>
+            <m>A</m> is invertible and <m>A^{-1}=A^T</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            The columns of <m>A</m> are orthonormal.
+          </p>
+        </li>
+        <li>
+          <p>
+            The rows of <m>A</m> are orthonormal.
+          </p>
+        </li>
+        <li>
+          <p>
+            The columns (resp., rows) of <m>A</m> form an orthonormal basis of <m>\R^n</m>.
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </theorem>
+  <definition xml:id="d_orthogonal_matrix">
+    <title>Orthogonal matrices</title>
+    <statement>
+      <p>
+      An <m>n\times n</m> matrix <m>A</m> is <term>orthogonal</term> if it is invertible and <m>A^{-1}=A^T</m>. Equivalently, <m>A</m> is orthogonal if its columns (or rows) are orthonormal.
+      </p>
+    </statement>
+  </definition>
+
   <paragraphs>
     <title>Gram-Schmidt Process</title>
-    <p>
-      The proof that every finite-dimensional vector space has an orthogonal basis is actually a procedure,
-      called the <em>Gram-Schmidt process</em>,
-      for converting an arbitrary basis for an inner product space to an orthogonal basis.
-    </p>
-    <theorem>
-      <title>Gram-Schmidt process</title>
-      <statement>
-        <p>
-          Let <m>(V, \langle \ , \ \rangle)</m> be an inner product space,
-          and let <m>B=\{\boldv_1, \boldv_2, \dots, \boldv_n\}</m> be a basis for <m>V</m>.
-          We can convert <m>B</m> into an orthogonal basis
-          <m>B'=\{\boldw_1, \boldw_2, \dots, \boldw_n\}</m> using the following recursive procedure:
-          <ol>
-            <li>
-              <p>
-                Set <m>\boldw_1=\boldv_1</m>.
-              </p>
-            </li>
-            <li>
-              <p>
-                For <m>2\leq r\leq n</m> replace <m>\boldv_r</m> with
-                <me>
-                  \boldw_r:=\boldv_r-\frac{\angvec{\boldv_r, \boldw_{r-1}}}{\angvec{\boldw_{r-1},\boldw_{r-1}}}\boldw_{r-1}-\frac{\angvec{\boldv_r, \boldw_{r-2}}}{\angvec{\boldw_{r-2},\boldw_{r-2}}}\boldw_{r-2}-\cdots -\frac{\angvec{\boldv_r, \boldw_{1}}}{\angvec{\boldw_{1},\boldw_{1}}}\boldw_1
-                </me>
-              </p>
-            </li>
-          </ol>
-        </p>
-        <p>
-          Lastly, to further transform to an orthonormal basis,
-          replace each <m>\boldw_i</m> with <m>\ds \boldu_i=\frac{\boldw_i}{\norm{\boldw_i}}</m>.
-        </p>
-      </statement>
-    </theorem>
+
   </paragraphs>
   <paragraphs>
   <title>Orthogonal complement</title>
-  <definition>
+  <definition xml:id="d_orthogonal_complement">
+    <title>Orthogonal complement</title>
+    <idx><h>orthogonal</h><h>complement (of a subspace)</h></idx>
+    <notation>
+      <usage>W^\perp</usage>
+      <description>the orthogonal complement of <m>W</m></description>
+    </notation>
     <statement>
       <p>.
         Let <m>(V,\langle \ , \rangle)</m> be an inner product vector space,
         and let <m>W\subseteq V</m> be a finite-dimensional subspace.
-        The <term>orthogonal complement of <m>W</m></term> is defined as
+        The <term>orthogonal complement of <m>W</m></term>, denoted <m>W^\perp</m>, is defined as
         <me>
-          W^\perp:=\{\boldv\in V\colon \langle \boldv, \boldw\rangle=0 \text{ for all } \boldw\in W\}
+          W^\perp=\{\boldv\in V\colon \langle \boldv, \boldw\rangle=0 \text{ for all } \boldw\in W\}
         </me>.
-      </p>
-      <p>
-        In English: <m>W^\perp</m> is the set of vectors that are orthogonal to
-        <term>all</term> vectors in <m>W</m>.
+        In other words <m>W^\perp</m> is the set of vectors that are orthogonal to
+        <term>all</term> elements of <m>W</m>.
       </p>
     </statement>
   </definition>
-  <theorem>
-    <title>Orthogonal complement theorem</title>
+  <theorem xml:id="th_orthogonal_complement">
+    <title>Orthogonal complement</title>
     <statement>
       <p>
         Let <m>(V,\langle \ , \rangle)</m> be an inner product vector space,
@@ -251,12 +303,12 @@
         <ol>
           <li>
             <p>
-              <m>W^\perp</m> is a subspace of <m>V</m>.
+              The orthogonal complement <m>W^\perp</m> is a subspace of <m>V</m>;
             </p>
           </li>
           <li>
             <p>
-              <m>W\cap W^\perp=\{\boldzero\}</m>
+              We have <m>W\cap W^\perp=\{\boldzero\}</m>.
             </p>
           </li>
         </ol>
@@ -347,7 +399,7 @@
   </paragraphs>
   <paragraphs>
     <title>Orthogonal Projection</title>
-    <theorem>
+    <theorem xml:id="th_orthogonal_projection">
       <title>Orthogonal projection theorem</title>
       <statement>
         <p>
@@ -356,8 +408,8 @@
           <em>finite-dimensional</em> subspace.
           <ol>
             <li>
+              <title>Orthogonal decomposition</title>
               <p>
-                (Orthogonal decomposition).
                 For all <m>\boldv\in V</m> there is a unique choice of vectors <m>\boldw\in W</m> and
                 <m>\boldw^\perp\in W^\perp</m> such that <m>\boldv=\boldw+\boldw^\perp</m>.
                 We call this vector expression an
@@ -368,17 +420,28 @@
               </p>
             </li>
             <li>
+              <title>Distance to <m>W</m></title>
               <p>
-                The orthogonal projection <m>\boldw=\proj{\boldv}{W}</m> is the element of <m>W</m> \alert{closest} to <m>\boldv</m>.
-                This means <m>\norm{\boldv-\proj{\boldv}{W}}\leq\norm{\boldv-\boldw'}</m> for any other <m>\boldw'\in W</m>.
-                We thus define the distance from <m>\boldv</m> to <m>W</m> as <m>d(\boldv, W)=\norm{\boldv-\proj{\boldv}{W}}=\norm{\boldw^\perp}</m>.
+                The orthogonal projection <m>\boldw=\proj{\boldv}{W}</m> is the unique element of <m>W</m> that <em>minimizes</em> the distance to <m>\boldv</m>.
+                In other words
+                <me>\norm{\boldv-\proj{\boldv}{W}}\leq\norm{\boldv-\boldw'}
+                </me>
+                for all <m>\boldw'\in W</m>.
+              </p>
+              <p>
+                Accordingly, we define the <term>distance from <m>\boldv</m> to <m>W</m></term>, denoted <m>d(\boldw, W)</m>, as
+                <me>
+                d(\boldv, W)=d(\boldv, \proj{\boldv}{W}=\norm{\boldw^\perp}
+                </me>.
               </p>
             </li>
             <li>
+              <title>Orthogonal projection formula</title>
               <p>
-                (Orthogonal projection formula).
                 Pick an <em>orthogonal</em> basis <m>B=\{\boldv_1,\boldv_2,\dots, \boldv_r\}</m> of <m>W</m>.
-                Then <m>\ds \proj{\boldv}{W}=\sum_{i=1}^r\frac{\angvec{\boldv,\boldv_i}}{\angvec{\boldv_i, \boldv_i}}\boldv_i</m>.
+                Then
+                <me> \proj{\boldv}{W}=\sum_{i=1}^r\frac{\angvec{\boldv,\boldv_i}}{\angvec{\boldv_i, \boldv_i}}\boldv_i
+                </me>.
               </p>
             </li>
           </ol>
