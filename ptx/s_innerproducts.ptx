@@ -1,4 +1,4 @@
-<section xml:id="ss_innerproducts">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_innerproducts">
   <title>Inner product spaces</title>
   <introduction>
     <p>
@@ -318,6 +318,9 @@
   Our last example defines an <em>integral inner product</em> on the space <m>C([a,b])</m> of continuous functions on an interval <m>[a,b]</m>. This inner product plays an important role in Fourier analysis, which studies the approximation of arbibitrary continuous functions with linear combinations of certain trigonometric funtions.
 </p>
 <theorem xml:id="th_integral_innerproduct">
+  <title>Integral inner product</title>
+
+
   <statement>
     <p>
     Fix an interval <m>[a,b]</m>, and let <m>V=C([a,b])</m>, the space of all continuous functions on <m>[a,b]</m>. For any <m>f,g\in C([a,b])</m> define
@@ -376,7 +379,7 @@
       </notation>
       <statement>
         <p>
-          Let <m>(V, \langle ,  \rangle )</m> be an inner product space. Given <m>\boldv\in V</m> we define its <term>norm</term> (or <term>length</term>), denoted <m>\normal{\boldv}, </m> as
+          Let <m>(V, \langle ,  \rangle )</m> be an inner product space. Given <m>\boldv\in V</m> we define its <term>norm</term> (or <term>length</term>), denoted <m>\norm{\boldv}, </m> as
           <me>
             \norm{\boldv}=\sqrt{\langle \boldv, \boldv  \rangle }
           </me>.
@@ -610,4 +613,5 @@
       </p>
     </paragraphs>
   </paragraphs>
+  <xi:include href="./s_innerproducts_ex.ptx"/>
 </section>

@@ -1,4 +1,4 @@
-<section xml:id="s_orthogonality">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_orthogonality">
   <title>Orthogonal bases and orthogonal projection</title>
   <paragraphs>
     <title>Orthogonal sets</title>
@@ -497,7 +497,7 @@
     element of <m>W</m> minimizing the distance to <m>\boldv</m>!
   </p>
   </paragraphs>
-  <corollary>
+  <corollary xml:id="cor_orthocomp_selfdual">
     <statement>
       <p>
         Let <m>(V,\angvec{\ , \ })</m> be an inner product space,
@@ -531,7 +531,7 @@
       and hence <m>\boldv=\boldw+\boldzero=\boldw\in W</m>.
     </p>
   </proof>
-  <corollary>
+  <corollary xml:id="cor_orthoproj_linear">
     <statement>
       <p>
         Let <m>(V,\angvec{\ , \ })</m> be an inner product space,
@@ -802,4 +802,5 @@
     just as before
   </p>
   </paragraphs>
+  <xi:include href="./s_orthogonality_ex.ptx"/>
 </section>
