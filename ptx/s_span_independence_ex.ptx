@@ -230,7 +230,7 @@ In each exercise, determine whether the given subset <m>S</m> of the vector spac
       </li>
       <li>
         <p>
-          The set <m>S'</m> is a spanning set for <m>\im T</m>.
+          If <m>S</m> is a spanning set for <m>V</m>, then <m>S'</m> is a spanning set for <m>\im T</m>.
         </p>
       </li>
     </ol>
