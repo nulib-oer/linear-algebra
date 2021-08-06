@@ -12293,12 +12293,12 @@
           </li>
           <li>
             <p>
-              <m>\boldv\in W\Longleftrightarrow \proj{\boldv}{W}=\boldv</m>;
+              <m>\boldv\in W\implies \proj{\boldv}{W}=\boldv</m>;
             </p>
           </li>
           <li>
             <p>
-              <m>\boldv\in W^\perp\Longleftrightarrow \proj{\boldv}{W}=\boldzero</m>.
+              <m>\boldv\in W^\perp\iff \proj{\boldv}{W}=\boldzero</m>.
             </p>
           </li>
         </ol>

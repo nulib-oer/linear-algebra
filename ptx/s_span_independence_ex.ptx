@@ -64,7 +64,7 @@ A = \begin{bmatrix}4\amp 0\\ -2\amp -2 \end{bmatrix} \hspace{5pt}, B = \begin{bm
         </li>
         <li>
           <p>
-            <m>g(x)=\sin 2x</m>
+            <m>g(x)=\cos 2x</m>
           </p>
         </li>
         <li>
@@ -90,7 +90,7 @@ A = \begin{bmatrix}4\amp 0\\ -2\amp -2 \end{bmatrix} \hspace{5pt}, B = \begin{bm
       </li>
       <li>
         <p>
-          <m>V=\R^3</m>, <m>S=\{(1,-1,1), (0,1,-2), (1,2,1)\}</m>
+          <m>V=\R^3</m>, <m>S=\{(1,-1,1), (0,1,-2), (-3,2,-1)\}</m>
         </p>
       </li>
       <li>
