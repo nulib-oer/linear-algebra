@@ -595,8 +595,9 @@
                   <mrow> \amp\implies T(\boldv-\boldv')=\boldzero_W </mrow>
                   <mrow>  \amp \implies \boldv-\boldv'\in \NS T=\{\boldzero_V\}</mrow>
                   <mrow>  \amp\implies \boldv-\boldv'=\boldzero_V </mrow>
-                  <mrow>  \amp \implies <m>\boldv=\boldv'</m></mrow>
+                  <mrow>  \amp \implies \boldv=\boldv'</mrow>
                 </md>.
+                Thus <m>T</m> is injective. 
               </p>
             </li>
           </ol>
