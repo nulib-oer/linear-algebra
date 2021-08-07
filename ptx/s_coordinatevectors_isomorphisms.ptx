@@ -415,23 +415,23 @@
     </statement>
     <hint>
       <p>
-        Choose an ordered basis <m>B</m> of <m>M_{22}</m> and use the coordinate vector map to translate to a question about subspaces of <m>\R^4</m>. Answer this question and translate back to <m>M_{22}</m>.
+        Choose an ordered basis <m>C</m> of <m>M_{22}</m> and use the coordinate vector map to translate to a question about subspaces of <m>\R^4</m>. Answer this question and translate back to <m>M_{22}</m>.
       </p>
     </hint>
     <solution>
       <p>
-        Let <m>B=(E_{11}, E_{12}, E_{21}, E_{22})</m> be the standard basis of <m>M_{22}</m>.
-        Apply <m>[\hspace{10pt}]_B</m> to the elements of the given <m>S</m> to get a corresponding set <m>S'\subseteq\R^4</m>:
+        Let <m>C=(E_{11}, E_{12}, E_{21}, E_{22})</m> be the standard basis of <m>M_{22}</m>.
+        Apply <m>[\hspace{10pt}]_C</m> to the elements of the given <m>S</m> to get a corresponding set <m>S'\subseteq\R^4</m>:
         <me>
-          S'=\left\{ [A_1]_B=(2,1,0,-2), [A_2]_B=(1,1,1,-1), [A_3]_B=(0,1,2,0), [A_4]_B=(-1,0,1,1) \right\}
+          S'=\left\{ [A_1]_C=(2,1,0,-2), [A_2]_C=(1,1,1,-1), [A_3]_C=(0,1,2,0), [A_4]_C=(-1,0,1,1) \right\}
         </me>.
-        Apply the column space procedure of <xref ref="proc_contract_extend"/> to contract <m>S'</m> to a linearly independent subset. This produces the subset
+        Apply the column space procedure of <xref ref="proc_contract_extend"/> to contract <m>S'</m> to a basis <m>B'</m> of <m>\Span S'</m>. This produces the subset
         <me>
-          \{[A_1]_B=(2,1,0,-2), [A_2]_B=(1,1,1,-1)\}
+          B'=\{[A_1]_C=(2,1,0,-2), [A_2]_C=(1,1,1,-1)\}
         </me>
         Translating back to <m>V=M_{22}</m>, we conclude that the corresponding set
         <me>
-          B'=\{A_1, A_2\}
+          B=\{A_1, A_2\}
         </me>
         is a basis for <m>W'=\Span S</m>. We conclude that <m>\dim W'=2 </m>.
       </p>
