@@ -1,4 +1,4 @@
-<section xml:id="ss_matrixreps">
+<section xml:id="s_matrixreps">
   <title>Matrix representations</title>
   <paragraphs>
     <title>Matrix representations of transformations</title>
@@ -176,7 +176,7 @@
     <statement>
       <p>
         Any question about the <em>linear transformation</em>
-        <m>T</m> can be answered by first answering the analagous question for the
+        <m>T</m> can be answered by first answering the analogous question for the
         <em>matrix</em> <m>A=[T]_B^{B'}</m>,
         and then translating your results back to <m>V</m> and <m>W</m> using
         <m>[\hspace{5pt}]_B^{-1}</m> and <m>[\hspace{5pt}]_{B'}^{-1}</m>.
