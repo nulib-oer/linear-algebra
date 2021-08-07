@@ -409,7 +409,7 @@
           S=\left \{ A_1=\begin{bmatrix}2\amp 1\\ 0\amp -2 \end{bmatrix} , A_2=\begin{bmatrix}1\amp 1\\ 1\amp -1 \end{bmatrix} , A_3=\begin{bmatrix}0\amp 1\\ 2\amp 0 \end{bmatrix} , A_4=\begin{bmatrix}-1\amp 0\\ 1\amp 1 \end{bmatrix} \right\}
         </me>
         is a subset of the space <m>W=\{ A\in M_{22}\colon \tr A=0\}</m>.
-        Let <m>W'=\Span S</m>. Contract <m>S</m> to a basis of <m>W'</m>,
+        Let <m>W'=\Span S</m>. Contract <m>S</m> to a basis of <m>W'</m>
         and determine whether <m>W'=W</m>.
       </p>
     </statement>
@@ -439,7 +439,7 @@
         Lastly the space <m>W</m> of all trace-zero matrices is easily seen to have basis
         <me>
         \left\{
-        \begin{amatrix}[rr]1\amp 0\\ 0\ amp -1  \end{amatrix},
+        \begin{amatrix}[rr]1\amp 0\\ 0 \amp -1  \end{amatrix},
         \begin{amatrix}[rr]0\amp 1\\ 0\amp 0  \end{amatrix},
         \begin{amatrix}[rr]0 \amp 0\\ 1\amp 0  \end{amatrix}
         \right\}
