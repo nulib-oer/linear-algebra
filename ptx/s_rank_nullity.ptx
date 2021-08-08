@@ -12,11 +12,11 @@
       <idx><h>rank</h><h>of a linear transformation</h></idx>
       <idx><h>nullity</h><h>of a linear transformation</h></idx>
       <notation>
-        <usage>\rank T</usage>
+        <usage><m>\rank T</m></usage>
         <description>the rank of <m>T</m></description>
       </notation>
       <notation>
-        <usage>\nullity T</usage>
+        <usage><m>\nullity T</m></usage>
         <description>the nullity of <m>T</m></description>
       </notation>
       <statement>
@@ -75,23 +75,23 @@
       <idx><h>rank</h><h>of a matrix</h></idx>
       <idx><h>nullity</h><h>of a matrix</h></idx>
       <notation>
-        <usage>\NS A</usage>
+        <usage><m>\NS A</m></usage>
         <description>the null space of matrix <m>A</m></description>
       </notation>
       <notation>
-        <usage>\RS A</usage>
+        <usage><m>\RS A</m></usage>
         <description>the row space of a matrix <m>A</m></description>
       </notation>
       <notation>
-        <usage>\CS A</usage>
+        <usage><m>\CS A</m></usage>
         <description>the column space of a matrix <m>A</m></description>
       </notation>
       <notation>
-        <usage>\rank A</usage>
+        <usage><m>\rank A</m></usage>
         <description>the rank of a matrix <m>A</m></description>
       </notation>
       <notation>
-        <usage>\nullity A</usage>
+        <usage><m>\nullity A</m></usage>
         <description>the nullity of a matrix <m>A</m></description>
       </notation>
       <statement>

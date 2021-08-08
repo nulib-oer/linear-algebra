@@ -28,7 +28,7 @@
       <title>Span</title>
       <idx><h>span</h><h>of a set of vectors</h></idx>
       <notation>
-        <usage>\Span S</usage>
+        <usage><m>\Span S</m></usage>
         <description>the span of <m>S</m></description>
       </notation>
         <statement>

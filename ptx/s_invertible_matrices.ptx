@@ -12,7 +12,7 @@
     <idx><h>invertible</h><h>matrix</h></idx>
     <idx><h>matrix</h><h>inverse</h></idx>
     <notation>
-      <usage>A^{-1}</usage>
+      <usage><m>A^{-1}</m></usage>
       <description>inverse of <m>A</m></description>
     </notation>
 
@@ -296,7 +296,7 @@
     <title>Matrix powers</title>
     <idx><h>matrix powers</h></idx>
     <notation>
-      <usage>A^r</usage>
+      <usage><m>A^r</m></usage>
       <description>matrix power</description>
     </notation>
     <statement>

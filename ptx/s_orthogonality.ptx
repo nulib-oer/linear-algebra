@@ -278,7 +278,7 @@
     <title>Orthogonal complement</title>
     <idx><h>orthogonal</h><h>complement (of a subspace)</h></idx>
     <notation>
-      <usage>W^\perp</usage>
+      <usage><m>W^\perp</m></usage>
       <description>the orthogonal complement of <m>W</m></description>
     </notation>
     <statement>

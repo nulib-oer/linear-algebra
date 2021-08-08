@@ -172,7 +172,7 @@
           </me>.
           The same reasoning shows that more generally, given polynomial <m>p(x)=ax^2+bx+c</m>, we have
           <me>
-            [p(x)]_B=\frac{1]{3}(a+b+c, a-2b+c, a+b-2)
+            [p(x)]_B=\frac{1}{3}(a+b+c, a-2b+c, a+b-2)
           </me>.
 
           </p>
@@ -597,7 +597,7 @@
                   <mrow>  \amp\implies \boldv-\boldv'=\boldzero_V </mrow>
                   <mrow>  \amp \implies \boldv=\boldv'</mrow>
                 </md>.
-                Thus <m>T</m> is injective. 
+                Thus <m>T</m> is injective.
               </p>
             </li>
           </ol>

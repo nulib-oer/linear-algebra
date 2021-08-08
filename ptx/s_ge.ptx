@@ -34,7 +34,7 @@
   <title>Augmented matrix</title>
   <!-- <idx><h>augmented matrix</h></idx> -->
 <notation>
-  <usage>\begin{amatrix}[c|c]A\amp \mathbb{b}\end{amatrix}</usage>
+  <usage><m>\begin{amatrix}[c|c]A\amp \mathbb{b}\end{amatrix}</m></usage>
   <description>augmented matrix</description>
 </notation>
   <statement>
@@ -255,15 +255,15 @@ As defined more thoroughly in <xref ref="d_matrix"/>, a matrix is just a rectang
   <remark xml:id="s_ge_notation">
     <title>Notation</title>
     <notation>
-      <usage>A\xrightarrow{c\,r_i} B</usage>
+      <usage><m>A\xrightarrow{c\,r_i} B</m></usage>
       <description>scalar multiplication</description>
     </notation>
     <notation>
-      <usage>A\xrightarrow{r_i\leftrightarrow r_j} B</usage>
+      <usage><m>A\xrightarrow{r_i\leftrightarrow r_j} B</m></usage>
       <description>row swap</description>
     </notation>
     <notation>
-      <usage>A\xrightarrow{r_i+c\,r_j} B</usage>
+      <usage><m>A\xrightarrow{r_i+c\,r_j} B</m></usage>
       <description>replace <m>r_i</m> with <m>r_i+c\,r_j</m></description>
     </notation>
     Our former elementary operation notation easily transfers to row operations on matrices. The expressions

@@ -121,7 +121,7 @@
   <idx><h>additive inverse</h><h>of a matrix</h></idx>
   <idx><h>matrix</h><h>additive inverse</h></idx>
   <notation>
-    <usage>-A</usage>
+    <usage><m>-A</m></usage>
     <description>Additive inverse of <m>A</m></description>
   </notation>
   <statement>
@@ -138,7 +138,7 @@
   <idx><h>identity matrix</h></idx>
   <idx><h>matrix</h><h>identity matrix</h></idx>
   <notation>
-    <usage>I</usage>
+    <usage><m>I</m></usage>
     <description>inverse matrix</description>
   </notation>
   <statement>

@@ -46,11 +46,11 @@
 </p>
 <definition xml:id="d_matrix_notation">
   <notation>
-    <usage>[a_{ij}]_{m\times n}</usage>
+    <usage><m>[a_{ij}]_{m\times n}</m></usage>
     <description>Matrix whose <m>ij</m>-th entry is <m>a_{ij}</m></description>
   </notation>
   <notation>
-    <usage>(A)_{ij}</usage>
+    <usage><m>(A)_{ij}</m></usage>
     <description><m>ij</m>-th entry of the matrix <m>A</m></description>
   </notation>
   <statement>
@@ -140,7 +140,7 @@
     <idx><h>matrix</h><h>diagonal of square matrix</h></idx>
     <idx><h>matrix</h><h>zero matrix</h></idx>
     <notation>
-      <usage>\boldzero_{m\times n}</usage>
+      <usage><m>\boldzero_{m\times n}</m></usage>
       <description>the <m>m\times n</m> zero matrix</description>
     </notation>
     <statement>

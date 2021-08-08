@@ -374,7 +374,7 @@
       <title>Norm (or length) of a vector</title>
       <idx><h>norm</h><h>of a vector</h></idx>
       <notation>
-        <usage>\norm{\boldv}</usage>
+        <usage><m>\norm{\boldv}</m></usage>
         <description>norm of <m>\boldv</m></description>
       </notation>
       <statement>
@@ -408,7 +408,7 @@
     <definition xml:id="d_distance">
       <idx><h>distance</h><h>between two vectors</h></idx>
       <notation>
-        <usage>d(\boldv, \boldw)</usage>
+        <usage><m>d(\boldv, \boldw)</m></usage>
         <description>the distance between <m>\boldv</m> and <m>\boldw</m></description>
       </notation>
       <title>Distance between vectors</title>

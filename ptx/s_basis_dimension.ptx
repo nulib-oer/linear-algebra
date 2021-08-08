@@ -314,7 +314,7 @@
     <title>Cardinality of a set</title>
     <idx><h>cardinality</h><h>of a set</h></idx>
     <notation>
-      <usage>\val{X}</usage>
+      <usage><m>\val{X}</m></usage>
       <description>the cardinality of the set <m>X</m></description>
     </notation>
     <statement>
@@ -420,7 +420,7 @@
     <title>Dimension of a vector space</title>
     <idx><h>dimension</h><h>of a vector space</h></idx>
     <notation>
-      <usage>\dim V</usage>
+      <usage><m>\dim V</m></usage>
       <description>dimension of <m>V</m></description>
     </notation>
     <statement>

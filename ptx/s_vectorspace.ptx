@@ -181,7 +181,7 @@ In each of the examples below we carefully lay out the details of items (1)-(3) 
   <title>Vector space of <m>m\times n</m> matrices</title>
   <idx><h>vector space</h><h>of matrices</h></idx>
   <notation>
-    <usage>M_{mn}</usage>
+    <usage><m>M_{mn}</m></usage>
     <description>vector space of <m>m\times n</m> matrices</description>
   </notation>
   <statement>
@@ -222,7 +222,7 @@ In each of the examples below we carefully lay out the details of items (1)-(3) 
   <title>Vector space of real <m>n</m>-tuples</title>
   <idx><h>vector space</h><h>of <m>n</m>-tuples</h></idx>
 <notation>
-  <usage>\R^n</usage>
+  <usage><m>\R^n</m></usage>
   <description>vector space of <m>n</m>-tuples</description>
 </notation>
   <statement>
@@ -290,7 +290,7 @@ In each of the examples below we carefully lay out the details of items (1)-(3) 
   <title>Zero vector space</title>
   <idx><h>vector space</h><h>zero vector space</h></idx>
 <notation>
-  <usage>\{\boldzero\}</usage>
+  <usage><m>\{\boldzero\}</m></usage>
   <description>the zero vector space</description>
 </notation>
   <statement>
@@ -333,7 +333,7 @@ In each of the examples below we carefully lay out the details of items (1)-(3) 
   <title>The vector space of infinite real sequences</title>
   <idx><h>vector space</h><h>of infinite real sequences</h></idx>
 <notation>
-  <usage>\R^\infty</usage>
+  <usage><m>\R^\infty</m></usage>
   <description>the vector space of infinite real sequences</description>
 </notation>
   <statement>
@@ -385,7 +385,7 @@ In each of the examples below we carefully lay out the details of items (1)-(3) 
   <title>Real functions</title>
   <idx><h>vector space</h><h>of real functions on an interval</h></idx>
   <notation>
-    <usage>F(X,\R)</usage>
+    <usage><m>F(X,\R)</m></usage>
     <description>vector space of functions from <m>X</m> to <m>\R</m></description>
   </notation>
   <statement>
@@ -453,7 +453,7 @@ In each of the examples below we carefully lay out the details of items (1)-(3) 
   <title>Vector space of positive real numbers</title>
     <idx><h>vector space</h><h>of positive real numbers</h></idx>
     <notation>
-      <usage>\R_{>0}</usage>
+      <usage><m>\R_{>0}</m></usage>
       <description>vector space of positive real numbers</description>
     </notation>
   <statement>

@@ -1,9 +1,8 @@
 <section xml:id="s_matrixreps">
-  <title>Matrix representations</title>
-  <paragraphs>
-    <title>Matrix representations of transformations</title>
+  <title>Matrix representations of linear transformations</title>
+  <introduction>
     <p>
-      We have seen how the coordinate vector map can be used to translate a linear algebraic question posed about the exotic vector space <m>V</m> into a question about the more familiar vector space <m>\R^n</m>,
+      We have seen how the coordinate vector map can be used to translate a linear algebraic question posed about a finite-dimensional vector space <m>V</m> into a question about <m>\R^n</m>,
       where we have many computational algorithms at our disposal.
     </p>
     <p>
@@ -44,14 +43,29 @@
       <q>model</q>
       <m>T</m>?
       All the properties of <m>T</m> we are interested in (<m>\NS T</m>,
-      <m>\nullity T</m>, <m>\CS T</m>, <m>\rank T</m>,
+      <m>\nullity T</m>, <m>\im T</m>, <m>\rank T</m>,
       etc.) are perfectly mirrored by the matrix <m>A</m>.
     </p>
     <p>
       As a result,
       this technique allows us to answer questions about the original <m>T</m> essentially by applying a relevant matrix algorithm to <m>A</m>.
     </p>
-  </paragraphs>
+  </introduction>
+  <definition xml:id="d_matrix_representation">
+    <statement>
+      <p>
+      Let <m>V</m> and <m>W</m> be vector spaces with ordered bases <m>B=(\boldv_1, \boldv_2, \dots, \boldv_n)</m> and <m>B'=(\boldw_1, \boldw_2, \dots, \boldw_m)</m>, respectively.  Given a linear transformation <m>T\colon V\rightarrow W</m>, the <term>matrix representing <m>T</m> with respect to <m>B</m> and <m>B'</m></term>, is the <m>m\times n</m> matrix <m>[T]_B^{B'}</m> whose <m>j</m>-th column is <m>[T(\boldv_j)]_{B'}</m>, considered as a column vector: <ie />,
+      <me>
+        [T]_B^{B'}=\begin{amatrix}[cccc]\vert \amp \vert \amp \amp \vert \\
+         [T(\boldv_1)]_{B'}\amp [T(\boldv_2)]_{B'}\amp \dots \amp [T(\boldv_n)]_{B'} \\
+        \vert \amp \vert \amp  \amp \vert
+       \end{amatrix}
+      </me>.
+      In the special case where <m>W=V</m> and we pick <m>B'=B</m> we write simply <m>[T]_B</m>.
+      </p>
+    </statement>
+  </definition>
+
   <paragraphs>
     <title>Matrix representations of transformations</title>
     <p>
@@ -68,7 +82,17 @@
     <p>
       Putting all three of these maps together yields the diagram
     </p>
-    <image source="images/cc8efd6a97c88e4497f27340c587cf4a67004367.png"/>
+
+    <figure>
+    <image xml:id="im_comm_diag" width="25%">
+    <latex-image>
+      \begin{tikzcd}
+      V \arrow[r, "T"] \arrow[d, leftrightarrow,"{[\hspace{.1in}]}_B"'] \amp W \arrow[d,leftrightarrow,"{[\hspace{.1in}]}_{B'}"] \\
+      \R^n \arrow[r, "{[T]}_B^{B'}"'] \amp \R^m
+      \end{tikzcd}
+    </latex-image>
+  </image>
+  </figure>
     <p>
       where the double-headed arrows indicate the fact that the coordinate maps are isomorphisms:
       i.e., we also have inverse maps <m>([\hspace{5pt}]_B)^{-1}</m>,
@@ -170,7 +194,11 @@
     The theorem is summed up by the following
     <em>commutative diagram</em>:
   </p>
-  <image source="images/339555c2b04a42fa7ebcff9362ead028de75cc56.png"/>
+  <figure>
+    <image source="../images/CommutativeTent.png" width="80%"/>
+  </figure>
+
+
   <corollary>
     <title>Computational method</title>
     <statement>

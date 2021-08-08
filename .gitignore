@@ -5,3 +5,6 @@
 **/knowl
 **/*.html
 **/ExercisesSolutions
+output/
+Makefile.paths
+Makefile*

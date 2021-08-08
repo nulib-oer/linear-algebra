@@ -18,7 +18,7 @@
       <title>Submatrix notation</title>
       <idx><h>submatrix</h></idx>
       <notation>
-        <usage>\widetilde{A}_{ij}</usage>
+        <usage><m>\widetilde{A}_{ij}</m></usage>
         <description>submatrix of <m>A</m></description>
       </notation>
       <statement>
@@ -31,7 +31,7 @@
       <title>The determinant</title>
       <idx><h>determinant</h></idx>
       <notation>
-        <usage>\det A</usage>
+        <usage><m>\det A</m></usage>
         <description>determinant of <m>A</m></description>
       </notation>
       <statement>
@@ -166,7 +166,7 @@
   <idx><h>minor of matrix</h></idx>
   <idx><h>expansion along row/column</h></idx>
   <notation>
-    <usage>M_{ij}</usage>
+    <usage><m>M_{ij}</m></usage>
     <description>the <m>ij</m>-th minor of a matrix</description>
   </notation>
   <statement>
@@ -379,7 +379,7 @@ As a further consequence of <xref ref="th_expansion_row"/> and <xref ref="cor_ex
   <title>Adjoint matrix</title>
   <idx><h>adjoint matrix</h></idx>
   <notation>
-    <usage>\adj A</usage>
+    <usage><m>\adj A</m></usage>
     <description>adjoint of a square matrix</description>
   </notation>
   <statement>

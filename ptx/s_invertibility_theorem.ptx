@@ -14,15 +14,15 @@
     <idx><h>elementary matrix</h></idx>
     <idx><h>matrix</h><h>elementary</h></idx>
     <notation>
-      <usage>\underset{cr_i}{E}</usage>
+      <usage><m>\underset{cr_i}{E}</m></usage>
       <description>Scaling elementary matrix</description>
     </notation>
     <notation>
-      <usage>\underset{r_i\leftrightarrow r_j}{E}</usage>
+      <usage><m>\underset{r_i\leftrightarrow r_j}{E}</m></usage>
       <description>Row swap elementary matrix</description>
     </notation>
     <notation>
-      <usage>\underset{r_i+c\,r_j}{E}</usage>
+      <usage><m>\underset{r_i+c\,r_j}{E}</m></usage>
       <description>Row addition elementary matrix</description>
     </notation>
     <statement>

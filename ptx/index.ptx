@@ -272,8 +272,10 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 \def\bspace{
 {\vspace{.05in}}}
 </macros>
+
 <latex-image-preamble>
 \usepackage{tikz}
+\usepackage{tikz-cd}
 \usepackage{tkz-graph}
 \usepackage{tkz-euclide}
 \usetikzlibrary{patterns}
@@ -304,7 +306,7 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
   <xi:include href="./c_vectorspace.ptx"/>
   <xi:include href="./c_innerproductspaces.ptx"/>
   <xi:include href="./c_eigenvectors_diagonalization.ptx"/>
-  
+
 
   <backmatter>
     <appendix xml:id="appendix-notation">

@@ -31,7 +31,7 @@
       <title>Functions</title>
       <idx><h>function</h></idx>
       <notation>
-        <usage>f\colon A\rightarrow B</usage>
+        <usage><m>f\colon A\rightarrow B</m></usage>
         <description>function from <m>A</m> to <m>B</m></description>
       </notation>
       <statement>
@@ -76,7 +76,7 @@
       <title>Function composition</title>
       <idx><h>function</h><h>composition</h></idx>
       <notation>
-        <usage>f\circ g</usage>
+        <usage><m>f\circ g</m></usage>
         <description>the composition of <m>f</m> and <m>g</m></description>
       </notation>
       <statement>
@@ -329,7 +329,7 @@
     <title>Matrix transformations</title>
     <idx><h>matrix transformation</h></idx>
     <notation>
-      <usage>T_A</usage>
+      <usage><m>T_A</m></usage>
       <description>the matrix transformation associated to <m>A</m></description>
     </notation>
     <statement>
@@ -404,7 +404,7 @@
   <title>Rotation in the plane</title>
   <idx><h>rotation</h><h>as linear transformation</h></idx>
   <notation>
-    <usage>\rho_\alpha</usage>
+    <usage><m>\rho_\alpha</m></usage>
     <description>rotation by <m>\alpha</m> in the plane</description>
   </notation>
 
