@@ -1,40 +1,39 @@
 <section xml:id="ss_eigenvectors">
   <title>Eigenvectors and eigenvalues</title>
   <paragraphs>
-  <title>Eigenvectors</title>
-  <p>
-    Let <m>T\colon V\rightarrow V</m> be linear.
-    We have seen that some choices of bases of <m>V</m> are better than others for representing <m>T</m> as a matrix.
-  </p>
-  <p>
-    The ideal situation is when <m>V</m> happens to have a basis
-    <m>B=\{\boldv_1,\dots, \boldv_n\}</m> where <m>T(\boldv_i)=c_i\boldv_i</m> for all <m>i</m>.
-    The matrix <m>[T]_B</m> in this case is diagonal!
-    <me>
-      [T]_B=\begin{bmatrix}c_1\amp 0\amp \dots\\ 0\amp c_2\amp 0\amp \dots\\ \vdots \amp \\ 0\amp 0\amp \dots\amp c_n \end{bmatrix}
-    </me>
-  </p>
-  <p>
-    This motivates us to find as many vectors as we can satisfying <m>T(\boldv)=c\boldv</m> for some <m>c</m>.
-    Such vectors are called <em>eigenvectors</em>.
-  </p>
-  <definition>
-    <statement>
-      <p>
-        Let <m>T\colon V\rightarrow V</m> be linear.
-        An <term>eigenvector</term> of <m>T</m> is a <term>nonzero</term>
-        vector <m>\boldv\ne\boldzero</m> such that
-        <m>T(\boldv)=\lambda\boldv</m> for some constant <m>\lambda\in\R</m>.
-      </p>
-    </statement>
-  </definition>
-  <paragraphs>
-    <title>Comment:</title>
+    <title>Eigenvectors</title>
     <p>
-      why the switch to <m>\lambda</m> all of a sudden?
-      Tradition!
+      Let <m>T\colon V\rightarrow V</m> be linear.
+      We have seen that some choices of bases of <m>V</m> are better than others for representing <m>T</m> as a matrix.
     </p>
-  </paragraphs>
+    <p>
+      The ideal situation is when <m>V</m> happens to have a basis
+      <m>B=\{\boldv_1,\dots, \boldv_n\}</m> where <m>T(\boldv_i)=c_i\boldv_i</m> for all <m>i</m>.
+      The matrix <m>[T]_B</m> in this case is diagonal!
+      <me>
+      [T]_B=\begin{bmatrix}c_1\amp 0\amp \dots\\ 0\amp c_2\amp 0\amp \dots\\ \vdots \amp \\ 0\amp 0\amp \dots\amp c_n \end{bmatrix}
+      </me>
+    </p>
+    <p>
+      This motivates us to find as many vectors as we can satisfying <m>T(\boldv)=c\boldv</m> for some <m>c</m>.
+      Such vectors are called <em>eigenvectors</em>.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>T\colon V\rightarrow V</m> be a linear transformation.
+          A <term>(real) eigenvalue of <m>T</m></term> is a scalar <m>\lambda\in \R</m> such that there is a <em>nonzero</em> vector <m>\boldv\in V</m> with <m>T(\boldv)=\boldv</m>. The vector <m>\boldv</m> in this case is called an <em>eigenvector of <m>T</m></em> with eigenvalue <m>\lambda</m>.
+        </p>
+
+      </statement>
+    </definition>
+    <paragraphs>
+      <title>Comment:</title>
+      <p>
+        why the switch to <m>\lambda</m> all of a sudden?
+        Tradition!
+      </p>
+    </paragraphs>
   </paragraphs>
   <paragraphs>
     <title>Examples by inspection</title>
@@ -44,8 +43,8 @@
     <p>
       We have seen that
       <md>
-        <mrow>T\left(\begin{bmatrix}0\amp 1\\ -1\amp 0 \end{bmatrix} \right)\amp =\amp \begin{bmatrix}0\amp 0\\ 0\amp 0 \end{bmatrix} =0\begin{bmatrix}0\amp 1\\ -1\amp 0 \end{bmatrix}</mrow>
-        <mrow>T\left(\begin{bmatrix}0\amp 1\\ 1\amp 0 \end{bmatrix} \right)\amp =\amp \begin{bmatrix}0\amp 2\\ 2\amp 0 \end{bmatrix} =2\begin{bmatrix}0\amp 1\\ 1\amp 0 \end{bmatrix} </mrow>
+      <mrow>T\left(\begin{bmatrix}0\amp 1\\ -1\amp 0 \end{bmatrix} \right)\amp =\amp \begin{bmatrix}0\amp 0\\ 0\amp 0 \end{bmatrix} =0\begin{bmatrix}0\amp 1\\ -1\amp 0 \end{bmatrix}</mrow>
+      <mrow>T\left(\begin{bmatrix}0\amp 1\\ 1\amp 0 \end{bmatrix} \right)\amp =\amp \begin{bmatrix}0\amp 2\\ 2\amp 0 \end{bmatrix} =2\begin{bmatrix}0\amp 1\\ 1\amp 0 \end{bmatrix} </mrow>
       </md>.
     </p>
     <p>
@@ -138,12 +137,12 @@
       We now focus on finding eigenvalues of an <m>n\times n</m> matrix <m>A</m>.
       Follow this chain of equivalences:
       <md>
-        <mrow>\text{ \(\lambda\in\R\) is an eigenvalue of \(A\) } \amp \Leftrightarrow\amp  A\boldx=\lambda\boldx \text{ for some \(\boldx\ne 0\) } \ \text{ (by def.) }</mrow>
-        <mrow>\amp \Leftrightarrow\amp \lambda\boldx-A\boldx=\boldzero</mrow>
-        <mrow>\amp \Leftrightarrow\amp (\lambda I_n)\boldx-A\boldx=\boldzero \ \text{ (since \(\lambda\boldx=(\lambda I_n)\boldx\)) }</mrow>
-        <mrow>\amp \Leftrightarrow\amp (\lambda I_n-A)\boldx=\boldzero \text{ for some \(\boldx\ne \boldzero\) }</mrow>
-        <mrow>\amp \Leftrightarrow\amp \lambda I_n-A \text{ is noninvertible }</mrow>
-        <mrow>\amp \Leftrightarrow\amp \det(\lambda I_n-A)=0 \ \text{ (invertibility theorem) }</mrow>
+      <mrow>\text{ \(\lambda\in\R\) is an eigenvalue of \(A\) } \amp \Leftrightarrow\amp  A\boldx=\lambda\boldx \text{ for some \(\boldx\ne 0\) } \ \text{ (by def.) }</mrow>
+      <mrow>\amp \Leftrightarrow\amp \lambda\boldx-A\boldx=\boldzero</mrow>
+      <mrow>\amp \Leftrightarrow\amp (\lambda I_n)\boldx-A\boldx=\boldzero \ \text{ (since \(\lambda\boldx=(\lambda I_n)\boldx\)) }</mrow>
+      <mrow>\amp \Leftrightarrow\amp (\lambda I_n-A)\boldx=\boldzero \text{ for some \(\boldx\ne \boldzero\) }</mrow>
+      <mrow>\amp \Leftrightarrow\amp \lambda I_n-A \text{ is noninvertible }</mrow>
+      <mrow>\amp \Leftrightarrow\amp \det(\lambda I_n-A)=0 \ \text{ (invertibility theorem) }</mrow>
       </md>
     </p>
     <p>
@@ -163,7 +162,7 @@
           The <term>characteristic polynomial</term>
           of <m>A</m> is the polynomial
           <me>
-            p(t)=\det(tI_n-A)
+          p(t)=\det(tI_n-A)
           </me>.
         </p>
       </statement>
@@ -237,15 +236,15 @@
     <p>
       Then we have:
       <md>
-        <mrow>-(\lambda_1+\lambda_2+\cdots +\lambda_n)\amp =\amp a_{n-1}=-\tr(A)</mrow>
-        <mrow>(-1)^n\lambda_1\lambda_2\cdots\lambda_n\amp =\amp a_0=(-1)^n\det(A)</mrow>
+      <mrow>-(\lambda_1+\lambda_2+\cdots +\lambda_n)\amp =\amp a_{n-1}=-\tr(A)</mrow>
+      <mrow>(-1)^n\lambda_1\lambda_2\cdots\lambda_n\amp =\amp a_0=(-1)^n\det(A)</mrow>
       </md>
     </p>
     <p>
       An easy consequence of these equalities is the following:
       <md>
-        <mrow>\tr(A)\amp =\amp \lambda_1+\lambda_2+\cdots +\lambda_n</mrow>
-        <mrow>\det(A)\amp =\amp \lambda_1\lambda_2\cdots\lambda_n</mrow>
+      <mrow>\tr(A)\amp =\amp \lambda_1+\lambda_2+\cdots +\lambda_n</mrow>
+      <mrow>\det(A)\amp =\amp \lambda_1\lambda_2\cdots\lambda_n</mrow>
       </md>
     </p>
     <p>
@@ -288,8 +287,8 @@
               Let <m>\lambda_1, \lambda_2, \dots, \lambda_n</m> be the roots of <m>p(t)</m>.
               Then
               <md>
-                <mrow>\tr(A)\amp =\sum_{i=1}^n\lambda_i=-a_{n-1}</mrow>
-                <mrow>\det(A)\amp =\prod_{i=1}^n\lambda_i=(-1)^na_0</mrow>
+              <mrow>\tr(A)\amp =\sum_{i=1}^n\lambda_i=-a_{n-1}</mrow>
+              <mrow>\det(A)\amp =\prod_{i=1}^n\lambda_i=(-1)^na_0</mrow>
               </md>
             </p>
           </li>
@@ -298,7 +297,7 @@
     </statement>
   </theorem>
   <paragraphs>
-    <title>Finding eigenvectors of $A$</title>
+    <title>Computing eigenspaces of a matrix </title>
     <p>
       Now suppose we have found an eigenvalue <m>\lambda</m> of <m>A</m>.
     </p>
@@ -316,7 +315,7 @@
           Let <m>\lambda</m> be an eigenvalue of <m>A</m>.
           We define the <m>\lambda</m>-eigenspace of <m>A</m> to be the space
           <me>
-            W_\lambda:=\NS(\lambda I_n-A)
+          W_\lambda=\NS(\lambda I_n-A)
           </me>.
         </p>
         <p>
@@ -325,6 +324,31 @@
       </statement>
     </definition>
   </paragraphs>
+  <algorithm xml:id="proc_eigenspaces">
+    <title>Computing eigenspaces of a matrix</title>
+    <statement>
+      <p>
+        Let <m>A</m> be an <m>n\times n</m> matrix. To find all real eigenvalues of <m>A</m> and compute bases for their eigenspaces, proceed as follows.
+      </p>
+      <ol>
+        <li>
+          <p>
+            Compute <m>p(t)=\det(tI-A)</m>. Let <m>\lambda_1, \lambda_2, \dots, \lambda_r</m> be the distinct real roots of <m>p(t)</m>. These are the real eigenvalues of <m>A</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Given real eigenvalue <m>\lambda</m> its corresponding eigenspace is
+            <me>
+            W_{\lambda}=\NS(\lambda I-A)
+            </me>.
+            Use the null space algorithm (<xref ref="proc_fund_spaces" text="global"/>) to compute a basis for <m>W_\lambda</m>
+
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </algorithm>
   <p>
     Let's compute the eigenspaces of our previous examples.
   </p>

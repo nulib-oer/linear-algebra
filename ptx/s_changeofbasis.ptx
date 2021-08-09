@@ -1,7 +1,6 @@
 <section xml:id="s_changeofbasis">
   <title>Change of basis</title>
-  <paragraphs>
-    <title>Change of basis</title>
+  <introduction>
     <p>
       We have seen how the coordinate vector map
       <m>[\hspace{10pt}]_B</m> and matrix representations
@@ -36,68 +35,59 @@
       <em>change of basis matrix</em>
       <m>\underset{B\rightarrow B'}{P}</m>.
     </p>
-    <p>
-      For question (2), we will look at the slightly less general situation where <m>T\colon V\rightarrow V</m>:
-      i.e., the situation where <m>W=V</m>,
-      and we choose the same basis for the domain and codomain.
-      I leave the full general case as an exercise.
-    </p>
-  </paragraphs>
-  <paragraphs>
-  <title>Change of basis matrix</title>
-  <paragraphs>
-    <title>Theorem/Definition</title>
-    <p>
-      Given a vector space <m>V</m> of dimension <m>n</m>,
-      and two different bases <m>B</m> and <m>B'</m>,
-      there is a <em>unique</em> <m>n\times n</m> matrix
-      <m>\underset{B\rightarrow B'}{P}</m> satisfying the following defining property:
+
+  </introduction>
+
+  <definition xml:id="d_change_of_basis">
+    <title>Change of basis matrix</title>
+    <idx><h>change of basis matrix</h></idx>
+    <notation>
+      <usage><m>[P]_B^{B'}</m></usage>
+      <description>change of basis matrix</description>
+    </notation>
+    <statement>
+      <p>
+      Let <m>B=(\boldv_1, \boldv_2, \dots, \boldv_n)</m> and <m>B'</m> be two ordered bases for the vector space <m>V</m>. The <term>change of basis from <m>B</m> to <m>B'</m></term> is the <m>n\times n</m> matrix <m>\underset{B\rightarrow B'}{P}</m> defined as
+      <me>
+        \underset{B\rightarrow B'}{P}=
+        \begin{bmatrix}
+          \vert \amp \vert \amp \amp \vert \\
+          [\boldv_1]_{B'} \amp [\boldv_2]_{B'}\amp \dots \amp [\boldv_n]_{B}
+        \end{bmatrix}
+      </me>.
+      In other words, the <m>j</m>-th column of <m>\underset{B\rightarrow B'}{P}</m> is obtained by computing the coordinate vector of the <m>j</m>-th element of the <em>original</em> basis <m>B</m> with respect to the <em>new</em> basis <m>B'</m>.
+      </p>
+    </statement>
+  </definition>
+  <theorem xml:id="th_change_of_basis_coordinates">
+    <title>Change of basis for coordinate vectors</title>
+    <statement>
+      <p>
+      Let <m>B</m> and <m>B'</m> be two ordered bases of the <m>n</m>-dimensional vector space <m>V</m>. For all <m>\boldv\in V</m> we have
       <me>
         \underset{B\rightarrow B'}{P}[\boldv]_B=[\boldv]_{B'}
       </me>.
-    </p>
-    <p>
-      The matrix <m>\underset{B\rightarrow B'}{P}</m> is called the
-      <term>change of basis matrix
-      (or transition matrix)
-      from <m>B</m> to <m>B'</m></term>.
-    </p>
-  </paragraphs>
-  <proof>
-    <p>
-      Let <m>B=\{\boldv_1,\dots, \boldv_n\}</m> and let <m>B'=\{\boldw_1,\dots,\boldw_n\}</m>.
-    </p>
-    <p>
-      We build <m>\underset{B\rightarrow B'}{P}</m> \alert{column by column}: specifically,
-      <m>\underset{B\rightarrow B'}{P}</m> is the matrix whose <m>j</m>-th column is
-      <me>
-        \boldp_j=[\boldv_j]_{B'};
-      </me>
-      i.e., to compute the <m>j</m>-th column of
-      <m>\underset{B\rightarrow B'}{P}</m> you must find the <m>B'</m>-coordinates of the <m>j</m>-th basis element of <m>B</m>.
-    </p>
-    <p>
-      Thus defined,
-      one can show using the column method that <m>\underset{B\rightarrow B'}{P}[\boldv_j]_{B}=[\boldv_j]_{B'}</m>.
-      One then argues that if the condition is true for each basis element <m>\boldv_j</m>,
-      then it must be true for all <m>\boldv</m>. (Ask your professor for details!)
-    </p>
-  </proof>
-  </paragraphs>
-  <paragraphs>
-    <title>Example</title>
-    <p>
-      For any vector space <m>V</m> and basis <m>B</m>,
-      we have <m>\underset{B\rightarrow B}{P}=I</m>.
-    </p>
-  </paragraphs>
-  <p>
-    Indeed for any vector <m>\boldv</m>,
-    we have <m>I[\boldv]_B=[\boldv]_B</m>.
-    Thus <m>I</m> satisfies the defining property of <m>\underset{B\rightarrow B}{P}</m>.
-    By uniqueness,
-    it follows that <m>I=\underset{B\rightarrow B}{P}</m> !!
-  </p>
+      In other words, to convert the <m>B</m>-coordinates of a vector <m>\boldv\in V</m> to <m>B'</m>-coordinates, simply multiply on the left by <m>\underset{B\rightarrow B'}{P}</m>.
+      </p>
+    </statement>
+    <proof>
+      <p>
+        Let <m>I_V\colon V\rightarrow V</m> be the identity transformation: <ie />, <m>I_V(\boldv)=\boldv</m> for all <m>\boldv\in V</m>. By <xref ref="th_matrixrep"/> the matrix <m>[I_V]_B^{B'}</m> is the unique matrix satisfying
+        <me>
+          [I_V]_B^{B'}[\boldv]_B=[I_V(\boldv)]_{B'}=[\boldv]_{B'}
+        </me>.
+        Comparing the formulas for <m>[I_V]_{B}^{B'}</m> and <m></m> we see directly that
+        <me>
+        [I_V]_B^{B'} = \underset{B\rightarrow B'}{P}
+        </me>.
+      </p>
+    </proof>
+
+  </theorem>
+
+
+
+
   <paragraphs>
     <title>Example</title>
     <p>
@@ -150,9 +140,7 @@
     Equivalently, this means that
     <m>p(x)=7+5(x-2)+(x-2)^2</m>, as one easily verifies.
   </p>
-  <p>
-    \framebreak
-  </p>
+
   <paragraphs>
     <title>Cool fact</title>
     <p>
@@ -170,58 +158,44 @@
     where <m>B'=\{1,x-a, (x-a)^2,\dots , (x-a)^n\}</m>.
   </p>
   </paragraphs>
+  <theorem xml:id="th_change_of_basis_properties">
+    <title>Change of basis matrix properties</title>
+    <statement>
+      <p>
+        Let <m>B, B', B''</m> be ordered bases for the <m>n</m>-dimensional vector space <m>V</m>.
+      </p>
+      <ol>
+        <li>
+          <p>
+            We have
+            <me>
+              \underset{B\rightarrow B}{P}=I
+            </me>.
+          </p>
+        </li>
+        <li>
+          <p>
+            The matrix <m>\underset{B\rightarrow B'}{P}</m> is invertible. In fact, we have
+            <me>
+              \underset{B\rightarrow B'}{P}^{-1}=\underset{B'\rightarrow B}{P}
+            </me>
+          </p>
+        </li>
+        <li>
+          <p>
+            We have
+            <me>
+              \underset{B\rightarrow B''}{P}=\underset{B'\rightarrow B''}{P}\, \underset{B\rightarrow B'}{P}
+            </me>.
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </theorem>
+
+
   <paragraphs>
-    <title>Theorem</title>
-    <p>
-      Let <m>V</m> be a vector space of dimension <m>n</m>,
-      and let <m>B</m> and <m>B'</m> be two different bases of <m>V</m>.
-    </p>
-  </paragraphs>
-  <p>
-    The change of basis matrix <m>\underset{B\rightarrow B'}{P}</m> is invertible.
-    In fact we have
-    <me>
-      (\underset{B\rightarrow B'}{P})^{-1}=\underset{B'\rightarrow B}{P}
-    </me>
-  </p>
-  <paragraphs>
-    <title>Proof</title>
-    <p>
-      I will show that <m>\underset{B'\rightarrow B}{P}\cdot\underset{B\rightarrow B'}{P}=I_n</m>,
-      proving that both matrices are invertible,
-      and are in fact the inverses of one another.
-      My proof will only make use of the defining property of change of basis matrices,
-      and their uniqueness.
-    </p>
-  </paragraphs>
-  <p>
-    For any <m>\boldv</m> we compute:
-    <md>
-      <mrow>\underset{B'\rightarrow B}{P}\cdot\underset{B\rightarrow B'}{P}[\boldv]_B\amp =\amp \underset{B'\rightarrow B}{P}(\underset{B\rightarrow B'}{P}[\boldv]_B)</mrow>
-      <mrow>\amp =\amp \underset{B'\rightarrow B}{P}[\boldv]_{B'} \hspace{5pt} \text{(prop. of \(\underset{B\rightarrow B'}{P}\))}</mrow>
-      <mrow>\amp =\amp [\boldv]_{B} \hspace{25pt} \text{(prop. of \(\underset{B'\rightarrow B}{P}\))}</mrow>
-    </md>
-  </p>
-  <p>
-    Thus <m>\underset{B'\rightarrow B}{P}\cdot\underset{B\rightarrow B'}{P}[\boldv]_B=[\boldv]_B</m> for all <m>\boldv\in V</m>.
-    But this means <m>\underset{B'\rightarrow B}{P}\cdot\underset{B\rightarrow B'}{P}</m> satisfies the defining property of <m>\underset{B\rightarrow B}{P}</m>.
-  </p>
-  <p>
-    By <em>uniqueness</em> of the change of basis matrix, we must have
-    <me>
-      \underset{B'\rightarrow B}{P}\cdot\underset{B\rightarrow B'}{P}=\underset{B\rightarrow B}{P}
-    </me>
-  </p>
-  <p>
-    Lastly, in a previous example we showed that <m>P_{B\rightarrow B}=I_n</m>.
-    Thus,
-    <me>
-      \underset{B'\rightarrow B}{P}\cdot\underset{B\rightarrow B'}{P}=\underset{B\rightarrow B}{P}=I_n
-    </me>,
-    as claimed.
-  </p>
-  <paragraphs>
-  <title>Example: $V=\R^n$ and $B$ is standard</title>
+  <title>Example: <m>V=\R^n</m> and <m>B</m> is standard</title>
   <p>
     Consider the simple example where <m>V=\R^n</m>,
     <m>B</m> is the standard basis,
@@ -255,86 +229,36 @@
     \end{bsolution}
   </p>
   </paragraphs>
-  <paragraphs>
-  <title>Alternative technique when $V=\R^n$</title>
-  <p>
-    The following is another technique for computing <m>\underset{B\rightarrow B'}{P}</m> in the
-    <em>special case</em> where <m>V=\R^n</m>.
-  </p>
-  <paragraphs>
-    <title>1.</title>
-    <p>
-      Let <m>\widetilde{B}</m> and
-      <m>\widetilde{B'}</m> be the matrices obtained by arranging the elements of <m>B</m>,
-      respectively <m>B'</m>, as columns of a matirx.
-      Build the augmented matrix
-    </p>
-  </paragraphs>
-  <me>
-    \begin{bmatrix}\widetilde{B'}\amp  \widetilde{B}
-    \end{bmatrix}
-  </me>
-  <paragraphs>
-    <title>2.</title>
-    <p>
-      Row reduce the augmented matrix until the left hand side is <m>I_n</m>:
-    </p>
-  </paragraphs>
-  <me>
-    \begin{bmatrix}I_n\amp  Q
-    \end{bmatrix}
-  </me>
-  <p>
-    Then <m>Q=\underset{B\rightarrow B'}{P}</m>.
-  </p>
-  <p>
-    Why does this work?
-  </p>
-  <p>
-    The row reduction process amounts to multiplying both matrices on the left by <m>(\widetilde{B'})^{-1}</m>:
-    that is, the matrix <m>Q</m> is <m>(\widetilde{B'})^{-1}\widetilde{B}</m>.
-    As we saw in the last example, however,
-    letting <m>S</m> be the <em>standard basis</em> of <m>\R^n</m>, we have
-    <me>
-      (\widetilde{B'})^{-1}=\underset{S\rightarrow B'}{P} \text{ and }  \widetilde{B}=\underset{B\rightarrow S}{P}
-    </me>
-  </p>
-  <p>
-    Thus <m>Q=\underset{S \rightarrow B'}{P}\cdot \underset{B\rightarrow S}{P}=\underset{B\rightarrow B'}{P}</m>.
-    (This last equality follows from one of the exercises.)
-  </p>
-  </paragraphs>
+
   <paragraphs>
     <title>Change of basis for transformations</title>
     <p>
       We now investigate how our choice of basis affects matrix representations of linear transformations.
-      As mentioned above, we only consider the special case where
+      We will only consider the special case where
       <m>T\colon V\rightarrow V</m> and we are comparing matrix representations <m>[T]_B</m> and
-      <m>[T]_{B'}</m> for two choices of basis for <m>V</m>.
+      <m>[T]_{B'}</m> for two different ordered bases of <m>V</m>.
     </p>
-    <theorem xml:id="Th_changeofbasis">
+    <theorem xml:id="th_change_of_basis_transformations">
       <title>Change of basis for transformations</title>
       <statement>
         <p>
           Let <m>V</m> be finite-dimensional,
           let <m>T\colon V\rightarrow V</m> be linear,
-          and let <m>B</m> and <m>B'</m> be two bases for <m>V</m>.
-        </p>
-        <p>
-          Then
+          and let <m>B</m> and <m>B'</m> be two bases for <m>V</m>. The matrices <m>[T]_B</m> and <m>[T]_{B'}</m> representing <m>T</m> with respect to <m>B</m> and <m>B'</m>, respectively,  are related as follows:
           <md>
-            <mrow>_{B'}\amp =\underset{B\rightarrow B'}{P}[T]_B\underset{B'\rightarrow B}{P}</mrow>
-            <mrow>\amp =\left( \underset{B'\rightarrow B}{P}\right)^{-1}[T]_B\underset{B'\rightarrow B}{P}</mrow>
-          </md>
+            <mrow>[T]_{B'}\amp =\underset{B\rightarrow B'}{P}\, [T]_B\, \underset{B'\rightarrow B}{P}</mrow>[2ex]
+            <mrow>\amp =\underset{B'\rightarrow B}{P}^{-1}\, [T]_B\, \underset{B'\rightarrow B}{P}</mrow>
+          </md>.
         </p>
       </statement>
     </theorem>
   </paragraphs>
-  <paragraphs>
-    <title>Pro-tip</title>
+  <remark xml:id="rm_change_of_basis_transformations">
+  <title>Getting change of basis formulas correct</title>
+  <statement>
     <p>
       It is easy to get the various details of the change of basis formula wrong.
-      Here is how I organize things in my mind.
+      Here is a potential way to keep things organized in your mind.
       <ol>
         <li>
           <p>
@@ -368,50 +292,14 @@
         <li>
           <p>
             If desired you may replace
-            <m>\underset{B\rightarrow B'}{P}</m> with <m>\left( \underset{B'\rightarrow B}{P}\right)^{-1}</m>.
+            <m>\underset{B\rightarrow B'}{P}</m> with <m> \underset{B'\rightarrow B}{P}^{-1}</m>.
           </p>
         </li>
       </ol>
     </p>
-  </paragraphs>
-  <paragraphs>
-    <title>Proof of change of basis theorem</title>
-    <p>
-      { \alert{Theorem recap}. Let <m>V</m> be finite-dimensional,
-      let <m>T\colon V\rightarrow V</m> be linear,
-      let <m>B</m> and <m>B'</m> be two bases for <m>V</m>,
-      and let <m>A=[T]_B</m>, <m>A'=[T]_{B'}</m>.
-      Then <m>A=(\underset{B\rightarrow B'}{P})^{-1}A'\underset{B\rightarrow B'}{P}</m> and <m>A'=(\underset{B'\rightarrow B}{P})^{-1}A\underset{B'\rightarrow B}{P}</m> }
-    </p>
-    <p>
-      First recall that <m>\underset{B'\rightarrow B}{P}=(\underset{B\rightarrow B'}{P})^{-1}</m>.
-      Using this fact,
-      it is easy to see that the second equality follows from the first by multiplying on the left and right by an appropriate matrix and its inverse.
-    </p>
-    <p>
-      We prove the first equality using the
-      <em>uniqueness property</em> of <m>A=[T]_B</m>.
-    </p>
-    <p>
-      That is, set <m>C=(\underset{B\rightarrow B'}{P})^{-1}A'\underset{B\rightarrow B'}{P}</m>.
-    </p>
-    <p>
-      To show <m>C=A</m>, we need only show
-      <m>[T(\boldv)]_B=C[\boldv]_B</m> for all <m>\boldv\in V</m>.
-      Here goes:
-      <md>
-        <mrow>C[\boldv]_B\amp =\amp (\underset{B\rightarrow B'}{P})^{-1}A'\underset{B\rightarrow B'}{P}[\boldv]_B</mrow>
-        <mrow>\amp =\amp \underset{B'\rightarrow B}{P}A'\underset{B\rightarrow B'}{P}[\boldv]_B\hspace{10pt} (\text{ since } \underset{B'\rightarrow B}{P}=(\underset{B\rightarrow B'}{P})^{-1})</mrow>
-        <mrow>\amp =\amp \underset{B'\rightarrow B}{P}A'[\boldv]_{B'} \hspace{10pt} \text{(prop. of \(\underset{B\rightarrow B'}{P}\))}</mrow>
-        <mrow>\amp =\amp \underset{B'\rightarrow B}{P}[T(\boldv)]_{B'} \hspace{10pt} \text{(prop. of \(A'=[T]_{B'}\))}</mrow>
-        <mrow>\amp =\amp [T(\boldv)]_{B}</mrow>
-      </md>
-    </p>
-    <p>
-      Amazing!
-      We didn't even have to get our hands dirty.
-    </p>
-  </paragraphs>
+    </statement>
+  </remark>
+
   <paragraphs>
     <title>Example</title>
     <p>
@@ -457,41 +345,48 @@
       </md>
     </p>
   </paragraphs>
+  <definition>
+    <statement>
+      <p>
+        Matrices <m>A, A'\in M_{nn}</m> are <term>similar</term>
+        if there is an invertible matrix <m>P</m> such that <m>A'=P^{-1}AP</m>.
+      </p>
+    </statement>
+  </definition>
   <p>
-    The change of basis formula is often used in the following type of situation.
-    <ol>
-      <li>
-        <p>
-          I am interested in a linear transformation <m>T\colon V\rightarrow V</m>,
-          where <m>V</m> is finite-dimensional.
-        </p>
-      </li>
-      <li>
-        <p>
-          I would like to compute <m>A=[T]_B</m> with respect to a specific basis <m>B</m>.
-          (Maybe <m>B</m> is a standard basis for <m>V</m> that I prefer to use.)
-        </p>
-      </li>
-      <li>
-        <p>
-          For whatever reason, it is easier to compute
-          <m>A'=[T]_{B'}</m> with respect to some other basis <m>B'</m>
-        </p>
-      </li>
-      <li>
-        <p>
-          Thus we first compute <m>[T]_{B'}</m>,
-          then compute <m>[T]_B</m> via the formula
-          <me>
-            [T]_B=\underset{B'\rightarrow B}{P}[T]_B'\underset{B\rightarrow B'}{P}
-          </me>.
-        </p>
-      </li>
-    </ol>
+    This notion of similarity is a technical one, but the name is fitting:
+    <m>A</m> and <m>A'</m> really are similar in the sense that they are just two different matrix representations of the same linear transformation! (See Holy Commutative Tent of Linear Algebra on next slide.)
   </p>
   <p>
-    The next example nicely illustrates this.
+    As we will see in coming sections,
+    matrices that are similar in this technical sense do indeed share many of the same properties.
+    We now have the theoretical foundation to understand why this is so:
+    they simply inherit these common properties from the overlying linear transformation <m>T</m>,
+    of which they are but earthly shadows.
   </p>
+  <p>
+    There is but one true <m>T</m>!
+  </p>
+  <paragraphs>
+    <title>Change of basis for <m>V=\R^n</m></title>
+
+    <p>
+      Let's consider the special case where <m>T\colon \R^n\rightarrow \R^n</m>: that is, when <m>V=\R^n</m> is a space of <m>n</m>-tuples. We know from <xref ref="cor_matrixreps"/> that <m>T=T_A</m> for a unique <m>n\times n</m> matrix <m>A</m>; in fact we know from the proof that <m>A=[T]_B</m>, where <m>B=(\bolde_1, \bolde_2, \dots, \bolde_n)</m> is the <em>standard</em> ordered basis of <m>\R^n</m>.
+    </p>
+    <p>
+      To compute <m>A=[T]_B</m> directly, we must compute <m>T(\bolde_j)</m> for each of the standard basis elements <m>\bolde_j</m>. However, for many naturally occuring transformations <m>T</m>, computing with respect to the standard basis is often not as convenient as computing with respect to some other basis <m>B'</m>: <ie />, it is often easier to compute <m>A'=[T]_{B'}</m> for some nonstandard basis <m>B'</m>. When this is the case <xref ref="th_change_of_basis_transformations"/> allows to us derive the desired matrix <m>A</m> from the more conveniently computed <m>A'</m>: namely, we have
+      <me>
+        A=P^{-1}A'P
+      </me>,
+      where <m>P=\underset{B\rightarrow B'}{P}</m>.
+    </p>
+    <p>
+      This gives us a powerful technique for computing matrix formulas for many interesting geometric linear transformations of <m>\R^n</m> whose very definitions involve an implicit choice nonstandard basis. Rotations, reflections and orthogonal projections are all examples of such transformations.
+    </p>
+
+
+  </paragraphs>
+
   <paragraphs>
     <title>Example: orthogonal projection revisited</title>
     <p>
@@ -539,39 +434,7 @@
       <m>\underset{B'\rightarrow B}{P}</m> was easy to compute. )
     </p>
   </paragraphs>
-  <paragraphs>
-    <title>Similar matrices</title>
-    <p>
-      Let <m>A=[T]_B</m> and <m>A'=[T]_{B'}</m> be two different representations of <m>T\colon V\rightarrow V</m>,
-      and set <m>P=\underset{B'\rightarrow B}{P}</m>.
-      Then we have <m>A'=P^{-1}AP</m>,
-      according to the change of basis formula for transformations.
-      We say <m>A</m> and <m>A'</m> are
-      <em>similar matrices</em> in this case.
-    </p>
-    <definition>
-      <statement>
-        <p>
-          Matrices <m>A, A'\in M_{nn}</m> are <term>similar</term>
-          if there is an invertible matrix <m>P</m> such that <m>A'=P^{-1}AP</m>.
-        </p>
-      </statement>
-    </definition>
-    <p>
-      This notion of similarity is a technical one, but the name is fitting:
-      <m>A</m> and <m>A'</m> really are similar in the sense that they are just two different matrix representations of the same linear transformation! (See Holy Commutative Tent of Linear Algebra on next slide.)
-    </p>
-    <p>
-      As we will see in coming sections,
-      matrices that are similar in this technical sense do indeed share many of the same properties.
-      We now have the theoretical foundation to understand why this is so:
-      they simply inherit these common properties from the overlying linear transformation <m>T</m>,
-      of which they are but earthly shadows.
-    </p>
-    <p>
-      There is but one true <m>T</m>!
-    </p>
-  </paragraphs>
+
   <p>
     <image width="75%" source="images/HolyCommutativeTent.png"/>
   </p>
