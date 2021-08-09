@@ -140,7 +140,7 @@
         <ol>
           <li>
             <p>
-              We have <m>\NS A=\NS T_A</m> and <m>\CS A=\im T_A</m>.
+              Let <m>T_A\colon \R^n\rightarrow \R^m</m> be the matrix transformation associated to <m>A</m>. Then <m>\NS A=\NS T_A</m> and <m>\CS A=\im T_A</m>.
             </p>
           </li>
           <li>
