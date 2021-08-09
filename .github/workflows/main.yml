@@ -22,10 +22,12 @@ jobs:
         with:
           submodules: true
 
-      - name: Install XSLT Support
+      - name: Install XSLT and Python Dependencies 
         run: |
           sudo apt-get update -y
           sudo apt-get install -y xsltproc
+          pip3 install lxml
+          pip3 install pdfCropMargins
 
       # Runs a single command using the runners shell
       - name: Build HTML Files
