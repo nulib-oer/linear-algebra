@@ -140,6 +140,11 @@
         <ol>
           <li>
             <p>
+              We have <m>\NS A=\NS T_A</m> and <m>\CS A=\im T_A</m>.
+            </p>
+          </li>
+          <li>
+            <p>
               We have
               <ul>
                 <li>
@@ -164,7 +169,7 @@
             <p>
               Let <m>\ell </m> be the number of leading ones in <m>U</m>, and let <m>k=n-\ell</m>; <ie />, <m>\ell</m> and <m>k</m> are the number of leading and free variables, respectively, of the system corresponding to <m>\begin{amatrix}[r|r]U\amp \boldzero]\end{amatrix}</m>. Then
               <md>
-              <mrow>\rank A\amp =\dim\CS A=\dim RS A=\ell </mrow>
+              <mrow>\rank A\amp =\dim\CS A=\dim \RS A=\ell </mrow>
               <mrow> \nullity A\amp=\dim\NS A=k </mrow>
               </md>.
             </p>
