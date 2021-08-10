@@ -34,7 +34,7 @@
         <me>
           \angvec{\boldx,\ \boldy}=\boldx^T \begin{amatrix}[cc]2\amp 1 \\ 1 \amp 3  \end{amatrix}\boldy
         </me>,
-        where we treat <m>\boldx, \boldy</m> as column vectors. This helps to prove axioms (i)-(ii). For axiom (iii), use a <q>complete the square</q> argument. 
+        where we treat <m>\boldx, \boldy</m> as column vectors. This helps to prove axioms (i)-(ii). For axiom (iii), use a <q>complete the square</q> argument.
       </p>
     </hint>
   </exercise>
@@ -173,7 +173,7 @@
             <p>
               For all <m>a,b,\theta\in\R</m>
               <me>
-                (a\cos^2\theta+b\sin^2\theta\leq a^2+b^2
+                (a\cos\theta+b\sin\theta)^2\leq a^2+b^2
               </me>.
             </p>
           </li>
