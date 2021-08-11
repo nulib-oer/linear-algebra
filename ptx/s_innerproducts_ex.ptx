@@ -170,7 +170,7 @@
             </p>
           </li>
           <li>
-            <p> DId this push?
+            <p> 
               For all <m>a,b,\theta\in\R</m>
               <me>
                 (a\cos\theta+b\sin\theta)^2\leq a^2+b^2
