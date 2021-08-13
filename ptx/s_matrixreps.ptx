@@ -22,7 +22,7 @@
           <p>
             <q>Identify</q>
             <m>V</m> with <m>\R^n</m> and <m>W</m> with <m>\R^m</m> using the coordinate vector isomorphisms
-            <m>[\hspace{10pt]}_B</m> and <m>[\hspace{10pt}]_{B'}</m>,
+            <m>[\hspace{5pt}]_B</m> and <m>[\hspace{5pt}]_{B'}</m>,
             respectively.
           </p>
         </li>
@@ -166,7 +166,7 @@
       <image xml:id="im_comm_diag" width="30%" source="./images/im_comm_diag.svg" />
     </figure>
     <p>
-      That the diagram is commutative means that starting with an element <m>\boldv\in V</m> in the top left of the diagram, whether we travel to the bottom right of the diagram either by first applying <m>T</m> and then applying <m>[\hspace{.5pt}]_{B'}</m> (<q>go right, then down</q>), or else by first applying <m>[\hspace{.5pt}]_B</m> and then applying <m>[T]_B^{B'}</m> (<q>go down, then right</q>), we get the same result! (The bottom map should technically be labeled <m>T_A</m>, where <m>A=[T]_B^{B'}</m>, but this would detract from the elegance of the diagram.)
+      That the diagram is commutative means that starting with an element <m>\boldv\in V</m> in the top left of the diagram, whether we travel to the bottom right of the diagram either by first applying <m>T</m> and then applying <m>[\hspace{5pt}]_{B'}</m> (<q>go right, then down</q>), or else by first applying <m>[\hspace{5pt}]_B</m> and then applying <m>[T]_B^{B'}</m> (<q>go down, then right</q>), we get the same result! (The bottom map should technically be labeled <m>T_A</m>, where <m>A=[T]_B^{B'}</m>, but this would detract from the elegance of the diagram.)
     </p>
 
   </statement>

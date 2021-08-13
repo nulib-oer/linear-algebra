@@ -1,7 +1,22 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<pretext xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en-US">
-  <docinfo>
-<macros>
+\documentclass[12pt]{article}
+\usepackage{geometry}
+\geometry{letterpaper,total={408pt,9.0in}}
+%% Custom Page Layout Adjustments (use latex.geometry)
+\usepackage{amsmath,amssymb}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{tkz-graph}
+\usepackage{tkz-euclide}
+\usetikzlibrary{patterns}
+\usetikzlibrary{positioning}
+\usetikzlibrary{matrix,arrows}
+\usetikzlibrary{calc}
+\usetikzlibrary{shapes}
+\usetikzlibrary{through,intersections,decorations,shadows,fadings}
+\usepackage{pgfplots}
+\ifdefined\tikzset
+\tikzset{ampersand replacement = \amp}
+\fi
 \newcommand{\Z}{{\mathbb Z}}
 \newcommand{\Q}{{\mathbb Q}}
 \newcommand{\R}{{\mathbb R}}
@@ -271,73 +286,14 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 }}
 \def\bspace{
 {\vspace{.05in}}}
-</macros>
-
-<latex-image-preamble>
-\usepackage{tikz}
-\usepackage{tikz-cd}
-\usepackage{tkz-graph}
-\usepackage{tkz-euclide}
-\usetikzlibrary{patterns}
-\usetikzlibrary{positioning}
-\usetikzlibrary{matrix,arrows}
-\usetikzlibrary{calc}
-\usetikzlibrary{shapes}
-\usetikzlibrary{through,intersections,decorations,shadows,fadings}
-\usepackage{pgfplots}
-</latex-image-preamble>
-
-<!-- Renamings -->
-<rename element="algorithm">Procedure</rename>
-<rename element="principle">Mantra</rename>
-
-<brandlogo url="http://linear-algebra.northwestern.pub/" source="images/im_holycomm.svg" />
-
-</docinfo>
-<book>
-  <title>Linear algebra: the theory of vector spaces and linear transformations</title>
-  <frontmatter>
-    <titlepage>
-      <author>
-        <personname>Aaron Greicius</personname>
-        <department> Mathematics Department </department>
-        <institution> Northwestern University</institution>
-      </author>
-
-    </titlepage>
-  </frontmatter>
-  <xi:include href="./c_linear_systems.ptx"/>
-  <xi:include href="./c_matrices.ptx"/>
-  <xi:include href="./c_vectorspace.ptx"/>
-  <xi:include href="./c_innerproductspaces.ptx"/>
-  <xi:include href="./c_eigenvectors_diagonalization.ptx"/>
-
-
-  <backmatter>
-    <appendix xml:id="appendix-notation">
-      <title>Notation</title>
-      <notation-list/>
-    </appendix>
-    <appendix xml:id="appendix-defs">
-      <title>Definitions</title>
-      <list-of elements="definition" divisions="section" />
-    </appendix>
-    <appendix xml:id="appendix-thms">
-      <title>Theory and procedures</title>
-      <list-of elements="theorem corollary algorithm" divisions="section" />
-    </appendix>
-
-    <appendix xml:id="appendix-egs">
-      <title>Examples</title>
-      <list-of elements="example" divisions="section" />
-    </appendix>
-    <!-- <xi:include href="./bibliography.ptx"/> -->
-
-    <index>
-      <title>Index</title>
-      <index-list />
-    </index>
-
-  </backmatter>
-</book>
-</pretext>
+\newcommand{\lt}{<}
+\newcommand{\gt}{>}
+\newcommand{\amp}{&}
+\begin{document}
+\pagestyle{empty}
+\begin{tikzcd}
+\amp V \arrow[rrr, "T"] \arrow[ddl, leftrightarrow, "{[\hspace{5pt}]_B}"'] \arrow[drr, leftrightarrow,"{[\hspace{5pt}]_{B'}}"]  \amp \amp \amp V \arrow[ddl, leftrightarrow,"{[\hspace{5pt}]_B}", pos=11/20] \arrow[drr, leftrightarrow, "{[\hspace{5pt}]_{B'}}"]\\
+\amp  \amp   \amp\R^n \arrow[rrr, "T_B"] \arrow[dlll, "P^{-1}"', pos=.4] \amp \amp \amp \R^n \\
+\R^n \arrow[rrr, "T_A"']\amp   \amp \amp \R^n  \arrow[urrr, "P"']\amp
+\end{tikzcd}
+\end{document}
