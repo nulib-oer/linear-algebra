@@ -94,19 +94,19 @@
       <me>
         A(BC)=(AB)C
       </me>,
-      we must show (1) that <m>A(BC)</m> and <m>(AB)C</m> have the same dimension, and (2) that <me>\left(A(BC)\right)_{ij}=\left((AB)C\right)_{ij}</me> for all possible <m>(i,j)</m>.
+      we must show (1) that <m>A(BC)</m> and <m>(AB)C</m> have the same dimension, and (2) that <me>[A(BC)]_{ij}=[(AB)C]_{ij}</me> for all possible <m>(i,j)</m>.
     </p>
       <p>
       (1) The usual observation about <q>inner</q> and <q>outer</q> dimensions shows that both <m>A(BC)</m> and <m>(AB)C</m> have dimension <m>m\times n</m>.
     </p><xref ref="d_matrix_mult"/>
     <p> (2) Given any  <m>(i,j)</m> with <m>1\leq i\leq m</m> and <m>1\leq j\leq n</m>, we have:
       <md>
-        <mrow> \Bigl(A(BC)\Bigr)_{ij}\amp=\sum_{\ell=1}^ra_{i\ell}(BC)_{\ell j}  \amp (<xref ref="d_matrix_mult"/>)</mrow>
+        <mrow> [A(BC)]_{ij}\amp=\sum_{\ell=1}^ra_{i\ell}[BC]_{\ell j}  \amp (<xref ref="d_matrix_mult"/>)</mrow>
         <mrow>\amp=\sum_{\ell=1}^ra_{i\ell}\left(\sum_{k=1}^sb_{\ell k}c_{kj}\right) \amp (<xref ref="d_matrix_mult"/>)</mrow>
         <mrow>=\amp \sum_{\ell=1}^r\sum_{k=1}^sa_{i\ell}(b_{\ell k}c_{kj}) \amp \text{ (real dist.) }</mrow>
         <mrow>=\amp \sum_{k=1}^s\sum_{\ell=1}^r(a_{i\ell}b_{\ell k})c_{kj} \amp \text{ (real comm., real assoc.) }</mrow>
         <mrow>=\amp \sum_{k=1}^s\left(\sum_{\ell=1}^ra_{i\ell}b_{\ell k}\right)c_{kj} \amp \text{ (real dist.) }</mrow>
-        <mrow>=\amp \sum_{k=1}^s(AB)_{ik}c_{kj}  =\Bigl((AB)C\Bigr)_{ij}</mrow>
+        <mrow>=\amp \sum_{k=1}^s[AB]_{ik}c_{kj}  =\Bigl[(AB)C]_{ij}</mrow>
       </md>
     </p>
     <p>

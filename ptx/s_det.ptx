@@ -18,12 +18,12 @@
       <title>Submatrix notation</title>
       <idx><h>submatrix</h></idx>
       <notation>
-        <usage><m>\widetilde{A}_{ij}</m></usage>
+        <usage><m>A_{ij}</m></usage>
         <description>submatrix of <m>A</m></description>
       </notation>
       <statement>
         <p>
-          Let <m>A</m> be an <m>n\times n</m> matrix with <m>n\geq 2</m>. Given <m>1\leq i, j\leq n</m>, the <term>submatrix of <m>A</m></term> obtained by removing the <m>i</m>-th row and <m>j</m>-th column of <m>A</m> is denoted <m>\widetilde{A}_{ij}</m>.
+          Let <m>A</m> be an <m>n\times n</m> matrix with <m>n\geq 2</m>. Given <m>1\leq i, j\leq n</m>, the <term>submatrix of <m>A</m></term> obtained by removing the <m>i</m>-th row and <m>j</m>-th column of <m>A</m> is denoted <m>A_{i  k}</m>.
         </p>
       </statement>
     </definition>
@@ -48,7 +48,7 @@
               <title>Recursive case: <m>n\geq 2 </m></title>
               <p> When <m>n\geq 2</m> we define
                 <me>
-                  \det A=\sum_{j=1}^n(-1)^{1+j}a_{1j}\det\widetilde{A}_{1j}=a_{11}\det\widetilde{A}_{11}-a_{12}\det\widetilde{A}_{12}+\cdots +(-1)^{1+n}a_{1n}\det\widetilde{A}_{1n}
+                  \det A=\sum_{j=1}^n(-1)^{1+j}a_{1j}\det A_{1  j}=a_{11}\det A_{11}-a_{12} A_{12}+\cdots +(-1)^{1+n}a_{1n}\det A_{1  n}
                 </me>.
               </p>
             </li>
@@ -65,7 +65,7 @@
         <p>
         Given <m>A=\abcdmatrix{a}{b}{c}{d}</m>, we have
         <md>
-          <mrow> \det A\amp = (-1)^{1+1}a\det \widetilde{A}_{11}+(-1)^{1+2}b\det\widetilde{A}_{12}\amp \text{(recursive case)}</mrow>
+          <mrow> \det A\amp = (-1)^{1+1}a\det A_{11}+(-1)^{1+2}b\det A_{12}\amp \text{(recursive case)}</mrow>
           <mrow> \amp =a\det [d]-b\det [c] \amp \text{(base case)}</mrow>
           <mrow>  \amp =ad-bc </mrow>
         </md>.
@@ -78,7 +78,7 @@
           </me>,
           we have
           <md>
-            <mrow>\det A \amp =a\det\widetilde{A}_{11}-b\det\widetilde{A}_{12}+c\det\widetilde{A}_{13} \amp \text{(recursive case)}</mrow>
+            <mrow>\det A \amp =a\det A_{11}-b\det A _{12}+c\det A_{13} \amp \text{(recursive case)}</mrow>
             <mrow> \amp =a\det \abcdmatrix{e}{f}{h}{i}-b\det\abcdmatrix{d}{f}{g}{i}+c\det\abcdmatrix{d}{e}{g}{h}</mrow>
             <mrow> \amp = a(ei-fh)-b(di-fg)+c(dh-eg) \amp \text{(\(n=2\) case)}</mrow>
           </md>.
@@ -117,20 +117,20 @@
     <p>
       Let <m>A=[a_{ij}]_{(n+1)\times (n+1)}</m> be a lower triangular matrix. Then <m>a_{1j}=0</m> for all <m>j\geq 2</m>, and hence the determinant of <m>A</m> is given by
       <me>
-        \det A=a_{11}\det \widetilde{A}_{11}
+        \det A=a_{11}\det  A_{11}
       </me>.
-      Claim: <m>\widetilde{A}_{ij}</m> is lower triangular. Indeed, first observe that we have
-      <me>(\widetilde{A}_{11})_{ij}=a_{i+1,j+1}</me>
+      Claim: <m>A_{i  k}</m> is lower triangular. Indeed, first observe that we have
+      <me>( A_{11})_{ij}=a_{i+1,j+1}</me>
       for all <m>1\leq i,j\leq n</m>; by deleting the first row and first column we effectively bump each index up by one. Since <m>A</m> is lower triangular we have  <m>a_{ij}=0</m> for all <m>1\leq i \lt; j\leq n+1</m>, and hence also
       <me>
-        (\widetilde{A}_{11})_{ij}=a_{i+1,j+1}=0
+        ( A_{11})_{ij}=a_{i+1,j+1}=0
       </me>
       for all <m>1\leq i\lt; j\leq n </m>, proving the claim.
     </p>
     <p>
       Lastly, assuming <m>P(n)</m> is true (the induction hypothesis) we have
       <md>
-        <mrow> \det A \amp=a_{11}\det\widetilde{A}_{11} </mrow>
+        <mrow> \det A \amp=a_{11}\det A_{11} </mrow>
         <mrow> \amp=a_{11}(a_{22}a_{33}\cdots a_{n+1,n+1})\amp \text{(induction)} </mrow>
         <mrow>  \amp=a_{11}a_{22}\cdots a_{n+1,n+1} </mrow>
       </md>,
@@ -173,7 +173,7 @@
     <p>
       Given an <m>n\times n</m> matrix <m>A</m>, for any pair <m>1\leq i,j\leq n</m> the <term><m>ij</m>-th minor of <m>A</m></term> is defined as
       <me>
-        M_{ij}=\det\widetilde{A}_{ij}
+        M_{ij}=\det A_{i  k}
       </me>.
     </p>
     <p>
@@ -205,8 +205,91 @@
   </statement>
   <proof>
     <p>
-Coming soon!
+      The proof is by induction on the size <m>n</m> of the matrix.
     </p>
+    <case>
+     <title>Base step: <m>n=1, 2</m></title>
+    <p>
+    For <m>n=1</m> there is nothing to prove. Given
+    <me>
+      A=\begin{bmatrix}a\amp b\\ c\amp d\end{bmatrix}
+    </me>
+    expanding along either row yields <m>ad-bc</m>, as one easily verifies.
+    </p>
+    </case>
+    <case>
+     <title>Induction step</title>
+    <p>
+    Assume the claim is true of any <m>(n-1)\times (n-1)</m> matrix.  Given <m>A=[a_{ij}]_{n\times n}</m> we have
+    <men xml:id="eq_det_def">
+      \det A=\sum_{j=1}^n (-1)^{1+j}a_{1 j}\det  A_{1j}
+    </men>.
+    Expanding along the <m>i</m>-th row of <m>A</m> for any <m>2\leq i\leq n</m>, on the other hand, we get
+    <men xml:id="eq_det_expansion">
+      \sum_{k=1}^n (-1)^{i+k}a_{ik}\det A_{i  k}
+    </men>.
+    To show these two expressions are equal we use the induction hypothesis to compute each <m>\det  A_{1  j}</m> by expanding along its <m>(i-1)</m>-th row:
+    <men xml:id="eq_det_submatrix">
+      \det  A_{1j}=\sum_{k=1}^{n-1}(-1)^{i-1+k}[ A_{1j}]_{(i-1) k}\det {( A_{1j})}_{(i-1) k}
+    </men>.
+    The matrix <m>(A_{1j})_{(i-1) k}</m> is the result of first deleting row 1 and column <m>j</m> from <m>A</m>, and then deleting row <m>(i-1)</m> and column <m>k</m> of the resulting matrix.  To deal with such iterated submatrices, we make some simple observations relating the rows and columns of <m>A_{1 j}</m> and <m>A_{i  k}</m> with those of <m>A</m>.
+    <ul>
+      <li>
+        <p>
+          The <m>(i-1)</m>-th row of <m> A_{1  j}</m> corresponds to the <m>i</m>-th row of <m>A</m>, and the first row of <m>A_{i  k}</m> corresponds to the first row of <m>A</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>k\lt j</m>, then the <m>k</m>-th column of <m> A_{1  j}</m> corresponds to the <m>k</m>-th column of <m>A</m>; if <m>k\geq j</m>, then the <m>k</m>-th column of <m>A_{1  j}</m> corresponds to the <m>(k+1)</m>-th column of <m>A</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>j\lt k</m>, then the <m>j</m>-th column of <m>A_{ik}</m> corresponds to the <m>j</m>-th column of <m>A</m>; if <m>j\geq k</m>, then the <m>j</m>-th column of <m>A_{ik}</m> corresponds to the <m>(j+1)</m>-th column of <m>A</m>.
+        </p>
+      </li>
+    </ul>
+    From these observations we derive the following table of formulas:
+    <mdn>
+      <mrow xml:id="eq_entry_formula_1">[ A_{1j}]_{(i-1)  k} \amp =\begin{cases}
+        a_{i  k} \amp \text{if } k\lt j\\
+        a_{i  (k+1)}  \amp \text{if } k\geq j
+      \end{cases} </mrow>
+      <mrow xml:id="eq_entry_formula_2">[ A_{i  k}]_{1  j} \amp =\begin{cases}
+        a_{1  j}  \amp \text{if } j\lt k\\
+        a_{1  (j+1)} \amp \text{if } k\leq j
+      \end{cases} </mrow>
+      <mrow xml:id="eq_iterated_submatrix">  {( A_{1j})}_{i-1  k}\amp=\begin{cases}
+         {( A_{i  k})}_{1  (j-1)} \amp\text{if } k\lt j \\
+         {( A_{i  (k+1)})}_{1  j} \amp \text{if } k\geq j
+      \end{cases}
+      </mrow>
+    </mdn>.
+  We now begin to unpack <xref ref="eq_det_def"/>:
+  <md>
+    <mrow>\det A \amp= \sum_{j=1}^n (-1)^{1+j}a_{1 j}\det  A_{1j}
+    </mrow>
+    <mrow> \amp = \sum_{j=1}^n (-1)^{1+j}a_{1 j}\sum_{k=1}^{n-1}(-1)^{i-1+k}[ A_{1j}]_{(i-1)k}\det {( A_{1j})}_{(i-1)k} \amp <xref ref="eq_det_submatrix"/>
+    </mrow>
+    <mrow>  \amp
+    = \underset{k\lt j \text{ terms}}{\underbrace{\sum_{j=2}^n \sum_{k=1}^{j-1}(-1)^{i+j+k}a_{1 j}a_{i  k}\det (A_{i  k})_{1  (j-1)}}}+\underset{k\geq j \text{ terms}}{\underbrace{\sum_{j=1}^{n-1} \sum_{k=j}^{n-1}(-1)^{i+j+k}a_{1 j}a_{i  (k+1)}\det (A_{i  (k+1)})_{1  j}}}
+    \amp <xref ref="eq_entry_formula_1" />, <xref ref="eq_iterated_submatrix"/>
+    </mrow>
+    <mrow>  \amp = \underset{j\geq k \text{ terms}}{\underbrace{\sum_{j=1}^{n-1} \sum_{k=1}^{j}(-1)^{i+j+k+1}a_{i  k}[A_{ik}]_{1j}\det (A_{i  k})_{1  j}}}+\underset{j\lt k \text{ terms}}{\underbrace{\sum_{j=1}^{n-1} \sum_{k=j+1}^{n}(-1)^{i+j+k-1}a_{ik}[A_{ik}]_{1 j}\det (A_{ik})_{1  j}}}
+    \amp (\text{re-labeled } j=j-1, k=k+1)
+    </mrow>
+    <mrow>  \amp = \underset{j\geq k \text{ terms}}{\underbrace{\sum_{j=1}^{n-1} \sum_{k=1}^{j}(-1)^{i+j+k+1}a_{i  k}[A_{ik}]_{1j}\det (A_{i  k})_{1  j}}}+\underset{j\lt k \text{ terms}}{\underbrace{\sum_{j=1}^{n-1} \sum_{k=j+1}^{n}(-1)^{i+j+k+1}a_{ik}[A_{ik}]_{1 j}\det (A_{ik})_{1  j}}}
+    \amp ((-1)^{c+2}=(-1)^c)
+    </mrow>
+    <mrow>  \amp =\sum_{k=1}^{n}(-1)^{i+k}a_{ik}\sum_{j=1}^{n-1}(-1)^{j+1}[A_{ik}]_{1j}\det (A_{ik})_{1j}
+    \amp (\text{re-order terms})
+    </mrow>
+    <mrow>  \amp =\sum_{k=1}^{n}(-1)^{i+k}a_{ik}\det A_{ik} </mrow>
+  </md>.
+  This completes the induction step, and thus the proof is finished. 
+</p>
+    </case>
   </proof>
 </theorem>
 <p>
@@ -244,8 +327,8 @@ Coming soon!
     <p>
       For any <m>1\leq j\leq n</m>, we have
       <md>
-        <mrow> \sum_{k=1}^n(-1)^{k+j}a_{kj}M_{kj}\amp =\sum_{k=1}^n(-1)^{k+j}(A^T)_{jk}\det\widetilde{A}_{kj} \amp (<xref ref="d_transpose"/>)</mrow>
-        <mrow> \amp = \sum_{k=1}^n(-1)^{k+j}(A^T)_{jk}\det\widetilde{A^T}_{jk} \amp (\widetilde{A^T}_{ij}=\widetilde{A}_{ji}) </mrow>
+        <mrow> \sum_{k=1}^n(-1)^{k+j}a_{kj}M_{kj}\amp =\sum_{k=1}^n(-1)^{k+j}(A^T)_{jk}\det A_{kj} \amp (<xref ref="d_transpose"/>)</mrow>
+        <mrow> \amp = \sum_{k=1}^n(-1)^{k+j}(A^T)_{jk}\det (A^T)_{jk} \amp ( (A^T)_{ij}= A_{ji}) </mrow>
         <mrow>  \amp= \det A^T  \amp (<xref ref="d_det"/>)</mrow>
         <mrow>  \amp=\det A \amp (<xref ref="th_det_transpose"/>) </mrow>
       </md>.
@@ -267,23 +350,23 @@ Coming soon!
     <p>
       First we compute <m>A</m> by expanding along the second row. The only nonzero term of this expansion is the last one, yielding
       <me>
-        \det A=(-1)^{2+4}(A)_{24}M_{24}=2\det\widetilde{A}_{24}
+        \det A=(-1)^{2+4}[A]_{24}M_{24}=2\det A_{24}
       </me>.
       We have
       <me>
-        \widetilde{A}_{24}=\begin{bmatrix}
+         A_{24}=\begin{bmatrix}
           2\amp 1\amp 0\\ 0\amp 2\amp 0\\ 4\amp 2\amp 1
       \end{bmatrix}
       </me>.
       To compute its determinant we expand along its third column:
       <me>
-        \det\widetilde{A}_{24}=(-1)^{3+3}1\det \begin{bmatrix}
+        \det A_{24}=(-1)^{3+3}1\det \begin{bmatrix}
             2\amp 1\\ 0\amp 2
       \end{bmatrix}=4.
       </me>
       We conclude that
       <me>
-        \det A=2\det\widetilde{A}_{24}=2(4)=8
+        \det A=2\det A_{24}=2(4)=8
       </me>.
     </p>
   </solution>
@@ -347,7 +430,7 @@ Coming soon!
      <title>Base step: <m>n=2</m></title>
      <p>
        Let <m>A=\begin{bmatrix}a\amp b\\c\amp d \end{bmatrix}</m>.
-       Then <m>A'=\abcdmatrix{c}{d}{a}{b}</m>, and
+       Then <m>A'=\abcdmatrix{c}{d}A{b}</m>, and
        <m>\det(A')=cb-ad=-(ad-bc)=-\det A</m>.
      </p>
     </case>
@@ -361,11 +444,11 @@ Coming soon!
       We compute the determinants of <m>A</m> and <m>A'</m> by expanding along the <m>\ell</m>-th row, where <m>\ell\ne i</m> and <m>\ell\ne k</m>. This is possible since <m>(n+1)\geq 3</m>.
     </p>
     <p>
-      Moving along the <m>\ell</m>-th row, notice that each submatrix <m>\widetilde{A'}_{\ell j}</m> is the result of swapping the two rows of <m>\widetilde{A}_{\ell j}</m> that originally corresponded to the <m>i</m>-th and <m>k</m>-th rows of <m>A</m>. Since these submatrices are of dimension <m>n\times n</m>, we have <m>\det \widetilde{A'}_{\ell j}=-\det \widetilde{A}_{\ell j}</m> by induction. Lastly, since the <m>\ell</m>-th rows of <m>A</m> and <m>A'</m> are the same we have
+      Moving along the <m>\ell</m>-th row, notice that each submatrix <m> {A'}_{\ell j}</m> is the result of swapping the two rows of <m> A_{\ell j}</m> that originally corresponded to the <m>i</m>-th and <m>k</m>-th rows of <m>A</m>. Since these submatrices are of dimension <m>n\times n</m>, we have <m>\det  {A'}_{\ell j}=-\det  A_{\ell j}</m> by induction. Lastly, since the <m>\ell</m>-th rows of <m>A</m> and <m>A'</m> are the same we have
       <md>
-        <mrow>\det A \amp=\sum_{j=1}^{n+1}(-1)^{\ell+j}a_{\ell j}\det \widetilde{A}_{\ell j} </mrow>
-        <mrow> \amp = \sum_{j=1}^{n+1}(-1)^{\ell+j}a_{\ell j}(-\det \widetilde{A'}_{\ell j})</mrow>
-        <mrow>  \amp =-\sum_{j=1}^{n+1}(-1)^{\ell+j}a_{\ell j}\det \widetilde{A'}_{\ell j} </mrow>
+        <mrow>\det A \amp=\sum_{j=1}^{n+1}(-1)^{\ell+j}a_{\ell j}\det  A_{\ell j} </mrow>
+        <mrow> \amp = \sum_{j=1}^{n+1}(-1)^{\ell+j}a_{\ell j}(-\det  {A'}_{\ell j})</mrow>
+        <mrow>  \amp =-\sum_{j=1}^{n+1}(-1)^{\ell+j}a_{\ell j}\det  {A'}_{\ell j} </mrow>
         <mrow>  \amp=-\det A' </mrow>
       </md>.
     </p>
