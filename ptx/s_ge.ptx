@@ -5,7 +5,7 @@
       In <xref ref="s_systems"/> we sketched a procedure for solving a linear system <m>L</m>. That procedure involved applying a sequence of row operations to <m>L</m> to obtain a <q>simpler</q> system <m>L'</m>.
     </p>
     <p>
-      In this section we will fill out this sketch. Specifically, we will
+      We will fill out this sketch in the next two sections. Specifically, we will
       <ol>
         <li>
           <p>
@@ -276,10 +276,10 @@ As defined more thoroughly in <xref ref="d_matrix"/>, a matrix is just a rectang
   At last we are ready to define Gaussian elimination. This is a procedure, or <em>algorithm</em>, that takes an input matrix <m>A</m> and row reduces it to a matrix <m>B</m> in row echelon form.
   </p>
   <principle xml:id="pr_GE-has-many-uses">
-  <title>Gaussian elimination has many uses</title>
+  <title>Gaussian elimination is the workhorse of linear algebra</title>
   <statement>
     <p>
-      You should think of Gaussian elimination as having a life independent of its role in solving systems of linear equations. In essence it is simply a certain procedure performed on matrices. As you will see, Gaussian elimination is the true workhorse of linear algebra; simplifying linear systems is but one of its many useful applications.
+      Simplifying linear systems is but one of the many useful applications of Gaussian elimination, and you should think of it as having a life independent of its role in solving systems of linear equations. In its essence Gaussian elimination is simply a certain procedure performed on matrices: one that we will come back to again and again, and to diverse ends.
     </p>
   </statement>
 </principle>
@@ -375,7 +375,7 @@ As defined more thoroughly in <xref ref="d_matrix"/>, a matrix is just a rectang
       <title>Gauss-Jordan elimination</title>
       <statement>
         <p>
-        <term>Gauss-Jordan elimination</term> is the algorithm described below. It takes which as an input a matrix <m>A</m> and returns a row equivalent matrix <m>B</m> in reduced row echelon form.
+        <term>Gauss-Jordan elimination</term> is the algorithm described below. It takes as an input a matrix <m>A</m> and returns a row equivalent matrix <m>B</m> in reduced row echelon form.
         </p>
         <dl>
           <li>

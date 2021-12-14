@@ -40,7 +40,7 @@
         <li>
           <p>
             The equation <m>x^2+y^2=1</m> is a <em> nonlinear</em>
-            in the unknowns <m>x</m> and <m>y</m>.
+            equation in the unknowns <m>x</m> and <m>y</m>.
           </p>
         </li>
       </ol>
@@ -242,7 +242,7 @@ A homogeneous system is thus typically written as:
     <em>Key point</em>. In order for this method to work,
     we need to make sure that the transformed system has <em>exactly</em>
     the same solutions as the original system!
-    To this end we will restrict ou permissible transformations to the <em>elementary  operations</em> define below.
+    To this end we will restrict our permissible transformations to the <em>elementary  operations</em> define below.
   </p>
   <definition index="elementary row operations" xml:id="d_eqops">
     <title>Elementary operations on linear systems</title>
@@ -407,7 +407,7 @@ A homogeneous system is thus typically written as:
       </p>
     </statement>
     <proof>
-      We prove by induction that if system <m>L'</m> is the result of applying <m>n</m> elementary operations to system <m>L</m>, <m>n\geq 0</m> then <m>L</m> and <m>L'</m> have the same set of solutions.
+      We prove by induction that if system <m>L'</m> is the result of applying <m>n</m> elementary operations to system <m>L</m>, <m>n\geq 0</m>, then <m>L</m> and <m>L'</m> have the same set of solutions.
       <case>
         <title> Base case: <m>n=0</m></title>
         <p>

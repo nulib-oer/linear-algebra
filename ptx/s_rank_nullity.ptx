@@ -60,6 +60,60 @@
         </p>
       </statement>
     </theorem>
+    <proof>
+      <p>
+        Choose a basis <m>B'=\{\boldv_1, \boldv_2, \dots, \boldv_k\}</m> of <m>\NS T</m> and extend <m>B'</m> to a basis <m>B=\{\boldv_1, \boldv_2,\dots, \boldv_k,\boldv_{k+1},\dots, \boldv_n\}</m>, using <xref ref="th_basis_contract_expand"/>. Observe that <m>\dim\NS T=\nullity T=k</m> and <m>\dim V=n</m>.
+      </p>
+      <p>
+        We claim that <m>B''=\{T(\boldv_{k+1}),T(\boldv_{k+2}),\dots, T(\boldv_{n})\}</m> is a basis of <m>\im T</m>.
+      </p>
+      <proof>
+        <title>Proof of claim</title>
+        <case>
+         <title><m>B''</m> is linearly independent</title>
+        <p>
+          Suppose <m>a_kT(\boldv_k)+a_{k+1}T(\boldv_{k+1})+\cdots +a_nT(\boldv_n)=\boldzero</m>. Then the vector
+          <m>\boldv=a_k\boldv_k+a_{k+1}\boldv_{k+1}+\cdots +a_n\boldv_n</m> satisfies <m>T(\boldv)=\boldzero</m> (using linearity of <m>T</m>), and hence <m>\boldv\in \NS T</m>. Then, using the fact that <m>B'</m> is a basis of <m>\NS T</m>, we have
+          <me>
+            b_1\boldv_1+b_2\boldv_2+\cdots +\boldv_k=\boldv=a_k\boldv_k+a_{k+1}\boldv_{k+1}+\cdots +a_n\boldv_n,
+          </me>
+          and hence
+          <me>
+            b_1\boldv_1+b_2\boldv_2+\cdots +\boldv_k-a_k\boldv_k-a_{k+1}\boldv_{k+1}-\cdots -a_n\boldv_n=\boldzero.
+          </me>
+          Since the set <m>B</m> is linearly independent, we conclude that <m>b_i=a_j=0</m> for all <m>1\leq i\leq k</m> and <m>k+1\leq j\leq n</m>. In particular, <m>a_{k+1}=a_{k+2}=\cdots=a_n=0</m>, as desired.
+        </p>
+        </case>
+        <case>
+         <title><m>B''</m> spans <m>\im T</m></title>
+        <p>
+        It is clear that <m>\Span B''\subseteq \im T</m> since <m>T(\boldv_i)\in \im T</m> for all <m>k+1\leq i\leq n</m> and <m>\im T</m> is closed under linear combinations.
+        </p>
+        <p>
+          For the other direction, suppose <m>\boldw\in \im T</m>. Then there is a <m>\boldv\in V</m> such that <m>\boldw=T(\boldv)</m>. Since <m>B</m> is a basis of <m>V</m> we may write
+          <me>
+            \boldv=a_1\boldv_1+a_2\boldv_2+\cdots a_k\boldv_k+a_{k+1}\boldv_{k+1}+\cdots +a_n\boldv_n
+          </me>,
+          in which case
+          <md>
+            <mrow>\boldw=T(\boldv)\amp= T(a_1\boldv_1+a_2\boldv_2+\cdots a_k\boldv_k+a_{k+1}\boldv_{k+1}+\cdots +a_n\boldv_n)
+            </mrow>
+            <mrow> \amp=a_1T(\boldv_1)+a_2T(\boldv_2)+\cdots a_kT(\boldv_k)+a_{k+1}T(\boldv_{k+1})+\cdots +a_nT(\boldv_n)
+            \amp (T \text{ is linear })
+            </mrow>
+            <mrow>  \amp=\boldzero +a_kT(\boldv_k)+a_{k+1}T(\boldv_{k+1})+\cdots +a_nT(\boldv_n) \amp (\boldv_i\in\NS T \text{ for } 1\leq i\leq k) </mrow>
+          </md>.
+          This shows that <m>\boldw=a_kT(\boldv_k)+a_{k+1}T(\boldv_{k+1})+\cdots +a_nT(\boldv_n)\in \Span B''</m>, as desired.
+        </p>
+        </case>
+      </proof>
+    Having shown <m>B''</m> is a basis for <m>\im T</m>, we conclude that <m>\dim \im T=\val{B''}=n-(k+1)+1=n-k</m>, and thus that
+    <md>
+      <mrow>\dim V \amp=k+(n-k) </mrow>
+      <mrow> \amp=\dim\NS T+\dim \im T </mrow>
+      <mrow>  \amp = \nullity T+\rank T</mrow>
+    </md>.
+    </proof>
 
   </paragraphs>
   <paragraphs xml:id="ss_fundamental_spaces">
@@ -96,7 +150,7 @@
       </notation>
       <statement>
         <p>
-          Let <m>A</m> be a an <m>m\times n</m> matrix. Let <m>\boldr_1,\dots, \boldr_m</m> be the <m>m</m> rows of <m>A</m>, and let <m>\boldc_1,\dots \boldc_n</m> be its <m>n</m> columns. The following subspaces are called the <term>fundamental subspaces of $A$</term>.
+          Let <m>A</m> be a an <m>m\times n</m> matrix. Let <m>\boldr_1,\dots, \boldr_m</m> be the <m>m</m> rows of <m>A</m>, and let <m>\boldc_1,\dots \boldc_n</m> be its <m>n</m> columns. The following subspaces are called the <term>fundamental subspaces of <m>A</m></term>.
         </p>
         <ul>
           <li>
@@ -159,7 +213,7 @@
                 </li>
                 <li>
                   <p>
-                    <m>\CS A\ne \CS U</m>, in general.
+                    <m>\dim\CS A=\dim \CS U</m> (but in general it is not the case that <m>\dim\CS A=\dim\CS U</m>).
                   </p>
                 </li>
               </ul>
@@ -167,10 +221,10 @@
           </li>
           <li>
             <p>
-              Let <m>\ell </m> be the number of leading ones in <m>U</m>, and let <m>k=n-\ell</m>; <ie />, <m>\ell</m> and <m>k</m> are the number of leading and free variables, respectively, of the system corresponding to <m>\begin{amatrix}[r|r]U\amp \boldzero]\end{amatrix}</m>. Then
+              Let <m>r </m> be the number of leading ones in <m>U</m>, and let <m>s=n-r</m>; <ie />, <m>r</m> and <m>k</m> are the number of leading and free variables, respectively, of the system corresponding to <m>\begin{amatrix}[r|r]U\amp \boldzero\end{amatrix}</m>. Then
               <md>
-              <mrow>\rank A\amp =\dim\CS A=\dim \RS A=\ell </mrow>
-              <mrow> \nullity A\amp=\dim\NS A=k </mrow>
+              <mrow>\rank A\amp =\dim\CS A=\dim \RS A=r </mrow>
+              <mrow> \nullity A\amp=\dim\NS A=s </mrow>
               </md>.
             </p>
           </li>
@@ -186,6 +240,122 @@
         </ol>
       </statement>
     </theorem>
+<proof>
+  <p>
+    We prove each statement in turn.
+  </p>
+  <proof>
+    <title>Proof of (1)</title>
+    <p>
+      Recall that <m>T_A</m> is defined as <m>T_A(\boldx)=A\boldx</m> for all <m>\boldx\in \mathbb{R}^n </m>. Then clearly <m>T_A(\boldx)=\boldzero</m> if and only if <m>A\boldx=\boldzero</m>, showing that <m>\NS T=\NS A</m>.
+    </p>
+    <p>
+      Let <m>\boldc_1, \boldc_2,\dots, \boldc_n</m> be the columns of <m>A</m>. We have
+      <md>
+        <mrow> \boldy\in \im T_A \amp\iff \boldy=T_A(\boldx) \text{ for some } \boldx\in \mathbb{R}^n </mrow>
+        <mrow> \amp\iff  \boldy=A \boldx \text{ for some } \boldx=(x_1,x_2,\dots, x_n)\in \mathbb{R}^n
+        \amp (\text{definition of } T_A) </mrow>
+        <mrow>  \amp \iff \boldy=x_1\boldc_1+x_2\boldc_2+\cdots +x_n\boldc_n \text{ for some } x_i\in \mathbb{\R} \amp (<xref ref="th_column_method"/>)</mrow>
+        <mrow>  \amp \iff \boldy\in\CS A</mrow>
+      </md>.
+      Thus <m>\im T_A=\CS A</m>.
+    </p>
+  </proof>
+  <proof>
+    <title>Proof of (2)</title>
+    <p>
+    First observe that <m>A=\begin{bmatrix}1\amp 1\\ 1\amp 1 \end{bmatrix}</m> is row equivalent to <m>U=\begin{bmatrix}1\amp 1\\ 0 \amp 0\end{bmatrix}</m> and yet <m>\CS A=\Span\{(1,1)\}=\{(t,t)\colon t\in \R\}\ne \CS U=\Span\{(1,0)\}=\{(t,0)\colon t\in\R\}</m>. Thus we do not have <m>\CS A=\CS U</m> in general.
+  </p>
+  <p> Next, we show more generally that if <m>A</m> is row equivalent to <m>B</m>, then <m>\NS A=\NS B</m>, <m>\RS A=\RS B</m>, and <m>\dim\CS A=\dim \CS B</m>.
+</p>
+<p>
+  Assume that <m>A</m> is row equivalent to <m>B</m>. Using the formulation of row reduction in terms of multiplication by elementary matrices, we see that there is an invertible matrix <m>Q</m> such that <m>B=QA</m>, and hence also <m>A=Q^{-1}B</m>. Then:
+  <md>
+    <mrow> \boldx\in\NS A\amp\iff A\boldx=\boldzero </mrow>
+    <mrow> \amp\iff QA\boldx=Q\boldzero \amp (<xref ref="th_inverse_cancel"/>) </mrow>
+    <mrow> \amp \iff B\boldx=\boldzero </mrow>
+    <mrow>  \amp iff \boldx\in\NS B</mrow>
+  </md> .
+  This proves <m>\NS A=\NS B</m>.
+</p>
+<p>
+  Next, by (1) we have <m>\NS A=\NS T_A</m>, <m>\CS A=\im T_A</m> and <m>\NS B=\NS T_B</m>, <m>\CS B=\im T_B</m>. Then
+  <md>
+    <mrow>\dim \CS A \amp=\dim\im T_A </mrow>
+    <mrow> \amp=n-\dim\NS A \amp (<xref ref="th_rank-nullity"/>) </mrow>
+    <mrow>  \amp=n-\dim NS B \amp (\NS A=\NS B)</mrow>
+    <mrow>  \amp =\dim\im T_B \amp ( <xref ref="th_rank-nullity"/></mrow>
+    <mrow>  \amp =\dim \CS B</mrow>
+  </md>.
+</p>
+<p>
+Lastly, we turn to the row spaces. We will show that each row of <m>B</m> is an element of <m>\RS A</m>, from whence it follows that <m>\RS B\subseteq \RS A</m>. Let <m>\boldr_i</m> be the <m>i</m>-th row of <m>B</m>, and let <m>\boldq_i</m> be the <m>i</m>-th column of <m>Q</m>. By <xref ref="th_row_method"/>, we have <m>\boldr_i=\boldq_i A</m>, and furthermore, <m>\boldq_i A</m> is the linear combination of the rows of <m>A</m> whose coefficients come from the entries of <m>\boldq_i</m>. Thus <m>\boldr_i\in\RS A</m>, as desired.
+</p>
+<p>
+Having shown that <m>\RS B\subseteq \RS A</m>, we see that the same argument works <em>mutatis mutandis</em> (swapping the roles of <m>A</m> and <m>B</m> and using <m>Q^{-1}</m> in place of <m>Q</m>) to show that <m>\RS A\subseteq \RS B</m>. We conclude that <m>\RS A=\RS B</m>.
+</p>
+  </proof>
+<proof>
+  <title>Proof of (3)</title>
+  <p>
+   By (2) we know that <m>\NS A=\NS U, \RS A=\RS U</m>, and <m>\dim\CS A=\dim\CS U</m>. So it is enough to show that <m>\dim \NS U=\dim\RS U=r</m> and <m>\dim \NS U=s</m>.
+  </p>
+  <p>
+    First, we will show that the <m>r</m> nonzero rows of <m>U</m> form a basis for <m>\RS U</m>, proving <m>\dim\RS U=r</m>. Clearly the nonzero rows span <m>\RS U</m>, since any linear combination of all the rows of <m>U</m> can be expressed as a linear combination of the nonzero rows. Furthermore, since <m>U</m> is in row echelon form, the staircase pattern of the leading ones appearing in the nonzero rows assures that these row vectors are linearly independent.
+  </p>
+  <p>
+    Next, we show that the columns of <m>U</m> containing leading ones form a basis of <m>\CS U</m>.
+      Let <m>\boldu_{i_1},\dots, \boldu_{i_r}</m> be the columns of <m>U</m> with leading ones, and let
+      <m>\boldu_{j_1}, \boldu_{j_2}, \dots, \boldu_{j_s}</m> be the columns without leading ones.
+      To prove the <m>\boldu_{i_k}</m> form a basis for <m>\CS U</m>, we will show that given any
+      <m>\boldy\in \CS U</m> there is a <em>unique</em>
+      choice of scalars <m>c_1, c_2,\dots,
+      c_r</m> such that <m>c_1\boldu_{i_1}+\cdots +c_r\boldu_{i_r}=\boldy</m>.
+      (Recall that the uniqueness of this choice implies linear independence.)
+    </p>
+    <p>
+      So assume <m>\boldy\in \CS U</m>.
+      Then we can find <m>\boldx\in\R^n</m> such that <m>U\boldx=\boldy</m>,
+      which means the linear system with augmented matrix <m>[\ U\ \vert \ \boldy]</m> is consistent.
+      Using our Gaussian elimination theory (specifically, <xref ref="th_solveSystem"/>),
+      we know that the solutions
+      <m>\boldx=(x_1,x_2,\dots,
+      x_n)</m> to this system are in 1-1 correspondence with choices for the free variables <m>x_{j_1}=t_{j_1}, x_{j_2}=t_{j_2}, \dots,
+      x_{j_s}=t_{j_s}</m>.
+      (Remember that the columns
+      <m>\boldu_{j_k}</m> without leading ones correspond to the free variables.)
+      In particular, there is a unique solution to
+      <m>U\boldx=\boldy</m> where we set all the free variables equal to 0.
+      By the column method (<xref ref="th_column_method"/>),
+      this gives us a unique linear combination of only the columns
+      <m>\boldu_{i_k}</m> with leading ones equal to <m>\boldy</m>.
+      This proves the claim, and shows that the columns with leading ones form a basis for <m>\CS U</m>. We conclude that <m>\dim\CS U=r</m>.
+  </p>
+  <p>
+    Lastly,  again using the results of (1), we have
+    <md>
+      <mrow>\dim NS U \amp =\dim NS T_U </mrow>
+      <mrow> \amp =n-\dim\im T_U \amp (<xref ref="th_rank-nullity"/>) </mrow>
+      <mrow>  \amp =n-\dim\CS U</mrow>
+      <mrow>  \amp =n-r </mrow>
+      <mrow>  \amp =s </mrow>
+    </md>,
+    where the last equality uses the fact that the sum of the number of columns with leading ones (<m>r</m>) and the number of columns without leading ones (<m>s</m>) is <m>n</m>, the total number of columns.
+  </p>
+</proof>
+<proof>
+  <title>Proof of (4)</title>
+  <p>
+    We have
+    <md>
+      <mrow> n \amp =\dim\NS T_A+\dim\im T_A \amp (<xref ref="th_rank-nullity"/>)</mrow>
+      <mrow> \amp =\dim\NS A+\dim\CS A \amp (\text{by (1)})\</mrow>
+      <mrow>  \amp =\dim\NS A+\dim\RS A \amp (\text{ by (3)})</mrow>
+    </md>.
+  </p>
+</proof>
+
+</proof>
 
 
     <algorithm xml:id="proc_fund_spaces">
