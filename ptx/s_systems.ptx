@@ -102,8 +102,8 @@ A homogeneous system is thus typically written as:
           </me>
           is an ordered sequence
           <m>(s_1,s_2,\dots,
-          s_n)</m> of real numbers for which the substitution <m>x_1=s_1, x_2=s_2,\dots, x_n=s_n</m> makes the equation true.
-          We say the sequence <m>(s_1,\dots ,s_n)</m> <term>solves the equation</term> in this case .
+          s_n)</m> of real numbers for which the variable assignment <m>x_1=s_1, x_2=s_2,\dots, x_n=s_n</m> makes the equation true.
+          We say <m>(s_1,\dots ,s_n)</m> <term>solves the equation</term> in this case .
         </p>
         <p>
           A <term>solution to a system of linear equations</term>
