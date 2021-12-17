@@ -8,22 +8,22 @@
     <idx><h>linear equation</h></idx>
     <statement>
       <p>
-        A <term>linear equation</term> in the <m>n</m> <term>unknowns</term>
-        (or <term>variables</term>)
-        <m>x_1,x_2,\dots x_n</m> is an equation of the form
+        A <term>linear expression</term> in the <m>n</m> unknowns
+        (or variables)
+        <m>x_1,x_2,\dots x_n</m> is an expression of the form
         <me>
-          c_1x_1+c_2x_2+\cdots +c_nx_n+d=e_1x_1+e_2x_2+\cdots +e_nx_n+f,
-        </me>
-        where <m>d, f, c_1,\dots, c_n, d_1,\dots, d_n</m> are real numbers. An equation not of this form is called <term>nonlinear</term>.
+          a_1x_1+a_2x_2+\cdots +a_nx_n
+        </me>,
+        where <m>a_1,a_2,\dots, a_n</m> are fixed real numbers.
       </p>
-      <p>Any linear equation in the unknowns <m>x_1,x_2,\dots, x_n</m> can be simplified, using only addition and subtraction, to an equation of the form
+      <p>A <term>linear equation</term> in the unknowns <m>x_1,x_2,\dots, x_n</m> is an equation that can be simplified, using only addition and subtraction, to an equation of the form
         <men xml:id="eq_std_form">
           a_1x_1+a_2x_2+\cdots a_nx_n=b,
         </men>
-        which we call its <term>standard form </term>.
+        which we call its <term>standard form </term>. An equation in the unknowns <m>x_1,x_2,\dots, x_n</m> is <term>nonlinear</term> if it cannot be simplified to the form <xref ref="eq_std_form"/> using only addition and subtraction.
       </p>
       <p>
-        Given a linear equation with standard form as in <xref ref="eq_std_form"/>, the equation is called <term>homogeneous</term> if <m>b=0</m>, and <term>nonhomogeneous</term> if <m>b\ne 0</m>.
+        Given a linear equation with standard form <xref ref="eq_std_form"/>, the equation is called <term>homogeneous</term> if <m>b=0</m>, and <term>nonhomogeneous</term> if <m>b\ne 0</m>.
       </p>
     </statement>
   </definition>
