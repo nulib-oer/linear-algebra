@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<publication>
+  <common>
+        <tableofcontents level="2"/>
+  </common>
+  <numbering>
+    <divisions chapter-start="0" />
+  </numbering>
+</publication>

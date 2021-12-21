@@ -1,0 +1,138 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_proof_technique">
+<title>Proof techniques</title>
+<introduction>
+  The logical structure and particular mathematical content of a proposition influence our choice of proof approach. In this section we describe some standard proof techniques, organized in terms of
+</introduction>
+<subsection xml:id="ss_logical_structure">
+  <title>Logical structure</title>
+  <subsubsection xml:id="sss_implication">
+    <title>Implication</title>
+    <p>
+      By <xref ref="d_logical_ops"/> the only time an implication  <m>\mathcal{P}\implies\mathcal{Q}</m> is false is when <m>\mathcal{P}</m> is true and <m>\mathcal{Q}</m> is false. Accordingly, the <em>direct approach</em> to proving an implication <m>\mathcal{P}\implies \mathcal{Q}</m> is to assume <m>\mathcal{P}</m> is true, and use this assumption to prove <m>\mathcal{Q}</m> is true.
+  </p>
+  <p>
+    A common <em>indirect approach</em> used to prove an implication <m>\mathcal{P}\implies \mathcal{Q}</m> is to prove its <em>contrapositive</em>  <m>\neg\mathcal{Q}\implies \neg \mathcal{P} </m>, which is logically equivalent to the original implication. In this case we assume <m>\mathcal{Q}</m> is not true, and show <m>\mathcal{P}</m> is not true. (Exercise: use a truth table to show the contrapositive is logically equivalent to the original implication.)
+  </p>
+  <warning>
+    <statement>
+      <p>
+        The <em>converse</em> of an implication <m>\mathcal{P}\implies \mathcal{Q}</m> is the implication <m>\mathcal{Q}\implies \mathcal{P}</m>; the <em>inverse</em> of <m>\mathcal{P}\implies\mathcal{Q}</m> is the implication <m>\neg\mathcal{P}\implies\neg\mathcal{Q}</m>. Neither the converse nor the inverse is equivalent to the original implication, and thus neither of these can be used to give an indirect proof of <m>\mathcal{P}\implies \mathcal{Q}</m>. (Exercise: use a truth table to show that neither the converse nor the inverse implication is logially equivalent to the original implication. )
+      </p>
+    </statement>
+  </warning>
+
+  </subsubsection>
+  <subsubsection xml:id="sss_disjunction">
+    <title>Disjunction</title>
+    <p>
+      Again, using <xref ref="d_logical_ops"/>, to directly show a disjunction <m>\mathcal{P}\text{ or }\mathcal{Q}</m> is true, we need only show one the two component propositions is true.
+    </p>
+    <p>
+      Alternatively, we can prove either of the implications <m>\neg\mathcal{P}\implies\mathcal{Q}</m> or <m>\neg Q\implies \mathcal{P}</m>, both of which are logically equivalent to <m>\mathcal{P}\text{ or }\mathcal{Q}</m>. (Exercise: use a truth table to show these three propositions are indeed equivalent!)
+    </p>
+  </subsubsection>
+  <subsubsection xml:id="sss_equivalence">
+    <title>Equivalence</title>
+    The equivalence <m>\mathcal{P}\iff\mathcal{Q}</m> is logically equivalent to the conjunction
+    <me>
+      (\mathcal{P}\implies\mathcal{Q})\text{ and } (\mathcal{Q}\implies \mathcal{P})
+    </me>.
+     Accordingly, the standard way of proving <m>\mathcal{P}\iff \mathcal{Q}</m> is to prove the two implications  <m>\mathcal{P}\implies\mathcal{Q}</m> and <m>\mathcal{Q}\implies\mathcal{P}</m> separately. (Exercise: use a truth table to show these propositions are indeed equivalent!)
+  </subsubsection>
+  <subsubsection xml:id="sss_logical_chains">
+    <title>Chains of implications/equivalences</title>
+    <p>
+      The relation <q><m>\mathcal{P}</m> implies <m>\mathcal{Q}</m></q> is transitive: <ie />, if <m>\mathcal{P}\implies\mathcal{Q}</m> and <m>\mathcal{Q}\implies\mathcal{R}</m>, then <m>\mathcal{P}\implies\mathcal{R}</m>. Similarly, the relation <q><m>\mathcal{P}</m> is equivalent to <m>\mathcal{Q}</m></q> is transitive. This allows us to prove an implication or equivalence via a <em>chain of implications</em> or <em>chain of equivalences</em>. When writing up a proof using this technique, use a vertically aligned format like the example below, treating one implication or equivalence per line, and adding a brief justification to the right:
+      <figure>
+        <md>
+          <mrow>\mathcal{P} \amp \iff \mathcal{P_1}\amp\text{(justification)}</mrow>
+          <mrow> \amp \iff \mathcal{P_2}\amp\text{(justification)} </mrow>
+          <mrow> \amp \vdots</mrow>
+          <mrow>  \amp \iff \mathcal{P_n}\amp\text{(justification)} </mrow>
+          <mrow>  \amp \iff \mathcal{Q}\amp\text{(justification)}</mrow>
+        </md>.
+        <caption>Proving the equivalence <m>\mathcal{P}\iff \mathcal{Q}</m> via chain of equivalences.</caption>
+      </figure>
+      It is also possible to build an argument as a hybrid chain of equivalences and implications. In this case the chain is only as strong as its weakest link. For example, a chain of the form
+      <md>
+        <mrow>\mathcal{P} \amp\iff\mathcal{Q} \amp\text{(justification)} </mrow>
+        <mrow> \amp\implies \mathcal{R} \amp\text{(justification)} </mrow>
+        <mrow>  \amp\iff \mathcal{S} \amp\text{(justification)}</mrow>
+      </md>
+      only shows that <m>\mathcal{P}\implies\mathcal{S}</m>. Indeed, we will have <m>\mathcal{P}\iff\mathcal{S}</m> if and only if the intervening implication <m>\mathcal{Q}\implies\mathcal{R}</m> is in fact an equivalence (<ie />, the arrow goes both ways).
+    </p>
+    <warning>
+      <statement>
+        <p>
+          It is often tempting, for the sake of space, to try and prove an equivalence <m>\mathcal{P}\iff\mathcal{Q}</m> via a chain of equivalences, as opposed to showing <m>\mathcal{P}\implies \mathcal{Q}</m> and <m>\mathcal{Q}\implies\mathcal{P}</m> separately.
+
+          When proceeding in this manner, make doubly sure that each <m>\iff</m> is indeed an equivalence: <ie />, that the implication arrow really goes both ways at each step. Even if each step in your chain truly is an equivalence, you should consider whether this will be obvious to your reader.
+        </p>
+      </statement>
+    </warning>
+  </subsubsection>
+  <example xml:id="ex_invertible_bijective">
+    <title>Invertible is equivalent to bijective</title>
+
+    <statement>
+      <p>
+      Let <m>f\colon A\rightarrow B</m> be a function. Prove: <m>f</m> is invertible if and only if <m>f</m> is bijective.
+      </p>
+    </statement>
+    <solution>
+      <p>
+       Let <m>\mathcal{P}</m> be the proposition that <m>f</m> is invertible, and let <m>\mathcal{Q}</m> be the proposition that <m>f</m> is bijective. We prove the equivalence <m>\mathcal{P}\iff \mathcal{Q}</m> by proving the two implications <m>\mathcal{P}\implies \mathcal{Q}</m> and <m>\mathcal{Q}\implies\mathcal{P}</m>.
+      </p>
+      <case>
+       <title><m>\mathcal{P}\implies \mathcal{Q}</m></title>
+      <p>
+      We must show that if <m>f</m> is invertible, then <m>f</m> is bijective. Assume <m>f</m> is invertible. Then <m>f</m> has an inverse <m>f^{-1}</m>. We show separately that <m>f</m> is injective and surjective, hence bijective.
+      </p>
+      <case>
+       <title><m>f</m> is injective</title>
+      <p>
+        We show <m>f(a)=f(a')\implies a=a'</m> via a chain of implications:
+        <md>
+          <mrow>f(a)=f(a') \amp \implies f^{-1}(f(a))=f^{-1}(f(a'))</mrow>
+          <mrow> \amp\implies a=a' \amp (f^{-1}\circ f=\id_A) </mrow>
+        </md>.
+      </p>
+      </case>
+      <case>
+       <title><m>f</m> is surjective</title>
+      <p>
+        Let <m>b</m> be an element of <m>B</m>. We must show that there is an <m>a\in A</m> such that <m>f(a)=b</m>. Letting <m>a=f^{-1}(b)</m>, we have
+        <md>
+          <mrow>f(a) \amp = f(f^{-1}(b))</mrow>
+          <mrow> \amp = b \amp (f\circ f^{-1}=\id_B)</mrow>
+        </md>.
+      </p>
+      </case>
+      </case>
+      <case>
+       <title><m>\mathcal{Q}\implies\mathcal{P}</m></title>
+      <p>
+      We must show that if <m>f</m> is bijective, then <m>f</m> is invertible. Assume <m>f</m> is bijective. First we define a function <m>g\colon B\rightarrow A</m> as follows: for all <m>b\in B</m>, let <m>g(b)</m> be the unique element <m>a\in A</m> such that <m>f(a)=b</m>. Note that our definition of <m>g</m> uses both that <m>f</m> is surjective (there is <em>some</em> element <m>a</m> such that <m>f(a)=b</m>)) and injective (there is <em>exactly one</em> element <m>a</m> such that <m>f(a)=b</m>).
+      </p>
+      <p>
+        We now prove that <m>g</m> is the inverse of <m>f</m>, showing <m>g\circ f=\id_A</m> and <m>f\circ g=\id_B</m> separately.
+      </p>
+      <case>
+       <title><m>g\circ f=\id_A</m></title>
+      <p>
+      Take any <m>a\in A</m> and let <m>b=f(a)</m>. By definition of <m>g</m>, we have <m>g(b)=a</m> and hence <m>g(f(a))=g(b)=a</m>. This proves <m>g\circ f=\id_A</m>.
+      </p>
+      </case>
+      <case>
+       <title><m>f\circ g=\id_B</m></title>
+      <p>
+      Take any <m>b\in B</m>. By definition of <m>g</m>, <m>g(b)</m> is the unique <m>a\in A</m> such that <m>f(a)=b</m>. Thus <m>f(g(b))=f(a)=b</m>. This proves <m>f\circ g=\id_B</m>.
+      </p>
+      </case>
+      </case>
+    </solution>
+  </example>
+</subsection>
+
+
+</section>

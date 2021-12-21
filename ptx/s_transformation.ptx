@@ -22,7 +22,7 @@
       it is the theory of vector spaces and the linear transformations between them. Go shout it from the rooftops!
     </p>
   </introduction>
-  <paragraphs xml:id="ss_functions">
+  <!-- <paragraphs xml:id="ss_functions">
     <title>Function definitions</title>
     <p>
       Before getting to the main attraction, we first establish some basic definitions and notation regarding functions.
@@ -71,8 +71,8 @@
         </ol>
         </p>
       </statement>
-    </definition>
-    <definition xml:id="d_function_composition">
+    </definition> -->
+    <!-- <definition xml:id="d_function_composition">
       <title>Function composition</title>
       <idx><h>function</h><h>composition</h></idx>
       <notation>
@@ -88,10 +88,13 @@
         In other words, to evaluate <m>f\circ g</m> at the input <m>a</m> we <em>first</em> compute <m>g(a)</m>, and <em>then</em> compute <m>f(g(a))</m>.
         </p>
       </statement>
-    </definition>
-  </paragraphs>
+    </definition> -->
+  <!-- </paragraphs> -->
   <paragraphs xml:id="ss_linear_transform">
     <title>Linear transformations</title>
+    <introduction>
+      First and foremost, a linear transformation is a function. Before continuing on in this section, you may want to reaquiant yourself with the basic function concepts and notation outlined in <xref ref="ss_functions" text="title"/>.
+    </introduction>
   <definition xml:id="d_linear_transform">
     <title>Linear transformations</title>
 

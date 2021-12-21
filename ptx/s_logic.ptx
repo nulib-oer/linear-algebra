@@ -1,0 +1,172 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_logic">
+<title>Logic</title>
+<introduction>
+  <p>
+    When dealing with mathematical statements and arguments, we must pay close attention to logical structure. This section addresses Different logical connectors give rise to different proof approaches. For the rest of this section, the symbols <m>\mathcal{P}</m> and <m>\mathcal{Q}</m> will stand for propositions.
+
+  </p>
+</introduction>
+<paragraphs xml:id="ss_propositional_calculus">
+  <title>Propositional logic</title>
+  <p>
+    A <em>proposition</em> is a sentence that is either true or false. We build <em>compound propositions</em> from component propositions using <em>logical operators</em> (or <em>logical connectors</em>); the truth value of the compound proposition is defined as a function of the truth values of the component propositions.
+  </p>
+  <definition xml:id="d_logical_ops">
+    <title>Logical operators</title>
+    <statement>
+      <p>
+        <ul>
+          <li>
+            <title>Negation</title>
+            <p>
+              Given a proposition <m>\mathcal{P}</m>, the <term>negation of <m>\mathcal{P}</m></term> is the proposition <sq>Not <m>\mathcal{P}</m></sq>, denoted <m>\neg\mathcal{P}</m> in logical notation, the truth value of which is defined as follows: <m>\neg\mathcal{P}</m> is true exactly when <m>\mathcal{P}</m> is false.
+            </p>
+          </li>
+          <li>
+            <title>Conjuction (logical and)</title>
+            <p>
+              Given propositions <m>\mathcal{P}</m> and <m>\mathcal{Q}</m>, their <term>conjuction</term> is the proposition <sq><m>\mathcal{P}</m> and <m>\mathcal{Q}</m></sq>, denoted <m>\mathcal{P}\land \mathcal{Q}</m> in logical notation, the truth value of which is defined as follows:  <m>\mathcal{P}\land\mathcal{Q}</m> is true when both <m>\mathcal{P}</m> and <m>\mathcal{Q}</m> are true, and false otherwise.
+            </p>
+          </li>
+        <li>
+          <title>Disjunction (logical or)</title>
+          <p>
+            Given propositions <m>\mathcal{P}</m> and <m>\mathcal{Q}</m>, their <term>disjunction</term> is the proposition <sq><m>\mathcal{P}</m> or <m>\mathcal{Q}</m></sq>, denoted <m>\mathcal{P}\lor \mathcal{Q}</m> in logical notation, the truth value of which is defined as follows: <m>\mathcal{P}\lor \mathcal{Q}</m> is true when at least one of <m>\mathcal{P}</m> and <m>\mathcal{Q}</m> is true, and false otherwise.
+          </p>
+        </li>
+        <li>
+          <title>Logical implication (if-then)</title>
+          <p>
+            Given propositions <m>\mathcal{P}</m> and <m>\mathcal{Q}</m>, the proposition <sq>If <m>\mathcal{P}</m>, then <m>\mathcal{Q}</m></sq>, denoted <m>\mathcal{P}\implies\mathcal{Q}</m> in logical notation, is called an <term>implication</term>, and its truth value is defined as follows: <m>\mathcal{P}\implies\mathcal{Q}</m> is false when <m>\mathcal{P}</m> is true and <m>\mathcal{Q}</m> is false, and true otherwise.
+          </p>
+        </li>
+        <li>
+          <title>Logical equivalence (if and only if)</title>
+          <p>
+            Given propositions <m>\mathcal{P}</m> and <m>\mathcal{Q}</m>, the proposition <sq><m>\mathcal{P}</m> if and only if <m>\mathcal{Q}</m></sq>, denoted <m>\mathcal{P}\iff\mathcal{Q}</m> in logical notation, is called an <term>equivalence</term>, and its truth value is defined as follows: <m>\mathcal{P}\iff \mathcal{Q}</m> is true when <m>\mathcal{P}</m> and <m>\mathcal{Q}</m> have the same truth value, and false otherwise. We say <m>\mathcal{P}</m> and <m>\mathcal{Q}</m> are <term>equivalent</term> when <m>\mathcal{P}\iff \mathcal{Q}</m> is true.
+          </p>
+        </li>
+      </ul>
+      </p>
+    </statement>
+  </definition>
+      <remark xml:id="rm_truth_tables">
+    <statement>
+      <p>
+        A <em>truth table</em> of a compound proposition <m>\mathcal{P}</m> is a concise way of displaying how the truth value of <m>\mathcal{P}</m> depends on the truth values of its component propositions. It contains one row for each possible truth assignment of the component propositions.  As illustration, we give the truth tables for the logical operators defined above:
+        <md>
+          <mrow>\amp\begin{array}{c||c}\mathcal{P}\amp\neg\mathcal{P} \\
+          \hline T\amp F\\F\amp T\end{array} \amp \amp \begin{array}{c|c||c}\mathcal{P}\amp\mathcal{Q}\amp\mathcal{P}\land\mathcal{Q} \\
+          \hline T\amp T\amp T\\T\amp F\amp F\\ F\amp T\amp F\\ F\amp F\amp F\end{array}
+          \amp \amp \begin{array}{c|c||c}\mathcal{P}\amp\mathcal{Q}\amp\mathcal{P}\lor\mathcal{Q} \\
+          \hline T\amp T\amp T\\T\amp F\amp T\\ F\amp T\amp T\\ F\amp F\amp F\end{array}</mrow>
+          <mrow> \amp
+          \begin{array}{c|c||c}\mathcal{P}\amp\mathcal{Q}\amp\mathcal{P}\implies\mathcal{Q} \\
+          \hline T\amp T\amp T\\T\amp F\amp F\\ F\amp T\amp T\\ F\amp F\amp T\end{array}
+          \amp \amp \begin{array}{c|c||c}\mathcal{P}\amp\mathcal{Q}\amp\mathcal{P}\iff\mathcal{Q} \\
+          \hline T\amp T\amp T\\T\amp F\amp F\\ F\amp T\amp F\\ F\amp F\amp T\end{array}</mrow>
+        </md>
+      </p>
+    </statement>
+  </remark>
+<example>
+  <statement>
+    <p>
+      Use a truth table to find all truth  value assignments of <m>\mathcal{P}</m> and <m>\mathcal{Q}</m> making the compound proposition
+      <me>
+        \neg\mathcal{P}\implies (\mathcal{Q}\implies P)
+      </me>
+      false.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      We construct a truth table with columns for <m>\mathcal{P}</m>, <m>\mathcal{Q}</m>, <m>\neg\mathcal{P}</m>, <m>\mathcal{Q\implies P}</m>, and <m>\neg\mathcal{P}\implies (\mathcal{Q}\implies P)</m>:
+      <me>
+      \begin{array}{c|c|c|c||c}\mathcal{P}\amp\mathcal{Q}\amp\neg\mathcal{P}\amp \mathcal{Q}\implies \mathcal{P}\amp \neg\mathcal{P}\implies(\mathcal{Q}\implies \mathcal{P}) \\
+      \hline T\amp T\amp F\amp T\amp T\\T\amp F\amp F\amp T\amp T\\ F\amp T\amp T\amp F\amp F\\ F\amp F\amp T\amp T\amp T\end{array}
+      </me>.
+      We conclude that <m>\neg\mathcal{P}\implies (\mathcal{Q}\implies P)</m> is false exactly when <m>\mathcal{P}</m> is false and <m>\mathcal{Q}</m> is true. (It follows that <m>\neg\mathcal{P}\implies (\mathcal{Q}\implies P)</m> is equivalent to <m>Q\implies P</m>. )
+    </p>
+
+  </solution>
+</example>
+    <remark xml:id="rm_logic_vs_vernacular">
+  <statement>
+    <p>
+      Our definitions of the logical operators above are chosen to agree with their usage in a very particular type of discourse: namely, <em>mathematical</em> discourse. They do not always agree with their use in natural language: hence the modifier 'logical' in their titles.
+    </p>
+    <p>For example, disjunctions in natural language of the form `<m>\mathcal{P}</m> or <m>\mathcal{Q}</m>' are often understood to be true when <m>\mathcal{P}</m> is true or <m>\mathcal{Q}</m> is true, <em>but not both</em>. This notion of disjunction is what is called the <em>exclusive or</em> in logic.
+  </p>
+  <p>Similarly, according to our definition, the implication
+      <sq>
+      If the President of the US is a dog, then the Vice President of the US is a cat
+    </sq>
+    is true, since the proposition <sq>The President of the US</sq> is false. (In logic we say the implication is <em>vacuously true</em> in this case.) However, working outside of our logical definitions of truth value, we may have been inclined to treat this implication as false, since both <sq>The President of the US is a dog</sq> and <sq>The Vice President of the US is a cat</sq> are false.
+  </p>
+  </statement>
+</remark>
+
+</paragraphs>
+<paragraphs xml:id="ss_quantifier_logic">
+  <title>Quantifier logic</title>
+  <p>
+    A sentence like <sq>All humans are mortal</sq> is modeled in logic as <sq>For all <m>x</m>, <m>P(x)</m></sq>, where <m>P(x)</m> stands for the phrase <sq><m>x</m> is mortal</sq>. Similarly, the sentence <sq>There is a square-root of <m>2</m></sq> is modeled as <sq>There exists an <m>x</m> such that <m>Q(x)</m></sq>, where <m>Q(x)</m> stands for the phrase <sq><m>x</m> is a square-root of 2</sq>. Observe that <m>P(x)</m> and <m>Q(x)</m> on their own are not propositions; there is no truth value to <sq><m>x</m> is mortal</sq> or <sq><m>x</m> is a square-root of 2</sq>. Instead, we think of <m>P(x)</m> and <m>Q(x)</m> as <em>propositional functions</em>, which, when evaluated at a specific value of <m>x</m> (<eg />, <m>x=\text{Aaron Greicius}</m> or <m>x=11</m>), return a proposition: <m>P(\text{Aaron Greicius})</m> is the proposition <sq>Aaron Greicius is mortal</sq>, which happens to be true at the time of writing; <m>Q(11)</m> is the proposition <sq><m>11</m> is a square-root of 2</sq>, which happens to be false. Another way of obtaining propositions from <m>P(x)</m> and <m>Q(x)</m> is to precede them with a <em>quantifier</em> (<eg />, <sq>for all <m>x</m></sq>, <sq>there is an <m>x</m></sq>) as we did above. We define these notions formally below.
+  </p>
+  <definition xml:id="d_predicates_quantifiers">
+    <statement>
+      <ul>
+        <li>
+          <title>Propositional function</title>
+          <p> A <term>propositional function</term> on the <term>domain of discourse</term> <m>D</m> is a rule <m>P</m> which for each element <m>d</m> in <m>D</m> assigns a proposition <m>P(d)</m>.
+          </p>
+        </li>
+        <li>
+          <title>Universal quantifier</title>
+          <p>
+            Given a propositional function <m>P</m> defined on a domain of discourse <m>D</m>, the proposition <sq>For all <m>x</m> in <m>D</m>, <m>P(x)</m></sq>, denoted <m>\forall x P(x)</m> in logical notation, is called a <term>universal quantification</term>, and its truth value is defined as follows: <m>\forall x P(x)</m> is true if for all elements <m>d</m> of <m>D</m>, the proposition <m>P(d)</m> is true.
+          </p>
+        </li>
+        <li>
+          <title>Existential quantifier</title>
+          <p>
+            Given a propositional function <m>P</m> defined on a domain of discourse <m>D</m>, the proposition <sq>There exists an <m>x</m> in <m>D</m> such that <m>P(x)</m></sq>, denoted <m>\exists x P(x)</m> in logical notation, is called an <term>existential quantification</term>, and its truth value is defined as follows: <m>\exists x P(x)</m> is true if there is some element <m>d</m> of <m>D</m> for which the proposition <m>P(d)</m> is true.
+          </p>
+        </li>
+      </ul>
+
+
+    </statement>
+  </definition>
+</paragraphs>
+<example>
+  <title>Truth depends on the domain of discourse</title>
+  <statement>
+
+  </statement>
+</example>
+<theorem xml:id="th_quantifier_rules">
+  <statement>
+    <p>
+      <ol>
+        <li>
+          <p>
+            <m>\forall x P(x)\implies \exists x P(x)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\neg\forall x P(x)\iff \exists x \neg P(x)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\neg\exists x P(x)\iff \forall x \neg P(x)</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+</theorem>
+
+</section>
