@@ -8,6 +8,9 @@
       In fact the connection between linear transformations and subspaces goes deeper than this. As we will see in <xref ref="d_nullspace_image"/>, a linear transformation <m>T\colon V\rightarrow W</m> naturally gives rise to two important subspaces: the <em>null space of <m>T</m></em> and the <em>image of <m>T</m></em>.
     </p>
   </introduction>
+  <subsection xml:id="ss_subspace">
+    <title>Definition of subspaces</title>
+
     <definition xml:id="d_subspace">
     <title>Subspace</title>
     <idx><h>subspace</h></idx>
@@ -163,7 +166,8 @@
         </p>
       </statement>
     </remark>
-<paragraphs xml:id="ss_nullspace_image">
+</subsection>
+<subsection xml:id="ss_nullspace_image">
   <title>Null space and image of a linear transformation</title>
   <p>
     Before looking at more examples, we first show how a linear transformation <m>T\colon V\rightarrow W</m> gives rise to two different subspaces: one insides <m>V</m>, and the other inside <m>W</m>. These are called the <em>null space</em> and <em>image</em> of <m>T</m>, respectively.
@@ -463,8 +467,8 @@
     </p>
   </statement>
 </remark>
-</paragraphs>
-<paragraphs xml:id="ss_subspace_functions">
+</subsection>
+<subsection xml:id="ss_subspace_functions">
   <title>Important subspaces of <m>F(X,\R)</m></title>
  <p>
    Let <m>X</m> be an interval of <m>\R</m>. Recall that <m>F(X,\R)</m> is the set of <em>all</em> functions from <m>X</m> to <m>\R</m>. This is a pretty unwieldy set, containing some pathological characters, and when studying functions on an interval we will often restrict our attention to certain more well-behaved subsets: e.g., continuous, differentiable, or infinitely differentiable functions. Not surprisingly, these subsets turn out to be subspaces of <m>F(X,\R)</m>.
@@ -540,7 +544,7 @@
       </p>
     </proof>
   </theorem>
-</paragraphs>
+
 
         <remark xml:id="rm_polynomial_equality">
       <title>Polynomial equality</title>
@@ -616,8 +620,8 @@
       </p>
     </statement>
   </example>
-
-    <paragraphs xml:id="ss_subspace_intersection_union">
+</subsection>
+    <subsection xml:id="ss_subspace_intersection_union">
     <title>Intersections and unions</title>
     <p>
       We end this section with some simple observations about how the property of being a subspace relates to basic set operations like intersection and union.
@@ -657,7 +661,7 @@
         </p>
       </statement>
     </remark>
-  </paragraphs>
+  </subsection>
 <xi:include href="./s_subspace_ex.ptx"/>
 
 </section>

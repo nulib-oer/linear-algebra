@@ -7,7 +7,7 @@
       We will gradually make our way to definitions of the vector spaces and linear transformations mentioned in this text's title. For now it will suffice to observe that a vector space is a certain kind of <em>set</em>, and a linear transformation is a special type of <em>function</em>. Accordingly we gather here some notions about sets and functions that will come in handy once we meet the two main players of linear algebra.
     </p>
   </introduction>
-  <paragraphs xml:id="ss_sets">
+  <subsection xml:id="ss_sets">
     <title>Sets</title>
 
   <definition xml:id="d_sets">
@@ -265,8 +265,8 @@
 </statement>
 </remark>
 
-    </paragraphs>
-    <paragraphs xml:id="ss_functions">
+    </subsection>
+    <subsection xml:id="ss_functions">
       <title>Functions</title>
       <definition xml:id="d_function">
           <title>Functions</title>
@@ -462,5 +462,5 @@
       </p>
     </proof>
 
-</paragraphs>
+</subsection>
 </section>

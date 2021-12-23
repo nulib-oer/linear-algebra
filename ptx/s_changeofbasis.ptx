@@ -37,7 +37,8 @@
     </p>
 
   </introduction>
-
+<subsection xml:id="ss_change_of_basis" >
+  <title>Change of basis matrices</title>
   <definition xml:id="d_change_of_basis">
     <title>Change of basis matrix</title>
     <idx><h>change of basis matrix</h></idx>
@@ -85,17 +86,17 @@
 
   </theorem>
 
+</subsection>
 
 
-
-  <paragraphs>
+  <subsection>
     <title>Example</title>
     <p>
       Let <m>V=\R^2</m>.
       Compute <m>\underset{B\rightarrow B'}{P}</m> where
       <m>B=\{\boldv_1=(1,1),\boldv_2=(1,-1)\}</m> and <m>B'=\{(1,2),(2,1)\}</m>.
     </p>
-  </paragraphs>
+  </subsection>
   <p>
     Test that the matrix converts correctly using the vector
     <m>\boldv=1(1,1)+3(1,-1)=(4,-2)</m>. \begin{bsolution} The recipe tells us that
@@ -115,7 +116,7 @@
   <p>
     Indeed, one easily verifies that <m>(4,-2)=-8/3(1,2)+10/3(2,1)</m>. \end{bsolution}
   </p>
-  <paragraphs>
+  <subsection>
     <title>Example</title>
     <p>
       Take <m>V=P_2</m>,
@@ -141,7 +142,7 @@
       <m>p(x)=7+5(x-2)+(x-2)^2</m>, as one easily verifies.
     </p>
 
-    <paragraphs>
+    <subsection>
       <title>Cool fact</title>
       <p>
         We could have derived the last equality using the theory of Taylor series.
@@ -149,7 +150,7 @@
         <q>expanded around <m>x=a</m></q>
         as <m>p(x)=\sum_{i=0}^n\frac{p^{(i)}(a)}{a!}(x-a)^i</m>.
       </p>
-    </paragraphs>
+    </subsection>
     <p>
       More generally, this means
       <me>
@@ -157,7 +158,7 @@
       </me>
       where <m>B'=\{1,x-a, (x-a)^2,\dots , (x-a)^n\}</m>.
     </p>
-  </paragraphs>
+  </subsection>
   <theorem xml:id="th_change_of_basis_properties">
     <title>Change of basis matrix properties</title>
     <statement>
@@ -194,7 +195,7 @@
   </theorem>
 
 
-  <paragraphs>
+  <subsection>
     <title>Example: <m>V=\R^n</m> and <m>B</m> is standard</title>
     <p>
       Consider the simple example where <m>V=\R^n</m>,
@@ -212,13 +213,13 @@
       <m>\underset{B'\rightarrow B}{P}</m> by placing the elements of <m>B'</m> as columns of a matrix,
       and then compute <m>\underset{B\rightarrow B'}{P}</m> by taking the inverse of this matrix!
     </p>
-    <paragraphs>
+    <subsection>
       <title>Example</title>
       <p>
         Let <m>V=\R^2</m>, <m>B</m> the standard basis for <m>\R^2</m>,
         and <m>B'=\{(1,\sqrt{3}),(-\sqrt{3},1)\}</m>.
       </p>
-    </paragraphs>
+    </subsection>
     <p>
       Find <m>P_{B\rightarrow B'}</m>. \begin{bsolution} The recipe above tells us that <m>\underset{B'\rightarrow B}{P}=\begin{bmatrix}1\amp -\sqrt{3}\\ \sqrt{3}\amp 1 \end{bmatrix}</m> and hence that
       <me>
@@ -228,9 +229,9 @@
     <p>
       \end{bsolution}
     </p>
-  </paragraphs>
+  </subsection>
 
-  <paragraphs>
+  <subsection>
     <title>Change of basis for transformations</title>
     <p>
       We now investigate how our choice of basis affects matrix representations of linear transformations.
@@ -252,7 +253,7 @@
         </p>
       </statement>
     </theorem>
-  </paragraphs>
+  </subsection>
   <remark xml:id="rm_change_of_basis_transformations">
     <title>Getting change of basis formulas correct</title>
     <statement>
@@ -300,7 +301,7 @@
     </statement>
   </remark>
 
-  <paragraphs>
+  <subsection>
     <title>Example</title>
     <p>
       Let <m>T\colon P_2\rightarrow P_2</m> be defined as <m>T(p(x))=p(x)+2p'(x)+xp''(x)</m>.
@@ -344,7 +345,7 @@
       <mrow>-2\amp 2\amp -3 \end{amatrix}</mrow>
       </md>
     </p>
-  </paragraphs>
+  </subsection>
   <definition>
     <statement>
       <p>
@@ -382,7 +383,7 @@
   <p>
     There is but one true <m>T</m>!
   </p>
-  <paragraphs>
+  <subsection>
     <title>Change of basis for <m>V=\R^n</m></title>
 
     <p>
@@ -400,9 +401,9 @@
     </p>
 
 
-  </paragraphs>
+  </subsection>
 
-  <paragraphs>
+  <subsection>
     <title>Example: orthogonal projection revisited</title>
     <p>
       Let <m>T\colon \R^3\rightarrow\R^3</m> be orthogonal projection onto the plane <m>\mathcal{P}: x+y+z=0</m>,
@@ -448,7 +449,7 @@
       (Note: since <m>B</m> is the standard basis in this case,
       <m>\underset{B'\rightarrow B}{P}</m> was easy to compute. )
     </p>
-  </paragraphs>
+  </subsection>
 
   <p>
     <image width="75%" source="images/HolyCommutativeTent.png"/>

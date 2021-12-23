@@ -1,6 +1,6 @@
 <section xml:id="ss_eigenvectors">
   <title>Eigenvectors and eigenvalues</title>
-  <paragraphs>
+  <subsection>
     <title>Eigenvectors</title>
     <p>
       Let <m>T\colon V\rightarrow V</m> be linear.
@@ -27,15 +27,15 @@
 
       </statement>
     </definition>
-    <paragraphs>
+    <subsection>
       <title>Comment:</title>
       <p>
         why the switch to <m>\lambda</m> all of a sudden?
         Tradition!
       </p>
-    </paragraphs>
-  </paragraphs>
-  <paragraphs>
+    </subsection>
+  </subsection>
+  <subsection>
     <title>Examples by inspection</title>
     <p>
       Define <m>T\colon M_{22}\rightarrow M_{22}</m> as <m>T(A)=A^T+A</m>.
@@ -51,8 +51,8 @@
       Thus <m>\begin{bmatrix}0\amp 1\\ -1\amp 0 \end{bmatrix}</m> is an eigenvector with eigenvalue 0, and
       <m>\begin{bmatrix}0\amp 1\\ 1\amp 0 \end{bmatrix}</m> is an eigenvector with eigenvalue 2.
     </p>
-  </paragraphs>
-  <paragraphs>
+  </subsection>
+  <subsection>
     <title>Examples by inspection</title>
     <p>
       Let <m>T_\theta\colon\R^2\rightarrow\R^2</m> be rotation counterclockwise by <m>\theta</m>,
@@ -72,8 +72,8 @@
       If <m>\theta\ne\pi</m>, then we see easily that
       <m>T_\theta</m> has no eigenvectors. \end{bsolution}
     </p>
-  </paragraphs>
-  <paragraphs>
+  </subsection>
+  <subsection>
     <title>Examples by inspection</title>
     <p>
       Fix <m>\alpha</m> with <m>0\leq \alpha\lt \pi</m>,
@@ -98,8 +98,8 @@
     <p>
       \end{bsolution}
     </p>
-  </paragraphs>
-  <paragraphs>
+  </subsection>
+  <subsection>
     <title>Finding eigenvalues of $T$ systematically</title>
     <p>
       Let <m>T\colon V\rightarrow V</m> be linear, <m>\dim(V)=n</m>.
@@ -130,8 +130,8 @@
         </li>
       </ol>
     </p>
-  </paragraphs>
-  <paragraphs>
+  </subsection>
+  <subsection>
     <title>Finding eigenvalues of $A$</title>
     <p>
       We now focus on finding eigenvalues of an <m>n\times n</m> matrix <m>A</m>.
@@ -167,13 +167,13 @@
         </p>
       </statement>
     </definition>
-  </paragraphs>
-  <paragraphs>
+  </subsection>
+  <subsection>
     <title>Example</title>
     <p>
       Find all eigenvalues of <m>A=\begin{bmatrix}1\amp 1\\ 2\amp -1 \end{bmatrix}</m>. \begin{bsolution} Compute:
     </p>
-  </paragraphs>
+  </subsection>
   <p>
     <m>p(t)=\det(tI-A)=\val{\begin{array}{cc}t-1\amp -1\\ -2\amp t+1 \end{array} }=t^2-3</m>.
   </p>
@@ -181,12 +181,12 @@
     The eigenvalues are the roots of <m>p(t)</m>:
     <m>\lambda_1=\sqrt{3}, \lambda_2=-\sqrt{3}</m>. \end{bsolution}
   </p>
-  <paragraphs>
+  <subsection>
     <title>Example</title>
     <p>
       Find all eigenvalues of <m>A=\begin{bmatrix}2\amp -1\amp -1\\ -1\amp 2\amp -1\\ -1\amp -1\amp 2 \end{bmatrix}</m>. \begin{bsolution} Compute:
     </p>
-  </paragraphs>
+  </subsection>
   <p>
     <m>p(t)=\det(tI-A)=\val{\begin{array}{ccc}t-2\amp 1\amp 1\\ 1\amp t-2\amp 1\\ 1\amp 1\amp t-2 \end{array} }=t^3-6t^2+9t=t(t-3)^2</m>.
   </p>
@@ -194,7 +194,7 @@
     The eigenvalues are the roots of <m>p(t)</m>:
     <m>\lambda_1=0</m>, <m>\lambda_2=3</m>. \end{bsolution}
   </p>
-  <paragraphs>
+  <subsection>
     <title>Facts about the characteristic polynomial</title>
     <p>
       Let <m>A</m> be <m>n\times n</m> and let
@@ -223,8 +223,8 @@
         </li>
       </ol>
     </p>
-  </paragraphs>
-  <paragraphs>
+  </subsection>
+  <subsection>
     <title>Fancy facts about $p(t)$</title>
     <p>
       Let <m>p(t)=\det(tI-A)=t^n+a_{n-1}t^{n-1}+\cdots +a_1t+a_0</m> be the characteristic polynomial.
@@ -256,7 +256,7 @@
       the above implies <m>p(t)=t^2-\tr(A)t+\det(A)</m>:
       a useful shortcut when having to compute eigenvalues of <m>2\times 2</m> matrices!
     </p>
-  </paragraphs>
+  </subsection>
   <p>
     Let's make our list of facts official.
   </p>
@@ -296,7 +296,7 @@
       </p>
     </statement>
   </theorem>
-  <paragraphs>
+  <subsection>
     <title>Computing eigenspaces of a matrix </title>
     <p>
       Now suppose we have found an eigenvalue <m>\lambda</m> of <m>A</m>.
@@ -323,7 +323,7 @@
         </p>
       </statement>
     </definition>
-  </paragraphs>
+  </subsection>
   <algorithm xml:id="proc_eigenspaces">
     <title>Computing eigenspaces of a matrix</title>
     <statement>
@@ -352,13 +352,13 @@
   <p>
     Let's compute the eigenspaces of our previous examples.
   </p>
-  <paragraphs>
+  <subsection>
     <title>Example</title>
     <p>
       <m>A=\begin{bmatrix}1\amp 1\\ 2\amp -1 \end{bmatrix}</m>,
       <m>\lambda_1=\sqrt{3}</m>, <m>\lambda_2=-\sqrt{3}</m>. \begin{bsolution}
     </p>
-  </paragraphs>
+  </subsection>
   <p>
     Compute:
   </p>
@@ -382,13 +382,13 @@
   <p>
     Let's compute the eigenspaces of our previous examples.
   </p>
-  <paragraphs>
+  <subsection>
     <title>Example</title>
     <p>
       <m>A=\begin{bmatrix}2\amp -1\amp -1\\ -1\amp 2\amp -1\\ -1\amp -1\amp 2 \end{bmatrix}</m>,
       <m>\lambda_1=0</m>, <m>\lambda_2=3</m>. \begin{bsolution} Compute:
     </p>
-  </paragraphs>
+  </subsection>
   <p>
     <m>W_0=\NS(0I-A)=\NS\left(\begin{bmatrix}2\amp -1\amp -1\\ -1\amp 2\amp -1\\ -1\amp -1\amp 2 \end{bmatrix} \right)=\Span\left(\left\{\boldv_1=\begin{bmatrix}1 \\ 1 \\ 1 \end{bmatrix} \right\}\right)</m>.
   </p>
@@ -399,13 +399,13 @@
     Thus the eigenvectors of <m>A</m> with eigenvalue 0 are vectors of the form <m>c\boldv_1</m>,
     and the eigenvectors of <m>A</m> with eigenvalue 3 are vectors of the form <m>c\boldv_2+d\boldv_3</m>.
   </p>
-  <paragraphs>
+  <subsection>
     <title>Comment</title>
     <p>
       Note that in general <m>W_0=\NS(0I-A)=\NS(-A)=\NS(A)</m>.
       (Think about why the last equality is true.)
     </p>
-  </paragraphs>
+  </subsection>
   <p>
     Thus the eigenvectors of <m>A</m> with eigenvalue 0 are precisely the nonzero vectors of <m>\NS(A)</m>,
     should there be any at all! \end{bsolution}

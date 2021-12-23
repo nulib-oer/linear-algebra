@@ -22,7 +22,7 @@
       it is the theory of vector spaces and the linear transformations between them. Go shout it from the rooftops!
     </p>
   </introduction>
-  <!-- <paragraphs xml:id="ss_functions">
+  <!-- <subsection xml:id="ss_functions">
     <title>Function definitions</title>
     <p>
       Before getting to the main attraction, we first establish some basic definitions and notation regarding functions.
@@ -89,8 +89,8 @@
         </p>
       </statement>
     </definition> -->
-  <!-- </paragraphs> -->
-  <paragraphs xml:id="ss_linear_transform">
+  <!-- </subsection> -->
+  <subsection xml:id="ss_linear_transform">
     <title>Linear transformations</title>
     <introduction>
       First and foremost, a linear transformation is a function. Before continuing on in this section, you may want to reaquiant yourself with the basic function concepts and notation outlined in <xref ref="ss_functions" text="title"/>.
@@ -318,9 +318,9 @@
   </statement>
 </remark>
 
-</paragraphs>
+</subsection>
 
-<paragraphs xml:id="ss_transform_examples">
+<subsection xml:id="ss_transform_examples">
   <title>Examples</title>
   <p>
     Our next example is in fact an entire family of examples of linear transformations: so-called <em>matrix transformations</em> of the form <m>T_A\colon \R^n\rightarrow \R^m</m>, where <m>A</m> is a given <m>m\times n</m> matrix. This is a good place to recall the <xref ref="princ_matrix_mantra" text='custom'> matrix mantra </xref>. Not only can a matrix represent a system of linear equations, it can represent a linear transformation. These are two very different concepts, and the <xref ref="princ_matrix_mantra" text='custom'> matrix mantra </xref> helps us not confuse the two. In the end a matrix is just a matrix: a mathematical tool that can be employed to diverse ends.
@@ -577,8 +577,8 @@
   </solution>
 </example>
 
-</paragraphs>
-<paragraphs xml:id="ss_transormation_video_examples">
+</subsection>
+<subsection xml:id="ss_transormation_video_examples">
   <title>Video examples</title>
 <p>
   <figure>
@@ -592,8 +592,8 @@
   <video xml:id="vid_transform_2" youtube="weETKP8p7cE" />
   </figure>
 </p>
-</paragraphs>
-<paragraphs xml:id="ss_transform_composition">
+</subsection>
+<subsection xml:id="ss_transform_composition">
   <title>Composition of linear transformations and matrix multiplication</title>
 <p>
   We end by making good on a promise we made long ago to <em>retroactively</em> make sense of the definition of matrix multiplication. The key connecting concept, as it turns out, is composition of functions. We first need a result showing that composition preserves linearity.
@@ -631,14 +631,14 @@
 Thus, we can now understand the definition of matrix multiplication as being chosen precisely to encode how to compute the composition of two matrix transformations. The restriction on the dimension of the ingredient matrices is now understood as guaranteeing that the corresponding matrix transformations can be composed!
 </p>
 
-</paragraphs>
+</subsection>
 
 <xi:include href="./s_transformation_ex.ptx"/>
 
 
 
 
-    <!-- <paragraphs>   ADD THESE TO LATER SECTIONS!!
+    <!-- <subsection>   ADD THESE TO LATER SECTIONS!!
     <title>Exotic example: \alert{differentiaton}</title>
     <p>
       Let <m>V=C^\infty(\R)</m>,
@@ -647,12 +647,12 @@ Thus, we can now understand the definition of matrix multiplication as being cho
       In other words, <m>T</m> takes as an input a function <m>f</m>,
       and returns as an output its derivative function <m>f'</m>.
     </p>
-    <paragraphs>
+    <subsection>
       <title>Claim</title>
       <p>
         : <m>T</m> is a linear transformation.
       </p>
-    </paragraphs>
+    </subsection>
     <proof>
       <p>
         We must show <m>T(cf+dg)=cT(f)+dT(g)</m> for any scalars
@@ -668,7 +668,7 @@ Thus, we can now understand the definition of matrix multiplication as being cho
         </md>
       </p>
     </proof>
-    </paragraphs>
+    </subsection>
     \item Let <m>V=P_n</m> and <m>W=P_{n+1}</m>,
     the function \item Let <m>V=M_{mn}</m>, <m>W=M_{nm}</m>.
     The function \item Let <m>V=C^1(-\infty,\infty)</m>,

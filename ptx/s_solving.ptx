@@ -21,7 +21,7 @@
 
 
 
-<paragraphs xml:id="ss_workingExample">
+<subsection xml:id="ss_workingExample">
   <title>Model example</title>
   <p> We begin by illustrating the general method for solving a linear system using our model example; a careful  description of the procedure, along with a proof of its validity, is found in <xref ref="th_solveSystem"/>.
 </p>
@@ -104,8 +104,8 @@
         </p>
       </statement>
     </remark>
-  </paragraphs>
-  <paragraphs xml:id="ss_solveSystem">
+  </subsection>
+  <subsection xml:id="ss_solveSystem">
     <title>General method for solving linear systems</title>
     <p>
       Before describing a precise algorithm for computing the set of solutions to a linear system, we must address the possibility that there are no solutions to the system whatsoever. Such a system is called <em>inconsistent</em>.
@@ -280,9 +280,9 @@
   </statement>
 </corollary>
 </p>
-</paragraphs>
+</subsection>
 
-<paragraphs xml:id="ss_homogeneous">
+<subsection xml:id="ss_homogeneous">
   <title>Solutions to homogeneous systems</title>
   <p>
     Consider the special case of a homogeneous system
@@ -315,7 +315,7 @@
       </statement>
     </corollary>
 
-  </paragraphs>
+  </subsection>
 
   <xi:include  href="s_solving_ex.ptx"/>
 

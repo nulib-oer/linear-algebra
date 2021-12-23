@@ -12,7 +12,7 @@
     </p>
   </introduction>
 
-  <paragraphs>
+  <subsection>
     <title>Span</title>
     <p>
       Recall that a linear combination
@@ -418,15 +418,15 @@
       </solution>
     </example>
 
-    </paragraphs>
+    </subsection>
 
 
-    <!-- <paragraphs>
+    <!-- <subsection>
       <title><m>\R^\infty</m></title>
       <p>
         As above we can define <m>\bolde_i\in \R^\infty</m> to be the infinite sequence whose <m>i</m>-th entry is 1, and whose every other entry is <m>0</m>.
       </p>
-    </paragraphs>
+    </subsection>
     <p>
       Note, however,
       that the set <m>\{\bolde_1, \bolde_2, \bolde_3, \dots\}</m> is <em>not</em>
@@ -443,8 +443,8 @@
       The last equality holds since the exponential function
       <m>f(x)=a^x</m> has image all positive reals for any base <m>a\ne 1</m>.
     </p>
-    </paragraphs>
-    <paragraphs>
+    </subsection>
+    <subsection>
     <title>Example</title>
     <p>
       Let <m>V=P_2</m> and let <m>S=\{p_1, p_2\}</m>,
@@ -462,7 +462,7 @@
         We do so by showing the <m>\subseteq</m> and
         <m>\supseteq</m> relations separately. (See my proof technique guide!)
       </p>
-      <paragraphs>
+      <subsection>
         <title><m>\subseteq</m></title>
         <p>
           Note first that <m>p_1(1)=p_2(1)=0</m>.
@@ -471,14 +471,14 @@
           But then <m>q(1)=ap_1(1)+bp_2(1)=0+0=0</m>.
           Thus <m>q(x)\in \{p(x)\colon p(1)=0\}</m>.
         </p>
-      </paragraphs>
-      <paragraphs>
+      </subsection>
+      <subsection>
         <title><m>\supseteq</m></title>
         <p>
           Now take <m>p(x)=a_2x^2+a_1x+a_0\in \{p(x)\in P_2\colon p(1)=0\}</m>.
           We must find <m>a, b\in \R</m> such that <m>p(x)=ap_1+bp_2</m>.
         </p>
-      </paragraphs>
+      </subsection>
       <p>
         Since <m>p(1)=0</m>, we have <m>a_2+a_1+a_0=0</m>.
         I claim <m>p(x)=(-a_0)p_1+(-a_1)p_2</m>.
@@ -491,8 +491,8 @@
         as desired.
       </p>
     </proof>
-    </paragraphs>
-    <paragraphs>
+    </subsection>
+    <subsection>
       <title>Example</title>
       <p>
         Let <m>V=P_2</m> and let <m>S=\{p_1, p_2, p_3\}</m> where
@@ -529,8 +529,8 @@
           showing <m>P_2\subseteq \Span(S)</m>.
         </p>
       </proof>
-    </paragraphs> -->
-  <paragraphs  xml:id="ss_linear_independence">
+    </subsection> -->
+  <subsection  xml:id="ss_linear_independence">
     <title>Linear independence</title>
     <p>
       As it turns out, the notion of <em>linear independence</em> defined below is precisely what we need to guarantee that a given spanning set has no <q>redundancies</q>.
@@ -746,8 +746,8 @@
     </ol>
     </solution>
   </example>
-  </paragraphs>
-  <paragraphs xml:id="ss_linear_independence_functionspace">
+  </subsection>
+  <subsection xml:id="ss_linear_independence_functionspace">
   <title>Linear independence in function spaces</title>
     <p>
       In each part of <xref ref="ex_linear_independence"/> it was easy to derive a relevant linear system as the notion of equality in these spaces amounts to checking a <em>finite</em> number of numeric equalities: <eg />, between the entries of two triples, the coefficients of two polynomials, or the entries of two <m>2\times 2</m> matrices.
@@ -895,10 +895,10 @@
     </ol>
   </solution>
 </example>
-  </paragraphs>
+  </subsection>
 <xi:include href="./s_span_independence_ex.ptx"/>
 
-  <!-- <paragraphs>
+  <!-- <subsection>
   <title>$C^\infty(a,b)$ and the Wronskian</title>
   <p>
     Let's consider this observation in the special example of

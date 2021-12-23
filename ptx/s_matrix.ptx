@@ -19,7 +19,7 @@
       </principle>
     </p>
   </introduction>
-  <paragraphs xml:id="ss_matrix_attributes">
+  <subsection xml:id="ss_matrix_attributes">
     <title>The basics</title>
     We begin with some elementary definitions about matrices, matrix equality, and special types of matrices. As the next definition makes clear, a matrix is just an ordered sequence of numbers arranged in a very particular manner.
     <definition xml:id="d_matrix">
@@ -165,8 +165,8 @@
       </p>
     </statement>
   </definition>
-</paragraphs>
-  <paragraphs xml:id="ss_matrix_arithmetic">
+</subsection>
+  <subsection xml:id="ss_matrix_arithmetic">
     <title>Matrix arithmetic: addition, subtraction and scalar multiplication</title>
     <p>
       We now lay out the various algebraic operations we will use to combine and transform matrices; we refer to the use of these operations loosely as <em>matrix arithmetic</em>. Some of these operations resemble familiar operations from real arithmetic in terms of their notation and definition. Do not be lulled into complacency! These are new operations defined for a new class of mathematical objects, and must be treated carefully. In particular, pay close attention to (a) exactly what type of mathematical objects serve as inputs for each operation (the <em>ingredients</em> of the operation), and (b) what type of mathematical object is outputted.
@@ -275,8 +275,8 @@
         </p>
       </solution>
     </example>
-  </paragraphs>
-  <paragraphs xml:id="ss_matrix_mult">
+  </subsection>
+  <subsection xml:id="ss_matrix_mult">
   <title>Matrix arithmetic: matrix multiplication</title>
     <p>
       So how do we define the product of two matrices? Looking at the previous operations, you might have guessed that we should define the product of two <m>m\times n</m> matrices by taking the product of their corresponding entries. Not so!
@@ -318,8 +318,8 @@
       <me> T_{AB}=T_A\circ T_B</me>.
       The ponderous restriction on the dimensions of the ingredient matrices ensures that the two functions <m>T_A</m> and <m>T_B</m> can be composed. (See <xref ref="ss_transform_composition" text="custom">Composition of linear transformations and matrix multiplication</xref>.)
     </p>
-  </paragraphs>
-  <paragraphs xml:id="s_column_row_method">
+  </subsection>
+  <subsection xml:id="s_column_row_method">
     <title>Alternative methods of multiplication</title>
     <p>
       In addition to the given definition of matrix multiplication,
@@ -449,9 +449,9 @@
         </ol>
       </solution>
     </example>
-  </paragraphs>
+  </subsection>
 
-  <paragraphs>
+  <subsection>
   <title>Transpose of a matrix</title> We end this section with one last operation, <em>matrix transposition</em>. We will not make much use of this operation until later, but this is as good a place as any to introduce it.
   <definition xml:id="d_transpose">
     <title>Matrix transposition</title>
@@ -495,6 +495,6 @@
       </p>
     </statement>
   </example>
-  </paragraphs>
+  </subsection>
 <xi:include  href="s_matrix_ex.ptx"/>
 </section>

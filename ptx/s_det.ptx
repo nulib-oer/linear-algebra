@@ -10,6 +10,8 @@
       making the determinant an important tool for investigating invertibility.
     </p>
     </introduction>
+<subsection xml:id="ss_det">
+  <title>Definition of the determinant</title>
     <p>
       Our definition of the determinant is a <em>recursive</em> one;
       given an <m>n\times n</m> matrix <m>A</m> its determinant is defined in terms of the determinant of certain <em>submatrices</em> of dimension <m>(n-1)\times (n-1)</m>. This necessitates some notation to help our discussion along.
@@ -153,7 +155,9 @@
     </p>
   </proof>
 </corollary>
-<paragraphs xml:id="ss_expansion_rows_columns">
+
+</subsection>
+<subsection xml:id="ss_expansion_rows_columns">
   <title>Expansion along rows and columns</title>
 <introduction>
   <p>
@@ -287,7 +291,7 @@
     </mrow>
     <mrow>  \amp =\sum_{k=1}^{n}(-1)^{i+k}a_{ik}\det A_{ik} </mrow>
   </md>.
-  This completes the induction step, and thus the proof is finished. 
+  This completes the induction step, and thus the proof is finished.
 </p>
     </case>
   </proof>
@@ -606,8 +610,8 @@ As a further consequence of <xref ref="th_expansion_row"/> and <xref ref="cor_ex
   </statement>
 </remark>
 
-</paragraphs>
-<paragraphs xml:id="ss_det_row_ops">
+</subsection>
+<subsection xml:id="ss_det_row_ops">
   <title>Row operations and determinant</title>
   <p>
   Suppose the square matrix <m>A</m> can be row reduced to <m>B</m> via  sequence of row operations. In general we do not have <m>\det A=\det B</m>, but we can compute <m>\det A</m> from <m>\det B</m> by keeping track of which operations are used.
@@ -877,6 +881,6 @@ As a further consequence of <xref ref="th_expansion_row"/> and <xref ref="cor_ex
 
   </statement>
 </theorem>
-</paragraphs>
+</subsection>
 <xi:include href="./s_det_ex.ptx"/>
 </section>

@@ -6,7 +6,7 @@
 
   </p>
 </introduction>
-<paragraphs xml:id="ss_propositional_calculus">
+<subsection xml:id="ss_propositional_calculus">
   <title>Propositional logic</title>
   <p>
     A <em>proposition</em> is a sentence that is either true or false. We build <em>compound propositions</em> from component propositions using <em>logical operators</em> (or <em>logical connectors</em>); the truth value of the compound proposition is defined as a function of the truth values of the component propositions.
@@ -107,8 +107,8 @@
   </statement>
 </remark>
 
-</paragraphs>
-<paragraphs xml:id="ss_predicate_logic">
+</subsection>
+<subsection xml:id="ss_predicate_logic">
   <title>Predicate logic</title>
   <p>
     Propositions like <q>All humans are mortal</q> and <q>Every positive real number has a square-root</q> are modeled in logic in the form <q>For all <m>x</m>, <m>P(x)</m></q> and <q>For all <m>r</m>, there exists an <m>s</m> such that <m>Q(r,s)</m></q>, where <m>P(x)</m> stands for the phrase <q><m>x</m> is mortal</q> and <m>Q(r,s)</m> stands for the phrase <q><m>s</m> is a square-root of <m>r</m></q>. Observe that <m>P(x)</m> and <m>Q(r,s)</m> on their own are not propositions; there is no truth value to <q><m>x</m> is mortal</q>
@@ -237,7 +237,7 @@
     </p>
   </solution>
 </example>
-</paragraphs>
+</subsection>
 
 
 </section>

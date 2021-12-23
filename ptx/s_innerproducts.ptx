@@ -30,6 +30,8 @@
       </dl>
     </p>
   </introduction>
+  <subsection xml:id="ss_inner_products">
+    <title>Inner products</title>
   <definition xml:id="d_innerproduct">
     <title>Inner product</title>
     <statement>
@@ -365,7 +367,8 @@
     </p>
   </solution>
 </example>
-  <paragraphs>
+</subsection>
+  <subsection xml:id="ss_norm_distance">
     <title>Norm and distance</title>
     <p>
       As mentioned at the top, once an inner product is established, we can define further notions of norm (or length), distance, angle, <etc />.  When the inner product in question is the standard dot product on <m>\R^2</m> or <m>\R^3</m>, then these are precisely the standard notions you have met in multivariable calculus. For more exotic inner products, however, the corresponding notions of length, distance, <etc />, are to be a useful generalization of these notions.
@@ -463,8 +466,8 @@
       </proof>
 
     </theorem>
-</paragraphs>
-  <paragraphs>
+</subsection>
+  <subsection>
     <title>Cauchy-Schwarz inequality, triangle inequalities, and angles between vectors</title>
     <p>
       The famous <em>Cauchy-Schwarz inequality</em> has a knack of cropping up all over the world of science: from properties of covariance in statistics, to the Heisenberg uncertainty principle of quantum mechanics. More directly pertinent to our discussion, the Cauchy-Schwarz inequality implies the triangle inequalities (<xref ref="th_triangle_inequalities" text="global"/>) and ensures that our notion of the angle between two nonzero vectors <xref ref="d_angle"/>) is well-defined.
@@ -571,8 +574,8 @@
         </p>
       </statement>
     </definition>
-  </paragraphs>
-  <paragraphs>
+  </subsection>
+  <subsection>
     <title>Choosing your inner product</title>
     <p>
       Why, given a fixed vector space <m>V</m>,
@@ -581,14 +584,14 @@
     <p>
       One way of understanding a particular choice of inner product is to ask what its corresponding notion of distance measures.
     </p>
-    <paragraphs>
+    <subsection>
       <title>Example</title>
       <p>
         Take <m>P_n</m> with the evaluation inner product at inputs <m>x=c_0, c_1,\dots, c_n</m>.
         Given two polynomials <m>p(x), q(x)</m>,
         the distance between them with respect to this inner product is
       </p>
-    </paragraphs>
+    </subsection>
     <me>
     \norm{p(x)-q(x)}=\sqrt{(p(c_0)-q(c_0))^2+(p(c_1)-q(c_1))^2+\cdots +(p(c_n)-q(c_n))^2}
     </me>.
@@ -598,7 +601,7 @@
       between two polynomials is a measure of how different their values are at the inputs <m>x=c_0,c_1,\dots ,c_n</m>.
       This inner product may be useful if you are particularly interested in how a polynomial behaves at this finite list of inputs.
     </p>
-    <paragraphs>
+    <subsection>
       <title>Example</title>
       <p>
         Take <m>C[a,b]</m> with the standard inner product <m>\langle f, g \rangle=\int_a^b f(x)g(x) \ dx</m>.
@@ -611,7 +614,7 @@
         This notion is useful in settings where integrals of functions represent quantities we are interested in (e.g. in probability theory,
         thermodynamics, and quantum mechanics).
       </p>
-    </paragraphs>
-  </paragraphs>
+    </subsection>
+  </subsection>
   <xi:include href="./s_innerproducts_ex.ptx"/>
 </section>

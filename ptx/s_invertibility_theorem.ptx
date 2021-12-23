@@ -5,7 +5,7 @@
     We saw in <xref ref="ex_invertible_matrices"/> that verifying directly whether a matrix is invertible, using only <xref ref="d_invertible_matrix"/>, can be quite an involved task. The goal of this section is to make this invertibility less onerous by developing some equivalent methods of testing invertibility. Our work culminates in <xref ref="th_invertibility"/> and <xref ref="th_invertibility_algorithm"/>, which draw connections between invertibility, solutions to linear systems, and row echelon forms of a square matrix. Not surprisingly, our old friend Gaussian elimination emerges as the fundamental computational tool.
     </p>
   </introduction>
-<paragraphs xml:id="ss_elementary_matrix">
+<subsection xml:id="ss_elementary_matrix">
   <title>Elementary matrices</title>
   <p>
   We begin with a treatment of <em>elementary matrices</em>, which serve as the basic building blocks for invertible matrices, and provide a crucial link between row reduction and matrix multiplication.
@@ -178,8 +178,8 @@
   </solution>
 </example>
 
-</paragraphs>
-<paragraphs xml:id="ss_systems_to_matrix_eqns" >
+</subsection>
+<subsection xml:id="ss_systems_to_matrix_eqns" >
   <title>Interlude on matrix equations</title>
   <p>
     We take a moment to make the following simple,
@@ -251,11 +251,14 @@
   </men>
   for some collection of elementary matrices <m>E_i</m>.
   </p>
+  </subsection>
+  <subsection xml:id="ss_invertibility_th">
+    <title>The invertibility theorem</title>
   <p>
     We are now in position to prove our first big theorem.
   </p>
 
-</paragraphs>
+
 <theorem xml:id="th_invertibility">
   <title>Invertibility theorem</title>
   <statement>
@@ -454,7 +457,8 @@
   </proof>
 
 </theorem>
-<paragraphs xml:id="ss_invertibility_alg">
+</subsection>
+<subsection xml:id="ss_invertibility_alg">
   <title>Invertibility algorithms</title>
   <p>
     The proof of the implication <m>(4)\implies (5)</m> of <xref ref="th_invertibility"/> can be expanded into an algorithm that (1) decides whether a given matrix <m>A</m> is invertible, and (2) computes <m>A^{-1}</m> if <m>A</m> is invertible.
@@ -539,8 +543,8 @@
       </p>
     </proof>
   </theorem>
-</paragraphs>
-<paragraphs xml:id="ss_inv_alg_example">
+</subsection>
+<subsection xml:id="ss_inv_alg_example">
   <title>In-depth example</title>
       <p>
       Let <me>A=\begin{amatrix}[rrr]1\amp 2\amp 0\\ 1\amp 2\amp 1\\ -1\amp -1\amp 3 \end{amatrix} </me>.
@@ -602,16 +606,14 @@
             </mrow>
         </md>.
     </p>
-</paragraphs>
-<paragraphs xml:id="ss_invertible_loose_ends">
+</subsection>
+<subsection xml:id="ss_invertible_loose_ends">
   <title>Some theoretical loose ends</title>
-
-
 <p>
-The two inveribility algorithms above are nice examples of how a <em>theoretical</em> result like our <xref ref="th_invertibility" text='custom'> invertibility theorem </xref> can pay some serious <em>computational</em> dividends. Namely, thanks to the theory we have discovered a method of computing the inverse of a matrix that essentially boils down to row reduction.
+The two inveribility algorithms above are nice examples of how a <em>theoretical</em> result like our <xref ref="th_invertibility" text="custom">invertibility theorem </xref> can pay some serious <em>computational</em> dividends. Namely, thanks to the theory we have discovered a method of computing the inverse of a matrix that essentially boils down to row reduction.
 </p>
 <p>
-   We finish this section with two further theoretical implications that tie up some loose ends: namely, we complete our understanding of the invertiblility of products of matrices, and we show that to test whether <m>B</m> is an inverse of <m>A</m> it suffices to show <em>just one</em> of the equalities <m>AB=I</m> and <m>BA=I</m>
+   We finish this section with two further theoretical implications that tie up some loose ends: namely, we complete our understanding of the invertiblility of products of matrices, and we show that to test whether <m>B</m> is an inverse of <m>A</m> it suffices to show <em>just one</em> of the definining equalities: <ie />, we need only show <m>AB=I</m> or <m>BA=I</m>. 
 </p>
 <corollary xml:id="cor_left-right_inverse">
   <title>Left-inverse if and only if right-inverse</title>
@@ -702,7 +704,7 @@ The two inveribility algorithms above are nice examples of how a <em>theoretical
   </corollary>
 
 
-</paragraphs>
+</subsection>
 <xi:include href="./s_invertibility_theorem_ex.ptx"/>
 
 </section>

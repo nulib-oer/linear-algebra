@@ -62,7 +62,7 @@ As defined more thoroughly in <xref ref="d_matrix"/>, a matrix is just a rectang
 </statement>
 </remark>
 
-<paragraphs xml:id="ss_ge_row_echelon">
+<subsection xml:id="ss_ge_row_echelon">
   <title>Row echelon matrices</title>
  <p>
    Here is our precise formulation of a <q>simple</q> linear system; it is a system whose associated augmented matrix is in <em>row echelon form</em>, as described below.
@@ -203,9 +203,9 @@ As defined more thoroughly in <xref ref="d_matrix"/>, a matrix is just a rectang
       </ol>
   </solution>
 </example>
-</paragraphs>
+</subsection>
 
-<paragraphs xml:id="ss_gaussian_elimination">
+<subsection xml:id="ss_gaussian_elimination">
   <title>Gaussian elimination</title>
   <p>
   We will now describe a systematic procedure, called <em>Gaussian elimination</em>, that allows us to reduce a given linear system <m>L</m> to a system <m>L'</m>in row echelon form.
@@ -323,7 +323,7 @@ As defined more thoroughly in <xref ref="d_matrix"/>, a matrix is just a rectang
   </statement>
 </definition>
 
-  <paragraphs>
+  <subsection>
     <title> Model example</title>
     <p>
     Use the following example as a model of how to both perform and annotate the steps in Gaussian elimination. When first learning this procedure, make sure to follow it <em>to the letter</em>. In particular, in the spirit of the mandate issued in <xref ref="s_systems_rm_oneoperation"/>, you should only perform one row operation at a time, and only in the sequence prescribed in Steps 1-4 of <xref ref="d_GE"/>.
@@ -370,7 +370,7 @@ As defined more thoroughly in <xref ref="d_matrix"/>, a matrix is just a rectang
   <p>
   The matrix outputed by Gaussian elimination is guaranteed to be in row echelon form, but it may not be in <em>reduced</em> row echelon form. <em>Gauss-Jordan elimination</em> describes a systematic way to continue reducing to this even simpler state.
 </p>
-</paragraphs>
+</subsection>
 <definition xml:id="d_GaussJordan">
       <title>Gauss-Jordan elimination</title>
       <statement>
@@ -454,7 +454,7 @@ As defined more thoroughly in <xref ref="d_matrix"/>, a matrix is just a rectang
   </solution>
 </example>
 
-</paragraphs>
+</subsection>
 
 <xi:include  href="s_ge_ex.ptx"/>
 

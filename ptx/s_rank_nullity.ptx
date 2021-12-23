@@ -3,7 +3,7 @@
   <introduction>
     This section is in one sense just a long-format example of how to compute bases and dimensions of subspaces. Along the way, however we meet the <xref ref="th_rank-nullity" text="custom">rank-nullity theorem</xref> (sometimes called the <q>fundamental theorem of linear algebra</q>), and apply this theorem in the context of <em>fundamental spaces of matrices</em> (<xref ref="d_fundamental_space"/>)
   </introduction>
-  <paragraphs xml:id="ss_rank-nullity">
+  <subsection xml:id="ss_rank-nullity">
     <title>The rank-nullity theorem</title>
 
 
@@ -115,8 +115,8 @@
     </md>.
     </proof>
 
-  </paragraphs>
-  <paragraphs xml:id="ss_fundamental_spaces">
+  </subsection>
+  <subsection xml:id="ss_fundamental_spaces">
     <title>Fundamental spaces of matrices</title>
 
 
@@ -474,8 +474,8 @@ Having shown that <m>\RS B\subseteq \RS A</m>, we see that the same argument wor
         </ol>
       </statement>
     </theorem>
-  </paragraphs>
-  <paragraphs xml:id="ss_expand_contract">
+  </subsection>
+  <subsection xml:id="ss_expand_contract">
     <title>Contracting and expanding to bases</title>
     <p>
       Thanks to <xref ref="th_basis_dimension"/> we know that spanning sets can be contracted to bases, and linearly independent sets can be extended to bases; and we have already seen a few instances where this result has been put to good use. However, neither the theorem nor its proof provide a practical means of performing this contraction or extension. We would like a systematic way of determining which vectors to throw out (when contracting), or which vectors to chuck in (when extending). In the special case where <m>V=\R^n</m> for some <m>n</m>, we can adapt <xref ref="proc_fund_spaces"/> to our needs.
@@ -555,6 +555,6 @@ Having shown that <m>\RS B\subseteq \RS A</m>, we see that the same argument wor
       </proof>
 
     </algorithm>
-  </paragraphs>
+  </subsection>
   <xi:include href="./s_rank_nullity_ex.ptx"/>
 </section>

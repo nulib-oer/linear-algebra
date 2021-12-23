@@ -1,6 +1,6 @@
 <section xml:id="ss_further">
   <title>Further properties</title>
-  <paragraphs>
+  <subsection>
   <title><xref ref="c_det"></xref>. <xref ref="ss_further"></xref>: further properties of the determinant</title>
   <p>
     Our analysis of how the determinant changes with row operations leads to a number of very important theorems.
@@ -17,12 +17,12 @@
       </p>
     </statement>
   </theorem>
-  <paragraphs>
+  <subsection>
     <title>Comment:</title>
     <p>
       please observe, the same is NOT true of addition!
     </p>
-  </paragraphs>
+  </subsection>
   <me>
     \det(A+B)\alert{\ne}\det(A)+\det(B)
   </me>.
@@ -31,7 +31,7 @@
       Your instructor will do this in class.
     </p>
   </proof>
-  </paragraphs>
+  </subsection>
   <theorem xml:id="th_detinv">
     <title>Determinant and invertibility</title>
     <statement>
@@ -42,12 +42,12 @@
     </statement>
   </theorem>
   <proof>
-    <paragraphs>
+    <subsection>
       <title>(<m>\Rightarrow</m>)</title>
       <p>
         I'll prove this direction as a chain of implications.
       </p>
-    </paragraphs>
+    </subsection>
     <md>
       <mrow>A \text{ invertible } \amp \Rightarrow AA^{-1}=I_n \text{ for some matrix \(A^{-1}\)}</mrow>
       <mrow>\amp \Rightarrow \det(AA^{-1})=\det I_n</mrow>
@@ -55,13 +55,13 @@
       <mrow>\amp \Rightarrow \det A\ \det A^{-1}=1 \amp \text{ (by Th. <xref ref="th_detmult"></xref>) }</mrow>
       <mrow>\amp \Rightarrow \det A\ne 0 \amp \text{ (otherwise product would be \(0\)) }</mrow>
     </md>
-    <paragraphs>
+    <subsection>
       <title><m>(\Leftarrow)</m></title>
       <p>
         I'll prove the <em>contrapositive</em> of this direction:
         that is, if <m>A</m> is not invertible, then <m>\det A=0</m>.
       </p>
-    </paragraphs>
+    </subsection>
     <p>
       Suppose <m>A</m> is not invertible,
       and suppose <m>A</m> reduces to the <em>reduced</em>
@@ -80,7 +80,7 @@
       It follows that <m>\det A=0</m>.
     </p>
   </proof>
-  <paragraphs>
+  <subsection>
     <title>Adjoint formula for $A^{-1}$</title>
     <p>
       Its worth recording also that we can use the determinant to give an actual formula for computing the inverse of a matrix!
@@ -124,8 +124,8 @@
         It follows that <m>A^{-1}=\frac{1}{c}B=\frac{1}{\det A}\adjoint A</m>.
       </p>
     </proof>
-  </paragraphs>
-  <paragraphs>
+  </subsection>
+  <subsection>
     <title>Our growing invertibility theorem</title>
     <p>
       Thanks to <xref ref="th_detinv">Theorem</xref>,
@@ -181,5 +181,5 @@
         </p>
       </statement>
     </theorem>
-  </paragraphs>
+  </subsection>
 </section>

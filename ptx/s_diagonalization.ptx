@@ -114,7 +114,7 @@
         </ol>
       </statement>
     </algorithm>
-  <paragraphs>
+  <subsection>
     <title>Deciding whether $A_{n\times n}$ is diagonalizable</title>
     <ol>
       <li>
@@ -152,8 +152,8 @@
         </p>
       </li>
     </ol>
-  </paragraphs>
-  <paragraphs>
+  </subsection>
+  <subsection>
     <title>Example</title>
     <p>
       Take <m>A=\begin{bmatrix}1\amp 1\\ 0\amp 1 \end{bmatrix}</m>.
@@ -174,8 +174,8 @@
       and since <m>\dim W_1=1\ne 2</m>,
       we conclude <m>A</m> is not diagonalizable.
     </p>
-  </paragraphs>
-  <paragraphs>
+  </subsection>
+  <subsection>
     <title>Example</title>
     <p>
       Let <m>A=\begin{bmatrix}14 \amp 21 \amp 3 \amp -39 \\ 12 \amp 25 \amp 3 \amp -41 \\ 12 \amp 24 \amp 5 \amp -42 \\ 12 \amp 22 \amp 3 \amp -38 \end{bmatrix}</m>.
@@ -205,8 +205,8 @@
         D=\begin{bmatrix}2\amp 0\amp 0\amp 0\\ 0\amp 2\amp 0\amp 0\\ 0\amp 0\amp -1\amp 0\\ 0\amp 0\amp 0\amp 3 \end{bmatrix} , \ \ P=\begin{bmatrix}3 \amp  1 \amp  1 \amp  3 \\ 2 \amp  1 \amp  1 \amp  5 \\ 0 \amp  2 \amp  1 \amp  6 \\ 2 \amp  1 \amp  1 \amp  4 \end{bmatrix}
       </me>
     </p>
-  </paragraphs>
-  <paragraphs>
+  </subsection>
+  <subsection>
     <title>Geometric and algebraic multiplicity</title>
     <p>
       Take <m>A</m>
@@ -245,8 +245,8 @@
         </p>
       </statement>
     </theorem>
-  </paragraphs>
-  <paragraphs>
+  </subsection>
+  <subsection>
     <title>Linear independence and eigenvectors</title>
     <p>
       The following result is used to prove the diagonalizability theorem
@@ -291,7 +291,7 @@
         Since <m>T</m> has a basis of eigenvectors, it is diagonalizable.
       </p>
     </proof>
-  </paragraphs>
+  </subsection>
   <p>
     <xref ref="th_independentteigenvectors">Theorem</xref>
     makes no assumption about the dimension of <m>V</m>.
@@ -322,7 +322,7 @@
       </p>
     </statement>
   </example>
-  <paragraphs>
+  <subsection>
     <title>Final extension of the invertibility theorem</title>
     <p>
       Lastly, we can add one final statement to the invertibility theorem:
@@ -340,8 +340,8 @@
     <p>
       You find the final version of the invertibility theorem on the next slide.
     </p>
-  </paragraphs>
-  <paragraphs>
+  </subsection>
+  <subsection>
     <title>Diagonalizable matrices</title>
     <definition>
       <statement>
@@ -399,8 +399,8 @@
         </li>
       </ol>
     </remark>
-  </paragraphs>
-  <paragraphs>
+  </subsection>
+  <subsection>
     <title>Properties of conjugation</title>
     <p>
       If we have, <m>D=P^{-1}AP</m>,
@@ -450,8 +450,8 @@
         Exercise.
       </p>
     </proof>
-  </paragraphs>
-  <paragraphs>
+  </subsection>
+  <subsection>
     <title>Examples: utility of diagonalizability</title>
     <p>
       Suppose <m>A</m> is diagonalizable,
@@ -493,8 +493,8 @@
         </p>
       </statement>
     </example>
-  </paragraphs>
-  <paragraphs>
+  </subsection>
+  <subsection>
     <title>Examples: utility of diagonalizability</title>
     <p>
       Suppose <m>A</m> is diagonalizable,
@@ -525,8 +525,8 @@
         </p>
       </statement>
     </example>
-  </paragraphs>
-  <paragraphs>
+  </subsection>
+  <subsection>
     <title>Examples: utility of diagonalizability</title>
     <p>
       Suppose <m>A</m> is diagonalizable,
@@ -567,8 +567,8 @@
         </p>
       </statement>
     </example>
-  </paragraphs>
-  <paragraphs>
+  </subsection>
+  <subsection>
     <title>Properties of similarity</title>
     <p>
       Before investigating the question of when a matrix is diagonalizable,
@@ -623,7 +623,7 @@
       The proof of (d) follows.
       I leave the rest as an exercise.
     </p>
-  </paragraphs>
+  </subsection>
   <proof>
     <p>
       By definition we have <m>B=P^{-1}AP</m> for some matrix <m>P</m>.
@@ -641,7 +641,7 @@
       </md>.
     </p>
   </proof>
-  <paragraphs>
+  <subsection>
     <title>The true meaning of similarity</title>
     <p>
       Hopefully <xref ref="th_conjugation">Theorems</xref>
@@ -693,7 +693,7 @@
     <p>
       There is one true <m>T</m>!
     </p>
-  </paragraphs>
+  </subsection>
   <p>
     <image width="75%" source="images/HolyCommutativeTent.png"/>
   </p>

@@ -1,6 +1,6 @@
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_orthogonality">
   <title>Orthogonal bases and orthogonal projection</title>
-  <paragraphs>
+  <subsection>
     <title>Orthogonal sets</title>
     <definition>
       <title>Orthogonal</title>
@@ -54,8 +54,8 @@
         proving that <m>S</m> is linearly independent.
       </p>
     </proof>
-  </paragraphs>
-  <paragraphs>
+  </subsection>
+  <subsection>
     <title>Example</title>
     <p>
       Let <m>V=C([0,2\pi])</m> with standard inner product <m>\langle f, g\rangle=\int_0^{2\pi} f(x)g(x) \, dx</m>.
@@ -88,8 +88,8 @@
         \scriptsize \left\{\cos\left(\frac{2\pi x}{L}\right), \sin\left(\frac{2\pi x}{L}\right), \cos\left(2\cdot\frac{2\pi x}{L}\right),\sin\left(2\cdot\frac{2\pi x}{L}\right),\dots\right\}
       </me>.
     </p>
-  </paragraphs>
-  <paragraphs>
+  </subsection>
+  <subsection>
     <title>Orthogonal bases</title>
 
 
@@ -165,7 +165,7 @@
         </p>
       </statement>
     </algorithm>
-  </paragraphs>
+  </subsection>
   <theorem xml:id="th_orthogonal_basis_formula">
     <title>Calculating with orthogonal bases</title>
     <statement>
@@ -197,7 +197,7 @@
     </statement>
   </theorem>
 
-  <paragraphs>
+  <subsection>
   <title>Example</title>
   <p>
     Let <m>V=\R^2</m> with the standard inner produce
@@ -228,7 +228,7 @@
     (put elements of <m>B'</m> in as columns).
     Hence <m>\underset{B\rightarrow B'}{P}=(\underset{B'\rightarrow B}{P})^{-1}=\begin{bmatrix}\sqrt{3}/2\amp 1/2\\-1/2\amp \sqrt{3}/2 \end{bmatrix}</m> \end{bsolution}
   </p>
-</paragraphs>
+</subsection>
   <theorem xml:id="th_orthogonal_matrices">
     <title>Orthogonal matrices</title>
     <statement>
@@ -268,11 +268,11 @@
     </statement>
   </definition>
 
-  <paragraphs>
+  <subsection>
     <title>Gram-Schmidt Process</title>
 
-  </paragraphs>
-  <paragraphs>
+  </subsection>
+  <subsection>
   <title>Orthogonal complement</title>
   <definition xml:id="d_orthogonal_complement">
     <title>Orthogonal complement</title>
@@ -315,7 +315,7 @@
       </p>
     </statement>
   </theorem>
-  <paragraphs>
+  <subsection>
     <title>Example</title>
     <p>
       Let <m>V=\R^3</m> equipped with the dot product,
@@ -324,9 +324,9 @@
       Then <m>W^\perp</m> is the set of vectors orthogonal to <m>(1,1,1)</m>:
       i.e., the plane perpendicular to <m>(1,1,1)</m>.
     </p>
-  </paragraphs>
-  </paragraphs>
-  <paragraphs>
+  </subsection>
+  </subsection>
+  <subsection>
     <title>Geometry of fundamental spaces</title>
     <p>
       The notion of orthogonal complement gives us a new way of understanding the relationship between the various fundamental spaces of a matrix.
@@ -368,14 +368,14 @@
         (ii) This follows from (i) and the fact that <m>\CS(A)=\RS(A^T)</m>.
       </p>
     </proof>
-  </paragraphs>
-  <paragraphs>
+  </subsection>
+  <subsection>
     <title>Visualizing the rank-nullity theorem</title>
     <me>
       <image width="65%" source="images/RankNullity.png"/>
     </me>
-  </paragraphs>
-  <paragraphs>
+  </subsection>
+  <subsection>
     <title>Example</title>
     <p>
       Understanding the orthogonal relationship between <m>\NS(A)</m> and <m>\RS(A)</m> allows us in many cases to quickly determine/visualize the one from the other.
@@ -396,8 +396,8 @@
         <image width="37%" source="images/NullRow.png"/>
       </me>
     </p>
-  </paragraphs>
-  <paragraphs>
+  </subsection>
+  <subsection>
     <title>Orthogonal Projection</title>
     <theorem xml:id="th_orthogonal_projection">
       <title>Orthogonal projection theorem</title>
@@ -448,8 +448,8 @@
         </p>
       </statement>
     </theorem>
-  </paragraphs>
-  <paragraphs>
+  </subsection>
+  <subsection>
   <title>Proof of orthogonal projection theorem</title>
   <p>
     Pick an <em>orthogonal</em> basis
@@ -462,19 +462,19 @@
     <m>\boldw^\perp\in W^\perp</m>, (B) this choice of <m>\boldw</m> and <m>\boldw^\perp</m> is unique,
     and (C) <m>\boldw</m> is the closest element of <m>W</m> to <m>\boldv</m>.
   </p>
-  <paragraphs>
+  <subsection>
     <title>(A)</title>
     <p>
       For all <m>i</m> we have
     </p>
-  </paragraphs>
+  </subsection>
   <md>
     <mrow>\langle\boldw^\perp,\boldv_i\rangle\amp =\amp \langle \boldv-\sum_{i=1}^r\frac{\angvec{\boldv,\boldv_i}}{\angvec{\boldv_i, \boldv_i}}\boldv_i, \boldv_i\rangle</mrow>
     <mrow>\amp =\amp \langle \boldv, \boldv_i\rangle-\langle \sum_{i=1}^r\frac{\angvec{\boldv,\boldv_i}}{\angvec{\boldv_i, \boldv_i}}\boldv_i ,\boldv_i\rangle \hspace{9pt} \text{ (distr.) }</mrow>
     <mrow>\amp =\amp \langle \boldv, \boldv_i\rangle-\frac{\angvec{\boldv,\boldv_i}}{\angvec{\boldv_i,\boldv_i}}\langle\boldv_i,\boldv_i\rangle \hspace{9pt} \text{ (by orthogonality) }</mrow>
     <mrow>\amp =\amp 0</mrow>
   </md>
-  <paragraphs>
+  <subsection>
     <title>(B)+(C)</title>
     <p>
       Recall: <m>\boldw</m> satisfies <m>\boldv=\boldw+\boldw^\perp</m>,
@@ -482,7 +482,7 @@
       Now take any other <m>\boldw'\in W</m>.
       Then
     </p>
-  </paragraphs>
+  </subsection>
   <md>
     <mrow>\norm{\boldv-\boldw'}^2\amp =\amp \norm{\boldw^\perp+(\boldw-\boldw')}^2
     =\norm{\boldw^\perp}^2+\norm{\boldw-\boldw'}^2 \hspace{9pt} \text{ (Pythag. theorem) }</mrow>
@@ -496,7 +496,7 @@
     This proves our choice of <m>\boldw</m> is the <em>unique</em>
     element of <m>W</m> minimizing the distance to <m>\boldv</m>!
   </p>
-  </paragraphs>
+  </subsection>
   <corollary xml:id="cor_orthocomp_selfdual">
     <statement>
       <p>
@@ -555,14 +555,14 @@
       <m>B=\{\boldv_1,\boldv_2, \dots, \boldv_r\}</m> of <m>W</m> and using the formula from the orthogonal projection theorem.
     </p>
   </proof>
-  <paragraphs>
+  <subsection>
     <title>Projection onto lines and planes in $\R^3$</title>
     <p>
       Let's revisit orthogonal projection onto lines and planes in <m>\R^3</m> passing through the origin.
       Here the relevant inner product is dot product.
     </p>
-  </paragraphs>
-  <paragraphs>
+  </subsection>
+  <subsection>
     <title>Projection onto a line $\ell$</title>
     <p>
       Any line in <m>\R^3</m> passing through the origin can be described as <m>\ell=\Span\{\boldv_0\}</m>,
@@ -577,15 +577,15 @@
     <p>
       We have re-derived the matrix formula for orthogonal projection onto <m>\ell</m>.
     </p>
-  </paragraphs>
-  <paragraphs>
+  </subsection>
+  <subsection>
     <title>Projection onto lines and planes in $\R^3$</title>
     <p>
       Let's revisit orthogonal projection onto lines and planes in <m>\R^3</m> passing through the origin.
       Here the relevant inner product is dot product.
     </p>
-  </paragraphs>
-  <paragraphs>
+  </subsection>
+  <subsection>
     <title>Projection onto a plane</title>
     <p>
       Any plane in <m>\R^3</m> passing through the origin can be described with the equation
@@ -611,7 +611,7 @@
         I-\frac{1}{a^2+b^2+c^2}\begin{bmatrix}a^2\amp ab\amp ac\\ ab\amp b^2\amp bc\\ ac\amp bc\amp c^2 \end{bmatrix} = \frac{1}{a^2+b^2+c^2}\begin{bmatrix}b^2+c^2\amp -ab\amp -ac\\ -ab\amp a^2+c^2\amp -bc\\ -ac\amp -bc\amp a^2+b^2 \end{bmatrix}
       </me>
     </p>
-  </paragraphs>
+  </subsection>
   <p>
     We can express this in terms of matrix multiplication as
   </p>
@@ -622,7 +622,7 @@
     replacing <m>(x,y,z)</m> with
     <m>(x-q_1,y-q_2,z-q_3)</m> \item Translate back by adding <m>Q</m> to your answer.
   </p>
-  <paragraphs>
+  <subsection>
     <title>Example: sine/cosine series</title>
     <p>
       Let <m>V=C[0,2\pi]</m> with inner product <m>\langle f, g\rangle=\int_0^{2\pi}f(x)g(x) \, dx</m>.
@@ -662,8 +662,8 @@
         \int_0^{2\pi} (f-\hat{f})^2\, dx\leq \int_0^{2\pi} (f-g)^2 \, dx
       </me>.
     </p>
-  </paragraphs>
-  <paragraphs>
+  </subsection>
+  <subsection>
     <title>Example: least-squares solution to $A\boldx=\boldy$</title>
     <p>
       Often in applications we have an
@@ -700,8 +700,8 @@
         \norm{\boldy-\hat{\boldy}}=\sqrt{(y_1-y_1')^2+(y_2-y_2')^2+\cdots +(y_n-y_n')^2}
       </me>.
     </p>
-  </paragraphs>
-  <paragraphs>
+  </subsection>
+  <subsection>
     <title>Least-squares example (curve fitting)</title>
     <p>
       Suppose we wish to find an equation of a line <m>y=mx+b</m> that best fits
@@ -729,8 +729,8 @@
       getting <m>m=5/14</m>, <m>b=28/14=2</m>.
       Thus <m>y=\frac{5}{14}x+2</m> is the line best fitting the data in the least-squares sense.
     </p>
-  </paragraphs>
-  <paragraphs>
+  </subsection>
+  <subsection>
     <title>Least-squares example contd.</title>
     <p>
       In what sense does <m>y=\frac{5}{14}x+2</m>
@@ -758,8 +758,8 @@
         \epsilon_1^2+\epsilon_2^2+\epsilon_3^2\leq (\epsilon_1')^2+(\epsilon_2')^2+(\epsilon_3')^2
       </me>
     </p>
-  </paragraphs>
-  <paragraphs>
+  </subsection>
+  <subsection>
   <title>Finding least squares solutions</title>
   <p>
     As the last example illustrated,
@@ -782,14 +782,14 @@
     to find a least-squares solution <m>\boldx</m> for <m>A\boldx=\boldy</m>,
     we simply use GE to solve the boxed equation. (Some more trickery shows a solution is guaranteed to exist!)
   </p>
-  <paragraphs>
+  <subsection>
     <title>Example</title>
     <p>
       In the previous example we were seeking a least-squares solution
       <m>\boldx=\colvec{m\\ b}</m> to <m>A\boldx=\boldy</m>,
       where <m>A=\begin{bmatrix}-3\amp 1\\ 1\amp 1\\ 2\amp 1 \end{bmatrix} , \boldy=\colvec{1\\2\\3}</m>.
     </p>
-  </paragraphs>
+  </subsection>
   <p>
     The equation <m>A^TA\boldx=A^T\boldy</m> is thus
     <me>
@@ -801,6 +801,6 @@
     <m>\boldx=\colvec{m\\ b}=\colvec{5/14\\ 2}</m> is a least-squares solution,
     just as before
   </p>
-  </paragraphs>
+  </subsection>
   <xi:include href="./s_orthogonality_ex.ptx"/>
 </section>

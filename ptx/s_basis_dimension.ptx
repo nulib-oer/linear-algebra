@@ -27,7 +27,7 @@
   </p>
 </introduction>
 
-  <paragraphs xml:id="ss_bases">
+  <subsection xml:id="ss_bases">
     <title>Bases of vector spaces</title>
     <definition xml:id="d_basis">
       <title>Basis</title>
@@ -304,8 +304,8 @@
     </p>
   </solution>
 </example>
-</paragraphs>
-<paragraphs xml:id="ss_dimension">
+</subsection>
+<subsection xml:id="ss_dimension">
   <title>Dimension of a a vector space</title>
   <p>
     The next few results are all in the service of establishing a notion of <em>dimension</em> for a vector space <m>V</m>, which we define to be the number of elements in a basis for <m>V</m>. For this to be a well-defined quantity, we need to show that any two bases for a vector space have the same number of elements.
@@ -721,6 +721,6 @@ That was quite a dose of theory! For your convenience, we collect the various re
   </statement>
 </theorem>
 
-</paragraphs>
+</subsection>
 <xi:include href="./s_basis_dimension_ex.ptx"/>
 </section>

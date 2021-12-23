@@ -1,8 +1,8 @@
 <section xml:id="s_dimension">
   <title>Dimension</title>
-  <paragraphs>
+  <subsection>
   <title><xref ref="c_vectorspace"></xref>. <xref ref="ss_dimension"></xref>: executive summary</title>
-  <paragraphs>
+  <subsection>
     <title>Definitions:</title>
     <p>
       dimension of a vector space. \alert{Procedures:} none,
@@ -15,9 +15,9 @@
       then <m>\dim W\leq \dim V</m>,
       and <m>\dim W=\dim V</m> iff <m>W=V</m>.
     </p>
-  </paragraphs>
-  </paragraphs>
-  <paragraphs>
+  </subsection>
+  </subsection>
+  <subsection>
     <title><xref ref="c_vectorspace"></xref>. <xref ref="ss_dimension"></xref>: dimension</title>
     <theorem xml:id="th_basiscard">
       <statement>
@@ -64,8 +64,8 @@
         </p>
       </statement>
     </definition>
-  </paragraphs>
-  <paragraphs>
+  </subsection>
+  <subsection>
     <title>Standard examples</title>
     <p>
       To prove <m>\dim(V)=n</m>,
@@ -105,8 +105,8 @@
     <p>
       Thus for each of these spaces <m>V</m> we have <m>\dim(V)=\infty</m>.
     </p>
-  </paragraphs>
-  <paragraphs>
+  </subsection>
+  <subsection>
     <title>Street smarts</title>
     <p>
       For each pair <m>V</m> and <m>S</m> below,
@@ -144,7 +144,7 @@
         </li>
       </ol>
     </p>
-  </paragraphs>
+  </subsection>
   <p>
     Here are some more useful facts about bases,
     the proofs of which will be done in class and the exercises.
@@ -224,7 +224,7 @@
       showing <m>r\leq n</m>, and thus <m>\dim(W)\leq\dim(V)</m>.
     </p>
   </proof>
-  <paragraphs>
+  <subsection>
   <title>Example</title>
   <p>
     Describe all subspaces of <m>\R^3</m>.
@@ -234,20 +234,20 @@
     by the previous theorem a subspace
     <m>W\subset \R^3</m> has dimension 0, 1, 2, or 3.
   </p>
-  <paragraphs>
+  <subsection>
     <title><m>\dim(W)=0</m>.</title>
     <p>
       In this case <m>W=\{\boldzero\}</m> is the trivial subspace.
     </p>
-  </paragraphs>
-  <paragraphs>
+  </subsection>
+  <subsection>
     <title><m>\dim(W)=1</m>.</title>
     <p>
       In this case <m>W=\Span\{\boldv\}</m> of a single nonzero vector.
       We recognize this as a line in 3-space.
     </p>
-  </paragraphs>
-  <paragraphs>
+  </subsection>
+  <subsection>
     <title><m>\dim(W)=2</m>.</title>
     <p>
       In this case <m>W=\Span\{\boldv, \boldw\}</m> is the span of two linearly independent vectors.
@@ -255,20 +255,20 @@
       hence not colinear.
       It follows that <m>W</m> is a plane in 3-space.
     </p>
-  </paragraphs>
-  <paragraphs>
+  </subsection>
+  <subsection>
     <title><m>\dim(W)=3</m>.</title>
     <p>
       Since <m>W\subset\R^3</m> and <m>\dim(\R^3)=3</m>,
       it follows from the previous theorem that <m>W=\R^3</m>.
     </p>
-  </paragraphs>
+  </subsection>
   <p>
     We have shown that the only subspaces of <m>\R^3</m> are lines, planes,
     the origin, and <m>\R^3</m> itself.
   </p>
-  </paragraphs>
-  <paragraphs>
+  </subsection>
+  <subsection>
     <title>Dimension theorem compendium</title>
     <p>
       We collect here some of the most important results from this section.
@@ -333,5 +333,5 @@
         </p>
       </statement>
     </theorem>
-  </paragraphs>
+  </subsection>
 </section>

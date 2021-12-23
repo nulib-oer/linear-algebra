@@ -7,4 +7,7 @@
   <numbering>
     <divisions chapter-start="0" />
   </numbering>
+  <numbering>
+    <divisions level="3" />
+  </numbering>
 </publication>

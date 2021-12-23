@@ -51,6 +51,9 @@
       this technique allows us to answer questions about the original <m>T</m> essentially by applying a relevant matrix algorithm to <m>A</m>.
     </p>
   </introduction>
+  <subsection xml:id="ss_matrix_reps">
+    <title>Matrix representations of linear transformations</title>
+
   <definition xml:id="d_matrix_representation">
     <statement>
       <p>
@@ -240,9 +243,9 @@
     </p>
   </statement>
 </corollary>
+</subsection>
 
-
-<paragraphs>
+<subsection>
   <title>Example</title>
   <p>
     Define <m>T\colon P_{3}\rightarrow P_{2}</m> by <m>T(p(x))=p'(x)</m>.
@@ -276,14 +279,14 @@
     Translating everything back to the original spaces,
     we see that <m>\NS(T)=\Span(\{1\})=\{\text{ constant poly.'s } \}</m> and <m>\range(T)=P_2</m>. \end{bsolution}
   </p>
-</paragraphs>
-<paragraphs>
+</subsection>
+<subsection>
   <title>Example</title>
   <p>
     Define <m>T\colon M_{22}\rightarrow M_{22}</m> by <m>T(A)=A^T+A</m>.
     Let <m>B</m> be the standard basis of <m>M_{22}</m>, and let
   </p>
-</paragraphs>
+</subsection>
 <me>
 B'=\{
 \begin{bmatrix}0\amp 1\\
@@ -321,7 +324,7 @@ B'=\{
        <em>Moral</em>: our choice of basis affects the matrix representing <m>T</m>,
         and some choices are better than others!
       </p>
-      <paragraphs>
+      <subsection>
         <title><m>\R^n</m> revisited</title>
         <p>
           Consider the <em>special case</em>
@@ -344,8 +347,8 @@ B'=\{
         <p>
           Example follows.
         </p>
-      </paragraphs>
-      <paragraphs>
+      </subsection>
+      <subsection>
         <title>Example</title>
         <p>
           Let <m>W\colon x+y+z=0</m> be the plane in <m>\R^3</m> perpendicular to <m>\boldn=(1,1,1)</m>,
@@ -391,7 +394,7 @@ B'=\{
           <q>represent</q>
           the same linear transformation?
         </p>
-      </paragraphs>
+      </subsection>
       <p>
         { Let <m>W\colon x+y+z=0</m> be a the plane in <m>\R^3</m> perpendicular to <m>\boldn=(1,1,1)</m>,
         and consider the orthogonal projection transformation <m>T=\text{ proj } _W\colon \R^3\rightarrow \R^3</m>.

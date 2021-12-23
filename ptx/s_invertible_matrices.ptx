@@ -7,6 +7,10 @@
   Ever on the lookout for connections between real number and matrix algebra, we ask whether there is a sensible analogue of multiplicative inverses for matrices. We have seen already that identity matrices <m>I_n</m> play the role of multiplicative identities for <m>n\times n</m> matrices, just as the number <m>1</m> does for real numbers. This suggests we should restrict our attention to <m>n\times n</m> matrices. The following definition is then the desired analogue of the multiplicative inverse of a nonzero real number.
   </p>
   </introduction>
+  <subsection xml:id="subsec-">
+    <title>Invertible matrices</title>
+
+
   <definition xml:id="d_invertible_matrix">
     <title>Invertible matrix</title>
     <idx><h>invertible</h><h>matrix</h></idx>
@@ -287,7 +291,8 @@
     Where is the flaw in our logic here? The second statement only allows us to conclude that there is some mystery matrix <m>C</m> satisfying <m>(AB)C=C(AB)=I</m>. We cannot yet say that <m>C=B^{-1}A^{-1}</m>, as this formula from <xref ref="th_invertible_prod"/> only applies when we already know that <m>A</m> and <m>B</m> are both invertible. But this is exactly what we are trying to prove! As such we are guilty here of <q>begging the question</q>, or <foreign>petitio principii</foreign> in Latin.
    </p>
  </remark>
-  <paragraphs>
+ </subsection>
+  <subsection>
   <title>Powers of matrices, matrix polynomials</title>
   <p>
     We end this section by exploring how the matrix inverse operation fits into our matrix algebra. First, we can now use the inverse operation to define matrix powers of the form <m>A^r</m> where <m>r</m> is an arbitary integer.
@@ -401,6 +406,6 @@
       </p>
     </proof>
   </theorem>
-</paragraphs>
+</subsection>
 <xi:include href="./s_invertible_matrices_ex.ptx"/>
 </section>
