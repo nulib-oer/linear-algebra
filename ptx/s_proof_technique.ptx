@@ -1,7 +1,7 @@
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_proof_technique">
 <title>Proof techniques</title>
 <introduction>
-  The logical structure and particular mathematical content of a proposition influence our choice of proof approach. In this section we describe some standard proof techniques, organized in terms of
+  Proof writing is an art, a technical skill you will hone and refine throughout your career; and like any art, proof writing has many tricks of the trade. We gather a few here in the form of a collection of general proof techniques. Part of mastering these techniques involves understanding the circumstances where they can be of use. When selecting a technique, we are guided in part by the logical structure and particular mathematical content of the proposition under consideration. The proof techniques below are organized under this guiding principle.  
 </introduction>
 <subsection xml:id="ss_logical_structure">
   <title>Logical structure</title>
