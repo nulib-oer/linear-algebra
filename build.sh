@@ -2,7 +2,9 @@
 
 mkdir -p public
 
-xsltproc -xinclude mathbook/xsl/pretext-html.xsl ptx/index.ptx
+xsltproc --xinclude --stringparam publisher publication/publication.xmlmathbook/xsl/pretext-html.xsl mathbook/xsl/pretext-html.xsl ptx/index.ptx 
+
+# xsltproc -xinclude mathbook/xsl/pretext-html.xsl ptx/index.ptx
 
 mv *.html public
 mv knowl public
