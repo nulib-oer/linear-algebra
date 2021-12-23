@@ -16,7 +16,7 @@
   <warning>
     <statement>
       <p>
-        The <em>converse</em> of an implication <m>\mathcal{P}\implies \mathcal{Q}</m> is the implication <m>\mathcal{Q}\implies \mathcal{P}</m>; the <em>inverse</em> of <m>\mathcal{P}\implies\mathcal{Q}</m> is the implication <m>\neg\mathcal{P}\implies\neg\mathcal{Q}</m>. Neither the converse nor the inverse is equivalent to the original implication, and thus neither of these can be used to give an indirect proof of <m>\mathcal{P}\implies \mathcal{Q}</m>. (Exercise: use a truth table to show that neither the converse nor the inverse implication is logially equivalent to the original implication. )
+        The <em>converse</em> of an implication <m>\mathcal{P}\implies \mathcal{Q}</m> is the implication <m>\mathcal{Q}\implies \mathcal{P}</m>; the <em>inverse</em> of <m>\mathcal{P}\implies\mathcal{Q}</m> is the implication <m>\neg\mathcal{P}\implies\neg\mathcal{Q}</m>. Neither the converse nor the inverse is equivalent to the original implication, and thus neither of these can be used to give an indirect proof of <m>\mathcal{P}\implies \mathcal{Q}</m>. (Exercise: use a truth table to show that neither the converse nor the inverse implication is logically equivalent to the original implication. )
       </p>
     </statement>
   </warning>
