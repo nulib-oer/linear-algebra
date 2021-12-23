@@ -156,7 +156,7 @@
     </statement>
   </remark>
 <example xml:id="ex_model_quant">
-  <title>Modeling <q>Every positive number has a positive square-root</q></title>
+  <title>Modeling <q>Every positive number has a square-root</q></title>
   <statement>
     <p>
     Model the sentence <q>Every positive real number has a square-root</q> in the form <m>\forall x P(x)</m>, where <m>P</m> is a propositional function with domain of discourse <m>D=\R</m>. Determine the truth value of <m>\forall x\, P(x)</m> using <xref ref="d_quantifiers"/>.
@@ -225,7 +225,7 @@
   <solution>
     <p>
       Let <m>\mathcal{P}</m> be the proposition in <xref ref="eq_proposition"/>.
-      Using the negation rules in series, we derive the <em>chain of equivalences</em>  below (see <xref ref="sss_logical_chains" text="title"/>). We've added parentheses to emphasize what is being negated at each step. Note how a quantifiers are <q>swapped</q> each time we pass the negation to the right. 
+      Using the negation rules in series, we derive the <em>chain of equivalences</em>  below (see <xref ref="sss_logical_chains" text="title"/>). We've added parentheses to emphasize what is being negated at each step. Note how a quantifiers are <q>swapped</q> each time we pass the negation to the right.
       <md>
         <mrow> \neg\mathcal{P}\amp\iff \forall L\in\R\,  \neg\left(\forall \epsilon \gt 0\, \exists \delta \gt0\,  \forall x\in\mathbb{R}\ (\val{x-c}\lt\delta\implies \val{f(x)-L}\lt\epsilon) \right)</mrow>
         <mrow> \amp\iff  \forall L\in\R\,  \exists \epsilon \gt 0\, \neg\left( \exists \delta \gt0\,  \forall x\in\mathbb{R}\ (\val{x-c}\lt\delta\implies \val{f(x)-L}\lt\epsilon) \right)</mrow>
