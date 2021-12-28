@@ -11,6 +11,11 @@
     <title>Sets</title>
 
   <definition xml:id="d_sets">
+    <idx><h>sets</h><h>membership</h></idx>
+    <notation>
+      <usage> <m>x\in A</m> </usage>
+      <description>set membership</description>
+    </notation>
       <title>Sets</title>
       <statement>
         <p>
@@ -30,25 +35,26 @@
       </statement>
     </definition>
     <p>
-      Set membership naturally extends to a notion of one set <q>lying</q> within another. This is called the <em>subset</em> relation.
+      Set membership naturally extends to a notion of one set <q>lying</q> within another. 
     </p>
     <definition xml:id="d_set_inclusion">
-      <title>Subsets</title>
+      <title>Set inclusion (subsets)</title>
       <idx><h>sets</h><h>subset</h></idx>
+      <idx><h>sets</h><h>inclusion</h></idx>
       <notation>
         <usage><m>A\subseteq B</m></usage>
-        <description>subset relation</description>
+        <description>set inclusion</description>
       </notation>
       <statement>
         <p>
-        A set <m>A</m> is a <term>subset</term> of a set <m>B</m>, denoted <m>A \subseteq B</m>, if every member of <m>A</m> is a member of <m>B</m>:  <ie />, if <m>x\in A</m> implies <m>x\in B</m> for any object <m>x</m>.
+        A set <m>A</m> is a <term>subset</term> of a set <m>B</m>, denoted <m>A \subseteq B</m>, if every member of <m>A</m> is a member of <m>B</m>:  <ie />, <m>x\in A</m> implies <m>x\in B</m> for any object <m>x</m>. The relation <m>A\subseteq B</m> is called <term>set inclusion</term>.
         </p>
       </statement>
     </definition>
         <remark xml:id="rm_equal_subset_logic">
       <statement>
         <p>
-          The definitions of set equality and the subset relation make use of two important logical operations: namely, the <q>if and only if</q> (or <q>iff</q> for short) and <q>if-then</q> operations. We describe these notions in more detail in <xref ref="s_logic"/> (logic), and we outline techniques for proving <q>iff</q> and <q>if-then</q> statements, including statements about set equality and the subset relation, in <xref ref="s_proof_technique"/> (proof technique).
+          The definitions of set equality and the subset relation make use of two important logical operations: namely, the <q>if and only if</q> (or <q>iff</q> for short) and <q>if-then</q> operations. We describe these notions in more detail in <xref ref="s_logic" text="title"/>, and we outline techniques for proving <q>if and only if</q> and <q>if-then</q> statements, including statements about set equality and the subset relation, in <xref ref="s_proof_technique" text="title"/>.
         </p>
       </statement>
     </remark>

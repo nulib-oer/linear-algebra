@@ -1,7 +1,7 @@
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_proof_technique">
 <title>Proof techniques</title>
 <introduction>
-  Proof writing is an art, a technical skill you will hone and refine throughout your career; and like any art, proof writing has many tricks of the trade. We gather a few here in the form of a collection of general proof techniques. Part of mastering these techniques involves understanding the circumstances where they can be of use. When selecting a technique, we are guided in part by the logical structure and particular mathematical content of the proposition under consideration. The proof techniques below are organized under this guiding principle.  
+  Proof writing is an art, a technical skill you will hone and refine throughout your career; and like any art, proof writing has many tricks of the trade. We gather a few here in the form of a collection of general proof techniques. Part of mastering these techniques involves understanding the circumstances where they can be of use. When selecting a technique, we are guided in part by the logical structure and particular mathematical content of the proposition under consideration. The proof techniques below are organized under this guiding principle.
 </introduction>
 <subsection xml:id="ss_logical_structure">
   <title>Logical structure</title>
@@ -70,9 +70,11 @@
         </p>
       </statement>
     </warning>
-  </subsubsection>
+  <p>
+    The example below provides the proof that a function is invertible if and only if it is bijective (<xref ref="th_invertible_bijective"/>). The proof nicely illustrates some of the different techniques used for proving implications and equivalences. Additionally, it is a nice example of how to separate out cases of the argument into clearly distinguished steps.
+  </p>
   <example xml:id="ex_invertible_bijective">
-    <title>Invertible is equivalent to bijective</title>
+    <title>Proof: invertible is equivalent to bijective</title>
 
     <statement>
       <p>
@@ -132,6 +134,57 @@
       </case>
     </solution>
   </example>
+  </subsubsection>
+  <subsubsection xml:id="sss_proof_by_contradiction">
+    <title>Proof by contradiction</title>
+    The technique of <em>proof by contradiction</em> (or <em>reductio ad absurdum</em>) proves a proposition <m>\mathcal{P}</m> by (a) assuming the negation <m>\neg\mathcal{P}</m> is true, and then (b) using this assumption to derive a proposition <m>\mathcal{Q}</m> known to be false. The choice of falsehood <m>\mathcal{Q}</m> is completely up to the person providing the proof. However, in order for the proof to be convincing, it should be clear, either logically or because of theory assumed to be known, that <m>\mathcal{Q}</m> is indeed false.
+    <example xml:id="ex_proof_by_contradiction">
+      <title>Proof by contradiction</title>
+      <statement>
+        <p>
+        Prove by contradiction that <m>0</m> has no multiplicative inverse in the reals: <ie />, there is no <m>r\in\R</m> such that <m>r\cdot 0=1</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We prove the claim by contradiction. Assume there is an <m>r\in \R</m> such that <m>r\cdot 0=1</m>. Since <m>r\cdot 0=0</m> for any <m>r\in \R</m> (a property of multiplication by 0), we have <m>1=r\cdot 0=0</m>: a contradiction since <m>1\ne 0</m>. We conclude that there is no <m>r\in \R</m> such that <m>r\cdot 0=1</m>.
+        </p>
+      </solution>
+    </example>
+        <remark xml:id="rm_proof_by_contradiction">
+      <statement>
+        <p>
+          Proof by contradiction resembles, but is not quite the same  thing as proving an implication via its contrapositive. Letting <m>F</m> denote an arbitrary falsehood (the <m>\mathcal{Q}</m> described above) what we do in a proof by contradiction is show that the implication <m>\neg \mathcal{P}\implies F</m> is true. Since <m>F</m> is false, and the implication is true, <m>\neg \mathcal{P}</m> must be false: equivalently, <m>\mathcal{P}</m> must be true.
+        </p>
+      </statement>
+    </remark>
+    </subsubsection>
+</subsection>
+<subsection xml:id="ss_set_properties">
+  <title>Basic set properties</title>
+<subsubsection xml:id="sss_set_inclusion">
+  <title>Set inclusion</title>
+  <p>
+    Let <m>A</m> and <m>B</m> be sets. By <xref ref="d_set_inclusion"/>, to prove <m>A\subseteq B</m> we must show that for all elements <m>x</m> we have
+  <me>
+    x\in A\implies x\in B
+  </me>.
+  This requires proving the implication above for a general element <m>x</m>, and we may use any of  the techniques described in <xref ref="sss_implication" text="title"/> and <xref ref="sss_logical_chains" text="title"/> to do so. 
+</p>
+</subsubsection>
+<subsubsection xml:id="sss_set_equality">
+  <title>Set equality</title>
+  <p>
+    Let <m>A</m> and <m>B</m> be sets. To prove <m>A=B</m> directly using <xref ref="d_set_equality"/> we must show that for all elements <m>x</m> we have
+    <me>
+      x\in A \iff x\in B
+    </me>.
+     To prove this universal equivalence, we must give an argument for the equivalence that holds for a general element <m>x</m>.
+  </p>
+  <p>
+    Alternatively, you can prove <m>A=B</m> by proving the two set inclusions <m>A\subseteq B</m> and <m>B\subseteq A</m> separately. This is equivalent to proving the two implications <m>x\in A\implies x\in B</m> and <m>x\in B\implies x\in A</m> separately.
+  </p>
+</subsubsection>
 </subsection>
 
 

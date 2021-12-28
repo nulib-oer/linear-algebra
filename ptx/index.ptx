@@ -87,6 +87,7 @@
 \def\Zm{\Z/m\Z}
 \def\Zn{\Z/n\Z}
 \def\Fp{\F_p}
+\newcommand{\longminus}{\scalebox{1.5}[1.0]{$-$}}
 \newcommand{\surjects}{\twoheadrightarrow}
 \newcommand{\injects}{\hookrightarrow}
 \newcommand{\bijects}{\leftrightarrow}
@@ -183,13 +184,7 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 \end{amatrix}
 }
 \newcommand{\spaceforemptycolumn}{\makebox[\wd\boxofmathplus]{\ }}
-\newcommand{\grstep}[2][\relax]{
-\mathrel{
-\hspace{\grsteplength}\mathop{\longrightarrow}\limits^{#2\mathstrut}_{
-\begin{subarray}{l} #1 \end{subarray}}\hspace{\grsteplength}}}
-\newcommand{\repeatedgrstep}[2][\relax]{\hspace{-\grsteplength}\grstep[#1]{#2}}
-\newcommand{\swap}{\leftrightarrow}
-\newcommand{\deter}[1]{ \mathchoice{\left|#1\right|}{|#1|}{|#1|}{|#1|} }
+
 \newcommand{\generalmatrix}[3]{
 \left(
 \begin{array}{cccc}
@@ -199,78 +194,14 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 #1_{#3,1} \amp #1_{#3,2} \amp \ldots  \amp #1_{#3,#2}
 \end{array}
 \right)  }
-\newcommand{\colvec}[2][c]{\begin{amatrix}[#1] #2 \end{amatrix}}
-\newcommand{\rowvec}[1]{\setlength{\arraycolsep}{3pt}\begin{bmatrix} #1 \end{bmatrix}}
-\DeclareMathOperator{\trace}{tr}
-\newcommand{\isomorphicto}{\cong}
-\newcommand{\rangespace}[1]{ \mathscr{R}(#1) }
-\newcommand{\nullspace}[1]{ \mathscr{N}(#1) }
-\newcommand{\genrangespace}[1]{ \mathscr{R}_\infty(#1) }
-\newcommand{\gennullspace}[1]{ \mathscr{N}_\infty(#1) }
-\newcommand{\zero}{ \vec{0} }
-\newcommand{\polyspace}{\mathcal{P}}
-\newcommand{\matspace}{\mathcal{M}}
 \DeclareMathOperator{\size}{size}
 \DeclareMathOperator{\adjoint}{adj}
 \DeclareMathOperator{\sgn}{sgn}
-\newcommand{\definend}[1]{\emph{#1}}
-\renewcommand{\Re}{\mathbb{R}}
-\newcommand{\map}[3]{\mbox{$#1\colon #2\to #3$}}
-\newcommand{\mapsunder}[1]{\stackrel{#1}{\longmapsto}}
-\newcommand{\mapsvia}[1]{\xrightarrow{#1}}
-\newcommand{\xmapsunder}[1]{\mapsunder{#1}}
-\newcommand{\composed}[2]{#1\mathbin{\circ} #2}
-\DeclareMathOperator{\identity}{id}
 \newcommand{\restrictionmap}[2]{{#1}\mathpunct\upharpoonright\hbox{}_{#2}}
 \renewcommand{\emptyset}{\varnothing}
-\newcommand{\setspacing}{0.1em}
-\newcommand{\set}[1]{\mbox{$\{\hspace{\setspacing}#1\hspace{\setspacing}\}$}}
-\newcommand{\suchthat}{\mid}
-\newcommand{\union}{\cup}
-\newcommand{\intersection}{\cap}
-\newcommand{\sequence}[1]{ \langle#1\rangle }
-\newcommand{\interval}[2]{#1\,\ldots\, #2}
-\newcommand{\setinterval}[2]{\mbox{$\{\interval{#1}{#2}\}$}}
-\newcommand{\openinterval}[2]{(\interval{#1}{#2})}
-\newcommand{\closedinterval}[2]{[\interval{#1}{#2}]}
-\newcommand{\clopinterval}[2]{[\interval{#1}{#2})}
-\newcommand{\opclinterval}[2]{(\interval{#1}{#2}]}
-\newcommand{\isimpliedby}{\Longleftarrow}
-\newcommand{\Sage}{\textit{Sage}}
-\newcommand{\Maple}{\textit{Maple}}
-\newcommand{\cat}[2]{#1\!\mathbin{\raise.6ex\hbox{\left( {}^\frown \right)}}\!#2}
-\newcommand{\alignedvdots}[1][10pt]{\mskip2.5mu\makebox[.5\equalsignwd][r]{}
-\smash{\vdots}}
-\newcommand{\stdbasis}{{\cal E}}
-\newcommand{\basis}[2]{\sequence{\vec{#1}_1,\ldots,\vec{#1}_{#2}}}
-\newcommand{\rowspace}[1]{ \mathop{{\mbox{Rowspace}}}(#1) }
-\newcommand{\colspace}[1]{ \mathop{{\mbox{Columnspace}}}(#1) }
-\newcommand{\linmaps}[2]{ \mathop{{\cal L}}(#1,#2) }
-\newcommand{\lincombo}[2]{
-#1_1#2_1+#1_2#2_2+\cdots +#1_n#2_n}
-\newcommand{\rep}[2]{ { Rep}_{#2}(#1) }
-\newcommand{\wrt}[1]{{\mbox{\scriptsize \textit{wrt}\hspace{.25em}\left( #1 \right)} }}
-\newcommand{\trans}[1]{ {{#1}^{\mathsf{T}}} }
+
 \newcommand{\proj}[2]{\mbox{proj}_{#2}({#1}) }
-\newcommand{\spanof}[1]{\relax [#1\relax ]}
-\newcommand{\directsum}{\oplus}
-\DeclareMathOperator{\dist}{dist}
-\newcommand{\nbyn}[1]{#1 \! \times \! #1 }
-\newcommand{\nbym}[2]{#1 \! \times \! #2 }
-\newcommand{\degs}[1]{#1^\circ\relax}
-\newcommand{\votepreflist}[3]{\colvec{#1 \\ #2 \\ #3}}
-\newcommand{\votinggraphic}[1]{\hspace{1.15em}\mathord{[.3in][.2in]{\includegraphics{voting.#1}}}\hspace{1.15em}}
-\newcommand{\magicsquares}{\mathscr{M}}
-\newcommand{\semimagicsquares}{\mathscr{H}}
-\newcommand{\circuitfont}{\sffamily}
-\newcommand{\digitinsq}[1]{\fbox{\left( #1 \right)} }
-\newcommand{\matrixvenlarge}[1]{\vbox{
-\vspace{\extramatrixvspace}
-\hbox{$#1$}
-\vspace{\extramatrixvspace}
-}}
-\def\bspace{
-{\vspace{.05in}}}
+
 </macros>
 
 <latex-image-preamble>

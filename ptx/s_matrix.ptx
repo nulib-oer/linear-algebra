@@ -93,7 +93,7 @@
   </statement>
 </remark>
   <p>
-  In everyday language the notion of equality is taken as self-evident. Two things are equal if they are the same. What more is there to say? In mathematics, each time we introduce a new type of mathematical object (e.g., sets, functions, $n$-tuples, etc.) we need to spell out exactly what we mean for two things to be considered equal. We do so now with matrices.
+  In everyday language the notion of equality is taken as self-evident. Two things are equal if they are the same. What more is there to say? In mathematics, each time we introduce a new type of mathematical object (e.g., sets, functions, <m>n</m>-tuples, etc.) we need to spell out exactly what we mean for two things to be considered equal. We do so now with matrices.
 </p>
   <definition xml:id="d_matrix_equality">
     <title>Matrix equality</title>
@@ -148,14 +148,15 @@
         A matrix <m>A</m> is <term>square</term> if its dimension is <m>n\times n</m>. The <term>diagonal</term> of a square matrix <m>A=[a_{ij}]_{n\times n}</m> consists of the entries <m>a_{ii}</m> for <m>1\leq i\leq n</m>.
       </p>
       <p>
-      A <m>1\times n</m>, i.e., a matrix of the form <me>\begin{bmatrix}a_1\amp a_2\amp \cdots \amp a_n \end{bmatrix}</me>, is called a <term>row vector</term>.
+      A <m>1\times n</m> matrix
+      <me>\bolda=\begin{bmatrix}a_1\amp a_2\amp \cdots \amp a_n \end{bmatrix}</me> is called a <term>row vector</term>. The <m>j</m>-th entry of a row vector <m>\bolda</m> is denoted <m>[\bolda]_j</m>
       </p>
       <p>
-        An <m>n\times 1</m> matrix, i.e., a matrix of the form
+        An <m>n\times 1</m> matrix
         <me>
-          \begin{bmatrix}b_1\\ b_2\\\vdots \\ b_m \end{bmatrix}
+          \boldb=\begin{bmatrix}b_1\\ b_2\\\vdots \\ b_m \end{bmatrix}
         </me>,
-        is called a <term>column vector</term>.
+        is called a <term>column vector</term>. The <m>i</m>-th entry of a column vector <m>\boldb</m> is denoted <m>[\boldb]_i</m>.
       </p>
       <p>
         The <term> <m>m\times n</m> zero matrix</term>, denoted <m>\boldzero_{m\times n}</m>, is the matrix of that dimension, all of whose entries are zero: i.e., <m>(\boldzero_{m\times n})_{ij}=0</m> for all <m>1\leq i\leq m</m> and <m>1\leq j\leq n</m>.
@@ -165,6 +166,40 @@
       </p>
     </statement>
   </definition>
+      <remark xml:id="rm_matrices_as_row_columns">
+    <title>Matrices as collections of columns/rows</title>
+    <statement>
+      <p>
+        Let <m>A</m> be an <m>m\times n</m> matrix. We will often think of <m>A</m> as a collection of columns, in which case we write
+        <men xml:id="eq_columns">
+          A=\begin{bmatrix}\vert \amp \vert \amp \amp \vert \\
+          \boldc_1 \amp \boldc_2\amp \cdots \amp \boldc_n \\
+          \vert \amp \vert \amp \amp \vert
+        \end{bmatrix}
+      </men>,
+        where <m>\boldc_j</m> is the column vector consisting of the entries of the <m>j</m>-th column of <m>A</m>: <ie />,
+        <me>
+          \boldc_j=\begin{bmatrix}a_{1j}\\ a_{2j}\\ \vdots \\ a_{mj}\end{bmatrix}
+        </me>.
+        Similarly, when we think of <m>A</m> as a collection of rows, we write
+        <men xml:id="eq_rows">
+          A=\begin{bmatrix}\ -\boldr_{1}- \ \\
+          \ -\boldr_{1}- \ \\
+          \vdots \\
+          \ -\boldr_{m}- \ \\
+        \end{bmatrix}
+      </men>,
+        where <m>\boldr_i</m> is the row vector consisting of the entries of the <m>i</m>-th row of <m>A</m>: <ie />,
+        <me>
+          \boldr_i=
+          \begin{bmatrix}a_{i1}\amp a_{i2}\amp\cdots\amp a_{in}
+        \end{bmatrix}
+        </me>.
+        The vertical and horizontal lines in <xref ref="eq_columns"/> and <xref ref="eq_rows"/> are used to emphasize that the <m>\boldc_j</m> are columns vectors and the <m>\boldr_i</m> are row vectors.
+      </p>
+    </statement>
+  </remark>
+
 </subsection>
   <subsection xml:id="ss_matrix_arithmetic">
     <title>Matrix arithmetic: addition, subtraction and scalar multiplication</title>
@@ -275,6 +310,19 @@
         </p>
       </solution>
     </example>
+        <remark xml:id="rm_entry_lin_comb">
+      <statement>
+        <p>
+          Let <m>A_1, A_2,\dots, A_r</m> be <m>m\times n</m> matrices,  An easy induction argument on <m>r</m> shows that for any scalars <m>c_1,c_2,\dots, c_r</m> we have
+          <me>
+             [c_1A_1+c_2A_2+\cdots +c_rA_r]_{ij} =c_1[A_1]_{ij}+c_2[A_2]_{ij}+\cdots c_r[A_r]_{ij}
+          </me>
+          for all <m>1\leq i\leq m</m>, <m>1\leq j\leq n</m>.
+          (See <xref ref="ex_entry_lin_comb"/>. )
+        </p>
+      </statement>
+    </remark>
+
   </subsection>
   <subsection xml:id="ss_matrix_mult">
   <title>Matrix arithmetic: matrix multiplication</title>
@@ -337,12 +385,14 @@
           <li>
           <title>Step 1</title>
             <p>
-
             Let <m>\boldb_j</m> be the <m>j</m>-th column of <m>B</m>, considered as a column vector.
             Then
-            <me>
-              AB=A\begin{bmatrix}\vert \amp \vert \amp  \amp \vert \\ \boldb_1\amp \boldb_2\amp \cdots\amp \boldb_r\\ \vert \amp \vert \amp  \amp \vert \end{bmatrix} =\begin{bmatrix}\vert \amp \vert \amp  \amp \vert \\ A\boldb_1\amp A\boldb_2\amp \cdots\amp A\boldb_r\\ \vert \amp  \vert \amp  \amp  \vert \end{bmatrix}
-            </me>.
+            <md>
+              <mrow>AB \amp =A\begin{bmatrix}\vert \amp \vert \amp  \amp \vert \\ \boldb_1\amp \boldb_2\amp \cdots\amp \boldb_r\\ \vert \amp \vert \amp  \amp \vert \end{bmatrix}
+              </mrow>
+              <mrow> \amp=\begin{bmatrix}\vert \amp \vert \amp  \amp \vert \\ A\boldb_1\amp A\boldb_2\amp \cdots\amp A\boldb_r\\ \vert \amp  \vert \amp  \amp  \vert \end{bmatrix}
+            </mrow>
+            </md>.
           </p>
           </li>
           <li>
@@ -357,6 +407,48 @@
         </dl>
       </statement>
     </theorem>
+    <proof>
+      <p>
+        We prove the equalities in both steps separately.
+      </p>
+      <case>
+        <title>Proof of Step 1</title>
+        <p>
+          We must show <m>AB=C</m>, where
+          <me>
+            C=\begin{bmatrix}\vert \amp \vert \amp  \amp \vert \\ A\boldb_1\amp A\boldb_2\amp \cdots\amp A\boldb_r\\ \vert \amp  \vert \amp  \amp  \vert \end{bmatrix}
+          </me>.
+          First we show <m>AB</m> and <m>C</m> have the same size. By definition of matrix multiplication, <m>AB</m> is <m>m\times r</m>. By construction <m>C</m> has <m>r</m> columns and its <m>j</m>-th column is <m>A\boldb_j</m>. Since <m>A</m> and <m>\boldb_j</m> have size <m>m\times n</m> and <m>n\times 1</m>, respectively, <m>A\boldb_j</m> has size <m>m\times 1</m>. Thus each of the <m>r</m> columns of <m>C</m> is an <m>m\times 1</m> column vector. It follows that <m>C</m> is <m> m\times r</m>, as desired.
+        </p>
+        <p>
+          Next we show that <m>[AB]_{ij}=[C]_{ij}</m> for all <m>1\leq i\leq m</m>, <m>1\leq j\leq r</m>. Since the <m>ij</m>-th entry of <m>C</m> is the <m>i</m>-th entry of the <m>j</m>-th column of <m>C</m>, we have
+          <md>
+            <mrow>[C]_{ij} \amp= [A\boldb_j]_{i}  </mrow>
+            <mrow> \amp=\sum_{k=1}^n a_{ik}b_{kj} </mrow>
+            <mrow>  \amp =[AB]_{ij}</mrow>
+          </md>.
+        </p>
+      </case>
+      <case>
+        <title>Proof of Step 2</title>
+        <p>
+          We must show that <m>A\boldb=\boldc</m>, where
+          <me>
+            \boldc=b_1\bolda_1+b_2\bolda_2+\cdots +b_n\bolda_n
+          </me>.
+          The usual argument shows that both <m>A\boldb</m> and <m>\boldc</m> are <m>m\times 1</m> column vectors. It remains only to show that the <m>i</m>-th entry <m>[A\boldb]_i</m> of the column <m>A\boldb</m> is equal to the <m>i</m>-th entry <m>[\boldc]_i</m> of <m>\boldc</m> for all <m>1\leq i\leq m</m>. For any such <m>i</m> we have <xref ref="d_"/>
+          <md>
+            <mrow>[\boldc]_i \amp = [b_1\bolda_1+b_2\bolda_2+\cdots +b_n\bolda_n]_i</mrow>
+            <mrow> \amp= b_1[\bolda_1]_i+b_2[\bolda_2]_i+\cdots +b_n[\bolda_n]_i \amp (<xref ref="rm_entry_lin_comb"/>)</mrow>
+            <mrow>  \amp= b_1a_{i1}+b_2a_{i2}+\cdots +b_n\bolda_{in}\amp (\text{def. of } \bolda_j) </mrow>
+            <mrow>  \amp= a_{i1}b_1+a_{i2}b_2+\cdots+a_{in}b_n </mrow>
+            <mrow>  \amp =[A\boldb]_i \amp (<xref ref="d_matrix_mult"/>)</mrow>
+          </md>.
+        </p>
+      </case>
+
+
+    </proof>
     <remark>
       <p>
         <xref ref="th_column_method"/> amounts to a two-step process for computing an arbitrary matrix product <m>AB</m>.
@@ -382,9 +474,12 @@
           <p>
             Let <m>\bolda_i</m> be the <m>i</m>-th row of <m>A</m>.
             Then
-            <me>
-              AB=\begin{bmatrix}--\bolda_1-- \\ --\bolda_2-- \\ \vdots \\ --\bolda_m-- \end{bmatrix} B = \begin{bmatrix}--\bolda_1B-- \\ --\bolda_2B-- \\ \vdots \\ --\bolda_mB-- \end{bmatrix}
-              </me>.
+            <md>
+            <mrow>  AB\amp =\begin{bmatrix} \ - \bolda_1- \  \\ \ - \bolda_2- \  \\ \vdots \\ \ - \bolda_m- \  \end{bmatrix} B
+             </mrow>
+              <mrow>  \amp = \begin{bmatrix}\ - \bolda_1B- \  \\ \ -\bolda_2B- \  \\ \vdots \\ \ -\bolda_mB - \ \end{bmatrix}
+              </mrow>
+              </md>.
             </p>
 
           </li>
@@ -400,6 +495,13 @@
         </dl>
       </statement>
     </theorem>
+    <proof>
+      <p>
+        The proof is very similar to that of <xref ref="th_column_method"/> and is left to the reader. 
+      </p>
+    </proof>
+
+
     <example xml:id="s_matrix_ex_product">
       <statement>
         <p>

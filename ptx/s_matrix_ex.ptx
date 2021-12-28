@@ -146,7 +146,7 @@
       </me>.
       </p>
   </statement>
-  <solution>
+  <!-- <solution>
     <p>
       The matrix <m>B_1</m>, when multiplied on the left,
       replaces the third row of <m>A</m> with <m>\boldr_3-2\boldr_2</m>.
@@ -158,6 +158,22 @@
     <p>
       The matrix <m>B_3</m>, when multiplied on the left,
       swaps <m>\boldr_1</m> and <m>\boldr_3</m>.
+    </p>
+  </solution> -->
+</exercise>
+<exercise xml:id="ex_entry_lin_comb">
+  <statement>
+    <p>
+      Let <m>r\geq 2</m> be an integer. Prove, by induction on <m>r</m>, that for any <m>m\times n</m> matrices <m>A_1, A_2,\dots, A_r</m> and scalars <m>c_1,c_2,\dots, c_r</m>, we have
+      <me>
+        [c_1A_1+c_2A_2+\cdots +c_rA_r]_{ij} =c_1[A_1]_{ij}+c_2[A_2]_{ij}+\cdots c_r[A_r]_{ij}
+      </me>
+      for all <m>1\leq i\leq m</m>, <m>1\leq j\leq n</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+
     </p>
   </solution>
 </exercise>
