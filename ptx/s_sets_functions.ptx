@@ -35,7 +35,7 @@
       </statement>
     </definition>
     <p>
-      Set membership naturally extends to a notion of one set <q>lying</q> within another. 
+      Set membership naturally extends to a notion of one set <q>lying</q> within another.
     </p>
     <definition xml:id="d_set_inclusion">
       <title>Set inclusion (subsets)</title>
@@ -283,18 +283,18 @@
           </notation>
           <statement>
             <p>
-            Let <m>A</m> and <m>B</m> be two sets. A <term>function from <m>A</m> to <m>B</m></term>, denoted <m>f\colon A\rightarrow B</m>, is a rule which, given any <term>input</term> <m>a\in A</m>, returns an <term>output</term> <m>b\in B</m>. In this case we write <m>b=f(a)</m> and call <m>b</m> the <term>image of <m>a</m> under <m>f</m></term>, or the <term>value of <m>f</m> at <m>a</m> </term>. Similarly, we say <m>f</m> <term>maps</term> (or <term>sends</term>) the input <m>a</m> to the output <m>b</m>.
+            Let <m>X</m> and <m>Y</m> be two sets. A <term>function from <m>X</m> to <m>Y</m></term>, denoted <m>f\colon X\rightarrow Y</m>, is a rule which, given any <term>input</term> <m>x\in X</m>, returns an <term>output</term> <m>y\in Y</m>. In this case we write <m>y=f(x)</m> and call <m>y</m> the <term>image of <m>x</m> under <m>f</m></term>, or the <term>value of <m>f</m> at <m>x</m> </term>. Similarly, we say <m>f</m> <term>maps</term> (or <term>sends</term>) the input <m>x</m> to the output <m>y</m>.
             </p>
             <p>
-              The set <m>A</m> is called the <term>domain</term> of <m>f</m>; the set <m>B</m> is called the <term>codomain</term> of <m>f</m>.
+              The set <m>X</m> is called the <term>domain</term> of <m>f</m>; the set <m>Y</m> is called the <term>codomain</term> of <m>f</m>.
             </p>
             <p>
               When we wish to indicate what rule defines the function, we use the elaborated notation
               <md>
-                <mrow>f\colon A \amp\rightarrow B </mrow>
-                <mrow> a \amp\mapsto f(a)</mrow>
+                <mrow>f\colon X \amp\rightarrow Y</mrow>
+                <mrow> x \amp\mapsto f(x)</mrow>
               </md>.
-              This is read as <q>The function <m>f</m> with domain <m>A</m> and codomain <m>B</m> maps an input <m>a</m> to the output <m>f(a)</m></q>.
+              This is read as <q>The function <m>f</m> with domain <m>X</m> and codomain <m>Y</m> maps an input <m>x</m> to the output <m>f(x)</m></q>.
             </p>
           </statement>
         </definition>
@@ -331,7 +331,7 @@
             <remark xml:id="rm_function_as_relation">
           <statement>
             <p>
-              Invoking the notion of a rule in the definition of a function is admittedly somewhat vague. A more precise definition can be given using the Cartesian product. Namely, given sets <m>A</m> and <m>B</m>, we define a function <m>f\colon A\rightarrow B</m> to be a subset <m>f\subseteq A\times B</m> satisfying the following property: for all <m>a\in A</m> there is a unique element <m>(a,b)\in f</m>. The uniqueness of the pair <m>(a,b)</m> then allows us to define the value <m>f(a)</m> of <m>f</m> at <m>a</m> as <m>b</m>, denoted <m>f(a)=b</m>.
+              Invoking the notion of a rule in the definition of a function is admittedly somewhat vague. A more precise definition can be given using the Cartesian product. Namely, given sets <m>X</m> and <m>Y</m>, we define a function <m>f\colon X\rightarrow Y</m> to be a subset <m>f\subseteq X\times Y</m> satisfying the following property: for all <m>x\in X</m> there is a unique element <m>(x,y)\in f</m>. The uniqueness of the pair <m>(x,y)</m> then allows us to define the value <m>f(x)</m> of <m>f</m> at <m>x</m> as <m>y</m>, denoted <m>f(x)=y</m>.
             </p>
           </statement>
         </remark>
@@ -347,12 +347,12 @@
               <ol label="i">
                 <li>
                   <p>
-                    they have the same domain <m>A</m> and codomain <m>B</m>, and
+                    they have the same domain <m>X</m> and codomain <m>Y</m>, and
                   </p>
                 </li>
                 <li>
                   <p>
-                    for all <m>a\in A</m>, we have <m>f(a)=g(a)</m>.
+                    for all <m>x\in X</m>, we have <m>f(x)=g(x)</m>.
                   </p>
                 </li>
               </ol>
@@ -364,8 +364,8 @@
       <idx><h>function</h><h>image of a set</h></idx>
       <idx><h>function</h><h>image</h></idx>
       <notation>
-        <usage><m>f(X)</m></usage>
-        <description>image of the set <m>X</m> under <m>f</m></description>
+        <usage><m>f(A)</m></usage>
+        <description>image of the set <m>A</m> under <m>f</m></description>
       </notation>
       <notation>
         <usage><m>\operatorname{im} f</m></usage>
@@ -373,16 +373,16 @@
       </notation>
       <statement>
         <p>
-        Given a function <m>f\colon A\rightarrow B</m> and a subset <m>X \subseteq A</m>, the <term>image of <m>X</m> under <m>f</m></term>, denoted <m>f(X)</m>, is defined as
+        Given a function <m>f\colon X\rightarrow Y</m> and a subset <m>A \subseteq X</m>, the <term>image of <m>A</m> under <m>f</m></term>, denoted <m>f(A)</m>, is defined as
         <me>
-          f(X)=\left\{ b \in B \colon f(x)=b \text{ for some } x \in X \right\}
+          f(A)=\left\{ y \in Y \colon f(a)=y \text{ for some } a \in A \right\}
         </me>.
-        In other words, <m>f(X)</m> is the set of all outputs <m>f(x)</m>,  where <m>x\in X</m>.
+        In other words, <m>f(A)</m> is the set of all outputs <m>f(a)</m>,  where <m>a\in X</m>.
        </p>
         <p>
         The <term>image of <m>f</m></term>, denoted <m>\operatorname{im} f</m>, is the set of <em>all</em> outputs of <m>f</m>: <ie />,
         <me>
-          \operatorname{im} f=f(A)=\left\{ b \in B \colon f(a)=b \text{ for some } a \in A \right\}
+          \operatorname{im} f=f(X)=\left\{ y \in Y \colon f(x)=y \text{ for some } x \in X \right\}
         </me>.
         </p>
 
@@ -399,16 +399,16 @@
       <idx><h>one-to-one correspondence</h></idx>
       <statement>
         <p>
-          Let <m>f\colon A\rightarrow B</m> be a function.
+          Let <m>f\colon X\rightarrow Y</m> be a function.
           <ul>
             <li>
               <p>
-                The function <m>f</m> is <term>injective</term> (or <term>one-to-one</term>) if for all <m>a,a'\in A</m>, if <m>f(a)=f(a')</m>, then <m>a=a'</m>: equivalently, if <m>a\ne a'</m>, then <m>f(a)\ne f(a')</m>.
+                The function <m>f</m> is <term>injective</term> (or <term>one-to-one</term>) if for all <m>x,x'\in X</m>, if <m>f(x)=f(x')</m>, then <m>x=x'</m>: equivalently, if <m>x\ne x'</m>, then <m>f(x)\ne f(x')</m>.
               </p>
             </li>
             <li>
               <p>
-                The function <m>f</m> is <term>surjective</term> (or <term>onto</term>) if for all <m>b\in B</m>, there is an <m>a\in A</m> such that <m>f(a)=b</m>: equivalently, <m>\im f=B</m>.
+                The function <m>f</m> is <term>surjective</term> (or <term>onto</term>) if for all <m>y\in Y</m>, there is an <m>x\in X</m> such that <m>f(x)=y</m>: equivalently, <m>\im f=Y</m>.
               </p>
             </li>
             <li>
@@ -420,6 +420,19 @@
         </p>
       </statement>
     </definition>
+    <example>
+      <title>Role of domain and codomain in injectivity and surjectivity</title>
+      <statement>
+        <p>
+          Consider the following three functions
+          <md>
+            <mrow>f\colon \R \amp\rightarrow \R \amp g\colon [0,\infty)\amp\rightarrow \R \amp h\colon [0,\infty)\amp \rightarrow [0,\infty) </mrow>
+            <mrow> x \amp\mapsto x^2 \amp x \amp\mapsto x^2 \amp x \amp\mapsto x^2 \amp </mrow>
+          </md>.
+          Although all three functions are defined using the same rule (<m>x\mapsto x^2</m>), they are not equal thanks to their differing domains and/or codomains. The choice of domain and codomain in these examples also plays a crucial role in determining whether the function is injective and/or surjective. The function <m>f</m> is neither injective (<m>f(-2)=f(2)=4</m>) nor surjective (<m>f(X)=[0,\infty)\ne \R</m>); the function <m>g</m> is injective but not surjective; the function <m>h</m> is both injective and surjective, hence bijective.
+        </p>
+      </statement>
+    </example>
     <definition xml:id="d_function_composition">
     <title>Function composition</title>
     <idx><h>function</h><h>composition</h></idx>
@@ -429,10 +442,10 @@
     </notation>
     <statement>
       <p>
-        Suppose <m>f\colon C\rightarrow D</m> and <m>g\colon A\rightarrow B</m> are functions satisfying <m>B\subseteq C</m>.  The <term>composition of <m>f</m> and <m>g</m></term> is the function <m>f\circ g\colon A\rightarrow D</m> defined as
+        Suppose <m>f\colon Z\rightarrow W</m> and <m>g\colon X\rightarrow Y</m> are functions satisfying <m>Y\subseteq Z</m>.  The <term>composition of <m>f</m> and <m>g</m></term> is the function <m>f\circ g\colon X\rightarrow W</m> defined as
         <m>
-          f\circ g\, (a)=f(g(a))
-        </m>, for all <m>a\in A</m>.
+          f\circ g\, (x)=f(g(x))
+        </m>, for all <m>x\in X</m>.
       </p>
     </statement>
   </definition>
@@ -446,10 +459,10 @@
         For any set <m>X</m> the <term>identity function</term> on <m>X</m> is the function <m>\id_X\colon X\rightarrow X</m> defined as <m>\id_X(x)=x</m> for all <m>x\in X</m>.
       </p>
       <p>
-        A function <m>f\colon A\rightarrow B</m> is <term>invertible</term> if there is a function <m>g\colon B\rightarrow A</m> satisfying <m>g\circ f=\id_A</m> and <m>f\circ g=\id_B</m>: <ie />,
+        A function <m>f\colon X\rightarrow Y</m> is <term>invertible</term> if there is a function <m>g\colon Y\rightarrow X</m> satisfying <m>g\circ f=\id_X</m> and <m>f\circ g=\id_Y</m>: <ie />,
         <md>
-          <mrow>g(f(a))\amp =a  \text{ for all } a\in A, </mrow>
-          <mrow> f(g(b))\amp=b  \text{ for all } b\in B </mrow>
+          <mrow>g(f(x))\amp =x  \text{ for all } x\in X, </mrow>
+          <mrow> f(g(y))\amp=y  \text{ for all } y\in Y </mrow>
         </md>.
       </p>
       The function <m>g</m> in this case is called the <term>inverse</term> of <m>f</m>, denoted <m>g=f^{-1}</m>.
@@ -458,7 +471,7 @@
     <theorem xml:id="th_invertible_bijective">
       <statement>
         <p>
-          A function <m>f\colon A\rightarrow B</m> is invertible if and only if it is bijective.
+          A function <m>f\colon X\rightarrow Y</m> is invertible if and only if it is bijective.
         </p>
       </statement>
     </theorem>
