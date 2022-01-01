@@ -406,49 +406,50 @@
           </li>
         </dl>
       </statement>
+      <proof>
+        <p>
+          We prove the equalities in both steps separately.
+        </p>
+        <case>
+          <title>Proof of Step 1</title>
+          <p>
+            We must show <m>AB=C</m>, where
+            <me>
+              C=\begin{bmatrix}\vert \amp \vert \amp  \amp \vert \\ A\boldb_1\amp A\boldb_2\amp \cdots\amp A\boldb_r\\ \vert \amp  \vert \amp  \amp  \vert \end{bmatrix}
+            </me>.
+            First we show <m>AB</m> and <m>C</m> have the same size. By definition of matrix multiplication, <m>AB</m> is <m>m\times r</m>. By construction <m>C</m> has <m>r</m> columns and its <m>j</m>-th column is <m>A\boldb_j</m>. Since <m>A</m> and <m>\boldb_j</m> have size <m>m\times n</m> and <m>n\times 1</m>, respectively, <m>A\boldb_j</m> has size <m>m\times 1</m>. Thus each of the <m>r</m> columns of <m>C</m> is an <m>m\times 1</m> column vector. It follows that <m>C</m> is <m> m\times r</m>, as desired.
+          </p>
+          <p>
+            Next we show that <m>[AB]_{ij}=[C]_{ij}</m> for all <m>1\leq i\leq m</m>, <m>1\leq j\leq r</m>. Since the <m>ij</m>-th entry of <m>C</m> is the <m>i</m>-th entry of the <m>j</m>-th column of <m>C</m>, we have
+            <md>
+              <mrow>[C]_{ij} \amp= [A\boldb_j]_{i}  </mrow>
+              <mrow> \amp=\sum_{k=1}^n a_{ik}b_{kj} </mrow>
+              <mrow>  \amp =[AB]_{ij}</mrow>
+            </md>.
+          </p>
+        </case>
+        <case>
+          <title>Proof of Step 2</title>
+          <p>
+            We must show that <m>A\boldb=\boldc</m>, where
+            <me>
+              \boldc=b_1\bolda_1+b_2\bolda_2+\cdots +b_n\bolda_n
+            </me>.
+            The usual argument shows that both <m>A\boldb</m> and <m>\boldc</m> are <m>m\times 1</m> column vectors. It remains only to show that the <m>i</m>-th entry <m>[A\boldb]_i</m> of the column <m>A\boldb</m> is equal to the <m>i</m>-th entry <m>[\boldc]_i</m> of <m>\boldc</m> for all <m>1\leq i\leq m</m>. For any such <m>i</m> we have
+            <md>
+              <mrow>[\boldc]_i \amp = [b_1\bolda_1+b_2\bolda_2+\cdots +b_n\bolda_n]_i</mrow>
+              <mrow> \amp= b_1[\bolda_1]_i+b_2[\bolda_2]_i+\cdots +b_n[\bolda_n]_i \amp (<xref ref="rm_entry_lin_comb"/>)</mrow>
+              <mrow>  \amp= b_1a_{i1}+b_2a_{i2}+\cdots +b_n\bolda_{in}\amp (\text{def. of } \bolda_j) </mrow>
+              <mrow>  \amp= a_{i1}b_1+a_{i2}b_2+\cdots+a_{in}b_n </mrow>
+              <mrow>  \amp =[A\boldb]_i \amp (<xref ref="d_matrix_mult"/>)</mrow>
+            </md>.
+          </p>
+        </case>
+
+
+      </proof>
     </theorem>
-    <proof>
-      <p>
-        We prove the equalities in both steps separately.
-      </p>
-      <case>
-        <title>Proof of Step 1</title>
-        <p>
-          We must show <m>AB=C</m>, where
-          <me>
-            C=\begin{bmatrix}\vert \amp \vert \amp  \amp \vert \\ A\boldb_1\amp A\boldb_2\amp \cdots\amp A\boldb_r\\ \vert \amp  \vert \amp  \amp  \vert \end{bmatrix}
-          </me>.
-          First we show <m>AB</m> and <m>C</m> have the same size. By definition of matrix multiplication, <m>AB</m> is <m>m\times r</m>. By construction <m>C</m> has <m>r</m> columns and its <m>j</m>-th column is <m>A\boldb_j</m>. Since <m>A</m> and <m>\boldb_j</m> have size <m>m\times n</m> and <m>n\times 1</m>, respectively, <m>A\boldb_j</m> has size <m>m\times 1</m>. Thus each of the <m>r</m> columns of <m>C</m> is an <m>m\times 1</m> column vector. It follows that <m>C</m> is <m> m\times r</m>, as desired.
-        </p>
-        <p>
-          Next we show that <m>[AB]_{ij}=[C]_{ij}</m> for all <m>1\leq i\leq m</m>, <m>1\leq j\leq r</m>. Since the <m>ij</m>-th entry of <m>C</m> is the <m>i</m>-th entry of the <m>j</m>-th column of <m>C</m>, we have
-          <md>
-            <mrow>[C]_{ij} \amp= [A\boldb_j]_{i}  </mrow>
-            <mrow> \amp=\sum_{k=1}^n a_{ik}b_{kj} </mrow>
-            <mrow>  \amp =[AB]_{ij}</mrow>
-          </md>.
-        </p>
-      </case>
-      <case>
-        <title>Proof of Step 2</title>
-        <p>
-          We must show that <m>A\boldb=\boldc</m>, where
-          <me>
-            \boldc=b_1\bolda_1+b_2\bolda_2+\cdots +b_n\bolda_n
-          </me>.
-          The usual argument shows that both <m>A\boldb</m> and <m>\boldc</m> are <m>m\times 1</m> column vectors. It remains only to show that the <m>i</m>-th entry <m>[A\boldb]_i</m> of the column <m>A\boldb</m> is equal to the <m>i</m>-th entry <m>[\boldc]_i</m> of <m>\boldc</m> for all <m>1\leq i\leq m</m>. For any such <m>i</m> we have
-          <md>
-            <mrow>[\boldc]_i \amp = [b_1\bolda_1+b_2\bolda_2+\cdots +b_n\bolda_n]_i</mrow>
-            <mrow> \amp= b_1[\bolda_1]_i+b_2[\bolda_2]_i+\cdots +b_n[\bolda_n]_i \amp (<xref ref="rm_entry_lin_comb"/>)</mrow>
-            <mrow>  \amp= b_1a_{i1}+b_2a_{i2}+\cdots +b_n\bolda_{in}\amp (\text{def. of } \bolda_j) </mrow>
-            <mrow>  \amp= a_{i1}b_1+a_{i2}b_2+\cdots+a_{in}b_n </mrow>
-            <mrow>  \amp =[A\boldb]_i \amp (<xref ref="d_matrix_mult"/>)</mrow>
-          </md>.
-        </p>
-      </case>
 
-
-    </proof>
     <remark>
       <p>
         <xref ref="th_column_method"/> amounts to a two-step process for computing an arbitrary matrix product <m>AB</m>.
@@ -494,12 +495,13 @@
           </li>
         </dl>
       </statement>
+      <proof>
+        <p>
+          The proof is very similar to that of <xref ref="th_column_method"/> and is left to the reader.
+        </p>
+      </proof>
     </theorem>
-    <proof>
-      <p>
-        The proof is very similar to that of <xref ref="th_column_method"/> and is left to the reader.
-      </p>
-    </proof>
+
 
 
     <example xml:id="s_matrix_ex_product">

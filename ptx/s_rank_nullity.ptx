@@ -59,7 +59,7 @@
 
         </p>
       </statement>
-    </theorem>
+
     <proof>
       <p>
         Choose a basis <m>B'=\{\boldv_1, \boldv_2, \dots, \boldv_k\}</m> of <m>\NS T</m> and extend <m>B'</m> to a basis <m>B=\{\boldv_1, \boldv_2,\dots, \boldv_k,\boldv_{k+1},\dots, \boldv_n\}</m>, using <xref ref="th_basis_contract_expand"/>. Observe that <m>\dim\NS T=\nullity T=k</m> and <m>\dim V=n</m>.
@@ -114,7 +114,7 @@
       <mrow>  \amp = \nullity T+\rank T</mrow>
     </md>.
     </proof>
-
+</theorem>
   </subsection>
   <subsection xml:id="ss_fundamental_spaces">
     <title>Fundamental spaces of matrices</title>

@@ -1,5 +1,6 @@
 <exercises xml:id="s_invertibility_theorem_ex">
   <exercisegroup>
+    <title>Inverse algorithm</title>
     <introduction>
       <p>
       Use the inverse algorithm to determine whether each matrix is invertible, and to compute its inverse if possible.
@@ -85,6 +86,7 @@
     </exercise>
 </exercisegroup>
   <exercisegroup>
+    <title>Product of elementary matrices algorithm</title>
   <introduction>
     <p>
       Each matrix below is invertible. Use the product of elementary matrices algorithm to write <m>A</m> as a product of elementary matrices.
@@ -106,7 +108,7 @@
         <md>
           <mrow>\begin{amatrix}[rr]0\amp 1\\2\amp -5 \end{amatrix} \amp \xrightarrow[]{r_1\leftrightarrow r_1} \begin{amatrix}[rr]2\amp -5 \\0\amp 1 \end{amatrix}</mrow>
           <mrow>\amp \xrightarrow[]{\frac{1}{2}r_1} \begin{amatrix}[rr]1\amp -5/2\\ 0\amp 1 \end{amatrix}</mrow>
-          <mrow> \amp \xrightarrow[]{r_1+5/2r_2} \begin{amatrix}[rr]1\amp 0\\ 0\amp 1 \end{amatrix} </mrow>
+          <mrow> \amp \xrightarrow[]{r_1+\frac{5}{2}r_2} \begin{amatrix}[rr]1\amp 0\\ 0\amp 1 \end{amatrix} </mrow>
           </md>
       </p>
       <p>
@@ -167,6 +169,14 @@
         You may make use of <xref ref="cor_left-right_inverse"/> in your argument.
       </p>
     </hint>
+  </exercise>
+  <exercise xml:id="ex_row_equiv_props">
+    <title>Properties of row equivalence</title>
+    <statement>
+      <p>
+        Let <m>A\sim B</m> denote that matrix <m>A</m> is row equivalent to <m>B</m>. Use <xref ref="cor_row_equivalence_invertibility"/> to show that the relation <m>A\sim B</m> is reflexive, symmetric, and transitive, as described in <xref ref="rm_row_equivalence_props"/>.
+      </p>
+    </statement>
   </exercise>
   <exercise>
     <statement>
