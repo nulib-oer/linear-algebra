@@ -578,7 +578,7 @@
 </example>
 
 </subsection>
-<subsection xml:id="ss_transormation_video_examples">
+<paragraphs xml:id="ss_transormation_video_examples">
   <title>Video examples</title>
 <p>
   <figure>
@@ -592,7 +592,7 @@
   <video xml:id="vid_transform_2" youtube="weETKP8p7cE" />
   </figure>
 </p>
-</subsection>
+</paragraphs>
 <subsection xml:id="ss_transform_composition">
   <title>Composition of linear transformations and matrix multiplication</title>
 <p>

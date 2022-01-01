@@ -262,6 +262,11 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
       <title>Examples</title>
       <list-of elements="example" divisions="section" />
     </appendix>
+
+    <appendix xml:id="appendix-vids">
+      <title>Video examples and figures</title>
+      <list-of elements="figure" divisions="section" />
+    </appendix>
     <!-- <xi:include href="./bibliography.ptx"/> -->
 
     <index>

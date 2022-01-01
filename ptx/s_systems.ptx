@@ -28,13 +28,14 @@
     </statement>
   </definition>
   <example>
+    <title>Linear and nonlinear equations</title>
     <statement>
       <ol>
         <li>
           <p>
             Consider <m>\sqrt{3}x+\sin(5)=2z-e^4y</m>.
             This is a linear equation in the unknowns <m>x,y,z</m>. Its standard form is <m>\sqrt{3}x+e^4y-2z=-\sin(5)</m>.
-            Since the right-hand side is nonzero, we see that the equation is nonhomogenous.
+            Since the right-hand side is nonzero, we see that the equation is nonhomogeneous.
           </p>
         </li>
         <li>
@@ -143,6 +144,8 @@ A homogeneous system is thus typically written as:
     </ol>
   </p>
   <example xml:id="s_systems_eg_2eqns2varss">
+    <title>Solutions to elementary systems</title>
+
     <statement>
     <p>
     For each system, compute the set of solutions.

@@ -246,12 +246,13 @@
   <title>Cartesian product</title>
   <statement>
     <p>
-      An <term><m>n</m>-tuple</term> of the sets <m>A_1, A_2,\dots, A_n</m> is a sequence <m>(a_1,a_2,\dots, a_n)</m> such that <m>a_i\in A_i</m> for all <m>1\leq i\leq n</m>. We define two <m>n</m>-tuples <m>(a_1,a_2,\dots, a_n)</m>, and <m> (a_1',a_2',\dots, a_n')</m> to be equal, denoted <m>(a_1,a_2,\dots, a_n)=(a_1',a_2',\dots, a_n')</m>, if <m>a_i=a_i'</m> for all <m>1\leq i\leq n</m>. We call <m>n</m> the <term>length</term> of the <m>n</m>-tuple <m>(a_1,a_2,\dots, a_n)</m>, and we call <m>a_i</m> its <term><m>i</m>-th entry</term> for all <m>1\leq i\leq n</m>.
+      An <term><m>n</m>-tuple</term> (or <term>sequence</term>) of the sets <m>A_1, A_2,\dots, A_n</m> is an ordered list <m>(a_1,a_2,\dots, a_n)</m> such that <m>a_i\in A_i</m> for all <m>1\leq i\leq n</m>. We define two <m>n</m>-tuples <m>(a_1,a_2,\dots, a_n)</m>, and <m> (a_1',a_2',\dots, a_n')</m> to be equal, denoted <m>(a_1,a_2,\dots, a_n)=(a_1',a_2',\dots, a_n')</m>, if <m>a_i=a_i'</m> for all <m>1\leq i\leq n</m>.
+      We call <m>n</m> the <term>length</term> of the sequence <m>(a_1,a_2,\dots, a_n)</m>, and we call <m>a_i</m> its <term><m>i</m>-th entry</term> for all <m>1\leq i\leq n</m>.
     </p>
     <p>The
     <term>(Cartesian) product</term> of the sets <m>A_1, A_2,\dots, A_n</m>, denoted <m>A_1\times A_2\times\cdots \times A_n</m> or <m>\displaystyle\prod_{i=1}^nA_i</m>, is the set of all <m>n</m>-tuples: <ie />,
     <me>
-      \prod_{i=1}^nA_i=A_1\times A_2\times\cdots \times A_n=\{(a_1,a_2,\dots, a_n)\colon a_i\in A_i\}
+      \prod_{i=1}^nA_i=A_1\times A_2\times\cdots \times A_n=\{(a_1,a_2,\dots, a_n)\colon a_i\in A_i \text{ for all } 1\leq i\leq n\}
     </me>.
   </p>
   <p>
@@ -478,6 +479,9 @@
     </statement>
   </definition>
     <theorem xml:id="th_invertible_bijective">
+      <title>Invertible is equivalent to bijective</title>
+      
+
       <statement>
         <p>
           A function <m>f\colon X\rightarrow Y</m> is invertible if and only if it is bijective.

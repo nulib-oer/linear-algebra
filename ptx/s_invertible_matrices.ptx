@@ -41,6 +41,8 @@
     </statement>
   </definition>
 <theorem xml:id="th_inverse_unique">
+  <title>Inverses are unique</title>
+
   <statement>
     <p>
       If <m>A</m> is an invertible matrix, then its inverse is unique: that is, there is only one matrix <m>B</m> satisfying <m>AB=BA=I</m>.

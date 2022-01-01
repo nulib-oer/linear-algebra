@@ -503,6 +503,8 @@
 
 
     <example xml:id="s_matrix_ex_product">
+      <title>Matrix multiplication</title>
+
       <statement>
         <p>
           Let <m>A=\begin{amatrix}[rrr] 1\amp 1 \amp -2 \\ 1\amp 3\amp 2\end{amatrix}</m> and <m>B=\begin{amatrix}[rc]1\amp 1\\ 0\amp 1 \\ -2\amp 1 \end{amatrix}</m>
@@ -551,6 +553,14 @@
         </ol>
       </solution>
     </example>
+    <paragraphs xml:id="ss_matrix_mult_vid">
+      <title>Video example of matrix multiplication</title>
+      <figure xml:id="fig_vid_matrix_mult_methods">
+        <title>Three methods of matrix multiplication</title>
+      <caption>Three methods of matrix multiplication</caption>
+      <video xml:id="vid_matrix_mult_methods" youtube="Kx4K8TTbl98" />
+      </figure>
+    </paragraphs>
   </subsection>
 
   <subsection>

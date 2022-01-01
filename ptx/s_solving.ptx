@@ -166,7 +166,7 @@
               </mrow>
               </md>,
             where each <m>F_i(x_{j_1},x_{j_2},\dots, x_{j_s})</m> is a linear expression in the free variables.
-            Then each solutions of <m>L</m> corresponds to a <em>unique</em> variable assignment of the form
+            Each solution of <m>L</m> thus corresponds to a <em>unique</em> variable assignment of the form
             <md>
             <mrow>\text{Free variables: } x_{j_1}\amp=t_{1}, \ x_{j_2}=t_{2},\dots, x_{j_s}=t_{s}</mrow>
             <mrow> \text{Leading variables: } x_{i_1}\amp =F_1(t_1,t_2,\dots, t_s) </mrow>
@@ -280,6 +280,21 @@
   </statement>
 </corollary>
 </p>
+<paragraphs xml:id="ss_GE_video_examples">
+  <title>Video examples of solving linear systems</title>
+  <p>
+    <figure>
+      <title>First example: solving linear systems</title>
+    <caption>First example: solving linear systems</caption>
+    <video xml:id="vid_GE_solving_1" youtube="ocmtUODkMQQ" />
+    </figure>
+    <figure>
+      <title>Second example: solving linear systems</title>
+    <caption>Second example: solving linear systems</caption>
+    <video xml:id="vid_GE_solving_2" youtube="PQ2lJWdTEAY" />
+    </figure>
+  </p>
+</paragraphs>
 </subsection>
 
 <subsection xml:id="ss_homogeneous">
@@ -291,7 +306,7 @@
     </me>
     Such a system is always consistent. Why? Observe that <m>(x_1,x_2,\dots,
     x_n)=(0,0,\dots, 0)</m> is guaranteed to be a solution. Alternatively,
-    it is easy to see that the corresponding row echelon matrix <m>U</m> for the system will have no leading 1's in the last column. Thus, in the special case of a homogeneous system, <xref ref="th_solveSystem"/> boils down to the following result. </p>
+    it is easy to see that the corresponding row echelon matrix <m>U</m> for the system will have no leading ones in the last column. Thus, in the special case of a homogeneous system, <xref ref="th_solveSystem"/> boils down to the following result. </p>
     <corollary xml:id="s_solving_homogeneous">
       <title>Solutions to homogeneous equations</title>
       <statement>

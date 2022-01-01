@@ -4,35 +4,56 @@
 
     <statement>
       <p>
-        Recall that the set of solutions <m>(x,y)</m> to a single linear equation in 2 variables constitutes a line <m>\ell</m> in <m>\R^2</m>.
-        We denote this <m>\ell\colon ax+by=c</m>.
-        Similarly, the set of solutions <m>(x,y,z)</m> to a single linear equation in 3 variables
-        <m>ax+by+cz=d</m> constitutes a plane <m>\mathcal{P}</m> in <m>\R^3</m>.
-        We denote this <m>\mathcal{P}\colon ax+by+cz=d</m>.
+        Recall that the <em>graph</em> of an equation is the set of all solutions to the equation. Graphs of linear equations correspond to some familiar geometric objects:
+        <ul>
+          <li>
+            <title>Lines</title>
+            <p>
+              A <em>line</em> in <m>\R^2</m> is the graph <m>\ell</m> of a linear equation of the form <m>ax+by=c</m>, where <m>a, b, c\in\R</m> are fixed constants, and at least one of <m>a</m> and <m>b</m> is nonzero: <ie />,
+              <me>
+                \ell=\{(x,y)\in\R^2\colon ax+by=c\}.
+              </me>
+            </p>
+          </li>
+          <li>
+            <title>Planes</title>
+            <p>
+              A <em>plane</em> in <m>\R^3</m> is the graph <m>\mathcal{P}</m> of a linear equation of the form <m>ax+by+cz=d</m>, where <m>a, b, c, d\in\R</m> are fixed constants, and at least one of <m>a, b, c</m> is nonzero: <ie />,
+              <me>
+                \mathcal{P}=\{(x,y,z)\in\R^3\colon ax+by+cz=d\}.
+              </me>
+            </p>
+          </li>
+        </ul>
+      We often use the abbreviated notation
+      <md>
+        <mrow>\ell \amp\colon ax+by=c \amp \mathcal{P}\amp\colon ax+by+cz=d</mrow>
+      </md>
+      to introduce the line <m>\ell</m> with defining equation <m>ax+by=c</m> or plane <m>\mathcal{P}</m> with definining equation <m>ax+by+cz=d</m>.
       </p>
       <ol>
         <li>
           <p>
-            Fix <m>m>1</m> and consider a system of <m>m</m> linear equations in the 2 unknowns <m>x</m> and <m>y</m>.
-            What do solutions <m>(x,y)</m> to this <em>system</em>
+            Fix <m>m\gt 1</m> and consider a system of <m>m</m> linear equations in the two unknowns <m>x</m> and <m>y</m>.
+            What does a solution <m>(x,y)</m> to this <em>system</em>
             of linear equations correspond to geometrically?
           </p>
         </li>
         <li>
           <p>
-            Use your interpretation to give a <em>geometric</em>
-            argument that a system of <m>m</m> equations in 2 unknowns will have either (i) 0 solutions, (ii) 1 solution,
+            Use your interpretation in (a) to give a <em>geometric</em>
+            argument that a system of <m>m</m> equations in two unknowns will have either (i) zero solutions, (ii) exactly one solution,
             or (iii) infinitely many solutions.
           </p>
         </li>
         <li>
           <p>
-            Use your geometric interpretation to help produce explicit examples of systems in 2 variables satisfying these three different cases (i)-(iii).
+            Use your geometric interpretation to help produce explicit examples of systems in two variables satisfying these three different cases (i)-(iii).
           </p>
         </li>
         <li>
           <p>
-            Now repeat (a)-(b) for systems of linear equations in 3 variables <m>x,y, z</m>.
+            Now repeat (a)-(b) for a system of linear equations in three variables <m>x,y, z</m>.
           </p>
         </li>
       </ol>
@@ -232,11 +253,9 @@
                 Now suppose <m>s=(s_1,s_2,\dots,
                 s_n)</m> satisfies <m>L'</m>.
                 Since <m>s</m> satisfies <m>e_j'=e_j</m>, we have
-                <md>
-                <mrow xml:id="solveeqn" tag="star">
-                  a_{j1}s_1+a_{j2}s_2+\cdots +a_{jn}s_n=b_j
-                </mrow>
-              </md>.
+                <men xml:id="solveeqn" tag="star">
+                  a_{j1}s_1+a_{j2}s_2+\cdots +a_{jn}s_n =b_j
+                </men>
                 Since <m>s</m> satisfies <m>e_i'</m>, we have
                 <me>
                   a_{i1}s_1+a_{i2}s_2+\cdots +a_{in}s_n+c(a_{j1}s_1+a_{j2}s_2+\cdots +a_{jn}s_n)=b_i+cb_j
@@ -255,4 +274,95 @@
           </case>
       </solution>
   </exercise>
+
+  <exercise xml:id="ex_solving_nonlinear_system">
+<title>Nonlinear systems</title>
+  <statement>
+    A <em>nonlinear</em> system of equations is a collection of equations, at least one of which is nonlinear. Our definition of a solution to a linear system generalizes easily to any system of equations.
+    <ol>
+      <li>
+        <p>
+        Consider the following nonlinear system in the unknowns <m>x, y</m>:
+        <me>
+          \begin{linsys}{2}
+          x^2\amp +\amp y^2\amp =\amp 1\\
+          x\amp +\amp x \amp =\amp \frac{1}{2}
+          \end{linsys}
+        </me>.
+        <ol>
+          <li>
+            <p>
+              Sketch the graphs of each of the two equations in the system on a common coordinate system.
+            </p>
+          </li>
+          <li>
+            <p>
+              Describe geometrically what a solution to the system is in terms of your sketch. Explain your reasoning. How many solutions to the system are there, according to your sketch.
+            </p>
+          </li>
+          <li>
+            <p>
+              Compute the set of all solutions to the system algebraically.
+            </p>
+          </li>
+        </ol>
+        </p>
+      </li>
+      <li>
+        <p>
+          Now consider a more general system
+          <men xml:id="eq_general_nonlinear">
+            \begin{linsys}{2}
+            x^2\amp +\amp y^2\amp =\amp 1\\
+            ax\amp +\amp bx \amp =\amp c,
+            \end{linsys}
+          </men>
+          where <m>a,b,c\in\R</m> are fixed constants and at least one of <m>a</m> or <m>b</m> is nonzero.
+        </p>
+        <ol>
+          <li>
+            <p>
+              Explain geometrically what a solution to the system corresponds to in terms of the graphs of its two equations.
+            </p>
+          </li>
+          <li>
+            <p>
+              Use your geometric interpretation in (i) to argue that the system <xref ref="eq_general_nonlinear"/> has either 0, 1, or 2 solutions. Give explicit examples of such systems corresponding to each of these three cases.
+            </p>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </statement>
+
+</exercise>
+<exercise>
+  <title>Not all arithmetic operations preserve solutions</title>
+
+  <statement>
+    <p>
+      In this exercise we investigate how the operation of squaring both sides of an equation changes the set of solutions. Let
+      <men xml:id="eq_general_equation">
+        F(x_1,x_2,\dots, x_n)=G(x_1,x_2,\dots, x_n)
+      </men>
+      represent a general equation (linear or nonlinear) in the unknowns <m>x_1,x_2,\dots, x_n</m>, let
+      <men xml:id="eq_general_equation_squared">
+        \left(F(x_1,x_2,\dots, x_n)\right)^2=\left(G(x_1,x_2,\dots, x_n)\right)^2
+      </men>
+      be the equation obtained by squaring both sides of the <xref ref="eq_general_equation"/>, let <m>S_1</m> be the set of solutions to <xref ref="eq_general_equation"/>, and let <m>S_2</m> be the set of solutions to <xref ref="eq_general_equation_squared"/>.
+    </p>
+    <ol>
+      <li>
+        <p>
+          Show that <m>S_1\subseteq S_2</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Given an explicit example of an equation of the form <xref ref="eq_general_equation"/> in two variables for which <m>S_2\not\subseteq S_1</m>.
+        </p>
+      </li>
+    </ol>
+  </statement>
+</exercise>
 </exercises>
