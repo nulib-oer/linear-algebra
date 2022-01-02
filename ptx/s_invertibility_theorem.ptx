@@ -713,7 +713,7 @@ The two inveribility algorithms above are nice examples of how a <em>theoretical
 
     </proof>
   </corollary>
-We conclude with two results related to row reduction. The first provides an equivalent formulation of row equivalence in terms of matrix arithmetic. The second provides at last the proof of the third statement of <xref ref="th_matrixforms"/> promised back in <xref ref="s_ge"/>.
+We conclude with two results related to row reduction. The first provides an equivalent formulation of row equivalence in terms of matrix arithmetic.
 <corollary xml:id="cor_row_equivalence_invertibility">
   <title>Row equivalence and invertible matrices</title>
   <statement>
@@ -770,11 +770,11 @@ We conclude with two results related to row reduction. The first provides an equ
          </p>
        </li>
      </ol>
-     The proof of these facts is left as an exercise (<xref ref="ex_row_equiv_props"/>)
+     The proof of these facts is left as an exercise (<xref ref="ex_row_equiv_props"/>).
     </p>
   </statement>
 </remark>
-
+Lastly, we provide at last the proof of the third statement of <xref ref="th_matrixforms"/> promised back in <xref ref="s_ge"/>. This proof is due to Thomas Yuster<fn>Thomas Yuster. <em>The reduced row echelon form of a matrix is unique: a simple proof</em>, Mathematics Magazine <term>57</term> (1984), no. 2, 93-94. </fn>.
 <corollary xml:id="cor_RRE_uniqueness">
   <title>Uniqueness of reduced row echelon form</title>
   <statement>
@@ -784,10 +784,30 @@ We conclude with two results related to row reduction. The first provides an equ
   </statement>
   <proof>
     <p>
-      Let <m>A</m> be an <m>m\times n</m> matrix. Using Gauss-Jordan elimination, we can row reduce <m>A</m> to matrix <m>U</m> in reduced row echelon form. Suppose <m>A</m> is also row equivalent to the matrix <m>U'</m> in reduced row echelon form. Then <m>U</m> and <m>U'</m> are row equivalent, since the row equivalence relation is symmetric and transitive (<xref ref="rm_row_equivalence_props"/>). Thus it suffices to show that if <m>U</m> and <m>U'</m> are row equivalent matrices in reduced row echelon form, then <m>U=U'</m>.
+      Let <m>A</m> be an <m>m\times n</m> matrix. Using Gauss-Jordan elimination, we can row reduce <m>A</m> to matrix <m>U</m> in reduced row echelon form. Suppose <m>A</m> is also row equivalent to the matrix <m>U'</m> in reduced row echelon form. Then <m>U</m> and <m>U'</m> are row equivalent, since the row equivalence relation is symmetric and transitive (<xref ref="rm_row_equivalence_props"/>). Thus it suffices to show that if <m>U</m> and <m>U'</m> are row equivalent matrices in reduced row echelon form, then <m>U=U'</m>. We do so by induction on <m>n</m>. The base step is trivial, since there is only one <m>m\times 1</m> matrix in reduced row echelon form.
     </p>
     <p>
-      Assume <m>U</m> and <m>U'</m> are row equivalent <m>m\times n</m> matrices in reduced row echelon form. By <xref ref="cor_row_equivalence_invertibility"/> there exists an invertible matrix <m>Q</m> such that <m>QU=U'</m>.
+      For the induction step we assume that any two row equivalent <m>m\times n</m> matrices in reduced row echelon form are equal.  Suppose by contradiction that <m>U=[u_{ij}]</m> and <m>U'=[u'_{ij}]</m> are row equivalent <m>m\times (n+1)</m> matrices in reduced row echelon form, and that <m>U\ne U'</m>.  By <xref ref="cor_row_equivalence_invertibility"/> there is an invertible matrix <m>Q</m> such that <m>QU=U'</m>. The first <m>n</m> columns of <m>U</m> and <m>U'</m> form matrices <m>V</m> and <m>V'</m>, respectively, that are in reduced row echelon form, as one easily checks. Furthermore, <m>V</m> and <m>V'</m> are row equivalent: indeed, using <xref ref="th_column_method"/> we see that <m>QU=U'</m> implies <m>QV=V'</m>. By the induction hypothesis we must have <m>V=V'</m>, and
+      thus <m>U</m> and <m>U'</m> can only differ in their last column.
+    </p>
+    <p>
+      We claim that <m>U</m> and <m>U'</m> must both have a leading one in the last column. To see why, consider the matrix equation <m>U\boldx=\boldzero</m>, where <m>\boldx=[x_j]</m> is a <m>(n+1)\times 1 </m> column vector. Since <m>QU=U'</m>, we have
+      <md>
+        <mrow>U\boldx=\boldzero \amp\implies QU\boldx=Q\boldzero  </mrow>
+        <mrow> \amp\implies U'\boldx=\boldzero \amp (U'=QU) </mrow>
+      </md>,
+    and thus
+    <me>
+      U\boldx=\boldzero\implies U\boldx-U'\boldx=\boldzero\implies (U-U')\boldx=\boldzero
+    </me>.
+    Because <m>U</m> and <m>U'</m> differ in at most their last column, the first <m>n</m> columns of <m>U-U'</m> are zero columns, and thus we have
+    <men xml:id="eq_unique_rref">
+      (U-U')\boldx=[x_{n+1}(u_{i(n+1)}-u'_{i(n+1)})]=\boldzero
+    </men>.
+    Since <m>U\ne U'</m>, there is some <m>1\leq i\leq m</m> such that <m>u_{i(n+1)}\ne u'_{i(n+1)}</m>. Since <m>x_{n+1}(u_{i(n+1)}-u'_{i(n+1)})=0</m> by <xref ref="eq_unique_rref"/>, we must have <m>x_{n+1}=0</m>. We have shown that for any <m>\boldx=[x_j]</m> satisfying <m>U\boldx=\boldzero</m>, we must have <m>x_{n+1}=0</m>. It follows from <xref ref="th_solveSystem"/> that <m>U</m> must have a leading in its last column, since otherwise the variable <m>x_{n+1}</m> in the system <m>U\boldx=0</m> would be free, and could assume any value. To see that <m>U'</m> also has a leading one in the last column, we use the same argument, starting with the equation <m>Q^{-1}U'=U</m>.
+    </p>
+    <p>
+      To summarize, starting with row equivalent matrices  <m>U</m> and <m>U'</m> in reduced row echelon form, and assuming by contradiction that <m>U\ne U'</m>, we conclude that (a) the first <m>n</m> columns of <m>U</m> and <m>U'</m> are equal and form matrices in reduced row echelon form, and (b) the last columns of <m>U</m> and <m>U'</m> have leading ones. Since <m>U</m> and <m>U'</m> are in reduced row echelon form, and since the first <m>n</m> columns of <m>U</m> and <m>U'</m> are equal, we see that the leading ones in the last columns of <m>U</m> and <m>U'</m> must occur in the same row: namely, the first zero row of <m>V=V'</m>. It follows that <m>U=U'</m>, a contradiction.
     </p>
   </proof>
 

@@ -100,7 +100,7 @@ As defined more thoroughly in <xref ref="d_matrix"/>, a matrix is just a rectang
         <dl>
           <li>
             <title>(iv)</title>
-            Any column of the matrix that contains a leading one of the matrix in one of its rows . In other words, if a column contains a leading one, then that is the only nonzero entry of that column.
+            Any column of the matrix that contains a leading one has zeros elsewhere. In other words, if a column contains a leading one, then that is the only nonzero entry of that column.
           </li>
         </dl>
       </p>
@@ -438,7 +438,7 @@ As defined more thoroughly in <xref ref="d_matrix"/>, a matrix is just a rectang
 
 <p>We will make heavy use of the first two results of <xref ref="th_matrixforms"/>. The proofs of these statements are not difficult, but not especially illuminating. Accordingly we omit them here, and point the interested reader to Robert Beezer's <url href="http://linear.ups.edu/fcla"><em>A First Course in Linear Algebra </em></url> (<url href="http://linear.ups.edu/fcla/section-RREF.html#theorem-REMEF">Theorem REMEF</url>).
 </p>
-<p>The third statement of <xref ref="th_matrixforms"/>, that every matrix is row equivalent to a <em>unique</em> matrix in reduced row echelon form, does in fact have an enlightening proof. We will postpone this proof, however, until we have a little more theory at our disposal. (See <xref provisional="cor_RRE_uniqueness"/>.) Until then we will conscientiously <em>not</em> make use of this result in developing any of our further theory.</p>
+<p>The third statement of <xref ref="th_matrixforms"/>, that every matrix is row equivalent to a <em>unique</em> matrix in reduced row echelon form, does in fact have an enlightening proof. We will postpone this proof, however, until we have a little more theory at our disposal. (See <xref ref="cor_RRE_uniqueness"/>.) Until then we will conscientiously <em>not</em> make use of this result in developing any of our further theory.</p>
 <example xml:id="s_ge_ex_REFnotunique">
   <title>Row echelon form is not unique</title>
   <statement>
