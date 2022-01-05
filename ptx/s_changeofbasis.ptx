@@ -361,7 +361,7 @@
     they simply inherit these common properties from the overlying linear transformation <m>T</m>,
     of which they are but earthly shadows.
   </p>
-  <!-- <figure>
+  <!-- <figure xml:id="fig_comm_tent">
     <caption>Holy commutative tent of linear algebra: <m>P=\underset{B\rightarrow B'}{P}</m>, <m>B=P^{-1}AP</m></caption>
     <image xml:id="im_holycomm">
       <latex-image>
@@ -374,7 +374,7 @@
     </image>
 
   </figure> -->
-  <figure>
+  <figure xml:id="fig_comm_tent">
     <caption>Holy commutative tent of linear algebra: <m>P=\underset{B\rightarrow B'}{P}</m>, <m>B=P^{-1}AP</m>
   </caption>
     <image xml:id="im_holycomm" source="./images/im_holycomm.svg"/>
@@ -451,7 +451,4 @@
     </p>
   </subsection>
 
-  <p>
-    <image width="75%" source="images/HolyCommutativeTent.png"/>
-  </p>
 </section>

@@ -298,7 +298,7 @@ The following exercises explore the relationship between a square matrix <m>A</m
       Give an explicit example of a square matrix <m>A</m> satisfying <m>A\ne \boldzero_{n\times n}</m> and <m>\adj A=\boldzero_{n\times n}</m>.
     </p>
     <p>
-      In other words, show that it is possible for a nonzero matrix to have a zero adjoint matrix. 
+      In other words, show that it is possible for a nonzero matrix to have a zero adjoint matrix.
     </p>
   </statement>
 </exercise>
@@ -338,10 +338,10 @@ The following exercises explore the relationship between a square matrix <m>A</m
     </p>
   </statement>
 </exercise>
-<exercise>
+<exercise xml:id="ex_det_col_ops">
   <statement>
     <p>
-      State and prove an analogue to <xref ref="th_det_row_ops"/> that describes how the corresponding <em>column operations</em> (i.e., scale a column by <m>c</m>, swap two columns, column addition) affect the determinant of a matrix.
+      State and prove an analogue to <xref ref="th_det_row_ops"/> that describes how the corresponding <em>column operations</em> (i.e., scale a column by <m>c</m>, swap two columns, column addition) affect the determinant of a matrix. (See <xref ref="rm_det_col_ops"/>).
     </p>
   </statement>
   <hint>

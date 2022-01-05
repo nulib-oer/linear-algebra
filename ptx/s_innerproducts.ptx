@@ -267,7 +267,7 @@
     (AB)_{ij}=\sum_{k=1}^na_{ik}b_{kj}=\boldr_i\cdot \boldc_j
   </me>,
   since
-  <m>\bolr_i=(a_{i1}, a_{i2}, \dots, a_{in})</m> and <m>\boldc_j=(b_{j1}, b_{2j},\dots, b_{nj})</m>.
+  <m>\boldr_i=(a_{i1}, a_{i2}, \dots, a_{in})</m> and <m>\boldc_j=(b_{j1}, b_{2j},\dots, b_{nj})</m>.
 </p>
 </proof>
 </theorem>
@@ -343,7 +343,7 @@
       </me>,
       since <m>f^2(x)\geq 0</m> for all <m>x\in [a,b]</m>. (This is a property of integration.) Furthermore, since <m>f^2</m> is continuous and <m>f^2(x)\geq 0</m>, we have
       <me>\langle f, f \rangle=\int_a^b f^2(x) \ dx=0 </me>
-      if and only if <m>f^2(x)=0</m> for all <m>x\in [a,b]</m> (a property of integrals of <em>continuous</em> functions) if and only if <m>f(x)=0</m> for all <m>x\in [a,b]</m> if and only if <m>\boldf=\boldzero</m>, the zero function.
+      if and only if <m>f^2(x)=0</m> for all <m>x\in [a,b]</m> (a property of integrals of <em>continuous</em> functions) if and only if <m>f(x)=0</m> for all <m>x\in [a,b]</m> if and only if <m>f=\boldzero</m>, the zero function.
     </p>
   </proof>
 </theorem>

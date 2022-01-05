@@ -60,7 +60,7 @@
         Let <m>V</m> and <m>W</m> be vector spaces with ordered bases <m>B=(\boldv_1, \boldv_2, \dots, \boldv_n)</m> and <m>B'=(\boldw_1, \boldw_2, \dots, \boldw_m)</m>, respectively.  Given a linear transformation <m>T\colon V\rightarrow W</m>, the <term>matrix representing <m>T</m> with respect to <m>B</m> and <m>B'</m></term>, is the <m>m\times n</m> matrix <m>[T]_B^{B'}</m> whose <m>j</m>-th column is <m>[T(\boldv_j)]_{B'}</m>, considered as a column vector: <ie />,
         <me>
         [T]_B^{B'}=\begin{amatrix}[cccc]\vert \amp \vert \amp \amp \vert \\
-        [T(\boldv_1)]_{B'}\amp [T(\boldv_2)]_{B'}\amp \dots \amp [T(\boldv_n)]_{B'} \\
+        \left[T(\boldv_1)\right]_{B'}\amp [T(\boldv_2)]_{B'}\amp \dots \amp [T(\boldv_n)]_{B'} \\
         \vert \amp \vert \amp  \amp \vert
       \end{amatrix}
       </me>.
@@ -93,7 +93,7 @@
           By definition we have
           <me>
           [T]_B^{B'}=\begin{amatrix}[cccc]\vert \amp \vert \amp \amp \vert \\
-          [T(\boldv_1)]_{B'}\amp [T(\boldv_2)]_{B'}\amp \dots \amp [T(\boldv_n)]_{B'} \\
+          \left[T(\boldv_1)\right]_{B'}\amp [T(\boldv_2)]_{B'}\amp \dots \amp [T(\boldv_n)]_{B'} \\
           \vert \amp \vert \amp  \amp \vert
         \end{amatrix}
         </me>.

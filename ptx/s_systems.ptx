@@ -256,7 +256,7 @@ A homogeneous system is thus typically written as:
     <idx><h>row reduction</h><h>of systems</h></idx>
     <statement>
       <p>
-        An <term>elementary operation</term> is one of the three types of operations on linear systems described below.
+        An <term>elementary operation</term> (or <term>elementary row operation</term>) is one of the three types of operations on linear systems described below.
       </p>
         <dl>
           <li xml:id="d_eq_scale">
@@ -281,7 +281,7 @@ A homogeneous system is thus typically written as:
           </li>
         </dl>
     <p>
-      The act of transforming a system of equations using elementary operations is called <term>reduction</term>
+      The act of transforming a system of equations using elementary operations is called <term>reduction</term> (or <term>row reduction</term>).
     </p>
     </statement>
   </definition>
@@ -397,8 +397,8 @@ A homogeneous system is thus typically written as:
     <statement>
       <p>
         We say two systems of linear equations are
-        <term>equivalent</term>
-        if the one can be obtained from the other by a finite sequence of row operations.
+        <term>equivalent</term> (or <term>row equivalent</term>)
+        if the one can be obtained from the other by a finite sequence of elementary operations.
       </p>
     </statement>
   </definition>

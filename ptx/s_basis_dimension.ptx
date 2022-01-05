@@ -146,7 +146,7 @@
       We show that no finite set of polynomials can span all of <m>P</m>; it follows that <m>P</m> does not have a finite basis.
     </p>
     <p>
-    Indeed let <m>S=\{p_1, p_2, \dots, p_r\}</m> be a finite set of polynomials, and let <m>n</m> be the maximal degree of all the polynomials <m>p_i\in S</m>. Then <m>p_i\in P_n</m> for all <m>i</m>, in which case <m>\Span S\subseteq P_n</m>: <ie />, <m>\Span S</m> is a subspace of the space of polynomials of degree at most <m>n</m>. Since <m>P_n\subsetne P</m>, we conclude that <m>\Span S\ne P</m>, as claimed.
+    Indeed let <m>S=\{p_1, p_2, \dots, p_r\}</m> be a finite set of polynomials, and let <m>n</m> be the maximal degree of all the polynomials <m>p_i\in S</m>. Then <m>p_i\in P_n</m> for all <m>i</m>, in which case <m>\Span S\subseteq P_n</m>: <ie />, <m>\Span S</m> is a subspace of the space of polynomials of degree at most <m>n</m>. Since <m>P_n\subsetneq P</m>, we conclude that <m>\Span S\ne P</m>, as claimed.
     </p>
   </solution>
 </example>

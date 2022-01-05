@@ -369,12 +369,12 @@
       </p>
     </proof>
   </subsection>
-  <subsection>
+  <!-- <subsection>
     <title>Visualizing the rank-nullity theorem</title>
     <me>
       <image width="65%" source="images/RankNullity.png"/>
     </me>
-  </subsection>
+  </subsection> -->
   <subsection>
     <title>Example</title>
     <p>
@@ -736,9 +736,9 @@
       In what sense does <m>y=\frac{5}{14}x+2</m>
       <q>best</q>
       fit the data?
-      <me>
+      <!-- <me>
         <image width="37%" source="images/LeastSquares.png"/>
-      </me>
+      </me> -->
     </p>
     <p>
       Let <m>\boldy=(1,2,3)=(y_1,y_2,y_3)</m> be the given <m>y</m>-values of the points,

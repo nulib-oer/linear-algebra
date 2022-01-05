@@ -29,6 +29,14 @@
         </p>
       </statement>
     </definition>
+        <warning xml:id="rm_minors">
+      <statement>
+        <p>
+          Do not conflate the submatrix notation <m>A_{ij}</m> with matrix entry notation <m>[A]_{ij}</m>: the former returns the submatrix of <m>A</m> obtained by deleting the <m>i</m>-th row and <m>j</m>-th column; the latter returns the <m>ij</m>-th entry of <m>A</m>.
+        </p>
+      </statement>
+    </warning>
+
     <definition xml:id="d_det">
       <title>The determinant</title>
       <idx><h>determinant</h></idx>
@@ -297,10 +305,10 @@
   </proof>
 </theorem>
 <p>
-  Naturally, it is also the case that we can compute the determinant by expanding along any <em>column</em>. This follows from the next theorem.
+  Suprisingly, it turns out that we can compute the determinant of a matrix by expanding along any <em>column</em> (<xref ref="cor_expansion_columns"/>). This is a consequence of the following theorem, which is useful in its own right. The proof uses induction and a wonderful trick starting from the observation that <m>c=\frac{1}{n}\sum_{i=1}^n c</m> for any <m>c\in\R</m>.
 </p>
 <theorem xml:id="th_det_transpose">
-  <title>Determinant and tranposition</title>
+  <title>Determinant and transposition</title>
   <statement>
     <p>
       Let <m>A</m> be an <m>n\times n</m> matrix. Then
@@ -311,7 +319,20 @@
   </statement>
   <proof>
     <p>
-      Coming soon!
+      The proof is by induction on <m>n</m>. The base case (<m>n=1</m>) is trivial since <m>[a]^T=[a]</m> for any <m>1\times 1</m> matrix <m>[a]</m>.
+    </p>
+    <p>
+      For induction we assume that for all <m>n\geq 2</m> we have <m>\det B^T=\det B</m> for any <m>(n-1)\times (n-1)</m> matrix. Suppose <m>A</m> is an <m>n\times n</m> matrix. We have
+      <md>
+        <mrow>\det A^T \amp = \frac{1}{n}\sum_{i=1}^{n}\det A^T </mrow>
+        <mrow> \amp =\frac{1}{n}\sum_{i=1}^n\sum_{j=1}^n(-1)^{i+j}[A^T]_{ij}\det \left((A^T)_{ij}\right) \amp (<xref ref="th_expansion_row"/>) </mrow>
+      <mrow>  \amp = \frac{1}{n}\sum_{i=1}^n\sum_{j=1}^n(-1)^{i+j}[A]_{ji}\det (A_{ji})^T \amp ([A^T]_{ij}=A_{ji}, (A^T)_{ij}=(A_{ji})^T)</mrow>
+      <mrow>  \amp = \frac{1}{n}\sum_{i=1}^n\sum_{j=1}^n(-1)^{i+j}[A]_{ji}\det A_{ji} \amp (\det (A_{ji})^T=\det A_{ji}, \text{ by induction})</mrow>
+      <mrow>  \amp= \frac{1}{n}\sum_{j=1}^n\sum_{i=1}^n(-1)^{i+j}[A]_{ji}\det A_{ji} \amp (\text{props. of addition})</mrow>
+      <mrow>  \amp =\frac{1}{n}\sum_{j=1}^n\det A \amp (<xref ref="th_expansion_row"/>)</mrow>
+      <mrow>  \amp = \det A</mrow>
+      </md>.
+      This completes the proof by induction. (Note how in the second equality in the chain above we compute <m>\det A^T</m> in the <m>i</m>-th term of <m>\sum_{i=1}^n\det A^T</m> by expanding along the <m>i</m>-th row of <m>\det A^T</m>. A similar observation applies to the penultimate equality.)
     </p>
   </proof>
 
@@ -537,7 +558,7 @@ As a further consequence of <xref ref="th_expansion_row"/> and <xref ref="cor_ex
     <p>
       Thus it suffices to prove <xref ref="eq_adj_form"/>. To do so, we must show that
       <me>
-      (A\, \adj A)_{ij}=(\adj A\, A)_{ij}=
+      [A\, \adj A]_{ij}=[\adj A\, A]_{ij}=
         \begin{cases} \det A\amp \text{if } i=j\\
                   0 \amp \text{if } i\ne j
           \end{cases}
@@ -548,7 +569,7 @@ As a further consequence of <xref ref="th_expansion_row"/> and <xref ref="cor_ex
       <p>
       In this case we have
       <md>
-        <mrow> (A\, \adj A)_{ii} \amp =\sum_{k=1}^na_{ik}(\adj A)_{ki}  </mrow>
+        <mrow> [A\, \adj A]_{ii} \amp =\sum_{k=1}^na_{ik}[\adj A]_{ki}  </mrow>
         <mrow> \amp =\sum_{k=1}^n a_{ik}((-1)^{i+k}M_{ik}) \amp (<xref ref="d_adjoint"/> )</mrow>
         <mrow>  \amp =\sum_{k=1}^n(-1)^{i+k}a_{ik}M_{ik} </mrow>
         <mrow>  \amp =\det A </mrow>
@@ -560,16 +581,16 @@ As a further consequence of <xref ref="th_expansion_row"/> and <xref ref="cor_ex
        <title>Case: <m>i\ne j</m></title>
       <p>
       When <m>i\ne j</m> we have <md>
-        <mrow> (A\, \adj A)_{ij} \amp =\sum_{k=1}^na_{ik}(\adj A)_{kj}  </mrow>
+        <mrow> [A\, \adj A]_{ij} \amp =\sum_{k=1}^na_{ik}[\adj A]_{kj}  </mrow>
         <mrow> \amp =\sum_{k=1}^n a_{ik}((-1)^{k+j}M_{jk}) \amp (<xref ref="d_adjoint"/> )</mrow>
         <mrow>  \amp =\sum_{k=1}^n(-1)^{k+j}a_{ik}M_{jk} </mrow>
         <mrow>  \amp =\det C </mrow>
         </md>,
         where <m>C</m> is the matrix obtained by replacing the <m>j</m>-th row of <m>A</m> with a copy of its <m>i</m>-th row. Since <m>C</m> has two identical rows <xref ref="th_det_zero_repeated_row"/> implies
         <me>
-          (A\, \adj A)_{ij}=\det C=0
+          [A\, \adj A]_{ij}=\det C=0
         </me>,
-        as desired. Once again, a similar argument using expansion along a column shows that <m>(\adj A\, A)_{ij}=0</m>.
+        as desired. Once again, a similar argument using expansion along a column shows that <m>[\adj A\, A]_{ij}=0</m>.
       </p>
       </case>
 
@@ -692,6 +713,15 @@ As a further consequence of <xref ref="th_expansion_row"/> and <xref ref="cor_ex
     </p>
   </statement>
 </remark>
+    <remark xml:id="rm_det_col_ops">
+      <title>Column operations and the determinant</title>
+  <statement>
+    <p>
+    As shown in <xref ref="ex_det_col_ops"/> the determinant behaves in a similar manner with respect to <em>elementary column operations</em>: <ie />, scaling a column by a nonzero constant scales the determinant by <m>c</m>, swapping columns multiplies the determinant by <m>-1</m>, adding a multiple of one column to another leaves the determinant unchanged.    
+    </p>
+  </statement>
+</remark>
+
 <corollary xml:id="cor_det_prod_elem">
   <title>Determinant and products of elementary matrices</title>
   <statement>
