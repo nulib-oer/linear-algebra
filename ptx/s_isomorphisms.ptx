@@ -1,0 +1,14 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_isomorphisms">
+  <title>Isomorphisms</title>
+    <introduction>
+    <p>
+      The <em>determinant</em> is a map that assigns to a square matrix <m>A</m> a scalar <m>\det A\in\R </m>.
+      The definition given below of the determinant is far from intuitive, and we will do little to motivate it up front. Instead, we allow its various properties to speak for themselves by way of retroactive motivation. In particular, we will see that
+      <me>
+        A \text{ is invertible } \iff \det A \ne 0
+      </me>,
+      making the determinant an important tool for investigating invertibility.
+    </p>
+    </introduction>
+
+</section>
