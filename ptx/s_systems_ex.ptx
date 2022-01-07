@@ -314,7 +314,7 @@
           <men xml:id="eq_general_nonlinear">
             \begin{linsys}{2}
             x^2\amp +\amp y^2\amp =\amp 1\\
-            ax\amp +\amp bx \amp =\amp c,
+            ax\amp +\amp by \amp =\amp c,
             \end{linsys}
           </men>
           where <m>a,b,c\in\R</m> are fixed constants and at least one of <m>a</m> or <m>b</m> is nonzero.
