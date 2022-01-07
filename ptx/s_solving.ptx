@@ -253,6 +253,7 @@
     </case>
   </proof>
   <p>Interesting in its own right is the following corollary of <xref ref="th_solveSystem"/>, which tells us that a linear system has either no solutions, exactly one solutions, or infinitely many solutions.
+  </p>
   <corollary xml:id="c_qualitative">
     <title><m>0</m>, <m>1</m>, or <m>\infty</m>-many solutions</title>
 
@@ -279,7 +280,36 @@
     </ul>
   </statement>
 </corollary>
+<p>
+  The decision tree in <xref ref="fig_decision_tree"/> concisely summarizes the different cases articulated in <xref ref="c_qualitative"/>.
 </p>
+<!-- <figure xml:id="fig_decision_tree">
+  <title>Decision tree for number of solutions to a system</title>
+  <caption>Decision tree for the number of solutions to a linear system with augmented matrix <m>U</m> in row echelon form. </caption>
+  <image xml:id="im_decision_tree">
+    <latex-image>
+      \begin{tikzpicture}[align=center]
+\node[shape=rectangle, rounded corners,
+    draw, align=center,
+    top color=white, bottom color=blue!20] {Leading one in the last column of $U$?}
+    	child[level distance=5em] { node {System inconsistent. \\ No solutions.} edge from parent node[left] {Yes} }
+	child[sibling distance=30em, level distance=7em] {
+	node[shape=rectangle, rounded corners, draw, align=center, top color=white, bottom color=blue!20] {Any {\em other} columns of $U$ with leading ones?}
+    	child[level distance=5 em] { node {System has $\infty$-many solutions.} edge from parent node[left,yshift=.5em] {Yes}}
+	child[sibling distance=1em,  level distance=5 em] { node {System has unique solution.} edge from parent node[right] {No}} edge from parent node[right, yshift=.5em] {No}
+    };
+      \end{tikzpicture}
+    </latex-image>
+  </image>
+
+
+</figure> -->
+<figure xml:id="fig_decision_tree">
+  <title>Decision tree for number of solutions to a system</title>
+  <caption>Decision tree for the number of solutions to a linear system with augmented matrix <m>U</m> in row echelon form. </caption>
+  <image xml:id="im_decision_tree" source="./images/im_decision_tree.svg"/>
+</figure>
+
 <paragraphs xml:id="ss_GE_video_examples">
   <title>Video examples of solving linear systems</title>
   <p>
@@ -297,7 +327,7 @@
 </paragraphs>
 </subsection>
 
-<subsection xml:id="ss_homogeneous">
+<paragraphs xml:id="ss_homogeneous">
   <title>Solutions to homogeneous systems</title>
   <p>
     Consider the special case of a homogeneous system
@@ -306,7 +336,7 @@
     </me>
     Such a system is always consistent. Why? Observe that <m>(x_1,x_2,\dots,
     x_n)=(0,0,\dots, 0)</m> is guaranteed to be a solution. Alternatively,
-    it is easy to see that the corresponding row echelon matrix <m>U</m> for the system will have no leading ones in the last column. Thus, in the special case of a homogeneous system, <xref ref="th_solveSystem"/> boils down to the following result. </p>
+    it is easy to see that row reducing the system results in an augmented matrix <m>U</m> whose last column is a zero column: a zero column certainly contains no leading ones. Thus, in the special case of a homogeneous system, <xref ref="c_qualitative"/> boils down to the following result. </p>
     <corollary xml:id="s_solving_homogeneous">
       <title>Solutions to homogeneous equations</title>
       <statement>
@@ -330,7 +360,7 @@
       </statement>
     </corollary>
 
-  </subsection>
+  </paragraphs>
 
   <xi:include  href="s_solving_ex.ptx"/>
 
