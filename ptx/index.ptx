@@ -90,8 +90,6 @@
       \def\Zm{\Z/m\Z}
       \def\Zn{\Z/n\Z}
       \def\Fp{\F_p}
-      \newcommand{\notimplies}{
-        \mathrel{{\ooalign{\hidewidth$\not\phantom{=}$\hidewidth\cr$\implies$}}}}
       \newcommand{\surjects}{\twoheadrightarrow}
       \newcommand{\injects}{\hookrightarrow}
       \newcommand{\bijects}{\leftrightarrow}
