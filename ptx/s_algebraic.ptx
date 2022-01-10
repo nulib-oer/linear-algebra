@@ -213,15 +213,24 @@
   </corollary>
   <proof>
     <p>
-      As simple as this claim might seem, remember that we are dealing with a completely new algebraic system here. Our proof must justify each step with either a definition, some property we already know to be true, or logic. We use a <q>chain of implications</q>:
+      As simple as this claim might seem, remember that we are dealing with a completely new algebraic system here. We will prove both implications of <q>if and only if</q> statement separately.
+      <case>
+       <title>Proof: <m>A+B=A+C\implies B=C</m></title>
+      <p>
+      We prove this via a chain of implications:
       <md>
         <mrow> A+B=A+C\amp \implies -A+(A+B)=-A+(A+C) </mrow>
         <mrow>  \amp\implies (-A+A)+B=(-A+A)+C\amp (<xref ref="th_matrixadd_assoc" text="title"/>) </mrow>
         <mrow>  \amp\implies \boldzero_{m\times n}+B=\boldzero_{m\times n}+C \amp (<xref ref="th_matrix_add_inverse"/>) </mrow>
         <mrow>  \amp \implies B=C \amp (<xref ref="th_matrix_add_ident"/>) </mrow>
       </md>.
-
     </p>
+    <case>
+     <title>Proof: <m>B=C\imlies A+B=A+C</m></title>
+    <p>
+    This direction is obvious: if <m>B</m> and <m>C</m> are equal matrices, then they remain equal when we add <m>A</m> to each of them.
+    </p>
+    </case>
   </proof>
 
   <remark>
@@ -306,7 +315,7 @@ The example in our warning above is but one instance of the general failure of t
           <p>
             Suppose matrices <m>B, C, D</m> satisfy <m>BD=CD</m>. We <em>cannot</em> conclude that <m>B=C</m>. In logical notation:
             <md>
-              <mrow>BD=CD \amp \;\not\!\!\!\!\implies B=D</mrow>
+              <mrow>BD=CD \amp \;\not\!\!\!\!\implies B=C</mrow>
             </md>
           </p>
         </li>
@@ -395,5 +404,21 @@ The example in our warning above is but one instance of the general failure of t
         </p>
       </proof>
     </theorem>
+    <paragraphs xml:id="ss_algebra_video_examples">
+      <title>Video examples: proving matrix equalities</title>
+
+      <figure xml:id="fig_proof_assoc">
+        <title>Matrix multiplication is associative</title>
+        <caption>Matrix multiplication is associative</caption>
+        <video xml:id="vid_proof_assoc" youtube="EDGxkEV5mm0" />
+      </figure>
+
+      <figure xml:id="fig_proof_transp">
+        <title>Transpose property</title>
+        <caption>Transpose property</caption>
+        <video xml:id="vid_proof_transp" youtube="twq0_HdpC3w" />
+      </figure>
+
+    </paragraphs>
 <xi:include  href="s_algebraic_ex.ptx"/>
 </section>
