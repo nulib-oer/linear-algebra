@@ -50,14 +50,9 @@
   <exercise>
     <statement>
       <p>
-        Suppose <m>A</m> is an invertible matrix. Prove: for any <em>nonzero</em> <m>c\in\R</m> the matrix <m>cA</m> is invertible. 
+        Suppose <m>A</m> is an invertible matrix. Prove: for any <em>nonzero</em> <m>c\in\R</m> the matrix <m>cA</m> is invertible.
       </p>
     </statement>
-    <solution>
-      <p>
-
-      </p>
-    </solution>
   </exercise>
   <exercise>
     <statement>
