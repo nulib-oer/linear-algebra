@@ -42,7 +42,7 @@
       </li>
       <li>
         <p>
-          Prove <xref ref="th_matrixscale_assoc"/>.
+          Prove <xref ref="th_matrixscale_comm"/>.
         </p>
       </li>
     </ol>
@@ -71,11 +71,7 @@
       Prove all three statements of <xref ref="th_matrix_add_mult_ident"/>.
     </p>
   </statement>
-  <solution>
-    <p>
 
-    </p>
-  </solution>
 </exercise>
 <exercise>
   <statement>
