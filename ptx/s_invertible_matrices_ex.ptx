@@ -74,7 +74,7 @@
     </statement>
     <hint>
       <p>
-        Use the column and or row method of matrix multiplication to show directly that <m>A</m> cannot have an inverse matrix.
+        Use the column and row method of matrix multiplication to show directly that <m>A</m> cannot have an inverse matrix.
       </p>
     </hint>
   </exercise>
