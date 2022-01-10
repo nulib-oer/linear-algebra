@@ -210,28 +210,31 @@
         </me>
       </p>
     </statement>
-  </corollary>
-  <proof>
-    <p>
-      As simple as this claim might seem, remember that we are dealing with a completely new algebraic system here. We will prove both implications of <q>if and only if</q> statement separately.
-      <case>
-       <title>Proof: <m>A+B=A+C\implies B=C</m></title>
+    <proof>
       <p>
-      We prove this via a chain of implications:
-      <md>
-        <mrow> A+B=A+C\amp \implies -A+(A+B)=-A+(A+C) </mrow>
-        <mrow>  \amp\implies (-A+A)+B=(-A+A)+C\amp (<xref ref="th_matrixadd_assoc" text="title"/>) </mrow>
-        <mrow>  \amp\implies \boldzero_{m\times n}+B=\boldzero_{m\times n}+C \amp (<xref ref="th_matrix_add_inverse"/>) </mrow>
-        <mrow>  \amp \implies B=C \amp (<xref ref="th_matrix_add_ident"/>) </mrow>
-      </md>.
-    </p>
-    <case>
-     <title>Proof: <m>B=C\imlies A+B=A+C</m></title>
-    <p>
-    This direction is obvious: if <m>B</m> and <m>C</m> are equal matrices, then they remain equal when we add <m>A</m> to each of them.
-    </p>
+        As simple as this claim might seem, remember that we are dealing with a completely new algebraic system here. We will prove both implications of <q>if and only if</q> statement separately.
+      </p>
+        <case>
+         <title>Proof: <m>A+B=A+C\implies B=C</m></title>
+        <p>
+        We prove this via a chain of implications:
+        <md>
+          <mrow> A+B=A+C\amp \implies -A+(A+B)=-A+(A+C) </mrow>
+          <mrow>  \amp\implies (-A+A)+B=(-A+A)+C\amp (<xref ref="th_matrixadd_assoc" text="title"/>) </mrow>
+          <mrow>  \amp\implies \boldzero_{m\times n}+B=\boldzero_{m\times n}+C \amp (<xref ref="th_matrix_add_inverse"/>) </mrow>
+          <mrow>  \amp \implies B=C \amp (<xref ref="th_matrix_add_ident"/>) </mrow>
+        </md>.
+      </p>
     </case>
-  </proof>
+      <case>
+       <title>Proof: <m>B=C\imlies A+B=A+C</m></title>
+      <p>
+      This direction is obvious: if <m>B</m> and <m>C</m> are equal matrices, then they remain equal when we add <m>A</m> to each of them.
+      </p>
+      </case>
+    </proof>
+  </corollary>
+
 
   <remark>
     <p>
