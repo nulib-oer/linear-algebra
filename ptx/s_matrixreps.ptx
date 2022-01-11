@@ -231,18 +231,7 @@
     </p>
   </statement>
 </remark>
-<corollary xml:id="cor_matrixreps">
-  <title>Matrix transformations</title>
-  <statement>
-    <p>
-    Given any linear transformation <m>T\colon \R^n\rightarrow \R^m</m> there is an <m>m\times n</m> matrix <m>A</m> such that <m>T=T_A</m>. In fact we may take
-    <me>
-      A=\begin{bmatrix}\vert\amp \vert\amp \cdots \amp \vert \\ T(\bolde_1)\amp  T(\bolde_2)\amp \cdots \amp T(\bolde_n)\\ \vert\amp \vert\amp \cdots \amp \vert \end{bmatrix}
-    </me>.
-    As a result, in the special case where the domain and codomain are both spaces of tuples, all linear transformations are matrix transformations.
-    </p>
-  </statement>
-</corollary>
+
 </subsection>
 
 <subsection>
