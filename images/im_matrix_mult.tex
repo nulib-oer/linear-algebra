@@ -7,11 +7,11 @@
 \usepackage{tikz-cd}
 \usepackage{tkz-graph}
 \usepackage{tkz-euclide}
+\usetikzlibrary{matrix,shapes,decorations.pathreplacing,fit,backgrounds}
 \usetikzlibrary{patterns}
 \usetikzlibrary{positioning}
-\usetikzlibrary{matrix,arrows}
+\usetikzlibrary{arrows}
 \usetikzlibrary{calc}
-\usetikzlibrary{shapes}
 \usetikzlibrary{through,intersections,decorations,shadows,fadings}
 \usepackage{pgfplots}
 \ifdefined\tikzset
@@ -102,7 +102,6 @@
 \def\Zm{\Z/m\Z}
 \def\Zn{\Z/n\Z}
 \def\Fp{\F_p}
-\newcommand{\longminus}{\scalebox{1.5}[1.0]{$-$}}
 \newcommand{\surjects}{\twoheadrightarrow}
 \newcommand{\injects}{\hookrightarrow}
 \newcommand{\bijects}{\leftrightarrow}
@@ -221,11 +220,48 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 \newcommand{\amp}{&}
 \begin{document}
 \pagestyle{empty}
-      \begin{tikzcd}
-\ \amp \ \\
-\amp  P(b+2) \arrow[u, no head, dotted]\\
- \amp P(b+1)  \arrow[u, "\text{climb up via}","P(b+1)\implies P(b+2)"']\\
-\amp P(b) \arrow[u, "\text{climb up via}","P(b)\implies P(b+1)"']\\
-\  \arrow[ur,"\text{climb on via}","\text{base case}"'] \amp
-  \end{tikzcd}
+        \begin{tikzpicture}[
+            Matrix/.style={
+matrix of math nodes,
+text height=2.5ex,
+text depth=0.75ex,
+text width=3.25ex,
+align=center,
+%left delimiter=\{,
+%right delimiter=\},
+column sep=1pt,
+row sep=5pt,
+%nodes={draw=black!10}, % Uncomment to see the square nodes.
+nodes in empty cells,
+},
+DL/.style={
+         left delimiter=[,
+         right delimiter=],
+         inner sep=-2pt,
+     },
+     DG/.style={
+         line cap= round,
+         line width =15pt,
+         opacity=0.2,
+     }
+ ]
+ \matrix[Matrix] at (0,0) (M){ % Matrix contents
+     \amp              \amp            \amp           \amp              \amp  [-2ex]\amp              \amp          \amp           \amp           \amp            \amp  \amp           \amp         \amp           \amp            \amp  \amp \\
+     \amp a_{11}  \amp a_{12} \amp \dots    \amp a_{1n}   \amp \amp b_{11}    \amp \dots  \amp b_{1j}  \amp \dots   \amp  b_{1r}  \amp \amp c_{11} \amp \dots \amp c_{1j}   \amp \dots   \amp c_{1r} \amp  \\
+     \amp  \vdots   \amp             \amp            \amp \vdots    \amp \amp b_{21}   \amp  \dots  \amp b_{2j}  \amp  \dots   \amp  b_{2r}   \amp \amp  \vdots  \amp   \amp \vdots   \amp   \amp \vdots  \\
+     \amp  a_{i1}   \amp  a_{i2}   \amp \dots   \amp a_{in}    \amp  \amp \vdots    \amp    \amp \vdots  \amp     \amp  \vdots   \amp =\amp  c_{i1}  \amp  \dots  \amp  c_{ij}  \amp  \dots   \amp  c_{ir} \amp \\
+     \amp  \vdots   \amp              \amp           \amp \vdots    \amp \amp b_{n1}  \amp \dots   \amp b_{nj}  \amp  \dots   \amp  b_{nr}   \amp \amp  \vdots \amp    \amp  \vdots  \amp   \amp  \vdots \amp  \\
+     \amp  a_{m1}  \amp a_{m2} \amp \dots   \amp a_{mn} \amp \amp              \amp           \amp            \amp           \amp            \amp \amp c_{m1} \amp \dots \amp c_{mj}   \amp  \dots   \amp c_{mr} \amp  \\
+     \amp                \amp             \amp  A        \amp             \amp  \amp             \amp           \amp     B        \amp        \amp             \amp \amp           \amp        \amp C \amp \\
+   };
+    \begin{scope}[on background layer]
+            \node[DL,fit=(M-2-2)(M-6-5)](subM-1){};
+             \node[DL,fit=(M-2-7)(M-5-11)](subM-2){};
+             \node[DL,fit=(M-2-13)(M-6-17)](subM-3){};
+         \draw[DG,red](M-4-2.center) --(M-4-5.center);
+          \draw[DG,green](M-2-9.center) --(M-5-9.center);
+          \draw[DG,blue](M-4-15.center) --(M-4-15.center);
+%                \draw[DG,green](M-2-3.center) --(M-2-3.center);
+             \end{scope}
+            \end{tikzpicture}
 \end{document}

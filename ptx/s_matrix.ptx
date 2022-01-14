@@ -343,6 +343,60 @@
       </p>
     </statement>
   </definition>
+  <figure xml:id="fig_matrix_mult">
+    <title>Visualizing matrix multiplication </title>
+    <caption>In <m>C=AB</m>, the <m>ij</m>-th entry <m>c_{ij}=\sum_{k=1}^na_{ik}b_{kj}</m> is computed by moving across the <m>i</m>-th row of <m>A</m> and down the <m>j</m>-th column of <m>B</m>. </caption>
+
+    <image xml:id="im_matrix_mult" width="75%">
+      <latex-image>
+        \begin{tikzpicture}[
+            Matrix/.style={
+matrix of math nodes,
+text height=2.5ex,
+text depth=0.75ex,
+text width=3.25ex,
+align=center,
+%left delimiter=\{,
+%right delimiter=\},
+column sep=1pt,
+row sep=5pt,
+%nodes={draw=black!10}, % Uncomment to see the square nodes.
+nodes in empty cells,
+},
+DL/.style={
+         left delimiter=[,
+         right delimiter=],
+         inner sep=-2pt,
+     },
+     DG/.style={
+         line cap= round,
+         line width =15pt,
+         opacity=0.2,
+     }
+ ]
+ \matrix[Matrix] at (0,0) (M){ % Matrix contents
+     \amp              \amp            \amp           \amp              \amp  [-2ex]\amp              \amp          \amp           \amp           \amp            \amp  \amp           \amp         \amp           \amp            \amp  \amp \\
+     \amp a_{11}  \amp a_{12} \amp \dots    \amp a_{1n}   \amp \amp b_{11}    \amp \dots  \amp b_{1j}  \amp \dots   \amp  b_{1r}  \amp \amp c_{11} \amp \dots \amp c_{1j}   \amp \dots   \amp c_{1r} \amp  \\
+     \amp  \vdots   \amp             \amp            \amp \vdots    \amp \amp b_{21}   \amp  \dots  \amp b_{2j}  \amp  \dots   \amp  b_{2r}   \amp \amp  \vdots  \amp   \amp \vdots   \amp   \amp \vdots  \\
+     \amp  a_{i1}   \amp  a_{i2}   \amp \dots   \amp a_{in}    \amp  \amp \vdots    \amp    \amp \vdots  \amp     \amp  \vdots   \amp =\amp  c_{i1}  \amp  \dots  \amp  c_{ij}  \amp  \dots   \amp  c_{ir} \amp \\
+     \amp  \vdots   \amp              \amp           \amp \vdots    \amp \amp b_{n1}  \amp \dots   \amp b_{nj}  \amp  \dots   \amp  b_{nr}   \amp \amp  \vdots \amp    \amp  \vdots  \amp   \amp  \vdots \amp  \\
+     \amp  a_{m1}  \amp a_{m2} \amp \dots   \amp a_{mn} \amp \amp              \amp           \amp            \amp           \amp            \amp \amp c_{m1} \amp \dots \amp c_{mj}   \amp  \dots   \amp c_{mr} \amp  \\
+     \amp                \amp             \amp  A        \amp             \amp  \amp             \amp           \amp     B        \amp        \amp             \amp \amp           \amp        \amp C \amp \\
+   };
+    \begin{scope}[on background layer]
+            \node[DL,fit=(M-2-2)(M-6-5)](subM-1){};
+             \node[DL,fit=(M-2-7)(M-5-11)](subM-2){};
+             \node[DL,fit=(M-2-13)(M-6-17)](subM-3){};
+         \draw[DG,red](M-4-2.center) --(M-4-5.center);
+          \draw[DG,green](M-2-9.center) --(M-5-9.center);
+          \draw[DG,blue](M-4-15.center) --(M-4-15.center);
+%                \draw[DG,green](M-2-3.center) --(M-2-3.center);
+             \end{scope}
+            \end{tikzpicture}
+      </latex-image>
+    </image>
+  </figure>
+
     <p>
     The formula for <m>[AB]_{ij}</m> is undoubtedly more complicated than you expected, and seems to come completely out of the blue. We will be able to retroactively motivate this definition once we introduce linear transformations. For now let's focus on understanding how and when we can compute the product of two matrices. In particular, let's concentrate on how matrix dimension comes into play.
   </p>
