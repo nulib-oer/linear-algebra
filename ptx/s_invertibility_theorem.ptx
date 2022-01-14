@@ -177,8 +177,7 @@
           <!-- <me>
             \underset{r_i+c\,r_j}{E}=\begin{bmatrix}1\amp 0\amp 0\amp \cdots\amp  0\amp 0\\ \vdots\amp  \amp \vdots \amp  \amp  \vdots \\ \cdots\amp c\amp \cdots\amp 1\amp \cdots\amp 0\\ \vdots\amp  \amp \vdots \amp  \amp  \vdots \\ 0\amp 0\amp \cdots\amp 0\amp 0\amp 1 \end{bmatrix}
           </me> -->
-        </p>
-        <image xml:id="im_elem_rowadd " width="50%">
+        <image xml:id="im_elem_rowadd" width="50%">
           <latex-image>
             \begin{tikzpicture}[
             Matrix/.style={
@@ -223,6 +222,7 @@
             \end{tikzpicture}
           </latex-image>
         </image>
+        </p>
       </li>
     </ul>
   </statement>

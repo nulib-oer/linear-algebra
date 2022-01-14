@@ -347,7 +347,7 @@
     <title>Visualizing matrix multiplication </title>
     <caption>In <m>C=AB</m>, the <m>ij</m>-th entry <m>c_{ij}=\sum_{k=1}^na_{ik}b_{kj}</m> is computed by moving across the <m>i</m>-th row of <m>A</m> and down the <m>j</m>-th column of <m>B</m>. </caption>
 
-    <image xml:id="im_matrix_mult" width="75%">
+    <image xml:id="im_matrix_mult" width="100%">
       <latex-image>
         \begin{tikzpicture}[
             Matrix/.style={
