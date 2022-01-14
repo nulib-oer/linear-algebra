@@ -370,7 +370,7 @@
     <remark xml:id="rm_matrix_transform">
   <statement>
     <p>
-      As the title of <xref ref="th_matrix_transform_i"/> suggests, there is a follow-up theorem (<xref ref="cor_matrix_transformations"/>), and this states that in fact <em>any</em> linear transformation <m>T\colon\R^n\rightarrow\R^m </m> is of the form <m>T=T_A</m> for some <m>m\times n</m> matrix <m>A</m>. In other words, all linear transformations from <m>\R^n</m> to <m>\R^m</m> are matrix transformations.
+      As the title of <xref ref="th_matrix_transform_i"/> suggests, there is a follow-up result (<xref ref="cor_matrix_transformations"/>), and this states that in fact <em>any</em> linear transformation <m>T\colon\R^n\rightarrow\R^m </m> is of the form <m>T=T_A</m> for some <m>m\times n</m> matrix <m>A</m>. In other words, all linear transformations from <m>\R^n</m> to <m>\R^m</m> are matrix transformations.
     </p>
     <p>
       As general as these two results are, mark well the <em>restriction</em> that remains: they apply only to functions with domain and codomain equal to a vector spaces of tuples. They say nothing for example about functions from <m>\R^\infty</m> to <m>F([0,1],\R)</m>.
