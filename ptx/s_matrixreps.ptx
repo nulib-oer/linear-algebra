@@ -153,7 +153,7 @@
     <p>
       Let <m>T\colon V\rightarrow W</m>, <m>B</m>, and <m>B'</m> be as in <xref ref="th_matrixrep"/>. The defining property of <m>[T]_B^{B'}</m> (<xref ref="eq_matrixrep_prop"/>) can be summarized by saying that the following diagram is <em>commutative</em>.
     </p>
-    <!-- <figure xml:id="fig_comm_diag">
+    <figure xml:id="fig_comm_diag">
       <caption>Commutative diagram for <m>[T]_B^{B'}</m></caption>
       <image xml:id="im_comm_diag" width="30%">
         <latex-image>
@@ -163,11 +163,11 @@
           \end{tikzcd}
         </latex-image>
       </image>
-    </figure> -->
-    <figure xml:id="fig_comm_diag">
+    </figure>
+    <!-- <figure xml:id="fig_comm_diag">
       <caption>Commutative diagram for <m>[T]_B^{B'}</m></caption>
       <image xml:id="im_comm_diag" width="30%" source="./images/im_comm_diag.svg" />
-    </figure>
+    </figure> -->
     <p>
       That the diagram is commutative means that starting with an element <m>\boldv\in V</m> in the top left of the diagram, whether we travel to the bottom right of the diagram either by first applying <m>T</m> and then applying <m>[\hspace{5pt}]_{B'}</m> (<q>go right, then down</q>), or else by first applying <m>[\hspace{5pt}]_B</m> and then applying <m>[T]_B^{B'}</m> (<q>go down, then right</q>), we get the same result! (The bottom map should technically be labeled <m>T_A</m>, where <m>A=[T]_B^{B'}</m>, but this would detract from the elegance of the diagram.)
     </p>

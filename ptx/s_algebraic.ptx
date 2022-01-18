@@ -227,7 +227,7 @@
       </p>
     </case>
       <case>
-       <title>Proof: <m>B=C\imlies A+B=A+C</m></title>
+       <title>Proof: <m>B=C\implies A+B=A+C</m></title>
       <p>
       This direction is obvious: if <m>B</m> and <m>C</m> are equal matrices, then they remain equal when we add <m>A</m> to each of them.
       </p>

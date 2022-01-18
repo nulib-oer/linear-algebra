@@ -283,7 +283,7 @@
 <p>
   The decision tree in <xref ref="fig_decision_tree"/> concisely summarizes the different cases articulated in <xref ref="c_qualitative"/>.
 </p>
-<!-- <figure xml:id="fig_decision_tree">
+<figure xml:id="fig_decision_tree">
   <title>Decision tree for number of solutions to a system</title>
   <caption>Decision tree for the number of solutions to a linear system with augmented matrix <m>U</m> in row echelon form. </caption>
   <image xml:id="im_decision_tree">
@@ -301,14 +301,12 @@
       \end{tikzpicture}
     </latex-image>
   </image>
-
-
-</figure> -->
-<figure xml:id="fig_decision_tree">
+</figure>
+<!-- <figure xml:id="fig_decision_tree">
   <title>Decision tree for number of solutions to a system</title>
   <caption>Decision tree for the number of solutions to a linear system with augmented matrix <m>U</m> in row echelon form. </caption>
   <image xml:id="im_decision_tree" source="./images/im_decision_tree.svg"/>
-</figure>
+</figure> -->
 
 <paragraphs xml:id="ss_GE_video_examples">
   <title>Video examples of solving linear systems</title>
