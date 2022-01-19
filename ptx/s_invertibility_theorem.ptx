@@ -825,7 +825,7 @@ The two inveribility algorithms above are nice examples of how a <em>theoretical
       <case>
        <title>Implication: <m>AB</m> invertible <m>\implies</m> <m>A</m> and <m>B</m> invertible</title>
        <p>
-          Assume <m>AB</m> is invertible and let <m>C</m> be its invers. Thus <m>C(AB)=(AB)C=I_n</m>.
+          Assume <m>AB</m> is invertible and let <m>C</m> be its inverse. Thus <m>C(AB)=(AB)C=I_n</m>.
          We first prove <m>B</m> is invertible. We have
          <md>
            <mrow>B\boldx=\boldzero\amp \implies  AB\boldx=\boldzero </mrow>

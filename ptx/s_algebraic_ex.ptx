@@ -174,19 +174,20 @@
       </li>
       <li>
         <p>
-          Find all <m>A</m> satisfying <m>A\, \begin{bmatrix}
+          Find all <m>A</m> satisfying <me>A\, \begin{bmatrix}
             1\amp 1\\ 1\amp 1
           \end{bmatrix}=\begin{bmatrix}
             1\amp 1\\ 1\amp 1
-          \end{bmatrix}</m>.
+          \end{bmatrix}</me>.
+          <hint>
+            <p>
+              Write <m>A=\begin{bmatrix}
+                a\amp b\\ c\amp d
+              \end{bmatrix}</m> and set up a system of linear equations in the unknowns <m>a,b,c,d</m>.
+            </p>
+          </hint>
         </p>
-        <hint>
-          <p>
-            Write <m>A=\begin{bmatrix}
-              a\amp b\\ c\amp d
-            \end{bmatrix}</m> and set up a system of linear equations in the unknowns <m>a,b,c,d</m>.
-          </p>
-        </hint>
+
       </li>
     </ol>
   </statement>

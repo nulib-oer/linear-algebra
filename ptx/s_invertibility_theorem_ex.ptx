@@ -80,7 +80,7 @@
     <exercise>
       <statement>
         <p>
-          <m>A=\begin{bmatrix}c\amp 0\amp 0\amp 0\\ 1\amp c\amp 0\amp 0\\ 0\amp 1\amp c\amp 0\\ 0\amp 0\amp 1\amp c \end{bmatrix}</m>
+          <m>A=\begin{bmatrix}c\amp 0\amp 0\amp 0\\ 1\amp c\amp 0\amp 0\\ 0\amp 1\amp c\amp 0\\ 0\amp 0\amp 1\amp c \end{bmatrix}</m>, <m>c\ne 0</m>
         </p>
       </statement>
     </exercise>
