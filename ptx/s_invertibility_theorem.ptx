@@ -525,16 +525,16 @@
         <li>
           <p>
             <m>A</m> is <term>upper triangular</term>
-            if <m>a_{ij}=0</m> for all <m>(i,j)</m> with <m>i>j</m>. (
-            <q><m>A</m> is zero above the diagonal.</q>
+            if <m>a_{ij}=0</m> for all <m>(i,j)</m> with <m>i<j</m>. (
+            <q><m>A</m> is zero below the diagonal.</q>
             )
           </p>
         </li>
         <li>
           <p>
             <m>A</m> is <term>lower triangular</term>
-            if <m>a_{ij}=0</m> for all <m>(i,j)</m> with <m>j>i</m>. (
-            <q><m>A</m> is zero below the diagonal.</q>
+            if <m>a_{ij}=0</m> for all <m>(i,j)</m> with <m>i>j</m>. (
+            <q><m>A</m> is zero above the diagonal.</q>
             )
           </p>
         </li>
