@@ -1,12 +1,18 @@
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_rank_nullity">
   <title>Rank-nullity theorem and fundamental spaces</title>
   <introduction>
-    This section is in one sense just a long-format example of how to compute bases and dimensions of subspaces. Along the way, however we meet the <xref ref="th_rank-nullity" text="custom">rank-nullity theorem</xref> (sometimes called the <q>fundamental theorem of linear algebra</q>), and apply this theorem in the context of <em>fundamental spaces of matrices</em> (<xref ref="d_fundamental_space"/>)
+    This section is in a sense just a long-format example of how to compute bases and dimensions of subspaces. Along the way, however we meet the <xref ref="th_rank-nullity" text="custom">rank-nullity theorem</xref> (sometimes called the <q>fundamental theorem of linear algebra</q>), and apply this theorem in the context of <em>fundamental spaces of matrices</em> (<xref ref="d_fundamental_space"/>)
   </introduction>
   <subsection xml:id="ss_rank-nullity">
     <title>The rank-nullity theorem</title>
 
-
+<introduction>
+  The rank-nullity theorem relates the the dimensions of the null space and image of a linear transformation <m>T\colon V\rightarrow W</m>, assuming <m>V</m> is finite dimensional. Roughly speaking, it says that the bigger the null space, the smaller the image. More precisely, it tells us that
+  <me>
+    \dim V=\dim\NS T+\dim\im T
+  </me>.
+As we will see, this elegant result can be used to significantly simplify computations with linear transformations. Furthermore, it allows us to prove some intuitively obvious properties of linear transformations. For example, suppose <m>V</m> is a finite-dimensional vector space. It seems obvious that if <m>\dim W> \dim V</m>, then there is no linear transformation mapping <m>V</m> surjectively onto <m>W</m>: <ie />, you shouldn't be able to map a <q>smaller</q> vector space onto a <q>bigger</q> one. Similarly, if <m>\dim W \lt \dim V</m>, then we expect that there is no injective linear transformation mapping <m>V</m> injectively into <m>W</m>. Both these results are easy consequences of the <xref ref="th_rank-nullity" text="custom"> rank-nullity theorem </xref>. 
+</introduction>
     <definition xml:id="d_rank_nullity">
       <title>Rank and nullity</title>
       <idx><h>rank</h><h>of a linear transformation</h></idx>
