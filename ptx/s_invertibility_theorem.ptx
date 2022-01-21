@@ -525,7 +525,7 @@
         <li>
           <p>
             <m>A</m> is <term>upper triangular</term>
-            if <m>a_{ij}=0</m> for all <m>(i,j)</m> with <m>i<j</m>. (
+            if <m>a_{ij}=0</m> for all <m>(i,j)</m> with <m>i \lt j</m>. (
             <q><m>A</m> is zero below the diagonal.</q>
             )
           </p>
