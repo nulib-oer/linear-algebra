@@ -198,7 +198,7 @@
           <p>
             The <term>image</term> (or <term>range</term>) of <m>T</m>, denoted <m>\im T</m>, is defined as
             <me>
-              \im T=\{\boldw\in W\colon \boldw=T(\boldv) \text{ for some } \boldv\in V\}
+              \im T=\{\boldw\in W\colon \boldw=T(\boldv) \text{ for some }  \boldv\in V \}
             </me>.
           </p>
         </li>
@@ -218,11 +218,7 @@
       </li>
       <li>
         <p>
-          More generally we can define the image (or range) <m>\im f</m>, for any function of sets <m>f\colon A\rightarrow B</m>: namely,
-          <me>
-            \im f=\{b\in B\colon b=f(a) \text{ for some } a\in A\}
-          </me>.
-          To decide whether or not an element <m>b\in B</m> is an element of <m>\im f</m>, we must determine whether there is an element <m>a\in A</m> such that <m>f(a)=b</m>. That is somewhat of a mouthful, and as such we often say simply <q><m>b</m> is hit by <m>f</m></q> (or not) for this condition.
+          Note that the image <m>\im T</m> of a linear transformation is just its image when considered simply as a function of sets. (See <xref ref="d_image"/>.)
         </p>
       </li>
       <li>
@@ -289,6 +285,55 @@
       </case>
   </proof>
 </theorem>
+<p>
+  Recall that a function <m>f\colon X\rightarrow Y</m> is surjective if <m>\im f=f(X)=Y</m>. (See <xref ref="d_injective_surjective_bijective"/>.) Thus the subspace <m>\im T</m> of a linear transformation <m>T</m> is a measure of sorts of the transformation being surjective or not. The next theorem indicates how the null space can be understood as a measure of a transformation being injective (one-to-one) or not. (See <xref ref="d_injective_surjective_bijective"/>.)
+</p>
+<theorem xml:id="th_nullspace_injective">
+  <title>Nullspace and injectivity</title>
+  <statement>
+    <p>
+      Let <m>T\colon V\rightarrow W</m> be a linear transformation. The following are equivalent:
+    </p>
+    <ol>
+      <li>
+        <p>
+          <m>T</m> is injective (<ie />, one-to-one);
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\NS T=\{\boldzero\}</m>.
+        </p>
+      </li>
+    </ol>
+    In fact, we have
+    <me>
+      T(\boldv)=T(\boldv') \iff \boldv'=\boldv+\boldu \text{ for some } \boldu\in \NS T
+    </me>
+
+  </statement>
+  <proof>
+    <case>
+     <title>Implication: <m>(1)\implies (2)</m></title>
+    <p>
+    In general we always have <m>\{\boldzero\}\subseteq \NS T</m> for a linear transformation <m>T</m>. If <m>T</m> is injective, this inclusion is an equality since
+    <md>
+    <mrow>  \boldv\in\NS T \amp \implies T(\boldv)=\boldzero \amp (\text{def. } \NS T)</mrow>
+    <mrow>  \amp \implies T(\boldv)=T(\boldzero)</mrow>
+    <mrow>  \amp \implies \boldv=\boldzero \amp (T \text{ injective})</mrow>
+    </md>.
+    </p>
+    </case>
+    <case>
+     <title>Implication: <m>()</m></title>
+    <p>
+
+    </p>
+    </case>
+  </proof>
+
+</theorem>
+
 <p>
   <xref ref="th_nullspace_image"/> provides us a with a useful indirect way of proving a subset <m>W\subseteq V</m> is a subspace:
   namely, find a linear transformation $T$ for which <m>W=\NS T</m>. (You could also identify <m>W=\im T</m> for some linear transformation <m>T</m>, but this approach tends to be not as convenient.
