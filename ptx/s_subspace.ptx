@@ -307,9 +307,9 @@
       </li>
     </ol>
     In fact, we have
-    <me>
+    <men xml:id="eq_nullspace_injective">
       T(\boldv)=T(\boldv') \iff \boldv'=\boldv+\boldu \text{ for some } \boldu\in \NS T
-    </me>
+    </men>
 
   </statement>
   <proof>
@@ -325,15 +325,39 @@
     </p>
     </case>
     <case>
-     <title>Implication: <m>()</m></title>
+     <title>Implication: <m>(2)\implies (1)</m></title>
     <p>
-
+      This implication is a consequence of the equivalence in <xref ref="eq_nullspace_injective"/>. Indeed assuming <xref ref="eq_nullspace_injective"/>, we have
+      <md>
+        <mrow>T(\boldv)=T(\boldv') \amp\iff \boldv'=\boldv+\boldu \text{ for some } \boldu\in \NS T </mrow>
+        <mrow> \amp\implies \boldv'=\boldv+\boldzero \amp (\NS T=\{\boldzero\}) </mrow>
+        <mrow>  \amp\implies \boldv=\boldv' </mrow>
+      </md>,
+      as desired. Thus it remains only to prove <xref ref="eq_nullspace_injective"/>. We do so via a chain of equivalences:
+      <md>
+        <mrow>T(\boldv)=T(\boldv') \amp \iff T(\boldv)-T(\boldv')=\boldzero</mrow>
+        <mrow> \amp \iff T(\boldv'-\boldv)=\boldzero \amp (T \text{ is linear})</mrow>
+        <mrow>  \amp \iff \boldu=\boldv'-\boldv\in\NS T</mrow>
+        <mrow>  \amp \iff \boldv'=\boldv+\boldu \text{ for some } \boldu\in\NS T </mrow>
+      </md>.
     </p>
     </case>
   </proof>
 
 </theorem>
 
+<remark>
+  <p>To determine whether a function of sets <m>f\colon X\rightarrow Y</m> is injective, we normally have show that <em>for each</em> output <m>y</m> in the range of <m>f</m> there is exactly one input <m>x</m> satisfying <m>f(x)=y</m>. Think of this as checking injectivity at every ouptou. <xref ref="th_nullspace_injective"/> tells us that in the special case of a linear transformation <m>T\colon V\rightarrow W</m> it is enough to check injectivity at exactly one ouput: namely, <m>\boldzero\in W</m>.
+  </p>
+  <p>
+    To see that this is a property of linear transformations, consider the function
+    <md>
+      <mrow>f\colon \R \amp \rightarrow \R</mrow>
+      <mrow> x \amp\mapsto f(x)=(x-1)^2 </mrow>
+    </md>.
+    The function is injective at the output <m>0=f(1)</m>, but not injective in general. 
+  </p>
+</remark>
 <p>
   <xref ref="th_nullspace_image"/> provides us a with a useful indirect way of proving a subset <m>W\subseteq V</m> is a subspace:
   namely, find a linear transformation $T$ for which <m>W=\NS T</m>. (You could also identify <m>W=\im T</m> for some linear transformation <m>T</m>, but this approach tends to be not as convenient.
