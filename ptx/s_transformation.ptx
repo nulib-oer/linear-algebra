@@ -531,7 +531,7 @@
       Fix an angle <m>\alpha</m> with <m>0\leq \alpha \leq \pi </m>, and let <m>\ell_\alpha</m> be the line through the origin that makes an angle of <m>\alpha</m> with the positive <m>x</m>-axis.
       </p>
       <p>
-        Define <m>r_\alpha\colon \R^2\rightarrow \R^2</m> to be the function that takes an input <m>P=(x,y)</m> and returns the output <m>P'=(x',y')</m> obtained by reflecting <m>P</m> through the line <m>\ell_\alpha</m>. In more detail, <m>P'</m> is obtained by drawing a perpendicular through <m>\ell_\alpha</m> that passes through <m>P</m> and taking the point on the other side of this line whose distance to <m>\ell_\alpha</m> is equal to the distance from <m>P</m> to <m>\ell_\alpha</m>.
+        Define <m>r_\alpha\colon \R^2\rightarrow \R^2</m> to be the function that takes an input <m>P=(x,y)</m> and returns the output <m>P'=(x',y')</m> obtained by reflecting <m>P</m> through the line <m>\ell_\alpha</m>. In more detail: if <m>P</m> lies on <m>\ell_\alpha</m>, then <m>P'=P</m>; otherwise, <m>P'</m> is obtained by drawing the perpendicular through <m>\ell_\alpha</m> that passes through <m>P</m> and taking the point on the other side of this line whose distance to <m>\ell_\alpha</m> is equal to the distance from <m>P</m> to <m>\ell_\alpha</m>.
       </p>
     <p>
       The function <m>r_{\alpha}</m> is called <term>rotation through the line</term> <m>\ell_\alpha</m>.
