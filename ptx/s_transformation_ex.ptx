@@ -114,7 +114,7 @@
     <title>Function shift operators</title>
     <statement>
       <p>
-      Let <m>X\subseteq \R</m> be an interval. Fix <m>a\in \R</m>. Define <m>T\colon F(X,\R)\rightarrow F(X,\R)</m> as <m>T(f)=g</m>, where <m>g(x)=f(x+a)</m>. Show that <m>T</m> is a linear transformation.
+      Fix <m>a\in \R</m>. Define <m>T\colon F(\R,\R)\rightarrow F(\R,\R)</m> as <m>T(f)=g</m>, where <m>g(x)=f(x+a)</m>. Show that <m>T</m> is a linear transformation.
       </p>
     </statement>
 
@@ -156,7 +156,7 @@
   <exercise>
     <statement>
       <p>
-        Let <m>T\colon F(X,\R)\rightarrow F(X,\R)</m> be defined as <m>T(f)=g</m>, where <m>g(x)=f(x)+f(-x)</m>. Show that <m>T</m> is linear. You may use the results of <xref ref="ex_transformation_function_scale"/> and <xref ref="ex_transformation_add_scale"/>.
+        Let <m>T\colon F(\R,\R)\rightarrow F(\R,\R)</m> be defined as <m>T(f)=g</m>, where <m>g(x)=f(x)+f(-x)</m>. Show that <m>T</m> is linear. You may use the results of <xref ref="ex_transformation_function_scale"/> and <xref ref="ex_transformation_add_scale"/>.
       </p>
     </statement>
   </exercise>
@@ -167,17 +167,7 @@
       </p>
     </statement>
   </exercise>
-  <exercise>
-    <statement>
-      <p>
-        Let <m>T\colon V\rightarrow W</m> be a linear transformation, and let <m>V'\subseteq V</m> be a subspace. Define <m>W'\subseteq W</m> as
-        <me>
-          W'=\{\boldw\colon \boldw=T(\boldv) \text{ for some } \boldv\in V'\}
-        </me>.
-        Prove: <m>W'</m> is a subspace of <m>W</m>.
-      </p>
-    </statement>
-  </exercise>
+  
   <exercise xml:id="ex_transformation_reflection">
     <title>Reflection through a line</title>
     <statement>

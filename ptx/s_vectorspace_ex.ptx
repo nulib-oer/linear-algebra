@@ -27,12 +27,12 @@
     </statement>
 </exercise>
 <exercisegroup>
+<title>Failed vector spaces</title>
 <introduction>
 <p>
-In each exercise below the provided set, along with proposed vector operations, does <em>not</em> constitute a vector space. Identify <em>all</em> details of the vector space definition that <em>fail</em> to be satisfied. In addition to checking the axioms, you should also ask whether the proposed vector operations are well-defined. Provide explicit counterexamples for each failed detail.
+In each exercise below, the provided set, along with proposed vector operations, does <em>not</em> constitute a vector space. Identify <em>all</em> details of the vector space definition that <em>fail</em> to be satisfied. In addition to checking the axioms, you should also ask whether the proposed vector operations are well-defined. Provide explicit counterexamples for each failed property.
 </p>
 </introduction>
-
 <exercise>
   <statement>
     <p>
@@ -69,6 +69,9 @@ In each exercise below the provided set, along with proposed vector operations, 
 </exercise>
 </exercisegroup>
 <exercisegroup>
+  <title>Verifying vector space axioms</title>
+
+
 <introduction>
 <p>
 In each exercise below the provided set, along with proposed vector operations, does constitute a vector space. Verify the indicated axioms.
