@@ -540,7 +540,7 @@
 <subsection xml:id="ss_subspace_functions">
   <title>Important subspaces of <m>F(X,\R)</m></title>
  <p>
-   Let <m>X</m> be an interval of <m>\R</m>. Recall that <m>F(X,\R)</m> is the set of <em>all</em> functions from <m>X</m> to <m>\R</m>. This is a pretty unwieldy set, containing some pathological characters, and when studying functions on an interval we will often restrict our attention to certain more well-behaved subsets: e.g., continuous, differentiable, or infinitely differentiable functions. Not surprisingly, these subsets turn out to be subspaces of <m>F(X,\R)</m>.
+   Let <m>X</m> be an <em>nondegenerate</em> interval of <m>\R</m>: <ie />, an interval containing at least two elements. Recall that <m>F(X,\R)</m> is the set of <em>all</em> functions from <m>X</m> to <m>\R</m>. This is a pretty unwieldy vector space, containing some pathological characters, and when studying functions on an interval we will often restrict our attention to certain more well-behaved subsets: <eg />, continuous, differentiable, or infinitely differentiable functions. Not surprisingly, these subsets turn out to be subspaces of <m>F(X,\R)</m>.
  </p>
   <definition xml:id="d_subspace_functions">
     <idx><h>function space</h><h>continuous</h></idx>
@@ -550,7 +550,7 @@
     <idx><h>polynomial</h></idx>
     <statement>
       <p>
-      Let <m>X\subseteq \R</m> be an interval.
+      Let <m>X\subseteq \R</m> be a nondegenerate interval.
       </p>
       <ol>
         <li>
