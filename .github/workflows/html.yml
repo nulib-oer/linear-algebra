@@ -6,7 +6,7 @@ name: Deploy
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main ]
+    branches: [ pretext-cli ]
     paths-ignore: 
       - '**.md'
 
@@ -24,23 +24,28 @@ jobs:
         with:
           submodules: true
 
-      - name: Install XSLT and Python Dependencies 
+      - name: Install Dependencies 
         run: |
+          sudo apt-get update -y
+          sudo apt install pdf2svg
           pip3 install pretextbook
           pip3 install lxml
           pip3 install pdfCropMargins
+
+      - name: Setup TinyTeX
+        uses: r-lib/actions/setup-tinytex@v1
+
+      - name: TeX Dependencies
+        run: |
+          tlmgr --version
+          tlmgr install $(cat latex-packages.txt)
 
       # Runs a single command using the runners shell
       - name: Build HTML Files
         run: pretext build html
 
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v1
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-2
-
-      - name: Deploy HTML to NUL Servers
-        run: |
-          aws s3 sync ./public ${{ secrets.AWS_S3_BUCKET_NAME }} --delete
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public/
