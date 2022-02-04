@@ -9,3 +9,4 @@ output/
 Makefile.paths
 Makefile*
 **/*.log
+generated-assets
