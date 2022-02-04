@@ -10,19 +10,19 @@
       <format>html</format>
       <source>ptx/index.ptx</source>
       <publication>publication/publication.ptx</publication>
-      <output-dir>public/html</output-dir>
+      <output-dir>public</output-dir>
     </target>
     <target name="latex">
       <format>latex</format>
       <source>source/main.ptx</source>
       <publication>publication/publication.ptx</publication>
-      <output-dir>public/latex</output-dir>
+      <output-dir>public</output-dir>
     </target>
     <target name="pdf">
       <format>pdf</format>
       <source>source/main.ptx</source>
       <publication>publication/publication.ptx</publication>
-      <output-dir>public/pdf</output-dir>
+      <output-dir>public</output-dir>
     </target>
     <!-- To quickly build the html of a subset of your project, edit main-subset.ptx
         and run `pretext build subset` (or `view` with watch option) -->
