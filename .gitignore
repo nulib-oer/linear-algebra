@@ -8,3 +8,4 @@
 output/
 Makefile.paths
 Makefile*
+**/*.log
