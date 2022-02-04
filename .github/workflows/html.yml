@@ -30,6 +30,7 @@ jobs:
           sudo apt install pdf2svg
           pip3 install pretextbook
           pip3 install lxml
+          pip3 install requests
           pip3 install pdfCropMargins
 
       - name: Setup TinyTeX
