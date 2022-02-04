@@ -26,14 +26,21 @@ jobs:
 
       - name: Install XSLT and Python Dependencies 
         run: |
-          sudo apt-get update -y
-          sudo apt-get install -y xsltproc
+          pip3 install pretextbook
           pip3 install lxml
           pip3 install pdfCropMargins
 
+      - name: Setup TinyTeX
+        uses: r-lib/actions/setup-tinytex@v1
+
+      - name: TeX Dependencies
+        run: |
+          tlmgr --version
+          tlmgr install pgf
+
       # Runs a single command using the runners shell
       - name: Build HTML Files
-        run: bash build.sh
+        run: pretext build html
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
