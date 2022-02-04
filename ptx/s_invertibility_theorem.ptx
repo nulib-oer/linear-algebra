@@ -65,28 +65,163 @@
     <ul>
       <li>
         <p>
-          The <m>n\times n </m> scaling matrix <m>\underset{c\,r_i}{E}</m> is the result of scaling the <m>i</m>-th row of <m>I_m</m> by <m>c</m>: i.e.,
-          <me>
+          The <m>n\times n </m> scaling matrix <m>\underset{c\,r_i}{E}</m> is the result of scaling the <m>i</m>-th row of <m>I_m</m> by <m>c</m>.
+          <!-- <me>
             \underset{c\,r_i}{E}=\begin{bmatrix}1\amp 0\amp 0\amp \cdots\amp  0\amp 0\\ 0\amp 1\amp 0\amp \cdots\amp 0\amp 0\\ \vdots\amp  \amp \vdots \amp  \amp  \vdots \\ 0\amp \cdots\amp 0\amp c\amp 0\amp \cdots\\ \vdots\amp  \amp \vdots \amp  \amp  \vdots \\ 0\amp 0\amp \cdots\amp 0\amp 0\amp 1 \end{bmatrix}
-          </me>
-
-        </p>
+          </me> -->
+          </p>
+          <image xml:id="im_elem_scalar" width="50%">
+            <latex-image>
+              \begin{tikzpicture}[
+              Matrix/.style={
+          matrix of nodes,
+          text height=2.5ex,
+          text depth=0.75ex,
+          text width=3.25ex,
+          align=center,
+          %left delimiter=\{,
+          %right delimiter=\},
+          column sep=5pt,
+          row sep=5pt,
+          nodes in empty cells,
+          },
+          DL/.style={
+           left delimiter=[,
+           right delimiter=],
+           inner sep=-2pt,
+          },
+          DG/.style={
+           line cap= round,
+           line width =15pt,
+           opacity=0.2,
+          }
+          ]
+          \matrix[Matrix] at (0,0) (M){ % Matrix contents
+          \amp   \amp  \amp  \amp\text{$i$-th} \amp \amp \\
+          \amp 1 \amp 0 \amp 0 \amp 0 \amp \dots \amp 0\\
+          \amp 0 \amp 1 \amp 0 \amp 0 \amp \dots \amp 0\\
+          \amp \amp  \vdots \amp  \amp  \amp  \vdots \amp   \\
+          \text{$i$-th} \amp 0 \amp 0 \amp 0 \amp c \amp 0 \amp 0 \\
+          \amp  \amp \vdots \amp  \amp  \amp \vdots \amp  \\
+          \amp 0 \amp 0\amp \dots \amp 0 \amp 0 \amp 1\\
+          \amp    \amp    \amp  \amp $\underset{cr_i}{E}$\\
+          };
+          \begin{scope}[on background layer]
+               \node[DL,fit=(M-2-2)(M-7-7)](subM-1){};
+               \draw[DG,red](M-5-2.center) --(M-5-7.center);
+               \draw[DG,green](M-2-5.center) --(M-7-5.center);
+               \end{scope}
+              \end{tikzpicture}
+            </latex-image>
+          </image>
       </li>
       <li>
         <p>
-          The <m>n\times n </m> row swap matrix <m>\underset{r_i\leftrightarrow r_j}{E}</m> is the result of swapping the <m>i</m>-th and <m>j</m>-th rows of <m>I_m</m>: i.e.,
-          <me>
+          The <m>n\times n </m> row swap matrix <m>\underset{r_i\leftrightarrow r_j}{E}</m> is the result of swapping the <m>i</m>-th and <m>j</m>-th rows of <m>I_m</m>.
+          <!-- <me>
             \underset{r_i\leftrightarrow r_j}{E}=\begin{bmatrix}1\amp 0\amp 0\amp \cdots\amp  0\amp 0\\ \vdots\amp  \amp \vdots \amp  \amp  \vdots \\ 0\amp 0\amp 0\amp 0\amp 1\amp \cdots\\ \vdots\amp  \amp \vdots \amp  \amp  \vdots \\ 0\amp \cdots\amp 1\amp 0\amp \cdots\amp 0\\ \vdots\amp  \amp \vdots \amp  \amp  \vdots \\ 0\amp 0\amp \cdots\amp 0\amp 0\amp 1 \end{bmatrix}
-          </me>
+          </me> -->
+          <image xml:id="im_elem_swap" width="50%">
+            <latex-image>
+              \begin{tikzpicture}[
+              Matrix/.style={
+          matrix of nodes,
+          text height=2.5ex,
+          text depth=0.75ex,
+          text width=3.25ex,
+          align=center,
+          %left delimiter=\{,
+          %right delimiter=\},
+          column sep=5pt,
+          row sep=5pt,
+          nodes in empty cells,
+          },
+          DL/.style={
+           left delimiter=[,
+           right delimiter=],
+           inner sep=-2pt,
+          },
+          DG/.style={
+           line cap= round,
+           line width =15pt,
+           opacity=0.2,
+          }
+          ]
+          \matrix[Matrix] at (10,0) (M2){ % Matrix contents
+       \amp   \amp  \amp \text{$i$-th} \amp \amp\text{$j$-th} \amp \\
+     \amp 1 \amp 0 \amp 0 \amp \dots \amp 0 \amp 0\\
+  \amp  \amp \vdots \amp  \amp  \amp \vdots \amp \\
+   \text{$i$-th}    \amp 0\amp 0\amp 0   \amp \dots \amp1   \amp0   \\
+   \amp  \amp \vdots \amp  \amp  \amp \vdots \amp \\
+    \text{$j$-th} \amp 0 \amp 0 \amp 1 \amp \dots\amp 0 \amp 0 \\
+     \amp  \amp \vdots \amp  \amp  \amp \vdots \amp  \\
+     \amp 0 \amp 0\amp 0 \amp \dots \amp 0 \amp 1\\
+     \amp \amp \amp \amp $\underset{cr_i}{E}$ \\
+    };
 
+          \begin{scope}[on background layer]
+          \draw[DG,red](M2-6-2.center) --(M2-6-7.center);
+   \draw[DG,green](M2-2-6.center) --(M2-8-6.center);
+   \draw[DG,red](M2-4-2.center) --(M2-4-7.center);
+   \draw[DG,green](M2-2-4.center) --(M2-8-4.center);
+\node[DL,fit=(M2-2-2)(M2-8-7)](subM-1){};
+               \end{scope}
+              \end{tikzpicture}
+            </latex-image>
+          </image>
         </p>
       </li>
       <li>
         <p>
-          The <m>n\times n </m> row addition matrix <m>\underset{r_i+c\,r_j}{E}</m> is the result of swapping the <m>i</m>-th row of <m>I_m</m> with the sum of its <m>i</m>-th row and <m>c</m> times its <m>j</m>-th row: i.e.,
-          <me>
+          The <m>n\times n </m> row addition matrix <m>\underset{r_i+c\,r_j}{E}</m> is the result of replacing the <m>i</m>-th row of <m>I_m</m> with the sum of its <m>i</m>-th row and <m>c</m> times its <m>j</m>-th row.
+          <!-- <me>
             \underset{r_i+c\,r_j}{E}=\begin{bmatrix}1\amp 0\amp 0\amp \cdots\amp  0\amp 0\\ \vdots\amp  \amp \vdots \amp  \amp  \vdots \\ \cdots\amp c\amp \cdots\amp 1\amp \cdots\amp 0\\ \vdots\amp  \amp \vdots \amp  \amp  \vdots \\ 0\amp 0\amp \cdots\amp 0\amp 0\amp 1 \end{bmatrix}
-          </me>
+          </me> -->
+        <image xml:id="im_elem_rowadd" width="50%">
+          <latex-image>
+            \begin{tikzpicture}[
+            Matrix/.style={
+        matrix of nodes,
+        text height=2.5ex,
+        text depth=0.75ex,
+        text width=3.25ex,
+        align=center,
+        %left delimiter=\{,
+        %right delimiter=\},
+        column sep=5pt,
+        row sep=5pt,
+        nodes in empty cells,
+        },
+        DL/.style={
+         left delimiter=[,
+         right delimiter=],
+         inner sep=-2pt,
+        },
+        DG/.style={
+         line cap= round,
+         line width =15pt,
+         opacity=0.2,
+        }
+        ]
+        \matrix[Matrix] at (0,0) (M){ % Matrix contents
+    \amp   \amp\text{$j$-th}  \amp  \amp\text{$i$-th} \amp \amp \\
+  \amp 1 \amp 0 \amp 0 \amp 0 \amp \dots \amp 0\\
+  \amp 0 \amp 1 \amp 0 \amp 0 \amp \dots \amp 0\\
+ \amp \amp  \vdots \amp  \amp  \amp  \vdots \amp   \\
+ \text{$i$-th} \amp \dots\amp c \amp \dots \amp1  \amp \dots \amp 0 \\
+  \amp  \amp \vdots \amp  \amp  \amp \vdots \amp  \\
+  \amp 0 \amp 0\amp \dots \amp 0 \amp 0 \amp 1\\
+  \amp    \amp    \amp  \amp $\underset{r_i+cr_j}{E}$\\
+ };
+   \begin{scope}[on background layer]
+            \node[DL,fit=(M-2-2)(M-7-7)](subM-1){};
+            \draw[DG,red](M-5-2.center) --(M-5-7.center);
+            \draw[DG,green](M-2-5.center) --(M-7-5.center);
+             \draw[DG,green](M-2-3.center) --(M-7-3.center);
+            \end{scope}
+            \end{tikzpicture}
+          </latex-image>
+        </image>
         </p>
       </li>
     </ul>
@@ -390,16 +525,16 @@
         <li>
           <p>
             <m>A</m> is <term>upper triangular</term>
-            if <m>a_{ij}=0</m> for all <m>(i,j)</m> with <m>i>j</m>. (
-            <q><m>A</m> is zero above the diagonal.</q>
+            if <m>a_{ij}=0</m> for all <m>(i,j)</m> with <m>i \lt j</m>. (
+            <q><m>A</m> is zero below the diagonal.</q>
             )
           </p>
         </li>
         <li>
           <p>
             <m>A</m> is <term>lower triangular</term>
-            if <m>a_{ij}=0</m> for all <m>(i,j)</m> with <m>j>i</m>. (
-            <q><m>A</m> is zero below the diagonal.</q>
+            if <m>a_{ij}=0</m> for all <m>(i,j)</m> with <m>i>j</m>. (
+            <q><m>A</m> is zero above the diagonal.</q>
             )
           </p>
         </li>
@@ -441,7 +576,7 @@
     <p> To this end, assume it is not the case that <m>a_{ii}\ne 0</m> for all <m>i</m>. Then we can find a smallest index <m>k</m> such that <m>a_{kk}=0</m> and <m>a_{ii}\ne 0</m> for any <m>i &lt;k</m>. It is easy to see that <m>A</m> is row equivalent to a matrix <m>A'=[a'_{ij}]</m>, satisfying <m>a_{jj}=1</m>  for <m>1\leq j\leq k-1</m> and <m>a_{ij}=0</m> for all <m>1\leq i &lt; j\leq k-1</m>: i.e., <m>A'</m> is <q>diagonal up until the <m>k</m>-th column</q>.
   </p>
     <p>
-    We now provide a nonzero solution <m>\boldx=[x_i]_{n\times 1}</m>to <m>A'\boldx=\boldzero</m>: namely, set <m>x_k=1</m>, <m>x_{i}=0</m> for all <m>i>k</m>, and <m>x_{i}=-a'_{ik}</m> for all <m>i &lt; k</m>. (Verify this for yourself, using the description above of <m>a'_{ij}</m> for <m>j\leq k-1</m>.) Since <m>A'</m> is row equivalent to <m>A</m>, the linear systems cooresponding to <m>\begin{amatrix}[cc] A\amp \boldzero\end{amatrix}</m> and <m>\begin{amatrix}[cc] A' \amp \boldzero\end{amatrix}</m> have the same solutions. Hence <m>\boldx</m> is also a nonzero solution to <m>A\boldx=\boldzero</m>. We conclude that <m>A</m> is not invertible by Statement (3) of <xref ref="th_invertibility"/>. This concludes the proof of this implication.
+    We now provide a nonzero solution <m>\boldx=[x_i]_{n\times 1}</m>to <m>A'\boldx=\boldzero</m>: namely, set <m>x_k=1</m>, <m>x_{i}=0</m> for all <m>i>k</m>, and <m>x_{i}=-a'_{ik}</m> for all <m>i &lt; k</m>. (Verify this for yourself, using the description above of <m>a'_{ij}</m> for <m>j\leq k-1</m>.) Since <m>A'</m> is row equivalent to <m>A</m>, the linear systems corresponding to <m>\begin{amatrix}[cc] A\amp \boldzero\end{amatrix}</m> and <m>\begin{amatrix}[cc] A' \amp \boldzero\end{amatrix}</m> have the same solutions. Hence <m>\boldx</m> is also a nonzero solution to <m>A\boldx=\boldzero</m>. We conclude that <m>A</m> is not invertible by Statement (3) of <xref ref="th_invertibility"/>. This concludes the proof of this implication.
     </p>
     </case>
     <case>
@@ -690,7 +825,7 @@ The two inveribility algorithms above are nice examples of how a <em>theoretical
       <case>
        <title>Implication: <m>AB</m> invertible <m>\implies</m> <m>A</m> and <m>B</m> invertible</title>
        <p>
-          Assume <m>AB</m> is invertible and let <m>C</m> be its invers. Thus <m>C(AB)=(AB)C=I_n</m>.
+          Assume <m>AB</m> is invertible and let <m>C</m> be its inverse. Thus <m>C(AB)=(AB)C=I_n</m>.
          We first prove <m>B</m> is invertible. We have
          <md>
            <mrow>B\boldx=\boldzero\amp \implies  AB\boldx=\boldzero </mrow>

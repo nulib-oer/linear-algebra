@@ -114,7 +114,7 @@
     <title>Function shift operators</title>
     <statement>
       <p>
-      Let <m>X\subseteq \R</m> be an interval. Fix <m>a\in \R</m>. Define <m>T\colon F(X,\R)\rightarrow F(X,\R)</m> as <m>T(f)=g</m>, where <m>g(x)=f(x+a)</m>. Show that <m>T</m> is a linear transformation.
+      Fix <m>a\in \R</m>. Define <m>T\colon F(\R,\R)\rightarrow F(\R,\R)</m> as <m>T(f)=g</m>, where <m>g(x)=f(x+a)</m>. Show that <m>T</m> is a linear transformation.
       </p>
     </statement>
 
@@ -156,7 +156,7 @@
   <exercise>
     <statement>
       <p>
-        Let <m>T\colon F(X,\R)\rightarrow F(X,\R)</m> be defined as <m>T(f)=g</m>, where <m>g(x)=f(x)+f(-x)</m>. Show that <m>T</m> is linear. You may use the results of <xref ref="ex_transformation_function_scale"/> and <xref ref="ex_transformation_add_scale"/>.
+        Let <m>T\colon F(\R,\R)\rightarrow F(\R,\R)</m> be defined as <m>T(f)=g</m>, where <m>g(x)=f(x)+f(-x)</m>. Show that <m>T</m> is linear. You may use the results of <xref ref="ex_transformation_function_scale"/> and <xref ref="ex_transformation_add_scale"/>.
       </p>
     </statement>
   </exercise>
@@ -167,48 +167,68 @@
       </p>
     </statement>
   </exercise>
-  <exercise>
-    <statement>
-      <p>
-        Let <m>T\colon V\rightarrow W</m> be a linear transformation, and let <m>V'\subseteq V</m> be a subspace. Define <m>W'\subseteq W</m> as
-        <me>
-          W'=\{\boldw\colon \boldw=T(\boldv) \text{ for some } \boldv\in V'\}
-        </me>.
-        Prove: <m>W'</m> is a subspace of <m>W</m>.
-      </p>
-    </statement>
-  </exercise>
+
   <exercise xml:id="ex_transformation_reflection">
     <title>Reflection through a line</title>
     <statement>
       <p>
-      Fix an angle <m>\alpha</m> with <m>0\leq \alpha \leq \pi </m>, and let <m>\ell_\alpha</m> be the line through the origin that makes an angle of <m>\alpha</m> with the positive <m>x</m>-axis.
-      </p>
-      <p>
-        Define <m>r_\alpha\colon \R^2\rightarrow \R^2</m> to be the function that takes an input <m>P=(x,y)</m> and returns the output <m>P'=(x',y')</m> obtained by reflecting <m>P</m> through the line <m>\ell_\alpha</m>. In more detail, <m>P'</m> is obtained by drawing a perpendicular through <m>\ell_\alpha</m> that passes through <m>P</m> and taking the point on the other side of this line whose distance to <m>\ell_\alpha</m> is equal to the distance from <m>P</m> to <m>\ell_\alpha</m>.
-      </p>
-      <p>
-        Prove that <m>r_\alpha</m> is a linear transformation as follows:
+      Fix an angle <m>\alpha</m> with <m>0\leq \alpha \leq \pi </m>, let <m>\ell_\alpha</m> be the line through the origin that makes an angle of <m>\alpha</m> with the positive <m>x</m>-axis, and let <m>r_\alpha\colon\R^2\rightarrow \R^2</m> be the reflection operation as described in <xref ref="d_reflection"/>.
+     Prove that <m>r_\alpha</m> is a linear transformation following the steps below.
         <ol>
           <li>
             <p>
-              In a manner similar to <xref ref="th_transform_rotation"/>, describe <m>r_\alpha</m> in terms of the polar coordinates <m>(r,\theta)</m> of the input point <m>P</m>. Additionally, it helps to write <m>\theta=\alpha+\phi</m>, where <m>\phi</m> is the angle line segment from the origin to <m>P</m> makes with the line <m>\ell_\alpha</m>.
-            </p>
-            <p>
+              In a manner similar to <xref ref="th_transform_rotation"/>, describe <m>P'=r_\alpha(P)</m> in terms of the polar coordinates <m>(r,\theta)</m> of <m>P</m>. Additionally, it helps to write <m>\theta=\alpha+\phi</m>, where <m>\phi</m> is the angle the line segment from the origin to <m>P</m> makes with the line <m>\ell_\alpha</m>.
               Include a drawing to support your explanation.
             </p>
           </li>
           <li>
             <p>
-              Use your description in (a) to find a matrix <m>A</m>, expressed in terms of <m>\alpha</m> such that <m>r_\alpha=T_A</m>.
-            </p>
-            <p>
-              You should test that your matrix formula is correct for some easy choices of <m>\alpha</m>: <eg />, <m>\alpha=0</m> and <m>\alpha=\pi/2</m>.
+              Use your description in (a), along with some trigonometric identities, to show <m>r_\alpha=T_A</m> where
+              <me>
+                A=\begin{bmatrix}\cos 2\alpha \amp \sin 2\alpha\\ \sin 2\alpha \amp -\cos 2\alpha \end{bmatrix}
+              </me>.
             </p>
           </li>
         </ol>
       </p>
     </statement>
+  </exercise>
+  <exercise xml:id="ex_transformation_composition_rotations_reflections">
+    <title>Compositions of rotations and reflections</title>
+    <statement>
+      <p>
+        In this exercise we will show that if we compose a rotation or reflection with another rotation or reflection, as defined in <xref ref="d_rotation"/> and <xref ref="d_reflection"/>, the result is yet another rotation or reflection.
+        For each part, express the given composition either as a rotation <m>\rho_\theta</m> or reflection <m>r_\theta</m>, where <m>\theta</m> is expressed in terms of <m>\alpha</m> and <m>\beta</m>.
+      </p>
+      <ol>
+        <li>
+          <p>
+          <m>\rho_\alpha\circ\rho_\beta</m>
+          </p>
+        </li>
+        <li>
+          <p>
+          <m>r_\alpha\circ r_\beta</m>
+          </p>
+        </li>
+        <li>
+          <p>
+          <m>\rho_\alpha\circ r_\beta</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>r_\alpha\circ \rho_\beta</m>
+          </p>
+        </li>
+      </ol>
+    </statement>
+    <hint>
+      <p>
+        Use <xref ref="th_transform_rotation"/> and <xref ref="th_transform_reflection"/>, along with some trigonometric identities.
+      </p>
+    </hint>
+
   </exercise>
 
 </exercises>

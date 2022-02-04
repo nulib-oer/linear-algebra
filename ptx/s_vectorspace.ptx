@@ -11,17 +11,17 @@
     <p>
       A common technique in mathematics for such investigations
       is to distill the important properties of the motivating operations into a list of <em>axioms</em>,
-      and then attempt to prove statements that apply to any system that satisfies these axioms.
+      and then to prove statements that apply to any system that satisfies these axioms.
     </p>
     <p>
       We now embark on just such an axiomatic approach.
       The notion of a <em>vector space</em> arises from focusing on just two operations from matrix algebra:
       matrix addition and matrix scalar multiplication. As we saw in <xref ref="s_algebraic"/>,
       these two operations satisfy many useful properties:
-      e.g, commutativity, associativity, distributivity, etc. Whereas earlier we showed directly that matrix algebra satisfies these properties, now we will come at things the other way: we record these various properties as a list of axioms, and declare <em>any</em> system that satisfies these axioms to be a vector space.
+      <eg />, commutativity, associativity, distributivity, <etc />. Whereas earlier we showed directly that matrix algebra satisfies these properties, now we will come at things the other way: we record these various properties as a list of axioms, and declare <em>any</em> system that satisfies these axioms to be a vector space.
     </p>
     <p>
-      Once we've established the definition of a vector space, when we go on to investigate the properties enjoyed by vector spaces we make no assumptions beyond the fact that the basic axioms are satisfied. This approach comes off as somewhat abstract in nature, but has the advantage that our conclusions now apply to any vector space you can think of. You don't have to reinvent the wheel each time you stumble across a new vector space.
+      Once we've established the definition of a vector space, when we go on to investigate the properties enjoyed by vector spaces we make no assumptions beyond the fact that the basic axioms are satisfied. This approach comes off as somewhat abstract, but has the advantage that our conclusions now apply to any vector space you can think of. You don't have to reinvent the wheel each time you stumble across a new vector space.
     </p>
   </introduction>
   <subsection xml:id="ss_vector_space">
@@ -40,7 +40,7 @@
             <li>
               <title>Scalar multiplication</title>
               <p>
-                This operation takes as input any real number <m>c\in R</m> and any element <m>\boldv\in V</m>, and outputs another element of <m>V</m>, denoted <m>c\boldv</m>. We describe this operation using set notation as follows:
+                This operation takes as input any real number <m>c\in R</m> and any element <m>\boldv\in V</m>, and outputs another element of <m>V</m>, denoted <m>c\boldv</m>. We describe this operation using function notation as follows:
                 <md>
                   <mrow>\R\times V\amp \rightarrow  V</mrow>
                   <mrow>(c,\boldv)\amp \mapsto  c\boldv</mrow>
@@ -50,7 +50,7 @@
             <li>
               <title>Vector addition</title>
               <p>
-              This operation takes as input any pair of elements <m>\boldv, \boldw\in V</m> and returns another element of <m>V</m>, denoted <m>\boldv+\boldw</m>.  In set notation:
+              This operation takes as input any pair of elements <m>\boldv, \boldw\in V</m> and returns another element of <m>V</m>, denoted <m>\boldv+\boldw</m>.  In function notation:
               <md>
                 <mrow>V\times V\amp \rightarrow  V</mrow>
                 <mrow>(\boldv,\boldw)\amp \mapsto   \boldv+\boldw</mrow>
@@ -232,7 +232,7 @@ In each of the examples below we carefully lay out the details of items (1)-(3) 
     <case>
      <title>Underlying set</title>
      <p>
-     A <term>real <m>n</m>-tuple</term> is an ordered sequence <m>(a_1,a_2,\dots, a_n)</m>, where <m>a_i\in \R</m> for all <m>i</m>. The <term>vector space of real <m>n</m>-tuples</term>, denoted <m>\R^n</m>, is the set of all real <m>n</m>-tuples:
+     The <term>vector space of real <m>n</m>-tuples</term>, denoted <m>\R^n</m>, is the set of all real <m>n</m>-tuples with real coefficients: <ie />,
      <me>
        \R^n=\{ (a_1,a_2,\dots, a_n) \colon a_i\in \R \}
      </me>.
@@ -385,8 +385,8 @@ In each of the examples below we carefully lay out the details of items (1)-(3) 
 </definition>
 
 <definition xml:id="ex_vs_functions">
-  <title>Real functions</title>
-  <idx><h>vector space</h><h>of real functions on an interval</h></idx>
+  <title>Real-valued functions</title>
+  <idx><h>vector space</h><h>of real-valued functions on a set</h></idx>
   <notation>
     <usage><m>F(X,\R)</m></usage>
     <description>vector space of functions from <m>X</m> to <m>\R</m></description>
@@ -395,16 +395,16 @@ In each of the examples below we carefully lay out the details of items (1)-(3) 
     <case>
     <title>Underlying set</title>
     <p>
-    Let <m>X\subseteq \R</m> be an interval. The <term>vector space of functions from <m>X</m> to <m>\R</m></term>, denoted <m>F(X,\R)</m>, is the set of all real-valued functions <m>f(x)</m> with domain <m>X</m>.
+    Let <m>X</m> be a set. The <term>vector space of functions from <m>X</m> to <m>\R</m></term>, denoted <m>F(X,\R)</m>, is the set of all real-valued functions <m>f\colon X\rightarrow \R</m>: <ie />, the set of all functions with domain <m>X</m> and codomain <m>\R</m>.
     </p>
    </case>
    <case>
     <title>Vector operations</title>
     <p>
-      The vector operations in <m>F(X,\R)</m> are none other than the function scaling and addition operations, perhaps familiar to you from calculus.
+      The vector operations on <m>F(X,\R)</m> defined below are generalizations of operations you may have seen before when learning about function transformations. 
     </p>
    <p>
-     <em>Scalar multiplication</em>. Given <m>c\in \R</m> and a real-valued function <m>f</m> with domain <m>X</m>, we let <m>cf</m> be the function defined as
+     <em>Scalar multiplication</em>. Given <m>c\in \R</m> and a real-valued function <m>f\colon X\rightarrow \R</m>, we let <m>cf</m> be the function defined as
      <me>
        (cf)(x)=c(f(x)) \text{ for all } x\in X
      </me>.
@@ -437,16 +437,21 @@ In each of the examples below we carefully lay out the details of items (1)-(3) 
 <remark xml:id="rm_vs_functions">
   <statement>
     <p>
-      Take a moment to let the exotic quality of this example sink in. The things we are calling <em>vectors</em> here are entire <em>functions</em>!
-      Furthermore, whereas we can concretely describe the general element of <m>\R^3</m> (<m>\boldv=(a,b,c)</m>) or even <m>\R^n</m> (<m>\boldv=(a_1,a_2,\dots, a_n)</m>),
-      there is no comparable way of expressing the general element of <m>F(X,\R)</m>. The general element is just an arbitrary rule taking inputs from the interval <m>X</m> and assigning values in <m>\R</m>. For example, the function <m>f(x)=\sin x-e^x</m> is one of our vectors; and so is the function <m>g</m> defined as
+      Take a moment to let the exotic quality of this example sink in. The things we are calling <em>vectors</em> in this case are entire <em>functions</em>!
+    </p>
+    <p> Consider <m>F(\R,\R)</m>. A vector of <m>F(\R,\R)</m> is a function <m>f\colon \R\rightarrow \R</m>: a rule that assigns to any input <m>x\in \R</m> a unique output <m>y\in \R</m>. Thus the functions <m>f</m> and <m>g</m> defined as <m>f(x)=x^2+1</m> and <m>g(x)=\sin x-x</m> are both vectors of <m>F(\R,\R)</m>, as is any function given by a formula involving familiar mathematical functions and operations (as long as the formula is defined for all <m>x\in \R</m>). That's a lot of vectors! And yet we are only beginning to scratch the surface, since a function of <m>F(\R,\R)</m> need not be given by a nice formula; it simply has to be a well-defined rule. For example, the function <m>h</m> defined as
       <me>
-        g(x)=\begin{cases}
+        h(x)=\begin{cases}
           1\amp \text{if } x \text{ is rational}\\
-          0\amp \text{if } x \text{ is not rational}.
+          0\amp \text{if } x \text{ is not rational}
       \end{cases}
       </me>
+      is also an element of <m>F(\R,\R)</m>.
     </p>
+    <p>
+      Hopefully this discussion gives some indication of how a vector space like <m>F(\R,\R)</m> is in some sense <em>much larger</em> than spaces like <m>\R^n</m> or <m>M_{mn}</m>, whose general elements can be described in a finite manner. This vague intuition can be made precise with the notion of the <em>dimension</em> of a vector space, which we develop in <xref ref="s_basis_dimension"/>.
+    </p>
+
   </statement>
 </remark>
 <p>
@@ -502,7 +507,7 @@ In each of the examples below we carefully lay out the details of items (1)-(3) 
    <case>
     <title>Verification of axioms</title>
     <p>
-      Exercise. We point out, however, that in this case the fact that the operations are actually well-defined should be justified. This is where the positivity of elements of <m>\R_{>0}</m> comes into play: since <m>\boldv=a</m> is a positive number, the power <m>c\boldv=a^c</m> is defined for any <m>c\in \R</m>, and is again positive; if <m>\boldv=a</m> and <m>\boldw=b</m> are both positive numbers, then so is <m>\boldv+\boldw=ab</m>.
+      Exercise. We point out, however, that in this case the fact that the operations are actually well-defined should be justified. This is where the positivity of elements of <m>\R_{>0}</m> comes into play: since <m>\boldv=a</m> is a positive number, the power <m>a^c</m> is defined for any <m>c\in \R</m> and is again positive. Thus <m>c\boldv=a^c</m> is indeed an element of <m>\R_{>0}</m>. Similarly, if <m>\boldv=a</m> and <m>\boldw=b</m> are both positive numbers, then so is <m>\boldv+\boldw=ab</m>.
     </p>
    </case>
   </statement>

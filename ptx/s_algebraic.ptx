@@ -86,6 +86,7 @@
     </p>
 
   <proof>
+    <title>Proof of (iv)</title>
     <p>We prove only the <xref ref="th_matrixmult_assoc" text="custom">multiplication associative law</xref>.
     Let <m>A=[a_{ij}]_{m\times r}</m>,
       <m>B=[b_{ij}]_{r\times s}</m>,
@@ -126,9 +127,9 @@
   </notation>
   <statement>
     <p>
-    Given an <m>m\times n</m> matrix <m>A=[a_{ij}]</m>, its <term>additive inverse</term> is the matrix
+    Given an <m>m\times n</m> matrix <m>A=[a_{ij}]</m>, its <term>additive inverse</term> <m>-A</m> is defined as
     <me>
-      -A:=(-1)A=[-a_{ij}]
+      -A=(-1)A=[-a_{ij}]
     </me>.
     </p>
   </statement>
@@ -203,25 +204,37 @@
 
     <statement>
       <p>
-        Let <m>A, B</m>, and <m>C</m> be <m>m\times n</m> matrices. If <m>A+B=A+C</m>, then <m>B=C</m>. Using logical implication notation:
+        Given <m>m\times n</m> matrices <m>A, B</m>, and <m>C</m>, we have <m>A+B=A+C</m> if and only if <m>B=C</m>. Using logical notation:
         <me>
-          A+B=A+C\, \Longrightarrow B=C.
+          A+B=A+C \iff  B=C.
         </me>
       </p>
     </statement>
+    <proof>
+      <p>
+        As simple as this claim might seem, remember that we are dealing with a completely new algebraic system here. We will prove both implications of <q>if and only if</q> statement separately.
+      </p>
+        <case>
+         <title>Proof: <m>A+B=A+C\implies B=C</m></title>
+        <p>
+        We prove this via a chain of implications:
+        <md>
+          <mrow> A+B=A+C\amp \implies -A+(A+B)=-A+(A+C) </mrow>
+          <mrow>  \amp\implies (-A+A)+B=(-A+A)+C\amp (<xref ref="th_matrixadd_assoc" text="title"/>) </mrow>
+          <mrow>  \amp\implies \boldzero_{m\times n}+B=\boldzero_{m\times n}+C \amp (<xref ref="th_matrix_add_inverse"/>) </mrow>
+          <mrow>  \amp \implies B=C \amp (<xref ref="th_matrix_add_ident"/>) </mrow>
+        </md>.
+      </p>
+    </case>
+      <case>
+       <title>Proof: <m>B=C\implies A+B=A+C</m></title>
+      <p>
+      This direction is obvious: if <m>B</m> and <m>C</m> are equal matrices, then they remain equal when we add <m>A</m> to each of them.
+      </p>
+      </case>
+    </proof>
   </corollary>
-  <proof>
-    <p>
-      As simple as this claim might seem, remember that we are dealing with a completely new algebraic system here. Our proof must justify each step with either a definition, some property we already know to be true, or logic. We use a <q>chain of implications</q>:
-      <md>
-        <mrow> A+B=A+C\amp \implies -A+(A+B)=-A+(A+C) </mrow>
-        <mrow>  \amp\implies (-A+A)+B=(-A+A)+C\amp (<xref ref="th_matrixadd_assoc" text="title"/>) </mrow>
-        <mrow>  \amp\implies \boldzero_{m\times n}+B=\boldzero_{m\times n}+C \amp (<xref ref="th_matrix_add_inverse"/>) </mrow>
-        <mrow>  \amp \implies B=C \amp (<xref ref="th_matrix_add_ident"/>) </mrow>
-      </md>.
 
-    </p>
-  </proof>
 
   <remark>
     <p>
@@ -260,9 +273,9 @@ The example in our warning above is but one instance of the general failure of t
         <title>Products of nonzero matrices may be equal to zero</title>
         <p>
           If the product of two matrices is the zero matrix,
-          we <em>cannot</em> conclude that one of matrices is the zero matrix. Using logical:
+          we <em>cannot</em> conclude that one of matrices is the zero matrix. In logical notation:
           <me>
-            \underset{m\times n}{A}\underset{n\times r}{B}=0_{m\times r}\not\Rightarrow A=0_{m\times n} \text{ or }  B=0_{n\times r}
+            \underset{m\times n}{A}\underset{n\times r}{B}=0_{m\times r}\;\not\!\!\!\!\implies A=0_{m\times n} \text{ or }  B=0_{n\times r}
           </me>.
               </p>
             </li>
@@ -297,7 +310,7 @@ The example in our warning above is but one instance of the general failure of t
           <p>
             Suppose matrices <m>A, B, C</m> satisfy <m>AB=AC</m>. We <em>cannot</em> conclude that <m>B=C</m>. In logical notation:
             <md>
-              <mrow>AB=AC \amp \not\Rightarrow B=C</mrow>
+              <mrow>AB=AC \amp \;\not\!\!\!\!\implies B=C</mrow>
             </md>
           </p>
         </li>
@@ -305,7 +318,7 @@ The example in our warning above is but one instance of the general failure of t
           <p>
             Suppose matrices <m>B, C, D</m> satisfy <m>BD=CD</m>. We <em>cannot</em> conclude that <m>B=C</m>. In logical notation:
             <md>
-              <mrow>BD=CD \amp \not\Rightarrow  B=D</mrow>
+              <mrow>BD=CD \amp \;\not\!\!\!\!\implies B=C</mrow>
             </md>
           </p>
         </li>
@@ -343,7 +356,7 @@ The example in our warning above is but one instance of the general failure of t
     </ol>
   </proof>
   <remark xml:id="rm_cancel_failure">
-    <p> Mark well this important abnormality of matrix algebra. Confronted with a real number equation of the form <m>ab=ac</m>, we have a deeply engrained impulse to declare that either <m>a=0</m> or <m>b=c</m>. (If we're sloppy we may forget about that first possibility.) The corresponding maneuver for the matrix equation <m>AB=AC</m> is simply not available to us, unless we know something more about <m>A</m>.
+    <p> Mark well this important abnormality of matrix algebra. Confronted with a real number equation of the form <m>ab=ac</m>, we have a deeply ingrained impulse to declare that either <m>a=0</m> or <m>b=c</m>. (If we're sloppy we may forget about that first possibility.) The corresponding maneuver for the matrix equation <m>AB=AC</m> is simply not available to us, unless we know something more about <m>A</m>.
   </p>
 </remark>
 <p>
@@ -394,5 +407,21 @@ The example in our warning above is but one instance of the general failure of t
         </p>
       </proof>
     </theorem>
+    <paragraphs xml:id="ss_algebra_video_examples">
+      <title>Video examples: proving matrix equalities</title>
+
+      <figure xml:id="fig_proof_assoc">
+        <title>Matrix multiplication is associative</title>
+        <caption>Matrix multiplication is associative</caption>
+        <video xml:id="vid_proof_assoc" youtube="EDGxkEV5mm0" />
+      </figure>
+
+      <figure xml:id="fig_proof_transp">
+        <title>Transpose property</title>
+        <caption>Transpose property</caption>
+        <video xml:id="vid_proof_transp" youtube="twq0_HdpC3w" />
+      </figure>
+
+    </paragraphs>
 <xi:include  href="s_algebraic_ex.ptx"/>
 </section>

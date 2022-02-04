@@ -211,7 +211,7 @@ As defined more thoroughly in <xref ref="d_matrix"/>, a matrix is just a rectang
   We will now describe a systematic procedure, called <em>Gaussian elimination</em>, that allows us to reduce a given linear system <m>L</m> to a system <m>L'</m>in row echelon form.
   In keeping with the foregoing discussion, we will identify a system <m>L</m> with its augmented matrix <m>A</m>. Furthermore, reducing a linear system using elementary operations on equations is now cast as performing <em>elementary row operations</em> on matrices. At the risk of redundancy we now officially translate a number of our former notions regarding reduction of linear systems to the setting of matrices.
   </p>
-  <definition index="elementary row operations" xml:id="d_rowops">
+  <definition  xml:id="d_rowops">
     <title>Elementary row operations on matrices</title>
     <idx><h>elementary row operations</h></idx>
     <idx><h>elementary row operations</h><h>scalar multiplication</h></idx>

@@ -2,7 +2,7 @@
 <exercisegroup>
 <introduction>
 <p>
-For each vector space <m>V</m> and subset <m>S</m>, use the one-step technique (<xref ref="eg_basis_onestep"/>to decide whether <m>S</m> is a basis for <m>V</m>. 
+For each vector space <m>V</m> and subset <m>S</m>, use the one-step technique (<xref ref="eg_basis_onestep"/>to decide whether <m>S</m> is a basis for <m>V</m>.
 </p>
 </introduction>
 <exercise>
@@ -76,6 +76,7 @@ For each vector space <m>V</m> and subset <m>S</m>, use the one-step technique (
 For each vector space <m>V</m> and subset <m>S</m> use an appropriate statement from <xref ref="cor_street_smarts"/> to help decide whether <m>S</m> is a basis for <m>V</m>. Justify your answer.
 </p>
 </introduction>
+
 <exercise>
   <statement>
     <p>

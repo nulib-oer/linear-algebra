@@ -320,10 +320,10 @@
 
 </subsection>
 
-<subsection xml:id="ss_transform_examples">
-  <title>Examples</title>
+<subsection xml:id="ss_matrix_transforms">
+  <title>Matrix transformations</title>
   <p>
-    Our next example is in fact an entire family of examples of linear transformations: so-called <em>matrix transformations</em> of the form <m>T_A\colon \R^n\rightarrow \R^m</m>, where <m>A</m> is a given <m>m\times n</m> matrix. This is a good place to recall the <xref ref="princ_matrix_mantra" text='custom'> matrix mantra </xref>. Not only can a matrix represent a system of linear equations, it can represent a linear transformation. These are two very different concepts, and the <xref ref="princ_matrix_mantra" text='custom'> matrix mantra </xref> helps us not confuse the two. In the end a matrix is just a matrix: a mathematical tool that can be employed to diverse ends.
+    We now describe what turns out to be an entire family of examples of linear transformations: so-called <em>matrix transformations</em> of the form <m>T_A\colon \R^n\rightarrow \R^m</m>, where <m>A</m> is a given <m>m\times n</m> matrix. This is a good place to recall the <xref ref="princ_matrix_mantra" text='custom'> matrix mantra </xref>. Not only can a matrix represent a system of linear equations, it can represent a linear transformation. These are two very different concepts, and the <xref ref="princ_matrix_mantra" text='custom'> matrix mantra </xref> helps us to not confuse the two. In the end a matrix is just a matrix: a mathematical tool that can be employed to diverse ends.
   </p>
   <p>
     The definition of a <em>matrix transformation</em> below marks the first point where we take some artistic license and conflate the vector space <m>\R^n</m> with the vector space <m>M_{n\times 1}</m> of column vectors. The rationale here is partly notational in nature (<m>\R^n</m> is less clunky than <m>M_{n\times 1}</m>), and partly conceptual. We will see that the spaces <m>\R^n</m> come equipped with a natural geometric structure, allowing us to interpret the linear transformations among them in a more conceptual manner, especially when <m>n=2, 3</m>.
@@ -370,7 +370,7 @@
     <remark xml:id="rm_matrix_transform">
   <statement>
     <p>
-      As the title of <xref ref="th_matrix_transform_i"/> suggests, there is a follow-up theorem, and this states that in fact <em>any</em> linear transformation <m>T\colon\R^n\rightarrow\R^m </m> is of the form <m>T=T_A</m> for some <m>m\times n</m> matrix <m>A</m>. In other words, all linear transformations from <m>\R^n</m> to <m>\R^m</m> are matrix transformations.
+      As the title of <xref ref="th_matrix_transform_i"/> suggests, there is a follow-up result (<xref ref="cor_matrix_transformations"/>), and this states that in fact <em>any</em> linear transformation <m>T\colon\R^n\rightarrow\R^m </m> is of the form <m>T=T_A</m> for some <m>m\times n</m> matrix <m>A</m>. In other words, all linear transformations from <m>\R^n</m> to <m>\R^m</m> are matrix transformations.
     </p>
     <p>
       As general as these two results are, mark well the <em>restriction</em> that remains: they apply only to functions with domain and codomain equal to a vector spaces of tuples. They say nothing for example about functions from <m>\R^\infty</m> to <m>F([0,1],\R)</m>.
@@ -400,9 +400,14 @@
     It follows from <xref ref="th_matrix_transform_i"/> that <m>T=T_A</m> is linear.
   </statement>
 </remark>
-<p>
-  Next we see our first geometric example of a linear transformation: rotation in the plane by an angle <m>\alpha</m>.
-</p>
+</subsection>
+<subsection xml:id="ss_rotations_reflections">
+  <title>Rotations and reflections in the plane</title>
+<introduction>
+  <p>
+    We now introduce two very important geometric examples of linear transformations: rotations and reflections in the plane. These operations are described in detail below; we use <xref ref="th_matrix_transform_i"/> to prove these operations are in fact linear transformations.
+   </p>
+</introduction>
 <definition xml:id="d_rotation">
   <title>Rotation in the plane</title>
   <idx><h>rotation</h><h>as linear transformation</h></idx>
@@ -410,14 +415,13 @@
     <usage><m>\rho_\alpha</m></usage>
     <description>rotation by <m>\alpha</m> in the plane</description>
   </notation>
-
   <statement>
     <p>
         Fix an angle <m>\alpha</m> and define
         <me>\rho_\alpha\colon \R^2\rightarrow \R^2
         </me>
         to be the function that takes an input <m>P=(x,y)</m>, considered as a point in the <m>xy</m>-plane, and returns the output <m>P'=(x',y')</m> obtained rotating <m>P</m> by an angle of <m>\alpha</m> about the origin.
-        The function <m>\rho_\alpha</m> is called <term>rotation by <m>\alpha</m> (about the origin) (in the plane)</term>.
+        The function <m>\rho_\alpha</m> is called <term>rotation about the origin </term> by the angle <m>\alpha</m>.
       </p>
       <p>
       We can extract a formula from the rule defining <m>\rho_\alpha</m> by using polar coordinates: if <m>P</m> has polar coordinates <m>(r,\theta)</m>, then <m>P'=\rho_\alpha(P)</m> has polar coordinates <m>(r,\theta+\alpha)</m>.
@@ -434,7 +438,6 @@
         \cos\alpha\amp -\sin\alpha\\ \sin\alpha \amp \cos\alpha
     \end{amatrix}
     </me>.
-
     </p>
   </statement>
   <proof>
@@ -464,7 +467,7 @@
     <remark xml:id="rm_rotation_matrix">
   <statement>
     <p>
-      Observe that it is not at all obvious geometrically that the rotation operation is <em>linear</em>: <ie />, that it preserves sums and scalar multiplications in <m>\R^2</m>. Indeed, our proof does not even show this directly, but instead first gives a matrix formula for rotation, and then uses <xref ref="th_transform_rotation"/>.
+      Observe that it is not at all obvious geometrically that the rotation operation is <em>linear</em>: <ie />, that it preserves addition and scalar multiplication of vectors in <m>\R^2</m>. Indeed, our proof does not even show this directly, but instead first gives a matrix formula for rotation and then uses <xref ref="th_transform_rotation"/>.
     </p>
     <p>
     Since matrices of the form
@@ -478,6 +481,7 @@
   </statement>
 </remark>
 <example>
+  <title>Rotation matrices</title>
   <statement>
     <p>
       Find formulas for <m>\rho_\pi\colon \R^2\rightarrow \R^2</m> and <m>\rho_{2\pi/3}\colon \R^2\rightarrow \R^2</m>, expressing your answer in terms of pairs (as opposed to column vectors).
@@ -517,8 +521,51 @@
   </solution>
 </example>
 <p>
-  We now proceed to some examples involving our more exotic vector spaces.
+  A second example of a geometric linear transformation is furnished by reflection through a line in <m>\R^2</m>.
 </p>
+<definition xml:id="d_reflection">
+  <idx><h>reflection</h><h>through a line</h></idx>
+  <title>Reflection through a line</title>
+  <statement>
+      <p>
+      Fix an angle <m>\alpha</m> with <m>0\leq \alpha \leq \pi </m>, and let <m>\ell_\alpha</m> be the line through the origin that makes an angle of <m>\alpha</m> with the positive <m>x</m>-axis.
+      </p>
+      <p>
+        Define <m>r_\alpha\colon \R^2\rightarrow \R^2</m> to be the function that takes an input <m>P=(x,y)</m> and returns the output <m>P'=(x',y')</m> obtained by reflecting <m>P</m> through the line <m>\ell_\alpha</m>. In more detail: if <m>P</m> lies on <m>\ell_\alpha</m>, then <m>P'=P</m>; otherwise, <m>P'</m> is obtained by drawing the perpendicular through <m>\ell_\alpha</m> that passes through <m>P</m> and taking the point on the other side of this line whose distance to <m>\ell_\alpha</m> is equal to the distance from <m>P</m> to <m>\ell_\alpha</m>.
+      </p>
+    <p>
+      The function <m>r_{\alpha}</m> is called <term>rotation through the line</term> <m>\ell_\alpha</m>.
+    </p>
+  </statement>
+</definition>
+<theorem xml:id="th_transform_reflection">
+  <title>Reflection is a linear transformation</title>
+  <statement>
+    <p>
+      Fix an angle <m>0\leq \alpha\leq \pi</m>. The reflection <m>r_\alpha\colon \R^2\rightarrow\R^2</m> is a linear transformation. In fact we have <m>r_{\alpha}=T_A</m>, where
+      <me>
+        A=\begin{amatrix}[rr]
+          \cos 2\alpha\amp\sin 2\alpha \\
+          \sin 2\alpha \amp -\cos 2\alpha
+      \end{amatrix}
+      </me>.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      See <xref ref="ex_transformation_reflection"/>.
+    </p>
+  </proof>
+
+</theorem>
+</subsection>
+<subsection xml:id="ss_transform_exotic_examples">
+<title>Additional examples</title>
+<introduction>
+  <p>
+    We now proceed to some examples involving our more exotic vector spaces.
+  </p>
+</introduction>
 <example>
   <title>Transposition is linear</title>
   <statement>
@@ -571,7 +618,7 @@
       <mrow> \amp= (ca_{i+1}+db_{i+1})_{i=1}^\infty \amp (\text{by def.})</mrow>
       <mrow>  \amp=c(a_{i+1})_{i=1}^\infty+d(b_{i+1})_{i=1}^\infty \amp (<xref ref="ex_vs_infinitesequences"/>)</mrow>
       <mrow>  \amp=cT_\ell(\boldv)+dT_\ell(\boldw)\amp (\text{by def.}) </mrow>
-    </md> .
+    </md>.
     This proves <m>T_\ell</m> is a linear transformation.
     </p>
   </solution>

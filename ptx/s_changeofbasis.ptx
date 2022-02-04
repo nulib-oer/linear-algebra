@@ -361,7 +361,7 @@
     they simply inherit these common properties from the overlying linear transformation <m>T</m>,
     of which they are but earthly shadows.
   </p>
-  <!-- <figure>
+  <!-- <figure xml:id="fig_comm_tent">
     <caption>Holy commutative tent of linear algebra: <m>P=\underset{B\rightarrow B'}{P}</m>, <m>B=P^{-1}AP</m></caption>
     <image xml:id="im_holycomm">
       <latex-image>
@@ -374,7 +374,7 @@
     </image>
 
   </figure> -->
-  <figure>
+  <figure xml:id="fig_comm_tent">
     <caption>Holy commutative tent of linear algebra: <m>P=\underset{B\rightarrow B'}{P}</m>, <m>B=P^{-1}AP</m>
   </caption>
     <image xml:id="im_holycomm" source="./images/im_holycomm.svg"/>
@@ -387,7 +387,7 @@
     <title>Change of basis for <m>V=\R^n</m></title>
 
     <p>
-      Let's consider the special case where <m>T\colon \R^n\rightarrow \R^n</m>: that is, when <m>V=\R^n</m> is a space of <m>n</m>-tuples. We know from <xref ref="cor_matrixreps"/> that <m>T=T_A</m> for a unique <m>n\times n</m> matrix <m>A</m>; in fact we know from the proof that <m>A=[T]_B</m>, where <m>B=(\bolde_1, \bolde_2, \dots, \bolde_n)</m> is the <em>standard</em> ordered basis of <m>\R^n</m>.
+      Let's consider the special case where <m>T\colon \R^n\rightarrow \R^n</m>: that is, when <m>V=\R^n</m> is a space of <m>n</m>-tuples. We know from <xref ref="cor_matrix_transformations"/> that <m>T=T_A</m> for a unique <m>n\times n</m> matrix <m>A</m>; in fact we know from the proof that <m>A=[T]_B</m>, where <m>B=(\bolde_1, \bolde_2, \dots, \bolde_n)</m> is the <em>standard</em> ordered basis of <m>\R^n</m>.
     </p>
     <p>
       To compute <m>A=[T]_B</m> directly, we must compute <m>T(\bolde_j)</m> for each of the standard basis elements <m>\bolde_j</m>. However, for many naturally occuring transformations <m>T</m>, computing with respect to the standard basis is often not as convenient as computing with respect to some other basis <m>B'</m>: <ie />, it is often easier to compute <m>A'=[T]_{B'}</m> for some nonstandard basis <m>B'</m>. When this is the case <xref ref="th_change_of_basis_transformations"/> allows to us derive the desired matrix <m>A</m> from the more conveniently computed <m>A'</m>: namely, we have
@@ -451,7 +451,4 @@
     </p>
   </subsection>
 
-  <p>
-    <image width="75%" source="images/HolyCommutativeTent.png"/>
-  </p>
 </section>

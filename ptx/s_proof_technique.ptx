@@ -287,6 +287,7 @@ To show <m>f</m> is bijective directly using <xref ref="d_injective_surjective_b
 <subsection xml:id="ss_mathematical_induction">
   <idx><h>mathematical induction</h></idx>
   <title>Mathematical induction</title>
+  <introduction>
   <p>
     <em>Mathematical induction</em> is a technique for proving universal quantifications of the form
     <me>
@@ -297,6 +298,7 @@ To show <m>f</m> is bijective directly using <xref ref="d_injective_surjective_b
       \forall n\geq b\, P(n)
     </me>.
   </p>
+</introduction>
   <subsubsection xml:id="sss_weak_induction">
     <idx><h>mathematical induction</h><h>weak induction</h></idx>
     <title>Proof by induction</title>
@@ -396,6 +398,26 @@ To show <m>f</m> is bijective directly using <xref ref="d_injective_surjective_b
     </example>
   <p>
     So why does proof by induction work? In other words, why is it a valid proof technique? Imagine our propositions <m>P(n)</m> as forming an infinite ladder that we wish to ascend. Cautious climbers that we are, we only will step on a rung if we know the corresponding proposition is true. Knowing <m>P(b)</m> is true (the base step) allows us to step onto the first rung. The universal implication <m>\forall n\geq b\, P(n)\implies P(n+1)</m> (induction step) gives us a <em>rule</em> that says if rung <m>n</m> is secure (i.e., true), then so is rung <m>n+1</m>. Since this rule holds for all rungs (i.e., for all <m>n\geq b</m>), we can safely ascend the entire ladder!
+    <figure xml:id="fig_proof_induction">
+      <title>Mathematical induction as ladder of propositions</title>
+      <caption>Mathematical induction as ladder of propositions</caption>
+      <image xml:id="im_proof_induction" width="50%">
+        <latex-image>
+          \begin{tikzcd}
+    \ \amp \ \\
+    \amp  P(b+2) \arrow[u, no head, dotted]\\
+     \amp P(b+1)  \arrow[u, "\text{climb up via}","P(b+1)\implies P(b+2)"']\\
+    \amp P(b) \arrow[u, "\text{climb up via}","P(b)\implies P(b+1)"']\\
+    \  \arrow[ur,"\text{climb on via}","\text{base case}"'] \amp
+      \end{tikzcd}
+        </latex-image>
+      </image>
+</figure>
+<!-- <figure xml:id="fig_proof_induction">
+  <title>Mathematical induction as ladder of propositions</title>
+  <caption>Mathematical induction as ladder of propositions</caption>
+<image xml:id="im_proof_induction" width="50%" source="./images/im_proof_induction.svg"/>
+</figure> -->
   </p>
 </subsubsection>
   <subsubsection xml:id="sss_strong_induction">

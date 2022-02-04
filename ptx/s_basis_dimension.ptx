@@ -23,7 +23,7 @@
    <me>
      \boldv=c_1\boldv_1+c_2\boldv_2+\cdots c_n\boldv_n
    </me>.
-   This observation has the following consequence: given any <m>n</m>-dimensional vector space <m>V</m>, no matter how exotic, once we choose a basis <m>B</m> of <m>V</m>, we can reduce any and all linear algebraic questions or computations about <m>V</m> to a corresponding question in <m>\R^n</m>. We will elaborate this idea further in <xref provisional="Computing with bases"/>.
+   This observation has the following consequence: given any <m>n</m>-dimensional vector space <m>V</m>, no matter how exotic, once we choose a basis <m>B</m> of <m>V</m>, we can reduce any and all linear algebraic questions or computations about <m>V</m> to a corresponding question in <m>\R^n</m>. We will elaborate this idea further in <xref ref="s_coordinatevectors_isomorphisms"/>.
   </p>
 </introduction>
 
@@ -146,7 +146,7 @@
       We show that no finite set of polynomials can span all of <m>P</m>; it follows that <m>P</m> does not have a finite basis.
     </p>
     <p>
-    Indeed let <m>S=\{p_1, p_2, \dots, p_r\}</m> be a finite set of polynomials, and let <m>n</m> be the maximal degree of all the polynomials <m>p_i\in S</m>. Then <m>p_i\in P_n</m> for all <m>i</m>, in which case <m>\Span S\subseteq P_n</m>: <ie />, <m>\Span S</m> is a subspace of the space of polynomials of degree at most <m>n</m>. Since <m>P_n\subsetne P</m>, we conclude that <m>\Span S\ne P</m>, as claimed.
+    Indeed let <m>S=\{p_1, p_2, \dots, p_r\}</m> be a finite set of polynomials, and let <m>n</m> be the maximal degree of all the polynomials <m>p_i\in S</m>. Then <m>p_i\in P_n</m> for all <m>i</m>, in which case <m>\Span S\subseteq P_n</m>: <ie />, <m>\Span S</m> is a subspace of the space of polynomials of degree at most <m>n</m>. Since <m>P_n\subsetneq P</m>, we conclude that <m>\Span S\ne P</m>, as claimed.
     </p>
   </solution>
 </example>

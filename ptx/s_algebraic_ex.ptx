@@ -42,7 +42,7 @@
       </li>
       <li>
         <p>
-          Prove <xref ref="th_matrixscale_assoc"/>.
+          Prove <xref ref="th_matrixscale_comm"/>.
         </p>
       </li>
     </ol>
@@ -71,11 +71,7 @@
       Prove all three statements of <xref ref="th_matrix_add_mult_ident"/>.
     </p>
   </statement>
-  <solution>
-    <p>
 
-    </p>
-  </solution>
 </exercise>
 <exercise>
   <statement>
@@ -101,12 +97,13 @@
     </ol>
   </statement>
 </exercise>
+
 <exercise>
   <statement>
     <p>
       Let <m>A</m> an <m>n\times n</m> matrix.
-      We define its <term>square</term>
-      to be the matrix <m>A^2:=AA</m>.
+      We define its <term>square</term> <m>A^2</m>
+      as <m>A^2=AA</m>.
     </p>
       <ol>
         <li>
@@ -145,5 +142,54 @@
       Similar hint for (b), only now set <m>A^2=A</m>.
     </p>
   </hint>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Consider the matrix equation
+      <m>A\, \begin{bmatrix}
+        1\amp 1\\ 1\amp 1
+      \end{bmatrix}=\begin{bmatrix}
+        1\amp 1\\ 1\amp 1
+      \end{bmatrix}</m>.
+    </p>
+    <ol>
+      <li>
+        <p>
+         The following chain of implications is invalid.
+          <md>
+            <mrow> A\, \begin{bmatrix}
+              1\amp 1\\ 1\amp 1
+            \end{bmatrix}=\begin{bmatrix}
+              1\amp 1\\ 1\amp 1
+            \end{bmatrix}\amp\implies A\, \begin{bmatrix}
+              1\amp 1\\ 1\amp 1
+            \end{bmatrix}=I_2\, \begin{bmatrix}
+              1\amp 1\\ 1\amp 1
+            \end{bmatrix} </mrow>
+            <mrow> \amp\implies A=I_2 </mrow>
+          </md>.
+        For each implication in the chain, explain why it is valid or invalid.
+        </p>
+      </li>
+      <li>
+        <p>
+          Find all <m>A</m> satisfying <me>A\, \begin{bmatrix}
+            1\amp 1\\ 1\amp 1
+          \end{bmatrix}=\begin{bmatrix}
+            1\amp 1\\ 1\amp 1
+          \end{bmatrix}</me>.
+          <hint>
+            <p>
+              Write <m>A=\begin{bmatrix}
+                a\amp b\\ c\amp d
+              \end{bmatrix}</m> and set up a system of linear equations in the unknowns <m>a,b,c,d</m>.
+            </p>
+          </hint>
+        </p>
+
+      </li>
+    </ol>
+  </statement>
 </exercise>
 </exercises>
