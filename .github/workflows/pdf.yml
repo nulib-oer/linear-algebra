@@ -6,7 +6,7 @@ name: Deploy
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main ]
+    branches: [ pdf ]
     paths-ignore: 
       - '**.md'
 
@@ -36,11 +36,11 @@ jobs:
       - name: TeX Dependencies
         run: |
           tlmgr --version
-          tlmgr install pgf
+          tlmgr install $(cat latex-packages.txt)
 
       # Runs a single command using the runners shell
       - name: Build HTML Files
-        run: pretext build html
+        run: pretext build pdf
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
