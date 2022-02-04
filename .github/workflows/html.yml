@@ -42,7 +42,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Build HTML Files
-        run: pretext build html
+        run: pretext build html -d
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
