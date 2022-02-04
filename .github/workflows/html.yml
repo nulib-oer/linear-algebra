@@ -44,6 +44,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Build HTML Files
         run: |
+          ls
           pretext build pdf
           pretext build html -d
 
