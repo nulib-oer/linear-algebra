@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-02-04T21:25:33Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span xmlns:svg="http://www.w3.org/2000/svg" class="space"> </span><span class="codenumber">4.4.15.1</span><span xmlns:svg="http://www.w3.org/2000/svg" class="period">.</span>
+</h4>
+<ol class="decimal">
+<li>
+<p>We claim \(S\) is linearly dependent. If</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+c_1f+c_2g+c_3h=\boldzero\text{,}
+\end{equation*}
+</div>
+<p class="continuation">then</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+c_1x+c_2\cos x+c_3\sin x=0\text{,}
+\end{equation*}
+</div>
+<p class="continuation">for all \(x\in (-2\pi, 2\pi)\text{.}\) In particular, the equality is true when evaluated at \(x=0, \pi/2, \pi\text{,}\) yielding the following linear system:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{linsys}{4}
+x=0 \colon \amp \amp 0c_1\amp +\amp \cos(0)c_2\amp +\amp \sin(0) c_3\amp= \amp 0\\
+x=\pi/2 \colon \amp \amp (\pi/2)c_1\amp +\amp \cos(\pi/2)c_2\amp +\amp \sin(\pi/2)c_3 \amp = \amp 0\\
+x=\pi \colon \amp  \amp \pi c_1\amp +\amp \cos(\pi)c_2\amp +\amp \sin(\pi)c_3 \amp= \amp 0
+\end{linsys}\text{,}
+\end{equation*}
+</div>
+<p class="continuation">or</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{linsys}{4}
+x=0 \colon  \amp \amp \amp \amp c_2\amp \amp \amp = \amp 0\\
+x=\pi/2 \colon \amp  \amp (\pi/2)c_1\amp +\amp \amp +\amp c_3 \amp = \amp 0\\
+x=\pi \colon \amp  \amp \pi c_1\amp - \amp c_2 \amp \amp  \amp= \amp 0
+\end{linsys}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">This system can be now be solved essentially by inspection: the first equation implies \(c_2=0\text{;}\) setting \(c_2=0\text{,}\) in the third equation, we conclude \(c_1=0\text{;}\) the second equation now implies \(c_3=0\text{.}\) We conclude that \(c_1=c_2=c_3=0\text{.}\) Thus the only linear combination of \(f, g, h\) yielding the zero function is the trivial one, showing that \(S\) is linearly independent.</p>
+</li>
+<li>
+<p>We claim \(S\) is linearly dependent. As discussed in <a href="" class="xref" data-knowl="./knowl/proc_linear_independence_functions.html" title="Procedure 4.4.13: Investigating linear independence of functions">Procedure 4.4.13</a>, to prove this we have to produce an identity involving these functions. The double-angle formula from trigonometry tells us that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\cos 2x=\cos^2 x-\sin^2x=2\cos^2x+1
+\end{equation*}
+</div>
+<p class="continuation">for all \(x\in (-2\pi, 2\pi)\) (in fact for all \(x\in \R\)). It follows that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+1-\cos 2x+2\cos^2x=0
+\end{equation*}
+</div>
+<p class="continuation">for all \(x\in (-2\pi, 2\pi)\text{,}\) or</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+f-g+2h=\boldzero\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Since we have found a nontrivial linear combination of elements of \(S\) yielding the zero vector, we conclude that \(S\) is linearly dependent.</p>
+</li>
+</ol>
+</div>
+<span class="incontext"><a href="s_span_independence.html#solution-46">in-context</a></span>
+</body>
+</html>

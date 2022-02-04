@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-02-04T21:25:17Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<p>Let</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+A=\begin{amatrix}[rrr]1\amp 2\amp 0\\ 1\amp 2\amp 1\\ -1\amp -1\amp 3 \end{amatrix} \text{.}
+\end{equation*}
+</div>
+<p class="continuation">Combining both algorithms we can decide whether \(A\) is invertible, and if so, compute \(A^{-1}\) and write \(A\) as a product of elementary matrices.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\begin{amatrix}[rrr|rrr]1\amp 2\amp 0\amp 1\amp 0\amp 0\\ 1\amp 2\amp 1\amp 0\amp 1\amp 0\\ -1\amp -1\amp 3\amp 0\amp 0\amp 1 \end{amatrix}  \amp \xrightarrow{r_2-r_1} \begin{amatrix}[rrr|rrr]1\amp 2\amp 0\amp 1\amp 0\amp 0\\ 0\amp 0\amp 1\amp -1\amp 1\amp 0\\ -1\amp -1\amp 3\amp 0\amp 0\amp 1 \end{amatrix}\\
+\amp \xrightarrow{r_3+r_1} \begin{amatrix}[rrr|rrr]1\amp 2\amp 0\amp 1\amp 0\amp 0\\ 0\amp 0\amp 1\amp -1\amp 1\amp 0\\ 0\amp 1\amp 3\amp 1\amp 0\amp 1 \end{amatrix}\\
+\text{ (three leading ones, thus invertible) }\amp \xrightarrow{r_2\leftrightarrow r_3} \begin{amatrix}[rrr|rrr]\boxed{1}\amp 2\amp 0\amp 1\amp 0\amp 0\\ 0\amp \boxed{1}\amp 3\amp 1\amp 0\amp 1\\ 0\amp 0\amp \boxed{1}\amp -1\amp 1\amp 0 \end{amatrix}\\
+\amp \xrightarrow{r_2-3r_3} \begin{amatrix}[rrr|rrr]1\amp 2\amp 0\amp 1\amp 0\amp 0\\ 0\amp 1\amp 0\amp 4\amp -3\amp 1\\ 0\amp 0\amp 1\amp -1\amp 1\amp 0 \end{amatrix}\\
+\amp \xrightarrow{r_1-2r_2} \begin{amatrix}[rrr|rrr]1\amp 0\amp 0\amp -7\amp 6\amp -2\\ 0\amp 1\amp 0\amp 4\amp -3\amp 1\\ 0\amp 0\amp 1\amp -1\amp 1\amp 0 \end{amatrix}
+\end{align*}
+</div>
+<p class="continuation">According to <a href="" class="xref" data-knowl="./knowl/th_invertibility_algorithm.html" title="Theorem 3.4.9: Inverse algorithm">Theorem 3.4.9</a>, the computation shows that \(A\) is invertible and</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+A^{-1}=\begin{amatrix}[rrr]-7\amp 6\amp -2\\ 4\amp -3\amp 1\\ -1\amp 1\amp 0 \end{amatrix}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Next, representing our row operations as elementary matrices, we see that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+E_5E_4E_3E_2E_1A=I\text{,}
+\end{equation*}
+</div>
+<p class="continuation">where</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+E_1\amp =\begin{amatrix}[rrr] 1\amp 0\amp 0\\
+-1\amp 1\amp 0\\
+0\amp 0\amp 1\end{amatrix}  \amp   E_2\amp =\begin{amatrix}[rrr]1\amp 0\amp 0\\
+0\amp 1\amp 0\\
+1\amp 0\amp 1\end{amatrix}\\
+E_3\amp =\begin{amatrix}[rrr]1\amp 0\amp 0\\
+0\amp 0\amp 1\\
+0\amp 1\amp 0 \end{amatrix} \amp   E_4\amp =\begin{amatrix}[rrr] 1\amp 0\amp 0\\
+0\amp 1\amp -3\\
+0\amp 0\amp 1\end{amatrix}\\
+E_5\amp =\begin{amatrix}[rrr]1\amp -2\amp 0\\
+0\amp 1\amp 0\\
+0\amp 0\amp 1\end{amatrix}\text{.}
+\end{align*}
+</div>
+<p class="continuation">We conclude that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+A \amp =E_1^{-1}E_2^{-1}E_3^{-1}E_4^{-1}E_5^{-1}\\
+\amp= \begin{amatrix}[rrr] 1\amp 0\amp 0\\
+1\amp 1\amp 0\\
+0\amp 0\amp 1\end{amatrix}
+\begin{amatrix}[rrr]1\amp 0\amp 0\\
+0\amp 1\amp 0\\
+-1\amp 0\amp 1\end{amatrix}
+\begin{amatrix}[rrr]1\amp 0\amp 0\\
+0\amp 0\amp 1\\
+0\amp 1\amp 0 \end{amatrix}
+\begin{amatrix}[rrr] 1\amp 0\amp 0\\
+0\amp 1\amp 3\\
+0\amp 0\amp 1\end{amatrix}
+\begin{amatrix}[rrr]1\amp 2\amp 0\\
+0\amp 1\amp 0\\
+0\amp 0\amp 1\end{amatrix}\text{.}
+\end{align*}
+</div>
+<span class="incontext"><a href="s_invertibility_theorem.html#p-707">in-context</a></span>
+</body>
+</html>

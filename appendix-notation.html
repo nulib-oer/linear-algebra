@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-02-04T21:24:58Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Notation</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg">miniversion=0.6</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\require{cancel}\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\C}{{\mathbb C}}
+\newcommand{\T}{{\mathbb T}}
+\newcommand{\F}{{\mathbb F}}
+\newcommand{\HH}{{\mathbb H}}
+\newcommand{\compose}{\circ}
+\newcommand{\bolda}{{\mathbf a}}
+\newcommand{\boldb}{{\mathbf b}}
+\newcommand{\boldc}{{\mathbf c}}
+\newcommand{\boldd}{{\mathbf d}}
+\newcommand{\bolde}{{\mathbf e}}
+\newcommand{\boldi}{{\mathbf i}}
+\newcommand{\boldj}{{\mathbf j}}
+\newcommand{\boldk}{{\mathbf k}}
+\newcommand{\boldn}{{\mathbf n}}
+\newcommand{\boldp}{{\mathbf p}}
+\newcommand{\boldq}{{\mathbf q}}
+\newcommand{\boldr}{{\mathbf r}}
+\newcommand{\bolds}{{\mathbf s}}
+\newcommand{\boldt}{{\mathbf t}}
+\newcommand{\boldu}{{\mathbf u}}
+\newcommand{\boldv}{{\mathbf v}}
+\newcommand{\boldw}{{\mathbf w}}
+\newcommand{\boldx}{{\mathbf x}}
+\newcommand{\boldy}{{\mathbf y}}
+\newcommand{\boldz}{{\mathbf z}}
+\newcommand{\boldzero}{{\mathbf 0}}
+\newcommand{\boldmod}{\boldsymbol{ \bmod }}
+\newcommand{\boldT}{{\mathbf T}}
+\newcommand{\boldN}{{\mathbf N}}
+\newcommand{\boldB}{{\mathbf B}}
+\newcommand{\boldF}{{\mathbf F}}
+\newcommand{\boldS}{{\mathbf S}}
+\newcommand{\boldG}{{\mathbf G}}
+\newcommand{\boldK}{{\mathbf K}}
+\newcommand{\boldL}{{\mathbf L}}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\NS}{null}
+\DeclareMathOperator{\RS}{row}
+\DeclareMathOperator{\CS}{col}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\range}{range}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\nullity}{nullity}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\Fix}{Fix}
+\DeclareMathOperator{\Aff}{Aff}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\mdeg}{mdeg}
+\DeclareMathOperator{\Lt}{Lt}
+\DeclareMathOperator{\Lc}{Lc}
+\DeclareMathOperator{\disc}{disc}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\adj}{adj}
+\DeclareMathOperator{\curl}{curl}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\diver}{div}
+\DeclareMathOperator{\flux}{flux}
+\def\Gal{\operatorname{Gal}}
+\def\ord{\operatorname{ord}}
+\def\ML{\operatorname{M}}
+\def\GL{\operatorname{GL}}
+\def\PGL{\operatorname{PGL}}
+\def\SL{\operatorname{SL}}
+\def\PSL{\operatorname{PSL}}
+\def\GSp{\operatorname{GSp}}
+\def\PGSp{\operatorname{PGSp}}
+\def\Sp{\operatorname{Sp}}
+\def\PSp{\operatorname{PSp}}
+\def\Aut{\operatorname{Aut}}
+\def\Inn{\operatorname{Inn}}
+\def\Hom{\operatorname{Hom}}
+\def\End{\operatorname{End}}
+\def\ch{\operatorname{char}}
+\def\Zp{\Z/p\Z}
+\def\Zm{\Z/m\Z}
+\def\Zn{\Z/n\Z}
+\def\Fp{\F_p}
+\newcommand{\surjects}{\twoheadrightarrow}
+\newcommand{\injects}{\hookrightarrow}
+\newcommand{\bijects}{\leftrightarrow}
+\newcommand{\isomto}{\overset{\sim}{\rightarrow}}
+\newcommand{\floor}[1]{\lfloor#1\rfloor}
+\newcommand{\ceiling}[1]{\left\lceil#1\right\rceil}
+\newcommand{\mclass}[2][m]{[#2]_{#1}}
+\newcommand{\val}[2][]{\left\lvert #2\right\rvert_{#1}}
+\newcommand{\valuation}[2][]{\left\lvert #2\right\rvert_{#1}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\anpoly}{a_nx^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+\newcommand{\anmonic}{x^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+\newcommand{\bmpoly}{b_mx^m+b_{m-1}x^{m-1}\cdots +b_1x+b_0}
+\newcommand{\pder}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\normalin}{\trianglelefteq}
+\newcommand{\angvec}[1]{\langle #1\rangle}
+\newcommand{\varpoly}[2]{#1_{#2}x^{#2}+#1_{#2-1}x^{#2-1}\cdots +#1_1x+#1_0}
+\newcommand{\varpower}[1][a]{#1_0+#1_1x+#1_1x^2+\cdots}
+\newcommand{\limasto}[2][x]{\lim_{#1\rightarrow #2}}
+\def\ntoinfty{\lim_{n\rightarrow\infty}}
+\def\xtoinfty{\lim_{x\rightarrow\infty}}
+\def\ii{\item}
+\def\bb{\begin{enumerate}}
+\def\ee{\end{enumerate}}
+\def\ds{\displaystyle}
+\def\p{\partial}
+\newcommand{\abcdmatrix}[4]{\begin{bmatrix}#1\amp #2\\ #3\amp #4 \end{bmatrix}
+}
+\newenvironment{amatrix}[1][ccc|c]{\left[\begin{array}{#1}}{\end{array}\right]}
+\newenvironment{linsys}[2][m]{
+\begin{array}[#1]{@{}*{#2}{rc}r@{}}
+}{
+\end{array}}
+\newcommand{\eqsys}{\begin{array}{rcrcrcr}
+a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp b_1\\
+a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp b_2\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \vdots\\
+a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp b_m
+\end{array}
+}
+\newcommand{\numeqsys}{\begin{array}{rrcrcrcr}
+e_1:\amp  a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp b_1\\
+e_2: \amp a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp b_2\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \vdots\\
+e_m: \amp a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp b_m
+\end{array}
+}
+\newcommand{\homsys}{\begin{array}{rcrcrcr}
+a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp 0\\
+a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp 0\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \vdots\\
+a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp 0
+\end{array}
+}
+\newcommand{\vareqsys}[4]{
+\begin{array}{ccccccc}
+#3_{11}x_{1}\amp +\amp #3_{12}x_{2}\amp +\cdots+\amp  #3_{1#2}x_{#2}\amp =\amp #4_1\\
+#3_{21}x_{1}\amp +\amp #3_{22}x_{2}\amp +\cdots+\amp #3_{2#2}x_{#2}\amp =\amp #4_2\\
+\vdots \amp \amp \vdots \amp  \amp \vdots \amp =\amp  \vdots\\
+#3_{#1 1}x_{1}\amp +\amp #3_{#1 2}x_{2}\amp +\cdots +\amp #3_{#1 #2}x_{#2}\amp =\amp #4_{#1}
+\end{array}
+}
+\newcommand{\genmatrix}[1][a]{
+\begin{bmatrix}
+#1_{11} \amp  #1_{12} \amp  \cdots \amp  #1_{1n} \\
+#1_{21} \amp  #1_{22} \amp  \cdots \amp  #1_{2n} \\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \\
+#1_{m1} \amp  #1_{m2} \amp  \cdots \amp  #1_{mn}
+\end{bmatrix}
+}
+\newcommand{\varmatrix}[3]{
+\begin{bmatrix}
+#3_{11} \amp  #3_{12} \amp  \cdots \amp  #3_{1#2} \\
+#3_{21} \amp  #3_{22} \amp  \cdots \amp  #3_{2#2} \\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \\
+#3_{#1 1} \amp  #3_{#1 2} \amp  \cdots \amp  #3_{#1 #2}
+\end{bmatrix}
+}
+\newcommand{\augmatrix}{
+\begin{amatrix}[cccc|c]
+a_{11} \amp  a_{12} \amp  \cdots \amp  a_{1n} \amp b_{1}\\
+a_{21} \amp  a_{22} \amp  \cdots \amp  a_{2n} \amp b_{2}\\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \amp \vdots\\
+a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
+\end{amatrix}
+}
+\newcommand{\varaugmatrix}[4]{
+\begin{amatrix}[cccc|c]
+#3_{11} \amp  #3_{12} \amp  \cdots \amp  #3_{1#2} \amp #4_{1}\\
+#3_{21} \amp  #3_{22} \amp  \cdots \amp  #3_{2#2} \amp #4_{2}\\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \amp \vdots\\
+#3_{#1 1} \amp  #3_{#1 2} \amp  \cdots \amp  #3_{#1 #2}\amp #4_{#1}
+\end{amatrix}
+}
+\newcommand{\spaceforemptycolumn}{\makebox[\wd\boxofmathplus]{\ }}
+
+\newcommand{\generalmatrix}[3]{
+\left(
+\begin{array}{cccc}
+#1_{1,1}  \amp #1_{1,2}  \amp \ldots  \amp #1_{1,#2}  \\
+#1_{2,1}  \amp #1_{2,2}  \amp \ldots  \amp #1_{2,#2}  \\
+\amp \vdots                         \\
+#1_{#3,1} \amp #1_{#3,2} \amp \ldots  \amp #1_{#3,#2}
+\end{array}
+\right)  }
+\newcommand{\colvec}[2][c]{\begin{bmatrix}[#1] #2 \end{bmatrix}}
+\DeclareMathOperator{\size}{size}
+\DeclareMathOperator{\adjoint}{adj}
+\DeclareMathOperator{\sgn}{sgn}
+\newcommand{\restrictionmap}[2]{{#1}\mathpunct\upharpoonright\hbox{}_{#2}}
+\renewcommand{\emptyset}{\varnothing}
+
+\newcommand{\proj}[2]{\mbox{proj}_{#2}({#1}) }
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://linear-algebra.northwestern.pub/" target="_blank"><img src="external/images/im_holycomm.svg" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">Linear algebra: the theory of vector spaces and linear transformations</span></a></h1>
+<p class="byline">Aaron Greicius</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="backmatter-1.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="backmatter-1.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="appendix-defs.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="backmatter-1.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="backmatter-1.html" title="Up">Up</a><a class="next-button button toolbar-item" href="appendix-defs.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link">
+<a href="c_foundations.html" data-scroll="c_foundations"><span class="codenumber">1</span> <span class="title">Foundations</span></a><ul>
+<li><a href="s_sets_functions.html" data-scroll="s_sets_functions">Sets and functions</a></li>
+<li><a href="s_logic.html" data-scroll="s_logic">Logic</a></li>
+<li><a href="s_proof_technique.html" data-scroll="s_proof_technique">Proof techniques</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_linear_systems.html" data-scroll="c_linear_systems"><span class="codenumber">2</span> <span class="title">Systems of linear equations</span></a><ul>
+<li><a href="s_systems.html" data-scroll="s_systems">Systems of linear equations</a></li>
+<li><a href="s_ge.html" data-scroll="s_ge">Gaussian elimination</a></li>
+<li><a href="s_solving.html" data-scroll="s_solving">Solving linear systems</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_matrices.html" data-scroll="c_matrices"><span class="codenumber">3</span> <span class="title">Matrices, their arithmetic, and their algebra</span></a><ul>
+<li><a href="s_matrix.html" data-scroll="s_matrix">Matrices and their arithmetic</a></li>
+<li><a href="s_algebraic.html" data-scroll="s_algebraic">Algebra of matrices</a></li>
+<li><a href="s_invertible_matrices.html" data-scroll="s_invertible_matrices">Invertible matrices</a></li>
+<li><a href="s_invertibility_theorem.html" data-scroll="s_invertibility_theorem">The invertibility theorem</a></li>
+<li><a href="s_det.html" data-scroll="s_det">The determinant</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_vectorspace.html" data-scroll="c_vectorspace"><span class="codenumber">4</span> <span class="title">Vector spaces and linear transformations</span></a><ul>
+<li><a href="s_vectorspace.html" data-scroll="s_vectorspace">Real vector spaces</a></li>
+<li><a href="s_transformation.html" data-scroll="s_transformation">Linear transformations</a></li>
+<li><a href="s_subspace.html" data-scroll="s_subspace">Subspaces</a></li>
+<li><a href="s_span_independence.html" data-scroll="s_span_independence">Span and linear independence</a></li>
+<li><a href="s_basis_dimension.html" data-scroll="s_basis_dimension">Bases and dimension</a></li>
+<li><a href="s_rank_nullity.html" data-scroll="s_rank_nullity">Rank-nullity theorem and fundamental spaces</a></li>
+<li><a href="s_isom.html" data-scroll="s_isom">Isomorphisms</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_innerproductspaces.html" data-scroll="c_innerproductspaces"><span class="codenumber">5</span> <span class="title">Inner product spaces</span></a><ul>
+<li><a href="s_innerproducts.html" data-scroll="s_innerproducts">Inner product spaces</a></li>
+<li><a href="s_orthogonality.html" data-scroll="s_orthogonality">Orthogonal bases and orthogonal projection</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_transbasis.html" data-scroll="c_transbasis"><span class="codenumber">6</span> <span class="title">Eigenvectors and diagonalization</span></a><ul>
+<li><a href="s_coordinatevectors_isomorphisms.html" data-scroll="s_coordinatevectors_isomorphisms">Coordinate vectors and isomorphisms</a></li>
+<li><a href="s_matrixreps.html" data-scroll="s_matrixreps">Matrix representations of linear transformations</a></li>
+<li><a href="s_changeofbasis.html" data-scroll="s_changeofbasis">Change of basis</a></li>
+<li><a href="ss_eigenvectors.html" data-scroll="ss_eigenvectors">Eigenvectors and eigenvalues</a></li>
+<li><a href="ss_diagonalization.html" data-scroll="ss_diagonalization">Diagonalization</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link active"><a href="appendix-notation.html" data-scroll="appendix-notation"><span class="codenumber">A</span> <span class="title">Notation</span></a></li>
+<li class="link"><a href="appendix-defs.html" data-scroll="appendix-defs"><span class="codenumber">B</span> <span class="title">Definitions</span></a></li>
+<li class="link"><a href="appendix-thms.html" data-scroll="appendix-thms"><span class="codenumber">C</span> <span class="title">Theory and procedures</span></a></li>
+<li class="link"><a href="appendix-egs.html" data-scroll="appendix-egs"><span class="codenumber">D</span> <span class="title">Examples</span></a></li>
+<li class="link"><a href="appendix-vids.html" data-scroll="appendix-vids"><span class="codenumber">E</span> <span class="title">Video examples and figures</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="appendix" id="appendix-notation"><h2 class="heading">
+<span class="type">Appendix</span> <span class="codenumber">A</span> <span class="title">Notation</span>
+</h2>
+<table class="notation-list">
+<tr>
+<th>Symbol</th>
+<th>Description</th>
+<th>Location</th>
+</tr>
+<tr>
+<td>\(x\in A\)</td>
+<td>set membership</td>
+<td><a href="" class="xref" data-knowl="./knowl/d_sets.html" title="Definition 1.1.1: Sets">Definition 1.1.1</a></td>
+</tr>
+<tr>
+<td>\(A\subseteq B\)</td>
+<td>set inclusion</td>
+<td><a href="" class="xref" data-knowl="./knowl/d_set_inclusion.html" title="Definition 1.1.3: Set inclusion (subsets)">Definition 1.1.3</a></td>
+</tr>
+<tr>
+<td>\(A\cup B\)</td>
+<td>set union</td>
+<td><a href="" class="xref" data-knowl="./knowl/d_set_operations.html" title="Definition 1.1.8: Basic set operations">Definition 1.1.8</a></td>
+</tr>
+<tr>
+<td>\(A\cap B\)</td>
+<td>set intersection</td>
+<td><a href="" class="xref" data-knowl="./knowl/d_set_operations.html" title="Definition 1.1.8: Basic set operations">Definition 1.1.8</a></td>
+</tr>
+<tr>
+<td>\(A-B\)</td>
+<td>set difference</td>
+<td><a href="" class="xref" data-knowl="./knowl/d_set_operations.html" title="Definition 1.1.8: Basic set operations">Definition 1.1.8</a></td>
+</tr>
+<tr>
+<td>\(\{\ \}, \emptyset\)</td>
+<td>the empty set</td>
+<td><a href="" class="xref" data-knowl="./knowl/d_common_sets.html" title="Definition 1.1.9: Common mathematical sets">Definition 1.1.9</a></td>
+</tr>
+<tr>
+<td>\(\mathbb{R}\)</td>
+<td>the real numbers</td>
+<td><a href="" class="xref" data-knowl="./knowl/d_common_sets.html" title="Definition 1.1.9: Common mathematical sets">Definition 1.1.9</a></td>
+</tr>
+<tr>
+<td>\(\mathbb{C}\)</td>
+<td>the complex numbers</td>
+<td><a href="" class="xref" data-knowl="./knowl/d_common_sets.html" title="Definition 1.1.9: Common mathematical sets">Definition 1.1.9</a></td>
+</tr>
+<tr>
+<td>\(\mathbb{Z}\)</td>
+<td>the integers</td>
+<td><a href="" class="xref" data-knowl="./knowl/d_common_sets.html" title="Definition 1.1.9: Common mathematical sets">Definition 1.1.9</a></td>
+</tr>
+<tr>
+<td>\(\mathbb{Q}\)</td>
+<td>the rational numbers</td>
+<td><a href="" class="xref" data-knowl="./knowl/d_common_sets.html" title="Definition 1.1.9: Common mathematical sets">Definition 1.1.9</a></td>
+</tr>
+<tr>
+<td>\(A\times B\)</td>
+<td>Cartesian product</td>
+<td><a href="" class="xref" data-knowl="./knowl/d_cartesian_product.html" title="Definition 1.1.10: Cartesian product">Definition 1.1.10</a></td>
+</tr>
+<tr>
+<td>\(f\colon A\rightarrow B\)</td>
+<td>a function from \(A\) to \(B\)</td>
+<td><a href="" class="xref" data-knowl="./knowl/d_function.html" title="Definition 1.1.13: Functions">Definition 1.1.13</a></td>
+</tr>
+<tr>
+<td>\(f(A)\)</td>
+<td>image of the set \(A\) under \(f\)</td>
+<td><a href="" class="xref" data-knowl="./knowl/d_image.html" title="Definition 1.1.18: Image of a set">Definition 1.1.18</a></td>
+</tr>
+<tr>
+<td>\(\operatorname{im} f\)</td>
+<td>image of a function \(f\)</td>
+<td><a href="" class="xref" data-knowl="./knowl/d_image.html" title="Definition 1.1.18: Image of a set">Definition 1.1.18</a></td>
+</tr>
+<tr>
+<td>\(f\circ g\)</td>
+<td>the composition of \(f\) and \(g\)</td>
+<td><a href="" class="xref" data-knowl="./knowl/d_function_composition.html" title="Definition 1.1.21: Function composition">Definition 1.1.21</a></td>
+</tr>
+<tr>
+<td>\(\begin{amatrix}[c|c]A\amp \mathbb{b}\end{amatrix}\)</td>
+<td>augmented matrix</td>
+<td><a href="" class="xref" data-knowl="./knowl/d_augmented_matrix.html" title="Definition 2.2.1: Augmented matrix">Definition 2.2.1</a></td>
+</tr>
+<tr>
+<td>\(A\xrightarrow{c\,r_i} B\)</td>
+<td>scalar multiplication</td>
+<td><a href="" class="xref" data-knowl="./knowl/s_ge_notation.html" title="Remark 2.2.6: Notation">Remark 2.2.6</a></td>
+</tr>
+<tr>
+<td>\(A\xrightarrow{r_i\leftrightarrow r_j} B\)</td>
+<td>row swap</td>
+<td><a href="" class="xref" data-knowl="./knowl/s_ge_notation.html" title="Remark 2.2.6: Notation">Remark 2.2.6</a></td>
+</tr>
+<tr>
+<td>\(A\xrightarrow{r_i+c\,r_j} B\)</td>
+<td>replace \(r_i\) with \(r_i+c\,r_j\)</td>
+<td><a href="" class="xref" data-knowl="./knowl/s_ge_notation.html" title="Remark 2.2.6: Notation">Remark 2.2.6</a></td>
+</tr>
+<tr>
+<td>\([a_{ij}]_{m\times n}\)</td>
+<td>Matrix whose \(ij\)-th entry is \(a_{ij}\)</td>
+<td><a href="" class="xref" data-knowl="./knowl/d_matrix_notation.html" title="Definition 3.1.3">Definition 3.1.3</a></td>
+</tr>
+<tr>
+<td>\((A)_{ij}\)</td>
+<td>\(ij\)-th entry of the matrix \(A\)</td>
+<td><a href="" class="xref" data-knowl="./knowl/d_matrix_notation.html" title="Definition 3.1.3">Definition 3.1.3</a></td>
+</tr>
+<tr>
+<td>\(\boldzero_{m\times n}\)</td>
+<td>the \(m\times n\) zero matrix</td>
+<td><a href="" class="xref" data-knowl="./knowl/d_square_matrices.html" title="Definition 3.1.7: Square matrices, row vectors, column vectors, zero matrices">Definition 3.1.7</a></td>
+</tr>
+<tr>
+<td>\(-A\)</td>
+<td>Additive inverse of \(A\)</td>
+<td><a href="" class="xref" data-knowl="./knowl/d_matrix_add_inverse.html" title="Definition 3.2.2: Additive inverse of a matrix">Definition 3.2.2</a></td>
+</tr>
+<tr>
+<td>\(I\)</td>
+<td>inverse matrix</td>
+<td><a href="" class="xref" data-knowl="./knowl/d_identity_matrix.html" title="Definition 3.2.3: Identity matrix">Definition 3.2.3</a></td>
+</tr>
+<tr>
+<td>\(A^{-1}\)</td>
+<td>inverse of \(A\)</td>
+<td><a href="" class="xref" data-knowl="./knowl/d_invertible_matrix.html" title="Definition 3.3.1: Invertible matrix">Definition 3.3.1</a></td>
+</tr>
+<tr>
+<td>\(A^r\)</td>
+<td>matrix power</td>
+<td><a href="" class="xref" data-knowl="./knowl/d_matrix_powers.html" title="Definition 3.3.9: Matrix powers">Definition 3.3.9</a></td>
+</tr>
+<tr>
+<td>\(f(A)\)</td>
+<td>matrix polynomial</td>
+<td><a href="" class="xref" data-knowl="./knowl/d_matrix_polynomials.html" title="Definition 3.3.10">Definition 3.3.10</a></td>
+</tr>
+<tr>
+<td>\(\underset{cr_i}{E}\)</td>
+<td>Scaling elementary matrix</td>
+<td><a href="" class="xref" data-knowl="./knowl/d_elementary_matrix.html" title="Definition 3.4.1">Definition 3.4.1</a></td>
+</tr>
+<tr>
+<td>\(\underset{r_i\leftrightarrow r_j}{E}\)</td>
+<td>Row swap elementary matrix</td>
+<td><a href="" class="xref" data-knowl="./knowl/d_elementary_matrix.html" title="Definition 3.4.1">Definition 3.4.1</a></td>
+</tr>
+<tr>
+<td>\(\underset{r_i+c\,r_j}{E}\)</td>
+<td>Row addition elementary matrix</td>
+<td><a href="" class="xref" data-knowl="./knowl/d_elementary_matrix.html" title="Definition 3.4.1">Definition 3.4.1</a></td>
+</tr>
+<tr>
+<td>\(A_{ij}\)</td>
+<td>submatrix of \(A\)</td>
+<td><a href="" class="xref" data-knowl="./knowl/d_minors.html" title="Definition 3.5.1: Submatrix notation">Definition 3.5.1</a></td>
+</tr>
+<tr>
+<td>\(\det A\)</td>
+<td>determinant of \(A\)</td>
+<td><a href="" class="xref" data-knowl="./knowl/d_det.html" title="Definition 3.5.3: The determinant">Definition 3.5.3</a></td>
+</tr>
+<tr>
+<td>\(M_{ij}\)</td>
+<td>the \(ij\)-th minor of a matrix</td>
+<td><a href="" class="xref" data-knowl="./knowl/d_minors_expansions.html" title="Definition 3.5.7: Minors and expansions along rows/columns">Definition 3.5.7</a></td>
+</tr>
+<tr>
+<td>\(\adj A\)</td>
+<td>adjoint of a square matrix</td>
+<td><a href="" class="xref" data-knowl="./knowl/d_adjoint.html" title="Definition 3.5.14: Adjoint matrix">Definition 3.5.14</a></td>
+</tr>
+<tr>
+<td>\(M_{mn}\)</td>
+<td>vector space of \(m\times n\) matrices</td>
+<td><a href="" class="xref" data-knowl="./knowl/ex_vs_matrices.html" title="Definition 4.1.3: Vector space of \(m\times n\) matrices">Definition 4.1.3</a></td>
+</tr>
+<tr>
+<td>\(\R^n\)</td>
+<td>vector space of \(n\)-tuples</td>
+<td><a href="" class="xref" data-knowl="./knowl/ex_vs_ntuples.html" title="Definition 4.1.4: Vector space of real \(n\)-tuples">Definition 4.1.4</a></td>
+</tr>
+<tr>
+<td>\(\{\boldzero\}\)</td>
+<td>the zero vector space</td>
+<td><a href="" class="xref" data-knowl="./knowl/ex_vs_zerospace.html" title="Definition 4.1.6: Zero vector space">Definition 4.1.6</a></td>
+</tr>
+<tr>
+<td>\(\R^\infty\)</td>
+<td>the vector space of infinite real sequences</td>
+<td><a href="" class="xref" data-knowl="./knowl/ex_vs_infinitesequences.html" title="Definition 4.1.7: The vector space of infinite real sequences">Definition 4.1.7</a></td>
+</tr>
+<tr>
+<td>\(F(X,\R)\)</td>
+<td>vector space of functions from \(X\) to \(\R\)</td>
+<td><a href="" class="xref" data-knowl="./knowl/ex_vs_functions.html" title="Definition 4.1.8: Real-valued functions">Definition 4.1.8</a></td>
+</tr>
+<tr>
+<td>\(\R_{&gt;0}\)</td>
+<td>vector space of positive real numbers</td>
+<td><a href="" class="xref" data-knowl="./knowl/ex_vs_positivereals.html" title="Definition 4.1.10: Vector space of positive real numbers">Definition 4.1.10</a></td>
+</tr>
+<tr>
+<td>\(T_A\)</td>
+<td>the matrix transformation associated to \(A\)</td>
+<td><a href="" class="xref" data-knowl="./knowl/d_matrix_transform.html" title="Definition 4.2.8: Matrix transformations">Definition 4.2.8</a></td>
+</tr>
+<tr>
+<td>\(\rho_\alpha\)</td>
+<td>rotation by \(\alpha\) in the plane</td>
+<td><a href="" class="xref" data-knowl="./knowl/d_rotation.html" title="Definition 4.2.12: Rotation in the plane">Definition 4.2.12</a></td>
+</tr>
+<tr>
+<td>\(\Span S\)</td>
+<td>the span of \(S\)</td>
+<td><a href="" class="xref" data-knowl="./knowl/d_span.html" title="Definition 4.4.1: Span">Definition 4.4.1</a></td>
+</tr>
+<tr>
+<td>\(\val{X}\)</td>
+<td>the cardinality of the set \(X\)</td>
+<td><a href="" class="xref" data-knowl="./knowl/d_cardinality.html" title="Definition 4.5.9: Cardinality of a set">Definition 4.5.9</a></td>
+</tr>
+<tr>
+<td>\(\dim V\)</td>
+<td>dimension of \(V\)</td>
+<td><a href="" class="xref" data-knowl="./knowl/d_dimension.html" title="Definition 4.5.12: Dimension of a vector space">Definition 4.5.12</a></td>
+</tr>
+<tr>
+<td>\(\rank T\)</td>
+<td>the rank of \(T\)</td>
+<td><a href="" class="xref" data-knowl="./knowl/d_rank_nullity.html" title="Definition 4.6.1: Rank and nullity">Definition 4.6.1</a></td>
+</tr>
+<tr>
+<td>\(\nullity T\)</td>
+<td>the nullity of \(T\)</td>
+<td><a href="" class="xref" data-knowl="./knowl/d_rank_nullity.html" title="Definition 4.6.1: Rank and nullity">Definition 4.6.1</a></td>
+</tr>
+<tr>
+<td>\(\NS A\)</td>
+<td>the null space of matrix \(A\)</td>
+<td><a href="" class="xref" data-knowl="./knowl/d_fundamental_space.html" title="Definition 4.6.5: Fundamental spaces">Definition 4.6.5</a></td>
+</tr>
+<tr>
+<td>\(\RS A\)</td>
+<td>the row space of a matrix \(A\)</td>
+<td><a href="" class="xref" data-knowl="./knowl/d_fundamental_space.html" title="Definition 4.6.5: Fundamental spaces">Definition 4.6.5</a></td>
+</tr>
+<tr>
+<td>\(\CS A\)</td>
+<td>the column space of a matrix \(A\)</td>
+<td><a href="" class="xref" data-knowl="./knowl/d_fundamental_space.html" title="Definition 4.6.5: Fundamental spaces">Definition 4.6.5</a></td>
+</tr>
+<tr>
+<td>\(\rank A\)</td>
+<td>the rank of a matrix \(A\)</td>
+<td><a href="" class="xref" data-knowl="./knowl/d_fundamental_space.html" title="Definition 4.6.5: Fundamental spaces">Definition 4.6.5</a></td>
+</tr>
+<tr>
+<td>\(\nullity A\)</td>
+<td>the nullity of a matrix \(A\)</td>
+<td><a href="" class="xref" data-knowl="./knowl/d_fundamental_space.html" title="Definition 4.6.5: Fundamental spaces">Definition 4.6.5</a></td>
+</tr>
+<tr>
+<td>\(\norm{\boldv}\)</td>
+<td>norm of \(\boldv\)</td>
+<td><a href="" class="xref" data-knowl="./knowl/d_norm.html" title="Definition 5.1.13: Norm (or length) of a vector">Definition 5.1.13</a></td>
+</tr>
+<tr>
+<td>\(d(\boldv, \boldw)\)</td>
+<td>the distance between \(\boldv\) and \(\boldw\)</td>
+<td><a href="" class="xref" data-knowl="./knowl/d_distance.html" title="Definition 5.1.15: Distance between vectors">Definition 5.1.15</a></td>
+</tr>
+<tr>
+<td>\(W^\perp\)</td>
+<td>the orthogonal complement of \(W\)</td>
+<td><a href="" class="xref" data-knowl="./knowl/d_orthogonal_complement.html" title="Definition 5.2.9: Orthogonal complement">Definition 5.2.9</a></td>
+</tr>
+<tr>
+<td>\([P]_B^{B'}\)</td>
+<td>change of basis matrix</td>
+<td><a href="" class="xref" data-knowl="./knowl/d_change_of_basis.html" title="Definition 6.3.1: Change of basis matrix">Definition 6.3.1</a></td>
+</tr>
+</table></section></div></main>
+</div>
+</body>
+</html>

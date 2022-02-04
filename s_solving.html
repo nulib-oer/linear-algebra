@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-02-04T21:24:34Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Solving linear systems</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg">miniversion=0.6</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\require{cancel}\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\C}{{\mathbb C}}
+\newcommand{\T}{{\mathbb T}}
+\newcommand{\F}{{\mathbb F}}
+\newcommand{\HH}{{\mathbb H}}
+\newcommand{\compose}{\circ}
+\newcommand{\bolda}{{\mathbf a}}
+\newcommand{\boldb}{{\mathbf b}}
+\newcommand{\boldc}{{\mathbf c}}
+\newcommand{\boldd}{{\mathbf d}}
+\newcommand{\bolde}{{\mathbf e}}
+\newcommand{\boldi}{{\mathbf i}}
+\newcommand{\boldj}{{\mathbf j}}
+\newcommand{\boldk}{{\mathbf k}}
+\newcommand{\boldn}{{\mathbf n}}
+\newcommand{\boldp}{{\mathbf p}}
+\newcommand{\boldq}{{\mathbf q}}
+\newcommand{\boldr}{{\mathbf r}}
+\newcommand{\bolds}{{\mathbf s}}
+\newcommand{\boldt}{{\mathbf t}}
+\newcommand{\boldu}{{\mathbf u}}
+\newcommand{\boldv}{{\mathbf v}}
+\newcommand{\boldw}{{\mathbf w}}
+\newcommand{\boldx}{{\mathbf x}}
+\newcommand{\boldy}{{\mathbf y}}
+\newcommand{\boldz}{{\mathbf z}}
+\newcommand{\boldzero}{{\mathbf 0}}
+\newcommand{\boldmod}{\boldsymbol{ \bmod }}
+\newcommand{\boldT}{{\mathbf T}}
+\newcommand{\boldN}{{\mathbf N}}
+\newcommand{\boldB}{{\mathbf B}}
+\newcommand{\boldF}{{\mathbf F}}
+\newcommand{\boldS}{{\mathbf S}}
+\newcommand{\boldG}{{\mathbf G}}
+\newcommand{\boldK}{{\mathbf K}}
+\newcommand{\boldL}{{\mathbf L}}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\NS}{null}
+\DeclareMathOperator{\RS}{row}
+\DeclareMathOperator{\CS}{col}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\range}{range}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\nullity}{nullity}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\Fix}{Fix}
+\DeclareMathOperator{\Aff}{Aff}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\mdeg}{mdeg}
+\DeclareMathOperator{\Lt}{Lt}
+\DeclareMathOperator{\Lc}{Lc}
+\DeclareMathOperator{\disc}{disc}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\adj}{adj}
+\DeclareMathOperator{\curl}{curl}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\diver}{div}
+\DeclareMathOperator{\flux}{flux}
+\def\Gal{\operatorname{Gal}}
+\def\ord{\operatorname{ord}}
+\def\ML{\operatorname{M}}
+\def\GL{\operatorname{GL}}
+\def\PGL{\operatorname{PGL}}
+\def\SL{\operatorname{SL}}
+\def\PSL{\operatorname{PSL}}
+\def\GSp{\operatorname{GSp}}
+\def\PGSp{\operatorname{PGSp}}
+\def\Sp{\operatorname{Sp}}
+\def\PSp{\operatorname{PSp}}
+\def\Aut{\operatorname{Aut}}
+\def\Inn{\operatorname{Inn}}
+\def\Hom{\operatorname{Hom}}
+\def\End{\operatorname{End}}
+\def\ch{\operatorname{char}}
+\def\Zp{\Z/p\Z}
+\def\Zm{\Z/m\Z}
+\def\Zn{\Z/n\Z}
+\def\Fp{\F_p}
+\newcommand{\surjects}{\twoheadrightarrow}
+\newcommand{\injects}{\hookrightarrow}
+\newcommand{\bijects}{\leftrightarrow}
+\newcommand{\isomto}{\overset{\sim}{\rightarrow}}
+\newcommand{\floor}[1]{\lfloor#1\rfloor}
+\newcommand{\ceiling}[1]{\left\lceil#1\right\rceil}
+\newcommand{\mclass}[2][m]{[#2]_{#1}}
+\newcommand{\val}[2][]{\left\lvert #2\right\rvert_{#1}}
+\newcommand{\valuation}[2][]{\left\lvert #2\right\rvert_{#1}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\anpoly}{a_nx^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+\newcommand{\anmonic}{x^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+\newcommand{\bmpoly}{b_mx^m+b_{m-1}x^{m-1}\cdots +b_1x+b_0}
+\newcommand{\pder}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\normalin}{\trianglelefteq}
+\newcommand{\angvec}[1]{\langle #1\rangle}
+\newcommand{\varpoly}[2]{#1_{#2}x^{#2}+#1_{#2-1}x^{#2-1}\cdots +#1_1x+#1_0}
+\newcommand{\varpower}[1][a]{#1_0+#1_1x+#1_1x^2+\cdots}
+\newcommand{\limasto}[2][x]{\lim_{#1\rightarrow #2}}
+\def\ntoinfty{\lim_{n\rightarrow\infty}}
+\def\xtoinfty{\lim_{x\rightarrow\infty}}
+\def\ii{\item}
+\def\bb{\begin{enumerate}}
+\def\ee{\end{enumerate}}
+\def\ds{\displaystyle}
+\def\p{\partial}
+\newcommand{\abcdmatrix}[4]{\begin{bmatrix}#1\amp #2\\ #3\amp #4 \end{bmatrix}
+}
+\newenvironment{amatrix}[1][ccc|c]{\left[\begin{array}{#1}}{\end{array}\right]}
+\newenvironment{linsys}[2][m]{
+\begin{array}[#1]{@{}*{#2}{rc}r@{}}
+}{
+\end{array}}
+\newcommand{\eqsys}{\begin{array}{rcrcrcr}
+a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp b_1\\
+a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp b_2\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \vdots\\
+a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp b_m
+\end{array}
+}
+\newcommand{\numeqsys}{\begin{array}{rrcrcrcr}
+e_1:\amp  a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp b_1\\
+e_2: \amp a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp b_2\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \vdots\\
+e_m: \amp a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp b_m
+\end{array}
+}
+\newcommand{\homsys}{\begin{array}{rcrcrcr}
+a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp 0\\
+a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp 0\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \vdots\\
+a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp 0
+\end{array}
+}
+\newcommand{\vareqsys}[4]{
+\begin{array}{ccccccc}
+#3_{11}x_{1}\amp +\amp #3_{12}x_{2}\amp +\cdots+\amp  #3_{1#2}x_{#2}\amp =\amp #4_1\\
+#3_{21}x_{1}\amp +\amp #3_{22}x_{2}\amp +\cdots+\amp #3_{2#2}x_{#2}\amp =\amp #4_2\\
+\vdots \amp \amp \vdots \amp  \amp \vdots \amp =\amp  \vdots\\
+#3_{#1 1}x_{1}\amp +\amp #3_{#1 2}x_{2}\amp +\cdots +\amp #3_{#1 #2}x_{#2}\amp =\amp #4_{#1}
+\end{array}
+}
+\newcommand{\genmatrix}[1][a]{
+\begin{bmatrix}
+#1_{11} \amp  #1_{12} \amp  \cdots \amp  #1_{1n} \\
+#1_{21} \amp  #1_{22} \amp  \cdots \amp  #1_{2n} \\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \\
+#1_{m1} \amp  #1_{m2} \amp  \cdots \amp  #1_{mn}
+\end{bmatrix}
+}
+\newcommand{\varmatrix}[3]{
+\begin{bmatrix}
+#3_{11} \amp  #3_{12} \amp  \cdots \amp  #3_{1#2} \\
+#3_{21} \amp  #3_{22} \amp  \cdots \amp  #3_{2#2} \\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \\
+#3_{#1 1} \amp  #3_{#1 2} \amp  \cdots \amp  #3_{#1 #2}
+\end{bmatrix}
+}
+\newcommand{\augmatrix}{
+\begin{amatrix}[cccc|c]
+a_{11} \amp  a_{12} \amp  \cdots \amp  a_{1n} \amp b_{1}\\
+a_{21} \amp  a_{22} \amp  \cdots \amp  a_{2n} \amp b_{2}\\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \amp \vdots\\
+a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
+\end{amatrix}
+}
+\newcommand{\varaugmatrix}[4]{
+\begin{amatrix}[cccc|c]
+#3_{11} \amp  #3_{12} \amp  \cdots \amp  #3_{1#2} \amp #4_{1}\\
+#3_{21} \amp  #3_{22} \amp  \cdots \amp  #3_{2#2} \amp #4_{2}\\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \amp \vdots\\
+#3_{#1 1} \amp  #3_{#1 2} \amp  \cdots \amp  #3_{#1 #2}\amp #4_{#1}
+\end{amatrix}
+}
+\newcommand{\spaceforemptycolumn}{\makebox[\wd\boxofmathplus]{\ }}
+
+\newcommand{\generalmatrix}[3]{
+\left(
+\begin{array}{cccc}
+#1_{1,1}  \amp #1_{1,2}  \amp \ldots  \amp #1_{1,#2}  \\
+#1_{2,1}  \amp #1_{2,2}  \amp \ldots  \amp #1_{2,#2}  \\
+\amp \vdots                         \\
+#1_{#3,1} \amp #1_{#3,2} \amp \ldots  \amp #1_{#3,#2}
+\end{array}
+\right)  }
+\newcommand{\colvec}[2][c]{\begin{bmatrix}[#1] #2 \end{bmatrix}}
+\DeclareMathOperator{\size}{size}
+\DeclareMathOperator{\adjoint}{adj}
+\DeclareMathOperator{\sgn}{sgn}
+\newcommand{\restrictionmap}[2]{{#1}\mathpunct\upharpoonright\hbox{}_{#2}}
+\renewcommand{\emptyset}{\varnothing}
+
+\newcommand{\proj}[2]{\mbox{proj}_{#2}({#1}) }
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://linear-algebra.northwestern.pub/" target="_blank"><img src="external/images/im_holycomm.svg" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">Linear algebra: the theory of vector spaces and linear transformations</span></a></h1>
+<p class="byline">Aaron Greicius</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="s_ge.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="c_linear_systems.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="c_matrices.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="s_ge.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="c_linear_systems.html" title="Up">Up</a><a class="next-button button toolbar-item" href="c_matrices.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link">
+<a href="c_foundations.html" data-scroll="c_foundations"><span class="codenumber">1</span> <span class="title">Foundations</span></a><ul>
+<li><a href="s_sets_functions.html" data-scroll="s_sets_functions">Sets and functions</a></li>
+<li><a href="s_logic.html" data-scroll="s_logic">Logic</a></li>
+<li><a href="s_proof_technique.html" data-scroll="s_proof_technique">Proof techniques</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_linear_systems.html" data-scroll="c_linear_systems"><span class="codenumber">2</span> <span class="title">Systems of linear equations</span></a><ul>
+<li><a href="s_systems.html" data-scroll="s_systems">Systems of linear equations</a></li>
+<li><a href="s_ge.html" data-scroll="s_ge">Gaussian elimination</a></li>
+<li><a href="s_solving.html" data-scroll="s_solving" class="active">Solving linear systems</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_matrices.html" data-scroll="c_matrices"><span class="codenumber">3</span> <span class="title">Matrices, their arithmetic, and their algebra</span></a><ul>
+<li><a href="s_matrix.html" data-scroll="s_matrix">Matrices and their arithmetic</a></li>
+<li><a href="s_algebraic.html" data-scroll="s_algebraic">Algebra of matrices</a></li>
+<li><a href="s_invertible_matrices.html" data-scroll="s_invertible_matrices">Invertible matrices</a></li>
+<li><a href="s_invertibility_theorem.html" data-scroll="s_invertibility_theorem">The invertibility theorem</a></li>
+<li><a href="s_det.html" data-scroll="s_det">The determinant</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_vectorspace.html" data-scroll="c_vectorspace"><span class="codenumber">4</span> <span class="title">Vector spaces and linear transformations</span></a><ul>
+<li><a href="s_vectorspace.html" data-scroll="s_vectorspace">Real vector spaces</a></li>
+<li><a href="s_transformation.html" data-scroll="s_transformation">Linear transformations</a></li>
+<li><a href="s_subspace.html" data-scroll="s_subspace">Subspaces</a></li>
+<li><a href="s_span_independence.html" data-scroll="s_span_independence">Span and linear independence</a></li>
+<li><a href="s_basis_dimension.html" data-scroll="s_basis_dimension">Bases and dimension</a></li>
+<li><a href="s_rank_nullity.html" data-scroll="s_rank_nullity">Rank-nullity theorem and fundamental spaces</a></li>
+<li><a href="s_isom.html" data-scroll="s_isom">Isomorphisms</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_innerproductspaces.html" data-scroll="c_innerproductspaces"><span class="codenumber">5</span> <span class="title">Inner product spaces</span></a><ul>
+<li><a href="s_innerproducts.html" data-scroll="s_innerproducts">Inner product spaces</a></li>
+<li><a href="s_orthogonality.html" data-scroll="s_orthogonality">Orthogonal bases and orthogonal projection</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_transbasis.html" data-scroll="c_transbasis"><span class="codenumber">6</span> <span class="title">Eigenvectors and diagonalization</span></a><ul>
+<li><a href="s_coordinatevectors_isomorphisms.html" data-scroll="s_coordinatevectors_isomorphisms">Coordinate vectors and isomorphisms</a></li>
+<li><a href="s_matrixreps.html" data-scroll="s_matrixreps">Matrix representations of linear transformations</a></li>
+<li><a href="s_changeofbasis.html" data-scroll="s_changeofbasis">Change of basis</a></li>
+<li><a href="ss_eigenvectors.html" data-scroll="ss_eigenvectors">Eigenvectors and eigenvalues</a></li>
+<li><a href="ss_diagonalization.html" data-scroll="ss_diagonalization">Diagonalization</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="appendix-notation.html" data-scroll="appendix-notation"><span class="codenumber">A</span> <span class="title">Notation</span></a></li>
+<li class="link"><a href="appendix-defs.html" data-scroll="appendix-defs"><span class="codenumber">B</span> <span class="title">Definitions</span></a></li>
+<li class="link"><a href="appendix-thms.html" data-scroll="appendix-thms"><span class="codenumber">C</span> <span class="title">Theory and procedures</span></a></li>
+<li class="link"><a href="appendix-egs.html" data-scroll="appendix-egs"><span class="codenumber">D</span> <span class="title">Examples</span></a></li>
+<li class="link"><a href="appendix-vids.html" data-scroll="appendix-vids"><span class="codenumber">E</span> <span class="title">Video examples and figures</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="s_solving"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.3</span> <span class="title">Solving linear systems</span>
+</h2>
+<section class="introduction" id="introduction-10"><p id="p-303">Let's continue with our model example from <a href="s_ge.html" class="internal" title="Section 2.2: Gaussian elimination">Section 2.2</a>. Summarizing the various steps, we have</p>
+<div class="displaymath">
+\begin{align*}
+\begin{array}{rcc}
+-2x_3+7x_5\amp =\amp 12 \\
+2x_1+4x_2-10x_3+6x_4+12x_5\amp = \amp 28 \\
+2x_1+4x_2-5x_3+6x_4-5x_5\amp =\amp -1
+\end{array}
+\amp \xrightarrow[]{\text{ aug. mat. } }\begin{bmatrix}0\amp 0\amp -2\amp 0\amp 7\amp 12\\ 2\amp 4\amp -10\amp 6\amp 12\amp 28\\ 2\amp 4\amp -5\amp 6\amp -5\amp -1 \end{bmatrix}\\
+\amp \xrightarrow[]{\text{ Gauss. elim. } }\begin{bmatrix}1\amp 2\amp -5\amp 3\amp 6\amp 14\\ 0\amp 0\amp 1\amp 0\amp -\frac{7}{2}\amp -6\\ 0\amp 0\amp 0\amp 0\amp 1\amp 2 \end{bmatrix}\\
+\amp \xrightarrow[]{\text{ new system } }\begin{array}{rcc} x_1+2x_2-5x_3+3x_4+6x_5\amp =\amp 14\\
+x_3-\frac{7}{2}x_5\amp =\amp -6\\
+x_5\amp =\amp 2 \end{array}\text{.}
+\end{align*}
+</div>
+<p class="continuation">The new system in row echelon form is undoubtedly simpler, but describing <em class="emphasis">all</em> of its solutions still requires some subtle analysis.</p></section><section class="subsection" id="ss_workingExample"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.3.1</span> <span class="title">Model example</span>
+</h3>
+<p id="p-304">We begin by illustrating the general method for solving a linear system using our model example; a careful  description of the procedure, along with a proof of its validity, is found in <a href="" class="xref" data-knowl="./knowl/th_solveSystem.html" title="Theorem 2.3.5: Solving linear systems">Theorem 2.3.5</a>.</p>
+<p id="p-305">A key first step involves separating the variables of the system into <em class="emphasis">free</em> and <em class="emphasis">leading</em> variables.</p>
+<article class="definition definition-like" id="d_free-leading"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">Free and leading variables.</span>
+</h4>
+<p id="p-306">Let \(L\) be a linear system in the unknowns \(x_1,x_2,\dots, x_n\text{,}\) and let \(A\) be its associated augmented matrix. Assume \(L\) (and hence \(A\)) is in row echelon form.</p>
+<p id="p-307">The unknown \(x_j\) is a <dfn class="terminology">leading variable</dfn> if the corresponding column in \(A\) (i.e., the \(i\)-th column) contains a leading one; it is a <dfn class="terminology">free variable</dfn> if the corresponding column in \(A\) does not contain a leading one.</p></article><article class="example example-like" id="s_solving_eg_free-leading"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-s_solving_eg_free-leading"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.2</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-s_solving_eg_free-leading"><article class="example example-like"><p id="p-308">Let \(L\) be the linear system in the unknowns \(x_1, x_2, x_3, x_4\) with augmented matrix</p>
+<div class="displaymath">
+\begin{equation*}
+A=\begin{amatrix}[cccc|r]\boxed{1}\amp1\amp3\amp2\amp4\\
+0\amp\boxed{1}\amp1\amp2\amp3\\
+0\amp0\amp0\amp\boxed{1}\amp-5
+\end{amatrix}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Then \(x_1, x_2, x_4\) are leading variables, since the first, second, and fourth columns of \(A\) have leading ones, as indicated by the boxes. The variable \(x_3\) is free since the third column of \(A\) has no leading one.</p></article></div>
+<p id="p-309">In our model example we transformed the original system \(L\) to the equivalent system \(L'\) below:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{linsys}{5} x_1\amp +\amp 2x_2\amp-\amp 5x_3\amp+\amp 3x_4 \amp +\amp 6x_5\amp =\amp 14\\
+\amp \amp \amp \amp x_3\amp-\amp \amp \amp \frac{7}{2}x_5\amp =\amp -6\\
+\amp \amp \amp \amp \amp \amp \amp \amp x_5\amp =\amp 2 \end{linsys}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">The free variables of \(L'\) are \(x_2\) and \(x_4\text{;}\) the leading variables are \(x_1, x_3\text{,}\) and \(x_5\text{.}\) Observe that if we assign \(x_2=s\) and \(x_4=t\text{,}\) where \(r\) and \(s\) are any real numbers, then we are left with a system \(L''\) in three unknowns (\(x_1,x_3,x_5\)) of the form</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{linsys}{3} x_1\amp-\amp 5x_3\amp+\amp 6x_5\amp= \amp 14-2s-3t\\
+\amp \amp x_3\amp -\amp \frac{7}{2}x_5\amp = \amp -6\\
+\amp \amp \amp \amp x_5\amp =\amp 2 \end{linsys}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Using back-substitution, we see that the unknowns \(x_1, x_3, x_5\) are then uniquely expressed in terms of \(s\) and \(t\) as</p>
+<div class="displaymath">
+\begin{equation}
+x_5=2, x_3=1, x_1=7-2s-3t.\label{ex_modelSolve}\tag{2.3.1}
+\end{equation}
+</div>
+<p class="continuation">Thus for any choice of real numbers \(s\) and \(t\) we get a unique solution of the form</p>
+<div class="displaymath">
+\begin{equation*}
+(x_1,x_2,x_3,x_4,x_5)=(7-2s-3t, s, 1, t, 2)\text{.}
+\end{equation*}
+</div>
+<p class="continuation">We conclude the set \(S\) of solutions to \(L\) is given as</p>
+<div class="displaymath">
+\begin{equation}
+S=\left\{(7-2s-3t, s, 1, t, 2)\colon s, t\in\R\right\}.\label{s_solving_eq_setnotation}\tag{2.3.2}
+\end{equation}
+</div>
+<p class="continuation">Alternatively, we can describe the solutions to \(L\) with the <em class="emphasis">parametric equations</em></p>
+<div class="displaymath">
+\begin{equation}
+x_1=7-2s-3t, x_2=s, x_3=1, t=t, x_5=2, \ t,s\in\R.\label{s_solving_eq_parametric}\tag{2.3.3}
+\end{equation}
+</div>
+<article class="remark remark-like" id="s_solving_rm_parametric"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">Mandate.</span>
+</h4>
+<p id="p-310">Get used to describing solutions to linear systems using either the set notation format of <a href="" class="xref" data-knowl="./knowl/s_solving_eq_setnotation.html" title="Equation 2.3.2">(2.3.2)</a> or the parametric equation format of <a href="" class="xref" data-knowl="./knowl/s_solving_eq_parametric.html" title="Equation 2.3.3">(2.3.3)</a>.</p>
+<p id="p-311">Note also the distinct roles played by free and leading variables in the description of solutions. We assign each free variable <em class="emphasis">freely</em> to any choice of real parameters (\(s\) and \(t\) in our example), and then solve for the leading variables in terms of these parameters in a unique manner. In particular, the leading variables are completely determined by our assignment of free variables.</p></article></section><section class="subsection" id="ss_solveSystem"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.3.2</span> <span class="title">General method for solving linear systems</span>
+</h3>
+<p id="p-312">Before describing a precise algorithm for computing the set of solutions to a linear system, we must address the possibility that there are no solutions to the system whatsoever. Such a system is called <em class="emphasis">inconsistent</em>.</p>
+<article class="definition definition-like" id="d_consistent"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">Consistent and inconsistent systems.</span>
+</h4>
+<p id="p-313">A linear system is <dfn class="terminology">consistent</dfn> if it has at least one solution; it is <dfn class="terminology">inconsistent</dfn> if it has no solutions.</p></article><p id="p-314">We are now in a position to describe an algorithm for computing the set of solutions of a linear system.</p>
+<article class="theorem theorem-like" id="th_solveSystem"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.3.5</span><span class="period">.</span><span class="space"> </span><span class="title">Solving linear systems.</span>
+</h4>
+<p id="p-315">Let \(L\) be a linear system in the unknowns \(x_1,x_2,\dots, x_n\text{,}\) and let \(S\) be the set of all solutions of \(L\text{.}\) We compute \(S\) as follows.</p>
+<dl class="description-list">
+<dt id="li-90">Step 1</dt>
+<dd><p id="p-316">Apply Gaussian elimination to reduce \(L\) to an equivalent system \(L'\) in row echelon form.</p></dd>
+<dt id="li-91">Step 2</dt>
+<dd><p id="p-317">Let \(U\) be the augmented matrix associated to \(L'\text{.}\) If the last column of \(U\) has a leading one, then \(L\) is inconsistent: i.e., \(S=\{ \}\) is the empty set. Otherwise, proceed to the next step.</p></dd>
+<dt id="li-92">Step 3</dt>
+<dd><p id="p-318">Determine which if any of the unknowns are free variables of \(L'\text{.}\)</p></dd>
+<dt id="li-93">Step 4</dt>
+<dd>
+<p id="p-319">If there are no free variables, solve for each unknown using back-substitution. In this case, there is a unique solution to \(L\text{:}\) i.e., \(S=\{(s_1,s_2,\dots, s_n)\}\) contains exactly one element.</p>
+<p id="p-320">Otherwise, let \(x_{i_1}, x_{i_2},\dots , x_{i_r}\) be the leading variables of \(L'\text{,}\) and let \(x_{j_1},x_{j_2},\dots, x_{j_s}\) be the free variables. Back-substitution allows us to express each leading variable in terms of the free variables. In other words, we can write</p>
+<div class="displaymath">
+\begin{align*}
+x_{i_1}\amp=F_1(x_{j_1},x_{j_2},\dots, x_{j_s}) \\
+x_{i_2}\amp =F_2(x_{j_1},x_{j_2},\dots, x_{j_s}) \\
+\vdots \amp \\
+x_{i_r} \amp =F_s(x_{j_1},x_{j_2},\dots, x_{j_s})\text{,}
+\end{align*}
+</div>
+<p class="continuation">where each \(F_i(x_{j_1},x_{j_2},\dots, x_{j_s})\) is a linear expression in the free variables. Each solution of \(L\) thus corresponds to a <em class="emphasis">unique</em> variable assignment of the form</p>
+<div class="displaymath">
+\begin{align*}
+\text{Free variables: } x_{j_1}\amp=t_{1}, \ x_{j_2}=t_{2},\dots, x_{j_s}=t_{s}\\
+\text{Leading variables: } x_{i_1}\amp =F_1(t_1,t_2,\dots, t_s) \\
+x_{i_2}\amp =F_2(t_1,t_2,\dots, t_s) \\
+\vdots \amp \\
+x_{i_r} \amp =F_s(t_1,t_2,\dots, t_s)\text{,}
+\end{align*}
+</div>
+<p class="continuation">where \(t_1,t_2,\dots, t_s\) are any real numbers.</p>
+</dd>
+</dl></article><article class="hiddenproof" id="proof-3"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-3"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-3"><article class="hiddenproof"><p id="p-321">First recall that \(L\) and \(L'\) have the same set of solutions (<a href="" class="xref" data-knowl="./knowl/s_systems_th_rowops.html" title="Theorem 2.1.12: Row equivalence theorem">Theorem 2.1.12</a>). So it suffices to show that the algorithm returns the correct set of solutions to \(L'\text{.}\)</p>
+<p id="p-322">Regarding consistency: if the last column of the augmented matrix \(U\) associated to \(L'\) has a leading one in the \(i\)-th row, then the corresponding equation in \(L'\) is</p>
+<div class="displaymath">
+\begin{equation*}
+0x_1+0x_2+\cdots 0x_n=1.
+\end{equation*}
+</div>
+<p class="continuation">Clearly this equation has no solutions, and hence the set of solutions to \(L'\) is empty.</p>
+<p id="p-323">Suppose now that the last column of \(U\) does not have a leading one.</p>
+<article class="case" id="case-27"><h4 class="heading">Case 1: no free variables.</h4>
+<p id="p-324">Suppose in Step 3 you determine that there are no free variables. Then each of the first \(n\) columns of \(U\) has a leading one in it. If follows that for each \(1\leq i \leq n\) the \(i\)-th equation of \(L'\) is of the form</p>
+<div class="displaymath">
+\begin{equation}
+x_i+c_{i,i+1}x_{i+1}+\cdots c_{i,n}x_n=b_i.\label{s_solving_case1eq}\tag{2.3.4}
+\end{equation}
+</div>
+<p class="continuation">Since \(U\) does not have a leading one in the last column, it follows that all equations beyond the \(n\)-th equation are of the form \(0x_1+0x_2+\cdots 0x_n=0\text{,}\) and as such may be disregarded since they are satisfied by any choice of the \(x_i\text{.}\) The remaining system of \(n\) equations in \(n\) unknowns can be solved by back-substitution, yielding a <em class="emphasis">unique</em> solution \((x_1,x_2,\dots, x_n)\) of the form</p>
+<div class="displaymath">
+\begin{align*}
+x_n \amp =b_n \\
+x_{n-1}\amp =b_{n-1}-c_{n-1,n}x_n=b_{n-1}-c_{n-1,n}b_n \\
+x_{n-2}\amp = b_{n-2}-c_{n-2,n}x_{n}-c_{n-2,n-1}x_{n-1}\\
+\amp =b_{n-2}-c_{n-2,n}b_n-c_{n-2,n-1}(b_{n-1}-c_{n-1,n}b_n)\\
+\amp \vdots 
+\end{align*}
+</div>
+<p class="continuation">Do not concern yourself overly with the exact formulas. The important point here is that once we know there is a unique assignment of the variables \(x_n, x_{n-1},\dots, x_{i+1}\) that satisfies the system, <a href="" class="xref" data-knowl="./knowl/s_solving_case1eq.html" title="Equation 2.3.4">(2.3.4)</a> allows us to solve for \(x_i\) in terms of the the \(x_j\text{,}\) \(j&gt;i\text{.}\) As such working our way up from the last equation, we find there is a unique solution to the system.</p></article><article class="case" id="case-28"><h4 class="heading">Case 2: free variables.</h4>
+<p id="p-325">Suppose now that \(x_{i_1}, x_{i_2},\dots , x_{i_r}\) are the leading variables of \(L'\text{,}\) and \(x_{j_1}, x_{j_2},\dots, x_{j_s}\) are the free variables. Again, since \(U\) does not have a leading one in the last column, there are exactly \(r\) nonzero equations in \(L'\text{:}\) one for each leading variable. After bringing any terms involving free variables to the right, the \(k\)-th such equation takes the form</p>
+<div class="displaymath">
+\begin{equation*}
+x_{i_k}+c_{k,k+1}x_{i_{k+1}}+\cdots c_{k,r}x_{i_{r}}=d_k-G_k(x_{j_1},x_{j_2},\dots, x_{j_s})\text{.}
+\end{equation*}
+</div>
+<p class="continuation">As in the previous case, back-substitution now allows us to solve for each leading variable as a function of the free variables:</p>
+<div class="displaymath">
+\begin{align*}
+x_{i_r}\amp =d_r-G_r(x_{j_1},x_{j_2},\dots, x_{j_s})\\
+\amp =F_s(x_{j_1},x_{j_2},\dots, x_{j_s})\\
+x_{i_{r-1}}\amp=d_{r-1}-c_{r}x_{i_r}-G_{r-1}(x_{j_1},x_{j_2},\dots, x_{j_s})\\
+\amp = d_{r-1}-c_{r}F_r(x_{j_1},x_{j_2},\dots, x_{j_s})-G_{r-1}(x_{j_1},x_{j_2},\dots, x_{j_s})\\
+\amp =F_{r-1}(x_{j_1},x_{j_2},\dots, x_{j_s})\\
+\amp \vdots \\
+x_1 \amp=F_1(x_{j_1},x_{j_2},\dots, x_{j_s}) 
+\end{align*}
+</div>
+<p class="continuation">This new system of equations clearly has the same set of solutions as \(L'\) (and \(L\)), since it was obtained from \(L'\) by deleting zero rows of \(U\) and using only addition and subtraction operations. Furthermore, it is clear that any assignment of the free variables</p>
+<div class="displaymath">
+\begin{equation*}
+x_{j_1}=t_1, x_{j_2}=t_2,\dots, x_{j_s}=t_s
+\end{equation*}
+</div>
+<p class="continuation">extends uniquely to the solution of \(L'\) that further assigns</p>
+<div class="displaymath">
+\begin{equation*}
+x_{i_1}=F_1(t_1,t_2,\dots, t_s), x_{i_2}=F_2(t_1,t_2,\dots, t_s), \dots, x_r=F_r(t_1,t_2,\dots, t_s)\text{.}
+\end{equation*}
+</div>
+<p class="continuation">The idea behind uniqueness here, is that once you assign values to the free variables, the values of the leading variables are completely determined by the equations \(x_{i_k}=F_k(x_{j_1},x_{j_2},\dots, x_{j_s})\text{.}\)</p>
+<p id="p-326">Lastly, we show that every solution of \(L'\) (and \(L\)) is obtained in this way. Suppose \(u=(u_1,u_2,\dots, u_n)\) is a solution. According to the discussion above \(u\) must be the unique solution to \(L'\) corresponding to the free variable assignment</p>
+<div class="displaymath">
+\begin{equation*}
+x_{j_1}=u_{j_1}, x_{j_2}=u_{j_2},\dots , x_{j_s}=u_{j_s}
+\end{equation*}
+</div>
+<p class="continuation">and corresponding leading variable assignment</p>
+<div class="displaymath">
+\begin{equation*}
+x_{i_1}=F_1(u_{j_1},x_{j_2},\dots, x_{i_2}), x_{i_2}=F_2(u_{j_1},x_{j_2},\dots, x_{j_s}),\dots, x_{i_r}=F_r(u_{j_1},x_{j_2},\dots, x_{j_s})\text{.}
+\end{equation*}
+</div></article></article></div>
+<p id="p-327">Interesting in its own right is the following corollary of <a href="" class="xref" data-knowl="./knowl/th_solveSystem.html" title="Theorem 2.3.5: Solving linear systems">Theorem 2.3.5</a>, which tells us that a linear system has either no solutions, exactly one solutions, or infinitely many solutions.</p>
+<article class="corollary theorem-like" id="c_qualitative"><h4 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">2.3.6</span><span class="period">.</span><span class="space"> </span><span class="title">\(0\text{,}\) \(1\text{,}\) or \(\infty\)-many solutions.</span>
+</h4>
+<p id="p-328">Let \(L\) be a linear system of equations, let \(L'\) be an equivalent system in row reduced form, and let \(U\) be the augmented matrix associated to \(L'\text{.}\)</p>
+<p id="p-329">The system \(L\) has either no solutions, exactly one solution, or infinitely-many solutions. In more detail:</p>
+<ul class="disc">
+<li id="li-94"><p id="p-330">If \(U\) has a leading one in its last column, then \(L\) has no solutions.</p></li>
+<li id="li-95"><p id="p-331">If \(U\) does not have a leading one in its last column and \(L'\) has no free variables, then \(L\) has a unique solution.</p></li>
+<li id="li-96"><p id="p-332">If \(U\) does not have a leading one in its last column and \(L'\) has a free variable, then \(L\) has infinitely many solutions.</p></li>
+</ul></article><p id="p-333">The decision tree in <a href="" class="xref" data-knowl="./knowl/fig_decision_tree.html" title="Figure 2.3.7: Decision tree for number of solutions to a system">Figure 2.3.7</a> concisely summarizes the different cases articulated in <a href="" class="xref" data-knowl="./knowl/c_qualitative.html" title="Corollary 2.3.6: \(0\text{,}\) \(1\text{,}\) or \(\infty\)-many solutions">Corollary 2.3.6</a>.</p>
+<figure class="figure figure-like" id="fig_decision_tree"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/im_decision_tree.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.7<span class="period">.</span></span><span class="space"> </span>Decision tree for the number of solutions to a linear system with augmented matrix \(U\) in row echelon form.</figcaption></figure><section class="paragraphs" id="ss_GE_video_examples"><h4 class="heading"><span class="title">Video examples of solving linear systems.</span></h4>
+<p id="p-334"><figure class="figure figure-like" id="figure-3"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="vid_GE_solving_1" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/ocmtUODkMQQ?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.8<span class="period">.</span></span><span class="space"> </span>First example: solving linear systems</figcaption></figure> <figure class="figure figure-like" id="figure-4"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="vid_GE_solving_2" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/PQ2lJWdTEAY?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.9<span class="period">.</span></span><span class="space"> </span>Second example: solving linear systems</figcaption></figure></p></section></section><section class="paragraphs" id="ss_homogeneous"><h3 class="heading"><span class="title">Solutions to homogeneous systems.</span></h3>
+<p id="p-335">Consider the special case of a homogeneous system</p>
+<div class="displaymath">
+\begin{equation*}
+\homsys
+\end{equation*}
+</div>
+<p class="continuation">Such a system is always consistent. Why? Observe that \((x_1,x_2,\dots,
+x_n)=(0,0,\dots, 0)\) is guaranteed to be a solution. Alternatively, it is easy to see that row reducing the system results in an augmented matrix \(U\) whose last column is a zero column: a zero column certainly contains no leading ones. Thus, in the special case of a homogeneous system, <a href="" class="xref" data-knowl="./knowl/c_qualitative.html" title="Corollary 2.3.6: \(0\text{,}\) \(1\text{,}\) or \(\infty\)-many solutions">Corollary 2.3.6</a> boils down to the following result.</p>
+<article class="corollary theorem-like" id="s_solving_homogeneous"><h4 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">2.3.10</span><span class="period">.</span><span class="space"> </span><span class="title">Solutions to homogeneous equations.</span>
+</h4>
+<p id="p-336">Fix a <em class="emphasis">homogeneous</em> linear system in \(n\) variables. There are two possibilities:</p>
+<ul class="disc">
+<li id="li-97"><p id="p-337">if all the variables are leading variables, then the system has a unique solution (i.e., \(1\) solution);</p></li>
+<li id="li-98"><p id="p-338">if there is a free variable, then the system has \(\infty\)-many solutions.</p></li>
+</ul></article></section><section class="exercises" id="s_solving_ex"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">2.3.3</span> <span class="title">Exercises</span>
+</h3>
+<div class="exercisegroup" id="exercisegroup-3">
+<h4 class="heading"><span class="title">Exercise Group.</span></h4>
+<div class="introduction" id="introduction-11">
+<p id="p-339">Solve the following systems of equations.</p>
+<ul class="disc">
+<li id="li-99"><p id="p-340">When row reducing follow Gaussian elimination to the letter.</p></li>
+<li id="li-100"><p id="p-341">Make sure to indicate how variables are sorted into free and dependent variables.</p></li>
+<li id="li-101"><p id="p-342">Express your answer in both the parametric equation format and set notation format.</p></li>
+</ul>
+</div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-13"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
+<div class="displaymath" id="p-343">
+\begin{equation*}
+\begin{linsys}{4} x_1\amp +\amp 2x_2\amp =\amp x_3\amp +\amp x_4\amp +\amp 3\\ 3x_1\amp +\amp 6x_2\amp =\amp 2x_3\amp -\amp 4x_4\amp +\amp 8\\ -x_1\amp +\amp 2x_3\amp =\amp 2x_2\amp -\amp x_4\amp -\amp 1 \end{linsys}
+\end{equation*}
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-15" id="solution-15"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-15"><div class="solution solution-like">
+<p id="p-344">We saw in <a href="" class="xref" data-knowl="./knowl/s_ge_equivsys.html" title="Exercise 2.2.3.4">Exercise 2.2.3.4</a> that the system is equivalent to a system \(L'\) with augmented matrix</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{amatrix}[rrrr|r]\boxed{1}\amp 2\amp -1\amp -1\amp 3\\ 0\amp 0\amp \boxed{1}\amp 7\amp -1\\ 0\amp 0\amp 0\amp \boxed{1}\amp -\frac{3}{7} \end{amatrix}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">The row echelon matrix tells us that \(x_2=t\) is the only free variable of \(L'\text{.}\) Back substitution then yields the parametric equation description:</p>
+<div class="displaymath">
+\begin{align*}
+x_1\amp = \frac{32}{7}-2t\\
+x_2\amp = t\\
+x_3\amp = 2\\
+x_4\amp = -\frac{3}{7}\text{.}
+\end{align*}
+</div>
+<p class="continuation">Thus the set of solutions is</p>
+<div class="displaymath">
+\begin{equation*}
+\left\{ \left(\frac{32}{7}-2t, t, 2, -\frac{3}{7}\right)\colon t\in \R\right\}\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-14"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
+<div class="displaymath" id="p-345">
+\begin{equation*}
+\begin{linsys}{4} x_1\amp +\amp x_2\amp -\amp x_3\amp +\amp x_4\amp =\amp 1\\ -2x_1\amp -\amp 2x_2\amp +\amp 2x_3\amp -\amp 2x_4\amp =\amp -2\\ x_1\amp +\amp x_2\amp +\amp x_3\amp +\amp 2x_4\amp =\amp 3 \end{linsys}
+\end{equation*}
+</div></article><article class="exercise exercise-like" id="exercise-15"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
+<div class="displaymath" id="p-346">
+\begin{equation*}
+\begin{linsys}{3} 2x_1 \amp +\amp  2x_2  \amp +\amp 2x_3\amp =\amp 0\\ -2x_1 \amp +\amp  5x_2 \amp +\amp 2x_3\amp =\amp 1\\ 8x_1 \amp +\amp   x_2   \amp +\amp 4x_3\amp =\amp -1 \end{linsys}
+\end{equation*}
+</div></article><article class="exercise exercise-like" id="exercise-16"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
+<div class="displaymath" id="p-347">
+\begin{equation*}
+\begin{linsys}{3} \amp \amp -2b  \amp +\amp 3c\amp =\amp 1\\ 3a \amp +\amp  6b \amp -\amp 3c\amp =\amp -2\\ 6a \amp +\amp   6b   \amp +\amp 3c\amp =\amp 5 \end{linsys}
+\end{equation*}
+</div></article><article class="exercise exercise-like" id="exercise-17"><h5 class="heading"><span class="codenumber">5<span class="period">.</span></span></h5>
+<div class="displaymath" id="p-348">
+\begin{equation*}
+\begin{linsys}{5} \amp  \amp  \amp \amp  T_3\amp +\amp T_4\amp +\amp T_5 \amp =\amp 0\\ -T_1\amp -\amp T_2 \amp +\amp 2T_3 \amp -\amp 3T_4\amp +\amp T_5 \amp =\amp 0\\ T_1\amp + \amp T_2 \amp -\amp 2T_3 \amp \amp \amp -\amp T_5 \amp =\amp 0\\ 2T_1\amp + \amp 2T_2 \amp -\amp T_3 \amp \amp \amp +\amp T_5 \amp =\amp 0 \end{linsys}
+\end{equation*}
+</div></article>
+</div>
+</div>
+<article class="exercise exercise-like" id="exercise-18"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<p id="p-349">For each system below determine all values of \(a\) for which the system below has (a) no solutions, (b) a unique solution, and (c) infinitely many solutions.</p>
+<ol class="lower-alpha">
+<li id="li-102"><p id="p-derived-li-102"><div class="displaymath">
+\begin{equation*}
+\begin{linsys}{3} x\amp +\amp 2y\amp +\amp z\amp =\amp 2\\ 2x\amp -\amp 2y\amp +\amp 3z\amp =\amp 1\\ x\amp +\amp 2y\amp -\amp (a^2-3)z\amp =\amp a \end{linsys}
+\end{equation*}
+</div></p></li>
+<li id="li-103"><div class="displaymath" id="p-350">
+\begin{equation*}
+\begin{linsys}{3} x\amp +\amp 2y\amp -\amp 3z\amp =\amp 4\\ 3x\amp -\amp y\amp +\amp 5z\amp =\amp 2\\ 4x\amp +\amp y\amp +\amp (a^2-14)z\amp =\amp a+2 \end{linsys}
+\end{equation*}
+</div></li>
+</ol></article><article class="exercise exercise-like" id="exercise-19"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<p id="p-351">Show that a linear system with more unknowns than equations has  either 0 solutions or infinitely many solutions.</p></article><article class="exercise exercise-like" id="exercise-20"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<p id="p-352">True or false. If true, provide a proof; if false, provide an explicit counterexample.</p>
+<ol class="lower-alpha">
+<li id="li-104"><p id="p-353">Every matrix has a unique row echelon form.</p></li>
+<li id="li-105"><p id="p-354">Any homogeneous linear system with more unknowns than equations has infinitely many solutions.</p></li>
+<li id="li-106"><p id="p-355">If a homogeneous linear system of \(n\) equations in \(n\) unknowns has a corresponding augmented matrix with a reduced row echelon form containing \(n\) leading ones, then the linear system has the unique solution \(s=(0,0,\dots, 0)\text{.}\)</p></li>
+<li id="li-107"><p id="p-356">All leading ones in of a matrix in row echelon form must occur in distinct columns.</p></li>
+<li id="li-108"><p id="p-357">If the reduced row echelon form of the augmented matrix for a linear system has a zero row, then the system must have infinitely many solutions.</p></li>
+<li id="li-109"><p id="p-358">If a linear system has more unknowns than equations, then it must have infinitely many solutions.</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-21"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
+<p id="p-359">Interpret each matrix below as an augmented matrix of a linear system. Asterisks represent an unspecified real number. For each matrix, determine whether the corresponding system is consistent or inconsistent. If the system is consistent, decide further whether the solution is unique or not. If there is not enough information answer ‘inconclusive’ and back up your claim by giving an explicit example where the system is consistent, and an explicit example where the system is inconsistent.</p>
+<ol class="lower-alpha">
+<li id="li-110"><p id="p-360">\(\displaystyle \begin{bmatrix}1\amp *\amp *\amp *\\ 0\amp 1\amp *\amp *\\ 0\amp 0\amp 1\amp 1 \end{bmatrix}\)</p></li>
+<li id="li-111"><p id="p-361">\(\displaystyle \begin{bmatrix}1\amp 0\amp 0\amp *\\ *\amp 1\amp 0\amp *\\ *\amp *\amp 1\amp * \end{bmatrix}\)</p></li>
+<li id="li-112"><p id="p-362">\(\displaystyle \begin{bmatrix}1\amp 0\amp 0\amp 0\\ 1\amp 0\amp 0\amp 1\\ 1\amp *\amp *\amp * \end{bmatrix}\)</p></li>
+<li id="li-113"><p id="p-363">\(\displaystyle \begin{bmatrix}1\amp *\amp *\amp *\\ 1\amp 0\amp 0\amp 1\\ 1\amp 0\amp 0\amp 1 \end{bmatrix}\)</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-22"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
+<p id="p-364">What condition must \(a, b,\) and \(c\) satisfy in order for the system below to be consistent? Express your answer as an equation involving \(a, b,\) and \(c\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{linsys}{3} x\amp +\amp 3y\amp +\amp z\amp =\amp a\\ -x\amp -\amp 2y\amp +\amp z\amp =\amp b\\ 3x\amp +\amp 7y\amp -\amp z\amp =\amp c \end{linsys}
+\end{equation*}
+</div></article><article class="exercise exercise-like" id="exercise-23"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
+<p id="p-365">Solve the system of equations below for \(x\text{,}\) \(y\text{,}\) and \(z\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{linsys}{3} \frac{1}{x}\amp +\amp \frac{2}{y}\amp -\amp \frac{4}{z}\amp =\amp 1\\ \\ \frac{2}{x}\amp +\amp \frac{3}{y}\amp +\amp \frac{8}{z}\amp =\amp 0\\ \\ -\frac{1}{x}\amp +\amp \frac{9}{y}\amp +\amp \frac{10}{z}\amp =\amp 5 \end{linsys}
+\end{equation*}
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1" id="hint-1"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1"><div class="hint solution-like"><p id="p-366">First replace the given <em class="emphasis">nonlinear</em> system with a linear one using a change of variable substitution.</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-24"><h4 class="heading"><span class="codenumber">12<span class="period">.</span></span></h4>
+<p id="p-367">If \(A\) is a matrix with three rows and five columns, then what is the maximum possible number of leading ones in its reduced row echelon form? Justify your answer.</p>
+<p id="p-368">Provide an explicit example of a matrix that attains this maximum number of leading ones.</p></article><article class="exercise exercise-like" id="exercise-25"><h4 class="heading"><span class="codenumber">13<span class="period">.</span></span></h4>
+<p id="p-369">If \(A\) is a matrix with three rows and six columns, then what is the maximum possible number of free variables in the general solution of the linear system with augmented matrix \(A\text{?}\) Justify your answer.</p>
+<p id="p-370">Provide an explicit example of a matrix that attains this maximal number of free variables.</p></article><article class="exercise exercise-like" id="exercise-26"><h4 class="heading"><span class="codenumber">14<span class="period">.</span></span></h4>
+<p id="p-371">If \(A\) is a matrix with five rows and three columns, then what is the minimum possible number of zero rows in any row echelon form of \(A\text{?}\)</p>
+<p id="p-372">Provide an explicit example of a matrix that attains this minimal number of zero rows.</p></article></section></section></div></main>
+</div>
+</body>
+</html>

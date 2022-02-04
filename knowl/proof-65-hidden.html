@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-02-04T21:25:39Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="hiddenproof"><p>By (2) we know that \(\NS A=\NS U, \RS A=\RS U\text{,}\) and \(\dim\CS A=\dim\CS U\text{.}\) So it is enough to show that \(\dim \NS U=\dim\RS U=r\) and \(\dim \NS U=s\text{.}\)</p>
+<p>First, we will show that the \(r\) nonzero rows of \(U\) form a basis for \(\RS U\text{,}\) proving \(\dim\RS U=r\text{.}\) Clearly the nonzero rows span \(\RS U\text{,}\) since any linear combination of all the rows of \(U\) can be expressed as a linear combination of the nonzero rows. Furthermore, since \(U\) is in row echelon form, the staircase pattern of the leading ones appearing in the nonzero rows assures that these row vectors are linearly independent.</p>
+<p>Next, we show that the columns of \(U\) containing leading ones form a basis of \(\CS U\text{.}\) Let \(\boldu_{i_1},\dots, \boldu_{i_r}\) be the columns of \(U\) with leading ones, and let \(\boldu_{j_1}, \boldu_{j_2}, \dots, \boldu_{j_s}\) be the columns without leading ones. To prove the \(\boldu_{i_k}\) form a basis for \(\CS U\text{,}\) we will show that given any \(\boldy\in \CS U\) there is a <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">unique</em> choice of scalars \(c_1, c_2,\dots,
+c_r\) such that \(c_1\boldu_{i_1}+\cdots +c_r\boldu_{i_r}=\boldy\text{.}\) (Recall that the uniqueness of this choice implies linear independence.)</p>
+<p>So assume \(\boldy\in \CS U\text{.}\) Then we can find \(\boldx\in\R^n\) such that \(U\boldx=\boldy\text{,}\) which means the linear system with augmented matrix \([\ U\ \vert \ \boldy]\) is consistent. Using our Gaussian elimination theory (specifically, <a href="" class="xref" data-knowl="./knowl/th_solveSystem.html" title="Theorem 2.3.5: Solving linear systems">Theorem 2.3.5</a>), we know that the solutions \(\boldx=(x_1,x_2,\dots,
+x_n)\) to this system are in 1-1 correspondence with choices for the free variables \(x_{j_1}=t_{j_1}, x_{j_2}=t_{j_2}, \dots,
+x_{j_s}=t_{j_s}\text{.}\) (Remember that the columns \(\boldu_{j_k}\) without leading ones correspond to the free variables.) In particular, there is a unique solution to \(U\boldx=\boldy\) where we set all the free variables equal to 0. By the column method (<a href="" class="xref" data-knowl="./knowl/th_column_method.html" title="Theorem 3.1.19: Column method of matrix multiplication">Theorem 3.1.19</a>), this gives us a unique linear combination of only the columns \(\boldu_{i_k}\) with leading ones equal to \(\boldy\text{.}\) This proves the claim, and shows that the columns with leading ones form a basis for \(\CS U\text{.}\) We conclude that \(\dim\CS U=r\text{.}\)</p>
+<p>Lastly,  again using the results of (1), we have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\dim NS U \amp =\dim NS T_U \\
+\amp =n-\dim\im T_U \amp (\knowl{./knowl/th_rank-nullity.html}{\text{Theorem 4.6.2}}) \\
+\amp =n-\dim\CS U\\
+\amp =n-r \\
+\amp =s \text{,}
+\end{align*}
+</div>
+<p class="continuation">where the last equality uses the fact that the sum of the number of columns with leading ones (\(r\)) and the number of columns without leading ones (\(s\)) is \(n\text{,}\) the total number of columns.</p></article></body>
+</html>

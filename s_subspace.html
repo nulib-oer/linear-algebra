@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-02-04T21:24:45Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Subspaces</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg">miniversion=0.6</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\require{cancel}\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\C}{{\mathbb C}}
+\newcommand{\T}{{\mathbb T}}
+\newcommand{\F}{{\mathbb F}}
+\newcommand{\HH}{{\mathbb H}}
+\newcommand{\compose}{\circ}
+\newcommand{\bolda}{{\mathbf a}}
+\newcommand{\boldb}{{\mathbf b}}
+\newcommand{\boldc}{{\mathbf c}}
+\newcommand{\boldd}{{\mathbf d}}
+\newcommand{\bolde}{{\mathbf e}}
+\newcommand{\boldi}{{\mathbf i}}
+\newcommand{\boldj}{{\mathbf j}}
+\newcommand{\boldk}{{\mathbf k}}
+\newcommand{\boldn}{{\mathbf n}}
+\newcommand{\boldp}{{\mathbf p}}
+\newcommand{\boldq}{{\mathbf q}}
+\newcommand{\boldr}{{\mathbf r}}
+\newcommand{\bolds}{{\mathbf s}}
+\newcommand{\boldt}{{\mathbf t}}
+\newcommand{\boldu}{{\mathbf u}}
+\newcommand{\boldv}{{\mathbf v}}
+\newcommand{\boldw}{{\mathbf w}}
+\newcommand{\boldx}{{\mathbf x}}
+\newcommand{\boldy}{{\mathbf y}}
+\newcommand{\boldz}{{\mathbf z}}
+\newcommand{\boldzero}{{\mathbf 0}}
+\newcommand{\boldmod}{\boldsymbol{ \bmod }}
+\newcommand{\boldT}{{\mathbf T}}
+\newcommand{\boldN}{{\mathbf N}}
+\newcommand{\boldB}{{\mathbf B}}
+\newcommand{\boldF}{{\mathbf F}}
+\newcommand{\boldS}{{\mathbf S}}
+\newcommand{\boldG}{{\mathbf G}}
+\newcommand{\boldK}{{\mathbf K}}
+\newcommand{\boldL}{{\mathbf L}}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\NS}{null}
+\DeclareMathOperator{\RS}{row}
+\DeclareMathOperator{\CS}{col}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\range}{range}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\nullity}{nullity}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\Fix}{Fix}
+\DeclareMathOperator{\Aff}{Aff}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\mdeg}{mdeg}
+\DeclareMathOperator{\Lt}{Lt}
+\DeclareMathOperator{\Lc}{Lc}
+\DeclareMathOperator{\disc}{disc}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\adj}{adj}
+\DeclareMathOperator{\curl}{curl}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\diver}{div}
+\DeclareMathOperator{\flux}{flux}
+\def\Gal{\operatorname{Gal}}
+\def\ord{\operatorname{ord}}
+\def\ML{\operatorname{M}}
+\def\GL{\operatorname{GL}}
+\def\PGL{\operatorname{PGL}}
+\def\SL{\operatorname{SL}}
+\def\PSL{\operatorname{PSL}}
+\def\GSp{\operatorname{GSp}}
+\def\PGSp{\operatorname{PGSp}}
+\def\Sp{\operatorname{Sp}}
+\def\PSp{\operatorname{PSp}}
+\def\Aut{\operatorname{Aut}}
+\def\Inn{\operatorname{Inn}}
+\def\Hom{\operatorname{Hom}}
+\def\End{\operatorname{End}}
+\def\ch{\operatorname{char}}
+\def\Zp{\Z/p\Z}
+\def\Zm{\Z/m\Z}
+\def\Zn{\Z/n\Z}
+\def\Fp{\F_p}
+\newcommand{\surjects}{\twoheadrightarrow}
+\newcommand{\injects}{\hookrightarrow}
+\newcommand{\bijects}{\leftrightarrow}
+\newcommand{\isomto}{\overset{\sim}{\rightarrow}}
+\newcommand{\floor}[1]{\lfloor#1\rfloor}
+\newcommand{\ceiling}[1]{\left\lceil#1\right\rceil}
+\newcommand{\mclass}[2][m]{[#2]_{#1}}
+\newcommand{\val}[2][]{\left\lvert #2\right\rvert_{#1}}
+\newcommand{\valuation}[2][]{\left\lvert #2\right\rvert_{#1}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\anpoly}{a_nx^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+\newcommand{\anmonic}{x^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+\newcommand{\bmpoly}{b_mx^m+b_{m-1}x^{m-1}\cdots +b_1x+b_0}
+\newcommand{\pder}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\normalin}{\trianglelefteq}
+\newcommand{\angvec}[1]{\langle #1\rangle}
+\newcommand{\varpoly}[2]{#1_{#2}x^{#2}+#1_{#2-1}x^{#2-1}\cdots +#1_1x+#1_0}
+\newcommand{\varpower}[1][a]{#1_0+#1_1x+#1_1x^2+\cdots}
+\newcommand{\limasto}[2][x]{\lim_{#1\rightarrow #2}}
+\def\ntoinfty{\lim_{n\rightarrow\infty}}
+\def\xtoinfty{\lim_{x\rightarrow\infty}}
+\def\ii{\item}
+\def\bb{\begin{enumerate}}
+\def\ee{\end{enumerate}}
+\def\ds{\displaystyle}
+\def\p{\partial}
+\newcommand{\abcdmatrix}[4]{\begin{bmatrix}#1\amp #2\\ #3\amp #4 \end{bmatrix}
+}
+\newenvironment{amatrix}[1][ccc|c]{\left[\begin{array}{#1}}{\end{array}\right]}
+\newenvironment{linsys}[2][m]{
+\begin{array}[#1]{@{}*{#2}{rc}r@{}}
+}{
+\end{array}}
+\newcommand{\eqsys}{\begin{array}{rcrcrcr}
+a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp b_1\\
+a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp b_2\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \vdots\\
+a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp b_m
+\end{array}
+}
+\newcommand{\numeqsys}{\begin{array}{rrcrcrcr}
+e_1:\amp  a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp b_1\\
+e_2: \amp a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp b_2\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \vdots\\
+e_m: \amp a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp b_m
+\end{array}
+}
+\newcommand{\homsys}{\begin{array}{rcrcrcr}
+a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp 0\\
+a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp 0\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \vdots\\
+a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp 0
+\end{array}
+}
+\newcommand{\vareqsys}[4]{
+\begin{array}{ccccccc}
+#3_{11}x_{1}\amp +\amp #3_{12}x_{2}\amp +\cdots+\amp  #3_{1#2}x_{#2}\amp =\amp #4_1\\
+#3_{21}x_{1}\amp +\amp #3_{22}x_{2}\amp +\cdots+\amp #3_{2#2}x_{#2}\amp =\amp #4_2\\
+\vdots \amp \amp \vdots \amp  \amp \vdots \amp =\amp  \vdots\\
+#3_{#1 1}x_{1}\amp +\amp #3_{#1 2}x_{2}\amp +\cdots +\amp #3_{#1 #2}x_{#2}\amp =\amp #4_{#1}
+\end{array}
+}
+\newcommand{\genmatrix}[1][a]{
+\begin{bmatrix}
+#1_{11} \amp  #1_{12} \amp  \cdots \amp  #1_{1n} \\
+#1_{21} \amp  #1_{22} \amp  \cdots \amp  #1_{2n} \\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \\
+#1_{m1} \amp  #1_{m2} \amp  \cdots \amp  #1_{mn}
+\end{bmatrix}
+}
+\newcommand{\varmatrix}[3]{
+\begin{bmatrix}
+#3_{11} \amp  #3_{12} \amp  \cdots \amp  #3_{1#2} \\
+#3_{21} \amp  #3_{22} \amp  \cdots \amp  #3_{2#2} \\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \\
+#3_{#1 1} \amp  #3_{#1 2} \amp  \cdots \amp  #3_{#1 #2}
+\end{bmatrix}
+}
+\newcommand{\augmatrix}{
+\begin{amatrix}[cccc|c]
+a_{11} \amp  a_{12} \amp  \cdots \amp  a_{1n} \amp b_{1}\\
+a_{21} \amp  a_{22} \amp  \cdots \amp  a_{2n} \amp b_{2}\\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \amp \vdots\\
+a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
+\end{amatrix}
+}
+\newcommand{\varaugmatrix}[4]{
+\begin{amatrix}[cccc|c]
+#3_{11} \amp  #3_{12} \amp  \cdots \amp  #3_{1#2} \amp #4_{1}\\
+#3_{21} \amp  #3_{22} \amp  \cdots \amp  #3_{2#2} \amp #4_{2}\\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \amp \vdots\\
+#3_{#1 1} \amp  #3_{#1 2} \amp  \cdots \amp  #3_{#1 #2}\amp #4_{#1}
+\end{amatrix}
+}
+\newcommand{\spaceforemptycolumn}{\makebox[\wd\boxofmathplus]{\ }}
+
+\newcommand{\generalmatrix}[3]{
+\left(
+\begin{array}{cccc}
+#1_{1,1}  \amp #1_{1,2}  \amp \ldots  \amp #1_{1,#2}  \\
+#1_{2,1}  \amp #1_{2,2}  \amp \ldots  \amp #1_{2,#2}  \\
+\amp \vdots                         \\
+#1_{#3,1} \amp #1_{#3,2} \amp \ldots  \amp #1_{#3,#2}
+\end{array}
+\right)  }
+\newcommand{\colvec}[2][c]{\begin{bmatrix}[#1] #2 \end{bmatrix}}
+\DeclareMathOperator{\size}{size}
+\DeclareMathOperator{\adjoint}{adj}
+\DeclareMathOperator{\sgn}{sgn}
+\newcommand{\restrictionmap}[2]{{#1}\mathpunct\upharpoonright\hbox{}_{#2}}
+\renewcommand{\emptyset}{\varnothing}
+
+\newcommand{\proj}[2]{\mbox{proj}_{#2}({#1}) }
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://linear-algebra.northwestern.pub/" target="_blank"><img src="external/images/im_holycomm.svg" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">Linear algebra: the theory of vector spaces and linear transformations</span></a></h1>
+<p class="byline">Aaron Greicius</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="s_transformation.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="c_vectorspace.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="s_span_independence.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="s_transformation.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="c_vectorspace.html" title="Up">Up</a><a class="next-button button toolbar-item" href="s_span_independence.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link">
+<a href="c_foundations.html" data-scroll="c_foundations"><span class="codenumber">1</span> <span class="title">Foundations</span></a><ul>
+<li><a href="s_sets_functions.html" data-scroll="s_sets_functions">Sets and functions</a></li>
+<li><a href="s_logic.html" data-scroll="s_logic">Logic</a></li>
+<li><a href="s_proof_technique.html" data-scroll="s_proof_technique">Proof techniques</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_linear_systems.html" data-scroll="c_linear_systems"><span class="codenumber">2</span> <span class="title">Systems of linear equations</span></a><ul>
+<li><a href="s_systems.html" data-scroll="s_systems">Systems of linear equations</a></li>
+<li><a href="s_ge.html" data-scroll="s_ge">Gaussian elimination</a></li>
+<li><a href="s_solving.html" data-scroll="s_solving">Solving linear systems</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_matrices.html" data-scroll="c_matrices"><span class="codenumber">3</span> <span class="title">Matrices, their arithmetic, and their algebra</span></a><ul>
+<li><a href="s_matrix.html" data-scroll="s_matrix">Matrices and their arithmetic</a></li>
+<li><a href="s_algebraic.html" data-scroll="s_algebraic">Algebra of matrices</a></li>
+<li><a href="s_invertible_matrices.html" data-scroll="s_invertible_matrices">Invertible matrices</a></li>
+<li><a href="s_invertibility_theorem.html" data-scroll="s_invertibility_theorem">The invertibility theorem</a></li>
+<li><a href="s_det.html" data-scroll="s_det">The determinant</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_vectorspace.html" data-scroll="c_vectorspace"><span class="codenumber">4</span> <span class="title">Vector spaces and linear transformations</span></a><ul>
+<li><a href="s_vectorspace.html" data-scroll="s_vectorspace">Real vector spaces</a></li>
+<li><a href="s_transformation.html" data-scroll="s_transformation">Linear transformations</a></li>
+<li><a href="s_subspace.html" data-scroll="s_subspace" class="active">Subspaces</a></li>
+<li><a href="s_span_independence.html" data-scroll="s_span_independence">Span and linear independence</a></li>
+<li><a href="s_basis_dimension.html" data-scroll="s_basis_dimension">Bases and dimension</a></li>
+<li><a href="s_rank_nullity.html" data-scroll="s_rank_nullity">Rank-nullity theorem and fundamental spaces</a></li>
+<li><a href="s_isom.html" data-scroll="s_isom">Isomorphisms</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_innerproductspaces.html" data-scroll="c_innerproductspaces"><span class="codenumber">5</span> <span class="title">Inner product spaces</span></a><ul>
+<li><a href="s_innerproducts.html" data-scroll="s_innerproducts">Inner product spaces</a></li>
+<li><a href="s_orthogonality.html" data-scroll="s_orthogonality">Orthogonal bases and orthogonal projection</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_transbasis.html" data-scroll="c_transbasis"><span class="codenumber">6</span> <span class="title">Eigenvectors and diagonalization</span></a><ul>
+<li><a href="s_coordinatevectors_isomorphisms.html" data-scroll="s_coordinatevectors_isomorphisms">Coordinate vectors and isomorphisms</a></li>
+<li><a href="s_matrixreps.html" data-scroll="s_matrixreps">Matrix representations of linear transformations</a></li>
+<li><a href="s_changeofbasis.html" data-scroll="s_changeofbasis">Change of basis</a></li>
+<li><a href="ss_eigenvectors.html" data-scroll="ss_eigenvectors">Eigenvectors and eigenvalues</a></li>
+<li><a href="ss_diagonalization.html" data-scroll="ss_diagonalization">Diagonalization</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="appendix-notation.html" data-scroll="appendix-notation"><span class="codenumber">A</span> <span class="title">Notation</span></a></li>
+<li class="link"><a href="appendix-defs.html" data-scroll="appendix-defs"><span class="codenumber">B</span> <span class="title">Definitions</span></a></li>
+<li class="link"><a href="appendix-thms.html" data-scroll="appendix-thms"><span class="codenumber">C</span> <span class="title">Theory and procedures</span></a></li>
+<li class="link"><a href="appendix-egs.html" data-scroll="appendix-egs"><span class="codenumber">D</span> <span class="title">Examples</span></a></li>
+<li class="link"><a href="appendix-vids.html" data-scroll="appendix-vids"><span class="codenumber">E</span> <span class="title">Video examples and figures</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="s_subspace"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">4.3</span> <span class="title">Subspaces</span>
+</h2>
+<section class="introduction" id="introduction-31"><p id="p-1122">The definition of a <em class="emphasis">subspace</em> of a vector space \(V\) is very much in the same spirit as our definition of linear transformations. It is a subset of \(V\) that in some sense respects the vector space structure: in the language of <a href="" class="xref" data-knowl="./knowl/d_subspace.html" title="Definition 4.3.1: Subspace">Definition 4.3.1</a>, it is a subset that is <em class="emphasis">closed under addition</em> and <em class="emphasis">closed under scalar multiplication</em>.</p>
+<p id="p-1123">In fact the connection between linear transformations and subspaces goes deeper than this. As we will see in <a href="" class="xref" data-knowl="./knowl/d_nullspace_image.html" title="Definition 4.3.12: Null space and image">Definition 4.3.12</a>, a linear transformation \(T\colon V\rightarrow W\) naturally gives rise to two important subspaces: the <em class="emphasis">null space of \(T\)</em> and the <em class="emphasis">image of \(T\)</em>.</p></section><section class="subsection" id="ss_subspace"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.3.1</span> <span class="title">Definition of subspaces</span>
+</h3>
+<article class="definition definition-like" id="d_subspace"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">Subspace.</span>
+</h4>
+<p id="p-1124">Let \(V\) be a vector space. A subset \(W\subseteq V\) is a <dfn class="terminology">subspace</dfn> of \(V\) if the following conditions hold:</p>
+<ol class="lower-roman">
+<li id="li-314">
+<span class="heading"><span class="title">\(W\) contains the zero vector.</span></span><p id="p-1125">We have \(\boldzero\in W\text{.}\)</p>
+</li>
+<li id="li-315">
+<span class="heading"><span class="title">\(W\) is closed under addition.</span></span><p id="p-1126">For all \(\boldv_1,\boldv_2\in V\text{,}\) if \(\boldv_1,\boldv_2\in W\text{,}\) then \(\boldv_1+\boldv_2\in W\text{.}\) Using logical notation:</p>
+<div class="displaymath">
+\begin{equation*}
+\boldv_1,\boldv_2\in W\implies \boldv_1+\boldv_2\in W\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-316">
+<span class="heading"><span class="title">\(W\) is closed under scalar multiplication.</span></span><p id="p-1127">For all \(c\in \R\) and \(\boldv\in V\text{,}\) if \(\boldv\in W\text{,}\) then \(c\boldv\in W\text{.}\) In logical notation:</p>
+<div class="displaymath">
+\begin{equation*}
+\boldv\in W\Rightarrow c\boldv\in W\text{.}
+\end{equation*}
+</div>
+</li>
+</ol></article><article class="example example-like" id="example-32"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-32"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.3.2</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-32"><article class="example example-like"><p id="p-1128">Let \(V=\R^2\) and let</p>
+<div class="displaymath">
+\begin{equation*}
+W=\{(t,t)\in\R^2 \colon t\in\R\}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Prove that \(W\) is a subspace.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-37" id="solution-37"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-37"><div class="solution solution-like">
+<p id="p-1129">We must show properties (i)-(iii) hold for \(W\text{.}\)</p>
+<ol class="lower-roman">
+<li id="li-317"><p id="p-1130">The zero element of \(V\) is \(\boldzero=(0,0)\text{,}\) which is certainly of the form \((t,t)\text{.}\) Thus \(\boldzero\in W\text{.}\)</p></li>
+<li id="li-318">
+<p id="p-1131">We must prove the implication \(\boldv_1, \boldv_2\in W\Rightarrow \boldv_1+\boldv_2\in W\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\boldv_1,\boldv_2\in W\amp \Rightarrow\amp  \boldv_1=(t,t), \boldv_2=(s,s) \text{ for some \(t,s\in\R\) }\\
+\amp \Rightarrow\amp \boldv_1+\boldv_2=(t+s,t+s)\\
+\amp \Rightarrow\amp \boldv_1+\boldv_2\in W\text{.}
+\end{align*}
+</div>
+</li>
+<li id="li-319">
+<p id="p-1132">We must prove the implication \(\boldv\in W\Rightarrow c\boldv\in W\text{,}\) for any \(c\in \R\text{.}\) We have</p>
+<div class="displaymath">
+\begin{align*}
+\boldv\in W\amp \Rightarrow\amp  \boldv=(t,t)\\
+\amp \Rightarrow\amp  c\boldv=(ct,ct)\\
+\amp \Rightarrow\amp  c\boldv\in W
+\end{align*}
+</div>
+</li>
+</ol>
+</div></div>
+</div></article></div>
+<article class="example example-like" id="example-33"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-33"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.3.3</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-33"><article class="example example-like"><p id="p-1133">Let \(V=\R^n\) and let</p>
+<div class="displaymath">
+\begin{equation*}
+W=\{(x,y)\in \R^2\colon x, y\geq 0\}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Is \(W\) a vector space? Decide which of the of properties (i)-(iii) in <a href="" class="xref" data-knowl="./knowl/d_subspace.html" title="Definition 4.3.1: Subspace">Definition 4.3.1</a> (if any) are satisfied by \(W\text{.}\)</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-38" id="solution-38"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-38"><div class="solution solution-like"><ol class="lower-roman">
+<li id="li-320"><p id="p-1134">Clearly \(\boldzero=(0,0)\in W\text{.}\)</p></li>
+<li id="li-321"><p id="p-1135">Suppose \(\boldv_1=(x_1,y_1), \boldv_2=(x_2,y_2)\in W\text{.}\) Then \(x_1, x_2, y_1, y_2\geq 0\text{,}\) in which case \(x_1+x_2, y_1+y_2\geq 0\text{,}\) and hence \(\boldv_1+\boldv_2\in W\text{.}\) Thus \(W\) is closed under addition.</p></li>
+<li id="li-322"><p id="p-1136">The set \(W\) is <em class="emphasis">not</em> closed under scalar multiplication. Indeed, let \(\boldv=(1,1)\in W\text{.}\) Then \((-2)\boldv=(-2,-2)\notin W\text{.}\)</p></li>
+</ol></div></div>
+</div></article></div>
+<article class="remark remark-like" id="rm_twostep_proof"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">4.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">Two-step proof for subspaces.</span>
+</h4>
+<p id="p-1137">As with proofs regarding linearity of functions, we can merge conditions (ii)-(iii) of <a href="" class="xref" data-knowl="./knowl/d_subspace.html" title="Definition 4.3.1: Subspace">Definition 4.3.1</a> into a single statement about linear combinations, deriving the following two-step method for proving a set \(W\) is a subspace of a vector space \(V\text{:}\)</p>
+<ol class="lower-roman">
+<li id="li-323"><p id="p-1138">Show \(\boldzero_V\in W\)</p></li>
+<li id="li-324">
+<p id="p-1139">Show that</p>
+<div class="displaymath">
+\begin{equation*}
+\boldv_1, \boldv_2\in W\implies c\boldv_1+d\boldv_2\in W\text{,}
+\end{equation*}
+</div>
+<p class="continuation">for all \(c,d\in\R\text{.}\)</p>
+</li>
+</ol></article><article class="remark remark-like" id="rm_subspace_is_vectorspace"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">4.3.5</span><span class="period">.</span><span class="space"> </span><span class="title">Subspaces are vector spaces.</span>
+</h4>
+<p id="p-1140">If \(W\) is a subspace of a vector space \(V\text{,}\) then it <em class="emphasis">inherits</em> a vector space structure from \(V\) by simply  <em class="emphasis">restricting</em> the vector operations defined on \(V\) to the subset \(W\text{.}\)</p>
+<p id="p-1141">It is important to understand how conditions (ii)-(iii) of <a href="" class="xref" data-knowl="./knowl/d_subspace.html" title="Definition 4.3.1: Subspace">Definition 4.3.1</a> come into play here. Without them we would not be able to say that restricting the vector operations of \(V\) to elements of \(W\) actually gives rise to well-defined operations on \(W\text{.}\) To be well-defined the operations must output elements that lie not just in \(V\text{,}\) but in \(W\) itself. This is precisely what being closed under addition and scalar multiplication guarantees.</p>
+<p id="p-1142">Once we know restriction gives rise to well-defined operations on \(W\text{,}\) verifying the axioms of  <a href="" class="xref" data-knowl="./knowl/d_vector_space.html" title="Definition 4.1.1: Vector space">Definition 4.1.1</a> mostly amounts to observing that if a condition is true for all \(\boldv\) in \(V\text{,}\) it is certainly true for all \(\boldv\) in the subset \(W\text{.}\)</p>
+<p id="p-1143">The “existential axioms” (iii) and (iv) of <a href="" class="xref" data-knowl="./knowl/d_vector_space.html" title="Definition 4.1.1: Vector space">Definition 4.1.1</a>, however, require special consideration. By definition, a subspace \(W\) contains the zero vector of \(V\text{,}\) and clearly this still acts as the zero vector when we restrict the vector operations to \(W\text{.}\) What about vector inverses? We know that for any \(\boldv\in W\) there is a vector inverse \(-\boldv\) lying somewhere in \(V\text{.}\) We must show that in fact \(-\boldv\) lies in \(W\text{:}\) i.e. we need to show that the operation of taking the vector inverse is well-defined on \(W\text{.}\) We prove this as follows:</p>
+<div class="displaymath">
+\begin{align*}
+\boldv\in W \amp\implies (-1)\boldv\in W \amp (\knowl{./knowl/d_subspace.html}{\text{Definition 4.3.1}}, \text{(iii) } )\\
+\amp\implies -\boldv\in W \amp (\knowl{./knowl/th_vectorspace_props.html}{\text{Theorem 4.1.13}}, (iii)) \text{.}
+\end{align*}
+</div></article><p id="p-1144">We now know how to determine whether a given subset of a vector space is in fact a subspace. We are also interested in means of constructing subspaces from some given ingredients. The result below tells us that taking the intersection of a given collection of subspaces results in a subspace. In <a href="s_subspace.html#ss_nullspace_image" class="internal" title="Subsection 4.3.3: Null space and image of a linear transformation">Subsection 4.3.3</a> we see how a linear transformation automatically gives rise to two subspaces.</p>
+<article class="theorem theorem-like" id="th_subspace_intersection"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.3.6</span><span class="period">.</span><span class="space"> </span><span class="title">Intersection of subspaces.</span>
+</h4>
+<p id="p-1145">Let \(V\) be a vector space, and suppose \(W_1,W_2,\dots, W_r\) are each subspaces of \(V\text{.}\) Then the intersection</p>
+<div class="displaymath">
+\begin{equation*}
+W=W_1\cap W_2\cdots \cap W_r\text{.}
+\end{equation*}
+</div></article><article class="hiddenproof" id="proof-49"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-49"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-49"><article class="hiddenproof"><p id="p-1146">Exercise.</p></article></div>
+<article class="remark remark-like" id="rm_subspace_union"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">4.3.7</span><span class="period">.</span><span class="space"> </span><span class="title">Unions of subspaces.</span>
+</h4>
+<p id="p-1147">While the intersection of subspaces is again a subspace, the same is not true for unions of subspaces.</p>
+<p id="p-1148">For example, take \(V=\R^2\text{,}\) \(W_1=\{(t,t)\colon t\in\R\}\) and \(W_2=\{(t,-t)\colon t\in\R\}\text{.}\) Then each \(W_i\) is a subspace, but their union \(W_1\cup W_2\) is not.</p>
+<p id="p-1149">Indeed, observe that \(\boldw_1=(1,1)\in W_1\subset W_1\cup W_2\) and \(\boldw_2=(1,-1)\in W_2\subset W_1\cup W_2\text{,}\) but \(\boldw_1+\boldw_2=(2,0)\notin W_1\cup W_2\text{.}\) Thus \(W_1\cup W_2\) is not closed under addition. (Interestingly, it is closed under scalar multiplication.)</p></article></section><section class="subsection" id="ss_subspace_functions"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.3.2</span> <span class="title">Important subspaces of \(F(X,\R)\)</span>
+</h3>
+<p id="p-1150">Let \(X\) be an <em class="emphasis">nondegenerate</em> interval of \(\R\text{:}\) i.e., an interval containing at least two elements. Recall that \(F(X,\R)\) is the set of <em class="emphasis">all</em> functions from \(X\) to \(\R\text{.}\) This is a pretty unwieldy vector space, containing some pathological characters, and when studying functions on an interval we will often restrict our attention to certain more well-behaved subsets: e.g., continuous, differentiable, or infinitely differentiable functions. Not surprisingly, these subsets turn out to be subspaces of \(F(X,\R)\text{.}\)</p>
+<article class="definition definition-like" id="d_subspace_functions"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.3.8</span><span class="period">.</span>
+</h4>
+<p id="p-1151">Let \(X\subseteq \R\) be a nondegenerate interval.</p>
+<ol class="decimal">
+<li id="li-325">
+<p id="p-1152">We denote by \(C(X)\) the set of all continuous functions on \(X\text{:}\) i.e.,</p>
+<div class="displaymath">
+\begin{equation*}
+C(X)=\{f\in F(X,\R)\colon f \text{ is continuous on } X\}\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-326"><p id="p-1153">Fix \(n\geq 1\text{.}\) A function \(f\in F(X,\R)\) is <dfn class="terminology">\(C^n\) on X</dfn> if \(f\) is \(n\)-times differentiable on \(X\) and its \(n\)-th derivative \(f^{(n)}(x)\) is continuous. The set of all \(C^n\) functions on \(X\) is denoted \(C^n(X)\text{.}\)</p></li>
+<li id="li-327"><p id="p-1154">A function \(f\in F(X,\R)\) is <dfn class="terminology">\(C^\infty\) on X</dfn> if \(f\) is infinitely differentiable on \(X\text{.}\) The set of all \(C^\infty\) functions on \(X\) is denoted \(C^\infty(X)\text{.}\)</p></li>
+<li id="li-328">
+<p id="p-1155">A <dfn class="terminology">polynomial on \(X\)</dfn> is a function \(f\colon X\rightarrow \R\) of the form \(f(x)=\anpoly\text{,}\) where \(a_i\in \R\) and \(a_n\ne 0\text{.}\) We call \(n\) the <dfn class="terminology">degree of f</dfn>, denoted \(\deg f=n\text{;}\) and we call \(a_n\) the <dfn class="terminology">leading term of \(f\)</dfn>.</p>
+<p id="p-1156">The set of polynomials of degree at most \(n\) on \(X\) is denoted \(P_n(X)\text{;}\) the set of all polynomials on \(X\) is denoted \(P(X)\text{.}\) When \(X=\R\text{,}\) we shorten the notation to \(P_n\) and \(P\text{.}\)</p>
+</li>
+</ol></article><article class="theorem theorem-like" id="th_subspace_functions"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.3.9</span><span class="period">.</span>
+</h4>
+<p id="p-1157">Let \(X\subseteq \R\) be an interval. The sets \(C(X), C^n(X), C^\infty(X), P_n(X), P(X)\) are all subspaces of \(F(X,\R)\text{.}\) Thus we have the following chain of subspaces:</p>
+<div class="displaymath">
+\begin{equation*}
+P_n(X)\subseteq P(X)\subseteq C^\infty(X)\subseteq C^n(X)\subseteq C(X)\subseteq F(X,\R)\text{.}
+\end{equation*}
+</div></article><article class="hiddenproof" id="proof-50"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-50"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-50"><article class="hiddenproof"><p id="p-1158">The proof amounts to the following observations:</p>
+<ul class="disc">
+<li id="li-329"><p id="p-1159">The zero function \(0_X\colon X\rightarrow \R\) is an element of all of these sets: i.e. the zero function is continuous, \(C^n\text{,}\) \(C^\infty\text{,}\) a polynomial, etc..</p></li>
+<li id="li-330"><p id="p-1160">If \(f\) and \(g\) both satisfy one of these properties (continuous, \(C^n\text{,}\) \(C^\infty\text{,}\) polynomial, etc.), then so does \(cf+dg\) for any \(c,d\in \R\text{.}\)</p></li>
+</ul>
+<p class="continuation">The second, “closed under linear combinations” observation is easily seen for \(P(X)\) and \(P_n(X)\) (i.e., the sum of two polynomials of degree at most \(n\) is clearly a polynomial of degree at most \(n\)); for the other spaces, this is a result of calculus properties to the effect that adding and scaling functions preserves continuity and differentiability.</p>
+<p id="p-1161">Lastly, that each subset relation holds in the given chain follows from similar observations: polynomials are infinitely differentiable, differentiable functions are continuous, etc..</p></article></div>
+<article class="remark remark-like" id="rm_polynomial_equality"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">4.3.10</span><span class="period">.</span><span class="space"> </span><span class="title">Polynomial equality.</span>
+</h4>
+<p id="p-1162">An important fact that we will make frequent use of is that for two polynomials \(f(x)=\anpoly\) and \(g(x)=\bmpoly\) of degree \(n\) and \(m\text{,}\)respectively,  we have \(f(x)=g(x)\) on an interval \(X\) if and only if (1) \(n=m\text{,}\) and (2) \(a_i=b_i\) for all \(0\leq i\leq n\text{.}\)</p>
+<p id="p-1163">In particular, we have \(f(x)=\boldzero\) (the zero function) on \(X\) if and only if \(a_i=0\) for all \(1\leq i\leq n\text{.}\)</p></article><p id="p-1164">With this new wealth of function spaces comes a family of linear transformations, <em class="emphasis">differential operators</em>, and these serve as important tools for studying properties of continuous and differentiable functions.</p>
+<article class="remark remark-like" id="rm_subspaces_derivatives"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">4.3.11</span><span class="period">.</span><span class="space"> </span><span class="title">Differential operators.</span>
+</h4>
+<p id="p-1165">Let \(X\subseteq \R\) be an interval. Define \(T_1\colon C^1(X)\rightarrow C(X)\) as \(T_1(f)=f'\text{:}\) i.e., \(T_1\) takes as input a \(C^1\) function on the interval \(X\text{,}\) and returns its (first) derivative. Note that the definition of \(C^1\) ensures that \(f'\) exists and is continuous on \(X\text{:}\) hence \(f'
+\in C(X)\text{,}\) as claimed.</p>
+<p id="p-1166">The operator \(T_1\) is a linear transformation. Indeed, given \(c,d\in \R\) and \(f,g\in C^1(X)\text{,}\) we have</p>
+<div class="displaymath">
+\begin{align*}
+T_1(cf+dg)   \amp = (cf+dg)' \amp \text{(by def.)} \\
+\amp =(cf)'+(dg)' \amp \text{(derivative prop.)} \\
+\amp =cf'+dg' \amp \text{(derivative prop.)}\\
+\amp = cT_1(f)+dT_1(g)\text{.}
+\end{align*}
+</div>
+<p id="p-1167">Since taking \(n\)-th derivatives amounts to <em class="emphasis">composing</em> the derivative operator \(T_1\) with itself \(n\) times, it follows from <a href="" class="xref" data-knowl="./knowl/th_transform_composition.html" title="Theorem 4.2.22: Composition of linear transformations">Theorem 4.2.22</a> that for any \(n\geq 1\) the  map</p>
+<div class="displaymath">
+\begin{align*}
+T_n\colon C^n(X) \amp \rightarrow C(X) \\
+f \amp\mapsto f^{(n)} \text{,}
+\end{align*}
+</div>
+<p class="continuation">which takes a function \(f\) to its \(n\)-th derivative, is also linear. (Note that we are careful to pick the domain \(C^n(X)\) to guarantee this operation is well-defined!)</p>
+<p id="p-1168">Lastly, by <a href="" class="xref" data-knowl="./knowl/ex_transformation_add_scale.html" title="Exercise 4.2.6.10: Adding and scaling linear transformations">Exercise 4.2.6.10</a>, we can add and scale these various operators to obtain more general linear transformations of the form</p>
+<div class="displaymath">
+\begin{equation*}
+T(f)=c_nf^{(n)}+c_{n-1}f^{(n-1)}+\cdots c_1f'+c_0f\text{.}
+\end{equation*}
+</div>
+<p class="continuation">We call such a function a <em class="emphasis">linear differential operator</em>. Understanding the linear algebraic properties of these operators is crucial to the theory of linear differential equations, as <a href="" class="xref" data-knowl="./knowl/eg_diff_eq_ex.html" title="Example 4.3.23: A differential equation">Example 4.3.23</a> illustrates.</p></article></section><section class="subsection" id="ss_nullspace_image"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.3.3</span> <span class="title">Null space and image of a linear transformation</span>
+</h3>
+<p id="p-1169">Before looking at more examples, we first show how a linear transformation \(T\colon V\rightarrow W\) gives rise to two different subspaces: one insides \(V\text{,}\) and the other inside \(W\text{.}\) These are called the <em class="emphasis">null space</em> and <em class="emphasis">image</em> of \(T\text{,}\) respectively.</p>
+<article class="definition definition-like" id="d_nullspace_image"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.3.12</span><span class="period">.</span><span class="space"> </span><span class="title">Null space and image.</span>
+</h4>
+<p id="p-1170">Let \(T\colon V\rightarrow W\) be a linear transformation.</p>
+<ol class="decimal">
+<li id="li-331">
+<span class="heading"><span class="title">Null space.</span></span><p id="p-1171">The <dfn class="terminology">null space</dfn> of \(T\text{,}\) denoted \(\NS T\text{,}\) is defined as</p>
+<div class="displaymath">
+\begin{equation*}
+\NS T=\{\boldv\in V\colon T(\boldv)=\boldzero_W\}\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-332">
+<span class="heading"><span class="title">Image.</span></span><p id="p-1172">The <dfn class="terminology">image</dfn> (or <dfn class="terminology">range</dfn>) of \(T\text{,}\) denoted \(\im T\text{,}\) is defined as</p>
+<div class="displaymath">
+\begin{equation*}
+\im T=\{\boldw\in W\colon \boldw=T(\boldv) \text{ for some }  \boldv\in V \}\text{.}
+\end{equation*}
+</div>
+</li>
+</ol></article><article class="remark remark-like" id="rm_nullspace_image"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">4.3.13</span><span class="period">.</span>
+</h4>
+<p id="p-1173">A few remarks:</p>
+<ol class="decimal">
+<li id="li-333"><p id="p-1174">Let \(T\colon V\rightarrow W\text{.}\) It is useful to keep in mind where \(\NS T\) and \(\im T\) “live” in this picture: we have \(\NS T\subseteq V\) and \(\im T\subseteq W\text{.}\) In other words, the null space is a subset of the domain, and the image is a subset of the codomain.</p></li>
+<li id="li-334"><p id="p-1175">Note that the image \(\im T\) of a linear transformation is just its image when considered simply as a function of sets. (See <a href="" class="xref" data-knowl="./knowl/d_image.html" title="Definition 1.1.18: Image of a set">Definition 1.1.18</a>.)</p></li>
+<li id="li-335">
+<p id="p-1176">The notion of a null space is analogous to the set of zeros (or roots) of a real-valued function \(f\colon X\rightarrow \R\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\{x\in X\colon f(x)=0\}\text{,}
+\end{equation*}
+</div>
+<p class="continuation">and “the zeros of \(T\)” is a useful English shorthand for \(\NS T\text{.}\) However, there is an important difference between the null space of a linear transformation and the zeros of an arbitrary real-valued function: the null space of a linear transformation comes with the added structure of a vector space (<a href="" class="xref" data-knowl="./knowl/th_nullspace_image.html" title="Theorem 4.3.14: Null space and image">Theorem 4.3.14</a>), whereas the zeros of an arbitrary function in general do not.</p>
+<p id="p-1177">The same observation can be made about the image of a linear transformation (<a href="" class="xref" data-knowl="./knowl/th_nullspace_image.html" title="Theorem 4.3.14: Null space and image">Theorem 4.3.14</a>), in comparison to the image of an arbitrary function.</p>
+</li>
+</ol></article><article class="theorem theorem-like" id="th_nullspace_image"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.3.14</span><span class="period">.</span><span class="space"> </span><span class="title">Null space and image.</span>
+</h4>
+<p id="p-1178">If \(T\colon V\rightarrow W\) is a linear transformation, then \(\NS T\) is a subspace of \(V\text{,}\) and \(\im T\) is a subspace of \(W\text{.}\)</p></article><article class="hiddenproof" id="proof-51"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-51"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-51"><article class="hiddenproof"><article class="case" id="case-83"><h5 class="heading">Null space of \(T\).</h5>
+<p id="p-1179">We use the two-step technique to prove \(\NS T\) is a subspace.</p>
+<ol class="decimal">
+<li id="li-336"><p id="p-1180">Since \(T(\boldzero_V)=\boldzero_W\) (<a href="" class="xref" data-knowl="./knowl/th_trans_props.html" title="Theorem 3.2.11: Properties of matrix transposition">Theorem 3.2.11</a>), we see that \(\boldzero_V\in \NS T\text{.}\)</p></li>
+<li id="li-337">
+<p id="p-1181">Suppose \(\boldv_1, \boldv_2\in \NS T\text{.}\) Given any \(c,d\in \R\text{,}\) we have</p>
+<div class="displaymath">
+\begin{align*}
+T(c\boldv_1+d\boldv_2) \amp=cT(\boldv_1)+dT(\boldv_2) \amp (T \text{ is linear, } \knowl{./knowl/th_trans_props.html}{\text{Theorem 3.2.11}})\\
+\amp=c\boldzero_W+d\boldzero_W \amp (\boldv_1, \boldv_2\in \NS T) \\
+\amp = \boldzero_W\text{.}
+\end{align*}
+</div>
+<p class="continuation">This shows that \(c\boldv_1+d\boldv_2\in \NS T\text{,}\) completing our proof.</p>
+</li>
+</ol></article><article class="case" id="case-84"><h5 class="heading">Image of \(T\).</h5>
+<p id="p-1182">The proof proceeds in a similar manner.</p>
+<ol class="decimal"><li id="li-338"><p id="p-1183">Since \(T(\boldzero_V)=\boldzero_W\) (<a href="" class="xref" data-knowl="./knowl/th_trans_props.html" title="Theorem 3.2.11: Properties of matrix transposition">Theorem 3.2.11</a>), we see that \(\boldzero_W\) is “hit” by \(T\text{,}\) and hence is a member of \(\im T\text{.}\)</p></li></ol></article></article></div>
+<p id="p-1184">Recall that a function \(f\colon X\rightarrow Y\) is surjective if \(\im f=f(X)=Y\text{.}\) (See <a href="" class="xref" data-knowl="./knowl/d_injective_surjective_bijective.html" title="Definition 1.1.19: Injective, surjective, bijective">Definition 1.1.19</a>.) Thus the subspace \(\im T\) of a linear transformation \(T\) is a measure of sorts of the transformation being surjective or not. The next theorem indicates how the null space can be understood as a measure of a transformation being injective (one-to-one) or not. (See <a href="" class="xref" data-knowl="./knowl/d_injective_surjective_bijective.html" title="Definition 1.1.19: Injective, surjective, bijective">Definition 1.1.19</a>.)</p>
+<article class="theorem theorem-like" id="th_nullspace_injective"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.3.15</span><span class="period">.</span><span class="space"> </span><span class="title">Nullspace and injectivity.</span>
+</h4>
+<p id="p-1185">Let \(T\colon V\rightarrow W\) be a linear transformation. The following are equivalent:</p>
+<ol class="decimal">
+<li id="li-339"><p id="p-1186">\(T\) is injective (i.e., one-to-one);</p></li>
+<li id="li-340"><p id="p-1187">\(\NS T=\{\boldzero\}\text{.}\)</p></li>
+</ol> In fact, we have<div class="displaymath">
+\begin{equation}
+T(\boldv)=T(\boldv') \iff \boldv'=\boldv+\boldu \text{ for some } \boldu\in \NS T\label{eq_nullspace_injective}\tag{4.3.1}
+\end{equation}
+</div></article><article class="hiddenproof" id="proof-52"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-52"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-52"><article class="hiddenproof"><article class="case" id="case-85"><h5 class="heading">Implication: \((1)\implies (2)\).</h5>
+<p id="p-1188">In general we always have \(\{\boldzero\}\subseteq \NS T\) for a linear transformation \(T\text{.}\) If \(T\) is injective, this inclusion is an equality since</p>
+<div class="displaymath">
+\begin{align*}
+\boldv\in\NS T \amp \iff T(\boldv)=\boldzero \amp (\text{def. } \NS T)\\
+\amp \implies T(\boldv)=T(\boldzero)\\
+\amp \implies \boldv=\boldzero \amp (T \text{ injective})\text{.}
+\end{align*}
+</div></article><article class="case" id="case-86"><h5 class="heading">Implication: \((2)\implies (1)\).</h5>
+<p id="p-1189">This implication is a consequence of the equivalence in <a href="" class="xref" data-knowl="./knowl/eq_nullspace_injective.html" title="Equation 4.3.1">(4.3.1)</a>. Indeed assuming <a href="" class="xref" data-knowl="./knowl/eq_nullspace_injective.html" title="Equation 4.3.1">(4.3.1)</a>, we have</p>
+<div class="displaymath">
+\begin{align*}
+T(\boldv)=T(\boldv') \amp\iff \boldv'=\boldv+\boldu \text{ for some } \boldu\in \NS T \\
+\amp\implies \boldv'=\boldv+\boldzero \amp (\NS T=\{\boldzero\}) \\
+\amp\implies \boldv=\boldv' \text{,}
+\end{align*}
+</div>
+<p class="continuation">as desired. Thus it remains only to prove <a href="" class="xref" data-knowl="./knowl/eq_nullspace_injective.html" title="Equation 4.3.1">(4.3.1)</a>. We do so via a chain of equivalences:</p>
+<div class="displaymath">
+\begin{align*}
+T(\boldv)=T(\boldv') \amp \iff T(\boldv')-T(\boldv)=\boldzero\\
+\amp \iff T(\boldv'-\boldv)=\boldzero \amp (T \text{ is linear})\\
+\amp \iff \boldu=\boldv'-\boldv\in\NS T \amp (\text{def. } \NS T)\\
+\amp \iff \boldv'=\boldv+\boldu \text{ for some } \boldu\in\NS T \text{.}
+\end{align*}
+</div></article></article></div>
+<article class="remark remark-like" id="remark-54"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">4.3.16</span><span class="period">.</span>
+</h4>
+<p id="p-1190">To determine whether a function of sets \(f\colon X\rightarrow Y\) is injective, we normally have show that <em class="emphasis">for each</em> output \(y\) in the range of \(f\) there is exactly one input \(x\) satisfying \(f(x)=y\text{.}\) Think of this as checking injectivity at every output. <a href="" class="xref" data-knowl="./knowl/th_nullspace_injective.html" title="Theorem 4.3.15: Nullspace and injectivity">Theorem 4.3.15</a> tells us that in the special case of a linear transformation \(T\colon V\rightarrow W\) it is enough to check injectivity at exactly one ouput: namely, \(\boldzero\in W\text{.}\)</p>
+<p id="p-1191">To see that this is a special property of linear transformations, consider the function</p>
+<div class="displaymath">
+\begin{align*}
+f\colon \R \amp \rightarrow \R\\
+x \amp\mapsto f(x)=(x-1)^2 \text{.}
+\end{align*}
+</div>
+<p class="continuation">The function is injective at the output \(0=f(1)\text{,}\) but not injective in general.</p></article><p id="p-1192"><a href="" class="xref" data-knowl="./knowl/th_nullspace_image.html" title="Theorem 4.3.14: Null space and image">Theorem 4.3.14</a> provides us a with a useful indirect way of proving a subset \(W\subseteq V\) is a subspace: namely, find a linear transformation $T$ for which \(W=\NS T\text{.}\) (You could also identify \(W=\im T\) for some linear transformation \(T\text{,}\) but this approach tends to be not as convenient.</p>
+<article class="example example-like" id="example-34"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-34"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.3.17</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-34"><article class="example example-like"><p id="p-1193">Prove that the set \(W\subseteq\R^3\) of all vectors \((x,y,z)\) satisfying \(x+2y+3z=x-y-z=0\) is a subspace of \(\R^3\text{.}\)</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-39" id="solution-39"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-39"><div class="solution solution-like">
+<p id="p-1194">Let</p>
+<div class="displaymath">
+\begin{equation*}
+A=\begin{bmatrix}1\amp 2\amp 3\\ 1\amp -1\amp -1 \end{bmatrix}\text{,}
+\end{equation*}
+</div>
+<p class="continuation">and let</p>
+<div class="displaymath">
+\begin{align*}
+T_A\colon \R^3 \amp\rightarrow \R^2 \\
+(x,y,z)\amp\mapsto (x+2y+3z, x-y-z) 
+\end{align*}
+</div>
+<p class="continuation">be its associated linear transformation. Then</p>
+<div class="displaymath">
+\begin{align*}
+\NS T_A \amp =\{(x,y,z)\in\R^3\colon T_A(x,y,z)=(0,0)\} \\
+\amp = \{(x,y,z)\in\R^3\colon (x+2y+3z,x-y-z)=(0,0)\} \\
+\amp = \{(x,y,z)\in\R^3\colon x+2y+3z=x-y-z=0\}\\
+\amp = W\text{.}
+\end{align*}
+</div>
+<p class="continuation">This shows that \(W\) can be identified as the null space of a linear transformation, and hence is a subspace of \(\R^3\text{.}\)</p>
+</div></div>
+</div></article></div>
+<article class="remark remark-like" id="rm_lines_planes"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">4.3.18</span><span class="period">.</span><span class="space"> </span><span class="title">Lines and planes.</span>
+</h4>
+<p id="p-1195">Recall that a line \(\ell\) in \(\R^2\) that <em class="emphasis">passes through the origin</em> can be expressed as the set of solutions \((x_1,x_2)\in\R^2\) to an equation of the form</p>
+<div class="displaymath">
+\begin{equation*}
+\ell\colon  ax_1+bx_2=0\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Similarly, a plane \(\mathcal{P}\) in \(\R^3\) that <em class="emphasis">passes through the origin</em> can be expressed as the the set of solutions \((x_1,x_2,x_3)\) to an equation of the form</p>
+<div class="displaymath">
+\begin{equation*}
+\mathcal{P}\colon ax_1+bx_2+cx_3=0\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Using the language of linear algebra, we see that the line \(\ell\) is precisely \(\NS T_A\text{,}\) where \(\underset{1\times 2}{A}=\begin{bmatrix} a \amp b\end{bmatrix}\text{;}\) and the plane \(\mathcal{P}\) is precisely \(\NS T_B\text{,}\) where \(\underset{1\times 3}{B}=\begin{bmatrix}a\amp b\amp c\end{bmatrix}\text{.}\) We conclude from <a href="" class="xref" data-knowl="./knowl/th_nullspace_image.html" title="Theorem 4.3.14: Null space and image">Theorem 4.3.14</a> that lines in \(\R^2\text{,}\) and planes in \(\R^3\text{,}\) are subspaces, <em class="emphasis">as long as they pass through the origin</em>.</p>
+<p id="p-1196">On the other hand, a line or plane that does <em class="emphasis">not</em> pass through the origin is not a subspace, since it does not contain the zero vector.</p>
+<p id="p-1197">The question arises: Can we describe <em class="emphasis">all</em> the subspaces of \(\R^2\) or \(\R^3\text{?}\) The answer is yes, as we will see in <a href="s_basis_dimension.html" class="internal" title="Section 4.5: Bases and dimension">Section 4.5</a></p></article><article class="definition definition-like" id="d_symmetric_skewsymmetric"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.3.19</span><span class="period">.</span><span class="space"> </span><span class="title">Symmetric and skew-symmetric matrices.</span>
+</h4>
+<p id="p-1198">A matrix \(A\in M_{nn}\) is <dfn class="terminology">symmetric</dfn> if \(A^T=A\text{.}\) It is <dfn class="terminology">skew-symmetric</dfn> if \(A^T=-A\text{.}\)</p></article><article class="example example-like" id="eg_symmetric_skesymmetric_subspace"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_symmetric_skesymmetric_subspace"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.3.20</span><span class="period">.</span><span class="space"> </span><span class="title">Vector spaces of symmetric/skew-symmetric matrices.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_symmetric_skesymmetric_subspace"><article class="example example-like"><p id="p-1199">Let \(V=M_{nn}\text{,}\) let \(W_1\) be the set of all symmetric \(n\times n\) matrices, and let \(W_2\) be the set of all skew-symmetric \(n\times n\) matrices. Prove that \(W_1\) and \(W_2\) are subspaces of \(V\text{.}\)</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-40" id="solution-40"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-40"><div class="solution solution-like">
+<p id="p-1200">Define functions \(T_i\colon M_{nn}\rightarrow M_{nn}\text{,}\) \(i=1,2\text{,}\) as follows:</p>
+<div class="displaymath">
+\begin{align*}
+T_1(A) \amp = A^T-A \\
+T_2(A)\amp = A^T+A\text{.}
+\end{align*}
+</div>
+<p class="continuation">Firstly, it is easy to see, using <a href="" class="xref" data-knowl="./knowl/th_trans_props.html" title="Theorem 3.2.11: Properties of matrix transposition">Theorem 3.2.11</a> that both \(T_1\) and \(T_2\) are both linear transformations. For example, for \(T_1\) we have</p>
+<div class="displaymath">
+\begin{align*}
+T_1(cA+dB) \amp=(cA+dB)^T-(cA+dB) \\
+\amp=cA^T+dB^T-cA-cB \\
+\amp = c(A^T-A)+d(B^T-B)\\
+\amp = cT_1(A)+dT_1(B)\text{.}
+\end{align*}
+</div>
+<p class="continuation">As similar proof applies to \(T_2\text{.}\)</p>
+<p id="p-1201">Next, it is easy to see that \(W_1=\NS T_1\) and \(W_2=\NS T_2\text{.}\) Taking \(W_1\) for example, we have</p>
+<div class="displaymath">
+\begin{align*}
+A \text{ symmetric} \amp\iff A^T=A \\
+\amp\iff A^T-A=\boldzero_{n\times n} \\
+\amp \iff T_1(A)=\boldzero_{n\times n}\\
+\amp \iff A\in \NS T_1\text{.}
+\end{align*}
+</div>
+<p class="continuation">Having identified \(W_1\) and \(W_2\) as null spaces of linear transformations, we conclude that they are subspaces of \(M_{nn}\text{.}\)</p>
+</div></div>
+</div></article></div>
+<p id="p-1202">The next two examples illustrate how to compute the image of a given linear transformation \(T\colon V\rightarrow W\text{.}\) The examples make clear that computing images (i.e., determining the set of elements of \(W\) that are hit by \(T\)) is often more onerous than computing null spaces.</p>
+<article class="example example-like" id="ex_subspace_image"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex_subspace_image"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.3.21</span><span class="period">.</span><span class="space"> </span><span class="title">Image computation.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex_subspace_image"><article class="example example-like"><p id="p-1203">Let \(T=T_A\colon \R^2\rightarrow\R^3\text{,}\) where \(A=\begin{bmatrix}1\amp 1\\ 2\amp 1\\ 3\amp 5 \end{bmatrix}\text{.}\) According to <a href="" class="xref" data-knowl="./knowl/th_nullspace_image.html" title="Theorem 4.3.14: Null space and image">Theorem 4.3.14</a>, \(\im T_A\) is a subspace of \(\R^3\text{.}\) Identify this subspace as a familiar geometric object.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-41" id="solution-41"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-41"><div class="solution solution-like">
+<p id="p-1204">By definition \(\im T_A\) is the set</p>
+<div class="displaymath">
+\begin{equation*}
+\{\boldy\in\R^3\colon \boldy=T_A(\boldx) \text{ for some \(\boldx\in \R^3\) } \}=\left\{\boldy\colon \boldy=A\boldx \text{ for some \(\boldx\in\R^2\) } \right\}\text{.}
+\end{equation*}
+</div>
+<p id="p-1205">Thus to compute \(\im T_A\) we must determine which choice of \(\boldy=(a,b,c)\) makes the system \(A\boldx=\boldy\) consistent. We answer this using our old friend Gaussian elimination!</p>
+<div class="displaymath">
+\begin{align*}
+\begin{amatrix}[rr|r] 1\amp 1\amp a\\ 2\amp 1\amp b\\ 3\amp 5\amp c \end{amatrix} \amp \xrightarrow[r_3-3r_1]{r_2-2r_1} \begin{amatrix}[rr|r] 1\amp 1\amp a\\ 0\amp 1\amp 2a-b\\ 0\amp 0\amp -7a+2b+c \end{amatrix}\text{.}
+\end{align*}
+</div>
+<p class="continuation">To be consistent we need \(-7a+2b+c=0\text{.}\) We conclude that \(\im T\) is the set of all \((a,b,c)\) satisfying \(-7a+2b+c=0\text{.}\) Geometrically this is the plane passing through \((0,0,0)\) with normal vector \(\boldn=(-7,2,1)\text{.}\)</p>
+</div></div>
+</div></article></div>
+<article class="example example-like" id="example-37"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-37"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.3.22</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-37"><article class="example example-like"><p id="p-1206">Consider again the linear transformation \(T_1\colon M_{nn}\rightarrow M_{nn}\text{,}\) \(T_1(A)=A^T-A\text{,}\) from <a href="" class="xref" data-knowl="./knowl/eg_symmetric_skesymmetric_subspace.html" title="Example 4.3.20: Vector spaces of symmetric/skew-symmetric matrices">Example 4.3.20</a>. We saw that \(\NS T_1\) was the space of symmetric matrices. Identify \(\im T_1\) as a familiar subspace of \(M_{nn}\text{.}\)</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-42" id="solution-42"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-42"><div class="solution solution-like">
+<p id="p-1207">Take \(B\in \im T_1\text{.}\) By definition this means \(B=T(A)=A^T-A\) for some \(A\text{.}\) So one, somewhat unsatisfying way of describing \(\im T_1\) is as the set of all matrices of the form \(A^T-A\text{.}\)</p>
+<p id="p-1208">Let's investigate further. Notice that if \(B=A^T-A\text{,}\) then \(B^T=(A^T-A)^T=(A^T)^T-A^T=A-A^T=-B\text{.}\) Thus every element \(B\in \im T\) satisfies \(B^T=-B\text{:}\) i.e., all elements of the image are skew-symmetric!</p>
+<p id="p-1209">We claim further that in fact \(\im T_1\) is the the set of <em class="emphasis">all</em> skew-symmetric matrices. To prove this, we need to show that given a skew-symmetric matrix \(B\text{,}\) we have \(B\in \im T_1\text{:}\) i.e., that there is a matrix \(A\) such that \(T_1(A)=B\text{.}\)</p>
+<p id="p-1210">Suppose \(B\) satisfies \(B^T=-B\text{.}\) Let \(A=-\frac{1}{2}B\text{.}\) Then</p>
+<div class="displaymath">
+\begin{equation*}
+T_1(A)=T_1(-\frac{1}{2}B)=-\frac{1}{2}(B^T-B)=-\frac{1}{2}(-B-B)=B\text{.}
+\end{equation*}
+</div>
+<p id="p-1211">This shows that \(B\in \im T_1\text{,}\) and concludes the proof that \(\im T_1\) is the set of all skew-symmetric matrices.</p>
+</div></div>
+</div></article></div>
+<p id="p-1212">We end with an example that illustrates how the notions of linear transformation, null space, and image can be applied to differential equations.</p>
+<article class="example example-like" id="eg_diff_eq_ex"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_diff_eq_ex"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.3.23</span><span class="period">.</span><span class="space"> </span><span class="title">A differential equation.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_diff_eq_ex"><article class="example example-like"><p id="p-1213">Fix an interval \(X\subseteq \R\text{.}\) Let \(S\) be the set of functions of \(C^1(X)\) satisfying the differential equation</p>
+<div class="displaymath">
+\begin{equation}
+f'=f\text{:}\label{eq_diff_eq_ex}\tag{4.3.2}
+\end{equation}
+</div>
+<p class="continuation">i.e.,</p>
+<div class="displaymath">
+\begin{equation*}
+S=\{f\in C^1(\R)\colon f'(x)=f(x) \text{ for all } x\in X\}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Define \(T\colon C^1(X)\rightarrow C(X)\) as the differential operator \(T(f)=f'-f\text{.}\) We have</p>
+<div class="displaymath">
+\begin{align*}
+f\in S \amp\iff f'=f \\
+\amp\iff f'-f=\boldzero \\
+\amp\iff T(f)=\boldzero \\
+\amp \iff f\in \NS T\text{.}
+\end{align*}
+</div>
+<p class="continuation">Thus \(S=\NS T\text{,}\) and we see that the set of solutions to <a href="" class="xref" data-knowl="./knowl/eq_diff_eq_ex.html" title="Equation 4.3.2">(4.3.2)</a> has the structure of a subspace. That is helpful information for us. For example, since \(S=\NS T\) is closed under vector addition and scalar multiplication, we know that if \(f\) and \(g\) are solutions to <a href="" class="xref" data-knowl="./knowl/eq_diff_eq_ex.html" title="Equation 4.3.2">(4.3.2)</a>, then so is \(cf+dg\) for any \(c,d\in\R\text{.}\)</p>
+<p id="p-1214">It is an interesting exercise to try and understand what \(\im T\) means in terms of the given differential equation. By definition, \(\im T\) is the set of \(g\in C(X)\) such that \(g=T(f)=f'-f\text{,}\) for some \(f\in C^1(X)\text{.}\) In the language of differential equations, this is the set of all continuous functions \(g\in C(X)\) for which the differential equation</p>
+<div class="displaymath">
+\begin{equation*}
+f'-f=g
+\end{equation*}
+</div>
+<p class="continuation"><em class="emphasis">can be solved</em> for \(f\text{.}\)</p></article></div></section><section class="exercises" id="s_subspace_ex"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">4.3.4</span> <span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-113"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<p id="p-1215">Let \(V=\R^4\) and define</p>
+<div class="displaymath">
+\begin{equation*}
+W=\{(x_1,x_2,x_3,x_4)\colon x_1-x_4=x_2+x_3=x_1+x_2+x_3=0\}\text{.}
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-341"><p id="p-1216">Show \(W\) is a subspace by identifying it as \(\NS T\) for an explicit linear transformation \(T\text{.}\)</p></li>
+<li id="li-342"><p id="p-1217">Give a parametric description of \(\im W\text{.}\)</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-114"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<p id="p-1218">In each part below a subset \(W\) of \(\R^2\) is described. Sketch \(W\) as a region of \(\R^2\) and determine whether it is a  subspace of \(\R^2\text{.}\) Justify your answer either with a proof or explicit counterexample.</p>
+<ol class="lower-alpha">
+<li id="li-343"><p id="p-1219">Let \(W=\{(x,y)\in \R^2\colon 2x+3y=0\}\text{.}\)</p></li>
+<li id="li-344"><p id="p-1220">Let \(W=\{(x,y)\in \R^2\colon \val{x}\geq \val{y}\}\text{.}\)</p></li>
+<li id="li-345"><p id="p-1221">Let \(W=\{(x,y)\in \R^2\colon x^2+2y^2\leq 1\}\text{.}\)</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-115"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<p id="p-1222">Let \(n\geq 2\text{.}\) In each part below a subset \(W\) of \(M_{nn}\) is described. Determine whether the given \(W\) is a  subspace of \(M_{nn}\text{.}\) Justify your answer either with a proof or explicit counterexample.</p>
+<ol class="lower-alpha">
+<li id="li-346"><p id="p-1223">Let \(W\) be the set of all upper triangular \(n\times n\) matrices.</p></li>
+<li id="li-347"><p id="p-1224">Let \(W=\{A\in M_{nn}\colon \det A=0\}\text{.}\)</p></li>
+<li id="li-348"><p id="p-1225">Let \(W=\{A\in M_{nn}\colon \tr A=0\}\text{.}\) (See <a href="" class="xref" data-knowl="./knowl/ex_transformation_trace.html" title="Exercise 4.2.6.4: Trace">Exercise 4.2.6.4</a>.)</p></li>
+<li id="li-349">
+<p id="p-1226">Fix \(B\in M_{nn}\) and define</p>
+<div class="displaymath">
+\begin{equation*}
+W=\{A\in M_{nn} \colon AB=BA\}\text{.}
+\end{equation*}
+</div>
+</li>
+</ol></article><article class="exercise exercise-like" id="exercise-116"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<p id="p-1227">Let \(n\geq 1\text{.}\) In each part below a subset \(W\) of \(P_2\) is described. Determine whether the given \(W\) is a  subspace of \(P_2\text{.}\) Justify your answer either with a proof or explicit counterexample.</p>
+<ol class="lower-alpha">
+<li id="li-350"><p id="p-1228">Let \(\ds W=\{f(x)=ax^2+bx+c \colon c=0\}\text{.}\)</p></li>
+<li id="li-351"><p id="p-1229">Let \(\ds W=\{f(x)=ax^2+bx+c \colon abc=0\}\text{.}\)</p></li>
+<li id="li-352"><p id="p-1230">Let \(\ds W=\{f(x)\in P_2 \colon xf'(x)=f(x) \}\text{.}\)</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-117"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<p id="p-1231">In each part below a subset \(W\) of \(C(\R)\) is described. Determine whether the given \(W\) is a  subspace of \(C(\R)\text{.}\) Justify your answer either with a proof or explicit counterexample.</p>
+<ol class="lower-alpha">
+<li id="li-353"><p id="p-1232">Let \(W=\{f\in C(\R)\colon f(4)=0\} \text{.}\)</p></li>
+<li id="li-354"><p id="p-1233">Let \(W=\{f\in C(\R)\colon f(0)=4\} \text{.}\)</p></li>
+<li id="li-355"><p id="p-1234">Let \(W=\{f\in C(\R)\colon f(x)=f(-x)\} \text{.}\)</p></li>
+<li id="li-356"><p id="p-1235">Let \(W=\{f\in C(\R)\colon f(x+\pi)=f(x)\} \text{.}\)</p></li>
+<li id="li-357"><p id="p-1236">Let \(W=\{f\in C(\R)\colon f\in P \text{ and } \deg f=5\}. \)</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-118"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<p id="p-1237">Each function \(T\) below is linear. Give parametric descriptions of \(\NS T\) and \(\im T\text{.}\) To do so, you will want to relate each computation to a system of linear equations. (See <a href="" class="xref" data-knowl="./knowl/ex_subspace_image.html" title="Example 4.3.21: Image computation">Example 4.3.21</a> for an example of computing an image.)</p>
+<ol class="lower-alpha">
+<li id="li-358"><div class="displaymath" id="p-1238">
+\begin{align*}
+T\colon \R^4 \amp \rightarrow \R^3 \\
+(x,y,z,w)\amp\mapsto (x+z+w, x-y-z,-2x+y-w) \text{.}
+\end{align*}
+</div></li>
+<li id="li-359"><div class="displaymath" id="p-1239">
+\begin{align*}
+T\colon M_{22}\amp \rightarrow M_{22} \\
+A \amp\mapsto \begin{amatrix}[rr]1\amp 1\\ 1\amp 1  \end{amatrix}A \text{.}
+\end{align*}
+</div></li>
+<li id="li-360"><div class="displaymath" id="p-1240">
+\begin{align*}
+T\colon P_2\amp \rightarrow P_2 \\
+f \amp\mapsto f(x)+f'(x)\text{.}
+\end{align*}
+</div></li>
+</ol></article><article class="exercise exercise-like" id="exercise-119"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<p id="p-1241">In each part below a linear transformation \(T\) is given, and a claim is made about \(\im T\text{.}\) Prove the claim.</p>
+<ol class="lower-alpha">
+<li id="li-361">
+<div class="displaymath" id="p-1242">
+\begin{align*}
+T\colon \R^\infty \amp \rightarrow \R^\infty \\
+(a_1,a_2,\dots)\amp\mapsto (a_2,a_3,\dots) 
+\end{align*}
+</div>
+<p class="continuation">. Claim: \(\im T=\R^\infty\)</p>
+</li>
+<li id="li-362">
+<div class="displaymath" id="p-1243">
+\begin{align*}
+T\colon C(\R) \amp \rightarrow C(\R) \\
+f(x)\amp\mapsto g(x)=f(x)+f(-x)\text{.}
+\end{align*}
+</div>
+<p class="continuation">Claim: \(\im T\) is the set of all continuous symmetric polynomials. In other words,</p>
+<div class="displaymath">
+\begin{equation*}
+\im T=\{f\in C(x)\colon f(-x)=f(x)\}.
+\end{equation*}
+</div>
+</li>
+</ol></article><article class="exercise exercise-like" id="exercise-120"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<p id="p-1244">Prove <a href="" class="xref" data-knowl="./knowl/th_subspace_intersection.html" title="Theorem 4.3.6: Intersection of subspaces">Theorem 4.3.6</a>.</p></article></section></section></div></main>
+</div>
+</body>
+</html>

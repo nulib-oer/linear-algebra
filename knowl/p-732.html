@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-02-04T21:25:18Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<p>We claim that \(U\) and \(U'\) must both have a leading one in the last column. To see why, consider the matrix equation \(U\boldx=\boldzero\text{,}\) where \(\boldx=[x_j]\) is a \((n+1)\times 1 \) column vector. Since \(QU=U'\text{,}\) we have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+U\boldx=\boldzero \amp\implies QU\boldx=Q\boldzero  \\
+\amp\implies U'\boldx=\boldzero \amp (U'=QU) \text{,}
+\end{align*}
+</div>
+<p class="continuation">and thus</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+U\boldx=\boldzero\implies U\boldx-U'\boldx=\boldzero\implies (U-U')\boldx=\boldzero\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Because \(U\) and \(U'\) differ in at most their last column, the first \(n\) columns of \(U-U'\) are zero columns, and thus we have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation}
+(U-U')\boldx=[x_{n+1}(u_{i(n+1)}-u'_{i(n+1)})]=\boldzero\text{.}\tag{3.4.5}
+\end{equation}
+</div>
+<p class="continuation">Since \(U\ne U'\text{,}\) there is some \(1\leq i\leq m\) such that \(u_{i(n+1)}\ne u'_{i(n+1)}\text{.}\) Since \(x_{n+1}(u_{i(n+1)}-u'_{i(n+1)})=0\) by <a href="" class="xref" data-knowl="./knowl/eq_unique_rref.html" title="Equation 3.4.5">(3.4.5)</a>, we must have \(x_{n+1}=0\text{.}\) We have shown that for any \(\boldx=[x_j]\) satisfying \(U\boldx=\boldzero\text{,}\) we must have \(x_{n+1}=0\text{.}\) It follows from <a href="" class="xref" data-knowl="./knowl/th_solveSystem.html" title="Theorem 2.3.5: Solving linear systems">Theorem 2.3.5</a> that \(U\) must have a leading in its last column, since otherwise the variable \(x_{n+1}\) in the system \(U\boldx=0\) would be free, and could assume any value. To see that \(U'\) also has a leading one in the last column, we use the same argument, starting with the equation \(Q^{-1}U'=U\text{.}\)</p>
+<span class="incontext"><a href="s_invertibility_theorem.html#p-732">in-context</a></span>
+</body>
+</html>

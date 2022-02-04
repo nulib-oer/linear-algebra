@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-02-04T21:25:11Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span xmlns:svg="http://www.w3.org/2000/svg" class="space"> </span><span class="codenumber">3.1.21</span><span xmlns:svg="http://www.w3.org/2000/svg" class="period">.</span><span xmlns:svg="http://www.w3.org/2000/svg" class="space"> </span><span class="title">Row method of matrix multiplication.</span>
+</h4>
+<p>Let \(A=[a_{i}]_{m\times n}\) and \(B=[b_{ij}]_{n\times r}\text{.}\) The row method of matrix multiplication computes \(AB\) using the two steps below.</p>
+<dl xmlns:svg="http://www.w3.org/2000/svg" class="description-list">
+<dt>Step 1</dt>
+<dd>
+<p>Let \(\bolda_i\) be the \(i\)-th row of \(A\text{.}\) Then</p>
+<div class="displaymath">
+\begin{align*}
+AB\amp =\begin{bmatrix} \ - \bolda_1- \  \\ \ - \bolda_2- \  \\ \vdots \\ \ - \bolda_m- \  \end{bmatrix} B\\
+\amp = \begin{bmatrix}\ - \bolda_1B- \  \\ \ -\bolda_2B- \  \\ \vdots \\ \ -\bolda_mB - \ \end{bmatrix}\text{.}
+\end{align*}
+</div>
+</dd>
+<dt>Step 2</dt>
+<dd>
+<p>Let \(\boldb_i\) be the \(i\)-th row of \(B\text{.}\) Given <em class="emphasis">any</em> row vector \(\bolda=[a_{j}]_{1\times n}\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+\bolda\, B=\begin{bmatrix}a_1\amp a_2\amp \cdots \amp a_n \end{bmatrix} B= a_1\boldb_1+a_2\boldb_2+\cdots +a_n\boldb_n\text{.}
+\end{equation*}
+</div>
+</dd>
+</dl></article><article class="hiddenproof"><a href="" class="proof-knowl original" data-knowl="./knowl/proof-5-hidden.html" title="Proof 3.1.21.1"><h4 class="heading"><span class="type">Proof<span xmlns:svg="http://www.w3.org/2000/svg" class="period">.</span></span></h4></a></article><span class="incontext"><a href="s_matrix.html#th_row_method">in-context</a></span>
+</body>
+</html>

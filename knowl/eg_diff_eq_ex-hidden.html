@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-02-04T21:25:29Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="example example-like"><p>Fix an interval \(X\subseteq \R\text{.}\) Let \(S\) be the set of functions of \(C^1(X)\) satisfying the differential equation</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation}
+f'=f\text{:}\tag{4.3.2}
+\end{equation}
+</div>
+<p class="continuation">i.e.,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+S=\{f\in C^1(\R)\colon f'(x)=f(x) \text{ for all } x\in X\}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Define \(T\colon C^1(X)\rightarrow C(X)\) as the differential operator \(T(f)=f'-f\text{.}\) We have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+f\in S \amp\iff f'=f \\
+\amp\iff f'-f=\boldzero \\
+\amp\iff T(f)=\boldzero \\
+\amp \iff f\in \NS T\text{.}
+\end{align*}
+</div>
+<p class="continuation">Thus \(S=\NS T\text{,}\) and we see that the set of solutions to <a href="" class="xref" data-knowl="./knowl/eq_diff_eq_ex.html" title="Equation 4.3.2">(4.3.2)</a> has the structure of a subspace. That is helpful information for us. For example, since \(S=\NS T\) is closed under vector addition and scalar multiplication, we know that if \(f\) and \(g\) are solutions to <a href="" class="xref" data-knowl="./knowl/eq_diff_eq_ex.html" title="Equation 4.3.2">(4.3.2)</a>, then so is \(cf+dg\) for any \(c,d\in\R\text{.}\)</p>
+<p>It is an interesting exercise to try and understand what \(\im T\) means in terms of the given differential equation. By definition, \(\im T\) is the set of \(g\in C(X)\) such that \(g=T(f)=f'-f\text{,}\) for some \(f\in C^1(X)\text{.}\) In the language of differential equations, this is the set of all continuous functions \(g\in C(X)\) for which the differential equation</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+f'-f=g
+\end{equation*}
+</div>
+<p class="continuation"><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">can be solved</em> for \(f\text{.}\)</p></article></body>
+</html>

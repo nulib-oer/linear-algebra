@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-02-04T21:25:32Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span xmlns:svg="http://www.w3.org/2000/svg" class="space"> </span><span class="codenumber">4.4.7.1</span><span xmlns:svg="http://www.w3.org/2000/svg" class="period">.</span>
+</h4>
+<ol class="decimal">
+<li><p>This was shown in <a href="" class="xref" data-knowl="./knowl/eg_span_2space.html" title="Example 4.4.3: Examples in \(\R^2\)">Example 4.4.3</a></p></li>
+<li>
+<p>We must show, given any \(A=\begin{amatrix}[rr]a\amp b\\ c\amp d  \end{amatrix}\text{,}\) we can find \(c_1, c_2, c_3, c_4\in \R\) such that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+c_1A_1+c_2A_2+c_3A_3+c_4A_4=\begin{amatrix}[rr]a\amp b\\ c\amp d  \end{amatrix}\text{,}
+\end{equation*}
+</div>
+<p class="continuation">or</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{amatrix}[rr]c_1+c_2+c_4 \amp c_1-c_2+c_4\\
+c_1+c_3-c_4\amp c_1-c_3-c_4  \end{amatrix}
+=
+\begin{amatrix}[rr]a\amp b \\ c\amp d  \end{amatrix}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">We can find such \(c_i\) if and only if the system with augmented matrix</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{amatrix}[rrrr|r]
+1\amp 1\amp 0\amp 1\amp a\\
+1\amp -1\amp 0\amp 1\amp b \\
+1\amp 0\amp 1\amp -1\amp c\\
+1\amp 0\amp -1\amp -1\amp d
+\end{amatrix}
+\end{equation*}
+</div>
+<p class="continuation">is consistent. This matrix row reduces to</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{amatrix}[rrrr|r]
+\boxed{1}\amp 1\amp 0\amp 1\amp a\\
+0\amp \boxed{1}\amp 0\amp 0\amp \frac{a-b}{2} \\
+0\amp 0\amp \boxed{1}\amp -2\amp c-\frac{a+b}{2}\\
+0\amp 0\amp 0\amp \boxed{1}\amp \frac{a+b-c-d}{4}
+\end{amatrix}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Since the last column will never contain a leading one, we conclude that the system is consistent for any choice of \(a,b,c,d\text{,}\) and thus that \(\Span S=M_{22}\text{,}\) as claimed.</p>
+</li>
+<li>
+<p>We must show that given any \(p(x)=ax^2+bx+c\) we can find \(c_1,c_2,c_3\) such that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+c_1(x^2+x+1)+c_2(x^2-1)+c_3(x-1)=ax^2+bx+c\text{,}
+\end{equation*}
+</div>
+<p class="continuation">or</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+(c_1+c_2)x^2+(c_1+c_3)x+(c_1-c_2-c_3)=ax^2+bx+c\text{.}
+\end{equation*}
+</div>
+<p class="continuation">According to <a href="" class="xref" data-knowl="./knowl/rm_polynomial_equality.html" title="Remark 4.3.10: Polynomial equality">Remark 4.3.10</a> this equality is true if and only if</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{linsys}{3}
+c_1 \amp +\amp c_2 \amp  \amp \amp = \amp a\\
+c_1 \amp \amp \amp + \amp c_3 \amp = \amp b\\
+c_1 \amp -\amp c_2 \amp - \amp c_3 \amp = \amp c
+\end{linsys}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">As in the examples above, our reasoning implies  \(\Span S=P_2\) if and only if this system is consistent for <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">any</em> choice of \(a,b,c\text{.}\) Thus usual Gaussian elimination procedure tells us that this is indeed so. We leave the details to you.</p>
+</li>
+</ol>
+</div>
+<span class="incontext"><a href="s_span_independence.html#solution-44">in-context</a></span>
+</body>
+</html>

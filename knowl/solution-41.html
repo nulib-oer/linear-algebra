@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-02-04T21:25:29Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span xmlns:svg="http://www.w3.org/2000/svg" class="space"> </span><span class="codenumber">4.3.21.1</span><span xmlns:svg="http://www.w3.org/2000/svg" class="period">.</span>
+</h4>
+<p>By definition \(\im T_A\) is the set</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\{\boldy\in\R^3\colon \boldy=T_A(\boldx) \text{ for some \(\boldx\in \R^3\) } \}=\left\{\boldy\colon \boldy=A\boldx \text{ for some \(\boldx\in\R^2\) } \right\}\text{.}
+\end{equation*}
+</div>
+<p>Thus to compute \(\im T_A\) we must determine which choice of \(\boldy=(a,b,c)\) makes the system \(A\boldx=\boldy\) consistent. We answer this using our old friend Gaussian elimination!</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\begin{amatrix}[rr|r] 1\amp 1\amp a\\ 2\amp 1\amp b\\ 3\amp 5\amp c \end{amatrix} \amp \xrightarrow[r_3-3r_1]{r_2-2r_1} \begin{amatrix}[rr|r] 1\amp 1\amp a\\ 0\amp 1\amp 2a-b\\ 0\amp 0\amp -7a+2b+c \end{amatrix}\text{.}
+\end{align*}
+</div>
+<p class="continuation">To be consistent we need \(-7a+2b+c=0\text{.}\) We conclude that \(\im T\) is the set of all \((a,b,c)\) satisfying \(-7a+2b+c=0\text{.}\) Geometrically this is the plane passing through \((0,0,0)\) with normal vector \(\boldn=(-7,2,1)\text{.}\)</p>
+</div>
+<span class="incontext"><a href="s_subspace.html#solution-41">in-context</a></span>
+</body>
+</html>
