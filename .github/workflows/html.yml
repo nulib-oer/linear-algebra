@@ -44,9 +44,9 @@ jobs:
       # Runs a single command using the runners shell
       - name: Build HTML Files
         run: |
-          ls
-          pretext build pdf
-          pretext build html -d
+          pdf2svg --version
+          #pretext build pdf
+          #pretext build html -d
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
