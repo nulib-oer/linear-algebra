@@ -45,6 +45,7 @@ jobs:
       - name: Build HTML Files
         run: |
           xelatex --version
+          pdflatex --version
           pretext -v DEBUG build html -d
 
       - name: Deploy
