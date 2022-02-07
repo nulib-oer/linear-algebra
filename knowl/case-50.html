@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-04T21:25:20Z       *-->
+<!--*       on 2022-02-07T16:15:54Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -13,34 +13,34 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
+<body class="ignore-math">
 <article class="case"><h5 class="heading">Induction step.</h5>
-<p>Assume the claim is true of any \((n-1)\times (n-1)\) matrix.  Given \(A=[a_{ij}]_{n\times n}\) we have</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+<p>Assume the claim is true of any <span class="process-math">\((n-1)\times (n-1)\)</span> matrix.  Given <span class="process-math">\(A=[a_{ij}]_{n\times n}\)</span> we have</p>
+<div class="displaymath process-math">
 \begin{equation}
 \det A=\sum_{j=1}^n (-1)^{1+j}a_{1 j}\det  A_{1j}\text{.}\tag{3.5.1}
 \end{equation}
 </div>
-<p class="continuation">Expanding along the \(i\)-th row of \(A\) for any \(2\leq i\leq n\text{,}\) on the other hand, we get</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+<p class="continuation">Expanding along the <span class="process-math">\(i\)</span>-th row of <span class="process-math">\(A\)</span> for any <span class="process-math">\(2\leq i\leq n\text{,}\)</span> on the other hand, we get</p>
+<div class="displaymath process-math">
 \begin{equation}
 \sum_{k=1}^n (-1)^{i+k}a_{ik}\det A_{i  k}\text{.}\tag{3.5.2}
 \end{equation}
 </div>
-<p class="continuation">To show these two expressions are equal we use the induction hypothesis to compute each \(\det  A_{1  j}\) by expanding along its \((i-1)\)-th row:</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+<p class="continuation">To show these two expressions are equal we use the induction hypothesis to compute each <span class="process-math">\(\det  A_{1  j}\)</span> by expanding along its <span class="process-math">\((i-1)\)</span>-th row:</p>
+<div class="displaymath process-math">
 \begin{equation}
 \det  A_{1j}=\sum_{k=1}^{n-1}(-1)^{i-1+k}[ A_{1j}]_{(i-1) k}\det {( A_{1j})}_{(i-1) k}\text{.}\tag{3.5.3}
 \end{equation}
 </div>
-<p class="continuation">The matrix \((A_{1j})_{(i-1) k}\) is the result of first deleting row 1 and column \(j\) from \(A\text{,}\) and then deleting row \((i-1)\) and column \(k\) of the resulting matrix.  To deal with such iterated submatrices, we make some simple observations relating the rows and columns of \(A_{1 j}\) and \(A_{i  k}\) with those of \(A\text{.}\)</p>
+<p class="continuation">The matrix <span class="process-math">\((A_{1j})_{(i-1) k}\)</span> is the result of first deleting row 1 and column <span class="process-math">\(j\)</span> from <span class="process-math">\(A\text{,}\)</span> and then deleting row <span class="process-math">\((i-1)\)</span> and column <span class="process-math">\(k\)</span> of the resulting matrix.  To deal with such iterated submatrices, we make some simple observations relating the rows and columns of <span class="process-math">\(A_{1 j}\)</span> and <span class="process-math">\(A_{i  k}\)</span> with those of <span class="process-math">\(A\text{.}\)</span></p>
 <ul class="disc">
-<li><p>The \((i-1)\)-th row of \(A_{1  j}\) corresponds to the \(i\)-th row of \(A\text{,}\) and the first row of \(A_{i  k}\) corresponds to the first row of \(A\text{.}\)</p></li>
-<li><p>If \(k\lt j\text{,}\) then the \(k\)-th column of \(A_{1  j}\) corresponds to the \(k\)-th column of \(A\text{;}\) if \(k\geq j\text{,}\) then the \(k\)-th column of \(A_{1  j}\) corresponds to the \((k+1)\)-th column of \(A\text{.}\)</p></li>
-<li><p>If \(j\lt k\text{,}\) then the \(j\)-th column of \(A_{ik}\) corresponds to the \(j\)-th column of \(A\text{;}\) if \(j\geq k\text{,}\) then the \(j\)-th column of \(A_{ik}\) corresponds to the \((j+1)\)-th column of \(A\text{.}\)</p></li>
+<li><p>The <span class="process-math">\((i-1)\)</span>-th row of <span class="process-math">\(A_{1  j}\)</span> corresponds to the <span class="process-math">\(i\)</span>-th row of <span class="process-math">\(A\text{,}\)</span> and the first row of <span class="process-math">\(A_{i  k}\)</span> corresponds to the first row of <span class="process-math">\(A\text{.}\)</span></p></li>
+<li><p>If <span class="process-math">\(k\lt j\text{,}\)</span> then the <span class="process-math">\(k\)</span>-th column of <span class="process-math">\(A_{1  j}\)</span> corresponds to the <span class="process-math">\(k\)</span>-th column of <span class="process-math">\(A\text{;}\)</span> if <span class="process-math">\(k\geq j\text{,}\)</span> then the <span class="process-math">\(k\)</span>-th column of <span class="process-math">\(A_{1  j}\)</span> corresponds to the <span class="process-math">\((k+1)\)</span>-th column of <span class="process-math">\(A\text{.}\)</span></p></li>
+<li><p>If <span class="process-math">\(j\lt k\text{,}\)</span> then the <span class="process-math">\(j\)</span>-th column of <span class="process-math">\(A_{ik}\)</span> corresponds to the <span class="process-math">\(j\)</span>-th column of <span class="process-math">\(A\text{;}\)</span> if <span class="process-math">\(j\geq k\text{,}\)</span> then the <span class="process-math">\(j\)</span>-th column of <span class="process-math">\(A_{ik}\)</span> corresponds to the <span class="process-math">\((j+1)\)</span>-th column of <span class="process-math">\(A\text{.}\)</span></p></li>
 </ul>
 <p class="continuation">From these observations we derive the following table of formulas:</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+<div class="displaymath process-math">
 \begin{align}
 [ A_{1j}]_{(i-1)  k} \amp =\begin{cases}
 a_{i  k} \amp \text{if } k\lt j\\
@@ -57,7 +57,7 @@ a_{1  (j+1)} \amp \text{if } k\leq j
 \end{align}
 </div>
 <p class="continuation">We now begin to unpack <a href="" class="xref" data-knowl="./knowl/eq_det_def.html" title="Equation 3.5.1">(3.5.1)</a>:</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+<div class="displaymath process-math">
 \begin{align*}
 \det A \amp= \sum_{j=1}^n (-1)^{1+j}a_{1 j}\det  A_{1j}\\
 \amp = \sum_{j=1}^n (-1)^{1+j}a_{1 j}\sum_{k=1}^{n-1}(-1)^{i-1+k}[ A_{1j}]_{(i-1)k}\det {( A_{1j})}_{(i-1)k} \amp \knowl{./knowl/eq_det_submatrix.html}{\text{(3.5.3)}}\\

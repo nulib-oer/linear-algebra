@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-04T21:24:39Z       *-->
+<!--*       on 2022-02-07T16:15:04Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -9,11 +9,14 @@
 <!--*                                          *-->
 <!--********************************************-->
 <html lang="en-US">
-<head>
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>The invertibility theorem</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Linear algebra: the theory of vector spaces and linear transformations">
+<meta property="book:author" content="Aaron Greicius">
 <script>window.MathJax = {
   tex: {
     inlineMath: [['\\(','\\)']],
@@ -24,8 +27,8 @@
     packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
   },
   options: {
-    ignoreHtmlClass: "tex2jax_ignore",
-    processHtmlClass: "has_am",
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
   },
   chtml: {
     scale: 0.88,
@@ -36,21 +39,21 @@
     paths: {pretext: "https://pretextbook.org/js/lib"},
   },
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg">miniversion=0.6</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
-</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
-<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
 </head>
-<body class="pretext-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\require{cancel}\newcommand{\Z}{{\mathbb Z}}
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}\newcommand{\Z}{{\mathbb Z}}
 \newcommand{\Q}{{\mathbb Q}}
 \newcommand{\R}{{\mathbb R}}
 \newcommand{\C}{{\mathbb C}}
@@ -251,14 +254,14 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
-\)</div>
+\)</span></div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href="http://linear-algebra.northwestern.pub/" target="_blank"><img src="external/images/im_holycomm.svg" alt="Logo image"></a><div class="title-container">
 <h1 class="heading"><a href="book-1.html"><span class="title">Linear algebra: the theory of vector spaces and linear transformations</span></a></h1>
 <p class="byline">Aaron Greicius</p>
 </div>
 </div></div>
-<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
 <a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="s_invertible_matrices.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="c_matrices.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="s_det.html" title="Next">Next</a></span>
@@ -268,68 +271,69 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="s_invertible_matrices.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="c_matrices.html" title="Up">Up</a><a class="next-button button toolbar-item" href="s_det.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
-<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
 <nav id="toc"><ul>
-<li class="link frontmatter"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link frontmatter"><a href="frontmatter-1.html" data-scroll="frontmatter-1" class="internal"><span class="title">Front Matter</span></a></li>
 <li class="link">
-<a href="c_foundations.html" data-scroll="c_foundations"><span class="codenumber">1</span> <span class="title">Foundations</span></a><ul>
-<li><a href="s_sets_functions.html" data-scroll="s_sets_functions">Sets and functions</a></li>
-<li><a href="s_logic.html" data-scroll="s_logic">Logic</a></li>
-<li><a href="s_proof_technique.html" data-scroll="s_proof_technique">Proof techniques</a></li>
+<a href="c_foundations.html" data-scroll="c_foundations" class="internal"><span class="codenumber">1</span> <span class="title">Foundations</span></a><ul>
+<li><a href="s_sets_functions.html" data-scroll="s_sets_functions" class="internal">Sets and functions</a></li>
+<li><a href="s_logic.html" data-scroll="s_logic" class="internal">Logic</a></li>
+<li><a href="s_proof_technique.html" data-scroll="s_proof_technique" class="internal">Proof techniques</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="c_linear_systems.html" data-scroll="c_linear_systems"><span class="codenumber">2</span> <span class="title">Systems of linear equations</span></a><ul>
-<li><a href="s_systems.html" data-scroll="s_systems">Systems of linear equations</a></li>
-<li><a href="s_ge.html" data-scroll="s_ge">Gaussian elimination</a></li>
-<li><a href="s_solving.html" data-scroll="s_solving">Solving linear systems</a></li>
+<a href="c_linear_systems.html" data-scroll="c_linear_systems" class="internal"><span class="codenumber">2</span> <span class="title">Systems of linear equations</span></a><ul>
+<li><a href="s_systems.html" data-scroll="s_systems" class="internal">Systems of linear equations</a></li>
+<li><a href="s_ge.html" data-scroll="s_ge" class="internal">Gaussian elimination</a></li>
+<li><a href="s_solving.html" data-scroll="s_solving" class="internal">Solving linear systems</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="c_matrices.html" data-scroll="c_matrices"><span class="codenumber">3</span> <span class="title">Matrices, their arithmetic, and their algebra</span></a><ul>
-<li><a href="s_matrix.html" data-scroll="s_matrix">Matrices and their arithmetic</a></li>
-<li><a href="s_algebraic.html" data-scroll="s_algebraic">Algebra of matrices</a></li>
-<li><a href="s_invertible_matrices.html" data-scroll="s_invertible_matrices">Invertible matrices</a></li>
+<a href="c_matrices.html" data-scroll="c_matrices" class="internal"><span class="codenumber">3</span> <span class="title">Matrices, their arithmetic, and their algebra</span></a><ul>
+<li><a href="s_matrix.html" data-scroll="s_matrix" class="internal">Matrices and their arithmetic</a></li>
+<li><a href="s_algebraic.html" data-scroll="s_algebraic" class="internal">Algebra of matrices</a></li>
+<li><a href="s_invertible_matrices.html" data-scroll="s_invertible_matrices" class="internal">Invertible matrices</a></li>
 <li><a href="s_invertibility_theorem.html" data-scroll="s_invertibility_theorem" class="active">The invertibility theorem</a></li>
-<li><a href="s_det.html" data-scroll="s_det">The determinant</a></li>
+<li><a href="s_det.html" data-scroll="s_det" class="internal">The determinant</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="c_vectorspace.html" data-scroll="c_vectorspace"><span class="codenumber">4</span> <span class="title">Vector spaces and linear transformations</span></a><ul>
-<li><a href="s_vectorspace.html" data-scroll="s_vectorspace">Real vector spaces</a></li>
-<li><a href="s_transformation.html" data-scroll="s_transformation">Linear transformations</a></li>
-<li><a href="s_subspace.html" data-scroll="s_subspace">Subspaces</a></li>
-<li><a href="s_span_independence.html" data-scroll="s_span_independence">Span and linear independence</a></li>
-<li><a href="s_basis_dimension.html" data-scroll="s_basis_dimension">Bases and dimension</a></li>
-<li><a href="s_rank_nullity.html" data-scroll="s_rank_nullity">Rank-nullity theorem and fundamental spaces</a></li>
-<li><a href="s_isom.html" data-scroll="s_isom">Isomorphisms</a></li>
+<a href="c_vectorspace.html" data-scroll="c_vectorspace" class="internal"><span class="codenumber">4</span> <span class="title">Vector spaces and linear transformations</span></a><ul>
+<li><a href="s_vectorspace.html" data-scroll="s_vectorspace" class="internal">Real vector spaces</a></li>
+<li><a href="s_transformation.html" data-scroll="s_transformation" class="internal">Linear transformations</a></li>
+<li><a href="s_subspace.html" data-scroll="s_subspace" class="internal">Subspaces</a></li>
+<li><a href="s_span_independence.html" data-scroll="s_span_independence" class="internal">Span and linear independence</a></li>
+<li><a href="s_basis_dimension.html" data-scroll="s_basis_dimension" class="internal">Bases and dimension</a></li>
+<li><a href="s_rank_nullity.html" data-scroll="s_rank_nullity" class="internal">Rank-nullity theorem and fundamental spaces</a></li>
+<li><a href="s_isom.html" data-scroll="s_isom" class="internal">Isomorphisms</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="c_innerproductspaces.html" data-scroll="c_innerproductspaces"><span class="codenumber">5</span> <span class="title">Inner product spaces</span></a><ul>
-<li><a href="s_innerproducts.html" data-scroll="s_innerproducts">Inner product spaces</a></li>
-<li><a href="s_orthogonality.html" data-scroll="s_orthogonality">Orthogonal bases and orthogonal projection</a></li>
+<a href="c_innerproductspaces.html" data-scroll="c_innerproductspaces" class="internal"><span class="codenumber">5</span> <span class="title">Inner product spaces</span></a><ul>
+<li><a href="s_innerproducts.html" data-scroll="s_innerproducts" class="internal">Inner product spaces</a></li>
+<li><a href="s_orthogonality.html" data-scroll="s_orthogonality" class="internal">Orthogonal bases and orthogonal projection</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="c_transbasis.html" data-scroll="c_transbasis"><span class="codenumber">6</span> <span class="title">Eigenvectors and diagonalization</span></a><ul>
-<li><a href="s_coordinatevectors_isomorphisms.html" data-scroll="s_coordinatevectors_isomorphisms">Coordinate vectors and isomorphisms</a></li>
-<li><a href="s_matrixreps.html" data-scroll="s_matrixreps">Matrix representations of linear transformations</a></li>
-<li><a href="s_changeofbasis.html" data-scroll="s_changeofbasis">Change of basis</a></li>
-<li><a href="ss_eigenvectors.html" data-scroll="ss_eigenvectors">Eigenvectors and eigenvalues</a></li>
-<li><a href="ss_diagonalization.html" data-scroll="ss_diagonalization">Diagonalization</a></li>
+<a href="c_transbasis.html" data-scroll="c_transbasis" class="internal"><span class="codenumber">6</span> <span class="title">Eigenvectors and diagonalization</span></a><ul>
+<li><a href="s_coordinatevectors_isomorphisms.html" data-scroll="s_coordinatevectors_isomorphisms" class="internal">Coordinate vectors and isomorphisms</a></li>
+<li><a href="s_matrixreps.html" data-scroll="s_matrixreps" class="internal">Matrix representations of linear transformations</a></li>
+<li><a href="s_changeofbasis.html" data-scroll="s_changeofbasis" class="internal">Change of basis</a></li>
+<li><a href="ss_eigenvectors.html" data-scroll="ss_eigenvectors" class="internal">Eigenvectors and eigenvalues</a></li>
+<li><a href="ss_diagonalization.html" data-scroll="ss_diagonalization" class="internal">Diagonalization</a></li>
 </ul>
 </li>
-<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
-<li class="link"><a href="appendix-notation.html" data-scroll="appendix-notation"><span class="codenumber">A</span> <span class="title">Notation</span></a></li>
-<li class="link"><a href="appendix-defs.html" data-scroll="appendix-defs"><span class="codenumber">B</span> <span class="title">Definitions</span></a></li>
-<li class="link"><a href="appendix-thms.html" data-scroll="appendix-thms"><span class="codenumber">C</span> <span class="title">Theory and procedures</span></a></li>
-<li class="link"><a href="appendix-egs.html" data-scroll="appendix-egs"><span class="codenumber">D</span> <span class="title">Examples</span></a></li>
-<li class="link"><a href="appendix-vids.html" data-scroll="appendix-vids"><span class="codenumber">E</span> <span class="title">Video examples and figures</span></a></li>
-<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="appendix-notation.html" data-scroll="appendix-notation" class="internal"><span class="codenumber">A</span> <span class="title">Notation</span></a></li>
+<li class="link"><a href="appendix-defs.html" data-scroll="appendix-defs" class="internal"><span class="codenumber">B</span> <span class="title">Definitions</span></a></li>
+<li class="link"><a href="appendix-thms.html" data-scroll="appendix-thms" class="internal"><span class="codenumber">C</span> <span class="title">Theory and procedures</span></a></li>
+<li class="link"><a href="appendix-egs.html" data-scroll="appendix-egs" class="internal"><span class="codenumber">D</span> <span class="title">Examples</span></a></li>
+<li class="link"><a href="appendix-vids.html" data-scroll="appendix-vids" class="internal"><span class="codenumber">E</span> <span class="title">Video examples and figures</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
 </ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="s_invertibility_theorem"><h2 class="heading hide-type">
+<main class="main"><div id="content" class="pretext-content">
+<section class="section" id="s_invertibility_theorem"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">3.4</span> <span class="title">The invertibility theorem</span>
 </h2>
 <section class="introduction" id="introduction-15"><p id="p-634">We saw in <a href="" class="xref" data-knowl="./knowl/ex_invertible_matrices.html" title="Example 3.3.4">Example 3.3.4</a> that verifying directly whether a matrix is invertible, using only <a href="" class="xref" data-knowl="./knowl/d_invertible_matrix.html" title="Definition 3.3.1: Invertible matrix">Definition 3.3.1</a>, can be quite an involved task. The goal of this section is to make this invertibility less onerous by developing some equivalent methods of testing invertibility. Our work culminates in <a href="" class="xref" data-knowl="./knowl/th_invertibility.html" title="Theorem 3.4.5: Invertibility theorem">Theorem 3.4.5</a> and <a href="" class="xref" data-knowl="./knowl/th_invertibility_algorithm.html" title="Theorem 3.4.9: Inverse algorithm">Theorem 3.4.9</a>, which draw connections between invertibility, solutions to linear systems, and row echelon forms of a square matrix. Not surprisingly, our old friend Gaussian elimination emerges as the fundamental computational tool.</p></section><section class="subsection" id="ss_elementary_matrix"><h3 class="heading hide-type">
@@ -339,33 +343,33 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <article class="definition definition-like" id="d_elementary_matrix"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.4.1</span><span class="period">.</span>
 </h4>
-<p id="p-636">An \(m\times m\)  matrix \(E\) is <dfn class="terminology">elementary</dfn> if multiplying any \(m\times n\) matrix \(A\) on the left by \(E\) performs one of our row operations on \(A\text{.}\)</p>
+<p id="p-636">An <span class="process-math">\(m\times m\)</span>  matrix <span class="process-math">\(E\)</span> is <dfn class="terminology">elementary</dfn> if multiplying any <span class="process-math">\(m\times n\)</span> matrix <span class="process-math">\(A\)</span> on the left by <span class="process-math">\(E\)</span> performs one of our row operations on <span class="process-math">\(A\text{.}\)</span></p>
 <p id="p-637">We have different types of elementary matrices depending on the type of row operation they perform, and we denote these with an elaboration of our earlier row operation notation:</p>
 <ul class="disc">
-<li id="li-204"><p id="p-638">A <dfn class="terminology">scaling elementary matrix</dfn>\(\underset{c\,r_i}{E}\) is a matrix such that multiplying a matrix \(A\) on the left by \(\underset{cr_i}{E}\) scales the \(i\)-th row of \(A\) by \(c\text{.}\)</p></li>
-<li id="li-205"><p id="p-639">A <dfn class="terminology">row swap elementary matrix</dfn>\(\underset{r_i\leftrightarrow r_j}{E}\) is a matrix such that multiplying a matrix \(A\) on the left by \(\underset{r_i\leftrightarrow r_j}{E}\) swaps the \(i\)-th and \(j\)-th rows of \(A\text{.}\)</p></li>
-<li id="li-206"><p id="p-640">A <dfn class="terminology">row addition elementary matrix</dfn>\(\underset{r_i+c\,r_j}{E}\) is a matrix such that multiplying a matrix \(A\) on the left by \(\underset{r_i+c\,r_j}{E}\) replaces the \(i\)-th row of \(A\) with \(r_i+c\,r_j\text{.}\)</p></li>
+<li id="li-204"><p id="p-638">A <dfn class="terminology">scaling elementary matrix</dfn><span class="process-math">\(\underset{c\,r_i}{E}\)</span> is a matrix such that multiplying a matrix <span class="process-math">\(A\)</span> on the left by <span class="process-math">\(\underset{cr_i}{E}\)</span> scales the <span class="process-math">\(i\)</span>-th row of <span class="process-math">\(A\)</span> by <span class="process-math">\(c\text{.}\)</span></p></li>
+<li id="li-205"><p id="p-639">A <dfn class="terminology">row swap elementary matrix</dfn><span class="process-math">\(\underset{r_i\leftrightarrow r_j}{E}\)</span> is a matrix such that multiplying a matrix <span class="process-math">\(A\)</span> on the left by <span class="process-math">\(\underset{r_i\leftrightarrow r_j}{E}\)</span> swaps the <span class="process-math">\(i\)</span>-th and <span class="process-math">\(j\)</span>-th rows of <span class="process-math">\(A\text{.}\)</span></p></li>
+<li id="li-206"><p id="p-640">A <dfn class="terminology">row addition elementary matrix</dfn><span class="process-math">\(\underset{r_i+c\,r_j}{E}\)</span> is a matrix such that multiplying a matrix <span class="process-math">\(A\)</span> on the left by <span class="process-math">\(\underset{r_i+c\,r_j}{E}\)</span> replaces the <span class="process-math">\(i\)</span>-th row of <span class="process-math">\(A\)</span> with <span class="process-math">\(r_i+c\,r_j\text{.}\)</span></p></li>
 </ul></article><p id="p-641">Naturally, the row method of multiplication is the key to connecting a given row operation with a particular elementary matrix. <a href="" class="xref" data-knowl="./knowl/th_elementary_matrices.html" title="Theorem 3.4.2: Elementary matrix formulas">Theorem 3.4.2</a> shows that once you fix the dimension, an elementary matrix is uniquely defined by the row operation it performs.</p>
 <article class="theorem theorem-like" id="th_elementary_matrices"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.4.2</span><span class="period">.</span><span class="space"> </span><span class="title">Elementary matrix formulas.</span>
 </h4>
-<p id="p-642">Fix an integer \(m\geq 2\text{.}\) The three types of \(n\times n\) elementary matrices can be described as follows:</p>
+<p id="p-642">Fix an integer <span class="process-math">\(m\geq 2\text{.}\)</span> The three types of <span class="process-math">\(n\times n\)</span> elementary matrices can be described as follows:</p>
 <ul class="disc">
 <li id="li-207">
-<p id="p-643">The \(n\times n \) scaling matrix \(\underset{c\,r_i}{E}\) is the result of scaling the \(i\)-th row of \(I_m\) by \(c\text{.}\) </p>
+<p id="p-643">The <span class="process-math">\(n\times n \)</span> scaling matrix <span class="process-math">\(\underset{c\,r_i}{E}\)</span> is the result of scaling the <span class="process-math">\(i\)</span>-th row of <span class="process-math">\(I_m\)</span> by <span class="process-math">\(c\text{.}\)</span> </p>
 <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/im_elem_scalar.svg" role="img" class="contained"></div>
 </li>
-<li id="li-208"><p id="p-644">The \(n\times n \) row swap matrix \(\underset{r_i\leftrightarrow r_j}{E}\) is the result of swapping the \(i\)-th and \(j\)-th rows of \(I_m\text{.}\)  <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/im_elem_swap.svg" role="img" class="contained"></div></p></li>
-<li id="li-209"><p id="p-645">The \(n\times n \) row addition matrix \(\underset{r_i+c\,r_j}{E}\) is the result of replacing the \(i\)-th row of \(I_m\) with the sum of its \(i\)-th row and \(c\) times its \(j\)-th row.  <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/im_elem_rowadd.svg" role="img" class="contained"></div></p></li>
-</ul></article><article class="hiddenproof" id="proof-20"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-20"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-20"><article class="hiddenproof"><p id="p-646">First we show that if \(E\) is one of the \(m\times m\) elementary matrices, then it must assume one of the forms described above. Indeed, since multiplying on the left by \(E\) performs a certain row operation, and since \(E=E\,I_m\text{,}\) we see that \(E\) itself is the result of performing this particular row operation on the \(m\times m\) identity matrix. Thus \(E\)  is one of the three types of matrices described above, obtained by performing an elementary row operation on \(I_m\text{.}\)</p>
-<p id="p-647">Next, we must show that any of the \(m\times m\) matrices \(E\) described above is indeed elementary in the sense of <a href="" class="xref" data-knowl="./knowl/d_elementary_matrix.html" title="Definition 3.4.1">Definition 3.4.1</a>: that is, we must show that multiplying any \(m\times n\) matrix \(A\) on the left by \(E\) performs the relevant row operation on \(A\text{.}\) This is now a direct consequence of <a href="" class="xref" data-knowl="./knowl/th_row_method.html" title="Theorem 3.1.21: Row method of matrix multiplication">Theorem 3.1.21</a>.</p>
-<p id="p-648">For example, take \(E=\underset{c\,r_i}{E}\text{.}\) For \(j\ne i\text{,}\) the \(j\)-th row of \(E\,A\) is given by the \(j\)-th row of \(E\) times \(A\text{.}\) Since the \(j\)-th row of \(E\) in this case has a one in the \(j\)-th entry and zeros elsewhere, the product of this row and \(A\) is just the \(j\)-th row of \(A\text{.}\) Similarly, the \(i\)-th row of \(E\, A\) in this case is \(c\) times the \(i\)-th row of \(A\text{.}\) Thus \(E\) leaves all the rows of \(A\) except for the \(i\)-th one, which is scaled by \(c\text{.}\)</p></article></div>
+<li id="li-208"><p id="p-644">The <span class="process-math">\(n\times n \)</span> row swap matrix <span class="process-math">\(\underset{r_i\leftrightarrow r_j}{E}\)</span> is the result of swapping the <span class="process-math">\(i\)</span>-th and <span class="process-math">\(j\)</span>-th rows of <span class="process-math">\(I_m\text{.}\)</span>  <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/im_elem_swap.svg" role="img" class="contained"></div></p></li>
+<li id="li-209"><p id="p-645">The <span class="process-math">\(n\times n \)</span> row addition matrix <span class="process-math">\(\underset{r_i+c\,r_j}{E}\)</span> is the result of replacing the <span class="process-math">\(i\)</span>-th row of <span class="process-math">\(I_m\)</span> with the sum of its <span class="process-math">\(i\)</span>-th row and <span class="process-math">\(c\)</span> times its <span class="process-math">\(j\)</span>-th row.  <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/im_elem_rowadd.svg" role="img" class="contained"></div></p></li>
+</ul></article><article class="hiddenproof" id="proof-20"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-20"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-20"><article class="hiddenproof"><p id="p-646">First we show that if <span class="process-math">\(E\)</span> is one of the <span class="process-math">\(m\times m\)</span> elementary matrices, then it must assume one of the forms described above. Indeed, since multiplying on the left by <span class="process-math">\(E\)</span> performs a certain row operation, and since <span class="process-math">\(E=E\,I_m\text{,}\)</span> we see that <span class="process-math">\(E\)</span> itself is the result of performing this particular row operation on the <span class="process-math">\(m\times m\)</span> identity matrix. Thus <span class="process-math">\(E\)</span>  is one of the three types of matrices described above, obtained by performing an elementary row operation on <span class="process-math">\(I_m\text{.}\)</span></p>
+<p id="p-647">Next, we must show that any of the <span class="process-math">\(m\times m\)</span> matrices <span class="process-math">\(E\)</span> described above is indeed elementary in the sense of <a href="" class="xref" data-knowl="./knowl/d_elementary_matrix.html" title="Definition 3.4.1">Definition 3.4.1</a>: that is, we must show that multiplying any <span class="process-math">\(m\times n\)</span> matrix <span class="process-math">\(A\)</span> on the left by <span class="process-math">\(E\)</span> performs the relevant row operation on <span class="process-math">\(A\text{.}\)</span> This is now a direct consequence of <a href="" class="xref" data-knowl="./knowl/th_row_method.html" title="Theorem 3.1.21: Row method of matrix multiplication">Theorem 3.1.21</a>.</p>
+<p id="p-648">For example, take <span class="process-math">\(E=\underset{c\,r_i}{E}\text{.}\)</span> For <span class="process-math">\(j\ne i\text{,}\)</span> the <span class="process-math">\(j\)</span>-th row of <span class="process-math">\(E\,A\)</span> is given by the <span class="process-math">\(j\)</span>-th row of <span class="process-math">\(E\)</span> times <span class="process-math">\(A\text{.}\)</span> Since the <span class="process-math">\(j\)</span>-th row of <span class="process-math">\(E\)</span> in this case has a one in the <span class="process-math">\(j\)</span>-th entry and zeros elsewhere, the product of this row and <span class="process-math">\(A\)</span> is just the <span class="process-math">\(j\)</span>-th row of <span class="process-math">\(A\text{.}\)</span> Similarly, the <span class="process-math">\(i\)</span>-th row of <span class="process-math">\(E\, A\)</span> in this case is <span class="process-math">\(c\)</span> times the <span class="process-math">\(i\)</span>-th row of <span class="process-math">\(A\text{.}\)</span> Thus <span class="process-math">\(E\)</span> leaves all the rows of <span class="process-math">\(A\)</span> except for the <span class="process-math">\(i\)</span>-th one, which is scaled by <span class="process-math">\(c\text{.}\)</span></p></article></div>
 <p id="p-649">Elementary matrices provide us a way of understanding row reduction as a series of matrix multiplications (on the left). Recall that wow operations on linear systems are useful in so far as they preserve the set of solutions, and that this is the result of each operation being in some sense  “reversible”. (See <a href="" class="xref" data-knowl="./knowl/ex_row_ops_preserve.html" title="Exercise 2.1.2: Row operations preserve solutions">Exercise 2.1.2</a>.) In terms of matrix multiplication, this reversible attribute is reflected in the fact that elementary matrices are <em class="emphasis">invertible</em>.</p>
 <article class="theorem theorem-like" id="th_inverse_elem"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.4.3</span><span class="period">.</span><span class="space"> </span><span class="title">Inverses of elementary matrices.</span>
 </h4>
-<p id="p-650">Fix \(n\text{.}\) All elementary matrices are invertible, and their inverses are elementary matrices. In fact, we have the following formulas:</p>
-<div class="displaymath">
+<p id="p-650">Fix <span class="process-math">\(n\text{.}\)</span> All elementary matrices are invertible, and their inverses are elementary matrices. In fact, we have the following formulas:</p>
+<div class="displaymath process-math">
 \begin{align*}
 \underset{cr_i}{E}^{-1}\amp = \underset{\frac{1}{c}r_i}{E}\\
 \underset{r_i\leftrightarrow r_j}{E}^{-1}\amp = \underset{r_i\leftrightarrow r_j}{E}\\
@@ -374,19 +378,19 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 </div></article><article class="hiddenproof" id="proof-21"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-21"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-21"><article class="hiddenproof"><p id="p-651">These formulas all follow easily from <a href="" class="xref" data-knowl="./knowl/th_row_method.html" title="Theorem 3.1.21: Row method of matrix multiplication">Theorem 3.1.21</a>, and the fact that the proposed inverse elementary matrix performs the “reverse”, or inverse, of the row operation corresponding to the given elementary matrix.</p></article></div>
 <article class="example example-like" id="example-24"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-24"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.4.4</span><span class="period">.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-24"><article class="example example-like"><p id="p-652">Fix \(n=3\text{.}\) Verify that the following pairs of \(3\times 3\) elementary matrices are indeed inverses of one another.</p>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-24"><article class="example example-like"><p id="p-652">Fix <span class="process-math">\(n=3\text{.}\)</span> Verify that the following pairs of <span class="process-math">\(3\times 3\)</span> elementary matrices are indeed inverses of one another.</p>
 <ul class="disc">
-<li id="li-210"><div class="displaymath" id="p-653">
+<li id="li-210"><div class="displaymath process-math" id="p-653">
 \begin{equation*}
 \underset{2r_3}{E},\  \underset{\frac{1}{2}r_3}{E}
 \end{equation*}
 </div></li>
-<li id="li-211"><div class="displaymath" id="p-654">
+<li id="li-211"><div class="displaymath process-math" id="p-654">
 \begin{equation*}
 \underset{r_1\leftrightarrow r_3}{E}, \  \underset{r_1\leftrightarrow r_3}{E}
 \end{equation*}
 </div></li>
-<li id="li-212"><div class="displaymath" id="p-655">
+<li id="li-212"><div class="displaymath process-math" id="p-655">
 \begin{equation*}
 \underset{r_1+3r_3}{E},\  \underset{r_1-3r_3}{E}
 \end{equation*}
@@ -396,19 +400,19 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-23" id="solution-23"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-23"><div class="solution solution-like"><ul class="disc">
 <li id="li-213">
 <p id="p-656">We have</p>
-<div class="displaymath">
+<div class="displaymath process-math">
 \begin{equation*}
 \underset{2r_3}{E}=\begin{bmatrix}1\amp 0\amp 0\\0\amp 1\amp 0\\ 0\amp 0\amp 2 \end{bmatrix}
 \end{equation*}
 </div>
 <p class="continuation">and</p>
-<div class="displaymath">
+<div class="displaymath process-math">
 \begin{equation*}
 \underset{\frac{1}{2}r_3}{E}=\begin{bmatrix}1\amp 0\amp 0\\0\amp 1\amp 0\\ 0\amp 0\amp 1/2 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
 <p class="continuation">You can verify for yourself that</p>
-<div class="displaymath">
+<div class="displaymath process-math">
 \begin{equation*}
 \underset{2r_3}{E}\ \underset{\frac{1}{2}r_3}{E}=\underset{\frac{1}{2}r_3}{E}\ \underset{2r_3}{E}=I_3\text{.}
 \end{equation*}
@@ -416,13 +420,13 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 </li>
 <li id="li-214">
 <p id="p-657">We have</p>
-<div class="displaymath">
+<div class="displaymath process-math">
 \begin{equation*}
 \underset{r_1\leftrightarrow r_3}{E}=\begin{bmatrix}0\amp 0\amp 1\\0\amp 1\amp 0\\ 1\amp 0\amp 0 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
 <p class="continuation">You can verify for yourself that</p>
-<div class="displaymath">
+<div class="displaymath process-math">
 \begin{equation*}
 \underset{r_1\leftrightarrow r_3}{E}\,\underset{r_1\leftrightarrow r_3}{E}=I_3\text{.}
 \end{equation*}
@@ -430,19 +434,19 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 </li>
 <li id="li-215">
 <p id="p-658">We have</p>
-<div class="displaymath">
+<div class="displaymath process-math">
 \begin{equation*}
 \underset{r_1+3r_3}{E}=\begin{bmatrix}1\amp 0\amp 3\\0\amp 1\amp 0\\ 0\amp 0\amp 1 \end{bmatrix}
 \end{equation*}
 </div>
 <p class="continuation">and</p>
-<div class="displaymath">
+<div class="displaymath process-math">
 \begin{equation*}
 \underset{r_1-3r_3}{E}=\begin{amatrix}[rrr]1\amp 0\amp -3\\0\amp 1\amp 0\\ 0\amp 0\amp 1 \end{amatrix}\text{.}
 \end{equation*}
 </div>
 <p class="continuation">You can verify for yourself that</p>
-<div class="displaymath">
+<div class="displaymath process-math">
 \begin{equation*}
 \underset{r_1+3r_3}{E}\,\underset{r_1-3r_3}{E}=\underset{r_1-3r_3}{E}\,\underset{r_1+3r_3}{E}=I_3\text{.}
 \end{equation*}
@@ -453,166 +457,171 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <span class="type">Subsection</span> <span class="codenumber">3.4.2</span> <span class="title">Interlude on matrix equations</span>
 </h3>
 <p id="p-659">We take a moment to make the following simple, somewhat overdo observation. Namely, we can represent a <em class="emphasis">system of linear equations</em></p>
-<div class="displaymath">
+<div class="displaymath process-math">
 \begin{equation}
 \eqsys\label{eq_lin_sys}\tag{3.4.1}
 \end{equation}
 </div>
 <p class="continuation">as a <em class="emphasis">single matrix equation</em></p>
-<div class="displaymath">
+<div class="displaymath process-math">
 \begin{equation}
 \genmatrix\begin{bmatrix}x_1\\x_2\\ \vdots \\ x_n \end{bmatrix} =\begin{bmatrix}b_1\\ b_2 \\ \vdots \\ b_m \end{bmatrix}\text{,}\label{eq_matrix_eq}\tag{3.4.2}
 \end{equation}
 </div>
 <p class="continuation">or</p>
-<div class="displaymath">
+<div class="displaymath process-math">
 \begin{equation*}
 A\boldx=\boldb\text{,}
 \end{equation*}
 </div>
-<p class="continuation">where \(A=[a_{ij}]\text{,}\) \(\boldx=[x_i]\text{,}\) \(\boldb=[b_i]\text{.}\)</p>
-<p id="p-660">Indeed if you expand out the left-hand side of <a href="" class="xref" data-knowl="./knowl/eq_matrix_eq.html" title="Equation 3.4.2">(3.4.2)</a> into an \(m\times 1\) column vector, using the definition of matrix multiplication, and then invoke the definition of matrix equality, then you obtain the linear system <a href="" class="xref" data-knowl="./knowl/eq_lin_sys.html" title="Equation 3.4.1">(3.4.1)</a>.</p>
-<p id="p-661">By the same token, an \(n\)-tuple \((s_1,s_2,\dots,
-s_n)\) is a solution to the <em class="emphasis">system of equations</em> \((*)\) if and only if its corresponding column vector \(\underset{n\times 1}{\bolds}=[s_i]\) is a solution to the <em class="emphasis">matrix equation</em> \(A\boldx=\boldb\text{.}\)</p>
+<p class="continuation">where <span class="process-math">\(A=[a_{ij}]\text{,}\)</span> <span class="process-math">\(\boldx=[x_i]\text{,}\)</span> <span class="process-math">\(\boldb=[b_i]\text{.}\)</span></p>
+<p id="p-660">Indeed if you expand out the left-hand side of <a href="" class="xref" data-knowl="./knowl/eq_matrix_eq.html" title="Equation 3.4.2">(3.4.2)</a> into an <span class="process-math">\(m\times 1\)</span> column vector, using the definition of matrix multiplication, and then invoke the definition of matrix equality, then you obtain the linear system <a href="" class="xref" data-knowl="./knowl/eq_lin_sys.html" title="Equation 3.4.1">(3.4.1)</a>.</p>
+<p id="p-661">By the same token, an <span class="process-math">\(n\)</span>-tuple <span class="process-math">\((s_1,s_2,\dots,
+s_n)\)</span> is a solution to the <em class="emphasis">system of equations</em> <span class="process-math">\((*)\)</span> if and only if its corresponding column vector <span class="process-math">\(\underset{n\times 1}{\bolds}=[s_i]\)</span> is a solution to the <em class="emphasis">matrix equation</em> <span class="process-math">\(A\boldx=\boldb\text{.}\)</span></p>
 <p id="p-662">We have thus recast the problem of solving linear systems to the problem of solving a certain matrix equation of the form</p>
-<div class="displaymath">
+<div class="displaymath process-math">
 \begin{equation*}
 A\underset{n\times 1}{\boldx}=\underset{m\times 1}{\boldb}
 \end{equation*}
 </div>
-<p class="continuation">for the unknown column vector \(\boldx\text{.}\) In particular, a <em class="emphasis">homogeneous</em> linear system</p>
-<div class="displaymath">
+<p class="continuation">for the unknown column vector <span class="process-math">\(\boldx\text{.}\)</span> In particular, a <em class="emphasis">homogeneous</em> linear system</p>
+<div class="displaymath process-math">
 \begin{equation*}
 \homsys
 \end{equation*}
 </div>
 <p class="continuation">can be represented as a matrix equation of the form</p>
-<div class="displaymath">
+<div class="displaymath process-math">
 \begin{equation*}
 A\underset{n\times 1}{\boldx}=\underset{m\times 1}{\boldzero}\text{.}
 \end{equation*}
 </div>
 <p id="p-663">Lastly, the use of Gaussian elimination to solve a linear system can now be understood in an <em class="emphasis">algebraic</em> way using matrix multiplication.</p>
-<p id="p-664">In more detail, suppose our given linear system has augmented matrix \(\begin{amatrix}[c|c]A\amp \boldb  \end{amatrix}\) that row reduces to the row echelon matrix \(\begin{amatrix}[c|c] U \amp \boldb'  \end{amatrix}\) after performing a sequence of row operations. Denote the \(i\)-th row operation \(\rho_i\text{,}\) and denote by \(\rho_i(B)\) the result of applying \(\rho_i\) to a matrix \(B\text{.}\)</p>
-<p id="p-665">Our sequence of operations \(\rho_i\) translates to the following sequence of matrix equations:</p>
-<div class="displaymath">
+<p id="p-664">In more detail, suppose our given linear system has augmented matrix <span class="process-math">\(\begin{amatrix}[c|c]A\amp \boldb  \end{amatrix}\)</span> that row reduces to the row echelon matrix <span class="process-math">\(\begin{amatrix}[c|c] U \amp \boldb'  \end{amatrix}\)</span> after performing a sequence of row operations. Denote the <span class="process-math">\(i\)</span>-th row operation <span class="process-math">\(\rho_i\text{,}\)</span> and denote by <span class="process-math">\(\rho_i(B)\)</span> the result of applying <span class="process-math">\(\rho_i\)</span> to a matrix <span class="process-math">\(B\text{.}\)</span></p>
+<p id="p-665">Our sequence of operations <span class="process-math">\(\rho_i\)</span> translates to the following sequence of matrix equations:</p>
+<div class="displaymath process-math">
 \begin{equation*}
 \begin{array}{c} A\boldx=\boldb\\  \rho_1(A)\boldx=\rho_1(\boldb)\\  \rho_2(\rho_1(A))\boldx=\rho_2(\rho_1(\boldb))\\  \vdots \\ \rho_r(\rho_{r-1}(\dots \rho_2(\rho_1(A))))\boldx=\rho_r(\rho_{r-1}(\dots \rho_2(\rho_1(\boldb)))) \\
 U\boldx=\boldb'\end{array}\text{.}
 \end{equation*}
 </div>
-<p id="p-666">Let \(\rho_i\) correspond to the elementary matrix \(E_i\text{.}\) Then we represent this same sequence using matrix multiplication:</p>
-<div class="displaymath">
+<p id="p-666">Let <span class="process-math">\(\rho_i\)</span> correspond to the elementary matrix <span class="process-math">\(E_i\text{.}\)</span> Then we represent this same sequence using matrix multiplication:</p>
+<div class="displaymath process-math">
 \begin{equation}
 \begin{array}{c} A\boldx=\boldb\\  E_1A\boldx=E_1\boldb\\  E_2E_1A\boldx=E_2E_1\boldb\\  \vdots \\ E_rE_{r-1}\cdots E_2E_1A\boldx=E_rE_{r-1}\cdots E_2E_1\boldb \\
 U\boldx=\boldb' \end{array}\text{.}\label{eq_GE_via_elem_mat}\tag{3.4.3}
 \end{equation}
 </div>
-<p class="continuation">This depiction of row reduction in terms of successive left-multiplication by elementary matrices will be useful to us in many ways. In particular, it follows from this discussion that two matrices \(A\) and \(B\) are row equivalent if and only if we have</p>
-<div class="displaymath">
+<p class="continuation">This depiction of row reduction in terms of successive left-multiplication by elementary matrices will be useful to us in many ways. In particular, it follows from this discussion that two matrices <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are row equivalent if and only if we have</p>
+<div class="displaymath process-math">
 \begin{equation}
 B=E_rE_{r-1}\cdots E_2E_1A\label{eq_row_equiv_via_elem_mat}\tag{3.4.4}
 \end{equation}
 </div>
-<p class="continuation">for some collection of elementary matrices \(E_i\text{.}\)</p></section><section class="subsection" id="ss_invertibility_th"><h3 class="heading hide-type">
+<p class="continuation">for some collection of elementary matrices <span class="process-math">\(E_i\text{.}\)</span></p></section><section class="subsection" id="ss_invertibility_th"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.4.3</span> <span class="title">The invertibility theorem</span>
 </h3>
 <p id="p-667">We are now in position to prove our first big theorem.</p>
 <article class="theorem theorem-like" id="th_invertibility"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.4.5</span><span class="period">.</span><span class="space"> </span><span class="title">Invertibility theorem.</span>
 </h4>
-<p id="p-668">Let \(A=[a_{ij}]\) be an \(n\times n\) matrix. The following statements are equivalent.</p>
+<p id="p-668">Let <span class="process-math">\(A=[a_{ij}]\)</span> be an <span class="process-math">\(n\times n\)</span> matrix. The following statements are equivalent.</p>
 <ol class="decimal">
-<li id="li-216"><p id="p-669">\(A\) is invertible.</p></li>
+<li id="li-216"><p id="p-669"><span class="process-math">\(A\)</span> is invertible.</p></li>
 <li id="li-217">
 <p id="p-670">The matrix equation</p>
-<div class="displaymath">
+<div class="displaymath process-math">
 \begin{equation*}
 A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldb}
 \end{equation*}
 </div>
-<p class="continuation">has a <em class="emphasis">unique solution</em> for <em class="emphasis">any</em> column vector  \(\boldb\text{.}\)</p>
+<p class="continuation">has a <em class="emphasis">unique solution</em> for <em class="emphasis">any</em> column vector  <span class="process-math">\(\boldb\text{.}\)</span></p>
 </li>
 <li id="li-218">
 <p id="p-671">The matrix equation</p>
-<div class="displaymath">
+<div class="displaymath process-math">
 \begin{equation*}
 A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldzero}
 \end{equation*}
 </div>
-<p class="continuation">has a <em class="emphasis">unique solution</em>: namely, \(\boldx=\boldzero_{n\times 1}\text{.}\)</p>
+<p class="continuation">has a <em class="emphasis">unique solution</em>: namely, <span class="process-math">\(\boldx=\boldzero_{n\times 1}\text{.}\)</span></p>
 </li>
-<li id="li-219"><p id="p-672">\(A\) is row equivalent to \(I_n\text{,}\) the \(n\times n\) identity matrix.</p></li>
-<li id="li-220"><p id="p-673">\(A\) is a product of elementary matrices.</p></li>
-</ol></article><article class="hiddenproof" id="proof-22"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-22"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-22"><article class="hiddenproof"><p id="p-674">Recall that to show two statements \(\mathcal{P}\) and \(\mathcal{Q}\) are equivalent, we must show two implications: \(\mathcal{P}\implies \mathcal{Q}\text{,}\) and \(\mathcal{Q}\implies \mathcal{P}\text{.}\) Instead of doing this for each possible pair of sentences above, we ease our work load by instead showing the following <em class="emphasis">cycle</em> of implications:</p>
-<div class="displaymath">
+<li id="li-219"><p id="p-672"><span class="process-math">\(A\)</span> is row equivalent to <span class="process-math">\(I_n\text{,}\)</span> the <span class="process-math">\(n\times n\)</span> identity matrix.</p></li>
+<li id="li-220"><p id="p-673"><span class="process-math">\(A\)</span> is a product of elementary matrices.</p></li>
+</ol></article><article class="hiddenproof" id="proof-22"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-22"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-22"><article class="hiddenproof"><p id="p-674">Recall that to show two statements <span class="process-math">\(\mathcal{P}\)</span> and <span class="process-math">\(\mathcal{Q}\)</span> are equivalent, we must show two implications: <span class="process-math">\(\mathcal{P}\implies \mathcal{Q}\text{,}\)</span> and <span class="process-math">\(\mathcal{Q}\implies \mathcal{P}\text{.}\)</span> Instead of doing this for each possible pair of sentences above, we ease our work load by instead showing the following <em class="emphasis">cycle</em> of implications:</p>
+<div class="displaymath process-math">
 \begin{equation*}
 (1)\implies(2)\implies(3)\implies(4)\implies(5)\implies (1)\text{.}
 \end{equation*}
 </div>
 <p class="continuation">Since implication is transitive, starting at any point in our cycle and making our way around the chain of implications, we see that any one of the propositions implies any other proposition.</p>
-<article class="case" id="case-38"><h5 class="heading">\((1)\implies (2)\).</h5>
-<p id="p-675">Suppose \(A^{-1}\) exists. Given any column vector \(\boldb\text{,}\) we have</p>
-<div class="displaymath">
+<article class="case" id="case-38"><h5 class="heading">
+<span class="process-math">\((1)\implies (2)\)</span>.</h5>
+<p id="p-675">Suppose <span class="process-math">\(A^{-1}\)</span> exists. Given any column vector <span class="process-math">\(\boldb\text{,}\)</span> we have</p>
+<div class="displaymath process-math">
 \begin{align*}
 A\boldx=\boldb \iff \boldx=A^{-1}\boldb \amp (\knowl{./knowl/th_inverse_cancel.html}{\text{Theorem 3.3.3}})\text{,}
 \end{align*}
 </div>
-<p class="continuation">which shows that \(\boldx=A^{-1}\boldb\) is the unique solution to \(A\boldx=\boldb\text{.}\)</p></article><article class="case" id="case-39"><h5 class="heading">\((2)\implies (3)\).</h5>
-<p id="p-676">Clearly, if \(A\boldx=\boldb\) has a unique solution for <em class="emphasis">any</em> choice of \(\boldb\text{,}\) then it has a unique solution for the <em class="emphasis">particular</em> choice \(\boldb=\boldzero\text{.}\) Since \(\boldx=\boldzero_{n\times 1}\) is clearly a solution to the equation, it must be the only solution.</p></article><article class="case" id="case-40"><h5 class="heading">\((3)\implies (4)\).</h5>
-<p id="p-677">Row reduce \(A\) to a matrix \(U\) in <em class="emphasis">reduced</em> row echelon form using Gauss-Jordan elimination. (See <a href="" class="xref" data-knowl="./knowl/th_matrixforms.html" title="Theorem 2.2.10: Row equivalent matrix forms">Theorem 2.2.10</a>.) Since the set of solutions to \(A\boldx=\boldzero\) is identical to the set of solutions to \(U\boldx=\boldzero\) (apply <a href="" class="xref" data-knowl="./knowl/s_systems_th_rowops.html" title="Theorem 2.1.12: Row equivalence theorem">Theorem 2.1.12</a> to their corresponding linear systems), we see that \(\boldzero\) is the only solution to \(U\boldx=\boldzero\text{.}\) <a href="" class="xref" data-knowl="./knowl/th_solveSystem.html" title="Theorem 2.3.5: Solving linear systems">Theorem 2.3.5</a> now implies \(U\) has a leading one in each column. Since \(U\) is \(n\times n\) and in <em class="emphasis">reduced</em> row echelon form, it follows that \(U\) must be the identity matrix. (Convince yourself of this.) Thus \(A\) is row equivalent to \(U=I\text{,}\) the identity matrix.</p></article><article class="case" id="case-41"><h5 class="heading">\((4)\implies (5)\).</h5>
-<p id="p-678">If \(A\) is row equivalent to \(I\text{,}\) then according to our discussion after <a href="" class="xref" data-knowl="./knowl/eq_GE_via_elem_mat.html" title="Equation 3.4.3">(3.4.3)</a>, we have \(I=E_rE_{r-1}\cdots E_1A\) for some collection of elementary matrices \(E_i\text{.}\) Since elementary matrices are invertible we can multiply both sides of this equation by</p>
-<div class="displaymath">
+<p class="continuation">which shows that <span class="process-math">\(\boldx=A^{-1}\boldb\)</span> is the unique solution to <span class="process-math">\(A\boldx=\boldb\text{.}\)</span></p></article><article class="case" id="case-39"><h5 class="heading">
+<span class="process-math">\((2)\implies (3)\)</span>.</h5>
+<p id="p-676">Clearly, if <span class="process-math">\(A\boldx=\boldb\)</span> has a unique solution for <em class="emphasis">any</em> choice of <span class="process-math">\(\boldb\text{,}\)</span> then it has a unique solution for the <em class="emphasis">particular</em> choice <span class="process-math">\(\boldb=\boldzero\text{.}\)</span> Since <span class="process-math">\(\boldx=\boldzero_{n\times 1}\)</span> is clearly a solution to the equation, it must be the only solution.</p></article><article class="case" id="case-40"><h5 class="heading">
+<span class="process-math">\((3)\implies (4)\)</span>.</h5>
+<p id="p-677">Row reduce <span class="process-math">\(A\)</span> to a matrix <span class="process-math">\(U\)</span> in <em class="emphasis">reduced</em> row echelon form using Gauss-Jordan elimination. (See <a href="" class="xref" data-knowl="./knowl/th_matrixforms.html" title="Theorem 2.2.10: Row equivalent matrix forms">Theorem 2.2.10</a>.) Since the set of solutions to <span class="process-math">\(A\boldx=\boldzero\)</span> is identical to the set of solutions to <span class="process-math">\(U\boldx=\boldzero\)</span> (apply <a href="" class="xref" data-knowl="./knowl/s_systems_th_rowops.html" title="Theorem 2.1.12: Row equivalence theorem">Theorem 2.1.12</a> to their corresponding linear systems), we see that <span class="process-math">\(\boldzero\)</span> is the only solution to <span class="process-math">\(U\boldx=\boldzero\text{.}\)</span> <a href="" class="xref" data-knowl="./knowl/th_solveSystem.html" title="Theorem 2.3.5: Solving linear systems">Theorem 2.3.5</a> now implies <span class="process-math">\(U\)</span> has a leading one in each column. Since <span class="process-math">\(U\)</span> is <span class="process-math">\(n\times n\)</span> and in <em class="emphasis">reduced</em> row echelon form, it follows that <span class="process-math">\(U\)</span> must be the identity matrix. (Convince yourself of this.) Thus <span class="process-math">\(A\)</span> is row equivalent to <span class="process-math">\(U=I\text{,}\)</span> the identity matrix.</p></article><article class="case" id="case-41"><h5 class="heading">
+<span class="process-math">\((4)\implies (5)\)</span>.</h5>
+<p id="p-678">If <span class="process-math">\(A\)</span> is row equivalent to <span class="process-math">\(I\text{,}\)</span> then according to our discussion after <a href="" class="xref" data-knowl="./knowl/eq_GE_via_elem_mat.html" title="Equation 3.4.3">(3.4.3)</a>, we have <span class="process-math">\(I=E_rE_{r-1}\cdots E_1A\)</span> for some collection of elementary matrices <span class="process-math">\(E_i\text{.}\)</span> Since elementary matrices are invertible we can multiply both sides of this equation by</p>
+<div class="displaymath process-math">
 \begin{equation*}
 (E_rE_{r-1}\cdots E_1)^{-1}=E_1^{-1}E_{2}^{-1}\cdots E_r^{-1}
 \end{equation*}
 </div>
 <p class="continuation">to conclude</p>
-<div class="displaymath">
+<div class="displaymath process-math">
 \begin{equation*}
 A=E_1^{-1}E_{2}^{-1}\cdots E_r^{-1}\text{.}
 \end{equation*}
 </div>
-<p class="continuation">Since inverses of elementary matrices are elementary (<a href="" class="xref" data-knowl="./knowl/th_inverse_elem.html" title="Theorem 3.4.3: Inverses of elementary matrices">Theorem 3.4.3</a>), we conclude that \(A\) is a product of elementary matrices.</p></article><article class="case" id="case-42"><h5 class="heading">\((5)\implies (1)\).</h5>
-<p id="p-679">If \(A\) is a product of elementary matrices, then it is a product of invertible matrices. Since products of invertible matrices are invertible, we conclude that \(A\) is invertible.</p></article></article></div>
+<p class="continuation">Since inverses of elementary matrices are elementary (<a href="" class="xref" data-knowl="./knowl/th_inverse_elem.html" title="Theorem 3.4.3: Inverses of elementary matrices">Theorem 3.4.3</a>), we conclude that <span class="process-math">\(A\)</span> is a product of elementary matrices.</p></article><article class="case" id="case-42"><h5 class="heading">
+<span class="process-math">\((5)\implies (1)\)</span>.</h5>
+<p id="p-679">If <span class="process-math">\(A\)</span> is a product of elementary matrices, then it is a product of invertible matrices. Since products of invertible matrices are invertible, we conclude that <span class="process-math">\(A\)</span> is invertible.</p></article></article></div>
 <article class="remark remark-like" id="rm_inv_solutions"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.4.6</span><span class="period">.</span>
 </h4>
 <p id="p-680">The <a href="" class="xref" data-knowl="./knowl/th_invertibility.html" title="Theorem 3.4.5: Invertibility theorem">invertibility theorem</a> has an immediate application to linear systems where the number of equations is <em class="emphasis">equal to</em> the number of unknowns. In this special situation, the system is equivalent to a matrix equation of the form</p>
-<div class="displaymath">
+<div class="displaymath process-math">
 \begin{equation*}
 A\boldx=\boldb\text{,}
 \end{equation*}
 </div>
-<p class="continuation">where \(A\) is a <em class="emphasis">square matrix</em>. According to the theorem, if we know \(A\) is invertible, then the matrix equation, and hence the linear system, has a unique solution: namely, \(\boldx=A^{-1}\boldb\text{.}\)</p>
-<p id="p-681">What if \(A\) is not invertible? Then the theorem only tells us that there is some column vector \(\boldc\text{,}\) not necessarily the given \(\boldb\text{,}\) such that the equation</p>
-<div class="displaymath">
+<p class="continuation">where <span class="process-math">\(A\)</span> is a <em class="emphasis">square matrix</em>. According to the theorem, if we know <span class="process-math">\(A\)</span> is invertible, then the matrix equation, and hence the linear system, has a unique solution: namely, <span class="process-math">\(\boldx=A^{-1}\boldb\text{.}\)</span></p>
+<p id="p-681">What if <span class="process-math">\(A\)</span> is not invertible? Then the theorem only tells us that there is some column vector <span class="process-math">\(\boldc\text{,}\)</span> not necessarily the given <span class="process-math">\(\boldb\text{,}\)</span> such that the equation</p>
+<div class="displaymath process-math">
 \begin{equation*}
 A\boldx=\boldc
 \end{equation*}
 </div>
-<p class="continuation">does not have a unique solution. In other words, the theorem alone doesn't allow us to conclude whether the given \(A\boldx=\boldb\) has a solution, and we must resort to our usual Gaussian elimination procedure to answer this question.</p></article><p id="p-682">The family of <em class="emphasis">triangular</em> matrices (upper, lower, and diagonal) defined below provides an easy testing ground for our new invertibility theorem.</p>
+<p class="continuation">does not have a unique solution. In other words, the theorem alone doesn't allow us to conclude whether the given <span class="process-math">\(A\boldx=\boldb\)</span> has a solution, and we must resort to our usual Gaussian elimination procedure to answer this question.</p></article><p id="p-682">The family of <em class="emphasis">triangular</em> matrices (upper, lower, and diagonal) defined below provides an easy testing ground for our new invertibility theorem.</p>
 <article class="definition definition-like" id="definition-43"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.4.7</span><span class="period">.</span>
 </h4>
-<p id="p-683">Let \(A=[a_{ij}]\) be \(n\times n\text{.}\) We say</p>
+<p id="p-683">Let <span class="process-math">\(A=[a_{ij}]\)</span> be <span class="process-math">\(n\times n\text{.}\)</span> We say</p>
 <ol class="decimal">
-<li id="li-221"><p id="p-684">\(A\) is <dfn class="terminology">diagonal</dfn> if \(a_{ij}=0\) for all \((i,j)\) with \(i\ne j\text{.}\) ( “\(A\) is zero off the diagonal.” )</p></li>
-<li id="li-222"><p id="p-685">\(A\) is <dfn class="terminology">upper triangular</dfn> if \(a_{ij}=0\) for all \((i,j)\) with \(i \lt j\text{.}\) ( “\(A\) is zero below the diagonal.” )</p></li>
-<li id="li-223"><p id="p-686">\(A\) is <dfn class="terminology">lower triangular</dfn> if \(a_{ij}=0\) for all \((i,j)\) with \(i&gt;j\text{.}\) ( “\(A\) is zero above the diagonal.” )</p></li>
-<li id="li-224"><p id="p-687">\(A\) is <dfn class="terminology">triangular</dfn> if \(A\) is upper triangular or lower triangular.</p></li>
+<li id="li-221"><p id="p-684"><span class="process-math">\(A\)</span> is <dfn class="terminology">diagonal</dfn> if <span class="process-math">\(a_{ij}=0\)</span> for all <span class="process-math">\((i,j)\)</span> with <span class="process-math">\(i\ne j\text{.}\)</span> ( “<span class="process-math">\(A\)</span> is zero off the diagonal.” )</p></li>
+<li id="li-222"><p id="p-685"><span class="process-math">\(A\)</span> is <dfn class="terminology">upper triangular</dfn> if <span class="process-math">\(a_{ij}=0\)</span> for all <span class="process-math">\((i,j)\)</span> with <span class="process-math">\(i \lt j\text{.}\)</span> ( “<span class="process-math">\(A\)</span> is zero below the diagonal.” )</p></li>
+<li id="li-223"><p id="p-686"><span class="process-math">\(A\)</span> is <dfn class="terminology">lower triangular</dfn> if <span class="process-math">\(a_{ij}=0\)</span> for all <span class="process-math">\((i,j)\)</span> with <span class="process-math">\(i&gt;j\text{.}\)</span> ( “<span class="process-math">\(A\)</span> is zero above the diagonal.” )</p></li>
+<li id="li-224"><p id="p-687"><span class="process-math">\(A\)</span> is <dfn class="terminology">triangular</dfn> if <span class="process-math">\(A\)</span> is upper triangular or lower triangular.</p></li>
 </ol></article><article class="theorem theorem-like" id="th_invertible_triangular"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.4.8</span><span class="period">.</span><span class="space"> </span><span class="title">Invertibility of triangular matrices.</span>
 </h4>
-<p id="p-688">Let \(A=[a_{ij}]\) be a triangular \(n\times n\) matrix. Then \(A\) is invertible if and only if \(a_{ii}\ne 0\) for all \(1\leq i\leq n\text{.}\)</p>
-<p id="p-689">In other words, \(A\) is invertible if and only if the diagonal entries of \(A\) are all nonzero.</p></article><article class="hiddenproof" id="proof-23"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-23"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-23"><article class="hiddenproof"><p id="p-690">In this proof we will make use of the following easy consequence of <a href="" class="xref" data-knowl="./knowl/th_inverse_trans.html" title="Theorem 3.3.14: Inverse and transpose">Theorem 3.3.14</a>: namely, \(A\) is invertible if and only if \(A^T\) is invertible. (The forward implication follows directly from the theorem; the reverse direction follows from the theorem applied to \(B=A^T\text{.}\))</p>
-<article class="case" id="case-43"><h5 class="heading">Case: \(A\) is upper triangular.</h5>
-<p id="p-691">If \(a_{ii}\ne 0\) for all \(i\text{,}\) then it is easy to see that we can row reduce \(A\) first to a row echelon matrix with leading ones in every diagonal entry, and then further to the identity matrix. Thus \(A\) is row equivalent to \(I\) in this case, and we conclude from statement (4) of <a href="" class="xref" data-knowl="./knowl/th_invertibility.html" title="Theorem 3.4.5: Invertibility theorem">Theorem 3.4.5</a> that \(A\) is invertible.</p>
-<p id="p-692">For the other implication, we show that if it is not the case that \(a_{ii}\ne 0\) for all \(i\text{,}\) then there is a nonzero solution \(\boldx\ne \boldzero\) to the matrix equation \(A\boldx=\boldzero\text{.}\) If this is the case, then since we have two distinct solutions to \(A\boldx=\boldzero\text{,}\) \(A\) is not invertible by Statement (3) of <a href="" class="xref" data-knowl="./knowl/th_invertibility.html" title="Theorem 3.4.5: Invertibility theorem">Theorem 3.4.5</a>.</p>
-<p id="p-693">To this end, assume it is not the case that \(a_{ii}\ne 0\) for all \(i\text{.}\) Then we can find a smallest index \(k\) such that \(a_{kk}=0\) and \(a_{ii}\ne 0\) for any \(i &lt;k\text{.}\) It is easy to see that \(A\) is row equivalent to a matrix \(A'=[a'_{ij}]\text{,}\) satisfying \(a_{jj}=1\)  for \(1\leq j\leq k-1\) and \(a_{ij}=0\) for all \(1\leq i &lt; j\leq k-1\text{:}\) i.e., \(A'\) is “diagonal up until the \(k\)-th column”.</p>
-<p id="p-694">We now provide a nonzero solution \(\boldx=[x_i]_{n\times 1}\)to \(A'\boldx=\boldzero\text{:}\) namely, set \(x_k=1\text{,}\) \(x_{i}=0\) for all \(i&gt;k\text{,}\) and \(x_{i}=-a'_{ik}\) for all \(i &lt; k\text{.}\) (Verify this for yourself, using the description above of \(a'_{ij}\) for \(j\leq k-1\text{.}\)) Since \(A'\) is row equivalent to \(A\text{,}\) the linear systems corresponding to \(\begin{amatrix}[cc] A\amp \boldzero\end{amatrix}\) and \(\begin{amatrix}[cc] A' \amp \boldzero\end{amatrix}\) have the same solutions. Hence \(\boldx\) is also a nonzero solution to \(A\boldx=\boldzero\text{.}\) We conclude that \(A\) is not invertible by Statement (3) of <a href="" class="xref" data-knowl="./knowl/th_invertibility.html" title="Theorem 3.4.5: Invertibility theorem">Theorem 3.4.5</a>. This concludes the proof of this implication.</p></article><article class="case" id="case-44"><h5 class="heading">Case: \(A\) is lower triangular.</h5>
-<p id="p-695">Set \(B=A^T\text{.}\) Then \(B\) is upper triangular, and \((B)_{ii}=(A)_{ii}=a_{ii}\) for all \(i\text{.}\) Then</p>
-<div class="displaymath">
+<p id="p-688">Let <span class="process-math">\(A=[a_{ij}]\)</span> be a triangular <span class="process-math">\(n\times n\)</span> matrix. Then <span class="process-math">\(A\)</span> is invertible if and only if <span class="process-math">\(a_{ii}\ne 0\)</span> for all <span class="process-math">\(1\leq i\leq n\text{.}\)</span></p>
+<p id="p-689">In other words, <span class="process-math">\(A\)</span> is invertible if and only if the diagonal entries of <span class="process-math">\(A\)</span> are all nonzero.</p></article><article class="hiddenproof" id="proof-23"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-23"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-23"><article class="hiddenproof"><p id="p-690">In this proof we will make use of the following easy consequence of <a href="" class="xref" data-knowl="./knowl/th_inverse_trans.html" title="Theorem 3.3.14: Inverse and transpose">Theorem 3.3.14</a>: namely, <span class="process-math">\(A\)</span> is invertible if and only if <span class="process-math">\(A^T\)</span> is invertible. (The forward implication follows directly from the theorem; the reverse direction follows from the theorem applied to <span class="process-math">\(B=A^T\text{.}\)</span>)</p>
+<article class="case" id="case-43"><h5 class="heading">Case: <span class="process-math">\(A\)</span> is upper triangular.</h5>
+<p id="p-691">If <span class="process-math">\(a_{ii}\ne 0\)</span> for all <span class="process-math">\(i\text{,}\)</span> then it is easy to see that we can row reduce <span class="process-math">\(A\)</span> first to a row echelon matrix with leading ones in every diagonal entry, and then further to the identity matrix. Thus <span class="process-math">\(A\)</span> is row equivalent to <span class="process-math">\(I\)</span> in this case, and we conclude from statement (4) of <a href="" class="xref" data-knowl="./knowl/th_invertibility.html" title="Theorem 3.4.5: Invertibility theorem">Theorem 3.4.5</a> that <span class="process-math">\(A\)</span> is invertible.</p>
+<p id="p-692">For the other implication, we show that if it is not the case that <span class="process-math">\(a_{ii}\ne 0\)</span> for all <span class="process-math">\(i\text{,}\)</span> then there is a nonzero solution <span class="process-math">\(\boldx\ne \boldzero\)</span> to the matrix equation <span class="process-math">\(A\boldx=\boldzero\text{.}\)</span> If this is the case, then since we have two distinct solutions to <span class="process-math">\(A\boldx=\boldzero\text{,}\)</span> <span class="process-math">\(A\)</span> is not invertible by Statement (3) of <a href="" class="xref" data-knowl="./knowl/th_invertibility.html" title="Theorem 3.4.5: Invertibility theorem">Theorem 3.4.5</a>.</p>
+<p id="p-693">To this end, assume it is not the case that <span class="process-math">\(a_{ii}\ne 0\)</span> for all <span class="process-math">\(i\text{.}\)</span> Then we can find a smallest index <span class="process-math">\(k\)</span> such that <span class="process-math">\(a_{kk}=0\)</span> and <span class="process-math">\(a_{ii}\ne 0\)</span> for any <span class="process-math">\(i &lt;k\text{.}\)</span> It is easy to see that <span class="process-math">\(A\)</span> is row equivalent to a matrix <span class="process-math">\(A'=[a'_{ij}]\text{,}\)</span> satisfying <span class="process-math">\(a_{jj}=1\)</span>  for <span class="process-math">\(1\leq j\leq k-1\)</span> and <span class="process-math">\(a_{ij}=0\)</span> for all <span class="process-math">\(1\leq i &lt; j\leq k-1\text{:}\)</span> i.e., <span class="process-math">\(A'\)</span> is “diagonal up until the <span class="process-math">\(k\)</span>-th column”.</p>
+<p id="p-694">We now provide a nonzero solution <span class="process-math">\(\boldx=[x_i]_{n\times 1}\)</span>to <span class="process-math">\(A'\boldx=\boldzero\text{:}\)</span> namely, set <span class="process-math">\(x_k=1\text{,}\)</span> <span class="process-math">\(x_{i}=0\)</span> for all <span class="process-math">\(i&gt;k\text{,}\)</span> and <span class="process-math">\(x_{i}=-a'_{ik}\)</span> for all <span class="process-math">\(i &lt; k\text{.}\)</span> (Verify this for yourself, using the description above of <span class="process-math">\(a'_{ij}\)</span> for <span class="process-math">\(j\leq k-1\text{.}\)</span>) Since <span class="process-math">\(A'\)</span> is row equivalent to <span class="process-math">\(A\text{,}\)</span> the linear systems corresponding to <span class="process-math">\(\begin{amatrix}[cc] A\amp \boldzero\end{amatrix}\)</span> and <span class="process-math">\(\begin{amatrix}[cc] A' \amp \boldzero\end{amatrix}\)</span> have the same solutions. Hence <span class="process-math">\(\boldx\)</span> is also a nonzero solution to <span class="process-math">\(A\boldx=\boldzero\text{.}\)</span> We conclude that <span class="process-math">\(A\)</span> is not invertible by Statement (3) of <a href="" class="xref" data-knowl="./knowl/th_invertibility.html" title="Theorem 3.4.5: Invertibility theorem">Theorem 3.4.5</a>. This concludes the proof of this implication.</p></article><article class="case" id="case-44"><h5 class="heading">Case: <span class="process-math">\(A\)</span> is lower triangular.</h5>
+<p id="p-695">Set <span class="process-math">\(B=A^T\text{.}\)</span> Then <span class="process-math">\(B\)</span> is upper triangular, and <span class="process-math">\((B)_{ii}=(A)_{ii}=a_{ii}\)</span> for all <span class="process-math">\(i\text{.}\)</span> Then</p>
+<div class="displaymath process-math">
 \begin{align*}
 A \text{ invertible} \amp \iff B=A^T \text{ invertible} \amp \text{(see statement at top )}\\
 \amp \iff a_{ii}=0 \text{ for all } i \amp \text{(by previous case)} \text{.}
@@ -620,33 +629,33 @@ A \text{ invertible} \amp \iff B=A^T \text{ invertible} \amp \text{(see statemen
 </div></article></article></div></section><section class="subsection" id="ss_invertibility_alg"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.4.4</span> <span class="title">Invertibility algorithms</span>
 </h3>
-<p id="p-696">The proof of the implication \((4)\implies (5)\) of <a href="" class="xref" data-knowl="./knowl/th_invertibility.html" title="Theorem 3.4.5: Invertibility theorem">Theorem 3.4.5</a> can be expanded into an algorithm that (1) decides whether a given matrix \(A\) is invertible, and (2) computes \(A^{-1}\) if \(A\) is invertible.</p>
+<p id="p-696">The proof of the implication <span class="process-math">\((4)\implies (5)\)</span> of <a href="" class="xref" data-knowl="./knowl/th_invertibility.html" title="Theorem 3.4.5: Invertibility theorem">Theorem 3.4.5</a> can be expanded into an algorithm that (1) decides whether a given matrix <span class="process-math">\(A\)</span> is invertible, and (2) computes <span class="process-math">\(A^{-1}\)</span> if <span class="process-math">\(A\)</span> is invertible.</p>
 <article class="theorem theorem-like" id="th_invertibility_algorithm"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.4.9</span><span class="period">.</span><span class="space"> </span><span class="title">Inverse algorithm.</span>
 </h4>
-<p id="p-697">Let \(A\) be an \(n\times n\) matrix. To test for invertibility of \(A\) proceed as follows.</p>
+<p id="p-697">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(n\times n\)</span> matrix. To test for invertibility of <span class="process-math">\(A\)</span> proceed as follows.</p>
 <dl class="description-list">
 <dt id="li-225">Step 1</dt>
 <dd>
-<p id="p-698">Build the \(n\times 2n\) augmented matrix \(\begin{amatrix}[c|c]A\amp I_n\end{amatrix}\) and use Gaussian elimination to row reduce to the form \(\begin{amatrix}[c|c]U\amp B\end{amatrix} \text{,}\) where \(U\) is in row echelon form.</p>
-<p id="p-699">The matrix \(A\) is invertible if and only if \(U\) has \(n\) leading ones.</p>
+<p id="p-698">Build the <span class="process-math">\(n\times 2n\)</span> augmented matrix <span class="process-math">\(\begin{amatrix}[c|c]A\amp I_n\end{amatrix}\)</span> and use Gaussian elimination to row reduce to the form <span class="process-math">\(\begin{amatrix}[c|c]U\amp B\end{amatrix} \text{,}\)</span> where <span class="process-math">\(U\)</span> is in row echelon form.</p>
+<p id="p-699">The matrix <span class="process-math">\(A\)</span> is invertible if and only if <span class="process-math">\(U\)</span> has <span class="process-math">\(n\)</span> leading ones.</p>
 </dd>
 <dt id="li-226">Step 2</dt>
-<dd><p id="p-700">If \(U\) has \(n\) leading ones, row reduce further to a matrix of the form \(\begin{amatrix}[c|c] I_n\amp C\end{amatrix}\text{.}\) Then \(A^{-1}=C\text{.}\)</p></dd>
-</dl></article><article class="hiddenproof" id="proof-24"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-24"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-24"><article class="hiddenproof"><p id="p-701">From the proof of <a href="" class="xref" data-knowl="./knowl/th_invertibility.html" title="Theorem 3.4.5: Invertibility theorem">Theorem 3.4.5</a> we know \(A\) is invertible if and only if \(U\) has \(n\) leading ones. The question remains as to why reducing the augmented matrix \(\begin{amatrix}[c|c]A\amp I\end{amatrix}\)  to \(\begin{amatrix}[c|c]I\amp C\end{amatrix}\) tells us that \(A^{-1}=C\text{.}\) Let \(E_1, E_2, \dots, E_r\) be the elementary matrices representing the row operations involved in this process. Then we have</p>
-<div class="displaymath">
+<dd><p id="p-700">If <span class="process-math">\(U\)</span> has <span class="process-math">\(n\)</span> leading ones, row reduce further to a matrix of the form <span class="process-math">\(\begin{amatrix}[c|c] I_n\amp C\end{amatrix}\text{.}\)</span> Then <span class="process-math">\(A^{-1}=C\text{.}\)</span></p></dd>
+</dl></article><article class="hiddenproof" id="proof-24"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-24"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-24"><article class="hiddenproof"><p id="p-701">From the proof of <a href="" class="xref" data-knowl="./knowl/th_invertibility.html" title="Theorem 3.4.5: Invertibility theorem">Theorem 3.4.5</a> we know <span class="process-math">\(A\)</span> is invertible if and only if <span class="process-math">\(U\)</span> has <span class="process-math">\(n\)</span> leading ones. The question remains as to why reducing the augmented matrix <span class="process-math">\(\begin{amatrix}[c|c]A\amp I\end{amatrix}\)</span>  to <span class="process-math">\(\begin{amatrix}[c|c]I\amp C\end{amatrix}\)</span> tells us that <span class="process-math">\(A^{-1}=C\text{.}\)</span> Let <span class="process-math">\(E_1, E_2, \dots, E_r\)</span> be the elementary matrices representing the row operations involved in this process. Then we have</p>
+<div class="displaymath process-math">
 \begin{equation*}
 E_rE_{r-1}\cdots E_1A=I_n\text{.}
 \end{equation*}
 </div>
 <p class="continuation">After a little algebra, we see that</p>
-<div class="displaymath">
+<div class="displaymath process-math">
 \begin{equation*}
 A^{-1}=E_rE_{r-1}\cdots E_1\text{.}
 \end{equation*}
 </div>
-<p class="continuation">Since \(C\) is the result of applying same row operations to \(I_n\) we have</p>
-<div class="displaymath">
+<p class="continuation">Since <span class="process-math">\(C\)</span> is the result of applying same row operations to <span class="process-math">\(I_n\)</span> we have</p>
+<div class="displaymath process-math">
 \begin{equation*}
 C=E_rE_{r-1}\cdots E_1I=E_rE_{r-1}\cdots E_1=A^{-1}\text{,}
 \end{equation*}
@@ -656,31 +665,31 @@ C=E_rE_{r-1}\cdots E_1I=E_rE_{r-1}\cdots E_1=A^{-1}\text{,}
 <article class="theorem theorem-like" id="th_elem_matrices_alg"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.4.10</span><span class="period">.</span><span class="space"> </span><span class="title">Product of elementary matrices algorithm.</span>
 </h4>
-<p id="p-703">Let \(A\) be an \(n\times n\) matrix. To (potentially) write \(A\) as a product of elementary matrices, proceed as follows.</p>
+<p id="p-703">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(n\times n\)</span> matrix. To (potentially) write <span class="process-math">\(A\)</span> as a product of elementary matrices, proceed as follows.</p>
 <dl class="description-list">
 <dt id="li-227">Step 1</dt>
-<dd><p id="p-704">Attempt to row reduce \(A\) to the identity, keeping track of your sequence of row operations in the form of elementary matrices.</p></dd>
+<dd><p id="p-704">Attempt to row reduce <span class="process-math">\(A\)</span> to the identity, keeping track of your sequence of row operations in the form of elementary matrices.</p></dd>
 <dt id="li-228">Step 2</dt>
 <dd>
-<p id="p-705">If you are able to row reduce \(A\) to \(I_n\) with a sequence of row operatons corresponding to the elementary matrices \(E_1, E_2, \dots, E_r\text{,}\) then</p>
-<div class="displaymath">
+<p id="p-705">If you are able to row reduce <span class="process-math">\(A\)</span> to <span class="process-math">\(I_n\)</span> with a sequence of row operatons corresponding to the elementary matrices <span class="process-math">\(E_1, E_2, \dots, E_r\text{,}\)</span> then</p>
+<div class="displaymath process-math">
 \begin{equation*}
 A=E_1^{-1}E_2^{-1}\cdots E_{r}.
 \end{equation*}
 </div>
-<p class="continuation">Since the inverse of an elementary matrix is elementary, we have written \(A\) as a product of elementary matrices.</p>
+<p class="continuation">Since the inverse of an elementary matrix is elementary, we have written <span class="process-math">\(A\)</span> as a product of elementary matrices.</p>
 </dd>
-</dl></article><article class="hiddenproof" id="proof-25"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-25"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-25"><article class="hiddenproof"><p id="p-706">See the proof of the implication \((4)\implies (5)\) in <a href="" class="xref" data-knowl="./knowl/th_invertibility.html" title="Theorem 3.4.5: Invertibility theorem">Theorem 3.4.5</a>.</p></article></div></section><section class="subsection" id="ss_inv_alg_example"><h3 class="heading hide-type">
+</dl></article><article class="hiddenproof" id="proof-25"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-25"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-25"><article class="hiddenproof"><p id="p-706">See the proof of the implication <span class="process-math">\((4)\implies (5)\)</span> in <a href="" class="xref" data-knowl="./knowl/th_invertibility.html" title="Theorem 3.4.5: Invertibility theorem">Theorem 3.4.5</a>.</p></article></div></section><section class="subsection" id="ss_inv_alg_example"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.4.5</span> <span class="title">In-depth example</span>
 </h3>
 <p id="p-707">Let</p>
-<div class="displaymath">
+<div class="displaymath process-math">
 \begin{equation*}
 A=\begin{amatrix}[rrr]1\amp 2\amp 0\\ 1\amp 2\amp 1\\ -1\amp -1\amp 3 \end{amatrix} \text{.}
 \end{equation*}
 </div>
-<p class="continuation">Combining both algorithms we can decide whether \(A\) is invertible, and if so, compute \(A^{-1}\) and write \(A\) as a product of elementary matrices.</p>
-<div class="displaymath">
+<p class="continuation">Combining both algorithms we can decide whether <span class="process-math">\(A\)</span> is invertible, and if so, compute <span class="process-math">\(A^{-1}\)</span> and write <span class="process-math">\(A\)</span> as a product of elementary matrices.</p>
+<div class="displaymath process-math">
 \begin{align*}
 \begin{amatrix}[rrr|rrr]1\amp 2\amp 0\amp 1\amp 0\amp 0\\ 1\amp 2\amp 1\amp 0\amp 1\amp 0\\ -1\amp -1\amp 3\amp 0\amp 0\amp 1 \end{amatrix}  \amp \xrightarrow{r_2-r_1} \begin{amatrix}[rrr|rrr]1\amp 2\amp 0\amp 1\amp 0\amp 0\\ 0\amp 0\amp 1\amp -1\amp 1\amp 0\\ -1\amp -1\amp 3\amp 0\amp 0\amp 1 \end{amatrix}\\
 \amp \xrightarrow{r_3+r_1} \begin{amatrix}[rrr|rrr]1\amp 2\amp 0\amp 1\amp 0\amp 0\\ 0\amp 0\amp 1\amp -1\amp 1\amp 0\\ 0\amp 1\amp 3\amp 1\amp 0\amp 1 \end{amatrix}\\
@@ -689,20 +698,20 @@ A=\begin{amatrix}[rrr]1\amp 2\amp 0\\ 1\amp 2\amp 1\\ -1\amp -1\amp 3 \end{amatr
 \amp \xrightarrow{r_1-2r_2} \begin{amatrix}[rrr|rrr]1\amp 0\amp 0\amp -7\amp 6\amp -2\\ 0\amp 1\amp 0\amp 4\amp -3\amp 1\\ 0\amp 0\amp 1\amp -1\amp 1\amp 0 \end{amatrix}
 \end{align*}
 </div>
-<p class="continuation">According to <a href="" class="xref" data-knowl="./knowl/th_invertibility_algorithm.html" title="Theorem 3.4.9: Inverse algorithm">Theorem 3.4.9</a>, the computation shows that \(A\) is invertible and</p>
-<div class="displaymath">
+<p class="continuation">According to <a href="" class="xref" data-knowl="./knowl/th_invertibility_algorithm.html" title="Theorem 3.4.9: Inverse algorithm">Theorem 3.4.9</a>, the computation shows that <span class="process-math">\(A\)</span> is invertible and</p>
+<div class="displaymath process-math">
 \begin{equation*}
 A^{-1}=\begin{amatrix}[rrr]-7\amp 6\amp -2\\ 4\amp -3\amp 1\\ -1\amp 1\amp 0 \end{amatrix}\text{.}
 \end{equation*}
 </div>
 <p class="continuation">Next, representing our row operations as elementary matrices, we see that</p>
-<div class="displaymath">
+<div class="displaymath process-math">
 \begin{equation*}
 E_5E_4E_3E_2E_1A=I\text{,}
 \end{equation*}
 </div>
 <p class="continuation">where</p>
-<div class="displaymath">
+<div class="displaymath process-math">
 \begin{align*}
 E_1\amp =\begin{amatrix}[rrr] 1\amp 0\amp 0\\
 -1\amp 1\amp 0\\
@@ -720,7 +729,7 @@ E_5\amp =\begin{amatrix}[rrr]1\amp -2\amp 0\\
 \end{align*}
 </div>
 <p class="continuation">We conclude that</p>
-<div class="displaymath">
+<div class="displaymath process-math">
 \begin{align*}
 A \amp =E_1^{-1}E_2^{-1}E_3^{-1}E_4^{-1}E_5^{-1}\\
 \amp= \begin{amatrix}[rrr] 1\amp 0\amp 0\\
@@ -743,27 +752,27 @@ A \amp =E_1^{-1}E_2^{-1}E_3^{-1}E_4^{-1}E_5^{-1}\\
 <span class="type">Subsection</span> <span class="codenumber">3.4.6</span> <span class="title">Some theoretical loose ends</span>
 </h3>
 <p id="p-708">The two inveribility algorithms above are nice examples of how a <em class="emphasis">theoretical</em> result like our <a href="" class="xref" data-knowl="./knowl/th_invertibility.html" title="Theorem 3.4.5: Invertibility theorem">invertibility theorem</a> can pay some serious <em class="emphasis">computational</em> dividends. Namely, thanks to the theory we have discovered a method of computing the inverse of a matrix that essentially boils down to row reduction.</p>
-<p id="p-709">We finish this section with a number of theoretical implications that tie up some loose ends. The results below are all consequences in some way of <a href="" class="xref" data-knowl="./knowl/th_invertibility.html" title="Theorem 3.4.5: Invertibility theorem">Theorem 3.4.5</a>. The fist shows that in fact one one of the defining equalities \(AB=I\) or \(BA=I\) suffices to define the inverse of a matrix.</p>
+<p id="p-709">We finish this section with a number of theoretical implications that tie up some loose ends. The results below are all consequences in some way of <a href="" class="xref" data-knowl="./knowl/th_invertibility.html" title="Theorem 3.4.5: Invertibility theorem">Theorem 3.4.5</a>. The fist shows that in fact one one of the defining equalities <span class="process-math">\(AB=I\)</span> or <span class="process-math">\(BA=I\)</span> suffices to define the inverse of a matrix.</p>
 <article class="corollary theorem-like" id="cor_left-right_inverse"><h4 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">3.4.11</span><span class="period">.</span><span class="space"> </span><span class="title">Left-inverse if and only if right-inverse.</span>
 </h4>
-<p id="p-710">Let \(A\) and \(B\) be \(n\times n\text{.}\) Then</p>
+<p id="p-710">Let <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> be <span class="process-math">\(n\times n\text{.}\)</span> Then</p>
 <ol class="decimal">
-<li id="li-229"><p id="p-711">\(BA=I_n\implies AB=I_n\text{.}\)</p></li>
-<li id="li-230"><p id="p-712">\(AB=I_n\implies BA=I_n\text{.}\)</p></li>
+<li id="li-229"><p id="p-711"><span class="process-math">\(BA=I_n\implies AB=I_n\text{.}\)</span></p></li>
+<li id="li-230"><p id="p-712"><span class="process-math">\(AB=I_n\implies BA=I_n\text{.}\)</span></p></li>
 </ol>
-<p class="continuation">In plain English: a matrix \(B\) is a <em class="emphasis">left-inverse</em> of \(A\) if and only if it is a <em class="emphasis">right-inverse</em> of \(A\text{.}\)</p></article><article class="hiddenproof" id="proof-26"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-26"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-26"><article class="hiddenproof"><p id="p-713">It is enough to prove the first implication: the second then follows by exchanging the roles of \(A\) and \(B\text{.}\)</p>
-<p id="p-714">Suppose \(BA=I_n\text{.}\) We first show that \(A\) is invertible. We have</p>
-<div class="displaymath">
+<p class="continuation">In plain English: a matrix <span class="process-math">\(B\)</span> is a <em class="emphasis">left-inverse</em> of <span class="process-math">\(A\)</span> if and only if it is a <em class="emphasis">right-inverse</em> of <span class="process-math">\(A\text{.}\)</span></p></article><article class="hiddenproof" id="proof-26"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-26"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-26"><article class="hiddenproof"><p id="p-713">It is enough to prove the first implication: the second then follows by exchanging the roles of <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{.}\)</span></p>
+<p id="p-714">Suppose <span class="process-math">\(BA=I_n\text{.}\)</span> We first show that <span class="process-math">\(A\)</span> is invertible. We have</p>
+<div class="displaymath process-math">
 \begin{align*}
 A\boldx=\boldzero\amp\implies BA\boldx=\boldzero \\
 \amp\implies I\boldx=\boldzero \\
 \amp \implies \boldx=\boldzero \text{.}
 \end{align*}
 </div>
-<p class="continuation">By Statement (3) of <a href="" class="xref" data-knowl="./knowl/th_invertibility.html" title="Theorem 3.4.5: Invertibility theorem">Theorem 3.4.5</a>, we conclude that \(A\) is invertible.</p>
-<p id="p-715">Now that we know \(A^{-1}\) exists we have</p>
-<div class="displaymath">
+<p class="continuation">By Statement (3) of <a href="" class="xref" data-knowl="./knowl/th_invertibility.html" title="Theorem 3.4.5: Invertibility theorem">Theorem 3.4.5</a>, we conclude that <span class="process-math">\(A\)</span> is invertible.</p>
+<p id="p-715">Now that we know <span class="process-math">\(A^{-1}\)</span> exists we have</p>
+<div class="displaymath process-math">
 \begin{align*}
 BA=I_n\amp \implies  BAA^{-1}=IA^{-1} \\
 \amp \implies B=A^{-1}\\
@@ -771,7 +780,7 @@ BA=I_n\amp \implies  BAA^{-1}=IA^{-1} \\
 \end{align*}
 </div></article></div>
 <p id="p-716">As a further consequence of <a href="" class="xref" data-knowl="./knowl/th_invertibility.html" title="Theorem 3.4.5: Invertibility theorem">Theorem 3.4.5</a>, we can at last strengthen the implication</p>
-<div class="displaymath">
+<div class="displaymath process-math">
 \begin{equation*}
 A, B \text{ invertible }\implies AB \text{ invertibe}
 \end{equation*}
@@ -780,100 +789,101 @@ A, B \text{ invertible }\implies AB \text{ invertibe}
 <article class="corollary theorem-like" id="cor_inv_prod_eq"><h4 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">3.4.12</span><span class="period">.</span><span class="space"> </span><span class="title">Invertibility of product equivalence.</span>
 </h4>
-<p id="p-717">Let \(A\) and \(B\) be \(n\times n\text{.}\) Then \(AB\) is invertible if and only if \(A\) and \(B\) are both invertible: i.e.,</p>
-<div class="displaymath">
+<p id="p-717">Let <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> be <span class="process-math">\(n\times n\text{.}\)</span> Then <span class="process-math">\(AB\)</span> is invertible if and only if <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are both invertible: i.e.,</p>
+<div class="displaymath process-math">
 \begin{equation*}
 A, B \text{ invertible }\iff AB \text{ invertibe}
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-27"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-27"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-27"><article class="hiddenproof"><article class="case" id="case-45"><h5 class="heading">Implication: \(A \text{ and } B \text{ invertible }\implies AB \text{ invertibe}\).</h5>
-<p id="p-718">We know from <a href="" class="xref" data-knowl="./knowl/th_invertible_prod.html" title="Theorem 3.3.6: Invertibility of products">Theorem 3.3.6</a>  that if \(A\) and \(B\) are invertible, then so is \(AB\text{.}\)</p></article><article class="case" id="case-46"><h5 class="heading">Implication: \(AB\) invertible \(\implies\) \(A\) and \(B\) invertible.</h5>
-<p id="p-719">Assume \(AB\) is invertible and let \(C\) be its inverse. Thus \(C(AB)=(AB)C=I_n\text{.}\) We first prove \(B\) is invertible. We have</p>
-<div class="displaymath">
+</div></article><article class="hiddenproof" id="proof-27"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-27"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-27"><article class="hiddenproof"><article class="case" id="case-45"><h5 class="heading">Implication: <span class="process-math">\(A \text{ and } B \text{ invertible }\implies AB \text{ invertibe}\)</span>.</h5>
+<p id="p-718">We know from <a href="" class="xref" data-knowl="./knowl/th_invertible_prod.html" title="Theorem 3.3.6: Invertibility of products">Theorem 3.3.6</a>  that if <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are invertible, then so is <span class="process-math">\(AB\text{.}\)</span></p></article><article class="case" id="case-46"><h5 class="heading">Implication: <span class="process-math">\(AB\)</span> invertible <span class="process-math">\(\implies\)</span> <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> invertible.</h5>
+<p id="p-719">Assume <span class="process-math">\(AB\)</span> is invertible and let <span class="process-math">\(C\)</span> be its inverse. Thus <span class="process-math">\(C(AB)=(AB)C=I_n\text{.}\)</span> We first prove <span class="process-math">\(B\)</span> is invertible. We have</p>
+<div class="displaymath process-math">
 \begin{align*}
 B\boldx=\boldzero\amp \implies  AB\boldx=\boldzero \\
 \amp \implies  \boldx=\boldzero\text{.}
 \end{align*}
 </div>
-<p class="continuation">The last implication uses Statement (3) of <a href="" class="xref" data-knowl="./knowl/th_invertibility.html" title="Theorem 3.4.5: Invertibility theorem">Theorem 3.4.5</a> and the fact that \(AB\) is invertible. We have shown that</p>
-<div class="displaymath">
+<p class="continuation">The last implication uses Statement (3) of <a href="" class="xref" data-knowl="./knowl/th_invertibility.html" title="Theorem 3.4.5: Invertibility theorem">Theorem 3.4.5</a> and the fact that <span class="process-math">\(AB\)</span> is invertible. We have shown that</p>
+<div class="displaymath process-math">
 \begin{equation*}
 B\boldx=\boldzero\implies \boldx=\boldzero\text{,}
 \end{equation*}
 </div>
-<p class="continuation">and hence that \(B\) is invertible, using once again Statement (3) of <a href="" class="xref" data-knowl="./knowl/th_invertibility.html" title="Theorem 3.4.5: Invertibility theorem">Theorem 3.4.5</a>.</p>
-<p id="p-720">Next we prove directly that \(A\) is invertible. Namely, we claim that \(A^{-1}=BC\text{.}\) Indeed, since \(C\) is the inverse of \(AB\text{,}\) we have \(A(BC)=(AB)C=I\text{.}\) Thus \(BC\) is a right-inverse of \(A\text{.}\) <a href="" class="xref" data-knowl="./knowl/cor_left-right_inverse.html" title="Corollary 3.4.11: Left-inverse if and only if right-inverse">Corollary 3.4.11</a> now implies \((BC)A=I\text{,}\) and hence that \(A^{-1}=BC\text{,}\) as claimed.</p>
-<p id="p-721">This completes the proof that if \(AB\) is invertible, then \(A\) and \(B\) are invertible.</p></article></article></div> We conclude with two results related to row reduction. The first provides an equivalent formulation of row equivalence in terms of matrix arithmetic. <article class="corollary theorem-like" id="cor_row_equivalence_invertibility"><h4 class="heading">
+<p class="continuation">and hence that <span class="process-math">\(B\)</span> is invertible, using once again Statement (3) of <a href="" class="xref" data-knowl="./knowl/th_invertibility.html" title="Theorem 3.4.5: Invertibility theorem">Theorem 3.4.5</a>.</p>
+<p id="p-720">Next we prove directly that <span class="process-math">\(A\)</span> is invertible. Namely, we claim that <span class="process-math">\(A^{-1}=BC\text{.}\)</span> Indeed, since <span class="process-math">\(C\)</span> is the inverse of <span class="process-math">\(AB\text{,}\)</span> we have <span class="process-math">\(A(BC)=(AB)C=I\text{.}\)</span> Thus <span class="process-math">\(BC\)</span> is a right-inverse of <span class="process-math">\(A\text{.}\)</span> <a href="" class="xref" data-knowl="./knowl/cor_left-right_inverse.html" title="Corollary 3.4.11: Left-inverse if and only if right-inverse">Corollary 3.4.11</a> now implies <span class="process-math">\((BC)A=I\text{,}\)</span> and hence that <span class="process-math">\(A^{-1}=BC\text{,}\)</span> as claimed.</p>
+<p id="p-721">This completes the proof that if <span class="process-math">\(AB\)</span> is invertible, then <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are invertible.</p></article></article></div>
+<article class="corollary theorem-like" id="cor_row_equivalence_invertibility"><h4 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">3.4.13</span><span class="period">.</span><span class="space"> </span><span class="title">Row equivalence and invertible matrices.</span>
 </h4>
-<p id="p-722">Let \(A\) and \(B\) be \(m\times n\) matrices. The following statements are equivalent.</p>
+<p id="p-722">Let <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> be <span class="process-math">\(m\times n\)</span> matrices. The following statements are equivalent.</p>
 <ol class="decimal">
-<li id="li-231"><p id="p-723">The matrices \(A\) and \(B\) are row equivalent.</p></li>
-<li id="li-232"><p id="p-724">There is an invertible \(m\times m\) matrix \(Q\) such that \(QA=B\text{.}\)</p></li>
-</ol></article><article class="hiddenproof" id="proof-28"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-28"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-28"><article class="hiddenproof">As discussed in <a href="s_invertibility_theorem.html#ss_systems_to_matrix_eqns" class="internal" title="Subsection 3.4.2: Interlude on matrix equations">Subsection 3.4.2</a> the matrices \(A\) and \(B\) are row equivalent if and only if there are \(m\times m\) elementary matrices \(E_1, E_2, \dots, E_r\) satisfying<div class="displaymath">
+<li id="li-231"><p id="p-723">The matrices <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are row equivalent.</p></li>
+<li id="li-232"><p id="p-724">There is an invertible <span class="process-math">\(m\times m\)</span> matrix <span class="process-math">\(Q\)</span> such that <span class="process-math">\(QA=B\text{.}\)</span></p></li>
+</ol></article><article class="hiddenproof" id="proof-28"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-28"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-28"><article class="hiddenproof">As discussed in <a href="s_invertibility_theorem.html#ss_systems_to_matrix_eqns" class="internal" title="Subsection 3.4.2: Interlude on matrix equations">Subsection 3.4.2</a> the matrices <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are row equivalent if and only if there are <span class="process-math">\(m\times m\)</span> elementary matrices <span class="process-math">\(E_1, E_2, \dots, E_r\)</span> satisfying<div class="displaymath process-math">
 \begin{equation*}
 E_rE_{r-1}\cdots E_1 A=B\text{.}
 \end{equation*}
-</div>The corollary now follows from (5) of <a href="" class="xref" data-knowl="./knowl/th_invertibility.html" title="Theorem 3.4.5: Invertibility theorem">Theorem 3.4.5</a> since a matrix \(Q\) is invertible if and only if it can be written as<div class="displaymath">
+</div>The corollary now follows from (5) of <a href="" class="xref" data-knowl="./knowl/th_invertibility.html" title="Theorem 3.4.5: Invertibility theorem">Theorem 3.4.5</a> since a matrix <span class="process-math">\(Q\)</span> is invertible if and only if it can be written as<div class="displaymath process-math">
 \begin{equation*}
 Q=E_rE_{r-1}\cdots E_1
 \end{equation*}
-</div>for some elementary matrices \(E_i\text{.}\)</article></div>
+</div>for some elementary matrices <span class="process-math">\(E_i\text{.}\)</span></article></div>
 <article class="remark remark-like" id="rm_row_equivalence_props"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.4.14</span><span class="period">.</span><span class="space"> </span><span class="title">Properties of row equivalence.</span>
 </h4>
-<p id="p-725">With the help of <a href="" class="xref" data-knowl="./knowl/cor_row_equivalence_invertibility.html" title="Corollary 3.4.13: Row equivalence and invertible matrices">Corollary 3.4.13</a>, we can easily show that the row equivalence relation is <em class="emphasis">reflexive</em>, <em class="emphasis">symmetric</em>, and <em class="emphasis">transitive</em>. In other words, letting \(A\sim B\) denote that \(A\) is row equivalent to \(B\text{,}\) the following properties hold.</p>
+<p id="p-725">With the help of <a href="" class="xref" data-knowl="./knowl/cor_row_equivalence_invertibility.html" title="Corollary 3.4.13: Row equivalence and invertible matrices">Corollary 3.4.13</a>, we can easily show that the row equivalence relation is <em class="emphasis">reflexive</em>, <em class="emphasis">symmetric</em>, and <em class="emphasis">transitive</em>. In other words, letting <span class="process-math">\(A\sim B\)</span> denote that <span class="process-math">\(A\)</span> is row equivalent to <span class="process-math">\(B\text{,}\)</span> the following properties hold.</p>
 <ol class="lower-roman">
 <li id="li-233">
-<span class="heading"><span class="title">Reflexivity.</span></span><p id="p-726">For any matrix \(A\text{,}\)  we have \(A\sim A\text{:}\) i.e., every matrix is row equivalent to itself.</p>
+<span class="heading"><span class="title">Reflexivity.</span></span><p id="p-726">For any matrix <span class="process-math">\(A\text{,}\)</span>  we have <span class="process-math">\(A\sim A\text{:}\)</span> i.e., every matrix is row equivalent to itself.</p>
 </li>
 <li id="li-234">
-<span class="heading"><span class="title">Symmetry.</span></span><p id="p-727">For all matrices \(A\) and \(B\text{,}\) if \(A\sim B\text{,}\) then \(B\sim A\text{.}\)</p>
+<span class="heading"><span class="title">Symmetry.</span></span><p id="p-727">For all matrices <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{,}\)</span> if <span class="process-math">\(A\sim B\text{,}\)</span> then <span class="process-math">\(B\sim A\text{.}\)</span></p>
 </li>
 <li id="li-235">
-<span class="heading"><span class="title">Transitivity.</span></span><p id="p-728">For all matrices \(A, B, C\text{,}\) if \(A\sim B\) and \(B\sim C\text{,}\) then \(A\sim C\text{.}\)</p>
+<span class="heading"><span class="title">Transitivity.</span></span><p id="p-728">For all matrices <span class="process-math">\(A, B, C\text{,}\)</span> if <span class="process-math">\(A\sim B\)</span> and <span class="process-math">\(B\sim C\text{,}\)</span> then <span class="process-math">\(A\sim C\text{.}\)</span></p>
 </li>
 </ol>
-<p class="continuation">The proof of these facts is left as an exercise (<a href="" class="xref" data-knowl="./knowl/ex_row_equiv_props.html" title="Exercise 3.4.7.12: Properties of row equivalence">Exercise 3.4.7.12</a>).</p></article> Lastly, we provide at last the proof of the third statement of <a href="" class="xref" data-knowl="./knowl/th_matrixforms.html" title="Theorem 2.2.10: Row equivalent matrix forms">Theorem 2.2.10</a> promised back in <a href="s_ge.html" class="internal" title="Section 2.2: Gaussian elimination">Section 2.2</a>. This proof is due to Thomas Yuster<a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-1" id="fn-1"><sup> 1 </sup></a>. <article class="corollary theorem-like" id="cor_RRE_uniqueness"><h4 class="heading">
+<p class="continuation">The proof of these facts is left as an exercise (<a href="" class="xref" data-knowl="./knowl/ex_row_equiv_props.html" title="Exercise 3.4.7.12: Properties of row equivalence">Exercise 3.4.7.12</a>).</p></article><a href="" class="xref" data-knowl="./knowl/th_matrixforms.html" title="Theorem 2.2.10: Row equivalent matrix forms">Theorem 2.2.10</a><a href="s_ge.html" class="internal" title="Section 2.2: Gaussian elimination">Section 2.2</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-3" id="fn-3"><sup> 1 </sup></a><article class="corollary theorem-like" id="cor_RRE_uniqueness"><h4 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">3.4.15</span><span class="period">.</span><span class="space"> </span><span class="title">Uniqueness of reduced row echelon form.</span>
 </h4>
-<p id="p-729">Any matrix \(A\) is row equivalent to a <em class="emphasis">unique</em> matrix in reduced row echelon form.</p></article><article class="hiddenproof" id="proof-29"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-29"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-29"><article class="hiddenproof"><p id="p-730">Let \(A\) be an \(m\times n\) matrix. Using Gauss-Jordan elimination, we can row reduce \(A\) to matrix \(U\) in reduced row echelon form. Suppose \(A\) is also row equivalent to the matrix \(U'\) in reduced row echelon form. Then \(U\) and \(U'\) are row equivalent, since the row equivalence relation is symmetric and transitive (<a href="" class="xref" data-knowl="./knowl/rm_row_equivalence_props.html" title="Remark 3.4.14: Properties of row equivalence">Remark 3.4.14</a>). Thus it suffices to show that if \(U\) and \(U'\) are row equivalent matrices in reduced row echelon form, then \(U=U'\text{.}\) We do so by induction on \(n\text{.}\) The base step is trivial, since there is only one \(m\times 1\) matrix in reduced row echelon form.</p>
-<p id="p-731">For the induction step we assume that any two row equivalent \(m\times n\) matrices in reduced row echelon form are equal.  Suppose by contradiction that \(U=[u_{ij}]\) and \(U'=[u'_{ij}]\) are row equivalent \(m\times (n+1)\) matrices in reduced row echelon form, and that \(U\ne U'\text{.}\)  By <a href="" class="xref" data-knowl="./knowl/cor_row_equivalence_invertibility.html" title="Corollary 3.4.13: Row equivalence and invertible matrices">Corollary 3.4.13</a> there is an invertible matrix \(Q\) such that \(QU=U'\text{.}\) The first \(n\) columns of \(U\) and \(U'\) form matrices \(V\) and \(V'\text{,}\) respectively, that are in reduced row echelon form, as one easily checks. Furthermore, \(V\) and \(V'\) are row equivalent: indeed, using <a href="" class="xref" data-knowl="./knowl/th_column_method.html" title="Theorem 3.1.19: Column method of matrix multiplication">Theorem 3.1.19</a> we see that \(QU=U'\) implies \(QV=V'\text{.}\) By the induction hypothesis we must have \(V=V'\text{,}\) and thus \(U\) and \(U'\) can only differ in their last column.</p>
-<p id="p-732">We claim that \(U\) and \(U'\) must both have a leading one in the last column. To see why, consider the matrix equation \(U\boldx=\boldzero\text{,}\) where \(\boldx=[x_j]\) is a \((n+1)\times 1 \) column vector. Since \(QU=U'\text{,}\) we have</p>
-<div class="displaymath">
+<p id="p-729">Any matrix <span class="process-math">\(A\)</span> is row equivalent to a <em class="emphasis">unique</em> matrix in reduced row echelon form.</p></article><article class="hiddenproof" id="proof-29"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-29"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-29"><article class="hiddenproof"><p id="p-730">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(m\times n\)</span> matrix. Using Gauss-Jordan elimination, we can row reduce <span class="process-math">\(A\)</span> to matrix <span class="process-math">\(U\)</span> in reduced row echelon form. Suppose <span class="process-math">\(A\)</span> is also row equivalent to the matrix <span class="process-math">\(U'\)</span> in reduced row echelon form. Then <span class="process-math">\(U\)</span> and <span class="process-math">\(U'\)</span> are row equivalent, since the row equivalence relation is symmetric and transitive (<a href="" class="xref" data-knowl="./knowl/rm_row_equivalence_props.html" title="Remark 3.4.14: Properties of row equivalence">Remark 3.4.14</a>). Thus it suffices to show that if <span class="process-math">\(U\)</span> and <span class="process-math">\(U'\)</span> are row equivalent matrices in reduced row echelon form, then <span class="process-math">\(U=U'\text{.}\)</span> We do so by induction on <span class="process-math">\(n\text{.}\)</span> The base step is trivial, since there is only one <span class="process-math">\(m\times 1\)</span> matrix in reduced row echelon form.</p>
+<p id="p-731">For the induction step we assume that any two row equivalent <span class="process-math">\(m\times n\)</span> matrices in reduced row echelon form are equal.  Suppose by contradiction that <span class="process-math">\(U=[u_{ij}]\)</span> and <span class="process-math">\(U'=[u'_{ij}]\)</span> are row equivalent <span class="process-math">\(m\times (n+1)\)</span> matrices in reduced row echelon form, and that <span class="process-math">\(U\ne U'\text{.}\)</span>  By <a href="" class="xref" data-knowl="./knowl/cor_row_equivalence_invertibility.html" title="Corollary 3.4.13: Row equivalence and invertible matrices">Corollary 3.4.13</a> there is an invertible matrix <span class="process-math">\(Q\)</span> such that <span class="process-math">\(QU=U'\text{.}\)</span> The first <span class="process-math">\(n\)</span> columns of <span class="process-math">\(U\)</span> and <span class="process-math">\(U'\)</span> form matrices <span class="process-math">\(V\)</span> and <span class="process-math">\(V'\text{,}\)</span> respectively, that are in reduced row echelon form, as one easily checks. Furthermore, <span class="process-math">\(V\)</span> and <span class="process-math">\(V'\)</span> are row equivalent: indeed, using <a href="" class="xref" data-knowl="./knowl/th_column_method.html" title="Theorem 3.1.19: Column method of matrix multiplication">Theorem 3.1.19</a> we see that <span class="process-math">\(QU=U'\)</span> implies <span class="process-math">\(QV=V'\text{.}\)</span> By the induction hypothesis we must have <span class="process-math">\(V=V'\text{,}\)</span> and thus <span class="process-math">\(U\)</span> and <span class="process-math">\(U'\)</span> can only differ in their last column.</p>
+<p id="p-732">We claim that <span class="process-math">\(U\)</span> and <span class="process-math">\(U'\)</span> must both have a leading one in the last column. To see why, consider the matrix equation <span class="process-math">\(U\boldx=\boldzero\text{,}\)</span> where <span class="process-math">\(\boldx=[x_j]\)</span> is a <span class="process-math">\((n+1)\times 1 \)</span> column vector. Since <span class="process-math">\(QU=U'\text{,}\)</span> we have</p>
+<div class="displaymath process-math">
 \begin{align*}
 U\boldx=\boldzero \amp\implies QU\boldx=Q\boldzero  \\
 \amp\implies U'\boldx=\boldzero \amp (U'=QU) \text{,}
 \end{align*}
 </div>
 <p class="continuation">and thus</p>
-<div class="displaymath">
+<div class="displaymath process-math">
 \begin{equation*}
 U\boldx=\boldzero\implies U\boldx-U'\boldx=\boldzero\implies (U-U')\boldx=\boldzero\text{.}
 \end{equation*}
 </div>
-<p class="continuation">Because \(U\) and \(U'\) differ in at most their last column, the first \(n\) columns of \(U-U'\) are zero columns, and thus we have</p>
-<div class="displaymath">
+<p class="continuation">Because <span class="process-math">\(U\)</span> and <span class="process-math">\(U'\)</span> differ in at most their last column, the first <span class="process-math">\(n\)</span> columns of <span class="process-math">\(U-U'\)</span> are zero columns, and thus we have</p>
+<div class="displaymath process-math">
 \begin{equation}
 (U-U')\boldx=[x_{n+1}(u_{i(n+1)}-u'_{i(n+1)})]=\boldzero\text{.}\label{eq_unique_rref}\tag{3.4.5}
 \end{equation}
 </div>
-<p class="continuation">Since \(U\ne U'\text{,}\) there is some \(1\leq i\leq m\) such that \(u_{i(n+1)}\ne u'_{i(n+1)}\text{.}\) Since \(x_{n+1}(u_{i(n+1)}-u'_{i(n+1)})=0\) by <a href="" class="xref" data-knowl="./knowl/eq_unique_rref.html" title="Equation 3.4.5">(3.4.5)</a>, we must have \(x_{n+1}=0\text{.}\) We have shown that for any \(\boldx=[x_j]\) satisfying \(U\boldx=\boldzero\text{,}\) we must have \(x_{n+1}=0\text{.}\) It follows from <a href="" class="xref" data-knowl="./knowl/th_solveSystem.html" title="Theorem 2.3.5: Solving linear systems">Theorem 2.3.5</a> that \(U\) must have a leading in its last column, since otherwise the variable \(x_{n+1}\) in the system \(U\boldx=0\) would be free, and could assume any value. To see that \(U'\) also has a leading one in the last column, we use the same argument, starting with the equation \(Q^{-1}U'=U\text{.}\)</p>
-<p id="p-733">To summarize, starting with row equivalent matrices  \(U\) and \(U'\) in reduced row echelon form, and assuming by contradiction that \(U\ne U'\text{,}\) we conclude that (a) the first \(n\) columns of \(U\) and \(U'\) are equal and form matrices in reduced row echelon form, and (b) the last columns of \(U\) and \(U'\) have leading ones. Since \(U\) and \(U'\) are in reduced row echelon form, and since the first \(n\) columns of \(U\) and \(U'\) are equal, we see that the leading ones in the last columns of \(U\) and \(U'\) must occur in the same row: namely, the first zero row of \(V=V'\text{.}\) It follows that \(U=U'\text{,}\) a contradiction.</p></article></div></section><section class="exercises" id="s_invertibility_theorem_ex"><h3 class="heading hide-type">
+<p class="continuation">Since <span class="process-math">\(U\ne U'\text{,}\)</span> there is some <span class="process-math">\(1\leq i\leq m\)</span> such that <span class="process-math">\(u_{i(n+1)}\ne u'_{i(n+1)}\text{.}\)</span> Since <span class="process-math">\(x_{n+1}(u_{i(n+1)}-u'_{i(n+1)})=0\)</span> by <a href="" class="xref" data-knowl="./knowl/eq_unique_rref.html" title="Equation 3.4.5">(3.4.5)</a>, we must have <span class="process-math">\(x_{n+1}=0\text{.}\)</span> We have shown that for any <span class="process-math">\(\boldx=[x_j]\)</span> satisfying <span class="process-math">\(U\boldx=\boldzero\text{,}\)</span> we must have <span class="process-math">\(x_{n+1}=0\text{.}\)</span> It follows from <a href="" class="xref" data-knowl="./knowl/th_solveSystem.html" title="Theorem 2.3.5: Solving linear systems">Theorem 2.3.5</a> that <span class="process-math">\(U\)</span> must have a leading in its last column, since otherwise the variable <span class="process-math">\(x_{n+1}\)</span> in the system <span class="process-math">\(U\boldx=0\)</span> would be free, and could assume any value. To see that <span class="process-math">\(U'\)</span> also has a leading one in the last column, we use the same argument, starting with the equation <span class="process-math">\(Q^{-1}U'=U\text{.}\)</span></p>
+<p id="p-733">To summarize, starting with row equivalent matrices  <span class="process-math">\(U\)</span> and <span class="process-math">\(U'\)</span> in reduced row echelon form, and assuming by contradiction that <span class="process-math">\(U\ne U'\text{,}\)</span> we conclude that (a) the first <span class="process-math">\(n\)</span> columns of <span class="process-math">\(U\)</span> and <span class="process-math">\(U'\)</span> are equal and form matrices in reduced row echelon form, and (b) the last columns of <span class="process-math">\(U\)</span> and <span class="process-math">\(U'\)</span> have leading ones. Since <span class="process-math">\(U\)</span> and <span class="process-math">\(U'\)</span> are in reduced row echelon form, and since the first <span class="process-math">\(n\)</span> columns of <span class="process-math">\(U\)</span> and <span class="process-math">\(U'\)</span> are equal, we see that the leading ones in the last columns of <span class="process-math">\(U\)</span> and <span class="process-math">\(U'\)</span> must occur in the same row: namely, the first zero row of <span class="process-math">\(V=V'\text{.}\)</span> It follows that <span class="process-math">\(U=U'\text{,}\)</span> a contradiction.</p></article></div></section><section class="exercises" id="s_invertibility_theorem_ex"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber">3.4.7</span> <span class="title">Exercises</span>
 </h3>
 <div class="exercisegroup" id="exercisegroup-4">
 <h4 class="heading"><span class="title">Inverse algorithm.</span></h4>
 <div class="introduction" id="introduction-16">
 <p id="p-734">Use the inverse algorithm to determine whether each matrix is invertible, and to compute its inverse if possible.</p>
-<p id="p-735">You are not required to follow Gaussian elimination to the letter, and you may perform multiple operations at the same time, as long as they are independent of one another. For example, do not do \(r_2\rightarrow r_2-r+1\) and \(r_3\rightarrow r_3+2r_2\) in the same step.</p>
+<p id="p-735">You are not required to follow Gaussian elimination to the letter, and you may perform multiple operations at the same time, as long as they are independent of one another. For example, do not do <span class="process-math">\(r_2\rightarrow r_2-r+1\)</span> and <span class="process-math">\(r_3\rightarrow r_3+2r_2\)</span> in the same step.</p>
 </div>
 <div class="exercisegroup-exercises">
 <article class="exercise exercise-like" id="exercise-48"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
-<p id="p-736">\(A=\begin{amatrix}[rrr]1/5\amp 1/5\amp -2/5\\ 1/5\amp 1/5\amp 1/10\\ 1/5\amp -4/5\amp 1/10 \end{amatrix}\)</p>
+<p id="p-736"><span class="process-math">\(A=\begin{amatrix}[rrr]1/5\amp 1/5\amp -2/5\\ 1/5\amp 1/5\amp 1/10\\ 1/5\amp -4/5\amp 1/10 \end{amatrix}\)</span></p>
 <div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-24" id="solution-24"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-24"><div class="solution solution-like">
 <p id="p-737">We use the inverse algorithm:</p>
-<div class="displaymath">
+<div class="displaymath process-math">
 \begin{align*}
 \begin{amatrix}[rrr|rrr]1/5\amp 1/5\amp -2/5\amp 1\amp 0\amp 0\\ 1/5\amp 1/5\amp 1/10\amp 0\amp 1\amp 0\\ 1/5\amp -4/5\amp 1/10\amp 0\amp 0\amp 1 \end{amatrix} \amp \xrightarrow[]{r_2 - r_1} \begin{amatrix}[rrr|rrr]1/5\amp 1/5\amp -2/5\amp 1\amp 0\amp 0\\ 0\amp 0\amp 1/2\amp -1\amp 1\amp 0\\ 1/5\amp -4/5\amp 1/10\amp 0\amp 0\amp 1 \end{amatrix}\\
 \amp \xrightarrow[]{r_3 - r_1} \begin{amatrix}[rrr|rrr]1/5\amp 1/5\amp -2/5\amp 1\amp 0\amp 0\\ 0\amp 0\amp 1/2\amp -1\amp 1\amp 0\\ 0\amp -1\amp 1/2\amp -1\amp 0\amp 1 \end{amatrix}\\
@@ -887,33 +897,33 @@ U\boldx=\boldzero\implies U\boldx-U'\boldx=\boldzero\implies (U-U')\boldx=\boldz
 \end{align*}
 </div>
 <p class="continuation">We conclude that</p>
-<div class="displaymath">
+<div class="displaymath process-math">
 \begin{equation*}
 A^{-1}=\begin{amatrix}[rrr] 1\amp 3\amp 1\\ 0\amp 1\amp -1\\ -2\amp 2\amp 0\end{amatrix}\text{.}
 \end{equation*}
 </div>
 </div></div>
 </div></article><article class="exercise exercise-like" id="exercise-49"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
-<p id="p-738">\(A=\begin{amatrix}[rrr]1\amp 1\amp -2\\ 2\amp -3\amp -3\\ 1\amp -4\amp 1 \end{amatrix}\)</p></article><article class="exercise exercise-like" id="exercise-50"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
-<p id="p-739">\(A=\begin{amatrix}[rrrr]0\amp 0\amp 2\amp 0\\ 1\amp 0\amp 0\amp 1\\ 0\amp -1\amp 3\amp 0\\ 2\amp 1\amp 5\amp -3  \end{amatrix}\)</p></article><article class="exercise exercise-like" id="exercise-51"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
-<p id="p-740">\(A=\begin{amatrix}[rrrr]1\amp -1\amp -1\amp 1\\ 2\amp 1\amp -3\amp 0 \\ 3\amp -1\amp -1\amp -1 \\ 5\amp 1\amp -4\amp -2\end{amatrix}\)</p></article><article class="exercise exercise-like" id="exercise-52"><h5 class="heading"><span class="codenumber">5<span class="period">.</span></span></h5>
-<p id="p-741">\(A=\begin{bmatrix}0\amp 0\amp 0\amp c_1\\ 0\amp 0\amp c_2\amp 0\\ 0\amp c_3\amp 0\amp 0\\ c_4\amp 0\amp 0\amp 0 \end{bmatrix}\text{,}\) \(c_i\ne 0\)</p></article><article class="exercise exercise-like" id="exercise-53"><h5 class="heading"><span class="codenumber">6<span class="period">.</span></span></h5>
-<p id="p-742">\(A=\begin{bmatrix}c\amp 0\amp 0\amp 0\\ 1\amp c\amp 0\amp 0\\ 0\amp 1\amp c\amp 0\\ 0\amp 0\amp 1\amp c \end{bmatrix}\text{,}\) \(c\ne 0\)</p></article>
+<p id="p-738"><span class="process-math">\(A=\begin{amatrix}[rrr]1\amp 1\amp -2\\ 2\amp -3\amp -3\\ 1\amp -4\amp 1 \end{amatrix}\)</span></p></article><article class="exercise exercise-like" id="exercise-50"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
+<p id="p-739"><span class="process-math">\(A=\begin{amatrix}[rrrr]0\amp 0\amp 2\amp 0\\ 1\amp 0\amp 0\amp 1\\ 0\amp -1\amp 3\amp 0\\ 2\amp 1\amp 5\amp -3  \end{amatrix}\)</span></p></article><article class="exercise exercise-like" id="exercise-51"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
+<p id="p-740"><span class="process-math">\(A=\begin{amatrix}[rrrr]1\amp -1\amp -1\amp 1\\ 2\amp 1\amp -3\amp 0 \\ 3\amp -1\amp -1\amp -1 \\ 5\amp 1\amp -4\amp -2\end{amatrix}\)</span></p></article><article class="exercise exercise-like" id="exercise-52"><h5 class="heading"><span class="codenumber">5<span class="period">.</span></span></h5>
+<p id="p-741"><span class="process-math">\(A=\begin{bmatrix}0\amp 0\amp 0\amp c_1\\ 0\amp 0\amp c_2\amp 0\\ 0\amp c_3\amp 0\amp 0\\ c_4\amp 0\amp 0\amp 0 \end{bmatrix}\text{,}\)</span> <span class="process-math">\(c_i\ne 0\)</span></p></article><article class="exercise exercise-like" id="exercise-53"><h5 class="heading"><span class="codenumber">6<span class="period">.</span></span></h5>
+<p id="p-742"><span class="process-math">\(A=\begin{bmatrix}c\amp 0\amp 0\amp 0\\ 1\amp c\amp 0\amp 0\\ 0\amp 1\amp c\amp 0\\ 0\amp 0\amp 1\amp c \end{bmatrix}\text{,}\)</span> <span class="process-math">\(c\ne 0\)</span></p></article>
 </div>
 </div>
 <div class="exercisegroup" id="exercisegroup-5">
 <h4 class="heading"><span class="title">Product of elementary matrices algorithm.</span></h4>
 <div class="introduction" id="introduction-17">
-<p id="p-743">Each matrix below is invertible. Use the product of elementary matrices algorithm to write \(A\) as a product of elementary matrices.</p>
+<p id="p-743">Each matrix below is invertible. Use the product of elementary matrices algorithm to write <span class="process-math">\(A\)</span> as a product of elementary matrices.</p>
 <p id="p-744">Here you should perform Gaussian elimination to the letter, one row operation at a time.</p>
 </div>
 <div class="exercisegroup-exercises">
 <article class="exercise exercise-like" id="exercise-54"><h5 class="heading"><span class="codenumber">7<span class="period">.</span></span></h5>
-<p id="p-745">\(A=\begin{amatrix}[rr]0\amp 1\\2\amp -5 \end{amatrix}\)</p>
+<p id="p-745"><span class="process-math">\(A=\begin{amatrix}[rr]0\amp 1\\2\amp -5 \end{amatrix}\)</span></p>
 <div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-25" id="solution-25"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-25"><div class="solution solution-like">
-<p id="p-746">Row reduce \(A\) to the identity matrix:</p>
-<div class="displaymath">
+<p id="p-746">Row reduce <span class="process-math">\(A\)</span> to the identity matrix:</p>
+<div class="displaymath process-math">
 \begin{align*}
 \begin{amatrix}[rr]0\amp 1\\2\amp -5 \end{amatrix} \amp \xrightarrow[]{r_1\leftrightarrow r_1} \begin{amatrix}[rr]2\amp -5 \\0\amp 1 \end{amatrix}\\
 \amp \xrightarrow[]{\frac{1}{2}r_1} \begin{amatrix}[rr]1\amp -5/2\\ 0\amp 1 \end{amatrix}\\
@@ -921,13 +931,13 @@ A^{-1}=\begin{amatrix}[rrr] 1\amp 3\amp 1\\ 0\amp 1\amp -1\\ -2\amp 2\amp 0\end{
 \end{align*}
 </div>
 <p id="p-747">The corresponding elementary matrices are</p>
-<div class="displaymath">
+<div class="displaymath process-math">
 \begin{equation*}
 E_1 = \begin{amatrix}[rr]0\amp 1\\ 1\amp 0 \end{amatrix} , E_2 = \begin{amatrix}[rr]1/2\amp 0\\ 0\amp 1 \end{amatrix}, E_3=\begin{amatrix}[rr]1\amp 5/2\\ 0\amp 1 \end{amatrix}\text{.}
 \end{equation*}
 </div>
-<p class="continuation">It follows that \(E_3E_2E_1A=I\text{,}\) and hence that</p>
-<div class="displaymath">
+<p class="continuation">It follows that <span class="process-math">\(E_3E_2E_1A=I\text{,}\)</span> and hence that</p>
+<div class="displaymath process-math">
 \begin{equation*}
 A=E_1^{-1}E_{2}^{-1}E_3^{-1}=\begin{amatrix}[rr]0\amp 1\\ 1\amp 0 \end{amatrix}
 \begin{amatrix}[rr]2\amp 0\\ 0\amp 1 \end{amatrix}
@@ -936,13 +946,14 @@ A=E_1^{-1}E_{2}^{-1}E_3^{-1}=\begin{amatrix}[rr]0\amp 1\\ 1\amp 0 \end{amatrix}
 </div>
 </div></div>
 </div></article><article class="exercise exercise-like" id="exercise-55"><h5 class="heading"><span class="codenumber">8<span class="period">.</span></span></h5>
-<p id="p-748">\(A=\begin{amatrix}[rr]7\amp 1\\ 5\amp 1  \end{amatrix}\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-56"><h5 class="heading"><span class="codenumber">9<span class="period">.</span></span></h5>
-<p id="p-749"><p id="p-750">\(A=\begin{amatrix}[rrr]1\amp 1\amp 0\\ 1\amp 1\amp 1\\ 0\amp 1\amp 1 \end{amatrix}\)</p></p></article><article class="exercise exercise-like" id="exercise-57"><h5 class="heading"><span class="codenumber">10<span class="period">.</span></span></h5>
-<p id="p-751">\(A=\begin{amatrix}[rrr]1\amp 1\amp 1\\ 1\amp -1\amp 0\\ 1\amp 0\amp -1 \end{amatrix}\text{.}\)</p></article>
+<p id="p-748"><span class="process-math">\(A=\begin{amatrix}[rr]7\amp 1\\ 5\amp 1  \end{amatrix}\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-56"><h5 class="heading"><span class="codenumber">9<span class="period">.</span></span></h5>
+<p id="p-749"><p id="p-750"><span class="process-math">\(A=\begin{amatrix}[rrr]1\amp 1\amp 0\\ 1\amp 1\amp 1\\ 0\amp 1\amp 1 \end{amatrix}\)</span></p></p></article><article class="exercise exercise-like" id="exercise-57"><h5 class="heading"><span class="codenumber">10<span class="period">.</span></span></h5>
+<p id="p-751"><span class="process-math">\(A=\begin{amatrix}[rrr]1\amp 1\amp 1\\ 1\amp -1\amp 0\\ 1\amp 0\amp -1 \end{amatrix}\text{.}\)</span></p></article>
 </div>
 </div>
 <article class="exercise exercise-like" id="exercise-58"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
-<p id="p-752">According to Statement (2) of the invertibility theorem, a matrix \(A\) is invertible if and only if for all column vectors \(\boldb\) the matrix equation \(A\boldx=\boldb\) has a <em class="emphasis">unique</em> solution. Show that we can add the following, weaker-looking version of (2) to our list of equivalent statements: <blockquote class="blockquote" id="blockquote-1">(2') The matrix equation \(A\boldx=\boldb\) has <em class="emphasis">a</em> solution for any column vector \(\boldb\text{.}\)</blockquote></p>
+<p id="p-752">According to Statement (2) of the invertibility theorem, a matrix <span class="process-math">\(A\)</span> is invertible if and only if for all column vectors <span class="process-math">\(\boldb\)</span> the matrix equation <span class="process-math">\(A\boldx=\boldb\)</span> has a <em class="emphasis">unique</em> solution. Show that we can add the following, weaker-looking version of (2) to our list of equivalent statements: <blockquote class="blockquote" id="blockquote-1">(2') The matrix equation <span class="process-math">\(A\boldx=\boldb\)</span> has <em class="emphasis">a</em> solution for any column vector <span class="process-math">\(\boldb\text{.}\)</span>
+</blockquote></p>
 <div class="solutions">
 <a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-6" id="hint-6"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-6"><div class="hint solution-like">
 <p id="p-753">Try to logically weave Statement (2') into our original list of equivalent statements by (a) finding a statement from our original list that implies (2'), and (b) find a statement in our original list that is implied by (2').</p>
@@ -951,55 +962,56 @@ A=E_1^{-1}E_{2}^{-1}E_3^{-1}=\begin{amatrix}[rr]0\amp 1\\ 1\amp 0 \end{amatrix}
 </div></article><article class="exercise exercise-like" id="ex_row_equiv_props"><h4 class="heading">
 <span class="codenumber">12<span class="period">.</span></span><span class="space"> </span><span class="title">Properties of row equivalence.</span>
 </h4>
-<p id="p-755">Let \(A\sim B\) denote that matrix \(A\) is row equivalent to \(B\text{.}\) Use <a href="" class="xref" data-knowl="./knowl/cor_row_equivalence_invertibility.html" title="Corollary 3.4.13: Row equivalence and invertible matrices">Corollary 3.4.13</a> to show that the relation \(A\sim B\) is reflexive, symmetric, and transitive, as described in <a href="" class="xref" data-knowl="./knowl/rm_row_equivalence_props.html" title="Remark 3.4.14: Properties of row equivalence">Remark 3.4.14</a>.</p></article><article class="exercise exercise-like" id="exercise-60"><h4 class="heading"><span class="codenumber">13<span class="period">.</span></span></h4>
-<p id="p-756">Let \(A\) be an \(m\times n\) matrix, and let \(Q\) be an invertible \(m\times m\) matrix.</p>
+<p id="p-755">Let <span class="process-math">\(A\sim B\)</span> denote that matrix <span class="process-math">\(A\)</span> is row equivalent to <span class="process-math">\(B\text{.}\)</span> Use <a href="" class="xref" data-knowl="./knowl/cor_row_equivalence_invertibility.html" title="Corollary 3.4.13: Row equivalence and invertible matrices">Corollary 3.4.13</a> to show that the relation <span class="process-math">\(A\sim B\)</span> is reflexive, symmetric, and transitive, as described in <a href="" class="xref" data-knowl="./knowl/rm_row_equivalence_props.html" title="Remark 3.4.14: Properties of row equivalence">Remark 3.4.14</a>.</p></article><article class="exercise exercise-like" id="exercise-60"><h4 class="heading"><span class="codenumber">13<span class="period">.</span></span></h4>
+<p id="p-756">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(m\times n\)</span> matrix, and let <span class="process-math">\(Q\)</span> be an invertible <span class="process-math">\(m\times m\)</span> matrix.</p>
 <p id="p-757">Show that the two matrix equations</p>
-<div class="displaymath">
+<div class="displaymath process-math">
 \begin{align*}
 A\underset{n\times 1}{\boldx} \amp=\underset{m\times 1}{\boldzero} \\
 (QA)\underset{n\times 1}{\boldx} \amp=\underset{m\times 1}{\boldzero} 
 \end{align*}
 </div>
 <p class="continuation">have the same set of solutions. In other words show that</p>
-<div class="displaymath">
+<div class="displaymath process-math">
 \begin{equation*}
 A\boldx=\boldzero \iff (QA)\boldx=\boldzero\text{.}
 \end{equation*}
 </div></article><article class="exercise exercise-like" id="exercise-61"><h4 class="heading"><span class="codenumber">14<span class="period">.</span></span></h4>
-<p id="p-758">Suppose \(A\) and \(B\) are row equivalent square matrices. Prove: \(A\) is invertible if and only if \(B\) is invertible.</p></article><article class="exercise exercise-like" id="exercise-62"><h4 class="heading"><span class="codenumber">15<span class="period">.</span></span></h4>
-<p id="p-759">Use the provided information to determine whether the given square matrix \(A\) is invertible. Justify your answer using the inveribility theorem or one of its corollaries.</p>
+<p id="p-758">Suppose <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are row equivalent square matrices. Prove: <span class="process-math">\(A\)</span> is invertible if and only if <span class="process-math">\(B\)</span> is invertible.</p></article><article class="exercise exercise-like" id="exercise-62"><h4 class="heading"><span class="codenumber">15<span class="period">.</span></span></h4>
+<p id="p-759">Use the provided information to determine whether the given square matrix <span class="process-math">\(A\)</span> is invertible. Justify your answer using the inveribility theorem or one of its corollaries.</p>
 <article class="task exercise-like" id="task-1"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<p id="p-760">There are column vectors \(\boldx_1\ne \boldx_2\) such that \(A\boldx_1=A\boldx_2\text{.}\)</p></article><article class="task exercise-like" id="task-2"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<p id="p-761">\(A^2\) is invertible.</p></article><article class="task exercise-like" id="task-3"><h5 class="heading"><span class="codenumber">(c)</span></h5>
-<p id="p-762">\(A^r=\boldzero\) for some \(r\geq 1\text{.}\)</p></article><article class="task exercise-like" id="task-4"><h5 class="heading"><span class="codenumber">(d)</span></h5>
-<p id="p-763">The sum of the columns of \(A\) is equal to the zero column vector.</p></article></article><article class="exercise exercise-like" id="exercise-63"><h4 class="heading"><span class="codenumber">16<span class="period">.</span></span></h4>
+<p id="p-760">There are column vectors <span class="process-math">\(\boldx_1\ne \boldx_2\)</span> such that <span class="process-math">\(A\boldx_1=A\boldx_2\text{.}\)</span></p></article><article class="task exercise-like" id="task-2"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-761"><span class="process-math">\(A^2\)</span> is invertible.</p></article><article class="task exercise-like" id="task-3"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-762"><span class="process-math">\(A^r=\boldzero\)</span> for some <span class="process-math">\(r\geq 1\text{.}\)</span></p></article><article class="task exercise-like" id="task-4"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-763">The sum of the columns of <span class="process-math">\(A\)</span> is equal to the zero column vector.</p></article></article><article class="exercise exercise-like" id="exercise-63"><h4 class="heading"><span class="codenumber">16<span class="period">.</span></span></h4>
 <p id="p-764">Answer true or false. If true, provide a proof; if false, exhibit an explicit counterexample.</p>
 <article class="task exercise-like" id="task-5"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<p id="p-765">The product of two \(n\times n\) elementary matrices is elementary.</p></article><article class="task exercise-like" id="task-6"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<p id="p-766">The product of two \(n\times n\) elementary matrices is invertible.</p></article><article class="task exercise-like" id="task-7"><h5 class="heading"><span class="codenumber">(c)</span></h5>
-<p id="p-767">The sum of two invertible \(n\times n\) matrices is invertible.</p></article><article class="task exercise-like" id="task-8"><h5 class="heading"><span class="codenumber">(d)</span></h5>
-<p id="p-768">If \(A\) is a singular \(n\times n\) matrix, then the linear system \(A\boldx=\boldzero\) has infinitely many solutions.</p></article><article class="task exercise-like" id="task-9"><h5 class="heading"><span class="codenumber">(e)</span></h5>
-<p id="p-769">If \(B\) is obtained from the invertible matrix \(A\) by replacing its second row with the sum of its first and second rows, then \(B\) is invertible.</p></article><article class="task exercise-like" id="task-10"><h5 class="heading"><span class="codenumber">(f)</span></h5>
-<p id="p-770">If \(A\) is square matrix, and \(\boldb\) is a column vector such that the matrix equation \(A\boldx=\boldb\) has a unique solution, then \(A\) is invertible.</p></article><article class="task exercise-like" id="task-11"><h5 class="heading"><span class="codenumber">(g)</span></h5>
-<p id="p-771">If \(A\) and \(B\) are row equivalent, then the matrix equations \(Ax=\boldzero\) and \(Bx=\boldzero\) have the same solution set.</p></article><article class="task exercise-like" id="task-12"><h5 class="heading"><span class="codenumber">(h)</span></h5>
-<p id="p-772">If \(A\) or \(B\) is singular, then \(AB\) is singular.</p></article><div class="solutions">
+<p id="p-765">The product of two <span class="process-math">\(n\times n\)</span> elementary matrices is elementary.</p></article><article class="task exercise-like" id="task-6"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-766">The product of two <span class="process-math">\(n\times n\)</span> elementary matrices is invertible.</p></article><article class="task exercise-like" id="task-7"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-767">The sum of two invertible <span class="process-math">\(n\times n\)</span> matrices is invertible.</p></article><article class="task exercise-like" id="task-8"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-768">If <span class="process-math">\(A\)</span> is a singular <span class="process-math">\(n\times n\)</span> matrix, then the linear system <span class="process-math">\(A\boldx=\boldzero\)</span> has infinitely many solutions.</p></article><article class="task exercise-like" id="task-9"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p id="p-769">If <span class="process-math">\(B\)</span> is obtained from the invertible matrix <span class="process-math">\(A\)</span> by replacing its second row with the sum of its first and second rows, then <span class="process-math">\(B\)</span> is invertible.</p></article><article class="task exercise-like" id="task-10"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p id="p-770">If <span class="process-math">\(A\)</span> is square matrix, and <span class="process-math">\(\boldb\)</span> is a column vector such that the matrix equation <span class="process-math">\(A\boldx=\boldb\)</span> has a unique solution, then <span class="process-math">\(A\)</span> is invertible.</p></article><article class="task exercise-like" id="task-11"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p id="p-771">If <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are row equivalent, then the matrix equations <span class="process-math">\(Ax=\boldzero\)</span> and <span class="process-math">\(Bx=\boldzero\)</span> have the same solution set.</p></article><article class="task exercise-like" id="task-12"><h5 class="heading"><span class="codenumber">(h)</span></h5>
+<p id="p-772">If <span class="process-math">\(A\)</span> or <span class="process-math">\(B\)</span> is singular, then <span class="process-math">\(AB\)</span> is singular.</p></article><div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-26" id="solution-26"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-26"><div class="solution solution-like"><ol class="lower-alpha"><li id="li-236">
 <p id="p-773">False. The matrices</p>
-<div class="displaymath">
+<div class="displaymath process-math">
 \begin{equation*}
 E_1=\begin{amatrix}[rr]1\amp 2\\ 0\amp 1  \end{amatrix},
 E_2=\begin{amatrix}[rr]1\amp 0\\ 3\amp 1  \end{amatrix}
 \end{equation*}
 </div>
 <p class="continuation">are both elementary, but</p>
-<div class="displaymath">
+<div class="displaymath process-math">
 \begin{equation*}
 E_1E_2=\begin{amatrix}[rr]7\amp 2\\ 3\amp 1  \end{amatrix}
 \end{equation*}
 </div>
 <p class="continuation">is not elementary.</p>
 </li></ol></div></div>
-</div></article></section></section></div></main>
+</div></article></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-3"><div class="fn">Thomas Yuster. <em class="emphasis">The reduced row echelon form of a matrix is unique: a simple proof</em>, Mathematics Magazine <dfn class="terminology">57</dfn> (1984), no. 2, 93-94.</div></div>
+</div></main>
 </div>
 </body>
 </html>

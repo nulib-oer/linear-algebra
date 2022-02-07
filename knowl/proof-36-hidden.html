@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-04T21:25:21Z       *-->
+<!--*       on 2022-02-07T16:15:55Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -13,14 +13,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="hiddenproof"><p>First observe that the second statement regarding invertibility follows directly from <a href="" class="xref" data-knowl="./knowl/eq_adj_form.html" title="Equation 3.5.7">(3.5.7)</a>, since in this case setting \(B=\frac{1}{\det A}\, \adj A\) we have</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+<body class="ignore-math"><article class="hiddenproof"><p>First observe that the second statement regarding invertibility follows directly from <a href="" class="xref" data-knowl="./knowl/eq_adj_form.html" title="Equation 3.5.7">(3.5.7)</a>, since in this case setting <span class="process-math">\(B=\frac{1}{\det A}\, \adj A\)</span> we have</p>
+<div class="displaymath process-math">
 \begin{equation*}
 AB=BA=\frac{1}{\det A}(A\adj A)=\frac{1}{\det A}((\det A)\, I)=I\text{.}
 \end{equation*}
 </div>
 <p>Thus it suffices to prove <a href="" class="xref" data-knowl="./knowl/eq_adj_form.html" title="Equation 3.5.7">(3.5.7)</a>. To do so, we must show that</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+<div class="displaymath process-math">
 \begin{equation*}
 [A\, \adj A]_{ij}=[\adj A\, A]_{ij}=
 \begin{cases} \det A\amp \text{if } i=j\\
@@ -28,9 +28,9 @@ AB=BA=\frac{1}{\det A}(A\adj A)=\frac{1}{\det A}((\det A)\, I)=I\text{.}
 \end{cases}\text{.}
 \end{equation*}
 </div>
-<article class="case"><h5 class="heading">Case: \(i=j\).</h5>
+<article class="case"><h5 class="heading">Case: <span class="process-math">\(i=j\)</span>.</h5>
 <p>In this case we have</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+<div class="displaymath process-math">
 \begin{align*}
 [A\, \adj A]_{ii} \amp =\sum_{k=1}^na_{ik}[\adj A]_{ki}  \\
 \amp =\sum_{k=1}^n a_{ik}((-1)^{i+k}M_{ik}) \amp (\knowl{./knowl/d_adjoint.html}{\text{Definition 3.5.14}} )\\
@@ -38,9 +38,9 @@ AB=BA=\frac{1}{\det A}(A\adj A)=\frac{1}{\det A}((\det A)\, I)=I\text{.}
 \amp =\det A \text{.}
 \end{align*}
 </div>
-<p class="continuation">A similar argument shows that \((\adj A\, A)_{ii}=\det A\text{,}\) though in this case we use expansion along a column.</p></article><article class="case"><h5 class="heading">Case: \(i\ne j\).</h5>
-<p>When \(i\ne j\) we have</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+<p class="continuation">A similar argument shows that <span class="process-math">\((\adj A\, A)_{ii}=\det A\text{,}\)</span> though in this case we use expansion along a column.</p></article><article class="case"><h5 class="heading">Case: <span class="process-math">\(i\ne j\)</span>.</h5>
+<p>When <span class="process-math">\(i\ne j\)</span> we have</p>
+<div class="displaymath process-math">
 \begin{align*}
 [A\, \adj A]_{ij} \amp =\sum_{k=1}^na_{ik}[\adj A]_{kj}  \\
 \amp =\sum_{k=1}^n a_{ik}((-1)^{k+j}M_{jk}) \amp (\knowl{./knowl/d_adjoint.html}{\text{Definition 3.5.14}} )\\
@@ -48,11 +48,11 @@ AB=BA=\frac{1}{\det A}(A\adj A)=\frac{1}{\det A}((\det A)\, I)=I\text{.}
 \amp =\det C \text{,}
 \end{align*}
 </div>
-<p class="continuation">where \(C\) is the matrix obtained by replacing the \(j\)-th row of \(A\) with a copy of its \(i\)-th row. Since \(C\) has two identical rows <a href="" class="xref" data-knowl="./knowl/th_det_zero_repeated_row.html" title="Theorem 3.5.13: Zero rows/columns, swapping rows/columns, identical rows/columns">Theorem 3.5.13</a> implies</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+<p class="continuation">where <span class="process-math">\(C\)</span> is the matrix obtained by replacing the <span class="process-math">\(j\)</span>-th row of <span class="process-math">\(A\)</span> with a copy of its <span class="process-math">\(i\)</span>-th row. Since <span class="process-math">\(C\)</span> has two identical rows <a href="" class="xref" data-knowl="./knowl/th_det_zero_repeated_row.html" title="Theorem 3.5.13: Zero rows/columns, swapping rows/columns, identical rows/columns">Theorem 3.5.13</a> implies</p>
+<div class="displaymath process-math">
 \begin{equation*}
 [A\, \adj A]_{ij}=\det C=0\text{,}
 \end{equation*}
 </div>
-<p class="continuation">as desired. Once again, a similar argument using expansion along a column shows that \([\adj A\, A]_{ij}=0\text{.}\)</p></article></article></body>
+<p class="continuation">as desired. Once again, a similar argument using expansion along a column shows that <span class="process-math">\([\adj A\, A]_{ij}=0\text{.}\)</span></p></article></article></body>
 </html>

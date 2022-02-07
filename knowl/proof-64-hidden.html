@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-04T21:25:39Z       *-->
+<!--*       on 2022-02-07T16:16:18Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -13,10 +13,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="hiddenproof"><p>First observe that \(A=\begin{bmatrix}1\amp 1\\ 1\amp 1 \end{bmatrix}\) is row equivalent to \(U=\begin{bmatrix}1\amp 1\\ 0 \amp 0\end{bmatrix}\) and yet \(\CS A=\Span\{(1,1)\}=\{(t,t)\colon t\in \R\}\ne \CS U=\Span\{(1,0)\}=\{(t,0)\colon t\in\R\}\text{.}\) Thus we do not have \(\CS A=\CS U\) in general.</p>
-<p>Next, we show more generally that if \(A\) is row equivalent to \(B\text{,}\) then \(\NS A=\NS B\text{,}\) \(\RS A=\RS B\text{,}\) and \(\dim\CS A=\dim \CS B\text{.}\)</p>
-<p>Assume that \(A\) is row equivalent to \(B\text{.}\) Using the formulation of row reduction in terms of multiplication by elementary matrices, we see that there is an invertible matrix \(Q\) such that \(B=QA\text{,}\) and hence also \(A=Q^{-1}B\text{.}\) Then:</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+<body class="ignore-math"><article class="hiddenproof"><p>First observe that <span class="process-math">\(A=\begin{bmatrix}1\amp 1\\ 1\amp 1 \end{bmatrix}\)</span> is row equivalent to <span class="process-math">\(U=\begin{bmatrix}1\amp 1\\ 0 \amp 0\end{bmatrix}\)</span> and yet <span class="process-math">\(\CS A=\Span\{(1,1)\}=\{(t,t)\colon t\in \R\}\ne \CS U=\Span\{(1,0)\}=\{(t,0)\colon t\in\R\}\text{.}\)</span> Thus we do not have <span class="process-math">\(\CS A=\CS U\)</span> in general.</p>
+<p>Next, we show more generally that if <span class="process-math">\(A\)</span> is row equivalent to <span class="process-math">\(B\text{,}\)</span> then <span class="process-math">\(\NS A=\NS B\text{,}\)</span> <span class="process-math">\(\RS A=\RS B\text{,}\)</span> and <span class="process-math">\(\dim\CS A=\dim \CS B\text{.}\)</span></p>
+<p>Assume that <span class="process-math">\(A\)</span> is row equivalent to <span class="process-math">\(B\text{.}\)</span> Using the formulation of row reduction in terms of multiplication by elementary matrices, we see that there is an invertible matrix <span class="process-math">\(Q\)</span> such that <span class="process-math">\(B=QA\text{,}\)</span> and hence also <span class="process-math">\(A=Q^{-1}B\text{.}\)</span> Then:</p>
+<div class="displaymath process-math">
 \begin{align*}
 \boldx\in\NS A\amp\iff A\boldx=\boldzero \\
 \amp\iff QA\boldx=Q\boldzero \amp (\knowl{./knowl/th_inverse_cancel.html}{\text{Theorem 3.3.3}}) \\
@@ -24,9 +24,9 @@
 \amp iff \boldx\in\NS B
 \end{align*}
 </div>
-<p class="continuation">. This proves \(\NS A=\NS B\text{.}\)</p>
-<p>Next, by (1) we have \(\NS A=\NS T_A\text{,}\) \(\CS A=\im T_A\) and \(\NS B=\NS T_B\text{,}\) \(\CS B=\im T_B\text{.}\) Then</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+<p class="continuation">. This proves <span class="process-math">\(\NS A=\NS B\text{.}\)</span></p>
+<p>Next, by (1) we have <span class="process-math">\(\NS A=\NS T_A\text{,}\)</span> <span class="process-math">\(\CS A=\im T_A\)</span> and <span class="process-math">\(\NS B=\NS T_B\text{,}\)</span> <span class="process-math">\(\CS B=\im T_B\text{.}\)</span> Then</p>
+<div class="displaymath process-math">
 \begin{align*}
 \dim \CS A \amp=\dim\im T_A \\
 \amp=n-\dim\NS A \amp (\knowl{./knowl/th_rank-nullity.html}{\text{Theorem 4.6.2}}) \\
@@ -35,6 +35,6 @@
 \amp =\dim \CS B\text{.}
 \end{align*}
 </div>
-<p>Lastly, we turn to the row spaces. We will show that each row of \(B\) is an element of \(\RS A\text{,}\) from whence it follows that \(\RS B\subseteq \RS A\text{.}\) Let \(\boldr_i\) be the \(i\)-th row of \(B\text{,}\) and let \(\boldq_i\) be the \(i\)-th column of \(Q\text{.}\) By <a href="" class="xref" data-knowl="./knowl/th_row_method.html" title="Theorem 3.1.21: Row method of matrix multiplication">Theorem 3.1.21</a>, we have \(\boldr_i=\boldq_i A\text{,}\) and furthermore, \(\boldq_i A\) is the linear combination of the rows of \(A\) whose coefficients come from the entries of \(\boldq_i\text{.}\) Thus \(\boldr_i\in\RS A\text{,}\) as desired.</p>
-<p>Having shown that \(\RS B\subseteq \RS A\text{,}\) we see that the same argument works <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">mutatis mutandis</em> (swapping the roles of \(A\) and \(B\) and using \(Q^{-1}\) in place of \(Q\)) to show that \(\RS A\subseteq \RS B\text{.}\) We conclude that \(\RS A=\RS B\text{.}\)</p></article></body>
+<p>Lastly, we turn to the row spaces. We will show that each row of <span class="process-math">\(B\)</span> is an element of <span class="process-math">\(\RS A\text{,}\)</span> from whence it follows that <span class="process-math">\(\RS B\subseteq \RS A\text{.}\)</span> Let <span class="process-math">\(\boldr_i\)</span> be the <span class="process-math">\(i\)</span>-th row of <span class="process-math">\(B\text{,}\)</span> and let <span class="process-math">\(\boldq_i\)</span> be the <span class="process-math">\(i\)</span>-th column of <span class="process-math">\(Q\text{.}\)</span> By <a href="" class="xref" data-knowl="./knowl/th_row_method.html" title="Theorem 3.1.21: Row method of matrix multiplication">Theorem 3.1.21</a>, we have <span class="process-math">\(\boldr_i=\boldq_i A\text{,}\)</span> and furthermore, <span class="process-math">\(\boldq_i A\)</span> is the linear combination of the rows of <span class="process-math">\(A\)</span> whose coefficients come from the entries of <span class="process-math">\(\boldq_i\text{.}\)</span> Thus <span class="process-math">\(\boldr_i\in\RS A\text{,}\)</span> as desired.</p>
+<p>Having shown that <span class="process-math">\(\RS B\subseteq \RS A\text{,}\)</span> we see that the same argument works <em class="emphasis">mutatis mutandis</em> (swapping the roles of <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> and using <span class="process-math">\(Q^{-1}\)</span> in place of <span class="process-math">\(Q\)</span>) to show that <span class="process-math">\(\RS A\subseteq \RS B\text{.}\)</span> We conclude that <span class="process-math">\(\RS A=\RS B\text{.}\)</span></p></article></body>
 </html>

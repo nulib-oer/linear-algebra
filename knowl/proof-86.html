@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-04T21:25:49Z       *-->
+<!--*       on 2022-02-07T16:16:30Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -13,14 +13,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
+<body class="ignore-math">
 <article class="hiddenproof"><h4 class="heading"><span class="type">Proof</span></h4>
-<p>We must prove two things: (1) the matrix \(A=[T]_{B}^{B'}\) satisfies <a href="" class="xref" data-knowl="./knowl/eq_matrixrep_prop.html" title="Equation 6.2.1">(6.2.1)</a>; (2) if \(A\) satisfies \(A[\boldv]_B=[T(\boldv)]_{B}\) for all \(\boldv\in V\text{,}\) then \(A=[T]_{B}^{B'}\text{.}\)</p>
-<p>Assume we have \(B=(\boldv_1, \boldv_2, \dots, \boldv_n)\text{.}\)</p>
+<p>We must prove two things: (1) the matrix <span class="process-math">\(A=[T]_{B}^{B'}\)</span> satisfies <a href="" class="xref" data-knowl="./knowl/eq_matrixrep_prop.html" title="Equation 6.2.1">(6.2.1)</a>; (2) if <span class="process-math">\(A\)</span> satisfies <span class="process-math">\(A[\boldv]_B=[T(\boldv)]_{B}\)</span> for all <span class="process-math">\(\boldv\in V\text{,}\)</span> then <span class="process-math">\(A=[T]_{B}^{B'}\text{.}\)</span></p>
+<p>Assume we have <span class="process-math">\(B=(\boldv_1, \boldv_2, \dots, \boldv_n)\text{.}\)</span></p>
 <ol class="decimal">
 <li>
 <p>By definition we have</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+<div class="displaymath process-math">
 \begin{equation*}
 [T]_B^{B'}=\begin{amatrix}[cccc]\vert \amp \vert \amp \amp \vert \\
 \left[T(\boldv_1)\right]_{B'}\amp [T(\boldv_2)]_{B'}\amp \dots \amp [T(\boldv_n)]_{B'} \\
@@ -28,14 +28,14 @@
 \end{amatrix}\text{.}
 \end{equation*}
 </div>
-<p class="continuation">Given any \(\boldv\in V\text{,}\) we can write</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+<p class="continuation">Given any <span class="process-math">\(\boldv\in V\text{,}\)</span> we can write</p>
+<div class="displaymath process-math">
 \begin{equation*}
 \boldv=c_1\boldv_1+c_2\boldv_2+\dots +c_n\boldv_n
 \end{equation*}
 </div>
-<p class="continuation">for some \(c_i\in \R\text{.}\) Then</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+<p class="continuation">for some <span class="process-math">\(c_i\in \R\text{.}\)</span> Then</p>
+<div class="displaymath process-math">
 \begin{align*}
 [T]_{B}^{B'}[\boldv] \amp= [T]_{B}^{B'} \begin{bmatrix}
 c_1\\ c_2\\ \vdots \\ v_n
@@ -49,25 +49,25 @@ c_1\\ c_2\\ \vdots \\ v_n
 <p class="continuation">as desired.</p>
 </li>
 <li>
-<p>Assume \(A\) satisfies</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+<p>Assume <span class="process-math">\(A\)</span> satisfies</p>
+<div class="displaymath process-math">
 \begin{equation*}
 A[\boldv]_B=[T(\boldv)]_{B'}
 \end{equation*}
 </div>
-<p class="continuation">for all \(\boldv\in V\text{.}\) Then in particular we have</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+<p class="continuation">for all <span class="process-math">\(\boldv\in V\text{.}\)</span> Then in particular we have</p>
+<div class="displaymath process-math">
 \begin{equation}
 A[\boldv_i]_B=[T(\boldv_i)]_{B'}\tag{6.2.2}
 \end{equation}
 </div>
-<p class="continuation">for all \(1\leq i\leq n\text{.}\) Since \(\boldv_i\) is the \(i\)-th element of \(B\text{,}\) we have \([\boldv_i]_B=\bolde_i\text{,}\) the \(i\)-th standard basis element of \(\R^n\text{.}\) Using the column method (<a href="" class="xref" data-knowl="./knowl/th_column_method.html" title="Theorem 3.1.19: Column method of matrix multiplication">3.1.19</a>), we see that</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+<p class="continuation">for all <span class="process-math">\(1\leq i\leq n\text{.}\)</span> Since <span class="process-math">\(\boldv_i\)</span> is the <span class="process-math">\(i\)</span>-th element of <span class="process-math">\(B\text{,}\)</span> we have <span class="process-math">\([\boldv_i]_B=\bolde_i\text{,}\)</span> the <span class="process-math">\(i\)</span>-th standard basis element of <span class="process-math">\(\R^n\text{.}\)</span> Using the column method (<a href="" class="xref" data-knowl="./knowl/th_column_method.html" title="Theorem 3.1.19: Column method of matrix multiplication">3.1.19</a>), we see that</p>
+<div class="displaymath process-math">
 \begin{equation*}
 A[\boldv_i]_B=A\bolde_i=\boldc_i,
 \end{equation*}
 </div>
-<p class="continuation">where \(\boldc_i\) is the \(i\)-th column of \(A\text{.}\) Thus <a href="" class="xref" data-knowl="./knowl/eq_matrixrep_proof.html" title="Equation 6.2.2">(6.2.2)</a> implies that the \(i\)-th column of \(A\) is equal to \([T(\boldv_i)]_{B}\text{,}\) the \(i\)-th column of \([T]_B^{B'}\text{,}\) for all \(1\leq i\leq n\text{.}\) Since \(A\) and \([T]_{B}^{B'}\) have identical columns, we conclude that \(A=[T]_{B}^{B'}\text{,}\) as desired.</p>
+<p class="continuation">where <span class="process-math">\(\boldc_i\)</span> is the <span class="process-math">\(i\)</span>-th column of <span class="process-math">\(A\text{.}\)</span> Thus <a href="" class="xref" data-knowl="./knowl/eq_matrixrep_proof.html" title="Equation 6.2.2">(6.2.2)</a> implies that the <span class="process-math">\(i\)</span>-th column of <span class="process-math">\(A\)</span> is equal to <span class="process-math">\([T(\boldv_i)]_{B}\text{,}\)</span> the <span class="process-math">\(i\)</span>-th column of <span class="process-math">\([T]_B^{B'}\text{,}\)</span> for all <span class="process-math">\(1\leq i\leq n\text{.}\)</span> Since <span class="process-math">\(A\)</span> and <span class="process-math">\([T]_{B}^{B'}\)</span> have identical columns, we conclude that <span class="process-math">\(A=[T]_{B}^{B'}\text{,}\)</span> as desired.</p>
 </li>
 </ol></article><span class="incontext"><a href="s_matrixreps.html#proof-86">in-context</a></span>
 </body>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-04T21:25:28Z       *-->
+<!--*       on 2022-02-07T16:16:04Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -13,14 +13,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
+<body class="ignore-math">
 <article class="remark remark-like"><h4 class="heading">
-<span class="type">Remark</span><span xmlns:svg="http://www.w3.org/2000/svg" class="space"> </span><span class="codenumber">4.3.11</span><span xmlns:svg="http://www.w3.org/2000/svg" class="period">.</span><span xmlns:svg="http://www.w3.org/2000/svg" class="space"> </span><span class="title">Differential operators.</span>
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">4.3.11</span><span class="period">.</span><span class="space"> </span><span class="title">Differential operators.</span>
 </h4>
-<p>Let \(X\subseteq \R\) be an interval. Define \(T_1\colon C^1(X)\rightarrow C(X)\) as \(T_1(f)=f'\text{:}\) i.e., \(T_1\) takes as input a \(C^1\) function on the interval \(X\text{,}\) and returns its (first) derivative. Note that the definition of \(C^1\) ensures that \(f'\) exists and is continuous on \(X\text{:}\) hence \(f'
-\in C(X)\text{,}\) as claimed.</p>
-<p>The operator \(T_1\) is a linear transformation. Indeed, given \(c,d\in \R\) and \(f,g\in C^1(X)\text{,}\) we have</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+<p>Let <span class="process-math">\(X\subseteq \R\)</span> be an interval. Define <span class="process-math">\(T_1\colon C^1(X)\rightarrow C(X)\)</span> as <span class="process-math">\(T_1(f)=f'\text{:}\)</span> i.e., <span class="process-math">\(T_1\)</span> takes as input a <span class="process-math">\(C^1\)</span> function on the interval <span class="process-math">\(X\text{,}\)</span> and returns its (first) derivative. Note that the definition of <span class="process-math">\(C^1\)</span> ensures that <span class="process-math">\(f'\)</span> exists and is continuous on <span class="process-math">\(X\text{:}\)</span> hence <span class="process-math">\(f'
+\in C(X)\text{,}\)</span> as claimed.</p>
+<p>The operator <span class="process-math">\(T_1\)</span> is a linear transformation. Indeed, given <span class="process-math">\(c,d\in \R\)</span> and <span class="process-math">\(f,g\in C^1(X)\text{,}\)</span> we have</p>
+<div class="displaymath process-math">
 \begin{align*}
 T_1(cf+dg)   \amp = (cf+dg)' \amp \text{(by def.)} \\
 \amp =(cf)'+(dg)' \amp \text{(derivative prop.)} \\
@@ -28,20 +28,20 @@ T_1(cf+dg)   \amp = (cf+dg)' \amp \text{(by def.)} \\
 \amp = cT_1(f)+dT_1(g)\text{.}
 \end{align*}
 </div>
-<p>Since taking \(n\)-th derivatives amounts to <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">composing</em> the derivative operator \(T_1\) with itself \(n\) times, it follows from <a href="" class="xref" data-knowl="./knowl/th_transform_composition.html" title="Theorem 4.2.22: Composition of linear transformations">Theorem 4.2.22</a> that for any \(n\geq 1\) the  map</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+<p>Since taking <span class="process-math">\(n\)</span>-th derivatives amounts to <em class="emphasis">composing</em> the derivative operator <span class="process-math">\(T_1\)</span> with itself <span class="process-math">\(n\)</span> times, it follows from <a href="" class="xref" data-knowl="./knowl/th_transform_composition.html" title="Theorem 4.2.22: Composition of linear transformations">Theorem 4.2.22</a> that for any <span class="process-math">\(n\geq 1\)</span> the  map</p>
+<div class="displaymath process-math">
 \begin{align*}
 T_n\colon C^n(X) \amp \rightarrow C(X) \\
 f \amp\mapsto f^{(n)} \text{,}
 \end{align*}
 </div>
-<p class="continuation">which takes a function \(f\) to its \(n\)-th derivative, is also linear. (Note that we are careful to pick the domain \(C^n(X)\) to guarantee this operation is well-defined!)</p>
+<p class="continuation">which takes a function <span class="process-math">\(f\)</span> to its <span class="process-math">\(n\)</span>-th derivative, is also linear. (Note that we are careful to pick the domain <span class="process-math">\(C^n(X)\)</span> to guarantee this operation is well-defined!)</p>
 <p>Lastly, by <a href="" class="xref" data-knowl="./knowl/ex_transformation_add_scale.html" title="Exercise 4.2.6.10: Adding and scaling linear transformations">Exercise 4.2.6.10</a>, we can add and scale these various operators to obtain more general linear transformations of the form</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+<div class="displaymath process-math">
 \begin{equation*}
 T(f)=c_nf^{(n)}+c_{n-1}f^{(n-1)}+\cdots c_1f'+c_0f\text{.}
 \end{equation*}
 </div>
-<p class="continuation">We call such a function a <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">linear differential operator</em>. Understanding the linear algebraic properties of these operators is crucial to the theory of linear differential equations, as <a href="" class="xref" data-knowl="./knowl/eg_diff_eq_ex.html" title="Example 4.3.23: A differential equation">Example 4.3.23</a> illustrates.</p></article><span class="incontext"><a href="s_subspace.html#rm_subspaces_derivatives">in-context</a></span>
+<p class="continuation">We call such a function a <em class="emphasis">linear differential operator</em>. Understanding the linear algebraic properties of these operators is crucial to the theory of linear differential equations, as <a href="" class="xref" data-knowl="./knowl/eg_diff_eq_ex.html" title="Example 4.3.23: A differential equation">Example 4.3.23</a> illustrates.</p></article><span class="incontext"><a href="s_subspace.html#rm_subspaces_derivatives">in-context</a></span>
 </body>
 </html>

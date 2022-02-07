@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-04T21:24:31Z       *-->
+<!--*       on 2022-02-07T16:14:55Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -9,11 +9,14 @@
 <!--*                                          *-->
 <!--********************************************-->
 <html lang="en-US">
-<head>
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Logic</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Linear algebra: the theory of vector spaces and linear transformations">
+<meta property="book:author" content="Aaron Greicius">
 <script>window.MathJax = {
   tex: {
     inlineMath: [['\\(','\\)']],
@@ -24,8 +27,8 @@
     packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
   },
   options: {
-    ignoreHtmlClass: "tex2jax_ignore",
-    processHtmlClass: "has_am",
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
   },
   chtml: {
     scale: 0.88,
@@ -36,21 +39,21 @@
     paths: {pretext: "https://pretextbook.org/js/lib"},
   },
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg">miniversion=0.6</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
-</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
-<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
 </head>
-<body class="pretext-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\require{cancel}\newcommand{\Z}{{\mathbb Z}}
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}\newcommand{\Z}{{\mathbb Z}}
 \newcommand{\Q}{{\mathbb Q}}
 \newcommand{\R}{{\mathbb R}}
 \newcommand{\C}{{\mathbb C}}
@@ -251,14 +254,14 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
-\)</div>
+\)</span></div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href="http://linear-algebra.northwestern.pub/" target="_blank"><img src="external/images/im_holycomm.svg" alt="Logo image"></a><div class="title-container">
 <h1 class="heading"><a href="book-1.html"><span class="title">Linear algebra: the theory of vector spaces and linear transformations</span></a></h1>
 <p class="byline">Aaron Greicius</p>
 </div>
 </div></div>
-<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
 <a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="s_sets_functions.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="c_foundations.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="s_proof_technique.html" title="Next">Next</a></span>
@@ -268,71 +271,71 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="s_sets_functions.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="c_foundations.html" title="Up">Up</a><a class="next-button button toolbar-item" href="s_proof_technique.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
-<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
 <nav id="toc"><ul>
-<li class="link frontmatter"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link frontmatter"><a href="frontmatter-1.html" data-scroll="frontmatter-1" class="internal"><span class="title">Front Matter</span></a></li>
 <li class="link">
-<a href="c_foundations.html" data-scroll="c_foundations"><span class="codenumber">1</span> <span class="title">Foundations</span></a><ul>
-<li><a href="s_sets_functions.html" data-scroll="s_sets_functions">Sets and functions</a></li>
+<a href="c_foundations.html" data-scroll="c_foundations" class="internal"><span class="codenumber">1</span> <span class="title">Foundations</span></a><ul>
+<li><a href="s_sets_functions.html" data-scroll="s_sets_functions" class="internal">Sets and functions</a></li>
 <li><a href="s_logic.html" data-scroll="s_logic" class="active">Logic</a></li>
-<li><a href="s_proof_technique.html" data-scroll="s_proof_technique">Proof techniques</a></li>
+<li><a href="s_proof_technique.html" data-scroll="s_proof_technique" class="internal">Proof techniques</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="c_linear_systems.html" data-scroll="c_linear_systems"><span class="codenumber">2</span> <span class="title">Systems of linear equations</span></a><ul>
-<li><a href="s_systems.html" data-scroll="s_systems">Systems of linear equations</a></li>
-<li><a href="s_ge.html" data-scroll="s_ge">Gaussian elimination</a></li>
-<li><a href="s_solving.html" data-scroll="s_solving">Solving linear systems</a></li>
+<a href="c_linear_systems.html" data-scroll="c_linear_systems" class="internal"><span class="codenumber">2</span> <span class="title">Systems of linear equations</span></a><ul>
+<li><a href="s_systems.html" data-scroll="s_systems" class="internal">Systems of linear equations</a></li>
+<li><a href="s_ge.html" data-scroll="s_ge" class="internal">Gaussian elimination</a></li>
+<li><a href="s_solving.html" data-scroll="s_solving" class="internal">Solving linear systems</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="c_matrices.html" data-scroll="c_matrices"><span class="codenumber">3</span> <span class="title">Matrices, their arithmetic, and their algebra</span></a><ul>
-<li><a href="s_matrix.html" data-scroll="s_matrix">Matrices and their arithmetic</a></li>
-<li><a href="s_algebraic.html" data-scroll="s_algebraic">Algebra of matrices</a></li>
-<li><a href="s_invertible_matrices.html" data-scroll="s_invertible_matrices">Invertible matrices</a></li>
-<li><a href="s_invertibility_theorem.html" data-scroll="s_invertibility_theorem">The invertibility theorem</a></li>
-<li><a href="s_det.html" data-scroll="s_det">The determinant</a></li>
+<a href="c_matrices.html" data-scroll="c_matrices" class="internal"><span class="codenumber">3</span> <span class="title">Matrices, their arithmetic, and their algebra</span></a><ul>
+<li><a href="s_matrix.html" data-scroll="s_matrix" class="internal">Matrices and their arithmetic</a></li>
+<li><a href="s_algebraic.html" data-scroll="s_algebraic" class="internal">Algebra of matrices</a></li>
+<li><a href="s_invertible_matrices.html" data-scroll="s_invertible_matrices" class="internal">Invertible matrices</a></li>
+<li><a href="s_invertibility_theorem.html" data-scroll="s_invertibility_theorem" class="internal">The invertibility theorem</a></li>
+<li><a href="s_det.html" data-scroll="s_det" class="internal">The determinant</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="c_vectorspace.html" data-scroll="c_vectorspace"><span class="codenumber">4</span> <span class="title">Vector spaces and linear transformations</span></a><ul>
-<li><a href="s_vectorspace.html" data-scroll="s_vectorspace">Real vector spaces</a></li>
-<li><a href="s_transformation.html" data-scroll="s_transformation">Linear transformations</a></li>
-<li><a href="s_subspace.html" data-scroll="s_subspace">Subspaces</a></li>
-<li><a href="s_span_independence.html" data-scroll="s_span_independence">Span and linear independence</a></li>
-<li><a href="s_basis_dimension.html" data-scroll="s_basis_dimension">Bases and dimension</a></li>
-<li><a href="s_rank_nullity.html" data-scroll="s_rank_nullity">Rank-nullity theorem and fundamental spaces</a></li>
-<li><a href="s_isom.html" data-scroll="s_isom">Isomorphisms</a></li>
+<a href="c_vectorspace.html" data-scroll="c_vectorspace" class="internal"><span class="codenumber">4</span> <span class="title">Vector spaces and linear transformations</span></a><ul>
+<li><a href="s_vectorspace.html" data-scroll="s_vectorspace" class="internal">Real vector spaces</a></li>
+<li><a href="s_transformation.html" data-scroll="s_transformation" class="internal">Linear transformations</a></li>
+<li><a href="s_subspace.html" data-scroll="s_subspace" class="internal">Subspaces</a></li>
+<li><a href="s_span_independence.html" data-scroll="s_span_independence" class="internal">Span and linear independence</a></li>
+<li><a href="s_basis_dimension.html" data-scroll="s_basis_dimension" class="internal">Bases and dimension</a></li>
+<li><a href="s_rank_nullity.html" data-scroll="s_rank_nullity" class="internal">Rank-nullity theorem and fundamental spaces</a></li>
+<li><a href="s_isom.html" data-scroll="s_isom" class="internal">Isomorphisms</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="c_innerproductspaces.html" data-scroll="c_innerproductspaces"><span class="codenumber">5</span> <span class="title">Inner product spaces</span></a><ul>
-<li><a href="s_innerproducts.html" data-scroll="s_innerproducts">Inner product spaces</a></li>
-<li><a href="s_orthogonality.html" data-scroll="s_orthogonality">Orthogonal bases and orthogonal projection</a></li>
+<a href="c_innerproductspaces.html" data-scroll="c_innerproductspaces" class="internal"><span class="codenumber">5</span> <span class="title">Inner product spaces</span></a><ul>
+<li><a href="s_innerproducts.html" data-scroll="s_innerproducts" class="internal">Inner product spaces</a></li>
+<li><a href="s_orthogonality.html" data-scroll="s_orthogonality" class="internal">Orthogonal bases and orthogonal projection</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="c_transbasis.html" data-scroll="c_transbasis"><span class="codenumber">6</span> <span class="title">Eigenvectors and diagonalization</span></a><ul>
-<li><a href="s_coordinatevectors_isomorphisms.html" data-scroll="s_coordinatevectors_isomorphisms">Coordinate vectors and isomorphisms</a></li>
-<li><a href="s_matrixreps.html" data-scroll="s_matrixreps">Matrix representations of linear transformations</a></li>
-<li><a href="s_changeofbasis.html" data-scroll="s_changeofbasis">Change of basis</a></li>
-<li><a href="ss_eigenvectors.html" data-scroll="ss_eigenvectors">Eigenvectors and eigenvalues</a></li>
-<li><a href="ss_diagonalization.html" data-scroll="ss_diagonalization">Diagonalization</a></li>
+<a href="c_transbasis.html" data-scroll="c_transbasis" class="internal"><span class="codenumber">6</span> <span class="title">Eigenvectors and diagonalization</span></a><ul>
+<li><a href="s_coordinatevectors_isomorphisms.html" data-scroll="s_coordinatevectors_isomorphisms" class="internal">Coordinate vectors and isomorphisms</a></li>
+<li><a href="s_matrixreps.html" data-scroll="s_matrixreps" class="internal">Matrix representations of linear transformations</a></li>
+<li><a href="s_changeofbasis.html" data-scroll="s_changeofbasis" class="internal">Change of basis</a></li>
+<li><a href="ss_eigenvectors.html" data-scroll="ss_eigenvectors" class="internal">Eigenvectors and eigenvalues</a></li>
+<li><a href="ss_diagonalization.html" data-scroll="ss_diagonalization" class="internal">Diagonalization</a></li>
 </ul>
 </li>
-<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
-<li class="link"><a href="appendix-notation.html" data-scroll="appendix-notation"><span class="codenumber">A</span> <span class="title">Notation</span></a></li>
-<li class="link"><a href="appendix-defs.html" data-scroll="appendix-defs"><span class="codenumber">B</span> <span class="title">Definitions</span></a></li>
-<li class="link"><a href="appendix-thms.html" data-scroll="appendix-thms"><span class="codenumber">C</span> <span class="title">Theory and procedures</span></a></li>
-<li class="link"><a href="appendix-egs.html" data-scroll="appendix-egs"><span class="codenumber">D</span> <span class="title">Examples</span></a></li>
-<li class="link"><a href="appendix-vids.html" data-scroll="appendix-vids"><span class="codenumber">E</span> <span class="title">Video examples and figures</span></a></li>
-<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="appendix-notation.html" data-scroll="appendix-notation" class="internal"><span class="codenumber">A</span> <span class="title">Notation</span></a></li>
+<li class="link"><a href="appendix-defs.html" data-scroll="appendix-defs" class="internal"><span class="codenumber">B</span> <span class="title">Definitions</span></a></li>
+<li class="link"><a href="appendix-thms.html" data-scroll="appendix-thms" class="internal"><span class="codenumber">C</span> <span class="title">Theory and procedures</span></a></li>
+<li class="link"><a href="appendix-egs.html" data-scroll="appendix-egs" class="internal"><span class="codenumber">D</span> <span class="title">Examples</span></a></li>
+<li class="link"><a href="appendix-vids.html" data-scroll="appendix-vids" class="internal"><span class="codenumber">E</span> <span class="title">Video examples and figures</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
 </ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="s_logic"><h2 class="heading hide-type">
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="s_logic"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.2</span> <span class="title">Logic</span>
 </h2>
-<section class="introduction" id="introduction-2"><p id="p-52">When dealing with mathematical statements and arguments, we must pay close attention to logical structure. This section addresses Different logical connectors give rise to different proof approaches. For the rest of this section, the symbols \(\mathcal{P}\) and \(\mathcal{Q}\) will stand for propositions.</p></section><section class="subsection" id="ss_propositional_calculus"><h3 class="heading hide-type">
+<section class="introduction" id="introduction-2"><p id="p-52">When dealing with mathematical statements and arguments, we must pay close attention to logical structure. This section addresses Different logical connectors give rise to different proof approaches. For the rest of this section, the symbols <span class="process-math">\(\mathcal{P}\)</span> and <span class="process-math">\(\mathcal{Q}\)</span> will stand for propositions.</p></section><section class="subsection" id="ss_propositional_calculus"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.2.1</span> <span class="title">Propositional logic</span>
 </h3>
 <p id="p-53">A <em class="emphasis">proposition</em> is a sentence that is either true or false. We build <em class="emphasis">compound propositions</em> from component propositions using <em class="emphasis">logical operators</em> (or <em class="emphasis">logical connectors</em>); the truth value of the compound proposition is defined as a function of the truth values of the component propositions.</p>
@@ -341,25 +344,25 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 </h4>
 <ul id="p-54" class="disc">
 <li id="li-13">
-<span class="heading"><span class="title">Negation.</span></span><p id="p-55">Given a proposition \(\mathcal{P}\text{,}\) the <dfn class="terminology">negation of \(\mathcal{P}\)</dfn> is the proposition “Not \(\mathcal{P}\)”, denoted \(\neg\mathcal{P}\) in logical notation, the truth value of which is defined as follows: \(\neg\mathcal{P}\) is true exactly when \(\mathcal{P}\) is false.</p>
+<span class="heading"><span class="title">Negation.</span></span><p id="p-55">Given a proposition <span class="process-math">\(\mathcal{P}\text{,}\)</span> the <dfn class="terminology">negation of <span class="process-math">\(\mathcal{P}\)</span></dfn> is the proposition “Not <span class="process-math">\(\mathcal{P}\)</span>”, denoted <span class="process-math">\(\neg\mathcal{P}\)</span> in logical notation, the truth value of which is defined as follows: <span class="process-math">\(\neg\mathcal{P}\)</span> is true exactly when <span class="process-math">\(\mathcal{P}\)</span> is false.</p>
 </li>
 <li id="li-14">
-<span class="heading"><span class="title">Conjunction (logical and).</span></span><p id="p-56">Given propositions \(\mathcal{P}\) and \(\mathcal{Q}\text{,}\) their <dfn class="terminology">conjuction</dfn> is the proposition “\(\mathcal{P}\) and \(\mathcal{Q}\)”, denoted \(\mathcal{P}\land \mathcal{Q}\) in logical notation, the truth value of which is defined as follows:  \(\mathcal{P}\land\mathcal{Q}\) is true when both \(\mathcal{P}\) and \(\mathcal{Q}\) are true, and false otherwise.</p>
+<span class="heading"><span class="title">Conjunction (logical and).</span></span><p id="p-56">Given propositions <span class="process-math">\(\mathcal{P}\)</span> and <span class="process-math">\(\mathcal{Q}\text{,}\)</span> their <dfn class="terminology">conjuction</dfn> is the proposition “<span class="process-math">\(\mathcal{P}\)</span> and <span class="process-math">\(\mathcal{Q}\)</span>”, denoted <span class="process-math">\(\mathcal{P}\land \mathcal{Q}\)</span> in logical notation, the truth value of which is defined as follows:  <span class="process-math">\(\mathcal{P}\land\mathcal{Q}\)</span> is true when both <span class="process-math">\(\mathcal{P}\)</span> and <span class="process-math">\(\mathcal{Q}\)</span> are true, and false otherwise.</p>
 </li>
 <li id="li-15">
-<span class="heading"><span class="title">Disjunction (logical or).</span></span><p id="p-57">Given propositions \(\mathcal{P}\) and \(\mathcal{Q}\text{,}\) their <dfn class="terminology">disjunction</dfn> is the proposition “\(\mathcal{P}\) or \(\mathcal{Q}\)”, denoted \(\mathcal{P}\lor \mathcal{Q}\) in logical notation, the truth value of which is defined as follows: \(\mathcal{P}\lor \mathcal{Q}\) is true when at least one of \(\mathcal{P}\) and \(\mathcal{Q}\) is true, and false otherwise.</p>
+<span class="heading"><span class="title">Disjunction (logical or).</span></span><p id="p-57">Given propositions <span class="process-math">\(\mathcal{P}\)</span> and <span class="process-math">\(\mathcal{Q}\text{,}\)</span> their <dfn class="terminology">disjunction</dfn> is the proposition “<span class="process-math">\(\mathcal{P}\)</span> or <span class="process-math">\(\mathcal{Q}\)</span>”, denoted <span class="process-math">\(\mathcal{P}\lor \mathcal{Q}\)</span> in logical notation, the truth value of which is defined as follows: <span class="process-math">\(\mathcal{P}\lor \mathcal{Q}\)</span> is true when at least one of <span class="process-math">\(\mathcal{P}\)</span> and <span class="process-math">\(\mathcal{Q}\)</span> is true, and false otherwise.</p>
 </li>
 <li id="li-16">
-<span class="heading"><span class="title">Logical implication (if-then).</span></span><p id="p-58">Given propositions \(\mathcal{P}\) and \(\mathcal{Q}\text{,}\) the proposition “If \(\mathcal{P}\text{,}\) then \(\mathcal{Q}\)”, denoted \(\mathcal{P}\implies\mathcal{Q}\) in logical notation, is called an <dfn class="terminology">implication</dfn>, and its truth value is defined as follows: \(\mathcal{P}\implies\mathcal{Q}\) is false when \(\mathcal{P}\) is true and \(\mathcal{Q}\) is false, and true otherwise.</p>
+<span class="heading"><span class="title">Logical implication (if-then).</span></span><p id="p-58">Given propositions <span class="process-math">\(\mathcal{P}\)</span> and <span class="process-math">\(\mathcal{Q}\text{,}\)</span> the proposition “If <span class="process-math">\(\mathcal{P}\text{,}\)</span> then <span class="process-math">\(\mathcal{Q}\)</span>”, denoted <span class="process-math">\(\mathcal{P}\implies\mathcal{Q}\)</span> in logical notation, is called an <dfn class="terminology">implication</dfn>, and its truth value is defined as follows: <span class="process-math">\(\mathcal{P}\implies\mathcal{Q}\)</span> is false when <span class="process-math">\(\mathcal{P}\)</span> is true and <span class="process-math">\(\mathcal{Q}\)</span> is false, and true otherwise.</p>
 </li>
 <li id="li-17">
-<span class="heading"><span class="title">Logical equivalence (if and only if).</span></span><p id="p-59">Given propositions \(\mathcal{P}\) and \(\mathcal{Q}\text{,}\) the proposition “\(\mathcal{P}\) if and only if \(\mathcal{Q}\)”, denoted \(\mathcal{P}\iff\mathcal{Q}\) in logical notation, is called an <dfn class="terminology">equivalence</dfn>, and its truth value is defined as follows: \(\mathcal{P}\iff \mathcal{Q}\) is true when \(\mathcal{P}\) and \(\mathcal{Q}\) have the same truth value, and false otherwise. We say \(\mathcal{P}\) and \(\mathcal{Q}\) are <dfn class="terminology">logically equivalent</dfn> when \(\mathcal{P}\iff \mathcal{Q}\) is true.</p>
+<span class="heading"><span class="title">Logical equivalence (if and only if).</span></span><p id="p-59">Given propositions <span class="process-math">\(\mathcal{P}\)</span> and <span class="process-math">\(\mathcal{Q}\text{,}\)</span> the proposition “<span class="process-math">\(\mathcal{P}\)</span> if and only if <span class="process-math">\(\mathcal{Q}\)</span>”, denoted <span class="process-math">\(\mathcal{P}\iff\mathcal{Q}\)</span> in logical notation, is called an <dfn class="terminology">equivalence</dfn>, and its truth value is defined as follows: <span class="process-math">\(\mathcal{P}\iff \mathcal{Q}\)</span> is true when <span class="process-math">\(\mathcal{P}\)</span> and <span class="process-math">\(\mathcal{Q}\)</span> have the same truth value, and false otherwise. We say <span class="process-math">\(\mathcal{P}\)</span> and <span class="process-math">\(\mathcal{Q}\)</span> are <dfn class="terminology">logically equivalent</dfn> when <span class="process-math">\(\mathcal{P}\iff \mathcal{Q}\)</span> is true.</p>
 </li>
 </ul></article><article class="remark remark-like" id="rm_truth_tables"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.2.2</span><span class="period">.</span>
 </h4>
-<p id="p-60">A <em class="emphasis">truth table</em> of a compound proposition \(\mathcal{P}\) is a concise way of displaying how the truth value of \(\mathcal{P}\) depends on the truth values of its component propositions. It contains one row for each possible truth assignment of the component propositions.  As illustration, we give the truth tables for the logical operators defined above:</p>
-<div class="displaymath">
+<p id="p-60">A <em class="emphasis">truth table</em> of a compound proposition <span class="process-math">\(\mathcal{P}\)</span> is a concise way of displaying how the truth value of <span class="process-math">\(\mathcal{P}\)</span> depends on the truth values of its component propositions. It contains one row for each possible truth assignment of the component propositions.  As illustration, we give the truth tables for the logical operators defined above:</p>
+<div class="displaymath process-math">
 \begin{align*}
 \amp\begin{array}{c||c}\mathcal{P}\amp\neg\mathcal{P} \\
 \hline T\amp F\\F\amp T\end{array} \amp \amp \begin{array}{c|c||c}\mathcal{P}\amp\mathcal{Q}\amp\mathcal{P}\land\mathcal{Q} \\
@@ -374,8 +377,8 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 \end{align*}
 </div></article><article class="example example-like" id="example-5"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-5"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.3</span><span class="period">.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-5"><article class="example example-like"><p id="p-61">Use a truth table to find all truth value assignments of \(\mathcal{P}\) and \(\mathcal{Q}\) making the compound proposition</p>
-<div class="displaymath">
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-5"><article class="example example-like"><p id="p-61">Use a truth table to find all truth value assignments of <span class="process-math">\(\mathcal{P}\)</span> and <span class="process-math">\(\mathcal{Q}\)</span> making the compound proposition</p>
+<div class="displaymath process-math">
 \begin{equation*}
 \neg\mathcal{P}\implies (\mathcal{Q}\implies P)
 \end{equation*}
@@ -383,73 +386,73 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <p class="continuation">false.</p>
 <div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1" id="solution-1"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1"><div class="solution solution-like">
-<p id="p-62">We construct a truth table with columns for \(\mathcal{P}\text{,}\) \(\mathcal{Q}\text{,}\) \(\neg\mathcal{P}\text{,}\) \(\mathcal{Q\implies P}\text{,}\) and \(\neg\mathcal{P}\implies (\mathcal{Q}\implies P)\text{:}\)</p>
-<div class="displaymath">
+<p id="p-62">We construct a truth table with columns for <span class="process-math">\(\mathcal{P}\text{,}\)</span> <span class="process-math">\(\mathcal{Q}\text{,}\)</span> <span class="process-math">\(\neg\mathcal{P}\text{,}\)</span> <span class="process-math">\(\mathcal{Q\implies P}\text{,}\)</span> and <span class="process-math">\(\neg\mathcal{P}\implies (\mathcal{Q}\implies P)\text{:}\)</span></p>
+<div class="displaymath process-math">
 \begin{equation*}
 \begin{array}{c|c|c|c||c}\mathcal{P}\amp\mathcal{Q}\amp\neg\mathcal{P}\amp \mathcal{Q}\implies \mathcal{P}\amp \neg\mathcal{P}\implies(\mathcal{Q}\implies \mathcal{P}) \\
 \hline T\amp T\amp F\amp T\amp T\\T\amp F\amp F\amp T\amp T\\ F\amp T\amp T\amp F\amp F\\ F\amp F\amp T\amp T\amp T\end{array}\text{.}
 \end{equation*}
 </div>
-<p class="continuation">We conclude that \(\neg\mathcal{P}\implies (\mathcal{Q}\implies P)\) is false exactly when \(\mathcal{P}\) is false and \(\mathcal{Q}\) is true. (It follows that \(\neg\mathcal{P}\implies (\mathcal{Q}\implies P)\) is equivalent to \(Q\implies P\text{.}\) )</p>
+<p class="continuation">We conclude that <span class="process-math">\(\neg\mathcal{P}\implies (\mathcal{Q}\implies P)\)</span> is false exactly when <span class="process-math">\(\mathcal{P}\)</span> is false and <span class="process-math">\(\mathcal{Q}\)</span> is true. (It follows that <span class="process-math">\(\neg\mathcal{P}\implies (\mathcal{Q}\implies P)\)</span> is equivalent to <span class="process-math">\(Q\implies P\text{.}\)</span> )</p>
 </div></div>
 </div></article></div>
 <article class="remark remark-like" id="rm_logic_vs_vernacular"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.2.4</span><span class="period">.</span>
 </h4>
 <p id="p-63">Our definitions of the logical operators above are chosen to agree with their usage in a very particular type of discourse: namely, <em class="emphasis">mathematical</em> discourse. They do not always agree with their use in natural language: hence the modifier “logical” in their titles.</p>
-<p id="p-64">For example, disjunctions in natural language of the form “\(\mathcal{P}\) or \(\mathcal{Q}\)” are often understood to be true when \(\mathcal{P}\) is true or \(\mathcal{Q}\) is true, <em class="emphasis">but not both</em>. This notion of disjunction is called the <em class="emphasis">exclusive or</em> in logic, in contrast to the standard logical or.</p>
+<p id="p-64">For example, disjunctions in natural language of the form “<span class="process-math">\(\mathcal{P}\)</span> or <span class="process-math">\(\mathcal{Q}\)</span>” are often understood to be true when <span class="process-math">\(\mathcal{P}\)</span> is true or <span class="process-math">\(\mathcal{Q}\)</span> is true, <em class="emphasis">but not both</em>. This notion of disjunction is called the <em class="emphasis">exclusive or</em> in logic, in contrast to the standard logical or.</p>
 <p id="p-65">Similarly, according to our definition, the implication “If the President of the US is a dog, then the Vice President of the US is a cat” is true, since the proposition “The President of the US is a dog” is false. (In logic we say the implication is <em class="emphasis">vacuously true</em> in this case.) However, working outside of our logical definitions of truth value, we may have been inclined to treat this implication as false, since both “The President of the US is a dog” and “The Vice President of the US is a cat” are false.</p></article></section><section class="subsection" id="ss_predicate_logic"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.2.2</span> <span class="title">Predicate logic</span>
 </h3>
-<p id="p-66">Propositions like “All humans are mortal” and “Every positive real number has a square-root” are modeled in logic in the form “For all \(x\text{,}\) \(P(x)\)” and “For all \(r\text{,}\) there exists an \(s\) such that \(Q(r,s)\)”, where \(P(x)\) stands for the phrase “\(x\) is mortal” and \(Q(r,s)\) stands for the phrase “\(s\) is a square-root of \(r\)”. Observe that \(P(x)\) and \(Q(r,s)\) on their own are not propositions; there is no truth value to “\(x\) is mortal” or “\(s\) is a square-root of \(r\)”. Instead, we think of \(P(x)\) and \(Q(r,s)\) as <em class="emphasis">functions</em> which return propositions when evaluated at a specific choice for \(x\text{,}\) or for \(r\) and \(s\text{.}\) For example, evaluating \(P(x)\) at \(x=\text{Aaron Greicius}\) yields the proposition “Aaron Greicius is mortal”, which happens to be true at the time of writing. Similarly evaluating \(Q(r,s)\) at  \(r=2, s=11\) yields the proposition “\(11\) is a square-root of 2”, which happens to be false. In logic  \(P(x)\) and \(Q(r,s)\) are called <em class="emphasis">propositional functions</em> (also called  <em class="emphasis">predicates</em>): functions whose outputs are propositions.</p>
-<p id="p-67">The propositions “For all \(x\text{,}\) \(P(x)\)” and “For all \(r\text{,}\) there exists an \(s\) such that \(Q(r,s)\)” are obtained from \(P(x)\) and \(Q(r,s)\) by <em class="emphasis">bounding</em> them with a series of <em class="emphasis">quantifiers</em> (e.g., “for all \(x\)”, “there exists an \(s\)”). The definition below allows us to assign truth values to such propositions.</p>
+<p id="p-66">Propositions like “All humans are mortal” and “Every positive real number has a square-root” are modeled in logic in the form “For all <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(P(x)\)</span>” and “For all <span class="process-math">\(r\text{,}\)</span> there exists an <span class="process-math">\(s\)</span> such that <span class="process-math">\(Q(r,s)\)</span>”, where <span class="process-math">\(P(x)\)</span> stands for the phrase “<span class="process-math">\(x\)</span> is mortal” and <span class="process-math">\(Q(r,s)\)</span> stands for the phrase “<span class="process-math">\(s\)</span> is a square-root of <span class="process-math">\(r\)</span>”. Observe that <span class="process-math">\(P(x)\)</span> and <span class="process-math">\(Q(r,s)\)</span> on their own are not propositions; there is no truth value to “<span class="process-math">\(x\)</span> is mortal” or “<span class="process-math">\(s\)</span> is a square-root of <span class="process-math">\(r\)</span>”. Instead, we think of <span class="process-math">\(P(x)\)</span> and <span class="process-math">\(Q(r,s)\)</span> as <em class="emphasis">functions</em> which return propositions when evaluated at a specific choice for <span class="process-math">\(x\text{,}\)</span> or for <span class="process-math">\(r\)</span> and <span class="process-math">\(s\text{.}\)</span> For example, evaluating <span class="process-math">\(P(x)\)</span> at <span class="process-math">\(x=\text{Aaron Greicius}\)</span> yields the proposition “Aaron Greicius is mortal”, which happens to be true at the time of writing. Similarly evaluating <span class="process-math">\(Q(r,s)\)</span> at  <span class="process-math">\(r=2, s=11\)</span> yields the proposition “<span class="process-math">\(11\)</span> is a square-root of 2”, which happens to be false. In logic  <span class="process-math">\(P(x)\)</span> and <span class="process-math">\(Q(r,s)\)</span> are called <em class="emphasis">propositional functions</em> (also called  <em class="emphasis">predicates</em>): functions whose outputs are propositions.</p>
+<p id="p-67">The propositions “For all <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(P(x)\)</span>” and “For all <span class="process-math">\(r\text{,}\)</span> there exists an <span class="process-math">\(s\)</span> such that <span class="process-math">\(Q(r,s)\)</span>” are obtained from <span class="process-math">\(P(x)\)</span> and <span class="process-math">\(Q(r,s)\)</span> by <em class="emphasis">bounding</em> them with a series of <em class="emphasis">quantifiers</em> (e.g., “for all <span class="process-math">\(x\)</span>”, “there exists an <span class="process-math">\(s\)</span>”). The definition below allows us to assign truth values to such propositions.</p>
 <article class="definition definition-like" id="d_quantifiers"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.2.5</span><span class="period">.</span>
 </h4>
-<p id="p-68">Let \(D\) be a set, and let \(P\) be a propositional function that assigns to all elements \(d\in D\) the proposition \(P(d)\text{.}\) The set \(D\) is called the <dfn class="terminology">domain of discourse</dfn> of \(P\text{.}\)</p>
+<p id="p-68">Let <span class="process-math">\(D\)</span> be a set, and let <span class="process-math">\(P\)</span> be a propositional function that assigns to all elements <span class="process-math">\(d\in D\)</span> the proposition <span class="process-math">\(P(d)\text{.}\)</span> The set <span class="process-math">\(D\)</span> is called the <dfn class="terminology">domain of discourse</dfn> of <span class="process-math">\(P\text{.}\)</span></p>
 <ul class="disc">
 <li id="li-18">
-<span class="heading"><span class="title">Universal quantifier.</span></span><p id="p-69">The proposition “For all \(x\) in \(D\text{,}\) \(P(x)\)”, denoted \(\forall x P(x)\) in logical notation, is called a <dfn class="terminology">universal quantification</dfn>, and its truth value is defined as follows: \(\forall x P(x)\) is true if for all elements \(d\) of \(D\text{,}\) the proposition \(P(d)\) is true; it is false if there is some \(d\in D\) such that \(P(d)\) is false.</p>
+<span class="heading"><span class="title">Universal quantifier.</span></span><p id="p-69">The proposition “For all <span class="process-math">\(x\)</span> in <span class="process-math">\(D\text{,}\)</span> <span class="process-math">\(P(x)\)</span>”, denoted <span class="process-math">\(\forall x P(x)\)</span> in logical notation, is called a <dfn class="terminology">universal quantification</dfn>, and its truth value is defined as follows: <span class="process-math">\(\forall x P(x)\)</span> is true if for all elements <span class="process-math">\(d\)</span> of <span class="process-math">\(D\text{,}\)</span> the proposition <span class="process-math">\(P(d)\)</span> is true; it is false if there is some <span class="process-math">\(d\in D\)</span> such that <span class="process-math">\(P(d)\)</span> is false.</p>
 </li>
 <li id="li-19">
-<span class="heading"><span class="title">Existential quantifier.</span></span><p id="p-70">The proposition “There exists an \(x\) in \(D\) such that \(P(x)\)”, denoted \(\exists x P(x)\) in logical notation, is called an <dfn class="terminology">existential quantification</dfn>, and its truth value is defined as follows: \(\exists x P(x)\) is true if there is some element \(d\) of \(D\) for which the proposition \(P(d)\) is true; it is false if \(P(d)\) is false for all \(d\in D\text{.}\)</p>
+<span class="heading"><span class="title">Existential quantifier.</span></span><p id="p-70">The proposition “There exists an <span class="process-math">\(x\)</span> in <span class="process-math">\(D\)</span> such that <span class="process-math">\(P(x)\)</span>”, denoted <span class="process-math">\(\exists x P(x)\)</span> in logical notation, is called an <dfn class="terminology">existential quantification</dfn>, and its truth value is defined as follows: <span class="process-math">\(\exists x P(x)\)</span> is true if there is some element <span class="process-math">\(d\)</span> of <span class="process-math">\(D\)</span> for which the proposition <span class="process-math">\(P(d)\)</span> is true; it is false if <span class="process-math">\(P(d)\)</span> is false for all <span class="process-math">\(d\in D\text{.}\)</span></p>
 </li>
 </ul></article><article class="remark remark-like" id="rm_domain_discourse"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.2.6</span><span class="period">.</span><span class="space"> </span><span class="title">Truth depends on domain of discourse.</span>
 </h4>
 <p id="p-71">Just as a function is not properly defined before its domain is specified, we do not have a well-defined propositional function, nor well-defined truth values of propositions built from this propositional function, until its domain of discourse is given.</p>
-<p id="p-72">For example, let \(P(x)\) be “x&gt;0”. If we declare \(D=(0,\infty)\text{,}\) then the proposition \(\forall x P(x)\) is true, since by definition every \(d\in (0,\infty)\) is positive. On the other hand,  if we declare \(D=\R\text{,}\) the proposition \(\forall x P(x)\) is false since not all elements of \(\R\) are positive: indeed, \(-1\) is negative, making \(P(-1)\) false.</p>
-<p id="p-73">Because of the important role played by the domain of discourse \(D\text{,}\) we sometimes include it in our quantifier expressions: e.g., \(\forall x\in D P(x)\text{,}\) \(\exists x\in D P(x)\text{.}\)  Using this convention allows us to see more immediately that  \(\forall\, x\in (0,\infty)\, P(x)\) is true and \(\forall\, x\in\mathbb{R}\, P(x)\) is false.</p></article><article class="example example-like" id="ex_model_quant"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex_model_quant"><h4 class="heading">
+<p id="p-72">For example, let <span class="process-math">\(P(x)\)</span> be “x&gt;0”. If we declare <span class="process-math">\(D=(0,\infty)\text{,}\)</span> then the proposition <span class="process-math">\(\forall x P(x)\)</span> is true, since by definition every <span class="process-math">\(d\in (0,\infty)\)</span> is positive. On the other hand,  if we declare <span class="process-math">\(D=\R\text{,}\)</span> the proposition <span class="process-math">\(\forall x P(x)\)</span> is false since not all elements of <span class="process-math">\(\R\)</span> are positive: indeed, <span class="process-math">\(-1\)</span> is negative, making <span class="process-math">\(P(-1)\)</span> false.</p>
+<p id="p-73">Because of the important role played by the domain of discourse <span class="process-math">\(D\text{,}\)</span> we sometimes include it in our quantifier expressions: e.g., <span class="process-math">\(\forall x\in D P(x)\text{,}\)</span> <span class="process-math">\(\exists x\in D P(x)\text{.}\)</span>  Using this convention allows us to see more immediately that  <span class="process-math">\(\forall\, x\in (0,\infty)\, P(x)\)</span> is true and <span class="process-math">\(\forall\, x\in\mathbb{R}\, P(x)\)</span> is false.</p></article><article class="example example-like" id="ex_model_quant"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex_model_quant"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.7</span><span class="period">.</span><span class="space"> </span><span class="title">Modeling “Every positive number has a square-root”.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex_model_quant"><article class="example example-like"><p id="p-74">Model the sentence “Every positive real number has a square-root” in the form \(\forall x P(x)\text{,}\) where \(P\) is a propositional function with domain of discourse \(D=\R\text{.}\) Determine the truth value of \(\forall x\, P(x)\) using <a href="" class="xref" data-knowl="./knowl/d_quantifiers.html" title="Definition 1.2.5">Definition 1.2.5</a>.</p>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex_model_quant"><article class="example example-like"><p id="p-74">Model the sentence “Every positive real number has a square-root” in the form <span class="process-math">\(\forall x P(x)\text{,}\)</span> where <span class="process-math">\(P\)</span> is a propositional function with domain of discourse <span class="process-math">\(D=\R\text{.}\)</span> Determine the truth value of <span class="process-math">\(\forall x\, P(x)\)</span> using <a href="" class="xref" data-knowl="./knowl/d_quantifiers.html" title="Definition 1.2.5">Definition 1.2.5</a>.</p>
 <div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2" id="solution-2"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2"><div class="solution solution-like">
-<p id="p-75">Fix our domain of discourse to be \(D=\R\text{.}\) For any \(r,s\in \R\text{,}\) let \(Q(r,s)\) be the proposition that \(s\) is a square-root of \(r\text{.}\) Define \(P(x)\) to be the propositional function</p>
-<div class="displaymath">
+<p id="p-75">Fix our domain of discourse to be <span class="process-math">\(D=\R\text{.}\)</span> For any <span class="process-math">\(r,s\in \R\text{,}\)</span> let <span class="process-math">\(Q(r,s)\)</span> be the proposition that <span class="process-math">\(s\)</span> is a square-root of <span class="process-math">\(r\text{.}\)</span> Define <span class="process-math">\(P(x)\)</span> to be the propositional function</p>
+<div class="displaymath process-math">
 \begin{equation*}
 x&gt;0 \implies \exists y\, Q(x,y)\text{.}
 \end{equation*}
 </div>
-<p class="continuation">Thus for any \(r\in\R\text{,}\) \(P(r)\) is the proposition that if \(r\) is positive, then \(r\) has a square-root. It follows that \(\forall x\in\R\, P(x)\) is the proposition that for all real numbers \(x\text{,}\) if \(x\) is positive, then  \(x\) has a square-root. This is clearly equivalent to the proposition that every positive real number has a square-root, as desired.</p>
-<p id="p-76">Lastly, we use <a href="" class="xref" data-knowl="./knowl/d_quantifiers.html" title="Definition 1.2.5">Definition 1.2.5</a> to show \(\forall x\in \R\, P(x)\) is true. Take any \(r\in \R\text{.}\) The real number \(r\) is either positive or not positive. If \(r\) is not positive, then \(r&gt;0\) is false and hence \(P(r)\text{,}\) which is the implication \(r&gt;0\implies \exists y\, Q(r,y)\text{,}\) is true vacuously.  If \(r\) is positive, then \(r&gt;0\) is true, and \(\exists y\, Q(r,y)\) is true, since \(r\) has a square-root in this case: namely, \(\sqrt{r}\text{.}\) But if \(r&gt;0\) is true and \(\exists y\, Q(r,y)\) is true, then the implication \(r&gt;0\implies \exists y\, Q(r,y)\) is true. We have proved \(P(r)\) is true for all \(r\in \R\text{.}\) Thus \(\forall x\in\R\, P(x)\) is true.</p>
+<p class="continuation">Thus for any <span class="process-math">\(r\in\R\text{,}\)</span> <span class="process-math">\(P(r)\)</span> is the proposition that if <span class="process-math">\(r\)</span> is positive, then <span class="process-math">\(r\)</span> has a square-root. It follows that <span class="process-math">\(\forall x\in\R\, P(x)\)</span> is the proposition that for all real numbers <span class="process-math">\(x\text{,}\)</span> if <span class="process-math">\(x\)</span> is positive, then  <span class="process-math">\(x\)</span> has a square-root. This is clearly equivalent to the proposition that every positive real number has a square-root, as desired.</p>
+<p id="p-76">Lastly, we use <a href="" class="xref" data-knowl="./knowl/d_quantifiers.html" title="Definition 1.2.5">Definition 1.2.5</a> to show <span class="process-math">\(\forall x\in \R\, P(x)\)</span> is true. Take any <span class="process-math">\(r\in \R\text{.}\)</span> The real number <span class="process-math">\(r\)</span> is either positive or not positive. If <span class="process-math">\(r\)</span> is not positive, then <span class="process-math">\(r&gt;0\)</span> is false and hence <span class="process-math">\(P(r)\text{,}\)</span> which is the implication <span class="process-math">\(r&gt;0\implies \exists y\, Q(r,y)\text{,}\)</span> is true vacuously.  If <span class="process-math">\(r\)</span> is positive, then <span class="process-math">\(r&gt;0\)</span> is true, and <span class="process-math">\(\exists y\, Q(r,y)\)</span> is true, since <span class="process-math">\(r\)</span> has a square-root in this case: namely, <span class="process-math">\(\sqrt{r}\text{.}\)</span> But if <span class="process-math">\(r&gt;0\)</span> is true and <span class="process-math">\(\exists y\, Q(r,y)\)</span> is true, then the implication <span class="process-math">\(r&gt;0\implies \exists y\, Q(r,y)\)</span> is true. We have proved <span class="process-math">\(P(r)\)</span> is true for all <span class="process-math">\(r\in \R\text{.}\)</span> Thus <span class="process-math">\(\forall x\in\R\, P(x)\)</span> is true.</p>
 </div></div>
 </div></article></div>
 <article class="warning remark-like" id="warning_order_quantifiers"><h4 class="heading">
 <span class="type">Warning</span><span class="space"> </span><span class="codenumber">1.2.8</span><span class="period">.</span><span class="space"> </span><span class="title">Order of quantifiers matters.</span>
 </h4>
-<p id="p-77">As <a href="" class="xref" data-knowl="./knowl/ex_model_quant.html" title="Example 1.2.7: Modeling “Every positive number has a square-root”">Example 1.2.7</a> illustrates, we can take a propositional function \(Q(x,y)\) in two variables and quantify one of the two variables to obtain a propositional function in one variable: e.g., \(P(x)=\exists y\, Q(x,y)\) or \(R(y)=\forall x\, Q(x,y)\text{.}\) Proceeding in this manner we engender propositions involving sequences of quantifiers. Mark well that the order of the quantifiers in such sequences is important!</p>
-<p id="p-78">For example, letting \(Q(x,y)\) be “\(y\) is a square-root of \(y\)” with domain of discourse \(D=(0,\infty)\text{.}\) The proposition \(\forall x\in\R\, \exists y\in\R\, Q(x,y)\) says that every positive real number has a positive square-root (true); the proposition \(\exists y\in\R\, \forall x\in\R\, Q(x,y)\) says that there is a positive real number that is the square-root of all real numbers (false).</p>
+<p id="p-77">As <a href="" class="xref" data-knowl="./knowl/ex_model_quant.html" title='Example 1.2.7: Modeling "Every positive number has a square-root"'>Example 1.2.7</a> illustrates, we can take a propositional function <span class="process-math">\(Q(x,y)\)</span> in two variables and quantify one of the two variables to obtain a propositional function in one variable: e.g., <span class="process-math">\(P(x)=\exists y\, Q(x,y)\)</span> or <span class="process-math">\(R(y)=\forall x\, Q(x,y)\text{.}\)</span> Proceeding in this manner we engender propositions involving sequences of quantifiers. Mark well that the order of the quantifiers in such sequences is important!</p>
+<p id="p-78">For example, letting <span class="process-math">\(Q(x,y)\)</span> be “<span class="process-math">\(y\)</span> is a square-root of <span class="process-math">\(y\)</span>” with domain of discourse <span class="process-math">\(D=(0,\infty)\text{.}\)</span> The proposition <span class="process-math">\(\forall x\in\R\, \exists y\in\R\, Q(x,y)\)</span> says that every positive real number has a positive square-root (true); the proposition <span class="process-math">\(\exists y\in\R\, \forall x\in\R\, Q(x,y)\)</span> says that there is a positive real number that is the square-root of all real numbers (false).</p>
 <p id="p-79">In general to “unpack” a sequence of quantifiers we start from the leftmost quantifier and proceed to the right.</p></article><article class="remark remark-like" id="rm_negating_quantifiers"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.2.9</span><span class="period">.</span><span class="space"> </span><span class="title">Negating quantifiers.</span>
 </h4>
-<p id="p-80">Let \(P(x)\) be a propositional function with domain of discourse \(D\text{.}\) According to <a href="" class="xref" data-knowl="./knowl/d_quantifiers.html" title="Definition 1.2.5">Definition 1.2.5</a> a universal quantification \(\forall x\, P(x)\) is false if it is <em class="emphasis">not the case</em> that \(P(d)\) is true for all for all \(d\in D\text{;}\) that is, if there is some \(d\in D\) such that \(P(d)\) is false. Letting \(\neg P(x)\) be the propositional function defined as \(\neg P(d)\) for all \(d\in D\text{,}\) we see that \(\forall x\,  P(x) \) is false if and only if \(\exists x\, \neg P(x)\) is true. This proves the equivalence</p>
-<div class="displaymath">
+<p id="p-80">Let <span class="process-math">\(P(x)\)</span> be a propositional function with domain of discourse <span class="process-math">\(D\text{.}\)</span> According to <a href="" class="xref" data-knowl="./knowl/d_quantifiers.html" title="Definition 1.2.5">Definition 1.2.5</a> a universal quantification <span class="process-math">\(\forall x\, P(x)\)</span> is false if it is <em class="emphasis">not the case</em> that <span class="process-math">\(P(d)\)</span> is true for all for all <span class="process-math">\(d\in D\text{;}\)</span> that is, if there is some <span class="process-math">\(d\in D\)</span> such that <span class="process-math">\(P(d)\)</span> is false. Letting <span class="process-math">\(\neg P(x)\)</span> be the propositional function defined as <span class="process-math">\(\neg P(d)\)</span> for all <span class="process-math">\(d\in D\text{,}\)</span> we see that <span class="process-math">\(\forall x\,  P(x) \)</span> is false if and only if <span class="process-math">\(\exists x\, \neg P(x)\)</span> is true. This proves the equivalence</p>
+<div class="displaymath process-math">
 \begin{equation*}
 \neg\forall x\, P(x)\iff \exists x\, \neg P(x)\text{.}
 \end{equation*}
 </div>
 <p class="continuation">Similarly, we have</p>
-<div class="displaymath">
+<div class="displaymath process-math">
 \begin{equation*}
 \neg\exists x\, P(x)\iff \forall x\, \neg P(x)\text{.}
 \end{equation*}
@@ -457,18 +460,18 @@ x&gt;0 \implies \exists y\, Q(x,y)\text{.}
 <p class="continuation">These equivalences can be understood as rules of negating quantifier statements. They can be summarized as follow: “swap quantifiers and negate the predicate.”</p></article><p id="p-81">The example below taken from calculus nicely illustrates how to negate  a proposition that involves a sequence of quantifiers.</p>
 <article class="example example-like" id="ex_limit_doesnt_exist"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex_limit_doesnt_exist"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.10</span><span class="period">.</span><span class="space"> </span><span class="title">The limit does not exist.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex_limit_doesnt_exist"><article class="example example-like"><p id="p-82">Let \(f(x)\) be a function with domain \(\R\text{,}\) and let \(c\in \R\) be a point of this domain. By definition, the proposition that \(\lim\limits_{x\to c}f(x)\) exists is equivalent to the following proposition:</p>
-<div class="displaymath">
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex_limit_doesnt_exist"><article class="example example-like"><p id="p-82">Let <span class="process-math">\(f(x)\)</span> be a function with domain <span class="process-math">\(\R\text{,}\)</span> and let <span class="process-math">\(c\in \R\)</span> be a point of this domain. By definition, the proposition that <span class="process-math">\(\lim\limits_{x\to c}f(x)\)</span> exists is equivalent to the following proposition:</p>
+<div class="displaymath process-math">
 \begin{equation}
 \exists L\in\R\,  \forall \epsilon \gt 0\, \exists \delta \gt0\,  \forall x\in\mathbb{R}\ (\val{x-c}\lt\delta\implies \val{f(x)-L}\lt\epsilon)\text{.}\label{eq_proposition}\tag{1.2.1}
 \end{equation}
 </div>
-<p class="continuation">(We made a number of shortcuts in our logical notation above (e.g. \(\forall \epsilon\gt 0\text{,}\) \(\exists\delta\gt 0\)) in order to simplify the expression somewhat; the intended meaning should still be clear. )</p>
-<p id="p-83">Use the negation rules described in <a href="" class="xref" data-knowl="./knowl/rm_negating_quantifiers.html" title="Remark 1.2.9: Negating quantifiers">Negating quantifiers</a> to derive a similar proposition equivalent to the statement that \(\lim\limits_{x\to c}f(x)\) do not exist.</p>
+<p class="continuation">(We made a number of shortcuts in our logical notation above (e.g. <span class="process-math">\(\forall \epsilon\gt 0\text{,}\)</span> <span class="process-math">\(\exists\delta\gt 0\)</span>) in order to simplify the expression somewhat; the intended meaning should still be clear. )</p>
+<p id="p-83">Use the negation rules described in <a href="" class="xref" data-knowl="./knowl/rm_negating_quantifiers.html" title="Remark 1.2.9: Negating quantifiers">Negating quantifiers</a> to derive a similar proposition equivalent to the statement that <span class="process-math">\(\lim\limits_{x\to c}f(x)\)</span> do not exist.</p>
 <div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-3" id="solution-3"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-3"><div class="solution solution-like">
-<p id="p-84">Let \(\mathcal{P}\) be the proposition in <a href="" class="xref" data-knowl="./knowl/eq_proposition.html" title="Equation 1.2.1">(1.2.1)</a>. Using the negation rules in series, we derive the <em class="emphasis">chain of equivalences</em>  below (see <a href="s_proof_technique.html#sss_logical_chains" class="internal" title="Subsubsection 1.3.1.4: Chains of implications/equivalences">Chains of implications/equivalences</a>). We've added parentheses to emphasize what is being negated at each step. Note how a quantifiers are “swapped” each time we pass the negation to the right.</p>
-<div class="displaymath">
+<p id="p-84">Let <span class="process-math">\(\mathcal{P}\)</span> be the proposition in <a href="" class="xref" data-knowl="./knowl/eq_proposition.html" title="Equation 1.2.1">(1.2.1)</a>. Using the negation rules in series, we derive the <em class="emphasis">chain of equivalences</em>  below (see <a href="s_proof_technique.html#sss_logical_chains" class="internal" title="Subsubsection 1.3.1.4: Chains of implications/equivalences">Chains of implications/equivalences</a>). We've added parentheses to emphasize what is being negated at each step. Note how a quantifiers are “swapped” each time we pass the negation to the right.</p>
+<div class="displaymath process-math">
 \begin{align*}
 \neg\mathcal{P}\amp\iff \forall L\in\R\,  \neg\left(\forall \epsilon \gt 0\, \exists \delta \gt0\,  \forall x\in\mathbb{R}\ (\val{x-c}\lt\delta\implies \val{f(x)-L}\lt\epsilon) \right)\\
 \amp\iff  \forall L\in\R\,  \exists \epsilon \gt 0\, \neg\left( \exists \delta \gt0\,  \forall x\in\mathbb{R}\ (\val{x-c}\lt\delta\implies \val{f(x)-L}\lt\epsilon) \right)\\
@@ -477,7 +480,7 @@ x&gt;0 \implies \exists y\, Q(x,y)\text{.}
 \amp\iff  \forall L\in\R\,  \exists \epsilon \gt 0\,  \forall \delta \gt0\, \exists x\in\mathbb{R}\ (\val{x-c}\lt\delta \text{ and } \val{f(x)-L}\not\lt\epsilon)\text{.}
 \end{align*}
 </div>
-<p class="continuation">(The last link in our chain uses the fact that \(\neg(\mathcal{Q}\implies\mathcal{R})\) is equivalent to \(\mathcal{Q}\land\neg\mathcal{R}\text{,}\) as a truth table easily shows.) Translating back into English, we conclude that the limit not existing (\(\neg\mathcal{P}\)) is equivalent to the following: for every \(L\in \mathbb{R}\) there is an \(\epsilon\gt 0\) such that for all \(\delta\gt 0\) there exists an \(x\in\mathbb{R}\) satisfying \(\val{x-c}\lt \delta\) and \(\val{f(x)-L}\not\gt\epsilon\text{.}\) Quite a mouthful!</p>
+<p class="continuation">(The last link in our chain uses the fact that <span class="process-math">\(\neg(\mathcal{Q}\implies\mathcal{R})\)</span> is equivalent to <span class="process-math">\(\mathcal{Q}\land\neg\mathcal{R}\text{,}\)</span> as a truth table easily shows.) Translating back into English, we conclude that the limit not existing (<span class="process-math">\(\neg\mathcal{P}\)</span>) is equivalent to the following: for every <span class="process-math">\(L\in \mathbb{R}\)</span> there is an <span class="process-math">\(\epsilon\gt 0\)</span> such that for all <span class="process-math">\(\delta\gt 0\)</span> there exists an <span class="process-math">\(x\in\mathbb{R}\)</span> satisfying <span class="process-math">\(\val{x-c}\lt \delta\)</span> and <span class="process-math">\(\val{f(x)-L}\not\gt\epsilon\text{.}\)</span> Quite a mouthful!</p>
 </div></div>
 </div></article></div></section></section></div></main>
 </div>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-04T21:25:19Z       *-->
+<!--*       on 2022-02-07T16:15:53Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -13,28 +13,28 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
+<body class="ignore-math">
 <article class="remark remark-like"><h4 class="heading">
-<span class="type">Remark</span><span xmlns:svg="http://www.w3.org/2000/svg" class="space"> </span><span class="codenumber">3.5.4</span><span xmlns:svg="http://www.w3.org/2000/svg" class="period">.</span><span xmlns:svg="http://www.w3.org/2000/svg" class="space"> </span><span class="title">Small \(n\) cases.</span>
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.5.4</span><span class="period">.</span><span class="space"> </span><span class="title">Small <span class="process-math">\(n\)</span> cases.</span>
 </h4>
-<p>Let's look at determinant formulas for the \(n=2,3\) cases. You may remember the formula for \(2\times 2\) matrices from <a href="" class="xref" data-knowl="./knowl/th_2by2_inverse.html" title="Theorem 3.3.5: Inverses of \(2\times 2\) matrices">Theorem 3.3.5</a>; we will make the connection more explicit in <a href="" class="xref" data-knowl="./knowl/th_adjoint.html" title="Theorem 3.5.16: Adjoint formula">Theorem 3.5.16</a>.</p>
-<p>Given \(A=\abcdmatrix{a}{b}{c}{d}\text{,}\) we have</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+<p>Let's look at determinant formulas for the <span class="process-math">\(n=2,3\)</span> cases. You may remember the formula for <span class="process-math">\(2\times 2\)</span> matrices from <a href="" class="xref" data-knowl="./knowl/th_2by2_inverse.html" title="Theorem 3.3.5: Inverses of 2\times 2 matrices">Theorem 3.3.5</a>; we will make the connection more explicit in <a href="" class="xref" data-knowl="./knowl/th_adjoint.html" title="Theorem 3.5.16: Adjoint formula">Theorem 3.5.16</a>.</p>
+<p>Given <span class="process-math">\(A=\abcdmatrix{a}{b}{c}{d}\text{,}\)</span> we have</p>
+<div class="displaymath process-math">
 \begin{align*}
 \det A\amp = (-1)^{1+1}a\det A_{11}+(-1)^{1+2}b\det A_{12}\amp \text{(recursive case)}\\
 \amp =a\det [d]-b\det [c] \amp \text{(base case)}\\
 \amp =ad-bc \text{.}
 \end{align*}
 </div>
-<p class="continuation">The formula for the \(n=2\) case is simple enough to serve as a “second base case”, allowing us to end the recursive process of computing a general \(n\times n\) matrix once we get to expressions involving \(2\times 2\) matrices.</p>
+<p class="continuation">The formula for the <span class="process-math">\(n=2\)</span> case is simple enough to serve as a “second base case”, allowing us to end the recursive process of computing a general <span class="process-math">\(n\times n\)</span> matrix once we get to expressions involving <span class="process-math">\(2\times 2\)</span> matrices.</p>
 <p>Given</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+<div class="displaymath process-math">
 \begin{equation*}
 A=\begin{amatrix}[ccc]a\amp b\amp c\\ d\amp e\amp f\\ g\amp h\amp i  \end{amatrix}\text{,}
 \end{equation*}
 </div>
 <p class="continuation">we have</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+<div class="displaymath process-math">
 \begin{align*}
 \det A \amp =a\det A_{11}-b\det A _{12}+c\det A_{13} \amp \text{(recursive case)}\\
 \amp =a\det \abcdmatrix{e}{f}{h}{i}-b\det\abcdmatrix{d}{f}{g}{i}+c\det\abcdmatrix{d}{e}{g}{h}\\

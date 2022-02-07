@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-04T21:25:17Z       *-->
+<!--*       on 2022-02-07T16:15:51Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -13,16 +13,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
+<body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
 <p>Let</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+<div class="displaymath process-math">
 \begin{equation*}
 A=\begin{amatrix}[rrr]1\amp 2\amp 0\\ 1\amp 2\amp 1\\ -1\amp -1\amp 3 \end{amatrix} \text{.}
 \end{equation*}
 </div>
-<p class="continuation">Combining both algorithms we can decide whether \(A\) is invertible, and if so, compute \(A^{-1}\) and write \(A\) as a product of elementary matrices.</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+<p class="continuation">Combining both algorithms we can decide whether <span class="process-math">\(A\)</span> is invertible, and if so, compute <span class="process-math">\(A^{-1}\)</span> and write <span class="process-math">\(A\)</span> as a product of elementary matrices.</p>
+<div class="displaymath process-math">
 \begin{align*}
 \begin{amatrix}[rrr|rrr]1\amp 2\amp 0\amp 1\amp 0\amp 0\\ 1\amp 2\amp 1\amp 0\amp 1\amp 0\\ -1\amp -1\amp 3\amp 0\amp 0\amp 1 \end{amatrix}  \amp \xrightarrow{r_2-r_1} \begin{amatrix}[rrr|rrr]1\amp 2\amp 0\amp 1\amp 0\amp 0\\ 0\amp 0\amp 1\amp -1\amp 1\amp 0\\ -1\amp -1\amp 3\amp 0\amp 0\amp 1 \end{amatrix}\\
 \amp \xrightarrow{r_3+r_1} \begin{amatrix}[rrr|rrr]1\amp 2\amp 0\amp 1\amp 0\amp 0\\ 0\amp 0\amp 1\amp -1\amp 1\amp 0\\ 0\amp 1\amp 3\amp 1\amp 0\amp 1 \end{amatrix}\\
@@ -31,20 +31,20 @@ A=\begin{amatrix}[rrr]1\amp 2\amp 0\\ 1\amp 2\amp 1\\ -1\amp -1\amp 3 \end{amatr
 \amp \xrightarrow{r_1-2r_2} \begin{amatrix}[rrr|rrr]1\amp 0\amp 0\amp -7\amp 6\amp -2\\ 0\amp 1\amp 0\amp 4\amp -3\amp 1\\ 0\amp 0\amp 1\amp -1\amp 1\amp 0 \end{amatrix}
 \end{align*}
 </div>
-<p class="continuation">According to <a href="" class="xref" data-knowl="./knowl/th_invertibility_algorithm.html" title="Theorem 3.4.9: Inverse algorithm">Theorem 3.4.9</a>, the computation shows that \(A\) is invertible and</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+<p class="continuation">According to <a href="" class="xref" data-knowl="./knowl/th_invertibility_algorithm.html" title="Theorem 3.4.9: Inverse algorithm">Theorem 3.4.9</a>, the computation shows that <span class="process-math">\(A\)</span> is invertible and</p>
+<div class="displaymath process-math">
 \begin{equation*}
 A^{-1}=\begin{amatrix}[rrr]-7\amp 6\amp -2\\ 4\amp -3\amp 1\\ -1\amp 1\amp 0 \end{amatrix}\text{.}
 \end{equation*}
 </div>
 <p class="continuation">Next, representing our row operations as elementary matrices, we see that</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+<div class="displaymath process-math">
 \begin{equation*}
 E_5E_4E_3E_2E_1A=I\text{,}
 \end{equation*}
 </div>
 <p class="continuation">where</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+<div class="displaymath process-math">
 \begin{align*}
 E_1\amp =\begin{amatrix}[rrr] 1\amp 0\amp 0\\
 -1\amp 1\amp 0\\
@@ -62,7 +62,7 @@ E_5\amp =\begin{amatrix}[rrr]1\amp -2\amp 0\\
 \end{align*}
 </div>
 <p class="continuation">We conclude that</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+<div class="displaymath process-math">
 \begin{align*}
 A \amp =E_1^{-1}E_2^{-1}E_3^{-1}E_4^{-1}E_5^{-1}\\
 \amp= \begin{amatrix}[rrr] 1\amp 0\amp 0\\

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-04T21:24:35Z       *-->
+<!--*       on 2022-02-07T16:15:00Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -9,11 +9,14 @@
 <!--*                                          *-->
 <!--********************************************-->
 <html lang="en-US">
-<head>
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Matrices and their arithmetic</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Linear algebra: the theory of vector spaces and linear transformations">
+<meta property="book:author" content="Aaron Greicius">
 <script>window.MathJax = {
   tex: {
     inlineMath: [['\\(','\\)']],
@@ -24,8 +27,8 @@
     packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
   },
   options: {
-    ignoreHtmlClass: "tex2jax_ignore",
-    processHtmlClass: "has_am",
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
   },
   chtml: {
     scale: 0.88,
@@ -36,21 +39,21 @@
     paths: {pretext: "https://pretextbook.org/js/lib"},
   },
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg">miniversion=0.6</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
-</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
-<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
 </head>
-<body class="pretext-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\require{cancel}\newcommand{\Z}{{\mathbb Z}}
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}\newcommand{\Z}{{\mathbb Z}}
 \newcommand{\Q}{{\mathbb Q}}
 \newcommand{\R}{{\mathbb R}}
 \newcommand{\C}{{\mathbb C}}
@@ -251,14 +254,14 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
-\)</div>
+\)</span></div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href="http://linear-algebra.northwestern.pub/" target="_blank"><img src="external/images/im_holycomm.svg" alt="Logo image"></a><div class="title-container">
 <h1 class="heading"><a href="book-1.html"><span class="title">Linear algebra: the theory of vector spaces and linear transformations</span></a></h1>
 <p class="byline">Aaron Greicius</p>
 </div>
 </div></div>
-<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
 <a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="c_matrices.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="c_matrices.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="s_algebraic.html" title="Next">Next</a></span>
@@ -268,68 +271,68 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="c_matrices.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="c_matrices.html" title="Up">Up</a><a class="next-button button toolbar-item" href="s_algebraic.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
-<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
 <nav id="toc"><ul>
-<li class="link frontmatter"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link frontmatter"><a href="frontmatter-1.html" data-scroll="frontmatter-1" class="internal"><span class="title">Front Matter</span></a></li>
 <li class="link">
-<a href="c_foundations.html" data-scroll="c_foundations"><span class="codenumber">1</span> <span class="title">Foundations</span></a><ul>
-<li><a href="s_sets_functions.html" data-scroll="s_sets_functions">Sets and functions</a></li>
-<li><a href="s_logic.html" data-scroll="s_logic">Logic</a></li>
-<li><a href="s_proof_technique.html" data-scroll="s_proof_technique">Proof techniques</a></li>
+<a href="c_foundations.html" data-scroll="c_foundations" class="internal"><span class="codenumber">1</span> <span class="title">Foundations</span></a><ul>
+<li><a href="s_sets_functions.html" data-scroll="s_sets_functions" class="internal">Sets and functions</a></li>
+<li><a href="s_logic.html" data-scroll="s_logic" class="internal">Logic</a></li>
+<li><a href="s_proof_technique.html" data-scroll="s_proof_technique" class="internal">Proof techniques</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="c_linear_systems.html" data-scroll="c_linear_systems"><span class="codenumber">2</span> <span class="title">Systems of linear equations</span></a><ul>
-<li><a href="s_systems.html" data-scroll="s_systems">Systems of linear equations</a></li>
-<li><a href="s_ge.html" data-scroll="s_ge">Gaussian elimination</a></li>
-<li><a href="s_solving.html" data-scroll="s_solving">Solving linear systems</a></li>
+<a href="c_linear_systems.html" data-scroll="c_linear_systems" class="internal"><span class="codenumber">2</span> <span class="title">Systems of linear equations</span></a><ul>
+<li><a href="s_systems.html" data-scroll="s_systems" class="internal">Systems of linear equations</a></li>
+<li><a href="s_ge.html" data-scroll="s_ge" class="internal">Gaussian elimination</a></li>
+<li><a href="s_solving.html" data-scroll="s_solving" class="internal">Solving linear systems</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="c_matrices.html" data-scroll="c_matrices"><span class="codenumber">3</span> <span class="title">Matrices, their arithmetic, and their algebra</span></a><ul>
+<a href="c_matrices.html" data-scroll="c_matrices" class="internal"><span class="codenumber">3</span> <span class="title">Matrices, their arithmetic, and their algebra</span></a><ul>
 <li><a href="s_matrix.html" data-scroll="s_matrix" class="active">Matrices and their arithmetic</a></li>
-<li><a href="s_algebraic.html" data-scroll="s_algebraic">Algebra of matrices</a></li>
-<li><a href="s_invertible_matrices.html" data-scroll="s_invertible_matrices">Invertible matrices</a></li>
-<li><a href="s_invertibility_theorem.html" data-scroll="s_invertibility_theorem">The invertibility theorem</a></li>
-<li><a href="s_det.html" data-scroll="s_det">The determinant</a></li>
+<li><a href="s_algebraic.html" data-scroll="s_algebraic" class="internal">Algebra of matrices</a></li>
+<li><a href="s_invertible_matrices.html" data-scroll="s_invertible_matrices" class="internal">Invertible matrices</a></li>
+<li><a href="s_invertibility_theorem.html" data-scroll="s_invertibility_theorem" class="internal">The invertibility theorem</a></li>
+<li><a href="s_det.html" data-scroll="s_det" class="internal">The determinant</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="c_vectorspace.html" data-scroll="c_vectorspace"><span class="codenumber">4</span> <span class="title">Vector spaces and linear transformations</span></a><ul>
-<li><a href="s_vectorspace.html" data-scroll="s_vectorspace">Real vector spaces</a></li>
-<li><a href="s_transformation.html" data-scroll="s_transformation">Linear transformations</a></li>
-<li><a href="s_subspace.html" data-scroll="s_subspace">Subspaces</a></li>
-<li><a href="s_span_independence.html" data-scroll="s_span_independence">Span and linear independence</a></li>
-<li><a href="s_basis_dimension.html" data-scroll="s_basis_dimension">Bases and dimension</a></li>
-<li><a href="s_rank_nullity.html" data-scroll="s_rank_nullity">Rank-nullity theorem and fundamental spaces</a></li>
-<li><a href="s_isom.html" data-scroll="s_isom">Isomorphisms</a></li>
+<a href="c_vectorspace.html" data-scroll="c_vectorspace" class="internal"><span class="codenumber">4</span> <span class="title">Vector spaces and linear transformations</span></a><ul>
+<li><a href="s_vectorspace.html" data-scroll="s_vectorspace" class="internal">Real vector spaces</a></li>
+<li><a href="s_transformation.html" data-scroll="s_transformation" class="internal">Linear transformations</a></li>
+<li><a href="s_subspace.html" data-scroll="s_subspace" class="internal">Subspaces</a></li>
+<li><a href="s_span_independence.html" data-scroll="s_span_independence" class="internal">Span and linear independence</a></li>
+<li><a href="s_basis_dimension.html" data-scroll="s_basis_dimension" class="internal">Bases and dimension</a></li>
+<li><a href="s_rank_nullity.html" data-scroll="s_rank_nullity" class="internal">Rank-nullity theorem and fundamental spaces</a></li>
+<li><a href="s_isom.html" data-scroll="s_isom" class="internal">Isomorphisms</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="c_innerproductspaces.html" data-scroll="c_innerproductspaces"><span class="codenumber">5</span> <span class="title">Inner product spaces</span></a><ul>
-<li><a href="s_innerproducts.html" data-scroll="s_innerproducts">Inner product spaces</a></li>
-<li><a href="s_orthogonality.html" data-scroll="s_orthogonality">Orthogonal bases and orthogonal projection</a></li>
+<a href="c_innerproductspaces.html" data-scroll="c_innerproductspaces" class="internal"><span class="codenumber">5</span> <span class="title">Inner product spaces</span></a><ul>
+<li><a href="s_innerproducts.html" data-scroll="s_innerproducts" class="internal">Inner product spaces</a></li>
+<li><a href="s_orthogonality.html" data-scroll="s_orthogonality" class="internal">Orthogonal bases and orthogonal projection</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="c_transbasis.html" data-scroll="c_transbasis"><span class="codenumber">6</span> <span class="title">Eigenvectors and diagonalization</span></a><ul>
-<li><a href="s_coordinatevectors_isomorphisms.html" data-scroll="s_coordinatevectors_isomorphisms">Coordinate vectors and isomorphisms</a></li>
-<li><a href="s_matrixreps.html" data-scroll="s_matrixreps">Matrix representations of linear transformations</a></li>
-<li><a href="s_changeofbasis.html" data-scroll="s_changeofbasis">Change of basis</a></li>
-<li><a href="ss_eigenvectors.html" data-scroll="ss_eigenvectors">Eigenvectors and eigenvalues</a></li>
-<li><a href="ss_diagonalization.html" data-scroll="ss_diagonalization">Diagonalization</a></li>
+<a href="c_transbasis.html" data-scroll="c_transbasis" class="internal"><span class="codenumber">6</span> <span class="title">Eigenvectors and diagonalization</span></a><ul>
+<li><a href="s_coordinatevectors_isomorphisms.html" data-scroll="s_coordinatevectors_isomorphisms" class="internal">Coordinate vectors and isomorphisms</a></li>
+<li><a href="s_matrixreps.html" data-scroll="s_matrixreps" class="internal">Matrix representations of linear transformations</a></li>
+<li><a href="s_changeofbasis.html" data-scroll="s_changeofbasis" class="internal">Change of basis</a></li>
+<li><a href="ss_eigenvectors.html" data-scroll="ss_eigenvectors" class="internal">Eigenvectors and eigenvalues</a></li>
+<li><a href="ss_diagonalization.html" data-scroll="ss_diagonalization" class="internal">Diagonalization</a></li>
 </ul>
 </li>
-<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
-<li class="link"><a href="appendix-notation.html" data-scroll="appendix-notation"><span class="codenumber">A</span> <span class="title">Notation</span></a></li>
-<li class="link"><a href="appendix-defs.html" data-scroll="appendix-defs"><span class="codenumber">B</span> <span class="title">Definitions</span></a></li>
-<li class="link"><a href="appendix-thms.html" data-scroll="appendix-thms"><span class="codenumber">C</span> <span class="title">Theory and procedures</span></a></li>
-<li class="link"><a href="appendix-egs.html" data-scroll="appendix-egs"><span class="codenumber">D</span> <span class="title">Examples</span></a></li>
-<li class="link"><a href="appendix-vids.html" data-scroll="appendix-vids"><span class="codenumber">E</span> <span class="title">Video examples and figures</span></a></li>
-<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="appendix-notation.html" data-scroll="appendix-notation" class="internal"><span class="codenumber">A</span> <span class="title">Notation</span></a></li>
+<li class="link"><a href="appendix-defs.html" data-scroll="appendix-defs" class="internal"><span class="codenumber">B</span> <span class="title">Definitions</span></a></li>
+<li class="link"><a href="appendix-thms.html" data-scroll="appendix-thms" class="internal"><span class="codenumber">C</span> <span class="title">Theory and procedures</span></a></li>
+<li class="link"><a href="appendix-egs.html" data-scroll="appendix-egs" class="internal"><span class="codenumber">D</span> <span class="title">Examples</span></a></li>
+<li class="link"><a href="appendix-vids.html" data-scroll="appendix-vids" class="internal"><span class="codenumber">E</span> <span class="title">Video examples and figures</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
 </ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="s_matrix"><h2 class="heading hide-type">
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="s_matrix"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">3.1</span> <span class="title">Matrices and their arithmetic</span>
 </h2>
 <section class="introduction" id="introduction-12"><p id="p-373">Matrices played a small supporting role in our discussion of linear systems in <a href="c_linear_systems.html" class="internal" title="Chapter 2: Systems of linear equations">Chapter 2</a>. In this chapter we bring them to center stage and give them a full-blown treatment as independent mathematical objects in their own right.</p>
@@ -339,75 +342,76 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <p id="p-375">A matrix is a matrix is a matrix.</p>
 <p id="p-376">Not every matrix should be thought of as an augmented matrix associated to a linear system.</p></article></p></section><section class="subsection" id="ss_matrix_attributes"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.1.1</span> <span class="title">The basics</span>
-</h3> We begin with some elementary definitions about matrices, matrix equality, and special types of matrices. As the next definition makes clear, a matrix is just an ordered sequence of numbers arranged in a very particular manner. <article class="definition definition-like" id="d_matrix"><h4 class="heading">
+</h3>
+<article class="definition definition-like" id="d_matrix"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix.</span>
 </h4>
 <p id="p-377">A <dfn class="terminology">(real) matrix</dfn> is a rectangular array of real numbers</p>
-<div class="displaymath">
+<div class="displaymath process-math">
 \begin{equation}
 A=\genmatrix\text{.}\label{s_matrix_eq_matrix}\tag{3.1.1}
 \end{equation}
 </div>
-<p class="continuation">The number \(a_{ij}\) located in the \(i\)-th row and \(j\)-th column of \(A\) is called the <dfn class="terminology">\((i,j)\)-entry</dfn> (or <dfn class="terminology">\(ij\)-th entry</dfn>) of \(A\text{.}\)</p>
-<p id="p-378">A matrix with \(m\) rows and \(n\) columns is said to have <dfn class="terminology">size</dfn> (or <dfn class="terminology">dimension</dfn>) \(m\times n\text{.}\)</p>
-<p id="p-379">We will typically use capital letters near the beginning of the alphabet (e.g. \(A, B,C, D\text{,}\) etc.) to denote matrices.</p></article><p id="p-380">The displayed matrix in <a href="" class="xref" data-knowl="./knowl/s_matrix_eq_matrix.html" title="Equation 3.1.1">(3.1.1)</a> is costly both in the space it takes up in print, and the time it takes to write down or typeset. Accordingly we introduce two somewhat complementary forms of notation to help describe matrices.</p>
+<p class="continuation">The number <span class="process-math">\(a_{ij}\)</span> located in the <span class="process-math">\(i\)</span>-th row and <span class="process-math">\(j\)</span>-th column of <span class="process-math">\(A\)</span> is called the <dfn class="terminology"><span class="process-math">\((i,j)\)</span>-entry</dfn> (or <dfn class="terminology"><span class="process-math">\(ij\)</span>-th entry</dfn>) of <span class="process-math">\(A\text{.}\)</span></p>
+<p id="p-378">A matrix with <span class="process-math">\(m\)</span> rows and <span class="process-math">\(n\)</span> columns is said to have <dfn class="terminology">size</dfn> (or <dfn class="terminology">dimension</dfn>) <span class="process-math">\(m\times n\text{.}\)</span></p>
+<p id="p-379">We will typically use capital letters near the beginning of the alphabet (e.g. <span class="process-math">\(A, B,C, D\text{,}\)</span> etc.) to denote matrices.</p></article><p id="p-380">The displayed matrix in <a href="" class="xref" data-knowl="./knowl/s_matrix_eq_matrix.html" title="Equation 3.1.1">(3.1.1)</a> is costly both in the space it takes up in print, and the time it takes to write down or typeset. Accordingly we introduce two somewhat complementary forms of notation to help describe matrices.</p>
 <article class="definition definition-like" id="d_matrix_notation"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.3</span><span class="period">.</span>
 </h4>
 <dl class="description-list">
 <dt id="li-114">Matrix-building notation</dt>
-<dd><p id="p-381">The notation \([a_{ij}]_{m\times n}\) denotes the \(m\times n\) matrix whose \(ij\)-th entry (\(i\)-th row, \(j\)-th column) is \(a_{ij}\text{.}\) When there is no danger of confusion, this notation is often shortened to \([a_{ij}]\text{.}\)</p></dd>
+<dd><p id="p-381">The notation <span class="process-math">\([a_{ij}]_{m\times n}\)</span> denotes the <span class="process-math">\(m\times n\)</span> matrix whose <span class="process-math">\(ij\)</span>-th entry (<span class="process-math">\(i\)</span>-th row, <span class="process-math">\(j\)</span>-th column) is <span class="process-math">\(a_{ij}\text{.}\)</span> When there is no danger of confusion, this notation is often shortened to <span class="process-math">\([a_{ij}]\text{.}\)</span></p></dd>
 <dt id="li-115">Matrix entry notation</dt>
-<dd><p id="p-382">Given a matrix \(A\text{,}\) the notation \([A]_{ij}\) denotes the \(ij\)-th entry of \(A\text{.}\)</p></dd>
+<dd><p id="p-382">Given a matrix <span class="process-math">\(A\text{,}\)</span> the notation <span class="process-math">\([A]_{ij}\)</span> denotes the <span class="process-math">\(ij\)</span>-th entry of <span class="process-math">\(A\text{.}\)</span></p></dd>
 </dl>
-<p id="p-383">Thus if \(A=[a_{ij}]_{m\times n}\text{,}\) then \([A]_{ij}=a_{ij}\) for all \(1\leq i\leq m\) and \(1\leq j\leq n\text{.}\)</p></article><article class="remark remark-like" id="remark-19"><h4 class="heading">
+<p id="p-383">Thus if <span class="process-math">\(A=[a_{ij}]_{m\times n}\text{,}\)</span> then <span class="process-math">\([A]_{ij}=a_{ij}\)</span> for all <span class="process-math">\(1\leq i\leq m\)</span> and <span class="process-math">\(1\leq j\leq n\text{.}\)</span></p></article><article class="remark remark-like" id="remark-19"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.1.4</span><span class="period">.</span>
 </h4>
-<p id="p-384">The matrix-building notation is often used simply to give names to the entries of an arbitrary matrix. However, it can also be used to describe a matrix whose \(ij\)-th entry is given by specified rule or formula.</p>
-<p id="p-385">For example, let \(A=[a_{ij}]_{2\times 3}\text{,}\) where \(a_{ij}=(i-j)j\text{.}\) This is the \(2\times 3\) matrix whose \(ij\)-th entry is \((i-j)j\text{.}\) Thus</p>
-<div class="displaymath">
+<p id="p-384">The matrix-building notation is often used simply to give names to the entries of an arbitrary matrix. However, it can also be used to describe a matrix whose <span class="process-math">\(ij\)</span>-th entry is given by specified rule or formula.</p>
+<p id="p-385">For example, let <span class="process-math">\(A=[a_{ij}]_{2\times 3}\text{,}\)</span> where <span class="process-math">\(a_{ij}=(i-j)j\text{.}\)</span> This is the <span class="process-math">\(2\times 3\)</span> matrix whose <span class="process-math">\(ij\)</span>-th entry is <span class="process-math">\((i-j)j\text{.}\)</span> Thus</p>
+<div class="displaymath process-math">
 \begin{equation*}
 A=\begin{bmatrix}(1-1)1 \amp (1-2)2 \amp (1-3)3\\ (2-1)1 \amp (2-2)2 \amp (2-3)3
 \end{bmatrix}=\begin{bmatrix}0 \amp -2 \amp -6\\ 1 \amp 0 \amp -3 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<p class="continuation">In this example we have \([A]_{23}=-3\) and \([A]_{ii}=0\) for \(i=1,2\text{.}\)</p></article><p id="p-386">In everyday language the notion of equality is taken as self-evident. Two things are equal if they are the same. What more is there to say? In mathematics, each time we introduce a new type of mathematical object (e.g., sets, functions, \(n\)-tuples, etc.) we need to spell out exactly what we mean for two things to be considered equal. We do so now with matrices.</p>
+<p class="continuation">In this example we have <span class="process-math">\([A]_{23}=-3\)</span> and <span class="process-math">\([A]_{ii}=0\)</span> for <span class="process-math">\(i=1,2\text{.}\)</span></p></article><p id="p-386">In everyday language the notion of equality is taken as self-evident. Two things are equal if they are the same. What more is there to say? In mathematics, each time we introduce a new type of mathematical object (e.g., sets, functions, <span class="process-math">\(n\)</span>-tuples, etc.) we need to spell out exactly what we mean for two things to be considered equal. We do so now with matrices.</p>
 <article class="definition definition-like" id="d_matrix_equality"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix equality.</span>
 </h4>
-<p id="p-387">Let \(A\) and \(B\) be matrices of dimension \(m\times n\) and \(m'\times n'\text{,}\) respectively.  The two matrices are <dfn class="terminology">equal</dfn> if</p>
+<p id="p-387">Let <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> be matrices of dimension <span class="process-math">\(m\times n\)</span> and <span class="process-math">\(m'\times n'\text{,}\)</span> respectively.  The two matrices are <dfn class="terminology">equal</dfn> if</p>
 <ol class="decimal">
-<li id="li-116"><p id="p-388">\(m=m'\) and \(n=n'\text{;}\)</p></li>
-<li id="li-117"><p id="p-389">\([A]_{ij}=[B]_{ij}\) for all \(1\leq i\leq m\) and \(1\leq j\leq n\text{.}\)</p></li>
+<li id="li-116"><p id="p-388"><span class="process-math">\(m=m'\)</span> and <span class="process-math">\(n=n'\text{;}\)</span></p></li>
+<li id="li-117"><p id="p-389"><span class="process-math">\([A]_{ij}=[B]_{ij}\)</span> for all <span class="process-math">\(1\leq i\leq m\)</span> and <span class="process-math">\(1\leq j\leq n\text{.}\)</span></p></li>
 </ol>
-<p id="p-390">In other words, we have \(A=B\) if and only if \(A\) and \(B\) have the same shape, and each entry of \(A\) is equal to the corresponding entry of \(B\text{.}\)</p></article><article class="example example-like" id="ex_inequality"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex_inequality"><h4 class="heading">
+<p id="p-390">In other words, we have <span class="process-math">\(A=B\)</span> if and only if <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> have the same shape, and each entry of <span class="process-math">\(A\)</span> is equal to the corresponding entry of <span class="process-math">\(B\text{.}\)</span></p></article><article class="example example-like" id="ex_inequality"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex_inequality"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.6</span><span class="period">.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex_inequality"><article class="example example-like"><p id="p-391">The matrix \(A=\begin{bmatrix}1\amp 2\amp 3\amp 4 \end{bmatrix}\) is not equal to \(B=\begin{bmatrix} 1\\ 2\\ 3\\ 4\end{bmatrix}\text{,}\) despite their having the same entries roughly in the same order: 1 is first, 2 is second, \etc. In this case equality does not hold as \(A\) and \(B\) have different shapes: \(A\) is \(1\times 4\text{,}\) and \(B\) is \(4\times 1\text{.}\)</p>
-<p id="p-392">The matrices \(A=\begin{bmatrix}1\amp 2 \\3\amp 4 \end{bmatrix}\) and \(B=\begin{bmatrix}1\amp 2\\ 5\amp 4\end{bmatrix}\) have the same dimension, but are not equal since \([A]_{21}=3\ne 5=[B]_{21}\text{.}\)</p></article></div>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex_inequality"><article class="example example-like"><p id="p-391">The matrix <span class="process-math">\(A=\begin{bmatrix}1\amp 2\amp 3\amp 4 \end{bmatrix}\)</span> is not equal to <span class="process-math">\(B=\begin{bmatrix} 1\\ 2\\ 3\\ 4\end{bmatrix}\text{,}\)</span> despite their having the same entries roughly in the same order: 1 is first, 2 is second, \etc. In this case equality does not hold as <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> have different shapes: <span class="process-math">\(A\)</span> is <span class="process-math">\(1\times 4\text{,}\)</span> and <span class="process-math">\(B\)</span> is <span class="process-math">\(4\times 1\text{.}\)</span></p>
+<p id="p-392">The matrices <span class="process-math">\(A=\begin{bmatrix}1\amp 2 \\3\amp 4 \end{bmatrix}\)</span> and <span class="process-math">\(B=\begin{bmatrix}1\amp 2\\ 5\amp 4\end{bmatrix}\)</span> have the same dimension, but are not equal since <span class="process-math">\([A]_{21}=3\ne 5=[B]_{21}\text{.}\)</span></p></article></div>
 <article class="definition definition-like" id="d_square_matrices"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.7</span><span class="period">.</span><span class="space"> </span><span class="title">Square matrices, row vectors, column vectors, zero matrices.</span>
 </h4>
-<p id="p-393">A matrix \(A\) is <dfn class="terminology">square</dfn> if its dimension is \(n\times n\text{.}\) The <dfn class="terminology">diagonal</dfn> of a square matrix \(A=[a_{ij}]_{n\times n}\) consists of the entries \(a_{ii}\) for \(1\leq i\leq n\text{.}\)</p>
-<p id="p-394">A \(1\times n\) matrix</p>
-<div class="displaymath">
+<p id="p-393">A matrix <span class="process-math">\(A\)</span> is <dfn class="terminology">square</dfn> if its dimension is <span class="process-math">\(n\times n\text{.}\)</span> The <dfn class="terminology">diagonal</dfn> of a square matrix <span class="process-math">\(A=[a_{ij}]_{n\times n}\)</span> consists of the entries <span class="process-math">\(a_{ii}\)</span> for <span class="process-math">\(1\leq i\leq n\text{.}\)</span></p>
+<p id="p-394">A <span class="process-math">\(1\times n\)</span> matrix</p>
+<div class="displaymath process-math">
 \begin{equation*}
 \bolda=\begin{bmatrix}a_1\amp a_2\amp \cdots \amp a_n \end{bmatrix}
 \end{equation*}
 </div>
-<p class="continuation">is called a <dfn class="terminology">row vector</dfn>. The \(j\)-th entry of a row vector \(\bolda\) is denoted \([\bolda]_j\)</p>
-<p id="p-395">An \(n\times 1\) matrix</p>
-<div class="displaymath">
+<p class="continuation">is called a <dfn class="terminology">row vector</dfn>. The <span class="process-math">\(j\)</span>-th entry of a row vector <span class="process-math">\(\bolda\)</span> is denoted <span class="process-math">\([\bolda]_j\)</span></p>
+<p id="p-395">An <span class="process-math">\(n\times 1\)</span> matrix</p>
+<div class="displaymath process-math">
 \begin{equation*}
 \boldb=\begin{bmatrix}b_1\\ b_2\\\vdots \\ b_m \end{bmatrix}\text{,}
 \end{equation*}
 </div>
-<p class="continuation">is called a <dfn class="terminology">column vector</dfn>. The \(i\)-th entry of a column vector \(\boldb\) is denoted \([\boldb]_i\text{.}\)</p>
-<p id="p-396">The <dfn class="terminology">\(m\times n\) zero matrix</dfn>, denoted \(\boldzero_{m\times n}\text{,}\) is the matrix of that dimension, all of whose entries are zero: i.e., \((\boldzero_{m\times n})_{ij}=0\) for all \(1\leq i\leq m\) and \(1\leq j\leq n\text{.}\)</p>
-<p id="p-397">When the actual dimension is not significant, we will often drop the subscript and write simply \(\boldzero\) for a zero matrix of suitable dimension.</p></article><article class="remark remark-like" id="rm_matrices_as_row_columns"><h4 class="heading">
+<p class="continuation">is called a <dfn class="terminology">column vector</dfn>. The <span class="process-math">\(i\)</span>-th entry of a column vector <span class="process-math">\(\boldb\)</span> is denoted <span class="process-math">\([\boldb]_i\text{.}\)</span></p>
+<p id="p-396">The <dfn class="terminology"><span class="process-math">\(m\times n\)</span> zero matrix</dfn>, denoted <span class="process-math">\(\boldzero_{m\times n}\text{,}\)</span> is the matrix of that dimension, all of whose entries are zero: i.e., <span class="process-math">\((\boldzero_{m\times n})_{ij}=0\)</span> for all <span class="process-math">\(1\leq i\leq m\)</span> and <span class="process-math">\(1\leq j\leq n\text{.}\)</span></p>
+<p id="p-397">When the actual dimension is not significant, we will often drop the subscript and write simply <span class="process-math">\(\boldzero\)</span> for a zero matrix of suitable dimension.</p></article><article class="remark remark-like" id="rm_matrices_as_row_columns"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.1.8</span><span class="period">.</span><span class="space"> </span><span class="title">Matrices as collections of columns/rows.</span>
 </h4>
-<p id="p-398">Let \(A\) be an \(m\times n\) matrix. We will often think of \(A\) as a collection of columns, in which case we write</p>
-<div class="displaymath">
+<p id="p-398">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(m\times n\)</span> matrix. We will often think of <span class="process-math">\(A\)</span> as a collection of columns, in which case we write</p>
+<div class="displaymath process-math">
 \begin{equation}
 A=\begin{bmatrix}\vert \amp \vert \amp \amp \vert \\
 \boldc_1 \amp \boldc_2\amp \cdots \amp \boldc_n \\
@@ -415,14 +419,14 @@ A=\begin{bmatrix}\vert \amp \vert \amp \amp \vert \\
 \end{bmatrix}\text{,}\label{eq_columns}\tag{3.1.2}
 \end{equation}
 </div>
-<p class="continuation">where \(\boldc_j\) is the column vector consisting of the entries of the \(j\)-th column of \(A\text{:}\) i.e.,</p>
-<div class="displaymath">
+<p class="continuation">where <span class="process-math">\(\boldc_j\)</span> is the column vector consisting of the entries of the <span class="process-math">\(j\)</span>-th column of <span class="process-math">\(A\text{:}\)</span> i.e.,</p>
+<div class="displaymath process-math">
 \begin{equation*}
 \boldc_j=\begin{bmatrix}a_{1j}\\ a_{2j}\\ \vdots \\ a_{mj}\end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<p class="continuation">Similarly, when we think of \(A\) as a collection of rows, we write</p>
-<div class="displaymath">
+<p class="continuation">Similarly, when we think of <span class="process-math">\(A\)</span> as a collection of rows, we write</p>
+<div class="displaymath process-math">
 \begin{equation}
 A=\begin{bmatrix}\ -\boldr_{1}- \ \\
 \ -\boldr_{1}- \ \\
@@ -431,15 +435,15 @@ A=\begin{bmatrix}\ -\boldr_{1}- \ \\
 \end{bmatrix}\text{,}\label{eq_rows}\tag{3.1.3}
 \end{equation}
 </div>
-<p class="continuation">where \(\boldr_i\) is the row vector consisting of the entries of the \(i\)-th row of \(A\text{:}\) i.e.,</p>
-<div class="displaymath">
+<p class="continuation">where <span class="process-math">\(\boldr_i\)</span> is the row vector consisting of the entries of the <span class="process-math">\(i\)</span>-th row of <span class="process-math">\(A\text{:}\)</span> i.e.,</p>
+<div class="displaymath process-math">
 \begin{equation*}
 \boldr_i=
 \begin{bmatrix}a_{i1}\amp a_{i2}\amp\cdots\amp a_{in}
 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<p class="continuation">The vertical and horizontal lines in <a href="" class="xref" data-knowl="./knowl/eq_columns.html" title="Equation 3.1.2">(3.1.2)</a> and <a href="" class="xref" data-knowl="./knowl/eq_rows.html" title="Equation 3.1.3">(3.1.3)</a> are used to emphasize that the \(\boldc_j\) are columns vectors and the \(\boldr_i\) are row vectors.</p></article></section><section class="subsection" id="ss_matrix_arithmetic"><h3 class="heading hide-type">
+<p class="continuation">The vertical and horizontal lines in <a href="" class="xref" data-knowl="./knowl/eq_columns.html" title="Equation 3.1.2">(3.1.2)</a> and <a href="" class="xref" data-knowl="./knowl/eq_rows.html" title="Equation 3.1.3">(3.1.3)</a> are used to emphasize that the <span class="process-math">\(\boldc_j\)</span> are columns vectors and the <span class="process-math">\(\boldr_i\)</span> are row vectors.</p></article></section><section class="subsection" id="ss_matrix_arithmetic"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.1.2</span> <span class="title">Matrix arithmetic: addition, subtraction and scalar multiplication</span>
 </h3>
 <p id="p-399">We now lay out the various algebraic operations we will use to combine and transform matrices; we refer to the use of these operations loosely as <em class="emphasis">matrix arithmetic</em>. Some of these operations resemble familiar operations from real arithmetic in terms of their notation and definition. Do not be lulled into complacency! These are new operations defined for a new class of mathematical objects, and must be treated carefully. In particular, pay close attention to (a) exactly what type of mathematical objects serve as inputs for each operation (the <em class="emphasis">ingredients</em> of the operation), and (b) what type of mathematical object is outputted.</p>
@@ -447,60 +451,60 @@ A=\begin{bmatrix}\ -\boldr_{1}- \ \\
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.9</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix addition and subtraction.</span>
 </h4>
 <p id="p-400"></p>
-<p id="p-401"><dfn class="terminology">Matrix addition</dfn> is the operation defined as follows: given two \(m\times n\) matrices \(A=[a_{ij}]_{m\times n}\) and \(B=[b_{ij}]_{m\times n}\text{,}\) we define their <dfn class="terminology">sum</dfn> to be the matrix</p>
-<div class="displaymath">
+<p id="p-401"><dfn class="terminology">Matrix addition</dfn> is the operation defined as follows: given two <span class="process-math">\(m\times n\)</span> matrices <span class="process-math">\(A=[a_{ij}]_{m\times n}\)</span> and <span class="process-math">\(B=[b_{ij}]_{m\times n}\text{,}\)</span> we define their <dfn class="terminology">sum</dfn> to be the matrix</p>
+<div class="displaymath process-math">
 \begin{equation*}
 A+B\colon =[a_{ij}+b_{ij}]_{m\times n}\text{.}
 \end{equation*}
 </div>
-<p class="continuation">In other words \(A+B\) is the \(m\times n\) matrix satisfying</p>
-<div class="displaymath">
+<p class="continuation">In other words <span class="process-math">\(A+B\)</span> is the <span class="process-math">\(m\times n\)</span> matrix satisfying</p>
+<div class="displaymath process-math">
 \begin{equation*}
 [A+B]_{ij}=[A]_{ij}+[B]_{ij}=a_{ij}+b_{ij}
 \end{equation*}
 </div>
-<p class="continuation">for all \(1\leq i\leq m\) and \(1\leq j\leq n\text{.}\)</p>
-<p id="p-402"><dfn class="terminology">Matrix subtraction</dfn> is the operation defined as follows: given two \(m\times n\) matrices \(A=[a_{ij}]_{m\times n}\) and \(B=[b_{ij}]_{m\times n}\text{,}\) we define their <dfn class="terminology">difference</dfn> to be the matrix</p>
-<div class="displaymath">
+<p class="continuation">for all <span class="process-math">\(1\leq i\leq m\)</span> and <span class="process-math">\(1\leq j\leq n\text{.}\)</span></p>
+<p id="p-402"><dfn class="terminology">Matrix subtraction</dfn> is the operation defined as follows: given two <span class="process-math">\(m\times n\)</span> matrices <span class="process-math">\(A=[a_{ij}]_{m\times n}\)</span> and <span class="process-math">\(B=[b_{ij}]_{m\times n}\text{,}\)</span> we define their <dfn class="terminology">difference</dfn> to be the matrix</p>
+<div class="displaymath process-math">
 \begin{equation*}
 A-B\colon =[a_{ij}-b_{ij}]_{m\times n}\text{.}
 \end{equation*}
 </div>
-<p class="continuation">In other words \(A-B\) is the \(m\times n\) matrix satisfying</p>
-<div class="displaymath">
+<p class="continuation">In other words <span class="process-math">\(A-B\)</span> is the <span class="process-math">\(m\times n\)</span> matrix satisfying</p>
+<div class="displaymath process-math">
 \begin{equation*}
 [A-B]_{ij}=[A]_{ij}-[B]_{ij}=a_{ij}-b_{ij}
 \end{equation*}
 </div>
-<p class="continuation">for all \(1\leq i\leq m\) and \(1\leq j\leq n\text{.}\)</p></article><article class="remark remark-like" id="remark-21"><h4 class="heading">
+<p class="continuation">for all <span class="process-math">\(1\leq i\leq m\)</span> and <span class="process-math">\(1\leq j\leq n\text{.}\)</span></p></article><article class="remark remark-like" id="remark-21"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.1.10</span><span class="period">.</span>
 </h4>Observe that matrix addition/subtraction is not defined for any old pair of matrices. The ingredients of matrix addition (or subtraction) are two matrices <em class="emphasis">of the same dimension</em>; and the output is a third matrix of this common dimension.</article><article class="definition definition-like" id="d_matrix_scalar_mult"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.11</span><span class="period">.</span><span class="space"> </span><span class="title">Scalar multiplication of matrices.</span>
 </h4>
-<p id="p-403">Given any matrix \(A=[a_{ij}]_{m\times n}\) and any constant \(c\in \R\text{,}\) we define</p>
-<div class="displaymath">
+<p id="p-403">Given any matrix <span class="process-math">\(A=[a_{ij}]_{m\times n}\)</span> and any constant <span class="process-math">\(c\in \R\text{,}\)</span> we define</p>
+<div class="displaymath process-math">
 \begin{equation*}
 cA=[ca_{ij}]\text{.}
 \end{equation*}
 </div>
-<p class="continuation">In other words, \(cA\) is the \(m\times n\) matrix obtained by “scaling” each of the entries of \(A\) by the constant \(c\text{.}\)</p>
-<p id="p-404">We call \(cA\) a <dfn class="terminology">scalar multiple</dfn> of \(A\text{.}\) Furthermore, to help distinguish between matrices and real numbers, we will refer to elements of \(\R\) as <dfn class="terminology">scalars</dfn>.</p></article><article class="remark remark-like" id="remark-22"><h4 class="heading">
+<p class="continuation">In other words, <span class="process-math">\(cA\)</span> is the <span class="process-math">\(m\times n\)</span> matrix obtained by “scaling” each of the entries of <span class="process-math">\(A\)</span> by the constant <span class="process-math">\(c\text{.}\)</span></p>
+<p id="p-404">We call <span class="process-math">\(cA\)</span> a <dfn class="terminology">scalar multiple</dfn> of <span class="process-math">\(A\text{.}\)</span> Furthermore, to help distinguish between matrices and real numbers, we will refer to elements of <span class="process-math">\(\R\)</span> as <dfn class="terminology">scalars</dfn>.</p></article><article class="remark remark-like" id="remark-22"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.1.12</span><span class="period">.</span>
 </h4>Whereas matrix addition and subtraction closely resemble corresponding operations involving real numbers, there is no obvious real arithmetic analogue to matrix scalar multiplication. In particular, notice how matrix scalar multiplication is a sort of  <em class="emphasis">hybrid</em> operation that combines mathematical objects of two very different natures: a real number (or scalar) on the one hand, and a matrix on the other.</article><p id="p-405">We call the result of applying a sequence of matrix additions and scalar multiplications a <em class="emphasis">linear combination of matrices</em>.</p>
 <article class="definition definition-like" id="d_matrix_lin_comb"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.13</span><span class="period">.</span><span class="space"> </span><span class="title">Linear combination of matrices.</span>
 </h4>
-<p id="p-406">Given matrices \(A_1,A_2,\dots, A_r\) of the same dimension, and scalars \(c_1,c_2, \dots ,c_r\text{,}\) the expression</p>
-<div class="displaymath">
+<p id="p-406">Given matrices <span class="process-math">\(A_1,A_2,\dots, A_r\)</span> of the same dimension, and scalars <span class="process-math">\(c_1,c_2, \dots ,c_r\text{,}\)</span> the expression</p>
+<div class="displaymath process-math">
 \begin{equation*}
 c_1A_1+c_2A_2\cdots +c_rA_r
 \end{equation*}
 </div>
-<p class="continuation">is called a <dfn class="terminology">linear combination of matrices</dfn>.  The scalars \(c_i\) are called the <dfn class="terminology">coefficients</dfn> of the linear combination.</p></article><article class="example example-like" id="example-18"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-18"><h4 class="heading">
+<p class="continuation">is called a <dfn class="terminology">linear combination of matrices</dfn>.  The scalars <span class="process-math">\(c_i\)</span> are called the <dfn class="terminology">coefficients</dfn> of the linear combination.</p></article><article class="example example-like" id="example-18"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-18"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.14</span><span class="period">.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-18"><article class="example example-like"><p id="p-407">Let \(A=\begin{amatrix}[rrr]1\amp -1\amp 2\\ 0\amp 0\amp 1\end{amatrix}\) and \(B=\begin{amatrix}[rrr]0\amp 1\amp 1\\ -1\amp -1\amp 1\end{amatrix}\text{.}\) Compute \(2A+(-3)B\text{.}\)</p>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-18"><article class="example example-like"><p id="p-407">Let <span class="process-math">\(A=\begin{amatrix}[rrr]1\amp -1\amp 2\\ 0\amp 0\amp 1\end{amatrix}\)</span> and <span class="process-math">\(B=\begin{amatrix}[rrr]0\amp 1\amp 1\\ -1\amp -1\amp 1\end{amatrix}\text{.}\)</span> Compute <span class="process-math">\(2A+(-3)B\text{.}\)</span></p>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-16" id="solution-16"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-16"><div class="solution solution-like"><div class="displaymath" id="p-408">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-16" id="solution-16"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-16"><div class="solution solution-like"><div class="displaymath process-math" id="p-408">
 \begin{align*}
 2A+(-3)B\amp= \begin{amatrix}[rrr]2\amp -2\amp 4\\ 0\amp 0\amp 2\end{amatrix}+\begin{amatrix}[rrr]0\amp -3\amp -3\\ 3\amp 3\amp -3\end{amatrix}\\
 \amp=\begin{amatrix}[rrr]-2\amp 1\amp -3\\ 3\amp 3\amp -1\end{amatrix} \text{.}
@@ -509,8 +513,8 @@ c_1A_1+c_2A_2\cdots +c_rA_r
 </div></article></div>
 <article class="example example-like" id="example-19"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-19"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.15</span><span class="period">.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-19"><article class="example example-like"><p id="p-409">Show that \(B=\begin{amatrix}3\amp -3\amp 3 \end{amatrix}\) can be expressed as a linear combination of the matrices</p>
-<div class="displaymath">
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-19"><article class="example example-like"><p id="p-409">Show that <span class="process-math">\(B=\begin{amatrix}3\amp -3\amp 3 \end{amatrix}\)</span> can be expressed as a linear combination of the matrices</p>
+<div class="displaymath process-math">
 \begin{equation*}
 A_1=\begin{amatrix}[rrr]1\amp 1\amp 1\end{amatrix}, \
 A_2=\begin{amatrix}[rrr]1\amp -1\amp 0\end{amatrix}, \
@@ -520,19 +524,19 @@ A_3=\begin{amatrix}[rrr]1\amp 1\amp -2\end{amatrix}\text{.}
 <div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-17" id="solution-17"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-17"><div class="solution solution-like">
 <p id="p-410">We must solve the matrix (or row vector) equation</p>
-<div class="displaymath">
+<div class="displaymath process-math">
 \begin{equation*}
 aA_1+bA_2+cA_3=B
 \end{equation*}
 </div>
-<p class="continuation">for the scalars \(a,b,c\text{.}\) Computing the linear combination on the left yields the matrix equation</p>
-<div class="displaymath">
+<p class="continuation">for the scalars <span class="process-math">\(a,b,c\text{.}\)</span> Computing the linear combination on the left yields the matrix equation</p>
+<div class="displaymath process-math">
 \begin{equation*}
 \begin{amatrix}[rrr]a+b+c\amp a-b+c\amp a-2c\end{amatrix}=\begin{amatrix}[rrr]3\amp -3\amp 3\end{amatrix}\text{.}
 \end{equation*}
 </div>
 <p class="continuation">Using the definition of matrix equality (<a href="" class="xref" data-knowl="./knowl/d_matrix_equality.html" title="Definition 3.1.5: Matrix equality">Definition 3.1.5</a>), we get the system of equations</p>
-<div class="displaymath">
+<div class="displaymath process-math">
 \begin{equation*}
 \begin{linsys}{3} 1a \amp +\amp b \amp + \amp c \amp = \amp 3\\
 a \amp-\amp b\amp +\amp c\amp =\amp -3\\
@@ -540,65 +544,65 @@ a \amp \amp \amp -\amp 2c\amp =\amp 3
 \end{linsys}\text{.}
 \end{equation*}
 </div>
-<p class="continuation">Using Gaussian elimination we find that there is a unique solution to this system: namely, \((a,b,c)=(1,3,-1)\text{.}\) We conclude that \(B=A_1+3A_2+(-1)A_3=A_1+3A_2-A_3\text{.}\)</p>
+<p class="continuation">Using Gaussian elimination we find that there is a unique solution to this system: namely, <span class="process-math">\((a,b,c)=(1,3,-1)\text{.}\)</span> We conclude that <span class="process-math">\(B=A_1+3A_2+(-1)A_3=A_1+3A_2-A_3\text{.}\)</span></p>
 </div></div>
 </div></article></div>
 <article class="remark remark-like" id="rm_entry_lin_comb"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.1.16</span><span class="period">.</span>
 </h4>
-<p id="p-411">Let \(A_1, A_2,\dots, A_r\) be \(m\times n\) matrices,  An easy induction argument on \(r\) shows that for any scalars \(c_1,c_2,\dots, c_r\) we have</p>
-<div class="displaymath">
+<p id="p-411">Let <span class="process-math">\(A_1, A_2,\dots, A_r\)</span> be <span class="process-math">\(m\times n\)</span> matrices,  An easy induction argument on <span class="process-math">\(r\)</span> shows that for any scalars <span class="process-math">\(c_1,c_2,\dots, c_r\)</span> we have</p>
+<div class="displaymath process-math">
 \begin{equation*}
 [c_1A_1+c_2A_2+\cdots +c_rA_r]_{ij} =c_1[A_1]_{ij}+c_2[A_2]_{ij}+\cdots c_r[A_r]_{ij}
 \end{equation*}
 </div>
-<p class="continuation">for all \(1\leq i\leq m\text{,}\) \(1\leq j\leq n\text{.}\) (See <a href="" class="xref" data-knowl="./knowl/ex_entry_lin_comb.html" title="Exercise 3.1.6.6">Exercise 3.1.6.6</a>. )</p></article></section><section class="subsection" id="ss_matrix_mult"><h3 class="heading hide-type">
+<p class="continuation">for all <span class="process-math">\(1\leq i\leq m\text{,}\)</span> <span class="process-math">\(1\leq j\leq n\text{.}\)</span> (See <a href="" class="xref" data-knowl="./knowl/ex_entry_lin_comb.html" title="Exercise 3.1.6.6">Exercise 3.1.6.6</a>. )</p></article></section><section class="subsection" id="ss_matrix_mult"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.1.3</span> <span class="title">Matrix arithmetic: matrix multiplication</span>
 </h3>
-<p id="p-412">So how do we define the product of two matrices? Looking at the previous operations, you might have guessed that we should define the product of two \(m\times n\) matrices by taking the product of their corresponding entries. Not so!</p>
+<p id="p-412">So how do we define the product of two matrices? Looking at the previous operations, you might have guessed that we should define the product of two <span class="process-math">\(m\times n\)</span> matrices by taking the product of their corresponding entries. Not so!</p>
 <article class="definition definition-like" id="d_matrix_mult"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.17</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix multiplication.</span>
 </h4>
 <p id="p-413"></p>
-<p id="p-414"><dfn class="terminology">Matrix multiplication</dfn> is the operation defined as follows: given an \(m\times n\) matrix \(A=[a_{ij}]_{m\times n}\) and an \(n\times r\) matrix \(B=[b_{ij}]_{n\times r}\text{,}\) we define their <dfn class="terminology">product</dfn> to be the \(m\times r\) matrix \(AB\) whose \(ij\)-th entry is given by the formula</p>
-<div class="displaymath">
+<p id="p-414"><dfn class="terminology">Matrix multiplication</dfn> is the operation defined as follows: given an <span class="process-math">\(m\times n\)</span> matrix <span class="process-math">\(A=[a_{ij}]_{m\times n}\)</span> and an <span class="process-math">\(n\times r\)</span> matrix <span class="process-math">\(B=[b_{ij}]_{n\times r}\text{,}\)</span> we define their <dfn class="terminology">product</dfn> to be the <span class="process-math">\(m\times r\)</span> matrix <span class="process-math">\(AB\)</span> whose <span class="process-math">\(ij\)</span>-th entry is given by the formula</p>
+<div class="displaymath process-math">
 \begin{equation*}
 [AB]_{ij}=a_{i1}b_{1j}+a_{i2}b_{2j}+\cdots a_{ir}b_{rj} =\sum_{\ell=1}^ra_{i\ell}b_{\ell j}
 \end{equation*}
 </div>
-<p class="continuation">for all \(1\leq i\leq m\) and \(1\leq j\leq r\text{.}\)</p></article><figure class="figure figure-like" id="fig_matrix_mult"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/im_matrix_mult.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.1.18<span class="period">.</span></span><span class="space"> </span>In \(C=AB\text{,}\) the \(ij\)-th entry \(c_{ij}=\sum_{k=1}^na_{ik}b_{kj}\) is computed by moving across the \(i\)-th row of \(A\) and down the \(j\)-th column of \(B\text{.}\)</figcaption></figure><p id="p-415">The formula for \([AB]_{ij}\) is undoubtedly more complicated than you expected, and seems to come completely out of the blue. We will be able to retroactively motivate this definition once we introduce linear transformations. For now let's focus on understanding how and when we can compute the product of two matrices. In particular, let's concentrate on how matrix dimension comes into play.</p>
-<p id="p-416">For the product of \(A_{mn}\) and \(B_{pr}\) to be defined, we need \(n=p\text{.}\) In other words for the product below to make sense we need the “inner” dimensions of \(A\) and \(B\) to be equal:</p>
-<div class="displaymath">
+<p class="continuation">for all <span class="process-math">\(1\leq i\leq m\)</span> and <span class="process-math">\(1\leq j\leq r\text{.}\)</span></p></article><figure class="figure figure-like" id="fig_matrix_mult"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/im_matrix_mult.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.1.18<span class="period">.</span></span><span class="space"> </span>In <span class="process-math">\(C=AB\text{,}\)</span> the <span class="process-math">\(ij\)</span>-th entry <span class="process-math">\(c_{ij}=\sum_{k=1}^na_{ik}b_{kj}\)</span> is computed by moving across the <span class="process-math">\(i\)</span>-th row of <span class="process-math">\(A\)</span> and down the <span class="process-math">\(j\)</span>-th column of <span class="process-math">\(B\text{.}\)</span></figcaption></figure><p id="p-415">The formula for <span class="process-math">\([AB]_{ij}\)</span> is undoubtedly more complicated than you expected, and seems to come completely out of the blue. We will be able to retroactively motivate this definition once we introduce linear transformations. For now let's focus on understanding how and when we can compute the product of two matrices. In particular, let's concentrate on how matrix dimension comes into play.</p>
+<p id="p-416">For the product of <span class="process-math">\(A_{mn}\)</span> and <span class="process-math">\(B_{pr}\)</span> to be defined, we need <span class="process-math">\(n=p\text{.}\)</span> In other words for the product below to make sense we need the “inner” dimensions of <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> to be equal:</p>
+<div class="displaymath process-math">
 \begin{equation*}
 \underset{m\times \boxed{n}}{A}\hspace{5pt} \underset{\boxed{n}\times r}{B}\text{.}
 \end{equation*}
 </div>
-<p class="continuation">If this condition is met, the dimension of the resulting matrix \(AB\) is determined by the “outer” dimensions of \(A\) and \(B\text{.}\) Schematically, you can think of the inner dimensions as being “canceled out”:</p>
-<div class="displaymath">
+<p class="continuation">If this condition is met, the dimension of the resulting matrix <span class="process-math">\(AB\)</span> is determined by the “outer” dimensions of <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{.}\)</span> Schematically, you can think of the inner dimensions as being “canceled out”:</p>
+<div class="displaymath process-math">
 \begin{equation*}
 \underset{\boxed{m}\times\cancel{n}}{A}\hspace{5pt}\underset{\cancel{n}\times\boxed{r}}{B}=\underset{m\times r}{AB}.
 \end{equation*}
 </div>
-<p id="p-417">All of this will make more sense once we begin thinking of matrices \(A\) as defining certain functions \(T_A\text{.}\) Our formula for the entries of \(AB\) is chosen precisely so that this new matrix corresponds to the <em class="emphasis">composition</em> of the functions \(T_A\) and \(T_B\text{:}\) i.e. so that</p>
-<div class="displaymath">
+<p id="p-417">All of this will make more sense once we begin thinking of matrices <span class="process-math">\(A\)</span> as defining certain functions <span class="process-math">\(T_A\text{.}\)</span> Our formula for the entries of <span class="process-math">\(AB\)</span> is chosen precisely so that this new matrix corresponds to the <em class="emphasis">composition</em> of the functions <span class="process-math">\(T_A\)</span> and <span class="process-math">\(T_B\text{:}\)</span> i.e. so that</p>
+<div class="displaymath process-math">
 \begin{equation*}
 T_{AB}=T_A\circ T_B\text{.}
 \end{equation*}
 </div>
-<p class="continuation">The ponderous restriction on the dimensions of the ingredient matrices ensures that the two functions \(T_A\) and \(T_B\) can be composed. (See <a href="s_transformation.html#ss_transform_composition" class="internal" title="Subsection 4.2.5: Composition of linear transformations and matrix multiplication">Composition of linear transformations and matrix multiplication</a>.)</p></section><section class="subsection" id="s_column_row_method"><h3 class="heading hide-type">
+<p class="continuation">The ponderous restriction on the dimensions of the ingredient matrices ensures that the two functions <span class="process-math">\(T_A\)</span> and <span class="process-math">\(T_B\)</span> can be composed. (See <a href="s_transformation.html#ss_transform_composition" class="internal" title="Subsection 4.2.5: Composition of linear transformations and matrix multiplication">Composition of linear transformations and matrix multiplication</a>.)</p></section><section class="subsection" id="s_column_row_method"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.1.4</span> <span class="title">Alternative methods of multiplication</span>
 </h3>
 <p id="p-418">In addition to the given definition of matrix multiplication, we will make <em class="emphasis">heavy use</em> of two further ways of computing matrix products, called the column method and the row method.</p>
 <article class="theorem theorem-like" id="th_column_method"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.1.19</span><span class="period">.</span><span class="space"> </span><span class="title">Column method of matrix multiplication.</span>
 </h4>
-<p id="p-419">Let \(A=[a_{i}]_{m\times n}\) and \(B=[b_{ij}]_{n\times r}\text{.}\) The column method of matrix multiplication computes \(AB\) using the two steps below.</p>
+<p id="p-419">Let <span class="process-math">\(A=[a_{i}]_{m\times n}\)</span> and <span class="process-math">\(B=[b_{ij}]_{n\times r}\text{.}\)</span> The column method of matrix multiplication computes <span class="process-math">\(AB\)</span> using the two steps below.</p>
 <dl class="description-list">
 <dt id="li-118">Step 1</dt>
 <dd>
-<p id="p-420">Let \(\boldb_j\) be the \(j\)-th column of \(B\text{,}\) considered as a column vector. Then</p>
-<div class="displaymath">
+<p id="p-420">Let <span class="process-math">\(\boldb_j\)</span> be the <span class="process-math">\(j\)</span>-th column of <span class="process-math">\(B\text{,}\)</span> considered as a column vector. Then</p>
+<div class="displaymath process-math">
 \begin{align*}
 AB \amp =A\begin{bmatrix}\vert \amp \vert \amp  \amp \vert \\ \boldb_1\amp \boldb_2\amp \cdots\amp \boldb_r\\ \vert \amp \vert \amp  \amp \vert \end{bmatrix}\\
 \amp=\begin{bmatrix}\vert \amp \vert \amp  \amp \vert \\ A\boldb_1\amp A\boldb_2\amp \cdots\amp A\boldb_r\\ \vert \amp  \vert \amp  \amp  \vert \end{bmatrix}\text{.}
@@ -607,8 +611,8 @@ AB \amp =A\begin{bmatrix}\vert \amp \vert \amp  \amp \vert \\ \boldb_1\amp \bold
 </dd>
 <dt id="li-119">Step 2</dt>
 <dd>
-<p id="p-421">Let \(\bolda_j\) be the \(j\)-th column of \(A\text{,}\) considered as a column vector. Given <em class="emphasis">any</em> column vector \(\boldb=[b_{i}]_{n\times 1}\) we have</p>
-<div class="displaymath">
+<p id="p-421">Let <span class="process-math">\(\bolda_j\)</span> be the <span class="process-math">\(j\)</span>-th column of <span class="process-math">\(A\text{,}\)</span> considered as a column vector. Given <em class="emphasis">any</em> column vector <span class="process-math">\(\boldb=[b_{i}]_{n\times 1}\)</span> we have</p>
+<div class="displaymath process-math">
 \begin{equation*}
 A\,\boldb=A\,\begin{bmatrix}b_1\\b_2\\ \vdots \\b_n \end{bmatrix} = b_1\bolda_1+b_2\bolda_2+\cdots +b_n\bolda_n\text{.}
 \end{equation*}
@@ -616,29 +620,29 @@ A\,\boldb=A\,\begin{bmatrix}b_1\\b_2\\ \vdots \\b_n \end{bmatrix} = b_1\bolda_1+
 </dd>
 </dl></article><article class="hiddenproof" id="proof-4"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-4"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-4"><article class="hiddenproof"><p id="p-422">We prove the equalities in both steps separately.</p>
 <article class="case" id="case-29"><h5 class="heading">Proof of Step 1.</h5>
-<p id="p-423">We must show \(AB=C\text{,}\) where</p>
-<div class="displaymath">
+<p id="p-423">We must show <span class="process-math">\(AB=C\text{,}\)</span> where</p>
+<div class="displaymath process-math">
 \begin{equation*}
 C=\begin{bmatrix}\vert \amp \vert \amp  \amp \vert \\ A\boldb_1\amp A\boldb_2\amp \cdots\amp A\boldb_r\\ \vert \amp  \vert \amp  \amp  \vert \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<p class="continuation">First we show \(AB\) and \(C\) have the same size. By definition of matrix multiplication, \(AB\) is \(m\times r\text{.}\) By construction \(C\) has \(r\) columns and its \(j\)-th column is \(A\boldb_j\text{.}\) Since \(A\) and \(\boldb_j\) have size \(m\times n\) and \(n\times 1\text{,}\) respectively, \(A\boldb_j\) has size \(m\times 1\text{.}\) Thus each of the \(r\) columns of \(C\) is an \(m\times 1\) column vector. It follows that \(C\) is \(m\times r\text{,}\) as desired.</p>
-<p id="p-424">Next we show that \([AB]_{ij}=[C]_{ij}\) for all \(1\leq i\leq m\text{,}\) \(1\leq j\leq r\text{.}\) Since the \(ij\)-th entry of \(C\) is the \(i\)-th entry of the \(j\)-th column of \(C\text{,}\) we have</p>
-<div class="displaymath">
+<p class="continuation">First we show <span class="process-math">\(AB\)</span> and <span class="process-math">\(C\)</span> have the same size. By definition of matrix multiplication, <span class="process-math">\(AB\)</span> is <span class="process-math">\(m\times r\text{.}\)</span> By construction <span class="process-math">\(C\)</span> has <span class="process-math">\(r\)</span> columns and its <span class="process-math">\(j\)</span>-th column is <span class="process-math">\(A\boldb_j\text{.}\)</span> Since <span class="process-math">\(A\)</span> and <span class="process-math">\(\boldb_j\)</span> have size <span class="process-math">\(m\times n\)</span> and <span class="process-math">\(n\times 1\text{,}\)</span> respectively, <span class="process-math">\(A\boldb_j\)</span> has size <span class="process-math">\(m\times 1\text{.}\)</span> Thus each of the <span class="process-math">\(r\)</span> columns of <span class="process-math">\(C\)</span> is an <span class="process-math">\(m\times 1\)</span> column vector. It follows that <span class="process-math">\(C\)</span> is <span class="process-math">\(m\times r\text{,}\)</span> as desired.</p>
+<p id="p-424">Next we show that <span class="process-math">\([AB]_{ij}=[C]_{ij}\)</span> for all <span class="process-math">\(1\leq i\leq m\text{,}\)</span> <span class="process-math">\(1\leq j\leq r\text{.}\)</span> Since the <span class="process-math">\(ij\)</span>-th entry of <span class="process-math">\(C\)</span> is the <span class="process-math">\(i\)</span>-th entry of the <span class="process-math">\(j\)</span>-th column of <span class="process-math">\(C\text{,}\)</span> we have</p>
+<div class="displaymath process-math">
 \begin{align*}
 [C]_{ij} \amp= [A\boldb_j]_{i}  \\
 \amp=\sum_{k=1}^n a_{ik}b_{kj} \\
 \amp =[AB]_{ij}\text{.}
 \end{align*}
 </div></article><article class="case" id="case-30"><h5 class="heading">Proof of Step 2.</h5>
-<p id="p-425">We must show that \(A\boldb=\boldc\text{,}\) where</p>
-<div class="displaymath">
+<p id="p-425">We must show that <span class="process-math">\(A\boldb=\boldc\text{,}\)</span> where</p>
+<div class="displaymath process-math">
 \begin{equation*}
 \boldc=b_1\bolda_1+b_2\bolda_2+\cdots +b_n\bolda_n\text{.}
 \end{equation*}
 </div>
-<p class="continuation">The usual argument shows that both \(A\boldb\) and \(\boldc\) are \(m\times 1\) column vectors. It remains only to show that the \(i\)-th entry \([A\boldb]_i\) of the column \(A\boldb\) is equal to the \(i\)-th entry \([\boldc]_i\) of \(\boldc\) for all \(1\leq i\leq m\text{.}\) For any such \(i\) we have</p>
-<div class="displaymath">
+<p class="continuation">The usual argument shows that both <span class="process-math">\(A\boldb\)</span> and <span class="process-math">\(\boldc\)</span> are <span class="process-math">\(m\times 1\)</span> column vectors. It remains only to show that the <span class="process-math">\(i\)</span>-th entry <span class="process-math">\([A\boldb]_i\)</span> of the column <span class="process-math">\(A\boldb\)</span> is equal to the <span class="process-math">\(i\)</span>-th entry <span class="process-math">\([\boldc]_i\)</span> of <span class="process-math">\(\boldc\)</span> for all <span class="process-math">\(1\leq i\leq m\text{.}\)</span> For any such <span class="process-math">\(i\)</span> we have</p>
+<div class="displaymath process-math">
 \begin{align*}
 [\boldc]_i \amp = [b_1\bolda_1+b_2\bolda_2+\cdots +b_n\bolda_n]_i\\
 \amp= b_1[\bolda_1]_i+b_2[\bolda_2]_i+\cdots +b_n[\bolda_n]_i \amp (\knowl{./knowl/rm_entry_lin_comb.html}{\text{Remark 3.1.16}})\\
@@ -650,18 +654,18 @@ C=\begin{bmatrix}\vert \amp \vert \amp  \amp \vert \\ A\boldb_1\amp A\boldb_2\am
 <article class="remark remark-like" id="remark-24"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.1.20</span><span class="period">.</span>
 </h4>
-<p id="p-426"><a href="" class="xref" data-knowl="./knowl/th_column_method.html" title="Theorem 3.1.19: Column method of matrix multiplication">Theorem 3.1.19</a> amounts to a two-step process for computing an arbitrary matrix product \(AB\text{.}\)</p>
-<p id="p-427">The first statement (Step 1) tells us that the \(j\)-th column of the matrix \(AB\) can be obtained by computing the product \(A\,\boldb_j\) of \(A\) with the \(j\)-th column of \(B\text{.}\)</p>
-<p id="p-428">The second statement (Step 2) tells us that each product \(A\,\boldb_j\) can itself be computed as a certain linear combination of the columns of \(A\) with coefficients drawn from \(\boldb_j\text{.}\)</p>
+<p id="p-426"><a href="" class="xref" data-knowl="./knowl/th_column_method.html" title="Theorem 3.1.19: Column method of matrix multiplication">Theorem 3.1.19</a> amounts to a two-step process for computing an arbitrary matrix product <span class="process-math">\(AB\text{.}\)</span></p>
+<p id="p-427">The first statement (Step 1) tells us that the <span class="process-math">\(j\)</span>-th column of the matrix <span class="process-math">\(AB\)</span> can be obtained by computing the product <span class="process-math">\(A\,\boldb_j\)</span> of <span class="process-math">\(A\)</span> with the <span class="process-math">\(j\)</span>-th column of <span class="process-math">\(B\text{.}\)</span></p>
+<p id="p-428">The second statement (Step 2) tells us that each product <span class="process-math">\(A\,\boldb_j\)</span> can itself be computed as a certain linear combination of the columns of <span class="process-math">\(A\)</span> with coefficients drawn from <span class="process-math">\(\boldb_j\text{.}\)</span></p>
 <p id="p-429">A similar remark applies to computing matrix products using the row method, as described below in <a href="" class="xref" data-knowl="./knowl/th_row_method.html" title="Theorem 3.1.21: Row method of matrix multiplication">Theorem 3.1.21</a>.</p></article><article class="theorem theorem-like" id="th_row_method"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.1.21</span><span class="period">.</span><span class="space"> </span><span class="title">Row method of matrix multiplication.</span>
 </h4>
-<p id="p-430">Let \(A=[a_{i}]_{m\times n}\) and \(B=[b_{ij}]_{n\times r}\text{.}\) The row method of matrix multiplication computes \(AB\) using the two steps below.</p>
+<p id="p-430">Let <span class="process-math">\(A=[a_{i}]_{m\times n}\)</span> and <span class="process-math">\(B=[b_{ij}]_{n\times r}\text{.}\)</span> The row method of matrix multiplication computes <span class="process-math">\(AB\)</span> using the two steps below.</p>
 <dl class="description-list">
 <dt id="li-120">Step 1</dt>
 <dd>
-<p id="p-431">Let \(\bolda_i\) be the \(i\)-th row of \(A\text{.}\) Then</p>
-<div class="displaymath">
+<p id="p-431">Let <span class="process-math">\(\bolda_i\)</span> be the <span class="process-math">\(i\)</span>-th row of <span class="process-math">\(A\text{.}\)</span> Then</p>
+<div class="displaymath process-math">
 \begin{align*}
 AB\amp =\begin{bmatrix} \ - \bolda_1- \  \\ \ - \bolda_2- \  \\ \vdots \\ \ - \bolda_m- \  \end{bmatrix} B\\
 \amp = \begin{bmatrix}\ - \bolda_1B- \  \\ \ -\bolda_2B- \  \\ \vdots \\ \ -\bolda_mB - \ \end{bmatrix}\text{.}
@@ -670,8 +674,8 @@ AB\amp =\begin{bmatrix} \ - \bolda_1- \  \\ \ - \bolda_2- \  \\ \vdots \\ \ - \b
 </dd>
 <dt id="li-121">Step 2</dt>
 <dd>
-<p id="p-432">Let \(\boldb_i\) be the \(i\)-th row of \(B\text{.}\) Given <em class="emphasis">any</em> row vector \(\bolda=[a_{j}]_{1\times n}\) we have</p>
-<div class="displaymath">
+<p id="p-432">Let <span class="process-math">\(\boldb_i\)</span> be the <span class="process-math">\(i\)</span>-th row of <span class="process-math">\(B\text{.}\)</span> Given <em class="emphasis">any</em> row vector <span class="process-math">\(\bolda=[a_{j}]_{1\times n}\)</span> we have</p>
+<div class="displaymath process-math">
 \begin{equation*}
 \bolda\, B=\begin{bmatrix}a_1\amp a_2\amp \cdots \amp a_n \end{bmatrix} B= a_1\boldb_1+a_2\boldb_2+\cdots +a_n\boldb_n\text{.}
 \end{equation*}
@@ -680,21 +684,21 @@ AB\amp =\begin{bmatrix} \ - \bolda_1- \  \\ \ - \bolda_2- \  \\ \vdots \\ \ - \b
 </dl></article><article class="hiddenproof" id="proof-5"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-5"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-5"><article class="hiddenproof"><p id="p-433">The proof is very similar to that of <a href="" class="xref" data-knowl="./knowl/th_column_method.html" title="Theorem 3.1.19: Column method of matrix multiplication">Theorem 3.1.19</a> and is left to the reader.</p></article></div>
 <article class="example example-like" id="s_matrix_ex_product"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-s_matrix_ex_product"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.22</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix multiplication.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-s_matrix_ex_product"><article class="example example-like"><p id="p-434">Let \(A=\begin{amatrix}[rrr] 1\amp 1 \amp -2 \\ 1\amp 3\amp 2\end{amatrix}\) and \(B=\begin{amatrix}[rc]1\amp 1\\ 0\amp 1 \\ -2\amp 1 \end{amatrix}\)</p>
-<p id="p-435">Compute \(AB\) using (a) the definition of matrix multiplication, (b) the column method, (c) the row method.</p>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-s_matrix_ex_product"><article class="example example-like"><p id="p-434">Let <span class="process-math">\(A=\begin{amatrix}[rrr] 1\amp 1 \amp -2 \\ 1\amp 3\amp 2\end{amatrix}\)</span> and <span class="process-math">\(B=\begin{amatrix}[rc]1\amp 1\\ 0\amp 1 \\ -2\amp 1 \end{amatrix}\)</span></p>
+<p id="p-435">Compute <span class="process-math">\(AB\)</span> using (a) the definition of matrix multiplication, (b) the column method, (c) the row method.</p>
 <div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-18" id="solution-18"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-18"><div class="solution solution-like"><ol class="lower-alpha">
 <li id="li-122">
 <p id="p-436">Using the definition, we see easily that</p>
-<div class="displaymath">
+<div class="displaymath process-math">
 \begin{equation*}
 AB=\begin{amatrix}[rr]5\amp 0\\ -3\amp 6 \end{amatrix}
 \end{equation*}
 </div>
 </li>
 <li id="li-123">
-<p id="p-437">Let \(\bolda_1, \bolda_2, \bolda_3\) be the columns of \(A\text{,}\) and let \(\boldb_1, \boldb_2\) be the columns of \(B\text{.}\) We have</p>
-<div class="displaymath">
+<p id="p-437">Let <span class="process-math">\(\bolda_1, \bolda_2, \bolda_3\)</span> be the columns of <span class="process-math">\(A\text{,}\)</span> and let <span class="process-math">\(\boldb_1, \boldb_2\)</span> be the columns of <span class="process-math">\(B\text{.}\)</span> We have</p>
+<div class="displaymath process-math">
 \begin{align*}
 AB \amp=
 \begin{amatrix}[cc]\vert \amp \vert \\
@@ -708,8 +712,8 @@ A\boldb_1\amp A\boldb_2 \\
 </div>
 </li>
 <li id="li-124">
-<p id="p-438">Now let \(\bolda_1, \bolda_2\) be the <em class="emphasis">rows</em> of \(A\text{,}\) and let \(\boldb_1, \boldb_2, \boldb_3\) be the <em class="emphasis">rows</em> of \(B\text{.}\) We have</p>
-<div class="displaymath">
+<p id="p-438">Now let <span class="process-math">\(\bolda_1, \bolda_2\)</span> be the <em class="emphasis">rows</em> of <span class="process-math">\(A\text{,}\)</span> and let <span class="process-math">\(\boldb_1, \boldb_2, \boldb_3\)</span> be the <em class="emphasis">rows</em> of <span class="process-math">\(B\text{.}\)</span> We have</p>
+<div class="displaymath process-math">
 \begin{align*}
 AB \amp= \begin{amatrix}[c]--\bolda_1\, B--\\ --\bolda_2\, B-- \end{amatrix}\amp \text{(Step 1)}\\
 \amp= \begin{amatrix}[c]--(1\boldb_1+1\boldb_2-2\boldb_3)-- \\
@@ -724,62 +728,63 @@ AB \amp= \begin{amatrix}[c]--\bolda_1\, B--\\ --\bolda_2\, B-- \end{amatrix}\amp
 <figure class="figure figure-like" id="fig_vid_matrix_mult_methods"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="vid_matrix_mult_methods" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/Kx4K8TTbl98?&amp;modestbranding=1&amp;rel=0"></iframe></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.1.23<span class="period">.</span></span><span class="space"> </span>Three methods of matrix multiplication</figcaption></figure></section></section><section class="subsection" id="subsection-19"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.1.5</span> <span class="title">Transpose of a matrix</span>
-</h3> We end this section with one last operation, <em class="emphasis">matrix transposition</em>. We will not make much use of this operation until later, but this is as good a place as any to introduce it. <article class="definition definition-like" id="d_transpose"><h4 class="heading">
+</h3>
+<em class="emphasis">matrix transposition</em><article class="definition definition-like" id="d_transpose"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.24</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix transposition.</span>
 </h4>
-<p id="p-439">Given an \(m\times n\) matrix \(A=[a_{ij}]\) its transpose \(A^T\) is the matrix whose \(ij\)-entry is the \(ji\)-th entry of \(A\text{.}\) In other words, \(A^T\) is the \(n\times m\) matrix satisfying \((A^T)_{ij}=(A)_{ji}\) for all \(1\leq i\leq n\) and \(1\leq j\leq m\text{.}\)</p></article><article class="remark remark-like" id="remark-25"><h4 class="heading">
+<p id="p-439">Given an <span class="process-math">\(m\times n\)</span> matrix <span class="process-math">\(A=[a_{ij}]\)</span> its transpose <span class="process-math">\(A^T\)</span> is the matrix whose <span class="process-math">\(ij\)</span>-entry is the <span class="process-math">\(ji\)</span>-th entry of <span class="process-math">\(A\text{.}\)</span> In other words, <span class="process-math">\(A^T\)</span> is the <span class="process-math">\(n\times m\)</span> matrix satisfying <span class="process-math">\((A^T)_{ij}=(A)_{ji}\)</span> for all <span class="process-math">\(1\leq i\leq n\)</span> and <span class="process-math">\(1\leq j\leq m\text{.}\)</span></p></article><article class="remark remark-like" id="remark-25"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.1.25</span><span class="period">.</span>
 </h4>
-<p id="p-440">Given a matrix \(A\) we can give a column- or row-based description of \(A^T\) as follows:</p>
+<p id="p-440">Given a matrix <span class="process-math">\(A\)</span> we can give a column- or row-based description of <span class="process-math">\(A^T\)</span> as follows:</p>
 <ul class="disc">
-<li id="li-125"><p id="p-441">\(A^T\) is the matrix whose \(i\)-th row is the \(i\)-th column of \(A\text{.}\)</p></li>
-<li id="li-126"><p id="p-442">\(A^T\) is the matrix whose \(j\)-th column is the \(j\)-th row of \(A\text{.}\)</p></li>
+<li id="li-125"><p id="p-441"><span class="process-math">\(A^T\)</span> is the matrix whose <span class="process-math">\(i\)</span>-th row is the <span class="process-math">\(i\)</span>-th column of <span class="process-math">\(A\text{.}\)</span></p></li>
+<li id="li-126"><p id="p-442"><span class="process-math">\(A^T\)</span> is the matrix whose <span class="process-math">\(j\)</span>-th column is the <span class="process-math">\(j\)</span>-th row of <span class="process-math">\(A\text{.}\)</span></p></li>
 </ul></article><article class="example example-like" id="example-21"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-21"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.26</span><span class="period">.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-21"><article class="example example-like"><p id="p-443">Let \(A=\begin{bmatrix}1\amp 2\amp 3\\4\amp 5\amp 6 \end{bmatrix}\text{;}\) then \(A^T=\begin{bmatrix}1\amp 4\\2\amp 5\\3\amp 6 \end{bmatrix}\text{.}\)</p>
-<p id="p-444">Let \(B=\begin{bmatrix}1\\0\\3 \end{bmatrix}\text{,}\) then \(B^T=\begin{bmatrix}1\amp 0\amp 3 \end{bmatrix}\text{.}\)</p></article></div></section><section class="exercises" id="s_matrix_ex"><h3 class="heading hide-type">
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-21"><article class="example example-like"><p id="p-443">Let <span class="process-math">\(A=\begin{bmatrix}1\amp 2\amp 3\\4\amp 5\amp 6 \end{bmatrix}\text{;}\)</span> then <span class="process-math">\(A^T=\begin{bmatrix}1\amp 4\\2\amp 5\\3\amp 6 \end{bmatrix}\text{.}\)</span></p>
+<p id="p-444">Let <span class="process-math">\(B=\begin{bmatrix}1\\0\\3 \end{bmatrix}\text{,}\)</span> then <span class="process-math">\(B^T=\begin{bmatrix}1\amp 0\amp 3 \end{bmatrix}\text{.}\)</span></p></article></div></section><section class="exercises" id="s_matrix_ex"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber">3.1.6</span> <span class="title">Exercises</span>
 </h3>
 <article class="exercise exercise-like" id="exercise-27"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
-<p id="p-445">For each part below write down the most general \(3\times 3\) matrix \(A=[a_{ij}]\) satisfying the given condition (use letter names \(a,b,c\text{,}\)etc. for entries).</p>
+<p id="p-445">For each part below write down the most general <span class="process-math">\(3\times 3\)</span> matrix <span class="process-math">\(A=[a_{ij}]\)</span> satisfying the given condition (use letter names <span class="process-math">\(a,b,c\text{,}\)</span>etc. for entries).</p>
 <ol class="lower-alpha">
-<li id="li-127"><p id="p-446">\(a_{ij}=a_{ji}\) for all \(i,j\text{.}\)</p></li>
-<li id="li-128"><p id="p-447">\(a_{ij}=-a_{ji}\) for all \(i,j\)</p></li>
-<li id="li-129"><p id="p-448">\(a_{ij}=0\) for \(i\ne j\text{.}\)</p></li>
+<li id="li-127"><p id="p-446"><span class="process-math">\(a_{ij}=a_{ji}\)</span> for all <span class="process-math">\(i,j\text{.}\)</span></p></li>
+<li id="li-128"><p id="p-447"><span class="process-math">\(a_{ij}=-a_{ji}\)</span> for all <span class="process-math">\(i,j\)</span></p></li>
+<li id="li-129"><p id="p-448"><span class="process-math">\(a_{ij}=0\)</span> for <span class="process-math">\(i\ne j\text{.}\)</span></p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-28"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
 <p id="p-449">Let</p>
-<div class="displaymath">
+<div class="displaymath process-math">
 \begin{equation*}
 A = \begin{bmatrix}3\amp 0\\ -1\amp 2\\ 1\amp 1 \end{bmatrix} , \hspace{5pt} B = \begin{bmatrix}4\amp -1\\ 0\amp 2 \end{bmatrix} , \hspace{5pt} C = \begin{bmatrix}1\amp 4\amp 2\\ 3\amp 1\amp 5 \end{bmatrix}
 \end{equation*}
 </div>
-<div class="displaymath">
+<div class="displaymath process-math">
 \begin{equation*}
 D = \begin{bmatrix}1\amp 5\amp 2\\ -1\amp 0\amp 1\\ 3\amp 2\amp 4 \end{bmatrix} ,  \hspace{5pt} E = \begin{bmatrix}6\amp 1\amp 3\\ -1\amp 1\amp 2\\ 4\amp 1\amp 3 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
 <p class="continuation">Compute the following matrices, or else explain why the given expression is not well defined.</p>
 <ol class="lower-alpha">
-<li id="li-130"><p id="p-450">\(\displaystyle (2D^T-E)A\)</p></li>
-<li id="li-131"><p id="p-451">\(\displaystyle (4B)C+2B\)</p></li>
-<li id="li-132"><p id="p-452">\(\displaystyle B^T(CC^T-A^TA)\)</p></li>
+<li id="li-130"><p id="p-450"><span class="process-math">\(\displaystyle (2D^T-E)A\)</span></p></li>
+<li id="li-131"><p id="p-451"><span class="process-math">\(\displaystyle (4B)C+2B\)</span></p></li>
+<li id="li-132"><p id="p-452"><span class="process-math">\(\displaystyle B^T(CC^T-A^TA)\)</span></p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-29"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
 <p id="p-453">Let</p>
-<div class="displaymath">
+<div class="displaymath process-math">
 \begin{equation*}
 A = \begin{bmatrix}3\amp -2\amp 7\\ 6\amp 5\amp 4\\ 0\amp 4\amp 9 \end{bmatrix} , \hspace{5pt} B = \begin{bmatrix}6\amp -2\amp 4\\ 0\amp 1\amp 3\\ 7\amp 7\amp 5 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
 <p class="continuation">Compute the following using either the row or column method of matrix multiplication. Make sure to show how you are using the relevant method.</p>
 <ol class="lower-alpha">
-<li id="li-133"><p id="p-454">the first column of \(AB\text{;}\)</p></li>
-<li id="li-134"><p id="p-455">the second row of \(BB\text{;}\)</p></li>
-<li id="li-135"><p id="p-456">the third column of \(AA\text{.}\)</p></li>
+<li id="li-133"><p id="p-454">the first column of <span class="process-math">\(AB\text{;}\)</span></p></li>
+<li id="li-134"><p id="p-455">the second row of <span class="process-math">\(BB\text{;}\)</span></p></li>
+<li id="li-135"><p id="p-456">the third column of <span class="process-math">\(AA\text{.}\)</span></p></li>
 </ol>
 <div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-19" id="solution-19"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-19"><div class="solution solution-like"><ol class="lower-alpha"><li id="li-136">
-<p id="p-457">Using expansion by columns, the first column of \(AB\) is given by \(A\) times the first column of \(B\text{.}\) We compute</p>
-<div class="displaymath">
+<p id="p-457">Using expansion by columns, the first column of <span class="process-math">\(AB\)</span> is given by <span class="process-math">\(A\)</span> times the first column of <span class="process-math">\(B\text{.}\)</span> We compute</p>
+<div class="displaymath process-math">
 \begin{equation*}
 \begin{bmatrix}3\amp -2\amp 7\\ 6\amp 5\amp 4\\ 0\amp 4\amp 9 \end{bmatrix} \begin{bmatrix}6\\ 0\\ 7 \end{bmatrix} = 6 \begin{amatrix}[r]3 \\ 6 \\ 0  \end{amatrix}+0 \begin{amatrix}[r]-2 \\ 5 \\ 4  \end{amatrix}+7\begin{amatrix}[r]7 \\ 4 \\ 9  \end{amatrix}= \begin{bmatrix}67\\ 64\\ 63 \end{bmatrix}
 \end{equation*}
@@ -787,7 +792,7 @@ A = \begin{bmatrix}3\amp -2\amp 7\\ 6\amp 5\amp 4\\ 0\amp 4\amp 9 \end{bmatrix} 
 </li></ol></div></div>
 </div></article><article class="exercise exercise-like" id="exercise-30"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
 <p id="p-458">Use the row or column method to quickly compute the following product:</p>
-<div class="displaymath">
+<div class="displaymath process-math">
 \begin{equation*}
 \begin{amatrix}[rrrrr]1\amp -1\amp 1\amp -1\amp 1\\ 1\amp -1\amp 1\amp -1\amp 1\\ 1\amp -1\amp 1\amp -1\amp 1\\ 1\amp -1\amp 1\amp -1\amp 1\\ 1\amp -1\amp 1\amp -1\amp 1 \end{amatrix}
 \begin{amatrix}[rrrr]1\amp 1\amp 1\amp 1\\ -1\amp 0\amp 0\amp 0\\ 0\amp 1\amp 0\amp 0\\ 0\amp 0\amp 2\amp 0\\ 0\amp 0\amp 0\amp 3 \end{amatrix}
@@ -796,34 +801,34 @@ A = \begin{bmatrix}3\amp -2\amp 7\\ 6\amp 5\amp 4\\ 0\amp 4\amp 9 \end{bmatrix} 
 <div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-20" id="solution-20"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-20"><div class="solution solution-like">
 <p id="p-459">I'll just describe the row method here.</p>
-<p id="p-460">Note that the rows of \(A\) are all identical, and equal to \(\begin{bmatrix}1 \amp -1 \amp 1 \amp -1 \amp 1 \end{bmatrix}\text{.}\) From the row method it follows that each row of \(AB\) is given by</p>
-<div class="displaymath">
+<p id="p-460">Note that the rows of <span class="process-math">\(A\)</span> are all identical, and equal to <span class="process-math">\(\begin{bmatrix}1 \amp -1 \amp 1 \amp -1 \amp 1 \end{bmatrix}\text{.}\)</span> From the row method it follows that each row of <span class="process-math">\(AB\)</span> is given by</p>
+<div class="displaymath process-math">
 \begin{equation*}
 \begin{bmatrix}1 \amp -1 \amp 1 \amp -1 \amp 1 \end{bmatrix} B\text{.}
 \end{equation*}
 </div>
-<p id="p-461">Thus the rows of \(AB\) are all identical, and the row method computes the product above by taking the corresponding alternating sum of the rows of \(B\text{:}\)</p>
-<div class="displaymath">
+<p id="p-461">Thus the rows of <span class="process-math">\(AB\)</span> are all identical, and the row method computes the product above by taking the corresponding alternating sum of the rows of <span class="process-math">\(B\text{:}\)</span></p>
+<div class="displaymath process-math">
 \begin{equation*}
 \begin{bmatrix}1 \amp -1 \amp 1 \amp -1 \amp 1 \end{bmatrix} B=\begin{bmatrix}2\amp 2\amp -1\amp 4 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<p id="p-462">Thus \(AB\) is the the \(5\times 4\) matrix, all of whose rows are \(\begin{bmatrix}2\amp 2\amp -1\amp 4 \end{bmatrix}\text{.}\)</p>
+<p id="p-462">Thus <span class="process-math">\(AB\)</span> is the the <span class="process-math">\(5\times 4\)</span> matrix, all of whose rows are <span class="process-math">\(\begin{bmatrix}2\amp 2\amp -1\amp 4 \end{bmatrix}\text{.}\)</span></p>
 </div></div>
 </div></article><article class="exercise exercise-like" id="exercise-31"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
-<p id="p-463">Each of the \(3\times 3\) matrices \(B_i\) below performs a specific row operation when multiplying a \(3\times n\) matrix \(A=\begin{bmatrix}-\boldr_1-\\ -\boldr_2-\\ -\boldr_3- \end{bmatrix}\) on the left; i.e., the matrix \(B_iA\) is the result of performing a certain row operation on the matrix \(A\text{.}\) Use the row method of matrix multiplication to decide what row operation each \(B_i\) performs.</p>
-<div class="displaymath">
+<p id="p-463">Each of the <span class="process-math">\(3\times 3\)</span> matrices <span class="process-math">\(B_i\)</span> below performs a specific row operation when multiplying a <span class="process-math">\(3\times n\)</span> matrix <span class="process-math">\(A=\begin{bmatrix}-\boldr_1-\\ -\boldr_2-\\ -\boldr_3- \end{bmatrix}\)</span> on the left; i.e., the matrix <span class="process-math">\(B_iA\)</span> is the result of performing a certain row operation on the matrix <span class="process-math">\(A\text{.}\)</span> Use the row method of matrix multiplication to decide what row operation each <span class="process-math">\(B_i\)</span> performs.</p>
+<div class="displaymath process-math">
 \begin{equation*}
 B_1=\begin{bmatrix}1\amp 0\amp 0\\ 0\amp 1\amp 0\\ -2\amp 0\amp 1 \end{bmatrix} , B_2=\begin{bmatrix}1\amp 0\amp 0\\ 0\amp \frac{1}{2}\amp 0\\ 0\amp 0\amp 1 \end{bmatrix} , B_3=\begin{bmatrix}0\amp 0\amp 1\\ 0\amp 1\amp 0\\ 1\amp 0\amp 0 \end{bmatrix}\text{.}
 \end{equation*}
 </div></article><article class="exercise exercise-like" id="ex_entry_lin_comb"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
-<p id="p-464">Let \(r\geq 2\) be an integer. Prove, by induction on \(r\text{,}\) that for any \(m\times n\) matrices \(A_1, A_2,\dots, A_r\) and scalars \(c_1,c_2,\dots, c_r\text{,}\) we have</p>
-<div class="displaymath">
+<p id="p-464">Let <span class="process-math">\(r\geq 2\)</span> be an integer. Prove, by induction on <span class="process-math">\(r\text{,}\)</span> that for any <span class="process-math">\(m\times n\)</span> matrices <span class="process-math">\(A_1, A_2,\dots, A_r\)</span> and scalars <span class="process-math">\(c_1,c_2,\dots, c_r\text{,}\)</span> we have</p>
+<div class="displaymath process-math">
 \begin{equation*}
 [c_1A_1+c_2A_2+\cdots +c_rA_r]_{ij} =c_1[A_1]_{ij}+c_2[A_2]_{ij}+\cdots c_r[A_r]_{ij}
 \end{equation*}
 </div>
-<p class="continuation">for all \(1\leq i\leq m\text{,}\) \(1\leq j\leq n\text{.}\)</p></article></section></section></div></main>
+<p class="continuation">for all <span class="process-math">\(1\leq i\leq m\text{,}\)</span> <span class="process-math">\(1\leq j\leq n\text{.}\)</span></p></article></section></section></div></main>
 </div>
 </body>
 </html>

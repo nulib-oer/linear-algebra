@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-04T21:25:11Z       *-->
+<!--*       on 2022-02-07T16:15:44Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -13,31 +13,31 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="hiddenproof"><p>We prove the equalities in both steps separately.</p>
+<body class="ignore-math"><article class="hiddenproof"><p>We prove the equalities in both steps separately.</p>
 <article class="case"><h5 class="heading">Proof of Step 1.</h5>
-<p>We must show \(AB=C\text{,}\) where</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+<p>We must show <span class="process-math">\(AB=C\text{,}\)</span> where</p>
+<div class="displaymath process-math">
 \begin{equation*}
 C=\begin{bmatrix}\vert \amp \vert \amp  \amp \vert \\ A\boldb_1\amp A\boldb_2\amp \cdots\amp A\boldb_r\\ \vert \amp  \vert \amp  \amp  \vert \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<p class="continuation">First we show \(AB\) and \(C\) have the same size. By definition of matrix multiplication, \(AB\) is \(m\times r\text{.}\) By construction \(C\) has \(r\) columns and its \(j\)-th column is \(A\boldb_j\text{.}\) Since \(A\) and \(\boldb_j\) have size \(m\times n\) and \(n\times 1\text{,}\) respectively, \(A\boldb_j\) has size \(m\times 1\text{.}\) Thus each of the \(r\) columns of \(C\) is an \(m\times 1\) column vector. It follows that \(C\) is \(m\times r\text{,}\) as desired.</p>
-<p>Next we show that \([AB]_{ij}=[C]_{ij}\) for all \(1\leq i\leq m\text{,}\) \(1\leq j\leq r\text{.}\) Since the \(ij\)-th entry of \(C\) is the \(i\)-th entry of the \(j\)-th column of \(C\text{,}\) we have</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+<p class="continuation">First we show <span class="process-math">\(AB\)</span> and <span class="process-math">\(C\)</span> have the same size. By definition of matrix multiplication, <span class="process-math">\(AB\)</span> is <span class="process-math">\(m\times r\text{.}\)</span> By construction <span class="process-math">\(C\)</span> has <span class="process-math">\(r\)</span> columns and its <span class="process-math">\(j\)</span>-th column is <span class="process-math">\(A\boldb_j\text{.}\)</span> Since <span class="process-math">\(A\)</span> and <span class="process-math">\(\boldb_j\)</span> have size <span class="process-math">\(m\times n\)</span> and <span class="process-math">\(n\times 1\text{,}\)</span> respectively, <span class="process-math">\(A\boldb_j\)</span> has size <span class="process-math">\(m\times 1\text{.}\)</span> Thus each of the <span class="process-math">\(r\)</span> columns of <span class="process-math">\(C\)</span> is an <span class="process-math">\(m\times 1\)</span> column vector. It follows that <span class="process-math">\(C\)</span> is <span class="process-math">\(m\times r\text{,}\)</span> as desired.</p>
+<p>Next we show that <span class="process-math">\([AB]_{ij}=[C]_{ij}\)</span> for all <span class="process-math">\(1\leq i\leq m\text{,}\)</span> <span class="process-math">\(1\leq j\leq r\text{.}\)</span> Since the <span class="process-math">\(ij\)</span>-th entry of <span class="process-math">\(C\)</span> is the <span class="process-math">\(i\)</span>-th entry of the <span class="process-math">\(j\)</span>-th column of <span class="process-math">\(C\text{,}\)</span> we have</p>
+<div class="displaymath process-math">
 \begin{align*}
 [C]_{ij} \amp= [A\boldb_j]_{i}  \\
 \amp=\sum_{k=1}^n a_{ik}b_{kj} \\
 \amp =[AB]_{ij}\text{.}
 \end{align*}
 </div></article><article class="case"><h5 class="heading">Proof of Step 2.</h5>
-<p>We must show that \(A\boldb=\boldc\text{,}\) where</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+<p>We must show that <span class="process-math">\(A\boldb=\boldc\text{,}\)</span> where</p>
+<div class="displaymath process-math">
 \begin{equation*}
 \boldc=b_1\bolda_1+b_2\bolda_2+\cdots +b_n\bolda_n\text{.}
 \end{equation*}
 </div>
-<p class="continuation">The usual argument shows that both \(A\boldb\) and \(\boldc\) are \(m\times 1\) column vectors. It remains only to show that the \(i\)-th entry \([A\boldb]_i\) of the column \(A\boldb\) is equal to the \(i\)-th entry \([\boldc]_i\) of \(\boldc\) for all \(1\leq i\leq m\text{.}\) For any such \(i\) we have</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+<p class="continuation">The usual argument shows that both <span class="process-math">\(A\boldb\)</span> and <span class="process-math">\(\boldc\)</span> are <span class="process-math">\(m\times 1\)</span> column vectors. It remains only to show that the <span class="process-math">\(i\)</span>-th entry <span class="process-math">\([A\boldb]_i\)</span> of the column <span class="process-math">\(A\boldb\)</span> is equal to the <span class="process-math">\(i\)</span>-th entry <span class="process-math">\([\boldc]_i\)</span> of <span class="process-math">\(\boldc\)</span> for all <span class="process-math">\(1\leq i\leq m\text{.}\)</span> For any such <span class="process-math">\(i\)</span> we have</p>
+<div class="displaymath process-math">
 \begin{align*}
 [\boldc]_i \amp = [b_1\bolda_1+b_2\bolda_2+\cdots +b_n\bolda_n]_i\\
 \amp= b_1[\bolda_1]_i+b_2[\bolda_2]_i+\cdots +b_n[\bolda_n]_i \amp (\knowl{./knowl/rm_entry_lin_comb.html}{\text{Remark 3.1.16}})\\
