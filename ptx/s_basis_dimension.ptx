@@ -55,7 +55,7 @@
         <title>Some standard bases</title>
       <statement>
         <p>
-          The examples of standard spanning sets in <xref ref="rm_spanning_sets"/> are easily seen to be linearly independent, and hence are in fact bases. We list them again here, using the same notation, and refer to these as <m>standard bases</m> for the given spaces.
+          The examples of standard spanning sets in <xref ref="rm_spanning_sets"/> are easily seen to be linearly independent, and hence are in fact bases. We list them again here, using the same notation, and refer to these as <em>standard bases</em> for the given spaces.
         </p>
         <ul>
         <li>
@@ -104,13 +104,13 @@
       <ol>
         <li>
           <p>
-            <m>V=\R^4</m>,
-            <m>B=\{(1,1,1,1), (1,0,0,-1), (1,0,-1,0), (0,1,-1,0)\}</m>.
+            <m>V=\R^2</m>,
+            <m>B=\{(1,1), (1,-1)\}</m>.
           </p>
         </li>
         <li>
           <p>
-            <m>V=P_2</m>, <m>B=\{1+x+x^2, -x+x^2, -1+x^2\}</m>.
+            <m>V=P_2</m>, <m>B=\{x^2+x+1, x^2-x, x^2+1\}</m>.
           </p>
         </li>
         <li>
@@ -126,8 +126,51 @@
   </statement>
   <solution>
     <p>
-    Each verification amounts to showing that the given <m>B</m> spans the given <m>V</m> and is linearly independent. We leave the details to you, using the techniques from <xref ref="s_span_independence"/>.
+    Each verification amounts to showing, using the techniques from <xref ref="s_span_independence"/>, that the given <m>B</m> spans the given <m>V</m> and is linearly independent. We illustrate with (1) and (2), leaving (3) to the reader.
     </p>
+    <ol>
+      <li>
+        <p>
+          Since neither element of <m>B=\{(1,1), (1,-1)\}</m> is a scalar multiple of the other, the set is linearly independent. To see that <m>B</m> spans <m>\R^2</m> we show that for any <m>(c,d)\in \R^2</m> we have
+          <me>
+            a(1,1)+b(1,-1)=(c,d)
+          </me>
+          for some <m>a,b\in \R</m>. Indeed we may take <m>a=\frac{1}{2}(c+d)</m> and <m>b=\frac{1}{2}(c-d)</m>. (These formulas were obtained by solving the corresponding system of two equations in the unknowns <m>a</m> and <m>b</m>.)
+        </p>
+      </li>
+      <li>
+        <p>
+          To show <m>B</m> spans <m>P_2</m> we must show that for any <m>dx^2+ex+f\in P_2</m> we can find <m>a,b,c\in\R</m> such that
+          <me>
+            a(x^2+x+1)+b(x^2-x)+c(x^2-1)=dx^2+ex+f
+          </me>,
+          or
+          <me>
+            (a+b+c)x^2+(a-b)x+(a-1)=dx^2+ex+f
+          </me>.
+          Equating coefficients yields the system of equations
+          <me>
+            \begin{linsys}{3}
+              a\amp +\amp b\amp +\amp c\amp = d\\
+              a\amp -\amp b\amp \amp \amp =e\\
+              a\amp  \amp  \amp -\amp c\amp =f
+            \end{linsys}
+          </me>,
+          which corresponds to the matrix equation
+          <me>
+            \underset{A}{\begin{amatrix}[rrr]1\amp 1\amp 1\\ 1\amp -1\amp 0\\ 1\amp 0\amp -1\end{amatrix}}\underset{\boldx}{\begin{bmatrix} a\\ b\\ c\end{bmatrix}}=\underset{\boldy}{\begin{bmatrix} d\\ e\\ f\end{bmatrix}}
+          </me>.
+          An easy computation shows <m>\det A=3</m>, and thus that <m>A</m> is invertible. We conclude that the system can be solved for <m>(a,b,c)</m> (set <m>\boldx=A^{-1}\boldy</m>), and thus that <m>B</m> spans <m>P_2</m>.
+        </p>
+        <p>
+          Our work above now can be used to also show that <m>B</m> is linearly independent. Replacing the arbitrary polynomial <m>dx^2+ex+f</m> with the zero polynomial <m>0x^2+0x+0</m>, we see that a linear combination
+          <me>
+            a(x^2+x+1)+b(x^2-x)+c(x^2-1)=\boldzero
+          </me>
+          corresponds to a solution <m>\boldx=(a,b,c)</m> to the matrix equation <m>A\boldx=\boldzero</m>. Since <m>A</m> is invertible, we conclude that <m>\boldx=\boldzero</m> (<xref ref="th_invertibility_expanded"/>), and thus that <m>a=b=c=0</m>. This shows <m>B</m> is linearly independent.
+        </p>
+      </li>
+    </ol>
   </solution>
 </example>
 <p>
@@ -210,61 +253,55 @@
     </ol>
   </statement>
   <proof>
+      <case>
+       <title>Implication: <m>(1)\implies (2)</m></title>
       <p>
-        Since clearly (1) and (2) imply that <m>B</m> spans <m>V</m>, it is enough to show that <m>B</m> is linearly independent if and only if whenever
-        <me>
-          c_1\boldv_1+c_2\boldv_2+\cdots +c_r\boldv_r=d_1\boldv_1+d_2\boldv_2+\cdots +d_s\boldv_r
-        </me>,
-        where <m>\boldv_i\in B</m> and <m>\boldv_i\ne \boldv_j</m> for all <m>1\leq i, j\leq r</m>, then <m>c_i=d_i</m> for all <m>1\leq i\leq r</m>.
-        We prove each implication separately.
+      Suppose <m>B</m> is a basis. By definition, <m>B</m> spans <m>V</m>, and so every element of <m>V</m> can be written as a linear combination of elements of <m>B</m>. It remains to show that this linear combination is unique in the sense described. This follows from the fact that <m>B</m> is linearly independent. Indeed, we have
+      <md>
+        <mrow> c_1\boldv_1+c_2\boldv_2+\cdots +c_r\boldv_r=d_1\boldv_1+d_2\boldv_2+\cdots +d_r\boldv_r \amp \implies
+        c_1\boldv_1+c_2\boldv_2+\cdots +c_r\boldv_r-(d_1\boldv_1+d_2\boldv_2+\cdots +d_r\boldv_r)=\boldzero </mrow>
+        <mrow> \amp\implies (c_1-d_1)\boldv_1+(c_2-d_2)\boldv_2+\cdots +(c_r-d_r)\boldv_r=\boldzero </mrow>
+        <mrow>  \amp \implies c_i-d_i=0 \text{ for all } i \amp (B \text{ lin. independent}) </mrow>
+        <mrow>  \amp \implies c_i=d_i \text{ for all } i </mrow>
+      </md>.
       </p>
-        <p>
-          Assume <m>B</m> is linearly independent. Then
-          <md>
-            <mrow> c_1\boldv_1+c_2\boldv_2+\cdots +c_r\boldv_r=d_1\boldv_1+d_2\boldv_2+\cdots +d_r\boldv_r \amp \implies
-            c_1\boldv_1+c_2\boldv_2+\cdots +c_r\boldv_r-(d_1\boldv_1+d_2\boldv_2+\cdots +d_r\boldv_r)=\boldzero </mrow>
-            <mrow> \amp\implies (c_1-d_1)\boldv_1+(c_2-d_2)\boldv_2+\cdots +(c_r-d_r)\boldv_r=\boldzero </mrow>
-            <mrow>  \amp \implies c_i-d_i=0 \text{ for all } i \amp (B \text{ lin. independent}, \boldv_i\ne \boldv_j) </mrow>
-            <mrow>  \amp \implies c_i=d_i \text{ for all } i </mrow>
-          </md>.
-        </p>
-        <p>
-          Going the other way, assume linear combinations of <m>B</m> are unique in the sense described. Then
-          <md>
-            <mrow>c_1\boldv_1+c_2\boldv_2+\cdots c_r\boldv_r=\boldzero \amp \implies
-             c_1\boldv_1+c_2\boldv_2+\cdots c_r\boldv_r=0\boldv_1+0\boldv_2+\cdots 0\boldv_r</mrow>
-             <mrow>  \amp \implies c_1=0, c_2=0, \dots, c_r=0 \amp \text{(by uniqueness condition)}</mrow>
-          </md>.
-          We conclude <m>B</m> is linearly independent in this case, as desired.
-        </p>
+      </case>
+      <case>
+       <title>Implication: <m>(2)\implies (1)</m></title>
+      <p>
+      If <m>B</m> satisfies (2), then clearly it spans <m>V</m>. The uniqueness of linear combinations of elements of <m>B</m> now easily implies <m>B</m> is linearly independent:
+      <md>
+        <mrow>c_1\boldv_1+c_2\boldv_2+\cdots c_r\boldv_r=\boldzero \amp \implies
+         c_1\boldv_1+c_2\boldv_2+\cdots c_r\boldv_r=0\boldv_1+0\boldv_2+\cdots 0\boldv_r</mrow>
+         <mrow>  \amp \implies c_1=0, c_2=0, \dots, c_r=0 \amp \text{(by uniqueness condition)}</mrow>
+      </md>.
+      </p>
+      </case>
   </proof>
-
 </theorem>
+<p>
+  <xref ref="th_basis_equivalence"/> yields the following one-step technique for proving a set is a basis.
+</p>
+<algorithm xml:id="proc_basis_onestep">
+  <title>One-step technique for bases</title>
+  <statement>
+    <p>
+      Let <m>V</m> be a vector space. To prove a subset <m>B\subseteq V</m> is a basis it suffices to show that every <m>\boldv\in V</m> can be written as a linear combination of elements of <m>B</m> in a unique way, as specified in <xref ref="th_basis_equivalence"/>.
+    </p>
+  </statement>
+</algorithm>
 <example xml:id="eg_basis_onestep">
   <title>One-step technique for bases</title>
   <statement>
     <p>
-    Let <m>V=P_1</m>.  Use the one-step technique to verify whether the given <m>S</m> is a basis of <m>V</m>.
+    Use the one-step technique to verify that
+          <me>B=\{p(x)=2x+1, x+1\}</me>
+    is a basis of <m>P_1</m>
     </p>
-    <ol>
-      <li>
-        <p>
-          <m>S=\{p(x)=2x+1, x+1\}</m>
-        </p>
-      </li>
-      <li>
-        <p>
-          <m>S=\{p(x)=x+1, q(x)=x-1, r(x)=7x+4\}</m>
-        </p>
-      </li>
-    </ol>
   </statement>
   <solution>
     <p>
-      <ol>
-        <li>
-          <p>
-            Take an arbitrary element <m>ax+b\in P_1</m> and consider the polynomial equation
+    Take an arbitrary element <m>ax+b\in P_1</m> and consider the polynomial equation
             <me>
               c_1p(x)+c_2q(x)=ax+b
             </me>
@@ -282,7 +319,7 @@
             \end{bmatrix}
             =\boldy
             </me>.
-            The matrix on the left is invertible, allowing us to solve
+            The matrix on the left is invertible, allowing us to solve:
             <me>
             \begin{bmatrix}
               c_1 \\ c_2
@@ -299,9 +336,6 @@
             </me>.
             We conclude that any <m>ax+b\in P_1</m> can be written as <m>c_1p+c_2q</m> in a unique way: namely, with <m>c_1=a-b</m> and <m>c_2=-a+2b</m>. Thus <m>S</m> is a basis.
           </p>
-        </li>
-      </ol>
-    </p>
   </solution>
 </example>
 </subsection>

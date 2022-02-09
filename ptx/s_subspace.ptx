@@ -176,7 +176,7 @@
     <p>
       Let <m>V</m> be a vector space. Given a collection <m>W_1, W_2,\dots, W_r</m>, where each <m>W_i</m> is a subspace of <m>V</m>, the intersection
       <me> W=W_1\cap W_2\cdots \cap W_r</me>
-      is a subspace. 
+      is a subspace.
     </p>
   </statement>
   <proof>
