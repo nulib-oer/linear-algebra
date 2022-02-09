@@ -1,7 +1,7 @@
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_isom">
 <title>Isomorphisms</title>
 <introduction>
-  In this section we utilize bases, dimension, and the <xref ref="th_rank-nullity" text="custom">rank-nullity theorem</xref> to investigate properties of linear transformations. The main focus will be the notion of an <em>isomorphism</em>, which is simply a linear transformation that is invertble when considered as a function. We begin, however, with an enlightening discussion relating linear transformations and bases.
+  In this section we utilize bases, dimension, and the <xref ref="th_rank-nullity" text="custom">rank-nullity theorem</xref> to investigate properties of linear transformations. The main focus will be the notion of an <em>isomorphism</em>, which is simply a linear transformation that is invertible when considered as a function. We begin, however, with an enlightening discussion relating linear transformations and bases.
 </introduction>
 <subsection xml:id="ss_bases_transformations">
   <title>Bases and linear transformations</title>
@@ -32,7 +32,7 @@
             </me>
             for all <m>\boldu\in B</m>. In more detail, given any <m>\boldv\in V</m>, if   <m>\boldv=c_1\boldu_1+c_2\boldu_2+\cdots +c_r\boldu_r</m>, where <m>\boldu_i\in B</m>  and <m>c_i\ne 0</m> for all <m>1\leq i\leq r</m>, then
             <men xml:id="eq_bases_transformations">
-              T(\boldv)=c_1\boldw_{\boldu_{1}}+c_2\boldw_{\boldu_{2}}+\cdots +c_r\boldw_{\boldu_{r}}
+              T(\boldv)=c_1T(\boldu_{1})+c_2T(\boldu_{2})+\cdots +c_rT(\boldu_{r})
             </men>.
 
           </p>
@@ -116,12 +116,16 @@
   <title>Composition of reflections</title>
   <statement>
     <p>
-      Let <m>r_0\colon \R^2\rightarrow\R^2</m> be reflection across the <m>x</m>-axis, and let <m>r_{\pi/2}\colon \R^2\rightarrow \R^2</m> be reflection across the <m>y</m>-axis. (See <xref ref="ex_transformation_reflection"/>.) Show that their composition <m>r_{\pi/2}\circ r_{0}</m> is <m>\rho_\pi</m>, rotation about the origin by 180 degrees.
+      Let <m>r_0\colon \R^2\rightarrow\R^2</m> be reflection across the <m>x</m>-axis, and let <m>r_{\pi/2}\colon \R^2\rightarrow \R^2</m> be reflection across the <m>y</m>-axis. (See <xref ref="ex_transformation_reflection"/>.) Use an argument in the spirit of statement (i) from <xref ref="rm_bases_transformations"/> to show that
+      <me>
+        r_{\pi/2}\circ r_{0}=\rho_{\pi}
+      </me>.
+      (Note: this equality can also be shown using our matrix formulas for rotations and reflections. See <xref ref="ex_transformation_composition_rotations_reflections"/>. )
     </p>
   </statement>
   <solution>
     <p>
-      Since <m>r_0</m> and <m>r_{\pi/2}</m> are both linear transformations (<xref ref="ex_transformation_reflection"/>), so is the composition <m>T=r_{\pi/2}\circ r_{0}</m>. We wish to show <m>T=r_{3\pi/4}</m>. Since <m>\rho_{\pi}</m> is also a linear transformation, it suffices by <xref ref="th_bases_transformations"/> to show that <m>T</m> and <m>\rho_\pi</m> agree on a basis of <m>\R^2</m>. Take the standard basis <m>B=\{(1,0), (0,1)\}</m>. Compute:
+      Since <m>r_0</m> and <m>r_{\pi/2}</m> are both linear transformations (<xref ref="ex_transformation_reflection"/>), so is the composition <m>T=r_{\pi/2}\circ r_{0}</m>. We wish to show <m>T=\rho_{\pi}</m>. Since <m>\rho_{\pi}</m> is also a linear transformation, it suffices by <xref ref="th_bases_transformations"/> to show that <m>T</m> and <m>\rho_\pi</m> agree on a basis of <m>\R^2</m>. Take the standard basis <m>B=\{(1,0), (0,1)\}</m>. Compute:
       <md>
         <mrow>T(1,0) \amp=r_{\pi}(r_{0}(1,0)) </mrow>
         <mrow> \amp =r_{\pi}(1,0) </mrow>
@@ -218,7 +222,7 @@
   <remark>
   <title>Proving <m>T</m> is an isomorphism</title>
   <p>
-    According to the definition to prove a function <m>T\colon V\rightarrow W</m> is an isomorphism, we must show that
+    According to <xref ref="d_isomorphism"/>, to prove a function <m>T\colon V\rightarrow W</m> is an isomorphism, we must show that
     <ol label="i">
       <li>
         <p>
