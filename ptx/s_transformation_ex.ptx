@@ -167,7 +167,7 @@
       </p>
     </statement>
   </exercise>
-  
+
   <exercise xml:id="ex_transformation_reflection">
     <title>Reflection through a line</title>
     <statement>
@@ -197,10 +197,8 @@
     <title>Compositions of rotations and reflections</title>
     <statement>
       <p>
-        In this exercise we will show that if we compose a rotation or reflection with another rotation or reflection, as defined in <xref ref="d_rotation"/> and <xref ref="d_reflection"/>, the result is yet another rotation or reflection. If <m>T\colon\R^2\rightarrow \R^2</m> is a rotation or reflection and <m>S\colon \R^2\rightarrow \R^2</m> is a rotation or reflection then so is <m>T\circ S</m>.
-      </p>
-      <p>
-        For each part, express the given composition either as a rotation <m>\rho_\theta</m> or reflection <m>r_\theta</m>, <m>\theta</m> is defined in terms of <m>\alpha</m> and <m>\beta</m>.
+        In this exercise we will show that if we compose a rotation or reflection with another rotation or reflection, as defined in <xref ref="d_rotation"/> and <xref ref="d_reflection"/>, the result is yet another rotation or reflection.
+        For each part, express the given composition either as a rotation <m>\rho_\theta</m> or reflection <m>r_\theta</m>, where <m>\theta</m> is expressed in terms of <m>\alpha</m> and <m>\beta</m>.
       </p>
       <ol>
         <li>

@@ -10,4 +10,11 @@
 - Open the folder in your terminal: `$ cd linear-algebra`
 - Run the build script: `$ bash build.sh`
 
-The HTML outputs will be build to a folder called `/public/` where you can open the `index.html` file in a web browser. 
+The HTML files will be built and placed in a folder called `/public/` where you can open the `index.html` file in a web browser. 
+
+## Additional Dependencies
+
+In addition to `xsltproc` and a LaTeX engine, you might need Python 3.x and the following packages:
+
+- `lxml` = `pip3 install lxml`
+- `pdfCropMargins` = `pip3 install pdfCropMargins`
