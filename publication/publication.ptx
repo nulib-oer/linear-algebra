@@ -2,6 +2,15 @@
 <publication>
     <!-- directories are relative to the main source PreTeXt file -->
     <source webwork-problems="../generated-assets/webwork/webwork-representations.ptx">
-        <directories external="../assets" generated="../generated-assets"/>
+        <directories external="../images" generated="../generated-assets"/>
     </source>
+  <common>
+        <tableofcontents level="2"/>
+  </common>
+  <numbering>
+    <divisions chapter-start="0" />
+  </numbering>
+  <numbering>
+    <divisions level="3" />
+  </numbering>
 </publication>

@@ -1,12 +1,16 @@
 **/.DS_Store
 **/*.mp4
-**/.latexcfg
-**/public
-**/knowl
-**/*.html
 **/ExercisesSolutions
-output/
-Makefile.paths
-Makefile*
 **/*.log
+
+# unpublished builds
+output
+
+# assets generated from source
 generated-assets
+
+# error logs
+.error_schema.log
+error_schema.log
+.error_syntax.log
+error_syntax.log
