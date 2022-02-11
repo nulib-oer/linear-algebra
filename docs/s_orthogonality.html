@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-02-07T10:11:02-06:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Orthogonal bases and orthogonal projection</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg">miniversion=0.6</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\require{cancel}\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\C}{{\mathbb C}}
+\newcommand{\T}{{\mathbb T}}
+\newcommand{\F}{{\mathbb F}}
+\newcommand{\HH}{{\mathbb H}}
+\newcommand{\compose}{\circ}
+\newcommand{\bolda}{{\mathbf a}}
+\newcommand{\boldb}{{\mathbf b}}
+\newcommand{\boldc}{{\mathbf c}}
+\newcommand{\boldd}{{\mathbf d}}
+\newcommand{\bolde}{{\mathbf e}}
+\newcommand{\boldi}{{\mathbf i}}
+\newcommand{\boldj}{{\mathbf j}}
+\newcommand{\boldk}{{\mathbf k}}
+\newcommand{\boldn}{{\mathbf n}}
+\newcommand{\boldp}{{\mathbf p}}
+\newcommand{\boldq}{{\mathbf q}}
+\newcommand{\boldr}{{\mathbf r}}
+\newcommand{\bolds}{{\mathbf s}}
+\newcommand{\boldt}{{\mathbf t}}
+\newcommand{\boldu}{{\mathbf u}}
+\newcommand{\boldv}{{\mathbf v}}
+\newcommand{\boldw}{{\mathbf w}}
+\newcommand{\boldx}{{\mathbf x}}
+\newcommand{\boldy}{{\mathbf y}}
+\newcommand{\boldz}{{\mathbf z}}
+\newcommand{\boldzero}{{\mathbf 0}}
+\newcommand{\boldmod}{\boldsymbol{ \bmod }}
+\newcommand{\boldT}{{\mathbf T}}
+\newcommand{\boldN}{{\mathbf N}}
+\newcommand{\boldB}{{\mathbf B}}
+\newcommand{\boldF}{{\mathbf F}}
+\newcommand{\boldS}{{\mathbf S}}
+\newcommand{\boldG}{{\mathbf G}}
+\newcommand{\boldK}{{\mathbf K}}
+\newcommand{\boldL}{{\mathbf L}}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\NS}{null}
+\DeclareMathOperator{\RS}{row}
+\DeclareMathOperator{\CS}{col}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\range}{range}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\nullity}{nullity}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\Fix}{Fix}
+\DeclareMathOperator{\Aff}{Aff}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\mdeg}{mdeg}
+\DeclareMathOperator{\Lt}{Lt}
+\DeclareMathOperator{\Lc}{Lc}
+\DeclareMathOperator{\disc}{disc}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\adj}{adj}
+\DeclareMathOperator{\curl}{curl}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\diver}{div}
+\DeclareMathOperator{\flux}{flux}
+\def\Gal{\operatorname{Gal}}
+\def\ord{\operatorname{ord}}
+\def\ML{\operatorname{M}}
+\def\GL{\operatorname{GL}}
+\def\PGL{\operatorname{PGL}}
+\def\SL{\operatorname{SL}}
+\def\PSL{\operatorname{PSL}}
+\def\GSp{\operatorname{GSp}}
+\def\PGSp{\operatorname{PGSp}}
+\def\Sp{\operatorname{Sp}}
+\def\PSp{\operatorname{PSp}}
+\def\Aut{\operatorname{Aut}}
+\def\Inn{\operatorname{Inn}}
+\def\Hom{\operatorname{Hom}}
+\def\End{\operatorname{End}}
+\def\ch{\operatorname{char}}
+\def\Zp{\Z/p\Z}
+\def\Zm{\Z/m\Z}
+\def\Zn{\Z/n\Z}
+\def\Fp{\F_p}
+\newcommand{\surjects}{\twoheadrightarrow}
+\newcommand{\injects}{\hookrightarrow}
+\newcommand{\bijects}{\leftrightarrow}
+\newcommand{\isomto}{\overset{\sim}{\rightarrow}}
+\newcommand{\floor}[1]{\lfloor#1\rfloor}
+\newcommand{\ceiling}[1]{\left\lceil#1\right\rceil}
+\newcommand{\mclass}[2][m]{[#2]_{#1}}
+\newcommand{\val}[2][]{\left\lvert #2\right\rvert_{#1}}
+\newcommand{\valuation}[2][]{\left\lvert #2\right\rvert_{#1}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\anpoly}{a_nx^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+\newcommand{\anmonic}{x^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+\newcommand{\bmpoly}{b_mx^m+b_{m-1}x^{m-1}\cdots +b_1x+b_0}
+\newcommand{\pder}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\normalin}{\trianglelefteq}
+\newcommand{\angvec}[1]{\langle #1\rangle}
+\newcommand{\varpoly}[2]{#1_{#2}x^{#2}+#1_{#2-1}x^{#2-1}\cdots +#1_1x+#1_0}
+\newcommand{\varpower}[1][a]{#1_0+#1_1x+#1_1x^2+\cdots}
+\newcommand{\limasto}[2][x]{\lim_{#1\rightarrow #2}}
+\def\ntoinfty{\lim_{n\rightarrow\infty}}
+\def\xtoinfty{\lim_{x\rightarrow\infty}}
+\def\ii{\item}
+\def\bb{\begin{enumerate}}
+\def\ee{\end{enumerate}}
+\def\ds{\displaystyle}
+\def\p{\partial}
+\newcommand{\abcdmatrix}[4]{\begin{bmatrix}#1\amp #2\\ #3\amp #4 \end{bmatrix}
+}
+\newenvironment{amatrix}[1][ccc|c]{\left[\begin{array}{#1}}{\end{array}\right]}
+\newenvironment{linsys}[2][m]{
+\begin{array}[#1]{@{}*{#2}{rc}r@{}}
+}{
+\end{array}}
+\newcommand{\eqsys}{\begin{array}{rcrcrcr}
+a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp b_1\\
+a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp b_2\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \vdots\\
+a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp b_m
+\end{array}
+}
+\newcommand{\numeqsys}{\begin{array}{rrcrcrcr}
+e_1:\amp  a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp b_1\\
+e_2: \amp a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp b_2\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \vdots\\
+e_m: \amp a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp b_m
+\end{array}
+}
+\newcommand{\homsys}{\begin{array}{rcrcrcr}
+a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp 0\\
+a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp 0\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \vdots\\
+a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp 0
+\end{array}
+}
+\newcommand{\vareqsys}[4]{
+\begin{array}{ccccccc}
+#3_{11}x_{1}\amp +\amp #3_{12}x_{2}\amp +\cdots+\amp  #3_{1#2}x_{#2}\amp =\amp #4_1\\
+#3_{21}x_{1}\amp +\amp #3_{22}x_{2}\amp +\cdots+\amp #3_{2#2}x_{#2}\amp =\amp #4_2\\
+\vdots \amp \amp \vdots \amp  \amp \vdots \amp =\amp  \vdots\\
+#3_{#1 1}x_{1}\amp +\amp #3_{#1 2}x_{2}\amp +\cdots +\amp #3_{#1 #2}x_{#2}\amp =\amp #4_{#1}
+\end{array}
+}
+\newcommand{\genmatrix}[1][a]{
+\begin{bmatrix}
+#1_{11} \amp  #1_{12} \amp  \cdots \amp  #1_{1n} \\
+#1_{21} \amp  #1_{22} \amp  \cdots \amp  #1_{2n} \\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \\
+#1_{m1} \amp  #1_{m2} \amp  \cdots \amp  #1_{mn}
+\end{bmatrix}
+}
+\newcommand{\varmatrix}[3]{
+\begin{bmatrix}
+#3_{11} \amp  #3_{12} \amp  \cdots \amp  #3_{1#2} \\
+#3_{21} \amp  #3_{22} \amp  \cdots \amp  #3_{2#2} \\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \\
+#3_{#1 1} \amp  #3_{#1 2} \amp  \cdots \amp  #3_{#1 #2}
+\end{bmatrix}
+}
+\newcommand{\augmatrix}{
+\begin{amatrix}[cccc|c]
+a_{11} \amp  a_{12} \amp  \cdots \amp  a_{1n} \amp b_{1}\\
+a_{21} \amp  a_{22} \amp  \cdots \amp  a_{2n} \amp b_{2}\\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \amp \vdots\\
+a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
+\end{amatrix}
+}
+\newcommand{\varaugmatrix}[4]{
+\begin{amatrix}[cccc|c]
+#3_{11} \amp  #3_{12} \amp  \cdots \amp  #3_{1#2} \amp #4_{1}\\
+#3_{21} \amp  #3_{22} \amp  \cdots \amp  #3_{2#2} \amp #4_{2}\\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \amp \vdots\\
+#3_{#1 1} \amp  #3_{#1 2} \amp  \cdots \amp  #3_{#1 #2}\amp #4_{#1}
+\end{amatrix}
+}
+\newcommand{\spaceforemptycolumn}{\makebox[\wd\boxofmathplus]{\ }}
+
+\newcommand{\generalmatrix}[3]{
+\left(
+\begin{array}{cccc}
+#1_{1,1}  \amp #1_{1,2}  \amp \ldots  \amp #1_{1,#2}  \\
+#1_{2,1}  \amp #1_{2,2}  \amp \ldots  \amp #1_{2,#2}  \\
+\amp \vdots                         \\
+#1_{#3,1} \amp #1_{#3,2} \amp \ldots  \amp #1_{#3,#2}
+\end{array}
+\right)  }
+\newcommand{\colvec}[2][c]{\begin{bmatrix}[#1] #2 \end{bmatrix}}
+\DeclareMathOperator{\size}{size}
+\DeclareMathOperator{\adjoint}{adj}
+\DeclareMathOperator{\sgn}{sgn}
+\newcommand{\restrictionmap}[2]{{#1}\mathpunct\upharpoonright\hbox{}_{#2}}
+\renewcommand{\emptyset}{\varnothing}
+
+\newcommand{\proj}[2]{\mbox{proj}_{#2}({#1}) }
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://linear-algebra.northwestern.pub/" target="_blank"><img src="external/images/im_holycomm.svg" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">Linear algebra: the theory of vector spaces and linear transformations</span></a></h1>
+<p class="byline">Aaron Greicius</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="s_innerproducts.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="c_innerproductspaces.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="c_transbasis.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="s_innerproducts.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="c_innerproductspaces.html" title="Up">Up</a><a class="next-button button toolbar-item" href="c_transbasis.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link">
+<a href="c_foundations.html" data-scroll="c_foundations"><span class="codenumber">1</span> <span class="title">Foundations</span></a><ul>
+<li><a href="s_sets_functions.html" data-scroll="s_sets_functions">Sets and functions</a></li>
+<li><a href="s_logic.html" data-scroll="s_logic">Logic</a></li>
+<li><a href="s_proof_technique.html" data-scroll="s_proof_technique">Proof techniques</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_linear_systems.html" data-scroll="c_linear_systems"><span class="codenumber">2</span> <span class="title">Systems of linear equations</span></a><ul>
+<li><a href="s_systems.html" data-scroll="s_systems">Systems of linear equations</a></li>
+<li><a href="s_ge.html" data-scroll="s_ge">Gaussian elimination</a></li>
+<li><a href="s_solving.html" data-scroll="s_solving">Solving linear systems</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_matrices.html" data-scroll="c_matrices"><span class="codenumber">3</span> <span class="title">Matrices, their arithmetic, and their algebra</span></a><ul>
+<li><a href="s_matrix.html" data-scroll="s_matrix">Matrices and their arithmetic</a></li>
+<li><a href="s_algebraic.html" data-scroll="s_algebraic">Algebra of matrices</a></li>
+<li><a href="s_invertible_matrices.html" data-scroll="s_invertible_matrices">Invertible matrices</a></li>
+<li><a href="s_invertibility_theorem.html" data-scroll="s_invertibility_theorem">The invertibility theorem</a></li>
+<li><a href="s_det.html" data-scroll="s_det">The determinant</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_vectorspace.html" data-scroll="c_vectorspace"><span class="codenumber">4</span> <span class="title">Vector spaces and linear transformations</span></a><ul>
+<li><a href="s_vectorspace.html" data-scroll="s_vectorspace">Real vector spaces</a></li>
+<li><a href="s_transformation.html" data-scroll="s_transformation">Linear transformations</a></li>
+<li><a href="s_subspace.html" data-scroll="s_subspace">Subspaces</a></li>
+<li><a href="s_span_independence.html" data-scroll="s_span_independence">Span and linear independence</a></li>
+<li><a href="s_basis_dimension.html" data-scroll="s_basis_dimension">Bases and dimension</a></li>
+<li><a href="s_rank_nullity.html" data-scroll="s_rank_nullity">Rank-nullity theorem and fundamental spaces</a></li>
+<li><a href="s_isom.html" data-scroll="s_isom">Isomorphisms</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_innerproductspaces.html" data-scroll="c_innerproductspaces"><span class="codenumber">5</span> <span class="title">Inner product spaces</span></a><ul>
+<li><a href="s_innerproducts.html" data-scroll="s_innerproducts">Inner product spaces</a></li>
+<li><a href="s_orthogonality.html" data-scroll="s_orthogonality" class="active">Orthogonal bases and orthogonal projection</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_transbasis.html" data-scroll="c_transbasis"><span class="codenumber">6</span> <span class="title">Eigenvectors and diagonalization</span></a><ul>
+<li><a href="s_coordinatevectors_isomorphisms.html" data-scroll="s_coordinatevectors_isomorphisms">Coordinate vectors and isomorphisms</a></li>
+<li><a href="s_matrixreps.html" data-scroll="s_matrixreps">Matrix representations of linear transformations</a></li>
+<li><a href="s_changeofbasis.html" data-scroll="s_changeofbasis">Change of basis</a></li>
+<li><a href="ss_eigenvectors.html" data-scroll="ss_eigenvectors">Eigenvectors and eigenvalues</a></li>
+<li><a href="ss_diagonalization.html" data-scroll="ss_diagonalization">Diagonalization</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="appendix-notation.html" data-scroll="appendix-notation"><span class="codenumber">A</span> <span class="title">Notation</span></a></li>
+<li class="link"><a href="appendix-defs.html" data-scroll="appendix-defs"><span class="codenumber">B</span> <span class="title">Definitions</span></a></li>
+<li class="link"><a href="appendix-thms.html" data-scroll="appendix-thms"><span class="codenumber">C</span> <span class="title">Theory and procedures</span></a></li>
+<li class="link"><a href="appendix-egs.html" data-scroll="appendix-egs"><span class="codenumber">D</span> <span class="title">Examples</span></a></li>
+<li class="link"><a href="appendix-vids.html" data-scroll="appendix-vids"><span class="codenumber">E</span> <span class="title">Video examples and figures</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="s_orthogonality"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">5.2</span> <span class="title">Orthogonal bases and orthogonal projection</span>
+</h2>
+<section class="subsection" id="subsection-58"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.2.1</span> <span class="title">Orthogonal sets</span>
+</h3>
+<article class="definition definition-like" id="definition-78"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Orthogonal.</span>
+</h4>
+<p id="p-1771">Let \((V,\langle \ , \rangle)\) be an inner product space. Vectors \(\boldv, \boldw\in V\) are <dfn class="terminology">orthogonal</dfn> if \(\langle \boldv, \boldw\rangle =0\text{.}\)</p>
+<p id="p-1772">Let \(S\subseteq V\) be a subset of <em class="emphasis">nonzero</em> vectors.</p>
+<ul class="disc">
+<li id="li-623"><p id="p-1773">The set \(S\) is <dfn class="terminology">orthogonal</dfn> if \(\langle\boldv,\boldw \rangle=0\) for all \(\boldv\ne\boldw\in S\text{.}\) We say that the elements of \(S\) are <dfn class="terminology">pairwise orthogonal</dfn> in this case.</p></li>
+<li id="li-624"><p id="p-1774">The set \(S\) is <dfn class="terminology">orthonormal</dfn> if it is both orthogonal and satisfies \(\norm{\boldv}=1\) for all \(\boldv\in S\text{:}\) i.e., \(S\) consists of pairwise orthogonal unit vectors.</p></li>
+</ul></article><article class="theorem theorem-like" id="th_orthogonal"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">Orthogonal implies linearly independent.</span>
+</h4>
+<p id="p-1775">Let \((V,\langle\ , \rangle)\) be an inner product space. If \(S\) is orthogonal, then \(S\) is linearly independent.</p></article><article class="hiddenproof" id="proof-79"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-79"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-79"><article class="hiddenproof"><div class="displaymath">
+\begin{align*}
+a_1\boldv_1 +a_2\boldv_2+\cdots +a_r\boldv_r=\boldzero\amp \Rightarrow\amp  \langle a_1\boldv_1 +a_2\boldv_2 +\cdots +a_r\boldv_r,\boldv_i\rangle=\langle\boldzero,\boldv_i\rangle\\
+\amp \Rightarrow\amp  a_1\langle\boldv_1,\boldv_i\rangle +a_2\langle \boldv_2,\boldv_i\rangle +\cdots +a_r\langle\boldv_r,\boldv_i\rangle=0\\
+\amp \Rightarrow\amp  a_i\langle \boldv_i,\boldv_i\rangle=0 \ \text{ (since \(\langle\boldv_j,\boldv_i\rangle= 0\) for \(j\ne i\)) }\\
+\amp \Rightarrow\amp  a_i=0  \text{ (since \(\langle\boldv_i,\boldv_i\rangle\ne 0\)) }
+\end{align*}
+</div>
+<p id="p-1776">We have shown that if \(a_1\boldv_1+a_2\boldv_2+\cdots +a_r\boldv_r=\boldzero\text{,}\) then \(a_i=0\) for all \(i\text{,}\) proving that \(S\) is linearly independent.</p></article></div></section><section class="subsection" id="subsection-59"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.2.2</span> <span class="title">Example</span>
+</h3>
+<p id="p-1777">Let \(V=C([0,2\pi])\) with standard inner product \(\langle f, g\rangle=\int_0^{2\pi} f(x)g(x) \, dx\text{.}\)</p>
+<p id="p-1778">Let</p>
+<div class="displaymath">
+\begin{equation*}
+S=\{\cos(x),\sin(x),\cos(2x),\sin(2x), \dots\}=\{\cos(nx)\colon n\in\Z_{&gt;0}\}\cup\{\sin(mx)\colon m\in\Z_{&gt;0}\}\text{.}
+\end{equation*}
+</div>
+<p id="p-1779">Then \(S\) is orthogonal, hence linearly independent.</p>
+<article class="hiddenproof" id="proof-80"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-80"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-80"><article class="hiddenproof"><p id="p-1780">Using some trig identities, one can show the following:</p>
+<div class="displaymath">
+\begin{align*}
+\langle \cos(nx),\cos(mx)\rangle=\int_0^{2\pi}\cos(nx)\cos(mx)\, dx\amp =\begin{cases} 0\amp  \text{ if \(n\ne m\) }\\
+\pi\amp  \text{ if \(n=m\) }  \end{cases}\\
+\langle \sin(nx),\sin(mx)\rangle=\int_0^{2\pi}\sin(nx)\sin(mx)\, dx\amp =\begin{cases} 0\amp  \text{ if \(n\ne m\) }\\
+\pi\amp  \text{ if \(n=m\) }  \end{cases}\\
+\langle \cos(nx),\sin(mx)\rangle=\int_0^{2\pi}\cos(nx)\sin(mx)\, dx\amp =0 \text{ for any \(n,m\) }
+\end{align*}
+</div></article></div>
+<p id="p-1781">Orthogonality holds more generally if we replace the interval \([0,2\pi]\) with any interval of length \(L\text{,}\) and replace \(S\) with</p>
+<div class="displaymath">
+\begin{equation*}
+\scriptsize \left\{\cos\left(\frac{2\pi x}{L}\right), \sin\left(\frac{2\pi x}{L}\right), \cos\left(2\cdot\frac{2\pi x}{L}\right),\sin\left(2\cdot\frac{2\pi x}{L}\right),\dots\right\}\text{.}
+\end{equation*}
+</div></section><section class="subsection" id="subsection-60"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.2.3</span> <span class="title">Orthogonal bases</span>
+</h3>
+<article class="definition definition-like" id="d_orthogonal_basis"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.2.3</span><span class="period">.</span><span class="space"> </span><span class="title">Orthogonal and orthonormal bases.</span>
+</h4>
+<p id="p-1782">Let \((V,\langle \ , \rangle)\) be an inner product space. An <dfn class="terminology">orthogonal basis</dfn> (resp., <dfn class="terminology">orthonormal basis</dfn>) of \(V\) is a basis \(B\) that is orthogonal (resp., orthonormal) as a set.</p></article><article class="theorem theorem-like" id="th_orthonormal_existence"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">Existence of orthonormal bases.</span>
+</h4>
+<p id="p-1783">Let \((V,\langle \ , \rangle)\) be a vector space of dimension \(n\text{.}\)</p>
+<ol class="decimal">
+<li id="li-625"><p id="p-1784">There is an orthonormal basis for \(V\text{.}\) In fact, any basis of \(V\) can be converted to an orthonormal basis using the <a href="" class="xref" data-knowl="./knowl/proc_gram-schmidt.html" title="Procedure 5.2.5: Gram-Schmidt procedure">Gram-Schmidt procedure</a>.</p></li>
+<li id="li-626"><p id="p-1785">If \(S\subseteq V\) is an orthogonal set, then there is an orthogonal basis \(B\) containing \(S\text{:}\) i.e., any orthogonal set can be extended to an orthogonal basis.</p></li>
+</ol></article><p id="p-1786">The proof that every finite-dimensional vector space has an orthogonal basis is actually a procedure, called the <em class="emphasis">Gram-Schmidt procedure</em>, for converting an arbitrary basis for an inner product space to an orthogonal basis.</p>
+<article class="algorithm theorem-like" id="proc_gram-schmidt"><h4 class="heading">
+<span class="type">Procedure</span><span class="space"> </span><span class="codenumber">5.2.5</span><span class="period">.</span><span class="space"> </span><span class="title">Gram-Schmidt procedure.</span>
+</h4>
+<p id="p-1787">Let \((V, \langle \ , \ \rangle)\) be an inner product space, and let \(B=\{\boldv_1, \boldv_2, \dots, \boldv_n\}\) be a basis for \(V\text{.}\) We can convert \(B\) into an orthogonal basis \(B'=\{\boldw_1, \boldw_2, \dots, \boldw_n\}\text{,}\) and further to an orthonormal basis \(B''=\{\boldu_1, \boldu_2, \dots, \boldu_n\}\text{,}\) as follows:</p>
+<ol class="decimal">
+<li id="li-627"><p id="p-1788">Set \(\boldw_1=\boldv_1\text{.}\)</p></li>
+<li id="li-628">
+<p id="p-1789">For \(2\leq r\leq n\) replace \(\boldv_r\) with</p>
+<div class="displaymath">
+\begin{equation*}
+\boldw_r:=\boldv_r-\frac{\angvec{\boldv_r, \boldw_{r-1}}}{\angvec{\boldw_{r-1},\boldw_{r-1}}}\boldw_{r-1}-\frac{\angvec{\boldv_r, \boldw_{r-2}}}{\angvec{\boldw_{r-2},\boldw_{r-2}}}\boldw_{r-2}-\cdots -\frac{\angvec{\boldv_r, \boldw_{1}}}{\angvec{\boldw_{1},\boldw_{1}}}\boldw_1\text{.}
+\end{equation*}
+</div>
+<p class="continuation">The resulting set \(B'=\{\boldw_1, \boldw_2, \dots, \boldw_n\}\) is an orthogonal basis of \(V\text{.}\)</p>
+</li>
+<li id="li-629">
+<p id="p-1790">For each \(1\leq i\leq n\) let</p>
+<div class="displaymath">
+\begin{equation*}
+\boldu_i=\frac{1}{\norm{\boldw_i}}\,\boldw_i\text{.}
+\end{equation*}
+</div>
+<p class="continuation">The set \(B''=\{\boldu_1, \boldu_2, \dots, \boldu_n\}\) is an orthonormal basis of \(V\text{.}\)</p>
+</li>
+</ol></article></section><article class="theorem theorem-like" id="th_orthogonal_basis_formula"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.2.6</span><span class="period">.</span><span class="space"> </span><span class="title">Calculating with orthogonal bases.</span>
+</h3>
+<p id="p-1791">Let \((V, \langle , \rangle )\) be an inner product space, and let \(B=\{\boldv_1,\dots,\boldv_n\}\subseteq V\) be an orthogonal basis.</p>
+<ol class="decimal">
+<li id="li-630">
+<p id="p-1792">Given any \(\boldv\in V\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+\boldv=a_1\boldv_1+a_2\boldb_2+\cdots +a_n\boldv_n
+\end{equation*}
+</div>
+<p class="continuation">where</p>
+<div class="displaymath">
+\begin{equation*}
+a_i=\frac{\langle \boldv,\boldv_i\rangle}{\langle\boldv_i,\boldv_i\rangle}\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-631">
+<p id="p-1793">If \(B\) is further assumed to be orthonormal, then</p>
+<div class="displaymath">
+\begin{equation*}
+a_i=\langle\boldv,\boldv_i\rangle
+\end{equation*}
+</div>
+<p class="continuation">for each \(1\leq i\leq n\text{.}\)</p>
+</li>
+</ol></article><section class="subsection" id="subsection-61"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.2.4</span> <span class="title">Example</span>
+</h3>
+<p id="p-1794">Let \(V=\R^2\) with the standard inner produce (aka the dot product).</p>
+<p id="p-1795">(a) Verify that \(B'=\{\boldv_1=(\sqrt{3}/2,1/2), \boldv_2=(-1/2,\sqrt{3}/2)\}\) is an orthonormal basis.</p>
+<p id="p-1796">(b) Compute \([\boldv]_{B'}\) for \(\boldv=(4,2)\text{.}\)</p>
+<p id="p-1797">(c) Compute \(\underset{B\rightarrow B'}{P}\text{,}\) where \(B\) is the standard basis. \​begin{bsolution}</p>
+<p id="p-1798">(a) Easily seen to be true.</p>
+<p id="p-1799">(b) Since \(B'\) is orthonormal, \(\boldv=a_1\boldv_1+a_2\boldv_2\) where \(a_1=\boldv\cdot\boldv_1=2\sqrt{3}+1\) and \(a_2=\boldv\cdot\boldv_2=\sqrt{3}-2\text{.}\) Thus \([\boldv]_{B'}=\begin{bmatrix}2\sqrt{3}+1\\ \sqrt{3}-2 \end{bmatrix}\)</p>
+<p id="p-1800">(c) As we have seen before, \(\underset{B'\rightarrow B}{P}=\begin{bmatrix}\sqrt{3}/2\amp -1/2\\1/2\amp \sqrt{3}/2 \end{bmatrix}\) (put elements of \(B'\) in as columns). Hence \(\underset{B\rightarrow B'}{P}=(\underset{B'\rightarrow B}{P})^{-1}=\begin{bmatrix}\sqrt{3}/2\amp 1/2\\-1/2\amp \sqrt{3}/2 \end{bmatrix}\) \end{bsolution}</p></section><article class="theorem theorem-like" id="th_orthogonal_matrices"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.2.7</span><span class="period">.</span><span class="space"> </span><span class="title">Orthogonal matrices.</span>
+</h3>
+<p id="p-1801">Let \(A\) be an \(n\times n\) matrix. The following statements are equivalent.</p>
+<ol class="decimal">
+<li id="li-632"><p id="p-1802">\(A\) is invertible and \(A^{-1}=A^T\text{.}\)</p></li>
+<li id="li-633"><p id="p-1803">The columns of \(A\) are orthonormal.</p></li>
+<li id="li-634"><p id="p-1804">The rows of \(A\) are orthonormal.</p></li>
+<li id="li-635"><p id="p-1805">The columns (resp., rows) of \(A\) form an orthonormal basis of \(\R^n\text{.}\)</p></li>
+</ol></article><article class="definition definition-like" id="d_orthogonal_matrix"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.2.8</span><span class="period">.</span><span class="space"> </span><span class="title">Orthogonal matrices.</span>
+</h3>
+<p id="p-1806">An \(n\times n\) matrix \(A\) is <dfn class="terminology">orthogonal</dfn> if it is invertible and \(A^{-1}=A^T\text{.}\) Equivalently, \(A\) is orthogonal if its columns (or rows) are orthonormal.</p></article><section class="subsection" id="subsection-62"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.2.5</span> <span class="title">Gram-Schmidt Process</span>
+</h3></section><section class="subsection" id="subsection-63"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.2.6</span> <span class="title">Orthogonal complement</span>
+</h3>
+<article class="definition definition-like" id="d_orthogonal_complement"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.2.9</span><span class="period">.</span><span class="space"> </span><span class="title">Orthogonal complement.</span>
+</h4>
+<p id="p-1807">. Let \((V,\langle \ , \rangle)\) be an inner product vector space, and let \(W\subseteq V\) be a finite-dimensional subspace. The <dfn class="terminology">orthogonal complement of \(W\)</dfn>, denoted \(W^\perp\text{,}\) is defined as</p>
+<div class="displaymath">
+\begin{equation*}
+W^\perp=\{\boldv\in V\colon \langle \boldv, \boldw\rangle=0 \text{ for all } \boldw\in W\}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">In other words \(W^\perp\) is the set of vectors that are orthogonal to <dfn class="terminology">all</dfn> elements of \(W\text{.}\)</p></article><article class="theorem theorem-like" id="th_orthogonal_complement"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.2.10</span><span class="period">.</span><span class="space"> </span><span class="title">Orthogonal complement.</span>
+</h4>
+<p id="p-1808">Let \((V,\langle \ , \rangle)\) be an inner product vector space, and let \(W\subseteq V\) be a subspace.</p>
+<ol class="decimal">
+<li id="li-636"><p id="p-1809">The orthogonal complement \(W^\perp\) is a subspace of \(V\text{;}\)</p></li>
+<li id="li-637"><p id="p-1810">We have \(W\cap W^\perp=\{\boldzero\}\text{.}\)</p></li>
+</ol></article><section class="subsection" id="subsection-64"><h4 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.2.6.1</span> <span class="title">Example</span>
+</h4>
+<p id="p-1811">Let \(V=\R^3\) equipped with the dot product, and let \(W=\Span\{(1,1,1)\}\subset \R^3\text{.}\) This is the line defined by the vector \((1,1,1)\text{.}\) Then \(W^\perp\) is the set of vectors orthogonal to \((1,1,1)\text{:}\) i.e., the plane perpendicular to \((1,1,1)\text{.}\)</p></section></section><section class="subsection" id="subsection-65"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.2.7</span> <span class="title">Geometry of fundamental spaces</span>
+</h3>
+<p id="p-1812">The notion of orthogonal complement gives us a new way of understanding the relationship between the various fundamental spaces of a matrix.</p>
+<article class="theorem theorem-like" id="theorem-65"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.2.11</span><span class="period">.</span>
+</h4>
+<p id="p-1813">Let \(A\) be \(m\times n\text{,}\) and consider \(\R^n\) and \(\R^m\) as inner product spaces with respect to the dot product. Then:</p>
+<ol class="decimal">
+<li id="li-638"><p id="p-1814">\(\NS(A)=\left(\RS(A)\right)^\perp\text{,}\) and thus \(\RS(A)=\left(\NS(A)\right)^\perp\text{.}\)</p></li>
+<li id="li-639"><p id="p-1815">\(\NS(A^T)=\left(\CS(A)\right)^\perp\text{,}\) and thus \(\CS(A)=\left(\NS(A^T)\right)^\perp\text{.}\)</p></li>
+</ol></article><article class="hiddenproof" id="proof-81"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-81"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-81"><article class="hiddenproof"><p id="p-1816">(i) Using the dot product method of matrix multiplication, we see that a vector \(\boldv\in\NS(A)\) if and only if \(\boldv\cdot\boldr_i=0\) for each row \(\boldr_i\) of \(A\text{.}\) Since the \(\boldr_i\) span \(\RS(A)\text{,}\) the linear properties of the dot product imply that \(\boldv\cdot\boldr_i=0\) for each row \(\boldr_i\) of \(A\) if and only if \(\boldv\cdot\boldw=0\) for <em class="emphasis">all</em> \(\boldw\in\RS(A)\) if and only if \(\boldv\in \RS(A)^\perp\text{.}\)</p>
+<p id="p-1817">(ii) This follows from (i) and the fact that \(\CS(A)=\RS(A^T)\text{.}\)</p></article></div></section><section class="subsection" id="subsection-66"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.2.8</span> <span class="title">Example</span>
+</h3>
+<p id="p-1818">Understanding the orthogonal relationship between \(\NS(A)\) and \(\RS(A)\) allows us in many cases to quickly determine/visualize the one from the other. Consider the example \(A=\begin{bmatrix}1\amp -1\amp 1\\ 1\amp -1\amp -1 \end{bmatrix}\text{.}\)</p>
+<p id="p-1819">Looking at the columns, we see easily that \(\rank(A)=2\text{,}\) which implies that \(\nullity(A)=3-2=1\text{.}\) Since \((1,-1,0)\) is an element of \(\NS(A)\) and \(\dim(\NS(A))=1\text{,}\) we must have \(\NS(A)=\Span\{(1,-1,0)\}\text{,}\) a line.</p>
+<p id="p-1820">By orthogonality, we conclude that</p>
+<div class="displaymath">
+\begin{equation*}
+\RS(A)=\NS(A)^\perp=\text{ (plane perpendicular to \((1,-1,0)\)) }\text{.}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+
+\end{equation*}
+</div></section><section class="subsection" id="subsection-67"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.2.9</span> <span class="title">Orthogonal Projection</span>
+</h3>
+<article class="theorem theorem-like" id="th_orthogonal_projection"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.2.12</span><span class="period">.</span><span class="space"> </span><span class="title">Orthogonal projection theorem.</span>
+</h4>
+<p id="p-1821">Let \((V,\langle \ , \rangle)\) be an inner product space, and let \(W\subseteq V\) be a <em class="emphasis">finite-dimensional</em> subspace.</p>
+<ol class="decimal">
+<li id="li-640">
+<span class="heading"><span class="title">Orthogonal decomposition.</span></span><p id="p-1822">For all \(\boldv\in V\) there is a unique choice of vectors \(\boldw\in W\) and \(\boldw^\perp\in W^\perp\) such that \(\boldv=\boldw+\boldw^\perp\text{.}\) We call this vector expression an <dfn class="terminology">orthogonal decomposition</dfn> of \(\boldv\text{,}\) and denote \(\boldw=\proj{\boldv}{W}\) and \(\boldw^\perp=\proj{\boldv}{W^\perp}\text{,}\) the <dfn class="terminology">orthogonal projections</dfn> of \(\boldv\) onto \(W\) and \(W^\perp\text{,}\) respectively.</p>
+</li>
+<li id="li-641">
+<span class="heading"><span class="title">Distance to \(W\).</span></span><p id="p-1823">The orthogonal projection \(\boldw=\proj{\boldv}{W}\) is the unique element of \(W\) that <em class="emphasis">minimizes</em> the distance to \(\boldv\text{.}\) In other words</p>
+<div class="displaymath">
+\begin{equation*}
+\norm{\boldv-\proj{\boldv}{W}}\leq\norm{\boldv-\boldw'}
+\end{equation*}
+</div>
+<p class="continuation">for all \(\boldw'\in W\text{.}\)</p>
+<p id="p-1824">Accordingly, we define the <dfn class="terminology">distance from \(\boldv\) to \(W\)</dfn>, denoted \(d(\boldw, W)\text{,}\) as</p>
+<div class="displaymath">
+\begin{equation*}
+d(\boldv, W)=d(\boldv, \proj{\boldv}{W}=\norm{\boldw^\perp}\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-642">
+<span class="heading"><span class="title">Orthogonal projection formula.</span></span><p id="p-1825">Pick an <em class="emphasis">orthogonal</em> basis \(B=\{\boldv_1,\boldv_2,\dots, \boldv_r\}\) of \(W\text{.}\) Then</p>
+<div class="displaymath">
+\begin{equation*}
+\proj{\boldv}{W}=\sum_{i=1}^r\frac{\angvec{\boldv,\boldv_i}}{\angvec{\boldv_i, \boldv_i}}\boldv_i\text{.}
+\end{equation*}
+</div>
+</li>
+</ol></article></section><section class="subsection" id="subsection-68"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.2.10</span> <span class="title">Proof of orthogonal projection theorem</span>
+</h3>
+<p id="p-1826">Pick an <em class="emphasis">orthogonal</em> basis \(B=\{\boldv_1,\boldv_2,\dots, \boldv_r\}\) of \(W\) and set \(\boldw=\sum_{i=1}^r\frac{\angvec{\boldv,\boldv_i}}{\angvec{\boldv_i, \boldv_i}}\boldv_i\text{.}\) This is clearly an element of \(W\text{.}\) Next we set \(\boldw^\perp=\boldv-\boldw=\boldv-\sum_{i=1}^r\frac{\angvec{\boldv,\boldv_i}}{\angvec{\boldv_i, \boldv_i}}\boldv_i\text{.}\)</p>
+<p id="p-1827">To complete the proof, we must show the following: (A) \(\boldw^\perp\in W^\perp\text{,}\) (B) this choice of \(\boldw\) and \(\boldw^\perp\) is unique, and (C) \(\boldw\) is the closest element of \(W\) to \(\boldv\text{.}\)</p>
+<section class="subsection" id="subsection-69"><h4 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.2.10.1</span> <span class="title">(A)</span>
+</h4>
+<p id="p-1828">For all \(i\) we have</p></section><div class="displaymath">
+\begin{align*}
+\langle\boldw^\perp,\boldv_i\rangle\amp =\amp \langle \boldv-\sum_{i=1}^r\frac{\angvec{\boldv,\boldv_i}}{\angvec{\boldv_i, \boldv_i}}\boldv_i, \boldv_i\rangle\\
+\amp =\amp \langle \boldv, \boldv_i\rangle-\langle \sum_{i=1}^r\frac{\angvec{\boldv,\boldv_i}}{\angvec{\boldv_i, \boldv_i}}\boldv_i ,\boldv_i\rangle \hspace{9pt} \text{ (distr.) }\\
+\amp =\amp \langle \boldv, \boldv_i\rangle-\frac{\angvec{\boldv,\boldv_i}}{\angvec{\boldv_i,\boldv_i}}\langle\boldv_i,\boldv_i\rangle \hspace{9pt} \text{ (by orthogonality) }\\
+\amp =\amp 0
+\end{align*}
+</div>
+<section class="subsection" id="subsection-70"><h4 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.2.10.2</span> <span class="title">(B)+(C)</span>
+</h4>
+<p id="p-1829">Recall: \(\boldw\) satisfies \(\boldv=\boldw+\boldw^\perp\text{,}\) where \(\boldw^\perp\in W^\perp\text{.}\) Now take any other \(\boldw'\in W\text{.}\) Then</p></section><div class="displaymath">
+\begin{align*}
+\norm{\boldv-\boldw'}^2\amp =\amp \norm{\boldw^\perp+(\boldw-\boldw')}^2
+=\norm{\boldw^\perp}^2+\norm{\boldw-\boldw'}^2 \hspace{9pt} \text{ (Pythag. theorem) }\\
+\amp \geq\amp  \norm{\boldw^\perp}^2=\norm{\boldv-\boldw}^2\text{.}
+\end{align*}
+</div>
+<p id="p-1830">Taking square-roots now proves the desired inequality. Furthermore, we have <em class="emphasis">equality</em> iff the last inequality is an equality iff \(\norm{\boldw''}=\norm{\boldw-\boldw'}=0\) iff \(\boldw=\boldw'\text{.}\) This proves our choice of \(\boldw\) is the <em class="emphasis">unique</em> element of \(W\) minimizing the distance to \(\boldv\text{!}\)</p></section><article class="corollary theorem-like" id="cor_orthocomp_selfdual"><h3 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">5.2.13</span><span class="period">.</span>
+</h3>
+<p id="p-1831">Let \((V,\angvec{\ , \ })\) be an inner product space, and let \(W\subseteq V\) be a finite-dimensional subspace. Then \((W^\perp)^\perp=W\text{.}\)</p></article><article class="hiddenproof" id="proof-82"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-82"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-82"><article class="hiddenproof"><p id="p-1832">Clearly \(W\subseteq (W^\perp)^\perp\text{.}\) For the other direction, take \(\boldv\in (W^\perp)^\perp\text{.}\) Using the <em class="emphasis">orthogonal projection theorem</em>, we can write \(\boldv=\boldw+\boldw^\perp\) with \(\boldw\in W\) and \(\boldw^\perp\in W^\perp\text{.}\) We will show \(\boldw^\perp=\boldzero\text{.}\)</p>
+<p id="p-1833">Since \(\boldv\in (W^\perp)^\perp\) we have \(\angvec{\boldv,\boldw^\perp}=0\text{.}\) Then we have</p>
+<div class="displaymath">
+\begin{align*}
+0\amp =\angvec{\boldv,\boldw^\perp}\\
+\amp =\angvec{\boldw+\boldw^\perp,\boldw^\perp}\\
+\amp =\angvec{\boldw,\boldw^\perp}+\angvec{\boldw^\perp,\boldw^\perp} \amp \text{ (since \(W\perp W^\perp\)) }\\
+\amp =0+\angvec{\boldw^\perp,\boldw^\perp}
+\end{align*}
+</div>
+<p id="p-1834">Thus \(\angvec{\boldw^\perp,\boldw^\perp}=0\text{.}\) It follows that \(\boldw^\perp=\boldzero\text{,}\) and hence \(\boldv=\boldw+\boldzero=\boldw\in W\text{.}\)</p></article></div>
+<article class="corollary theorem-like" id="cor_orthoproj_linear"><h3 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">5.2.14</span><span class="period">.</span>
+</h3>
+<p id="p-1835">Let \((V,\angvec{\ , \ })\) be an inner product space, and let \(W\subseteq V\) be a finite-dimensional subspace.</p>
+<p id="p-1836">Define \(T\colon V\rightarrow V\) as \(T(\boldv)=\proj{\boldv}{W}\text{.}\) Then \(T\) is a linear transformation.</p>
+<p id="p-1837">In other words, orthogonal projection onto \(W\) defines a linear transformation of \(V\text{.}\)</p></article><article class="hiddenproof" id="proof-83"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-83"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-83"><article class="hiddenproof"><p id="p-1838">We must show that \(T(c\boldv_1+d\boldv_2)=cT(\boldv_1)+dT(\boldv_2)\) for all \(c,d\in\R\) and \(\boldv_1,\boldv_2\in V\text{.}\) This is easily shown by picking an orthonormal basis \(B=\{\boldv_1,\boldv_2, \dots, \boldv_r\}\) of \(W\) and using the formula from the orthogonal projection theorem.</p></article></div>
+<section class="subsection" id="subsection-71"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.2.11</span> <span class="title">Projection onto lines and planes in $\R^3$</span>
+</h3>
+<p id="p-1839">Let's revisit orthogonal projection onto lines and planes in \(\R^3\) passing through the origin. Here the relevant inner product is dot product.</p></section><section class="subsection" id="subsection-72"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.2.12</span> <span class="title">Projection onto a line $\ell$</span>
+</h3>
+<p id="p-1840">Any line in \(\R^3\) passing through the origin can be described as \(\ell=\Span\{\boldv_0\}\text{,}\) for some \(\boldv_0=(a,b,c)\ne 0\text{.}\) Since this is an orthogonal basis of \(\ell\text{,}\) by the orthogonal projection theorem we have, for any \(\boldv=(x,y,z)\)</p>
+<div class="displaymath">
+\begin{equation*}
+\proj{\boldv}{\ell}=\frac{\boldv\cdot \boldv_0}{\boldv_0\cdot\boldv_0}\boldv_0=\frac{ax+by+cz}{a^2+b^2+c^2}(a,b,c)=\frac{1}{a^2+b^2+c^2}\begin{bmatrix}a^2\amp ab\amp ac\\ ab\amp b^2\amp bc\\ ac\amp bc\amp c^2 \end{bmatrix} \begin{bmatrix}x\\ y\\ z \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<p id="p-1841">We have re-derived the matrix formula for orthogonal projection onto \(\ell\text{.}\)</p></section><section class="subsection" id="subsection-73"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.2.13</span> <span class="title">Projection onto lines and planes in $\R^3$</span>
+</h3>
+<p id="p-1842">Let's revisit orthogonal projection onto lines and planes in \(\R^3\) passing through the origin. Here the relevant inner product is dot product.</p></section><section class="subsection" id="subsection-74"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.2.14</span> <span class="title">Projection onto a plane</span>
+</h3>
+<p id="p-1843">Any plane in \(\R^3\) passing through the origin can be described with the equation \(\mathcal{P}\colon ax+by+cz=0\) for some \(\boldn=(a,b,c)\ne 0\text{.}\) This says precisely that \(\mathcal{P}\) is the orthogonal complement of the line \(\ell=\Span\{(a,b,c)\}\text{:}\) i.e., \(\mathcal{P}=\ell^\perp\text{.}\)</p>
+<p id="p-1844">From the orthogonal projection theorem, we know that</p>
+<div class="displaymath">
+\begin{equation*}
+\boldv=\proj{\boldv}{\ell}+\proj{\boldv}{\ell^\perp}=\proj{\boldv}{\ell}+\proj{\boldv}{\mathcal{P}}\text{.}
+\end{equation*}
+</div>
+<p id="p-1845">But then</p>
+<div class="displaymath">
+\begin{equation*}
+\proj{\boldv}{\mathcal{P}}=\boldv-\proj{\boldv}{\ell}=I \ \boldv-\proj{\boldv}{\ell}=(I-A)\boldv\text{,}
+\end{equation*}
+</div>
+<p class="continuation">where \(A\) is the matrix formula for \(\proj{\boldv}{\ell}\) from the previous example. We conclude that the matrix defining \(\proj{\boldv}{\mathcal{P}}\) is</p>
+<div class="displaymath">
+\begin{equation*}
+I-\frac{1}{a^2+b^2+c^2}\begin{bmatrix}a^2\amp ab\amp ac\\ ab\amp b^2\amp bc\\ ac\amp bc\amp c^2 \end{bmatrix} = \frac{1}{a^2+b^2+c^2}\begin{bmatrix}b^2+c^2\amp -ab\amp -ac\\ -ab\amp a^2+c^2\amp -bc\\ -ac\amp -bc\amp a^2+b^2 \end{bmatrix}
+\end{equation*}
+</div></section><p id="p-1846">We can express this in terms of matrix multiplication as</p>
+<p id="p-1847">\item Translate the whole picture by \(-Q=(-q_1,-q_2, -q_3)\text{,}\) which means we replace \(P=(x,y,z)\) with \(P-Q=(x-q_1,y-q_2,z-q_3)\text{.}\) \item Apply our formulas from before, replacing \((x,y,z)\) with \((x-q_1,y-q_2,z-q_3)\) \item Translate back by adding \(Q\) to your answer.</p>
+<section class="subsection" id="subsection-75"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.2.15</span> <span class="title">Example: sine/cosine series</span>
+</h3>
+<p id="p-1848">Let \(V=C[0,2\pi]\) with inner product \(\langle f, g\rangle=\int_0^{2\pi}f(x)g(x) \, dx\text{.}\)</p>
+<p id="p-1849">We have seen that the set</p>
+<div class="displaymath">
+\begin{equation*}
+B=\{1, \cos(x),\sin(x),\cos(2x),\sin(2x), \dots , \cos(nx),\sin(nx)\}
+\end{equation*}
+</div>
+<p class="continuation">is orthogonal. Thus \(B\) is an orthogonal basis of \(W=\Span(B)\text{,}\) which we might describe as the space of <dfn class="terminology">trigonometric polynomials of degree at most \(n\)</dfn>.</p>
+<p id="p-1850">Given an arbitrary function \(f(x)\in C[0,2\pi]\text{,}\) its orthogonal projection onto \(W\) is the function</p>
+<div class="displaymath">
+\begin{equation*}
+\hat{f}(x)=a_0+a_1\cos(x)+b_1\sin(x)+a_2\cos(2x)+b_2\sin(2x)+\cdots +a_n\cos(nx)+b_n\sin(nx)\text{,}
+\end{equation*}
+</div>
+<p class="continuation">where</p>
+<div class="displaymath">
+\begin{equation*}
+a_0=\frac{1}{2\pi}\int_0^{2\pi} f(x) \ dx, \ a_j=\frac{1}{\pi}\int_0^{2\pi}f(x)\cos(jx)\, dx, \ b_k=\frac{1}{\pi}\int_0^{2\pi}f(x)\sin(kx)\, dx\text{.}
+\end{equation*}
+</div>
+<p id="p-1851">The projection theorem tells us that \(\hat{f}\) is the “best” trigonometric polynomial approximation of \(f(x)\) (of degree at most \(n\)), in the sense that for any other sinusoidal \(g\in W\text{,}\) \(\left\vert\left\vert f-\hat{f}\right\vert\right\vert\leq \norm{f-g}\text{.}\)</p>
+<p id="p-1852">This means in turn</p>
+<div class="displaymath">
+\begin{equation*}
+\int_0^{2\pi} (f-\hat{f})^2\, dx\leq \int_0^{2\pi} (f-g)^2 \, dx\text{.}
+\end{equation*}
+</div></section><section class="subsection" id="subsection-76"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.2.16</span> <span class="title">Example: least-squares solution to $A\boldx=\boldy$</span>
+</h3>
+<p id="p-1853">Often in applications we have an \(m\times n\) matrix \(A\) and vector \(\boldy\in\R^m\) for which the matrix equation</p>
+<div class="displaymath">
+\begin{equation*}
+A\boldx=\boldy
+\end{equation*}
+</div>
+<p class="continuation">has no solution. In terms of fundamental spaces, this means simply that \(\boldy\notin \CS(A)\text{.}\) Set \(W=\CS(A)\text{.}\)</p>
+<p id="p-1854">In such situations we speak of a <em class="emphasis">least-squares</em> solution to the matrix equation. This is a vector \(\hat{\boldx}\) such that \(A\hat{\boldx}=\hat{\boldy}\text{,}\) where \(\hat{\boldy}=\proj{\boldy}{W}\text{.}\) Here the inner product is taken to be the dot product.</p>
+<p id="p-1855">Note: the equation \(A\hat{\boldx}=\hat{\boldy}\) is guaranteed to have a solution since \(\hat{\boldy}=\proj{\boldy}{W}\) lies in \(\CS(A)\text{.}\)</p>
+<p id="p-1856">The vector \(\hat{\boldx}\) is called a least-square solutions because its image \(\hat{\boldy}\) is the element of \(\CS(A)\) that is “closest” to \(\boldy\) in terms of the dot product. Writing \(\boldy=(y_1,y_2,\dots,y_n)\) and \(\hat{\boldy}=(y_1',y_2',\dots,
+y_n')\text{,}\) this means that \(\hat{\boldy}\) minimizes the distance</p>
+<div class="displaymath">
+\begin{equation*}
+\norm{\boldy-\hat{\boldy}}=\sqrt{(y_1-y_1')^2+(y_2-y_2')^2+\cdots +(y_n-y_n')^2}\text{.}
+\end{equation*}
+</div></section><section class="subsection" id="subsection-77"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.2.17</span> <span class="title">Least-squares example (curve fitting)</span>
+</h3>
+<p id="p-1857">Suppose we wish to find an equation of a line \(y=mx+b\) that best fits (in the least-square's sense) the following \((x,y)\) data points: \(P_1=(-3,1), P_2=(1,2), P_3=(2,3)\text{.}\)</p>
+<p id="p-1858">Then we seek \(m\) and \(b\) such that</p>
+<div class="displaymath">
+\begin{align*}
+1\amp =m(-3)+b\\
+2\amp =m(1)+b\\
+3\amp =m(2)+b\text{,}
+\end{align*}
+</div>
+<p class="continuation">or equivalently, we wish to solve \(\begin{bmatrix}-3\amp 1\\ 1\amp 1\\ 2\amp 1 \end{bmatrix} \begin{bmatrix}m \\ b \end{bmatrix} =\begin{bmatrix}1\\ 2\\ 3 \end{bmatrix}\text{.}\)</p>
+<p id="p-1859">This equation has no solution as \(\boldy=(1,2,3)\) does no lie in \(W=\CS(A)=\Span(\{(-3,1,2),(1,1,1)\}\text{.}\) So instead we compute \(\hat{\boldy}=\proj{\boldy}{W}=(13/14,33/14,38/14)\text{.}\) (This was not hard to compute as conveniently the given basis of \(W\) was already orthogonal!)</p>
+<p id="p-1860">Finally we solve \(A\begin{bmatrix}m\\ b \end{bmatrix} =\hat{\boldy}\text{,}\) getting \(m=5/14\text{,}\) \(b=28/14=2\text{.}\) Thus \(y=\frac{5}{14}x+2\) is the line best fitting the data in the least-squares sense.</p></section><section class="subsection" id="subsection-78"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.2.18</span> <span class="title">Least-squares example contd.</span>
+</h3>
+<p id="p-1861">In what sense does \(y=\frac{5}{14}x+2\) “best” fit the data? </p>
+<p id="p-1862">Let \(\boldy=(1,2,3)=(y_1,y_2,y_3)\) be the given \(y\)-values of the points, and \(\hat{\boldy}=(y_1',y_2',y_3')\) be the projection we computed before. In the graph the values \(\epsilon_i\) denote the vertical difference \(\epsilon_i=y_i-y_i'\) between the data points, and our fitting line.</p>
+<p id="p-1863">The projection \(\hat{\boldy}\) makes the error \(\norm{\boldy-\hat{\boldy}}=\sqrt{ \epsilon_1^2+\epsilon_2^2+\epsilon_3^2}\) as small as possible.</p>
+<p id="p-1864">This means if I draw <em class="emphasis">any other line</em> and compute the corresponding differences \(\epsilon_i'\) at the \(x\)-values -3, 1 and 2, then we have</p>
+<div class="displaymath">
+\begin{equation*}
+\epsilon_1^2+\epsilon_2^2+\epsilon_3^2\leq (\epsilon_1')^2+(\epsilon_2')^2+(\epsilon_3')^2
+\end{equation*}
+</div></section><section class="subsection" id="subsection-79"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.2.19</span> <span class="title">Finding least squares solutions</span>
+</h3>
+<p id="p-1865">As the last example illustrated, one method of finding a least-squares solution \(\boldx\) to \(A\boldx=\boldy\) is to first produce an orthogonal basis for \(\CS(A)\text{,}\) then compute \(\hat{\boldy}=\proj{\boldy}{\CS(A)}\text{,}\) and then use GE to solve \(A\boldx=\hat{\boldy}\text{.}\)</p>
+<p id="p-1866">Alternatively, it turns out (through a little trickery) that \(\hat{\boldy}=A\boldx\text{,}\) where \(\boldx\) is a solution to the equation</p>
+<div class="displaymath">
+\begin{equation*}
+A^TA\boldx=A^T\boldy\text{.}
+\end{equation*}
+</div>
+<p id="p-1867">This solves us the hassle of computing an orthogonal basis for \(\CS(A)\text{;}\) to find a least-squares solution \(\boldx\) for \(A\boldx=\boldy\text{,}\) we simply use GE to solve the boxed equation. (Some more trickery shows a solution is guaranteed to exist!)</p>
+<section class="subsection" id="subsection-80"><h4 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.2.19.1</span> <span class="title">Example</span>
+</h4>
+<p id="p-1868">In the previous example we were seeking a least-squares solution \(\boldx=\colvec{m\\ b}\) to \(A\boldx=\boldy\text{,}\) where \(A=\begin{bmatrix}-3\amp 1\\ 1\amp 1\\ 2\amp 1 \end{bmatrix} , \boldy=\colvec{1\\2\\3}\text{.}\)</p></section><p id="p-1869">The equation \(A^TA\boldx=A^T\boldy\) is thus</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}14\amp 0\\ 0\amp 3 \end{bmatrix} \boldx= \colvec{5\\ 6}
+\end{equation*}
+</div>
+<p id="p-1870">As you can see, \(\boldx=\colvec{m\\ b}=\colvec{5/14\\ 2}\) is a least-squares solution, just as before</p></section><section class="exercises" id="s_orthogonality_ex"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">5.2.20</span> <span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-171"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<p id="p-1871">The vectors</p>
+<div class="displaymath">
+\begin{equation*}
+\boldv_1=(1,1,1,1), \boldv_2=(1,-1,1,-1), \boldv_3=(1,1,-1,-1), \boldv_4=(1,-1,-1,1)
+\end{equation*}
+</div>
+<p class="continuation">are pairwise orthogonal with respect to the dot product, as is easily verified. For each \(\boldv\) below, find the scalars  \(c_i\) such that</p>
+<div class="displaymath">
+\begin{equation*}
+\boldv=c_1\boldv_1+c_2\boldv_2+c_3\boldv_3+c_4\boldv_4\text{.}
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-643"><p id="p-1872">\(\displaystyle \boldv=(3,0,-1,0)\)</p></li>
+<li id="li-644"><p id="p-1873">\(\displaystyle \boldv=(1,2,0,1)\)</p></li>
+<li id="li-645"><p id="p-1874">\(\boldv=(a,b,c,d)\) (Your answer will be expressed in terms of \(a,b,c\text{,}\) and \(d\text{.}\) )</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-172"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<p id="p-1875">Consider the inner product space given by \(V=\R^3\) together with the dot product. Let \(W\) be the plane with defining equation \(x+2y-z=0\text{.}\) Compute an orthogonal basis of \(W\text{,}\) and then extend this to an orthogonal basis of \(\R^3\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-173"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<p id="p-1876">Consider the vector space \(V=C([0,1])\) with the integral inner product. Apply Gram-Schmidt to the basis \(B=\{1,2^x, 3^x\}\) of \(W=\Span(B)\) to obtain an orthogonal basis of \(W\text{.}\)</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-60" id="solution-60"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-60"><div class="solution solution-like">
+<p id="p-1877">The resulting orthogonal basis is \(B'=\{f_1, f_2,f_3\}\text{,}\) where</p>
+<div class="displaymath">
+\begin{align*}
+f_1\amp =1\\
+f_2\amp =2^x-(\angvec{2^x,1}/\angvec{1,1})1\\
+\amp =2^x-(\int_{0}^12^x \ dx)/(\int_0^1 1 \ dx)=2^x-\frac{1}{\ln 2}\\
+f_3\amp =3^x-(\angvec{3^x,2^x-\frac{1}{\ln 2}}/\angvec{2^x-\frac{1}{\ln 2}, 2^x-\frac{1}{\ln 2}})(2^x-\frac{1}{\ln 2})-(\angvec{3^x,1}/\angvec{1,1})1\\
+\amp =3^x-\frac{\frac{2}{\ln 2\ln 3}+\frac{5}{\ln 6}}{\frac{1}{(\ln 2)^2}+\frac{3}{\ln 4}}(2^x-\frac{1}{\ln 2})-\frac{1}{\ln 3}
+\end{align*}
+</div>
+<p id="p-1878">OK, I admit, I used technology to compute those integrals.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-174"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<p id="p-1879">Consider the vector space \(V=P_2\) with the evaluation at \(-1, 0, 1\) inner product:</p>
+<div class="displaymath">
+\begin{equation*}
+\angvec{p(x),q(x)}=p(-1)q(-1)+p(0)q(0)+p(1)q(1)\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Apply Gram-Schmidt to the standard basis of \(P_2\) to obtain an orthogonal basis of \(P_2\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-175"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<p id="p-1880">Let \(V=M_{22}\) with inner product \(\angvec{A,B}=\tr(A^TB)\text{,}\) and let \(W\subseteq V\) be the subspace of matrices whose trace is 0.</p>
+<ol class="lower-alpha">
+<li id="li-646"><p id="p-1881">Compute an orthogonal basis for \(W\text{.}\) You can do this either by inspection (the space is manageable), or by starting with a simple basis of \(W\) and applying the Gram-Schmidt procedure.</p></li>
+<li id="li-647">
+<p id="p-1882">Compute \(\proj{A}{W}\text{,}\) where</p>
+<div class="displaymath">
+\begin{equation*}
+A=\begin{bmatrix}1\amp 2\\ 1\amp 1 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+</li>
+</ol></article><article class="exercise exercise-like" id="exercise-176"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<p id="p-1883">Let \(V=C([0,1])\) with the integral inner product, and let \(f(x)=x\text{.}\) Find the function of the form \(g(x)=a+b\cos(2\pi x)+c\sin(2\pi x)\) that “best approximates” \(f(x)\) in terms of this inner product: i.e. find the the \(g(x)\) of this form that minimizes \(d(g,f)\text{.}\)</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-17" id="hint-17"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-17"><div class="hint solution-like"><p id="p-1884">The set \(S=\{f(x)=1, g(x)=\cos(2\pi x), h(x)=\sin(2\pi x)\}\) is orthogonal with respect to the given inner product.</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-177"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<p id="p-1885">Let \((V,\langle , \rangle )\) be an inner produce space. Prove: if \(\angvec{\boldv,\ \boldw}=0\text{,}\) then</p>
+<div class="displaymath">
+\begin{equation*}
+\norm{\boldv+\boldw}^2=\norm{\boldv}^2+\norm{\boldw}^2\text{.}
+\end{equation*}
+</div>
+<p class="continuation">This result can be thought of as the <em class="emphasis">Pythagorean theorem for general inner product spaces</em>.</p></article><article class="exercise exercise-like" id="exercise-178"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<p id="p-1886">Let \((V, \langle , \rangle )\) be an inner product space, let \(S=\{\boldw_1, \boldw_2, \dots, \boldw_r\}\subseteq V\text{,}\) and let \(W=\Span S\text{.}\) Prove:</p>
+<div class="displaymath">
+\begin{equation*}
+\boldv\in W^\perp \text{ if and only if } \langle \boldv,\boldw_i \rangle=0 \text{ for all } 1\leq i\leq r\text{.}
+\end{equation*}
+</div>
+<p class="continuation">In other words, to check whether an element is in \(W^\perp\text{,}\) it suffices to check that it is orthogonal to each element of its spanning set \(S\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-179"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
+<p id="p-1887">Let \((V, \langle , \rangle )\) be an inner product space, and suppose \(B=\{\boldv_1, \boldv_2, \dots, \boldv_n\}\) is an orthonormal basis of \(V\text{.}\) Suppose \(\boldv, \boldw\in V\) satisfy</p>
+<div class="displaymath">
+\begin{equation*}
+\boldv=\sum_{i=1}^nc_i\boldv_i, \boldw=\sum_{i=1}^nd_i\boldv_i\text{.}
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-648">
+<p id="p-1888">Prove:</p>
+<div class="displaymath">
+\begin{equation*}
+\langle \boldv, \boldw\rangle =\sum_{i=1}^nc_id_i\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-649">
+<p id="p-1889">Prove:</p>
+<div class="displaymath">
+\begin{equation*}
+\norm{\boldv}=\sqrt{\sum_{i=1}^nc_i^2}\text{.}
+\end{equation*}
+</div>
+</li>
+</ol></article><article class="exercise exercise-like" id="exercise-180"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
+<p id="p-1890">Prove both statements of <a href="" class="xref" data-knowl="./knowl/th_orthogonal_complement.html" title="Theorem 5.2.10: Orthogonal complement">Theorem 5.2.10</a>.</p></article><article class="exercise exercise-like" id="exercise-181"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
+<p id="p-1891">Prove <a href="" class="xref" data-knowl="./knowl/cor_orthoproj_linear.html" title="Corollary 5.2.14">Corollary 5.2.14</a> following the suggestion in the text.</p></article><article class="exercise exercise-like" id="ex_orthoproj_props"><h4 class="heading"><span class="codenumber">12<span class="period">.</span></span></h4>
+<p id="p-1892">Let \(V\) an inner product space, and let \(W\subseteq V\) be a finite-dimensional subspace. Recall that \(\proj{\boldv}{W}\) is defined as the unique \(\boldw\in W\) satisfying \(\boldv=\boldw+\boldw^\perp\text{,}\) where \(\boldw^\perp\in W^\perp\text{.}\) Use this definition (including the uniqueness claim) to prove the following statements.</p>
+<ol class="lower-alpha">
+<li id="li-650"><p id="p-1893">If \(\boldv\in W\text{,}\) then \(\proj{\boldv}{W}=\boldv\text{.}\)</p></li>
+<li id="li-651"><p id="p-1894">We have \(\boldv\in W^\perp\) if and only if  \(\proj{\boldv}{W}=\boldzero\text{.}\)</p></li>
+</ol></article><article class="exercise exercise-like" id="ex_orthocomp_dim"><h4 class="heading">
+<span class="codenumber">13<span class="period">.</span></span><span class="space"> </span><span class="title">Dimension of \(W^\perp\).</span>
+</h4>
+<p id="p-1895">Let \((V, \ \angvec{\ , \ })\) be an inner product space of dimension \(n\text{,}\) and suppose  \(W\subseteq V\) is a subspace of dimension \(r\text{.}\) Prove: \(\dim W^\perp=n-r\text{.}\)</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-18" id="hint-18"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-18"><div class="hint solution-like"><p id="p-1896">Begin by picking an <em class="emphasis">orthogonal</em> basis \(B=\{\boldv_1,\dots ,\boldv_r\}\) of \(W\) and extend to an <em class="emphasis">orthogonal</em> basis \(B'=\{\boldv_1,\boldv_2, \dots, \boldv_r, \boldu_1,\dots , \boldu_{n-r}\}\) of all of \(V\text{.}\) Show the \(\boldu_i\) form a basis for \(W^\perp\text{.}\)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-184"><h4 class="heading"><span class="codenumber">14<span class="period">.</span></span></h4>
+<p id="p-1897">We consider the problem of fitting a collection of data points \((x,y)\) with a quadratic curve of the form \(y=f(x)=ax^2+bx+c\text{.}\) Thus we are <em class="emphasis">given</em> some collection of points \((x,y)\text{,}\) and we <em class="emphasis">seek</em> parameters \(a,
+b, c\) for which the graph of \(f(x)=ax^2+bx+c\) “best fits” the points in some way.</p>
+<ol class="lower-alpha">
+<li id="li-652"><p id="p-1898">Show, using linear algebra, that if we are given any three points \((x,y)=(r_1,s_1), (r_2,s_2), (r_3,s_3)\text{,}\) where the \(x\)-coordinates \(r_i\) are all distinct, then there is a <em class="emphasis">unique</em> choice of \(a,b,c\) such that the corresponding quadratic function agrees <em class="emphasis">precisely</em> with the data. In other words, given just about any three points in the plane, there is a unique quadratic curve connecting them.</p></li>
+<li id="li-653">
+<p id="p-1899">Now suppose we are given the four data points</p>
+<div class="displaymath">
+\begin{equation*}
+P_1=(0,2), P_2=(1,0), P_3=(2,2), P_4=(3,6)\text{.}
+\end{equation*}
+</div>
+<ol class="lower-roman">
+<li id="li-654"><p id="p-1900">Use the least-squares method described in the lecture notes to come up with a quadratic function \(y=f(x)\) that “best fits” the data.</p></li>
+<li id="li-655"><p id="p-1901">Graph the function \(f\) you found, along with the points \(P_i\text{.}\) (You may want to use technology.) Use your graph to explain precisely in what sense \(f\) “best fits” the data.</p></li>
+</ol>
+</li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-61" id="solution-61"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-61"><div class="solution solution-like"><p id="p-1902"></p></div></div>
+</div></article></section></section></div></main>
+</div>
+</body>
+</html>

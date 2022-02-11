@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-02-04T12:00:19-06:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Inner product spaces</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg">miniversion=0.6</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\require{cancel}\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\C}{{\mathbb C}}
+\newcommand{\T}{{\mathbb T}}
+\newcommand{\F}{{\mathbb F}}
+\newcommand{\HH}{{\mathbb H}}
+\newcommand{\compose}{\circ}
+\newcommand{\bolda}{{\mathbf a}}
+\newcommand{\boldb}{{\mathbf b}}
+\newcommand{\boldc}{{\mathbf c}}
+\newcommand{\boldd}{{\mathbf d}}
+\newcommand{\bolde}{{\mathbf e}}
+\newcommand{\boldi}{{\mathbf i}}
+\newcommand{\boldj}{{\mathbf j}}
+\newcommand{\boldk}{{\mathbf k}}
+\newcommand{\boldn}{{\mathbf n}}
+\newcommand{\boldp}{{\mathbf p}}
+\newcommand{\boldq}{{\mathbf q}}
+\newcommand{\boldr}{{\mathbf r}}
+\newcommand{\bolds}{{\mathbf s}}
+\newcommand{\boldt}{{\mathbf t}}
+\newcommand{\boldu}{{\mathbf u}}
+\newcommand{\boldv}{{\mathbf v}}
+\newcommand{\boldw}{{\mathbf w}}
+\newcommand{\boldx}{{\mathbf x}}
+\newcommand{\boldy}{{\mathbf y}}
+\newcommand{\boldz}{{\mathbf z}}
+\newcommand{\boldzero}{{\mathbf 0}}
+\newcommand{\boldmod}{\boldsymbol{ \bmod }}
+\newcommand{\boldT}{{\mathbf T}}
+\newcommand{\boldN}{{\mathbf N}}
+\newcommand{\boldB}{{\mathbf B}}
+\newcommand{\boldF}{{\mathbf F}}
+\newcommand{\boldS}{{\mathbf S}}
+\newcommand{\boldG}{{\mathbf G}}
+\newcommand{\boldK}{{\mathbf K}}
+\newcommand{\boldL}{{\mathbf L}}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\NS}{null}
+\DeclareMathOperator{\RS}{row}
+\DeclareMathOperator{\CS}{col}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\range}{range}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\nullity}{nullity}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\Fix}{Fix}
+\DeclareMathOperator{\Aff}{Aff}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\mdeg}{mdeg}
+\DeclareMathOperator{\Lt}{Lt}
+\DeclareMathOperator{\Lc}{Lc}
+\DeclareMathOperator{\disc}{disc}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\adj}{adj}
+\DeclareMathOperator{\curl}{curl}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\diver}{div}
+\DeclareMathOperator{\flux}{flux}
+\def\Gal{\operatorname{Gal}}
+\def\ord{\operatorname{ord}}
+\def\ML{\operatorname{M}}
+\def\GL{\operatorname{GL}}
+\def\PGL{\operatorname{PGL}}
+\def\SL{\operatorname{SL}}
+\def\PSL{\operatorname{PSL}}
+\def\GSp{\operatorname{GSp}}
+\def\PGSp{\operatorname{PGSp}}
+\def\Sp{\operatorname{Sp}}
+\def\PSp{\operatorname{PSp}}
+\def\Aut{\operatorname{Aut}}
+\def\Inn{\operatorname{Inn}}
+\def\Hom{\operatorname{Hom}}
+\def\End{\operatorname{End}}
+\def\ch{\operatorname{char}}
+\def\Zp{\Z/p\Z}
+\def\Zm{\Z/m\Z}
+\def\Zn{\Z/n\Z}
+\def\Fp{\F_p}
+\newcommand{\surjects}{\twoheadrightarrow}
+\newcommand{\injects}{\hookrightarrow}
+\newcommand{\bijects}{\leftrightarrow}
+\newcommand{\isomto}{\overset{\sim}{\rightarrow}}
+\newcommand{\floor}[1]{\lfloor#1\rfloor}
+\newcommand{\ceiling}[1]{\left\lceil#1\right\rceil}
+\newcommand{\mclass}[2][m]{[#2]_{#1}}
+\newcommand{\val}[2][]{\left\lvert #2\right\rvert_{#1}}
+\newcommand{\valuation}[2][]{\left\lvert #2\right\rvert_{#1}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\anpoly}{a_nx^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+\newcommand{\anmonic}{x^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+\newcommand{\bmpoly}{b_mx^m+b_{m-1}x^{m-1}\cdots +b_1x+b_0}
+\newcommand{\pder}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\normalin}{\trianglelefteq}
+\newcommand{\angvec}[1]{\langle #1\rangle}
+\newcommand{\varpoly}[2]{#1_{#2}x^{#2}+#1_{#2-1}x^{#2-1}\cdots +#1_1x+#1_0}
+\newcommand{\varpower}[1][a]{#1_0+#1_1x+#1_1x^2+\cdots}
+\newcommand{\limasto}[2][x]{\lim_{#1\rightarrow #2}}
+\def\ntoinfty{\lim_{n\rightarrow\infty}}
+\def\xtoinfty{\lim_{x\rightarrow\infty}}
+\def\ii{\item}
+\def\bb{\begin{enumerate}}
+\def\ee{\end{enumerate}}
+\def\ds{\displaystyle}
+\def\p{\partial}
+\newcommand{\abcdmatrix}[4]{\begin{bmatrix}#1\amp #2\\ #3\amp #4 \end{bmatrix}
+}
+\newenvironment{amatrix}[1][ccc|c]{\left[\begin{array}{#1}}{\end{array}\right]}
+\newenvironment{linsys}[2][m]{
+\begin{array}[#1]{@{}*{#2}{rc}r@{}}
+}{
+\end{array}}
+\newcommand{\eqsys}{\begin{array}{rcrcrcr}
+a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp b_1\\
+a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp b_2\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \vdots\\
+a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp b_m
+\end{array}
+}
+\newcommand{\numeqsys}{\begin{array}{rrcrcrcr}
+e_1:\amp  a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp b_1\\
+e_2: \amp a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp b_2\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \vdots\\
+e_m: \amp a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp b_m
+\end{array}
+}
+\newcommand{\homsys}{\begin{array}{rcrcrcr}
+a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp 0\\
+a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp 0\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \vdots\\
+a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp 0
+\end{array}
+}
+\newcommand{\vareqsys}[4]{
+\begin{array}{ccccccc}
+#3_{11}x_{1}\amp +\amp #3_{12}x_{2}\amp +\cdots+\amp  #3_{1#2}x_{#2}\amp =\amp #4_1\\
+#3_{21}x_{1}\amp +\amp #3_{22}x_{2}\amp +\cdots+\amp #3_{2#2}x_{#2}\amp =\amp #4_2\\
+\vdots \amp \amp \vdots \amp  \amp \vdots \amp =\amp  \vdots\\
+#3_{#1 1}x_{1}\amp +\amp #3_{#1 2}x_{2}\amp +\cdots +\amp #3_{#1 #2}x_{#2}\amp =\amp #4_{#1}
+\end{array}
+}
+\newcommand{\genmatrix}[1][a]{
+\begin{bmatrix}
+#1_{11} \amp  #1_{12} \amp  \cdots \amp  #1_{1n} \\
+#1_{21} \amp  #1_{22} \amp  \cdots \amp  #1_{2n} \\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \\
+#1_{m1} \amp  #1_{m2} \amp  \cdots \amp  #1_{mn}
+\end{bmatrix}
+}
+\newcommand{\varmatrix}[3]{
+\begin{bmatrix}
+#3_{11} \amp  #3_{12} \amp  \cdots \amp  #3_{1#2} \\
+#3_{21} \amp  #3_{22} \amp  \cdots \amp  #3_{2#2} \\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \\
+#3_{#1 1} \amp  #3_{#1 2} \amp  \cdots \amp  #3_{#1 #2}
+\end{bmatrix}
+}
+\newcommand{\augmatrix}{
+\begin{amatrix}[cccc|c]
+a_{11} \amp  a_{12} \amp  \cdots \amp  a_{1n} \amp b_{1}\\
+a_{21} \amp  a_{22} \amp  \cdots \amp  a_{2n} \amp b_{2}\\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \amp \vdots\\
+a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
+\end{amatrix}
+}
+\newcommand{\varaugmatrix}[4]{
+\begin{amatrix}[cccc|c]
+#3_{11} \amp  #3_{12} \amp  \cdots \amp  #3_{1#2} \amp #4_{1}\\
+#3_{21} \amp  #3_{22} \amp  \cdots \amp  #3_{2#2} \amp #4_{2}\\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \amp \vdots\\
+#3_{#1 1} \amp  #3_{#1 2} \amp  \cdots \amp  #3_{#1 #2}\amp #4_{#1}
+\end{amatrix}
+}
+\newcommand{\spaceforemptycolumn}{\makebox[\wd\boxofmathplus]{\ }}
+
+\newcommand{\generalmatrix}[3]{
+\left(
+\begin{array}{cccc}
+#1_{1,1}  \amp #1_{1,2}  \amp \ldots  \amp #1_{1,#2}  \\
+#1_{2,1}  \amp #1_{2,2}  \amp \ldots  \amp #1_{2,#2}  \\
+\amp \vdots                         \\
+#1_{#3,1} \amp #1_{#3,2} \amp \ldots  \amp #1_{#3,#2}
+\end{array}
+\right)  }
+\newcommand{\colvec}[2][c]{\begin{bmatrix}[#1] #2 \end{bmatrix}}
+\DeclareMathOperator{\size}{size}
+\DeclareMathOperator{\adjoint}{adj}
+\DeclareMathOperator{\sgn}{sgn}
+\newcommand{\restrictionmap}[2]{{#1}\mathpunct\upharpoonright\hbox{}_{#2}}
+\renewcommand{\emptyset}{\varnothing}
+
+\newcommand{\proj}[2]{\mbox{proj}_{#2}({#1}) }
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://linear-algebra.northwestern.pub/" target="_blank"><img src="external/images/im_holycomm.svg" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">Linear algebra: the theory of vector spaces and linear transformations</span></a></h1>
+<p class="byline">Aaron Greicius</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="c_innerproductspaces.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="c_innerproductspaces.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="s_orthogonality.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="c_innerproductspaces.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="c_innerproductspaces.html" title="Up">Up</a><a class="next-button button toolbar-item" href="s_orthogonality.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link">
+<a href="c_foundations.html" data-scroll="c_foundations"><span class="codenumber">1</span> <span class="title">Foundations</span></a><ul>
+<li><a href="s_sets_functions.html" data-scroll="s_sets_functions">Sets and functions</a></li>
+<li><a href="s_logic.html" data-scroll="s_logic">Logic</a></li>
+<li><a href="s_proof_technique.html" data-scroll="s_proof_technique">Proof techniques</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_linear_systems.html" data-scroll="c_linear_systems"><span class="codenumber">2</span> <span class="title">Systems of linear equations</span></a><ul>
+<li><a href="s_systems.html" data-scroll="s_systems">Systems of linear equations</a></li>
+<li><a href="s_ge.html" data-scroll="s_ge">Gaussian elimination</a></li>
+<li><a href="s_solving.html" data-scroll="s_solving">Solving linear systems</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_matrices.html" data-scroll="c_matrices"><span class="codenumber">3</span> <span class="title">Matrices, their arithmetic, and their algebra</span></a><ul>
+<li><a href="s_matrix.html" data-scroll="s_matrix">Matrices and their arithmetic</a></li>
+<li><a href="s_algebraic.html" data-scroll="s_algebraic">Algebra of matrices</a></li>
+<li><a href="s_invertible_matrices.html" data-scroll="s_invertible_matrices">Invertible matrices</a></li>
+<li><a href="s_invertibility_theorem.html" data-scroll="s_invertibility_theorem">The invertibility theorem</a></li>
+<li><a href="s_det.html" data-scroll="s_det">The determinant</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_vectorspace.html" data-scroll="c_vectorspace"><span class="codenumber">4</span> <span class="title">Vector spaces and linear transformations</span></a><ul>
+<li><a href="s_vectorspace.html" data-scroll="s_vectorspace">Real vector spaces</a></li>
+<li><a href="s_transformation.html" data-scroll="s_transformation">Linear transformations</a></li>
+<li><a href="s_subspace.html" data-scroll="s_subspace">Subspaces</a></li>
+<li><a href="s_span_independence.html" data-scroll="s_span_independence">Span and linear independence</a></li>
+<li><a href="s_basis_dimension.html" data-scroll="s_basis_dimension">Bases and dimension</a></li>
+<li><a href="s_rank_nullity.html" data-scroll="s_rank_nullity">Rank-nullity theorem and fundamental spaces</a></li>
+<li><a href="s_isom.html" data-scroll="s_isom">Isomorphisms</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_innerproductspaces.html" data-scroll="c_innerproductspaces"><span class="codenumber">5</span> <span class="title">Inner product spaces</span></a><ul>
+<li><a href="s_innerproducts.html" data-scroll="s_innerproducts" class="active">Inner product spaces</a></li>
+<li><a href="s_orthogonality.html" data-scroll="s_orthogonality">Orthogonal bases and orthogonal projection</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_transbasis.html" data-scroll="c_transbasis"><span class="codenumber">6</span> <span class="title">Eigenvectors and diagonalization</span></a><ul>
+<li><a href="s_coordinatevectors_isomorphisms.html" data-scroll="s_coordinatevectors_isomorphisms">Coordinate vectors and isomorphisms</a></li>
+<li><a href="s_matrixreps.html" data-scroll="s_matrixreps">Matrix representations of linear transformations</a></li>
+<li><a href="s_changeofbasis.html" data-scroll="s_changeofbasis">Change of basis</a></li>
+<li><a href="ss_eigenvectors.html" data-scroll="ss_eigenvectors">Eigenvectors and eigenvalues</a></li>
+<li><a href="ss_diagonalization.html" data-scroll="ss_diagonalization">Diagonalization</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="appendix-notation.html" data-scroll="appendix-notation"><span class="codenumber">A</span> <span class="title">Notation</span></a></li>
+<li class="link"><a href="appendix-defs.html" data-scroll="appendix-defs"><span class="codenumber">B</span> <span class="title">Definitions</span></a></li>
+<li class="link"><a href="appendix-thms.html" data-scroll="appendix-thms"><span class="codenumber">C</span> <span class="title">Theory and procedures</span></a></li>
+<li class="link"><a href="appendix-egs.html" data-scroll="appendix-egs"><span class="codenumber">D</span> <span class="title">Examples</span></a></li>
+<li class="link"><a href="appendix-vids.html" data-scroll="appendix-vids"><span class="codenumber">E</span> <span class="title">Video examples and figures</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="s_innerproducts"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">5.1</span> <span class="title">Inner product spaces</span>
+</h2>
+<section class="introduction" id="introduction-43"><p id="p-1683">An <em class="emphasis">inner product</em> is an additional layer of structure we can define on a vector space \(V\text{.}\) It takes a pair of elements \(\boldv, \boldw\in V\) and returns a scalar \(\langle \boldv,\boldw \rangle\in \R\text{.}\) As with the vector addition and scalar multiplication, we define inner products axiomatically, taking as our model the dot product on \(\R^2\) and \(\R^3\text{.}\) Our definition (<a href="" class="xref" data-knowl="./knowl/d_innerproduct.html" title="Definition 5.1.1: Inner product">5.1.1</a>) simply promulgates a few important properties enjoyed by the dot product that may be familiar to you from studying calculus.</p>
+<p id="p-1684">The addition of an inner product enriches the structure of a vector space considerably, and gives rise to a number of additional useful analytic tools. We highlight a few below.</p>
+<dl class="description-list">
+<dt id="li-598">Distance and angle</dt>
+<dd><p id="p-1685">A notion of <em class="emphasis">distance</em> and <em class="emphasis">angle</em> between two vectors can be defined relative to a given inner product. These provide a numeric measurement of how “close” (distance) or “closely oriented” (angle) two vectors in our space are.</p></dd>
+<dt id="li-599">Orthogonality</dt>
+<dd><p id="p-1686">Two vectors \(\boldv, \boldw\in V\) are <em class="emphasis">orthogonal</em>, relative to a given inner product, if \(\langle \boldv, \boldw\rangle=0\text{.}\) Orthogonality leads further to a general notion of <em class="emphasis">orthogonal projection</em> onto a subspace \(W\subseteq V\text{.}\)</p></dd>
+<dt id="li-600">Orthogonal bases</dt>
+<dd><p id="p-1687">An <em class="emphasis">orthogonal basis</em> of a vector space \(V\text{,}\) relative to a given inner product, is one whose elements are pairwise orthogonal. As we will see there are many computational advantages of working with an orthogonal basis.</p></dd>
+</dl></section><section class="subsection" id="ss_inner_products"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.1.1</span> <span class="title">Inner products</span>
+</h3>
+<article class="definition definition-like" id="d_innerproduct"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Inner product.</span>
+</h4>
+<p id="p-1688">Let \(V\) be a vector space. An <dfn class="terminology">inner product</dfn> on \(V\) is an operation that takes as input a pair of vectors \(\boldv, \boldw\in V\) and outputs a scalar \(\langle \boldv, \boldw \rangle \in \R\text{.}\) Using function notation:</p>
+<div class="displaymath">
+\begin{align*}
+\langle \ , \rangle \colon \amp V\times V\rightarrow \R\\
+(\boldv_1,\boldv_2)\amp \mapsto \langle \boldv_1,\boldv_2\rangle\text{.}
+\end{align*}
+</div>
+<p class="continuation">Furthermore, this operation must satisfy the following axioms.</p>
+<ol class="lower-roman">
+<li id="li-601">
+<span class="heading"><span class="title">Symmetry.</span></span><p id="p-1689">For all \(\boldv, \boldw\in V\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+\langle \boldv, \boldw \rangle =\langle \boldw, \boldv \rangle\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-602">
+<span class="heading"><span class="title">Linearity.</span></span><p id="p-1690">For all \(\boldv, \boldw, \boldu\in V\) and \(c, d\in \R\) we have :</p>
+<div class="displaymath">
+\begin{equation*}
+\langle c\boldv+d\boldw, \boldu \rangle =c \langle \boldv, \boldu \rangle +d \langle \boldw, \boldu \rangle\text{.}
+\end{equation*}
+</div>
+<p class="continuation">It follows by (i) (symmetry) that</p>
+<div class="displaymath">
+\begin{equation*}
+\langle \boldu, c\boldv+d\boldw \rangle =c \langle \boldu, \boldv \rangle +d \langle \boldu, \boldw \rangle\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-603">
+<span class="heading"><span class="title">Positivity.</span></span><p id="p-1691">For all \(\boldv\in V\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+\langle \boldv, \boldv \rangle \geq 0
+\end{equation*}
+</div>
+<p class="continuation">and</p>
+<div class="displaymath">
+\begin{equation*}
+\langle \boldv, \boldv \rangle =0 \text{ if and only if } \boldv=\boldzero\text{.}
+\end{equation*}
+</div>
+</li>
+</ol>
+<p class="continuation">An <dfn class="terminology">inner product space</dfn> is a pair \((V, \langle , \rangle )\text{,}\) where \(V\) is a vector space, and \(\langle , \rangle \) is a choice of inner product on \(V\text{.}\)</p></article><article class="remark remark-like" id="rm_innerproduct_algebra"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Inner products of linear combinations.</span>
+</h4>
+<p id="p-1692">We will have many opportunities to “expand out” an inner product of two linear combinations of vectors. Using axioms (i) and (ii) in series, this process resembles the procedure for multiplying two polynomials. For example, we have</p>
+<div class="displaymath">
+\begin{align*}
+\langle c\boldv+d\boldw, e\boldv+f\boldw\rangle
+\amp = c \langle \boldv,  e\boldv+f\boldw \rangle +d \langle \boldw, e\boldv+f\boldw \rangle \amp (\knowl{./knowl/d_innerproduct.html}{\text{5.1.1}}, \text{(ii)})\\
+\amp=ce \langle \boldv, \boldv\rangle+cf\langle \boldv,\boldw \rangle +de \langle \boldw, \boldv\rangle+df\langle \boldw, \boldw\rangle \amp (\knowl{./knowl/d_innerproduct.html}{\text{5.1.1}}, \text{(ii)}) \\
+\amp = ce\langle \boldv, \boldv\rangle +(cf+de)\langle \boldv, \boldw\rangle +df\langle \boldw, \boldw\rangle
+\amp (\knowl{./knowl/d_innerproduct.html}{\text{5.1.1}}, \text{(i)})\text{.}
+\end{align*}
+</div>
+<p class="continuation">Note how in the last step we are able to group the “cross terms”, \(\langle \boldv, \boldw\rangle=\langle \boldw, \boldv\rangle\) using the symmetry axiom.</p>
+<p id="p-1693">More generally, given linear combinations</p>
+<div class="displaymath">
+\begin{align*}
+\boldv \amp = c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n=\sum_{i=1}^n c_i\boldv_i \\
+\boldw \amp =d_1\boldv_1+d_2\boldv_2+\cdots +d_n\boldv_n=\sum_{i=1}^nd_i\boldv_i \text{,}
+\end{align*}
+</div>
+<p class="continuation">the same reasoning shows that</p>
+<div class="displaymath">
+\begin{align*}
+\langle \boldv, \boldw \rangle   \amp=
+c_1d_1 \langle \boldv_1, \boldv_1  \rangle+c_2d_2 \langle \boldv_2, \boldv_2 \rangle +\cdots+c_nd_n \langle \boldv_n, \boldv_n \rangle +\underset{\text{cross terms}}{\underbrace{(c_1d_2+c_2d_1)\langle \boldv_1,\boldv_2  \rangle +\cdots}}  \\
+\amp= \sum_{i=1}^nc_id_i \langle \boldv_i, \boldv_i \rangle +\underset{\text{cross terms}}{\underbrace{\sum_{1\leq i\lt j\leq n}(c_{i}d_j+c_jd_i)\langle \boldv_i, \boldv_j \rangle}}  \text{.}
+\end{align*}
+</div>
+<p class="continuation">In particular, we have</p>
+<div class="displaymath">
+\begin{equation*}
+\langle \boldv, \boldv\rangle =\sum_{i=1}^nc_i^2 \langle \boldv_i, \boldv_i \rangle +\sum_{1\leq i\lt j\leq n}2c_ic_j \langle \boldv_i, \boldv_j \rangle\text{.}
+\end{equation*}
+</div></article><p id="p-1694">We now present a series of important examples of inner products defined on our various inner product spaces. Each is presented as a theorem, as we must prove that the proposed operation satisfies the axios of an inner product. The first example, the <em class="emphasis">weighted dot product</em> is itself a vast generalization of the familiar dot product operations defined on \(\R^2\) and \(\R^3\text{.}\)</p>
+<article class="theorem theorem-like" id="th_weighted_dotproduct"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">Weighted dot product.</span>
+</h4>
+<p id="p-1695">Let \(V=\R^n\text{.}\) Let \(k_1, k_2, \dots , k_n\) be any list of real numbers. Define an operation on \(\R^n\) as follows: given \(\boldx=(x_1,x_2,\dots, x_n), \boldy=(y_1, y_2, \dots, y_n)\in\R^n\text{,}\) let</p>
+<div class="displaymath">
+\begin{equation*}
+\langle \boldx, \boldy \rangle=k_1x_1y_1+k_2x_2y_2+\cdots k_nx_ny_n=\sum_{i=1}^nk_ix_iy_i\text{.}
+\end{equation*}
+</div>
+<p class="continuation">This operation is an inner product if and only if \(k_i&gt;0\) for all \(i\text{.}\)</p>
+<p id="p-1696">We call this inner product a <dfn class="terminology">weighted dot product</dfn> on \(\R^n\text{,}\) or more specifically, the <dfn class="terminology">dot product with weights \(k_1, k_2,\dots, k_n\)</dfn>. In the special case where \(k_i=1\) for all \(i\) we call this the <dfn class="terminology">(standard) dot product</dfn> and write \(\boldx\cdot \boldy\) instead of \(\langle \boldx, \boldy \rangle \text{.}\)</p></article><article class="hiddenproof" id="proof-72"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-72"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-72"><article class="hiddenproof"><p id="p-1697">First we show that axioms (i) and (ii) are satsified for <em class="emphasis">any</em> choice of \(k_i\text{.}\) Let</p>
+<div class="displaymath">
+\begin{equation*}
+K=\begin{amatrix}[rrrr]k_1\amp 0\amp \dots \amp 0 \\ 0\amp k_2\amp 0\amp \dots \\ \vdots \\ 0\amp \dots\amp 0\amp k_n \end{amatrix}\text{,}
+\end{equation*}
+</div>
+<p class="continuation">the diagonal matrix whose \(i\)-th diagonal entry is \(k_i\text{.}\) Then for all \(\boldx=(x_1,x_2,\dots, x_n), \boldy=(y_1,y_2,\dots, y_n)\in \R^n\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+\langle \boldx, \boldy  \rangle=\boldx^TK\boldy=\begin{amatrix}[cccc]x_1\amp x_2\amp \dots\amp x_n \end{amatrix} K\begin{bmatrix}y_1\\ y_2\\ \vdots \\ y_n\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Here we treat \(\boldx, \boldy\) as column vectors, and we treat the resulting \(1\times 1\) matrix \(\boldx^T K\boldy\) as a scalar. Axioms (i)-(ii) now follow from various matrix properties. For linearity, for example, we have</p>
+<div class="displaymath">
+\begin{align*}
+\langle c\boldx_1+d\boldx_2, \boldy \rangle \amp = (c\boldx_1+d\boldx_2)^TK\boldy\\
+\amp =(c\boldx_1^T+d\boldx_2^T)K\boldy \amp (\knowl{./knowl/th_trans_props.html}{\text{3.2.11}})\\
+\amp =c\boldx_1^TK\boldy+d\boldx_2^TK\boldy \\
+\amp =c \langle \boldx_1, \boldy \rangle +d \langle \boldx_2,\boldy  \rangle \text{.}
+\end{align*}
+</div>
+<p class="continuation">Symmetry requires a little more trickery:</p>
+<div class="displaymath">
+\begin{align*}
+\langle \boldy, \boldx  \rangle   \amp = \boldy^TK\boldx \\
+\amp = \boldy^TK^T\boldx \amp (K^T=K) \\
+\amp = (\boldx^T K\boldy)^T \amp (\knowl{./knowl/th_trans_props.html}{\text{Theorem 3.2.11}})\\
+\amp =\boldx^T K \boldy \amp \\
+\amp = \langle \boldx, \boldy \rangle \text{.}
+\end{align*}
+</div>
+<p class="continuation">Note that \((\boldx^T K\boldy)^T=\boldx^T K\boldy\) as \(\boldx^T K\boldy\) is just a \(1\times 1\) matrix.</p>
+<p id="p-1698">Lastly, we show that axiom (iii) is satisfied if and only if \(k_i&gt;0\) for all \(i\text{.}\) To this end consider the formula</p>
+<div class="displaymath">
+\begin{equation*}
+\langle \boldx, \boldx \rangle=k_1x_1^2+k_2x_2^2+\cdots k_nx_n^2\text{.}
+\end{equation*}
+</div>
+<p class="continuation">If \(k_i&gt;0\text{,}\) then since \(x_i^2\geq 0\) for all \(i\text{,}\) we have \(\langle \boldx, \boldx \rangle\geq 0\) for any \(\boldx\text{,}\) and \(\langle \boldx, \boldx \rangle=0\) if and only if \(x_i=0\) for all \(i\) if and only if \(\boldx=\boldzero\text{.}\)</p>
+<p id="p-1699">For the other direction suppose \(k_i\leq 0\) for some \(i\text{.}\) Let \(\boldx=\bolde_i\text{,}\) the  \(i\)-th element of the standard basis of \(\R^n\text{.}\) Then \(\langle \boldx, \boldx \rangle=k_i\leq 0\text{,}\) in contradiction to the positivity axiom.</p></article></div>
+<article class="example example-like" id="example-51"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-51"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">Dot product on \(\R^4\).</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-51"><article class="example example-like"><p id="p-1700">Let \(\boldx=(-1,2,0,1), \boldy=(1,2,1,1)\text{.}\) Then</p>
+<div class="displaymath">
+\begin{equation*}
+\boldx\cdot \boldy=-1+4+0+1=4\text{,}
+\end{equation*}
+</div>
+<p class="continuation">and</p>
+<div class="displaymath">
+\begin{equation*}
+\boldx\cdot\boldx=1+4+0+1=6\text{.}
+\end{equation*}
+</div></article></div>
+<article class="example example-like" id="example-52"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-52"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">Weighted dot product.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-52"><article class="example example-like"><p id="p-1701">The dot product with weights \(2, 1, 3\) on \(\R^3\) is defined as</p>
+<div class="displaymath">
+\begin{equation*}
+\langle \boldx, \boldy  \rangle= 2x_1y_1+x_2y_2+3x_3y_3\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Let \(\boldx=(-1,-1,-1)\) and \(\boldy=(1,0,1)\text{.}\) We have</p>
+<div class="displaymath">
+\begin{equation*}
+\langle \boldx, \boldy \rangle =2(-1)+0-3=-5\text{,}
+\end{equation*}
+</div>
+<p class="continuation">and</p>
+<div class="displaymath">
+\begin{equation*}
+\langle \boldx, \boldx \rangle =2(-1)^2+1(-1)^2+3(-1)^2=2+1+3=6\text{.}
+\end{equation*}
+</div></article></div>
+<article class="example example-like" id="example-53"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-53"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.6</span><span class="period">.</span><span class="space"> </span><span class="title">Why the weights must be positive.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-53"><article class="example example-like"><p id="p-1702">Define</p>
+<div class="displaymath">
+\begin{equation*}
+\langle \boldx, \boldy \rangle =(-1)x_1y_1+2x_2y_2
+\end{equation*}
+</div>
+<p class="continuation">for vectors \(\boldx=(x_1,x_2), \boldy=(y_1,y_2)\in \R^2\text{.}\) Then</p>
+<div class="displaymath">
+\begin{equation*}
+\langle (3,1), (3,1)  \rangle=-9+2=-7\lt 0\text{.}
+\end{equation*}
+</div></article></div>
+<article class="remark remark-like" id="rm_dotproduct"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.1.7</span><span class="period">.</span>
+</h4>
+<p id="p-1703">It is worth highlighting the obersvation in the proof above that a dot product with weights \(k_1, k_2, \dots, k_n\) can be expressed as a matrix product:</p>
+<div class="displaymath">
+\begin{equation*}
+\langle \boldx, \boldy \rangle=\sum_{i=1}^nk_ix_iy_i=\boldx^TK\boldy\text{,}
+\end{equation*}
+</div>
+<p class="continuation">where \(K\) is the diagonal \(n\times n\) matrix whose \(i\)-th diagonal entry is \(k_i\text{.}\) Here \(\boldx, \boldy\) are treated as column vectors, and we identify the resulting \(1\times 1\) matrix \(\boldx^T K \boldy\) with a scalar.</p>
+<p id="p-1704">In particular for the standard dot product this matrix formula reduces to</p>
+<div class="displaymath">
+\begin{equation*}
+\boldx\cdot \boldy=\boldx^T I \boldy=\boldx^T\boldy\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Conversely, the dot product gives another way to formulate general matrix multiplication, as the next theorem articulates.</p></article><article class="theorem theorem-like" id="th_dotproduct_method"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.1.8</span><span class="period">.</span><span class="space"> </span><span class="title">Dot product method of matrix multiplication.</span>
+</h4>
+<p id="p-1705">Let \(A\) be an \(m\times n\) matrix, and let \(B\) be a \(n\times r\) matrix. Let \(\boldr_i\in \R^n\) be the \(i\)-th row of \(A\text{,}\) and let \(\boldc_j\in \R^n\) be the \(j\)-th column of \(B\text{.}\) Then</p>
+<div class="displaymath">
+\begin{equation*}
+(AB)_{ij}=\boldr_i\cdot \boldc_j\text{.}
+\end{equation*}
+</div>
+<p class="continuation">In other words, the \(ij\)-th entry of \(AB\) is the dot product of the \(i\)-th row of \(A\) and the \(j\)-th column of \(B\text{.}\)</p></article><article class="hiddenproof" id="proof-73"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-73"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-73"><article class="hiddenproof"><p id="p-1706">Let \(A=[a_{ij}]_{m\times n}\) and \(B=[b_{ij}]_{n\times r}\text{.}\) Then</p>
+<div class="displaymath">
+\begin{equation*}
+(AB)_{ij}=\sum_{k=1}^na_{ik}b_{kj}=\boldr_i\cdot \boldc_j\text{,}
+\end{equation*}
+</div>
+<p class="continuation">since \(\boldr_i=(a_{i1}, a_{i2}, \dots, a_{in})\) and \(\boldc_j=(b_{j1}, b_{2j},\dots, b_{nj})\text{.}\)</p></article></div>
+<p id="p-1707">Next we introduce an important family of inner products defined on polynomials spaces called <em class="emphasis">evaluation inner products</em>. These are useful when we wish to compare polynomials by how they behave at a specified list of inputs.</p>
+<article class="theorem theorem-like" id="th_evaluation_innerproduct"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.1.9</span><span class="period">.</span><span class="space"> </span><span class="title">Evaluation inner products on \(P_n\).</span>
+</h4>
+<p id="p-1708">Let \(V=P_n\text{,}\) and let \(c_0, c_1, \dots, c_n\) be any list of \(n+1\) distinct real numbers. For any \(p(x), q(x)\in P_n\) define</p>
+<div class="displaymath">
+\begin{equation*}
+\langle p(x), q(x) \rangle =p(c_0)q(c_0)+p(c_1)q(c_1)+\cdots +p(c_n)q(c_n)\text{.}
+\end{equation*}
+</div>
+<p class="continuation">This defines an inner product on \(P_n\) called an <dfn class="terminology">evaluation inner product</dfn>, or more precisely, <dfn class="terminology">evaluation at the inputs \(c_0, c_1, \dots, c_n\)</dfn>.</p></article><article class="hiddenproof" id="proof-74"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-74"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-74"><article class="hiddenproof"><p id="p-1709">That axioms (i)-(ii) are satisfied is left as an exercise. For axiom (iii), note that</p>
+<div class="displaymath">
+\begin{equation*}
+\langle p(x), p(x) \rangle =p(c_0)^2+p(c_1)^2+\cdots +p(c_n)^2\geq 0\text{,}
+\end{equation*}
+</div>
+<p class="continuation">and we have equality if and only if \(p(c_0)=p(c_1)=\dots p(c_n)=0\text{.}\) Since a nonzero polynomial of degree \(n\) or less has <em class="emphasis">at most</em> \(n\) distinct roots, we conclude that \(p(x)=\boldzero\text{,}\) the zero polynomial.</p></article></div>
+<article class="example example-like" id="example-54"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-54"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.10</span><span class="period">.</span><span class="space"> </span><span class="title">Evaluation at \(-1, 0, 1\).</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-54"><article class="example example-like"><p id="p-1710">Let \(V=P_2\text{,}\) and let \(\langle p(x),q(x)  \rangle \) be the evaluation at \(-1, 0, 1\) inner product. Compute \(\langle x^2-1,x^2+2x+1  \rangle \) and \(\langle x^2-1, x^2-1  \rangle. \)</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-57" id="solution-57"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-57"><div class="solution solution-like">
+<p id="p-1711">Let \(p(x)=x^2-1\text{,}\) \(q(x)=x^2+2x+1\text{.}\) We have</p>
+<div class="displaymath">
+\begin{equation*}
+\langle p(x), q(x)  \rangle=p(-1)q(-1)+p(0)q(0)+p(1)q(1)=0+(-1)1+0=-1
+\end{equation*}
+</div>
+<p class="continuation">and</p>
+<div class="displaymath">
+\begin{equation*}
+\langle p(x), p(x) \rangle =p(-1)^2+p(0)^2+p(1)^2=0+(-1)^2+0=1\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article></div>
+<p id="p-1712">Our last example defines an <em class="emphasis">integral inner product</em> on the space \(C([a,b])\) of continuous functions on an interval \([a,b]\text{.}\) This inner product plays an important role in Fourier analysis, which studies the approximation of arbibitrary continuous functions with linear combinations of certain trigonometric funtions.</p>
+<article class="theorem theorem-like" id="th_integral_innerproduct"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.1.11</span><span class="period">.</span><span class="space"> </span><span class="title">Integral inner product.</span>
+</h4>
+<p id="p-1713">Fix an interval \([a,b]\text{,}\) and let \(V=C([a,b])\text{,}\) the space of all continuous functions on \([a,b]\text{.}\) For any \(f,g\in C([a,b])\) define</p>
+<div class="displaymath">
+\begin{equation*}
+\langle f,g \rangle=\int_a^bf(x)g(x)\ dx\text{.}
+\end{equation*}
+</div>
+<p class="continuation">This defines an inner product on \(C([a,b])\) called the <dfn class="terminology">integral inner product</dfn>.</p></article><article class="hiddenproof" id="proof-75"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-75"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-75"><article class="hiddenproof"><p id="p-1714">First observe that the integral defining the inner product always exists since the product \(fg\) is a continuous function on the closed interval \([a,b]\text{.}\)</p>
+<p id="p-1715">Axioms (i)-(ii) follow directly from the definition and various properties of the integral. This is left as an exercise. As for (iii), we have</p>
+<div class="displaymath">
+\begin{equation*}
+\langle f, f   \rangle=\int_{a}^b f^2(x) \ dx \geq 0\text{,}
+\end{equation*}
+</div>
+<p class="continuation">since \(f^2(x)\geq 0\) for all \(x\in [a,b]\text{.}\) (This is a property of integration.) Furthermore, since \(f^2\) is continuous and \(f^2(x)\geq 0\text{,}\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+\langle f, f \rangle=\int_a^b f^2(x) \ dx=0 
+\end{equation*}
+</div>
+<p class="continuation">if and only if \(f^2(x)=0\) for all \(x\in [a,b]\) (a property of integrals of <em class="emphasis">continuous</em> functions) if and only if \(f(x)=0\) for all \(x\in [a,b]\) if and only if \(f=\boldzero\text{,}\) the zero function.</p></article></div>
+<article class="example example-like" id="example-55"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-55"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.12</span><span class="period">.</span><span class="space"> </span><span class="title">Integral inner product.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-55"><article class="example example-like"><p id="p-1716">Let \(V=C([0,1])\text{,}\) equipped with integral inner product. Let  \(f(x)=x\text{,}\) \(g(x)=e^x\text{.}\) Compute \(\langle f,g  \rangle \) and \(\langle f,f  \rangle \text{.}\)</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-58" id="solution-58"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-58"><div class="solution solution-like">
+<p id="p-1717">We have</p>
+<div class="displaymath">
+\begin{equation*}
+\langle f,g  \rangle=\int_0^1xe^x\ dx=(xe^x\Bigr\vert_0^1-\int_0^1 e^x\ dx)=e-(e-1)=1
+\end{equation*}
+</div>
+<p class="continuation">and</p>
+<div class="displaymath">
+\begin{equation*}
+\langle f, f \rangle=\int_0^1 x^2 \ dx=\frac{1}{3}\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article></div></section><section class="subsection" id="ss_norm_distance"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.1.2</span> <span class="title">Norm and distance</span>
+</h3>
+<p id="p-1718">As mentioned at the top, once an inner product is established, we can define further notions of norm (or length), distance, angle, etc..  When the inner product in question is the standard dot product on \(\R^2\) or \(\R^3\text{,}\) then these are precisely the standard notions you have met in multivariable calculus. For more exotic inner products, however, the corresponding notions of length, distance, etc., are to be a useful generalization of these notions.</p>
+<article class="definition definition-like" id="d_norm"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.1.13</span><span class="period">.</span><span class="space"> </span><span class="title">Norm (or length) of a vector.</span>
+</h4>
+<p id="p-1719">Let \((V, \langle ,  \rangle )\) be an inner product space. Given \(\boldv\in V\) we define its <dfn class="terminology">norm</dfn> (or <dfn class="terminology">length</dfn>), denoted \(\norm{\boldv}, \) as</p>
+<div class="displaymath">
+\begin{equation*}
+\norm{\boldv}=\sqrt{\langle \boldv, \boldv  \rangle }\text{.}
+\end{equation*}
+</div>
+<p class="continuation">A <dfn class="terminology">unit vector</dfn> is a vector \(\boldv\) of length one: i.e., a vector  \(\boldv\) satisfying \(\norm{\boldv}=1\text{.}\)</p></article><article class="remark remark-like" id="rm_unit_vectors"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.1.14</span><span class="period">.</span><span class="space"> </span><span class="title">Unit vectors.</span>
+</h4>
+<p id="p-1720">Given any \(\boldv\ne \boldzero\in V\text{,}\) the vector \(\boldu=\frac{1}{\norm{\boldv}}\boldv\) is a unit vector. To verify this, let \(c=\norm{\boldv}\) and compute</p>
+<div class="displaymath">
+\begin{align*}
+\norm{\boldu} \amp \sqrt{\langle \frac{1}{c}\boldv,\frac{1}{c}\boldv   \rangle }\\
+\amp =\sqrt{\frac{1}{c^2}\langle \boldv,\boldv  \rangle} \amp (\knowl{./knowl/d_innerproduct.html}{\text{Definition 5.1.1}}, \text{(ii)})  \\
+\amp=\frac{1}{c}\sqrt{\langle \boldv,\boldv  \rangle } \\
+\amp =\frac{\norm{\boldv}}{\norm{\boldv}}=1\text{.}
+\end{align*}
+</div></article><p id="p-1721">Next, the distance between two vectors in an inner product space is defined as the length of their difference.</p>
+<article class="definition definition-like" id="d_distance"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.1.15</span><span class="period">.</span><span class="space"> </span><span class="title">Distance between vectors.</span>
+</h4>
+<p id="p-1722">Let \((V,\langle ,  \rangle )\) be an inner product space. The <dfn class="terminology">distance between \(\boldv, \boldw\in V\)</dfn>, denoted \(d(\boldv, \boldw)\text{,}\) is defined as</p>
+<div class="displaymath">
+\begin{equation*}
+d(\boldv, \boldw)=\norm{\boldv-\boldw}=\sqrt{\langle \boldv-\boldw,\boldv-\boldw  \rangle }\text{.}
+\end{equation*}
+</div></article><article class="theorem theorem-like" id="th_norm_basic_props"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.1.16</span><span class="period">.</span><span class="space"> </span><span class="title">Basic properties of norm and distance.</span>
+</h4>
+<p id="p-1723">Let \((V,\langle ,  \rangle)\) be an inner product space.</p>
+<ol class="decimal">
+<li id="li-604">
+<p id="p-1724">For all \(\boldv\in V\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+\norm{\boldv}\geq 0\text{,}
+\end{equation*}
+</div>
+<p class="continuation">and equality holds if and only if \(\boldv=0\text{.}\)</p>
+</li>
+<li id="li-605">
+<p id="p-1725">For all \(c\in \R\) and \(\boldv\in V\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+\norm{c\boldv}=\val{c}\norm{\boldv}\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-606">
+<p id="p-1726">For all \(\boldv, \boldw\in V\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+d(\boldv,\boldw)=d(\boldw,\boldv)\geq 0\text{,}
+\end{equation*}
+</div>
+<p class="continuation">and equality holds if and only if \(\boldv=\boldw\text{.}\)</p>
+</li>
+</ol></article><article class="hiddenproof" id="proof-76"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-76"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-76"><article class="hiddenproof"><p id="p-1727">This is an elementary exercise of unpacking the various definitions, and is left to the reader.</p></article></div></section><section class="subsection" id="subsection-54"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.1.3</span> <span class="title">Cauchy-Schwarz inequality, triangle inequalities, and angles between vectors</span>
+</h3>
+<p id="p-1728">The famous <em class="emphasis">Cauchy-Schwarz inequality</em> has a knack of cropping up all over the world of science: from properties of covariance in statistics, to the Heisenberg uncertainty principle of quantum mechanics. More directly pertinent to our discussion, the Cauchy-Schwarz inequality implies the triangle inequalities (<a href="" class="xref" data-knowl="./knowl/th_triangle_inequalities.html" title="Theorem 5.1.18: Triangle Inequalities">5.1.18</a>) and ensures that our notion of the angle between two nonzero vectors <a href="" class="xref" data-knowl="./knowl/d_angle.html" title="Definition 5.1.19: Angle between vectors">Definition 5.1.19</a>) is well-defined.</p>
+<article class="theorem theorem-like" id="th_Cauchy-Schwarz"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.1.17</span><span class="period">.</span><span class="space"> </span><span class="title">Cauchy-Schwarz inequality.</span>
+</h4>
+<p id="p-1729">Let \((V,\langle \ , \rangle)\) be an inner product space. For all \(\boldv,\boldw\in V\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+\val{\langle\boldv,\boldw\rangle}\leq\norm{\boldv}\norm{\boldw}\text{,}
+\end{equation*}
+</div>
+<p class="continuation">and equality holds if and only if \(\boldv=c\boldw\) for some \(c\in\R\text{.}\)</p></article><article class="hiddenproof" id="proof-77"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-77"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-77"><article class="hiddenproof"><p id="p-1730">Fix vectors \(\boldv\) and \(\boldw\text{.}\) For any \(t\in\R\) we have by positivity</p>
+<div class="displaymath">
+\begin{equation*}
+0\leq \langle t\boldv-\boldw,t\boldv-\boldw\rangle=\langle\boldv,\boldv\rangle t^2-2\langle\boldv,\boldw\rangle t+\langle\boldw,\boldw\rangle=at^2-2bt+c\text{,}
+\end{equation*}
+</div>
+<p class="continuation">where</p>
+<div class="displaymath">
+\begin{equation}
+a=\langle\boldv,\boldv\rangle, \ b=\langle\boldv,\boldw\rangle, \   c=\langle\boldw,\boldw\rangle=\norm{w}^2\text{.}\label{eq_cauchy_schwarz}\tag{5.1.1}
+\end{equation}
+</div>
+<p class="continuation">Since \(at^2-2b\,t+c\geq 0\) for all \(t\in \R\) the quadratic polynomial \(p(t)=at^2-2b\,t+c\) has <em class="emphasis">at most</em> one root. Using the quadratic formula for we conclude that we must have \(4b^2-4ac\leq 0\text{,}\) since otherwise \(p(t)\) would have two distinct roots. Substituting back in for \(a,b,c\) using <a href="" class="xref" data-knowl="./knowl/eq_cauchy_schwarz.html" title="Equation 5.1.1">(5.1.1)</a>, we see after a bit of algebra that</p>
+<div class="displaymath">
+\begin{equation*}
+(\langle\boldv,\boldw\rangle)^2\leq \norm{\boldv}^2\norm{\boldw}^2\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Taking square-roots yields the desired inequality.</p>
+<p id="p-1731">The same reasoning shows that the Cauchy-Schwarz inequality is an actual equality if and only if  \(p(t)=0\) for some \(t\) if and only if \(0=\langle t\boldv-\boldw,t\boldv-\boldw\rangle\) if and only if  \(\boldv=t\boldw\) for some \(t\) (by positivity).</p></article></div>
+<p id="p-1732">The following triangle inequalities are more or less direct consequences of the Cauchy-Schwarz inequality.</p>
+<article class="theorem theorem-like" id="th_triangle_inequalities"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.1.18</span><span class="period">.</span><span class="space"> </span><span class="title">Triangle Inequalities.</span>
+</h4>
+<p id="p-1733">Let \((V, \langle \ , \rangle)\) be an inner product space.</p>
+<ol class="decimal">
+<li id="li-607">
+<p id="p-1734">For all \(\boldv, \boldw\in V\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+\norm{\boldv+\boldw}\leq \norm{\boldv}+\norm{\boldw}\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-608">
+<p id="p-1735">For all \(\boldv, \boldw, \boldu\in V\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+d(\boldv,\boldw)\leq d(\boldv,\boldu)+d(\boldu,\boldw)
+\end{equation*}
+</div>
+</li>
+</ol></article><article class="hiddenproof" id="proof-78"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-78"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-78"><article class="hiddenproof"><p id="p-1736">This is an elementary exercise of unpacking the definitions of norm and distance in terms of the inner product, and then applying the Cauchy-Schwarz inequality appropriately. The proof is left as an exercise.</p></article></div>
+<p id="p-1737">Let \((V, \langle ,  \rangle )\) be an inner product space. For any <em class="emphasis">nonzero</em> vectors \(\boldv, \boldw\text{,}\) the Cauchy-Schwarz inequality tells us that</p>
+<div class="displaymath">
+\begin{equation*}
+\val{\langle \boldv, \boldw \rangle }\leq \norm{\boldv}\, \norm{\boldw}\text{,}
+\end{equation*}
+</div>
+<p class="continuation">or equivalently,</p>
+<div class="displaymath">
+\begin{equation*}
+-1\leq \frac{\langle \boldv, \boldw \rangle}{\norm{\boldv}\, \norm{\boldw}} \leq 1\text{.}
+\end{equation*}
+</div>
+<p class="continuation">It follows that there is a unique real number \(\theta\in [0,\pi]\) satisfying</p>
+<div class="displaymath">
+\begin{equation*}
+\cos\theta=\frac{\langle \boldv, \boldw \rangle}{\norm{\boldv}\, \norm{\boldw}}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">We define the <em class="emphasis">angle between \(\boldv\) and \(\boldw\)</em> to be this \(\theta\text{.}\)</p>
+<article class="definition definition-like" id="d_angle"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.1.19</span><span class="period">.</span><span class="space"> </span><span class="title">Angle between vectors.</span>
+</h4>
+<p id="p-1738">Let \((V,\langle ,  \rangle )\) be an inner product space. Given nonzero vectors \(\boldv, \boldw\in V\text{,}\) the <dfn class="terminology">angle between \(\boldv\) and \(\boldw\)</dfn> is defined to be the unique \(\theta\in [0,\pi]\) satisfying</p>
+<div class="displaymath">
+\begin{equation*}
+\cos\theta=\frac{\langle \boldv, \boldw \rangle}{\norm{\boldv}\, \norm{\boldw}}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Equivalently, we have</p>
+<div class="displaymath">
+\begin{equation*}
+\theta=\cos^{-1}\left(
+\frac{\langle \boldv, \boldw \rangle}{\norm{\boldv}\, \norm{\boldw}}
+\right)\text{.}
+\end{equation*}
+</div></article></section><section class="subsection" id="subsection-55"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.1.4</span> <span class="title">Choosing your inner product</span>
+</h3>
+<p id="p-1739">Why, given a fixed vector space \(V\text{,}\) would we prefer one inner product definition to another?</p>
+<p id="p-1740">One way of understanding a particular choice of inner product is to ask what its corresponding notion of distance measures.</p>
+<section class="subsection" id="subsection-56"><h4 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.1.4.1</span> <span class="title">Example</span>
+</h4>
+<p id="p-1741">Take \(P_n\) with the evaluation inner product at inputs \(x=c_0, c_1,\dots, c_n\text{.}\) Given two polynomials \(p(x), q(x)\text{,}\) the distance between them with respect to this inner product is</p></section><div class="displaymath">
+\begin{equation*}
+\norm{p(x)-q(x)}=\sqrt{(p(c_0)-q(c_0))^2+(p(c_1)-q(c_1))^2+\cdots +(p(c_n)-q(c_n))^2}\text{.}
+\end{equation*}
+</div>
+<p id="p-1742">So in this inner product space the “distance” between two polynomials is a measure of how different their values are at the inputs \(x=c_0,c_1,\dots ,c_n\text{.}\) This inner product may be useful if you are particularly interested in how a polynomial behaves at this finite list of inputs.</p>
+<section class="subsection" id="subsection-57"><h4 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.1.4.2</span> <span class="title">Example</span>
+</h4>
+<p id="p-1743">Take \(C[a,b]\) with the standard inner product \(\langle f, g \rangle=\int_a^b f(x)g(x) \ dx\text{.}\) Here the distance between two functions is defined as \(\ds \norm{f-g}=\sqrt{\int_a^b (f(x)-g(x))^2 \ dx}\text{.}\) In particular, a function \(f\) is “close” to the zero function (i.e. “is small” ) if the <em class="emphasis">integral</em> of \(f^2\) is small. This notion is useful in settings where integrals of functions represent quantities we are interested in (e.g. in probability theory, thermodynamics, and quantum mechanics).</p></section></section><section class="exercises" id="s_innerproducts_ex"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">5.1.5</span> <span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-162"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<p id="p-1744">For each of the following operations on \(\R^2\text{,}\) determine whether it defines an inner product on \(\R^2\text{.}\) If it fails to be an inner product, identify which of the three inner product axioms (if any) it does satisfy, and provide explicit counterexamples for any axiom that fails.</p>
+<ol class="lower-alpha">
+<li id="li-609"><p id="p-1745">\(\angvec{(x_1,x_2),\ (y_1,y_2)}=x_1y_2+x_2y_1\text{.}\)</p></li>
+<li id="li-610"><p id="p-1746">\(\angvec{(x_1,x_2),\ (y_1,y_2)}=2x_1y_1+x_1y_2+x_2y_1+3x_2y_2\text{.}\)</p></li>
+<li id="li-611"><p id="p-1747">\(\angvec{(x_1,x_2), \ (y_1,y_2)}=x_1^2y_1^2+x_2^2y_2^2\text{.}\)</p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-16" id="hint-16"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-16"><div class="hint solution-like">
+<p id="p-1748">The operation in (b) is an inner product. Use that fact that</p>
+<div class="displaymath">
+\begin{equation*}
+\angvec{\boldx,\ \boldy}=\boldx^T \begin{amatrix}[cc]2\amp 1 \\ 1 \amp 3  \end{amatrix}\boldy\text{,}
+\end{equation*}
+</div>
+<p class="continuation">where we treat \(\boldx, \boldy\) as column vectors. This helps to prove axioms (i)-(ii). For axiom (iii), use a “complete the square” argument.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-163"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<p id="p-1749">We work within the inner product space given by \(V=P_2\) together with the evaluation at 0, 1, 2 inner product.</p>
+<p id="p-1750">Let \(q(x)=x\text{.}\) Give a parametric description of the set</p>
+<div class="displaymath">
+\begin{equation*}
+W=\{p(x)\in P_2\colon \langle p(x), q(x)\rangle =0\}\text{.}
+\end{equation*}
+</div></article><article class="exercise exercise-like" id="exercise-164"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<p id="p-1751">We work in the inner product space given by \(V=C([-\pi,\pi])\) together with the integral inner product.</p>
+<ol class="lower-alpha">
+<li id="li-612"><p id="p-1752">Let \(f(x)=\cos x, g(x)=\sin x\text{.}\) Compute \(\langle f,g \rangle \) and \(\norm{g}\text{.}\)</p></li>
+<li id="li-613"><p id="p-1753">Show that if \(f(x)\) is an odd function (i.e., \(f(x)=-f(-x)\) for all \(x\)) and \(g(x)\) is an even function (\(g(-x)=g(x)\) for all \(x\)), then \(\langle f, g \rangle=0 \text{.}\) <em class="alert">Hint</em>: use the area interpretation of the integral and properties of even/odd functions.</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-165"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<p id="p-1754">Compute the angle between the given vectors with respect to the given inner product. Do not give your answer in terms of \(\arccos\text{:}\) i.e., the angles can be computed by hand.</p>
+<ol class="lower-alpha">
+<li id="li-614"><p id="p-1755">\(V=\R^4\) with the standard dot product; \(\boldv=(1,1,1,1), \boldw=(1,-1,1,1)\)</p></li>
+<li id="li-615"><p id="p-1756">\(V=C([0,1])\) with the integral inner product; \(f(x)=1, g(x)=x\text{.}\)</p></li>
+<li id="li-616"><p id="p-1757">\(V=P_2\) with evaluation at \(-1, 1\) inner product; \(p(x)=-\frac{1}{2}x+\frac{1}{2}, q(x)=2x\)</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-166"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<p id="p-1758">Let \(\boldv, \boldw\in V\text{,}\) and let \(\theta\) be the angle between them. Prove the following equivalence:</p>
+<div class="displaymath">
+\begin{equation*}
+\norm{\boldv+\boldw}=\norm{\boldv}+\norm{\boldw}\text{ if and only if }  \theta=0\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Your proof should be a <em class="emphasis">chain of equivalences</em> with each step justified.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-59" id="solution-59"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-59"><div class="solution solution-like"><div class="displaymath" id="p-1759">
+\begin{align*}
+\norm{\boldv+\boldw}=\norm{\boldv}+\norm{\boldw}\amp \Leftrightarrow \norm{\boldv+\boldw}^2=\left(\norm{\boldv}+\norm{\boldw}\right)^2 \amp \text{ ( square both sides) }\\
+\amp \Leftrightarrow (\boldv+\boldw)\cdot(\boldv+\boldw)=\norm{\boldv}^2+2\norm{\boldv}\norm{\boldw}+\norm{\boldw}^2\\
+\amp \Leftrightarrow \boldv\cdot\boldv+2\boldv\cdot\boldw+\boldw\cdot\boldw=\boldv\cdot\boldv+2\norm{\boldv}\norm{\boldw}+\boldw\cdot\boldw\\
+\amp \Leftrightarrow \boldv\cdot\boldw=\norm{\boldv}\norm{\boldw}\\
+\amp \Leftrightarrow \frac{\boldv\cdot\boldw}{\norm{\boldv}\norm{\boldw}}=1\\
+\amp \Leftrightarrow \cos(\theta)=1\\
+\amp \Leftrightarrow \theta=0\text{.}
+\end{align*}
+</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-167"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<p id="p-1760">Let \((V, \langle , \rangle )\) be an inner product space. Suppose vectors \(\boldv, \boldw\in V\) satisfy \(\norm{\boldv}=2\) and \(\norm{\boldw}=3\text{.}\) Using the Cauchy-Schwarz inequality (<a href="" class="xref" data-knowl="./knowl/th_Cauchy-Schwarz.html" title="Theorem 5.1.17: Cauchy-Schwarz inequality">5.1.17</a>) find the maximum and minimum possible values of \(\norm{\boldv-\boldw}\text{,}\) and give explicit examples where those values occur.</p></article><article class="exercise exercise-like" id="exercise-168"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<p id="p-1761">Prove all statements of <a href="" class="xref" data-knowl="./knowl/th_norm_basic_props.html" title="Theorem 5.1.16: Basic properties of norm and distance">Theorem 5.1.16</a>.</p></article><article class="exercise exercise-like" id="exercise-169"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<p id="p-1762">Prove each inequality below using the Cauchy-Schwarz inequality (<a href="" class="xref" data-knowl="./knowl/th_Cauchy-Schwarz.html" title="Theorem 5.1.17: Cauchy-Schwarz inequality">5.1.17</a>) applied to a judicious choice of inner product space, and possibly a judicious choice of vector in said inner product space.</p>
+<ol class="lower-alpha">
+<li id="li-617">
+<p id="p-1763">For all \(f, g\in C([a,b])\)</p>
+<div class="displaymath">
+\begin{equation*}
+\left(\int_a^b f(x)g(x) \ dx\right)^2\leq \int_a^b f^2(x)\ dx\int_a^b g^2(x) \ dx\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-618">
+<p id="p-1764">For all \((x_1,x_2,\dots, x_n)\in\R^n\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+(x_1+x_2+\cdots +x_n)\leq\sqrt{x_1^2+x_2^2+\cdots +x_n^2}\sqrt{n}\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-619">
+<p id="p-1765">For all \(a,b,\theta\in\R\)</p>
+<div class="displaymath">
+\begin{equation*}
+(a\cos\theta+b\sin\theta)^2\leq a^2+b^2\text{.}
+\end{equation*}
+</div>
+</li>
+</ol></article><article class="exercise exercise-like" id="ex_isometries"><h4 class="heading">
+<span class="codenumber">9<span class="period">.</span></span><span class="space"> </span><span class="title">Isometries of inner product spaces.</span>
+</h4>
+<p id="p-1766">Let \((V,\angvec{ \ , })\) be an inner product space. An <dfn class="terminology">isometry</dfn>  of \(V\) is a function \(f\colon V\rightarrow V\) that preserves distance: i.e.,</p>
+<div class="displaymath">
+\begin{equation*}
+d(f(\boldv), f(\boldw))=d(\boldv, \boldw) \text{ for all \(\boldv, \boldw\in V\) }\text{.}
+\end{equation*}
+</div>
+<p class="continuation">In this exercise we will show that any isometry that maps \(\boldzero\) to \(\boldzero\) is a linear transformation. This is a very useful fact. For example, it implies the linearity of many geometric transformations we have considered: rotation about the origin in \(\R^2\text{,}\) reflection through a line in \(\R^2\text{,}\) etc..</p>
+<p id="p-1767">In what follows assume that \(f\) is an isometry of \(V\) satisfying \(f(\boldzero)=\boldzero\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-620"><p id="p-1768">Prove that \(\norm{f(\boldv)}=\norm{\boldv}\text{:}\) i.e., \(f\) preserves norms.</p></li>
+<li id="li-621"><p id="p-1769">Prove \(\angvec{f(\boldv), f(\boldw)}=\angvec{\boldv, \boldw}\text{:}\) i.e., \(f\) preserves inner products. Hint: first prove that \(\angvec{\boldv, \boldw}=\frac{1}{2}(\norm{\boldv}^2+\norm{\boldw}^2-\norm{\boldv-\boldw}^2)\text{.}\)</p></li>
+<li id="li-622">
+<p id="p-1770">To prove \(f\) is linear it is enough to show \(f(\boldv+c\boldw)=f(\boldv)+cf(\boldw)\) for all \(\boldv, \boldw\in V\text{,}\) \(c\in \R\text{.}\) To do so, use the above parts to show that</p>
+<div class="displaymath">
+\begin{equation*}
+\norm{f(\boldv+c\boldw)-(f(\boldv)+cf(\boldw))}=0\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Hint: regroup this difference in a suitable manner so that you can use parts (a)-(b). You may also want to use the identity</p>
+<div class="displaymath">
+\begin{equation*}
+\norm{\boldv-\boldw}^2=\norm{\boldv}^2-2\angvec{\boldv,\boldw}+\norm{\boldw}^2\text{.}
+\end{equation*}
+</div>
+</li>
+</ol></article></section></section></div></main>
+</div>
+</body>
+</html>

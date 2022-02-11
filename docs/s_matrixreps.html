@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-02-07T10:11:05-06:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Matrix representations of linear transformations</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg">miniversion=0.6</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\require{cancel}\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\C}{{\mathbb C}}
+\newcommand{\T}{{\mathbb T}}
+\newcommand{\F}{{\mathbb F}}
+\newcommand{\HH}{{\mathbb H}}
+\newcommand{\compose}{\circ}
+\newcommand{\bolda}{{\mathbf a}}
+\newcommand{\boldb}{{\mathbf b}}
+\newcommand{\boldc}{{\mathbf c}}
+\newcommand{\boldd}{{\mathbf d}}
+\newcommand{\bolde}{{\mathbf e}}
+\newcommand{\boldi}{{\mathbf i}}
+\newcommand{\boldj}{{\mathbf j}}
+\newcommand{\boldk}{{\mathbf k}}
+\newcommand{\boldn}{{\mathbf n}}
+\newcommand{\boldp}{{\mathbf p}}
+\newcommand{\boldq}{{\mathbf q}}
+\newcommand{\boldr}{{\mathbf r}}
+\newcommand{\bolds}{{\mathbf s}}
+\newcommand{\boldt}{{\mathbf t}}
+\newcommand{\boldu}{{\mathbf u}}
+\newcommand{\boldv}{{\mathbf v}}
+\newcommand{\boldw}{{\mathbf w}}
+\newcommand{\boldx}{{\mathbf x}}
+\newcommand{\boldy}{{\mathbf y}}
+\newcommand{\boldz}{{\mathbf z}}
+\newcommand{\boldzero}{{\mathbf 0}}
+\newcommand{\boldmod}{\boldsymbol{ \bmod }}
+\newcommand{\boldT}{{\mathbf T}}
+\newcommand{\boldN}{{\mathbf N}}
+\newcommand{\boldB}{{\mathbf B}}
+\newcommand{\boldF}{{\mathbf F}}
+\newcommand{\boldS}{{\mathbf S}}
+\newcommand{\boldG}{{\mathbf G}}
+\newcommand{\boldK}{{\mathbf K}}
+\newcommand{\boldL}{{\mathbf L}}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\NS}{null}
+\DeclareMathOperator{\RS}{row}
+\DeclareMathOperator{\CS}{col}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\range}{range}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\nullity}{nullity}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\Fix}{Fix}
+\DeclareMathOperator{\Aff}{Aff}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\mdeg}{mdeg}
+\DeclareMathOperator{\Lt}{Lt}
+\DeclareMathOperator{\Lc}{Lc}
+\DeclareMathOperator{\disc}{disc}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\adj}{adj}
+\DeclareMathOperator{\curl}{curl}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\diver}{div}
+\DeclareMathOperator{\flux}{flux}
+\def\Gal{\operatorname{Gal}}
+\def\ord{\operatorname{ord}}
+\def\ML{\operatorname{M}}
+\def\GL{\operatorname{GL}}
+\def\PGL{\operatorname{PGL}}
+\def\SL{\operatorname{SL}}
+\def\PSL{\operatorname{PSL}}
+\def\GSp{\operatorname{GSp}}
+\def\PGSp{\operatorname{PGSp}}
+\def\Sp{\operatorname{Sp}}
+\def\PSp{\operatorname{PSp}}
+\def\Aut{\operatorname{Aut}}
+\def\Inn{\operatorname{Inn}}
+\def\Hom{\operatorname{Hom}}
+\def\End{\operatorname{End}}
+\def\ch{\operatorname{char}}
+\def\Zp{\Z/p\Z}
+\def\Zm{\Z/m\Z}
+\def\Zn{\Z/n\Z}
+\def\Fp{\F_p}
+\newcommand{\surjects}{\twoheadrightarrow}
+\newcommand{\injects}{\hookrightarrow}
+\newcommand{\bijects}{\leftrightarrow}
+\newcommand{\isomto}{\overset{\sim}{\rightarrow}}
+\newcommand{\floor}[1]{\lfloor#1\rfloor}
+\newcommand{\ceiling}[1]{\left\lceil#1\right\rceil}
+\newcommand{\mclass}[2][m]{[#2]_{#1}}
+\newcommand{\val}[2][]{\left\lvert #2\right\rvert_{#1}}
+\newcommand{\valuation}[2][]{\left\lvert #2\right\rvert_{#1}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\anpoly}{a_nx^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+\newcommand{\anmonic}{x^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+\newcommand{\bmpoly}{b_mx^m+b_{m-1}x^{m-1}\cdots +b_1x+b_0}
+\newcommand{\pder}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\normalin}{\trianglelefteq}
+\newcommand{\angvec}[1]{\langle #1\rangle}
+\newcommand{\varpoly}[2]{#1_{#2}x^{#2}+#1_{#2-1}x^{#2-1}\cdots +#1_1x+#1_0}
+\newcommand{\varpower}[1][a]{#1_0+#1_1x+#1_1x^2+\cdots}
+\newcommand{\limasto}[2][x]{\lim_{#1\rightarrow #2}}
+\def\ntoinfty{\lim_{n\rightarrow\infty}}
+\def\xtoinfty{\lim_{x\rightarrow\infty}}
+\def\ii{\item}
+\def\bb{\begin{enumerate}}
+\def\ee{\end{enumerate}}
+\def\ds{\displaystyle}
+\def\p{\partial}
+\newcommand{\abcdmatrix}[4]{\begin{bmatrix}#1\amp #2\\ #3\amp #4 \end{bmatrix}
+}
+\newenvironment{amatrix}[1][ccc|c]{\left[\begin{array}{#1}}{\end{array}\right]}
+\newenvironment{linsys}[2][m]{
+\begin{array}[#1]{@{}*{#2}{rc}r@{}}
+}{
+\end{array}}
+\newcommand{\eqsys}{\begin{array}{rcrcrcr}
+a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp b_1\\
+a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp b_2\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \vdots\\
+a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp b_m
+\end{array}
+}
+\newcommand{\numeqsys}{\begin{array}{rrcrcrcr}
+e_1:\amp  a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp b_1\\
+e_2: \amp a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp b_2\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \vdots\\
+e_m: \amp a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp b_m
+\end{array}
+}
+\newcommand{\homsys}{\begin{array}{rcrcrcr}
+a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp 0\\
+a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp 0\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \vdots\\
+a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp 0
+\end{array}
+}
+\newcommand{\vareqsys}[4]{
+\begin{array}{ccccccc}
+#3_{11}x_{1}\amp +\amp #3_{12}x_{2}\amp +\cdots+\amp  #3_{1#2}x_{#2}\amp =\amp #4_1\\
+#3_{21}x_{1}\amp +\amp #3_{22}x_{2}\amp +\cdots+\amp #3_{2#2}x_{#2}\amp =\amp #4_2\\
+\vdots \amp \amp \vdots \amp  \amp \vdots \amp =\amp  \vdots\\
+#3_{#1 1}x_{1}\amp +\amp #3_{#1 2}x_{2}\amp +\cdots +\amp #3_{#1 #2}x_{#2}\amp =\amp #4_{#1}
+\end{array}
+}
+\newcommand{\genmatrix}[1][a]{
+\begin{bmatrix}
+#1_{11} \amp  #1_{12} \amp  \cdots \amp  #1_{1n} \\
+#1_{21} \amp  #1_{22} \amp  \cdots \amp  #1_{2n} \\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \\
+#1_{m1} \amp  #1_{m2} \amp  \cdots \amp  #1_{mn}
+\end{bmatrix}
+}
+\newcommand{\varmatrix}[3]{
+\begin{bmatrix}
+#3_{11} \amp  #3_{12} \amp  \cdots \amp  #3_{1#2} \\
+#3_{21} \amp  #3_{22} \amp  \cdots \amp  #3_{2#2} \\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \\
+#3_{#1 1} \amp  #3_{#1 2} \amp  \cdots \amp  #3_{#1 #2}
+\end{bmatrix}
+}
+\newcommand{\augmatrix}{
+\begin{amatrix}[cccc|c]
+a_{11} \amp  a_{12} \amp  \cdots \amp  a_{1n} \amp b_{1}\\
+a_{21} \amp  a_{22} \amp  \cdots \amp  a_{2n} \amp b_{2}\\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \amp \vdots\\
+a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
+\end{amatrix}
+}
+\newcommand{\varaugmatrix}[4]{
+\begin{amatrix}[cccc|c]
+#3_{11} \amp  #3_{12} \amp  \cdots \amp  #3_{1#2} \amp #4_{1}\\
+#3_{21} \amp  #3_{22} \amp  \cdots \amp  #3_{2#2} \amp #4_{2}\\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \amp \vdots\\
+#3_{#1 1} \amp  #3_{#1 2} \amp  \cdots \amp  #3_{#1 #2}\amp #4_{#1}
+\end{amatrix}
+}
+\newcommand{\spaceforemptycolumn}{\makebox[\wd\boxofmathplus]{\ }}
+
+\newcommand{\generalmatrix}[3]{
+\left(
+\begin{array}{cccc}
+#1_{1,1}  \amp #1_{1,2}  \amp \ldots  \amp #1_{1,#2}  \\
+#1_{2,1}  \amp #1_{2,2}  \amp \ldots  \amp #1_{2,#2}  \\
+\amp \vdots                         \\
+#1_{#3,1} \amp #1_{#3,2} \amp \ldots  \amp #1_{#3,#2}
+\end{array}
+\right)  }
+\newcommand{\colvec}[2][c]{\begin{bmatrix}[#1] #2 \end{bmatrix}}
+\DeclareMathOperator{\size}{size}
+\DeclareMathOperator{\adjoint}{adj}
+\DeclareMathOperator{\sgn}{sgn}
+\newcommand{\restrictionmap}[2]{{#1}\mathpunct\upharpoonright\hbox{}_{#2}}
+\renewcommand{\emptyset}{\varnothing}
+
+\newcommand{\proj}[2]{\mbox{proj}_{#2}({#1}) }
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://linear-algebra.northwestern.pub/" target="_blank"><img src="external/images/im_holycomm.svg" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">Linear algebra: the theory of vector spaces and linear transformations</span></a></h1>
+<p class="byline">Aaron Greicius</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="s_coordinatevectors_isomorphisms.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="c_transbasis.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="s_changeofbasis.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="s_coordinatevectors_isomorphisms.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="c_transbasis.html" title="Up">Up</a><a class="next-button button toolbar-item" href="s_changeofbasis.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link">
+<a href="c_foundations.html" data-scroll="c_foundations"><span class="codenumber">1</span> <span class="title">Foundations</span></a><ul>
+<li><a href="s_sets_functions.html" data-scroll="s_sets_functions">Sets and functions</a></li>
+<li><a href="s_logic.html" data-scroll="s_logic">Logic</a></li>
+<li><a href="s_proof_technique.html" data-scroll="s_proof_technique">Proof techniques</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_linear_systems.html" data-scroll="c_linear_systems"><span class="codenumber">2</span> <span class="title">Systems of linear equations</span></a><ul>
+<li><a href="s_systems.html" data-scroll="s_systems">Systems of linear equations</a></li>
+<li><a href="s_ge.html" data-scroll="s_ge">Gaussian elimination</a></li>
+<li><a href="s_solving.html" data-scroll="s_solving">Solving linear systems</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_matrices.html" data-scroll="c_matrices"><span class="codenumber">3</span> <span class="title">Matrices, their arithmetic, and their algebra</span></a><ul>
+<li><a href="s_matrix.html" data-scroll="s_matrix">Matrices and their arithmetic</a></li>
+<li><a href="s_algebraic.html" data-scroll="s_algebraic">Algebra of matrices</a></li>
+<li><a href="s_invertible_matrices.html" data-scroll="s_invertible_matrices">Invertible matrices</a></li>
+<li><a href="s_invertibility_theorem.html" data-scroll="s_invertibility_theorem">The invertibility theorem</a></li>
+<li><a href="s_det.html" data-scroll="s_det">The determinant</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_vectorspace.html" data-scroll="c_vectorspace"><span class="codenumber">4</span> <span class="title">Vector spaces and linear transformations</span></a><ul>
+<li><a href="s_vectorspace.html" data-scroll="s_vectorspace">Real vector spaces</a></li>
+<li><a href="s_transformation.html" data-scroll="s_transformation">Linear transformations</a></li>
+<li><a href="s_subspace.html" data-scroll="s_subspace">Subspaces</a></li>
+<li><a href="s_span_independence.html" data-scroll="s_span_independence">Span and linear independence</a></li>
+<li><a href="s_basis_dimension.html" data-scroll="s_basis_dimension">Bases and dimension</a></li>
+<li><a href="s_rank_nullity.html" data-scroll="s_rank_nullity">Rank-nullity theorem and fundamental spaces</a></li>
+<li><a href="s_isom.html" data-scroll="s_isom">Isomorphisms</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_innerproductspaces.html" data-scroll="c_innerproductspaces"><span class="codenumber">5</span> <span class="title">Inner product spaces</span></a><ul>
+<li><a href="s_innerproducts.html" data-scroll="s_innerproducts">Inner product spaces</a></li>
+<li><a href="s_orthogonality.html" data-scroll="s_orthogonality">Orthogonal bases and orthogonal projection</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_transbasis.html" data-scroll="c_transbasis"><span class="codenumber">6</span> <span class="title">Eigenvectors and diagonalization</span></a><ul>
+<li><a href="s_coordinatevectors_isomorphisms.html" data-scroll="s_coordinatevectors_isomorphisms">Coordinate vectors and isomorphisms</a></li>
+<li><a href="s_matrixreps.html" data-scroll="s_matrixreps" class="active">Matrix representations of linear transformations</a></li>
+<li><a href="s_changeofbasis.html" data-scroll="s_changeofbasis">Change of basis</a></li>
+<li><a href="ss_eigenvectors.html" data-scroll="ss_eigenvectors">Eigenvectors and eigenvalues</a></li>
+<li><a href="ss_diagonalization.html" data-scroll="ss_diagonalization">Diagonalization</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="appendix-notation.html" data-scroll="appendix-notation"><span class="codenumber">A</span> <span class="title">Notation</span></a></li>
+<li class="link"><a href="appendix-defs.html" data-scroll="appendix-defs"><span class="codenumber">B</span> <span class="title">Definitions</span></a></li>
+<li class="link"><a href="appendix-thms.html" data-scroll="appendix-thms"><span class="codenumber">C</span> <span class="title">Theory and procedures</span></a></li>
+<li class="link"><a href="appendix-egs.html" data-scroll="appendix-egs"><span class="codenumber">D</span> <span class="title">Examples</span></a></li>
+<li class="link"><a href="appendix-vids.html" data-scroll="appendix-vids"><span class="codenumber">E</span> <span class="title">Video examples and figures</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="s_matrixreps"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">6.2</span> <span class="title">Matrix representations of linear transformations</span>
+</h2>
+<section class="introduction" id="introduction-45"><p id="p-1967">We have seen how the coordinate vector map can be used to translate a linear algebraic question posed about a finite-dimensional vector space \(V\) into a question about \(\R^n\text{,}\) where we have many computational algorithms at our disposal.</p>
+<p id="p-1968">We would like to extend this technique to linear transformations \(T\colon V\rightarrow W\text{,}\) where both \(V\) and \(W\) are <em class="emphasis">finite-dimensional</em>. The basic idea, to be fleshed out below, can be described as follows:</p>
+<ol class="decimal">
+<li id="li-692"><p id="p-1969">Pick a basis \(B\) for \(V\text{,}\) and a basis \(B'\) for \(W\text{.}\)</p></li>
+<li id="li-693"><p id="p-1970">“Identify” \(V\) with \(\R^n\) and \(W\) with \(\R^m\) using the coordinate vector isomorphisms \([\hspace{5pt}]_B\) and \([\hspace{5pt}]_{B'}\text{,}\) respectively.</p></li>
+<li id="li-694"><p id="p-1971">“Model” the linear transformation \(T\colon V\rightarrow W\) with a certain linear transformation \(T_A\colon \R^n\rightarrow \R^m\text{.}\)</p></li>
+</ol>
+<p id="p-1972">The matrix \(A\) defining \(T_A\) will be called the <em class="emphasis">matrix representing \(T\) with respect to our choice of basis \(B\) for \(V\) and \(B'\) for \(W\)</em>.</p>
+<p id="p-1973">In what sense does \(A\) “model” \(T\text{?}\) All the properties of \(T\) we are interested in (\(\NS T\text{,}\) \(\nullity T\text{,}\) \(\im T\text{,}\) \(\rank T\text{,}\) etc.) are perfectly mirrored by the matrix \(A\text{.}\)</p>
+<p id="p-1974">As a result, this technique allows us to answer questions about the original \(T\) essentially by applying a relevant matrix algorithm to \(A\text{.}\)</p></section><section class="subsection" id="ss_matrix_reps"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.2.1</span> <span class="title">Matrix representations of linear transformations</span>
+</h3>
+<article class="definition definition-like" id="d_matrix_representation"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.2.1</span><span class="period">.</span>
+</h4>
+<p id="p-1975">Let \(V\) and \(W\) be vector spaces with ordered bases \(B=(\boldv_1, \boldv_2, \dots, \boldv_n)\) and \(B'=(\boldw_1, \boldw_2, \dots, \boldw_m)\text{,}\) respectively.  Given a linear transformation \(T\colon V\rightarrow W\text{,}\) the <dfn class="terminology">matrix representing \(T\) with respect to \(B\) and \(B'\)</dfn>, is the \(m\times n\) matrix \([T]_B^{B'}\) whose \(j\)-th column is \([T(\boldv_j)]_{B'}\text{,}\) considered as a column vector: i.e.,</p>
+<div class="displaymath">
+\begin{equation*}
+[T]_B^{B'}=\begin{amatrix}[cccc]\vert \amp \vert \amp \amp \vert \\
+\left[T(\boldv_1)\right]_{B'}\amp [T(\boldv_2)]_{B'}\amp \dots \amp [T(\boldv_n)]_{B'} \\
+\vert \amp \vert \amp  \amp \vert
+\end{amatrix}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">In the special case where \(W=V\) and we pick \(B'=B\) we write simply \([T]_B\text{.}\)</p></article><article class="theorem theorem-like" id="th_matrixrep"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.2.2</span><span class="period">.</span>
+</h4>
+<p id="p-1976">Let \(T\colon V\rightarrow W\) be a linear transformation, where \(\dim V=n\) and \(\dim W=m\text{,}\) and let \(B, B'\) be ordered bases for \(V\) and \(W\text{,}\) respectively. The matrix \([T]_B^{B'}\) is the <em class="emphasis">unique</em> \(m\times n\) matrix saitsfying the following property:</p>
+<div class="displaymath">
+\begin{equation}
+[T]_{B}^{B'}[\boldv]_B=[T(\boldv)]_{B'} \text{ for all } \boldv\in V\text{.}\label{eq_matrixrep_prop}\tag{6.2.1}
+\end{equation}
+</div>
+<p class="continuation">Here \([\boldv]_B\) is treated as an \(n\times 1\) column vector.</p></article><article class="hiddenproof" id="proof-86"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-86"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-86"><article class="hiddenproof"><p id="p-1977">We must prove two things: (1) the matrix \(A=[T]_{B}^{B'}\) satisfies <a href="" class="xref" data-knowl="./knowl/eq_matrixrep_prop.html" title="Equation 6.2.1">(6.2.1)</a>; (2) if \(A\) satisfies \(A[\boldv]_B=[T(\boldv)]_{B}\) for all \(\boldv\in V\text{,}\) then \(A=[T]_{B}^{B'}\text{.}\)</p>
+<p id="p-1978">Assume we have \(B=(\boldv_1, \boldv_2, \dots, \boldv_n)\text{.}\)</p>
+<ol class="decimal">
+<li id="li-695">
+<p id="p-1979">By definition we have</p>
+<div class="displaymath">
+\begin{equation*}
+[T]_B^{B'}=\begin{amatrix}[cccc]\vert \amp \vert \amp \amp \vert \\
+\left[T(\boldv_1)\right]_{B'}\amp [T(\boldv_2)]_{B'}\amp \dots \amp [T(\boldv_n)]_{B'} \\
+\vert \amp \vert \amp  \amp \vert
+\end{amatrix}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Given any \(\boldv\in V\text{,}\) we can write</p>
+<div class="displaymath">
+\begin{equation*}
+\boldv=c_1\boldv_1+c_2\boldv_2+\dots +c_n\boldv_n
+\end{equation*}
+</div>
+<p class="continuation">for some \(c_i\in \R\text{.}\) Then</p>
+<div class="displaymath">
+\begin{align*}
+[T]_{B}^{B'}[\boldv] \amp= [T]_{B}^{B'} \begin{bmatrix}
+c_1\\ c_2\\ \vdots \\ v_n
+\end{bmatrix} \\
+\amp=c_1[T(\boldv_1)]_{B'}+c_n[T(\boldv_n)]_{B'}+\cdots +c_n[T(\boldv_n)]_{B'} \amp (\text{column method})\\
+\amp = [c_1T(\boldv_1)+c_2T(\boldv_2)+\cdots +c_nT(\boldv_n)]_{B'} \amp (\knowl{./knowl/th_coordinates.html}{\text{6.1.9}})\\
+\amp=[T(c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n)]_{B'} \amp (T \text{ is linear})\\
+\amp =[T(\boldv)]_{B'}\text{,}
+\end{align*}
+</div>
+<p class="continuation">as desired.</p>
+</li>
+<li id="li-696">
+<p id="p-1980">Assume \(A\) satisfies</p>
+<div class="displaymath">
+\begin{equation*}
+A[\boldv]_B=[T(\boldv)]_{B'}
+\end{equation*}
+</div>
+<p class="continuation">for all \(\boldv\in V\text{.}\) Then in particular we have</p>
+<div class="displaymath">
+\begin{equation}
+A[\boldv_i]_B=[T(\boldv_i)]_{B'}\label{eq_matrixrep_proof}\tag{6.2.2}
+\end{equation}
+</div>
+<p class="continuation">for all \(1\leq i\leq n\text{.}\) Since \(\boldv_i\) is the \(i\)-th element of \(B\text{,}\) we have \([\boldv_i]_B=\bolde_i\text{,}\) the \(i\)-th standard basis element of \(\R^n\text{.}\) Using the column method (<a href="" class="xref" data-knowl="./knowl/th_column_method.html" title="Theorem 3.1.19: Column method of matrix multiplication">3.1.19</a>), we see that</p>
+<div class="displaymath">
+\begin{equation*}
+A[\boldv_i]_B=A\bolde_i=\boldc_i,
+\end{equation*}
+</div>
+<p class="continuation">where \(\boldc_i\) is the \(i\)-th column of \(A\text{.}\) Thus <a href="" class="xref" data-knowl="./knowl/eq_matrixrep_proof.html" title="Equation 6.2.2">(6.2.2)</a> implies that the \(i\)-th column of \(A\) is equal to \([T(\boldv_i)]_{B}\text{,}\) the \(i\)-th column of \([T]_B^{B'}\text{,}\) for all \(1\leq i\leq n\text{.}\) Since \(A\) and \([T]_{B}^{B'}\) have identical columns, we conclude that \(A=[T]_{B}^{B'}\text{,}\) as desired.</p>
+</li>
+</ol></article></div>
+<article class="remark remark-like" id="rm_matrixreps_uniqueness"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">6.2.3</span><span class="period">.</span><span class="space"> </span><span class="title">Uniqueness of \([T]_B^{B'}\).</span>
+</h4>
+<p id="p-1981">The uniqueness claim of <a href="" class="xref" data-knowl="./knowl/th_matrixrep.html" title="Theorem 6.2.2">Theorem 6.2.2</a> provides an alternative way of computing \([T]_{B}^{B'}\text{:}\) namely, simply find an  \(m\times n\) matrix \(A\) that satisfies</p>
+<div class="displaymath">
+\begin{equation*}
+A[\boldv]_B=[T(\boldv)]_{B'}
+\end{equation*}
+</div>
+<p class="continuation">for all \(\boldv\in V\text{.}\) Since there is only one such matrix, we must have \(A=[T]_B^{B'}\text{.}\)</p></article><article class="remark remark-like" id="rm_commutative_diagram"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">6.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">Commutative diagram for \([T]_B^{B'}\).</span>
+</h4>
+<p id="p-1982">Let \(T\colon V\rightarrow W\text{,}\) \(B\text{,}\) and \(B'\) be as in <a href="" class="xref" data-knowl="./knowl/th_matrixrep.html" title="Theorem 6.2.2">Theorem 6.2.2</a>. The defining property of \([T]_B^{B'}\) (<a href="" class="xref" data-knowl="./knowl/eq_matrixrep_prop.html" title="Equation 6.2.1">(6.2.1)</a>) can be summarized by saying that the following diagram is <em class="emphasis">commutative</em>.</p>
+<figure class="figure figure-like" id="fig_comm_diag"><div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="generated/latex-image/im_comm_diag.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.5<span class="period">.</span></span><span class="space"> </span>Commutative diagram for \([T]_B^{B'}\)</figcaption></figure><p id="p-1983">That the diagram is commutative means that starting with an element \(\boldv\in V\) in the top left of the diagram, whether we travel to the bottom right of the diagram either by first applying \(T\) and then applying \([\hspace{5pt}]_{B'}\) (“go right, then down”), or else by first applying \([\hspace{5pt}]_B\) and then applying \([T]_B^{B'}\) (“go down, then right”), we get the same result! (The bottom map should technically be labeled \(T_A\text{,}\) where \(A=[T]_B^{B'}\text{,}\) but this would detract from the elegance of the diagram.)</p></article><article class="remark remark-like" id="rm_matrixreps_model"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">6.2.6</span><span class="period">.</span><span class="space"> </span><span class="title">How \([T]_B^{B'}\) represents \(T\).</span>
+</h4>
+<p id="p-1984">In what precise sense does the matrix \(A=[T]_{B}^{B'}\) represent or model the linear transformation \(T\text{?}\) To answer this question we enumerate the key features of <a href="" class="xref" data-knowl="./knowl/fig_comm_diag.html" title="Figure 6.2.5">Figure 6.2.5</a>:</p>
+<ul class="disc">
+<li id="li-697">
+<p id="p-1985">The diagram is <em class="emphasis">commutative</em>: i.e.,</p>
+<div class="displaymath">
+\begin{equation*}
+A[\boldv]_B=[T(\boldv)]_{B}^{B'}
+\end{equation*}
+</div>
+<p class="continuation">for all \(\boldv\in V\text{.}\)</p>
+</li>
+<li id="li-698"><p id="p-1986">The vertical coordinate vector maps are <em class="emphasis">isomorphisms</em>.</p></li>
+</ul>
+<p class="continuation">These two properties together allow us to translate any linear algebraic fact about \(T\) to an equivalent fact about the matrix \(A\text{.}\) We list a few here:</p>
+<ul class="disc">
+<li id="li-699"><p id="p-1987">\(\boldv\in \NS T\) if and only if \([\boldv]_B\in \NS A\)</p></li>
+<li id="li-700"><p id="p-1988">\(\boldw\in \im T\) if and only if \([\boldw]_{B'}\in \CS A=\im_{T_A}\)</p></li>
+<li id="li-701"><p id="p-1989">\(\{\boldv_1,\boldv_2,\dots, \boldv_r\}\) is a basis of \(\NS T\) if and only if \(\{[\boldv_1]_B, [\boldv_2]_B, \dots, [\boldv_r]_B\}\) is a basis of \(\NS A\)</p></li>
+<li id="li-702"><p id="p-1990">\(\{\boldw_1,\boldw_2,\dots, \boldw_s\}\) is a basis of \(\im T\) if and only if \(\{[\boldw_1]_{B'}, [\boldw_2]_{B'}, \dots, [\boldv_s]_{B'}\}\) is a basis of \(\CS A=\im_{T_A}\text{.}\)</p></li>
+<li id="li-703"><p id="p-1991">\(\nullity T=\nullity A\) and \(\rank T=\rank A\)</p></li>
+<li id="li-704"><p id="p-1992">\(T\) is an isomorphism if and only if \(A\) is invertible.</p></li>
+</ul></article></section><section class="subsection" id="subsection-84"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.2.2</span> <span class="title">Example</span>
+</h3>
+<p id="p-1993">Define \(T\colon P_{3}\rightarrow P_{2}\) by \(T(p(x))=p'(x)\text{.}\) Compute \(A=[T]_{B}^{B'}\text{,}\) where \(B\) and \(B'\) are the standard bases for \(P_3\) and \(P_2\text{,}\) respectively.</p>
+<p id="p-1994">Use \(A\) to determine \(\NS T\) and \(\range T\text{.}\) \​begin{bsolution} The matrix \(A\) will be \(3\times 4\text{.}\) Denote by \(\boldc_j\) the \(j\)-th column of \(A\text{.}\) We use the formula for \(\boldc_j\text{:}\)</p>
+<div class="displaymath">
+\begin{align*}
+\boldc_1\amp =[T(1)]_{B'}=[0]_{B'}=\begin{bmatrix} 0\\
+0\\
+0 \end{bmatrix} \amp \boldc_2\amp =[T(x)]_{B'}=[1]_{B'}=\begin{bmatrix} 1\\
+0\\
+0 \end{bmatrix}\\
+\boldc_3\amp =[T(x^2)]_{B'}=[2x]_{B'}=\begin{bmatrix} 0\\
+2\\
+0 \end{bmatrix} \amp \boldc_4\amp =[T(x^3)]_{B'}=[3x^2]_{B'}=\begin{bmatrix} 0\\
+0\\
+3 \end{bmatrix}
+\end{align*}
+</div>
+<p id="p-1995">Thus \(A=\begin{bmatrix}0\amp 1\amp 0\amp 0\\ 0\amp 0\amp 2\amp 0\\ 0\amp 0\amp 0\amp 3 \end{bmatrix}\text{.}\)</p>
+<p id="p-1996">We see easily that \(\NS A =\Span(\{(1,0,0,0)\})\) and \(\range A=\CS A=\R^3\text{.}\) Translating everything back to the original spaces, we see that \(\NS(T)=\Span(\{1\})=\{\text{ constant poly.'s } \}\) and \(\range(T)=P_2\text{.}\) \end{bsolution}</p></section><section class="subsection" id="subsection-85"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.2.3</span> <span class="title">Example</span>
+</h3>
+<p id="p-1997">Define \(T\colon M_{22}\rightarrow M_{22}\) by \(T(A)=A^T+A\text{.}\) Let \(B\) be the standard basis of \(M_{22}\text{,}\) and let</p></section><div class="displaymath">
+\begin{equation*}
+B'=\{
+\begin{bmatrix}0\amp 1\\
+-1\amp 0
+\end{bmatrix} ,
+\begin{bmatrix}1\amp 0\\
+0\amp 0
+\end{bmatrix} ,
+\begin{bmatrix}0\amp 1\\
+1\amp 0
+\end{bmatrix} ,
+\begin{bmatrix}0\amp 0\\
+0\amp 1
+\end{bmatrix}
+\}\text{.}
+\end{equation*}
+</div>
+<ol class="decimal">
+<li id="li-705"><p id="p-1998">Compute \(A=[T]_B\text{.}\)</p></li>
+<li id="li-706"><p id="p-1999">Compute \(A'=[T]_{B'}\text{.}\)</p></li>
+</ol>
+<div class="displaymath" id="p-2000">
+\begin{equation*}
+A=\begin{bmatrix}2\amp 0\amp 0\amp 0\\ 0\amp 1\amp 1\amp 0\\ 0\amp 1\amp 1\amp 0\\ 0\amp 0\amp 0\amp 2 \end{bmatrix} , A'=\begin{bmatrix}0\amp 0\amp 0\amp 0\\ 0\amp 2\amp 0\amp 0\\ 0\amp 0\amp 2\amp 0\\ 0\amp 0\amp 0\amp 2 \end{bmatrix}
+\end{equation*}
+</div>
+<p id="p-2001"><em class="emphasis">Moral</em>: our choice of basis affects the matrix representing \(T\text{,}\) and some choices are better than others!</p>
+<section class="subsection" id="subsection-86"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.2.4</span> <span class="title">\(\R^n\) revisited</span>
+</h3>
+<p id="p-2002">Consider the <em class="emphasis">special case</em> of the form \(T\colon \R^n\rightarrow \R^m\text{.}\) We know that in this case we have \(T=T_A\text{,}\) where</p>
+<div class="displaymath">
+\begin{equation*}
+A= \begin{bmatrix}\vert\amp \vert\amp \cdots \amp \vert \\ T(\bolde_1)\amp  T(\bolde_2)\amp \cdots \amp T(\bolde_n)\\ \vert\amp \vert\amp \cdots \amp \vert \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<p id="p-2003">In light of our recent discussion we recognize this as simply \(A=[T]_{B}^{B'}\text{,}\) where \(B,B'\) are the <em class="emphasis">standard bases</em> of \(\R^n\) and \(\R^m\text{.}\)</p>
+<p id="p-2004">This is certainly the most direct way of associating a matrix to the transformation \(T\) in this case, but it begs the question as to whether another choice of bases gives us a <em class="emphasis">better</em> matrix representation!</p>
+<p id="p-2005">Example follows.</p></section><section class="subsection" id="subsection-87"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.2.5</span> <span class="title">Example</span>
+</h3>
+<p id="p-2006">Let \(W\colon x+y+z=0\) be the plane in \(\R^3\) perpendicular to \(\boldn=(1,1,1)\text{,}\) and consider the orthogonal projection transformation \(T=\text{ proj } _W\colon \R^3\rightarrow \R^3\text{.}\)</p>
+<p id="p-2007">The recipe in the last slide tells us that \(\text{ proj } _W=T_A\) where \(A=\begin{bmatrix}2/3 \amp -1/3\amp -1/3\\-1/3\amp 2/3\amp -1/3\\ -1/3\amp -1/3\amp 2/3 \end{bmatrix}\text{.}\)</p>
+<p id="p-2008">This \(A\) is nothing more than \([T]_B\text{,}\) where \(B=\{\bolde_1,\bolde_2,\bolde_3\}\) is the <em class="emphasis">standard basis</em> of \(\R^3\text{.}\) We ask: Is there another basis \(B'\) for which the matrix \(A'=[T]_{B'}\) is simpler?</p>
+<p id="p-2009">Yes!! I'll build a basis that pays more attention to the geometry involved in defining \(T\text{.}\) Start first with a basis of the plane \(W\text{:}\) the set \(\{\boldv_1=(1,-1,0),\boldv_2=(0,1,-1)\}\) will do. Now <em class="emphasis">extend</em> to a basis of \(\R^3\text{.}\) We need only add a vector that is not included already in \(W\text{:}\) the normal vector \(\boldv_3=(1,1,1)\) to the plane is a natural choice.</p>
+<p id="p-2010">Thus we consider the basis \(B'=\{\boldv_1,\boldv_2, \boldv_3\}\) and compute \(A'=[\text{ proj } _W]_{B'}\text{:}\) { $ A'=</p> \​begin{bmatrix}\vert\amp \vert\amp \vert\\ [T(\boldv_1)]_{B'}\amp [T(\boldv_2)]_{B'}\amp [T(\boldv_3)]_{B'}\\ \vert\amp \vert\amp \vert \end{bmatrix} \​begin{bmatrix}\vert\amp \vert\amp \vert\\ [\boldv_1]_{B'}\amp [\boldv_2]_{B'}\amp [\boldzero]_{B'}\\ \vert\amp \vert\amp \vert \end{bmatrix} \​begin{bmatrix}1\amp 0\amp 0\\ 0\amp 1\amp 0\\ 0\amp 0\amp 0 \end{bmatrix} <p id="p-2011">Wow, \(A'\) is way simpler! How can both of these matrices “represent” the same linear transformation?</p></section><p id="p-2012">{ Let \(W\colon x+y+z=0\) be a the plane in \(\R^3\) perpendicular to \(\boldn=(1,1,1)\text{,}\) and consider the orthogonal projection transformation \(T=\text{ proj } _W\colon \R^3\rightarrow \R^3\text{.}\)</p>
+<p id="p-2013">Two different bases: \(B=\{\bolde_1,\bolde_2,\bolde_3\}\text{,}\)\(B'=\{\boldv_1=(1,-1,0),\boldv_2=(0,1,-1), \boldv_3=(1,1,1)\}\text{.}\)</p>
+<p id="p-2014">Two different matrix representations:</p>
+<p id="p-2015">\(A=[T]_B=\frac{1}{3}\begin{bmatrix}2 \amp -1\amp -1\\-1\amp 2\amp -1\\ -1\amp -1\amp 2 \end{bmatrix}\text{,}\) \(A'=[T]_{B'}=\begin{bmatrix}1\amp 0\amp 0\\ 0\amp 1\amp 0\\ 0\amp 0\amp 0 \end{bmatrix}\text{.}\)}</p>
+<p id="p-2016">The simpler matrix \(A'\) gives us a clear <em class="emphasis">conceptual</em> understanding of this orthogonal projection.</p>
+<p id="p-2017">For example, we see that \(\CS A'=\Span(\{(1,0,0),(0,1,0)\})\) and \(\NS A'=\Span(\{(0,0,1)\}\text{,}\) and furthermore \(A'\) acts as the identity on \(\CS A'\text{,}\) and as the zero transformation on \(\NS A'\text{.}\)</p>
+<p id="p-2018">Using \([\hspace{5pt}]_{B'}^{-1}\) we can translate this information back to \(T=\text{ proj } _W\text{.}\) Namely, \(\range T=\Span\{(\boldv_1,\boldv_2)\}=W\text{,}\) \(\NS T=\Span \{\boldv_3\}=\Span \{\boldn\}\text{,}\) and furthermore, \(T\) acts as the identity on \(W\) and as the zero transformation on \(\Span\{\boldn\}\text{.}\)</p>
+<p id="p-2019">However, if we actually want an <em class="emphasis">explicit formula</em> for computing he orthogonal projection of a vector \(\boldx\in \R^3\) onto \(W\text{,}\) we are better off using \(A\text{,}\) since we have \(\proj{\boldx}{W}=A\boldx\text{.}\)</p>
+<p id="p-2020">So both representations have their own particular virtue! In the next section we develop a means for fluidly going back and forth between the two.</p>
+<p id="p-2021">Wouldn't it have been easier just to compute</p></section></div></main>
+</div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-02-07T10:11:32-06:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="hiddenproof"><p>As simple as this claim might seem, remember that we are dealing with a completely new algebraic system here. We will prove both implications of “if and only if” statement separately.</p>
+<article class="case"><h4 class="heading">Proof: \(A+B=A+C\implies B=C\).</h4>
+<p>We prove this via a chain of implications:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+A+B=A+C\amp \implies -A+(A+B)=-A+(A+C) \\
+\amp\implies (-A+A)+B=(-A+A)+C\amp (\knowl{./knowl/th_matrixadd_assoc.html}{\text{Addition associative law}}) \\
+\amp\implies \boldzero_{m\times n}+B=\boldzero_{m\times n}+C \amp (\knowl{./knowl/th_matrix_add_inverse.html}{\text{Item 2}}) \\
+\amp \implies B=C \amp (\knowl{./knowl/th_matrix_add_ident.html}{\text{Item 1}}) \text{.}
+\end{align*}
+</div></article><article class="case"><h4 class="heading">Proof: \(B=C\implies A+B=A+C\).</h4>
+<p>This direction is obvious: if \(B\) and \(C\) are equal matrices, then they remain equal when we add \(A\) to each of them.</p></article></article></body>
+</html>

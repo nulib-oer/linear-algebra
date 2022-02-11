@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-02-07T10:11:11-06:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Theory and procedures</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg">miniversion=0.6</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\require{cancel}\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\C}{{\mathbb C}}
+\newcommand{\T}{{\mathbb T}}
+\newcommand{\F}{{\mathbb F}}
+\newcommand{\HH}{{\mathbb H}}
+\newcommand{\compose}{\circ}
+\newcommand{\bolda}{{\mathbf a}}
+\newcommand{\boldb}{{\mathbf b}}
+\newcommand{\boldc}{{\mathbf c}}
+\newcommand{\boldd}{{\mathbf d}}
+\newcommand{\bolde}{{\mathbf e}}
+\newcommand{\boldi}{{\mathbf i}}
+\newcommand{\boldj}{{\mathbf j}}
+\newcommand{\boldk}{{\mathbf k}}
+\newcommand{\boldn}{{\mathbf n}}
+\newcommand{\boldp}{{\mathbf p}}
+\newcommand{\boldq}{{\mathbf q}}
+\newcommand{\boldr}{{\mathbf r}}
+\newcommand{\bolds}{{\mathbf s}}
+\newcommand{\boldt}{{\mathbf t}}
+\newcommand{\boldu}{{\mathbf u}}
+\newcommand{\boldv}{{\mathbf v}}
+\newcommand{\boldw}{{\mathbf w}}
+\newcommand{\boldx}{{\mathbf x}}
+\newcommand{\boldy}{{\mathbf y}}
+\newcommand{\boldz}{{\mathbf z}}
+\newcommand{\boldzero}{{\mathbf 0}}
+\newcommand{\boldmod}{\boldsymbol{ \bmod }}
+\newcommand{\boldT}{{\mathbf T}}
+\newcommand{\boldN}{{\mathbf N}}
+\newcommand{\boldB}{{\mathbf B}}
+\newcommand{\boldF}{{\mathbf F}}
+\newcommand{\boldS}{{\mathbf S}}
+\newcommand{\boldG}{{\mathbf G}}
+\newcommand{\boldK}{{\mathbf K}}
+\newcommand{\boldL}{{\mathbf L}}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\NS}{null}
+\DeclareMathOperator{\RS}{row}
+\DeclareMathOperator{\CS}{col}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\range}{range}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\nullity}{nullity}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\Fix}{Fix}
+\DeclareMathOperator{\Aff}{Aff}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\mdeg}{mdeg}
+\DeclareMathOperator{\Lt}{Lt}
+\DeclareMathOperator{\Lc}{Lc}
+\DeclareMathOperator{\disc}{disc}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\adj}{adj}
+\DeclareMathOperator{\curl}{curl}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\diver}{div}
+\DeclareMathOperator{\flux}{flux}
+\def\Gal{\operatorname{Gal}}
+\def\ord{\operatorname{ord}}
+\def\ML{\operatorname{M}}
+\def\GL{\operatorname{GL}}
+\def\PGL{\operatorname{PGL}}
+\def\SL{\operatorname{SL}}
+\def\PSL{\operatorname{PSL}}
+\def\GSp{\operatorname{GSp}}
+\def\PGSp{\operatorname{PGSp}}
+\def\Sp{\operatorname{Sp}}
+\def\PSp{\operatorname{PSp}}
+\def\Aut{\operatorname{Aut}}
+\def\Inn{\operatorname{Inn}}
+\def\Hom{\operatorname{Hom}}
+\def\End{\operatorname{End}}
+\def\ch{\operatorname{char}}
+\def\Zp{\Z/p\Z}
+\def\Zm{\Z/m\Z}
+\def\Zn{\Z/n\Z}
+\def\Fp{\F_p}
+\newcommand{\surjects}{\twoheadrightarrow}
+\newcommand{\injects}{\hookrightarrow}
+\newcommand{\bijects}{\leftrightarrow}
+\newcommand{\isomto}{\overset{\sim}{\rightarrow}}
+\newcommand{\floor}[1]{\lfloor#1\rfloor}
+\newcommand{\ceiling}[1]{\left\lceil#1\right\rceil}
+\newcommand{\mclass}[2][m]{[#2]_{#1}}
+\newcommand{\val}[2][]{\left\lvert #2\right\rvert_{#1}}
+\newcommand{\valuation}[2][]{\left\lvert #2\right\rvert_{#1}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\anpoly}{a_nx^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+\newcommand{\anmonic}{x^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+\newcommand{\bmpoly}{b_mx^m+b_{m-1}x^{m-1}\cdots +b_1x+b_0}
+\newcommand{\pder}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\normalin}{\trianglelefteq}
+\newcommand{\angvec}[1]{\langle #1\rangle}
+\newcommand{\varpoly}[2]{#1_{#2}x^{#2}+#1_{#2-1}x^{#2-1}\cdots +#1_1x+#1_0}
+\newcommand{\varpower}[1][a]{#1_0+#1_1x+#1_1x^2+\cdots}
+\newcommand{\limasto}[2][x]{\lim_{#1\rightarrow #2}}
+\def\ntoinfty{\lim_{n\rightarrow\infty}}
+\def\xtoinfty{\lim_{x\rightarrow\infty}}
+\def\ii{\item}
+\def\bb{\begin{enumerate}}
+\def\ee{\end{enumerate}}
+\def\ds{\displaystyle}
+\def\p{\partial}
+\newcommand{\abcdmatrix}[4]{\begin{bmatrix}#1\amp #2\\ #3\amp #4 \end{bmatrix}
+}
+\newenvironment{amatrix}[1][ccc|c]{\left[\begin{array}{#1}}{\end{array}\right]}
+\newenvironment{linsys}[2][m]{
+\begin{array}[#1]{@{}*{#2}{rc}r@{}}
+}{
+\end{array}}
+\newcommand{\eqsys}{\begin{array}{rcrcrcr}
+a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp b_1\\
+a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp b_2\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \vdots\\
+a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp b_m
+\end{array}
+}
+\newcommand{\numeqsys}{\begin{array}{rrcrcrcr}
+e_1:\amp  a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp b_1\\
+e_2: \amp a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp b_2\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \vdots\\
+e_m: \amp a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp b_m
+\end{array}
+}
+\newcommand{\homsys}{\begin{array}{rcrcrcr}
+a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp 0\\
+a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp 0\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \vdots\\
+a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp 0
+\end{array}
+}
+\newcommand{\vareqsys}[4]{
+\begin{array}{ccccccc}
+#3_{11}x_{1}\amp +\amp #3_{12}x_{2}\amp +\cdots+\amp  #3_{1#2}x_{#2}\amp =\amp #4_1\\
+#3_{21}x_{1}\amp +\amp #3_{22}x_{2}\amp +\cdots+\amp #3_{2#2}x_{#2}\amp =\amp #4_2\\
+\vdots \amp \amp \vdots \amp  \amp \vdots \amp =\amp  \vdots\\
+#3_{#1 1}x_{1}\amp +\amp #3_{#1 2}x_{2}\amp +\cdots +\amp #3_{#1 #2}x_{#2}\amp =\amp #4_{#1}
+\end{array}
+}
+\newcommand{\genmatrix}[1][a]{
+\begin{bmatrix}
+#1_{11} \amp  #1_{12} \amp  \cdots \amp  #1_{1n} \\
+#1_{21} \amp  #1_{22} \amp  \cdots \amp  #1_{2n} \\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \\
+#1_{m1} \amp  #1_{m2} \amp  \cdots \amp  #1_{mn}
+\end{bmatrix}
+}
+\newcommand{\varmatrix}[3]{
+\begin{bmatrix}
+#3_{11} \amp  #3_{12} \amp  \cdots \amp  #3_{1#2} \\
+#3_{21} \amp  #3_{22} \amp  \cdots \amp  #3_{2#2} \\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \\
+#3_{#1 1} \amp  #3_{#1 2} \amp  \cdots \amp  #3_{#1 #2}
+\end{bmatrix}
+}
+\newcommand{\augmatrix}{
+\begin{amatrix}[cccc|c]
+a_{11} \amp  a_{12} \amp  \cdots \amp  a_{1n} \amp b_{1}\\
+a_{21} \amp  a_{22} \amp  \cdots \amp  a_{2n} \amp b_{2}\\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \amp \vdots\\
+a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
+\end{amatrix}
+}
+\newcommand{\varaugmatrix}[4]{
+\begin{amatrix}[cccc|c]
+#3_{11} \amp  #3_{12} \amp  \cdots \amp  #3_{1#2} \amp #4_{1}\\
+#3_{21} \amp  #3_{22} \amp  \cdots \amp  #3_{2#2} \amp #4_{2}\\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \amp \vdots\\
+#3_{#1 1} \amp  #3_{#1 2} \amp  \cdots \amp  #3_{#1 #2}\amp #4_{#1}
+\end{amatrix}
+}
+\newcommand{\spaceforemptycolumn}{\makebox[\wd\boxofmathplus]{\ }}
+
+\newcommand{\generalmatrix}[3]{
+\left(
+\begin{array}{cccc}
+#1_{1,1}  \amp #1_{1,2}  \amp \ldots  \amp #1_{1,#2}  \\
+#1_{2,1}  \amp #1_{2,2}  \amp \ldots  \amp #1_{2,#2}  \\
+\amp \vdots                         \\
+#1_{#3,1} \amp #1_{#3,2} \amp \ldots  \amp #1_{#3,#2}
+\end{array}
+\right)  }
+\newcommand{\colvec}[2][c]{\begin{bmatrix}[#1] #2 \end{bmatrix}}
+\DeclareMathOperator{\size}{size}
+\DeclareMathOperator{\adjoint}{adj}
+\DeclareMathOperator{\sgn}{sgn}
+\newcommand{\restrictionmap}[2]{{#1}\mathpunct\upharpoonright\hbox{}_{#2}}
+\renewcommand{\emptyset}{\varnothing}
+
+\newcommand{\proj}[2]{\mbox{proj}_{#2}({#1}) }
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://linear-algebra.northwestern.pub/" target="_blank"><img src="external/images/im_holycomm.svg" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">Linear algebra: the theory of vector spaces and linear transformations</span></a></h1>
+<p class="byline">Aaron Greicius</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="appendix-defs.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="backmatter-1.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="appendix-egs.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="appendix-defs.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="backmatter-1.html" title="Up">Up</a><a class="next-button button toolbar-item" href="appendix-egs.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link">
+<a href="c_foundations.html" data-scroll="c_foundations"><span class="codenumber">1</span> <span class="title">Foundations</span></a><ul>
+<li><a href="s_sets_functions.html" data-scroll="s_sets_functions">Sets and functions</a></li>
+<li><a href="s_logic.html" data-scroll="s_logic">Logic</a></li>
+<li><a href="s_proof_technique.html" data-scroll="s_proof_technique">Proof techniques</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_linear_systems.html" data-scroll="c_linear_systems"><span class="codenumber">2</span> <span class="title">Systems of linear equations</span></a><ul>
+<li><a href="s_systems.html" data-scroll="s_systems">Systems of linear equations</a></li>
+<li><a href="s_ge.html" data-scroll="s_ge">Gaussian elimination</a></li>
+<li><a href="s_solving.html" data-scroll="s_solving">Solving linear systems</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_matrices.html" data-scroll="c_matrices"><span class="codenumber">3</span> <span class="title">Matrices, their arithmetic, and their algebra</span></a><ul>
+<li><a href="s_matrix.html" data-scroll="s_matrix">Matrices and their arithmetic</a></li>
+<li><a href="s_algebraic.html" data-scroll="s_algebraic">Algebra of matrices</a></li>
+<li><a href="s_invertible_matrices.html" data-scroll="s_invertible_matrices">Invertible matrices</a></li>
+<li><a href="s_invertibility_theorem.html" data-scroll="s_invertibility_theorem">The invertibility theorem</a></li>
+<li><a href="s_det.html" data-scroll="s_det">The determinant</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_vectorspace.html" data-scroll="c_vectorspace"><span class="codenumber">4</span> <span class="title">Vector spaces and linear transformations</span></a><ul>
+<li><a href="s_vectorspace.html" data-scroll="s_vectorspace">Real vector spaces</a></li>
+<li><a href="s_transformation.html" data-scroll="s_transformation">Linear transformations</a></li>
+<li><a href="s_subspace.html" data-scroll="s_subspace">Subspaces</a></li>
+<li><a href="s_span_independence.html" data-scroll="s_span_independence">Span and linear independence</a></li>
+<li><a href="s_basis_dimension.html" data-scroll="s_basis_dimension">Bases and dimension</a></li>
+<li><a href="s_rank_nullity.html" data-scroll="s_rank_nullity">Rank-nullity theorem and fundamental spaces</a></li>
+<li><a href="s_isom.html" data-scroll="s_isom">Isomorphisms</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_innerproductspaces.html" data-scroll="c_innerproductspaces"><span class="codenumber">5</span> <span class="title">Inner product spaces</span></a><ul>
+<li><a href="s_innerproducts.html" data-scroll="s_innerproducts">Inner product spaces</a></li>
+<li><a href="s_orthogonality.html" data-scroll="s_orthogonality">Orthogonal bases and orthogonal projection</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_transbasis.html" data-scroll="c_transbasis"><span class="codenumber">6</span> <span class="title">Eigenvectors and diagonalization</span></a><ul>
+<li><a href="s_coordinatevectors_isomorphisms.html" data-scroll="s_coordinatevectors_isomorphisms">Coordinate vectors and isomorphisms</a></li>
+<li><a href="s_matrixreps.html" data-scroll="s_matrixreps">Matrix representations of linear transformations</a></li>
+<li><a href="s_changeofbasis.html" data-scroll="s_changeofbasis">Change of basis</a></li>
+<li><a href="ss_eigenvectors.html" data-scroll="ss_eigenvectors">Eigenvectors and eigenvalues</a></li>
+<li><a href="ss_diagonalization.html" data-scroll="ss_diagonalization">Diagonalization</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="appendix-notation.html" data-scroll="appendix-notation"><span class="codenumber">A</span> <span class="title">Notation</span></a></li>
+<li class="link"><a href="appendix-defs.html" data-scroll="appendix-defs"><span class="codenumber">B</span> <span class="title">Definitions</span></a></li>
+<li class="link active"><a href="appendix-thms.html" data-scroll="appendix-thms"><span class="codenumber">C</span> <span class="title">Theory and procedures</span></a></li>
+<li class="link"><a href="appendix-egs.html" data-scroll="appendix-egs"><span class="codenumber">D</span> <span class="title">Examples</span></a></li>
+<li class="link"><a href="appendix-vids.html" data-scroll="appendix-vids"><span class="codenumber">E</span> <span class="title">Video examples and figures</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="appendix" id="appendix-thms"><h2 class="heading">
+<span class="type">Appendix</span> <span class="codenumber">C</span> <span class="title">Theory and procedures</span>
+</h2>
+<h4 class="heading hide-type" title="Section 1.1: Sets and functions"><p class="assistive"><span class="codenumber">1.1</span><span class="space"> </span><span class="title">Sets and functions</span></p></h4>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_invertible_bijective.html" title="Theorem 1.1.23: Invertible is equivalent to bijective">Theorem 1.1.23</a> Invertible is equivalent to bijective</div>
+<h4 class="heading hide-type" title="Section 2.1: Systems of linear equations"><p class="assistive"><span class="codenumber">2.1</span><span class="space"> </span><span class="title">Systems of linear equations</span></p></h4>
+<div>
+<a href="" class="xref" data-knowl="./knowl/s_systems_th_rowops.html" title="Theorem 2.1.12: Row equivalence theorem">Theorem 2.1.12</a> Row equivalence theorem</div>
+<h4 class="heading hide-type" title="Section 2.2: Gaussian elimination"><p class="assistive"><span class="codenumber">2.2</span><span class="space"> </span><span class="title">Gaussian elimination</span></p></h4>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_matrixforms.html" title="Theorem 2.2.10: Row equivalent matrix forms">Theorem 2.2.10</a> Row equivalent matrix forms</div>
+<h4 class="heading hide-type" title="Section 2.3: Solving linear systems"><p class="assistive"><span class="codenumber">2.3</span><span class="space"> </span><span class="title">Solving linear systems</span></p></h4>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_solveSystem.html" title="Theorem 2.3.5: Solving linear systems">Theorem 2.3.5</a> Solving linear systems</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/c_qualitative.html" title="Corollary 2.3.6: \(0\text{,}\) \(1\text{,}\) or \(\infty\)-many solutions">Corollary 2.3.6</a> \(0\text{,}\) \(1\text{,}\) or \(\infty\)-many solutions</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/s_solving_homogeneous.html" title="Corollary 2.3.10: Solutions to homogeneous equations">Corollary 2.3.10</a> Solutions to homogeneous equations</div>
+<h4 class="heading hide-type" title="Section 3.1: Matrices and their arithmetic"><p class="assistive"><span class="codenumber">3.1</span><span class="space"> </span><span class="title">Matrices and their arithmetic</span></p></h4>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_column_method.html" title="Theorem 3.1.19: Column method of matrix multiplication">Theorem 3.1.19</a> Column method of matrix multiplication</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_row_method.html" title="Theorem 3.1.21: Row method of matrix multiplication">Theorem 3.1.21</a> Row method of matrix multiplication</div>
+<h4 class="heading hide-type" title="Section 3.2: Algebra of matrices"><p class="assistive"><span class="codenumber">3.2</span><span class="space"> </span><span class="title">Algebra of matrices</span></p></h4>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_matrix_alg_props.html" title="Theorem 3.2.1: Properties of matrix addition, multiplication and scalar multiplication">Theorem 3.2.1</a> Properties of matrix addition, multiplication and scalar multiplication</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_matrix_add_mult_ident.html" title="Theorem 3.2.4: Additive identities, additive inverses, and multiplicative identities">Theorem 3.2.4</a> Additive identities, additive inverses, and multiplicative identities</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/c_matrix_additive_canc.html" title="Corollary 3.2.5: Additive cancellation of matrices">Corollary 3.2.5</a> Additive cancellation of matrices</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_matrix_abnormalities.html" title="Theorem 3.2.8: Matrix algebra abnormalities">Theorem 3.2.8</a> Matrix algebra abnormalities</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_matrix_cancel.html" title="Corollary 3.2.9: Failure of multiplicative cancellation">Corollary 3.2.9</a> Failure of multiplicative cancellation</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_trans_props.html" title="Theorem 3.2.11: Properties of matrix transposition">Theorem 3.2.11</a> Properties of matrix transposition</div>
+<h4 class="heading hide-type" title="Section 3.3: Invertible matrices"><p class="assistive"><span class="codenumber">3.3</span><span class="space"> </span><span class="title">Invertible matrices</span></p></h4>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_inverse_unique.html" title="Theorem 3.3.2: Inverses are unique">Theorem 3.3.2</a> Inverses are unique</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_inverse_cancel.html" title="Theorem 3.3.3: Solving with invertible matrices">Theorem 3.3.3</a> Solving with invertible matrices</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_2by2_inverse.html" title="Theorem 3.3.5: Inverses of \(2\times 2\) matrices">Theorem 3.3.5</a> Inverses of \(2\times 2\) matrices</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_invertible_prod.html" title="Theorem 3.3.6: Invertibility of products">Theorem 3.3.6</a> Invertibility of products</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/c_invertible_prod.html" title="Corollary 3.3.7">Corollary 3.3.7</a> </div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_power_rules.html" title="Theorem 3.3.13: Properties of matrix powers">Theorem 3.3.13</a> Properties of matrix powers</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_inverse_trans.html" title="Theorem 3.3.14: Inverse and transpose">Theorem 3.3.14</a> Inverse and transpose</div>
+<h4 class="heading hide-type" title="Section 3.4: The invertibility theorem"><p class="assistive"><span class="codenumber">3.4</span><span class="space"> </span><span class="title">The invertibility theorem</span></p></h4>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_elementary_matrices.html" title="Theorem 3.4.2: Elementary matrix formulas">Theorem 3.4.2</a> Elementary matrix formulas</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_inverse_elem.html" title="Theorem 3.4.3: Inverses of elementary matrices">Theorem 3.4.3</a> Inverses of elementary matrices</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_invertibility.html" title="Theorem 3.4.5: Invertibility theorem">Theorem 3.4.5</a> Invertibility theorem</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_invertible_triangular.html" title="Theorem 3.4.8: Invertibility of triangular matrices">Theorem 3.4.8</a> Invertibility of triangular matrices</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_invertibility_algorithm.html" title="Theorem 3.4.9: Inverse algorithm">Theorem 3.4.9</a> Inverse algorithm</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_elem_matrices_alg.html" title="Theorem 3.4.10: Product of elementary matrices algorithm">Theorem 3.4.10</a> Product of elementary matrices algorithm</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/cor_left-right_inverse.html" title="Corollary 3.4.11: Left-inverse if and only if right-inverse">Corollary 3.4.11</a> Left-inverse if and only if right-inverse</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/cor_inv_prod_eq.html" title="Corollary 3.4.12: Invertibility of product equivalence">Corollary 3.4.12</a> Invertibility of product equivalence</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/cor_row_equivalence_invertibility.html" title="Corollary 3.4.13: Row equivalence and invertible matrices">Corollary 3.4.13</a> Row equivalence and invertible matrices</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/cor_RRE_uniqueness.html" title="Corollary 3.4.15: Uniqueness of reduced row echelon form">Corollary 3.4.15</a> Uniqueness of reduced row echelon form</div>
+<h4 class="heading hide-type" title="Section 3.5: The determinant"><p class="assistive"><span class="codenumber">3.5</span><span class="space"> </span><span class="title">The determinant</span></p></h4>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_det_triangular.html" title="Theorem 3.5.5: Determinant of triangular matrices">Theorem 3.5.5</a> Determinant of triangular matrices</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/cor_det_identity.html" title="Corollary 3.5.6: Determinant of identity matrices">Corollary 3.5.6</a> Determinant of identity matrices</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_expansion_row.html" title="Theorem 3.5.8: Expansion along rows">Theorem 3.5.8</a> Expansion along rows</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_det_transpose.html" title="Theorem 3.5.9: Determinant and transposition">Theorem 3.5.9</a> Determinant and transposition</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/cor_expansion_columns.html" title="Corollary 3.5.10: Expansion along columns">Corollary 3.5.10</a> Expansion along columns</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_det_zero_repeated_row.html" title="Theorem 3.5.13: Zero rows/columns, swapping rows/columns, identical rows/columns">Theorem 3.5.13</a> Zero rows/columns, swapping rows/columns, identical rows/columns</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_adjoint.html" title="Theorem 3.5.16: Adjoint formula">Theorem 3.5.16</a> Adjoint formula</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_det_row_ops.html" title="Theorem 3.5.19: Row operations and determinant">Theorem 3.5.19</a> Row operations and determinant</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/cor_det_prod_elem.html" title="Corollary 3.5.22: Determinant and products of elementary matrices">Corollary 3.5.22</a> Determinant and products of elementary matrices</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_inv_iff_det.html" title="Theorem 3.5.24: Determinant and invertibility">Theorem 3.5.24</a> Determinant and invertibility</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_det_mult.html" title="Theorem 3.5.25: Determinant is multiplicative">Theorem 3.5.25</a> Determinant is multiplicative</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_invertibility_expanded.html" title="Theorem 3.5.26: Invertibility theorem (extended cut)">Theorem 3.5.26</a> Invertibility theorem (extended cut)</div>
+<h4 class="heading hide-type" title="Section 4.1: Real vector spaces"><p class="assistive"><span class="codenumber">4.1</span><span class="space"> </span><span class="title">Real vector spaces</span></p></h4>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_vectorspace_props.html" title="Theorem 4.1.13: Basic vector space properties">Theorem 4.1.13</a> Basic vector space properties</div>
+<h4 class="heading hide-type" title="Section 4.2: Linear transformations"><p class="assistive"><span class="codenumber">4.2</span><span class="space"> </span><span class="title">Linear transformations</span></p></h4>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_transform_basic_props.html" title="Theorem 4.2.5: Basic properties of linear transformations">Theorem 4.2.5</a> Basic properties of linear transformations</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_matrix_transform_i.html" title="Theorem 4.2.9: Matrix transformations I">Theorem 4.2.9</a> Matrix transformations I</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_transform_rotation.html" title="Theorem 4.2.13: Rotation is a linear transformation">Theorem 4.2.13</a> Rotation is a linear transformation</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_transform_reflection.html" title="Theorem 4.2.17: Reflection is a linear transformation">Theorem 4.2.17</a> Reflection is a linear transformation</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_transform_composition.html" title="Theorem 4.2.22: Composition of linear transformations">Theorem 4.2.22</a> Composition of linear transformations</div>
+<h4 class="heading hide-type" title="Section 4.3: Subspaces"><p class="assistive"><span class="codenumber">4.3</span><span class="space"> </span><span class="title">Subspaces</span></p></h4>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_subspace_intersection.html" title="Theorem 4.3.6: Intersection of subspaces">Theorem 4.3.6</a> Intersection of subspaces</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_subspace_functions.html" title="Theorem 4.3.9">Theorem 4.3.9</a> </div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_nullspace_image.html" title="Theorem 4.3.14: Null space and image">Theorem 4.3.14</a> Null space and image</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_nullspace_injective.html" title="Theorem 4.3.15: Nullspace and injectivity">Theorem 4.3.15</a> Nullspace and injectivity</div>
+<h4 class="heading hide-type" title="Section 4.4: Span and linear independence"><p class="assistive"><span class="codenumber">4.4</span><span class="space"> </span><span class="title">Span and linear independence</span></p></h4>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_span.html" title="Theorem 4.4.4: Spans are subspaces">Theorem 4.4.4</a> Spans are subspaces</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/proc_linear_independence.html" title="Procedure 4.4.10: Investigating linear independence">Procedure 4.4.10</a> Investigating linear independence</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/proc_linear_independence_functions.html" title="Procedure 4.4.13: Investigating linear independence of functions">Procedure 4.4.13</a> Investigating linear independence of functions</div>
+<h4 class="heading hide-type" title="Section 4.5: Bases and dimension"><p class="assistive"><span class="codenumber">4.5</span><span class="space"> </span><span class="title">Bases and dimension</span></p></h4>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_basis_equivalence.html" title="Theorem 4.5.7: Basis equivalence">Theorem 4.5.7</a> Basis equivalence</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_basis_span_bounds.html" title="Theorem 4.5.10">Theorem 4.5.10</a> </div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_basis_dimension.html" title="Theorem 4.5.11: Basis bounds">Theorem 4.5.11</a> Basis bounds</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_basis_contract_expand.html" title="Theorem 4.5.15: Contracting and expanding to bases">Theorem 4.5.15</a> Contracting and expanding to bases</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/cor_street_smarts.html" title="Corollary 4.5.16: Street smarts">Corollary 4.5.16</a> Street smarts</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/cor_dimension_subspace.html" title="Corollary 4.5.17: Dimension of subspaces">Corollary 4.5.17</a> Dimension of subspaces</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_dimension_compendium.html" title="Theorem 4.5.18: Dimension theory compendium">Theorem 4.5.18</a> Dimension theory compendium</div>
+<h4 class="heading hide-type" title="Section 4.6: Rank-nullity theorem and fundamental spaces"><p class="assistive"><span class="codenumber">4.6</span><span class="space"> </span><span class="title">Rank-nullity theorem and fundamental spaces</span></p></h4>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_rank-nullity.html" title="Theorem 4.6.2: Rank-nullity">Theorem 4.6.2</a> Rank-nullity</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_fundamental_spaces.html" title="Theorem 4.6.6: Fundamental spaces">Theorem 4.6.6</a> Fundamental spaces</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/proc_fund_spaces.html" title="Procedure 4.6.7: Computing bases of fundamental spaces">Procedure 4.6.7</a> Computing bases of fundamental spaces</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_invertibility_supersized.html" title="Theorem 4.6.8: Invertibility theorem (supersized)">Theorem 4.6.8</a> Invertibility theorem (supersized)</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/proc_contract_extend.html" title="Procedure 4.6.9: Contracting and extending to bases of \(\R^n\)">Procedure 4.6.9</a> Contracting and extending to bases of \(\R^n\)</div>
+<h4 class="heading hide-type" title="Section 4.7: Isomorphisms"><p class="assistive"><span class="codenumber">4.7</span><span class="space"> </span><span class="title">Isomorphisms</span></p></h4>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_bases_transformations.html" title="Theorem 4.7.1: Bases and linear transformations">Theorem 4.7.1</a> Bases and linear transformations</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/cor_matrix_transformations.html" title="Corollary 4.7.4: Matrix transformations II">Corollary 4.7.4</a> Matrix transformations II</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_isomorphism_preserves.html" title="Theorem 4.7.9: Properties preserved by isomorphisms">Theorem 4.7.9</a> Properties preserved by isomorphisms</div>
+<h4 class="heading hide-type" title="Section 5.1: Inner product spaces"><p class="assistive"><span class="codenumber">5.1</span><span class="space"> </span><span class="title">Inner product spaces</span></p></h4>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_weighted_dotproduct.html" title="Theorem 5.1.3: Weighted dot product">Theorem 5.1.3</a> Weighted dot product</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_dotproduct_method.html" title="Theorem 5.1.8: Dot product method of matrix multiplication">Theorem 5.1.8</a> Dot product method of matrix multiplication</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_evaluation_innerproduct.html" title="Theorem 5.1.9: Evaluation inner products on \(P_n\)">Theorem 5.1.9</a> Evaluation inner products on \(P_n\)</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_integral_innerproduct.html" title="Theorem 5.1.11: Integral inner product">Theorem 5.1.11</a> Integral inner product</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_norm_basic_props.html" title="Theorem 5.1.16: Basic properties of norm and distance">Theorem 5.1.16</a> Basic properties of norm and distance</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_Cauchy-Schwarz.html" title="Theorem 5.1.17: Cauchy-Schwarz inequality">Theorem 5.1.17</a> Cauchy-Schwarz inequality</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_triangle_inequalities.html" title="Theorem 5.1.18: Triangle Inequalities">Theorem 5.1.18</a> Triangle Inequalities</div>
+<h4 class="heading hide-type" title="Section 5.2: Orthogonal bases and orthogonal projection"><p class="assistive"><span class="codenumber">5.2</span><span class="space"> </span><span class="title">Orthogonal bases and orthogonal projection</span></p></h4>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_orthogonal.html" title="Theorem 5.2.2: Orthogonal implies linearly independent">Theorem 5.2.2</a> Orthogonal implies linearly independent</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_orthonormal_existence.html" title="Theorem 5.2.4: Existence of orthonormal bases">Theorem 5.2.4</a> Existence of orthonormal bases</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/proc_gram-schmidt.html" title="Procedure 5.2.5: Gram-Schmidt procedure">Procedure 5.2.5</a> Gram-Schmidt procedure</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_orthogonal_basis_formula.html" title="Theorem 5.2.6: Calculating with orthogonal bases">Theorem 5.2.6</a> Calculating with orthogonal bases</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_orthogonal_matrices.html" title="Theorem 5.2.7: Orthogonal matrices">Theorem 5.2.7</a> Orthogonal matrices</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_orthogonal_complement.html" title="Theorem 5.2.10: Orthogonal complement">Theorem 5.2.10</a> Orthogonal complement</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/theorem-65.html" title="Theorem 5.2.11">Theorem 5.2.11</a> </div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_orthogonal_projection.html" title="Theorem 5.2.12: Orthogonal projection theorem">Theorem 5.2.12</a> Orthogonal projection theorem</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/cor_orthocomp_selfdual.html" title="Corollary 5.2.13">Corollary 5.2.13</a> </div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/cor_orthoproj_linear.html" title="Corollary 5.2.14">Corollary 5.2.14</a> </div>
+<h4 class="heading hide-type" title="Section 6.1: Coordinate vectors and isomorphisms"><p class="assistive"><span class="codenumber">6.1</span><span class="space"> </span><span class="title">Coordinate vectors and isomorphisms</span></p></h4>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_coordinates_orthogonal.html" title="Theorem 6.1.7: Coordinate vectors for orthogonal bases">Theorem 6.1.7</a> Coordinate vectors for orthogonal bases</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_coordinates.html" title="Theorem 6.1.9: Coordinate vector transformation">Theorem 6.1.9</a> Coordinate vector transformation</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/proc_contract_extend_general.html" title="Procedure 6.1.10: Contracting and extending to bases in general spaces">Procedure 6.1.10</a> Contracting and extending to bases in general spaces</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_isomorphisms.html" title="Theorem 6.1.12: Isomorphism compendium">Theorem 6.1.12</a> Isomorphism compendium</div>
+<h4 class="heading hide-type" title="Section 6.2: Matrix representations of linear transformations"><p class="assistive"><span class="codenumber">6.2</span><span class="space"> </span><span class="title">Matrix representations of linear transformations</span></p></h4>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_matrixrep.html" title="Theorem 6.2.2">Theorem 6.2.2</a> </div>
+<h4 class="heading hide-type" title="Section 6.3: Change of basis"><p class="assistive"><span class="codenumber">6.3</span><span class="space"> </span><span class="title">Change of basis</span></p></h4>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_change_of_basis_coordinates.html" title="Theorem 6.3.2: Change of basis for coordinate vectors">Theorem 6.3.2</a> Change of basis for coordinate vectors</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_change_of_basis_properties.html" title="Theorem 6.3.3: Change of basis matrix properties">Theorem 6.3.3</a> Change of basis matrix properties</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_change_of_basis_transformations.html" title="Theorem 6.3.4: Change of basis for transformations">Theorem 6.3.4</a> Change of basis for transformations</div>
+<h4 class="heading hide-type" title="Section 6.4: Eigenvectors and eigenvalues"><p class="assistive"><span class="codenumber">6.4</span><span class="space"> </span><span class="title">Eigenvectors and eigenvalues</span></p></h4>
+<div>
+<a href="" class="xref" data-knowl="./knowl/theorem-74.html" title="Theorem 6.4.3: Characteristic polynomial theorem">Theorem 6.4.3</a> Characteristic polynomial theorem</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/proc_eigenspaces.html" title="Procedure 6.4.5: Computing eigenspaces of a matrix">Procedure 6.4.5</a> Computing eigenspaces of a matrix</div>
+<h4 class="heading hide-type" title="Section 6.5: Diagonalization"><p class="assistive"><span class="codenumber">6.5</span><span class="space"> </span><span class="title">Diagonalization</span></p></h4>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_diagonalizability.html" title="Theorem 6.5.2: Diagonalizability theorem">Theorem 6.5.2</a> Diagonalizability theorem</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/proc_diagonalize.html" title="Procedure 6.5.3: Deciding whether a linear transformation is diagonalizable">Procedure 6.5.3</a> Deciding whether a linear transformation is diagonalizable</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/proc_diagonalize_matrix.html" title="Procedure 6.5.4">Procedure 6.5.4</a> </div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/theorem-76.html" title="Theorem 6.5.5: Algebraic and geometric multiplicity theorem">Theorem 6.5.5</a> Algebraic and geometric multiplicity theorem</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_independentteigenvectors.html" title="Theorem 6.5.6">Theorem 6.5.6</a> </div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/corollary-18.html" title="Corollary 6.5.7">Corollary 6.5.7</a> </div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_conjugation.html" title="Theorem 6.5.11: Properties of conjugation">Theorem 6.5.11</a> Properties of conjugation</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/th_similarity.html" title="Theorem 6.5.15: Properties of similarity">Theorem 6.5.15</a> Properties of similarity</div>
+<div>
+<a href="" class="xref" data-knowl="./knowl/theorem-80.html" title="Theorem 6.5.17: Invertibility theorem (final version)">Theorem 6.5.17</a> Invertibility theorem (final version)</div></section></div></main>
+</div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-02-07T10:11:55-06:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<p>Turning now to matrix multiplication, suppose \(A\) is \(m\times n\) and \(B\) is \(n\times r\text{.}\) Let \(C=AB\) be their product. These matrices give rise to linear transformations</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+T_A\colon \R^n \amp\rightarrow \R^m \amp T_B\colon \R^r \amp\rightarrow \R^n \amp T_C\colon \R^r \amp\rightarrow \R^m  \text{.}
+\end{align*}
+</div>
+<p class="continuation">According to <a href="" class="xref" data-knowl="./knowl/th_transform_composition.html" title="Theorem 4.2.22: Composition of linear transformations">Theorem 4.2.22</a> the composition \(T_A\circ T_B\) is a linear transformation from \(\R^r\) (the domain of \(T_B\)) to \(\R^m\) (the codomain of \(T_A\)). We claim that \(T_A\circ T_B=T_C\text{.}\) Indeed, identifying elements of \(\R^r\) with column vectors, for all \(\boldx\in \R^n\) we have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+T_A\circ T_B(\boldx) \amp = T_A(T_B(\boldx)) \amp (\knowl{./knowl/d_function_composition.html}{\text{Definition 1.1.21}}) \\
+\amp =T_A(B\boldx) \amp (\knowl{./knowl/d_matrix_transform.html}{\text{Definition 4.2.8}})\\
+\amp= A(B\boldx) \amp (\knowl{./knowl/d_matrix_transform.html}{\text{Definition 4.2.8}})\\
+\amp = (AB)\boldx \amp (\text{assoc.})\\
+\amp = T_C(\boldx) \amp (\text{since } C=AB)\text{.}
+\end{align*}
+</div>
+<p class="continuation">Thus, we can now understand the definition of matrix multiplication as being chosen precisely to encode how to compute the composition of two matrix transformations. The restriction on the dimension of the ingredient matrices is now understood as guaranteeing that the corresponding matrix transformations can be composed!</p>
+<span class="incontext"><a href="s_transformation.html#p-1093">in-context</a></span>
+</body>
+</html>

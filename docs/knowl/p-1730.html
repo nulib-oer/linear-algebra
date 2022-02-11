@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-02-07T10:12:25-06:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<p>Fix vectors \(\boldv\) and \(\boldw\text{.}\) For any \(t\in\R\) we have by positivity</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+0\leq \langle t\boldv-\boldw,t\boldv-\boldw\rangle=\langle\boldv,\boldv\rangle t^2-2\langle\boldv,\boldw\rangle t+\langle\boldw,\boldw\rangle=at^2-2bt+c\text{,}
+\end{equation*}
+</div>
+<p class="continuation">where</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation}
+a=\langle\boldv,\boldv\rangle, \ b=\langle\boldv,\boldw\rangle, \   c=\langle\boldw,\boldw\rangle=\norm{w}^2\text{.}\tag{5.1.1}
+\end{equation}
+</div>
+<p class="continuation">Since \(at^2-2b\,t+c\geq 0\) for all \(t\in \R\) the quadratic polynomial \(p(t)=at^2-2b\,t+c\) has <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">at most</em> one root. Using the quadratic formula for we conclude that we must have \(4b^2-4ac\leq 0\text{,}\) since otherwise \(p(t)\) would have two distinct roots. Substituting back in for \(a,b,c\) using <a href="" class="xref" data-knowl="./knowl/eq_cauchy_schwarz.html" title="Equation 5.1.1">(5.1.1)</a>, we see after a bit of algebra that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+(\langle\boldv,\boldw\rangle)^2\leq \norm{\boldv}^2\norm{\boldw}^2\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Taking square-roots yields the desired inequality.</p>
+<span class="incontext"><a href="s_innerproducts.html#p-1730">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-02-07T10:12:11-06:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="hiddenproof"><p>Let \(S=\{\boldv_1, \boldv_2, \dots, \boldv_n\}\text{,}\) and let \(S'=\{\boldw_1, \boldw_2, \dots, \boldw_r\}\text{.}\) Since \(S\) spans \(V\text{,}\) each element of \(S'\) is a linear combination of elements of \(S\text{:}\) i.e., we have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation}
+\boldw_j=a_{1j}\boldv_1+a_{2j}\boldv_2+\cdots a_{nj}\boldv_n=\sum_{i=1}^n\boldv_{ij}\tag{4.5.1}
+\end{equation}
+</div>
+<p class="continuation">for all \(1\leq j\leq r\text{.}\) Now consider the following chain of equivalences:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+c_1\boldw_1+c_2\boldw_2+\cdots c_r\boldw_r=\boldzero \amp \iff c_1(\sum_{i=1}^n\boldv_{i1})+c_2(\sum_{i=1}^n\boldv_{i2})+\cdots +c_r\sum_{i=1}^n\boldv_{in}=\boldzero\amp (\knowl{./knowl/eq_basis_bound.html}{\text{(4.5.1)}}) \\
+\amp \iff \sum_{j=1}^rc_j\sum_{i=1}^na_{ij}\boldv_i=\boldzero\\
+\amp\iff \sum_{i=1}^n(\sum_{j=1}^ra_{ij}c_j)\boldv_i=\boldzero  \\
+\amp \iff (\sum_{j=1}^ra_{1j}c_j)\boldv_1+(\sum_{j=1}^ra_{2j}c_j)\boldv_2+\cdots (\sum_{j=1}^ra_{nj}c_j)\boldv_n=\boldzero \text{.}
+\end{align*}
+</div>
+<p class="continuation">From the last vector equation, we see that if we can find a nonzero sequence \((c_1,c_2,\dots, c_r)\) satisfying</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\sum_{j=1}^ra_{ij}c_j=0
+\end{equation*}
+</div>
+<p class="continuation">for all \(1\leq i\leq n\text{,}\) then there is a nontrivial combination of the \(\boldw_i\) equal to the zero vector, and hence that \(S'\) is linearly dependent. Such a sequence \((c_1,c_2,\dots, c_n)\) corresponds to a solution to the homogeneous linear with augmented matrix</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{amatrix}[r|r]
+A\amp \boldzero
+\end{amatrix}\text{,}
+\end{equation*}
+</div>
+<p class="continuation">where \(A=[a_{ij}]_{n\times r}\text{.}\) Since this is a homogeneous system of \(n\) equations in \(r\) unknowns, and since \(r&gt;n\text{,}\) there are in fact infinitely many solutions. (The system has at most \(n\) leading ones, and so there must be a free variable since one of the \(r\) columns in the equivalent row echelon matrix must fail to contain a leading one.) In particular there is a nonzero solution \((c_1,c_2,\dots, c_n)\ne \boldzero\text{,}\) and we conclude that \(S'\) is linearly dependent.</p></article></body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-02-04T12:01:05-06:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="remark remark-like"><h4 class="heading">
+<span class="type">Remark</span><span xmlns:svg="http://www.w3.org/2000/svg" class="space"> </span><span class="codenumber">4.3.5</span><span xmlns:svg="http://www.w3.org/2000/svg" class="period">.</span><span xmlns:svg="http://www.w3.org/2000/svg" class="space"> </span><span class="title">Subspaces are vector spaces.</span>
+</h4>
+<p>If \(W\) is a subspace of a vector space \(V\text{,}\) then it <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">inherits</em> a vector space structure from \(V\) by simply  <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">restricting</em> the vector operations defined on \(V\) to the subset \(W\text{.}\)</p>
+<p>It is important to understand how conditions (ii)-(iii) of <a href="" class="xref" data-knowl="./knowl/d_subspace.html" title="Definition 4.3.1: Subspace">Definition 4.3.1</a> come into play here. Without them we would not be able to say that restricting the vector operations of \(V\) to elements of \(W\) actually gives rise to well-defined operations on \(W\text{.}\) To be well-defined the operations must output elements that lie not just in \(V\text{,}\) but in \(W\) itself. This is precisely what being closed under addition and scalar multiplication guarantees.</p>
+<p>Once we know restriction gives rise to well-defined operations on \(W\text{,}\) verifying the axioms of  <a href="" class="xref" data-knowl="./knowl/d_vector_space.html" title="Definition 4.1.1: Vector space">Definition 4.1.1</a> mostly amounts to observing that if a condition is true for all \(\boldv\) in \(V\text{,}\) it is certainly true for all \(\boldv\) in the subset \(W\text{.}\)</p>
+<p>The “existential axioms” (iii) and (iv) of <a href="" class="xref" data-knowl="./knowl/d_vector_space.html" title="Definition 4.1.1: Vector space">Definition 4.1.1</a>, however, require special consideration. By definition, a subspace \(W\) contains the zero vector of \(V\text{,}\) and clearly this still acts as the zero vector when we restrict the vector operations to \(W\text{.}\) What about vector inverses? We know that for any \(\boldv\in W\) there is a vector inverse \(-\boldv\) lying somewhere in \(V\text{.}\) We must show that in fact \(-\boldv\) lies in \(W\text{:}\) i.e. we need to show that the operation of taking the vector inverse is well-defined on \(W\text{.}\) We prove this as follows:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\boldv\in W \amp\implies (-1)\boldv\in W \amp (\knowl{./knowl/d_subspace.html}{\text{Definition 4.3.1}}, \text{(iii) } )\\
+\amp\implies -\boldv\in W \amp (\knowl{./knowl/th_vectorspace_props.html}{\text{Theorem 4.1.13}}, (iii)) \text{.}
+\end{align*}
+</div></article><span class="incontext"><a href="s_subspace.html#rm_subspace_is_vectorspace">in-context</a></span>
+</body>
+</html>

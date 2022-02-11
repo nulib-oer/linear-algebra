@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-02-04T12:00:56-06:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="hiddenproof"><h4 class="heading"><span class="type">Proof</span></h4>
+<p>The first statement follows easily by computing \(\det (\underset{cr_i}{E}\, A)\) by expanding along the \(i\)-th row. The second statement is in fact a rephrasing of the second statement of <a href="" class="xref" data-knowl="./knowl/th_det_zero_repeated_row.html" title="Theorem 3.5.13: Zero rows/columns, swapping rows/columns, identical rows/columns">Theorem 3.5.13</a>. It remains to prove the third statement.</p>
+<p>Let \(A=[a_{ij}]_{n\times n}\text{,}\) and set \(B=\underset{r_i+cr_j}{E}\cdot A\text{.}\) Then \(B\) is identical to \(A\) with the exception of the \(i\)-th row, whose \(k\)-th entry is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+(B)_{ik}=a_{ik}+ca_{jk}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">It follows that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\det B \amp=\sum_{k=1}^n(-1)^{i+k}(a_{ik}+ca_{jk})M_{ik} \\
+\amp = \sum_{k=1}^n(-1)^{i+k}a_{ik}M_{ik}+c\sum_{k=1}^n(-1)^{i+k}a_{jk}M_{ik}\\
+\amp =\det A+\det C \text{,}
+\end{align*}
+</div>
+<p class="continuation">where \(C\) is the matrix obtained by replacing the \(i\)-th row of \(A\) with a row identical with its \(j\)-th row. By <a href="" class="xref" data-knowl="./knowl/th_det_zero_repeated_row.html" title="Theorem 3.5.13: Zero rows/columns, swapping rows/columns, identical rows/columns">Theorem 3.5.13</a> we conclude \(\det C=0\text{,}\) and thus</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\det(\underset{r_i+cr_j}{E}\cdot A)=\det B=\det A+\det C=\det A\text{,}
+\end{equation*}
+</div>
+<p class="continuation">as desired.</p></article><span class="incontext"><a href="s_det.html#proof-37">in-context</a></span>
+</body>
+</html>

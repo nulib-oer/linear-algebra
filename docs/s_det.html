@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-02-07T10:10:41-06:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>The determinant</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg">miniversion=0.6</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\require{cancel}\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\C}{{\mathbb C}}
+\newcommand{\T}{{\mathbb T}}
+\newcommand{\F}{{\mathbb F}}
+\newcommand{\HH}{{\mathbb H}}
+\newcommand{\compose}{\circ}
+\newcommand{\bolda}{{\mathbf a}}
+\newcommand{\boldb}{{\mathbf b}}
+\newcommand{\boldc}{{\mathbf c}}
+\newcommand{\boldd}{{\mathbf d}}
+\newcommand{\bolde}{{\mathbf e}}
+\newcommand{\boldi}{{\mathbf i}}
+\newcommand{\boldj}{{\mathbf j}}
+\newcommand{\boldk}{{\mathbf k}}
+\newcommand{\boldn}{{\mathbf n}}
+\newcommand{\boldp}{{\mathbf p}}
+\newcommand{\boldq}{{\mathbf q}}
+\newcommand{\boldr}{{\mathbf r}}
+\newcommand{\bolds}{{\mathbf s}}
+\newcommand{\boldt}{{\mathbf t}}
+\newcommand{\boldu}{{\mathbf u}}
+\newcommand{\boldv}{{\mathbf v}}
+\newcommand{\boldw}{{\mathbf w}}
+\newcommand{\boldx}{{\mathbf x}}
+\newcommand{\boldy}{{\mathbf y}}
+\newcommand{\boldz}{{\mathbf z}}
+\newcommand{\boldzero}{{\mathbf 0}}
+\newcommand{\boldmod}{\boldsymbol{ \bmod }}
+\newcommand{\boldT}{{\mathbf T}}
+\newcommand{\boldN}{{\mathbf N}}
+\newcommand{\boldB}{{\mathbf B}}
+\newcommand{\boldF}{{\mathbf F}}
+\newcommand{\boldS}{{\mathbf S}}
+\newcommand{\boldG}{{\mathbf G}}
+\newcommand{\boldK}{{\mathbf K}}
+\newcommand{\boldL}{{\mathbf L}}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\NS}{null}
+\DeclareMathOperator{\RS}{row}
+\DeclareMathOperator{\CS}{col}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\range}{range}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\nullity}{nullity}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\Fix}{Fix}
+\DeclareMathOperator{\Aff}{Aff}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\mdeg}{mdeg}
+\DeclareMathOperator{\Lt}{Lt}
+\DeclareMathOperator{\Lc}{Lc}
+\DeclareMathOperator{\disc}{disc}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\adj}{adj}
+\DeclareMathOperator{\curl}{curl}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\diver}{div}
+\DeclareMathOperator{\flux}{flux}
+\def\Gal{\operatorname{Gal}}
+\def\ord{\operatorname{ord}}
+\def\ML{\operatorname{M}}
+\def\GL{\operatorname{GL}}
+\def\PGL{\operatorname{PGL}}
+\def\SL{\operatorname{SL}}
+\def\PSL{\operatorname{PSL}}
+\def\GSp{\operatorname{GSp}}
+\def\PGSp{\operatorname{PGSp}}
+\def\Sp{\operatorname{Sp}}
+\def\PSp{\operatorname{PSp}}
+\def\Aut{\operatorname{Aut}}
+\def\Inn{\operatorname{Inn}}
+\def\Hom{\operatorname{Hom}}
+\def\End{\operatorname{End}}
+\def\ch{\operatorname{char}}
+\def\Zp{\Z/p\Z}
+\def\Zm{\Z/m\Z}
+\def\Zn{\Z/n\Z}
+\def\Fp{\F_p}
+\newcommand{\surjects}{\twoheadrightarrow}
+\newcommand{\injects}{\hookrightarrow}
+\newcommand{\bijects}{\leftrightarrow}
+\newcommand{\isomto}{\overset{\sim}{\rightarrow}}
+\newcommand{\floor}[1]{\lfloor#1\rfloor}
+\newcommand{\ceiling}[1]{\left\lceil#1\right\rceil}
+\newcommand{\mclass}[2][m]{[#2]_{#1}}
+\newcommand{\val}[2][]{\left\lvert #2\right\rvert_{#1}}
+\newcommand{\valuation}[2][]{\left\lvert #2\right\rvert_{#1}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\anpoly}{a_nx^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+\newcommand{\anmonic}{x^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+\newcommand{\bmpoly}{b_mx^m+b_{m-1}x^{m-1}\cdots +b_1x+b_0}
+\newcommand{\pder}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\normalin}{\trianglelefteq}
+\newcommand{\angvec}[1]{\langle #1\rangle}
+\newcommand{\varpoly}[2]{#1_{#2}x^{#2}+#1_{#2-1}x^{#2-1}\cdots +#1_1x+#1_0}
+\newcommand{\varpower}[1][a]{#1_0+#1_1x+#1_1x^2+\cdots}
+\newcommand{\limasto}[2][x]{\lim_{#1\rightarrow #2}}
+\def\ntoinfty{\lim_{n\rightarrow\infty}}
+\def\xtoinfty{\lim_{x\rightarrow\infty}}
+\def\ii{\item}
+\def\bb{\begin{enumerate}}
+\def\ee{\end{enumerate}}
+\def\ds{\displaystyle}
+\def\p{\partial}
+\newcommand{\abcdmatrix}[4]{\begin{bmatrix}#1\amp #2\\ #3\amp #4 \end{bmatrix}
+}
+\newenvironment{amatrix}[1][ccc|c]{\left[\begin{array}{#1}}{\end{array}\right]}
+\newenvironment{linsys}[2][m]{
+\begin{array}[#1]{@{}*{#2}{rc}r@{}}
+}{
+\end{array}}
+\newcommand{\eqsys}{\begin{array}{rcrcrcr}
+a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp b_1\\
+a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp b_2\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \vdots\\
+a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp b_m
+\end{array}
+}
+\newcommand{\numeqsys}{\begin{array}{rrcrcrcr}
+e_1:\amp  a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp b_1\\
+e_2: \amp a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp b_2\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \vdots\\
+e_m: \amp a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp b_m
+\end{array}
+}
+\newcommand{\homsys}{\begin{array}{rcrcrcr}
+a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp 0\\
+a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp 0\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \vdots\\
+a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp 0
+\end{array}
+}
+\newcommand{\vareqsys}[4]{
+\begin{array}{ccccccc}
+#3_{11}x_{1}\amp +\amp #3_{12}x_{2}\amp +\cdots+\amp  #3_{1#2}x_{#2}\amp =\amp #4_1\\
+#3_{21}x_{1}\amp +\amp #3_{22}x_{2}\amp +\cdots+\amp #3_{2#2}x_{#2}\amp =\amp #4_2\\
+\vdots \amp \amp \vdots \amp  \amp \vdots \amp =\amp  \vdots\\
+#3_{#1 1}x_{1}\amp +\amp #3_{#1 2}x_{2}\amp +\cdots +\amp #3_{#1 #2}x_{#2}\amp =\amp #4_{#1}
+\end{array}
+}
+\newcommand{\genmatrix}[1][a]{
+\begin{bmatrix}
+#1_{11} \amp  #1_{12} \amp  \cdots \amp  #1_{1n} \\
+#1_{21} \amp  #1_{22} \amp  \cdots \amp  #1_{2n} \\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \\
+#1_{m1} \amp  #1_{m2} \amp  \cdots \amp  #1_{mn}
+\end{bmatrix}
+}
+\newcommand{\varmatrix}[3]{
+\begin{bmatrix}
+#3_{11} \amp  #3_{12} \amp  \cdots \amp  #3_{1#2} \\
+#3_{21} \amp  #3_{22} \amp  \cdots \amp  #3_{2#2} \\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \\
+#3_{#1 1} \amp  #3_{#1 2} \amp  \cdots \amp  #3_{#1 #2}
+\end{bmatrix}
+}
+\newcommand{\augmatrix}{
+\begin{amatrix}[cccc|c]
+a_{11} \amp  a_{12} \amp  \cdots \amp  a_{1n} \amp b_{1}\\
+a_{21} \amp  a_{22} \amp  \cdots \amp  a_{2n} \amp b_{2}\\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \amp \vdots\\
+a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
+\end{amatrix}
+}
+\newcommand{\varaugmatrix}[4]{
+\begin{amatrix}[cccc|c]
+#3_{11} \amp  #3_{12} \amp  \cdots \amp  #3_{1#2} \amp #4_{1}\\
+#3_{21} \amp  #3_{22} \amp  \cdots \amp  #3_{2#2} \amp #4_{2}\\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \amp \vdots\\
+#3_{#1 1} \amp  #3_{#1 2} \amp  \cdots \amp  #3_{#1 #2}\amp #4_{#1}
+\end{amatrix}
+}
+\newcommand{\spaceforemptycolumn}{\makebox[\wd\boxofmathplus]{\ }}
+
+\newcommand{\generalmatrix}[3]{
+\left(
+\begin{array}{cccc}
+#1_{1,1}  \amp #1_{1,2}  \amp \ldots  \amp #1_{1,#2}  \\
+#1_{2,1}  \amp #1_{2,2}  \amp \ldots  \amp #1_{2,#2}  \\
+\amp \vdots                         \\
+#1_{#3,1} \amp #1_{#3,2} \amp \ldots  \amp #1_{#3,#2}
+\end{array}
+\right)  }
+\newcommand{\colvec}[2][c]{\begin{bmatrix}[#1] #2 \end{bmatrix}}
+\DeclareMathOperator{\size}{size}
+\DeclareMathOperator{\adjoint}{adj}
+\DeclareMathOperator{\sgn}{sgn}
+\newcommand{\restrictionmap}[2]{{#1}\mathpunct\upharpoonright\hbox{}_{#2}}
+\renewcommand{\emptyset}{\varnothing}
+
+\newcommand{\proj}[2]{\mbox{proj}_{#2}({#1}) }
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://linear-algebra.northwestern.pub/" target="_blank"><img src="external/images/im_holycomm.svg" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">Linear algebra: the theory of vector spaces and linear transformations</span></a></h1>
+<p class="byline">Aaron Greicius</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="s_invertibility_theorem.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="c_matrices.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="c_vectorspace.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="s_invertibility_theorem.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="c_matrices.html" title="Up">Up</a><a class="next-button button toolbar-item" href="c_vectorspace.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link">
+<a href="c_foundations.html" data-scroll="c_foundations"><span class="codenumber">1</span> <span class="title">Foundations</span></a><ul>
+<li><a href="s_sets_functions.html" data-scroll="s_sets_functions">Sets and functions</a></li>
+<li><a href="s_logic.html" data-scroll="s_logic">Logic</a></li>
+<li><a href="s_proof_technique.html" data-scroll="s_proof_technique">Proof techniques</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_linear_systems.html" data-scroll="c_linear_systems"><span class="codenumber">2</span> <span class="title">Systems of linear equations</span></a><ul>
+<li><a href="s_systems.html" data-scroll="s_systems">Systems of linear equations</a></li>
+<li><a href="s_ge.html" data-scroll="s_ge">Gaussian elimination</a></li>
+<li><a href="s_solving.html" data-scroll="s_solving">Solving linear systems</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_matrices.html" data-scroll="c_matrices"><span class="codenumber">3</span> <span class="title">Matrices, their arithmetic, and their algebra</span></a><ul>
+<li><a href="s_matrix.html" data-scroll="s_matrix">Matrices and their arithmetic</a></li>
+<li><a href="s_algebraic.html" data-scroll="s_algebraic">Algebra of matrices</a></li>
+<li><a href="s_invertible_matrices.html" data-scroll="s_invertible_matrices">Invertible matrices</a></li>
+<li><a href="s_invertibility_theorem.html" data-scroll="s_invertibility_theorem">The invertibility theorem</a></li>
+<li><a href="s_det.html" data-scroll="s_det" class="active">The determinant</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_vectorspace.html" data-scroll="c_vectorspace"><span class="codenumber">4</span> <span class="title">Vector spaces and linear transformations</span></a><ul>
+<li><a href="s_vectorspace.html" data-scroll="s_vectorspace">Real vector spaces</a></li>
+<li><a href="s_transformation.html" data-scroll="s_transformation">Linear transformations</a></li>
+<li><a href="s_subspace.html" data-scroll="s_subspace">Subspaces</a></li>
+<li><a href="s_span_independence.html" data-scroll="s_span_independence">Span and linear independence</a></li>
+<li><a href="s_basis_dimension.html" data-scroll="s_basis_dimension">Bases and dimension</a></li>
+<li><a href="s_rank_nullity.html" data-scroll="s_rank_nullity">Rank-nullity theorem and fundamental spaces</a></li>
+<li><a href="s_isom.html" data-scroll="s_isom">Isomorphisms</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_innerproductspaces.html" data-scroll="c_innerproductspaces"><span class="codenumber">5</span> <span class="title">Inner product spaces</span></a><ul>
+<li><a href="s_innerproducts.html" data-scroll="s_innerproducts">Inner product spaces</a></li>
+<li><a href="s_orthogonality.html" data-scroll="s_orthogonality">Orthogonal bases and orthogonal projection</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_transbasis.html" data-scroll="c_transbasis"><span class="codenumber">6</span> <span class="title">Eigenvectors and diagonalization</span></a><ul>
+<li><a href="s_coordinatevectors_isomorphisms.html" data-scroll="s_coordinatevectors_isomorphisms">Coordinate vectors and isomorphisms</a></li>
+<li><a href="s_matrixreps.html" data-scroll="s_matrixreps">Matrix representations of linear transformations</a></li>
+<li><a href="s_changeofbasis.html" data-scroll="s_changeofbasis">Change of basis</a></li>
+<li><a href="ss_eigenvectors.html" data-scroll="ss_eigenvectors">Eigenvectors and eigenvalues</a></li>
+<li><a href="ss_diagonalization.html" data-scroll="ss_diagonalization">Diagonalization</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="appendix-notation.html" data-scroll="appendix-notation"><span class="codenumber">A</span> <span class="title">Notation</span></a></li>
+<li class="link"><a href="appendix-defs.html" data-scroll="appendix-defs"><span class="codenumber">B</span> <span class="title">Definitions</span></a></li>
+<li class="link"><a href="appendix-thms.html" data-scroll="appendix-thms"><span class="codenumber">C</span> <span class="title">Theory and procedures</span></a></li>
+<li class="link"><a href="appendix-egs.html" data-scroll="appendix-egs"><span class="codenumber">D</span> <span class="title">Examples</span></a></li>
+<li class="link"><a href="appendix-vids.html" data-scroll="appendix-vids"><span class="codenumber">E</span> <span class="title">Video examples and figures</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="s_det"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3.5</span> <span class="title">The determinant</span>
+</h2>
+<section class="introduction" id="introduction-18"><p id="p-774">The <em class="emphasis">determinant</em> is a map that assigns to a square matrix \(A\) a scalar \(\det A\in\R \text{.}\) The definition given below of the determinant is far from intuitive, and we will do little to motivate it up front. Instead, we allow its various properties to speak for themselves by way of retroactive motivation. In particular, we will see that</p>
+<div class="displaymath">
+\begin{equation*}
+A \text{ is invertible } \iff \det A \ne 0\text{,}
+\end{equation*}
+</div>
+<p class="continuation">making the determinant an important tool for investigating invertibility.</p></section><section class="subsection" id="ss_det"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.5.1</span> <span class="title">Definition of the determinant</span>
+</h3>
+<p id="p-775">Our definition of the determinant is a <em class="emphasis">recursive</em> one; given an \(n\times n\) matrix \(A\) its determinant is defined in terms of the determinant of certain <em class="emphasis">submatrices</em> of dimension \((n-1)\times (n-1)\text{.}\) This necessitates some notation to help our discussion along.</p>
+<article class="definition definition-like" id="d_minors"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.5.1</span><span class="period">.</span><span class="space"> </span><span class="title">Submatrix notation.</span>
+</h4>
+<p id="p-776">Let \(A\) be an \(n\times n\) matrix with \(n\geq 2\text{.}\) Given \(1\leq i, j\leq n\text{,}\) the <dfn class="terminology">submatrix of \(A\)</dfn> obtained by removing the \(i\)-th row and \(j\)-th column of \(A\) is denoted \(A_{i  k}\text{.}\)</p></article><article class="warning remark-like" id="rm_minors"><h4 class="heading">
+<span class="type">Warning</span><span class="space"> </span><span class="codenumber">3.5.2</span><span class="period">.</span>
+</h4>
+<p id="p-777">Do not conflate the submatrix notation \(A_{ij}\) with matrix entry notation \([A]_{ij}\text{:}\) the former returns the submatrix of \(A\) obtained by deleting the \(i\)-th row and \(j\)-th column; the latter returns the \(ij\)-th entry of \(A\text{.}\)</p></article><article class="definition definition-like" id="d_det"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.5.3</span><span class="period">.</span><span class="space"> </span><span class="title">The determinant.</span>
+</h4>
+<p id="p-778">Let \(A=[a_{ij}]_{n\times n}\text{.}\) The determinant is defined as follows:</p>
+<dl class="description-list">
+<dt id="li-237">Base case: \(n=1\)</dt>
+<dd><p id="p-779">When \(n=1\) we have \(A=[a_{11}]\) and we define \(\det A=a_{11}\text{.}\)</p></dd>
+<dt id="li-238">Recursive case: \(n\geq 2 \)</dt>
+<dd>
+<p id="p-780">When \(n\geq 2\) we define</p>
+<div class="displaymath">
+\begin{equation*}
+\det A=\sum_{j=1}^n(-1)^{1+j}a_{1j}\det A_{1  j}=a_{11}\det A_{11}-a_{12} A_{12}+\cdots +(-1)^{1+n}a_{1n}\det A_{1  n}\text{.}
+\end{equation*}
+</div>
+</dd>
+</dl></article><article class="remark remark-like" id="rm_det_small_cases"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.5.4</span><span class="period">.</span><span class="space"> </span><span class="title">Small \(n\) cases.</span>
+</h4>
+<p id="p-781">Let's look at determinant formulas for the \(n=2,3\) cases. You may remember the formula for \(2\times 2\) matrices from <a href="" class="xref" data-knowl="./knowl/th_2by2_inverse.html" title="Theorem 3.3.5: Inverses of \(2\times 2\) matrices">Theorem 3.3.5</a>; we will make the connection more explicit in <a href="" class="xref" data-knowl="./knowl/th_adjoint.html" title="Theorem 3.5.16: Adjoint formula">Theorem 3.5.16</a>.</p>
+<p id="p-782">Given \(A=\abcdmatrix{a}{b}{c}{d}\text{,}\) we have</p>
+<div class="displaymath">
+\begin{align*}
+\det A\amp = (-1)^{1+1}a\det A_{11}+(-1)^{1+2}b\det A_{12}\amp \text{(recursive case)}\\
+\amp =a\det [d]-b\det [c] \amp \text{(base case)}\\
+\amp =ad-bc \text{.}
+\end{align*}
+</div>
+<p class="continuation">The formula for the \(n=2\) case is simple enough to serve as a “second base case”, allowing us to end the recursive process of computing a general \(n\times n\) matrix once we get to expressions involving \(2\times 2\) matrices.</p>
+<p id="p-783">Given</p>
+<div class="displaymath">
+\begin{equation*}
+A=\begin{amatrix}[ccc]a\amp b\amp c\\ d\amp e\amp f\\ g\amp h\amp i  \end{amatrix}\text{,}
+\end{equation*}
+</div>
+<p class="continuation">we have</p>
+<div class="displaymath">
+\begin{align*}
+\det A \amp =a\det A_{11}-b\det A _{12}+c\det A_{13} \amp \text{(recursive case)}\\
+\amp =a\det \abcdmatrix{e}{f}{h}{i}-b\det\abcdmatrix{d}{f}{g}{i}+c\det\abcdmatrix{d}{e}{g}{h}\\
+\amp = a(ei-fh)-b(di-fg)+c(dh-eg) \amp \text{(\(n=2\) case)}\text{.}
+\end{align*}
+</div></article><p id="p-784">The recursive nature of the determinant definition makes induction arguments particularly useful when proving properties of the determinant, as illustrated by the next theorem.</p>
+<article class="theorem theorem-like" id="th_det_triangular"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.5.5</span><span class="period">.</span><span class="space"> </span><span class="title">Determinant of triangular matrices.</span>
+</h4>
+<p id="p-785">Let \(A=[a_{ij}]_{n\times n}\) be triangular (upper, lower, or diagonal). Then</p>
+<div class="displaymath">
+\begin{equation*}
+\det A=a_{11}a_{22}\cdots a_{nn}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">In other words, the determinant of a triangular matrix is the product of its diagonal entries.</p></article><article class="hiddenproof" id="proof-30"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-30"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-30"><article class="hiddenproof"><p id="p-786">We only give the proof for lower triangular matrices; the proof in the upper triangular case is nearly identical.</p>
+<p id="p-787">For any \(n\geq 1\) let \(P(n)\) denote the proposition: “The determinant of any \(n\times n\) lower triangular matrix is the product of its diagonal entries”. We prove by induction that \(P(n)\) is true for all \(n\geq 1\text{.}\)</p>
+<article class="case" id="case-47"><h5 class="heading">Base step: show \(P(1)\) is true.</h5>
+<p id="p-788">In this case \(A=[a_{11}]\text{,}\) and \(\det A=a_{11} \) is indeed the product of the diagonal entries of \(A\text{.}\)</p></article><article class="case" id="case-48"><h5 class="heading">Induction step: show \(P(n)\implies P(n+1)\) for all \(n\geq 1\).</h5>
+<p id="p-789">Let \(A=[a_{ij}]_{(n+1)\times (n+1)}\) be a lower triangular matrix. Then \(a_{1j}=0\) for all \(j\geq 2\text{,}\) and hence the determinant of \(A\) is given by</p>
+<div class="displaymath">
+\begin{equation*}
+\det A=a_{11}\det  A_{11}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Claim: \(A_{i  k}\) is lower triangular. Indeed, first observe that we have</p>
+<div class="displaymath">
+\begin{equation*}
+( A_{11})_{ij}=a_{i+1,j+1}
+\end{equation*}
+</div>
+<p class="continuation">for all \(1\leq i,j\leq n\text{;}\) by deleting the first row and first column we effectively bump each index up by one. Since \(A\) is lower triangular we have  \(a_{ij}=0\) for all \(1\leq i \lt; j\leq n+1\text{,}\) and hence also</p>
+<div class="displaymath">
+\begin{equation*}
+( A_{11})_{ij}=a_{i+1,j+1}=0
+\end{equation*}
+</div>
+<p class="continuation">for all \(1\leq i\lt; j\leq n \text{,}\) proving the claim.</p>
+<p id="p-790">Lastly, assuming \(P(n)\) is true (the induction hypothesis) we have</p>
+<div class="displaymath">
+\begin{align*}
+\det A \amp=a_{11}\det A_{11} \\
+\amp=a_{11}(a_{22}a_{33}\cdots a_{n+1,n+1})\amp \text{(induction)} \\
+\amp=a_{11}a_{22}\cdots a_{n+1,n+1} \text{,}
+\end{align*}
+</div>
+<p class="continuation">as desired.</p></article></article></div>
+<article class="corollary theorem-like" id="cor_det_identity"><h4 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">3.5.6</span><span class="period">.</span><span class="space"> </span><span class="title">Determinant of identity matrices.</span>
+</h4>
+<p id="p-791">Let \(I\) be the \(n\times n\) identity matrix. Then \(\det I=1\text{.}\)</p></article><article class="hiddenproof" id="proof-31"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-31"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-31"><article class="hiddenproof"><p id="p-792">This follows directly from <a href="" class="xref" data-knowl="./knowl/th_det_triangular.html" title="Theorem 3.5.5: Determinant of triangular matrices">Theorem 3.5.5</a> since the diagonal entries of \(I\) are all ones.</p></article></div></section><section class="subsection" id="ss_expansion_rows_columns"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.5.2</span> <span class="title">Expansion along rows and columns</span>
+</h3>
+<section class="introduction" id="introduction-19"><p id="p-793">Morally speaking, we should give some examples of higher-dimensional determinants, but we first introduce some theory that affords us more leeway in our computations.</p></section><article class="definition definition-like" id="d_minors_expansions"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.5.7</span><span class="period">.</span><span class="space"> </span><span class="title">Minors and expansions along rows/columns.</span>
+</h4>
+<p id="p-794">Given an \(n\times n\) matrix \(A\text{,}\) for any pair \(1\leq i,j\leq n\) the <dfn class="terminology">\(ij\)-th minor of \(A\)</dfn> is defined as</p>
+<div class="displaymath">
+\begin{equation*}
+M_{ij}=\det A_{i  k}\text{.}
+\end{equation*}
+</div>
+<p id="p-795">For any \(1\leq i\leq n\) the expression</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{k=1}^n(-1)^{i+k}a_{ik}M_{ik}
+\end{equation*}
+</div>
+<p class="continuation">is called the <dfn class="terminology">expansion along the \(i\)-th row of \(A\)</dfn>.</p>
+<p id="p-796">For any \(1\leq j\leq n\text{,}\) the expression</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{k=1}^n(-1)^{k+j}a_{kj}M_{kj}
+\end{equation*}
+</div>
+<p class="continuation">is called the <dfn class="terminology">expansion along the \(j\)-th column of \(A\)</dfn>.</p></article><article class="theorem theorem-like" id="th_expansion_row"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.5.8</span><span class="period">.</span><span class="space"> </span><span class="title">Expansion along rows.</span>
+</h4>
+<p id="p-797">Let \(A=[a_{ij}]_{n\times n}\text{.}\) For any \(1\leq i\leq n\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+\det A=  \sum_{k=1}^n(-1)^{i+k}a_{ik}M_{ik}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">In other words, we can compute \(\det A\) by expanding along any row of \(A\text{.}\)</p></article><article class="hiddenproof" id="proof-32"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-32"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-32"><article class="hiddenproof"><p id="p-798">The proof is by induction on the size \(n\) of the matrix.</p>
+<article class="case" id="case-49"><h5 class="heading">Base step: \(n=1, 2\).</h5>
+<p id="p-799">For \(n=1\) there is nothing to prove. Given</p>
+<div class="displaymath">
+\begin{equation*}
+A=\begin{bmatrix}a\amp b\\ c\amp d\end{bmatrix}
+\end{equation*}
+</div>
+<p class="continuation">expanding along either row yields \(ad-bc\text{,}\) as one easily verifies.</p></article><article class="case" id="case-50"><h5 class="heading">Induction step.</h5>
+<p id="p-800">Assume the claim is true of any \((n-1)\times (n-1)\) matrix.  Given \(A=[a_{ij}]_{n\times n}\) we have</p>
+<div class="displaymath">
+\begin{equation}
+\det A=\sum_{j=1}^n (-1)^{1+j}a_{1 j}\det  A_{1j}\text{.}\label{eq_det_def}\tag{3.5.1}
+\end{equation}
+</div>
+<p class="continuation">Expanding along the \(i\)-th row of \(A\) for any \(2\leq i\leq n\text{,}\) on the other hand, we get</p>
+<div class="displaymath">
+\begin{equation}
+\sum_{k=1}^n (-1)^{i+k}a_{ik}\det A_{i  k}\text{.}\label{eq_det_expansion}\tag{3.5.2}
+\end{equation}
+</div>
+<p class="continuation">To show these two expressions are equal we use the induction hypothesis to compute each \(\det  A_{1  j}\) by expanding along its \((i-1)\)-th row:</p>
+<div class="displaymath">
+\begin{equation}
+\det  A_{1j}=\sum_{k=1}^{n-1}(-1)^{i-1+k}[ A_{1j}]_{(i-1) k}\det {( A_{1j})}_{(i-1) k}\text{.}\label{eq_det_submatrix}\tag{3.5.3}
+\end{equation}
+</div>
+<p class="continuation">The matrix \((A_{1j})_{(i-1) k}\) is the result of first deleting row 1 and column \(j\) from \(A\text{,}\) and then deleting row \((i-1)\) and column \(k\) of the resulting matrix.  To deal with such iterated submatrices, we make some simple observations relating the rows and columns of \(A_{1 j}\) and \(A_{i  k}\) with those of \(A\text{.}\)</p>
+<ul class="disc">
+<li id="li-239"><p id="p-801">The \((i-1)\)-th row of \(A_{1  j}\) corresponds to the \(i\)-th row of \(A\text{,}\) and the first row of \(A_{i  k}\) corresponds to the first row of \(A\text{.}\)</p></li>
+<li id="li-240"><p id="p-802">If \(k\lt j\text{,}\) then the \(k\)-th column of \(A_{1  j}\) corresponds to the \(k\)-th column of \(A\text{;}\) if \(k\geq j\text{,}\) then the \(k\)-th column of \(A_{1  j}\) corresponds to the \((k+1)\)-th column of \(A\text{.}\)</p></li>
+<li id="li-241"><p id="p-803">If \(j\lt k\text{,}\) then the \(j\)-th column of \(A_{ik}\) corresponds to the \(j\)-th column of \(A\text{;}\) if \(j\geq k\text{,}\) then the \(j\)-th column of \(A_{ik}\) corresponds to the \((j+1)\)-th column of \(A\text{.}\)</p></li>
+</ul>
+<p class="continuation">From these observations we derive the following table of formulas:</p>
+<div class="displaymath">
+\begin{align}
+[ A_{1j}]_{(i-1)  k} \amp =\begin{cases}
+a_{i  k} \amp \text{if } k\lt j\\
+a_{i  (k+1)}  \amp \text{if } k\geq j
+\end{cases} \label{eq_entry_formula_1}\tag{3.5.4}\\
+[ A_{i  k}]_{1  j} \amp =\begin{cases}
+a_{1  j}  \amp \text{if } j\lt k\\
+a_{1  (j+1)} \amp \text{if } k\leq j
+\end{cases} \label{eq_entry_formula_2}\tag{3.5.5}\\
+{( A_{1j})}_{i-1  k}\amp=\begin{cases}
+{( A_{i  k})}_{1  (j-1)} \amp\text{if } k\lt j \\
+{( A_{i  (k+1)})}_{1  j} \amp \text{if } k\geq j
+\end{cases}\text{.}\label{eq_iterated_submatrix}\tag{3.5.6}
+\end{align}
+</div>
+<p class="continuation">We now begin to unpack <a href="" class="xref" data-knowl="./knowl/eq_det_def.html" title="Equation 3.5.1">(3.5.1)</a>:</p>
+<div class="displaymath">
+\begin{align*}
+\det A \amp= \sum_{j=1}^n (-1)^{1+j}a_{1 j}\det  A_{1j}\\
+\amp = \sum_{j=1}^n (-1)^{1+j}a_{1 j}\sum_{k=1}^{n-1}(-1)^{i-1+k}[ A_{1j}]_{(i-1)k}\det {( A_{1j})}_{(i-1)k} \amp \knowl{./knowl/eq_det_submatrix.html}{\text{(3.5.3)}}\\
+\amp
+= \underset{k\lt j \text{ terms}}{\underbrace{\sum_{j=2}^n \sum_{k=1}^{j-1}(-1)^{i+j+k}a_{1 j}a_{i  k}\det (A_{i  k})_{1  (j-1)}}}+\underset{k\geq j \text{ terms}}{\underbrace{\sum_{j=1}^{n-1} \sum_{k=j}^{n-1}(-1)^{i+j+k}a_{1 j}a_{i  (k+1)}\det (A_{i  (k+1)})_{1  j}}}
+\amp \knowl{./knowl/eq_entry_formula_1.html}{\text{(3.5.4)}}, \knowl{./knowl/eq_iterated_submatrix.html}{\text{(3.5.6)}}\\
+\amp = \underset{j\geq k \text{ terms}}{\underbrace{\sum_{j=1}^{n-1} \sum_{k=1}^{j}(-1)^{i+j+k+1}a_{i  k}[A_{ik}]_{1j}\det (A_{i  k})_{1  j}}}+\underset{j\lt k \text{ terms}}{\underbrace{\sum_{j=1}^{n-1} \sum_{k=j+1}^{n}(-1)^{i+j+k-1}a_{ik}[A_{ik}]_{1 j}\det (A_{ik})_{1  j}}}
+\amp (\text{re-labeled } j=j-1, k=k+1)\\
+\amp = \underset{j\geq k \text{ terms}}{\underbrace{\sum_{j=1}^{n-1} \sum_{k=1}^{j}(-1)^{i+j+k+1}a_{i  k}[A_{ik}]_{1j}\det (A_{i  k})_{1  j}}}+\underset{j\lt k \text{ terms}}{\underbrace{\sum_{j=1}^{n-1} \sum_{k=j+1}^{n}(-1)^{i+j+k+1}a_{ik}[A_{ik}]_{1 j}\det (A_{ik})_{1  j}}}
+\amp ((-1)^{c+2}=(-1)^c)\\
+\amp =\sum_{k=1}^{n}(-1)^{i+k}a_{ik}\sum_{j=1}^{n-1}(-1)^{j+1}[A_{ik}]_{1j}\det (A_{ik})_{1j}
+\amp (\text{re-order terms})\\
+\amp =\sum_{k=1}^{n}(-1)^{i+k}a_{ik}\det A_{ik} \text{.}
+\end{align*}
+</div>
+<p class="continuation">This completes the induction step, and thus the proof is finished.</p></article></article></div>
+<p id="p-804">Suprisingly, it turns out that we can compute the determinant of a matrix by expanding along any <em class="emphasis">column</em> (<a href="" class="xref" data-knowl="./knowl/cor_expansion_columns.html" title="Corollary 3.5.10: Expansion along columns">Corollary 3.5.10</a>). This is a consequence of the following theorem, which is useful in its own right. The proof uses induction and a wonderful trick starting from the observation that \(c=\frac{1}{n}\sum_{i=1}^n c\) for any \(c\in\R\text{.}\)</p>
+<article class="theorem theorem-like" id="th_det_transpose"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.5.9</span><span class="period">.</span><span class="space"> </span><span class="title">Determinant and transposition.</span>
+</h4>
+<p id="p-805">Let \(A\) be an \(n\times n\) matrix. Then</p>
+<div class="displaymath">
+\begin{equation*}
+\det A^T=\det A\text{.}
+\end{equation*}
+</div></article><article class="hiddenproof" id="proof-33"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-33"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-33"><article class="hiddenproof"><p id="p-806">The proof is by induction on \(n\text{.}\) The base case (\(n=1\)) is trivial since \([a]^T=[a]\) for any \(1\times 1\) matrix \([a]\text{.}\)</p>
+<p id="p-807">For induction we assume that for all \(n\geq 2\) we have \(\det B^T=\det B\) for any \((n-1)\times (n-1)\) matrix. Suppose \(A\) is an \(n\times n\) matrix. We have</p>
+<div class="displaymath">
+\begin{align*}
+\det A^T \amp = \frac{1}{n}\sum_{i=1}^{n}\det A^T \\
+\amp =\frac{1}{n}\sum_{i=1}^n\sum_{j=1}^n(-1)^{i+j}[A^T]_{ij}\det \left((A^T)_{ij}\right) \amp (\knowl{./knowl/th_expansion_row.html}{\text{Theorem 3.5.8}}) \\
+\amp = \frac{1}{n}\sum_{i=1}^n\sum_{j=1}^n(-1)^{i+j}[A]_{ji}\det (A_{ji})^T \amp ([A^T]_{ij}=A_{ji}, (A^T)_{ij}=(A_{ji})^T)\\
+\amp = \frac{1}{n}\sum_{i=1}^n\sum_{j=1}^n(-1)^{i+j}[A]_{ji}\det A_{ji} \amp (\det (A_{ji})^T=\det A_{ji}, \text{ by induction})\\
+\amp= \frac{1}{n}\sum_{j=1}^n\sum_{i=1}^n(-1)^{i+j}[A]_{ji}\det A_{ji} \amp (\text{props. of addition})\\
+\amp =\frac{1}{n}\sum_{j=1}^n\det A \amp (\knowl{./knowl/th_expansion_row.html}{\text{Theorem 3.5.8}})\\
+\amp = \det A\text{.}
+\end{align*}
+</div>
+<p class="continuation">This completes the proof by induction. (Note how in the second equality in the chain above we compute \(\det A^T\) in the \(i\)-th term of \(\sum_{i=1}^n\det A^T\) by expanding along the \(i\)-th row of \(\det A^T\text{.}\) A similar observation applies to the penultimate equality.)</p></article></div>
+<article class="corollary theorem-like" id="cor_expansion_columns"><h4 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">3.5.10</span><span class="period">.</span><span class="space"> </span><span class="title">Expansion along columns.</span>
+</h4>
+<p id="p-808">Let \(A=[a_{ij}]_{n\times n}\text{.}\) For any \(1\leq j\leq n\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+\det A=  \sum_{k=1}^n(-1)^{k+j}a_{kj}M_{kj}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">In other words, we can compute \(\det A\) by expanding along any row of \(A\text{.}\)</p></article><article class="hiddenproof" id="proof-34"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-34"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-34"><article class="hiddenproof"><p id="p-809">For any \(1\leq j\leq n\text{,}\) we have</p>
+<div class="displaymath">
+\begin{align*}
+\sum_{k=1}^n(-1)^{k+j}a_{kj}M_{kj}\amp =\sum_{k=1}^n(-1)^{k+j}(A^T)_{jk}\det A_{kj} \amp (\knowl{./knowl/d_transpose.html}{\text{Definition 3.1.24}})\\
+\amp = \sum_{k=1}^n(-1)^{k+j}(A^T)_{jk}\det (A^T)_{jk} \amp ( (A^T)_{ij}= A_{ji}) \\
+\amp= \det A^T  \amp (\knowl{./knowl/d_det.html}{\text{Definition 3.5.3}})\\
+\amp=\det A \amp (\knowl{./knowl/th_det_transpose.html}{\text{Theorem 3.5.9}}) \text{.}
+\end{align*}
+</div></article></div>
+<article class="example example-like" id="example-25"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-25"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.5.11</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-25"><article class="example example-like"><p id="p-810">Compute \(\det A\) for</p>
+<div class="displaymath">
+\begin{equation*}
+A=\begin{bmatrix}2\amp 1\amp 0\amp 3\\ 0\amp 0\amp 0\amp 2\\ 0\amp 2\amp 0\amp 0\\ 4\amp 2\amp 1\amp 0 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-27" id="solution-27"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-27"><div class="solution solution-like">
+<p id="p-811">First we compute \(A\) by expanding along the second row. The only nonzero term of this expansion is the last one, yielding</p>
+<div class="displaymath">
+\begin{equation*}
+\det A=(-1)^{2+4}[A]_{24}M_{24}=2\det A_{24}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">We have</p>
+<div class="displaymath">
+\begin{equation*}
+A_{24}=\begin{bmatrix}
+2\amp 1\amp 0\\ 0\amp 2\amp 0\\ 4\amp 2\amp 1
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">To compute its determinant we expand along its third column:</p>
+<div class="displaymath">
+\begin{equation*}
+\det A_{24}=(-1)^{3+3}1\det \begin{bmatrix}
+2\amp 1\\ 0\amp 2
+\end{bmatrix}=4.
+\end{equation*}
+</div>
+<p class="continuation">We conclude that</p>
+<div class="displaymath">
+\begin{equation*}
+\det A=2\det A_{24}=2(4)=8\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article></div>
+<article class="remark remark-like" id="rm_sign_matrix"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.5.12</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix of signs.</span>
+</h4>
+<p id="p-812">When expanding along a row or column, it is easy to get tripped up by the sign \((-1)^{i+j}\) in front of the \(ij\)-th coefficient. A “matrix of signs” is a sort of mnemonic device to help you in this regard. It is easily generated by observing that the sign in front of the \((1,1)\)-th entry is always a \(+\) (since \(1=(-1)^{1+1}\)), and that any horizontal or vertical step within the matrix is accompanied by a change of sign. As an example, for \(n=4\) we have the following matrix of signs:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}
++\amp -\amp +\amp -\\
+-\amp +\amp -\amp +\\
++\amp -\amp +\amp -\\
+-\amp +\amp -\amp +
+\end{bmatrix}\text{.}
+\end{equation*}
+</div></article><p id="p-813">The freedom to compute the determinant by expanding along any row or column gives rise to the following intuitive property.</p>
+<article class="theorem theorem-like" id="th_det_zero_repeated_row"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.5.13</span><span class="period">.</span><span class="space"> </span><span class="title">Zero rows/columns, swapping rows/columns, identical rows/columns.</span>
+</h4>
+<p id="p-814">Let \(A\) be an \(n\times n\) matrix.</p>
+<ol class="decimal">
+<li id="li-242"><p id="p-815">If \(A\) has a zero row or zero column, then \(\det A=0\)</p></li>
+<li id="li-243">
+<p id="p-816">Assume \(n\geq 2\text{.}\) Let \(A'\) be the matrix obtained by swapping two rows (or two columns) of \(A\text{.}\) Then</p>
+<div class="displaymath">
+\begin{equation*}
+\det A'=-\det A\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-244"><p id="p-817">Assume \(n\geq 2\text{.}\) If \(A\) has two identical rows or two identical columns, then \(\det A=0\text{.}\)</p></li>
+</ol></article><article class="hiddenproof" id="proof-35"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-35"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-35"><article class="hiddenproof"><p id="p-818">The first statement is obvious since according to <a href="" class="xref" data-knowl="./knowl/th_expansion_row.html" title="Theorem 3.5.8: Expansion along rows">Theorem 3.5.8</a> and <a href="" class="xref" data-knowl="./knowl/cor_expansion_columns.html" title="Corollary 3.5.10: Expansion along columns">Corollary 3.5.10</a> we may compute the determinant by expanding along the zero row or zero column in question.</p>
+<p id="p-819">The third statement follows from the second. Indeed, if \(A\) has two identical rows or columns, then the matrix \(A'\) obtained from \(A\) by swapping the rows (or columns) in question is \(A\) itself. Thus \(\det A=-\det A\) by the second statement, and we conclude that \(\det A=0\text{.}\)</p>
+<p id="p-820">It remains only to show the second statement. We prove only the statement regarding swapping rows; the corresponding statement about columns follows from <a href="" class="xref" data-knowl="./knowl/th_det_transpose.html" title="Theorem 3.5.9: Determinant and transposition">Theorem 3.5.9</a>. The proof is by induction.</p>
+<article class="case" id="case-51"><h5 class="heading">Base step: \(n=2\).</h5>
+<p id="p-821">Let \(A=\begin{bmatrix}a\amp b\\c\amp d \end{bmatrix}\text{.}\) Then \(A'=\abcdmatrix{c}{d}A{b}\text{,}\) and \(\det(A')=cb-ad=-(ad-bc)=-\det A\text{.}\)</p></article><article class="case" id="case-52"><h5 class="heading">Induction step.</h5>
+<p id="p-822">We assume by induction that the result holds for any \(n\times n\) matrices, \(n\geq 2\text{,}\) and show the same is true for any \((n+1)\times (n+1)\) matrix.</p>
+<p id="p-823">Let \(A\) be an \((n+1)\times (n+1)\) matrix, and suppose \(A'\)  is the result of swapping the \(i\)-th and \(k\)-th rows of \(A\text{.}\) We compute the determinants of \(A\) and \(A'\) by expanding along the \(\ell\)-th row, where \(\ell\ne i\) and \(\ell\ne k\text{.}\) This is possible since \((n+1)\geq 3\text{.}\)</p>
+<p id="p-824">Moving along the \(\ell\)-th row, notice that each submatrix \({A'}_{\ell j}\) is the result of swapping the two rows of \(A_{\ell j}\) that originally corresponded to the \(i\)-th and \(k\)-th rows of \(A\text{.}\) Since these submatrices are of dimension \(n\times n\text{,}\) we have \(\det  {A'}_{\ell j}=-\det  A_{\ell j}\) by induction. Lastly, since the \(\ell\)-th rows of \(A\) and \(A'\) are the same we have</p>
+<div class="displaymath">
+\begin{align*}
+\det A \amp=\sum_{j=1}^{n+1}(-1)^{\ell+j}a_{\ell j}\det  A_{\ell j} \\
+\amp = \sum_{j=1}^{n+1}(-1)^{\ell+j}a_{\ell j}(-\det  {A'}_{\ell j})\\
+\amp =-\sum_{j=1}^{n+1}(-1)^{\ell+j}a_{\ell j}\det  {A'}_{\ell j} \\
+\amp=-\det A' \text{.}
+\end{align*}
+</div></article></article></div>
+<p id="p-825">As a further consequence of <a href="" class="xref" data-knowl="./knowl/th_expansion_row.html" title="Theorem 3.5.8: Expansion along rows">Theorem 3.5.8</a> and <a href="" class="xref" data-knowl="./knowl/cor_expansion_columns.html" title="Corollary 3.5.10: Expansion along columns">Corollary 3.5.10</a>, we can derive the <em class="emphasis">adjoint formula</em>.</p>
+<article class="definition definition-like" id="d_adjoint"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.5.14</span><span class="period">.</span><span class="space"> </span><span class="title">Adjoint matrix.</span>
+</h4>
+<p id="p-826">Let \(A\) be \(n\times n\text{.}\) The <dfn class="terminology">adjoint</dfn> of \(A\text{,}\) denoted \(\adj A\text{,}\) is the \(n\times n\) matrix whose \(ij\)-th entry is defined as follows:</p>
+<div class="displaymath">
+\begin{equation*}
+(\adj A)_{ij}=(-1)^{i+j}M_{ji}\text{.}
+\end{equation*}
+</div></article><article class="remark remark-like" id="rm_adjoint"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.5.15</span><span class="period">.</span>
+</h4>
+<p id="p-827">Be careful of the order reversal in this definition. The \(ij\)-th entry of \(\adj A\) is equal to plus or minus the \(ji\)-th minor of \(A\text{.}\) Let's see this in action for some small matrices.</p>
+<p id="p-828">For</p>
+<div class="displaymath">
+\begin{equation*}
+A=\abcdmatrix{a}{b}{c}{d}
+\end{equation*}
+</div>
+<p class="continuation">we have</p>
+<div class="displaymath">
+\begin{equation*}
+\adj A=\begin{amatrix}[rr] M_{11}\amp -M_{21}\\ -M_{12}\amp M_{22}\end{amatrix}=
+\begin{amatrix}[rr]d\amp -b\\ -c\amp a  \end{amatrix}\text{.}
+\end{equation*}
+</div>
+<p id="p-829">For</p>
+<div class="displaymath">
+\begin{equation*}
+A=\begin{bmatrix}
+a\amp b\amp c\\ d\amp e\amp f\\ g\amp h\amp i
+\end{bmatrix}
+\end{equation*}
+</div>
+<p class="continuation">we have</p>
+<div class="displaymath">
+\begin{equation*}
+\adj A=\begin{amatrix}[rrr]
+M_{11}\amp -M_{21}\amp M_{31}\\
+-M_{12}\amp M_{22}\amp -M_{32}\\
+M_{13}\amp -M_{23}\amp M_{33}
+\end{amatrix}
+=\begin{amatrix}[rrr]
+(ei-fh)\amp -(bi-ch)\amp (bf-ce)\\
+-(di-fg)\amp (ai-cg)\amp -(af-cd)\\
+(dh-eg)\amp -(ah-bg)\amp (ae-bd)
+\end{amatrix}\text{.}
+\end{equation*}
+</div></article><article class="theorem theorem-like" id="th_adjoint"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.5.16</span><span class="period">.</span><span class="space"> </span><span class="title">Adjoint formula.</span>
+</h4>
+<p id="p-830">Let \(A\) be an \(n\times n\) matrix. Then</p>
+<div class="displaymath">
+\begin{equation}
+A\,(\adj A)=(\adj A)\, A=(\det A)I\text{.}\label{eq_adj_form}\tag{3.5.7}
+\end{equation}
+</div>
+<p class="continuation">As a consequence, if \(\det A\ne 0\text{,}\) then \(A\) is invertible and</p>
+<div class="displaymath">
+\begin{equation}
+A^{-1}=\frac{1}{\det A}\, \adj A\text{.}\label{eq_adj_inv_form}\tag{3.5.8}
+\end{equation}
+</div></article><article class="hiddenproof" id="proof-36"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-36"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-36"><article class="hiddenproof"><p id="p-831">First observe that the second statement regarding invertibility follows directly from <a href="" class="xref" data-knowl="./knowl/eq_adj_form.html" title="Equation 3.5.7">(3.5.7)</a>, since in this case setting \(B=\frac{1}{\det A}\, \adj A\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+AB=BA=\frac{1}{\det A}(A\adj A)=\frac{1}{\det A}((\det A)\, I)=I\text{.}
+\end{equation*}
+</div>
+<p id="p-832">Thus it suffices to prove <a href="" class="xref" data-knowl="./knowl/eq_adj_form.html" title="Equation 3.5.7">(3.5.7)</a>. To do so, we must show that</p>
+<div class="displaymath">
+\begin{equation*}
+[A\, \adj A]_{ij}=[\adj A\, A]_{ij}=
+\begin{cases} \det A\amp \text{if } i=j\\
+0 \amp \text{if } i\ne j
+\end{cases}\text{.}
+\end{equation*}
+</div>
+<article class="case" id="case-53"><h5 class="heading">Case: \(i=j\).</h5>
+<p id="p-833">In this case we have</p>
+<div class="displaymath">
+\begin{align*}
+[A\, \adj A]_{ii} \amp =\sum_{k=1}^na_{ik}[\adj A]_{ki}  \\
+\amp =\sum_{k=1}^n a_{ik}((-1)^{i+k}M_{ik}) \amp (\knowl{./knowl/d_adjoint.html}{\text{Definition 3.5.14}} )\\
+\amp =\sum_{k=1}^n(-1)^{i+k}a_{ik}M_{ik} \\
+\amp =\det A \text{.}
+\end{align*}
+</div>
+<p class="continuation">A similar argument shows that \((\adj A\, A)_{ii}=\det A\text{,}\) though in this case we use expansion along a column.</p></article><article class="case" id="case-54"><h5 class="heading">Case: \(i\ne j\).</h5>
+<p id="p-834">When \(i\ne j\) we have</p>
+<div class="displaymath">
+\begin{align*}
+[A\, \adj A]_{ij} \amp =\sum_{k=1}^na_{ik}[\adj A]_{kj}  \\
+\amp =\sum_{k=1}^n a_{ik}((-1)^{k+j}M_{jk}) \amp (\knowl{./knowl/d_adjoint.html}{\text{Definition 3.5.14}} )\\
+\amp =\sum_{k=1}^n(-1)^{k+j}a_{ik}M_{jk} \\
+\amp =\det C \text{,}
+\end{align*}
+</div>
+<p class="continuation">where \(C\) is the matrix obtained by replacing the \(j\)-th row of \(A\) with a copy of its \(i\)-th row. Since \(C\) has two identical rows <a href="" class="xref" data-knowl="./knowl/th_det_zero_repeated_row.html" title="Theorem 3.5.13: Zero rows/columns, swapping rows/columns, identical rows/columns">Theorem 3.5.13</a> implies</p>
+<div class="displaymath">
+\begin{equation*}
+[A\, \adj A]_{ij}=\det C=0\text{,}
+\end{equation*}
+</div>
+<p class="continuation">as desired. Once again, a similar argument using expansion along a column shows that \([\adj A\, A]_{ij}=0\text{.}\)</p></article></article></div>
+<article class="example example-like" id="example-26"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-26"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.5.17</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-26"><article class="example example-like"><p id="p-835">Use the adjoint formula to compute \(A^{-1}\text{,}\) where</p>
+<div class="displaymath">
+\begin{equation*}
+A=\begin{amatrix}[rrr]1\amp 2\amp 1 \\ -1\amp 1\amp -1\\ 0\amp 2\amp 2  \end{amatrix}\text{.}
+\end{equation*}
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-28" id="solution-28"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-28"><div class="solution solution-like">
+<p id="p-836">First compute \(\det A=\) by expanding along the third row:</p>
+<div class="displaymath">
+\begin{equation*}
+\det A=-2(-1+1)+2(2+1)=6\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Next, compute</p>
+<div class="displaymath">
+\begin{equation*}
+\adj A=\begin{amatrix}[rrr] 4\amp -2 \amp -3\\ 2\amp 2\amp 0\\ -2\amp -2\amp 3  \end{amatrix}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Then we have</p>
+<div class="displaymath">
+\begin{equation*}
+A^{-1}=\frac{1}{6}\,\adj A=\frac{1}{6}\, \begin{amatrix}[rrr] 4\amp -2 \amp -3\\ 2\amp 2\amp 0\\ -2\amp -2\amp 3  \end{amatrix}\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article></div>
+<article class="remark remark-like" id="rm_adjoint_form"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.5.18</span><span class="period">.</span>
+</h4>
+<p id="p-837">Before you get too excited about the adjoint formula, you should know that as \(n\) grows, this procedure becomes much more costly in terms of number of arithmetic operations involved than our inverse algorithm based on Gauss-Jordan elimination. You get a sense of this already from the previous \(3\times 3\) example. In general, the Gauss-Jordan inverse algorithm is the way to go.</p></article></section><section class="subsection" id="ss_det_row_ops"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.5.3</span> <span class="title">Row operations and determinant</span>
+</h3>
+<p id="p-838">Suppose the square matrix \(A\) can be row reduced to \(B\) via  sequence of row operations. In general we do not have \(\det A=\det B\text{,}\) but we can compute \(\det A\) from \(\det B\) by keeping track of which operations are used.</p>
+<article class="theorem theorem-like" id="th_det_row_ops"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.5.19</span><span class="period">.</span><span class="space"> </span><span class="title">Row operations and determinant.</span>
+</h4>
+<p id="p-839">Let \(A\) be an \(n\times n\) matrix. Using the notation from <a href="" class="xref" data-knowl="./knowl/d_elementary_matrix.html" title="Definition 3.4.1">Definition 3.4.1</a> we have:</p>
+<ol class="decimal">
+<li id="li-245"><p id="p-840">\(\displaystyle \det(\underset{c\cdot r_i}{E}\, A)=c\det(A)\)</p></li>
+<li id="li-246"><p id="p-841">\(\displaystyle \det(\underset{r_i\leftrightarrow r_j}{E}\, A)=-\det(A)\)</p></li>
+<li id="li-247"><p id="p-842">\(\det(\underset{r_i+cr_j}{E}\, A)=\det(A)\text{.}\)</p></li>
+</ol>
+<p class="continuation">In particular, taking \(A=I\text{,}\) we have</p>
+<div class="displaymath">
+\begin{align*}
+\det\underset{c\cdot r_i}{E}\amp =c \amp \det\underset{r_i\leftrightarrow r_j}{E}\amp =-1 \amp \det \underset{r_i+cr_j}{E}\amp =1  \text{.}
+\end{align*}
+</div></article><article class="hiddenproof" id="proof-37"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-37"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-37"><article class="hiddenproof"><p id="p-843">The first statement follows easily by computing \(\det (\underset{cr_i}{E}\, A)\) by expanding along the \(i\)-th row. The second statement is in fact a rephrasing of the second statement of <a href="" class="xref" data-knowl="./knowl/th_det_zero_repeated_row.html" title="Theorem 3.5.13: Zero rows/columns, swapping rows/columns, identical rows/columns">Theorem 3.5.13</a>. It remains to prove the third statement.</p>
+<p id="p-844">Let \(A=[a_{ij}]_{n\times n}\text{,}\) and set \(B=\underset{r_i+cr_j}{E}\cdot A\text{.}\) Then \(B\) is identical to \(A\) with the exception of the \(i\)-th row, whose \(k\)-th entry is</p>
+<div class="displaymath">
+\begin{equation*}
+(B)_{ik}=a_{ik}+ca_{jk}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">It follows that</p>
+<div class="displaymath">
+\begin{align*}
+\det B \amp=\sum_{k=1}^n(-1)^{i+k}(a_{ik}+ca_{jk})M_{ik} \\
+\amp = \sum_{k=1}^n(-1)^{i+k}a_{ik}M_{ik}+c\sum_{k=1}^n(-1)^{i+k}a_{jk}M_{ik}\\
+\amp =\det A+\det C \text{,}
+\end{align*}
+</div>
+<p class="continuation">where \(C\) is the matrix obtained by replacing the \(i\)-th row of \(A\) with a row identical with its \(j\)-th row. By <a href="" class="xref" data-knowl="./knowl/th_det_zero_repeated_row.html" title="Theorem 3.5.13: Zero rows/columns, swapping rows/columns, identical rows/columns">Theorem 3.5.13</a> we conclude \(\det C=0\text{,}\) and thus</p>
+<div class="displaymath">
+\begin{equation*}
+\det(\underset{r_i+cr_j}{E}\cdot A)=\det B=\det A+\det C=\det A\text{,}
+\end{equation*}
+</div>
+<p class="continuation">as desired.</p></article></div>
+<article class="remark remark-like" id="rm_det_row_ops"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.5.20</span><span class="period">.</span>
+</h4>
+<p id="p-845">In the language of row operations, <a href="" class="xref" data-knowl="./knowl/th_det_row_ops.html" title="Theorem 3.5.19: Row operations and determinant">Theorem 3.5.19</a> translates as follows:</p>
+<ul class="disc">
+<li id="li-248"><p id="p-846">Scaling a row of a matrix by \(c\) has the effect of scaling the determinant by \(c\text{.}\)</p></li>
+<li id="li-249"><p id="p-847">Swapping two rows of a matrix changes the sign of the determinant.</p></li>
+<li id="li-250"><p id="p-848">Performing a row addition operation on a matrix has no effect on the determinant.</p></li>
+</ul></article><article class="remark remark-like" id="rm_det_col_ops"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.5.21</span><span class="period">.</span><span class="space"> </span><span class="title">Column operations and the determinant.</span>
+</h4>
+<p id="p-849">As shown in <a href="" class="xref" data-knowl="./knowl/ex_det_col_ops.html" title="Exercise 3.5.4.22">Exercise 3.5.4.22</a> the determinant behaves in a similar manner with respect to <em class="emphasis">elementary column operations</em>: i.e., scaling a column by a nonzero constant scales the determinant by \(c\text{,}\) swapping columns multiplies the determinant by \(-1\text{,}\) adding a multiple of one column to another leaves the determinant unchanged.</p></article><article class="corollary theorem-like" id="cor_det_prod_elem"><h4 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">3.5.22</span><span class="period">.</span><span class="space"> </span><span class="title">Determinant and products of elementary matrices.</span>
+</h4>
+<p id="p-850">Let \(A\) be an \(n\times n\) matrix, and suppose we have</p>
+<div class="displaymath">
+\begin{equation}
+B=E_rE_{r-1}\cdots E_1\, A\label{eq_row_reduce_elem}\tag{3.5.9}
+\end{equation}
+</div>
+<p class="continuation">for some collection of elementary matrices \(E_i\text{.}\)  Then</p>
+<div class="displaymath">
+\begin{equation}
+\det B=\det E_r\, \det E_{r-1}\cdots \det E_1\, \det A\text{.}\label{eq_det_row_reduce}\tag{3.5.10}
+\end{equation}
+</div></article><article class="hiddenproof" id="proof-38"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-38"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-38"><article class="hiddenproof"><p id="p-851">This is an easy proof by induction on the number \(r\) of elementary matrices involved, the base case (\(r=1\)) of which is covered by <a href="" class="xref" data-knowl="./knowl/th_det_row_ops.html" title="Theorem 3.5.19: Row operations and determinant">Theorem 3.5.19</a>.</p></article></div>
+<p id="p-852"><a href="" class="xref" data-knowl="./knowl/cor_det_prod_elem.html" title="Corollary 3.5.22: Determinant and products of elementary matrices">Corollary 3.5.22</a> has both computational and theoretical applications.</p>
+<p id="p-853">On the computational side, it suggests an alternative method of computing \(\det A\text{:}\) first row reduce \(A\) to a simpler matrix \(B\text{,}\) making sure to keep track of the operations you use; set up an equation as in <a href="" class="xref" data-knowl="./knowl/eq_row_reduce_elem.html" title="Equation 3.5.9">(3.5.9)</a> representing the row reduction; then solve the corresponding equation <a href="" class="xref" data-knowl="./knowl/eq_det_row_reduce.html" title="Equation 3.5.10">(3.5.10)</a> for \(\det A\) in terms of \(\det B\) and the \(\det E_i\text{.}\)</p>
+<article class="example example-like" id="example-27"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-27"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.5.23</span><span class="period">.</span><span class="space"> </span><span class="title">Determinant via row reduction.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-27"><article class="example example-like"><p id="p-854">Suppose the matrix \(A\) can be row reduced to</p>
+<div class="displaymath">
+\begin{equation*}
+B=\begin{amatrix}[rrr]2\amp -7\amp -8\\ 0\amp -3\amp 4\\ 0\amp 0\amp 2  \end{amatrix}
+\end{equation*}
+</div>
+<p class="continuation">by perfomring the following sequence of row operations:</p>
+<ol class="decimal">
+<li id="li-251"><p id="p-855">First swap the second and third rows.</p></li>
+<li id="li-252"><p id="p-856">Then scale the first row by \(3\)</p></li>
+<li id="li-253"><p id="p-857">Then replace the second row with the second row plus the first row.</p></li>
+</ol>
+<p class="continuation">Compute \(\det A\text{.}\)</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-29" id="solution-29"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-29"><div class="solution solution-like">
+<p id="p-858">In terms of elementary matrices we have</p>
+<div class="displaymath">
+\begin{equation*}
+B=\underset{r_2+r_1}{E}\underset{3r_1}{E}\underset{r_2\leftrightarrow r_3}{E}A,
+\end{equation*}
+</div>
+<p class="continuation">and hence</p>
+<div class="displaymath">
+\begin{equation*}
+\det B=\det \underset{r_2+r_1}{E}\, \det \underset{3r_1}{E}\, \det \underset{r_2\leftrightarrow r_3}{E}\, \det A=(1)(3)(-1)\det A=(-3)\det A.
+\end{equation*}
+</div>
+<p class="continuation">We conclude that</p>
+<div class="displaymath">
+\begin{equation*}
+\det A=-\frac{1}{3}\det B=-(1/3)(-12)=4\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article></div>
+<p id="p-859">On the theoretical side, <a href="" class="xref" data-knowl="./knowl/cor_det_prod_elem.html" title="Corollary 3.5.22: Determinant and products of elementary matrices">Corollary 3.5.22</a> implies both <a href="" class="xref" data-knowl="./knowl/th_inv_iff_det.html" title="Theorem 3.5.24: Determinant and invertibility">Theorem 3.5.24</a> and <a href="" class="xref" data-knowl="./knowl/th_det_mult.html" title="Theorem 3.5.25: Determinant is multiplicative">Theorem 3.5.25</a>.</p>
+<article class="theorem theorem-like" id="th_inv_iff_det"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.5.24</span><span class="period">.</span><span class="space"> </span><span class="title">Determinant and invertibility.</span>
+</h4>
+<p id="p-860">Let \(A\) be an \(n\times n\) matrix. Then \(A\) is invertible if and only if \(\det A\ne 0\text{.}\)</p></article><article class="hiddenproof" id="proof-39"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-39"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-39"><article class="hiddenproof"><p id="p-861">The implication \(\det A\ne 0\implies A \text{ invertible}\) was proved in <a href="" class="xref" data-knowl="./knowl/th_adjoint.html" title="Theorem 3.5.16: Adjoint formula">Theorem 3.5.16</a>.</p>
+<p id="p-862">For the other direction, assume \(A\) is invertible. Then <a href="" class="xref" data-knowl="./knowl/th_invertibility.html" title="Theorem 3.4.5: Invertibility theorem">Theorem 3.4.5</a> implies \(A\) is a product of elementary matrices:</p>
+<div class="displaymath">
+\begin{equation*}
+A=E_1E_2\cdots E_r\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Then <a href="" class="xref" data-knowl="./knowl/cor_det_prod_elem.html" title="Corollary 3.5.22: Determinant and products of elementary matrices">Corollary 3.5.22</a> implies</p>
+<div class="displaymath">
+\begin{equation*}
+\det A=\det E_1\, \det E_2\cdots \det E_1\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Since \(\det E_i\ne 0\) for all \(i\) (<a href="" class="xref" data-knowl="./knowl/th_det_row_ops.html" title="Theorem 3.5.19: Row operations and determinant">Theorem 3.5.19</a>), we conclude \(\det A\ne 0\text{.}\)</p></article></div>
+<article class="theorem theorem-like" id="th_det_mult"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.5.25</span><span class="period">.</span><span class="space"> </span><span class="title">Determinant is multiplicative.</span>
+</h4>
+<p id="p-863">Let \(A\) and \(B\) be \(n\times n\) matrices. Then</p>
+<div class="displaymath">
+\begin{equation*}
+\det AB=\det A\, \det B\text{.}
+\end{equation*}
+</div></article><article class="hiddenproof" id="proof-40"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-40"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-40"><article class="hiddenproof"><p id="p-864">We consider two cases based on the invertibility of \(A\) and/or \(B\text{.}\)</p>
+<article class="case" id="case-55"><h5 class="heading">\(A\) or \(B\) is not invertible.</h5>
+<p id="p-865">In this case \(AB\) is not invertible (<a href="" class="xref" data-knowl="./knowl/cor_inv_prod_eq.html" title="Corollary 3.4.12: Invertibility of product equivalence">Corollary 3.4.12</a>), and hence \(\det AB=0\) by <a href="" class="xref" data-knowl="./knowl/th_inv_iff_det.html" title="Theorem 3.5.24: Determinant and invertibility">Theorem 3.5.24</a>. By the same reasoning we must have \(\det A=0\) or \(\det B=0\text{.}\) It follows that</p>
+<div class="displaymath">
+\begin{equation*}
+\det AB=\det A\, \det B=0
+\end{equation*}
+</div>
+<p class="continuation">in this case.</p></article><article class="case" id="case-56"><h5 class="heading">\(A\) and \(B\) both invertible.</h5>
+<p id="p-866">In this case we can write</p>
+<div class="displaymath">
+\begin{align*}
+A \amp E_1E_2\cdots E_r \amp B\amp=E'_1E'_2\cdots E'_s 
+\end{align*}
+</div>
+<p class="continuation">for some elementary matrices \(E_i\) and \(E'_j\) (<a href="" class="xref" data-knowl="./knowl/th_invertibility.html" title="Theorem 3.4.5: Invertibility theorem">Theorem 3.4.5</a>). Then</p>
+<div class="displaymath">
+\begin{align*}
+\det AB \amp= \det(E_1E_2\cdots E_rE'_1E'_2\cdots E'_s) \\
+\amp= \det E_1\det E_2\cdots \det E_r\det E'_1\det E'_2\cdots \det E'_s \amp (\knowl{./knowl/cor_det_prod_elem.html}{\text{Corollary 3.5.22}})\\
+\amp=\det A\, \det B \amp (\knowl{./knowl/cor_det_prod_elem.html}{\text{Corollary 3.5.22}}) \text{.}
+\end{align*}
+</div></article></article></div>
+<p id="p-867">We end this section (and chapter) by adding the results of <a href="" class="xref" data-knowl="./knowl/th_inv_iff_det.html" title="Theorem 3.5.24: Determinant and invertibility">Theorem 3.5.24</a> and one of our homework exercises to our invertibility theorem.</p>
+<article class="theorem theorem-like" id="th_invertibility_expanded"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.5.26</span><span class="period">.</span><span class="space"> </span><span class="title">Invertibility theorem (extended cut).</span>
+</h4>
+<p id="p-868">Let \(A=\) be an \(n\times n\) matrix. The following statements are equivalent.</p>
+<ol class="decimal">
+<li id="li-254"><p id="p-869">\(A\) is invertible.</p></li>
+<li id="li-255">
+<p id="p-870">The matrix equation</p>
+<div class="displaymath">
+\begin{equation*}
+A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldb}
+\end{equation*}
+</div>
+<p class="continuation">has a <em class="emphasis">unique solution</em> for <em class="emphasis">any</em> column vector  \(\boldb\text{.}\)</p>
+</li>
+<li id="li-256">
+<p id="p-871">The matrix equation</p>
+<div class="displaymath">
+\begin{equation*}
+A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldb}
+\end{equation*}
+</div>
+<p class="continuation">has a solution for <em class="emphasis">any</em> column vector  \(\boldb\text{.}\)</p>
+</li>
+<li id="li-257">
+<p id="p-872">The matrix equation</p>
+<div class="displaymath">
+\begin{equation*}
+A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldzero}
+\end{equation*}
+</div>
+<p class="continuation">has a <em class="emphasis">unique solution</em>: namely, \(\boldx=\boldzero_{n\times 1}\text{.}\)</p>
+</li>
+<li id="li-258"><p id="p-873">\(A\) is row equivalent to \(I_n\text{,}\) the \(n\times n\) identity matrix.</p></li>
+<li id="li-259"><p id="p-874">\(A\) is a product of elementary matrices.</p></li>
+<li id="li-260"><p id="p-875">\(\det A\ne 0\text{.}\)</p></li>
+</ol></article></section><section class="exercises" id="s_det_ex"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">3.5.4</span> <span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-64"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<p id="p-876">Let</p>
+<div class="displaymath">
+\begin{equation*}
+A = \begin{bmatrix}-1\amp 1\amp 2\\ 3\amp 0\amp -5\\ 1\amp 7\amp 2 \end{bmatrix}
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-261"><p id="p-877">Compute \(\det(A)\) by expanding along the second row.</p></li>
+<li id="li-262"><p id="p-878">Compute \(\det(A)\) by expanding along the third column.</p></li>
+</ol></article><div class="exercisegroup" id="exercisegroup-6">
+<h4 class="heading"><span class="title">Exercise Group.</span></h4>
+<div class="introduction" id="introduction-20"><p id="p-879">Compute the determinant of the given matrix. Indicate which row or column you expand along.</p></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-65"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
+<div class="displaymath" id="p-880">
+\begin{equation*}
+A=\begin{amatrix}[rrr]2\amp 0\amp 3\\ 0\amp 3\amp 2\\ -2\amp 0\amp -4 \end{amatrix}
+\end{equation*}
+</div></article><article class="exercise exercise-like" id="exercise-66"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
+<div class="displaymath" id="p-881">
+\begin{equation*}
+A=\begin{amatrix}[rrrr] 2\amp 1\amp 0\amp 5\\ 1\amp 2\amp 0\amp -1\\ 1\amp 4\amp -3\amp 0\\ 2\amp 6\amp 3\amp 2 \end{amatrix}
+\end{equation*}
+</div></article><article class="exercise exercise-like" id="exercise-67"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
+<div class="displaymath" id="p-882">
+\begin{equation*}
+A=\begin{amatrix}[rrrrr]4\amp 0\amp 0\amp 1\amp 0\\ 3\amp 3\amp 3\amp -1\amp 0\\ 1\amp 2\amp 4\amp 2\amp 3\\ 9\amp 4\amp 6\amp 2\amp 3\\ 2\amp 2\amp 4\amp 2\amp 3 \end{amatrix}
+\end{equation*}
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-7">
+<h4 class="heading"><span class="title">Exercise Group.</span></h4>
+<div class="introduction" id="introduction-21"><p id="p-883">For each matrix, find all values of \(c\) (if any) making the matrix invertible. Use the determinant.</p></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-68"><h5 class="heading"><span class="codenumber">5<span class="period">.</span></span></h5>
+<div class="displaymath" id="p-884">
+\begin{equation*}
+A=\begin{amatrix}[ccc] c \amp 1 \amp 1 \\
+1 \amp 1 \amp c \\
+1 \amp 1 \amp 1 \\  \end{amatrix}
+\end{equation*}
+</div></article><article class="exercise exercise-like" id="exercise-69"><h5 class="heading"><span class="codenumber">6<span class="period">.</span></span></h5>
+<div class="displaymath" id="p-885">
+\begin{equation*}
+A=\begin{amatrix}[ccc] c \amp 1 \amp 1 \\
+1 \amp 1 \amp c \\
+1 \amp 3 \amp 1 \\  \end{amatrix}
+\end{equation*}
+</div></article><article class="exercise exercise-like" id="exercise-70"><h5 class="heading"><span class="codenumber">7<span class="period">.</span></span></h5>
+<div class="displaymath" id="p-886">
+\begin{equation*}
+A=\begin{amatrix}[ccc] c \amp 1 \amp 1 \\
+1 \amp c \amp 1 \\
+c+1 \amp c+1 \amp 2
+\end{amatrix}
+\end{equation*}
+</div></article><article class="exercise exercise-like" id="exercise-71"><h5 class="heading"><span class="codenumber">8<span class="period">.</span></span></h5>
+<div class="displaymath" id="p-887">
+\begin{equation*}
+A=\begin{amatrix}[ccc] c \amp 1 \amp 1 \\
+1 \amp c \amp 1 \\
+1 \amp 1 \amp c \\  \end{amatrix}
+\end{equation*}
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-8">
+<h4 class="heading"><span class="title">Exercise Group.</span></h4>
+<div class="introduction" id="introduction-22"><p id="p-888">Use the adjoint formula to compute the inverse of each matrix.</p></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-72"><h5 class="heading"><span class="codenumber">9<span class="period">.</span></span></h5>
+<div class="displaymath" id="p-889">
+\begin{equation*}
+A=\begin{amatrix}[rr]-7\amp -5\\ 1\amp 4  \end{amatrix}
+\end{equation*}
+</div></article><article class="exercise exercise-like" id="exercise-73"><h5 class="heading"><span class="codenumber">10<span class="period">.</span></span></h5>
+<div class="displaymath" id="p-890">
+\begin{equation*}
+A=\begin{amatrix}[rrr]
+0\amp 2\amp -3\\ 1\amp -2\amp -1 \\ 0\amp 0\amp 1
+\end{amatrix}
+\end{equation*}
+</div></article>
+</div>
+</div>
+<article class="exercise exercise-like" id="exercise-74"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
+<p id="p-891">Let</p>
+<div class="displaymath">
+\begin{equation*}
+A=\begin{amatrix}[rrrr]1\amp -3\amp 1\amp 1\\ -3\amp 1\amp 1\amp 1\\ 1\amp 1\amp -3\amp 1\\ 1\amp 1\amp 1\amp -3 \end{amatrix}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Show \(\det A=0\) without computing the determinant directly. In other words, use a row reduction technique or <a href="" class="xref" data-knowl="./knowl/th_invertibility_expanded.html" title="Theorem 3.5.26: Invertibility theorem (extended cut)">Theorem 3.5.26</a>.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-30" id="solution-30"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-30"><div class="solution solution-like"><p id="p-892"></p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-75"><h4 class="heading"><span class="codenumber">12<span class="period">.</span></span></h4>
+<p id="p-893">Let \(A\) be an \(n\times n\) matrix, and let \(c\) be a scalar. State and prove a formula relating \(\det(cA)\) with \(\det(A)\text{.}\)</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-31" id="solution-31"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-31"><div class="solution solution-like">
+<p id="p-894">Warning: in general \(\det(cA)\ne c\det(A)\text{!}\) We claim in fact that if \(A\) is \(n\times n\text{,}\) then \(\det(cA)=c^n\det(A)\text{.}\) We give two proofs: one uses only induction and the definition of the determinant; the other uses the multiplicative property of the determinant.</p>
+<article class="hiddenproof" id="proof-41"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-41"><h5 class="heading"><span class="title">Proof by induction.</span></h5></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-41"><article class="hiddenproof"><p id="p-895">We show that for all \(n\geq 1\text{,}\) if \(A\) is an \(n\times n\) matrix, then \(\det(cA)=c^n\det A\text{.}\)</p>
+<article class="case" id="case-57"><h5 class="heading">Base step: \(n=1\).</h5>
+<p id="p-896">Here we have \(A=[a]\text{,}\) \(cA=[ca]\text{,}\) and thus \(\det(cA)=ca=c\det A\text{.}\)</p></article><article class="case" id="case-58"><h5 class="heading">Induction step.</h5>
+<p id="p-897">We assume that \(\det(cB)=c^n\det B\) for any \(n\times n\) matrix \(B\text{,}\) and prove \(\det(cA)=c^{n+1}\det A\) for any \((n+1)\times (n+1)\) matrix \(A\text{.}\) To this end, let \(A=[a_{ij}]_{(n+1)\times (n+1)}\text{.}\) Then</p>
+<div class="displaymath">
+\begin{align*}
+\det(cA) \amp =\det [ca_{ij}]_{(n+1)\times (n+1)} \\
+\amp = \sum_{j=1}^{n+1}(-1)^{1+j}ca_{1j}\det(c\widetilde{A}_{1j})\\
+\amp = \sum_{j=1}^{n+1}(-1)^{1+j}ca_{1j}(c^n \det\widetilde{A}_{1j}) \amp (\text{induction})\\
+\amp = c^{n+1}\sum_{j=1}^{n+1}(-1)^{1+j}a_{1j}\det\widetilde{A}_{1j}\\
+\amp =c^{n+1}\det A\text{.}
+\end{align*}
+</div></article></article></div>
+<article class="hiddenproof" id="proof-42"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-42"><h5 class="heading"><span class="title">Proof using determinant properties.</span></h5></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-42"><article class="hiddenproof"><p id="p-898">We have</p>
+<div class="displaymath">
+\begin{equation*}
+cA=(cI)A=\begin{bmatrix}c\amp 0\amp \dots\amp 0\\ 0\amp c\amp 0\amp \dots\\ \vdots \amp \\ 0\amp 0\amp \dots\amp c \end{bmatrix} A\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Then</p>
+<div class="displaymath">
+\begin{align*}
+\det(cA) \amp=\det((cI)A) \\
+\amp =\det(cI)\, \det A\amp (\knowl{./knowl/th_det_mult.html}{\text{Theorem 3.5.25}}) \\
+\amp =(\underset{n \text{times}}{\underbrace{c\cdot c\cdots c}})\,\det A \amp (\knowl{./knowl/th_det_triangular.html}{\text{Theorem 3.5.5}}) \\
+\amp =c^n\det A \text{.}
+\end{align*}
+</div></article></div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-76"><h4 class="heading"><span class="codenumber">13<span class="period">.</span></span></h4>
+<p id="p-899">Assume \(A\) is a \(5\times 5\) matrix satisfying \(\det A=2\text{.}\) Compute the determinant of the given matrix.</p>
+<ol class="lower-alpha">
+<li id="li-263"><p id="p-900">\(\displaystyle \det(-A)\)</p></li>
+<li id="li-264"><p id="p-901">\(\displaystyle \det(A^{-1})\)</p></li>
+<li id="li-265"><p id="p-902">\(\displaystyle \det(2A^T)\)</p></li>
+<li id="li-266"><p id="p-903">\(\displaystyle \det(A^3)\)</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-77"><h4 class="heading"><span class="codenumber">14<span class="period">.</span></span></h4>
+<p id="p-904">Let \(A\) and \(B\) be \(n\times n\) matrices, and suppose \(B\) is invertible. Prove the following:</p>
+<ol class="lower-alpha">
+<li id="li-267"><p id="p-905">\(\ds \det(B^{-1})=\frac{1}{\det(B)}\text{.}\)</p></li>
+<li id="li-268"><p id="p-906">\(\ds \det(B^{-1}AB)=\det(A)\text{.}\)</p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-32" id="solution-32"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-32"><div class="solution solution-like">
+<p id="p-907">We prove (a).</p>
+<div class="displaymath">
+\begin{align*}
+BB^{-1}=I \amp\implies \det(BB^{-1})=\det I \\
+\amp\implies \det B\, \det B^{-1}=1 \amp (\knowl{./knowl/th_det_mult.html}{\text{Theorem 3.5.25}}, \det I=1) \text{.}
+\end{align*}
+</div>
+<p class="continuation">Furthermore, since \(B\) is invertible, we know \(\det B\ne 0\) (<a href="" class="xref" data-knowl="./knowl/th_invertibility_expanded.html" title="Theorem 3.5.26: Invertibility theorem (extended cut)">Theorem 3.5.26</a>), allowing us to solve the last equation for \(\det B^{-1}\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\det B\, \det B^{-1}=1\implies \det B^{-1}=\frac{1}{\det B},\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-78"><h4 class="heading"><span class="codenumber">15<span class="period">.</span></span></h4>
+<p id="p-908">Assume the square matrix \(A\) satisfies \(A^TA=I\text{.}\) Show that \(\det A=\pm 1\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-79"><h4 class="heading"><span class="codenumber">16<span class="period">.</span></span></h4>
+<p id="p-909">Prove that a square matrix \(A\) is invertible if and only if \(A^TA\) is invertible.</p></article><div class="exercisegroup" id="exercisegroup-9">
+<h4 class="heading"><span class="title">Exercise Group.</span></h4>
+<div class="introduction" id="introduction-23"><p id="p-910">The following exercises explore the relationship between a square matrix \(A\) and its adjoint \(\adj A\text{.}\)</p></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-80"><h5 class="heading"><span class="codenumber">17<span class="period">.</span></span></h5>
+<p id="p-911">Give an explicit example of a square matrix \(A\) satisfying \(A\ne \boldzero_{n\times n}\) and \(\adj A=\boldzero_{n\times n}\text{.}\)</p>
+<p id="p-912">In other words, show that it is possible for a nonzero matrix to have a zero adjoint matrix.</p></article><article class="exercise exercise-like" id="exercise-81"><h5 class="heading"><span class="codenumber">18<span class="period">.</span></span></h5>
+<p id="p-913">Let \(A\) be an \(n\times n\) matrix. Prove:</p>
+<div class="displaymath">
+\begin{equation*}
+\det \adj A=(\det A)^{n-1}\text{.}
+\end{equation*}
+</div></article><article class="exercise exercise-like" id="exercise-82"><h5 class="heading"><span class="codenumber">19<span class="period">.</span></span></h5>
+<p id="p-914">Prove: \(A\) is invertible if and only if \(\adj A\) is invertible.</p></article><article class="exercise exercise-like" id="exercise-83"><h5 class="heading"><span class="codenumber">20<span class="period">.</span></span></h5>
+<p id="p-915">Assume \(A\) is invertible. Prove:</p>
+<div class="displaymath">
+\begin{equation*}
+\adj(\adj A)=\frac{1}{(\det A)^{n-2}}\, A\text{.}
+\end{equation*}
+</div></article>
+</div>
+</div>
+<article class="exercise exercise-like" id="exercise-84"><h4 class="heading"><span class="codenumber">21<span class="period">.</span></span></h4>
+<p id="p-916">In our proof of statement (2) of <a href="" class="xref" data-knowl="./knowl/th_det_zero_repeated_row.html" title="Theorem 3.5.13: Zero rows/columns, swapping rows/columns, identical rows/columns">Theorem 3.5.13</a> we only showed that if \(A\) is a square matrix with two identical rows, then \(\det A=0\text{.}\) Assuming this, show that the same is true if \(A\) has two identical columns.</p></article><article class="exercise exercise-like" id="ex_det_col_ops"><h4 class="heading"><span class="codenumber">22<span class="period">.</span></span></h4>
+<p id="p-917">State and prove an analogue to <a href="" class="xref" data-knowl="./knowl/th_det_row_ops.html" title="Theorem 3.5.19: Row operations and determinant">Theorem 3.5.19</a> that describes how the corresponding <em class="emphasis">column operations</em> (i.e., scale a column by \(c\text{,}\) swap two columns, column addition) affect the determinant of a matrix. (See <a href="" class="xref" data-knowl="./knowl/rm_det_col_ops.html" title="Remark 3.5.21: Column operations and the determinant">Remark 3.5.21</a>).</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-7" id="hint-7"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-7"><div class="hint solution-like"><p id="p-918">Express each of these types of column operations as multiplication on the right by an elementary matrix.</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-86"><h4 class="heading"><span class="codenumber">23<span class="period">.</span></span></h4>
+<p id="p-919">Let \(A\) be the \(n\times n\) matrix with \(a's\) along the diagonal and \(b\)'s elsewhere: i.e.,</p>
+<div class="displaymath">
+\begin{equation*}
+A=\begin{bmatrix}a\amp b\amp b\dots \\ b\amp a\amp b\amp \dots\\ \vdots \amp  \amp \vdots \\ b\amp b\amp \dots \amp a \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">State and prove a formula for \(\det A\text{.}\) (Your formula will involve \(a\text{,}\) \(b\text{,}\) and \(n\text{.}\))</p>
+<p id="p-920">Look at the \(n=2\) and \(n=3\) cases first. To prove the formula in the general case you may want to make use of row reduction and <a href="" class="xref" data-knowl="./knowl/th_det_row_ops.html" title="Theorem 3.5.19: Row operations and determinant">Theorem 3.5.19</a>.</p></article><article class="exercise exercise-like" id="exercise-87"><h4 class="heading"><span class="codenumber">24<span class="period">.</span></span></h4>
+<p id="p-921">Given scalars \(r_1, r_2, \dots, r_n\in \R\) the <em class="emphasis">Vandermonde</em> matrix is defined as</p>
+<div class="displaymath">
+\begin{equation*}
+A_{r_1,r_2,\dots, r_n}=\begin{amatrix}[llcl]1\amp 1\amp \cdots \amp 1\\ r_1\amp r_2\amp \cdots \amp  r_n\\ r_1^2\amp r_2^2\amp \cdots \amp r_n^2\\ \vdots \amp  \vdots \amp  \amp \vdots\\ r_1^{n-1}\amp r_2^{n-1}\amp \cdots \amp r_n^{n-1} \end{amatrix}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">In other words, we have</p>
+<div class="displaymath">
+\begin{equation*}
+(A_{r_1,r_2,\dots, r_n})_{ij}=r_j^{i-1}
+\end{equation*}
+</div>
+<p class="continuation">Prove:</p>
+<div class="displaymath">
+\begin{equation*}
+\ds\det (A_{r_1,r_2,\dots,
+r_n})=\prod_{1\leq i\lt j\leq n}(r_j-r_i)\text{.}
+\end{equation*}
+</div></article></section></section></div></main>
+</div>
+</body>
+</html>

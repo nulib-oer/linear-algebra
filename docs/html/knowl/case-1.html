@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-02-04T12:00:37-06:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="case"><h6 class="heading">Proof of \(\mathcal{P}\implies \mathcal{Q}\).</h6>
+<p>We must show that if \(f\) is invertible, then \(f\) is bijective. Assume \(f\) is invertible. Then \(f\) has an inverse \(f^{-1}\text{.}\) We show separately that \(f\) is injective and surjective, hence bijective.</p>
+<article class="case"><h6 class="heading">\(f\) is injective.</h6>
+<p>We show \(f(x)=f(x')\implies x=x'\) via a chain of implications:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+f(x)=f(x') \amp \implies f^{-1}(f(x))=f^{-1}(f(x'))\\
+\amp\implies x=x' \amp (f^{-1}\circ f=\id_X) \text{.}
+\end{align*}
+</div></article><article class="case"><h6 class="heading">\(f\) is surjective.</h6>
+<p>Let \(b\) be an element of \(Y\text{.}\) We must show that there is an \(x\in X\) such that \(f(x)=y\text{.}\) Letting \(x=f^{-1}(y)\text{,}\) we have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+f(x) \amp = f(f^{-1}(y))\\
+\amp = y \amp (f\circ f^{-1}=\id_Y)\text{.}
+\end{align*}
+</div></article></article><span class="incontext"><a href="s_proof_technique.html#case-1">in-context</a></span>
+</body>
+</html>

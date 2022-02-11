@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-02-04T12:00:42-06:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span xmlns:svg="http://www.w3.org/2000/svg" class="space"> </span><span class="codenumber">2.3.5</span><span xmlns:svg="http://www.w3.org/2000/svg" class="period">.</span><span xmlns:svg="http://www.w3.org/2000/svg" class="space"> </span><span class="title">Solving linear systems.</span>
+</h4>
+<p>Let \(L\) be a linear system in the unknowns \(x_1,x_2,\dots, x_n\text{,}\) and let \(S\) be the set of all solutions of \(L\text{.}\) We compute \(S\) as follows.</p>
+<dl xmlns:svg="http://www.w3.org/2000/svg" class="description-list">
+<dt>Step 1</dt>
+<dd><p>Apply Gaussian elimination to reduce \(L\) to an equivalent system \(L'\) in row echelon form.</p></dd>
+<dt>Step 2</dt>
+<dd><p>Let \(U\) be the augmented matrix associated to \(L'\text{.}\) If the last column of \(U\) has a leading one, then \(L\) is inconsistent: i.e., \(S=\{ \}\) is the empty set. Otherwise, proceed to the next step.</p></dd>
+<dt>Step 3</dt>
+<dd><p>Determine which if any of the unknowns are free variables of \(L'\text{.}\)</p></dd>
+<dt>Step 4</dt>
+<dd>
+<p>If there are no free variables, solve for each unknown using back-substitution. In this case, there is a unique solution to \(L\text{:}\) i.e., \(S=\{(s_1,s_2,\dots, s_n)\}\) contains exactly one element.</p>
+<p>Otherwise, let \(x_{i_1}, x_{i_2},\dots , x_{i_r}\) be the leading variables of \(L'\text{,}\) and let \(x_{j_1},x_{j_2},\dots, x_{j_s}\) be the free variables. Back-substitution allows us to express each leading variable in terms of the free variables. In other words, we can write</p>
+<div class="displaymath">
+\begin{align*}
+x_{i_1}\amp=F_1(x_{j_1},x_{j_2},\dots, x_{j_s}) \\
+x_{i_2}\amp =F_2(x_{j_1},x_{j_2},\dots, x_{j_s}) \\
+\vdots \amp \\
+x_{i_r} \amp =F_s(x_{j_1},x_{j_2},\dots, x_{j_s})\text{,}
+\end{align*}
+</div>
+<p class="continuation">where each \(F_i(x_{j_1},x_{j_2},\dots, x_{j_s})\) is a linear expression in the free variables. Each solution of \(L\) thus corresponds to a <em class="emphasis">unique</em> variable assignment of the form</p>
+<div class="displaymath">
+\begin{align*}
+\text{Free variables: } x_{j_1}\amp=t_{1}, \ x_{j_2}=t_{2},\dots, x_{j_s}=t_{s}\\
+\text{Leading variables: } x_{i_1}\amp =F_1(t_1,t_2,\dots, t_s) \\
+x_{i_2}\amp =F_2(t_1,t_2,\dots, t_s) \\
+\vdots \amp \\
+x_{i_r} \amp =F_s(t_1,t_2,\dots, t_s)\text{,}
+\end{align*}
+</div>
+<p class="continuation">where \(t_1,t_2,\dots, t_s\) are any real numbers.</p>
+</dd>
+</dl></article><span class="incontext"><a href="s_solving.html#th_solveSystem">in-context</a></span>
+</body>
+</html>

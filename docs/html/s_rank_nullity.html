@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-02-04T12:00:17-06:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Rank-nullity theorem and fundamental spaces</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg">miniversion=0.6</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\require{cancel}\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\C}{{\mathbb C}}
+\newcommand{\T}{{\mathbb T}}
+\newcommand{\F}{{\mathbb F}}
+\newcommand{\HH}{{\mathbb H}}
+\newcommand{\compose}{\circ}
+\newcommand{\bolda}{{\mathbf a}}
+\newcommand{\boldb}{{\mathbf b}}
+\newcommand{\boldc}{{\mathbf c}}
+\newcommand{\boldd}{{\mathbf d}}
+\newcommand{\bolde}{{\mathbf e}}
+\newcommand{\boldi}{{\mathbf i}}
+\newcommand{\boldj}{{\mathbf j}}
+\newcommand{\boldk}{{\mathbf k}}
+\newcommand{\boldn}{{\mathbf n}}
+\newcommand{\boldp}{{\mathbf p}}
+\newcommand{\boldq}{{\mathbf q}}
+\newcommand{\boldr}{{\mathbf r}}
+\newcommand{\bolds}{{\mathbf s}}
+\newcommand{\boldt}{{\mathbf t}}
+\newcommand{\boldu}{{\mathbf u}}
+\newcommand{\boldv}{{\mathbf v}}
+\newcommand{\boldw}{{\mathbf w}}
+\newcommand{\boldx}{{\mathbf x}}
+\newcommand{\boldy}{{\mathbf y}}
+\newcommand{\boldz}{{\mathbf z}}
+\newcommand{\boldzero}{{\mathbf 0}}
+\newcommand{\boldmod}{\boldsymbol{ \bmod }}
+\newcommand{\boldT}{{\mathbf T}}
+\newcommand{\boldN}{{\mathbf N}}
+\newcommand{\boldB}{{\mathbf B}}
+\newcommand{\boldF}{{\mathbf F}}
+\newcommand{\boldS}{{\mathbf S}}
+\newcommand{\boldG}{{\mathbf G}}
+\newcommand{\boldK}{{\mathbf K}}
+\newcommand{\boldL}{{\mathbf L}}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\NS}{null}
+\DeclareMathOperator{\RS}{row}
+\DeclareMathOperator{\CS}{col}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\range}{range}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\nullity}{nullity}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\Fix}{Fix}
+\DeclareMathOperator{\Aff}{Aff}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\mdeg}{mdeg}
+\DeclareMathOperator{\Lt}{Lt}
+\DeclareMathOperator{\Lc}{Lc}
+\DeclareMathOperator{\disc}{disc}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\adj}{adj}
+\DeclareMathOperator{\curl}{curl}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\diver}{div}
+\DeclareMathOperator{\flux}{flux}
+\def\Gal{\operatorname{Gal}}
+\def\ord{\operatorname{ord}}
+\def\ML{\operatorname{M}}
+\def\GL{\operatorname{GL}}
+\def\PGL{\operatorname{PGL}}
+\def\SL{\operatorname{SL}}
+\def\PSL{\operatorname{PSL}}
+\def\GSp{\operatorname{GSp}}
+\def\PGSp{\operatorname{PGSp}}
+\def\Sp{\operatorname{Sp}}
+\def\PSp{\operatorname{PSp}}
+\def\Aut{\operatorname{Aut}}
+\def\Inn{\operatorname{Inn}}
+\def\Hom{\operatorname{Hom}}
+\def\End{\operatorname{End}}
+\def\ch{\operatorname{char}}
+\def\Zp{\Z/p\Z}
+\def\Zm{\Z/m\Z}
+\def\Zn{\Z/n\Z}
+\def\Fp{\F_p}
+\newcommand{\surjects}{\twoheadrightarrow}
+\newcommand{\injects}{\hookrightarrow}
+\newcommand{\bijects}{\leftrightarrow}
+\newcommand{\isomto}{\overset{\sim}{\rightarrow}}
+\newcommand{\floor}[1]{\lfloor#1\rfloor}
+\newcommand{\ceiling}[1]{\left\lceil#1\right\rceil}
+\newcommand{\mclass}[2][m]{[#2]_{#1}}
+\newcommand{\val}[2][]{\left\lvert #2\right\rvert_{#1}}
+\newcommand{\valuation}[2][]{\left\lvert #2\right\rvert_{#1}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\anpoly}{a_nx^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+\newcommand{\anmonic}{x^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+\newcommand{\bmpoly}{b_mx^m+b_{m-1}x^{m-1}\cdots +b_1x+b_0}
+\newcommand{\pder}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\normalin}{\trianglelefteq}
+\newcommand{\angvec}[1]{\langle #1\rangle}
+\newcommand{\varpoly}[2]{#1_{#2}x^{#2}+#1_{#2-1}x^{#2-1}\cdots +#1_1x+#1_0}
+\newcommand{\varpower}[1][a]{#1_0+#1_1x+#1_1x^2+\cdots}
+\newcommand{\limasto}[2][x]{\lim_{#1\rightarrow #2}}
+\def\ntoinfty{\lim_{n\rightarrow\infty}}
+\def\xtoinfty{\lim_{x\rightarrow\infty}}
+\def\ii{\item}
+\def\bb{\begin{enumerate}}
+\def\ee{\end{enumerate}}
+\def\ds{\displaystyle}
+\def\p{\partial}
+\newcommand{\abcdmatrix}[4]{\begin{bmatrix}#1\amp #2\\ #3\amp #4 \end{bmatrix}
+}
+\newenvironment{amatrix}[1][ccc|c]{\left[\begin{array}{#1}}{\end{array}\right]}
+\newenvironment{linsys}[2][m]{
+\begin{array}[#1]{@{}*{#2}{rc}r@{}}
+}{
+\end{array}}
+\newcommand{\eqsys}{\begin{array}{rcrcrcr}
+a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp b_1\\
+a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp b_2\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \vdots\\
+a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp b_m
+\end{array}
+}
+\newcommand{\numeqsys}{\begin{array}{rrcrcrcr}
+e_1:\amp  a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp b_1\\
+e_2: \amp a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp b_2\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \vdots\\
+e_m: \amp a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp b_m
+\end{array}
+}
+\newcommand{\homsys}{\begin{array}{rcrcrcr}
+a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp 0\\
+a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp 0\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \vdots\\
+a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp 0
+\end{array}
+}
+\newcommand{\vareqsys}[4]{
+\begin{array}{ccccccc}
+#3_{11}x_{1}\amp +\amp #3_{12}x_{2}\amp +\cdots+\amp  #3_{1#2}x_{#2}\amp =\amp #4_1\\
+#3_{21}x_{1}\amp +\amp #3_{22}x_{2}\amp +\cdots+\amp #3_{2#2}x_{#2}\amp =\amp #4_2\\
+\vdots \amp \amp \vdots \amp  \amp \vdots \amp =\amp  \vdots\\
+#3_{#1 1}x_{1}\amp +\amp #3_{#1 2}x_{2}\amp +\cdots +\amp #3_{#1 #2}x_{#2}\amp =\amp #4_{#1}
+\end{array}
+}
+\newcommand{\genmatrix}[1][a]{
+\begin{bmatrix}
+#1_{11} \amp  #1_{12} \amp  \cdots \amp  #1_{1n} \\
+#1_{21} \amp  #1_{22} \amp  \cdots \amp  #1_{2n} \\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \\
+#1_{m1} \amp  #1_{m2} \amp  \cdots \amp  #1_{mn}
+\end{bmatrix}
+}
+\newcommand{\varmatrix}[3]{
+\begin{bmatrix}
+#3_{11} \amp  #3_{12} \amp  \cdots \amp  #3_{1#2} \\
+#3_{21} \amp  #3_{22} \amp  \cdots \amp  #3_{2#2} \\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \\
+#3_{#1 1} \amp  #3_{#1 2} \amp  \cdots \amp  #3_{#1 #2}
+\end{bmatrix}
+}
+\newcommand{\augmatrix}{
+\begin{amatrix}[cccc|c]
+a_{11} \amp  a_{12} \amp  \cdots \amp  a_{1n} \amp b_{1}\\
+a_{21} \amp  a_{22} \amp  \cdots \amp  a_{2n} \amp b_{2}\\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \amp \vdots\\
+a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
+\end{amatrix}
+}
+\newcommand{\varaugmatrix}[4]{
+\begin{amatrix}[cccc|c]
+#3_{11} \amp  #3_{12} \amp  \cdots \amp  #3_{1#2} \amp #4_{1}\\
+#3_{21} \amp  #3_{22} \amp  \cdots \amp  #3_{2#2} \amp #4_{2}\\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \amp \vdots\\
+#3_{#1 1} \amp  #3_{#1 2} \amp  \cdots \amp  #3_{#1 #2}\amp #4_{#1}
+\end{amatrix}
+}
+\newcommand{\spaceforemptycolumn}{\makebox[\wd\boxofmathplus]{\ }}
+
+\newcommand{\generalmatrix}[3]{
+\left(
+\begin{array}{cccc}
+#1_{1,1}  \amp #1_{1,2}  \amp \ldots  \amp #1_{1,#2}  \\
+#1_{2,1}  \amp #1_{2,2}  \amp \ldots  \amp #1_{2,#2}  \\
+\amp \vdots                         \\
+#1_{#3,1} \amp #1_{#3,2} \amp \ldots  \amp #1_{#3,#2}
+\end{array}
+\right)  }
+\newcommand{\colvec}[2][c]{\begin{bmatrix}[#1] #2 \end{bmatrix}}
+\DeclareMathOperator{\size}{size}
+\DeclareMathOperator{\adjoint}{adj}
+\DeclareMathOperator{\sgn}{sgn}
+\newcommand{\restrictionmap}[2]{{#1}\mathpunct\upharpoonright\hbox{}_{#2}}
+\renewcommand{\emptyset}{\varnothing}
+
+\newcommand{\proj}[2]{\mbox{proj}_{#2}({#1}) }
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://linear-algebra.northwestern.pub/" target="_blank"><img src="external/images/im_holycomm.svg" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">Linear algebra: the theory of vector spaces and linear transformations</span></a></h1>
+<p class="byline">Aaron Greicius</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="s_basis_dimension.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="c_vectorspace.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="s_isom.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="s_basis_dimension.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="c_vectorspace.html" title="Up">Up</a><a class="next-button button toolbar-item" href="s_isom.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link">
+<a href="c_foundations.html" data-scroll="c_foundations"><span class="codenumber">1</span> <span class="title">Foundations</span></a><ul>
+<li><a href="s_sets_functions.html" data-scroll="s_sets_functions">Sets and functions</a></li>
+<li><a href="s_logic.html" data-scroll="s_logic">Logic</a></li>
+<li><a href="s_proof_technique.html" data-scroll="s_proof_technique">Proof techniques</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_linear_systems.html" data-scroll="c_linear_systems"><span class="codenumber">2</span> <span class="title">Systems of linear equations</span></a><ul>
+<li><a href="s_systems.html" data-scroll="s_systems">Systems of linear equations</a></li>
+<li><a href="s_ge.html" data-scroll="s_ge">Gaussian elimination</a></li>
+<li><a href="s_solving.html" data-scroll="s_solving">Solving linear systems</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_matrices.html" data-scroll="c_matrices"><span class="codenumber">3</span> <span class="title">Matrices, their arithmetic, and their algebra</span></a><ul>
+<li><a href="s_matrix.html" data-scroll="s_matrix">Matrices and their arithmetic</a></li>
+<li><a href="s_algebraic.html" data-scroll="s_algebraic">Algebra of matrices</a></li>
+<li><a href="s_invertible_matrices.html" data-scroll="s_invertible_matrices">Invertible matrices</a></li>
+<li><a href="s_invertibility_theorem.html" data-scroll="s_invertibility_theorem">The invertibility theorem</a></li>
+<li><a href="s_det.html" data-scroll="s_det">The determinant</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_vectorspace.html" data-scroll="c_vectorspace"><span class="codenumber">4</span> <span class="title">Vector spaces and linear transformations</span></a><ul>
+<li><a href="s_vectorspace.html" data-scroll="s_vectorspace">Real vector spaces</a></li>
+<li><a href="s_transformation.html" data-scroll="s_transformation">Linear transformations</a></li>
+<li><a href="s_subspace.html" data-scroll="s_subspace">Subspaces</a></li>
+<li><a href="s_span_independence.html" data-scroll="s_span_independence">Span and linear independence</a></li>
+<li><a href="s_basis_dimension.html" data-scroll="s_basis_dimension">Bases and dimension</a></li>
+<li><a href="s_rank_nullity.html" data-scroll="s_rank_nullity" class="active">Rank-nullity theorem and fundamental spaces</a></li>
+<li><a href="s_isom.html" data-scroll="s_isom">Isomorphisms</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_innerproductspaces.html" data-scroll="c_innerproductspaces"><span class="codenumber">5</span> <span class="title">Inner product spaces</span></a><ul>
+<li><a href="s_innerproducts.html" data-scroll="s_innerproducts">Inner product spaces</a></li>
+<li><a href="s_orthogonality.html" data-scroll="s_orthogonality">Orthogonal bases and orthogonal projection</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_transbasis.html" data-scroll="c_transbasis"><span class="codenumber">6</span> <span class="title">Eigenvectors and diagonalization</span></a><ul>
+<li><a href="s_coordinatevectors_isomorphisms.html" data-scroll="s_coordinatevectors_isomorphisms">Coordinate vectors and isomorphisms</a></li>
+<li><a href="s_matrixreps.html" data-scroll="s_matrixreps">Matrix representations of linear transformations</a></li>
+<li><a href="s_changeofbasis.html" data-scroll="s_changeofbasis">Change of basis</a></li>
+<li><a href="ss_eigenvectors.html" data-scroll="ss_eigenvectors">Eigenvectors and eigenvalues</a></li>
+<li><a href="ss_diagonalization.html" data-scroll="ss_diagonalization">Diagonalization</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="appendix-notation.html" data-scroll="appendix-notation"><span class="codenumber">A</span> <span class="title">Notation</span></a></li>
+<li class="link"><a href="appendix-defs.html" data-scroll="appendix-defs"><span class="codenumber">B</span> <span class="title">Definitions</span></a></li>
+<li class="link"><a href="appendix-thms.html" data-scroll="appendix-thms"><span class="codenumber">C</span> <span class="title">Theory and procedures</span></a></li>
+<li class="link"><a href="appendix-egs.html" data-scroll="appendix-egs"><span class="codenumber">D</span> <span class="title">Examples</span></a></li>
+<li class="link"><a href="appendix-vids.html" data-scroll="appendix-vids"><span class="codenumber">E</span> <span class="title">Video examples and figures</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="s_rank_nullity"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">4.6</span> <span class="title">Rank-nullity theorem and fundamental spaces</span>
+</h2>
+<section class="introduction" id="introduction-38">This section is in a sense just a long-format example of how to compute bases and dimensions of subspaces. Along the way, however we meet the <a href="" class="xref" data-knowl="./knowl/th_rank-nullity.html" title="Theorem 4.6.2: Rank-nullity">rank-nullity theorem</a> (sometimes called the “fundamental theorem of linear algebra”), and apply this theorem in the context of <em class="emphasis">fundamental spaces of matrices</em> (<a href="" class="xref" data-knowl="./knowl/d_fundamental_space.html" title="Definition 4.6.5: Fundamental spaces">Definition 4.6.5</a>).</section><section class="subsection" id="ss_rank-nullity"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.6.1</span> <span class="title">The rank-nullity theorem</span>
+</h3>
+<section class="introduction" id="introduction-39"><p id="p-1515">The <a href="" class="xref" data-knowl="./knowl/th_rank-nullity.html" title="Theorem 4.6.2: Rank-nullity">rank-nullity theorem</a> relates the the dimensions of the null space and image of a linear transformation \(T\colon V\rightarrow W\text{,}\) assuming \(V\) is finite dimensional. Roughly speaking, it says that the bigger the null space, the smaller the image. More precisely, it tells us that</p>
+<div class="displaymath">
+\begin{equation*}
+\dim V=\dim\NS T+\dim\im T\text{.}
+\end{equation*}
+</div>
+<p class="continuation">As we will see, this elegant result can be used to significantly simplify computations with linear transformations. For example, in a situation where we wish to compute explicitly both the null space and image of a given linear transformation, we can often get away with just computing one of the two spaces and using the rank-nullity theorem (and a dimension argument) to easily determine the other. Additionally, the rank-nullity theorem will directly imply some intuitively obvious properties of linear transformations. For example, suppose \(V\) is a finite-dimensional vector space. It seems obvious that if \(\dim W&gt; \dim V\text{,}\) then there is no linear transformation mapping \(V\) surjectively onto \(W\text{:}\) i.e., you should not be able to map a “smaller” vector space onto a “bigger” one. Similarly, if \(\dim W \lt \dim V\text{,}\) then we expect that there is no injective linear transformation mapping \(V\) injectively into \(W\text{.}\) Both these results are easy consequences of the <a href="" class="xref" data-knowl="./knowl/th_rank-nullity.html" title="Theorem 4.6.2: Rank-nullity">rank-nullity theorem</a>.</p>
+<p id="p-1516">Before proving the theorem we give names to \(\dim \NS T\) and \(\dim\im T\text{.}\)</p></section><article class="definition definition-like" id="d_rank_nullity"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.6.1</span><span class="period">.</span><span class="space"> </span><span class="title">Rank and nullity.</span>
+</h4>
+<p id="p-1517">Let \(T\colon V\rightarrow W\) be a linear transformation.</p>
+<ul class="disc">
+<li id="li-514">
+<p id="p-1518">The <dfn class="terminology">rank</dfn> of \(T\text{,}\) denoted \(\rank T\text{,}\) is the dimension of \(\im T\text{:}\) i.e.,</p>
+<div class="displaymath">
+\begin{equation*}
+\rank T=\dim\im T\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-515">
+<p id="p-1519">The <dfn class="terminology">nullity</dfn> of \(T\text{,}\) denoted \(\nullity T\text{,}\) is the dimension of \(\NS T\text{:}\) i.e.,</p>
+<div class="displaymath">
+\begin{equation*}
+\nullity T=\dim\NS T\text{.}
+\end{equation*}
+</div>
+</li>
+</ul></article><article class="theorem theorem-like" id="th_rank-nullity"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.6.2</span><span class="period">.</span><span class="space"> </span><span class="title">Rank-nullity.</span>
+</h4>
+<p id="p-1520">Let \(V\) be a vector space of dimension \(n\text{,}\) and let \(T\colon V\rightarrow W\) be a linear transformation. Then</p>
+<div class="displaymath">
+\begin{equation*}
+n=\dim\NS T+\dim\im T\text{,}
+\end{equation*}
+</div>
+<p class="continuation">or alternatively,</p>
+<div class="displaymath">
+\begin{equation*}
+n=\nullity T+\rank T\text{.}
+\end{equation*}
+</div></article><article class="hiddenproof" id="proof-60"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-60"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-60"><article class="hiddenproof"><p id="p-1521">Choose a basis \(B'=\{\boldv_1, \boldv_2, \dots, \boldv_k\}\) of \(\NS T\) and extend \(B'\) to a basis \(B=\{\boldv_1, \boldv_2,\dots, \boldv_k,\boldv_{k+1},\dots, \boldv_n\}\text{,}\) using <a href="" class="xref" data-knowl="./knowl/th_basis_contract_expand.html" title="Theorem 4.5.15: Contracting and expanding to bases">Theorem 4.5.15</a>. Observe that \(\dim\NS T=\nullity T=k\) and \(\dim V=n\text{.}\)</p>
+<p id="p-1522">We claim that \(B''=\{T(\boldv_{k+1}),T(\boldv_{k+2}),\dots, T(\boldv_{n})\}\) is a basis of \(\im T\text{.}\)</p>
+<article class="hiddenproof" id="proof-61"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-61"><h5 class="heading"><span class="title">Proof of claim.</span></h5></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-61"><article class="hiddenproof"><article class="case" id="case-91"><h5 class="heading">\(B''\) is linearly independent.</h5>
+<p id="p-1523">Suppose \(a_kT(\boldv_k)+a_{k+1}T(\boldv_{k+1})+\cdots +a_nT(\boldv_n)=\boldzero\text{.}\) Then the vector \(\boldv=a_k\boldv_k+a_{k+1}\boldv_{k+1}+\cdots +a_n\boldv_n\) satisfies \(T(\boldv)=\boldzero\) (using linearity of \(T\)), and hence \(\boldv\in \NS T\text{.}\) Then, using the fact that \(B'\) is a basis of \(\NS T\text{,}\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+b_1\boldv_1+b_2\boldv_2+\cdots +\boldv_k=\boldv=a_k\boldv_k+a_{k+1}\boldv_{k+1}+\cdots +a_n\boldv_n,
+\end{equation*}
+</div>
+<p class="continuation">and hence</p>
+<div class="displaymath">
+\begin{equation*}
+b_1\boldv_1+b_2\boldv_2+\cdots +\boldv_k-a_k\boldv_k-a_{k+1}\boldv_{k+1}-\cdots -a_n\boldv_n=\boldzero.
+\end{equation*}
+</div>
+<p class="continuation">Since the set \(B\) is linearly independent, we conclude that \(b_i=a_j=0\) for all \(1\leq i\leq k\) and \(k+1\leq j\leq n\text{.}\) In particular, \(a_{k+1}=a_{k+2}=\cdots=a_n=0\text{,}\) as desired.</p></article><article class="case" id="case-92"><h5 class="heading">\(B''\) spans \(\im T\).</h5>
+<p id="p-1524">It is clear that \(\Span B''\subseteq \im T\) since \(T(\boldv_i)\in \im T\) for all \(k+1\leq i\leq n\) and \(\im T\) is closed under linear combinations.</p>
+<p id="p-1525">For the other direction, suppose \(\boldw\in \im T\text{.}\) Then there is a \(\boldv\in V\) such that \(\boldw=T(\boldv)\text{.}\) Since \(B\) is a basis of \(V\) we may write</p>
+<div class="displaymath">
+\begin{equation*}
+\boldv=a_1\boldv_1+a_2\boldv_2+\cdots a_k\boldv_k+a_{k+1}\boldv_{k+1}+\cdots +a_n\boldv_n\text{,}
+\end{equation*}
+</div>
+<p class="continuation">in which case</p>
+<div class="displaymath">
+\begin{align*}
+\boldw=T(\boldv)\amp= T(a_1\boldv_1+a_2\boldv_2+\cdots a_k\boldv_k+a_{k+1}\boldv_{k+1}+\cdots +a_n\boldv_n)\\
+\amp=a_1T(\boldv_1)+a_2T(\boldv_2)+\cdots a_kT(\boldv_k)+a_{k+1}T(\boldv_{k+1})+\cdots +a_nT(\boldv_n)
+\amp (T \text{ is linear })\\
+\amp=\boldzero +a_kT(\boldv_k)+a_{k+1}T(\boldv_{k+1})+\cdots +a_nT(\boldv_n) \amp (\boldv_i\in\NS T \text{ for } 1\leq i\leq k) \text{.}
+\end{align*}
+</div>
+<p class="continuation">This shows that \(\boldw=a_kT(\boldv_k)+a_{k+1}T(\boldv_{k+1})+\cdots +a_nT(\boldv_n)\in \Span B''\text{,}\) as desired.</p></article></article></div> Having shown \(B''\) is a basis for \(\im T\text{,}\) we conclude that \(\dim \im T=\val{B''}=n-(k+1)+1=n-k\text{,}\) and thus that<div class="displaymath">
+\begin{align*}
+\dim V \amp=k+(n-k) \\
+\amp=\dim\NS T+\dim \im T \\
+\amp = \nullity T+\rank T\text{.}
+\end{align*}
+</div></article></div>
+<article class="example example-like" id="eg_rank-nullity_verification"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_rank-nullity_verification"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.6.3</span><span class="period">.</span><span class="space"> </span><span class="title">Rank-nullity: verification.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_rank-nullity_verification"><article class="example example-like"><p id="p-1526">Verify the rank-nullity theorem for the linear transformation \(T\colon \R^3\rightarrow \R^2\) defined as \(T(x,y,z)=(x+y+z,x+y+z)\text{.}\)</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-51" id="solution-51"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-51"><div class="solution solution-like">
+<p id="p-1527">To verify the rank-nullity theorem, we must compute bases for \(\NS T\) and \(\im T\text{.}\) Consider first \(\NS T\text{.}\) We have</p>
+<div class="displaymath">
+\begin{align*}
+\NS T \amp =\{(x,y,z)\colon x+y+z=0\}\\
+\amp =\{(-s-t,s,t)\colon s,t\in\R\} \text{.}
+\end{align*}
+</div>
+<p class="continuation">Here the parametric description is obtained using our usual technique for solving systems of equations (<a href="" class="xref" data-knowl="./knowl/th_solveSystem.html" title="Theorem 2.3.5: Solving linear systems">Theorem 2.3.5</a>). From the parametric description, it is clear that the set \(B=\{(-1,1,0), (-1,0,1)\}\) spans \(\NS T\text{.}\) Since \(B\) is clearly linearly independent, it is a basis for \(\NS T\text{,}\) and we conclude that \(\dim \NS=\val{B}=2\text{.}\) (Alternatively, the equation \(x+y+z=0\) defines a plane passing through the origin in \(\R^3\text{,}\) and we know such subspaces are of dimension two. )</p>
+<p id="p-1528">Next it is fairly clearly that \(\im T=\{(t,t)\colon t\in \R\}=\Span\{(1,1)\}\text{.}\) Thus \(B'=\{(1,1)\}\) is a basis for \(\im T\) and \(\dim\im T=\val{B'}=1\text{.}\)</p>
+<p id="p-1529">Finally we observe that</p>
+<div class="displaymath">
+\begin{equation*}
+\nullity T+\rank T=\dim\NS T+\dim\im T=2+1=3=\dim \R^3,
+\end{equation*}
+</div>
+<p class="continuation">as predicted by the rank-nullity theorem.</p>
+</div></div>
+</div></article></div>
+<article class="example example-like" id="eg_rank-nullity_computation"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_rank-nullity_computation"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.6.4</span><span class="period">.</span><span class="space"> </span><span class="title">Rank-nullity: application.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_rank-nullity_computation"><article class="example example-like"><p id="p-1530">Show that the linear transformation</p>
+<div class="displaymath">
+\begin{align*}
+T\colon \R^4 \amp\rightarrow \R^3 \\
+(x,y,z,w)\amp \mapsto (x+z,y+z+w,z+2w) 
+\end{align*}
+</div>
+<p class="continuation">is surjective: i.e., \(\im T=\R^3\text{.}\) Do so by first computing \(\NS T\text{.}\)</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-52" id="solution-52"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-52"><div class="solution solution-like">
+<p id="p-1531">We first examine \(\NS T\text{.}\) We have</p>
+<div class="displaymath">
+\begin{equation*}
+T(x,y,z,w)=\boldzero \iff \begin{linsys}{4}
+x\amp \amp \amp \amp \amp + \amp w\amp =\amp 0\\
+\amp \amp y\amp+ \amp z \amp + \amp w\amp =\amp 0\\
+\amp \amp \amp\amp z \amp + \amp 2w\amp =\amp 0
+\end{linsys}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">The system above is already in row echelon form, and so we easily see that</p>
+<div class="displaymath">
+\begin{equation*}
+\NS T=\{(-t,t,-2t,t)\colon t\in \R\}=\Span\{(-1,1,-2,1)\}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Thus \(B=\{(-1,1,-2,1)\}\) is a basis of \(\NS T\text{,}\) and we conclude that \(\dim \NS T=1\text{.}\) The <a href="" class="xref" data-knowl="./knowl/th_rank-nullity.html" title="Theorem 4.6.2: Rank-nullity">rank-nullity theorem</a> now implies that</p>
+<div class="displaymath">
+\begin{equation*}
+\dim \im T=4-\dim \NS T=4-1=3\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Since \(\im T\subseteq \R^3\) and \(\dim\im T=\dim \R^3=3\text{,}\) we conclude by <a href="" class="xref" data-knowl="./knowl/cor_dimension_subspace.html" title="Corollary 4.5.17: Dimension of subspaces">Corollary 4.5.17</a> that \(\im T=\R^3\text{.}\) Thus \(T\) is surjective.</p>
+</div></div>
+</div></article></div></section><section class="subsection" id="ss_fundamental_spaces"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.6.2</span> <span class="title">Fundamental spaces of matrices</span>
+</h3>
+<article class="definition definition-like" id="d_fundamental_space"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.6.5</span><span class="period">.</span><span class="space"> </span><span class="title">Fundamental spaces.</span>
+</h4>
+<p id="p-1532">Let \(A\) be a an \(m\times n\) matrix. Let \(\boldr_1,\dots, \boldr_m\) be the \(m\) rows of \(A\text{,}\) and let \(\boldc_1,\dots \boldc_n\) be its \(n\) columns. The following subspaces are called the <dfn class="terminology">fundamental subspaces of \(A\)</dfn>.</p>
+<ul class="disc">
+<li id="li-516">
+<p id="p-1533">The <dfn class="terminology">null space of \(A\)</dfn>, denoted \(\NS A\) is defined as</p>
+<div class="displaymath">
+\begin{equation*}
+\NS A =\{\boldx\in\R^n\colon A\boldx=\boldzero\}\subseteq \R^n.\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-517">
+<p id="p-1534">The <dfn class="terminology">row space of \(A\)</dfn>, denoted \(\RS A\text{,}\) is defined as</p>
+<div class="displaymath">
+\begin{equation*}
+\RS A=\Span \{\boldr_1, \boldr_2, \dots, \boldr_m\}\subseteq \R^n\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-518">
+<p id="p-1535">The <dfn class="terminology">column space of \(A\)</dfn>, denoted \(\CS A\text{,}\) is defined as</p>
+<div class="displaymath">
+\begin{equation*}
+\CS A=\Span \{\boldc_1, \boldc_2, \dots, \boldc_n\}\subseteq \R^m\text{.}
+\end{equation*}
+</div>
+</li>
+</ul>
+<p id="p-1536">The <dfn class="terminology">rank</dfn> and <dfn class="terminology">nullity</dfn> of \(A\text{,}\) denoted \(\rank A\) and \(\nullity A\text{,}\) respectively, are defined as \(\rank A=\dim \CS A\) and \(\nullity A=\dim\NS A\text{.}\)</p></article><article class="theorem theorem-like" id="th_fundamental_spaces"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.6.6</span><span class="period">.</span><span class="space"> </span><span class="title">Fundamental spaces.</span>
+</h4>
+<p id="p-1537">Let \(A\) be an \(m\times n\) matrix. Suppose \(A\) is row equivalent to the row echelon matrix \(U\text{.}\)</p>
+<ol class="decimal">
+<li id="li-519"><p id="p-1538">Let \(T_A\colon \R^n\rightarrow \R^m\) be the matrix transformation associated to \(A\text{.}\) Then \(\NS A=\NS T_A\) and \(\CS A=\im T_A\text{.}\)</p></li>
+<li id="li-520">
+<p id="p-1539">We have</p>
+<ul class="disc">
+<li id="li-521"><p id="p-1540">\(\displaystyle \NS A=\NS U\)</p></li>
+<li id="li-522"><p id="p-1541">\(\displaystyle \RS A=\RS U\)</p></li>
+<li id="li-523"><p id="p-1542">\(\dim\CS A=\dim \CS U\) (but in general it is not the case that \(\dim\CS A=\dim\CS U\)).</p></li>
+</ul>
+</li>
+<li id="li-524">
+<p id="p-1543">Let \(r \) be the number of leading ones in \(U\text{,}\) and let \(s=n-r\text{;}\) i.e., \(r\) and \(k\) are the number of leading and free variables, respectively, of the system corresponding to \(\begin{amatrix}[r|r]U\amp \boldzero\end{amatrix}\text{.}\) Then</p>
+<div class="displaymath">
+\begin{align*}
+\rank A\amp =\dim\CS A=\dim \RS A=r \\
+\nullity A\amp=\dim\NS A=s \text{.}
+\end{align*}
+</div>
+</li>
+<li id="li-525">
+<span class="heading"><span class="title">Rank-nullity for matrices.</span></span><p id="p-1544">We have</p>
+<div class="displaymath">
+\begin{equation*}
+n=\dim\NS A+\dim\CS A=\dim\NS A+\dim\RS A\text{.}
+\end{equation*}
+</div>
+</li>
+</ol></article><article class="hiddenproof" id="proof-62"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-62"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-62"><article class="hiddenproof"><p id="p-1545">We prove each statement in turn.</p>
+<article class="hiddenproof" id="proof-63"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-63"><h4 class="heading"><span class="title">Proof of (1).</span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-63"><article class="hiddenproof"><p id="p-1546">Recall that \(T_A\) is defined as \(T_A(\boldx)=A\boldx\) for all \(\boldx\in \mathbb{R}^n \text{.}\) Then clearly \(T_A(\boldx)=\boldzero\) if and only if \(A\boldx=\boldzero\text{,}\) showing that \(\NS T=\NS A\text{.}\)</p>
+<p id="p-1547">Let \(\boldc_1, \boldc_2,\dots, \boldc_n\) be the columns of \(A\text{.}\) We have</p>
+<div class="displaymath">
+\begin{align*}
+\boldy\in \im T_A \amp\iff \boldy=T_A(\boldx) \text{ for some } \boldx\in \mathbb{R}^n \\
+\amp\iff  \boldy=A \boldx \text{ for some } \boldx=(x_1,x_2,\dots, x_n)\in \mathbb{R}^n
+\amp (\text{definition of } T_A) \\
+\amp \iff \boldy=x_1\boldc_1+x_2\boldc_2+\cdots +x_n\boldc_n \text{ for some } x_i\in \mathbb{\R} \amp (\knowl{./knowl/th_column_method.html}{\text{Theorem 3.1.19}})\\
+\amp \iff \boldy\in\CS A\text{.}
+\end{align*}
+</div>
+<p class="continuation">Thus \(\im T_A=\CS A\text{.}\)</p></article></div>
+<article class="hiddenproof" id="proof-64"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-64"><h4 class="heading"><span class="title">Proof of (2).</span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-64"><article class="hiddenproof"><p id="p-1548">First observe that \(A=\begin{bmatrix}1\amp 1\\ 1\amp 1 \end{bmatrix}\) is row equivalent to \(U=\begin{bmatrix}1\amp 1\\ 0 \amp 0\end{bmatrix}\) and yet \(\CS A=\Span\{(1,1)\}=\{(t,t)\colon t\in \R\}\ne \CS U=\Span\{(1,0)\}=\{(t,0)\colon t\in\R\}\text{.}\) Thus we do not have \(\CS A=\CS U\) in general.</p>
+<p id="p-1549">Next, we show more generally that if \(A\) is row equivalent to \(B\text{,}\) then \(\NS A=\NS B\text{,}\) \(\RS A=\RS B\text{,}\) and \(\dim\CS A=\dim \CS B\text{.}\)</p>
+<p id="p-1550">Assume that \(A\) is row equivalent to \(B\text{.}\) Using the formulation of row reduction in terms of multiplication by elementary matrices, we see that there is an invertible matrix \(Q\) such that \(B=QA\text{,}\) and hence also \(A=Q^{-1}B\text{.}\) Then:</p>
+<div class="displaymath">
+\begin{align*}
+\boldx\in\NS A\amp\iff A\boldx=\boldzero \\
+\amp\iff QA\boldx=Q\boldzero \amp (\knowl{./knowl/th_inverse_cancel.html}{\text{Theorem 3.3.3}}) \\
+\amp \iff B\boldx=\boldzero \\
+\amp iff \boldx\in\NS B
+\end{align*}
+</div>
+<p class="continuation">. This proves \(\NS A=\NS B\text{.}\)</p>
+<p id="p-1551">Next, by (1) we have \(\NS A=\NS T_A\text{,}\) \(\CS A=\im T_A\) and \(\NS B=\NS T_B\text{,}\) \(\CS B=\im T_B\text{.}\) Then</p>
+<div class="displaymath">
+\begin{align*}
+\dim \CS A \amp=\dim\im T_A \\
+\amp=n-\dim\NS A \amp (\knowl{./knowl/th_rank-nullity.html}{\text{Theorem 4.6.2}}) \\
+\amp=n-\dim NS B \amp (\NS A=\NS B)\\
+\amp =\dim\im T_B \amp ( \knowl{./knowl/th_rank-nullity.html}{\text{Theorem 4.6.2}}\\
+\amp =\dim \CS B\text{.}
+\end{align*}
+</div>
+<p id="p-1552">Lastly, we turn to the row spaces. We will show that each row of \(B\) is an element of \(\RS A\text{,}\) from whence it follows that \(\RS B\subseteq \RS A\text{.}\) Let \(\boldr_i\) be the \(i\)-th row of \(B\text{,}\) and let \(\boldq_i\) be the \(i\)-th column of \(Q\text{.}\) By <a href="" class="xref" data-knowl="./knowl/th_row_method.html" title="Theorem 3.1.21: Row method of matrix multiplication">Theorem 3.1.21</a>, we have \(\boldr_i=\boldq_i A\text{,}\) and furthermore, \(\boldq_i A\) is the linear combination of the rows of \(A\) whose coefficients come from the entries of \(\boldq_i\text{.}\) Thus \(\boldr_i\in\RS A\text{,}\) as desired.</p>
+<p id="p-1553">Having shown that \(\RS B\subseteq \RS A\text{,}\) we see that the same argument works <em class="emphasis">mutatis mutandis</em> (swapping the roles of \(A\) and \(B\) and using \(Q^{-1}\) in place of \(Q\)) to show that \(\RS A\subseteq \RS B\text{.}\) We conclude that \(\RS A=\RS B\text{.}\)</p></article></div>
+<article class="hiddenproof" id="proof-65"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-65"><h4 class="heading"><span class="title">Proof of (3).</span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-65"><article class="hiddenproof"><p id="p-1554">By (2) we know that \(\NS A=\NS U, \RS A=\RS U\text{,}\) and \(\dim\CS A=\dim\CS U\text{.}\) So it is enough to show that \(\dim \NS U=\dim\RS U=r\) and \(\dim \NS U=s\text{.}\)</p>
+<p id="p-1555">First, we will show that the \(r\) nonzero rows of \(U\) form a basis for \(\RS U\text{,}\) proving \(\dim\RS U=r\text{.}\) Clearly the nonzero rows span \(\RS U\text{,}\) since any linear combination of all the rows of \(U\) can be expressed as a linear combination of the nonzero rows. Furthermore, since \(U\) is in row echelon form, the staircase pattern of the leading ones appearing in the nonzero rows assures that these row vectors are linearly independent.</p>
+<p id="p-1556">Next, we show that the columns of \(U\) containing leading ones form a basis of \(\CS U\text{.}\) Let \(\boldu_{i_1},\dots, \boldu_{i_r}\) be the columns of \(U\) with leading ones, and let \(\boldu_{j_1}, \boldu_{j_2}, \dots, \boldu_{j_s}\) be the columns without leading ones. To prove the \(\boldu_{i_k}\) form a basis for \(\CS U\text{,}\) we will show that given any \(\boldy\in \CS U\) there is a <em class="emphasis">unique</em> choice of scalars \(c_1, c_2,\dots,
+c_r\) such that \(c_1\boldu_{i_1}+\cdots +c_r\boldu_{i_r}=\boldy\text{.}\) (Recall that the uniqueness of this choice implies linear independence.)</p>
+<p id="p-1557">So assume \(\boldy\in \CS U\text{.}\) Then we can find \(\boldx\in\R^n\) such that \(U\boldx=\boldy\text{,}\) which means the linear system with augmented matrix \([\ U\ \vert \ \boldy]\) is consistent. Using our Gaussian elimination theory (specifically, <a href="" class="xref" data-knowl="./knowl/th_solveSystem.html" title="Theorem 2.3.5: Solving linear systems">Theorem 2.3.5</a>), we know that the solutions \(\boldx=(x_1,x_2,\dots,
+x_n)\) to this system are in 1-1 correspondence with choices for the free variables \(x_{j_1}=t_{j_1}, x_{j_2}=t_{j_2}, \dots,
+x_{j_s}=t_{j_s}\text{.}\) (Remember that the columns \(\boldu_{j_k}\) without leading ones correspond to the free variables.) In particular, there is a unique solution to \(U\boldx=\boldy\) where we set all the free variables equal to 0. By the column method (<a href="" class="xref" data-knowl="./knowl/th_column_method.html" title="Theorem 3.1.19: Column method of matrix multiplication">Theorem 3.1.19</a>), this gives us a unique linear combination of only the columns \(\boldu_{i_k}\) with leading ones equal to \(\boldy\text{.}\) This proves the claim, and shows that the columns with leading ones form a basis for \(\CS U\text{.}\) We conclude that \(\dim\CS U=r\text{.}\)</p>
+<p id="p-1558">Lastly,  again using the results of (1), we have</p>
+<div class="displaymath">
+\begin{align*}
+\dim NS U \amp =\dim NS T_U \\
+\amp =n-\dim\im T_U \amp (\knowl{./knowl/th_rank-nullity.html}{\text{Theorem 4.6.2}}) \\
+\amp =n-\dim\CS U\\
+\amp =n-r \\
+\amp =s \text{,}
+\end{align*}
+</div>
+<p class="continuation">where the last equality uses the fact that the sum of the number of columns with leading ones (\(r\)) and the number of columns without leading ones (\(s\)) is \(n\text{,}\) the total number of columns.</p></article></div>
+<article class="hiddenproof" id="proof-66"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-66"><h4 class="heading"><span class="title">Proof of (4).</span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-66"><article class="hiddenproof"><p id="p-1559">We have</p>
+<div class="displaymath">
+\begin{align*}
+n \amp =\dim\NS T_A+\dim\im T_A \amp (\knowl{./knowl/th_rank-nullity.html}{\text{Theorem 4.6.2}})\\
+\amp =\dim\NS A+\dim\CS A \amp (\text{by (1)})\\\
+\amp =\dim\NS A+\dim\RS A \amp (\text{ by (3)})\text{.}
+\end{align*}
+</div></article></div></article></div>
+<article class="algorithm theorem-like" id="proc_fund_spaces"><h4 class="heading">
+<span class="type">Procedure</span><span class="space"> </span><span class="codenumber">4.6.7</span><span class="period">.</span><span class="space"> </span><span class="title">Computing bases of fundamental spaces.</span>
+</h4>
+<p id="p-1560">To compute bases for the fundamental spaces of an \(m\times n\) matrix \(A\text{,}\) proceed as follow.</p>
+<ol class="decimal">
+<li id="li-526"><p id="p-1561">Row reduce \(A\) to a matrix \(U\) in row echelon form.</p></li>
+<li id="li-527"><p id="p-1562">We have \(\NS A=\NS U\text{.}\) Compute a parametric description of the solutions to the linear system \(U\boldx=\boldzero\) following <a href="" class="xref" data-knowl="./knowl/th_solveSystem.html" title="Theorem 2.3.5: Solving linear systems">Theorem 2.3.5</a>. If the free variables are \(t_1, t_2, \dots, t_k \text{,}\) a basis \(B=\{\boldv_1, \boldv_2, \dots, \boldv_k\}\) of \(\NS A\) is obtained by letting \(\boldv_i\) be the solution corresponding to the choice \(t_i=1\) and \(t_j=0\) for \(j\ne i\text{.}\)</p></li>
+<li id="li-528"><p id="p-1563">We have \(\RS A=\RS U\text{.}\) The set of nonzero rows of \(U\) is a basis for \(\RS A\text{.}\)</p></li>
+<li id="li-529"><p id="p-1564">In general \(\CS A\ne \CS U\text{.}\) However, the columns of \(U\) containing leading ones form a basis of \(\CS U\text{,}\) and the <em class="emphasis">corresponding columns</em> of \(A\) form a basis for \(\CS A\text{.}\)</p></li>
+</ol></article><p id="p-1565"><a href="" class="xref" data-knowl="./knowl/th_fundamental_spaces.html" title="Theorem 4.6.6: Fundamental spaces">Theorem 4.6.6</a> allows us to add seven more equivalent statements to our invertibility theorem, bringing us to a total of fourteen! We have tried to sandwich in the new statements in places where the equivalence with a neighbor is fairly straightforward to show, or else already established.</p>
+<article class="theorem theorem-like" id="th_invertibility_supersized"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.6.8</span><span class="period">.</span><span class="space"> </span><span class="title">Invertibility theorem (supersized).</span>
+</h4>
+<p id="p-1566">Let \(A\) be an \(n\times n\) matrix. The following statements are equivalent.</p>
+<ol class="decimal">
+<li id="li-530"><p id="p-1567">\(A\) is invertible.</p></li>
+<li id="li-531">
+<p id="p-1568">The matrix equation</p>
+<div class="displaymath">
+\begin{equation*}
+A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldb}
+\end{equation*}
+</div>
+<p class="continuation">has a <em class="emphasis">unique solution</em> for <em class="emphasis">any</em> column vector  \(\boldb\text{.}\)</p>
+</li>
+<li id="li-532"><p id="p-1569">\(\displaystyle \NS A=\{\boldzero\}\)</p></li>
+<li id="li-533"><p id="p-1570">\(\displaystyle \nullity A=0\)</p></li>
+<li id="li-534"><p id="p-1571">\(\displaystyle \rank A=0\)</p></li>
+<li id="li-535"><p id="p-1572">\(\displaystyle \RS A=\R^n\)</p></li>
+<li id="li-536"><p id="p-1573">\(\displaystyle \CS A=\R^n\)</p></li>
+<li id="li-537">
+<p id="p-1574">The matrix equation</p>
+<div class="displaymath">
+\begin{equation*}
+A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldb}
+\end{equation*}
+</div>
+<p class="continuation">has a solution for <em class="emphasis">any</em> column vector  \(\boldb\text{.}\)</p>
+</li>
+<li id="li-538">
+<p id="p-1575">The matrix equation</p>
+<div class="displaymath">
+\begin{equation*}
+A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldzero}
+\end{equation*}
+</div>
+<p class="continuation">has a <em class="emphasis">unique solution</em>: namely, \(\boldx=\boldzero_{n\times 1}\text{.}\)</p>
+</li>
+<li id="li-539"><p id="p-1576">Any of the following equivalent conditions about the set \(S\) of <em class="emphasis">columns</em> of \(A\) hold: \(S\) is a basis of \(\R^n\text{;}\) \(S\) spans \(\R^n\text{;}\) \(S\) is linearly independent.</p></li>
+<li id="li-540"><p id="p-1577">Any of the following equivalent conditions about the set \(S\) of <em class="emphasis">rows</em> of \(A\) hold: \(S\) is a basis of \(\R^n\text{;}\) \(S\) spans \(\R^n\text{;}\) \(S\) is linearly independent.</p></li>
+<li id="li-541"><p id="p-1578">\(A\) is row equivalent to \(I_n\text{,}\) the \(n\times n\) identity matrix.</p></li>
+<li id="li-542"><p id="p-1579">\(A\) is a product of elementary matrices.</p></li>
+<li id="li-543"><p id="p-1580">\(\det A\ne 0\text{.}\)</p></li>
+</ol></article></section><section class="subsection" id="ss_expand_contract"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.6.3</span> <span class="title">Contracting and expanding to bases</span>
+</h3>
+<p id="p-1581">Thanks to <a href="" class="xref" data-knowl="./knowl/th_basis_dimension.html" title="Theorem 4.5.11: Basis bounds">Theorem 4.5.11</a> we know that spanning sets can be contracted to bases, and linearly independent sets can be extended to bases; and we have already seen a few instances where this result has been put to good use. However, neither the theorem nor its proof provide a practical means of performing this contraction or extension. We would like a systematic way of determining which vectors to throw out (when contracting), or which vectors to chuck in (when extending). In the special case where \(V=\R^n\) for some \(n\text{,}\) we can adapt <a href="" class="xref" data-knowl="./knowl/proc_fund_spaces.html" title="Procedure 4.6.7: Computing bases of fundamental spaces">Procedure 4.6.7</a> to our needs.</p>
+<article class="algorithm theorem-like" id="proc_contract_extend"><h4 class="heading">
+<span class="type">Procedure</span><span class="space"> </span><span class="codenumber">4.6.9</span><span class="period">.</span><span class="space"> </span><span class="title">Contracting and extending to bases of \(\R^n\).</span>
+</h4>
+<p id="p-1582">Let \(S=\{\boldv_1, \boldv_2,\dots, \boldv_r\}\subseteq \R^n\text{.}\)</p>
+<dl class="description-list">
+<dt id="li-544">Contracting to a basis</dt>
+<dd>
+<p id="p-1583">Assume \(S\) spans \(\R^n\text{.}\) To contract \(S\) to a basis \(B\subseteq S\text{,}\) proceed as follows.</p>
+<ol class="decimal">
+<li id="li-545"><p id="p-1584">Let \(A\) be the \(n\times r\) matrix whose \(j\)-th column is given by \(\boldv_j\) for all \(1\leq j\leq r\text{.}\)</p></li>
+<li id="li-546"><p id="p-1585">Use the column space procedure (<a href="" class="xref" data-knowl="./knowl/proc_fund_spaces.html" title="Procedure 4.6.7: Computing bases of fundamental spaces">4.6.7</a>) to compute a basis \(B\) of \(\CS A\text{,}\) chosen from among the original columns of \(A\text{.}\)</p></li>
+<li id="li-547"><p id="p-1586">The subset \(B\subseteq S\) is a basis for \(\R^n\text{.}\)</p></li>
+</ol>
+</dd>
+<dt id="li-548">Extending to a basis</dt>
+<dd>
+<p id="p-1587">Assume \(S\) is linearly independent. To extend \(S\) to a basis \(B\) of \(\R^n\) proceed as follows.</p>
+<ol class="decimal">
+<li id="li-549"><p id="p-1588">Let \(A\) be the \(n\times (r+n)\) matrix whose first \(r\) columns are the elements of \(S\text{,}\) and whose remaining \(n\) columns consist of \(\bolde_1, \bolde_2, \dots, \bolde_n\text{,}\) the standard basis elements of \(\R^n\text{.}\)</p></li>
+<li id="li-550"><p id="p-1589">Use the column space procedure (<a href="" class="xref" data-knowl="./knowl/proc_fund_spaces.html" title="Procedure 4.6.7: Computing bases of fundamental spaces">4.6.7</a>) to compute a basis \(B\) of \(\CS A\text{,}\) chosen from among the original columns of \(A\text{.}\)</p></li>
+<li id="li-551"><p id="p-1590">The set \(B\) is a basis for \(\R^n\) containing \(S\text{.}\)</p></li>
+</ol>
+</dd>
+</dl></article><article class="hiddenproof" id="proof-67"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-67"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-67"><article class="hiddenproof"><p id="p-1591">Let's see why in both cases the procedure produces a basis of \(\R^n\) that is either a sub- or superset of \(S\text{.}\)</p>
+<article class="case" id="case-93"><h5 class="heading">Contracting to a basis.</h5>
+<p id="p-1592">In this case we have \(\CS A=\Span S=\R^n\text{.}\) Thus \(B\) is a basis for \(\R^n\text{.}\) Since the column space procedure selects columns <em class="emphasis">from among</em> the original columns of \(A\text{,}\) we have \(B\subseteq S\text{,}\) as desired.</p></article><article class="case" id="case-94"><h5 class="heading">Extending to a basis.</h5>
+<p id="p-1593">Since \(\CS A\) contains \(\bolde_j\) for all \(1\leq j\leq n\text{,}\) we have \(\CS A=\R^n\text{.}\) Thus \(B\) is a basis for \(\R^n\text{.}\) Since the first \(r\) columns of \(A\) are linearly independent (they are the elements of \(S\)), when we row reduce \(A\) to a matrix \(U\) in row echelon form, the first \(r\) columns of \(U\) will contain leading ones. (To see this, imagine row reducing the \(n\times r\) submatrix \(A'\) consisting of the first \(r\) columns of \(A\) to a row echelon matrix \(U'\text{.}\) Since these columns are linearly independent, they already form a basis for \(\CS A'\text{.}\) Thus the corresponding colmns of \(U'\) must all have leading ones. ) It follows that the first \(r\) columns of \(A\) are selected to be in the basis \(B\text{,}\) and hence that \(S\subseteq B\text{,}\) as desired.</p></article></article></div></section><section class="exercises" id="s_rank_nullity_ex"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">4.6.4</span> <span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-148"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<p id="p-1594">In this exercise we will show that for any \((a,b,c,d)\in \R^4\text{,}\) there is a polynomial \(p(x)\in P_3\) satisfying</p>
+<div class="displaymath">
+\begin{equation*}
+p(-1)=a, p(0)=b, p(1)=c, p(2)=d\text{.}
+\end{equation*}
+</div>
+<p class="continuation">In other words given any list of values \(a, b, c, d\text{,}\) we can find a polynomial that evaluates to these values at the inputs \(x=-1, 0, 1, 2\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-552"><p id="p-1595">Define \(T\colon P_3\rightarrow \R^4\) by \(T(p(x))=(p(-1), p(0), p(1), p(2))\text{.}\) Show that \(T\) is linear.</p></li>
+<li id="li-553"><p id="p-1596">Compute \(\NS T\text{.}\) You may use the fact that a polynomial of degree \(n\) has at most \(n\) roots.</p></li>
+<li id="li-554"><p id="p-1597">Use the rank-nullity theorem to compute \(\dim \im T\text{.}\) Explain why this implies \(\im T=\R^4\)</p></li>
+<li id="li-555"><p id="p-1598">Explain why the equality \(\im T=\R^4\) is equivalent to the claim we wish to prove.</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-149"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<p id="p-1599"><p id="p-1600">Use the rank-nullity theorem to compute the rank of the linear transformation \(T\) described.</p></p>
+<ol class="lower-alpha">
+<li id="li-556"><p id="p-1601">\(T\colon\R^7\rightarrow M_{32}\text{,}\) \(\nullity T=2\)</p></li>
+<li id="li-557"><p id="p-1602">\(T\colon P_3\rightarrow \R^5\text{,}\) \(\NS T=\{\boldzero\}\)</p></li>
+<li id="li-558"><p id="p-1603">\(T\colon P_5 \rightarrow P_5\text{,}\) \(\NS T=P_4\)</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-150"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<p id="p-1604">For each linear transformation \(T\colon V\rightarrow W\) use the rank-nullity theorem to decide whether \(\im T=W\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-559"><p id="p-1605">\(\displaystyle T\colon \R^4\rightarrow \R^5\)</p></li>
+<li id="li-560"><p id="p-1606">\(T\colon M_{22}\rightarrow P_2\text{,}\) \(\nullity T=2\)</p></li>
+<li id="li-561"><p id="p-1607">\(T\colon M_{23}\rightarrow M_{32}\text{,}\) \(\NS T=\{\boldzero\}\)</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-151"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<p id="p-1608">Let \(A\) be \(m\times n\) with \(n\lt m\text{.}\) Prove, using <a href="" class="xref" data-knowl="./knowl/th_fundamental_spaces.html" title="Theorem 4.6.6: Fundamental spaces">Theorem 4.6.6</a> that there is a \(\boldb\in\R^m\) such that the system \(A\boldx=\boldb\) is inconsistent.</p></article><article class="exercise exercise-like" id="exercise-152"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<p id="p-1609">For each matrix \(A\) (i) row reduce \(A\) to a matrix \(U\) in row echelon form, (ii) compute bases for \(\CS A\) and \(\CS U\text{,}\) (iii) compute \(\dim \CS A\) and \(\dim \CS U\text{,}\)and (iv) decide whether \(\CS A=\CS U\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-562"><div class="displaymath" id="p-1610">
+\begin{equation*}
+A=\boldzero_{n\times n}
+\end{equation*}
+</div></li>
+<li id="li-563"><div class="displaymath" id="p-1611">
+\begin{equation*}
+A=\begin{amatrix}[rr]-2 \amp 1\\ 1\amp 5  \end{amatrix}
+\end{equation*}
+</div></li>
+<li id="li-564"><div class="displaymath" id="p-1612">
+\begin{equation*}
+A=\begin{amatrix}[rrr]1 \amp 1 \amp 3 \\ 1 \amp 2 \amp 1 \\ 1 \amp 3 \amp -1  \end{amatrix}
+\end{equation*}
+</div></li>
+</ol></article><article class="exercise exercise-like" id="exercise-153"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<p id="p-1613">Assume \(A\) is invertible, and is row equivalent to the row echelon matrix \(U\text{.}\) Prove: \(\CS A=\CS U\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-154"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<p id="p-1614">For each matrix below, (i) compute bases for each fundamental space, (ii) identify these spaces as familiar geometric objects in \(\R^2\) or \(\R^3\text{,}\) and (iii) provide sketches of each space. The sketches of \(\NS A\) and \(\RS A\) should be combined in the same coordinate system.</p>
+<ol class="lower-alpha">
+<li id="li-565"><div class="displaymath" id="p-1615">
+\begin{equation*}
+A=\begin{amatrix}[rrr]1\amp 0\amp 0\\ 0\amp 1\amp 0  \end{amatrix}
+\end{equation*}
+</div></li>
+<li id="li-566"><div class="displaymath" id="p-1616">
+\begin{equation*}
+A=\begin{amatrix}[rrr]1\amp 1\amp -2\\ 3\amp -4\amp 1  \end{amatrix}
+\end{equation*}
+</div></li>
+<li id="li-567"><div class="displaymath" id="p-1617">
+\begin{equation*}
+A=\begin{amatrix}[rr] 1\amp 2\\ 0\amp 0 \\ -1\amp -2  \end{amatrix}
+\end{equation*}
+</div></li>
+</ol></article><article class="exercise exercise-like" id="exercise-155"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<p id="p-1618">For each \(A\) compute bases for each fundamental space. In each case, you can find bases for one of the fundamental spaces by inspection, and then use the rank-nullity theorem to reduce your workload for the other spaces. See first solution for a model example.</p>
+<ol class="lower-alpha">
+<li id="li-568"><div class="displaymath" id="p-1619">
+\begin{equation*}
+A=\begin{amatrix}[rrrr]1\amp 1\amp 1\amp 1\\ 1\amp 1\amp 1\amp 1\\ \end{amatrix}
+\end{equation*}
+</div></li>
+<li id="li-569"><div class="displaymath" id="p-1620">
+\begin{equation*}
+A=\begin{bmatrix}1\amp 1\amp 1\amp 1\\ 2\amp 1\amp 2\amp 1\\ 1\amp 1\amp 1\amp 1 \end{bmatrix}
+\end{equation*}
+</div></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-53" id="solution-53"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-53"><div class="solution solution-like"><ol class="lower-alpha"><li id="li-570"><p id="p-1621">Clearly, \(B=\{(1,1)\}\) is a basis for \(\CS A\text{,}\) and \(B'=\{(1,1,1,1)\}\) is a basis for \(\RS A\text{.}\) It follows that \(\rank A=1\) and hence \(\nullity A=4-1=3\text{.}\) Thus we need to find three linearly independent elements of \(\NS A\) to find a basis. We can do so by inspection with the help of the column method. Namely, observe that \(\boldv_1=(1,-1,0,0), \boldv_2=(0,1,-1,0), \boldv_3=(0,0,1,-1)\) are all in \(\NS A\) (column method). The location of zeros in these vectors make it clear that \(B''=\{\boldv_1,\boldv_2, \bolv_3\}\) are linearly independent. Since \(\dim NS A=3\text{,}\) and \(\val{B''}=3\text{,}\) we conclude that \(B''\) is a basis of \(\NS A\) (<a href="" class="xref" data-knowl="./knowl/cor_dimension_subspace.html" title="Corollary 4.5.17: Dimension of subspaces">4.5.17</a>).</p></li></ol></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-156"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
+<p id="p-1622">For each \(A\) use <a href="" class="xref" data-knowl="./knowl/proc_fund_spaces.html" title="Procedure 4.6.7: Computing bases of fundamental spaces">Procedure 4.6.7</a> to compute bases for each fundamental space.</p>
+<ol class="lower-alpha">
+<li id="li-571"><div class="displaymath" id="p-1623">
+\begin{equation*}
+A= \begin{bmatrix}1\amp 2\amp 4\amp 5\\ 0\amp 1\amp -3\amp 0\\ 0\amp 0\amp 1\amp -3\\ 0\amp 0\amp 0\amp 0 \end{bmatrix}
+\end{equation*}
+</div></li>
+<li id="li-572"><div class="displaymath" id="p-1624">
+\begin{equation*}
+A= \begin{bmatrix}1\amp 2\amp -1\amp 5\\ 0\amp 1\amp 4\amp 3\\ 0\amp 0\amp 1\amp -7\\ 0\amp 0\amp 0\amp 1 \end{bmatrix}
+\end{equation*}
+</div></li>
+<li id="li-573"><div class="displaymath" id="p-1625">
+\begin{equation*}
+A = \begin{bmatrix}1\amp 4\amp 5\amp 6\amp 9\\ 3\amp -2\amp 1\amp 4\amp -1\\ -1\amp 0\amp -1\amp -2\amp -1\\ 2\amp 3\amp 5\amp 7\amp 8 \end{bmatrix}
+\end{equation*}
+</div></li>
+</ol></article><article class="exercise exercise-like" id="exercise-157"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
+<p id="p-1626">Find the rank and nullity of each matrix by reducing it to row echelon form.</p>
+<ol class="lower-alpha">
+<li id="li-574"><div class="displaymath" id="p-1627">
+\begin{equation*}
+A = \begin{amatrix}[rrrrr] 1\amp 0\amp -2\amp 1\amp 0\\ 0\amp -1\amp -3\amp 1\amp 3\\ -2\amp -1\amp 1\amp -1\amp 3\\ 0\amp 1\amp 3\amp 0\amp -4 \end{amatrix}
+\end{equation*}
+</div></li>
+<li id="li-575"><div class="displaymath" id="p-1628">
+\begin{equation*}
+A = \begin{amatrix}[rrrr] 1\amp 3\amp 1\amp 3\\ 0\amp 1\amp 1\amp 0\\ -3\amp 0\amp 6\amp -1\\ 3\amp 4\amp -2\amp 1\\ 2\amp 0\amp -4\amp -2 \end{amatrix}
+\end{equation*}
+</div></li>
+</ol></article><article class="exercise exercise-like" id="exercise-158"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
+<p id="p-1629">Let \(A\) be an \(n\times n\) matrix.</p>
+<ol class="lower-alpha">
+<li id="li-576"><p id="p-1630">Prove: \(A^2=\boldzero_{n\times n}\) if and only if \(\CS A\subseteq \NS A\text{.}\)</p></li>
+<li id="li-577"><p id="p-derived-li-577">Construct a \(2\times 2\) matrix \(A\) with \(\NS A=\CS A=\Span\{(1,2)\}\text{.}\) Verify that your \(A\) satisfies \(A^2=\boldzero_{2\times 2}\text{.}\)</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-159"><h4 class="heading"><span class="codenumber">12<span class="period">.</span></span></h4>
+<p id="p-1631">Suppose \(A\) is \(m\times n\) with \(m\ne n\text{.}\)</p>
+<p id="p-1632">Prove: either the rows of \(A\) are linearly dependent or the columns of \(A\) are linearly dependent.</p></article><article class="exercise exercise-like" id="exercise-160"><h4 class="heading"><span class="codenumber">13<span class="period">.</span></span></h4>
+<p id="p-1633">Prove: \(\nullity A=\nullity A^T\) if and only if \(A\) is a square matrix.</p></article><article class="exercise exercise-like" id="exercise-161"><h4 class="heading"><span class="codenumber">14<span class="period">.</span></span></h4>
+<p id="p-1634">Suppose \(\underset{m\times n}{A}\) reduces to the row echelon matrix \(\underset{m\times n}{U}\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-578"><p id="p-1635">Prove: the columns \(\boldu_{i_1}, \boldu_{i_2}, \dots, \boldu_{i_r}\) of \(U\) form a basis for \(\CS U\) if and only if the corresponding columns \(\bolda_{i_1}, \bolda_{i_2}, \dots, \bolda_{i_r}\) of \(A\) form a basis for \(\CS A\text{.}\)</p></li>
+<li id="li-579"><p id="p-1636">Prove: the columns of \(U\) with leading ones form a basis for \(\CS U\text{.}\)</p></li>
+<li id="li-580"><p id="p-1637">Prove: \(\dim \NS U=\#(\text{ free variables } )\) in the linear system \(U\boldx=\boldzero\text{.}\)</p></li>
+<li id="li-581"><p id="p-1638">Suppose \(x_{j_1}=t_{j_1}, x_{j_2}=t_{j_2}, \dots,
+x_{j_s}=t_{j_s}\) are the free variables of the system \(U\boldx=\boldzero\text{.}\) Let \(\boldv_{j_k}\) be the element of \(\NS U\) obtained by setting \(t_{j_k}=1\) and \(t_{j_\ell}=0\) for \(\ell\ne k\) in our parametric description of solutions to \(U\boldx=\boldzero\text{.}\) Prove: \(\{\boldv_{j_1}, \boldv_{j_2}, \dots, \boldv_{j_s}\}\) is a basis for \(\NS U\text{.}\)</p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-54" id="solution-54"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-54"><div class="solution solution-like">
+<p id="p-1639">Recall that \(A\) being row equivalent to \(U\) is equivalent to there being an invertible matrix \(Q\) such that</p>
+<div class="displaymath">
+\begin{equation*}
+QA=U\tag{\(*\)}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">We will use this fact repeatedly.</p>
+<ol class="lower-alpha">
+<li id="li-582">
+<p id="p-1640">By the column method of matrix multiplication we have \(\boldu_i=Q\bolda_i\text{:}\) i.e., the \(i\)-th column of \(U\) is obtained by multiplying the \(i\)-th column of \(A\) on the left by \(Q\text{.}\) First observe that</p>
+<div class="displaymath">
+\begin{align*}
+\boldzero=c_1\bolda_{i_1}+\cdots +c_r\bolda_{i_r}\amp \Leftrightarrow Q\boldzero=Q(c_1\bolda_{i_1}+\cdots +c_r\bolda_{i_r}) \amp \text{ (since \(Q\) is invertible) }\\
+\amp \Leftrightarrow \boldzero=c_1Q\bolda_{i_1}+\cdots +c_rQ\bolda_{i_r} \amp \text{ (matrix arithmetic) }\\
+\amp \Leftrightarrow \boldzero=c_1\boldu_{i_1}+\cdots +c_r\boldu_{i_r}
+\end{align*}
+</div>
+<p id="p-1641">In particular, there is a nontrivial linear combination of the \(\bolda_{i_k}\) equal to \(\boldzero\) if and only if there is a nontrivial linear combination of the \(\boldu_{i_k}\) equal to \(\boldzero\text{.}\) Thus the \(\bolda_{i_k}\) are independent if and only if the \(\boldu_{i_k}\) are independent.</p>
+<p id="p-1642">Next, we claim the \(\bolda_{i_k}\) span \(\CS A\) if and only if the \(\boldu_{i_k}\) span \(\CS U\text{.}\) Indeed, suppose the \(\bolda_{i_k}\) span \(\CS A\text{.}\) Take \(\boldy\in \CS U\text{.}\) we will show that \(\boldy\) is a linear combination of the \(\boldu_{i_k}\text{.}\)</p>
+<p id="p-1643">Since \(\boldy\in \CS U\text{,}\) there is an \(\boldx\in\R^n\) such that \(\boldy=U\boldx\) (since \(\CS U=\range U\)). We have \(U=QA\text{,}\) and thus \(\boldy=QA(\boldx)=Q(\boldw)\text{,}\) where \(\boldw=A\boldx\text{.}\) Then \(\boldw\in \CS A\text{,}\) and we can write \(\boldw=c_1\bolda_{i_1}+\cdots +c_r\bolda_{i_r}\text{.}\) It then follows that</p>
+<div class="displaymath">
+\begin{equation*}
+\boldy=Q\boldw=Q(c_1\bolda_{i_1}+\cdots +c_r\bolda_{i_r})=c_1Q\bolda_{i_1}+\cdots +c_rQ\bolda_{i_r}=c_1\boldu_{i_1}+\cdots +c_r\boldu_{i_r}\text{.}
+\end{equation*}
+</div>
+<p id="p-1644">Since \(\boldy\) was any element of \(\CS U\text{,}\) we see that the \(\boldu_{i_k}\) span \(\CS U\text{,}\) as desired.</p>
+<p id="p-1645">To go the other way (i.e., that if the \(\boldu_{i_k}\) span \(\CS U\text{,}\) the \(\bolda_{i_k}\) span \(\CS A\)), note that \((*)\) implies \(A=Q^{-1}U\text{,}\) and we can use the same argument above with the roles of \(\bolda_{i_k}\) and \(\boldu_{i_k}\) swapped!</p>
+<p id="p-1646">We have shown that the \(\bolda_{i_k}\) are independent if and only if the \(\boldu_{i_k}\text{,}\) and that they span \(\CS A\) if and only if the \(\boldu_{i_k}\) span \(\CS U\text{.}\) It follows that the \(\bolda_{i_k}\) form a basis for \(\CS A\) if and only if the \(\boldu_{i_k}\) form a basis for \(\CS U\text{.}\)</p>
+</li>
+<li id="li-583">
+<p id="p-1647">Let \(\boldu_{i_1},\dots, \boldu_{i_r}\) be the columns of \(U\) with leading ones, and let \(\boldu_{j_1}, \boldu_{j_2}, \dots, \boldu_{j_s}\) be the columns without leading ones. To prove the \(\boldu_{i_k}\) form a basis for \(\CS U\text{,}\) we will show that given any \(\boldy\in \CS U\) there is a <em class="emphasis">unique</em> choice of scalars \(c_1, c_2,\dots,
+c_r\) such that \(c_1\boldu_{i_1}+\cdots +c_r\boldu_{i_r}=\boldy\text{.}\) (Recall that the uniqueness of this choice implies linear independence.)</p>
+<p id="p-1648">So assume \(\boldy\in \CS U\text{.}\) Then we can find \(\boldx\in\R^n\) such that \(U\boldx=\boldy\text{,}\) which means the linear system with augmented matrix \([\ U\ \vert \ \boldy]\) is consistent. Using our Gaussian elimination theory, we know that the solutions \(\boldx=(x_1,x_2,\dots,
+x_n)\) to this system are in 1-1 correspondence with choices for the free variables \(x_{j_1}=t_{j_1}, x_{j_2}=t_{j_2}, \dots,
+x_{j_s}=t_{j_s}\text{.}\) (Remember that the columns \(\boldu_{j_k}\) without leading ones correspond to the free variables.) In particular, there is a unique solution to \(U\boldx=\boldy\) where we set all the free variables equal to 0. By the column method, this gives us a unique linear combination of only the columns \(\boldu_{i_k}\) with leading ones equal to \(\boldy\text{.}\) This proves the claim.</p>
+</li>
+<li id="li-584"><p id="p-1649">Using the notation and result from (b) we see that \(\rank U=\dim\range U=\dim\CS U=r\text{,}\) the number of columns of \(U\) with leading ones. By the rank-nullity theorem, \(\dim\NS U=n-r=s\text{,}\) the number of columns without leading ones. This is also equal to the number of free variables in the corresponding system of equations.</p></li>
+<li id="li-585"><p id="p-1650">(d) The given recipe produces a list of \(s\) distinct vectors in \(\NS U\text{.}\) Since \(s=\dim\NS U\text{,}\) by part (c), it suffice to show the \(\boldv_i\) are linearly independent. This is easy to see. Indeed suppose we have \(c_1\boldv_1+c_2\boldv_2+\cdots +c_s\boldv_s=\boldzero\text{.}\) Since for each \(1\leq i\leq s\text{,}\) \(\boldv_i\) is the <em class="emphasis">only</em> vector with a nonzero entry for the \(i\)-th component, we must have \(c_i=0\) for all \(1\leq i\leq s\text{.}\) Thus we see that the set is linearly independent.</p></li>
+</ol>
+</div></div>
+</div></article></section></section></div></main>
+</div>
+</body>
+</html>

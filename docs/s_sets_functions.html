@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-02-07T10:10:25-06:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Sets and functions</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg">miniversion=0.6</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\require{cancel}\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\C}{{\mathbb C}}
+\newcommand{\T}{{\mathbb T}}
+\newcommand{\F}{{\mathbb F}}
+\newcommand{\HH}{{\mathbb H}}
+\newcommand{\compose}{\circ}
+\newcommand{\bolda}{{\mathbf a}}
+\newcommand{\boldb}{{\mathbf b}}
+\newcommand{\boldc}{{\mathbf c}}
+\newcommand{\boldd}{{\mathbf d}}
+\newcommand{\bolde}{{\mathbf e}}
+\newcommand{\boldi}{{\mathbf i}}
+\newcommand{\boldj}{{\mathbf j}}
+\newcommand{\boldk}{{\mathbf k}}
+\newcommand{\boldn}{{\mathbf n}}
+\newcommand{\boldp}{{\mathbf p}}
+\newcommand{\boldq}{{\mathbf q}}
+\newcommand{\boldr}{{\mathbf r}}
+\newcommand{\bolds}{{\mathbf s}}
+\newcommand{\boldt}{{\mathbf t}}
+\newcommand{\boldu}{{\mathbf u}}
+\newcommand{\boldv}{{\mathbf v}}
+\newcommand{\boldw}{{\mathbf w}}
+\newcommand{\boldx}{{\mathbf x}}
+\newcommand{\boldy}{{\mathbf y}}
+\newcommand{\boldz}{{\mathbf z}}
+\newcommand{\boldzero}{{\mathbf 0}}
+\newcommand{\boldmod}{\boldsymbol{ \bmod }}
+\newcommand{\boldT}{{\mathbf T}}
+\newcommand{\boldN}{{\mathbf N}}
+\newcommand{\boldB}{{\mathbf B}}
+\newcommand{\boldF}{{\mathbf F}}
+\newcommand{\boldS}{{\mathbf S}}
+\newcommand{\boldG}{{\mathbf G}}
+\newcommand{\boldK}{{\mathbf K}}
+\newcommand{\boldL}{{\mathbf L}}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\NS}{null}
+\DeclareMathOperator{\RS}{row}
+\DeclareMathOperator{\CS}{col}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\range}{range}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\nullity}{nullity}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\Fix}{Fix}
+\DeclareMathOperator{\Aff}{Aff}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\mdeg}{mdeg}
+\DeclareMathOperator{\Lt}{Lt}
+\DeclareMathOperator{\Lc}{Lc}
+\DeclareMathOperator{\disc}{disc}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\adj}{adj}
+\DeclareMathOperator{\curl}{curl}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\diver}{div}
+\DeclareMathOperator{\flux}{flux}
+\def\Gal{\operatorname{Gal}}
+\def\ord{\operatorname{ord}}
+\def\ML{\operatorname{M}}
+\def\GL{\operatorname{GL}}
+\def\PGL{\operatorname{PGL}}
+\def\SL{\operatorname{SL}}
+\def\PSL{\operatorname{PSL}}
+\def\GSp{\operatorname{GSp}}
+\def\PGSp{\operatorname{PGSp}}
+\def\Sp{\operatorname{Sp}}
+\def\PSp{\operatorname{PSp}}
+\def\Aut{\operatorname{Aut}}
+\def\Inn{\operatorname{Inn}}
+\def\Hom{\operatorname{Hom}}
+\def\End{\operatorname{End}}
+\def\ch{\operatorname{char}}
+\def\Zp{\Z/p\Z}
+\def\Zm{\Z/m\Z}
+\def\Zn{\Z/n\Z}
+\def\Fp{\F_p}
+\newcommand{\surjects}{\twoheadrightarrow}
+\newcommand{\injects}{\hookrightarrow}
+\newcommand{\bijects}{\leftrightarrow}
+\newcommand{\isomto}{\overset{\sim}{\rightarrow}}
+\newcommand{\floor}[1]{\lfloor#1\rfloor}
+\newcommand{\ceiling}[1]{\left\lceil#1\right\rceil}
+\newcommand{\mclass}[2][m]{[#2]_{#1}}
+\newcommand{\val}[2][]{\left\lvert #2\right\rvert_{#1}}
+\newcommand{\valuation}[2][]{\left\lvert #2\right\rvert_{#1}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\anpoly}{a_nx^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+\newcommand{\anmonic}{x^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+\newcommand{\bmpoly}{b_mx^m+b_{m-1}x^{m-1}\cdots +b_1x+b_0}
+\newcommand{\pder}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\normalin}{\trianglelefteq}
+\newcommand{\angvec}[1]{\langle #1\rangle}
+\newcommand{\varpoly}[2]{#1_{#2}x^{#2}+#1_{#2-1}x^{#2-1}\cdots +#1_1x+#1_0}
+\newcommand{\varpower}[1][a]{#1_0+#1_1x+#1_1x^2+\cdots}
+\newcommand{\limasto}[2][x]{\lim_{#1\rightarrow #2}}
+\def\ntoinfty{\lim_{n\rightarrow\infty}}
+\def\xtoinfty{\lim_{x\rightarrow\infty}}
+\def\ii{\item}
+\def\bb{\begin{enumerate}}
+\def\ee{\end{enumerate}}
+\def\ds{\displaystyle}
+\def\p{\partial}
+\newcommand{\abcdmatrix}[4]{\begin{bmatrix}#1\amp #2\\ #3\amp #4 \end{bmatrix}
+}
+\newenvironment{amatrix}[1][ccc|c]{\left[\begin{array}{#1}}{\end{array}\right]}
+\newenvironment{linsys}[2][m]{
+\begin{array}[#1]{@{}*{#2}{rc}r@{}}
+}{
+\end{array}}
+\newcommand{\eqsys}{\begin{array}{rcrcrcr}
+a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp b_1\\
+a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp b_2\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \vdots\\
+a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp b_m
+\end{array}
+}
+\newcommand{\numeqsys}{\begin{array}{rrcrcrcr}
+e_1:\amp  a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp b_1\\
+e_2: \amp a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp b_2\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \vdots\\
+e_m: \amp a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp b_m
+\end{array}
+}
+\newcommand{\homsys}{\begin{array}{rcrcrcr}
+a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp 0\\
+a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp 0\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \vdots\\
+a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp 0
+\end{array}
+}
+\newcommand{\vareqsys}[4]{
+\begin{array}{ccccccc}
+#3_{11}x_{1}\amp +\amp #3_{12}x_{2}\amp +\cdots+\amp  #3_{1#2}x_{#2}\amp =\amp #4_1\\
+#3_{21}x_{1}\amp +\amp #3_{22}x_{2}\amp +\cdots+\amp #3_{2#2}x_{#2}\amp =\amp #4_2\\
+\vdots \amp \amp \vdots \amp  \amp \vdots \amp =\amp  \vdots\\
+#3_{#1 1}x_{1}\amp +\amp #3_{#1 2}x_{2}\amp +\cdots +\amp #3_{#1 #2}x_{#2}\amp =\amp #4_{#1}
+\end{array}
+}
+\newcommand{\genmatrix}[1][a]{
+\begin{bmatrix}
+#1_{11} \amp  #1_{12} \amp  \cdots \amp  #1_{1n} \\
+#1_{21} \amp  #1_{22} \amp  \cdots \amp  #1_{2n} \\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \\
+#1_{m1} \amp  #1_{m2} \amp  \cdots \amp  #1_{mn}
+\end{bmatrix}
+}
+\newcommand{\varmatrix}[3]{
+\begin{bmatrix}
+#3_{11} \amp  #3_{12} \amp  \cdots \amp  #3_{1#2} \\
+#3_{21} \amp  #3_{22} \amp  \cdots \amp  #3_{2#2} \\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \\
+#3_{#1 1} \amp  #3_{#1 2} \amp  \cdots \amp  #3_{#1 #2}
+\end{bmatrix}
+}
+\newcommand{\augmatrix}{
+\begin{amatrix}[cccc|c]
+a_{11} \amp  a_{12} \amp  \cdots \amp  a_{1n} \amp b_{1}\\
+a_{21} \amp  a_{22} \amp  \cdots \amp  a_{2n} \amp b_{2}\\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \amp \vdots\\
+a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
+\end{amatrix}
+}
+\newcommand{\varaugmatrix}[4]{
+\begin{amatrix}[cccc|c]
+#3_{11} \amp  #3_{12} \amp  \cdots \amp  #3_{1#2} \amp #4_{1}\\
+#3_{21} \amp  #3_{22} \amp  \cdots \amp  #3_{2#2} \amp #4_{2}\\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \amp \vdots\\
+#3_{#1 1} \amp  #3_{#1 2} \amp  \cdots \amp  #3_{#1 #2}\amp #4_{#1}
+\end{amatrix}
+}
+\newcommand{\spaceforemptycolumn}{\makebox[\wd\boxofmathplus]{\ }}
+
+\newcommand{\generalmatrix}[3]{
+\left(
+\begin{array}{cccc}
+#1_{1,1}  \amp #1_{1,2}  \amp \ldots  \amp #1_{1,#2}  \\
+#1_{2,1}  \amp #1_{2,2}  \amp \ldots  \amp #1_{2,#2}  \\
+\amp \vdots                         \\
+#1_{#3,1} \amp #1_{#3,2} \amp \ldots  \amp #1_{#3,#2}
+\end{array}
+\right)  }
+\newcommand{\colvec}[2][c]{\begin{bmatrix}[#1] #2 \end{bmatrix}}
+\DeclareMathOperator{\size}{size}
+\DeclareMathOperator{\adjoint}{adj}
+\DeclareMathOperator{\sgn}{sgn}
+\newcommand{\restrictionmap}[2]{{#1}\mathpunct\upharpoonright\hbox{}_{#2}}
+\renewcommand{\emptyset}{\varnothing}
+
+\newcommand{\proj}[2]{\mbox{proj}_{#2}({#1}) }
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://linear-algebra.northwestern.pub/" target="_blank"><img src="external/images/im_holycomm.svg" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">Linear algebra: the theory of vector spaces and linear transformations</span></a></h1>
+<p class="byline">Aaron Greicius</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="c_foundations.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="c_foundations.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="s_logic.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="c_foundations.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="c_foundations.html" title="Up">Up</a><a class="next-button button toolbar-item" href="s_logic.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link">
+<a href="c_foundations.html" data-scroll="c_foundations"><span class="codenumber">1</span> <span class="title">Foundations</span></a><ul>
+<li><a href="s_sets_functions.html" data-scroll="s_sets_functions" class="active">Sets and functions</a></li>
+<li><a href="s_logic.html" data-scroll="s_logic">Logic</a></li>
+<li><a href="s_proof_technique.html" data-scroll="s_proof_technique">Proof techniques</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_linear_systems.html" data-scroll="c_linear_systems"><span class="codenumber">2</span> <span class="title">Systems of linear equations</span></a><ul>
+<li><a href="s_systems.html" data-scroll="s_systems">Systems of linear equations</a></li>
+<li><a href="s_ge.html" data-scroll="s_ge">Gaussian elimination</a></li>
+<li><a href="s_solving.html" data-scroll="s_solving">Solving linear systems</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_matrices.html" data-scroll="c_matrices"><span class="codenumber">3</span> <span class="title">Matrices, their arithmetic, and their algebra</span></a><ul>
+<li><a href="s_matrix.html" data-scroll="s_matrix">Matrices and their arithmetic</a></li>
+<li><a href="s_algebraic.html" data-scroll="s_algebraic">Algebra of matrices</a></li>
+<li><a href="s_invertible_matrices.html" data-scroll="s_invertible_matrices">Invertible matrices</a></li>
+<li><a href="s_invertibility_theorem.html" data-scroll="s_invertibility_theorem">The invertibility theorem</a></li>
+<li><a href="s_det.html" data-scroll="s_det">The determinant</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_vectorspace.html" data-scroll="c_vectorspace"><span class="codenumber">4</span> <span class="title">Vector spaces and linear transformations</span></a><ul>
+<li><a href="s_vectorspace.html" data-scroll="s_vectorspace">Real vector spaces</a></li>
+<li><a href="s_transformation.html" data-scroll="s_transformation">Linear transformations</a></li>
+<li><a href="s_subspace.html" data-scroll="s_subspace">Subspaces</a></li>
+<li><a href="s_span_independence.html" data-scroll="s_span_independence">Span and linear independence</a></li>
+<li><a href="s_basis_dimension.html" data-scroll="s_basis_dimension">Bases and dimension</a></li>
+<li><a href="s_rank_nullity.html" data-scroll="s_rank_nullity">Rank-nullity theorem and fundamental spaces</a></li>
+<li><a href="s_isom.html" data-scroll="s_isom">Isomorphisms</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_innerproductspaces.html" data-scroll="c_innerproductspaces"><span class="codenumber">5</span> <span class="title">Inner product spaces</span></a><ul>
+<li><a href="s_innerproducts.html" data-scroll="s_innerproducts">Inner product spaces</a></li>
+<li><a href="s_orthogonality.html" data-scroll="s_orthogonality">Orthogonal bases and orthogonal projection</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_transbasis.html" data-scroll="c_transbasis"><span class="codenumber">6</span> <span class="title">Eigenvectors and diagonalization</span></a><ul>
+<li><a href="s_coordinatevectors_isomorphisms.html" data-scroll="s_coordinatevectors_isomorphisms">Coordinate vectors and isomorphisms</a></li>
+<li><a href="s_matrixreps.html" data-scroll="s_matrixreps">Matrix representations of linear transformations</a></li>
+<li><a href="s_changeofbasis.html" data-scroll="s_changeofbasis">Change of basis</a></li>
+<li><a href="ss_eigenvectors.html" data-scroll="ss_eigenvectors">Eigenvectors and eigenvalues</a></li>
+<li><a href="ss_diagonalization.html" data-scroll="ss_diagonalization">Diagonalization</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="appendix-notation.html" data-scroll="appendix-notation"><span class="codenumber">A</span> <span class="title">Notation</span></a></li>
+<li class="link"><a href="appendix-defs.html" data-scroll="appendix-defs"><span class="codenumber">B</span> <span class="title">Definitions</span></a></li>
+<li class="link"><a href="appendix-thms.html" data-scroll="appendix-thms"><span class="codenumber">C</span> <span class="title">Theory and procedures</span></a></li>
+<li class="link"><a href="appendix-egs.html" data-scroll="appendix-egs"><span class="codenumber">D</span> <span class="title">Examples</span></a></li>
+<li class="link"><a href="appendix-vids.html" data-scroll="appendix-vids"><span class="codenumber">E</span> <span class="title">Video examples and figures</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="s_sets_functions"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.1</span> <span class="title">Sets and functions</span>
+</h2>
+<section class="introduction" id="introduction-1"><p id="p-1">We will gradually make our way to definitions of the vector spaces and linear transformations mentioned in this text's title. For now it will suffice to observe that a vector space is a certain kind of <em class="emphasis">set</em>, and a linear transformation is a special type of <em class="emphasis">function</em>. Accordingly we gather here some notions about sets and functions that will come in handy once we meet the two main players of linear algebra.</p></section><section class="subsection" id="ss_sets"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.1.1</span> <span class="title">Sets</span>
+</h3>
+<article class="definition definition-like" id="d_sets"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Sets.</span>
+</h4>
+<p id="p-2">A <dfn class="terminology">set</dfn> is a collection of objects. An object \(x\) is a  <dfn class="terminology">member</dfn> (or <dfn class="terminology">element</dfn>) of a set \(A\) if \(A\) contains \(x\text{.}\) In this case, we write \(x \in A\text{.}\) If \(x\) is not a member of \(A\text{,}\) we write \(x \notin A\text{.}\)</p></article><p id="p-3">We use curly braces to describe the contents of a set. For example, \(A=\{1,2,3\}\) is the set containing the first three positive integers, and \(B=\{1,2,3,\dots\}\) is the set of all positive integers. The defining property of sets is that they are completely determined by their members, and nothing more. In particular, when describing sets as above, it does not matter in what order the elements are listed, nor if they are repeated: e.g., \(\{1,2,3\}\text{,}\) \(\{2,1,3\}\text{,}\) and \(\{2,1,1,3,2\}\) are three descriptions of the same set. This somewhat slippery notion is made perfectly clear by specifying exactly what it means for two sets to be equal, as we do below.</p>
+<article class="definition definition-like" id="d_set_equality"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Set equality.</span>
+</h4>
+<p id="p-4">Sets \(A\) and \(B\) are <dfn class="terminology">equal</dfn>, denoted \(A=B\text{,}\) if they have precisely the same elements:  i.e., if for any object \(x\text{,}\) we have \(x\in A\) if and only if \(x\in B\text{.}\)</p></article><p id="p-5">Set membership naturally extends to a notion of one set “lying” within another.</p>
+<article class="definition definition-like" id="d_set_inclusion"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">Set inclusion (subsets).</span>
+</h4>
+<p id="p-6">A set \(A\) is a <dfn class="terminology">subset</dfn> of a set \(B\text{,}\) denoted \(A \subseteq B\text{,}\) if every member of \(A\) is a member of \(B\text{:}\)  i.e., \(x\in A\) implies \(x\in B\) for any object \(x\text{.}\) The relation \(A\subseteq B\) is called <dfn class="terminology">set inclusion</dfn>.</p></article><article class="remark remark-like" id="rm_equal_subset_logic"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.1.4</span><span class="period">.</span>
+</h4>
+<p id="p-7">The definitions of set equality and the subset relation make use of two important logical operations: namely, the “if and only if” (or “iff” for short) and “if-then” operations. We describe these notions in more detail in <a href="s_logic.html" class="internal" title="Section 1.2: Logic">Logic</a>, and we outline techniques for proving “if and only if” and “if-then” statements, including statements about set equality and the subset relation, in <a href="s_proof_technique.html" class="internal" title="Section 1.3: Proof techniques">Proof techniques</a>.</p></article><p id="p-8">With the fundamental notions of membership, equality, and subset in place, we now introduce means of building new sets from existing ones. The first is a manner of carving out a subset of a given set using a specified property.</p>
+<article class="definition definition-like" id="d_set_builder_notation"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">Set-builder notation.</span>
+</h4>
+<p id="p-9">Let \(A\) be a set, and let \(P\) be a property that elements of \(A\) either satisfy or do not satisfy. For an element \(x\in A\text{,}\) let \(P(x)\) denote the statement that \(x\) satisfies \(P\text{.}\)  The set of all elements of \(A\) satisfying \(P\) is denoted</p>
+<div class="displaymath">
+\begin{equation*}
+\{x \in A \colon P(x) \}\text{.}
+\end{equation*}
+</div></article><article class="remark remark-like" id="rm_set_builder"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.1.6</span><span class="period">.</span>
+</h4>
+<p id="p-10">Set builder notation ‘\(\{x \in A\colon P(x)\}\)’ is parsed from left to right as follows:</p>
+<ul class="disc">
+<li id="li-1"><p id="p-11">‘\{’ is read as “the set of”</p></li>
+<li id="li-2"><p id="p-12">‘\(x\in A\)’ is read as “elements of \(A\)”</p></li>
+<li id="li-3"><p id="p-13">‘\(\colon\)’ is read as “such that”</p></li>
+<li id="li-4"><p id="p-14">‘\(P(x)\)’ is read as “\(P(x)\) is true”.</p></li>
+</ul>
+<p class="continuation">Taken altogether we get: “The set of elements of \(A\) such that \(P(x)\) is true”.</p></article><article class="example example-like" id="ex_set_builder"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex_set_builder"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.7</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex_set_builder"><article class="example example-like"><p id="p-15">Let \(A=\{0,1,2,\dots \}\) be the set of nonnegative integers. The subset \(B=\{0,2,4,\dots\}\) of <em class="emphasis">even</em> positive integers can be described using set-builder notation as</p>
+<div class="displaymath">
+\begin{equation*}
+B=\{x\in A\colon x \text{ is even}\}\text{,}
+\end{equation*}
+</div>
+<p class="continuation">or alternatively,</p>
+<div class="displaymath">
+\begin{equation*}
+B=\{x\in A\colon x=2k \text{ for some integer} k\}\text{.}
+\end{equation*}
+</div></article></div>
+<p id="p-16">Next we use set builder notation, the set membership relation, and some basic logic to define the union, intersection, and difference of sets.</p>
+<article class="definition definition-like" id="d_set_operations"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.8</span><span class="period">.</span><span class="space"> </span><span class="title">Basic set operations.</span>
+</h4>
+<p id="p-17">Let \(A\) and \(B\) be subsets of a common set \(X\text{.}\)</p>
+<ul class="disc">
+<li id="li-5">
+<span class="heading"><span class="title">Set union.</span></span><p id="p-18">The <dfn class="terminology">union</dfn> \(A \cup B\) of \(A\) and \(B\) is defined as</p>
+<div class="displaymath">
+\begin{equation*}
+A\cup B=\{x\in X\colon x\in A\text{ or } x\in B\}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">More generally, the union \(A_1\cup A_2\dots \cup A_n\) of a collection of subsets of \(A_i\subseteq X\) is defined as</p>
+<div class="displaymath">
+\begin{equation*}
+A_1\cup A_2\dots \cup A_n=\{x\in X\colon x\in A_i \text{ for some } 1\leq i\leq n\}.
+\end{equation*}
+</div>
+</li>
+<li id="li-6">
+<span class="heading"><span class="title">Set intersection.</span></span><p id="p-19">The <dfn class="terminology">intersection</dfn> \(A \cap B\) of \(A\) and \(B\) is defined as</p>
+<div class="displaymath">
+\begin{equation*}
+A\cap B=\{x\in X\colon x\in A\text{ and } x\in B\}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">More generally, the intersection \(A_1\cap A_2\dots \cap A_n\) of a collection of subsets of \(A_i\subseteq X\) is defined as</p>
+<div class="displaymath">
+\begin{equation*}
+A_1\cap A_2\dots \cap A_n=\{x\in X\colon x\in A_i \text{ for all } 1\leq i\leq n\}.
+\end{equation*}
+</div>
+</li>
+<li id="li-7">
+<span class="heading"><span class="title">Set difference.</span></span><p id="p-20">The <dfn class="terminology">difference</dfn> \(A-B\) is defined as</p>
+<div class="displaymath">
+\begin{equation*}
+A-B=\{x\in X\colon x\in A\text{ and } x\notin B\}\text{.}
+\end{equation*}
+</div>
+</li>
+</ul></article><p id="p-21">With the help of these set operations, we can now describe some common sets used in mathematics.</p>
+<article class="definition definition-like" id="d_common_sets"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.9</span><span class="period">.</span><span class="space"> </span><span class="title">Common mathematical sets.</span>
+</h4>
+<p id="p-22">We denote by \(\mathbb{R}\) the set of all real numbers. The <dfn class="terminology">integers</dfn> \(\Z\) and <dfn class="terminology">rational numbers</dfn> \(\mathbb{Q}\) are the subsets of \(\R\) defined as</p>
+<div class="displaymath">
+\begin{align*}
+\mathbb{Z} \amp =\{0,1,2,3,\dots\}\cup \{-1,-2,-3,\dots\} \\
+\mathbb{Q} \amp = \{x\in\mathbb{R}\colon x=\tfrac{m}{n} \text{ for some } m,n\in\Z\}  \text{.}
+\end{align*}
+</div>
+<p class="continuation">The <dfn class="terminology">complex numbers</dfn> \(\mathbb{C}\) are defined as the set of all formal expressions of the form \(a+bi\text{,}\) where \(a,b\in\mathbb{R}\text{.}\) Identifying a real number \(a\) with the complex number \(a+0i\text{,}\) we have the following chain of subsets:</p>
+<div class="displaymath">
+\begin{equation*}
+\mathbb{Z}\subseteq\mathbb{Q}\subseteq\mathbb{R}\subseteq\mathbb{C}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">The <dfn class="terminology">empty set</dfn> is the set containing no objects, denoted \(\{\ \}\) or \(\emptyset\text{.}\)</p></article><p id="p-23">Lastly, we define the <em class="emphasis">cartesian product</em> of sets, which is a formal description of an ordered collection of objects.</p>
+<article class="definition definition-like" id="d_cartesian_product"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.10</span><span class="period">.</span><span class="space"> </span><span class="title">Cartesian product.</span>
+</h4>
+<p id="p-24">An <dfn class="terminology">\(n\)-tuple</dfn> (or <dfn class="terminology">sequence</dfn>) of the sets \(A_1, A_2,\dots, A_n\) is an ordered list \((a_1,a_2,\dots, a_n)\) such that \(a_i\in A_i\) for all \(1\leq i\leq n\text{.}\) We define two \(n\)-tuples \((a_1,a_2,\dots, a_n)\text{,}\) and \((a_1',a_2',\dots, a_n')\) to be equal, denoted \((a_1,a_2,\dots, a_n)=(a_1',a_2',\dots, a_n')\text{,}\) if \(a_i=a_i'\) for all \(1\leq i\leq n\text{.}\) We call \(n\) the <dfn class="terminology">length</dfn> of the sequence \((a_1,a_2,\dots, a_n)\text{,}\) and we call \(a_i\) its <dfn class="terminology">\(i\)-th entry</dfn> for all \(1\leq i\leq n\text{.}\)</p>
+<p id="p-25">The <dfn class="terminology">(Cartesian) product</dfn> of the sets \(A_1, A_2,\dots, A_n\text{,}\) denoted \(A_1\times A_2\times\cdots \times A_n\) or \(\displaystyle\prod_{i=1}^nA_i\text{,}\) is the set of all \(n\)-tuples: i.e.,</p>
+<div class="displaymath">
+\begin{equation*}
+\prod_{i=1}^nA_i=A_1\times A_2\times\cdots \times A_n=\{(a_1,a_2,\dots, a_n)\colon a_i\in A_i \text{ for all } 1\leq i\leq n\}\text{.}
+\end{equation*}
+</div>
+<p id="p-26">Given a set \(A\text{,}\) its <dfn class="terminology">\(n\)-ary Cartesian product</dfn> \(A^n\) is defined as</p>
+<div class="displaymath">
+\begin{equation*}
+A^n=\prod_{i=1}^n A=\underset{n\text{ times}}{\underbrace{A\times A\times\cdots \times A}}\text{.}
+\end{equation*}
+</div></article><article class="remark remark-like" id="rm_pairs_triples"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.1.11</span><span class="period">.</span>
+</h4>
+<p id="p-27">We have more suggestive names for \(n\)-tuples when \(n\) is small: a 2-tuple \((a,b)\) is called a pair, a 3-tuple \((a,b,c)\) is called a triple, a 4-tuple \((a,b,c,d)\) is called a quadruple, etc.. We will use the generic term “tuple” to designate a \(n\)-tuple of unspecified length.</p></article><article class="remark remark-like" id="rm_tuple_ordered"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.1.12</span><span class="period">.</span>
+</h4>
+<p id="p-28">Observe how tuples capture the notion of an <em class="emphasis">ordered</em> collection of object. For example, whereas the sets \(\{1, 1, 2, 3\}\) and \(\{1,2,2,3\}\) are all equal to one another, the 4-tuples \((1,1,2,3)\) and \((1,2,2,3)\) are not: they differ in their second entries.</p>
+<p id="p-29">What about the tuples \((1,1,1)\) and \((1,1,1,1)\text{?}\) Are these equal? Technically our definition of equality only applies to tuples living in the same fixed Cartesian product. In particular, for the question of equality to make sense, the tuples must have the same length. As such we will officially avoid writing things like \((1,1,1)\ne (1,1,1,1)\text{,}\) although unofficially we consider these two objects as completely different. You should think of \((1,1,1)\) and \((1,1,1,1)\) as creatures living on two different planets in the universe of tuples.</p></article></section><section class="subsection" id="ss_functions"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.1.2</span> <span class="title">Functions</span>
+</h3>
+<article class="definition definition-like" id="d_function"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.13</span><span class="period">.</span><span class="space"> </span><span class="title">Functions.</span>
+</h4>
+<p id="p-30">Let \(X\) and \(Y\) be two sets. A <dfn class="terminology">function from \(X\) to \(Y\)</dfn>, denoted \(f\colon X\rightarrow Y\text{,}\) is a rule which, given any <dfn class="terminology">input</dfn> \(x\in X\text{,}\) returns an <dfn class="terminology">output</dfn> \(y\in Y\text{.}\) In this case we write \(y=f(x)\) and call \(y\) the <dfn class="terminology">image of \(x\) under \(f\)</dfn>, or the <dfn class="terminology">value of \(f\) at \(x\)</dfn>. Similarly, we say \(f\) <dfn class="terminology">maps</dfn> (or <dfn class="terminology">sends</dfn>) the input \(x\) to the output \(y\text{.}\)</p>
+<p id="p-31">The set \(X\) is called the <dfn class="terminology">domain</dfn> of \(f\text{;}\) the set \(Y\) is called the <dfn class="terminology">codomain</dfn> of \(f\text{.}\)</p>
+<p id="p-32">When we wish to indicate what rule defines the function, we use the elaborated notation</p>
+<div class="displaymath">
+\begin{align*}
+f\colon X \amp\rightarrow Y\\
+x \amp\mapsto f(x)\text{.}
+\end{align*}
+</div>
+<p class="continuation">This is read as “The function \(f\) with domain \(X\) and codomain \(Y\) maps an input \(x\) to the output \(f(x)\)”.</p></article><article class="example example-like" id="example-2"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-2"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.14</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-2"><article class="example example-like"><p id="p-33">Consider the function</p>
+<div class="displaymath">
+\begin{align*}
+f\colon \mathbb{Z}\amp \rightarrow \mathbb{Z}\\
+x\amp\mapsto x^2 \text{.}
+\end{align*}
+</div>
+<p class="continuation">This function has domain and codomain equal to \(\mathbb{Z}\) and maps an integer to its square.</p></article></div>
+<article class="example example-like" id="example-3"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-3"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.15</span><span class="period">.</span><span class="space"> </span><span class="title">Arithmetic operations as functions.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-3"><article class="example example-like"><p id="p-34">Our familiar arithmetic operations can be expressed as functions whose inputs are pairs of numbers: addition is the function</p>
+<div class="displaymath">
+\begin{align*}
+a\colon \R\times \R \amp\rightarrow \R \\
+(x,y) \amp\mapsto x+y 
+\end{align*}
+</div>
+<p class="continuation">and multiplication is the function</p>
+<div class="displaymath">
+\begin{align*}
+m\colon\mathbb{R}\times \mathbb{R} \amp \rightarrow \mathbb{R}\\
+(x,y)\amp\mapsto  xy 
+\end{align*}
+</div></article></div>
+<article class="remark remark-like" id="rm_function_as_relation"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.1.16</span><span class="period">.</span>
+</h4>
+<p id="p-35">Invoking the notion of a rule in the definition of a function is admittedly somewhat vague. A more precise definition can be given using the Cartesian product. Namely, given sets \(X\) and \(Y\text{,}\) we define a function \(f\colon X\rightarrow Y\) to be a subset \(f\subseteq X\times Y\) satisfying the following property: for all \(x\in X\) there is a unique element \((x,y)\in f\text{.}\) The uniqueness of the pair \((x,y)\) then allows us to define the value \(f(x)\) of \(f\) at \(x\) as \(y\text{,}\) denoted \(f(x)=y\text{.}\)</p></article><p id="p-36">As with sets and tuples, we are obliged to specify what we mean for two functions to be equal. The definition below makes clear how the the domain and codomain, as well as the rule that takes inputs to outputs, are all essential ingredients of a function.</p>
+<article class="definition definition-like" id="d_function_equality"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.17</span><span class="period">.</span><span class="space"> </span><span class="title">Function equality.</span>
+</h4>
+<p id="p-37">Functions \(f\) and \(g\) are <dfn class="terminology">equal</dfn> if</p>
+<ol class="lower-roman">
+<li id="li-8"><p id="p-38">they have the same domain \(X\) and codomain \(Y\text{,}\) and</p></li>
+<li id="li-9"><p id="p-39">for all \(x\in X\text{,}\) we have \(f(x)=g(x)\text{.}\)</p></li>
+</ol></article><article class="definition definition-like" id="d_image"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.18</span><span class="period">.</span><span class="space"> </span><span class="title">Image of a set.</span>
+</h4>
+<p id="p-40">Given a function \(f\colon X\rightarrow Y\) and a subset \(A \subseteq X\text{,}\) the <dfn class="terminology">image of \(A\) under \(f\)</dfn>, denoted \(f(A)\text{,}\) is defined as</p>
+<div class="displaymath">
+\begin{equation*}
+f(A)=\left\{ y \in Y \colon f(a)=y \text{ for some } a \in A \right\}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">In other words, \(f(A)\) is the set of all outputs \(f(a)\text{,}\)  where \(a\in X\text{.}\)</p>
+<p id="p-41">The <dfn class="terminology">image of \(f\)</dfn>, denoted \(\operatorname{im} f\text{,}\) is the set of <em class="emphasis">all</em> outputs of \(f\text{:}\) i.e.,</p>
+<div class="displaymath">
+\begin{equation*}
+\operatorname{im} f=f(X)=\left\{ y \in Y \colon f(x)=y \text{ for some } x \in X \right\}\text{.}
+\end{equation*}
+</div></article><article class="definition definition-like" id="d_injective_surjective_bijective"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.19</span><span class="period">.</span><span class="space"> </span><span class="title">Injective, surjective, bijective.</span>
+</h4>
+<p id="p-42">Let \(f\colon X\rightarrow Y\) be a function.</p>
+<ul class="disc">
+<li id="li-10"><p id="p-43">The function \(f\) is <dfn class="terminology">injective</dfn> (or <dfn class="terminology">one-to-one</dfn>) if for all \(x,x'\in X\text{,}\) if \(f(x)=f(x')\text{,}\) then \(x=x'\text{:}\) equivalently, if \(x\ne x'\text{,}\) then \(f(x)\ne f(x')\text{.}\)</p></li>
+<li id="li-11"><p id="p-44">The function \(f\) is <dfn class="terminology">surjective</dfn> (or <dfn class="terminology">onto</dfn>) if for all \(y\in Y\text{,}\) there is an \(x\in X\) such that \(f(x)=y\text{:}\) equivalently, \(\im f=Y\text{.}\)</p></li>
+<li id="li-12"><p id="p-45">The function \(f\) is <dfn class="terminology">bijective</dfn> (or a <dfn class="terminology">one-to-one correspondence</dfn>) if it is injective and surjective.</p></li>
+</ul></article><article class="example example-like" id="example-4"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-4"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.20</span><span class="period">.</span><span class="space"> </span><span class="title">Role of domain and codomain in injectivity and surjectivity.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-4"><article class="example example-like"><p id="p-46">Consider the following three functions</p>
+<div class="displaymath">
+\begin{align*}
+f\colon \R \amp\rightarrow \R \amp g\colon [0,\infty)\amp\rightarrow \R \amp h\colon [0,\infty)\amp \rightarrow [0,\infty) \\
+x \amp\mapsto x^2 \amp x \amp\mapsto x^2 \amp x \amp\mapsto x^2 \amp \text{.}
+\end{align*}
+</div>
+<p class="continuation">Although all three functions are defined using the same rule (\(x\mapsto x^2\)), they are not equal thanks to their differing domains and/or codomains. The choice of domain and codomain in these examples also plays a crucial role in determining whether the function is injective and/or surjective. The function \(f\) is neither injective (\(f(-2)=f(2)=4\)) nor surjective (\(f(X)=[0,\infty)\ne \R\)); the function \(g\) is injective but not surjective; the function \(h\) is both injective and surjective, hence bijective.</p></article></div>
+<article class="definition definition-like" id="d_function_composition"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.21</span><span class="period">.</span><span class="space"> </span><span class="title">Function composition.</span>
+</h4>
+<p id="p-47">Suppose \(f\colon Z\rightarrow W\) and \(g\colon X\rightarrow Y\) are functions satisfying \(Y\subseteq Z\text{.}\)  The <dfn class="terminology">composition of \(f\) and \(g\)</dfn> is the function \(f\circ g\colon X\rightarrow W\) defined as \(f\circ g\, (x)=f(g(x))
+\text{,}\) for all \(x\in X\text{.}\)</p></article><article class="definition definition-like" id="d_invertible_function"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.22</span><span class="period">.</span><span class="space"> </span><span class="title">Identity and inverse functions.</span>
+</h4>
+<p id="p-48">For any set \(X\) the <dfn class="terminology">identity function</dfn> on \(X\) is the function \(\id_X\colon X\rightarrow X\) defined as \(\id_X(x)=x\) for all \(x\in X\text{.}\)</p>
+<p id="p-49">A function \(f\colon X\rightarrow Y\) is <dfn class="terminology">invertible</dfn> if there is a function \(g\colon Y\rightarrow X\) satisfying \(g\circ f=\id_X\) and \(f\circ g=\id_Y\text{:}\) i.e.,</p>
+<div class="displaymath">
+\begin{align*}
+g(f(x))\amp =x  \text{ for all } x\in X, \\
+f(g(y))\amp=y  \text{ for all } y\in Y \text{.}
+\end{align*}
+</div> The function \(g\) in this case is called the <dfn class="terminology">inverse</dfn> of \(f\text{,}\) denoted \(g=f^{-1}\text{.}\)</article><article class="theorem theorem-like" id="th_invertible_bijective"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.1.23</span><span class="period">.</span><span class="space"> </span><span class="title">Invertible is equivalent to bijective.</span>
+</h4>
+<p id="p-50">A function \(f\colon X\rightarrow Y\) is invertible if and only if it is bijective.</p></article><article class="hiddenproof" id="proof-1"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-1"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-1"><article class="hiddenproof"><p id="p-51">The proof of this theorem is left as an example of proving “if and only if” statements. See <a href="" class="xref" data-knowl="./knowl/ex_invertible_bijective.html" title="Example 1.3.3: Proof: invertible is equivalent to bijective">Example 1.3.3</a>.</p></article></div></section></section></div></main>
+</div>
+</body>
+</html>

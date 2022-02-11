@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-02-07T10:12:16-06:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="hiddenproof"><article class="case"><h5 class="heading">\(B''\) is linearly independent.</h5>
+<p>Suppose \(a_kT(\boldv_k)+a_{k+1}T(\boldv_{k+1})+\cdots +a_nT(\boldv_n)=\boldzero\text{.}\) Then the vector \(\boldv=a_k\boldv_k+a_{k+1}\boldv_{k+1}+\cdots +a_n\boldv_n\) satisfies \(T(\boldv)=\boldzero\) (using linearity of \(T\)), and hence \(\boldv\in \NS T\text{.}\) Then, using the fact that \(B'\) is a basis of \(\NS T\text{,}\) we have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+b_1\boldv_1+b_2\boldv_2+\cdots +\boldv_k=\boldv=a_k\boldv_k+a_{k+1}\boldv_{k+1}+\cdots +a_n\boldv_n,
+\end{equation*}
+</div>
+<p class="continuation">and hence</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+b_1\boldv_1+b_2\boldv_2+\cdots +\boldv_k-a_k\boldv_k-a_{k+1}\boldv_{k+1}-\cdots -a_n\boldv_n=\boldzero.
+\end{equation*}
+</div>
+<p class="continuation">Since the set \(B\) is linearly independent, we conclude that \(b_i=a_j=0\) for all \(1\leq i\leq k\) and \(k+1\leq j\leq n\text{.}\) In particular, \(a_{k+1}=a_{k+2}=\cdots=a_n=0\text{,}\) as desired.</p></article><article class="case"><h5 class="heading">\(B''\) spans \(\im T\).</h5>
+<p>It is clear that \(\Span B''\subseteq \im T\) since \(T(\boldv_i)\in \im T\) for all \(k+1\leq i\leq n\) and \(\im T\) is closed under linear combinations.</p>
+<p>For the other direction, suppose \(\boldw\in \im T\text{.}\) Then there is a \(\boldv\in V\) such that \(\boldw=T(\boldv)\text{.}\) Since \(B\) is a basis of \(V\) we may write</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\boldv=a_1\boldv_1+a_2\boldv_2+\cdots a_k\boldv_k+a_{k+1}\boldv_{k+1}+\cdots +a_n\boldv_n\text{,}
+\end{equation*}
+</div>
+<p class="continuation">in which case</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\boldw=T(\boldv)\amp= T(a_1\boldv_1+a_2\boldv_2+\cdots a_k\boldv_k+a_{k+1}\boldv_{k+1}+\cdots +a_n\boldv_n)\\
+\amp=a_1T(\boldv_1)+a_2T(\boldv_2)+\cdots a_kT(\boldv_k)+a_{k+1}T(\boldv_{k+1})+\cdots +a_nT(\boldv_n)
+\amp (T \text{ is linear })\\
+\amp=\boldzero +a_kT(\boldv_k)+a_{k+1}T(\boldv_{k+1})+\cdots +a_nT(\boldv_n) \amp (\boldv_i\in\NS T \text{ for } 1\leq i\leq k) \text{.}
+\end{align*}
+</div>
+<p class="continuation">This shows that \(\boldw=a_kT(\boldv_k)+a_{k+1}T(\boldv_{k+1})+\cdots +a_nT(\boldv_n)\in \Span B''\text{,}\) as desired.</p></article></article></body>
+</html>

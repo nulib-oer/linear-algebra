@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-02-07T10:11:39-06:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="case"><h5 class="heading">Case: \(A\) is upper triangular.</h5>
+<p>If \(a_{ii}\ne 0\) for all \(i\text{,}\) then it is easy to see that we can row reduce \(A\) first to a row echelon matrix with leading ones in every diagonal entry, and then further to the identity matrix. Thus \(A\) is row equivalent to \(I\) in this case, and we conclude from statement (4) of <a href="" class="xref" data-knowl="./knowl/th_invertibility.html" title="Theorem 3.4.5: Invertibility theorem">Theorem 3.4.5</a> that \(A\) is invertible.</p>
+<p>For the other implication, we show that if it is not the case that \(a_{ii}\ne 0\) for all \(i\text{,}\) then there is a nonzero solution \(\boldx\ne \boldzero\) to the matrix equation \(A\boldx=\boldzero\text{.}\) If this is the case, then since we have two distinct solutions to \(A\boldx=\boldzero\text{,}\) \(A\) is not invertible by Statement (3) of <a href="" class="xref" data-knowl="./knowl/th_invertibility.html" title="Theorem 3.4.5: Invertibility theorem">Theorem 3.4.5</a>.</p>
+<p>To this end, assume it is not the case that \(a_{ii}\ne 0\) for all \(i\text{.}\) Then we can find a smallest index \(k\) such that \(a_{kk}=0\) and \(a_{ii}\ne 0\) for any \(i &lt;k\text{.}\) It is easy to see that \(A\) is row equivalent to a matrix \(A'=[a'_{ij}]\text{,}\) satisfying \(a_{jj}=1\)  for \(1\leq j\leq k-1\) and \(a_{ij}=0\) for all \(1\leq i &lt; j\leq k-1\text{:}\) i.e., \(A'\) is “diagonal up until the \(k\)-th column”.</p>
+<p>We now provide a nonzero solution \(\boldx=[x_i]_{n\times 1}\)to \(A'\boldx=\boldzero\text{:}\) namely, set \(x_k=1\text{,}\) \(x_{i}=0\) for all \(i&gt;k\text{,}\) and \(x_{i}=-a'_{ik}\) for all \(i &lt; k\text{.}\) (Verify this for yourself, using the description above of \(a'_{ij}\) for \(j\leq k-1\text{.}\)) Since \(A'\) is row equivalent to \(A\text{,}\) the linear systems corresponding to \(\begin{amatrix}[cc] A\amp \boldzero\end{amatrix}\) and \(\begin{amatrix}[cc] A' \amp \boldzero\end{amatrix}\) have the same solutions. Hence \(\boldx\) is also a nonzero solution to \(A\boldx=\boldzero\text{.}\) We conclude that \(A\) is not invertible by Statement (3) of <a href="" class="xref" data-knowl="./knowl/th_invertibility.html" title="Theorem 3.4.5: Invertibility theorem">Theorem 3.4.5</a>. This concludes the proof of this implication.</p></article><span class="incontext"><a href="s_invertibility_theorem.html#case-43">in-context</a></span>
+</body>
+</html>

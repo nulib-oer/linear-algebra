@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-02-04T12:00:08-06:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Real vector spaces</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg">miniversion=0.6</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\require{cancel}\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\C}{{\mathbb C}}
+\newcommand{\T}{{\mathbb T}}
+\newcommand{\F}{{\mathbb F}}
+\newcommand{\HH}{{\mathbb H}}
+\newcommand{\compose}{\circ}
+\newcommand{\bolda}{{\mathbf a}}
+\newcommand{\boldb}{{\mathbf b}}
+\newcommand{\boldc}{{\mathbf c}}
+\newcommand{\boldd}{{\mathbf d}}
+\newcommand{\bolde}{{\mathbf e}}
+\newcommand{\boldi}{{\mathbf i}}
+\newcommand{\boldj}{{\mathbf j}}
+\newcommand{\boldk}{{\mathbf k}}
+\newcommand{\boldn}{{\mathbf n}}
+\newcommand{\boldp}{{\mathbf p}}
+\newcommand{\boldq}{{\mathbf q}}
+\newcommand{\boldr}{{\mathbf r}}
+\newcommand{\bolds}{{\mathbf s}}
+\newcommand{\boldt}{{\mathbf t}}
+\newcommand{\boldu}{{\mathbf u}}
+\newcommand{\boldv}{{\mathbf v}}
+\newcommand{\boldw}{{\mathbf w}}
+\newcommand{\boldx}{{\mathbf x}}
+\newcommand{\boldy}{{\mathbf y}}
+\newcommand{\boldz}{{\mathbf z}}
+\newcommand{\boldzero}{{\mathbf 0}}
+\newcommand{\boldmod}{\boldsymbol{ \bmod }}
+\newcommand{\boldT}{{\mathbf T}}
+\newcommand{\boldN}{{\mathbf N}}
+\newcommand{\boldB}{{\mathbf B}}
+\newcommand{\boldF}{{\mathbf F}}
+\newcommand{\boldS}{{\mathbf S}}
+\newcommand{\boldG}{{\mathbf G}}
+\newcommand{\boldK}{{\mathbf K}}
+\newcommand{\boldL}{{\mathbf L}}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\NS}{null}
+\DeclareMathOperator{\RS}{row}
+\DeclareMathOperator{\CS}{col}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\range}{range}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\nullity}{nullity}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\Fix}{Fix}
+\DeclareMathOperator{\Aff}{Aff}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\mdeg}{mdeg}
+\DeclareMathOperator{\Lt}{Lt}
+\DeclareMathOperator{\Lc}{Lc}
+\DeclareMathOperator{\disc}{disc}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\adj}{adj}
+\DeclareMathOperator{\curl}{curl}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\diver}{div}
+\DeclareMathOperator{\flux}{flux}
+\def\Gal{\operatorname{Gal}}
+\def\ord{\operatorname{ord}}
+\def\ML{\operatorname{M}}
+\def\GL{\operatorname{GL}}
+\def\PGL{\operatorname{PGL}}
+\def\SL{\operatorname{SL}}
+\def\PSL{\operatorname{PSL}}
+\def\GSp{\operatorname{GSp}}
+\def\PGSp{\operatorname{PGSp}}
+\def\Sp{\operatorname{Sp}}
+\def\PSp{\operatorname{PSp}}
+\def\Aut{\operatorname{Aut}}
+\def\Inn{\operatorname{Inn}}
+\def\Hom{\operatorname{Hom}}
+\def\End{\operatorname{End}}
+\def\ch{\operatorname{char}}
+\def\Zp{\Z/p\Z}
+\def\Zm{\Z/m\Z}
+\def\Zn{\Z/n\Z}
+\def\Fp{\F_p}
+\newcommand{\surjects}{\twoheadrightarrow}
+\newcommand{\injects}{\hookrightarrow}
+\newcommand{\bijects}{\leftrightarrow}
+\newcommand{\isomto}{\overset{\sim}{\rightarrow}}
+\newcommand{\floor}[1]{\lfloor#1\rfloor}
+\newcommand{\ceiling}[1]{\left\lceil#1\right\rceil}
+\newcommand{\mclass}[2][m]{[#2]_{#1}}
+\newcommand{\val}[2][]{\left\lvert #2\right\rvert_{#1}}
+\newcommand{\valuation}[2][]{\left\lvert #2\right\rvert_{#1}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\anpoly}{a_nx^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+\newcommand{\anmonic}{x^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+\newcommand{\bmpoly}{b_mx^m+b_{m-1}x^{m-1}\cdots +b_1x+b_0}
+\newcommand{\pder}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\normalin}{\trianglelefteq}
+\newcommand{\angvec}[1]{\langle #1\rangle}
+\newcommand{\varpoly}[2]{#1_{#2}x^{#2}+#1_{#2-1}x^{#2-1}\cdots +#1_1x+#1_0}
+\newcommand{\varpower}[1][a]{#1_0+#1_1x+#1_1x^2+\cdots}
+\newcommand{\limasto}[2][x]{\lim_{#1\rightarrow #2}}
+\def\ntoinfty{\lim_{n\rightarrow\infty}}
+\def\xtoinfty{\lim_{x\rightarrow\infty}}
+\def\ii{\item}
+\def\bb{\begin{enumerate}}
+\def\ee{\end{enumerate}}
+\def\ds{\displaystyle}
+\def\p{\partial}
+\newcommand{\abcdmatrix}[4]{\begin{bmatrix}#1\amp #2\\ #3\amp #4 \end{bmatrix}
+}
+\newenvironment{amatrix}[1][ccc|c]{\left[\begin{array}{#1}}{\end{array}\right]}
+\newenvironment{linsys}[2][m]{
+\begin{array}[#1]{@{}*{#2}{rc}r@{}}
+}{
+\end{array}}
+\newcommand{\eqsys}{\begin{array}{rcrcrcr}
+a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp b_1\\
+a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp b_2\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \vdots\\
+a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp b_m
+\end{array}
+}
+\newcommand{\numeqsys}{\begin{array}{rrcrcrcr}
+e_1:\amp  a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp b_1\\
+e_2: \amp a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp b_2\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \vdots\\
+e_m: \amp a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp b_m
+\end{array}
+}
+\newcommand{\homsys}{\begin{array}{rcrcrcr}
+a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp 0\\
+a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp 0\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \vdots\\
+a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp 0
+\end{array}
+}
+\newcommand{\vareqsys}[4]{
+\begin{array}{ccccccc}
+#3_{11}x_{1}\amp +\amp #3_{12}x_{2}\amp +\cdots+\amp  #3_{1#2}x_{#2}\amp =\amp #4_1\\
+#3_{21}x_{1}\amp +\amp #3_{22}x_{2}\amp +\cdots+\amp #3_{2#2}x_{#2}\amp =\amp #4_2\\
+\vdots \amp \amp \vdots \amp  \amp \vdots \amp =\amp  \vdots\\
+#3_{#1 1}x_{1}\amp +\amp #3_{#1 2}x_{2}\amp +\cdots +\amp #3_{#1 #2}x_{#2}\amp =\amp #4_{#1}
+\end{array}
+}
+\newcommand{\genmatrix}[1][a]{
+\begin{bmatrix}
+#1_{11} \amp  #1_{12} \amp  \cdots \amp  #1_{1n} \\
+#1_{21} \amp  #1_{22} \amp  \cdots \amp  #1_{2n} \\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \\
+#1_{m1} \amp  #1_{m2} \amp  \cdots \amp  #1_{mn}
+\end{bmatrix}
+}
+\newcommand{\varmatrix}[3]{
+\begin{bmatrix}
+#3_{11} \amp  #3_{12} \amp  \cdots \amp  #3_{1#2} \\
+#3_{21} \amp  #3_{22} \amp  \cdots \amp  #3_{2#2} \\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \\
+#3_{#1 1} \amp  #3_{#1 2} \amp  \cdots \amp  #3_{#1 #2}
+\end{bmatrix}
+}
+\newcommand{\augmatrix}{
+\begin{amatrix}[cccc|c]
+a_{11} \amp  a_{12} \amp  \cdots \amp  a_{1n} \amp b_{1}\\
+a_{21} \amp  a_{22} \amp  \cdots \amp  a_{2n} \amp b_{2}\\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \amp \vdots\\
+a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
+\end{amatrix}
+}
+\newcommand{\varaugmatrix}[4]{
+\begin{amatrix}[cccc|c]
+#3_{11} \amp  #3_{12} \amp  \cdots \amp  #3_{1#2} \amp #4_{1}\\
+#3_{21} \amp  #3_{22} \amp  \cdots \amp  #3_{2#2} \amp #4_{2}\\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \amp \vdots\\
+#3_{#1 1} \amp  #3_{#1 2} \amp  \cdots \amp  #3_{#1 #2}\amp #4_{#1}
+\end{amatrix}
+}
+\newcommand{\spaceforemptycolumn}{\makebox[\wd\boxofmathplus]{\ }}
+
+\newcommand{\generalmatrix}[3]{
+\left(
+\begin{array}{cccc}
+#1_{1,1}  \amp #1_{1,2}  \amp \ldots  \amp #1_{1,#2}  \\
+#1_{2,1}  \amp #1_{2,2}  \amp \ldots  \amp #1_{2,#2}  \\
+\amp \vdots                         \\
+#1_{#3,1} \amp #1_{#3,2} \amp \ldots  \amp #1_{#3,#2}
+\end{array}
+\right)  }
+\newcommand{\colvec}[2][c]{\begin{bmatrix}[#1] #2 \end{bmatrix}}
+\DeclareMathOperator{\size}{size}
+\DeclareMathOperator{\adjoint}{adj}
+\DeclareMathOperator{\sgn}{sgn}
+\newcommand{\restrictionmap}[2]{{#1}\mathpunct\upharpoonright\hbox{}_{#2}}
+\renewcommand{\emptyset}{\varnothing}
+
+\newcommand{\proj}[2]{\mbox{proj}_{#2}({#1}) }
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://linear-algebra.northwestern.pub/" target="_blank"><img src="external/images/im_holycomm.svg" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">Linear algebra: the theory of vector spaces and linear transformations</span></a></h1>
+<p class="byline">Aaron Greicius</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="c_vectorspace.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="c_vectorspace.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="s_transformation.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="c_vectorspace.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="c_vectorspace.html" title="Up">Up</a><a class="next-button button toolbar-item" href="s_transformation.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link">
+<a href="c_foundations.html" data-scroll="c_foundations"><span class="codenumber">1</span> <span class="title">Foundations</span></a><ul>
+<li><a href="s_sets_functions.html" data-scroll="s_sets_functions">Sets and functions</a></li>
+<li><a href="s_logic.html" data-scroll="s_logic">Logic</a></li>
+<li><a href="s_proof_technique.html" data-scroll="s_proof_technique">Proof techniques</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_linear_systems.html" data-scroll="c_linear_systems"><span class="codenumber">2</span> <span class="title">Systems of linear equations</span></a><ul>
+<li><a href="s_systems.html" data-scroll="s_systems">Systems of linear equations</a></li>
+<li><a href="s_ge.html" data-scroll="s_ge">Gaussian elimination</a></li>
+<li><a href="s_solving.html" data-scroll="s_solving">Solving linear systems</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_matrices.html" data-scroll="c_matrices"><span class="codenumber">3</span> <span class="title">Matrices, their arithmetic, and their algebra</span></a><ul>
+<li><a href="s_matrix.html" data-scroll="s_matrix">Matrices and their arithmetic</a></li>
+<li><a href="s_algebraic.html" data-scroll="s_algebraic">Algebra of matrices</a></li>
+<li><a href="s_invertible_matrices.html" data-scroll="s_invertible_matrices">Invertible matrices</a></li>
+<li><a href="s_invertibility_theorem.html" data-scroll="s_invertibility_theorem">The invertibility theorem</a></li>
+<li><a href="s_det.html" data-scroll="s_det">The determinant</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_vectorspace.html" data-scroll="c_vectorspace"><span class="codenumber">4</span> <span class="title">Vector spaces and linear transformations</span></a><ul>
+<li><a href="s_vectorspace.html" data-scroll="s_vectorspace" class="active">Real vector spaces</a></li>
+<li><a href="s_transformation.html" data-scroll="s_transformation">Linear transformations</a></li>
+<li><a href="s_subspace.html" data-scroll="s_subspace">Subspaces</a></li>
+<li><a href="s_span_independence.html" data-scroll="s_span_independence">Span and linear independence</a></li>
+<li><a href="s_basis_dimension.html" data-scroll="s_basis_dimension">Bases and dimension</a></li>
+<li><a href="s_rank_nullity.html" data-scroll="s_rank_nullity">Rank-nullity theorem and fundamental spaces</a></li>
+<li><a href="s_isom.html" data-scroll="s_isom">Isomorphisms</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_innerproductspaces.html" data-scroll="c_innerproductspaces"><span class="codenumber">5</span> <span class="title">Inner product spaces</span></a><ul>
+<li><a href="s_innerproducts.html" data-scroll="s_innerproducts">Inner product spaces</a></li>
+<li><a href="s_orthogonality.html" data-scroll="s_orthogonality">Orthogonal bases and orthogonal projection</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_transbasis.html" data-scroll="c_transbasis"><span class="codenumber">6</span> <span class="title">Eigenvectors and diagonalization</span></a><ul>
+<li><a href="s_coordinatevectors_isomorphisms.html" data-scroll="s_coordinatevectors_isomorphisms">Coordinate vectors and isomorphisms</a></li>
+<li><a href="s_matrixreps.html" data-scroll="s_matrixreps">Matrix representations of linear transformations</a></li>
+<li><a href="s_changeofbasis.html" data-scroll="s_changeofbasis">Change of basis</a></li>
+<li><a href="ss_eigenvectors.html" data-scroll="ss_eigenvectors">Eigenvectors and eigenvalues</a></li>
+<li><a href="ss_diagonalization.html" data-scroll="ss_diagonalization">Diagonalization</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="appendix-notation.html" data-scroll="appendix-notation"><span class="codenumber">A</span> <span class="title">Notation</span></a></li>
+<li class="link"><a href="appendix-defs.html" data-scroll="appendix-defs"><span class="codenumber">B</span> <span class="title">Definitions</span></a></li>
+<li class="link"><a href="appendix-thms.html" data-scroll="appendix-thms"><span class="codenumber">C</span> <span class="title">Theory and procedures</span></a></li>
+<li class="link"><a href="appendix-egs.html" data-scroll="appendix-egs"><span class="codenumber">D</span> <span class="title">Examples</span></a></li>
+<li class="link"><a href="appendix-vids.html" data-scroll="appendix-vids"><span class="codenumber">E</span> <span class="title">Video examples and figures</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="s_vectorspace"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">4.1</span> <span class="title">Real vector spaces</span>
+</h2>
+<section class="introduction" id="introduction-24"><p id="p-922">When discussing matrix algebra we saw that operations from real number arithmetic have natural analogues in the world of matrices. Furthermore, the act of comparing these two different algebraic systems brought to light many interesting features of matrix algebra.</p>
+<p id="p-923">Why stop at matrices? Are there other interesting algebraic systems that admit analogous operations? If so, to what degree do these systems agree with or differ from real number or matrix algebra?</p>
+<p id="p-924">A common technique in mathematics for such investigations is to distill the important properties of the motivating operations into a list of <em class="emphasis">axioms</em>, and then to prove statements that apply to any system that satisfies these axioms.</p>
+<p id="p-925">We now embark on just such an axiomatic approach. The notion of a <em class="emphasis">vector space</em> arises from focusing on just two operations from matrix algebra: matrix addition and matrix scalar multiplication. As we saw in <a href="s_algebraic.html" class="internal" title="Section 3.2: Algebra of matrices">Section 3.2</a>, these two operations satisfy many useful properties: e.g., commutativity, associativity, distributivity, etc.. Whereas earlier we showed directly that matrix algebra satisfies these properties, now we will come at things the other way: we record these various properties as a list of axioms, and declare <em class="emphasis">any</em> system that satisfies these axioms to be a vector space.</p>
+<p id="p-926">Once we've established the definition of a vector space, when we go on to investigate the properties enjoyed by vector spaces we make no assumptions beyond the fact that the basic axioms are satisfied. This approach comes off as somewhat abstract, but has the advantage that our conclusions now apply to any vector space you can think of. You don't have to reinvent the wheel each time you stumble across a new vector space.</p></section><section class="subsection" id="ss_vector_space"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.1.1</span> <span class="title">Definition of a vector space</span>
+</h3>
+<article class="definition definition-like" id="d_vector_space"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Vector space.</span>
+</h4>
+<p id="p-927">A <dfn class="terminology">(real) vector space</dfn> is a set \(V\) together with two operations, <dfn class="terminology">scalar multiplication</dfn> and <dfn class="terminology">vector addition</dfn>, described in detail below.</p>
+<dl class="description-list">
+<dt id="li-269">Scalar multiplication</dt>
+<dd>
+<p id="p-928">This operation takes as input any real number \(c\in R\) and any element \(\boldv\in V\text{,}\) and outputs another element of \(V\text{,}\) denoted \(c\boldv\text{.}\) We describe this operation using function notation as follows:</p>
+<div class="displaymath">
+\begin{align*}
+\R\times V\amp \rightarrow  V\\
+(c,\boldv)\amp \mapsto  c\boldv\text{.}
+\end{align*}
+</div>
+</dd>
+<dt id="li-270">Vector addition</dt>
+<dd>
+<p id="p-929">This operation takes as input any pair of elements \(\boldv, \boldw\in V\) and returns another element of \(V\text{,}\) denoted \(\boldv+\boldw\text{.}\)  In function notation:</p>
+<div class="displaymath">
+\begin{align*}
+V\times V\amp \rightarrow  V\\
+(\boldv,\boldw)\amp \mapsto   \boldv+\boldw\text{.}
+\end{align*}
+</div>
+</dd>
+</dl>
+<p id="p-930">Furthermore, these two operations must satisfy the following list of axioms.</p>
+<ol class="lower-roman">
+<li id="li-271">
+<span class="heading"><span class="title">Vector addition is commutative.</span></span><p id="p-931">For all \(\boldv, \boldw\in V\text{,}\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+\boldv+\boldw=\boldw+\boldv\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-272">
+<span class="heading"><span class="title">Vector addition is associative.</span></span><p id="p-932">For all \(\boldu, \boldv, \boldw\in V\text{,}\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+(\boldu+\boldv)+\boldw=\boldu+(\boldv+\boldw)\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-273">
+<span class="heading"><span class="title">Existence of additive identity.</span></span><p id="p-933">There is an element \(\boldzero\in V\) such that for all \(\boldv\in V\text{,}\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+\boldzero+\boldv=\boldv+\boldzero=\boldv\text{.}
+\end{equation*}
+</div>
+<p class="continuation">The element \(\boldzero\) is called the <dfn class="terminology">zero vector of \(V\)</dfn>.</p>
+</li>
+<li id="li-274">
+<span class="heading"><span class="title">Existence of additive inverses.</span></span><p id="p-934">For all \(\boldv\in V\text{,}\) there is another element \(-\boldv\) satisfying</p>
+<div class="displaymath">
+\begin{equation*}
+-\boldv+\boldv=\boldv+(-\boldv)=\boldzero\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Given \(\boldv\in V\text{,}\) the element \(-\boldv\) is called the <dfn class="terminology">vector inverse of \(\boldv\)</dfn>.</p>
+</li>
+<li id="li-275">
+<span class="heading"><span class="title">Distribution over vector addition.</span></span><p id="p-935">For all \(c\in \R\) and \(\boldv, \boldw\in V\text{,}\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+c(\boldv+\boldw)=c\boldv+c\boldw\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-276">
+<span class="heading"><span class="title">Distribution over scalar addition.</span></span><p id="p-936">For all \(c, d\in \R\) and \(\boldv\in V\text{,}\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+(c+d)\boldv=c\boldv+d\boldv
+\end{equation*}
+</div>
+</li>
+<li id="li-277">
+<span class="heading"><span class="title">Scalar multiplication is associative.</span></span><p id="p-937">For all \(c,d\in \R\) and all \(\boldv\in V\text{,}\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+c(d\boldv)=(cd)\boldv\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-278">
+<span class="heading"><span class="title">Scalar multiplicative identity.</span></span><p id="p-938">For all \(\boldv\in V\text{,}\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+1\boldv=\boldv\text{.}
+\end{equation*}
+</div>
+</li>
+</ol>
+<p id="p-939">We call the elements of a vector space <dfn class="terminology">vectors</dfn>.</p></article><article class="remark remark-like" id="rm_vectorspace_real"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">4.1.2</span><span class="period">.</span>
+</h4>
+<p id="p-940">What's the deal with the ‘real’ modifier? The reals are one example of a type of number system called a <em class="emphasis">field</em>. Other examples of fields are given by the complex numbers (\(\C\)) and the rational numbers (\(\Q\)). If \(K\) is a field, and if we replace each mention of \(\R\) in <a href="" class="xref" data-knowl="./knowl/d_vector_space.html" title="Definition 4.1.1: Vector space">Definition 4.1.1</a> with a mention of \(K\text{,}\) then we are left with the definition of a vector space over \(K\text{.}\) Setting \(K=\C\text{,}\) for example, we get the definition of a complex vector space.</p>
+<p id="p-941">In our treatment of linear algebra we will largely focus on real vector spaces, and as such will often drop this modifier: hence the parentheses in the definition.</p></article></section><section class="subsection" id="ss_vectorspace_examples"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.1.2</span> <span class="title">Examples</span>
+</h3>
+<p id="p-942">When introducing a new vector space there are many details in <a href="" class="xref" data-knowl="./knowl/d_vector_space.html" title="Definition 4.1.1: Vector space">Definition 4.1.1</a> that must be verified. To help organize this task, follow this checklist:</p>
+<ol class="decimal">
+<li id="li-279"><p id="p-943">Make explicit the underlying set \(V\) of the vector space.</p></li>
+<li id="li-280"><p id="p-944">Make explicit what the scalar multiplication and vector addition operations are.</p></li>
+<li id="li-281"><p id="p-945">Identify an element of \(V\) that serves as the zero vector and indicate the rule that assigns vector inverses to elements of \(V\text{.}\)</p></li>
+<li id="li-282"><p id="p-946">Show that the two vector operations and our choice of zero vector and vector inverses satisfy the axioms of <a href="" class="xref" data-knowl="./knowl/d_vector_space.html" title="Definition 4.1.1: Vector space">Definition 4.1.1</a>.</p></li>
+</ol>
+<p class="continuation">Think of items (1)-(3) of our checklist as official declarations about the makeup of our vector space: “The underlying set shall be as stated”; “We declare the vector operations thusly”; “The zero vector shall be this element here, and vector inverses shall be assigned in this manner”. Item (4) is where we get down to the nitty gritty of showing that the our proposed vector space structure articulated in (1)-(3) does indeed satisfy all the necessary properties.</p>
+<p id="p-947">In each of the examples below we carefully lay out the details of items (1)-(3) while often leaving much of the work of item (4) to you. You will meet these vector spaces frequently throughout the rest of your life. Each time you do, it will be helpful for orientation purposes to mentally run through items (1)-(3). Ask yourself: What is the underlying set? What are vector operations? What acts as the zero vector, and how do I assign vector inverses?</p>
+<article class="definition definition-like" id="ex_vs_matrices"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">Vector space of \(m\times n\) matrices.</span>
+</h4>
+<article class="case" id="case-59"><h5 class="heading">Underlying set.</h5>
+<p id="p-948">The <dfn class="terminology">vector space of \(m\times n\) matrices</dfn>, denoted \(M_{mn}\text{,}\) is the set of all \(m\times n\) matrices: i.e.,</p>
+<div class="displaymath">
+\begin{equation*}
+M_{mn}=\left\{ A=[a_{ij}]_{m\times n}\colon a_{ij}\in \R\right\}\text{.}
+\end{equation*}
+</div></article><article class="case" id="case-60"><h5 class="heading">Vector operations.</h5>
+<p id="p-949">Scalar multiplication and vector addition in \(M_{mn}\) are defined as matrix scalar multiplication and matrix addition, respectively.</p></article><article class="case" id="case-61"><h5 class="heading">Zero vector and vector inverses.</h5>
+<p id="p-950">The zero vector of \(M_{mn}\) is the \(m\times n\) zero matrix: i.e., \(\boldzero=\boldzero_{m\times n}\text{.}\)</p>
+<p id="p-951">Given an element \(A=[a_{ij}]\in M_{mn}\text{,}\) its vector inverse is the matrix additive inverse \(-A=[-a_{ij}]\text{.}\)</p></article><article class="case" id="case-62"><h5 class="heading">Verification of axioms.</h5>
+<p id="p-952">We showed in <a href="" class="xref" data-knowl="./knowl/th_matrix_alg_props.html" title="Theorem 3.2.1: Properties of matrix addition, multiplication and scalar multiplication">Theorem 3.2.1</a> that matrix scalar multiplication and vector addition, satisfy axioms (i), (ii), (v)-(viii). <a href="" class="xref" data-knowl="./knowl/th_matrix_add_mult_ident.html" title="Theorem 3.2.4: Additive identities, additive inverses, and multiplicative identities">Theorem 3.2.4</a> implies that our choice of zero vector (\(\boldzero_{m\times n}\)) and vector inverses (\(-A\)) satisfies axioms (iii)-(iv).</p></article></article><article class="definition definition-like" id="ex_vs_ntuples"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">Vector space of real \(n\)-tuples.</span>
+</h4>
+<article class="case" id="case-63"><h5 class="heading">Underlying set.</h5>
+<p id="p-953">The <dfn class="terminology">vector space of real \(n\)-tuples</dfn>, denoted \(\R^n\text{,}\) is the set of all real \(n\)-tuples with real coefficients: i.e.,</p>
+<div class="displaymath">
+\begin{equation*}
+\R^n=\{ (a_1,a_2,\dots, a_n) \colon a_i\in \R \}\text{.}
+\end{equation*}
+</div></article><article class="case" id="case-64"><h5 class="heading">Vector operations.</h5>
+<p id="p-954">The vector operations on \(n\)-tuples are defined entry-wise.</p>
+<p id="p-955"><em class="emphasis">Scalar multiplication</em>. Given \(c\in \R\) and \(\boldv=(a_1,a_2,\dots, a_n)\in \R^n\text{,}\) we define</p>
+<div class="displaymath">
+\begin{equation*}
+c\boldv=(ca_1,ca_2,\dots, ca_n)\text{.}
+\end{equation*}
+</div>
+<p id="p-956"><em class="emphasis">Vector addition</em>. Given \(\boldv=(a_1,a_2,\dots, a_n)\) and \(\boldw=(b_1,b_2,\dots, b_n)\text{,}\) we define</p>
+<div class="displaymath">
+\begin{equation*}
+\boldv+\boldw=(a_1+b_1, a_2+b_2,\dots, a_n+b_n)\text{.}
+\end{equation*}
+</div></article><article class="case" id="case-65"><h5 class="heading">Zero vector and vector inverses.</h5>
+<p id="p-957">The zero vector \(\R^n\) is the \(n\)-tuple of all zeros: i.e., \(\boldzero=(0,0,\dots, 0)\text{.}\)</p>
+<p id="p-958">Given a vector \(\boldv=(a_1,a_2,\dots, a_n)\text{,}\) we have \(-\boldv=(-a_1,-a_2,\dots, -a_n)\text{.}\)</p></article><article class="case" id="case-66"><h5 class="heading">Verification of axioms.</h5>
+<p id="p-959">It is clear that structurally speaking \(\R^n\) behaves exactly like \(M_{1n}\text{,}\) the vector space of \(1\times n\) row vectors: we have essentially just replaced brackets with parentheses. As such it follows from the previous example that \(\R^n\text{,}\) along with the given operations, constitutes a vector space.</p></article></article><article class="remark remark-like" id="remark-39"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">4.1.5</span><span class="period">.</span>
+</h4>
+<p id="p-960">Why introduce a new vector space, \(\R^n\text{,}\) if it is essentially the same thing as \(M_{1n}\text{,}\) or even \(M_{n1}\) for that matter? Recall that a matrix is not simply an ordered sequence: it is an ordered sequence arranged in a very particular way. This subtlety is baked into the very definition of matrix equality, and allows us to say that \(\begin{amatrix}[rr]1\amp 2  \end{amatrix}\) is not equal to \(\begin{amatrix}[r]1\\ 2  \end{amatrix}\text{.}\) There are situations, however, where we don't need this extra layer of structure, and want to treat an ordered sequence simply as an ordered sequence: for example, when describing solutions to the linear system</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{linsys}{2}
+2x\amp +\amp 7y\amp=\amp 5\\
+3x\amp-\amp 5y\amp =\amp -2
+\end{linsys}{2}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">In this situation it is most natural to think of a solution simply as an pair \((s_1,s_2)\in \R^2\text{,}\) as opposed to a row vector in \(M_{12}\) or column vector in \(M_{21}\text{.}\)</p></article><p id="p-961">We do not end our catalog of vector spaces here, but rather move on to more exotic examples, starting with the <em class="emphasis">zero (or trivial) vector space</em>.</p>
+<article class="definition definition-like" id="ex_vs_zerospace"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.1.6</span><span class="period">.</span><span class="space"> </span><span class="title">Zero vector space.</span>
+</h4>
+<article class="case" id="case-67"><h5 class="heading">Underlying set.</h5>
+<p id="p-962">A <dfn class="terminology">zero (or trivial) vector space</dfn> is a set containing exactly one element: i.e., \(V=\{\boldv\}\text{.}\)</p></article><article class="case" id="case-68"><h5 class="heading">Vector operations.</h5>
+<p id="p-963">Since \(V=\{\boldv\}\) contains only one element we have no real choice in defining our vector operations.</p>
+<p id="p-964"><em class="emphasis">Scalar multiplication</em>. Define \(c\boldv=\boldv\) for any \(c\in \R\) and the unique element \(\boldv\in V\text{.}\)</p>
+<p id="p-965"><em class="emphasis">Vector addition</em>. Define \(\boldv+\boldv=\boldv\) for the unique element \(\boldv\in V\text{.}\)</p></article><article class="case" id="case-69"><h5 class="heading">Zero vector and vector inverses.</h5>
+<p id="p-966">We declare \(\boldzero=\boldv\text{.}\) Accordingly we will write \(V=\{\boldzero\}\) from now on.</p>
+<p id="p-967">We declare \(-\boldv=\boldv\text{.}\)</p></article><article class="case" id="case-70"><h5 class="heading">Verification of axioms.</h5>
+<p id="p-968">It is clear that \(V=\{\boldzero\}\) satisfies the axioms of <a href="" class="xref" data-knowl="./knowl/d_vector_space.html" title="Definition 4.1.1: Vector space">Definition 4.1.1</a>: for axioms (i)-(ii) and (v)-(viii) both sides of the desired equality are equal to \(\boldzero\text{;}\) axioms (iii)-(iv) boil down to the fact that \(\boldv+\boldv=\boldv\) by definition.</p></article></article><article class="definition definition-like" id="ex_vs_infinitesequences"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.1.7</span><span class="period">.</span><span class="space"> </span><span class="title">The vector space of infinite real sequences.</span>
+</h4>
+<article class="case" id="case-71"><h5 class="heading">Underlying set.</h5>
+<p id="p-969">The <dfn class="terminology">vector space of real infinite sequences</dfn>, denoted \(\R^\infty\text{,}\) is the set of all infinite sequences \((a_i)_{i=1}^\infty=(a_1,a_2,\dots,)\text{,}\) where \(a_i\in \R\) for all \(i\text{:}\) i.e.,</p>
+<div class="displaymath">
+\begin{equation*}
+\R^\infty=\{ (a_i)_{i=1}^\infty \colon a_i\in \R \}\text{.}
+\end{equation*}
+</div></article><article class="case" id="case-72"><h5 class="heading">Vector operations.</h5>
+<p id="p-970">As in \(\R^n\) we define our vector operations on infinite sequences entry-wise.</p>
+<p id="p-971"><em class="emphasis">Scalar multiplication</em>. Given \(c\in \R\) and \(\boldv=(a_i)_{i=1}^\infty\in \R^\infty\text{,}\) we define</p>
+<div class="displaymath">
+\begin{equation*}
+c\boldv=(ca_{i})_{i=1}^\infty=(ca_1,ca_2,\dots)\text{.}
+\end{equation*}
+</div>
+<p id="p-972"><em class="emphasis">Vector addition</em>. Given \(\boldv=(a_i)_{i=1}^\infty\) and \(\boldw=(b_i)_{i=1}^\infty\text{,}\) we define</p>
+<div class="displaymath">
+\begin{equation*}
+\boldv+\boldw=(a_i+b_i)_{i=1}^\infty=(a_1+b_1, a_2+b_2,\dots)\text{.}
+\end{equation*}
+</div></article><article class="case" id="case-73"><h5 class="heading">Zero vector and vector inverses.</h5>
+<p id="p-973">The zero vector \(\R^\infty\) is the sequence of all zeros: i.e., \(\boldzero=(0,0,\dots)\text{.}\)</p>
+<p id="p-974">Given a vector \(\boldv=(a_i)_{i=1}^\infty\text{,}\) we let \(-\boldv=(-a_i)_{i=1}^\infty=(-a_1,-a_2,\dots )\text{.}\)</p></article><article class="case" id="case-74"><h5 class="heading">Verification of axioms.</h5>
+<p id="p-975">Exercise. Observe that since the vector operations are defined entry-wise, the vector arithmetic in \(\R^\infty\) not so very different from that of \(\R^n\text{.}\)</p></article></article><article class="definition definition-like" id="ex_vs_functions"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.1.8</span><span class="period">.</span><span class="space"> </span><span class="title">Real-valued functions.</span>
+</h4>
+<article class="case" id="case-75"><h5 class="heading">Underlying set.</h5>
+<p id="p-976">Let \(X\) be a set. The <dfn class="terminology">vector space of functions from \(X\) to \(\R\)</dfn>, denoted \(F(X,\R)\text{,}\) is the set of all real-valued functions \(f\colon X\rightarrow \R\text{:}\) i.e., the set of all functions with domain \(X\) and codomain \(\R\text{.}\)</p></article><article class="case" id="case-76"><h5 class="heading">Vector operations.</h5>
+<p id="p-977">The vector operations on \(F(X,\R)\) defined below are generalizations of operations you may have seen before when learning about function transformations.</p>
+<p id="p-978"><em class="emphasis">Scalar multiplication</em>. Given \(c\in \R\) and a real-valued function \(f\colon X\rightarrow \R\text{,}\) we let \(cf\) be the function defined as</p>
+<div class="displaymath">
+\begin{equation*}
+(cf)(x)=c(f(x)) \text{ for all } x\in X\text{.}
+\end{equation*}
+</div>
+<p id="p-979"><em class="emphasis">Vector addition</em>. Given real-valued functions \(f\) and \(g\) with domain \(X\text{,}\) we let \(f+g\) be the function defined as</p>
+<div class="displaymath">
+\begin{equation*}
+(f+g)(x)=f(x)+g(x) \text{ for all } x\in X\text{.}
+\end{equation*}
+</div></article><article class="case" id="case-77"><h5 class="heading">Zero vector and vector inverses.</h5>
+<p id="p-980">The zero vector \(F(X,\R)\) is the constant function \(O_X\) that assigns a value of 0 to all elements of \(X\text{:}\) i.e., \(0_X(x)=0\) for all \(x\in X\text{.}\)</p>
+<p id="p-981">Given a function \(f\in F(X,\R)\text{,}\) its vector inverse is the function \(-f\) defined as</p>
+<div class="displaymath">
+\begin{equation*}
+(-f)(x)=-f(x) \text{ for all } x\in X\text{.}
+\end{equation*}
+</div></article><article class="case" id="case-78"><h5 class="heading">Verification of axioms.</h5> Exercise.</article></article><article class="remark remark-like" id="rm_vs_functions"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">4.1.9</span><span class="period">.</span>
+</h4>
+<p id="p-982">Take a moment to let the exotic quality of this example sink in. The things we are calling <em class="emphasis">vectors</em> in this case are entire <em class="emphasis">functions</em>!</p>
+<p id="p-983">Consider \(F(\R,\R)\text{.}\) A vector of \(F(\R,\R)\) is a function \(f\colon \R\rightarrow \R\text{:}\) a rule that assigns to any input \(x\in \R\) a unique output \(y\in \R\text{.}\) Thus the functions \(f\) and \(g\) defined as \(f(x)=x^2+1\) and \(g(x)=\sin x-x\) are both vectors of \(F(\R,\R)\text{,}\) as is any function given by a formula involving familiar mathematical functions and operations (as long as the formula is defined for all \(x\in \R\)). That's a lot of vectors! And yet we are only beginning to scratch the surface, since a function of \(F(\R,\R)\) need not be given by a nice formula; it simply has to be a well-defined rule. For example, the function \(h\) defined as</p>
+<div class="displaymath">
+\begin{equation*}
+h(x)=\begin{cases}
+1\amp \text{if } x \text{ is rational}\\
+0\amp \text{if } x \text{ is not rational}
+\end{cases}
+\end{equation*}
+</div>
+<p class="continuation">is also an element of \(F(\R,\R)\text{.}\)</p>
+<p id="p-984">Hopefully this discussion gives some indication of how a vector space like \(F(\R,\R)\) is in some sense <em class="emphasis">much larger</em> than spaces like \(\R^n\) or \(M_{mn}\text{,}\) whose general elements can be described in a finite manner. This vague intuition can be made precise with the notion of the <em class="emphasis">dimension</em> of a vector space, which we develop in <a href="s_basis_dimension.html" class="internal" title="Section 4.5: Bases and dimension">Section 4.5</a>.</p></article><p id="p-985">We end with an example that illustrates how we can define the vector operations to be anything we like, as long as they satisfy the axioms of <a href="" class="xref" data-knowl="./knowl/d_vector_space.html" title="Definition 4.1.1: Vector space">Definition 4.1.1</a>. In this case scalar multiplication will be defined as real number <em class="emphasis">exponentiation</em>, and vector addition will be defined as real number <em class="emphasis">multiplication</em>.</p>
+<article class="definition definition-like" id="ex_vs_positivereals"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.1.10</span><span class="period">.</span><span class="space"> </span><span class="title">Vector space of positive real numbers.</span>
+</h4>
+<article class="case" id="case-79"><h5 class="heading">Underlying set.</h5>
+<p id="p-986">The <dfn class="terminology">vector space of positive real numbers</dfn>, denoted \(\R_{&gt;0}\text{,}\) is defined as</p>
+<div class="displaymath">
+\begin{equation*}
+\R_{&gt;0}=\{x\in \R\colon x&gt;0\}\text{.}
+\end{equation*}
+</div></article><article class="case" id="case-80"><h5 class="heading">Vector operations.</h5>
+<p id="p-987">Scalar multiplication is defined via exponentiation and vector addition is defined as multiplication.</p>
+<p id="p-988"><em class="emphasis">Scalar multiplication</em>. Given \(c\in \R\) and \(\boldv=a\in \R_{&gt;0}\) we define</p>
+<div class="displaymath">
+\begin{equation*}
+c\boldv=a^c\text{.}
+\end{equation*}
+</div>
+<p id="p-989"><em class="emphasis">Vector addition</em>. Given \(\boldv=a, \boldw=b\in \R_{&gt;0}\text{,}\) we define</p>
+<div class="displaymath">
+\begin{equation*}
+\boldv+\boldw=ab\text{.}
+\end{equation*}
+</div></article><article class="case" id="case-81"><h5 class="heading">Zero vector and vector inverses.</h5>
+<p id="p-990">The zero vector of \(\R_{&gt;0}\) is the number 1: i.e., we have \(\boldzero=1\) in the vector space \(\R_{&gt;0}\text{.}\)</p>
+<p id="p-991">Given \(\boldv=a\in \R_{&gt;0}\) the vector inverse is defined as</p>
+<div class="displaymath">
+\begin{equation*}
+-\boldv=\frac{1}{a}\text{.}
+\end{equation*}
+</div></article><article class="case" id="case-82"><h5 class="heading">Verification of axioms.</h5>
+<p id="p-992">Exercise. We point out, however, that in this case the fact that the operations are actually well-defined should be justified. This is where the positivity of elements of \(\R_{&gt;0}\) comes into play: since \(\boldv=a\) is a positive number, the power \(a^c\) is defined for any \(c\in \R\) and is again positive. Thus \(c\boldv=a^c\) is indeed an element of \(\R_{&gt;0}\text{.}\) Similarly, if \(\boldv=a\) and \(\boldw=b\) are both positive numbers, then so is \(\boldv+\boldw=ab\text{.}\)</p></article></article><p id="p-993">The notion of a linear combination of matrices (<a href="" class="xref" data-knowl="./knowl/d_matrix_lin_comb.html" title="Definition 3.1.13: Linear combination of matrices">Definition 3.1.13</a>) generalizes easily to any vector space, and will be an important concept in the further development of our theory.</p>
+<article class="definition definition-like" id="d_vector_lin_comb"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.1.11</span><span class="period">.</span><span class="space"> </span><span class="title">Linear combination of vectors.</span>
+</h4>
+<p id="p-994">Let \(V\) be a vector space. An expression of the form</p>
+<div class="displaymath">
+\begin{equation*}
+c_1\boldv_1+c_2\boldv_2+\cdots +c_r\boldv_r\text{,}
+\end{equation*}
+</div>
+<p class="continuation">where \(c_i\in\R\) and \(\boldv_i\in V\) for all \(i\text{,}\) is called a <dfn class="terminology">linear combination</dfn>. The scalars \(c_i\) are called the <dfn class="terminology">coefficients</dfn> of the linear combination.</p></article><article class="example example-like" id="example-28"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-28"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.1.12</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-28"><article class="example example-like"><p id="p-995">Let \(V=\R_{&gt;0}\text{.}\) Given the vectors \(\boldv=2\) and \(\boldw=\frac{1}{2}\text{,}\) compute the linear combination</p>
+<div class="displaymath">
+\begin{equation*}
+3\boldv+(-1/5)\boldw\text{.}
+\end{equation*}
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-33" id="solution-33"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-33"><div class="solution solution-like">
+<p id="p-996">By definition of scalar multiplication in \(\R_{&gt;0}\) (<a href="" class="xref" data-knowl="./knowl/ex_vs_positivereals.html" title="Definition 4.1.10: Vector space of positive real numbers">Definition 4.1.10</a>) we have</p>
+<div class="displaymath">
+\begin{equation*}
+3\boldv=2^3=8 \text{ and }(-1/5)\boldw=(1/2)^{-1/5}=\sqrt[5]{2}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Next, since vector addition in \(\R_{&gt;0}\) is defined as real number multiplication (<a href="" class="xref" data-knowl="./knowl/ex_vs_positivereals.html" title="Definition 4.1.10: Vector space of positive real numbers">Definition 4.1.10</a>), we conclude</p>
+<div class="displaymath">
+\begin{equation*}
+3\boldv+(-1/5)\boldw=8\sqrt[5]{2}\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article></div></section><section class="subsection" id="ss_vectorspace_properties"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.1.3</span> <span class="title">General properties</span>
+</h3>
+<p id="p-997">When proving a general fact about vector spaces we can only invoke the defining axioms; we cannot assume the vectors of the space assume any particular form. For example, we cannot assume vectors of \(V\) are \(n\)-tuples, or matrices, etc. We end with an example of such an axiomatic proof.</p>
+<article class="theorem theorem-like" id="th_vectorspace_props"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.1.13</span><span class="period">.</span><span class="space"> </span><span class="title">Basic vector space properties.</span>
+</h4>
+<p id="p-998">Let \(V\) be a vector space.</p>
+<ol class="decimal">
+<li id="li-283"><p id="p-999">For all \(\boldv\in V\text{,}\) we have \(0\boldv=\boldzero\text{.}\)</p></li>
+<li id="li-284"><p id="p-1000">For all \(c\in \R\text{,}\) we have \(c\boldzero=\boldzero\text{.}\)</p></li>
+<li id="li-285"><p id="p-1001">For all \(\boldv\in V\text{,}\) we have \((-1)\boldv=-\boldv\text{.}\)</p></li>
+<li id="li-286"><p id="p-1002">For all \(\boldv\in V\text{,}\) if \(c\boldv=\boldzero\text{,}\) then \(c=0\) or \(\boldv=\boldzero\text{.}\)</p></li>
+</ol></article><article class="hiddenproof" id="proof-43"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-43"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-43"><article class="hiddenproof"><p id="p-1003">We prove (1), leaving (2)-(4) as an exercise.</p>
+<p id="p-1004">First observe that \(0\boldv=(0+0)\boldv\text{,}\) since \(0=0+0\text{.}\)</p>
+<p id="p-1005">By Axiom (vi) we have \((0+0)\boldv=0\boldv+0\boldv\text{.}\) Thus \(0\boldv=0\boldv+0\boldv\text{.}\)</p>
+<p id="p-1006">Now add \(-0\boldv\text{,}\) the vector inverse of \(0\boldv\text{,}\) to both sides of the last equation:</p>
+<div class="displaymath">
+\begin{equation*}
+-0\boldv+0\boldv=-0\boldv+(0\boldv+0\boldv)\text{.}
+\end{equation*}
+</div>
+<p id="p-1007">Now simplify this equation step by step using the axioms:</p>
+<div class="displaymath">
+\begin{align*}
+-0\boldv+0\boldv=-0\boldv+(0\boldv+0\boldv)\amp\implies
+\boldzero=(-0\boldv+0\boldv)+0\boldv \amp (\text{Axiom (iv) and Axiom (ii)}) \\
+\amp\implies \boldzero=\boldzero+0\boldv \amp (\text{(Axiom (iv))})\\
+\amp\implies \boldzero=0\boldv \text{.}
+\end{align*}
+</div></article></div></section><section class="exercises" id="s_vectorspace_ex"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">4.1.4</span> <span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-88"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<p id="p-1008">Verify that \(\R^\infty=\{(a_i)_{i=1}^\infty\colon a_i\in \R\}\text{,}\) along with the proposed vector operations</p>
+<div class="displaymath">
+\begin{align*}
+c(a_i)_{i=1}^\infty\amp=(ca_i)_{i=1}^\infty \\
+(a_i)_{i=1}^\infty+(b_i)_{i=1}^\infty \amp =(a_i+b_i)_{i=1}^\infty \text{,}
+\end{align*}
+</div>
+<p class="continuation">satisfies the defining axioms of a vector space.</p></article><article class="exercise exercise-like" id="exercise-89"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<p id="p-1009">Verify that \(\R_{&gt;0}=\{a\in \R\colon a&gt;0\}=(0,\infty)\text{,}\) along with the proposed vector operations</p>
+<div class="displaymath">
+\begin{align*}
+c\odot a\amp=a^c \\
+a\oplus b \amp =ab \text{,}
+\end{align*}
+</div>
+<p class="continuation">satisfies the defining axioms of a vector space.</p>
+<p id="p-1010">Note: we use the funny symbols \(\odot\) and \(\oplus\) for scalar multiplication and vector addition to prevent confusion between the vector operations of \(\R_{&gt;0}\) and real number arithmetic operations.</p></article><div class="exercisegroup" id="exercisegroup-10">
+<h4 class="heading"><span class="title">Failed vector spaces.</span></h4>
+<div class="introduction" id="introduction-25"><p id="p-1011">In each exercise below, the provided set, along with proposed vector operations, does <em class="emphasis">not</em> constitute a vector space. Identify <em class="emphasis">all</em> details of the vector space definition that <em class="emphasis">fail</em> to be satisfied. In addition to checking the axioms, you should also ask whether the proposed vector operations are well-defined. Provide explicit counterexamples for each failed property.</p></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-90"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
+<p id="p-1012">Let \(V=\R^n\text{.}\) Define vector addition on \(V\) to be the usual \(n\)-tuple vector addition, but define scalar multiplication as</p>
+<div class="displaymath">
+\begin{equation*}
+c(a_1,a_2,\dots ,a_n)=(c^2a_1,c^2a_2,\dots, c^2a_n)\text{.}
+\end{equation*}
+</div></article><article class="exercise exercise-like" id="exercise-91"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
+<p id="p-1013">Let \(V=\R^2\text{.}\) Define vector addition on \(V\) to be the usual \(n\)-tuple vector addition, but define scalar multiplication as</p>
+<div class="displaymath">
+\begin{equation*}
+c(a_1,a_2)=(ca_1,0)\text{.}
+\end{equation*}
+</div></article><article class="exercise exercise-like" id="exercise-92"><h5 class="heading"><span class="codenumber">5<span class="period">.</span></span></h5>
+<p id="p-1014">Let</p>
+<div class="displaymath">
+\begin{equation*}
+V=\{A\in M_{nn}\colon A \text{ is invertible}\}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Define scalar multiplication and vector addition to be the usual matrix scalar multiplication and matrix addition.</p></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-11">
+<h4 class="heading"><span class="title">Verifying vector space axioms.</span></h4>
+<div class="introduction" id="introduction-26"><p id="p-1015">In each exercise below the provided set, along with proposed vector operations, does constitute a vector space. Verify the indicated axioms.</p></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-93"><h5 class="heading"><span class="codenumber">6<span class="period">.</span></span></h5>
+<p id="p-1016">Let \(x\) be a variable. Define \(V=\{ax+1\colon a\in\R\}\text{,}\) the set of all linear polynomials \(f(x)=ax+1\) with constant coefficient equal to one. Define the vector operations as follows:</p>
+<div class="displaymath">
+\begin{align*}
+c(ax+1) \amp= cax+1 \\
+(ax+1)(bx+1)\amp=(ax+1)(bx+1)-abx^2 \text{.}
+\end{align*}
+</div>
+<p class="continuation">Verify axioms (iii)-(vi).</p></article><article class="exercise exercise-like" id="exercise-94"><h5 class="heading"><span class="codenumber">7<span class="period">.</span></span></h5>
+<p id="p-1017">Let \(V=\{(a,b)\in\R^2\colon a&gt;0, \ b\lt 0\}\text{:}\) i.e., \(V\) is the set of pairs whose first entry is positive and whose second entry is negative.</p>
+<div class="displaymath">
+\begin{align*}
+c(a, b) \amp= (a^c, -\lvert b\rvert^c) \\
+(a_1,b_1)+(a_2,b_2)\amp=(a_1a_2,-b_1b_2) \text{.}
+\end{align*}
+</div>
+<p class="continuation">Verify axioms (iii)-(v), and axiom (viii).</p></article>
+</div>
+</div>
+<article class="exercise exercise-like" id="exercise-95"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<p id="p-1018">Prove statements (2)-(4) of <a href="" class="xref" data-knowl="./knowl/th_vectorspace_props.html" title="Theorem 4.1.13: Basic vector space properties">Theorem 4.1.13</a>. When treating a specific part you may assume the results of any part that has already been proven, including statement (1).</p></article><article class="exercise exercise-like" id="exercise-96"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
+<p id="p-1019">Let \(V\) be a vector space.</p>
+<ol class="lower-alpha">
+<li id="li-287"><p id="p-1020">Show that the zero vector of \(V\) is unique: i.e., show that if \(\boldw\in V\) satisfies \(\boldw+\boldv=\boldv\) for all \(\boldv\in V\text{,}\) then \(\boldw=\boldzero\text{.}\)</p></li>
+<li id="li-288"><p id="p-1021">Fix \(\boldv\in V\text{.}\) Show that the vector inverse of \(\boldv\) is unique: i.e., show that if \(\boldw+\boldv=\boldzero\text{,}\) then \(\boldw=-\boldv\text{.}\)</p></li>
+</ol>
+<p class="continuation">Thus we may speak of <em class="emphasis">the</em> zero vector of a vector space, and <em class="emphasis">the</em> vector inverse of a vector \(\boldv\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-97"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
+<p id="p-1022">Let \(V\) be a vector space. Prove:</p>
+<div class="displaymath">
+\begin{equation*}
+\boldu + \boldw = \boldv + \boldw \iff \boldu=\boldv\text{.}
+\end{equation*}
+</div></article><article class="exercise exercise-like" id="ex_vs_zero_or_infinite"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
+<p id="p-1023">Let \(V\) be a vector space. Prove that either \(V=\{\boldzero\}\) (i.e., \(V\) is the zero space) or \(V\) is infinite. In other words, a vector space contains either exactly one element or infinitely many elements.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-8" id="hint-8"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-8"><div class="hint solution-like"><p id="p-1024">Assume \(V\) contains a nonzero vector \(\boldv\ne\boldzero\text{.}\) Show that if \(c\ne d\text{,}\) then \(c\boldv\ne d\boldv\text{.}\) You assume the results of <a href="" class="xref" data-knowl="./knowl/th_vectorspace_props.html" title="Theorem 4.1.13: Basic vector space properties">Theorem 4.1.13</a>.</p></div></div>
+</div></article></section></section></div></main>
+</div>
+</body>
+</html>

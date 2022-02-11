@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-02-07T10:10:28-06:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Systems of linear equations</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg">miniversion=0.6</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\require{cancel}\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\C}{{\mathbb C}}
+\newcommand{\T}{{\mathbb T}}
+\newcommand{\F}{{\mathbb F}}
+\newcommand{\HH}{{\mathbb H}}
+\newcommand{\compose}{\circ}
+\newcommand{\bolda}{{\mathbf a}}
+\newcommand{\boldb}{{\mathbf b}}
+\newcommand{\boldc}{{\mathbf c}}
+\newcommand{\boldd}{{\mathbf d}}
+\newcommand{\bolde}{{\mathbf e}}
+\newcommand{\boldi}{{\mathbf i}}
+\newcommand{\boldj}{{\mathbf j}}
+\newcommand{\boldk}{{\mathbf k}}
+\newcommand{\boldn}{{\mathbf n}}
+\newcommand{\boldp}{{\mathbf p}}
+\newcommand{\boldq}{{\mathbf q}}
+\newcommand{\boldr}{{\mathbf r}}
+\newcommand{\bolds}{{\mathbf s}}
+\newcommand{\boldt}{{\mathbf t}}
+\newcommand{\boldu}{{\mathbf u}}
+\newcommand{\boldv}{{\mathbf v}}
+\newcommand{\boldw}{{\mathbf w}}
+\newcommand{\boldx}{{\mathbf x}}
+\newcommand{\boldy}{{\mathbf y}}
+\newcommand{\boldz}{{\mathbf z}}
+\newcommand{\boldzero}{{\mathbf 0}}
+\newcommand{\boldmod}{\boldsymbol{ \bmod }}
+\newcommand{\boldT}{{\mathbf T}}
+\newcommand{\boldN}{{\mathbf N}}
+\newcommand{\boldB}{{\mathbf B}}
+\newcommand{\boldF}{{\mathbf F}}
+\newcommand{\boldS}{{\mathbf S}}
+\newcommand{\boldG}{{\mathbf G}}
+\newcommand{\boldK}{{\mathbf K}}
+\newcommand{\boldL}{{\mathbf L}}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\NS}{null}
+\DeclareMathOperator{\RS}{row}
+\DeclareMathOperator{\CS}{col}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\range}{range}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\nullity}{nullity}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\Fix}{Fix}
+\DeclareMathOperator{\Aff}{Aff}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\mdeg}{mdeg}
+\DeclareMathOperator{\Lt}{Lt}
+\DeclareMathOperator{\Lc}{Lc}
+\DeclareMathOperator{\disc}{disc}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\adj}{adj}
+\DeclareMathOperator{\curl}{curl}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\diver}{div}
+\DeclareMathOperator{\flux}{flux}
+\def\Gal{\operatorname{Gal}}
+\def\ord{\operatorname{ord}}
+\def\ML{\operatorname{M}}
+\def\GL{\operatorname{GL}}
+\def\PGL{\operatorname{PGL}}
+\def\SL{\operatorname{SL}}
+\def\PSL{\operatorname{PSL}}
+\def\GSp{\operatorname{GSp}}
+\def\PGSp{\operatorname{PGSp}}
+\def\Sp{\operatorname{Sp}}
+\def\PSp{\operatorname{PSp}}
+\def\Aut{\operatorname{Aut}}
+\def\Inn{\operatorname{Inn}}
+\def\Hom{\operatorname{Hom}}
+\def\End{\operatorname{End}}
+\def\ch{\operatorname{char}}
+\def\Zp{\Z/p\Z}
+\def\Zm{\Z/m\Z}
+\def\Zn{\Z/n\Z}
+\def\Fp{\F_p}
+\newcommand{\surjects}{\twoheadrightarrow}
+\newcommand{\injects}{\hookrightarrow}
+\newcommand{\bijects}{\leftrightarrow}
+\newcommand{\isomto}{\overset{\sim}{\rightarrow}}
+\newcommand{\floor}[1]{\lfloor#1\rfloor}
+\newcommand{\ceiling}[1]{\left\lceil#1\right\rceil}
+\newcommand{\mclass}[2][m]{[#2]_{#1}}
+\newcommand{\val}[2][]{\left\lvert #2\right\rvert_{#1}}
+\newcommand{\valuation}[2][]{\left\lvert #2\right\rvert_{#1}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\anpoly}{a_nx^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+\newcommand{\anmonic}{x^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+\newcommand{\bmpoly}{b_mx^m+b_{m-1}x^{m-1}\cdots +b_1x+b_0}
+\newcommand{\pder}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\normalin}{\trianglelefteq}
+\newcommand{\angvec}[1]{\langle #1\rangle}
+\newcommand{\varpoly}[2]{#1_{#2}x^{#2}+#1_{#2-1}x^{#2-1}\cdots +#1_1x+#1_0}
+\newcommand{\varpower}[1][a]{#1_0+#1_1x+#1_1x^2+\cdots}
+\newcommand{\limasto}[2][x]{\lim_{#1\rightarrow #2}}
+\def\ntoinfty{\lim_{n\rightarrow\infty}}
+\def\xtoinfty{\lim_{x\rightarrow\infty}}
+\def\ii{\item}
+\def\bb{\begin{enumerate}}
+\def\ee{\end{enumerate}}
+\def\ds{\displaystyle}
+\def\p{\partial}
+\newcommand{\abcdmatrix}[4]{\begin{bmatrix}#1\amp #2\\ #3\amp #4 \end{bmatrix}
+}
+\newenvironment{amatrix}[1][ccc|c]{\left[\begin{array}{#1}}{\end{array}\right]}
+\newenvironment{linsys}[2][m]{
+\begin{array}[#1]{@{}*{#2}{rc}r@{}}
+}{
+\end{array}}
+\newcommand{\eqsys}{\begin{array}{rcrcrcr}
+a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp b_1\\
+a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp b_2\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \vdots\\
+a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp b_m
+\end{array}
+}
+\newcommand{\numeqsys}{\begin{array}{rrcrcrcr}
+e_1:\amp  a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp b_1\\
+e_2: \amp a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp b_2\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \vdots\\
+e_m: \amp a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp b_m
+\end{array}
+}
+\newcommand{\homsys}{\begin{array}{rcrcrcr}
+a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp 0\\
+a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp 0\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \vdots\\
+a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp 0
+\end{array}
+}
+\newcommand{\vareqsys}[4]{
+\begin{array}{ccccccc}
+#3_{11}x_{1}\amp +\amp #3_{12}x_{2}\amp +\cdots+\amp  #3_{1#2}x_{#2}\amp =\amp #4_1\\
+#3_{21}x_{1}\amp +\amp #3_{22}x_{2}\amp +\cdots+\amp #3_{2#2}x_{#2}\amp =\amp #4_2\\
+\vdots \amp \amp \vdots \amp  \amp \vdots \amp =\amp  \vdots\\
+#3_{#1 1}x_{1}\amp +\amp #3_{#1 2}x_{2}\amp +\cdots +\amp #3_{#1 #2}x_{#2}\amp =\amp #4_{#1}
+\end{array}
+}
+\newcommand{\genmatrix}[1][a]{
+\begin{bmatrix}
+#1_{11} \amp  #1_{12} \amp  \cdots \amp  #1_{1n} \\
+#1_{21} \amp  #1_{22} \amp  \cdots \amp  #1_{2n} \\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \\
+#1_{m1} \amp  #1_{m2} \amp  \cdots \amp  #1_{mn}
+\end{bmatrix}
+}
+\newcommand{\varmatrix}[3]{
+\begin{bmatrix}
+#3_{11} \amp  #3_{12} \amp  \cdots \amp  #3_{1#2} \\
+#3_{21} \amp  #3_{22} \amp  \cdots \amp  #3_{2#2} \\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \\
+#3_{#1 1} \amp  #3_{#1 2} \amp  \cdots \amp  #3_{#1 #2}
+\end{bmatrix}
+}
+\newcommand{\augmatrix}{
+\begin{amatrix}[cccc|c]
+a_{11} \amp  a_{12} \amp  \cdots \amp  a_{1n} \amp b_{1}\\
+a_{21} \amp  a_{22} \amp  \cdots \amp  a_{2n} \amp b_{2}\\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \amp \vdots\\
+a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
+\end{amatrix}
+}
+\newcommand{\varaugmatrix}[4]{
+\begin{amatrix}[cccc|c]
+#3_{11} \amp  #3_{12} \amp  \cdots \amp  #3_{1#2} \amp #4_{1}\\
+#3_{21} \amp  #3_{22} \amp  \cdots \amp  #3_{2#2} \amp #4_{2}\\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \amp \vdots\\
+#3_{#1 1} \amp  #3_{#1 2} \amp  \cdots \amp  #3_{#1 #2}\amp #4_{#1}
+\end{amatrix}
+}
+\newcommand{\spaceforemptycolumn}{\makebox[\wd\boxofmathplus]{\ }}
+
+\newcommand{\generalmatrix}[3]{
+\left(
+\begin{array}{cccc}
+#1_{1,1}  \amp #1_{1,2}  \amp \ldots  \amp #1_{1,#2}  \\
+#1_{2,1}  \amp #1_{2,2}  \amp \ldots  \amp #1_{2,#2}  \\
+\amp \vdots                         \\
+#1_{#3,1} \amp #1_{#3,2} \amp \ldots  \amp #1_{#3,#2}
+\end{array}
+\right)  }
+\newcommand{\colvec}[2][c]{\begin{bmatrix}[#1] #2 \end{bmatrix}}
+\DeclareMathOperator{\size}{size}
+\DeclareMathOperator{\adjoint}{adj}
+\DeclareMathOperator{\sgn}{sgn}
+\newcommand{\restrictionmap}[2]{{#1}\mathpunct\upharpoonright\hbox{}_{#2}}
+\renewcommand{\emptyset}{\varnothing}
+
+\newcommand{\proj}[2]{\mbox{proj}_{#2}({#1}) }
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://linear-algebra.northwestern.pub/" target="_blank"><img src="external/images/im_holycomm.svg" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">Linear algebra: the theory of vector spaces and linear transformations</span></a></h1>
+<p class="byline">Aaron Greicius</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="c_linear_systems.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="c_linear_systems.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="s_ge.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="c_linear_systems.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="c_linear_systems.html" title="Up">Up</a><a class="next-button button toolbar-item" href="s_ge.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link">
+<a href="c_foundations.html" data-scroll="c_foundations"><span class="codenumber">1</span> <span class="title">Foundations</span></a><ul>
+<li><a href="s_sets_functions.html" data-scroll="s_sets_functions">Sets and functions</a></li>
+<li><a href="s_logic.html" data-scroll="s_logic">Logic</a></li>
+<li><a href="s_proof_technique.html" data-scroll="s_proof_technique">Proof techniques</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_linear_systems.html" data-scroll="c_linear_systems"><span class="codenumber">2</span> <span class="title">Systems of linear equations</span></a><ul>
+<li><a href="s_systems.html" data-scroll="s_systems" class="active">Systems of linear equations</a></li>
+<li><a href="s_ge.html" data-scroll="s_ge">Gaussian elimination</a></li>
+<li><a href="s_solving.html" data-scroll="s_solving">Solving linear systems</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_matrices.html" data-scroll="c_matrices"><span class="codenumber">3</span> <span class="title">Matrices, their arithmetic, and their algebra</span></a><ul>
+<li><a href="s_matrix.html" data-scroll="s_matrix">Matrices and their arithmetic</a></li>
+<li><a href="s_algebraic.html" data-scroll="s_algebraic">Algebra of matrices</a></li>
+<li><a href="s_invertible_matrices.html" data-scroll="s_invertible_matrices">Invertible matrices</a></li>
+<li><a href="s_invertibility_theorem.html" data-scroll="s_invertibility_theorem">The invertibility theorem</a></li>
+<li><a href="s_det.html" data-scroll="s_det">The determinant</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_vectorspace.html" data-scroll="c_vectorspace"><span class="codenumber">4</span> <span class="title">Vector spaces and linear transformations</span></a><ul>
+<li><a href="s_vectorspace.html" data-scroll="s_vectorspace">Real vector spaces</a></li>
+<li><a href="s_transformation.html" data-scroll="s_transformation">Linear transformations</a></li>
+<li><a href="s_subspace.html" data-scroll="s_subspace">Subspaces</a></li>
+<li><a href="s_span_independence.html" data-scroll="s_span_independence">Span and linear independence</a></li>
+<li><a href="s_basis_dimension.html" data-scroll="s_basis_dimension">Bases and dimension</a></li>
+<li><a href="s_rank_nullity.html" data-scroll="s_rank_nullity">Rank-nullity theorem and fundamental spaces</a></li>
+<li><a href="s_isom.html" data-scroll="s_isom">Isomorphisms</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_innerproductspaces.html" data-scroll="c_innerproductspaces"><span class="codenumber">5</span> <span class="title">Inner product spaces</span></a><ul>
+<li><a href="s_innerproducts.html" data-scroll="s_innerproducts">Inner product spaces</a></li>
+<li><a href="s_orthogonality.html" data-scroll="s_orthogonality">Orthogonal bases and orthogonal projection</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="c_transbasis.html" data-scroll="c_transbasis"><span class="codenumber">6</span> <span class="title">Eigenvectors and diagonalization</span></a><ul>
+<li><a href="s_coordinatevectors_isomorphisms.html" data-scroll="s_coordinatevectors_isomorphisms">Coordinate vectors and isomorphisms</a></li>
+<li><a href="s_matrixreps.html" data-scroll="s_matrixreps">Matrix representations of linear transformations</a></li>
+<li><a href="s_changeofbasis.html" data-scroll="s_changeofbasis">Change of basis</a></li>
+<li><a href="ss_eigenvectors.html" data-scroll="ss_eigenvectors">Eigenvectors and eigenvalues</a></li>
+<li><a href="ss_diagonalization.html" data-scroll="ss_diagonalization">Diagonalization</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="appendix-notation.html" data-scroll="appendix-notation"><span class="codenumber">A</span> <span class="title">Notation</span></a></li>
+<li class="link"><a href="appendix-defs.html" data-scroll="appendix-defs"><span class="codenumber">B</span> <span class="title">Definitions</span></a></li>
+<li class="link"><a href="appendix-thms.html" data-scroll="appendix-thms"><span class="codenumber">C</span> <span class="title">Theory and procedures</span></a></li>
+<li class="link"><a href="appendix-egs.html" data-scroll="appendix-egs"><span class="codenumber">D</span> <span class="title">Examples</span></a></li>
+<li class="link"><a href="appendix-vids.html" data-scroll="appendix-vids"><span class="codenumber">E</span> <span class="title">Video examples and figures</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="s_systems"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.1</span> <span class="title">Systems of linear equations</span>
+</h2>
+<section class="introduction" id="introduction-6">We begin in a deceptively simple manner with the study of systems of linear equations and their solutions.</section><article class="definition definition-like" id="d_lin-equation"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Linear equations.</span>
+</h3>
+<p id="p-143">A <dfn class="terminology">linear expression</dfn> in the \(n\) unknowns (or variables) \(x_1,x_2,\dots x_n\) is an expression of the form</p>
+<div class="displaymath">
+\begin{equation*}
+a_1x_1+a_2x_2+\cdots +a_nx_n\text{,}
+\end{equation*}
+</div>
+<p class="continuation">where \(a_1,a_2,\dots, a_n\) are fixed real numbers.</p>
+<p id="p-144">A <dfn class="terminology">linear equation</dfn> in the unknowns \(x_1,x_2,\dots, x_n\) is an equation that can be simplified, using only addition and subtraction, to an equation of the form</p>
+<div class="displaymath">
+\begin{equation}
+a_1x_1+a_2x_2+\cdots a_nx_n=b,\label{eq_std_form}\tag{2.1.1}
+\end{equation}
+</div>
+<p class="continuation">which we call its <dfn class="terminology">standard form</dfn>. An equation in the unknowns \(x_1,x_2,\dots, x_n\) is <dfn class="terminology">nonlinear</dfn> if it cannot be simplified to the form <a href="" class="xref" data-knowl="./knowl/eq_std_form.html" title="Equation 2.1.1">(2.1.1)</a> using only addition and subtraction.</p>
+<p id="p-145">Given a linear equation with standard form <a href="" class="xref" data-knowl="./knowl/eq_std_form.html" title="Equation 2.1.1">(2.1.1)</a>, the equation is called <dfn class="terminology">homogeneous</dfn> if \(b=0\text{,}\) and <dfn class="terminology">nonhomogeneous</dfn> if \(b\ne 0\text{.}\)</p></article><article class="example example-like" id="example-12"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-12"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Linear and nonlinear equations.</span>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-12"><article class="example example-like"><ol class="decimal">
+<li id="li-22"><p id="p-146">Consider \(\sqrt{3}x+\sin(5)=2z-e^4y\text{.}\) This is a linear equation in the unknowns \(x,y,z\text{.}\) Its standard form is \(\sqrt{3}x+e^4y-2z=-\sin(5)\text{.}\) Since the right-hand side is nonzero, we see that the equation is nonhomogeneous.</p></li>
+<li id="li-23"><p id="p-147">The equation \(x^2+y^2=1\) is a <em class="emphasis">nonlinear</em> equation in the unknowns \(x\) and \(y\text{.}\)</p></li>
+</ol></article></div>
+<article class="definition definition-like" id="d_lin-sys"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">Systems of linear equations.</span>
+</h3>
+<p id="p-148">A <dfn class="terminology">system of linear equations</dfn> (or <dfn class="terminology">linear system</dfn>) is a set of linear equations.</p>
+<p id="p-149">A <dfn class="terminology">homogeneous</dfn> linear system is a set of homogeneous linear equations.</p></article><p id="p-150">When displaying a system of \(m\) equations in the \(n\) unknowns \(x_1,x_2,\dots x_n\text{,}\) we typically write each equation in standard form and align the corresponding terms of each equation into columns:</p>
+<div class="displaymath">
+\begin{equation*}
+\eqsys
+\end{equation*}
+</div>
+<p class="continuation">A homogeneous system is thus typically written as:</p>
+<div class="displaymath">
+\begin{equation*}
+\homsys.
+\end{equation*}
+</div>
+<article class="remark remark-like" id="remark-12"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.1.4</span><span class="period">.</span>
+</h3>
+<p id="p-151">You will want to get comfortable with the double-indexing used to display linear systems as quickly as possible. Here is a good way to orient yourself:</p>
+<ul class="disc">
+<li id="li-24"><p id="p-152">The \(i\) appearing in \(a_{ij}\) and \(b_i\) indicates the \(i\)-th row in our displayed system, or equivalently, the \(i\)-th equation.</p></li>
+<li id="li-25"><p id="p-153">The \(j\) appearing in \(a_{ij}\) indicates the \(j\)-th column in our displayed system, which is associated to the \(j\)-th variable, for \(1\leq j\leq n\text{.}\)</p></li>
+</ul></article><article class="definition definition-like" id="d_lin-sys-sols"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">Solutions to linear systems.</span>
+</h3>
+<p id="p-154">A <dfn class="terminology">solution to a linear equation</dfn></p>
+<div class="displaymath">
+\begin{equation*}
+a_1x_1+a_2x_2+\cdots a_nx_n=b
+\end{equation*}
+</div>
+<p class="continuation">is an ordered sequence \((s_1,s_2,\dots,
+s_n)\) of real numbers for which the variable assignment \(x_1=s_1, x_2=s_2,\dots, x_n=s_n\) makes the equation true. We say \((s_1,\dots ,s_n)\) <dfn class="terminology">solves the equation</dfn> in this case.</p>
+<p id="p-155">A <dfn class="terminology">solution to a system of linear equations</dfn></p>
+<div class="displaymath">
+\begin{equation*}
+\eqsys
+\end{equation*}
+</div>
+<p class="continuation">is a sequence \((s_1,s_2,\dots,s_n)\) that is a solution to each of the system's \(m\) equations. We say \((s_1,s_2,\dots,
+s_n)\) <dfn class="terminology">solves the system</dfn> in this case.</p></article><p id="p-156">Given a linear system we will seek to find the set of <em class="emphasis">all</em> solutions to the system. As we will soon see, this set of solutions will take one of three qualitative forms:</p>
+<ol class="decimal">
+<li id="li-26"><p id="p-157">The solution set is empty; i.e., there are no solutions. We say the system is <dfn class="terminology">inconsistent</dfn> in this case. Otherwise a system is called <dfn class="terminology">consistent</dfn>.</p></li>
+<li id="li-27"><p id="p-158">The solution set contains a single element; i.e., there is exactly one solution.</p></li>
+<li id="li-28"><p id="p-159">The solution set contains infinitely many elements; i.e., there are infinitely solutions.</p></li>
+</ol>
+<article class="example example-like" id="s_systems_eg_2eqns2varss"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-s_systems_eg_2eqns2varss"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.6</span><span class="period">.</span><span class="space"> </span><span class="title">Solutions to elementary systems.</span>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-s_systems_eg_2eqns2varss"><article class="example example-like"><p id="p-160">For each system, compute the set of solutions.</p>
+<ol class="decimal">
+<li id="li-29"><p id="p-derived-li-29"><div class="displaymath">
+\begin{equation*}
+\begin{linsys}{2} x\amp -\amp y\amp =\amp 0\\ x\amp -\amp y\amp =\amp 1\end{linsys}
+\end{equation*}
+</div></p></li>
+<li id="li-30"><p id="p-derived-li-30"><div class="displaymath">
+\begin{equation*}
+\begin{linsys}{2} x\amp -\amp y\amp =\amp 0\\ x\amp +\amp y\amp =\amp 1\end{linsys}
+\end{equation*}
+</div></p></li>
+<li id="li-31"><p id="p-derived-li-31"><div class="displaymath">
+\begin{equation*}
+\begin{linsys}{2} x\amp -\amp y\amp =\amp 1\\ 2x\amp -\amp 2y\amp =\amp 2\end{linsys}
+\end{equation*}
+</div></p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-8" id="solution-8"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-8"><div class="solution solution-like"><ol class="decimal">
+<li id="li-32"><p id="p-161">The first equation implies \(x=y\text{.}\) Substituting \(y\) for \(x\) in the second equation, we would then have \(0=1\text{,}\) a contradiction. Thus there are no solutions: i.e., \(S\) is the empty set, denoted \(S=\{ \ \}\) or \(S=\emptyset\text{.}\)</p></li>
+<li id="li-33"><p id="p-162">The first equation implies \(x=y\text{.}\) Making this substitution in the second equation yields \(2x=1\text{,}\) or \(x=1/2\text{.}\) Thus \((x,y)=(1/2,1/2)\) is the unique solution, and \(S=\{ (1/2,1/2)\}\text{.}\)</p></li>
+<li id="li-34"><p id="p-163">The second equation is just twice the first. It follows that both equations have the exact same set of solutions, and so we need only find all solutions to \(x-y=1\text{.}\) Note that we can set \(x=t\) for <em class="emphasis">any</em> real number \(t \in\R\text{.}\) Solving for \(y\) in terms of \(t\) we get \((x,y)=(t,t-1)\) for any \(t\in\R\text{,}\) and thus \(S=\{(t,t-1)\colon t\in\R\}\text{,}\) an infinite set!</p></li>
+</ol></div></div>
+</div></article></div>
+<p id="p-164">In <a href="" class="xref" data-knowl="./knowl/s_systems_eg_2eqns2varss.html" title="Example 2.1.6: Solutions to elementary systems">Example 2.1.6</a> we were able to combine some simple logic and arithmetic to solve each system completely. (A more geometric approach is discussed in <a href="" class="xref" data-knowl="./knowl/ex_solving_sys_geom.html" title="Exercise 2.1.1: Geometry of linear systems">Exercise 2.1.1</a>.) Of course, things get more complicated as the number of equations and/or unknowns in the system increases.</p>
+<p id="p-165">For example, consider the system</p>
+<div class="displaymath">
+\begin{equation}
+\begin{linsys}{3} 2x\amp -\amp y\amp -\amp z\amp =\amp 3\\ x\amp \amp \amp -\amp z\amp =\amp 2 \\ x\amp -\amp y\amp \amp \amp =\amp 1 \end{linsys}\label{s_systems_eq_runningexample}\tag{2.1.2}
+\end{equation}
+</div>
+<p class="continuation">Observe first that the sequence \((5,2,5)\) is not a solution to the system; one easily checks that is satisfies the first and second equations, but not the third. Similarly, it is easy to verify that \((4,2,3)\) and \((0,-1,2)\) are both solutions to the system. The question remains: How do we find <em class="emphasis">all</em> solutions to the linear system in a systematic way?</p>
+<article class="remark remark-like" id="remark-13"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.1.7</span><span class="period">.</span>
+</h3>
+<p id="p-166">Observe the somewhat funny spacing in <a href="" class="xref" data-knowl="./knowl/s_systems_eq_runningexample.html" title="Equation 2.1.2">(2.1.2)</a>. This is in force in order to align the unknowns in separate columns. In general, when handed a linear system in the wild, your first step should be to write each equation in standard form, and make sure the unknowns are aligned vertically in this manner.</p></article><section class="paragraphs" id="pars-"><h3 class="heading"><span class="title">Some systems are easier to solve than others.</span></h3>
+<p id="p-167">Below you find two systems of three equations in three unknowns.</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{ccc} \text{ System } L \amp \hspace{5pt}\amp \text{ System } L' \\ \hline \begin{linsys}{3} 2x\amp +\amp 3y\amp +\amp -z\amp =\amp 18\\ x\amp +\amp 2y\amp -\amp 2z\amp =\amp 8\\ -\frac{1}{2}x\amp +\amp -\frac{1}{2}y\amp +\amp \frac{1}{2}z\amp =\amp -3 \end{linsys} \amp  \amp \begin{linsys}{3} x\amp +\amp y\amp +\amp z\amp =\amp 10\\ \amp \amp y\amp -\amp 3z\amp =\amp -2\\ \amp \amp \amp \amp z\amp =\amp 2 \end{linsys} \end{array}
+\end{equation*}
+</div>
+<p class="continuation">The staircase pattern of \(L'\) allows us to solve easily by <em class="emphasis">backwards substitution</em>. In more detail:</p>
+<ol class="decimal">
+<li id="li-35"><p id="p-168">Equation 3 in \(L'\) tells us that \(z=2\text{.}\)</p></li>
+<li id="li-36"><p id="p-169">Now substitute \(z=2\) into Equation 2 of \(L'\) and solve for \(y\) to get \(y=4\text{.}\)</p></li>
+<li id="li-37"><p id="p-170">Finally, substitute \(y=4\) and \(z=2\) into Equation 1 of \(L'\)and solve for \(x\) to get \(x=4\text{.}\) We conclude that \((x,y,z)=(4,4,2)\) is a solution to \(L'\text{.}\)</p></li>
+<li id="li-38"><p id="p-171">Furthermore, since at each step we had no choice in the matter (\(z\) must be equal to 2, \(y\) then must be equal to 4, etc.), we see that in fact \((4,4,2)\) is the <em class="emphasis">only</em> solution to \(L'\text{.}\)</p></li>
+</ol>
+<p class="continuation">Our method for solving a more complicated system, like \(L\) above, will be to <em class="emphasis">transform</em> it to a simpler system like \(L'\text{.}\)</p>
+<p id="p-172"><em class="emphasis">Key point</em>. In order for this method to work, we need to make sure that the transformed system has <em class="emphasis">exactly</em> the same solutions as the original system! To this end we will restrict our permissible transformations to the <em class="emphasis">elementary  operations</em> define below.</p>
+<article class="definition definition-like" id="d_eqops"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.1.8</span><span class="period">.</span><span class="space"> </span><span class="title">Elementary operations on linear systems.</span>
+</h4>
+<p id="p-173">An <dfn class="terminology">elementary operation</dfn> (or <dfn class="terminology">elementary row operation</dfn>) is one of the three types of operations on linear systems described below.</p>
+<dl class="description-list">
+<dt id="d_eq_scale">Scalar multiplication</dt>
+<dd><p id="p-174">Multiply an equation by a <em class="emphasis">nonzero</em> number \(c\ne 0\text{:}\) i.e., replace the \(i\)-th equation \(e_i\) of the system with \(c\cdot e_i\) for \(c\ne 0\text{.}\) Note: \(c\cdot e_i\) is the result of multiplying the left and right sides of equation \(e_i\) by \(c\text{.}\)</p></dd>
+<dt id="d_eq_swap">Equation swap</dt>
+<dd><p id="p-175">Swap the \(i\)-th and \(j\)-th equations of the system, \(i\ne j\text{:}\) i.e., replace equation \(e_i\) of the system with \(e_j\text{,}\) and replace equation \(e_j\) with \(e_i\text{.}\)</p></dd>
+<dt id="d_eq_add">Equation addition</dt>
+<dd><p id="p-176">Add a multiple of one equation to another: i.e., replace \(e_i\) with \(e_i+ce_j\) for some \(c\text{,}\) \(i\text{,}\) and \(j\text{.}\)</p></dd>
+</dl>
+<p id="p-177">The act of transforming a system of equations using elementary operations is called <dfn class="terminology">reduction</dfn> (or <dfn class="terminology">row reduction</dfn>).</p></article><p id="p-178">After reducing a linear system \(L\) using elementary operations, we are left with a new system \(L'\text{.}\) The systems \(L\) and \(L'\) will generally look very different from one another. Note, however, that the two systems will have the same <em class="emphasis">number</em> of equations, and the same <em class="emphasis">number</em> of variables. More importantly, the two systems will have identical sets of solutions; that is, the set of solutions of the new system \(L'\) is identical to the set of solutions to \(L\text{!}\)</p>
+<p id="p-179">To convince ourselves of this last assertion, it suffices to show that the application of any one of these elementary row operations produces a new system \(L'\) with exactly the same set of solutions as \(L\text{;}\) if this is so, then performing any finite sequence of elementary row operations must also preserve the set of solutions in this sense. <a href="" class="xref" data-knowl="./knowl/s_systems_th_rowops.html" title="Theorem 2.1.12: Row equivalence theorem">Theorem 2.1.12</a> will make these claims official. For now let's look at an example.</p></section><section class="paragraphs" id="s_systems_eg_long"><h3 class="heading"><span class="title">Complete example.</span></h3>
+<p id="p-180">Consider again the linear system</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{linsys}{3} 2x\amp +\amp 3y\amp +\amp -z\amp =\amp 18\\ x\amp +\amp 2y\amp -\amp 2z\amp =\amp 8\\ -\frac{1}{2}x\amp +\amp -\frac{1}{2}y\amp +\amp \frac{1}{2}z\amp =\amp -3 \end{linsys}
+\end{equation*}
+</div>
+<p id="p-181">We transform the system as as follows:</p>
+<div class="displaymath">
+\begin{align*}
+\begin{linsys}{3} 2x\amp +\amp 3y\amp +\amp -z\amp =\amp 18\\ x\amp +\amp 2y\amp -\amp 2z\amp =\amp 8\\ -\frac{1}{2}x\amp +\amp -\frac{1}{2}y\amp +\amp \frac{1}{2}z\amp =\amp -3 \end{linsys}
+\amp \xrightarrow[\hspace{15pt}]{2e_3}\amp \begin{linsys}{3} 2x\amp +\amp 3y\amp +\amp -z\amp =\amp 18\\
+x\amp +\amp 2y\amp -\amp 2z\amp =\amp 8\\
+-x\amp +\amp -y\amp +\amp z\amp =\amp -6 \end{linsys}\\
+\amp \\
+\amp \xrightarrow[\hspace{10pt}]{e_1-e_2}\amp \begin{linsys}{3} x\amp +\amp y\amp +\amp z\amp =\amp 10\\
+x\amp +\amp 2y\amp -\amp 2z\amp =\amp 8\\
+-x\amp +\amp -y\amp +\amp z\amp =\amp -6 \end{linsys}\\
+\amp \\
+\amp \xrightarrow[\hspace{10pt}]{e_2-e_1}\amp  \begin{linsys}{3} x\amp +\amp y\amp +\amp z\amp =\amp 10\\
+\amp \amp y\amp -\amp 3z\amp =\amp -2\\
+\amp \amp \amp \amp 2z\amp =\amp 4 \end{linsys}\\
+\amp \\
+\amp \xrightarrow[\hspace{10pt}]{e_3+e_1}\amp  \begin{linsys}{3} x\amp +\amp y\amp +\amp z\amp =\amp 10\\
+\amp \amp y\amp -\amp 3z\amp =\amp -2\\
+\amp \amp \amp \amp 2z\amp =\amp 4 \end{linsys}\\
+\amp \\
+\amp \xrightarrow[]{\frac{1}{2}e_3}\amp  \begin{linsys}{3} x\amp +\amp y\amp +\amp z\amp =\amp 10\\
+\amp \amp y\amp -\amp 3z\amp =\amp -2\\
+\amp \amp \amp \amp z\amp =\amp 2 \end{linsys}
+\end{align*}
+</div>
+<p id="p-182">Now put the logic together. Our original linear system \(L\) was transformed by a sequence of elementary row operations to a new system \(L'\text{:}\)</p>
+<div class="displaymath">
+\begin{align*}
+\begin{linsys}{3} 2x\amp +\amp 3y\amp +\amp -z\amp =\amp 18\\
+x\amp +\amp 2y\amp -\amp 2z\amp =\amp 8\\
+-x\amp +\amp -y\amp +\amp z\amp =\amp -6 \end{linsys} \amp \xrightarrow[]{\text{ row op.'s } }\amp \begin{linsys}{3} x\amp +\amp y\amp +\amp z\amp =\amp 10\\
+\amp \amp y\amp -\amp 3z\amp =\amp -2\\
+\amp \amp \amp \amp z\amp =\amp 2 \end{linsys}
+\end{align*}
+</div>
+<p id="p-183">We saw already that the second system has exactly one solution, namely the triple \((x,y,z)=(4,4,2)\text{.}\)</p>
+<p id="p-184">Since transforming a system by row operations preserves solutions, the first and second systems have <em class="emphasis">exactly the same solutions</em>.</p>
+<p id="p-185">Thus \((x,y,z)=(4,4,2)\) is the only solution to the original system!</p></section><article class="remark remark-like" id="s_systems_notation_rowops"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.1.9</span><span class="period">.</span><span class="space"> </span><span class="title">Notation.</span>
+</h3>
+<p id="p-186">As we will see later, keeping track of the exact sequence of row operations is important in some situations. The notation used in the last example is useful for this bookkeeping. Let's explicate the notation somewhat.</p>
+<p id="p-187">The notation</p>
+<div class="displaymath">
+\begin{equation*}
+L\xrightarrow{c\, e_i}L'
+\end{equation*}
+</div>
+<p class="continuation">indicates that system \(L'\) is obtained from \(L\) by replacing equation \(e_i\) with \(c\, e_i\text{.}\)</p>
+<p id="p-188">The notation</p>
+<div class="displaymath">
+\begin{equation*}
+L\xrightarrow{e_i\leftrightarrow e_j}L'
+\end{equation*}
+</div>
+<p class="continuation">indicates that system \(L'\) is obtained from \(L\) by swapping rows \(e_i\) and \(e_j\text{.}\)</p>
+<p id="p-189">The notation</p>
+<div class="displaymath">
+\begin{equation*}
+L\xrightarrow{e_i+c\,e_j}L'
+\end{equation*}
+</div>
+<p class="continuation">indicates that system \(L'\) is obtained from \(L\) by replacing equation \(e_i\) with \(e_i+c\,e_i\text{.}\)</p></article><article class="remark remark-like" id="s_systems_rm_oneoperation"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.1.10</span><span class="period">.</span><span class="space"> </span><span class="title">Mandate.</span>
+</h3>
+<p id="p-190">You may be tempted to do multiple operations in a single step during this procedure. Resist this temptation for now until we have a better understanding of things.</p>
+<p id="p-191">Furthermore, if later on you do give in to this temptation, make sure that the two (or more row operations) you perform are independent of one another. For example, do not swap \(e_2\) with \(e_1\) and replace \(e_3\) with \(e_3-5e_2\) in the same step.</p></article><p id="p-192">We end by making official a claim made earlier. First we introduce the notion of <em class="emphasis">equivalent linear systems</em>, mainly to spare ourselves from the mouthful that is “obtained by applying a finite sequence of elementary row operations”.</p>
+<article class="definition definition-like" id="d_rowequivalent"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.1.11</span><span class="period">.</span><span class="space"> </span><span class="title">Equivalence of linear systems.</span>
+</h3>
+<p id="p-193">We say two systems of linear equations are <dfn class="terminology">equivalent</dfn> (or <dfn class="terminology">row equivalent</dfn>) if the one can be obtained from the other by a finite sequence of elementary operations.</p></article><article class="theorem theorem-like" id="s_systems_th_rowops"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.1.12</span><span class="period">.</span><span class="space"> </span><span class="title">Row equivalence theorem.</span>
+</h3>
+<p id="p-194">Equivalent systems of linear equations have identical sets of solutions.</p></article><article class="hiddenproof" id="proof-2"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-2"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-2"><article class="hiddenproof">We prove by induction that if system \(L'\) is the result of applying \(n\) elementary operations to system \(L\text{,}\) \(n\geq 0\text{,}\) then \(L\) and \(L'\) have the same set of solutions. <article class="case" id="case-22"><h4 class="heading">Base case: \(n=0\).</h4>
+<p id="p-195">In this case \(L=L'\) (we have applied no operations) and the statement is obvious.</p></article><article class="case" id="case-23"><h4 class="heading">Induction step.</h4>
+<p id="p-196">Assume that applying a sequence of \(n\) elementary operations to a linear system preserves the set of solutions.</p>
+<p id="p-197">Suppose \(L'\) is the result of applying \(n+1\) elementary operations to the system \(L\text{.}\) Let \(L''\) be the result of applying the first \(n\) of these operations. By the induction hypothesis, systems \(L\) and \(L''\) have the same set of solutions.</p>
+<p id="p-198">Since the system \(L'\) is obtained from \(L''\) by applying exactly one elementary operation, <a href="" class="xref" data-knowl="./knowl/ex_row_ops_preserve.html" title="Exercise 2.1.2: Row operations preserve solutions">Exercise 2.1.2</a> implies \(L'\) and \(L''\) have the same set of solutions.</p>
+<p id="p-199">We conclude that \(L\) and \(L'\) have the same set of solutions, as desired.</p></article></article></div>
+<section class="exercises" id="s_systems_ex"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="ex_solving_sys_geom"><h4 class="heading">
+<span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Geometry of linear systems.</span>
+</h4>
+<p id="p-200">Recall that the <em class="emphasis">graph</em> of an equation is the set of all solutions to the equation. Graphs of linear equations correspond to some familiar geometric objects:</p>
+<ul class="disc">
+<li id="li-42">
+<span class="heading"><span class="title">Lines.</span></span><p id="p-201">A <em class="emphasis">line</em> in \(\R^2\) is the graph \(\ell\) of a linear equation of the form \(ax+by=c\text{,}\) where \(a, b, c\in\R\) are fixed constants, and at least one of \(a\) and \(b\) is nonzero: i.e.,</p>
+<div class="displaymath">
+\begin{equation*}
+\ell=\{(x,y)\in\R^2\colon ax+by=c\}.
+\end{equation*}
+</div>
+</li>
+<li id="li-43">
+<span class="heading"><span class="title">Planes.</span></span><p id="p-202">A <em class="emphasis">plane</em> in \(\R^3\) is the graph \(\mathcal{P}\) of a linear equation of the form \(ax+by+cz=d\text{,}\) where \(a, b, c, d\in\R\) are fixed constants, and at least one of \(a, b, c\) is nonzero: i.e.,</p>
+<div class="displaymath">
+\begin{equation*}
+\mathcal{P}=\{(x,y,z)\in\R^3\colon ax+by+cz=d\}.
+\end{equation*}
+</div>
+</li>
+</ul>
+<p class="continuation">We often use the abbreviated notation</p>
+<div class="displaymath">
+\begin{align*}
+\ell \amp\colon ax+by=c \amp \mathcal{P}\amp\colon ax+by+cz=d
+\end{align*}
+</div>
+<p class="continuation">to introduce the line \(\ell\) with defining equation \(ax+by=c\) or plane \(\mathcal{P}\) with definining equation \(ax+by+cz=d\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-44"><p id="p-203">Fix \(m\gt 1\) and consider a system of \(m\) linear equations in the two unknowns \(x\) and \(y\text{.}\) What does a solution \((x,y)\) to this <em class="emphasis">system</em> of linear equations correspond to geometrically?</p></li>
+<li id="li-45"><p id="p-204">Use your interpretation in (a) to give a <em class="emphasis">geometric</em> argument that a system of \(m\) equations in two unknowns will have either (i) zero solutions, (ii) exactly one solution, or (iii) infinitely many solutions.</p></li>
+<li id="li-46"><p id="p-205">Use your geometric interpretation to help produce explicit examples of systems in two variables satisfying these three different cases (i)-(iii).</p></li>
+<li id="li-47"><p id="p-206">Now repeat (a)-(b) for a system of linear equations in three variables \(x,y, z\text{.}\)</p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-9" id="solution-9"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-9"><div class="solution solution-like">
+<p id="p-207">(a) Geometrically, each equation in the system represents a line \(\ell_i\colon a_ix+b_iy=c_i\text{.}\) A solution \((x,y)\) to the \(i\)-th equation corresponds to a point on \(\ell_i\text{.}\) Thus a solution \((x,y)\) to the system corresponds to a point lying on <em class="emphasis">all</em> of the lines: i.e., a point of intersection of the lines.</p>
+<p id="p-208">(b) First of all to prove the desired “or” statement it suffices to prove that if the number of solutions is greater than 1, then there are infinitely many solutions.</p>
+<p id="p-209">Now suppose there is more than one solution. Then there are at least two different solutions: \(P_1=(x_1,y_1)\) and \(P_2=(x_2,y_2)\text{.}\) Take any of the two lines \(\ell_i, \ell_j\text{.}\) By above the intersection of \(\ell_i\) and \(\ell_j\) contains \(P_1\) and \(P_2\text{.}\) But two <em class="emphasis">distinct</em> lines intersect in at most one point. It follows that \(\ell_i\) and \(\ell_j\) must be equal. Since \(\ell_i\) and \(\ell_j\) were arbitrary, it follows <em class="emphasis">all</em> of the lines \(\ell_i\) are in fact the same line \(\ell\text{.}\) But this means the common intersection of the lines is \(\ell\text{,}\) which has infinitely many points. It follows that the system has infinitely many solutions.</p>
+<p id="p-210">(c) We will get 0 solutions if the system includes two different parallel lines: e.g., \(\ell_1\colon x+y=5\) and \(\ell_2\colon x+y=1\text{.}\)</p>
+<p id="p-211">We will get exactly one solution when the slopes of each line in the system are distinct.</p>
+<p id="p-212">We will get infinitely many solutions when <em class="emphasis">all</em> equations in the system represent the <em class="emphasis">same line</em>. This happens when all equations are multiples of one another.</p>
+<p id="p-213">(d) Now each equation in our system defines a plane \(\mathcal{P}_i\colon a_ix+b_iy+c_iz=d_i\text{.}\) A solution \((x,y,z)\) to the system corresponds to a point \(P=(x,y,z)\) of intersection of the planes. We recall two facts from Euclidean geometry:</p>
+<ol class="lower-alpha">
+<li id="li-48">
+<span class="heading"><span class="title">Fact 1.</span></span><p id="p-214">Given two distinct points, there is a unique line containing both of them.</p>
+</li>
+<li id="li-49">
+<span class="heading"><span class="title">Fact 2.</span></span><p id="p-215">Given any number of distinct planes, they either do not intersect, or intersect in a line.</p>
+</li>
+</ol>
+<p id="p-216">We proceed as in part (b) above: that is show that if there are two distinct solutions to the system, then there are infinitely many solutions. First, for simplicity, we may assume that the equations \(\mathcal{P}_i\colon a_ix+b_iy+c_iz=d_i\) define <em class="emphasis">distinct</em> planes; if we have two equations defining the same plane, we can delete one of them and not change the set of solutions to the system.</p>
+<p id="p-217">Now suppose \(P=(x_1,y_1,z_1)\) and \(Q=(x_2,y_2,z_2)\) are two distinct solutions to the system. Let \(\ell\) be the unique line containing \(P\) and \(Q\) (Fact 1). I claim that \(\ell\) is precisely the set of solutions to the system. To see this, take any two equations in the system \(\mathcal{P}_i\colon a_ix+b_iy+c_iz=d_i\) and \(\mathcal{P}_j\colon a_jx+b_jy+c_iz=d_j\text{.}\) Since the two corresponding planes are distinct, and intersect in at least the points \(P\) and \(Q\text{,}\) they must intersect in a line (Fact 2); since this line contains \(P\) and \(Q\text{,}\) it must be the line \(\ell\) (Fact 1). Thus any two planes in the system intersect in the line \(\ell\text{.}\) From this it follows that: (a) a point satisfying the system must lie in \(\ell\text{;}\) and (b) all points on \(\ell\) satisfy the system (since we have shown that \(\ell\) lies in all the planes). It follows that \(\ell\) is precisely the set of solutions, and hence that there are infinitely many solutions.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="ex_row_ops_preserve"><h4 class="heading">
+<span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Row operations preserve solutions.</span>
+</h4>
+<p id="p-218">We made the claim that each of our three row operations</p>
+<ol class="lower-alpha">
+<li id="li-50"><p id="p-219">scalar multiplication (\(e_i\mapsto c\cdot e_i\) for \(c\ne 0\)),</p></li>
+<li id="li-51"><p id="p-220">swap (\(e_i\leftrightarrow e_j\)),</p></li>
+<li id="li-52"><p id="p-221">addition (\(e_i\mapsto e_i+c\cdot e_j\) for some \(c\))</p></li>
+</ol> do not change the set of solutions of a linear system. To prove this claim, let \(L\) be a general linear system<div class="displaymath">
+\begin{equation*}
+\numeqsys\text{.}
+\end{equation*}
+</div>Now consider each type of row operation separately, write down the new system \(L'\) you get by applying this row operation, and prove that an \(n\)-tuple \(s=(s_1,s_2,\dots ,s_n)\) is a solution to the original system \(L\) if and only if it is a solution to the new system \(L'\text{.}\)<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-10" id="solution-10"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-10"><div class="solution solution-like">
+<p id="p-222">Let \(L\) be the original system with equations \(e_1,e_2,\dots ,e_m\text{.}\) For each specified row operation, we will call the resulting new system \(L'\) and its equations \(e'_1,e'_2,\dots , e'_m\text{.}\)</p>
+<article class="case" id="case-24"><h5 class="heading">Row swap.</h5>
+<p id="p-223">In this case systems \(L\) and \(L'\) have exactly the same equations, just written in a different order. Thus the \(n\)-tuple \(s\) satisfies \(L\) if and only if it satisfies each of the equations \(e_i\text{,}\) if and only if it satisfies each of the equations \(e'_i\text{,}\) since these are the same equations! It follows that \(s\) is a solution of \(L\) if and only if it is a solution to \(L'\text{.}\)</p></article><article class="case" id="case-25"><h5 class="heading">Scalar multiplication.</h5>
+<p id="p-224">In this case \(e_j=e'_j\) for all \(j\ne i\text{,}\) and \(e'_i=c\cdot e_i\) for some \(c\ne 0\text{.}\) Since only the \(i\)-th equation has changed, it suffices to show that \(s\) is a solution to \(e_i\) if and only if \(s\) is a solution to \(c\cdot e_i\text{.}\) Let's prove each direction of this if and only if separately.</p>
+<p id="p-225">If \(s\) satisfies \(e_1\text{,}\) then \(a_{i1}s_1+a_{i2}s_2+\cdots +a_{in}s_n=b_i\text{.}\) Multiplying both sides by \(c\) we see that</p>
+<div class="displaymath">
+\begin{equation*}
+ca_{i1}s_1+ca_{i2}s_2+\cdots +ca_{in}s_n=cb_i,
+\end{equation*}
+</div>
+<p class="continuation">and hence that \(s\) is also a solution of \(c\,e_i=e_i'\text{.}\)</p>
+<p id="p-226">For the other direction, if \(s\) satisfies \(c e_i=e_i'\text{,}\) then</p>
+<div class="displaymath">
+\begin{equation*}
+ca_{ii}s_1+ca_{i2}s_2+\cdots ca_{in}s_n=cb_i.
+\end{equation*}
+</div>
+<p class="continuation">Now, since \(c\ne 0\text{,}\) we can multiply both sides of this equation by \(1/c\) to see that</p>
+<div class="displaymath">
+\begin{equation*}
+a_{i1}s_1+a_{i2}s_2+\cdots +a_{in}s_n=b_i
+\end{equation*}
+</div>
+<p class="continuation">and hence that \(s\) is a solution to \(e_i\text{.}\)</p></article><article class="case" id="case-26"><h5 class="heading">Row addition.</h5>
+<p id="p-227">The only equation of \(L'\) that differs from \(L\) is</p>
+<div class="displaymath">
+\begin{equation*}
+e_i'=e_i+ce_j\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Writing this equation out in terms of coefficients gives us</p>
+<div class="displaymath">
+\begin{equation*}
+e_i': a_{i1}x_1+a_{i2}x_2+\cdots +a_{in}x_n+c(a_{j1}x_1+a_{j2}x_2+\cdots +a_{jn}x_n)=b_i+cb_j\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Now if \(s\) satisfies \(L\text{,}\) then it satisfies \(e_i\) and \(e_j\text{,}\) in which case evaluating the RHS of the \(e_i'\) above at \(s\) yields</p>
+<div class="displaymath">
+\begin{align*}
+a_{i1}s_1+a_{i2}s_2+\cdots +a_{in}s_n+c(a_{j1}s_1+a_{j2}s_2+\cdots +a_{jn}s_n)\amp =b_i+cb_j
+\end{align*}
+</div>
+<p class="continuation">showing that \(s\) satisfies \(e_i'\text{.}\) Now suppose \(s=(s_1,s_2,\dots,
+s_n)\) satisfies \(L'\text{.}\) Since \(s\) satisfies \(e_j'=e_j\text{,}\) we have</p>
+<div class="displaymath">
+\begin{equation}
+a_{j1}s_1+a_{j2}s_2+\cdots +a_{jn}s_n =b_j\label{solveeqn}\tag{2.1.3}
+\end{equation}
+</div>
+<p class="continuation">Since \(s\) satisfies \(e_i'\text{,}\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+a_{i1}s_1+a_{i2}s_2+\cdots +a_{in}s_n+c(a_{j1}s_1+a_{j2}s_2+\cdots +a_{jn}s_n)=b_i+cb_j
+\end{equation*}
+</div>
+<p class="continuation">Substituting <a href="" class="xref" data-knowl="./knowl/solveeqn.html" title="Equation 2.1.3">(2.1.3)</a> into the equation above we get</p>
+<div class="displaymath">
+\begin{equation*}
+a_{i1}s_1+a_{i2}s_2+\cdots +a_{in}s_n+c(b_j)=b_i+cb_j\text{,}
+\end{equation*}
+</div>
+<p class="continuation">and hence</p>
+<div class="displaymath">
+\begin{equation*}
+a_{i1}s_1+a_{i2}s_2+\cdots +a_{in}s_n=b_i\text{.}
+\end{equation*}
+</div>
+<p class="continuation">This shows that \(s\) satisfies \(e_i\text{.}\) It follows that \(s\) satisfies \(L\text{.}\)</p></article>
+</div></div>
+</div></article><article class="exercise exercise-like" id="ex_solving_nonlinear_system"><h4 class="heading">
+<span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Nonlinear systems.</span>
+</h4>A <em class="emphasis">nonlinear</em> system of equations is a collection of equations, at least one of which is nonlinear. Our definition of a solution to a linear system generalizes easily to any system of equations. <ol class="lower-alpha">
+<li id="li-53">
+<p id="p-228">Consider the following nonlinear system in the unknowns \(x, y\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{linsys}{2}
+x^2\amp +\amp y^2\amp =\amp 1\\
+x\amp +\amp y \amp =\amp \frac{1}{2}
+\end{linsys}\text{.}
+\end{equation*}
+</div>
+<ol class="lower-roman">
+<li id="li-54"><p id="p-229">Sketch the graphs of each of the two equations in the system on a common coordinate system.</p></li>
+<li id="li-55"><p id="p-230">Describe geometrically what a solution to the system is in terms of your sketch. Explain your reasoning. How many solutions to the system are there, according to your sketch.</p></li>
+<li id="li-56"><p id="p-231">Compute the set of all solutions to the system algebraically.</p></li>
+</ol>
+</li>
+<li id="li-57">
+<p id="p-232">Now consider a more general system</p>
+<div class="displaymath">
+\begin{equation}
+\begin{linsys}{2}
+x^2\amp +\amp y^2\amp =\amp 1\\
+ax\amp +\amp by \amp =\amp c,
+\end{linsys}\label{eq_general_nonlinear}\tag{2.1.4}
+\end{equation}
+</div>
+<p class="continuation">where \(a,b,c\in\R\) are fixed constants and at least one of \(a\) or \(b\) is nonzero.</p>
+<ol class="lower-roman">
+<li id="li-58"><p id="p-233">Explain geometrically what a solution to the system corresponds to in terms of the graphs of its two equations.</p></li>
+<li id="li-59"><p id="p-234">Use your geometric interpretation in (i) to argue that the system <a href="" class="xref" data-knowl="./knowl/eq_general_nonlinear.html" title="Equation 2.1.4">(2.1.4)</a> has either 0, 1, or 2 solutions. Give explicit examples of such systems corresponding to each of these three cases.</p></li>
+</ol>
+</li>
+</ol></article><article class="exercise exercise-like" id="exercise-4"><h4 class="heading">
+<span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Not all arithmetic operations preserve solutions.</span>
+</h4>
+<p id="p-235">In this exercise we investigate how the operation of squaring both sides of an equation changes the set of solutions. Let</p>
+<div class="displaymath">
+\begin{equation}
+F(x_1,x_2,\dots, x_n)=G(x_1,x_2,\dots, x_n)\label{eq_general_equation}\tag{2.1.5}
+\end{equation}
+</div>
+<p class="continuation">represent a general equation (linear or nonlinear) in the unknowns \(x_1,x_2,\dots, x_n\text{,}\) let</p>
+<div class="displaymath">
+\begin{equation}
+\left(F(x_1,x_2,\dots, x_n)\right)^2=\left(G(x_1,x_2,\dots, x_n)\right)^2\label{eq_general_equation_squared}\tag{2.1.6}
+\end{equation}
+</div>
+<p class="continuation">be the equation obtained by squaring both sides of the <a href="" class="xref" data-knowl="./knowl/eq_general_equation.html" title="Equation 2.1.5">(2.1.5)</a>, let \(S_1\) be the set of solutions to <a href="" class="xref" data-knowl="./knowl/eq_general_equation.html" title="Equation 2.1.5">(2.1.5)</a>, and let \(S_2\) be the set of solutions to <a href="" class="xref" data-knowl="./knowl/eq_general_equation_squared.html" title="Equation 2.1.6">(2.1.6)</a>.</p>
+<ol class="lower-alpha">
+<li id="li-60"><p id="p-236">Show that \(S_1\subseteq S_2\text{.}\)</p></li>
+<li id="li-61"><p id="p-237">Given an explicit example of an equation of the form <a href="" class="xref" data-knowl="./knowl/eq_general_equation.html" title="Equation 2.1.5">(2.1.5)</a> in two variables for which \(S_2\not\subseteq S_1\text{.}\)</p></li>
+</ol></article></section></section></div></main>
+</div>
+</body>
+</html>

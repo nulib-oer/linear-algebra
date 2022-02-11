@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-02-07T10:12:12-06:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="hiddenproof"><p>Let \(S=\{\boldv_1, \boldv_2, \dots , \boldv_r\}\text{.}\)</p>
+<ol class="decimal">
+<li>
+<p>Assume \(\Span S=V\text{.}\) Let \(S'\) be a subset of \(S\) of <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">minimal cardinality</em> such that \(\Span S'\) is still equal to \(V\text{.}\) Such a set is guaranteed to exist: since \(S\) is finite, it has a finite number of subsets; of these subsets some will span, others will not; of the subsets that do span, there will be one (or more) that has the least number of elements.</p>
+<p>We claim that such a spanning subset \(S'\) of minimal cardinality is linearly independent, and hence is a basis for \(V\text{,}\) as desired. We give a proof by contradiction. Suppose \(S'\) is linearly dependent. Then some element of \(S'\text{,}\) call it \(\boldv_0\text{,}\) can be expressed as a linear combination of the other elements (<a href="" class="xref" data-knowl="./knowl/rm_linear_independence.html" title="Remark 4.4.9">Remark 4.4.9</a>). Then in terms of span, the element \(\boldv_0\) is “redundant”. In other words, if we let \(S''=S'-\{\boldv_0\}\text{,}\) the set obtained by “throwing out” \(\boldv_0\text{,}\) then we have \(\Span S''=\Span S'=V\text{.}\) Since \(\val{S''} &lt; \val{S}\text{,}\) this contradicts our choice of \(S'\) as a spanning set of minimal cardinality. We conclude that \(S'\) is linearly independent, completing the proof.</p>
+</li>
+<li>
+<p>Assume \(S\) is linearly independent. The procedure below constructs a finite chain of sets</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+S=S_0\subseteq S_1\dots \subseteq S_k
+\end{equation*}
+</div>
+<p class="continuation">that ends with a basis \(B=S_k\text{.}\)</p>
+<ul class="disc">
+<li>
+<span class="heading"><span class="title">Initialization.</span></span><p>Let \(S=S_0\)</p>
+</li>
+<li>
+<span class="heading"><span class="title">Expansion loop.</span></span><p>If \(\Span S_i=V\text{,}\) return \(B=S_i\text{.}\) Otherwise set \(S_{i+1}=S_i\cup \{\boldv\}\text{,}\) where \(\boldv\) is any element of \(V\) that is not contained in \(\Span S_i\) and repeat.</p>
+</li>
+</ul>
+<p class="continuation">Some observations:</p>
+<ol class="lower-roman">
+<li><p>Each \(S_i\) is linearly independent. This can be shown by induction, the crucial point being that if \(S_i\) is linearly independent, and if \(\boldv\notin \Span S_i\text{,}\) then \(S_{i+1}=S_i\cup \{\boldv_0\}\) is linearly independent. The proof is left as an exercise.</p></li>
+<li><p>The procedure must halt. Why? Since \(\dim V=n\text{,}\) and since each \(S_i\) is linearly independent, we must have \(\val{S_i}\leq n\) for all \(i\) by <a href="" class="xref" data-knowl="./knowl/th_basis_dimension.html" title="Theorem 4.5.11: Basis bounds">Theorem 4.5.11</a>. Since \(\val{S_i}&lt; \val{S_{i+1}}\) and \(\val{S_{i}}\leq n\text{,}\) the procedure must halt in at most \(n\) steps.</p></li>
+</ol>
+<p class="continuation">From (ii) we may assume the procedure halts at \(S_k\) for some \(k\geq 0\text{.}\) From (i) we know that \(S_k\) is linearly independent. Furthermore, since the procedure halts at \(S_k\text{,}\) we know that \(\Span S_k=V\text{.}\) It follows that \(B=S_k\) is a basis containing \(S\text{,}\) as desired.</p>
+</li>
+</ol></article></body>
+</html>
