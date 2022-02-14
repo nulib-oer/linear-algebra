@@ -164,7 +164,7 @@ As we will see, this elegant result can be used to significantly simplify comput
         <mrow>T\colon \R^4 \amp\rightarrow \R^3 </mrow>
         <mrow> (x,y,z,w)\amp \mapsto (x+z,y+z+w,z+2w) </mrow>
       </md>
-      is surjective: <ie />, <m>\im T=\R^3</m>. Do so by first computing <m>\NS T</m>. 
+      is surjective: <ie />, <m>\im T=\R^3</m>. Do so by first computing <m>\NS T</m>.
     </p>
   </statement>
   <solution>
@@ -284,7 +284,7 @@ As we will see, this elegant result can be used to significantly simplify comput
                 </li>
                 <li>
                   <p>
-                    <m>\dim\CS A=\dim \CS U</m> (but in general it is not the case that <m>\dim\CS A=\dim\CS U</m>).
+                    <m>\dim\CS A=\dim \CS U</m> (but in general it is <em>not</em> the case that <m>\CS A=\CS U</m>).
                   </p>
                 </li>
               </ul>
