@@ -845,7 +845,7 @@
     <ol>
       <li>
         <p>
-          We claim <m>S</m> is linearly dependent. If
+          We claim <m>S</m> is linearly independent. If
           <me>
             c_1f+c_2g+c_3h=\boldzero
           </me>,
