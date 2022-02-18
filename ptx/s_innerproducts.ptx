@@ -605,7 +605,7 @@
                 <mrow>d(f,g) \amp = \norm{f-g} </mrow>
                 <mrow> \amp =\sqrt{\langle f-g, f-g \rangle} </mrow>
                 <mrow>  \amp = \sqrt{\langle \sin x, \sin x\rangle }</mrow>
-                <mrow>  \amp = \sqrt{\int_{-pi}^pi\sin^2 x\, dx}</mrow>
+                <mrow>  \amp = \sqrt{\int_{-pi}^{pi}\sin^2 x\, dx}</mrow>
                 <mrow>  \amp = \sqrt{\pi} </mrow>
               </md>
             </p>
