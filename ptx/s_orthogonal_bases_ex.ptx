@@ -1,0 +1,303 @@
+<exercises xml:id="s_orthogonal_bases_ex">
+
+  <exercise>
+    <statement>
+      <p>
+        The vectors
+        <me>
+          \boldv_1=(1,1,1,1), \boldv_2=(1,-1,1,-1), \boldv_3=(1,1,-1,-1), \boldv_4=(1,-1,-1,1)
+        </me>
+        are pairwise orthogonal with respect to the dot product, as is easily verified. For each <m>\boldv</m> below, find the scalars  <m>c_i</m> such that
+        <me>
+          \boldv=c_1\boldv_1+c_2\boldv_2+c_3\boldv_3+c_4\boldv_4
+        </me>.
+      </p>
+      <ol>
+        <li>
+          <p>
+            <m>\boldv=(3,0,-1,0)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\boldv=(1,2,0,1)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+           <m>\boldv=(a,b,c,d)</m> (Your answer will be expressed in terms of <m>a,b,c</m>, and <m>d</m>. )
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Consider the inner product space given by <m>V=\R^3</m> together with the dot product. Let <m>W</m> be the plane with defining equation <m>x+2y-z=0</m>. Compute an orthogonal basis of <m>W</m>, and then extend this to an orthogonal basis of <m>\R^3</m>.
+      </p>
+    </statement>
+  </exercise>
+
+
+  <exercise>
+    <statement>
+      <p>
+        Consider the vector space <m>V=C([0,1])</m> with the integral inner product.
+        Apply Gram-Schmidt to the basis <m>B=\{1,2^x, 3^x\}</m> of
+        <m>W=\Span(B)</m> to obtain an orthogonal basis of <m>W</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        The resulting orthogonal basis is <m>B'=\{f_1, f_2,f_3\}</m>, where
+        <md>
+        <mrow>f_1\amp =1</mrow>
+        <mrow>f_2\amp =2^x-(\angvec{2^x,1}/\angvec{1,1})1</mrow>
+        <mrow>\amp =2^x-(\int_{0}^12^x \ dx)/(\int_0^1 1 \ dx)=2^x-\frac{1}{\ln 2}</mrow>
+        <mrow>f_3\amp =3^x-(\angvec{3^x,2^x-\frac{1}{\ln 2}}/\angvec{2^x-\frac{1}{\ln 2}, 2^x-\frac{1}{\ln 2}})(2^x-\frac{1}{\ln 2})-(\angvec{3^x,1}/\angvec{1,1})1</mrow>
+        <mrow>\amp =3^x-\frac{\frac{2}{\ln 2\ln 3}+\frac{5}{\ln 6}}{\frac{1}{(\ln 2)^2}+\frac{3}{\ln 4}}(2^x-\frac{1}{\ln 2})-\frac{1}{\ln 3}</mrow>
+        </md>
+      </p>
+      <p>
+        OK, I admit, I used technology to compute those integrals.
+      </p>
+    </solution>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Consider the vector space <m>V=P_2</m> with the
+        evaluation at <m>-1, 0, 1</m> inner product:
+        <me>
+        \angvec{p(x),q(x)}=p(-1)q(-1)+p(0)q(0)+p(1)q(1)
+        </me>.
+        Apply Gram-Schmidt to the standard basis of <m>P_2</m> to obtain an orthogonal basis of <m>P_2</m>.
+      </p>
+    </statement>
+
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>V=M_{22}</m> with inner product <m>\angvec{A,B}=\tr(A^TB)</m>,
+        and let <m>W\subseteq V</m> be the subspace of matrices whose trace is 0.
+      </p>
+      <ol>
+        <li>
+          <p>
+            Compute an orthogonal basis for <m>W</m>. You can do this either by inspection (the space is manageable), or by starting with a simple basis of <m>W</m> and applying the Gram-Schmidt procedure.
+          </p>
+        </li>
+        <li>
+          <p>
+            Compute <m>\proj{A}{W}</m>,
+            where
+            <me>A=\begin{bmatrix}1\amp 2\\ 1\amp 1 \end{bmatrix}
+            </me>.
+          </p>
+        </li>
+      </ol>
+    </statement>
+
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Let <m>V=C([0,1])</m> with the integral inner product, and let <m>f(x)=x</m>.
+        Find the function of the form
+        <m>g(x)=a+b\cos(2\pi x)+c\sin(2\pi x)</m> that <q>best approximates</q> <m>f(x)</m> in terms of this inner product: <ie /> find the the <m>g(x)</m> of this form that minimizes <m>d(g,f)</m>.
+      </p>
+    </statement>
+    <hint>
+      <p>
+        The set <m>S=\{f(x)=1, g(x)=\cos(2\pi x), h(x)=\sin(2\pi x)\}</m> is orthogonal with respect to the given inner product.
+      </p>
+    </hint>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Let <m>(V,\langle , \rangle )</m> be an inner produce space. Prove:
+        if <m>\angvec{\boldv,\ \boldw}=0</m>, then
+        <me>
+        \norm{\boldv+\boldw}^2=\norm{\boldv}^2+\norm{\boldw}^2
+        </me>.
+        This result can be thought of as the <em>Pythagorean theorem for general inner product spaces</em>.
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Let <m>(V, \langle , \rangle )</m> be an inner product space, let <m>S=\{\boldw_1, \boldw_2, \dots, \boldw_r\}\subseteq V</m>, and let <m>W=\Span S</m>. Prove:
+        <me>
+        \boldv\in W^\perp \text{ if and only if } \langle \boldv,\boldw_i \rangle=0 \text{ for all } 1\leq i\leq r
+        </me>.
+        In other words, to check whether an element is in <m>W^\perp</m>, it suffices to check that it is orthogonal to each element of its spanning set <m>S</m>.
+
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Let <m>(V, \langle , \rangle )</m> be an inner product space, and suppose <m>B=\{\boldv_1, \boldv_2, \dots, \boldv_n\}</m> is an orthonormal basis of <m>V</m>. Suppose <m>\boldv, \boldw\in V</m> satisfy
+        <me>
+          \boldv=\sum_{i=1}^nc_i\boldv_i, \boldw=\sum_{i=1}^nd_i\boldv_i
+        </me>.
+      </p>
+      <ol>
+        <li>
+          <p>
+            Prove:
+            <me>
+              \langle \boldv, \boldw\rangle =\sum_{i=1}^nc_id_i
+            </me>.
+
+          </p>
+        </li>
+        <li>
+          <p>
+            Prove:
+            <me>
+              \norm{\boldv}=\sqrt{\sum_{i=1}^nc_i^2}
+            </me>.
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </exercise>
+
+
+
+  <exercise>
+    <statement>
+      <p>
+        Prove both statements of <xref ref="th_orthogonal_complement"/>.
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Prove <xref ref="cor_orthoproj_linear"/> following the suggestion in the text.
+      </p>
+    </statement>
+
+  </exercise>
+  <exercise xml:id="ex_orthoproj_props">
+    <statement>
+      <p>
+        Let <m>V</m> an inner product space,
+        and let <m>W\subseteq V</m> be a finite-dimensional subspace.
+        Recall that <m>\proj{\boldv}{W}</m> is defined as the unique
+        <m>\boldw\in W</m> satisfying <m>\boldv=\boldw+\boldw^\perp</m>,
+        where <m>\boldw^\perp\in W^\perp</m>.
+        Use this definition
+        (including the uniqueness claim)
+        to prove the following statements.
+        <ol>
+          <li>
+            <p>
+              If <m>\boldv\in W</m>, then <m>\proj{\boldv}{W}=\boldv</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              We have <m>\boldv\in W^\perp</m> if and only if  <m>\proj{\boldv}{W}=\boldzero</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise xml:id="ex_orthocomp_dim">
+    <title>Dimension of <m>W^\perp</m></title>
+    <statement>
+      <p>
+        Let <m>(V, \ \angvec{\ , \ })</m> be an inner product space of dimension <m>n</m>,
+        and suppose  <m>W\subseteq V</m> is a subspace of dimension <m>r</m>.
+
+        Prove: <m>\dim W^\perp=n-r</m>.
+      </p>
+    </statement>
+    <hint>
+      <p>
+        Begin by picking an <em>orthogonal</em>
+        basis <m>B=\{\boldv_1,\dots ,\boldv_r\}</m> of <m>W</m> and extend to an <em>orthogonal</em>
+        basis <m>B'=\{\boldv_1,\boldv_2, \dots, \boldv_r, \boldu_1,\dots , \boldu_{n-r}\}</m> of all of <m>V</m>.
+        Show the <m>\boldu_i</m> form a basis for <m>W^\perp</m>.
+      </p>
+    </hint>
+  </exercise>
+
+
+
+  <exercise>
+    <statement>
+      <p>
+        We consider the problem of fitting a collection of data points <m>(x,y)</m> with a quadratic curve of the form <m>y=f(x)=ax^2+bx+c</m>.
+        Thus we are <em>given</em> some collection of points <m>(x,y)</m>,
+        and we <em>seek</em> parameters
+        <m>a,
+        b, c</m> for which the graph of <m>f(x)=ax^2+bx+c</m>
+        <q>best fits</q>
+        the points in some way.
+      </p>
+      <ol>
+        <li>
+          <p>
+            Show, using linear algebra,
+            that if we are given any three points <m>(x,y)=(r_1,s_1), (r_2,s_2), (r_3,s_3)</m>,
+            where the <m>x</m>-coordinates <m>r_i</m> are all distinct,
+            then there is a <em>unique</em>
+            choice of <m>a,b,c</m> such that the corresponding quadratic function agrees
+            <em>precisely</em> with the data.
+            In other words, given just about any three points in the plane,
+            there is a unique quadratic curve connecting them.
+          </p>
+        </li>
+        <li>
+          <p>
+            Now suppose we are given the four data points
+            <me>
+            P_1=(0,2), P_2=(1,0), P_3=(2,2), P_4=(3,6)
+            </me>.
+          </p>
+          <ol>
+            <li>
+              <p>
+                Use the least-squares method described in the lecture notes to come up with a quadratic function <m>y=f(x)</m> that
+                <q>best fits</q>
+                the data.
+              </p>
+            </li>
+            <li>
+              <p>
+                Graph the function <m>f</m> you found,
+                along with the points <m>P_i</m>.
+                (You may want to use technology.)
+                Use your graph to explain precisely in what sense <m>f</m>
+                <q>best fits</q>
+                the data.
+              </p>
+            </li>
+          </ol>
+        </li>
+      </ol>
+    </statement>
+    <solution>
+      <p>
+
+      </p>
+    </solution>
+  </exercise>
+</exercises>

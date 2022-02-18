@@ -67,16 +67,13 @@
             </p>
           </li>
           <li>
-            <title>Positivity</title>
+            <title>Positive definiteness</title>
             <p>
               For all <m>\boldv\in V</m> we have
-              <me>
-                \langle \boldv, \boldv \rangle \geq 0
-              </me>
-              and
-              <me>
-                \langle \boldv, \boldv \rangle =0 \text{ if and only if } \boldv=\boldzero
-              </me>.
+              <md>
+                <mrow> \langle \boldv, \boldv \rangle \amp\geq 0,\text{ and} \amp (\text{positivity})</mrow>
+                <mrow> \langle \boldv, \boldv \rangle \amp=0 \text{ if and only if } \boldv=\boldzero \amp (\text{definiteness}) </mrow>
+              </md>.
             </p>
           </li>
         </ol>
@@ -234,7 +231,7 @@
 <remark xml:id="rm_dotproduct">
 <statement>
   <p>
-    It is worth highlighting the obersvation in the proof above that a dot product with weights <m>k_1, k_2, \dots, k_n</m> can be expressed as a matrix product:
+    It is worth highlighting the observation in the proof above that a dot product with weights <m>k_1, k_2, \dots, k_n</m> can be expressed as a matrix product:
     <me>
       \langle \boldx, \boldy \rangle=\sum_{i=1}^nk_ix_iy_i=\boldx^TK\boldy
     </me>,
@@ -245,22 +242,48 @@
     <me>
       \boldx\cdot \boldy=\boldx^T I \boldy=\boldx^T\boldy
     </me>.
-    Conversely, the dot product gives another way to formulate general matrix multiplication, as the next theorem articulates.
+    Conversely, the dot product gives another way to formulate general matrix multiplication.  as the next theorem articulates.
   </p>
 </statement>
 </remark>
 <theorem xml:id="th_dotproduct_method">
-<title>Dot product method of matrix multiplication</title>
+<title>Dot product and matrix multiplication</title>
 <statement>
-<p>
-  Let <m>A</m> be an <m>m\times n</m> matrix, and let <m>B</m> be a <m>n\times r</m> matrix. Let <m>\boldr_i\in \R^n</m> be the <m>i</m>-th row of <m>A</m>, and let <m>\boldc_j\in \R^n</m> be the <m>j</m>-th column of <m>B</m>. Then
-  <me>
-    (AB)_{ij}=\boldr_i\cdot \boldc_j
-  </me>.
-  In other words, the <m>ij</m>-th entry of <m>AB</m> is the dot product of the <m>i</m>-th row of <m>A</m> and the <m>j</m>-th column of <m>B</m>.
-</p>
+<ol>
+  <li>
+    <p>
+      Given <m>n</m>-tuples <m>\boldx=(x_1,x_2,\dots, x_n)</m> and <m>\boldy=(y_1,y_2,\dots, y_n)</m>, we have
+      <md>
+        <mrow>\boldx\cdot \boldy \amp = \begin{bmatrix} x_1 \amp x_2\amp \dots \amp x_n\end{bmatrix}
+        \begin{bmatrix}
+          y_1\\ y_2\\ \vdots \\ y_n
+        \end{bmatrix}  </mrow>
+        <mrow> \amp=\boldx^T\boldy </mrow>
+      </md>,
+      where in the last equality <m>\boldx</m> and <m>\boldy</m> are treated as column vectors.
+    </p>
+  </li>
+  <li>
+    <p>
+      Let <m>A</m> be an <m>m\times n</m> matrix, and let <m>B</m> be a <m>n\times r</m> matrix. Let <m>\boldr_i\in \R^n</m> be the <m>i</m>-th row of <m>A</m>, and let <m>\boldc_j\in \R^n</m> be the <m>j</m>-th column of <m>B</m>. For all <m>1\leq i\leq m, 1\leq j\leq n</m>, we have
+      <me>
+        (AB)_{ij}=\boldr_i\cdot \boldc_j
+      </me>,
+      where <m>\boldr_i</m> and <m>\boldc_j</m> are considered as <m>n</m>-tuples.
+      In other words, the <m>ij</m>-th entry of <m>AB</m> is the dot product of the <m>i</m>-th row of <m>A</m> and the <m>j</m>-th column of <m>B</m>.
+    </p>
+  </li>
+</ol>
+
 </statement>
 <proof>
+  <ol>
+    <li>
+      <p>
+        See <xref ref="rm_dotproduct"/> and the proof of <xref ref="th_weighted_dotproduct"/>.
+      </p>
+    </li>
+  </ol>
 <p>
   Let <m>A=[a_{ij}]_{m\times n}</m> and <m>B=[b_{ij}]_{n\times r}</m>. Then
   <me>
@@ -371,7 +394,7 @@
   <subsection xml:id="ss_norm_distance">
     <title>Norm and distance</title>
     <p>
-      As mentioned at the top, once an inner product is established, we can define further notions of norm (or length), distance, angle, <etc />.  When the inner product in question is the standard dot product on <m>\R^2</m> or <m>\R^3</m>, then these are precisely the standard notions you have met in multivariable calculus. For more exotic inner products, however, the corresponding notions of length, distance, <etc />, are to be a useful generalization of these notions.
+      As mentioned above, once an inner product is established, we can define further notions like norm (or length), distance, and angle in terms of the given inner product.  When the inner product in question is the standard dot product on <m>\R^2</m> or <m>\R^3</m>, then these are precisely the familiar notions you may have met in multivariable calculus. Things get really interesting when we treat a more exotic inner product space. For example, consider <m>V=C([a,b])</m>: the integral inner product on <m>V</m> (<xref ref="th_integral_innerproduct"/>) gives rise to useful notions of the length of a function <m>f\in C([a,b])</m>, as well as the distance or angle between two functions <m>f,g\in C([a,b])</m>.
     </p>
     <definition xml:id="d_norm">
       <title>Norm (or length) of a vector</title>
@@ -390,6 +413,62 @@
         </p>
       </statement>
     </definition>
+    <example xml:id="eg_norm_dot">
+      <title>Norm with respect to dot product</title>
+      <statement>
+        <p>
+          Consider <m>V=\R^4</m> with the standard dot product. Compute <m>\norm{(1,-1,-2,1)}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We have
+          <md>
+            <mrow> \norm{(1,-1,-2,1)}\amp =\sqrt{(1,-1,-2,1)\cdot (1,-1,-2,1)} </mrow>
+            <mrow> \amp=\sqrt{1+1+4+1} </mrow>
+            <mrow>  \amp = \sqrt{7}</mrow>
+          </md>.
+        </p>
+      </solution>
+    </example>
+    <example xml:id="eg_norm_weighteddot">
+        <title>Norm with respect to weighted dot product</title>
+        <statement>
+        <p>
+          Consider <m>V=\R^3</m> equipped with the dot product with weights <m>1,2,3</m>. Compute <m>\norm{(3,1,-2)}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We have
+          <md>
+            <mrow> \norm{(3,1,-2)}\amp =\sqrt{\left\langle (3,1,-2), (3,1,-2)\right\rangle} </mrow>
+            <mrow> \amp=\sqrt{1(3^2)+2(1^2)+3((-2)^2)} </mrow>
+            <mrow>  \amp = \sqrt{23}</mrow>
+          </md>.
+        </p>
+      </solution>
+    </example>
+    <example xml:id="eg_norm_integral">
+      <title>Norm with respect to integral inner product</title>
+      <statement>
+        <p>
+          Consider <m>V=C([0,1])</m> equipped with the integral inner product. Compute <m>\norm{f}</m>, where <m>f(x)=e^x</m>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We have
+          <md>
+            <mrow> \norm{f}\amp =\sqrt{\langle f,f\rangle} </mrow>
+            <mrow> \amp=\sqrt{\int_0^1(e^x)^2\, dx} </mrow>
+            <mrow>  \amp = \sqrt{\int_0^1e^{2x}\, dx}</mrow>
+            <mrow>  \amp =\sqrt{(e^2-1)/2} </mrow>
+          </md>.
+        </p>
+      </solution>
+    </example>
+
         <remark xml:id="rm_unit_vectors">
       <title>Unit vectors</title>
 
@@ -397,16 +476,64 @@
         <p>
           Given any <m>\boldv\ne \boldzero\in V</m>, the vector <m>\boldu=\frac{1}{\norm{\boldv}}\boldv</m> is a unit vector. To verify this, let <m>c=\norm{\boldv}</m> and compute
           <md>
-            <mrow>\norm{\boldu} \amp \sqrt{\langle \frac{1}{c}\boldv,\frac{1}{c}\boldv   \rangle }</mrow>
+            <mrow>\norm{\boldu} \amp =\sqrt{\left\langle \frac{1}{c}\boldv,\frac{1}{c}\boldv   \right\rangle }</mrow>
             <mrow> \amp =\sqrt{\frac{1}{c^2}\langle \boldv,\boldv  \rangle} \amp (<xref ref="d_innerproduct"/>, \text{(ii)})  </mrow>
-            <mrow>  \amp=\frac{1}{c}\sqrt{\langle \boldv,\boldv  \rangle } </mrow>
+            <mrow>  \amp =\frac{1}{\val{c}}\sqrt{\langle \boldv,\boldv  \rangle } </mrow>
+            <mrow>  \amp =\frac{1}{c}\sqrt{\langle \boldv,\boldv  \rangle } \amp (c=\norm{\boldv}\geq 0)</mrow>
             <mrow>  \amp =\frac{\norm{\boldv}}{\norm{\boldv}}=1</mrow>
           </md>.
         </p>
       </statement>
     </remark>
+    <example xml:id="eg_unit_vectors">
+      <title>Unit vectors</title>
+      <statement>
+        <p>
+          For each inner product space <m>(V, \langle\,, \rangle)</m> and <m>\boldv\in V</m> compute the associated unit vector <m>\boldu=\frac{1}{\norm{v}}\boldv</m>
+          <ol>
+            <li>
+              <p>
+                <m>V=\R^4</m> with dot product, <m>\boldv=(1,-1,2,1)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>V=\R^3</m> with dot product with weights <m>1,2,3</m>, <m>\boldv=(3,1,-2)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>V=C([0,1])</m> with integral inner product, <m>\boldv=e^x</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The norms of the vectors in each case were computed in <xref first="eg_norm_dot" last="eg_norm_integral"/>. We simply scale to compute the corresponding unit vectors.
+        </p>
+        <ol>
+          <li>
+            <p>
+              <m>\boldu=\frac{1}{\sqrt{7}}(1,-1,2,1)=(\sqrt{7}/7,-\sqrt{7}/7,2\sqrt{7}/7,\sqrt{7}/7)</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\boldu=\frac{1}{\sqrt{23}}(3,1,-2)=(3\sqrt{23}/23,\sqrt{23}/23,-2\sqrt{23}/23)</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\boldu=\frac{1}{\sqrt{(e^2-1)/2}}e^x=\frac{\sqrt{2(e^2-1)}{e^2-1}e^x</m>
+            </p>
+          </li>
+        </ol>
+      </solution>
+    </example>
     <p>
-    Next, the distance between two vectors in an inner product space is defined as the length of their difference.
+    Next, we define the distance between two vectors in an inner product space as the length of their vector difference.
     </p>
     <definition xml:id="d_distance">
       <idx><h>distance</h><h>between two vectors</h></idx>
@@ -424,6 +551,68 @@
         </p>
       </statement>
     </definition>
+    <example xml:id="eg_distance">
+      <statement>
+        <p>
+         For each inner product space <m>V</m>, compute the distance between the given vectors.
+        </p>
+        <ol>
+          <li>
+            <p>
+              <m>V=\R^3</m> with the dot product, <m>\boldx=(x_1,x_2,x_3)</m>, <m>\boldy=(y_1,y_2,y_3)</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>V=P_2</m> with the evaluation at <m>1,-1,0</m> inner product, <m>p_1(x)=x^2+1</m>, <m>p_2(x)=x+2</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>V=C([-\pi,\pi])</m> with the integral inner product, <m>f(x)=\sin x+x</m>, <m>g(x)=x</m>
+            </p>
+          </li>
+        </ol>
+      </statement>
+      <solution>
+        <ol>
+          <li>
+            <p>
+              We have
+              <md>
+                <mrow>d(\boldx,\boldy) \amp = \norm{\boldx-\boldy} </mrow>
+                <mrow>  \amp = \sqrt{\langle \boldx-\boldy,\boldx-\boldy\rangle} </mrow>
+                <mrow> \amp =\sqrt{(x_1-y_1,x_2-y_2,x_3-y_3)\cdot(x_1-y_1,x_2-y_2,x_3-y_3)} </mrow>
+                <mrow>  \amp = \sqrt{(x_1-y_1)^2+(x_2-y_2)^2+(x_3-y_3)^2}</mrow>
+              </md>.
+            </p>
+          </li>
+          <li>
+            <p>
+              We have
+              <md>
+                <mrow>d(p_1,p_2) \amp = \norm{p_1-p_2} </mrow>
+                <mrow>  \amp = \sqrt{\langle p_1-p_2, p_1-p_2\rangle}</mrow>
+                <mrow>  \amp = \sqrt{(p_1(1)-p_2(1))^2+(p_1(-1)-p_2(-1))^2+(p_1(0)-p_2(0))^2}</mrow>
+                <mrow>  \amp = \sqrt{(-1)^2+(1)^2+(-1)^2}=\sqrt{3} </mrow>
+              </md>
+            </p>
+          </li>
+          <li>
+            <p>
+              We have
+              <md>
+                <mrow>d(f,g) \amp = \norm{f-g} </mrow>
+                <mrow> \amp =\sqrt{\langle f-g, f-g \rangle} </mrow>
+                <mrow>  \amp = \sqrt{\langle \sin x, \sin x\rangle }</mrow>
+                <mrow>  \amp = \sqrt{\int_{-pi}^pi\sin^2 x\, dx}</mrow>
+                <mrow>  \amp = \sqrt{\pi} </mrow>
+              </md>
+            </p>
+          </li>
+        </ol>
+      </solution>
+    </example>
     <theorem xml:id="th_norm_basic_props">
       <title>Basic properties of norm and distance</title>
       <statement>

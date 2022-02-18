@@ -1,4 +1,4 @@
-<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_orthogonality">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_orthogonal_projection">
   <title>Orthogonal bases and orthogonal projection</title>
   <subsection>
     <title>Orthogonal sets</title>
@@ -802,5 +802,5 @@
     just as before
   </p>
   </subsection>
-  <xi:include href="./s_orthogonality_ex.ptx"/>
+  <xi:include href="./s_orthogonal_projection_ex.ptx"/>
 </section>

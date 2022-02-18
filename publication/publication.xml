@@ -10,4 +10,7 @@
   <numbering>
     <divisions level="3" />
   </numbering>
+  <html>
+    <knowl example="no" />
+  </html>
 </publication>
