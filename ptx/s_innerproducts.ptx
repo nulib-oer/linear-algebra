@@ -170,12 +170,21 @@
       If <m>k_i>0</m>, then since <m>x_i^2\geq 0</m> for all <m>i</m>, we have <m>\langle \boldx, \boldx \rangle\geq 0</m> for any <m>\boldx</m>, and <m>\langle \boldx, \boldx \rangle=0</m> if and only if <m>x_i=0</m> for all <m>i</m> if and only if <m>\boldx=\boldzero</m>.
       </p>
       <p>
-        For the other direction suppose <m>k_i\leq 0</m> for some <m>i</m>. Let <m>\boldx=\bolde_i</m>, the  <m>i</m>-th element of the standard basis of <m>\R^n</m>. Then <m>\langle \boldx, \boldx \rangle=k_i\leq 0</m>, in contradiction to the positivity axiom.
+        For the other direction suppose <m>k_i\leq 0</m> for some <m>i</m>. Let <m>\boldx=\bolde_i</m>, the  <m>i</m>-th element of the standard basis of <m>\R^n</m>. Then <m>\langle \boldx, \boldx \rangle=k_i\leq 0</m>: a counterexample to the definiteness property of axiom (iii).
       </p>
 
     </proof>
   </theorem>
-
+<definition xml:id="d_euclidean_space">
+  <idx><h>Euclidean <m>n</m>-space</h></idx>
+  <idx><h>Weighted Euclidean space</h></idx>
+  <title>(Weighted) Euclidean space</title>
+  <statement>
+    <p>
+    Fix a positive integer <m>n</m>. <term>Euclidean <m>n</m>-space</term> is the inner product space with underlying vector space <m>\R^n</m> and inner product given by the dot product. More generally, a <term>weighted Eulidean space</term> is an inner product space of the form <m>(\R^n,\langle\, , \rangle)</m>, where <m>\langle\, , \rangle</m> is a weighted dot product.
+    </p>
+  </statement>
+</definition>
 
 <example>
   <title>Dot product on <m>\R^4</m></title>
@@ -219,19 +228,22 @@
   <title>Why the weights must be positive</title>
   <statement>
     <p>
-    Define
+    Consider the operation on <m>\R^2</m> defined as
     <me>
       \langle \boldx, \boldy \rangle =(-1)x_1y_1+2x_2y_2
     </me>
-    for vectors <m>\boldx=(x_1,x_2), \boldy=(y_1,y_2)\in \R^2</m>. Then <me>\langle (3,1), (3,1)  \rangle=-9+2=-7\lt 0
-    </me>.
+    where <m>\boldx=(x_1,x_2), \boldy=(y_1,y_2)</m>. This operation satisfies axioms (i) and (ii) of <xref ref="d_innerproduct"/>. (See proof of <xref ref="th_weighted_dotproduct"/>.) However, it fails both the positivity and definiteness properties of axiom (iii):
+    <md>
+      <mrow>\langle (3,1), (3,1) \rangle \amp =-9+2=-7\lt 0</mrow>
+      <mrow> \langle (1,1/\sqrt{2}), (1,1/\sqrt{2})\rangle \amp=-1+2/2=0 </mrow>
+    </md>.
     </p>
   </statement>
 </example>
 <remark xml:id="rm_dotproduct">
 <statement>
   <p>
-    It is worth highlighting the observation in the proof above that a dot product with weights <m>k_1, k_2, \dots, k_n</m> can be expressed as a matrix product:
+    It is worth highlighting the observation in the proof of <xref ref="th_weighted_dotproduct"/> that a dot product with weights <m>k_1, k_2, \dots, k_n</m> can be expressed as a matrix product:
     <me>
       \langle \boldx, \boldy \rangle=\sum_{i=1}^nk_ix_iy_i=\boldx^TK\boldy
     </me>,
@@ -650,7 +662,15 @@
       </statement>
       <proof>
         <p>
-          This is an elementary exercise of unpacking the various definitions, and is left to the reader.
+          We prove (2) and leave the rest as an exercise (<xref ref="ex_norm_props"/>).
+        </p>
+        <p>
+          Given <m>c\in \R</m> and <m>\boldv\in V</m> we have
+          <md>
+            <mrow>\norm{c\boldv} \amp =\sqrt{\langle c\boldv, c\boldv\rangle}</mrow>
+            <mrow> \amp=\sqrt{c^2\langle \boldv, \boldv\rangle} \amp (<xref ref="d_innerproduct"/>)</mrow>
+            <mrow>  \amp =\val{c}\sqrt{\langle \boldv, \boldv\rangle} \amp (\sqrt{c^2}=\val{c})</mrow>
+          </md>.
         </p>
       </proof>
 
@@ -659,7 +679,7 @@
   <subsection>
     <title>Cauchy-Schwarz inequality, triangle inequalities, and angles between vectors</title>
     <p>
-      The famous <em>Cauchy-Schwarz inequality</em> has a knack of cropping up all over the world of science: from properties of covariance in statistics, to the Heisenberg uncertainty principle of quantum mechanics. More directly pertinent to our discussion, the Cauchy-Schwarz inequality implies the triangle inequalities (<xref ref="th_triangle_inequalities" text="global"/>) and ensures that our notion of the angle between two nonzero vectors <xref ref="d_angle"/>) is well-defined.
+      The famous <em>Cauchy-Schwarz inequality</em> has a knack of cropping up all over the world of science: from properties of covariance in statistics, to the Heisenberg uncertainty principle of quantum mechanics. More directly pertinent to our discussion, the Cauchy-Schwarz inequality implies the triangle inequalities (<xref ref="th_triangle_inequalities" text="global"/>) and ensures that our notion of the angle between two nonzero vectors (<xref ref="d_angle"/>) is well-defined.
     </p>
     <theorem xml:id="th_Cauchy-Schwarz">
       <title>Cauchy-Schwarz inequality</title>
@@ -687,11 +707,15 @@
        </men>.
 
         Since <m>at^2-2b\,t+c\geq 0</m> for all <m>t\in \R</m> the quadratic polynomial <m>p(t)=at^2-2b\,t+c</m> has
-        <em>at most</em> one root. Using the quadratic formula for we conclude that we must have <m>4b^2-4ac\leq 0</m>,
+        <em>at most</em> one root. Using the quadratic formula we conclude that we must have <m>4b^2-4ac\leq 0</m>,
         since otherwise <m>p(t)</m> would have two distinct roots.
-        Substituting back in for <m>a,b,c</m> using <xref ref="eq_cauchy_schwarz"/>, we see after a bit of algebra that
+        It follows that
         <me>
-        (\langle\boldv,\boldw\rangle)^2\leq \norm{\boldv}^2\norm{\boldw}^2
+          4\langle \boldv, \boldw\rangle^2-4\norm{\boldv}^2\norm{\boldw}^2\leq 0
+        </me>,
+        or equivalently
+        <me>
+        \langle\boldv,\boldw\rangle^2\leq \norm{\boldv}^2\norm{\boldw}^2
         </me>.
         Taking square-roots yields the desired inequality.
       </p>
@@ -743,7 +767,7 @@
       <me>
         \cos\theta=\frac{\langle \boldv, \boldw \rangle}{\norm{\boldv}\, \norm{\boldw}}
       </me>.
-      We define the <em>angle between <m>\boldv</m> and <m>\boldw</m></em> to be this <m>\theta</m>.
+      We call <m>\theta</m> the <em>angle between <m>\boldv</m> and <m>\boldw</m></em>.
     </p>
     <definition xml:id="d_angle">
       <title>Angle between vectors</title>
@@ -756,13 +780,100 @@
           </me>.
           Equivalently, we have
           <me>
-            \theta=\cos^{-1}\left(
+            \theta=\arccos\left(
               \frac{\langle \boldv, \boldw \rangle}{\norm{\boldv}\, \norm{\boldw}}
             \right)
           </me>.
         </p>
       </statement>
     </definition>
+        <remark xml:id="rm_general_angles">
+      <statement>
+        <p>
+          Our definition of the angle between two vectors may remind you of the dot product angle formula for vectors in <m>\R^3</m>:
+          <men xml:id="eq_dotproductangle">
+            \cos\theta=\frac{\boldx\cdot\boldy}{\norm{\boldx}\norm{\boldy}}
+          </men>.
+          Interestingly, whereas <xref ref="eq_dotproductangle"/> is typically treated as a <em>theorem</em>, derived from properties of the dot product and the law of cosines, in a general inner product space the equation
+          <me>
+            \cos\theta =\frac{\langle \boldv, \boldw\rangle}{\norm{\boldv}\norm{\boldw}}
+          </me>
+          is understood as the <em>definition</em> of the angle between two vectors.
+        </p>
+      </statement>
+    </remark>
+    <example xml:id="eg_angle_dotproduct">
+      <statement>
+        <p>
+          Consider <m>\R^2</m> along with the dot product. Verify that our definition of the angle <m>\theta</m> between <m>(1,1)</m> and <m>(1,0)</m> is consistent with our planar geometry notion of angle.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          According to <xref ref="d_angle"/>, <m>\theta</m> is the unique element of <m>[0,\pi]</m> satisfying
+          <me>
+            \cos \theta=\frac{(1,1)\cdot (1,0)}{\norm{(1,1)}\norm{(1,0)}}=\frac{1}{\sqrt{2}}=\frac{\sqrt{2}}{2}
+          </me>.
+          We recognize <m>\theta</m> as the familiar angle <m>\pi/4</m>, as expected.
+
+        </p>
+      </solution>
+    </example>
+    <example xml:id="eg_angle_weighted">
+      <statement>
+        <p>
+          Consider <m>\R^2</m> with the weighted dot product
+          <me>
+            \langle (x_1,x_2), (y_1,y_2)\rangle=2x_1x_2+y_1y_2
+          </me>
+          Compute the angle <m>\theta</m> between <m>(1,1)</m> and <m>(0,0)</m> with respect to this inner product
+        </p>
+      </statement>
+      <solution>
+        <p>
+          First compute
+          <md>
+            <mrow>\langle (1,1), (1,0)\rangle \amp= 2(1)+1(0)=2 </mrow>
+            <mrow> \norm{(1,1)}\amp =\sqrt{\langle (1,1),(1,1)\rangle} </mrow>
+            <mrow>  \amp =\sqrt{2+1}=\sqrt{3} </mrow>
+            <mrow> \norm{(1,0)}\amp =\sqrt{\langle (1,0),(1,0)\rangle} </mrow>
+            <mrow>  \amp =\sqrt{2} </mrow>
+          </md>
+          By definition <m>\theta</m> is the unique value in <m>[0,\pi]</m> satisfying
+          <me>
+            \cos\theta=\frac{\langle (1,1), (1,0)\rangle}{\norm{(1,1)}\norm{(1,0)}}=\frac{2}{\sqrt{3}\sqrt{2}}=\frac{\sqrt{6}}{3}
+          </me>.
+          We see that <m>\theta</m> is not one of our familiar angles from the unit circle (<eg />, <m>\pi/6, \pi/4</m>, <etc />) and so express <m>\theta</m> in terms of the <m>\arccos</m> function:
+          <me>
+            \theta=\arccos(\sqrt{6}/3)\approx 35.3^\circ
+          </me>.
+        </p>
+      </solution>
+    </example>
+    <example xml:id="eg_angle_function">
+      <statement>
+        <p>
+          Consider <m>V=C([-\pi, \pi])</m> with the integral inner product. Compute the angle <m>\theta</m> between <m>f(x)=\sin x</m> and <m>g(x)=\sin 2x</m> with respect to this inner product.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          First compute
+          <md>
+            <mrow>\langle f, g\rangle \amp=\int_{-\pi}^\pi \sin x\sin 2x\, dx </mrow>
+            <mrow> \amp=\frac{1}{2}\int_{-\pi}^\pi\cos(x-2x)-\cos(x+2x)\, dx \amp (\text{trig. identity})</mrow>
+            <mrow>  \amp =\frac{1}{2}\int_{-\pi}^\pi \cos(-x)-\cos 3x\, dx</mrow>
+            <mrow>  \amp = 0</mrow>.
+          </md>
+          It follows that
+          <me>
+            \cos \theta=\frac{\langle f, g\rangle}{\norm{f}\norm{g}}=0
+          </me>,
+          and hence that <m>\theta=\pi/2</m>.
+
+        </p>
+      </solution>
+    </example>
   </subsection>
   <subsection>
     <title>Choosing your inner product</title>
