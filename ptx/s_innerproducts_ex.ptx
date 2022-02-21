@@ -73,32 +73,39 @@
       </p>
     </statement>
   </exercise>
+<exercisegroup>
+  <introduction>
+    Compute the angle between the given vectors with respect to the given inner product. The exercises are designed to be done by hand: <ie />, do not express your answer in terms of <m>\arccos</m>.
+  </introduction>
   <exercise>
     <statement>
       <p>
-        Compute the angle between the given vectors with respect to the given inner product. Do not give your answer in terms of <m>\arccos</m>: <ie />, the angles can be computed by hand.
+        <m>V=\R^4</m> with the standard dot product; <m>\boldv=(1,1,1,1), \boldw=(1,-1,1,1)</m>
       </p>
-      <ol>
-        <li>
-          <p>
-            <m>V=\R^4</m> with the standard dot product; <m>\boldv=(1,1,1,1), \boldw=(1,-1,1,1)</m>
-          </p>
-        </li>
-        <li>
-          <p>
-            <m>V=C([0,1])</m> with the integral inner product; <m>f(x)=1, g(x)=x</m>.
-          </p>
-        </li>
-        <li>
-          <p>
-            <m>V=P_2</m> with evaluation at <m>-1, 1</m> inner product; <m>p(x)=-\frac{1}{2}x+\frac{1}{2}, q(x)=2x</m>
-          </p>
-        </li>
-      </ol>
-
     </statement>
   </exercise>
-
+  <exercise>
+    <statement>
+      <p>
+        <m>V=\R^2</m> with the dot product with weights <m>1,2</m>; <m>\boldv=(1,0), \boldw=(-2,\sqrt{2})</m>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        <m>V=C([0,1])</m> with the integral inner product; <m>f(x)=1, g(x)=x</m>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        <m>V=P_2</m> with evaluation at <m>-1, 1</m> inner product; <m>p(x)=-\frac{1}{2}x+\frac{1}{2}, q(x)=2x</m>
+      </p>
+    </statement>
+</exercise>
+</exercisegroup>
 
 
 
@@ -115,7 +122,7 @@
         with each step justified.
       </p>
     </statement>
-    <solution>
+    <!-- <solution>
       <p>
         <md>
         <mrow>\norm{\boldv+\boldw}=\norm{\boldv}+\norm{\boldw}\amp \Leftrightarrow \norm{\boldv+\boldw}^2=\left(\norm{\boldv}+\norm{\boldw}\right)^2 \amp \text{ ( square both sides) }</mrow>
@@ -127,7 +134,7 @@
         <mrow>\amp \Leftrightarrow \theta=0</mrow>
         </md>.
       </p>
-    </solution>
+    </solution> -->
   </exercise>
   <exercise>
     <statement>
@@ -220,11 +227,6 @@
             To do so, use the above parts to show that
             <me>
               \norm{f(\boldv+c\boldw)-(f(\boldv)+cf(\boldw))}=0
-            </me>.
-            Hint: regroup this difference in a suitable manner so that you can use parts (a)-(b).
-            You may also want to use the identity
-            <me>
-              \norm{\boldv-\boldw}^2=\norm{\boldv}^2-2\angvec{\boldv,\boldw}+\norm{\boldw}^2
             </me>.
           </p>
         </li>
