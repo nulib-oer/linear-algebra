@@ -880,41 +880,61 @@
     <p>
       Why, given a fixed vector space <m>V</m>,
       would we prefer one inner product definition to another?
-    </p>
-    <p>
       One way of understanding a particular choice of inner product is to ask what its corresponding notion of distance measures.
     </p>
-    <subsection>
-      <title>Example</title>
-      <p>
-        Take <m>P_n</m> with the evaluation inner product at inputs <m>x=c_0, c_1,\dots, c_n</m>.
-        Given two polynomials <m>p(x), q(x)</m>,
-        the distance between them with respect to this inner product is
+    <example xml:id="eg_why_weightedproduct">
+      <title>Weighted dot product distance</title>
+      <statement>
+        <p>
+         Consider <m>\R^n</m> with a choice of weighted dot product
+         <me>
+           \langle (x_1,x_2,\dots, x_n), (y_1,y_2,\dots, y_n)\rangle=k_1x_1y_1+k_2x_2y_2+\cdots +k_nx_ny_n,
+         </me>
+         where <m>k_1,k_2,\dots, k_n</m> are fixed positive constants. With respect to this inner product the distance between two vectors <m>\boldx=(x_1,x_2,\dots, x_n)</m> and <m>\boldy=(y_1,y_2,\dots, y_n)</m> is
+         <me>
+           d(\boldx,\boldy)=\norm{\boldx-\boldy}=\sqrt{k_1(x_1-y_1)^2+k_2(x_2-y_2)^2+\cdots +k_n(x_n-y_n)^2}
+         </me>.
+         Thus <m>d(\boldx, \boldy)</m> is an aggregate measure of the difference between the corresponding entries of <m>\boldx</m> and <m>\boldy</m>, as weighted by our choice of the constants <m>k_i</m>.
+       </p>
+       <p>
+         Imagine that each element of <m>\boldx\in \R^n</m> is a data point collected by measuring <m>n</m> different properties of a sample <m>s</m> : <ie />, <m>x_i</m> is the measured value of property <m>P_i</m> on <m>s</m> for all <m>1\leq i\leq n</m>.  Given samples <m>s</m> and <m>s'</m> with corresponding measurement vectors <m>\bolx</m> and <m>\boldy</m>, the weighted distance <m>d(\boldx,\boldy)</m> is then a quantitative way of saying how <q>close</q> the two samples are to one another. The choice of weights <m>k_i</m> allows us to adjust the relative influence of a given property <m>P_i</m> in determining this closeness. For example, the standard dot product (<m>k_i=1</m> for all <m>i</m>) yields a notion of distance that gives each property equal standing.
+        </p>
+      </statement>
+    </example>
+    <example xml:id="eg_why_evaluationinner">
+      <title>Evaluation inner product distance</title>
+      <statement>
+        <p>
+          Consider <m>P_n</m> with the evaluation inner product at a fixed choice of inputs <m>x=c_0, c_1,\dots, c_n</m>.
+          Given two polynomials <m>p(x), q(x)</m>,
+          the distance between them with respect to this inner product is
+          <me>
+          \norm{p(x)-q(x)}=\sqrt{(p(c_0)-q(c_0))^2+(p(c_1)-q(c_1))^2+\cdots +(p(c_n)-q(c_n))^2}
+          </me>.
+            We see that with respect to this inner product, the
+            distance
+            between two polynomials is a measure of how much their values at the inputs <m>x=c_0,c_1,\dots ,c_n</m> differ.
+            This inner product may be useful if you are interested in how a polynomial behaves at this finite list of inputs.
       </p>
-    </subsection>
-    <me>
-    \norm{p(x)-q(x)}=\sqrt{(p(c_0)-q(c_0))^2+(p(c_1)-q(c_1))^2+\cdots +(p(c_n)-q(c_n))^2}
-    </me>.
-    <p>
-      So in this inner product space the
-      <q>distance</q>
-      between two polynomials is a measure of how different their values are at the inputs <m>x=c_0,c_1,\dots ,c_n</m>.
-      This inner product may be useful if you are particularly interested in how a polynomial behaves at this finite list of inputs.
-    </p>
-    <subsection>
-      <title>Example</title>
-      <p>
-        Take <m>C[a,b]</m> with the standard inner product <m>\langle f, g \rangle=\int_a^b f(x)g(x) \ dx</m>.
-        Here the distance between two functions is defined as <m>\ds \norm{f-g}=\sqrt{\int_a^b (f(x)-g(x))^2 \ dx}</m>.
-        In particular, a function <m>f</m> is
-        <q>close</q>
-        to the zero function (i.e.
-        <q>is small</q>
-        ) if the <em>integral</em> of <m>f^2</m> is small.
-        This notion is useful in settings where integrals of functions represent quantities we are interested in (e.g. in probability theory,
-        thermodynamics, and quantum mechanics).
-      </p>
-    </subsection>
+      </statement>
+    </example>
+      <example xml:id="eg_why_integralinner">
+        <title>Integral inner product and distance</title>
+        <statement>
+          <p>
+            Take <m>C[a,b]</m> with the standard inner product <m>\langle f, g \rangle=\int_a^b f(x)g(x) \ dx</m>.
+            Here the distance between two functions is defined as
+            <me>\norm{f-g}=\sqrt{\int_a^b (f(x)-g(x))^2 \ dx}
+            </me>.
+            In particular, the <q>size</q> of a function <m>f</m> is
+            given by
+            <me>
+              \norm{f}=\int_a^b f^2(x)\, dx
+            </me>,
+            which we can think of as a sort of infinite average of the values <m>f^2(x)</m> for all <m>x\in [a,b]</m>.
+          </p>
+        </statement>
+      </example>
   </subsection>
   <xi:include href="./s_innerproducts_ex.ptx"/>
 </section>
