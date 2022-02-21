@@ -925,13 +925,8 @@
             Take <m>C[a,b]</m> with the standard inner product <m>\langle f, g \rangle=\int_a^b f(x)g(x) \ dx</m>.
             Here the distance between two functions is defined as
             <me>\norm{f-g}=\sqrt{\int_a^b (f(x)-g(x))^2 \ dx}
-            </me>.
-            In particular, the <q>size</q> of a function <m>f</m> is
-            given by
-            <me>
-              \norm{f}=\int_a^b f^2(x)\, dx
             </me>,
-            which we can think of as a sort of infinite average of the values <m>f^2(x)</m> for all <m>x\in [a,b]</m>.
+            which we can think of as an aggregate measure of the difference of values <m>f(x)-g(x)</m> for all <m>x\in [a,b]</m>. Thus <m>d(f,g)</m> is a global measure of the similarity between <m>f</m> and <m>g</m> that takes into account their values over the entire interval <m>[a,b]</m>. 
           </p>
         </statement>
       </example>
