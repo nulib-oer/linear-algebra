@@ -184,7 +184,7 @@
                 The set <m>B''=\{\boldu_1, \boldu_2, \dots, \boldu_n\}</m> is an orthonormal basis of <m>V</m>.
               </p>
             </li>
-          </ol>
+          </dl>
         </p>
       </statement>
     </algorithm>
