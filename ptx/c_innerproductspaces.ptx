@@ -2,5 +2,5 @@
   <title>Inner product spaces</title>
   <xi:include  href="s_innerproducts.ptx"/>
   <xi:include  href="s_orthogonal_bases.ptx"/>
-  <xi:include  href="s_orthogonal_projection"/>
+  <xi:include  href="s_orthogonal_projection.ptx"/>
 </chapter>
