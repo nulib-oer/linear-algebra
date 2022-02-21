@@ -157,17 +157,16 @@
           and let <m>B=\{\boldv_1, \boldv_2, \dots, \boldv_n\}</m> be a basis for <m>V</m>.
           We can convert <m>B</m> into an orthogonal basis
           <m>B'=\{\boldw_1, \boldw_2, \dots, \boldw_n\}</m>, and further to an orthonormal basis <m>B''=\{\boldu_1, \boldu_2, \dots, \boldu_n\}</m>, as follows:
-          <dl>
+          <ol>
             <li>
-              <title>Step 1</title>
               <p>
                 Set <m>\boldw_1=\boldv_1</m>.
               </p>
             </li>
             <li>
-              <title>Step <m>r</m>, <m>2\leq r\leq n</m></title>
+              <title>Orthogonalize</title>
               <p>
-                Replace <m>\boldv_r</m> with
+                Proceeding in succession for each <m>2\leq r\leq n</m>, replace <m>\boldv_r</m> with
                 <me>
                   \boldw_r:=\boldv_r-\frac{\angvec{\boldv_r, \boldw_{r-1}}}{\angvec{\boldw_{r-1},\boldw_{r-1}}}\boldw_{r-1}-\frac{\angvec{\boldv_r, \boldw_{r-2}}}{\angvec{\boldw_{r-2},\boldw_{r-2}}}\boldw_{r-2}-\cdots -\frac{\angvec{\boldv_r, \boldw_{1}}}{\angvec{\boldw_{1},\boldw_{1}}}\boldw_1
                 </me>.
@@ -184,7 +183,7 @@
                 The set <m>B''=\{\boldu_1, \boldu_2, \dots, \boldu_n\}</m> is an orthonormal basis of <m>V</m>.
               </p>
             </li>
-          </dl>
+          </ol>
         </p>
       </statement>
     </algorithm>
