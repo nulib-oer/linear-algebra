@@ -111,14 +111,9 @@
 <exercise>
   <statement>
     <p>
-      Let <m>(V,\langle\, , \rangle)</m> be an inner product space. Prove that <m>\langle \boldv, \boldzero\rangle=0</m> for all <m>\boldv\in V</m>. 
+      Let <m>(V,\langle\, , \rangle)</m> be an inner product space. Prove that <m>\langle \boldv, \boldzero\rangle=0</m> for all <m>\boldv\in V</m>.
     </p>
   </statement>
-  <solution>
-    <p>
-
-    </p>
-  </solution>
 </exercise>
 
   <exercise>
