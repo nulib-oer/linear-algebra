@@ -74,6 +74,7 @@
     </statement>
   </exercise>
 <exercisegroup>
+  <title></title>
   <introduction>
     Compute the angle between the given vectors with respect to the given inner product. The exercises are designed to be done by hand: <ie />, do not express your answer in terms of <m>\arccos</m>.
   </introduction>

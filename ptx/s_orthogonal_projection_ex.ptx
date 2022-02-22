@@ -1,93 +1,49 @@
 <exercises xml:id="s_orthogonal_projection_ex">
+  <exercisegroup>
+    <title></title>
+    <introduction>
+      In each exercise below you are given an inner product space <m>V</m>, a subspace <m>W=\Span B</m> where <m>B</m> is orthogonal, and a vector <m>\boldv\in V</m>. Compute <m>\proj{\boldv}{W}</m>.
+    </introduction>
+    <exercise>
+      <statement>
+        <p>
+          <m>V=\R^4</m> with the dot product; <m>W=\Span\{(1,1,1,1),(1,-1,1,-1), (1,1,-1,-1)\}</m>; <m>\boldv=(2,3,-1,1)</m>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <m>V=\R^3</m> with dot product with weights <m>k_1=1, k_2=2, k_3=1</m>; <m>W=\{(1,1,1), (1,-1,1),(1,0,-1)\}</m>; <m>\boldv=(1,2,3)</m>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <m>V=C([0,2\pi])</m> with the integral inner product; <m>W=\Span\{\cos x, \cos 2x, \sin x\}</m>; <m>f(x)=3</m> for all <m>x\in [0,2\pi]</m>
+        </p>
+      </statement>
+    </exercise>
+
+  </exercisegroup>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>\mathcal{P}\subseteq \R^3</m> be the plane passing through the origin with normal vector <m>\boldn=(1,2,-1)</m>. Find the orthogonal projection of <m>(1,1,1)</m> onto <m>\mathcal{P}</m> with respect to the dot product.
+      </p>
+    </statement>
+  </exercise>
 
   <exercise>
     <statement>
       <p>
-        The vectors
-        <me>
-          \boldv_1=(1,1,1,1), \boldv_2=(1,-1,1,-1), \boldv_3=(1,1,-1,-1), \boldv_4=(1,-1,-1,1)
-        </me>
-        are pairwise orthogonal with respect to the dot product, as is easily verified. For each <m>\boldv</m> below, find the scalars  <m>c_i</m> such that
-        <me>
-          \boldv=c_1\boldv_1+c_2\boldv_2+c_3\boldv_3+c_4\boldv_4
-        </me>.
+        Recall that the trace <m>\tr A</m> of a square matrix is the sum of its diagonal entries. Let <m>V=M_{22}</m> with inner product <m>\angvec{A,B}=\tr(A^TB)</m>. (You may take for granted that this operation is indeed an inner product on <m>M_{22}</m>.) Define <m>W=\{A\in M_{22}\colon \tr A=0\}</m>.
       </p>
       <ol>
         <li>
           <p>
-            <m>\boldv=(3,0,-1,0)</m>
-          </p>
-        </li>
-        <li>
-          <p>
-            <m>\boldv=(1,2,0,1)</m>
-          </p>
-        </li>
-        <li>
-          <p>
-           <m>\boldv=(a,b,c,d)</m> (Your answer will be expressed in terms of <m>a,b,c</m>, and <m>d</m>. )
-          </p>
-        </li>
-      </ol>
-    </statement>
-  </exercise>
-
-  <exercise>
-    <statement>
-      <p>
-        Consider the inner product space given by <m>V=\R^3</m> together with the dot product. Let <m>W</m> be the plane with defining equation <m>x+2y-z=0</m>. Compute an orthogonal basis of <m>W</m>, and then extend this to an orthogonal basis of <m>\R^3</m>.
-      </p>
-    </statement>
-  </exercise>
-
-
-  <exercise>
-    <statement>
-      <p>
-        Consider the vector space <m>V=C([0,1])</m> with the integral inner product.
-        Apply Gram-Schmidt to the basis <m>B=\{1,2^x, 3^x\}</m> of
-        <m>W=\Span(B)</m> to obtain an orthogonal basis of <m>W</m>.
-      </p>
-    </statement>
-    <solution>
-      <p>
-        The resulting orthogonal basis is <m>B'=\{f_1, f_2,f_3\}</m>, where
-        <md>
-        <mrow>f_1\amp =1</mrow>
-        <mrow>f_2\amp =2^x-(\angvec{2^x,1}/\angvec{1,1})1</mrow>
-        <mrow>\amp =2^x-(\int_{0}^12^x \ dx)/(\int_0^1 1 \ dx)=2^x-\frac{1}{\ln 2}</mrow>
-        <mrow>f_3\amp =3^x-(\angvec{3^x,2^x-\frac{1}{\ln 2}}/\angvec{2^x-\frac{1}{\ln 2}, 2^x-\frac{1}{\ln 2}})(2^x-\frac{1}{\ln 2})-(\angvec{3^x,1}/\angvec{1,1})1</mrow>
-        <mrow>\amp =3^x-\frac{\frac{2}{\ln 2\ln 3}+\frac{5}{\ln 6}}{\frac{1}{(\ln 2)^2}+\frac{3}{\ln 4}}(2^x-\frac{1}{\ln 2})-\frac{1}{\ln 3}</mrow>
-        </md>
-      </p>
-      <p>
-        OK, I admit, I used technology to compute those integrals.
-      </p>
-    </solution>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>
-        Consider the vector space <m>V=P_2</m> with the
-        evaluation at <m>-1, 0, 1</m> inner product:
-        <me>
-        \angvec{p(x),q(x)}=p(-1)q(-1)+p(0)q(0)+p(1)q(1)
-        </me>.
-        Apply Gram-Schmidt to the standard basis of <m>P_2</m> to obtain an orthogonal basis of <m>P_2</m>.
-      </p>
-    </statement>
-
-  </exercise>
-  <exercise>
-    <statement>
-      <p>
-        Let <m>V=M_{22}</m> with inner product <m>\angvec{A,B}=\tr(A^TB)</m>,
-        and let <m>W\subseteq V</m> be the subspace of matrices whose trace is 0.
-      </p>
-      <ol>
-        <li>
-          <p>
-            Compute an orthogonal basis for <m>W</m>. You can do this either by inspection (the space is manageable), or by starting with a simple basis of <m>W</m> and applying the Gram-Schmidt procedure.
+            Compute an orthogonal basis for <m>W</m>. You can do this either by inspection (the space is manageable), or by starting with any basis of <m>W</m> and applying the Gram-Schmidt procedure.
           </p>
         </li>
         <li>
@@ -118,20 +74,8 @@
     </hint>
   </exercise>
 
-  <exercise>
-    <statement>
-      <p>
-        Let <m>(V,\langle , \rangle )</m> be an inner produce space. Prove:
-        if <m>\angvec{\boldv,\ \boldw}=0</m>, then
-        <me>
-        \norm{\boldv+\boldw}^2=\norm{\boldv}^2+\norm{\boldw}^2
-        </me>.
-        This result can be thought of as the <em>Pythagorean theorem for general inner product spaces</em>.
-      </p>
-    </statement>
-  </exercise>
 
-  <exercise>
+  <exercise xml:id="ex_ortho_comp">
     <statement>
       <p>
         Let <m>(V, \langle , \rangle )</m> be an inner product space, let <m>S=\{\boldw_1, \boldw_2, \dots, \boldw_r\}\subseteq V</m>, and let <m>W=\Span S</m>. Prove:
@@ -147,43 +91,41 @@
   <exercise>
     <statement>
       <p>
-        Let <m>(V, \langle , \rangle )</m> be an inner product space, and suppose <m>B=\{\boldv_1, \boldv_2, \dots, \boldv_n\}</m> is an orthonormal basis of <m>V</m>. Suppose <m>\boldv, \boldw\in V</m> satisfy
+        Consider the inner product space <m>\R^4</m> together with the dot product. Let
         <me>
-          \boldv=\sum_{i=1}^nc_i\boldv_i, \boldw=\sum_{i=1}^nd_i\boldv_i
-        </me>.
+          W=\{(x_1,x_2,x_3,x_4)\in \R^4\colon x_1=x_3 \text{ and } x_2=x_4\}.
+        </me>
+        Provide orthogonal bases for <m>W</m> and <m>W^\perp</m>.
       </p>
-      <ol>
-        <li>
-          <p>
-            Prove:
-            <me>
-              \langle \boldv, \boldw\rangle =\sum_{i=1}^nc_id_i
-            </me>.
-
-          </p>
-        </li>
-        <li>
-          <p>
-            Prove:
-            <me>
-              \norm{\boldv}=\sqrt{\sum_{i=1}^nc_i^2}
-            </me>.
-          </p>
-        </li>
-      </ol>
     </statement>
   </exercise>
-
-
 
   <exercise>
     <statement>
       <p>
-        Prove both statements of <xref ref="th_orthogonal_complement"/>.
+        Prove statements (1) and (2) of <xref ref="th_orthogonal_complement"/>.
       </p>
     </statement>
   </exercise>
-
+  <exercise xml:id="ex_orthocomp_dim">
+    <title>Dimension of <m>W^\perp</m></title>
+    <statement>
+      <p>
+        Prove statement (3) of <xref ref="th_orthogonal_complement"/>:  if <m>(V, \ \angvec{\ , \ })</m> is an inner product space of dimension <m>n</m>, and <m>W</m> is a subspace of <m>V</m>, then
+        <me>
+          \dim W+\dim W^\perp=n
+        </me>.
+      </p>
+    </statement>
+    <hint>
+      <p>
+        By <xref ref="cor_orthonormal_existence"/> there is an orthogonal basis
+        <m>B=\{\boldv_1,\dots ,\boldv_r\}</m> of <m>W</m>, and furthermore, we can extend <m>B</m> to an orthogonal
+        basis <m>B'=\{\boldv_1,\boldv_2, \dots, \boldv_r, \boldu_1,\dots , \boldu_{n-r}\}</m> of all of <m>V</m>.
+        Show the <m>\boldu_i</m> form a basis for <m>W^\perp</m>.
+      </p>
+    </hint>
+  </exercise>
   <exercise>
     <statement>
       <p>
@@ -219,25 +161,7 @@
     </statement>
   </exercise>
 
-  <exercise xml:id="ex_orthocomp_dim">
-    <title>Dimension of <m>W^\perp</m></title>
-    <statement>
-      <p>
-        Let <m>(V, \ \angvec{\ , \ })</m> be an inner product space of dimension <m>n</m>,
-        and suppose  <m>W\subseteq V</m> is a subspace of dimension <m>r</m>.
 
-        Prove: <m>\dim W^\perp=n-r</m>.
-      </p>
-    </statement>
-    <hint>
-      <p>
-        Begin by picking an <em>orthogonal</em>
-        basis <m>B=\{\boldv_1,\dots ,\boldv_r\}</m> of <m>W</m> and extend to an <em>orthogonal</em>
-        basis <m>B'=\{\boldv_1,\boldv_2, \dots, \boldv_r, \boldu_1,\dots , \boldu_{n-r}\}</m> of all of <m>V</m>.
-        Show the <m>\boldu_i</m> form a basis for <m>W^\perp</m>.
-      </p>
-    </hint>
-  </exercise>
 
 
 
@@ -294,10 +218,5 @@
         </li>
       </ol>
     </statement>
-    <solution>
-      <p>
-
-      </p>
-    </solution>
   </exercise>
 </exercises>

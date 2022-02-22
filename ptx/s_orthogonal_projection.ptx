@@ -535,5 +535,5 @@
     just as before
   </p>
   </subsection>
-  <!-- <xi:include href="./s_orthogonal_projection_ex.ptx"/> -->
+  <xi:include href="./s_orthogonal_projection_ex.ptx"/>
 </section>
