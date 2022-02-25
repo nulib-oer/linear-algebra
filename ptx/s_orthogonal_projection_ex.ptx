@@ -100,7 +100,7 @@
     </statement>
   </exercise>
 
-  <exercise>
+  <exercise xml:id="ex_orthocomp_subspace">
     <statement>
       <p>
         Prove statements (1) and (2) of <xref ref="th_orthogonal_complement"/>.
@@ -148,7 +148,7 @@
         <ol>
           <li>
             <p>
-              If <m>\boldv\in W</m>, then <m>\proj{\boldv}{W}=\boldv</m>.
+             We have <m>\boldv\in W</m> if and only if <m>\proj{\boldv}{W}=\boldv</m>.
             </p>
           </li>
           <li>

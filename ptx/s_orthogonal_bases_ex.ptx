@@ -129,7 +129,7 @@
 </exercise>
 
 
-  <exercise>
+  <exercise xml:id="ex_ortho_pythag">
     <statement>
       <p>
         Let <m>(V,\langle , \rangle )</m> be an inner produce space. Prove:
