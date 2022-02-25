@@ -184,12 +184,11 @@
           <li>
             <p>
               Using the dot product method of matrix multiplication,
-              we see that a vector <m>\boldv\in\NS(A)</m> if and only if
-              <m>\boldv\cdot\boldr_i=0</m> for each row <m>\boldr_i</m> of <m>A</m>.
-              Since the <m>\boldr_i</m> span <m>\RS(A)</m>,
-              the linear properties of the dot product imply that <m>\boldv\cdot\boldr_i=0</m> for each row
-              <m>\boldr_i</m> of <m>A</m> if and only if <m>\boldv\cdot\boldw=0</m> for <em>all</em>
-              <m>\boldw\in\RS(A)</m> if and only if <m>\boldv\in \RS(A)^\perp</m>.
+              we see that a vector <m>\boldx\in\NS(A)</m> if and only if
+              <m>\boldx\cdot\boldr_i=0</m> for each row <m>\boldr_i</m> of <m>A</m>, if and only if <m>\boldx\cdot \boldw=0</m> for all <m>\boldw\in \Span \{\boldr_1, \boldr_2, \dots, \boldr_m\}=\RS A</m> (see <xref ref="rm_computing_ortho_comp"/>), if and only if <m>\boldx\in (\RS A)^\perp</m>. This shows <m>\NS A=(\RS A)^\perp</m>.
+            </p>
+            <p>
+              We can use <xref ref="cor_orthocomp_selfdual"/> to conclude <m>\RS A=(\NS A)^\perp</m>. Alternatively, and more directly, the argument above shows that <m>\boldw\in \RS A\implies \boldw\in (\NS A)^\perp</m>, proving <m>\RS A\subseteq (\NS A)^\perp</m>. Next, by the rank-nullity theorem we have <m>\dim \RS A=n-\dim\NS A</m>; and by <xref ref="th_orthogonal_complement"/> we have <m>\dim (\NS A)^\perp=n-\dim\NS A</m>. It follows that <m>\dim\RS A=\dim (\NS A)^\perp</m>. Since <m>\RS A\subseteq (\NS A)^\perp</m> and <m>\dim \RS A=\dim (\NS A)^\perp</m>, we conclude by <xref ref="cor_dimension_subspace"/> that <m>\RS A=(\NS A)^\perp</m>.
             </p>
           </li>
           <li>
@@ -421,10 +420,32 @@
   </corollary>
   <proof>
     <p>
-      We must show that <m>T(c\boldv_1+d\boldv_2)=cT(\boldv_1)+dT(\boldv_2)</m> for all
-      <m>c,d\in\R</m> and <m>\boldv_1,\boldv_2\in V</m>.
-      This is easily shown by picking an orthonormal basis
-      <m>B=\{\boldv_1,\boldv_2, \dots, \boldv_r\}</m> of <m>W</m> and using the formula from the orthogonal projection theorem.
+      <ol>
+        <li>
+          <p>
+            We must show that <m>T(c\boldv+d\boldw)=cT(\boldv)+dT(\boldw)</m> for all
+            <m>c,d\in\R</m> and <m>\boldv,\boldw\in V</m>.
+            We pick an orthogonal basis
+            <m>B=\{\boldv_1,\boldv_2, \dots, \boldv_r\}</m> of <m>W</m> and compute, using formula <xref ref="eq_ortho_proj_formula"/>:
+            <md>
+              <mrow>T(c\boldv+d\boldw) \amp=\sum_{i=1}^{r}\frac{\langle c\boldv+d\boldw, \boldv_i\rangle}{\langle\boldv_i, \boldv_i\rangle }\boldv_i </mrow>
+              <mrow> \amp=\sum_{i=1}^r\frac{c\langle \boldv,\boldv_i\rangle+d\langle \boldw, \boldv_i\rangle}{\langle \boldv_i, \boldv_i\rangle}\boldv_i </mrow>
+              <mrow>  \amp =c\sum_{i=1}^r\frac{\angvec{\boldv, \boldv_i}}{\angvec{\boldv_i, \boldv_i}}\boldv_i+d\sum_{i=1}^r\frac{\angvec{\boldw, \boldv_i}}{\angvec{\boldv_i, \boldv_i}}\boldv_i</mrow>
+              <mrow>  \amp = cT(\boldv)+dT(\boldw)</mrow>
+            </md>.
+          </p>
+        </li>
+        <li>
+          <p>
+           We have by definition that <m>T(\boldv)=\proj_W(\boldv)\in W</m>, and thus <m>\im T\subseteq W</m>. For the other direction, if <m>\boldw\in W</m>, then <m>\boldw=\proj_W(\boldw)</m> (The statements about <m>\im T</m> and <m>\NS T</m> amount to the two following equivalences:
+            <md>
+              <mrow>\boldv\in W \amp \iff \proj</mrow>
+              <mrow> \amp </mrow>
+            </md>
+          </p>
+        </li>
+      </ol>
+
     </p>
   </proof>
 </subsection>
