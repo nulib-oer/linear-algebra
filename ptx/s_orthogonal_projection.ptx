@@ -265,19 +265,26 @@
     </p>
   </proof>
   <corollary xml:id="cor_orthoproj_linear">
+    <title>Orthgonal projection is linear</title>
+
+
     <statement>
       <p>
         Let <m>(V,\angvec{\ , \ })</m> be an inner product space,
         and let <m>W\subseteq V</m> be a finite-dimensional subspace.
       </p>
-      <p>
-        Define <m>T\colon V\rightarrow V</m> as <m>T(\boldv)=\proj{\boldv}{W}</m>.
-        Then <m>T</m> is a linear transformation.
-      </p>
-      <p>
-        In other words,
-        orthogonal projection onto <m>W</m> defines a linear transformation of <m>V</m>.
-      </p>
+      <ol>
+        <li>
+          <p>
+            The function <m>T\colon V\rightarrow V</m> defined as <m>T(\boldv)=\proj{\boldv}{W}</m> is a linear transformation.
+          </p>
+        </li>
+        <li>
+          <p>
+            We have <m>\im T=W</m> and <m>\NS T=W^\perp</m>.
+          </p>
+        </li>
+      </ol>
     </statement>
   </corollary>
   <proof>
