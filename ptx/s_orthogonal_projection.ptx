@@ -806,17 +806,17 @@ The last two computations, <m>\proj{(-2,-4,-2)}{\ell}=(-2,-4,-2)</m> and <m>\pro
        <figure xml:id="fig_leastsquares">
          <title>Least-squares visualization</title>
           <caption>Least-squares visualization</caption>
-           <image xml:id="im_leastsquares" width="50%" source="./images/im_leastsquares" />
+           <image xml:id="im_leastsquares" width="100%" source="./images/im_leastsquares" />
        </figure>
         Let <m>\boldy=(1,2,3)=(y_1,y_2,y_3)</m> be the given <m>y</m>-values of the points,
-        and let <m>\hat{\boldy}=(y_1',y_2',y_3')</m> be its orthogonal projection.
+        and let <m>\hat{\boldy}=(y_1',y_2',y_3')</m> be the orthogonal projection of <m>\boldy</m> onto <m>\CS A</m>.
         In the graph the values <m>\epsilon_i</m> denote the vertical difference
         <m>\epsilon_i=y_i-y_i'</m> between the data points, and our fitting line.
         The projection <m>\hat{\boldy}</m> makes the error
         <m>\norm{\boldy-\hat{\boldy}}=\sqrt{ \epsilon_1^2+\epsilon_2^2+\epsilon_3^2}</m> as small as possible.
         This means if I draw <em>any other line</em>
         and compute the corresponding differences
-        <m>\epsilon_i'</m> at the <m>x</m>-values -3, 1 and 2, then we have
+        <m>\epsilon_i'</m> at the <m>x</m>-values  -3, 1 and 2, then
         <me>
           \epsilon_1^2+\epsilon_2^2+\epsilon_3^2\leq (\epsilon_1')^2+(\epsilon_2')^2+(\epsilon_3')^2
         </me>
