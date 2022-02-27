@@ -771,7 +771,7 @@ The last two computations, <m>\proj{(-2,-4,-2)}{\ell}=(-2,-4,-2)</m> and <m>\pro
       First observe, using <xref ref="th_fundamental_spaces"/>, that <xref ref="eq_least-squares_orig"/> has a solution if and only if <m>\boldy\in \CS A\subseteq \R^m</m>. Let <m>W=\CS A</m>, and let <m>\hat{\boldy}=\proj{\boldy}{W}</m>, where orthogonal projection is taken with respect to the dot product on <m>\R^</m>. By definition of <m>\operatorname{proj}_W</m>,  <m>\hat{\boldy}\in W=\CS A</m>, and thus there is a solution <m>\hat{\boldx}</m>
       to the adjusted matrix equation
       <men xml:id="eq_least-squares_new">
-        A\hat{boldx}=\hat{\boldy}
+        A\hat{\boldx}=\hat{\boldy}
       </men>.
       We call <m>\hat{\boldx}</m> a <term>least-squares</term> solution to <xref ref="eq_least-squares_orig"/>. Observe, that <m>\hat{\boldx}</m> does <em>not</em> necessarily satisfy <m>A\hat{\boldx}=\boldy</m>; rather, it satisfies <m>A\hat{\boldx}=\hat{\boldy}</m>. What makes this a <q>least-squares</q> solution is that <m>\hat{\boldy}=\proj{\boldy}{W}</m> is the element of <m>W=\CS A</m> closest to <m>\boldy</m>. With respect to the dot product, this means that  <m>\hat{\boldy}</m> minimizes the quantity
       <me>
@@ -789,7 +789,7 @@ The last two computations, <m>\proj{(-2,-4,-2)}{\ell}=(-2,-4,-2)</m> and <m>\pro
       <me>
         \boldx=\begin{bmatrix}m \\ b \end{bmatrix}, A=\begin{amatrix}[rr]-3\amp 1\\ 1\amp 1\\ 2\amp 1 \end{amatrix}  , \boldy=\begin{bmatrix}1\\ 2\\ 3 \end{bmatrix}
       </me>.
-      Using Gaussian elimination, we see easily that this equation has no solution: equivalently, <m>\boldy\notin W=\CS A</m>. Accordingly, we compute <m>\hat{\boldy}=\proj{\boldy}{W}</m> and find a solution to <m>A\hat{\boldx}=\hat{\boldy}</m>. Conveniently, the set <m>B=\{(-3,2,1), (1,1,1)\}</m> is already an <em>orthogonal</em> basis of <m>W=\col A</m>, allowing us to use <xref ref="eq_ortho_proj_formula"/>:
+      Using Gaussian elimination, we see easily that this equation has no solution: equivalently, <m>\boldy\notin W=\CS A</m>. Accordingly, we compute <m>\hat{\boldy}=\proj{\boldy}{W}</m> and find a solution to <m>A\hat{\boldx}=\hat{\boldy}</m>. Conveniently, the set <m>B=\{(-3,2,1), (1,1,1)\}</m> is already an <em>orthogonal</em> basis of <m>W=\CS A</m>, allowing us to use <xref ref="eq_ortho_proj_formula"/>:
       <me>
         \hat{\boldy}=\frac{\boldy\cdot (-3,1,2)}{(-3,2,1)\cdot (-3,1,2)}(-3,1,2)+\frac{\boldy\cdot(1,1,1)}{(1,1,1)\cdot (1,1,1)}(1,1,1)=\frac{1}{14}(13, 33, 38)
       </me>.
@@ -806,7 +806,7 @@ The last two computations, <m>\proj{(-2,-4,-2)}{\ell}=(-2,-4,-2)</m> and <m>\pro
        <figure xml:id="fig_leastsquares">
          <title>Least-squares visualization</title>
           <caption>Least-squares visualization</caption>
-           <image xml:id="im_leastsquares" width="100%" source="./images/im_leastsquares" />
+           <image xml:id="im_leastsquares" width="100%" source="images/im_leastsquares" />
        </figure>
         Let <m>\boldy=(1,2,3)=(y_1,y_2,y_3)</m> be the given <m>y</m>-values of the points,
         and let <m>\hat{\boldy}=(y_1',y_2',y_3')</m> be the orthogonal projection of <m>\boldy</m> onto <m>\CS A</m>.
