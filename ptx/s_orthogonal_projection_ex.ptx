@@ -139,25 +139,21 @@
       <p>
         Let <m>V</m> an inner product space,
         and let <m>W\subseteq V</m> be a finite-dimensional subspace.
-        Recall that <m>\proj{\boldv}{W}</m> is defined as the unique
-        <m>\boldw\in W</m> satisfying <m>\boldv=\boldw+\boldw^\perp</m>,
-        where <m>\boldw^\perp\in W^\perp</m>.
-        Use this definition
-        (including the uniqueness claim)
-        to prove the following statements.
+        Prove the following statements:
+        </p>
         <ol>
           <li>
             <p>
-             We have <m>\boldv\in W</m> if and only if <m>\proj{\boldv}{W}=\boldv</m>.
+             <m>\boldv\in W</m> if and only if <m>\proj{\boldv}{W}=\boldv</m>;
             </p>
           </li>
           <li>
             <p>
-              We have <m>\boldv\in W^\perp</m> if and only if  <m>\proj{\boldv}{W}=\boldzero</m>.
+              <m>\boldv\in W^\perp</m> if and only if  <m>\proj{\boldv}{W}=\boldzero</m>.
             </p>
           </li>
         </ol>
-      </p>
+
     </statement>
   </exercise>
 

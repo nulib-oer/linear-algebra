@@ -71,27 +71,35 @@
       <p>
         Let <m>V=C([0,2\pi])</m> with integral inner product <m>\langle f, g\rangle=\int_0^{2\pi} f(x)g(x) \, dx</m>, and let
         <me>
-          S=\{\cos(x),\sin(x),\cos(2x),\sin(2x), \dots\}=\{\cos(nx)\colon n\in\Z_{>0}\}\cup\{\sin(mx)\colon m\in\Z_{>0}\}
-        </me>.
+          S=\{1, \cos(x),\sin(x),\cos(2x),\sin(2x), \dots\}=\{\cos(nx)\colon n\in\Z_{>0}\}\cup\{\sin(mx)\colon m\in\Z_{>0}\}
+        </me>,
+        where the element <m>1\in S</m> is understood as the constant function <m>f(x)=1</m> for all <m>x\in [0,2\pi]</m>.
       Show that <m>S</m> is orthogonal and hence linearly independent.
       </p>
     </statement>
     <solution>
       <p>
-        Using the trigonometric identities
+        First observe that
+        <md>
+          <mrow> \angvec{1,1} \amp = \int_0^{2\pi} 1\, dx=2\pi </mrow>
+          <mrow>\angvec{1, \cos n x} \amp= \int_0^{2\pi}\cos n x\, dx=0 </mrow>
+          <mrow>\angvec{1, \sin n x} \amp= \int_0^{2\pi}\sin n x\, dx=0 </mrow>
+        </md>
+        for all <m>n</m>. (Note: since <m>\angvec{1,1}=2\pi\ne 1</m>, the set <m>S</m> is not orthonormal. )
+        Next, using the trigonometric identities
         <md>
           <mrow>\cos\alpha\cos\beta \amp =\frac{1}{2}(\cos(\alpha-\beta)+\cos(\alpha+\beta))</mrow>
           <mrow> \sin\alpha\sin\beta  \amp=\frac{1}{2}(\cos(\alpha-\beta)-\cos(\alpha+\beta)) </mrow>
           <mrow> \sin\alpha\cos\beta \amp =\frac{1}{2}(\sin(\alpha-\beta)+\sin(\alpha+\beta)) </mrow>
         </md>
-        we easily compute
+        it follows that
         <md>
           <mrow>\langle \cos(nx),\cos(mx)\rangle=\int_0^{2\pi}\cos(nx)\cos(mx)\, dx\amp =\begin{cases} 0\amp  \text{ if \(n\ne m\) }</mrow>
           <mrow>\pi\amp  \text{ if \(n=m\) }  \end{cases}</mrow>
           <mrow>\langle \sin(nx),\sin(mx)\rangle=\int_0^{2\pi}\sin(nx)\sin(mx)\, dx\amp =\begin{cases} 0\amp  \text{ if \(n\ne m\) }</mrow>
           <mrow>\pi\amp  \text{ if \(n=m\) }  \end{cases}</mrow>
           <mrow>\langle \cos(nx),\sin(mx)\rangle=\int_0^{2\pi}\cos(nx)\sin(mx)\, dx\amp =0 \text{ for any \(n,m\) }</mrow>
-        </md>
+        </md>.
       </p>
     </solution>
   </example>
@@ -315,7 +323,7 @@
     </statement>
   </definition>
   </subsection>
-  
+
 
   <xi:include href="./s_orthogonal_bases_ex.ptx"/>
 </section>
