@@ -53,8 +53,11 @@
   </introduction>
   <subsection xml:id="ss_matrix_reps">
     <title>Matrix representations of linear transformations</title>
-
+    <p>
+      Given a linear transformation <m>T\colon V\rightarrow W</m> and choice of ordered bases <m>B</m> and <m>B'</m> of <m>V</m> and <m>W</m>, respectively, we define the matrix <m>A=[T]_B^{B'}</m> representing <m>T</m> column by column, using a familiar looking formula.
+    </p>
   <definition xml:id="d_matrix_representation">
+    <title>Matrix representations of linear transformations</title>
     <statement>
       <p>
         Let <m>V</m> and <m>W</m> be vector spaces with ordered bases <m>B=(\boldv_1, \boldv_2, \dots, \boldv_n)</m> and <m>B'=(\boldw_1, \boldw_2, \dots, \boldw_m)</m>, respectively.  Given a linear transformation <m>T\colon V\rightarrow W</m>, the <term>matrix representing <m>T</m> with respect to <m>B</m> and <m>B'</m></term>, is the <m>m\times n</m> matrix <m>[T]_B^{B'}</m> whose <m>j</m>-th column is <m>[T(\boldv_j)]_{B'}</m>, considered as a column vector: <ie />,
@@ -68,6 +71,65 @@
     </p>
   </statement>
 </definition>
+<example>
+  <statement>
+    <p>
+      Consider the linear transformation <m>T\colon P_{3}\rightarrow P_{2}</m> defined as <m>T(p(x))=p'(x)</m>.
+      Compute <m>A=[T]_{B}^{B'}</m>,
+      where <m>B</m> and <m>B'</m> are the standard bases for <m>P_3</m> and <m>P_2</m>,
+      respectively.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      The matrix <m>A</m> will be <m>3\times 4</m>.
+      Denote by <m>\boldc_j</m> the <m>j</m>-th column of <m>A</m>.
+      We use the formula for <m>\boldc_j</m>:
+      <md>
+      <mrow>\boldc_1\amp =[T(1)]_{B'}=[0]_{B'}=\begin{bmatrix} 0</mrow>
+      <mrow>0</mrow>
+      <mrow>0 \end{bmatrix} \amp \boldc_2\amp =[T(x)]_{B'}=[1]_{B'}=\begin{bmatrix} 1</mrow>
+      <mrow>0</mrow>
+      <mrow>0 \end{bmatrix}</mrow>
+      <mrow>\boldc_3\amp =[T(x^2)]_{B'}=[2x]_{B'}=\begin{bmatrix} 0</mrow>
+      <mrow>2</mrow>
+      <mrow>0 \end{bmatrix} \amp \boldc_4\amp =[T(x^3)]_{B'}=[3x^2]_{B'}=\begin{bmatrix} 0</mrow>
+      <mrow>0</mrow>
+      <mrow>3 \end{bmatrix}</mrow>
+      </md>.
+      Thus <m>A=\begin{bmatrix}0\amp 1\amp 0\amp 0\\ 0\amp 0\amp 2\amp 0\\ 0\amp 0\amp 0\amp 3 \end{bmatrix}</m>.
+    </p>
+  </solution>
+</example>
+<p>
+  The formula for <m>[T]_{B}^{B'}</m> should remind you of the formula from <xref ref="cor_matrix_transformations"/> used for computing the matrix <m>A</m> satisfying <m>T=T_A</m> for a linear transformation <m>T\colon \R^n\rightarrow \R^m</m>. The next example explicates this resemblance.
+</p>
+<example xml:id="eg_matrixreps_matrixtransforms">
+  <title>Relation to matrix transformations</title>
+  <statement>
+    <p>
+    Consider a linear transformation of the form <m>T\colon \R^n\rightarrow \R^m</m>. This is the special case where we have the domain <m>V</m> and codomain <m>W</m> of <m>T</m> both equal to spaces of tuples. We know from  <xref ref="cor_matrix_transformations"/> that <m>T=T_A</m> where <m>A</m> is the <m>m\times n</m> matrix defined as
+    <me>
+    A= \begin{bmatrix}\vert\amp \vert\amp  \amp \vert \\ T(\bolde_1)\amp  T(\bolde_2)\amp \cdots \amp T(\bolde_n)\\ \vert\amp \vert\amp  \amp \vert \end{bmatrix}
+    </me>.
+    Let <m>B</m> and <m>B'</m> be the standard ordered bases of <m>\R^n</m> and <m>\R^m</m>, respectively. We claim that <m>A=[T]_{B}^{B'}</m>: <ie />, <m>A</m> is the matrix representation of <m>T</m> obtained by choosing the standard bases of <m>\R^n</m> and <m>\R^m</m>. To prove the claim, we observe that for all <m>1\leq j\leq n</m> the <m>j</m>-th columns of <m>A</m> and <m>[T]_B^{B'}</m> are equal: <ie />, <m>T(\bolde_j)=[T(\bolde_j)]_{B'}</m>.
+    This is a result of the fact that for all vectors <m>\boldw\in \R^m</m> we have <m>[\boldw]_{B'}=\boldw</m>: that is, the coordinate vector of a vector <m>\boldw\in \R^m</m> with respect to the <em>standard basis</em> is just <m>\boldw</m> itself. (See <xref ref="eg_coordinatevector_standard"/>).
+  </p>
+  </statement>
+</example>
+    <remark xml:id="rm_better_basis">
+  <statement>
+    <p>
+      According to <xref ref="eg_matrixreps_matrixtransforms"/>, given a linear transformation <m>T\colon \R^n\rightarrow \R^m</m>, the matrix <m>A</m> such that <m>T=T_A</m> is just one way of representing <m>T</m>: namely, the representation with respect to the standard bases of <m>\R^n</m> and <m>\R^m</m>. This begs the question of whether a different choice of bases might give rise to a more convenient matrix representation of <m>T</m>. The answer is yes, as we will see over the course of this chapter.
+    </p>
+  </statement>
+</remark>
+</subsection>
+<subsection xml:id="ss_matrixreps_models">
+  <title>Matrix representations as models</title>
+<p>
+  Before moving to more examples, we describe in what precise sense the matrix <m>A=[T]_B^{B'}</m> models the original linear transformation <m>T\colon V\rightarrow W</m>, and how we can use <m>A</m> to answer questions about <m>T</m>. The next theorem is key to understanding this.
+</p>
 <theorem xml:id="th_matrixrep">
   <statement>
     <p>
@@ -139,19 +201,16 @@
   <title>Uniqueness of <m>[T]_B^{B'}</m></title>
   <statement>
     <p>
-      The uniqueness claim of <xref ref="th_matrixrep"/> provides an alternative way of computing <m>[T]_{B}^{B'}</m>: namely, simply find an  <m>m\times n</m> matrix <m>A</m> that satisfies
+      The uniqueness claim of <xref ref="th_matrixrep"/> provides an alternative way of computing <m>[T]_{B}^{B'}</m> that can be useful in certain situations: namely, simply provide an <m>m\times n</m> matrix <m>A</m> that satisfies the defining property
       <me>
         A[\boldv]_B=[T(\boldv)]_{B'}
       </me>
-      for all <m>\boldv\in V</m>. Since there is only one such matrix, we must have <m>A=[T]_B^{B'}</m>.
+      for all <m>\boldv\in V</m>. Since there is only one such matrix, we must have <m>A=[T]_B^{B'}</m> in this case.
     </p>
   </statement>
 </remark>
-<remark xml:id="rm_commutative_diagram">
-  <title>Commutative diagram for <m>[T]_B^{B'}</m></title>
-  <statement>
     <p>
-      Let <m>T\colon V\rightarrow W</m>, <m>B</m>, and <m>B'</m> be as in <xref ref="th_matrixrep"/>. The defining property of <m>[T]_B^{B'}</m> (<xref ref="eq_matrixrep_prop"/>) can be summarized by saying that the following diagram is <em>commutative</em>.
+      Let <m>T\colon V\rightarrow W</m>, <m>B</m>, and <m>B'</m> be as in <xref ref="th_matrixrep"/>. The defining property <xref ref="eq_matrixrep_prop"/> of <m>[T]_B^{B'}</m> can be summarized by saying that the following diagram is <em>commutative</em>.
     </p>
     <figure xml:id="fig_comm_diag">
       <caption>Commutative diagram for <m>[T]_B^{B'}</m></caption>
@@ -168,107 +227,51 @@
       <caption>Commutative diagram for <m>[T]_B^{B'}</m></caption>
       <image xml:id="im_comm_diag" width="30%" source="./images/im_comm_diag.svg" />
     </figure> -->
-    <p>
-      That the diagram is commutative means that starting with an element <m>\boldv\in V</m> in the top left of the diagram, whether we travel to the bottom right of the diagram either by first applying <m>T</m> and then applying <m>[\hspace{5pt}]_{B'}</m> (<q>go right, then down</q>), or else by first applying <m>[\hspace{5pt}]_B</m> and then applying <m>[T]_B^{B'}</m> (<q>go down, then right</q>), we get the same result! (The bottom map should technically be labeled <m>T_A</m>, where <m>A=[T]_B^{B'}</m>, but this would detract from the elegance of the diagram.)
+      <p>
+        The diagram being commutative here means that starting with an element <m>\boldv\in V</m> in the top left of the diagram, whether we travel to the bottom right of the diagram either by first applying <m>T</m> and then applying <m>[\hspace{5pt}]_{B'}</m> (<q>go right, then down</q>), or else by first applying <m>[\hspace{5pt}]_B</m> and then applying <m>[T]_B^{B'}</m> (<q>go down, then right</q>), we get the same result! (The bottom map should technically be labeled <m>T_A</m>, where <m>A=[T]_B^{B'}</m>, but this would detract from the elegance of the diagram.)
     </p>
-
-  </statement>
-</remark>
-    <remark xml:id="rm_matrixreps_model">
-  <title>How <m>[T]_B^{B'}</m> represents <m>T</m></title>
-  <statement>
     <p>
-      In what precise sense does the matrix <m>A=[T]_{B}^{B'}</m> represent or model the linear transformation <m>T</m>? To answer this question we enumerate the key features of <xref ref="fig_comm_diag"/>:
-      <ul>
-        <li>
-          <p>
-            The diagram is <em>commutative</em>: <ie />,
-            <me>
-              A[\boldv]_B=[T(\boldv)]_{B}^{B'}
-            </me>
-            for all <m>\boldv\in V</m>.
-          </p>
-        </li>
-        <li>
-          <p>
-            The vertical coordinate vector maps are <em>isomorphisms</em>.
-          </p>
-        </li>
-      </ul>
-      These two properties together allow us to translate any linear algebraic fact about <m>T</m> to an equivalent fact about the matrix <m>A</m>. We list a few here:
-      <ul>
-        <li>
-          <p>
-            <m>\boldv\in \NS T</m> if and only if <m>[\boldv]_B\in \NS A</m>
-          </p>
-        </li>
-        <li>
-          <p>
-            <m>\boldw\in \im T</m> if and only if <m>[\boldw]_{B'}\in \CS A=\im_{T_A}</m>
-          </p>
-        </li>
-        <li>
-          <p>
-            <m>\{\boldv_1,\boldv_2,\dots, \boldv_r\}</m> is a basis of <m>\NS T</m> if and only if <m>\{[\boldv_1]_B, [\boldv_2]_B, \dots, [\boldv_r]_B\}</m> is a basis of <m>\NS A</m>
-          </p>
-        </li>
-        <li>
-          <p>
-            <m>\{\boldw_1,\boldw_2,\dots, \boldw_s\}</m> is a basis of <m>\im T</m> if and only if <m>\{[\boldw_1]_{B'}, [\boldw_2]_{B'}, \dots, [\boldv_s]_{B'}\}</m> is a basis of <m>\CS A=\im_{T_A}</m>.
-          </p>
-        </li>
-        <li>
-          <p>
-            <m>\nullity T=\nullity A</m> and <m>\rank T=\rank A</m>
-          </p>
-        </li>
-        <li>
-          <p>
-            <m>T</m> is an isomorphism if and only if <m>A</m> is invertible.
-          </p>
-        </li>
-      </ul>
+      Besides commutativity, the other import feature of <xref ref="fig_comm_diag"/> is that the two vertical coordinate transformations identify the domain and codomain of <m>T</m> with the familiar spaces <m>\R^n</m> and <m>\R^m</m> in a one-to-one manner. (Using the language of <xref ref="s_isom"/>, these maps are isomorphisms.)
+      These properties together allow us to translate any linear algebraic question about <m>T</m> to an equivalent question about the matrix <m>A</m>, as the following theorem indicates.
     </p>
-  </statement>
-</remark>
+      <theorem xml:id="th_matrixreps_model">
+        <title>Computing with matrix representations</title>
+        <statement>
+          <p>
+            Let <m>T\colon V\rightarrow W</m> be linear, and let <m>B</m> and <m>B'</m> be ordered bases of <m>V</m> and <m>W</m>, respectively. The matrix   <m>A=[T]_{B}^{B'}</m> satisfies the following properties:
+          </p>
+          <ol>
+            <li>
+              <p>
+                <m>\boldv\in \NS T</m> if and only if <m>[\boldv]_B\in \NS A</m>;
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\boldw\in \im T</m> if and only if <m>[\boldw]_{B'}\in \CS A</m>;
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\{\boldv_1,\boldv_2,\dots, \boldv_r\}</m> is a basis of <m>\NS T</m> if and only if <m>\{[\boldv_1]_B, [\boldv_2]_B, \dots, [\boldv_r]_B\}</m> is a basis of <m>\NS A</m>;
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\{\boldw_1,\boldw_2,\dots, \boldw_s\}</m> is a basis of <m>\im T</m> if and only if <m>\{[\boldw_1]_{B'}, [\boldw_2]_{B'}, \dots, [\boldv_s]_{B'}\}</m> is a basis of <m>\CS A=\im_{T_A}</m>;
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\nullity T=\nullity A</m> and <m>\rank T=\rank A</m>.
+              </p>
+            </li>
+          </ol>
+        </statement>
+      </theorem>
 
 </subsection>
 
-<subsection>
-  <title>Example</title>
-  <p>
-    Define <m>T\colon P_{3}\rightarrow P_{2}</m> by <m>T(p(x))=p'(x)</m>.
-    Compute <m>A=[T]_{B}^{B'}</m>,
-    where <m>B</m> and <m>B'</m> are the standard bases for <m>P_3</m> and <m>P_2</m>,
-    respectively.
-  </p>
-  <p>
-    Use <m>A</m> to determine <m>\NS T</m> and
-    <m>\range T</m>. \begin{bsolution} The matrix <m>A</m> will be <m>3\times 4</m>.
-    Denote by <m>\boldc_j</m> the <m>j</m>-th column of <m>A</m>.
-    We use the formula for <m>\boldc_j</m>:
-    <md>
-    <mrow>\boldc_1\amp =[T(1)]_{B'}=[0]_{B'}=\begin{bmatrix} 0</mrow>
-    <mrow>0</mrow>
-    <mrow>0 \end{bmatrix} \amp \boldc_2\amp =[T(x)]_{B'}=[1]_{B'}=\begin{bmatrix} 1</mrow>
-    <mrow>0</mrow>
-    <mrow>0 \end{bmatrix}</mrow>
-    <mrow>\boldc_3\amp =[T(x^2)]_{B'}=[2x]_{B'}=\begin{bmatrix} 0</mrow>
-    <mrow>2</mrow>
-    <mrow>0 \end{bmatrix} \amp \boldc_4\amp =[T(x^3)]_{B'}=[3x^2]_{B'}=\begin{bmatrix} 0</mrow>
-    <mrow>0</mrow>
-    <mrow>3 \end{bmatrix}</mrow>
-    </md>
-  </p>
-  <p>
-    Thus <m>A=\begin{bmatrix}0\amp 1\amp 0\amp 0\\ 0\amp 0\amp 2\amp 0\\ 0\amp 0\amp 0\amp 3 \end{bmatrix}</m>.
-  </p>
-  <p>
-    We see easily that <m>\NS A =\Span(\{(1,0,0,0)\})</m> and <m>\range A=\CS A=\R^3</m>.
-    Translating everything back to the original spaces,
-    we see that <m>\NS(T)=\Span(\{1\})=\{\text{ constant poly.'s } \}</m> and <m>\range(T)=P_2</m>. \end{bsolution}
-  </p>
-</subsection>
 <subsection>
   <title>Example</title>
   <p>
@@ -315,27 +318,7 @@ B'=\{
       </p>
       <subsection>
         <title><m>\R^n</m> revisited</title>
-        <p>
-          Consider the <em>special case</em>
-          of the form <m>T\colon \R^n\rightarrow \R^m</m>.
-          We know that in this case we have <m>T=T_A</m>, where
-          <me>
-          A= \begin{bmatrix}\vert\amp \vert\amp \cdots \amp \vert \\ T(\bolde_1)\amp  T(\bolde_2)\amp \cdots \amp T(\bolde_n)\\ \vert\amp \vert\amp \cdots \amp \vert \end{bmatrix}
-          </me>.
-        </p>
-        <p>
-          In light of our recent discussion we recognize this as simply <m>A=[T]_{B}^{B'}</m>,
-          where <m>B,B'</m> are the <em>standard bases</em>
-          of <m>\R^n</m> and <m>\R^m</m>.
-        </p>
-        <p>
-          This is certainly the most direct way of associating a matrix to the transformation <m>T</m> in this case,
-          but it begs the question as to whether another choice of bases gives us a
-          <em>better</em> matrix representation!
-        </p>
-        <p>
-          Example follows.
-        </p>
+
       </subsection>
       <subsection>
         <title>Example</title>
