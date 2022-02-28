@@ -1,4 +1,4 @@
-<section xml:id="s_matrixreps">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_matrixreps">
   <title>Matrix representations of linear transformations</title>
   <introduction>
     <p>
@@ -412,4 +412,6 @@ B'=\{
       <p>
         Wouldn't it have been easier just to compute
       </p>
-    </section>
+  <xi:include href="./s_matrixreps_ex.ptx"/>
+
+  </section>

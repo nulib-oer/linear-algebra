@@ -23,7 +23,7 @@
    <me>
      \boldv=c_1\boldv_1+c_2\boldv_2+\cdots c_n\boldv_n
    </me>.
-   This observation has the following consequence: given any <m>n</m>-dimensional vector space <m>V</m>, no matter how exotic, once we choose a basis <m>B</m> of <m>V</m>, we can reduce any and all linear algebraic questions or computations about <m>V</m> to a corresponding question in <m>\R^n</m>. We will elaborate this idea further in <xref ref="s_coordinatevectors_isomorphisms"/>.
+   This observation has the following consequence: given any <m>n</m>-dimensional vector space <m>V</m>, no matter how exotic, once we choose a basis <m>B</m> of <m>V</m>, we can reduce any and all linear algebraic questions or computations about <m>V</m> to a corresponding question in <m>\R^n</m>. We will elaborate this idea further in <xref ref="s_coordinatevectors"/>.
   </p>
 </introduction>
 

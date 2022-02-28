@@ -1,4 +1,4 @@
-<section xml:id="s_coordinatevectors_isomorphisms">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_coordinatevectors" >
   <title>Coordinate vectors</title>
   <introduction>
     <p>
@@ -517,5 +517,5 @@
 
 
   </subsection>
-
+<xi:include href="./s_coordinatevectors_ex.ptx"/>
 </section>
