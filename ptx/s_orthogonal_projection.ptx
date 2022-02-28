@@ -766,17 +766,22 @@ The last two computations, <m>\proj{(-2,-4,-2)}{\ell}=(-2,-4,-2)</m> and <m>\pro
       Of course in most situations the provided points do not lie on a line, and thus there is no solution <m>\boldx</m> to the given matrix equation <m>A\boldx=\boldy</m>. When this is the case we can use the theory of orthogonal projection to find what is called a <em>least-squares</em> solution, which we now describe in detail.
     </p>
     <p>
-      Here is the general setup: we are given an <m>m\times n</m> matrix <m>A</m> and an <m>m\times 1</m> column vector <m>\boldy</m>, and we consider the matrix equation
-      <men xml:id="eq_least-squares_orig">A\boldx=\boldy</men>.
-      First observe, using <xref ref="th_fundamental_spaces"/>, that <xref ref="eq_least-squares_orig"/> has a solution if and only if <m>\boldy\in \CS A\subseteq \R^m</m>. Let <m>W=\CS A</m>, and let <m>\hat{\boldy}=\proj{\boldy}{W}</m>, where orthogonal projection is taken with respect to the dot product on <m>\R^</m>. By definition of <m>\operatorname{proj}_W</m>,  <m>\hat{\boldy}\in W=\CS A</m>, and thus there is a solution <m>\hat{\boldx}</m>
-      to the adjusted matrix equation
+      The least-squares method applies to any matrix equation
+      <men xml:id="eq_least-squares_orig">\underset{m\times n}{A}\, \underset{n\times 1}{\boldx}=\underset{m\times 1}{\boldy}</men>,
+      where <m>A</m> and <m>\boldy</m> are given, and <m>\boldx</m> is treated as an unknown vector. Recall that
+      <md>
+        <mrow>A\boldx=\boldy \text{ has a solution } \amp\iff \boldy\in \CS A \amp (<xref ref="th_fundamental_spaces"/>) </mrow>
+      </md>.
+      When <m>\boldy\notin \CS A</m>, and hence <xref ref="eq_least-squares_orig"/> does not have a solution, the least-squares method proceeds by replacing <m>\boldy</m> with the element of <m>W=\CS A</m> closest to it: that is, with its <em>orthogonal projection</em> onto <m>W</m>.  Let <m>\hat{\boldy}=\proj{\boldy}{W}</m>, where orthogonal projection is taken with respect to the dot product on <m>\R^m</m>, and consider the adjusted matrix equation
       <men xml:id="eq_least-squares_new">
-        A\hat{\boldx}=\hat{\boldy}
+        A\boldx=\hat{\boldy}
       </men>.
-      We call <m>\hat{\boldx}</m> a <term>least-squares</term> solution to <xref ref="eq_least-squares_orig"/>. Observe, that <m>\hat{\boldx}</m> does <em>not</em> necessarily satisfy <m>A\hat{\boldx}=\boldy</m>; rather, it satisfies <m>A\hat{\boldx}=\hat{\boldy}</m>. What makes this a <q>least-squares</q> solution is that <m>\hat{\boldy}=\proj{\boldy}{W}</m> is the element of <m>W=\CS A</m> closest to <m>\boldy</m>. With respect to the dot product, this means that  <m>\hat{\boldy}</m> minimizes the quantity
+      By definition of <m>\operatorname{proj}_W</m>,  we have <m>\hat{\boldy}\in W=\CS A</m>, and thus there is a solution <m>\hat{\boldx}</m> to <xref ref="eq_least-squares_new"/>.
+      We call <m>\hat{\boldx}</m> a <term>least-squares</term> solution to <xref ref="eq_least-squares_orig"/>. Observe that <m>\hat{\boldx}</m> does <em>not</em> necessarily satisfy <m>A\hat{\boldx}=\boldy</m>; rather, it satisfies <m>A\hat{\boldx}=\hat{\boldy}</m>. What makes this a <q>least-squares</q> solution is that <m>A\hat{\boldx}=\hat{\boldy}</m> is the element of <m>W=\CS A</m> closest to <m>\boldy</m>. With respect to the dot product, this means that a least-squares solution <m>\hat{\boldx}</m> minimizes the quantity
       <me>
-        \norm{\boldy-\hat{\boldy}}=\sqrt{(y_1-y_1')^2+(y_2-y_2')^2+\cdots +(y_n-y_n')^2}
-      </me>.
+        \norm{\boldy-A\boldx}=\sqrt{(y_1-y_1')^2+(y_2-y_2')^2+\cdots +(y_n-y_n')^2}
+      </me>,
+      among all <m>\boldx\in \R^n</m>.
     </p>
 <example xml:id="eg_least-squares">
   <title>Best fitting line</title>
@@ -835,7 +840,7 @@ The last two computations, <m>\proj{(-2,-4,-2)}{\ell}=(-2,-4,-2)</m> and <m>\pro
       <p>
         Given an <m>m\times n</m> matrix <m>A</m> and <m>m\times 1</m> column vector <m>\boldy</m>, a vector <m>\hat{\boldx}</m> is a least-squares solution to <m>A\boldx=\boldy</m> if and only if
         <men xml:id="eq_leastsquares_matrix_equation">
-          A^TA\hat{\boldx}=A^T\boldy
+          A^TA\boldx=A^T\boldy
         </men>.
           In other words, we can find a least-squares solution by solving the matrix equation <xref ref="eq_leastsquares_matrix_equation"/> directly.
       </p>
