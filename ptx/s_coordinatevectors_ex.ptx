@@ -52,7 +52,7 @@
   <exercise>
     <statement>
       <p>
-        <m>V=\R^3</m> with dot product; <m>B=\left((1,1,1),(1,-1,0),(1,1,2)\right)</m>. Compute <m>[(-3,2,4)]_B</m>.
+        <m>V=\R^3</m> with dot product; <m>B=\left((1,1,1),(1,-1,0),(1,1,-2)\right)</m>. Compute <m>[(-3,2,4)]_B</m>.
       </p>
     </statement>
   </exercise>

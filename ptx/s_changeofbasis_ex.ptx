@@ -8,11 +8,60 @@
   <exercise>
     <statement>
       <p>
-      <m>V=\R^2</m>, <m>B=(\bolde_1, \bolde_2)</m>, <m>B'=()</m>  
+      <m>V=\R^2</m>, <m>B=(\bolde_1, \bolde_2)</m>, <m>B'=((3,4),(1,1))</m>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+      <m>V=\R^2</m>, <m>B=((1,2), (2,1))</m>, <m>B'=((-1,1),(2,1))</m>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+      <m>V=\R^3</m>, <m>B=(\bolde_1, \bolde_2, \bolde_3)</m>, <m>B'=(\bolde_3, \bolde_2, \bolde_1)</m>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+      <m>V=P_2</m>, <m>B=(x^2, x, 1)</m>, <m>B'=((x-2)^2, (x-2), 1)</m>
       </p>
     </statement>
   </exercise>
   </exercisegroup>
+  <exercise>
+    <statement>
+      <p>
+        Suppose <m>B=(\boldv_1, \boldv_2)</m> and <m>B'=(\boldw_1, \boldw_2)</m> are two bases for the space <m>V</m>.
+        <ol>
+          <li>
+            <p>
+              Let <m>\boldv=-3\boldv_1+2\boldv_2</m>. Compute <m>[\boldv]_B</m> and <m>[\boldv]_{B'}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Let <m>\boldw=\boldw_1+2\boldw_2</m>. Compute <m>[\boldw]_B</m> and <m>[\boldw]_{B'}</m>. 
+            </p>
+          </li>
+        </ol>
+        <me>
+          \underset{B}
+        </me>
+
+      </p>
+    </statement>
+    <solution>
+      <p>
+
+      </p>
+    </solution>
+  </exercise>
 
 
 </exercises>

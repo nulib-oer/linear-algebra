@@ -53,7 +53,7 @@
         \underset{B\rightarrow B'}{P}=
         \begin{bmatrix}
           \vert \amp \vert \amp \amp \vert \\
-          [\boldv_1]_{B'} \amp [\boldv_2]_{B'}\amp \dots \amp [\boldv_n]_{B}\\
+          \phantom{v}[\boldv_1]_{B'} \amp \phantom{v}[\boldv_2]_{B'}\amp \dots \amp \phantom{v}[\boldv_n]_{B}\\
           \vert \amp \vert \amp \amp \vert
         \end{bmatrix}
         </me>.
@@ -69,7 +69,7 @@
         <ol>
           <li>
             <p>
-              Let <m>\id_V\colon V\rightarrow V</m> be the identity transformation (<xref ref="d_transform_zero_identity"/>) defined as <m>\id_V(\boldv)=\boldv</m> for all <m>\boldv\in V</m>. We have
+              Recall that <m>\id_V\colon V\rightarrow V</m> is the identity transformation (<xref ref="d_transform_zero_identity"/>), defined as <m>\id_V(\boldv)=\boldv</m> for all <m>\boldv\in V</m>. We have
               <me>
                 \underset{B\rightarrow B'}{P}=[\id_V]_{B}^{B'}
               </me>.
@@ -81,7 +81,7 @@
               <men xml:id="eq_changebasis_matrix_prop">
               \underset{B\rightarrow B'}{P}[\boldv]_B=[\boldv]_{B'}
             </men>.
-              In other words, to convert the <m>B</m>-coordinates of a vector <m>\boldv\in V</m> to <m>B'</m>-coordinates, simply multiply on the left by <m>\underset{B\rightarrow B'}{P}</m>.
+              In other words, to convert the <m>B</m>-coordinates of a vector <m>\boldv\in V</m> to <m>B'</m>-coordinates, simply multiply on the left by the matrix  <m>\underset{B\rightarrow B'}{P}</m>.
             </p>
           </li>
         </ol>
