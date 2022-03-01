@@ -1,4 +1,4 @@
-<section xml:id="s_changeofbasis">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_changeofbasis">
   <title>Change of basis</title>
   <introduction>
     <p>
@@ -450,5 +450,5 @@
       <m>\underset{B'\rightarrow B}{P}</m> was easy to compute. )
     </p>
   </subsection>
-
+<xi:include href="./s_changeofbasis_ex.ptx"/>
 </section>

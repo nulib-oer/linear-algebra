@@ -13,7 +13,7 @@
   <title>Orthogonal complement</title>
   <introduction>
     <p>
-      We being by making sense of what it means for a vector to be orthogonal to a subspace.
+      We begin by making sense of what it means for a vector to be orthogonal to a subspace.
     </p>
   </introduction>
   <definition xml:id="d_orthogonal_complement">
