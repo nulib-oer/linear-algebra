@@ -1,0 +1,18 @@
+<exercises xml:id="s_changeofbasis_ex">
+  <exercisegroup>
+  <introduction>
+  <p>
+  In each exercise a vector space <m>V</m> is given along with two ordered bases <m>B</m> and <m>B'</m>. Compute <m>\underset{B\rightarrow B'}{P}</m> and <m>\underset{B'\rightarrow B}{P}</m>.
+  </p>
+  </introduction>
+  <exercise>
+    <statement>
+      <p>
+      <m>V=\R^2</m>, <m>B=(\bolde_1, \bolde_2)</m>, <m>B'=()</m>  
+      </p>
+    </statement>
+  </exercise>
+  </exercisegroup>
+
+
+</exercises>

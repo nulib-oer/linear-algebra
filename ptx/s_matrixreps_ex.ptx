@@ -1,9 +1,10 @@
 <exercises xml:id="s_matrixreps_ex">
   <exercisegroup>
-    <title></title>
     <introduction>
+    <p>
     Compute <m>[T]_B^{B'}</m> for each provided <m>T\colon V\rightarrow W</m> and choice of bases <m>B</m> and <m>B'</m> of <m>V</m> and <m>W</m>. You may assume that the given <m>T</m> is a linear transformation.
-    </introduction>
+  </p>
+</introduction>
     <exercise>
       <statement>
         <p>

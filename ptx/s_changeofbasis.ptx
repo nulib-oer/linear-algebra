@@ -38,12 +38,12 @@
 
   </introduction>
 <subsection xml:id="ss_change_of_basis" >
-  <title>Change of basis matrices</title>
+  <title>Change of basis matrix</title>
   <definition xml:id="d_change_of_basis">
     <title>Change of basis matrix</title>
     <idx><h>change of basis matrix</h></idx>
     <notation>
-      <usage><m>[P]_B^{B'}</m></usage>
+      <usage><m>\underset{B\rightarrow B'}{P}</m></usage>
       <description>change of basis matrix</description>
     </notation>
     <statement>
@@ -53,7 +53,8 @@
         \underset{B\rightarrow B'}{P}=
         \begin{bmatrix}
           \vert \amp \vert \amp \amp \vert \\
-          [\boldv_1]_{B'} \amp [\boldv_2]_{B'}\amp \dots \amp [\boldv_n]_{B}
+          [\boldv_1]_{B'} \amp [\boldv_2]_{B'}\amp \dots \amp [\boldv_n]_{B}\\
+          \vert \amp \vert \amp \amp \vert
         \end{bmatrix}
         </me>.
         In other words, the <m>j</m>-th column of <m>\underset{B\rightarrow B'}{P}</m> is obtained by computing the coordinate vector of the <m>j</m>-th element of the <em>original</em> basis <m>B</m> with respect to the <em>new</em> basis <m>B'</m>.
@@ -64,11 +65,27 @@
     <title>Change of basis for coordinate vectors</title>
     <statement>
       <p>
-        Let <m>B</m> and <m>B'</m> be two ordered bases of the <m>n</m>-dimensional vector space <m>V</m>. For all <m>\boldv\in V</m> we have
-        <me>
-        \underset{B\rightarrow B'}{P}[\boldv]_B=[\boldv]_{B'}
-        </me>.
-        In other words, to convert the <m>B</m>-coordinates of a vector <m>\boldv\in V</m> to <m>B'</m>-coordinates, simply multiply on the left by <m>\underset{B\rightarrow B'}{P}</m>.
+        Let <m>B</m> and <m>B'</m> be two ordered bases of the <m>n</m>-dimensional vector space <m>V</m>.
+        <ol>
+          <li>
+            <p>
+              Let <m>\id_V\colon V\rightarrow V</m> be the identity transformation (<xref ref="d_transform_zero_identity"/>) defined as <m>\id_V(\boldv)=\boldv</m> for all <m>\boldv\in V</m>. We have
+              <me>
+                \underset{B\rightarrow B'}{P}=[\id_V]_{B}^{B'}
+              </me>.
+            </p>
+          </li>
+          <li>
+            <p>
+              For all <m>\boldv\in V</m> we have
+              <men xml:id="eq_changebasis_matrix_prop">
+              \underset{B\rightarrow B'}{P}[\boldv]_B=[\boldv]_{B'}
+            </men>.
+              In other words, to convert the <m>B</m>-coordinates of a vector <m>\boldv\in V</m> to <m>B'</m>-coordinates, simply multiply on the left by <m>\underset{B\rightarrow B'}{P}</m>.
+            </p>
+          </li>
+        </ol>
+
       </p>
     </statement>
     <proof>
