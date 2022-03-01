@@ -371,7 +371,7 @@
           -1\amp -1\amp 2
         \end{amatrix}
         </me>.
-        Now consider a nonstandard basis <m>B'</m> of <m>\R^3</m> constructed with an eye toward the geometry involved in this projection operator. Namely, we begin with an orthogonal basis of the plane <m>W</m> and extend to an orthogonal basis of <m>\R^3</m>. The vectors <m>(1,-1,0), (1,1,-22)</m> clearly form an orthogonal basis of <m>W</m>. To complete the basis we simply add the normal vector <m>\boldn</m>:
+        Now consider a nonstandard basis <m>B'</m> of <m>\R^3</m> constructed with an eye toward the geometry involved in the definition of this projection operator. Namely, we begin with an orthogonal basis of the plane <m>W</m> and extend to an orthogonal basis of <m>\R^3</m>. The vectors <m>(1,-1,0), (1,1,-22)</m> clearly form an orthogonal basis of <m>W</m>. To complete the basis we simply add the normal vector <m>\boldn</m>:
         <me>
         B'=\left( \underset{\boldv_1}{(1,-1,0)}, \underset{\boldv_2}{(1,1,-2)}, \underset{\boldv_3}{(1,1,1)} \right)
         </me>.
