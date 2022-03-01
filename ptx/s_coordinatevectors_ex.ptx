@@ -131,7 +131,7 @@
       <ol>
         <li>
           <p>
-            Use one of the techniques described in <xref ref="proc_contract_extend_general"/> to contract <m>S</m> to a basis of <m>W=\Span S</m>. To begin, choose your favorite ordered basis of <m>P_2</m>.
+            Use one of the techniques described in <xref ref="proc_contract_extend_general"/> to contract <m>S</m> to a basis of <m>W=\Span S</m>. To begin, choose your favorite ordered basis of <m>P_3</m>.
           </p>
         </li>
         <li>
