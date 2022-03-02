@@ -195,7 +195,7 @@
           <p>
             The matrix <m>\underset{B\rightarrow B'}{P}</m> is invertible. In fact, we have
             <me>
-            \underset{B\rightarrow B'}{P}^{-1}=\underset{B'\rightarrow B}{P}
+            \left(\underset{B\rightarrow B'}{P}\right)^{-1}=\underset{B'\rightarrow B}{P}
             </me>
           </p>
         </li>
@@ -247,7 +247,144 @@
       \end{bsolution}
     </p>
   </subsection>
+<subsection xml:id="ss_changebasis_orthonormal">
+  <title>Working with orthonormal bases</title>
+  <p>
+    Let <m>B</m> and <m>B'</m> be ordered bases of an <m>n</m>-dimensional inner product space <m>(V,\langle\, , \rangle)</m>. Not surprisingly, if one or more of <m>B</m> and <m>B'</m> are orthornormal, our change of basis computations are simplified significantly. For example, if <m>B'</m> is orthonormal (or even orthogonal), the coordinate vector computations necessary to compute <m>\underset{B\rightarrow B'}{P}</m> can be done using the inner product formula of <xref ref="th_coordinates_orthogonal"/>. Furthermore, as we see below, if both <m>B</m> and <m>B'</m> are orthonormal, then the columns of <m>\underset{B\rightarrow B'}{P}</m> form an orthonormal basis of <m>\R^n</m>, in which case we can compute <m>\underset{B'\rightarrow B}{P}</m> as
+    <me>
+      \underset{B'\rightarrow B}{P}=\left(\underset{B\rightarrow B'}{P}\right)^{-1}=\left(\underset{B\rightarrow B'}{P}\right)^T
+    </me>.
+    In other words, when <m>B</m> and <m>B'</m> are orthonormal bases, the change of basis matrix is what we call an <em>orthogonal matrix</em>.
+  </p>
+  <definition xml:id="d_orthogonal_matrix">
+    <title>Orthogonal matrices</title>
+    <statement>
+      <p>
+      An invertible <m>n\times n</m> matrix <m>A</m> is <term>orthogonal</term> if <m>A^{-1}=A^T</m>.
+      </p>
+    </statement>
+  </definition>
+      <remark xml:id="rm_orthogonal_matrices">
+    <statement>
+      <p>
+        Since for an invertible matrix <m>A</m> we have <m>(A^T)^{-1}=(A^{-1})^T</m> it follows immediately from <xref ref="d_orthogonal_matrix"/> that
+        <me>
+          A \text{ is orthogonal}\iff A^T \text{ is orthogonal} \iff A^{-1} \text{ is orthogonal}
+        </me>.
+      </p>
+    </statement>
+  </remark>
+<example>
+  <statement>
+    <p>
+      The matrix
+      <me>
+      A=\begin{amatrix}[rr]\frac{\sqrt{2}}{2}\amp -\frac{\sqrt{2}}{2}\\ \frac{\sqrt{2}}{2} \amp \frac{\sqrt{2}}{2} \end{amatrix}
+      </me> is orthogonal, as one easily checks by computing <m>A^TA</m>. Observe that the columns of <m>A</m> form an orthonormal set with respect to the dot product, as do the rows. This is not a coincidence!
+    </p>
+  </statement>
+</example>
+  <theorem xml:id="th_orthogonal_matrices">
+    <title>Orthogonal matrices</title>
+    <statement>
+      <p>
+        Let <m>A</m> be an <m>n\times n</m> matrix. The following statements are equivalent.
+      </p>
+      <ol>
+        <li>
+          <p>
+            The matrix <m>A</m> is orthogonal.
+          </p>
+        </li>
+        <li>
+          <p>
+            The columns of <m>A</m> form an orthonormal basis of <m>\R^n</m> with respect to the dot product.
+          </p>
+        </li>
+        <li>
+          <p>
+            The rows of <m>A</m> form an orthonormal basis of <m>\R^n</m> with respect to the dot product.
+          </p>
+        </li>
+      </ol>
+    </statement>
+    <proof>
+      <p>
+         Let <m>\boldr_i</m> and <m>\boldc_i</m> be the <m>i</m>-th row and column of <m>A</m>, respectively, for each <m>1\leq i\leq n</m>. From <xref ref="th_dotproduct_method"/> we see that
+        <mdn>
+          <mrow xml:id="eq_orthogonal_matrixleft">A^TA \amp=[\boldc_i\cdot \boldc_j]_{1\leq i,j\leq n} </mrow>
+          <mrow xml:id="eq_orthogonal_matrixright">AA^T \amp=[\boldr_i\cdot \boldr_j]_{1\leq i,j\leq n} </mrow>
+        </mdn>.
+        We use here that rows of <m>A^T</m> are the columns of <m>A</m>, and the columns of <m>A^T</m> are the rows of <m>A</m>. From <xref first="eq_orthogonal_matrixleft" last="eq_orthogonal_matrixright"/> it follows easily that
+        <md>
+          <mrow>A^{-1}=A^T \amp \iff A^TA=I </mrow>
+          <mrow> \amp \iff \boldc_i\cdot\boldc_j=\begin{cases} 1\amp \text{if } i=j\\ 0\amp \text{if } i\ne j\end{cases} </mrow>
+          <mrow>  \amp \iff \{\boldc_1,\boldc_2,\dots, \boldc_n\} \text{ is orthonormal}</mrow>
+          <mrow>  \amp \iff \{\boldc_1,\boldc_2,\dots, \boldc_n\} \text{ is an orthonormal basis}\amp (n=\dim\R^n)</mrow>
+        </md>,
+        and
+        <md>
+          <mrow>A^{-1}=A^T \amp \iff AA^T=I </mrow>
+          <mrow> \amp \iff \boldr_i\cdot\boldr_j=\begin{cases} 1\amp \text{if } i=j\\ 0\amp \text{if } i\ne j\end{cases} </mrow>
+          <mrow>  \amp \iff \{\boldr_1,\boldr_2,\dots, \boldr_n\} \text{ is orthonormal}</mrow>
+          <mrow>  \amp \iff \{\boldr_1,\boldr_2,\dots, \boldr_n\} \text{ is an orthonormal basis} \amp (n=\dim\R^n)</mrow>
+        </md>.
+        This proves <m>(1)\iff (2)</m> and <m>(1)\iff (3)</m>. The result follows.
+      </p>
+    </proof>
+  </theorem>
+      <remark xml:id="rm_orthogonal_matrices_misnomer">
+    <statement>
+      <p>
+        It is somewhat unfortunate that the property of being an <em>orthogonal</em> matrix is equivalent to your rows or columns forming an <em>orthonormal</em> basis. You ask: Why not simply call such matrices <em>orthonormal</em> matrices? My answer: tradition!
+      </p>
+    </statement>
+  </remark>
 
+<theorem xml:id="th_changebasis_orthonormal">
+  <title>Orthonormal change of basis</title>
+  <statement>
+    <p>
+      Let <m>(V,\langle\, , \rangle)</m> be a finite dimensional inner product space, and suppose <m>B</m> and <m>B'</m> are orthonormal bases of <m>V</m>.
+    </p>
+    <ol>
+      <li>
+        <p>
+          The matrices <m>\underset{B\rightarrow B'}{P}</m> and <m>\underset{B'\rightarrow B}{P}</m> are orthogonal.
+        </p>
+      </li>
+      <li>
+        <p>
+          We have
+          <me>
+            \underset{B'\rightarrow B}{P}=\left( \underset{B\rightarrow B'}{P} \right)^T
+          </me>.
+        </p>
+      </li>
+    </ol>
+  </statement>
+  <proof>
+    <ol>
+      <li>
+        <p>
+          Let <m>B=(\boldv_1, \boldv_2,\dots, \boldv_n)</m>. By definition, the columns of <m>\underset{B\rightarrow B'}{P}</m> are the coordinate vectors <m>[\boldv_i]_{B'}</m>, <m>1\leq i\leq n</m>. By <xref ref="ex_coordinates_orthonormal"/>, these coordinate vectors form an orthonormal subset of <m>\R^n</m>; since there are <m>n=\dim\R^n</m> of them, they form an orthonormal basis. From <xref ref="th_orthogonal_matrices"/> it follows that <m>\underset{B\rightarrow B'}{P}</m> is orthogonal.
+          Lastly, from <xref ref="rm_orthogonal_matrices"/> it follows that <m>\underset{B'\rightarrow B}{P}=\left(\underset{B\rightarrow B'}{P}\right)^{-1}</m> is also orthogonal.
+        </p>
+      </li>
+      <li>
+        <p>
+          Since <m>\underset{B\rightarrow B'}{P}</m> is orthogonal, we have
+          <me>
+            \underset{B'\rightarrow B}{P}=\left(\underset{B\rightarrow B'}{P}\right)^{-1}=\left(\underset{B\rightarrow B'}{P}\right)^T
+          </me>.
+        </p>
+      </li>
+    </ol>
+  </proof>
+
+</theorem>
+
+</subsection>
   <subsection>
     <title>Change of basis for transformations</title>
     <p>

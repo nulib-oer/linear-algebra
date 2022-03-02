@@ -282,46 +282,6 @@
       </proof>
     </corollary>
 
-
-
-  <theorem xml:id="th_orthogonal_matrices">
-    <title>Orthogonal matrices</title>
-    <statement>
-      <p>
-        Let <m>A</m> be an <m>n\times n</m> matrix. The following statements are equivalent.
-      </p>
-      <ol>
-        <li>
-          <p>
-            <m>A</m> is invertible and <m>A^{-1}=A^T</m>.
-          </p>
-        </li>
-        <li>
-          <p>
-            The columns of <m>A</m> are orthonormal.
-          </p>
-        </li>
-        <li>
-          <p>
-            The rows of <m>A</m> are orthonormal.
-          </p>
-        </li>
-        <li>
-          <p>
-            The columns (resp., rows) of <m>A</m> form an orthonormal basis of <m>\R^n</m>.
-          </p>
-        </li>
-      </ol>
-    </statement>
-  </theorem>
-  <definition xml:id="d_orthogonal_matrix">
-    <title>Orthogonal matrices</title>
-    <statement>
-      <p>
-      An <m>n\times n</m> matrix <m>A</m> is <term>orthogonal</term> if it is invertible and <m>A^{-1}=A^T</m>. Equivalently, <m>A</m> is orthogonal if its columns (or rows) are orthonormal.
-      </p>
-    </statement>
-  </definition>
   </subsection>
 
 

@@ -180,4 +180,28 @@
     </statement>
 
   </exercise>
+  <exercise xml:id="ex_coordinates_orthonormal">
+    <title>Orthonormal coordinate vectors</title>  
+    <statement>
+      <p>
+        Let <m>(V, \langle\, , \rangle)</m> be an inner product space, and suppose <m>B=(\boldv_1, \boldv_2, \dots, \boldv_n)</m> is an orthonormal ordered basis of <m>V</m>.
+      </p>
+      <ol>
+        <li>
+          <p>
+            Prove that
+            <me>
+              \langle \boldv, \boldw\rangle =[\boldv]_B\cdot [\boldw]_B
+            </me>
+            for all <m>\boldv, \boldw\in V</m>. In other words we can compute the inner product of vectors by computing the dot product of their coordinate vectors with respect to the orthonormal basis <m>B</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Prove that a set <m>S=\{\boldw_1, \boldw_2, \dots, \boldw_r\}\subseteq V</m> is orthogonal (resp. orthonormal) with respect to <m>\langle\, , \rangle</m> if and only if <m>S'=\{[\boldw_1]_B, [\boldw_2]_B, \dots, [\boldw_r]_B\subseteq \R^n</m> is orthogonal (resp. orthonormal) with respect to the dot product.
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </exercise>
 </exercises>
