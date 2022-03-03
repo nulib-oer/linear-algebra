@@ -1,23 +1,59 @@
 <section xml:id="ss_eigenvectors">
   <title>Eigenvectors and eigenvalues</title>
+  <introduction>
+    <p>
+      As we saw in <xref ref="eg_matrixreps_proj"/>, different matrix representations <m>[T]_B</m> and <m>[T]_{B'}</m> for a linear transformation <m>T\colon V\rightarrow V</m> provide different insights into the nature of <m>T</m>. Furthermore, we see from this example that if the action of <m>T</m> on a given basis is simple to describe, then so too is the matrix representation of <m>T</m> with respect to that basis.
+    </p>
+    <p>
+      A particularly agreeable situation arises when the basis <m>B=(\boldv_1, \boldv_2, \dots, \boldv_n)</m> satisfies
+      <me>
+        T(\boldv_i)=c_i\boldv_i, c_i\in \R
+      </me>
+      for all <m>1\leq i\leq n</m>. Using recipe <xref ref="eq_matrixrep_formula"/> we in this case that the corresponding matrix representation
+      <me>
+        [T]_B=\begin{bmatrix}
+          c_1\amp 0\amp \dots \amp \amp 0\\
+          0\amp c_2\amp 0\amp \dots \amp 0\\
+          \vdots  \amp \amp \amp \amp \vdots \\
+          0\amp 0\amp \dots \amp 0\amp c_n
+      \end{bmatrix}
+      </me>
+      is diagonal! Diagonal matrices are about as simple as they come: they wear all of their properties (rank, nullity, invertibility, <etc />) on their sleeve.  If we hope to find a diagonal matrix representation of <m>T</m>, then we should seek nonzero vectors <m>\boldv</m> satisfying <m>T(\boldv)=c\boldv</m> for some <m>c\in \R</m>: these are called <em>eigenvectors</em> of <m>T</m>.
+    </p>
+  </introduction>
+
   <subsection>
     <title>Eigenvectors</title>
     <p>
-      Let <m>T\colon V\rightarrow V</m> be linear.
-      We have seen that some choices of bases of <m>V</m> are better than others for representing <m>T</m> as a matrix.
+      We further motivate the notion of an eigenvector with an illustrative example.
     </p>
-    <p>
-      The ideal situation is when <m>V</m> happens to have a basis
-      <m>B=\{\boldv_1,\dots, \boldv_n\}</m> where <m>T(\boldv_i)=c_i\boldv_i</m> for all <m>i</m>.
-      The matrix <m>[T]_B</m> in this case is diagonal!
-      <me>
-      [T]_B=\begin{bmatrix}c_1\amp 0\amp \dots\\ 0\amp c_2\amp 0\amp \dots\\ \vdots \amp \\ 0\amp 0\amp \dots\amp c_n \end{bmatrix}
-      </me>
-    </p>
-    <p>
-      This motivates us to find as many vectors as we can satisfying <m>T(\boldv)=c\boldv</m> for some <m>c</m>.
-      Such vectors are called <em>eigenvectors</em>.
-    </p>
+      <p>
+        Consider <m>T_A\colon \R^2\rightarrow \R^2</m> where
+         <me>
+         A=\frac{1}{5}\begin{amatrix}[rr]-3\amp 4\\ 4\amp 3 \end{amatrix}
+         </me>.
+         It turns out that <m>T=T_A</m> has a simple geometric description, though you wouldn't have guessed this from <m>A</m>. To reveal the geometry at play, we represent <m>T</m> with respect to the orthogonal basis <m>B'=(\boldv_1=(1,2), \boldv_2=(2,-1))</m>. Since
+          <md>
+            <mrow>T((1,2)) \amp=A\colvec{1 \\ 2 }=\colvec{1 \\ 2}=1(1,2)+0(2,-1) </mrow>
+            <mrow>T_A((2,-1)) \amp=A\colvec{2 \\ -1}=-(2,-1)=0(1,2)+(-1)(2,-1) </mrow>
+          </md>,
+          it follows that
+          <me>
+            [T]_{B'}=\begin{amatrix}[rr] 1\amp 0\\ 0\amp -1  \end{amatrix}
+          </me>.
+          The alternative representation given by <m>A'=[T]_{B'}</m> reveals that <m>T</m> is none other than reflection through the line <m>\ell=\Span\{(1,2)\}</m>!  How? Given any vector <m>\boldv\in \R^2</m>, we can write
+        <men xml:id="eq_reflection_decomposition">
+          \boldv=c_1\boldv_1+c_2\boldv_2
+        </men>.
+        Note that since <m>\boldv_1</m> and <m>\boldv_2</m> are orthogonal, we have <m>c_1\boldv_1\in \ell</m> and <m>c_2\boldv_2\in \ell^\perp</m>: <ie />, <xref ref="eq_reflection_decomposition"/> is the orthogonal decomposition of <m>\boldv</m> with respect to <m>\ell</m>. Next, the representation <m>A'=[T]_{B'}</m> tells us that <m>T(\boldv_1)=\boldv_1</m> and <m>T(\boldv_2)=-\boldv_2</m>. It follows that <m>T(\boldv)=c_1\boldv_1-c_2\boldv_2</m>.
+        This is nothing more than a vector description of reflection through the line <m>\ell</m>, as <xref ref="fig_reflection_eigenvectors"/> makes clear.
+        </p>
+        <figure xml:id="fig_reflection_eigenvectors">
+          <title>Reflection through <m>\ell=\Span\{(1,2)\}</m></title>
+          <image xml:id="im_reflection_eigenvectors" width="100%" source="images/im_reflection_eigenvectors"/>
+          <caption>Reflection through <m>\ell=\Span\{(1,2)\}</m></caption>
+        </figure>
+
     <definition>
       <statement>
         <p>

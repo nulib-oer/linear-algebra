@@ -195,7 +195,7 @@
       #1_{#3,1} \amp #1_{#3,2} \amp \ldots  \amp #1_{#3,#2}
       \end{array}
       \right)  }
-      \newcommand{\colvec}[2][c]{\begin{bmatrix}[#1] #2 \end{bmatrix}}
+      \newcommand{\colvec}[2][c]{\begin{amatrix}[#1] #2 \end{amatrix}}
       \DeclareMathOperator{\size}{size}
       \DeclareMathOperator{\adjoint}{adj}
       \DeclareMathOperator{\sgn}{sgn}
