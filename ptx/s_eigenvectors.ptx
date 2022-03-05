@@ -87,6 +87,7 @@
         for some <m>\lambda\in \R</m> is called an <term>eigenvector</term> of <m>A</m> with <term>eigenvalue</term> <m>\lambda</m>.
         </p>
         </case>
+        In both cases we will sometimes call an eigenvector with eigenvalue <m>\lambda</m> a <term><m>\lambda</m>-eigenvector</term> for short.
       </statement>
     </definition>
       <remark xml:id="rm_eigenvector_lambda">
@@ -111,23 +112,49 @@
         </p>
       </statement>
     </remark>
+
     <p>
-      Given a linear transformation <m>T\colon V\rightarrow V</m> we wish to determine (a) which values <m>\lambda\in \R</m> are eigenvalues of <m>T</m>, and (b) for each eigenvalue <m>\lambda</m>, which vectors <m>\boldv\in V</m> are eigenvectors of <m>T</m> with eigenvalue <m>\lambda</m>. In the next examples we carry out such an investigation in an <foreign>ad hoc</foreign> manner. The first example is a generalization of our analysis in <xref ref="eg_reflection_eigenvectors"/>.
+      Given a linear transformation <m>T\colon V\rightarrow V</m> we wish to (a) determine which values <m>\lambda\in \R</m> are eigenvalues of <m>T</m>, and (b) find all the eigenvectors corresponding to a given eigenvalue <m>\lambda</m>. In the next examples we carry out such an investigation in an <foreign>ad hoc</foreign> manner.
     </p>
-    <example xml:id="eg_eigenvector_adhoc_reflection">
-      <title>Eigenvectors of reflections</title>
+    <example xml:id="eg_eigenvectors_zerotransform">
+      <title>Zero and identity transformations</title>
       <statement>
         <p>
-        Let <m>\ell=\Span\{\boldv\}</m> be a line in <m>\R^2</m> passing through the origin, and define <m>T\colon \R^2\rightarrow \R^2</m> to be reflection through <m>\ell</m>. (See <xref ref="d_reflection"/>.) Find all eigenvectors and eigenvalues of <m>T</m>. Use a geometric argument.
+          Assume <m>V</m> is nonzero. Recall that the zero transformation <m>0_V\colon V\rightarrow V </m> and identity transformation <m>\id_V\colon V\rightarrow V</m> are defined as <m>0_V(\boldv)=\boldzero</m> and <m>\id_V(\boldv)=\boldv</m> for all <m>\boldv\in V</m>. Find all eigenvalues and eigenvectors of <m>0_V</m> and <m>\id_V</m>.
         </p>
       </statement>
       <solution>
         <p>
-        Let <m>\ell^\perp</m>
+          Since <m>0_V(\boldv)=\boldzero=0\boldv</m> for all <m>\boldv\in V</m>, we see that <m>0</m> is the only eigenvalue of <m>0_V</m>, and that all nonzero vectors of <m>V</m> are <m>0</m>-eigenvectors.
+        </p>
+        <p>
+          Similarly, since <m>\id_V(\boldv)=\boldv=1\boldv</m> for all <m>\boldv\in V</m>, we see that <m>1</m> is the only eigenvalue of <m>\id_V</m>, and that all nonzero vectors of <m>V</m> are <m>1</m>-eigenvectors.
         </p>
       </solution>
     </example>
+    <example xml:id="eg_eigenvector_adhoc_reflection">
+      <title>Reflection</title>
+      <statement>
+        <p>
+        Let <m>\ell</m> be a line in <m>\R^2</m> passing through the origin, and define <m>T\colon \R^2\rightarrow \R^2</m> to be reflection through <m>\ell</m>. (See <xref ref="d_reflection"/>.) Find all eigenvectors and eigenvalues of <m>T</m>. Use a geometric argument.
+        </p>
+      </statement>
+      <solution>
+        <p>
+        Since the reflection operator fixes all elements of the line <m>\ell</m>, we have <m>T(\boldx)=\boldx</m> for any <m>\boldx\in \ell</m>. This shows that any nonzero element of <m>\ell</m> is an eigenvectors of <m>T</m> with eigenvalue <m>1</m>.
+      </p>
+      <p>
+        Similarly, since <m>\ell^\perp</m> is orthogonal to <m>\ell</m>, reflection through <m>\ell</m> takes any element <m>\boldx=(x,y)\in \ell^\perp</m> and maps it to <m>-\boldx=(-x,-y)</m>. Thus any nonzero element <m>\boldx\in \ell^\perp</m> is  an eigenvector of <m>T</m> with eigenvalue <m>-1</m>.
+      </p>
+      <p>
+        We claim that these two cases exhaust all eigenvectors of <m>T</m>. Indeed, in general a nonzero vector <m>\boldv</m> lies in the line <m>\ell'=\Span\{\boldx\}</m>, and its reflection <m>T(\boldx)</m> lies in the line <m>\ell''=\Span\{T(\boldx)\}</m>, which itself is the result of reflecting the line <m>\ell'</m> through <m>\ell</m>. Now assume <m>T(\boldx)=\lambda\boldx</m>. We must have <m>\lambda\ne 0</m>, since <m>T(\boldv)\ne \boldzero</m> if <m>\boldx\ne \boldzero</m>;
+        but if <m>\lambda\ne 0</m> it follows that the line <m>\ell=\Span\{\boldx\}</m> and its reflection <m>\ell''=\Span\{T(\boldv)\}</m> are equal. Clearly the only lines that are mapped to themselves by reflection through <m>\ell</m> are <m>\ell</m> and <m>\ell^\perp</m>. Thus if <m>\boldx</m> is an eigenvector of <m>T</m> it must lie in <m>\ell</m> or <m>\ell^\perp</m>.
+      </p>
+      </solution>
+    </example>
     <example xml:id="eg_eigenvector_adhoc_rotation">
+      <title>Rotation</title>
+
       <statement>
         <p>
           Fix <m>\theta\in (0,2\pi)</m> and define <m>T\colon \R^2\rightarrow \R^2</m> to be rotation by <m>\theta</m>. (See <xref ref="d_rotation"/>) Find all eigenvectors and eigenvalues of <m>T</m>. Use a geometric argument. Your answer will depend on the choice of <m>\theta</m>.
@@ -135,8 +162,20 @@
       </statement>
       <solution>
         <p>
-
+          <case>
+           <title>Case: <m>\theta=\pi</m></title>
+          <p>
+          Rotation by <m>\pi</m> sends every vector <m>\boldx\in \R^2</m> to <m>-\boldx</m>: <ie />, <m>T(\boldx)=-\boldx=(-1)\boldx</m>. It follows that <m>\lambda=-1</m> is the only eigenvalue of <m>T</m> and all <em>nonzero</em> elements of <m>\R^2</m> are eigenvectors with eigenvalue <m>-1</m>.
+          </p>
+          </case>
+          <case>
+           <title>Case: <m>\theta\ne \pi</m></title>
+          <p>
+            A similar argument to the one in <xref ref="eg_eigenvector_adhoc_reflection"/> shows that <m>T</m> has no eigenvalues in this case. In more detail, a nonzero vector <m>\boldx</m> lies in the line <m>\ell=\Span\{\boldx\}</m>, and its rotation <m>T(\boldx)</m> lies in the line <m>\ell'=\Span\{T(\boldx)\}</m>, which is the result of rotating <m>\ell</m> by the angle <m>\theta</m>. Since <m>\theta\ne \pi</m>, it is clear that <m>\ell\ne \ell'</m>, and thus we cannot have <m>T(\boldv)=\lambda\boldv</m> for some <m>\lambda\in \R</m>.
+          </p>
+          </case>
         </p>
+
       </solution>
     </example>
     <example xml:id="eg_eigenvector_adhoc_transposition">
@@ -157,12 +196,12 @@
           <men xml:id="eq_eigenvectors_adhoc_transposition">
             A^T=\lambda A
           </men>.
-          We ask for which scalars <m>\lambda\in \R</m> do there exist a nonzero matrix <m>A</m> satisfying <xref ref="eq_eigenvectors_adhoc_transposition"/>. Let's consider some specific choices of <m>\lambda</m>.
+          We ask for which scalars <m>\lambda\in \R</m> does there exist a nonzero matrix <m>A</m> satisfying <xref ref="eq_eigenvectors_adhoc_transposition"/>. Let's consider some specific choices of <m>\lambda</m>.
         </p>
         <case>
          <title>Case: <m>\lambda=1</m></title>
         <p>
-        In this case <xref ref="eq_eigenvectors_adhoc_transposition"/> reads <m>A^T=1\,A=A</m>. Thus the eigenvectors of <m>S</m> with eigenvalue <m>1</m> are precisely the nonzero  <em>symmetric</em> matrices: <ie />,
+        In this case <xref ref="eq_eigenvectors_adhoc_transposition"/> reads <m>A^T=A</m>. Thus the eigenvectors of <m>S</m> with eigenvalue <m>1</m> are precisely the nonzero  <em>symmetric</em> matrices: <ie />,
         <me>
           A=\begin{amatrix}[rr]a\amp b\\ b\amp c  \end{amatrix}
         </me>.
@@ -191,6 +230,24 @@
         </p>
         </case>
         In summation, our analysis shows that the transposition operator <m>S</m> has exactly two eigenvalues, <m>\lambda_1=1</m> and <m>\lambda_2=-1</m>, that the eigenvectors of <m>S</m> with eigenvalue 1 are the nonzero symmetric matrices, and that the eigenvalues of <m>S</m> with eigenvalue <m>-1</m> are the nonzero skew-symmetric matrices.
+      </solution>
+    </example>
+    <example xml:id="eg_eigenvectors_adhoc_derivative">
+      <title>Differentiation</title>
+      <statement>
+        <p>
+          Let <m>T\colon C^\infty(\R)\rightarrow C^\infty(\R)</m> be defined as <m>T(f)=f'</m>. Find all eigenvalues and eigenvectors of <m>T</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          An eigenvector of <m>T</m> is a nonzero function <m>f</m> satisfying <m>T(f)=\lambda f</m> for some <m>\lambda</m>. By definition, this means
+          <men xml:id="eq_eigenvectors_adhoc_derivative">
+            f'=\lambda f
+          </men>
+          for some <m>\lambda\in\R</m>. Thus <m>\lambda</m> is an eigenvalue of <m>T</m> if and only if the differential equation <xref ref="eq_eigenvectors_adhoc_derivative"/> has a nonzero solution. This is true for all <m>\lambda\in \R</m>! Indeed for any <m>lambda</m> the exponential function <m>f(x)=e^{\lambda x}</m> satisfies <m>f'(x)=\lambda e^{\lambda x}=\lambda f(x)</m> for all <m>x\in \R</m>. Furthermore, any solution to <xref ref="eq_eigenvectors_adhoc_derivative"/> is of the form <m>f(x)=Ce^{\lambda x}</m> for some <m>C\in \R</m>.
+          We conclude that (a) every <m>\lambda\in \R</m> is an eigenvalue of <m>T</m>, and (b) for a given <m>\lambda</m>, the <m>\lambda</m>-eigenvectors of <m>T</m> are presicely the functions of the form <m>f(x)=Ce^{\lambda x}</m> for some <m>C\ne 0</m>.
+        </p>
       </solution>
     </example>
   </subsection>
