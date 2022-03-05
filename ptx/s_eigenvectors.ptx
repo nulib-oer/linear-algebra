@@ -2,7 +2,7 @@
   <title>Eigenvectors and eigenvalues</title>
   <introduction>
     <p>
-      As we saw in <xref ref="eg_matrixreps_proj"/>, different matrix representations <m>[T]_B</m> and <m>[T]_{B'}</m> for a linear transformation <m>T\colon V\rightarrow V</m> provide different insights into the nature of <m>T</m>. Furthermore, we see from this example that if the action of <m>T</m> on a given basis is simple to describe, then so too is the matrix representation of <m>T</m> with respect to that basis.
+      For the remaining sections of this chapter we will focus our investigation on linear transformations of the form <m>T\colon V\rightarrow V</m>: that is, transformations from a space <m>V</m> into itself. When <m>V</m> is finite-dimensional we can get a computational grip on <m>T</m> by choosing an ordered basis <m>B</m> and considering the matrix representation <m>[T]_B</m>. As was illustrated in <xref ref="eg_matrixreps_proj"/>, different matrix representations <m>[T]_B</m> and <m>[T]_{B'}</m> provide different insights into the nature of <m>T</m>. Furthermore, we see from this example that if the action of <m>T</m> on a chosen basis is simple to describe, then so too is the matrix representation of <m>T</m> with respect to that basis.
     </p>
     <p>
       A particularly agreeable situation arises when the basis <m>B=(\boldv_1, \boldv_2, \dots, \boldv_n)</m> satisfies
@@ -87,7 +87,7 @@
         for some <m>\lambda\in \R</m> is called an <term>eigenvector</term> of <m>A</m> with <term>eigenvalue</term> <m>\lambda</m>.
         </p>
         </case>
-        In both cases we will sometimes call an eigenvector with eigenvalue <m>\lambda</m> a <term><m>\lambda</m>-eigenvector</term> for short.
+        In both cases we will call an eigenvector with eigenvalue <m>\lambda</m> a <term><m>\lambda</m>-eigenvector</term> for short.
       </statement>
     </definition>
       <remark xml:id="rm_eigenvector_lambda">
@@ -100,7 +100,7 @@
         <remark xml:id="rm_eigenvector_nonzero">
       <statement>
         <p>
-         Note well the important condition that an eigenvector must be nonzero. This means <m>\boldzero</m> by definition is <em>not</em> an eigenvector. If we allowed <m>\boldzero</m> as an eigenvector, then the notion of the eigenvalue <em>of an eigenvector</em> would no longer be well-defined. This is because for any linear transformation we have
+         Note well the important condition that an eigenvector must be nonzero. This means the zero vector <m>\boldzero</m> by definition is <em>not</em> an eigenvector. If we allowed <m>\boldzero</m> as an eigenvector, then the notion of the eigenvalue <em>of an eigenvector</em> would no longer be well-defined. This is because for any linear transformation we have
          <me>
            T(\boldzero)=\boldzero,
          </me>
@@ -112,6 +112,23 @@
         </p>
       </statement>
     </remark>
+        <remark xml:id="rm_eigenvectors_visual">
+      <title>Visualizing eigenvectors</title>
+      <statement>
+        <p>
+        Suppose <m>\boldv\ne\boldzero</m> is an eigenvector of the linear transformation <m>T\colon V\rightarrow V</m>. Letting <m>W=\Span\{\boldv\}</m>, this means that <m>T(\boldv)=\lambda\boldv\in W</m>: <ie />, <m>T</m> maps an eigenvector to some other element of the one-dimensional subspace it defines. The special case where <m>V=\R^2</m> is easy to visualize and can help guide your intuition in the general case. Here the space <m>\Span\{\boldv\}=\ell</m>
+        is a line passing through origin. If <m>\boldv</m> is an eigenvector of a given linear transformation, then it must be mapped to some other vector pointing along <m>\ell</m>: <eg />, <m>\lambda_1\boldv</m> or <m>\lambda_2\boldv_2</m>. It it is not an eigenvector, it gets mapped to a vector <m>\boldw</m> that does not point along <m>\ell</m>.
+        </p>
+      </statement>
+    </remark>
+    <figure xml:id="fig_eigenvector_visual">
+      <title>Visualizing eigenvectors</title>
+      <caption>Visualizing eigenvectors</caption>
+      <image xml:id="im_eigenvector_visual" width="100%" source="images/im_eigenvector_visual">
+      </image>
+    </figure>
+
+
 
     <p>
       Given a linear transformation <m>T\colon V\rightarrow V</m> we wish to (a) determine which values <m>\lambda\in \R</m> are eigenvalues of <m>T</m>, and (b) find all the eigenvectors corresponding to a given eigenvalue <m>\lambda</m>. In the next examples we carry out such an investigation in an <foreign>ad hoc</foreign> manner.
@@ -304,11 +321,16 @@
   <title>Eigenspaces</title>
   <statement>
     <p>
-      Let <m>A</m> be an <m>n\times n</m> matrix. Given <m>\lambda\in \R</m> the <term><m>\lambda</m>-eigenspace</term> of <m>A</m> is the subspace <m>W_\lambda</m> defined as
+      Let <m>A</m> be an <m>n\times n</m> matrix. Given <m>\lambda\in \R</m> the <term><m>\lambda</m>-eigenspace</term> of <m>A</m> is the subspace <m>W_\lambda\subseteq \R^n</m> defined as
       <me>
         W_\lambda=\NS (\lambda I -A)
       </me>.
-      The nonzero elements of <m>W_\lambda</m> are precisely the eigenvectors of <m>A</m> with eigenvalue <m>\lambda</m>.
+      Similarly, given a finite-dimensional vector space <m>V</m>, a linear transformation <m>T\colon V\rightarrow V</m>, and <m>\lambda\in \R</m>, the <term><m>\lambda</m>-eigenspace</term> of <m>T</m>
+      is the subspace <m>W\subseteq V</m> defined as
+      <me>
+        W_\lambda=\NS(\lambda \id_V-T)
+      </me>.
+      In both cases the nonzero elements of <m>W_\lambda</m> are precisely the <m>\lambda</m>-eigenvectors.%
     </p>
   </statement>
 </definition>
