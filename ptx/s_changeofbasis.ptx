@@ -500,21 +500,23 @@
       </md>
     </p>
   </subsection>
-  <definition>
-    <statement>
+  <definition xml:id="d_similar">
+    <idx><h>similar matrices</h></idx><statement>
       <p>
         Matrices <m>A, A'\in M_{nn}</m> are <term>similar</term>
         if there is an invertible matrix <m>P</m> such that <m>A'=P^{-1}AP</m>.
       </p>
     </statement>
   </definition>
-  <p>
-    As we will see in coming sections,
-    matrices that are similar in this technical sense do indeed share many of the same properties.
-    We now have the theoretical foundation to understand why this is so:
-    they simply inherit these common properties from the overlying linear transformation <m>T</m>,
-    of which they are but earthly shadows.
-  </p>
+  <remark xml:id="rm_holy_commutative_tent">
+    <p>
+      As we will see in coming sections, matrices that are similar in the techinical sense given by <xref ref="d_similar"/> are indeed similar algebraically speaking: <ie />, similar matrices share many of the same properties.
+      We now have the theoretical foundation to understand why this is so:
+      they simply inherit these common properties from the overlying linear transformation <m>T</m>,
+      of which they are but earthly shadows. (See <xref ref="fig_comm_tent"/>.) There is but one true <m>T</m>!
+    </p>
+  </remark>
+
   <!-- <figure xml:id="fig_comm_tent">
     <caption>Holy commutative tent of linear algebra: <m>P=\underset{B\rightarrow B'}{P}</m>, <m>B=P^{-1}AP</m></caption>
     <image xml:id="im_holycomm">
@@ -534,9 +536,7 @@
     <image xml:id="im_holycomm" source="./images/im_holycomm.svg"/>
 
   </figure>
-  <p>
-    There is but one true <m>T</m>!
-  </p>
+
   <subsection>
     <title>Change of basis for <m>V=\R^n</m></title>
 

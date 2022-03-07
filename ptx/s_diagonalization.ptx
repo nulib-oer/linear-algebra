@@ -1,11 +1,25 @@
-<section xml:id="ss_diagonalization">
+<section xml:id="s_diagonalization">
   <title>Diagonalization</title>
+
+
+<introduction>
+  <p>
+Intro
+  </p>
+</introduction>
+
+
+  <subsection xml:id="ss_diagonalizable">
+    <title>Diagonalizable transformations</title>
   <definition>
     <statement>
       <p>
-        A linear transformation <m>T\colon V\rightarrow V</m> is
+        Let <m>V</m> be a finite-dimensional vector space. A linear transformation <m>T\colon V\rightarrow V</m> is
         <term>diagonalizable</term>
-        if there exists a basis <m>B</m> of <m>V</m> for which <m>[T]_B</m> is a diagonal matrix.
+        if there exists an ordered basis <m>B</m> of <m>V</m> for which <m>[T]_B</m> is a diagonal matrix.
+      </p>
+      <p>
+        An <m>n\times n</m> matrix <m>A</m> is <term>diagonalizable</term> if the matrix transformation <m>T_A\colon \R^n\rightarrow \R^n</m> is diagonalizable.
       </p>
     </statement>
   </definition>
@@ -17,44 +31,67 @@
       linearly independent eigenvectors.
     </p>
     <theorem xml:id="th_diagonalizability">
-      <title>Diagonalizability theorem</title>
+      <title>Diagonalizability conditions</title>
       <statement>
         <p>
-          Let <m>T\colon V\rightarrow V</m> be linear, <m>\dim(V)=n</m>.
+          Let <m>T\colon V\rightarrow V</m> be a linear transformation of the finite-dimensional space <m>V</m>.
           <ol>
             <li>
-              <title>Qualitative statement</title>
+              <title>Basis of eigenvectors</title>
               <p>
-                Given basis <m>B</m> of <m>V</m>,
+                Given an ordered basis <m>B</m> of <m>V</m>,
                 the matrix <m>[T]_B</m> is diagonal if and only if <m>B</m> consists of eigenvectors of <m>T</m>.
-                Thus <m>T</m> is diagonalizable if and only if there is a basis of <m>V</m> consisting of eigenvectors of <m>T</m>.
+                Thus <m>T</m> is diagonalizable if and only if there is an ordered basis of <m>V</m> consisting of eigenvectors of <m>T</m>.
               </p>
             </li>
             <li>
-              <title>Quantitative statement</title>
+              <title>Dimension of eigenspaces</title>
               <p>
                 Let <m>\lambda_1, \lambda_2, \dots, \lambda_r</m> be the
-                <em>distinct</em> eigenvalues of <m>T</m>,
-                let <m>W_{\lambda_j}</m> be the corresponding eigenspaces,
-                and let <m>n_j=\dim W_{\lambda_j}</m>.
-                Then
-                <me>T \text{ is diagonalizable } \iff n_1+n_2+\cdots +n_r=n
+                distinct eigenvalues of <m>T</m>, and for each <m>1\leq i\leq r</m>, let
+                <m>W_{\lambda_i}</m> be the <m>\lambda_i</m>-eigenspace. We have
+                <me>T \text{ is diagonalizable } \iff \sum_{i=1}^r\dim W_{\lambda_i}=n
                 </me>.
               </p>
             </li>
           </ol>
         </p>
       </statement>
+      <proof>
+      </proof>
     </theorem>
-    <proof>
-      <p>
-        The first statement was a homework exercise.
-        The proof of the second statement is within our means,
-        but somewhat lengthy.
-        I will sketch its proof elsewhere.
-        For now it is more important to understand how to use the result.
-      </p>
-    </proof>
+    <corollary xml:id="cor_diagonalizability">
+      <statement>
+        <p>
+          Let <m>T\colon V\rightarrow V</m> be a linear transformation of the <m>n</m>-dimensional space <m>V</m>, let <m>B</m> be an ordered basis of <m>V</m>, and let <m>A=[T]_B</m>. The following are equivalent:
+          <ol>
+            <li>
+              <p>
+                <m>T</m> is diagonalizable;
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>A</m> is diagonalizable;
+              </p>
+            </li>
+            <li>
+              <p>
+                there is a basis of <m>\R^n</m> consisting of eigenvectors of <m>A</m>;
+              </p>
+            </li>
+            <li>
+              <p>
+                if <m>\lambda_1,\lambda_2, \dots, \lambda_r</m> are the distinct eigenvalues of <m>A</m>, then
+                <me>
+                  \sum_{i=1}^r\dim W_{\lambda_i}=n
+                </me>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </corollary>
     <algorithm xml:id="proc_diagonalize">
       <title>Deciding whether a linear transformation is diagonalizable</title>
       <statement>
@@ -64,34 +101,12 @@
         <ol>
           <li>
             <p>
-              Use <xref ref="proc_eigenspaces"/> to compute the distinct real eigenvalues <m>\lambda_1, \lambda_2, \dots, \lambda_r</m> of <m>T</m>, as well as bases of their corresponding eigenspaces.
+              Pick <em>any</em> ordered basis <m>B</m> of <m>V</m> and compute <m>A=[T]_B</m>. By <xref ref="cor_diagonalizability"/> we know that <m>T</m> is diagonalizable if and only if <m>A</m> is diagonalizable.
             </p>
           </li>
           <li>
             <p>
-              We have
-              <me>
-                T \text{ diagonalizable }\iff \sum_{i=1}^r\dim W_{\lambda_i}=n
-              </me>.
-            </p>
-          </li>
-          <li>
-            <p>
-              Let <m>B_i</m> be an ordered basis for <m>W_{\lambda_i}</m>, and let <m>B</m> be the ordered basis obtained by concatenating the bases <m>B_1, B_2, \dots, B_r</m>. Then <m>[T]_B</m> is a diagonal matrix representing <m>T</m>.
-            </p>
-          </li>
-        </ol>
-      </statement>
-    </algorithm>
-    <algorithm xml:id="proc_diagonalize_matrix">
-      <statement>
-        <p>
-          Let <m>A</m> be an <m>n\times n</m> matrix. To decide whether <m>A</m> is diagonalizable, proceed as follows.
-        </p>
-        <ol>
-          <li>
-            <p>
-              Compute the distinct real eigenvalues <m>\lambda_1, \lambda_2, \dots, \lambda_r</m> of <m>A</m> as well as bases for their corresponding eigenspaces.
+              Compute the distinct real eigenvalues <m>\lambda_1, \lambda_2, \dots, \lambda_r</m> of <m>A</m> as well as bases for their corresponding eigenspaces <m>W_{\lambda_i}</m>.
             </p>
           </li>
           <li>
@@ -104,108 +119,346 @@
           </li>
           <li>
             <p>
-              Let <m>B_i</m> be an ordered basis for <m>W_{\lambda_i}</m>, let <m>B'</m> be the ordered basis obtained by concatenating the bases <m>B_1, B_2, \dots, B_r</m>, and let <m>P</m> be the matrix whose <m>j</m>-th column is the <m>j</m>-th element of <m>B'</m>. Then
+              For all <m>1\leq i\leq r</m> compute and ordered basis <m>B_i</m> of <m>W_{\lambda_i}</m>, let <m>B'</m> be the ordered basis obtained by concatenating the bases <m>B_1, B_2, \dots, B_r</m>, and let <m>P</m> be the matrix whose <m>j</m>-th column is the <m>j</m>-th element of <m>B'</m>. The basis <m>B'</m> is a basis of eigenvectors of <m>A</m> and we have
               <me>
-                D=P^{-1}AP
-              </me>
-              is diagonal. Furthermore, we have <m>D=[T_A]_{B'}</m>: <ie />, <m>D</m> is the matrix representing <m>T_A</m> with respect to the basis <m>B'</m> .
+                [T_A]_{B'}=P^{-1}AP=D
+              </me>,
+              where <m>D</m> is the diagonal matrix
+              <me>
+              D=
+                \begin{bmatrix}
+                \lambda_1 \amp \amp  \amp \amp \amp \amp   \\
+                         \amp \ddots \amp \amp \amp \amp     \\
+                  \amp   \amp   \lambda_2 \amp  \amp \amp   \\
+                \amp  \amp  \amp     \ddots \amp  \amp    \\
+                \amp  \amp  \amp    \amp   \lambda_r \amp   \\
+                \amp  \amp  \amp    \amp  \amp   \ddots    \\
+                \amp  \amp  \amp    \amp  \amp  \amp   \lambda_r
+                \end{bmatrix}
+              </me>.
+
+            </p>
+          </li>
+          <li>
+            <p>
+              <q>Lifting</q> the basis <m>B'</m> back to <m>V</m> via the coordinate transformation <m>[\phantom{\boldv}]_B</m> yields a basis of eigenvectors of <m>T</m>.
             </p>
           </li>
         </ol>
       </statement>
     </algorithm>
-  <subsection>
-    <title>Deciding whether $A_{n\times n}$ is diagonalizable</title>
-    <ol>
-      <li>
-        <p>
-          Find the distinct eigenvalues,
-          <m>\lambda_1,\dots, \lambda_r</m>, of <m>A</m>,
-          let <m>W_{\lambda_i}</m> be the corresponding eigenspaces,
-          and let <m>n_i=\dim W_{\lambda_i}</m>.
-        </p>
-      </li>
-      <li>
-        <p>
-          <m>A</m> is diagonalizable if and only if <m>n_1+n_2+\cdots +n_r=n</m>.
-        </p>
-      </li>
-      <li>
-        <p>
-          If the above equality is true,
-          compute bases <m>B_j</m> for each <m>W_{\lambda_j}</m>.
-        </p>
-      </li>
-      <li>
-        <p>
-          Place all the vectors from the bases <m>B_j</m> as columns of a matrix <m>P</m>.
-          As these eigenvectors are linearly independent, <m>P</m> is invertible.
-        </p>
-      </li>
-      <li>
-        <p>
-          The matrix <m>D=P^{-1}AP</m> is diagonal.
-          In more detail,
-          the <m>j</m>-th diagonal entry of <m>D</m> is the eigenvalue associated to the eigenvector in the <m>j</m>-th column of <m>P</m>.
-          This means the first <m>n_1</m> diagonal entries of <m>D</m> are equal to <m>\lambda_1</m>,
-          the next <m>n_2</m> entries are equal to <m>\lambda_2</m>, etc.
-        </p>
-      </li>
-    </ol>
-  </subsection>
-  <subsection>
-    <title>Example</title>
+  <remark xml:id="rm_diagonalize_matrices">
+    Our examaples will focus on the special case where <m>T=T_A</m> is a matrix transformation. In this case deciding whether <m>T</m> is diagonalizable is equivalent to deciding whether <m>A</m> is diagonalizable, and this question is answered by performing steps (2)-(4) of <xref ref="proc_diagonalize"/>.
+  </remark>
+  <p>
+   As a first demonstration of <xref ref="proc_diagonalize"/> we give an example of a matrix that is not diagonalizable.
+  </p>
+  <example xml:id="eg_diagonalizable_not">
+    <statement>
+      <p>
+        Show that <m>A=\begin{bmatrix}
+          1\amp 1\\ 0\amp 1
+        \end{bmatrix}</m> is not diagonalizable.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Since <m>A</m> is upper triangular, its characteristic polynomial is easily seen to be <m>p(t)=(t-1)^2</m>. Thus <m>\lambda=1</m> is the only eigenvalue of <m>A</m>. We have
+        <me>
+          W_1=\NS(I-A)=\NS \begin{amatrix}[rr]
+          0\amp -1 \\ 0\amp 0
+        \end{amatrix}=\Span\{(1,0)\}
+        </me>.
+        Since <m>\dim W_1=1\lt 2</m>, we conclude that <m>A</m> is not diagonalizable.
+      </p>
+    </solution>
+  </example>
+  <p>
+    A slightly larger example will better illustrate the various steps of <xref ref="proc_diagonalize"/>.
+  </p>
+  <example xml:id="eg_diagonalizable_big">
+    <statement>
+      <p>
+        The matrix
+        <me>
+        A=\begin{amatrix}[rrrr]14 \amp 21 \amp 3 \amp -39 \\ 12 \amp 25 \amp 3 \amp -41 \\ 12 \amp 24 \amp 5 \amp -42 \\ 12 \amp 22 \amp 3 \amp -38 \end{amatrix}
+        </me>
+        has characteristic polynomial <m>p(t)=t^4 - 6t^3 + 9t^2 + 4t - 12</m>. Decide whether <m>A</m> is diagonalizable. If yes, find an invertible matrix <m>P</m> and diagonal matrix <m>D</m> such that <m>D=P^{-1}AP</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+       To factor <m>p(t)</m>, we first look for integer roots dividing the constant term <m>-12</m>: <ie />, we test whether any of <m>\pm 1, \pm 2, \pm 3, \pm 4, \pm 6, \pm 12</m> are roots. Luckily, we see that <m>-1</m> is a root of <m>p(t)</m>. Doing polynomial division of <m>p(t)</m> by <m>(t+1)</m> yields
+       <me>
+         p(t)=(t+1)\underset{q(t)}{(t^3-7t^2+16t-12)}
+       </me>.
+       Repeating this factoring technique on <m>q(t)</m>, we see that <m>q(2)=0</m>, and thus can continue to factor:
+       <md>
+         <mrow> p(t)\amp=(t+1)(t^3-7t^2+16t-12)</mrow>
+         <mrow> \amp=(t+1)(t-2)(t^2-5t+6) </mrow>
+         <mrow>  \amp = (t+1)(t-2)^2(t-3)</mrow>
+       </md>.
+       We conclude that the eigenvalues of <m>A</m> are <m>-1</m>, <m>2</m>, and <m>3</m>.  We now compute bases for the corresponding eigenspaces. The bases below were obtained using <xref ref="proc_fund_spaces"/>. We omit the details of the Gaussian elimination performed in each case. (Check for yourself!)
+       <md>
+         <mrow>W_{-1} \amp =\NS \begin{amatrix}[rrrr]
+         -15\amp -21\amp -3\amp 39\\
+         -12\amp -26\amp -3\amp 41\\
+         -12\amp -24\amp -6\amp 42\\
+         -12\amp -22\amp -3\amp -37
+         \end{amatrix}=\Span\{(1,1,1,1)\} </mrow>
+         <mrow>W_{2} \amp =\NS \begin{amatrix}[rrrr]
+         -12\amp -21\amp -3\amp 39\\
+         -12\amp -23\amp -3\amp 41\\
+         -12\amp -24\amp -3\amp 42\\
+         -12\amp -22\amp -3\amp 40
+         \end{amatrix}=\Span\{(3,2,0,2),(1,1,2,1)\}  </mrow>
+         <mrow>W_{-1} \amp =\NS \begin{amatrix}[rrrr]
+         -11\amp -21\amp -3\amp 39\\
+         -12\amp -22\amp -3\amp 41\\
+         -12\amp -24\amp -2\amp 42\\
+         -12\amp -22\amp -3\amp 41
+         \end{amatrix}=\Span\{(3,5,6,4)\}  </mrow>
+       </md>.
+       We have ski
+       Since
+       <me>
+         \dim W_{-1}+\dim W_{2}+\dim W_{3}=1+2+1=4=\dim \R^4
+       </me>,
+       we conclude that <m>A</m> is diagonalizable. Furthermore, we have <m>D=P^{-1}AP</m>, where
+       <me>
+         P=\begin{amatrix}[rrrr]
+           1\amp 3\amp 1\amp 3\\
+           1\amp 2\amp 1\amp 5\\
+           1\amp 0\amp 2\amp 6\\
+           1\amp 2\amp 1\amp 4
+         \end{amatrix},
+         D=\begin{amatrix}[rrrr]
+         -1\amp 0 \amp 0 \amp 0 \\
+         0 \amp 2\amp 0\amp 0\\
+         0\amp 0\amp 2\amp 0\\
+         0\amp 0\amp 0\amp 3
+       \end{amatrix}
+       </me>.
+     </p>
+    </solution>
+  </example>
+</subsection>
+<subsection xml:id="ss_diagonalizable_matrices">
+  <title>Diagonalizable matrices</title>
+  <p>
+    Recall that two square matrices <m>A</m> and <m>B</m> are similar if <m>B=P^{-1}AP</m> for some invertible matrix <m>P</m> (<xref ref="d_similar" text="global"/>). From our theory above it follows that a matrix <m>A</m> is diagonalizable if and only if it is similar to a diagonal matrix.
+  </p>
+  <corollary xml:id="cor_diagonalizable_matrix">
+    <title>Diagonalizabilty and similarity</title>
+    <statement>
+      <p>
+        An <m>n\times n</m> matrix <m>A</m> is diagonalizable if and only if it is similar to a diagonal matrix: <ie />, if and only if there is an invertible matrix <m>P</m> and a diagonal matrix <m>D</m> such that
+        <me>
+          D=P^{-1}AP
+        </me>.
+      </p>
+    </statement>
+    <proof>
+      <p>
+        Let <m>B</m> be the standard ordered basis of <m>\R^n</m>. If <m>A</m> is diagonalizable, then there is an ordered basis <m>B'</m> of <m>\R^n</m> such that <m>[T_A]_{B'}=D</m> is diagonal. Setting <m>P=\underset{B'\rightarrow B}{P}</m>, we have
+        <md>
+          <mrow>D=[T_A]_{B'} \amp= \underset{B\rightarrow B'}{P}[T_A]_B\underset{B'\rightarrow B}{P} \amp (<xref ref="th_change_of_basis_transformations" text="global"/>) </mrow>
+          <mrow> \amp= P^{-1}AP \amp (\underset{B'\rightarrow B}{P}=P, [T_A]_B=A) </mrow>
+        </md>.
+        Conversely, suppose we have <m>D=P^{-1}AP</m>, for some invertible matrix <m>P</m> and diagonal matrix <m>D</m>. Let <m>B'</m> be ordered basis whose <m>j</m>-th element is the <m>j</m>-th column of <m>P</m>. We have <m>P=\underset{B'\rightarrow B}{P}</m> (since <m>B</m> is the standard basis), and hence
+        <me>
+          [T_A]_{B'}=P^{-1}[T_A]_BP=P^{-1}AP=D
+        </me>,
+        showing that <m>T_A</m> is diagonalizable, as desired.
+
+      </p>
+    </proof>
+
+  </corollary>
+  <p>
+  Similar matrices share many of the same properties. (See <xref ref="th_similarity"/>.)  As observed in <xref ref="rm_holy_commutative_tent"/>, this is a consequence of the fact that similar matrices can be thought of as two different matrix representations of the same fixed linear transformation.
+</p>
+<theorem xml:id="th_conjugation">
+  <title>Properties of conjugation</title>
+  <statement>
     <p>
-      Take <m>A=\begin{bmatrix}1\amp 1\\ 0\amp 1 \end{bmatrix}</m>.
-      Earlier I claimed that this matrix is not diagonalizable.
-      Let's see why.
+      Let <m>P</m> be any invertible <m>n\times n</m> matrix.
+      <ol>
+        <li>
+          <p>
+            For all <m>A_1,A_2\in M_{nn}</m> and <m>c_1,c_2\in \R</m>, we have <m>P^{-1}(c_1A_1+c_2A_2)P=c_1P^{-1}A_1P+c_2P^{-1}A_2P</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Let <m>A\in M_{nn}</m>. For all integers <m>k\geq 0</m>, we have <m>P^{-1}A^kP=(P^{-1}AP)^k</m>.
+            If <m>A</m> is invertible,
+            this equality holds for <em>all</em>
+            integers <m>n</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Recall that given any polynomial <m>f(x)=a_rx^r+a_{r-1}x^{r-1}+\cdots +a_1x+a_0</m> and any
+            <m>n\times n</m> matrix <m>A</m> we define <m>f(A)=a_rA^r+a_{r-1}A^{r-1}+\cdots +a_1A+a_0I_n</m>.
+            We have <m>f(P^{-1}AP)=P^{-1}f(A)P</m> for any polynomial <m>f(x)</m>. 
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+</theorem>
+
+<theorem xml:id="th_similarity">
+  <title>Properties of similarity</title>
+  <statement>
+    <p>
+      Suppose <m>A</m> is similar to <m>B</m>:
+      <ie />, there is an invertible matrix <m>P</m> such that <m>B=P^{-1}AP</m>. The following hold:
+      <ol>
+        <li>
+          <p>
+            <m>B</m> is similar to <m>A</m>;
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>A</m> and <m>B</m> have the same trace and determinant;
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>A</m> and <m>B</m> have the same rank;
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>A</m> and <m>B</m> have the same characteristic polynomial;
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>A</m> and <m>B</m> have the same eigenvalues;
+          </p>
+        </li>
+        <li>
+          <p>
+            for any <m>\lambda\in \R</m> we have <m>\dim W_{\lambda}=\dim W_{\lambda}'</m>, where <m>W_\lambda, W_\lambda'</m> are the <m>\lambda</m>-eigen spaces of <m>A</m> and <m>B</m>, respectively.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+  <proof>
+    <p>
+      By definition we have <m>B=P^{-1}AP</m> for some matrix <m>P</m>.
+      We wish to show the characteristic polynomials <m>p_A(t)</m> and <m>p_B(t)</m> of the two matrices are equal.
+      Compute:
+      <md>
+        <mrow>p_B(t)\amp =\amp \det(tI-B)</mrow>
+        <mrow>\amp =\amp \det(tI-P^{-1}AP)</mrow>
+        <mrow>\amp =\amp \det(tP^{-1}IP-P^{-1}AP) \ \text{ (since \(P^{-1}IP=I\))}</mrow>
+        <mrow>\amp =\amp \det(P^{-1}tIP-P^{-1}AP) \ \text{ (\(t\) behaves as scalar) }</mrow>
+        <mrow>\amp =\amp \det(P^{-1}(tI-A)P)</mrow>
+        <mrow>\amp =\amp \det(P^{-1})\det(tI-A)\det(P)</mrow>
+        <mrow>\amp =\amp (\det(P))^{-1}\det(P)\det(tI-A)</mrow>
+        <mrow>\amp =\amp \det(tI-A)=p_A(t)</mrow>
+      </md>.
+    </p>
+  </proof>
+</theorem>
+<p>
+  In this spirit, a good way of thinking about a diagonalizable matrix <m>A</m> is that it is <q>as good as diagonal</q>. In practical terms, if <m>A</m> satisfies
+  <men xml:id="eq_diagonalizable">
+    D=P^{-1}AP
+  </men>,
+  where <m>D</m> is diagonal,
+  then we can answer many computational and theoretical questions about <m>A</m> by first answering them about <m>D</m> and then using the relation <xref ref="eq_diagonalizable"/>. The following examples are nice illustrations of this technique.
+</p>
+<example xml:id="eg_diagonalizable_matrix_powers">
+  <title>Diagoanlizable: matrix powers</title>
+  <statement>
+    <p>
+      Assume <m>D=P^{-1}AP</m>, where <m>D</m> is diagonal.
+      To normally difficult matrix power computation <m>A^{n}</m> can be accomplished by computing <m>D^{n}</m> (easy) and then observing that
+      <md>
+        <mrow>A^n\amp = (PDP^{-1})^n \amp </mrow>
+        <mrow> \amp =PD^nP^{-1} \amp (<xref ref="th_conjugation"/>, 2) </mrow>
+      </md>.
+      For example,
+      take <m>A=\begin{bmatrix}1\amp 3\\ 1\amp -1 \end{bmatrix}</m>.
+      Using <xref ref="proc_diagonalize"/>, we see that <m>D=P^{-1}AP</m>,
+      where <m>D=\begin{bmatrix}2\amp 0\\ 0\amp -2 \end{bmatrix}</m>
+      and <m>P=\begin{bmatrix}3\amp 1\\ 1\amp -1 \end{bmatrix}</m>.
+      It follows that for any <m>n\in \Z</m> we have
+      <md>
+        <mrow>A^n \amp=PD^nP^{-1} </mrow>
+        <mrow> \amp = P\begin{bmatrix}2^{n}\amp 0\\ 0\amp (-2)^{n} \end{bmatrix} P^{-1}</mrow>
+        <mrow>  \amp = \frac{1}{4}\begin{bmatrix}3\cdot2^n+(-2)^n\amp 3\cdot 2^n-3(-2)^{n}\\ 2^{n}-(-2)^n\amp 2^n+3(-2)^{n} \end{bmatrix}</mrow>
+      </md>.
+    </p>
+  </statement>
+</example>
+<example xml:id="eg_diagonalizable_matrix_polynomials">
+  <title>Diagonalizable: matrix polynomials</title>
+
+  <statement>
+    <p>
+      Assume <m>D=P^{-1}AP</m>, where <m>D</m> is a diagonal <m>n\times n</m> matrix. Let <m>[D]_{ii}=d_{i}</m>. Given any polynomial <m>f(x)=\anpoly</m>, we have
+      <md>
+        <mrow>f(A) \amp= f(PDP^{-1}) </mrow>
+        <mrow> \amp =Pf(D)P^{-1}  \amp (<xref ref="th_conjugation"/>)</mrow>
+      </md>.
+      Furthemore, since <m>D</m> is diagonal, it follows that <m>f(D)</m> is also diagonal, and in fact its diagonal entries are given by <m>f(d_i)</m>. This gives us an easy method of computing arbitary polynomials of the matrix <m>A</m>.
     </p>
     <p>
-      The characteristic polynomial of <m>A</m> is <m>p(t)=(t-1)^2</m>.
-      Thus <m>\lambda=1</m> is the only eigenvalue of <m>A</m>.
-    </p>
-    <p>
-      We have <m>W_1=\NS(I-A)=\NS\begin{bmatrix}0\amp -1\\ 0\amp 0 \end{bmatrix}</m>.
-      We see clearly that <m>\rank(I-A)=1</m>,
-      and hence <m>\dim W_1=\dim\NS(I-A)=2-1=1</m>.
-    </p>
-    <p>
-      Since <m>W_1</m> is the only eigenspace,
-      and since <m>\dim W_1=1\ne 2</m>,
-      we conclude <m>A</m> is not diagonalizable.
-    </p>
-  </subsection>
-  <subsection>
-    <title>Example</title>
-    <p>
-      Let <m>A=\begin{bmatrix}14 \amp 21 \amp 3 \amp -39 \\ 12 \amp 25 \amp 3 \amp -41 \\ 12 \amp 24 \amp 5 \amp -42 \\ 12 \amp 22 \amp 3 \amp -38 \end{bmatrix}</m>.
-    </p>
-    <p>
-      The characteristic polynomial of <m>A</m> is <m>p(t)=x^4 - 6x^3 + 9x^2 + 4x - 12</m>.
-      (This is not obvious, but would be a pain to compute in detail.
-      You may take this for granted.)
-    </p>
-    <p>
-      Our usual factoring tricks allow us to factor this as <m>p(x)=(x-2)^2(x+1)(x-3)</m>.
-    </p>
-    <p>
-      The eigenspaces are <m>W_2=\NS(2I-A), W_{-1}=\NS(-I-A)</m>,
-      and <m>W_3=(3I-A)</m>.
-      I'll leave it to you to verify that they have bases <m>B=\{ (3,2,0,2), (1,1,2,1)\}</m>,
-      <m>B'=\{(1,1,1,1)\}</m>, and <m>B''=\{(3,5,6,4)\}</m>,
-      respectively.
-    </p>
-    <p>
-      It follows that the dimensions of the eigenspaces are 2, 1, and 1, respectively.
-      Since <m>2+1+1=4</m>, we conclude that <m>A</m> is diagonalizable.
-    </p>
-    <p>
-      In more detail, we have <m>D=P^{-1}AP</m>, where
+      Take the matrix <m>A=\begin{bmatrix}1\amp 3\\ 1\amp -1 \end{bmatrix}</m> from <xref ref="eg_diagonalizable_matrix_powers"/>, which satisfies <m>D=P^{-1}AP</m>,
+      where <m>D=\begin{bmatrix}2\amp 0\\ 0\amp -2 \end{bmatrix}</m>
+      and <m>P=\begin{bmatrix}3\amp 1\\ 1\amp -1 \end{bmatrix}</m>. Let <m>f(x)=x^2 -4</m>. Since <m>f(2)=f(-2)=0</m>, it follows that <m>f(D)=D^2-4I=\boldzero</m> and hence
       <me>
-        D=\begin{bmatrix}2\amp 0\amp 0\amp 0\\ 0\amp 2\amp 0\amp 0\\ 0\amp 0\amp -1\amp 0\\ 0\amp 0\amp 0\amp 3 \end{bmatrix} , \ \ P=\begin{bmatrix}3 \amp  1 \amp  1 \amp  3 \\ 2 \amp  1 \amp  1 \amp  5 \\ 0 \amp  2 \amp  1 \amp  6 \\ 2 \amp  1 \amp  1 \amp  4 \end{bmatrix}
-      </me>
+        f(A)=A^2-4I=Pf(D)P^{-1}=P\boldzero P^{-1}=\boldzero
+      </me>,
+      as you can easily check.
     </p>
-  </subsection>
+  </statement>
+</example>
+  <example>
+    <statement>
+      <p>
+        <m>A</m> has a <em>square-root</em>
+        (i.e., a matrix <m>B</m> such that <m>B^2=A</m>) iff <m>D</m> has a square-root.
+      </p>
+      <p>
+        Indeed, suppose <m>B^2=A</m>.
+        Set <m>C=P^{-1}BP</m>.
+        Then <m>C^2=P^{-1}B^2P=P^{-1}AP=D</m>.
+        Similarly, if <m>C^2=D</m>, then <m>B^2=A</m>, where <m>B=PCP^{-1}</m>.
+      </p>
+      <p>
+        As an example,
+        the matrix <m>A=\begin{bmatrix}0\amp -2\\ 1 \amp 3 \end{bmatrix}</m>,
+        satisfies <m>D=P^{-1}AP</m>,
+        where <m>D=\begin{bmatrix}1\amp 0\\ 0\amp 2 \end{bmatrix}</m>,
+        and <m>P=\begin{bmatrix}2\amp 1\\ -1\amp -1 \end{bmatrix}</m>.
+        Since <m>C=\begin{bmatrix}1\amp 0\\ 0\amp \sqrt{2} \end{bmatrix}</m> is a square-root of <m>D</m>,
+        <m>B=PCP^{-1}=\begin{bmatrix}2-\sqrt{2}\amp 2-2\sqrt{2}\\ -1+\sqrt{2}\amp -1+2\sqrt{2} \end{bmatrix}</m> is a square-root of <m>A</m>,
+        as you can easily check.
+      </p>
+      <p>
+        So when exactly does a diagonal matrix <m>D</m> have a square-root?
+        Clearly, it is sufficient that
+        <m>d_i\geq 0</m> for all <m>i</m>, as in the example above.
+        Interestingly, this is not a necessary condition!
+        Indeed, consider the following example:
+      </p>
+      <p>
+        <m>\begin{bmatrix}-1\amp 0\\ 0\amp -1 \end{bmatrix} =\begin{bmatrix}0\amp -1\\ 1\amp 0 \end{bmatrix} ^2</m>.
+      </p>
+    </statement>
+  </example>
+
+
+</subsection>
   <subsection>
     <title>Geometric and algebraic multiplicity</title>
     <p>
@@ -230,7 +483,7 @@
         <p>
           Let <m>A</m>
           (or <m>T</m>)
-          have characterisitc polynomial
+          have characteristic polynomial
           <me>
             p(t)=(t-\lambda_1)^{n_1}(t-\lambda_2)^{n_2}\cdots (t-\lambda_r)^{n_r}
           </me>,
@@ -265,11 +518,7 @@
         </p>
       </statement>
     </theorem>
-    <proof>
-      <p>
-        Proved elsewhere.
-      </p>
-    </proof>
+
     <corollary>
       <statement>
         <p>
@@ -277,21 +526,22 @@
           and suppose <m>\dim V=n</m>.
         </p>
         <p>
-          If <m>T</m> has <m>n</m> \alert{distinct} eigenvalues,
+          If <m>T</m> has <m>n</m> distinct eigenvalues,
           then <m>T</m> is diagonalizable.
         </p>
       </statement>
+      <proof>
+        <p>
+          Let <m>\boldv_1, \boldv_2,\dots, \boldv_n</m> be eigenvectors corresponding to these <m>n</m> distinct eigenvalues.
+          The theorem tells us they form a linearly independent set.
+          Since <m>\dim V=n</m>,
+          they form a basis for <m>V</m> by the dimension theorem compendium.
+          Since <m>T</m> has a basis of eigenvectors, it is diagonalizable.
+        </p>
+      </proof>
     </corollary>
-    <proof>
-      <p>
-        Let <m>\boldv_1, \boldv_2,\dots, \boldv_n</m> be eigenvectors corresponding to these <m>n</m> distinct eigenvalues.
-        The theorem tells us they form a linearly independent set.
-        Since <m>\dim V=n</m>,
-        they form a basis for <m>V</m> by the dimension theorem compendium.
-        Since <m>T</m> has a basis of eigenvectors, it is diagonalizable.
-      </p>
-    </proof>
-  </subsection>
+
+
   <p>
     <xref ref="th_independentteigenvectors">Theorem</xref>
     makes no assumption about the dimension of <m>V</m>.
@@ -322,328 +572,10 @@
       </p>
     </statement>
   </example>
-  <subsection>
-    <title>Final extension of the invertibility theorem</title>
-    <p>
-      Lastly, we can add one final statement to the invertibility theorem:
-      <m>A</m> is invertible if and only if <m>0</m> is not an eigenvalue of <m>A</m>.
-    </p>
-    <p>
-      Indeed <m>0</m> is an eigenvalue of <m>A</m> if and only if
-      <m>p(0)=\det(0I-A)=\det(-A)=0</m> if and only if <m>\det A=0</m>,
-      since <m>\det(-A)=(-1)^n\det A</m>.
-    </p>
-    <p>
-      Since <m>\det A=0</m> if and only if <m>A</m> is not invertible,
-      we conclude that <m>0</m> is an eigenvalue of <m>A</m> if and only if <m>A</m> is not invertible.
-    </p>
-    <p>
-      You find the final version of the invertibility theorem on the next slide.
-    </p>
-  </subsection>
-  <subsection>
-    <title>Diagonalizable matrices</title>
-    <definition>
-      <statement>
-        <p>
-          An <m>n\times n</m> matrix <m>A</m> is
-          <term>diagonalizable</term>
-          if there is an invertible matrix <m>P</m> such that <m>D=P^{-1}AP</m> is diagonal.
-        </p>
-        <p>
-          In other words,
-          <m>A</m> is diagonalizable if it is <term>similar</term>
-          to a diagonal matrix <m>D</m>.
-        </p>
-      </statement>
-    </definition>
-    <remark>
-      <ol>
-        <li>
-          <p>
-            If <m>A</m> is itself diagonal,
-            then it is diagonalizable:
-            we may choose <m>P=I_n</m> in the definition.
-          </p>
-        </li>
-        <li>
-          <p>
-            In this section we will develop a systematic procedure for determining whether a matrix is diagonalizable.
-            As we will see, the answer is yes if and only if <m>A</m> has
-            <q>enough</q>
-            linearly independent eigenvectors.
-            Of course we will spell out precisely what we mean by
-            <q>enough</q>.
-          </p>
-        </li>
-        <li>
-          <p>
-            Not all matrices are diagonalizable.
-            For example,
-            <m>A=\begin{bmatrix}0\amp 1\\ 0\amp 0 \end{bmatrix}</m> is not diagonalizable,
-            as the aforementioned procedure will show.
-          </p>
-        </li>
-        <li>
-          <p>
-            Roughly speaking,
-            you should interpret being diagonalizable as meaning
-            <q>as good as diagonal</q>. To elaborate:
-            doing arithmetic with diagonal matrices <m>D</m> is extremely easy;
-            if we know <m>A</m> is diagonalizable,
-            meaning it is similar to a diagonal matrix <m>D</m>,
-            then it shares many essential properties of <m>D</m>,
-            and we can use the relation
-            <m>D=P^{-1}AP</m> to help ease arithmetic computations involving <m>A</m>.
-          </p>
-        </li>
-      </ol>
-    </remark>
-  </subsection>
-  <subsection>
-    <title>Properties of conjugation</title>
-    <p>
-      If we have, <m>D=P^{-1}AP</m>,
-      why exactly is there such a close connection between <m>D</m> and <m>A</m>?
-      One explanation has to do with the underlying operation
-      <me>
-        A\longmapsto P^{-1}AP
-      </me>,
-      which we call <em>conjugation by <m>P</m></em>.
-      As the following theorem outlines,
-      conjugation by an invertible <m>P</m> satisfies many useful properties,
-      and we use these to relate the matrix <m>A</m> with the matrix <m>P^{-1}AP</m>.
-    </p>
-    <theorem xml:id="th_conjugation">
-      <title>Properties of conjugation</title>
-      <statement>
-        <p>
-          Let <m>P</m> be any invertible <m>n\times n</m> matrix.
-          <ol>
-            <li>
-              <p>
-                <m>P^{-1}(c_1A_1+c_2A_2)P=c_1P^{-1}A_1P+c_2P^{-1}A_2P</m>. (\alert{Conjugation by <m>P</m> is a linear transformation}.)
-              </p>
-            </li>
-            <li>
-              <p>
-                <m>P^{-1}A^nP=(P^{-1}AP)^n</m> for any integer <m>n\geq 0</m>.
-                If <m>A</m> is invertible,
-                the equality holds for <em>all</em>
-                integers <m>n</m>. (\alert{Conjugation preserves powers}.)
-              </p>
-            </li>
-            <li>
-              <p>
-                Recall that given any polynomial <m>f(x)=\anpoly</m> and any
-                <m>n\times n</m> matrix <m>A</m> we define <m>f(A)=a_nA^n+a_{n-1}A^{n-1}+a_1A+a_0I_n</m>.
-                We have <m>f(P^{-1}AP)=P^{-1}f(A)P</m> for any polynomial <m>f(x)</m>,
-                and any <m>n\times n</m> matrix <m>A</m>. (\alert{Conjugation preserves polynomial evaluation}.)
-              </p>
-            </li>
-          </ol>
-        </p>
-      </statement>
-    </theorem>
-    <proof>
-      <p>
-        Exercise.
-      </p>
-    </proof>
-  </subsection>
-  <subsection>
-    <title>Examples: utility of diagonalizability</title>
-    <p>
-      Suppose <m>A</m> is diagonalizable,
-      so that <m>D=P^{-1}AP</m>,
-      where <m>D</m> is diagonal with diagonal entries <m>d_i</m>.
-      Using <xref ref="th_conjugation">Theorem</xref>,
-      we can now see how to translate statements about <m>D</m>
-      (which are generally easy to prove),
-      to statements about <m>A</m>
-      (which otherwise might have been difficult to show).
-    </p>
-    <example xml:id="eg_diagpowers">
-      <statement>
-        <p>
-          To compute <m>A^{n}</m> (hard) we can just compute <m>D^{n}</m> (easy) and then observe that <m>A=PDP^{-1}</m>, and thus
-          <me>
-            A^{n}=(PDP^{-1})^{n}=PD^{n}P^{-1}
-          </me>,
-          where the last equality follows from part (b) of <xref ref="th_conjugation">Theorem</xref>;
-          here we let <m>P^{-1}</m> assume the role of <m>P</m> in the theorem statement.
-        </p>
-        <p>
-          For example,
-          let <m>A=\begin{bmatrix}1\amp 3\\ 1\amp -1 \end{bmatrix}</m>.
-          Let's compute <m>A^n</m> for arbitrary <m>n</m>.
-        </p>
-        <p>
-          We have <m>D=P^{-1}AP</m>,
-          where <m>D=\begin{bmatrix}2\amp 0\\ 0\amp -2 \end{bmatrix}</m>,
-          and <m>P=\begin{bmatrix}3\amp 1\\ 1\amp -1 \end{bmatrix}</m>.
-          (This is not obvious yet.
-          Soon we will have the tools to see why this is so.)
-        </p>
-        <p>
-          Then <m>A=PDP^{-1}</m>, and thus
-          <me>
-            A^{n}=PD^{n}P^{-1}=P\begin{bmatrix}2^{100}\amp 0\\ 0\amp (-2)^{100} \end{bmatrix} P^{-1}=\frac{1}{4}\begin{bmatrix}3\cdot2^n+(-2)^n\amp 3\cdot 2^n-3(-2)^{n}\\ 2^{n}-(-2)^n\amp 2^n+3(-2)^{n} \end{bmatrix}
-          </me>.
-        </p>
-      </statement>
-    </example>
-  </subsection>
-  <subsection>
-    <title>Examples: utility of diagonalizability</title>
-    <p>
-      Suppose <m>A</m> is diagonalizable,
-      so that <m>D=P^{-1}AP</m>,
-      where <m>D</m> is diagonal with diagonal entries <m>d_i</m>.
-    </p>
-    <example>
-      <statement>
-        <p>
-          More generally,
-          we have <m>f(A)=f(PDP^{-1})=Pf(D)P^{-1}</m> for any polynomial <m>f(x)=\anpoly</m>.
-          Since <m>D</m> is diagonal, with diagonal entries <m>d_i</m>,
-          it is easy to see that <m>f(D)</m> is also diagonal,
-          with diagonal entries <m>f(d_i)</m>.
-        </p>
-        <p>
-          In particular we see that <m>f(A)=\underset{n\times n}{\boldzero}</m> if and only if <m>f(D)=\underset{n\times n}{\boldzero}</m>,
-          and this holds if and only if
-          <m>f(d_i)=0</m> for each diagonal entry <m>d_i</m> of <m>D</m>.
-        </p>
-        <p>
-          Take the matrix <m>A</m> from <xref ref="eg_diagpowers">Example</xref>,
-          and let <m>f(x)=(x-2)(x+2)=x^2-4</m>.
-          Since <m>f(2)=f(-2)=0</m>,
-          it follows that <m>f(D)=f(A)=\underset{2\times 2}{\boldzero}</m>.
-          In other words,
-          <m>A^2-4I=\underset{2\times 2}{\boldzero}</m>, as you can easily check.
-        </p>
-      </statement>
-    </example>
-  </subsection>
-  <subsection>
-    <title>Examples: utility of diagonalizability</title>
-    <p>
-      Suppose <m>A</m> is diagonalizable,
-      so that <m>D=P^{-1}AP</m>,
-      where <m>D</m> is diagonal with diagonal entries <m>d_i</m>.
-    </p>
-    <example>
-      <statement>
-        <p>
-          <m>A</m> has a <em>square-root</em>
-          (i.e., a matrix <m>B</m> such that <m>B^2=A</m>) iff <m>D</m> has a square-root.
-        </p>
-        <p>
-          Indeed, suppose <m>B^2=A</m>.
-          Set <m>C=P^{-1}BP</m>.
-          Then <m>C^2=P^{-1}B^2P=P^{-1}AP=D</m>.
-          Similarly, if <m>C^2=D</m>, then <m>B^2=A</m>, where <m>B=PCP^{-1}</m>.
-        </p>
-        <p>
-          As an example,
-          the matrix <m>A=\begin{bmatrix}0\amp -2\\ 1 \amp 3 \end{bmatrix}</m>,
-          satisfies <m>D=P^{-1}AP</m>,
-          where <m>D=\begin{bmatrix}1\amp 0\\ 0\amp 2 \end{bmatrix}</m>,
-          and <m>P=\begin{bmatrix}2\amp 1\\ -1\amp -1 \end{bmatrix}</m>.
-          Since <m>C=\begin{bmatrix}1\amp 0\\ 0\amp \sqrt{2} \end{bmatrix}</m> is a square-root of <m>D</m>,
-          <m>B=PCP^{-1}=\begin{bmatrix}2-\sqrt{2}\amp 2-2\sqrt{2}\\ -1+\sqrt{2}\amp -1+2\sqrt{2} \end{bmatrix}</m> is a square-root of <m>A</m>,
-          as you can easily check.
-        </p>
-        <p>
-          So when exactly does a diagonal matrix <m>D</m> have a square-root?
-          Clearly, it is sufficient that
-          <m>d_i\geq 0</m> for all <m>i</m>, as in the example above.
-          Interestingly, this is not a necessary condition!
-          Indeed, consider the following example:
-        </p>
-        <p>
-          <m>\begin{bmatrix}-1\amp 0\\ 0\amp -1 \end{bmatrix} =\begin{bmatrix}0\amp -1\\ 1\amp 0 \end{bmatrix} ^2</m>.
-        </p>
-      </statement>
-    </example>
-  </subsection>
-  <subsection>
-    <title>Properties of similarity</title>
-    <p>
-      Before investigating the question of when a matrix is diagonalizable,
-      we record a few more properties illustrating the close connection between similar matrices.
-    </p>
-    <theorem xml:id="th_similarity">
-      <title>Properties of similarity</title>
-      <statement>
-        <p>
-          Suppose <m>A</m> is similar to <m>B</m>:
-          i.e., there is an invertible matrix <m>P</m> such that <m>B=P^{-1}AP</m>.
-          Then:
-          <ol>
-            <li>
-              <p>
-                <m>B</m> is similar to <m>A</m>. (\alert{Similarity is symmetric}.)
-              </p>
-            </li>
-            <li>
-              <p>
-                <m>A</m> and <m>B</m> have the same trace and determinant.
-              </p>
-            </li>
-            <li>
-              <p>
-                <m>A</m> and <m>B</m> have the same rank.
-              </p>
-            </li>
-            <li>
-              <p>
-                <m>A</m> and <m>B</m> have the same characteristic polynomial.
-              </p>
-            </li>
-            <li>
-              <p>
-                <m>A</m> and <m>B</m> have the same eigenvalues.
-              </p>
-            </li>
-            <li>
-              <p>
-                Given any <m>\lambda\in\R</m>,
-                let <m>W_\lambda</m> be the corresponding eigenspace for <m>A</m>,
-                and <m>W_\lambda'</m> the corresponding eigenspace for <m>B</m>.
-                Then <m>\dim W_{\lambda}=\dim W_{\lambda}'</m>.
-              </p>
-            </li>
-          </ol>
-        </p>
-      </statement>
-    </theorem>
-    <p>
-      The proof of (d) follows.
-      I leave the rest as an exercise.
-    </p>
-  </subsection>
-  <proof>
-    <p>
-      By definition we have <m>B=P^{-1}AP</m> for some matrix <m>P</m>.
-      We wish to show the characteristic polynomials <m>p_A(t)</m> and <m>p_B(t)</m> of the two matrices are equal.
-      Compute:
-      <md>
-        <mrow>p_B(t)\amp =\amp \det(tI-B)</mrow>
-        <mrow>\amp =\amp \det(tI-P^{-1}AP)</mrow>
-        <mrow>\amp =\amp \det(tP^{-1}IP-P^{-1}AP) \ \text{ (since \(P^{-1}IP=I\))}</mrow>
-        <mrow>\amp =\amp \det(P^{-1}tIP-P^{-1}AP) \ \text{ (\(t\) behaves as scalar) }</mrow>
-        <mrow>\amp =\amp \det(P^{-1}(tI-A)P)</mrow>
-        <mrow>\amp =\amp \det(P^{-1})\det(tI-A)\det(P)</mrow>
-        <mrow>\amp =\amp (\det(P))^{-1}\det(P)\det(tI-A)</mrow>
-        <mrow>\amp =\amp \det(tI-A)=p_A(t)</mrow>
-      </md>.
-    </p>
-  </proof>
-  <subsection>
-    <title>The true meaning of similarity</title>
-    <p>
+
+
+
+    <!-- <p>
       Hopefully <xref ref="th_conjugation">Theorems</xref>
       and <xref ref="th_similarity"></xref>
       convince you that similar matrices
@@ -692,116 +624,7 @@
     </p>
     <p>
       There is one true <m>T</m>!
-    </p>
+    </p> -->
   </subsection>
-  <p>
-    <image width="75%" source="images/HolyCommutativeTent.png"/>
-  </p>
-  <p>
-    The previous theorem allows us to extend some of our matrix definitions to linear transformations.
-  </p>
-  <definition>
-    <statement>
-      <p>
-        Let <m>T\colon V\rightarrow V</m> be linear,
-        let <m>B</m> be <term>any basis</term>
-        of <m>V</m>, and let <m>A=[T]_B</m>.
-        We define the <term>characteristic polynomial</term>
-        of <m>T</m> to be <m>p(t)=\det(tI-A)</m>.
-      </p>
-    </statement>
-  </definition>
 
-  <theorem>
-    <title>Invertibility theorem (final version)</title>
-    <statement>
-      <p>
-        Let <m>A</m> be <m>n\times n</m>.
-        The following statements are equivalent.
-        <ol>
-          <li>
-            <p>
-              <m>A</m> is invertible.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>A\boldx=\boldzero</m> has a unique solution
-              (the trivial one).
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>A</m> is row equivalent to <m>I_n</m>,
-              the <m>n\times n</m> identity matrix.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>A</m> is a product of elementary matrices.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>A\boldx=\boldb</m> has a solution for every
-              <m>n\times 1</m> column vector <m>\boldb</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>A\boldx=\boldb</m> has a <em>unique</em>
-              solution for every <m>n\times 1</m> column vector <m>\boldb</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>\det(A)\ne 0</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>\NS(A)=\{\boldzero\}</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>\nullity(A)=0</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>\rank(A)=n</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>\CS(A)=\R^n</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>\RS(A)=\R^n</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              The columns of <m>A</m> are linearly independent
-              (or span <m>\R^n</m>, or are a basis of <m>\R^n</m>).
-            </p>
-          </li>
-          <li>
-            <p>
-              The rows of <m>A</m> are linearly independent
-              (or span <m>\R^n</m>, or are a basis of <m>\R^n</m>).
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>A</m> does not have 0 as an eigenvalue.
-            </p>
-          </li>
-        </ol>
-      </p>
-    </statement>
-  </theorem>
 </section>
