@@ -116,7 +116,7 @@
       <title>Visualizing eigenvectors</title>
       <statement>
         <p>
-        Suppose <m>\boldv\ne\boldzero</m> is an eigenvector of the linear transformation <m>T\colon V\rightarrow V</m>. Letting <m>W=\Span\{\boldv\}</m>, this means that <m>T(\boldv)=\lambda\boldv\in W</m>: <ie />, <m>T</m> maps an eigenvector to some other element of the one-dimensional subspace it defines. The special case where <m>V=\R^2</m> is easy to visualize and can help guide your intuition in the general case. Here the space <m>\Span\{\boldv\}=\ell</m>
+        Suppose <m>\boldv\ne\boldzero</m> is an eigenvector of the linear transformation <m>T\colon V\rightarrow V</m>. Letting <m>W=\Span\{\boldv\}</m>, this means that <m>T(\boldv)=\lambda\boldv\in W</m>: <ie />, <m>T</m> maps an eigenvector to some other element of the one-dimensional subspace it defines. The special case where <m>V=\R^2</m> is easy to visualize and can help guide your intuition in the general case. (See <xref ref="fig_eigenvector_visual"/>) Here the space <m>\Span\{\boldv\}=\ell</m>
         is a line passing through origin. If <m>\boldv</m> is an eigenvector of a given linear transformation, then it must be mapped to some other vector pointing along <m>\ell</m>: <eg />, <m>\lambda_1\boldv</m> or <m>\lambda_2\boldv_2</m>. It it is not an eigenvector, it gets mapped to a vector <m>\boldw</m> that does not point along <m>\ell</m>.
         </p>
       </statement>
@@ -283,16 +283,30 @@
         <ol>
           <li>
             <p>
-             A value <m>\lambda\in \R</m> is an eigenvalue of <m>T</m> if and only if it is an eigenvalue of <m>A</m>. Thus <m>T</m> and <m>A</m> have the same set of eigenvalues.
+              A vector <m>\boldv\in V</m> is an eigenvector of <m>T</m> with eigenvalue <m>\lambda</m> if and only if <m>\boldx=[\boldv]_B</m> is an eigenvector of <m>A</m> with eigenvalue <m>\lambda</m>.
             </p>
           </li>
           <li>
             <p>
-              A vector <m>\boldv\in V</m> is an eigenvector of <m>T</m> with eigenvalue <m>\lambda</m> if and only if <m>\boldx=[\boldv]_B</m> is an eigenvector of <m>A</m> with eigenvalue <m>\lambda</m>.
+             A value <m>\lambda\in \R</m> is an eigenvalue of <m>T</m> if and only if it is an eigenvalue of <m>A</m>. Thus <m>T</m> and <m>A</m> have the same set of eigenvalues.
             </p>
           </li>
         </ol>
       </statement>
+      <proof>
+        <p>
+          We prove statement (1) as a chain of equivalences:
+          <md>
+            <mrow>\boldv \text{ is an eigenvector of } T \amp \iff \boldv\ne 0 \text{ and } T\boldv=\lambda \boldv </mrow>
+            <mrow> \amp \iff \boldx=[\boldv]_B\ne \boldzero \text{ and } [T\boldv]_B=[\lambda\boldv] \amp (<xref ref="th_coordinates" text="global"/>, (2)) </mrow>
+            <mrow>  \amp \iff \boldx=[\boldv]_B\ne \boldzero \text{ and } [T\boldv]_B=\lambda[\boldv]_B \amp (<xref ref="th_coordinates" text="global"/>, (1))</mrow>
+            <mrow>  \amp \iff \boldx=[\boldv]\ne \boldzero \text{ and } [T]_B[\boldv]_B=\lambda[\boldv]_B \amp (<xref ref="th_matrixrep" text="global"/>)</mrow>
+            <mrow>  \amp \iff \boldx\ne 0 \text{ and } A\boldx=\lambda\boldx</mrow>
+            <mrow>  \amp \iff \boldx \text{ is an eigenvector of } A</mrow>
+          </md>.
+          From (1) it follows directly that if <m>\lambda</m> is an an eigenvalue of <m>T</m>, it is an eigenvalue of <m>A=[T]_B</m>. Conversey, if <m>\lambda</m> is an eigenvalue of <m>A=[T]_B</m>, then there is a nonzero <m>\boldx\in\R^n </m> such that <m>A\boldx=\lambda \boldx</m>. Since <m>[\phantom{\boldv}]_B</m> is surjective (<xref ref="th_coordinates"/>, (3)), there is a vector <m>\boldv\in V</m> such that <m>[\boldv]_B</m>. It follows from (1) that <m>\boldv</m> is a <m>\lambda</m>-eigenvector of <m>T</m>, and thus that <m>\lambda</m> is an eigenvalue of <m>T</m>.
+        </p>
+      </proof>
     </theorem>
     <p>
       Thanks to <xref ref="th_eigenvectors_transformation_matrixrep"/>, we can boil down the eigenvector/eigenvalue question for linear transformations of finite vector spaces to the analogous question about square matrices. The next theorem is the key result.
@@ -316,7 +330,24 @@
           </ol>
         </p>
       </statement>
+      <proof>
+        <p>
+          First observe that
+          <me>
+            A\boldx=\lambda\boldx \iff \lambda\boldx-A\boldx=\boldzero \iff (\lambda I-A)\boldx=\boldzero
+          </me>.
+          From this equivalence it follows that
+          <me>
+            \NS(\lambda I-A)=\{\boldx\in \R^n\colon A\boldx=\lambda \boldx
+          </me>.
+          Since an eigenvector must be nonzero, we conclude that the <m>\lambda</m>-eigenvectors of <m>A</m> are precisely the nonzero elements of <m>\NS(\lambda I-A)</m>. This proves statement (1). As a consequence, <m>A</m> has <m>\lambda</m> as an eigenvalue if and only if <m>\NS (\lambda I-A)</m> contains a nonzero element, if and only if <m>\lambda I-A</m> is singular (<xref ref="th_invertibility_supersized" text="global"/>).
+        </p>
+      </proof>
+
     </theorem>
+    <p>
+      According to <xref ref="th_eigenvectors_matrices"/>,  the eigenvectors of <m>A</m> live in null spaces of matrices of the form <m>\lambda I-A</m>. Accordingly, we call these spaces <em>eigenspaces</em>.
+    </p>
 <definition xml:id="d_eigenspace">
   <title>Eigenspaces</title>
   <statement>
@@ -330,27 +361,13 @@
       <me>
         W_\lambda=\NS(\lambda \id_V-T)
       </me>.
-      In both cases the nonzero elements of <m>W_\lambda</m> are precisely the <m>\lambda</m>-eigenvectors.%
+      In both cases the nonzero elements of <m>W_\lambda</m> are precisely the <m>\lambda</m>-eigenvectors.
     </p>
   </statement>
 </definition>
 <p>
-  We have made some significant progress. Finding all eigenvectors with eigenvalue <m>\lambda</m> amounts to finding the nonzero elements of the space <m>\NS (\lambda I-A)</m>, and our fundamental space algorithms make this an easy task. However, for there to be any eigenvectors whatsoever, the matrix <m>\NS(\lambda I-A)</m> must be singular, or equivalently, <m>\det (\lambda I-A)=0</m>. Thus the eigenvalues of <m>A</m> are precisely the <em>roots</em> of the function <m>p(t)=\det(tI-A)</m>. Clearly this function deserves a name.
+  We nearly have a complete method for computing the eigenvalues and eigenectors of a square matrix <m>A</m>. The last step is to identify the values of <m>\lambda</m> for which <m>\lambda I-A</m> is not invertible. By <xref ref="th_invertibility_supersized" text="global"/>, the matrix <m>\lambda I-A</m> is not invertible if and only if <m>\det (\lambda I-A)=0</m>. Thus the eigenvalues of <m>A</m> are precisely the <em>zeros</em> of the function <m>p(t)=\det(tI-A)</m>.
 </p>
-<definition>
-  <idx><h>characteristic polynomial</h><h>of a matrix</h></idx>
-  <title>Characteristic polynomial of a matrix</title>
-  <statement>
-    <p>
-      Let <m>A</m> be <m>n\times n</m>.
-      The <term>characteristic polynomial</term>
-      of <m>A</m> is the function
-      <me>
-      p(t)=\det(tI-A)
-      </me>.
-    </p>
-  </statement>
-</definition>
 <corollary xml:id="cor_eigenvalues">
   <title>Eigenvalues of a matrix</title>
   <statement>
@@ -381,16 +398,205 @@
     </ol>
   </statement>
 </corollary>
+Clearly the function <m>p(t)=\det(tI-A)</m> deserves a name; we call it the <em>characteristic polynomial</em> of <m>A</m>.
+<definition>
+  <idx><h>characteristic polynomial</h><h>of a matrix</h></idx>
+  <title>Characteristic polynomial of a matrix</title>
+  <statement>
+    <p>
+      Let <m>A</m> be <m>n\times n</m>.
+      The <term>characteristic polynomial</term>
+      of <m>A</m> is the function
+      <me>
+      p(t)=\det(tI-A)
+      </me>.
+    </p>
+  </statement>
+</definition>
+<p>
+We will show in due time that <m>p(t)=\det(tI-A)</m> is indeed a polynomial ((<xref ref="th_characteristic_polynomial"/>)), but before then it is high time we saw some examples of systematically computing eigenvalues and eigenvectors of a matrix. First give a complete description of this procedure.
+</p>
+
+<algorithm xml:id="proc_eigenspaces_matrix">
+  <title>Computing eigenspaces of a matrix</title>
+  <statement>
+    <p>
+      Let <m>A</m> be an <m>n\times n</m> matrix. To find all real eigenvalues <m>\lambda</m> of <m>A</m> and compute a basis for the corresponding eigenspace <m>W_\lambda</m>, proceed as follows.
+    </p>
+    <ol>
+      <li>
+        <p>
+          Compute <m>p(t)=\det(tI-A)</m>. Let
+          <m>\lambda_1, \lambda_2, \dots, \lambda_r</m> be the distinct <em>real</em> roots of <m>p(t)</m>. These are the eigenvalues of <m>A</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          For each <m>\lambda\in \{\lambda_1, \lambda_2,\dots, \lambda_r\}</m>, the corresponding eigenspace is
+          <me>
+          W_{\lambda}=\NS(\lambda I-A)
+          </me>.
+          Use the null space algorithm (<xref ref="proc_fund_spaces" text="global"/>) to compute a basis for <m>W_\lambda</m>.
+        </p>
+      </li>
+    </ol>
+  </statement>
+</algorithm>
+<example>
+  <statement>
+    <p>
+    Let <m>A=\begin{amatrix}[rr]1\amp 2\\ 1\amp 2 \end{amatrix}</m>.
+    <ol>
+      <li>
+        <p>
+          Find all eigenvalue of <m>A</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Compute a basis for the eigenspace <m>W_\lambda</m> for each eigenvalue <m>\lambda</m>.
+        </p>
+      </li>
+    </ol>
+    </p>
+  </statement>
+  <solution>
+    <p>
+      We compute
+      <me>p(t)=\det(tI-A)=\det \begin{amatrix}[rr]t-1\amp -2\\ -1\amp t-2 \end{amatrix}=t^2-3t=t(t-3)
+      </me>.
+      Thus the eigenvalues of <m>A</m> are <m>\lambda=0</m> and <m>\lambda=3</m>.
+    </p>
+    <case>
+     <title>Basis for <m>W_0</m></title>
+    <p>
+    We have
+    <md>
+      <mrow>W_0 \amp =\NS(0I-A)</mrow>
+      <mrow> \amp = \NS(-A) </mrow>
+      <mrow>  \amp =\NS\begin{amatrix}[rr]-1\amp -2\\ -1\amp -2 \end{amatrix}</mrow>
+      <mrow>  \amp =\Span\{(2,-1)\}</mrow>
+    </md>.
+    Thus all <m>0</m>-eigenvectors of <m>A</m> are of the form <m>c(2,-1)</m>, where <m>c\ne 0</m>.
+
+    </p>
+    </case>
+    <case>
+     <title>Basis for <m>W_3</m></title>
+    <p>
+    We have
+    <md>
+      <mrow>W_3 \amp =\NS(3I-A)</mrow>
+      <mrow>  \amp =\NS\begin{amatrix}[rr]2\amp -2\\ -1\amp 1 \end{amatrix}</mrow>
+      <mrow>  \amp =\Span\{(1,1)\}</mrow>
+    </md>.
+    Thus all <m>3</m>-eigenvectors of <m>A</m> are of the form <m>c(1,1)</m>, where <m>c\ne 0</m>.
+    </p>
+    </case>
+  </solution>
+</example>
+<p>
+The example above brings to light a connection between eigenvalues and invertibility, which we make official below. At the end of the section we will add this result to our invertibility theorem.
+</p>
 <corollary xml:id="cor_eigenvalue_invertible">
   <statement>
     <p>
-      A square matrix <m>A</m> is invertible if and only if <m>0</m> is not an eigenvalue of <m>A</m>.
+      Let <m>A</m> be an <m>n\times n</m> matrix.
+      <ol>
+        <li>
+          <p>
+            The <m>0</m>-eigenspace of <m>A</m> is equal to the null space of <m>A</m>: <ie />,
+            <me>
+              W_0=\NS A
+            </me>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Zero is an eigenvalue of <m>A</m> if and only if <m>A</m> is not invertible.
+          </p>
+        </li>
+      </ol>
     </p>
   </statement>
+  <proof>
+      <ol>
+        <li>
+          <p>
+            We have
+            <me>
+              W_0=\NS(0I-A)=\NS(-A).
+            </me>
+            Since <m>-A\boldx=\boldzero</m> if and only if <m>A\boldx=\boldzero</m>, we conclude that <m>\NS(-A)=\NS A</m>, and hence <m>W_0=\NS A</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Zero is an eigenvalue of <m>A</m> if and only if <m>W_0</m> is nontrivial, if and only if <m>\NS A</m> is nontrivial (by (1)), if and only if <m>A</m> is not invertible.
+          </p>
+        </li>
+      </ol>
+  </proof>
+
 </corollary>
-<p>
-  The function <m>p(t)=\det(tI-A)</m> is indeed a polynomial. In fact, as we we will see below (<xref ref="th_characteristic_polynomial"/>), if <m>A</m> is <m>n\times n</m>, then <m>p(t)</m> is a degree <m>n</m> polynomial.
-</p>
+<example>
+  <statement>
+    <p>
+    Let
+    <me>
+    A=\begin{amatrix}[rrr]2\amp -1\amp -1\\ -1\amp 2\amp -1\\ -1\amp -1\amp 2 \end{amatrix}</me>.
+    </p>
+    <ol>
+      <li>
+        <p>
+          Find all eigenvalues of <m>A</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Compute a basis for the eigenspace <m>W_\lambda</m> for each eigenvalue <m>\lambda</m>.
+        </p>
+      </li>
+    </ol>
+  </statement>
+  <solution>
+    <p>
+      First compute
+      <md>
+        <mrow>p(t) \amp = \det (tI-A)</mrow>
+        <mrow> \amp = \det \begin{amatrix}[rrr]t-2\amp 1\amp 1\\ 1\amp t-2\amp 1\\ 1\amp 1\amp t-2 \end{amatrix} </mrow>
+        <mrow>  \amp = t^3-6t^2+9t</mrow>
+        <mrow>  \amp = t(t^2-6t+9)</mrow>
+        <mrow>  \amp = t(t-3)^2</mrow>
+      </md>.
+      We see that the eigenvalues of <m>A</m> are <m>\lambda=0</m> and <m>\lambda=3</m>. Now compute bases for their correponding eigenspaces.
+     </p>
+     <case>
+      <title>Basis of <m>W_0</m></title>
+     <p>
+     We have
+     <md>
+       <mrow>W_0 \amp = \NS(0I-A)</mrow>
+       <mrow> \amp = \NS \begin{amatrix}[rrr]-2\amp 1\amp 1\\ 1\amp -2\amp 1\\ 1\amp 1\amp -2 \end{amatrix}  </mrow>
+       <mrow>  \amp = \Span\{(1,1,1)</mrow>
+     </md>.
+     (We have skipped the Gaussian elimination steps involved in computing a basis for <m>\NS(-A)</m>.)
+     </p>
+     </case>
+     <case>
+      <title>Basis of <m>W_3</m></title>
+     <p>
+     We have
+     <md>
+       <mrow>W_3 \amp = \NS(3I-A)</mrow>
+       <mrow> \amp= \NS \begin{amatrix}[rrr]1\amp 1\amp 1\\ 1\amp 1\amp 1\\ 1\amp 1\amp 1 \end{amatrix} </mrow>
+       <mrow>  \amp = \Span\{ (1,-1,0),(1,0,-1)\}</mrow>
+     </md>.
+     </p>
+     </case>
+    We conclude that the <m>0</m>-eigenvectors of <m>A</m> are the nonzero scalar multiples of <m>(1,1,1)</m>, and that the <m>3</m>-eigenvectors are all nonzero vectors of the form <m>\boldx=c_1(1,-1,0)+c_2(1,0,-1)</m>.
+  </solution>
+</example>
 <theorem xml:id="th_characteristic_polynomial">
   <title>Characteristic polynomial</title>
   <statement>
@@ -457,73 +663,8 @@
 </corollary>
 </subsection>
 
-  <subsection>
-    <title>Example</title>
-    <p>
-      Find all eigenvalues of <m>A=\begin{bmatrix}1\amp 1\\ 2\amp -1 \end{bmatrix}</m>. \begin{bsolution} Compute:
-    </p>
-  </subsection>
-  <p>
-    <m>p(t)=\det(tI-A)=\val{\begin{array}{cc}t-1\amp -1\\ -2\amp t+1 \end{array} }=t^2-3</m>.
-  </p>
-  <p>
-    The eigenvalues are the roots of <m>p(t)</m>:
-    <m>\lambda_1=\sqrt{3}, \lambda_2=-\sqrt{3}</m>. \end{bsolution}
-  </p>
-  <subsection>
-    <title>Example</title>
-    <p>
-      Find all eigenvalues of <m>A=\begin{bmatrix}2\amp -1\amp -1\\ -1\amp 2\amp -1\\ -1\amp -1\amp 2 \end{bmatrix}</m>. \begin{bsolution} Compute:
-    </p>
-  </subsection>
-  <p>
-    <m>p(t)=\det(tI-A)=\val{\begin{array}{ccc}t-2\amp 1\amp 1\\ 1\amp t-2\amp 1\\ 1\amp 1\amp t-2 \end{array} }=t^3-6t^2+9t=t(t-3)^2</m>.
-  </p>
-  <p>
-    The eigenvalues are the roots of <m>p(t)</m>:
-    <m>\lambda_1=0</m>, <m>\lambda_2=3</m>. \end{bsolution}
-  </p>
 
-  <subsection>
-    <title>Computing eigenspaces of a matrix </title>
-    <p>
-      Now suppose we have found an eigenvalue <m>\lambda</m> of <m>A</m>.
-    </p>
-    <p>
-      Our chain of equivalences from earlier told us that the eigenvectors of <m>A</m> with eigenvalue <m>\lambda</m> are precisely the <em>nonzero</em>
-      solutions to the matrix equation <m>(\lambda I_n-A)\boldx=\boldzero</m>.
-    </p>
-    <p>
-      Thus to find all eigenvectors with eigenvalue <m>\lambda</m> we simply compute
-      <m>\NS(\lambda I_n-A)</m> using Gaussian elimination.
-    </p>
 
-  </subsection>
-  <algorithm xml:id="proc_eigenspaces_matrix">
-    <title>Computing eigenspaces of a matrix</title>
-    <statement>
-      <p>
-        Let <m>A</m> be an <m>n\times n</m> matrix. To find all real eigenvalues <m>\lambda</m> of <m>A</m> and compute a basis for the corresponding eigenspace <m>W_\lambda</m>, proceed as follows.
-      </p>
-      <ol>
-        <li>
-          <p>
-            Compute <m>p(t)=\det(tI-A)</m>. Let
-            <m>\lambda_1, \lambda_2, \dots, \lambda_r</m> be the distinct <em>real</em> roots of <m>p(t)</m>. These are the eigenvalues of <m>A</m>.
-          </p>
-        </li>
-        <li>
-          <p>
-            For each <m>\lambda\in \{\lambda_1, \lambda_2,\dots, \lambda_r\}</m>, the corresponding eigenspace is
-            <me>
-            W_{\lambda}=\NS(\lambda I-A)
-            </me>.
-            Use the null space algorithm (<xref ref="proc_fund_spaces" text="global"/>) to compute a basis for <m>W_\lambda</m>.
-          </p>
-        </li>
-      </ol>
-    </statement>
-  </algorithm>
   <algorithm xml:id="proc_eigenspaces_transformation">
     <title>Computing eigenspaces of a linear transformation</title>
     <statement>
@@ -549,65 +690,5 @@
       </ol>
     </statement>
   </algorithm>
-  <p>
-    Let's compute the eigenspaces of our previous examples.
-  </p>
-  <subsection>
-    <title>Example</title>
-    <p>
-      <m>A=\begin{bmatrix}1\amp 1\\ 2\amp -1 \end{bmatrix}</m>,
-      <m>\lambda_1=\sqrt{3}</m>, <m>\lambda_2=-\sqrt{3}</m>. \begin{bsolution}
-    </p>
-  </subsection>
-  <p>
-    Compute:
-  </p>
-  <p>
-    <m>W_{\sqrt{3}}=\NS(\sqrt{3}I-A)=\NS\left(\begin{bmatrix}\sqrt{3}-1\amp -1\\ -2\amp \sqrt{3}+1 \end{bmatrix} \right) =\Span(\left\{ \begin{bmatrix}\sqrt{3}+1\\2 \end{bmatrix} \right\})</m>
-  </p>
-  <p>
-    <m>W_{-\sqrt{3}}=\NS(-\sqrt{3}I-A)=\NS\left(\begin{bmatrix}-\sqrt{3}-1\amp -1\\ -2\amp -\sqrt{3}+1 \end{bmatrix} \right) =\Span(\left\{ \begin{bmatrix}-\sqrt{3}+1\\ 2 \end{bmatrix} \right\})</m>
-  </p>
-  <p>
-    Thus any multiple of <m>\boldv_1=(\sqrt{3}+1,2)</m> is an eigenvector of <m>A</m> with eigenvalue <m>\sqrt{3}</m>,
-    and any multiple of <m>\boldv_2=(-\sqrt{3}+1,2)</m> is an eigenvector of <m>A</m> with eigenvalue <m>-\sqrt{3}</m>.
-  </p>
-  <p>
-    Check: <m>A\begin{bmatrix}\sqrt{3}+1\\ 2 \end{bmatrix} =\begin{bmatrix}3\sqrt{3}+3\\ 2\sqrt{3} \end{bmatrix} =\sqrt{3}\begin{bmatrix}\sqrt{3}+1\\ 2 \end{bmatrix} \checkmark</m>.
-    <m>A\begin{bmatrix}-\sqrt{3}+1\\ 2 \end{bmatrix} =\begin{bmatrix}-3\sqrt{3}+3\\ -2\sqrt{3} \end{bmatrix} =-\sqrt{3}\begin{bmatrix}-\sqrt{3}+1\\ 2 \end{bmatrix} \checkmark</m>.
-  </p>
-  <p>
-    \end{bsolution}
-  </p>
-  <p>
-    Let's compute the eigenspaces of our previous examples.
-  </p>
-  <subsection>
-    <title>Example</title>
-    <p>
-      <m>A=\begin{bmatrix}2\amp -1\amp -1\\ -1\amp 2\amp -1\\ -1\amp -1\amp 2 \end{bmatrix}</m>,
-      <m>\lambda_1=0</m>, <m>\lambda_2=3</m>. \begin{bsolution} Compute:
-    </p>
-  </subsection>
-  <p>
-    <m>W_0=\NS(0I-A)=\NS\left(\begin{bmatrix}2\amp -1\amp -1\\ -1\amp 2\amp -1\\ -1\amp -1\amp 2 \end{bmatrix} \right)=\Span\left(\left\{\boldv_1=\begin{bmatrix}1 \\ 1 \\ 1 \end{bmatrix} \right\}\right)</m>.
-  </p>
-  <p>
-    <m>W_3=\NS(3I-A)=\NS(\left( \begin{bmatrix}1\amp 1\amp 1\\ 1\amp 1\amp 1\\ 1\amp 1\amp 1 \end{bmatrix} \right) =\Span\left(\left\{\boldv_2= \begin{bmatrix}1 \\ -1 \\ 0 \end{bmatrix} , \boldv_3=\begin{bmatrix}1 \\ 0 \\ -1 \end{bmatrix} \right\}\right)</m>.
-  </p>
-  <p>
-    Thus the eigenvectors of <m>A</m> with eigenvalue 0 are vectors of the form <m>c\boldv_1</m>,
-    and the eigenvectors of <m>A</m> with eigenvalue 3 are vectors of the form <m>c\boldv_2+d\boldv_3</m>.
-  </p>
-  <subsection>
-    <title>Comment</title>
-    <p>
-      Note that in general <m>W_0=\NS(0I-A)=\NS(-A)=\NS(A)</m>.
-      (Think about why the last equality is true.)
-    </p>
-  </subsection>
-  <p>
-    Thus the eigenvectors of <m>A</m> with eigenvalue 0 are precisely the nonzero vectors of <m>\NS(A)</m>,
-    should there be any at all! \end{bsolution}
-  </p>
+
 </section>
