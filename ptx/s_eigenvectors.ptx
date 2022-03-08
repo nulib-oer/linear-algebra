@@ -270,7 +270,7 @@
   </subsection>
 
   <subsection>
-    <title>Finding eigenvalues of <m>T</m> systematically</title>
+    <title>Finding eigenvalues and eigenvectors systematically</title>
     <p>
       You can imagine that our <foreign>ad hoc</foreign> approach to finding eigenvalues and eigenvectors will break down once the linear transformation under consideration becomes complicated enough. As such it is vital to have a systematic method of finding all eigenvalues and eigenvectors of a linear transformation <m>T\colon V\rightarrow V</m>. The rest of this section is devoted to describing just such a method in the special case where <m>\dim V=n\lt\infty</m>. The first key observation is that we can answer the eigenvalues/eigenvectors of <m>T</m> by answering the same question about <m>A=[T]_B</m>, where <m>B</m> is an ordered basis of <m>V</m>.
     </p>
@@ -304,7 +304,7 @@
             <mrow>  \amp \iff \boldx\ne 0 \text{ and } A\boldx=\lambda\boldx</mrow>
             <mrow>  \amp \iff \boldx \text{ is an eigenvector of } A</mrow>
           </md>.
-          From (1) it follows directly that if <m>\lambda</m> is an an eigenvalue of <m>T</m>, it is an eigenvalue of <m>A=[T]_B</m>. Conversey, if <m>\lambda</m> is an eigenvalue of <m>A=[T]_B</m>, then there is a nonzero <m>\boldx\in\R^n </m> such that <m>A\boldx=\lambda \boldx</m>. Since <m>[\phantom{\boldv}]_B</m> is surjective (<xref ref="th_coordinates"/>, (3)), there is a vector <m>\boldv\in V</m> such that <m>[\boldv]_B</m>. It follows from (1) that <m>\boldv</m> is a <m>\lambda</m>-eigenvector of <m>T</m>, and thus that <m>\lambda</m> is an eigenvalue of <m>T</m>.
+          From (1) it follows directly that if <m>\lambda</m> is an an eigenvalue of <m>T</m>, then it is an eigenvalue of <m>A=[T]_B</m>. Conversey, if <m>\lambda</m> is an eigenvalue of <m>A=[T]_B</m>, then there is a nonzero <m>\boldx\in\R^n </m> such that <m>A\boldx=\lambda \boldx</m>. Since <m>[\phantom{\boldv}]_B</m> is surjective (<xref ref="th_coordinates"/>, (3)), there is a vector <m>\boldv\in V</m> such that <m>[\boldv]_B</m>. It follows from (1) that <m>\boldv</m> is a <m>\lambda</m>-eigenvector of <m>T</m>, and thus that <m>\lambda</m> is an eigenvalue of <m>T</m>.
         </p>
       </proof>
     </theorem>
@@ -324,7 +324,7 @@
             </li>
             <li>
               <p>
-                As a consequence, <m>\lambda\in \R</m> is an eigenvalue of <m>A</m> if and only if the matrix <m>\lambda I-A</m> is singular (<ie />, noninvertible).
+                As a consequence, <m>\lambda\in \R</m> is an eigenvalue of <m>A</m> if and only if the matrix <m>\lambda I-A</m> is singular (<ie />, not invertible).
               </p>
             </li>
           </ol>
@@ -338,9 +338,9 @@
           </me>.
           From this equivalence it follows that
           <me>
-            \NS(\lambda I-A)=\{\boldx\in \R^n\colon A\boldx=\lambda \boldx
+            \NS(\lambda I-A)=\{\boldx\in \R^n\colon A\boldx=\lambda \boldx\}
           </me>.
-          Since an eigenvector must be nonzero, we conclude that the <m>\lambda</m>-eigenvectors of <m>A</m> are precisely the nonzero elements of <m>\NS(\lambda I-A)</m>. This proves statement (1). As a consequence, <m>A</m> has <m>\lambda</m> as an eigenvalue if and only if <m>\NS (\lambda I-A)</m> contains a nonzero element, if and only if <m>\lambda I-A</m> is singular (<xref ref="th_invertibility_supersized" text="global"/>).
+          Since an eigenvector must be nonzero, we conclude that the <m>\lambda</m>-eigenvectors of <m>A</m> are precisely the nonzero elements of <m>\NS(\lambda I-A)</m>. This proves statement (1). As a consequence, we see that <m>A</m> has <m>\lambda</m> as an eigenvalue if and only if <m>\NS (\lambda I-A)</m> contains nonzero element elements: <ie />, if and only if <m>\NS (\lambda I-A)\ne \{\boldzero\}</m>. By the <xref ref="th_invertibility_supersized" text="custom">invertibility theorem</xref> this is true if and only if <m>\lambda I-A</m> is not invertible.
         </p>
       </proof>
 
@@ -361,18 +361,18 @@
       <me>
         W_\lambda=\NS(\lambda \id_V-T)
       </me>.
-      In both cases the nonzero elements of <m>W_\lambda</m> are precisely the <m>\lambda</m>-eigenvectors.
+      In both cases the <em>nonzero</em> elements of <m>W_\lambda</m> are precisely the <m>\lambda</m>-eigenvectors.
     </p>
   </statement>
 </definition>
 <p>
-  We nearly have a complete method for computing the eigenvalues and eigenectors of a square matrix <m>A</m>. The last step is to identify the values of <m>\lambda</m> for which <m>\lambda I-A</m> is not invertible. By <xref ref="th_invertibility_supersized" text="global"/>, the matrix <m>\lambda I-A</m> is not invertible if and only if <m>\det (\lambda I-A)=0</m>. Thus the eigenvalues of <m>A</m> are precisely the <em>zeros</em> of the function <m>p(t)=\det(tI-A)</m>.
+  We nearly have a complete method for computing the eigenvalues and eigenectors of a square matrix <m>A</m>. The last step is to identify the values of <m>\lambda</m> for which <m>\lambda I-A</m> is not invertible. By the <xref ref="th_invertibility_supersized" text="custom">invertibility theorem</xref>, the matrix <m>\lambda I-A</m> is not invertible if and only if <m>\det (\lambda I-A)=0</m>. Thus the eigenvalues of <m>A</m> are precisely the <em>zeros</em> of the function <m>p(t)=\det(tI-A)</m>. We have proved the following corollary.
 </p>
 <corollary xml:id="cor_eigenvalues">
   <title>Eigenvalues of a matrix</title>
   <statement>
     <p>
-      Let <m>A</m> be an <m>n\times n</m> matrix, and let <m>p(t)=\det(tI-A)</m>. The following are equivalent:
+      Let <m>A</m> be an <m>n\times n</m> matrix, let <m>p(t)=\det(tI-A)</m>, and let <m>\lambda\in \R</m>. The following are equivalent:
     </p>
     <ol>
       <li>
@@ -398,7 +398,36 @@
     </ol>
   </statement>
 </corollary>
-Clearly the function <m>p(t)=\det(tI-A)</m> deserves a name; we call it the <em>characteristic polynomial</em> of <m>A</m>.
+<example xml:id="eg_eigenvalues_rotation">
+  <title>Rotation (again)</title>
+  <statement>
+    <p>
+    Fix <m>\theta\in (0,2\pi)</m> and let <m>T\colon \R^2\rightarrow \R^2</m> be rotation by <m>\theta</m>. Recall that we have <m>T=T_A</m> where
+    <me>
+      A=\begin{amatrix}[rr]\cos\theta\amp -\sin\theta\\ \sin\theta\amp \cos\theta  \end{amatrix}
+    </me>.
+    Now compute
+    <md>
+      <mrow>p(t)=\det(tI-A) \amp= \det \begin{bmatrix}
+        t-\cos\theta\amp \sin\theta\\ -\sin\theta\amp t-\cos\theta
+      \end{bmatrix} </mrow>
+      <mrow> \amp=t^2-2(\cos\theta)t+1</mrow>
+    </md>.
+    We can use the quadratic formula to find the roots of <m>p(t)</m>:
+    <me>
+      t=\frac{2\cos\theta\pm \sqrt{4\cos^2\theta-4}}{2}=\cos\theta\pm \sqrt{\cos^2\theta-1}
+    </me>.
+    When <m>\theta=\pi</m>, this reduces to <m>t=\cos\pi=-1</m>, confirming our conclusion in <xref ref="eg_eigenvector_adhoc_rotation"/> that <m>\lambda=-1</m> is the only eigenvalue of the rotation by <m>\pi</m> operator.
+    </p>
+    <p>
+      When <m>\theta\in (0,\pi)</m> and <m>\theta\ne \pi</m>, then <m>\cos^2\theta-1\lt 0</m>
+      and we see that <m>p(t)</m> has no real roots. This confirms our conclusion in <xref ref="eg_eigenvector_adhoc_rotation"/> that such rotations have no eigenvalues.
+    </p>
+  </statement>
+</example>
+<p>
+  Clearly the function <m>p(t)=\det(tI-A)</m> deserves a name; we call it the <em>characteristic polynomial</em> of <m>A</m>.
+</p>
 <definition>
   <idx><h>characteristic polynomial</h><h>of a matrix</h></idx>
   <title>Characteristic polynomial of a matrix</title>
@@ -414,14 +443,14 @@ Clearly the function <m>p(t)=\det(tI-A)</m> deserves a name; we call it the <em>
   </statement>
 </definition>
 <p>
-We will show in due time that <m>p(t)=\det(tI-A)</m> is indeed a polynomial ((<xref ref="th_characteristic_polynomial"/>)), but before then it is high time we saw some examples of systematically computing eigenvalues and eigenvectors of a matrix. First give a complete description of this procedure.
+We will show below that <m>p(t)=\det(tI-A)</m> is indeed a polynomial (<xref ref="th_characteristic_polynomial"/>). We postpone that discussion for now in order to present some examples of systematically computing eigenvalues and eigenvectors of matrices. Below you find the the complete description of this procedure.
 </p>
 
 <algorithm xml:id="proc_eigenspaces_matrix">
   <title>Computing eigenspaces of a matrix</title>
   <statement>
     <p>
-      Let <m>A</m> be an <m>n\times n</m> matrix. To find all real eigenvalues <m>\lambda</m> of <m>A</m> and compute a basis for the corresponding eigenspace <m>W_\lambda</m>, proceed as follows.
+      Let <m>A</m> be an <m>n\times n</m> matrix. To find all eigenvalues <m>\lambda</m> of <m>A</m> and compute a basis for the corresponding eigenspace <m>W_\lambda</m>, proceed as follows.
     </p>
     <ol>
       <li>
@@ -442,7 +471,7 @@ We will show in due time that <m>p(t)=\det(tI-A)</m> is indeed a polynomial ((<x
     </ol>
   </statement>
 </algorithm>
-<example>
+<example xml:id="eg_eigenspaces_A">
   <statement>
     <p>
     Let <m>A=\begin{amatrix}[rr]1\amp 2\\ 1\amp 2 \end{amatrix}</m>.
@@ -495,8 +524,67 @@ We will show in due time that <m>p(t)=\det(tI-A)</m> is indeed a polynomial ((<x
     </case>
   </solution>
 </example>
+
+<example xml:id="eg_eigenspaces_B">
+  <statement>
+    <p>
+    Let
+    <me>
+    A=\begin{amatrix}[rrr]2\amp -1\amp -1\\ -1\amp 2\amp -1\\ -1\amp -1\amp 2 \end{amatrix}</me>.
+    </p>
+    <ol>
+      <li>
+        <p>
+          Find all eigenvalues of <m>A</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Compute a basis for the eigenspace <m>W_\lambda</m> for each eigenvalue <m>\lambda</m>.
+        </p>
+      </li>
+    </ol>
+  </statement>
+  <solution>
+    <p>
+      First compute
+      <md>
+        <mrow>p(t) \amp = \det (tI-A)</mrow>
+        <mrow> \amp = \det \begin{amatrix}[rrr]t-2\amp 1\amp 1\\ 1\amp t-2\amp 1\\ 1\amp 1\amp t-2 \end{amatrix} </mrow>
+        <mrow>  \amp = t^3-6t^2+9t</mrow>
+        <mrow>  \amp = t(t^2-6t+9)</mrow>
+        <mrow>  \amp = t(t-3)^2</mrow>
+      </md>.
+      We see that the eigenvalues of <m>A</m> are <m>\lambda=0</m> and <m>\lambda=3</m>. Now compute bases for their corresponding eigenspaces.
+     </p>
+     <case>
+      <title>Basis of <m>W_0</m></title>
+     <p>
+     We have
+     <md>
+       <mrow>W_0 \amp = \NS(0I-A)</mrow>
+       <mrow> \amp = \NS \begin{amatrix}[rrr]-2\amp 1\amp 1\\ 1\amp -2\amp 1\\ 1\amp 1\amp -2 \end{amatrix}  </mrow>
+       <mrow>  \amp = \Span\{(1,1,1)</mrow>
+     </md>.
+     (We have skipped the Gaussian elimination steps involved in computing a basis for <m>\NS(-A)</m>.)
+     </p>
+     </case>
+     <case>
+      <title>Basis of <m>W_3</m></title>
+     <p>
+     We have
+     <md>
+       <mrow>W_3 \amp = \NS(3I-A)</mrow>
+       <mrow> \amp= \NS \begin{amatrix}[rrr]1\amp 1\amp 1\\ 1\amp 1\amp 1\\ 1\amp 1\amp 1 \end{amatrix} </mrow>
+       <mrow>  \amp = \Span\{ (1,-1,0),(1,0,-1)\}</mrow>
+     </md>.
+     </p>
+     </case>
+    We conclude that the <m>0</m>-eigenvectors of <m>A</m> are the nonzero scalar multiples of <m>(1,1,1)</m>, and that the <m>3</m>-eigenvectors are all nonzero vectors of the form <m>\boldx=c_1(1,-1,0)+c_2(1,0,-1)</m>.
+  </solution>
+</example>
 <p>
-The example above brings to light a connection between eigenvalues and invertibility, which we make official below. At the end of the section we will add this result to our invertibility theorem.
+<xref first="eg_eigenspaces_A" last="eg_eigenspaces_B"/> bring to light a connection between eigenvalues and invertibility that is worth highlighting.
 </p>
 <corollary xml:id="cor_eigenvalue_invertible">
   <statement>
@@ -539,64 +627,106 @@ The example above brings to light a connection between eigenvalues and invertibi
   </proof>
 
 </corollary>
-<example>
+<p>
+  Of course statement (2) of <xref ref="cor_eigenvalue_invertible"/> gives rise to yet another equivalent formulation of invertibility, and we include this in our ever-expanding <xref ref="th_invertibility_penultimate" text="custom">invertibility theorem</xref> at the end of the section. We end our current discusion with an example illustrating how to compute the eigenvalues and eigenvectors of an arbitrary linear transformation <m>T\colon V\rightarrow V</m> of a finite-dimensional space. The idea is to first represent <m>T</m> as a matrix with respect to some basis <m>B</m>, apply <xref ref="proc_eigenspaces_matrix"/> to this matrix, and then <q>lift</q> the results back to <m>V</m>.
+</p>
+<algorithm xml:id="proc_eigenspaces_transformation">
+  <title>Computing eigenspaces of a linear transformation</title>
   <statement>
     <p>
-    Let
-    <me>
-    A=\begin{amatrix}[rrr]2\amp -1\amp -1\\ -1\amp 2\amp -1\\ -1\amp -1\amp 2 \end{amatrix}</me>.
+      Let <m>T\colon V\rightarrow V</m> be a linear transformation of a finite-dimensional vector space <m>V</m>. To compute the eigenvalues and eigenspaces of <m>T</m>, proceed as follows.
     </p>
     <ol>
       <li>
         <p>
-          Find all eigenvalues of <m>A</m>.
+          Pick <em>any</em> ordered basis <m>B</m> of <m>V</m> and compute <m>A=[T]_B</m>.
         </p>
       </li>
       <li>
         <p>
-          Compute a basis for the eigenspace <m>W_\lambda</m> for each eigenvalue <m>\lambda</m>.
+          Apply <xref ref="proc_eigenspaces_matrix"/> to <m>A</m> to compute bases of <m>W_\lambda</m> for each eigenvalue <m>\lambda</m> of <m>A</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          For each eigenvalue <m>\lambda</m>, <q>lift</q> the basis of <m>W_\lambda\subseteq \R^n</m> back up to <m>V</m> using the coordinate transformation <m>[\phantom{\boldv}]_B</m>. The result is the basis for the <m>\lambda</m>-eigenspace of <m>T</m>.
+        </p>
+      </li>
+    </ol>
+  </statement>
+</algorithm>
+<example xml:id="eg_eigenvector_systematic_transposition">
+  <title>Transposition (again)</title>
+  <statement>
+    <p>
+      Let <m>S\colon M_{22}\rightarrow M_{22}</m> be defined as <m>S(A)=A^T</m>.
+    </p>
+    <ol>
+      <li>
+        <p>
+          Find all eigenvalues of <m>S</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          For each eigenvalue <m>\lambda</m> of <m>S</m> compute a basis for <m>W_\lambda</m>.
         </p>
       </li>
     </ol>
   </statement>
   <solution>
     <p>
-      First compute
+      Let <m>B=(E_{11}, E_{12}, E_{21}, E_{22})</m>, the standard ordered basis of <m>M_{22}</m>. Compute <m>A=[S]_B</m>:
       <md>
-        <mrow>p(t) \amp = \det (tI-A)</mrow>
-        <mrow> \amp = \det \begin{amatrix}[rrr]t-2\amp 1\amp 1\\ 1\amp t-2\amp 1\\ 1\amp 1\amp t-2 \end{amatrix} </mrow>
-        <mrow>  \amp = t^3-6t^2+9t</mrow>
-        <mrow>  \amp = t(t^2-6t+9)</mrow>
-        <mrow>  \amp = t(t-3)^2</mrow>
+        <mrow> A=[S]_B \amp =\begin{bmatrix}
+          \vert \amp \vert\amp \vert\amp \vert \\
+          [S(E_{11})]_B\amp [S(E_{12})]_B \amp [S(E_{21})]_B \amp [S(E_{22})]_B\\
+          \vert \amp \vert \amp \vert\amp \vert
+      \end{bmatrix} </mrow>
+      <mrow>  \amp = =\begin{bmatrix}
+        \vert \amp \vert\amp \vert\amp \vert \\
+        [E_{11}]_B\amp [E_{21}]_B \amp [E_{12}]_B \amp [E_{22}]_B \\
+        \vert \amp \vert \amp \vert\amp \vert
+    \end{bmatrix}
+    \amp (E_{11}^T=E_{11}, E_{12}^T=E_{21}, \text{etc.})</mrow>
+    <mrow>  \amp =\begin{bmatrix}
+      1\amp 0\amp 0\amp 0\\
+      0\amp 0\amp 1\amp 0\\
+      0\amp 1\amp 0\amp 0\\
+      0\amp 0\amp 0\amp 1
+    \end{bmatrix} </mrow>
       </md>.
-      We see that the eigenvalues of <m>A</m> are <m>\lambda=0</m> and <m>\lambda=3</m>. Now compute bases for their correponding eigenspaces.
-     </p>
-     <case>
-      <title>Basis of <m>W_0</m></title>
-     <p>
-     We have
-     <md>
-       <mrow>W_0 \amp = \NS(0I-A)</mrow>
-       <mrow> \amp = \NS \begin{amatrix}[rrr]-2\amp 1\amp 1\\ 1\amp -2\amp 1\\ 1\amp 1\amp -2 \end{amatrix}  </mrow>
-       <mrow>  \amp = \Span\{(1,1,1)</mrow>
-     </md>.
-     (We have skipped the Gaussian elimination steps involved in computing a basis for <m>\NS(-A)</m>.)
-     </p>
-     </case>
-     <case>
-      <title>Basis of <m>W_3</m></title>
-     <p>
-     We have
-     <md>
-       <mrow>W_3 \amp = \NS(3I-A)</mrow>
-       <mrow> \amp= \NS \begin{amatrix}[rrr]1\amp 1\amp 1\\ 1\amp 1\amp 1\\ 1\amp 1\amp 1 \end{amatrix} </mrow>
-       <mrow>  \amp = \Span\{ (1,-1,0),(1,0,-1)\}</mrow>
-     </md>.
-     </p>
-     </case>
-    We conclude that the <m>0</m>-eigenvectors of <m>A</m> are the nonzero scalar multiples of <m>(1,1,1)</m>, and that the <m>3</m>-eigenvectors are all nonzero vectors of the form <m>\boldx=c_1(1,-1,0)+c_2(1,0,-1)</m>.
+    Now apply <xref ref="proc_eigenspaces_matrix"/> to <m>A</m>. From <m>p(t)=\det(tI-A)=(t-1)^2(t^2-1)=(t-1)^3(t+1)</m> we conclude that <m>\lambda=1</m> and <m>\lambda=-1</m> are the only eigenvalues of <m>A</m> (and hence also <m>S</m>). Basese for the corresponding eigenspaces of <m>A</m> are easily computed as
+    <md>
+      <mrow>\NS(I-A) \amp= \Span\{(1,0,0,0), (0,1,1,0), (0,0,0,1)\} </mrow>
+      <mrow> \NS(-I-A) \amp =\Span\{(0,1,-1,0)\} </mrow>
+    </md>.
+    Now lift these up to bases of the eigenspaces <m>W_1</m> and <m>W_{-1}</m> of <m>S</m>:
+    <md>
+      <mrow>W_1 \amp=\Span\left\{ A_1=\begin{bmatrix}
+        1\amp 0\\ 0 \amp 0
+      \end{bmatrix},
+      A_2=\begin{bmatrix}
+        0\amp 1\\ 1 \amp 0
+      \end{bmatrix},
+      A_3=\begin{bmatrix}
+        0\amp 0\\ 0 \amp 1
+      \end{bmatrix} \right\} </mrow>
+      <mrow>W_{-1} \amp= \Span\left\{A_4=
+      \begin{amatrix}[rr]
+        0\amp 1\\ -1 \amp 0
+      \end{amatrix} \right\} </mrow>
+    </md>.
+    It is easy to see that <m>W_1</m> and <m>W_2</m> are the subspaces of symmetric and skew-symmetric matricies, respectively. This is consistent with our analysis in <xref ref="eg_eigenvector_adhoc_transposition"/>.
+    </p>
   </solution>
 </example>
+</subsection>
+<subsection xml:id="ss_eigenvectors_characteristic_polynomial">
+  <title>Properties of the characteristic polynomial</title>
+  <p>
+    We turn now to some very useful properties of the characteristic polynomial <m>p(t)=\det(tI-A)</m> of a square matrix <m>A</m>.
+  </p>
 <theorem xml:id="th_characteristic_polynomial">
   <title>Characteristic polynomial</title>
   <statement>
@@ -606,15 +736,15 @@ The example above brings to light a connection between eigenvalues and invertibi
     <ol>
       <li>
         <p>
-          The function <m>p(t)=\det (tI-A)</m> is a monic polynomial of degree <m>n</m>: <ie />,
+          The function <m>p(t)=\det (tI-A)</m> is a monic polynomial of degree <m>n</m> with real coefficients: <ie />,
           <men xml:id="eq_char_poly">
-          p(t)=t^n+a_{n-1}t^{n-1}+\cdots +a_1t+a_0
+          p(t)=t^n+a_{n-1}t^{n-1}+\cdots +a_1t+a_0, a_i\in \R
         </men>.
         </p>
       </li>
       <li>
         <p>
-          Over <m>\C</m> we can factor <m>p(t)</m> completely as
+          Over the complex numbers <m>\C</m> we can factor <m>p(t)</m> completely as
           <me>
             p(t)=(t-\lambda_1)(t-\lambda_2)\cdots (t-\lambda_n),
           </me>
@@ -653,7 +783,77 @@ The example above brings to light a connection between eigenvalues and invertibi
       </li>
     </ol>
   </statement>
+  <proof>
+    <proof>
+      <title>Proof of (1)</title>
+      <p>
+       We show the claim by strong induction on <m>n\geq 1</m>. The claim is easily seen to be true for all <m>1\times 1</m>.
+      </p>
+      <p>
+        Fix <m>n\geq 2</m> and assume the claim is true for all <m>(n-1)\times (n-1)</m> matrices. Let <m>A=[a_{ij}]_{1\leq i,j\leq n}</m>.  Expanding  <m>p(t)=\det (tI-A)</m> along the first row yields
+        <men xml:id="eq_char_poly_proof">
+          p(t)=(t-a_{11})\det(t-A)_{11}-a_{12}\det(t-A)_{12}+a_{13}\det(t-A)_{13}+\cdots,
+        </men>.
+        (Recall that for any matrix <m>B</m> the notation <m>B_{ij}</m> denotes the submatrix obtained by removing the <m>i</m>-th row and <m>j</m>-th column of <m>B</m>.) First observe that <m>(t-A)_{11}=t-A_{11}</m>, and thus <m>\det(t-A)_{11}</m> is the characteristic polynomial of the <m>(n-1)\times (n-1)</m> matrix <m>A_{11}</m>. By induction this is a monic polynomial of degree <m>n-1</m>, and hence the
+        first term of <xref ref="eq_char_poly_proof"/>, <m>(t-a_{11})\det(t-A)_{11}</m> is a monic polynomial of degree <m>n</m>. The result follows once we can show the remaining terms of <xref ref="eq_char_poly_proof"/> are polynomials of degree <m>n-1</m>. To see this, observe that each submatrix <m>(t-A)_{1j}</m> can be realized as an <m>(n-1)\times (n-1)</m> matrix of the form <m>t-B</m> after a row swap and a column swap. (Convince yourself of this!) These two operations taken together leave the determinant unchanged, and we conclude by induction that the <m>j</m>-th term <m>(-1)^{1+j}a_{1j}\det(t-A)_{1j}=(-1)^{1+j}a_{1j}\det(t-B)</m> is a monic polynomial of degree <m>(n-1)</m>, as claimed.
+      </p>
+    </proof>
+    <proof>
+      <title>Proof of (2)-(3)</title>
+      <p>
+      Statement (2) is the fundamental theorem of algebra: every polynomial with real coeofficients factors completely over the complex numbers. Statement (3) follows from <xref ref="cor_eigenvalues"/>.
+      </p>
+    </proof>
+    <proof>
+      <title>Proof of (4)-(6)</title>
+      <p>
+        Statement (6) clearly follows from statements (4) and (5). From (1) and (2) we conclude
+        <men xml:id="eq_char_poly_equality">
+          t^n+a_{n-1}t^{n-1}+\cdots +a_1t+a_0=(t-\lambda_1)(t-\lambda_2)\cdots (t-\lambda_n)
+        </men>.
+        Expanding out the right-hand side of this polynomial equality yields a polynomial of the form
+        <me>
+          t^n-(\lambda_1+\lambda_2+\cdots \lambda_n)t^{n-1}+\cdots +b_1t+(-1)^n\lambda_1\lambda_2\cdots \lambda_n
+        </me>.
+        Going back and equating coefficients between the left- and right-hand sides of <xref ref="eq_char_poly_equality"/> yields
+        <md>
+          <mrow>a_{n-1} \amp = -(\lambda_1+\lambda_2+\cdots +\lambda_n)</mrow>
+          <mrow> a_0 \amp =(-1)^n\lambda_1\lambda_2\cdots \lambda_n </mrow>
+        </md>.
+        This proves half of statements (4) and (5).
+        The fact that <m>a_{n-1}=-\tr A</m> can be proved by induction using a modified version of the argument from the proof of (1) above. It remains to show that <m>a_n=(-1)^n\det A</m>. We have
+        <md>
+          <mrow>a_n \amp= p(0) </mrow>
+          <mrow> \amp=\det(0I-A) </mrow>
+          <mrow>  \amp=\det(-A) </mrow>
+          <mrow>  \amp =(-1)^n\det A</mrow>
+        </md>.
+      </p>
+    </proof>
+  </proof>
 </theorem>
+    <remark xml:id="rm_char_poly_trick">
+  <title>Characteristic polynomial for <m>2\times 2</m> matrices</title>
+  <statement>
+    <p>
+      Let <m>A</m> be a <m>2\times 2</m> matrix, and let <m>p(t)=\det(tI-A)</m>. Using <xref first="eq_char_poly" last="eq_char_poly_det"/> we have
+    <me>
+      p(t)=t^2-(\tr A) t+\det A
+    </me>.
+    This is a useful trick if you want to produce a <m>2\times 2</m> matrix with a prescribed characteristic polynomial. For example, a matrix with characteristic polynomial <m>p(t)=t^2-2</m> has trace equal to 0 and determinant equal to <m>-2</m>. Such matrices are easy to construct: <eg />,
+    <me>
+    A_1=\begin{amatrix}[rr]0\amp 2\\ 1\amp 0  \end{amatrix}, A_2=\begin{amatrix}[rr]1\amp 1 \\ 1\amp -1  \end{amatrix}, A_3=\begin{amatrix}[rr] 3\amp -7 \\ 1\amp -3 \end{amatrix}
+    </me>.
+    </p>
+  </statement>
+</remark>
+
+<p>
+  An important consequence of <xref ref="th_characteristic_polynomial"/> is that an <m>n\times n</m> matrix <m>A</m> can have at most <m>n</m> distinct eigenvalues. Indeed, the eigenvalues of <m>A</m> are the real roots appearing among the <m>\lambda_i</m> in the factorization
+  <me>
+    p(t)=\det(tI-A)=(t-\lambda_1)(t-\lambda_2)\cdots (t-\lambda_n)
+  </me>. This proves the following corollary.
+</p>
 <corollary xml:id="cor_eigenvalues_atmost_n">
   <statement>
     <p>
@@ -661,34 +861,101 @@ The example above brings to light a connection between eigenvalues and invertibi
     </p>
   </statement>
 </corollary>
+<p>
+  Lastly, as promised we end by incorporating statement (2) of <xref ref="cor_eigenvalue_invertible"/> into our invertibility theorem.
+</p>
+<theorem xml:id="th_invertibility_penultimate">
+  <title>Invertibility theorem (final version)</title>
+  <statement>
+    <p>
+      Let <m>A</m> be an <m>n\times n</m> matrix.
+      The following statements are equivalent.
+    </p>
+    <ol>
+      <li>
+        <p>
+          <m>A</m> is invertible.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          The matrix equation <me>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldb}</me> has a <em>unique solution</em> for <em>any</em> column vector  <m>\boldb</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          The matrix equation <me>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldb}</me> has a solution for <em>any</em> column vector  <m>\boldb</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          The matrix equation <me>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldzero}</me> has a <em>unique solution</em>: namely, <m>\boldx=\boldzero_{n\times 1}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>A</m> is row equivalent to <m>I_n</m>,
+          the <m>n\times n</m> identity matrix.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>A</m> is a product of elementary matrices.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\det A\ne 0</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\NS A=\{\boldzero\}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\nullity A=0</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\rank A=0</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\RS A=\R^n</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\CS A=\R^n</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          Any of the following equivalent conditions about the set <m>S</m> of <em>columns</em> of <m>A</m> hold: <m>S</m> is a basis of <m>\R^n</m>; <m>S</m> spans <m>\R^n</m>; <m>S</m> is linearly independent.
+        </p>
+      </li>
+      <li>
+        <p>
+          Any of the following equivalent conditions about the set <m>S</m> of <em>rows</em> of <m>A</m> hold: <m>S</m> is a basis of <m>\R^n</m>; <m>S</m> spans <m>\R^n</m>; <m>S</m> is linearly independent.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\lambda=0</m> is not an eigenvalue of <m>A</m>.
+        </p>
+      </li>
+    </ol>
+  </statement>
+</theorem>
 </subsection>
 
 
 
-  <algorithm xml:id="proc_eigenspaces_transformation">
-    <title>Computing eigenspaces of a linear transformation</title>
-    <statement>
-      <p>
-        Let <m>T\colon V\rightarrow V</m> be a linear transformation of a finite-dimensional vector space <m>V</m>. To compute the eigenvalues and eigenspaces of <m>T</m>, proceed as follows.
-      </p>
-      <ol>
-        <li>
-          <p>
-            Pick an ordered basis <m>B</m> of <m>V</m> and compute <m>A=[T]_B</m>.
-          </p>
-        </li>
-        <li>
-          <p>
-            Apply <xref ref="proc_eigenspaces_matrix"/> to <m>A</m> to compute bases of <m>W_\lambda</m> for each eigenvalue <m>\lambda</m> of <m>A</m>.
-          </p>
-        </li>
-        <li>
-          <p>
-            For each eigenvalue <m>\lambda</m>, <q>lift</q> the basis of <m>W_\lambda\subseteq \R^n</m> back up to <m>V</m> using the coordinate transformation <m>[\phantom{\boldv}]_B</m>. The result is the basis for the <m>\lambda</m>-eigenspace of <m>T</m>.
-          </p>
-        </li>
-      </ol>
-    </statement>
-  </algorithm>
+
 
 </section>
