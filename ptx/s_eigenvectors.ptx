@@ -1,4 +1,4 @@
-<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ss_eigenvectors">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_eigenvectors">
   <title>Eigenvectors and eigenvalues</title>
   <introduction>
     <p>
@@ -955,7 +955,7 @@ We will show below that <m>p(t)=\det(tI-A)</m> is indeed a polynomial (<xref ref
 </subsection>
 
 
-
+<xi:include href="./s_eigenvectors_ex.ptx"/>
 
 
 </section>
