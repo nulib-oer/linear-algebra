@@ -1,0 +1,137 @@
+<exercises xml:id="s_diagonalization_ex">
+  <exercisegroup>
+    <introduction>
+    <p>
+    For each matrix <m>A</m> use <xref ref="proc_diagonalize"/> to determine whether it is diagoanlizable. If yes, then produce an invertible matrix <m>P</m> and diagonal matrix <m>D</m> satisfying <m>D=P^{-1}AP</m>. For the last matrix the characteristic polynomial <m>p(t)</m> is provided for convenience.
+    </p>
+    </introduction>
+    <exercise>
+      <statement>
+        <p>
+          <m>A=\begin{amatrix}[rrr]
+          3\amp 0\amp 0 \\ 0\amp 2\amp 0\\ 0\amp 1\amp 2
+          \end{amatrix}
+          </m>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <m>A=\begin{amatrix}[rrr]
+          -1\amp 4\amp -2\\ -3\amp 4\amp 0\\ -3\amp 1\amp 3
+          \end{amatrix}
+          </m>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <m>A=\begin{amatrix}[rrr]
+          0\amp 0\amp 0\\ 0\amp 0\amp 0 \\ 3\amp 0\amp 1
+          \end{amatrix}
+          </m>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <m>A=\begin{amatrix}[rrr]
+          5\amp 0\amp 0\\ 1\amp 5\amp 0 \\ 0\amp 1\amp 5
+          \end{amatrix}
+          </m>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <m>A=\begin{amatrix}[rrr]
+          19\amp -9\amp -6\\ 25\amp -11\amp -9\\ 17\amp -9\amp -4
+          \end{amatrix}
+          </m>; <m>p(t)=t^3-4t^2+5t-2</m>
+        </p>
+      </statement>
+    </exercise>
+  </exercisegroup>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>A=\begin{bmatrix} a \amp b \\ c \amp d\end{bmatrix} </m>. Show that <m>A</m> is diagonalizable if and only if either <m>(a-d)^2+4bc\gt 0</m> or <m>A=aI</m> (<ie />, <m>a=d</m> and <m>b=c=0</m>).
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Prove <xref ref="th_similarity"/>.
+      </p>
+    </statement>
+    <hint>
+      <p>
+        Show that for any <m>c\in \R</m> we have <m>cI-P^{-1}AP=P^{-1}(cI-A)P</m>.
+      </p>
+    </hint>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        According to <xref ref="th_similarity"/> if <m>A</m> and <m>B</m> are similar, then they have the same rank. Show that the converse is false by showing that the matrices
+        <me>
+          A=\begin{amatrix}[rr]
+          1\amp 0\\ 0\amp 0
+          \end{amatrix}, B=\begin{amatrix}[rr]
+          0\amp 1\\ 0\amp 0
+          \end{amatrix}
+        </me>
+        have the same rank, but are not similar.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        According to <xref ref="th_similarity"/> if <m>A</m> and <m>B</m> are similar, then they have the same characteristic polynomial. Show that the converse is false by showing that the matrices
+        <me>
+          A=\begin{amatrix}[rr]
+          1\amp 1\\ 0\amp 1
+          \end{amatrix}, B=\begin{amatrix}[rr]
+          1\amp 0\\ 0\amp 1
+          \end{amatrix}
+        </me>
+        have the same characteristic polynomial, but are not similar.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        In each case information about a matrix <m>A</m> is given. Decide whether <m>A</m> is diagonalizable.
+      </p>
+      <ol>
+        <li>
+          <p>
+            <m>A\in M_{33}</m>, <m>p(t)=\det(tI-A)=t^3-t^2</m>, <m>nullity A=2</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>A\in M_{33}</m>, <m>p(t)=\det(tI-A)=t^3+t^2-t</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>A\in M_{22}</m>, <m>\tr A=4</m>, <m>\det A=3</m>
+          </p>
+          <hint>
+            <p>
+              See <xref ref="rem_char"/>
+            </p>
+          </hint>
+        </li>
+      </ol>
+    </statement>
+  </exercise>
+</exercises>

@@ -1,4 +1,4 @@
-<section xml:id="ss_eigenvectors">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ss_eigenvectors">
   <title>Eigenvectors and eigenvalues</title>
   <introduction>
     <p>
@@ -690,5 +690,5 @@ The example above brings to light a connection between eigenvalues and invertibi
       </ol>
     </statement>
   </algorithm>
-
+<xi:include href="./s_eigenvectors_ex.ptx"/>
 </section>

@@ -1,4 +1,4 @@
-<section xml:id="s_diagonalization">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_diagonalization">
   <title>Diagonalization</title>
 
 
@@ -301,7 +301,7 @@ Intro
           <p>
             Recall that given any polynomial <m>f(x)=a_rx^r+a_{r-1}x^{r-1}+\cdots +a_1x+a_0</m> and any
             <m>n\times n</m> matrix <m>A</m> we define <m>f(A)=a_rA^r+a_{r-1}A^{r-1}+\cdots +a_1A+a_0I_n</m>.
-            We have <m>f(P^{-1}AP)=P^{-1}f(A)P</m> for any polynomial <m>f(x)</m>. 
+            We have <m>f(P^{-1}AP)=P^{-1}f(A)P</m> for any polynomial <m>f(x)</m>.
           </p>
         </li>
       </ol>
@@ -626,5 +626,5 @@ Intro
       There is one true <m>T</m>!
     </p> -->
   </subsection>
-
+<xi:include href="./s_diagonalization_ex.ptx"/>
 </section>
