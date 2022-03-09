@@ -153,7 +153,7 @@
       <ol>
         <li>
           <p>
-            <m>A\in M_{33}</m>, <m>p(t)=\det(tI-A)=t^3-t^2</m>, <m>nullity A=2</m>
+            <m>A\in M_{33}</m>, <m>p(t)=\det(tI-A)=t^3-t^2</m>, <m>\nullity A=2</m>
           </p>
         </li>
         <li>
