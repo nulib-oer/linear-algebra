@@ -91,7 +91,7 @@
     <exercise>
       <statement>
         <p>
-          <m>A\boldw=\boldw</m> for all <m>\boldw\in W=\{(x,y,z)\colon x+y+z=0\}</m>, <m>A\boldx=\boldx</m> for <m>\boldx=(1,1,1)</m>.
+          <m>A\boldw=\boldw</m> for all <m>\boldw\in W=\{(x,y,z)\colon x+y+z=0\}</m>, <m>A\boldx=\boldzero</m> for <m>\boldx=(1,1,1)</m>.
         </p>
       </statement>
     </exercise>
@@ -109,7 +109,7 @@
         </li>
         <li>
           <p>
-            Prove that <m>A^n=A</m> for all odd integers <m>n\geq 1</m>. 
+            Prove that <m>A^n=A</m> for all odd integers <m>n\geq 1</m>.
           </p>
         </li>
       </ol>
