@@ -538,7 +538,7 @@
           </li>
           <li>
             <p>
-              <m>\boldu=\frac{1}{\sqrt{(e^2-1)/2}}e^x=\frac{\sqrt{2(e^2-1)}{e^2-1}e^x</m>
+              <m>\boldu=\frac{1}{\sqrt{(e^2-1)/2}}e^x=\frac{\sqrt{2(e^2-1)}}{e^2-1}e^x</m>
             </p>
           </li>
         </ol>
@@ -897,7 +897,7 @@
          Thus <m>d(\boldx, \boldy)</m> is an aggregate measure of the difference between the corresponding entries of <m>\boldx</m> and <m>\boldy</m>, as weighted by our choice of the constants <m>k_i</m>.
        </p>
        <p>
-         Imagine that each element of <m>\boldx\in \R^n</m> is a data point collected by measuring <m>n</m> different properties of a sample <m>s</m> : <ie />, <m>x_i</m> is the measured value of property <m>P_i</m> on <m>s</m> for all <m>1\leq i\leq n</m>.  Given samples <m>s</m> and <m>s'</m> with corresponding measurement vectors <m>\bolx</m> and <m>\boldy</m>, the weighted distance <m>d(\boldx,\boldy)</m> is then a quantitative way of saying how <q>close</q> the two samples are to one another. The choice of weights <m>k_i</m> allows us to adjust the relative influence of a given property <m>P_i</m> in determining this closeness. For example, the standard dot product (<m>k_i=1</m> for all <m>i</m>) yields a notion of distance that gives each property equal standing.
+         Imagine that each element of <m>\boldx\in \R^n</m> is a data point collected by measuring <m>n</m> different properties of a sample <m>s</m> : <ie />, <m>x_i</m> is the measured value of property <m>P_i</m> on <m>s</m> for all <m>1\leq i\leq n</m>.  Given samples <m>s</m> and <m>s'</m> with corresponding measurement vectors <m>\boldx</m> and <m>\boldy</m>, the weighted distance <m>d(\boldx,\boldy)</m> is then a quantitative way of saying how <q>close</q> the two samples are to one another. The choice of weights <m>k_i</m> allows us to adjust the relative influence of a given property <m>P_i</m> in determining this closeness. For example, the standard dot product (<m>k_i=1</m> for all <m>i</m>) yields a notion of distance that gives each property equal standing.
         </p>
       </statement>
     </example>
@@ -926,7 +926,7 @@
             Here the distance between two functions is defined as
             <me>\norm{f-g}=\sqrt{\int_a^b (f(x)-g(x))^2 \ dx}
             </me>,
-            which we can think of as an aggregate measure of the difference of values <m>f(x)-g(x)</m> for all <m>x\in [a,b]</m>. Thus <m>d(f,g)</m> is a global measure of the similarity between <m>f</m> and <m>g</m> that takes into account their values over the entire interval <m>[a,b]</m>. 
+            which we can think of as an aggregate measure of the difference of values <m>f(x)-g(x)</m> for all <m>x\in [a,b]</m>. Thus <m>d(f,g)</m> is a global measure of the similarity between <m>f</m> and <m>g</m> that takes into account their values over the entire interval <m>[a,b]</m>.
           </p>
         </statement>
       </example>

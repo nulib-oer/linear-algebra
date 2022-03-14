@@ -2,29 +2,21 @@
   <title>Change of basis</title>
   <introduction>
     <p>
-      We have seen how the coordinate vector map
-      <m>[\hspace{10pt}]_B</m> and matrix representations
-      <m>[T]_B^{B'}</m> are two invaluable computational tools for dealing with abstract vector spaces.
-    </p>
-    <p>
-      As the notation indicates,
-      both of these operations depend essentially on your
-      <em>choice of basis or bases</em>.
-      This gives rise to the following questions:
+      Coordinate vectors and matrix reprsentations work in tandem to model vectors in an abstract vector space <m>V</m> as column vectors in <m>\R^n</m>, and linear transformations <m>T\colon V\rightarrow W</m> as <m>m\times n</m> matrices.
+      In both cases the model depends on our choice of basis. In this section we investigate how different basis choices affect these various models. Specifically, we consider the two questions below.
       <ol>
         <li>
           <p>
-            Given <m>V</m> and two choices of basis, <m>B</m> and <m>B'</m>,
-            what is the relation between
+            Given <m>V</m> and two ordered bases <m>B</m> and <m>B'</m>,
+            what is the algebraic relation between
             <m>[\boldv]_B</m> and <m>[\boldv]_{B'}</m>?
           </p>
         </li>
         <li>
           <p>
-            Given <m>T\colon V\rightarrow W</m> and two choices of pairs of bases,
-            <m>(B, B')</m> and <m>(B'', B''')</m>,
+            Given <m>T\colon V\rightarrow V</m> and two ordered bases <m>B</m> and <m>B'</m>,
             what is the relation between
-            <m>[T]_{B}^{B'}</m> and <m>[T]_{B''}^{B'''}</m>?
+            <m>[T]_{B}</m> and <m>[T]_{B'}</m>?
           </p>
         </li>
       </ol>
@@ -39,6 +31,9 @@
   </introduction>
 <subsection xml:id="ss_change_of_basis" >
   <title>Change of basis matrix</title>
+  <p>
+    We define change of basis matrices via a column-by-column formula and motivate the definition retroactively with <xref ref="th_change_of_basis_coordinates"/>.
+  </p>
   <definition xml:id="d_change_of_basis">
     <title>Change of basis matrix</title>
     <idx><h>change of basis matrix</h></idx>
@@ -84,98 +79,172 @@
               In other words, to convert the <m>B</m>-coordinates of a vector <m>\boldv\in V</m> to <m>B'</m>-coordinates, simply multiply on the left by the matrix  <m>\underset{B\rightarrow B'}{P}</m>.
             </p>
           </li>
+          <li>
+            <p>
+              Property <xref ref="eq_changebasis_matrix_prop"/> defines <m>\underset{B\rightarrow B'}{P}</m> uniquely: <ie />, if <m>A</m> satisfies <m>A[\boldv]_B=[\boldv]_{B'}</m> for all <m>\boldv\in \R^n</m>, then <m>A=\underset{B\rightarrow B'}{P}</m>.
+            </p>
+          </li>
         </ol>
 
       </p>
     </statement>
     <proof>
-      <p>
-        Let <m>I_V\colon V\rightarrow V</m> be the identity transformation: <ie />, <m>I_V(\boldv)=\boldv</m> for all <m>\boldv\in V</m>. By <xref ref="th_matrixrep"/> the matrix <m>[I_V]_B^{B'}</m> is the unique matrix satisfying
-        <me>
-        [I_V]_B^{B'}[\boldv]_B=[I_V(\boldv)]_{B'}=[\boldv]_{B'}
-        </me>.
-        Comparing the formulas for <m>[I_V]_{B}^{B'}</m> and <m></m> we see directly that
-        <me>
-        [I_V]_B^{B'} = \underset{B\rightarrow B'}{P}
-        </me>.
-      </p>
+      <ol>
+        <li>
+          <p>
+            Let <m>I_V\colon V\rightarrow V</m> be the identity transformation: <ie />, <m>I_V(\boldv)=\boldv</m> for all <m>\boldv\in V</m>. By <xref ref="th_matrixrep"/> the matrix <m>[I_V]_B^{B'}</m> is the unique matrix satisfying
+            <me>
+            [I_V]_B^{B'}[\boldv]_B=[I_V(\boldv)]_{B'}=[\boldv]_{B'}
+            </me>.
+            Comparing the formulas for <m>[I_V]_{B}^{B'}</m> and <m></m> we see directly that
+            <me>
+            [I_V]_B^{B'} = \underset{B\rightarrow B'}{P}
+            </me>.
+          </p>
+        </li>
+        <li>
+          <p>
+            This follows from (1) and <xref ref="th_matrixrep"/>:
+            <md>
+              <mrow> \underset{B\rightarrow B'}{P}[\boldv]_B \amp = [\id_V]_{B}^{B'}[\boldv]_B </mrow>
+              <mrow>  \amp = [\id_V(\boldv)]_{B'} \amp (<xref ref="th_matrixrep"/>)</mrow>
+              <mrow> \amp =[\boldv]_{B'} </mrow>
+            </md>.
+          </p>
+        </li>
+        <li>
+          <p>
+            By (2) of <xref ref="th_matrixrep"/> (the uniqueness claim), if <m>A</m> satisfies <m>A[\boldv]_B=[\boldv]_{B'}</m> for all <m>\boldv\in \R^n</m>, then <m>A=[\id_V]_{B}^{B'}</m>. Since <m>[\id_V]_{B}^{B'}=\underset{B\rightarrow B'}{P}</m>, we conclude <m>A=\underset{B\rightarrow B'}{P}</m>.
+          </p>
+        </li>
+      </ol>
+
     </proof>
 
   </theorem>
-
-</subsection>
-
-
-  <subsection>
-    <title>Example</title>
+<example>
+  <statement>
     <p>
-      Let <m>V=\R^2</m>.
-      Compute <m>\underset{B\rightarrow B'}{P}</m> where
-      <m>B=\{\boldv_1=(1,1),\boldv_2=(1,-1)\}</m> and <m>B'=\{(1,2),(2,1)\}</m>.
+      Let <m>V=\R^2</m>, <m>B=(\boldv_1=(1,1),\boldv_2=(1,-1))</m>, <m>B'=(\boldw_1=(1,2), \boldw_2=(2,-1))</m>. Observe that <m>B</m> and <m>B'</m> are both orthogonal with resepct to the dot product. This will simplify your computations below.
+      <ol>
+        <li>
+          <p>
+            Compute <m>\underset{B\rightarrow B'}{P}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Let <m>\boldx=(4,-2)</m>. Compute <m>[\boldx]_{B'}</m> using <xref ref="eq_changebasis_matrix_prop"/>.
+          </p>
+        </li>
+      </ol>
     </p>
-  </subsection>
-  <p>
-    Test that the matrix converts correctly using the vector
-    <m>\boldv=1(1,1)+3(1,-1)=(4,-2)</m>. \begin{bsolution} The recipe tells us that
-    <md>
-    <mrow>\underset{B\rightarrow B'}{P}\amp =\amp \begin{bmatrix}\vert \amp \vert \\ \hspace{7pt}[\boldv_1]_{B'} \amp \hspace{7pt}[\boldv_2]_{B'}\\ \vert \amp \vert \end{bmatrix}</mrow>
-    <mrow>\amp =\amp \begin{bmatrix}1/3\amp -1\\ 1/3\amp 1 \end{bmatrix}  \hspace{8pt}\text{ (after some computation) }</mrow>
-    </md>
-  </p>
-  <p>
-    For <m>\boldv=1(1,1)+3(1,-1)=(4,-2)</m>,
-    we have <m>(\boldv)_B=(1,3)</m>.
-    Thus we should have
-    <me>
-    [\boldv]_{B'}=\underset{B\rightarrow B'}{P}[\boldv]_B=\begin{bmatrix}1/3\amp -1\\ 1/3\amp 1 \end{bmatrix} \begin{bmatrix}1\\ 3 \end{bmatrix} =\begin{bmatrix}-8/3\\ 10/3 \end{bmatrix}
-    </me>.
-  </p>
-  <p>
-    Indeed, one easily verifies that <m>(4,-2)=-8/3(1,2)+10/3(2,1)</m>. \end{bsolution}
-  </p>
-  <subsection>
-    <title>Example</title>
+  </statement>
+  <solution>
+    <ol>
+      <li>
+        <p>
+          Using <xref ref="d_change_of_basis"/>, we have
+          <md>
+          <mrow>\underset{B\rightarrow B'}{P}\amp = \begin{bmatrix}\vert \amp \vert \\ \hspace{7pt}[\boldv_1]_{B'} \amp \hspace{7pt}[\boldv_2]_{B'}\\ \vert \amp \vert \end{bmatrix}</mrow>
+          <mrow>\amp = \begin{bmatrix}\frac{3}{5}\amp -\frac{1}{5}\\ \frac{1}{5}\amp \frac{3}{5} \end{bmatrix}  </mrow>
+          </md>.
+          Here the two coordinate vector computations <m>[(1,1)]_{B'}=(3/5, 1/5)</m> and <m>[(1,-1)]_{B'}=(-1/5,3/5)</m> were done using <xref ref="th_coordinates_orthogonal"/>.
+        </p>
+      </li>
+      <li>
+        <p>
+          First we easily compute <m>[\boldx]_{B}=(1, 3)</m>, again using <xref ref="th_coordinates_orthogonal"/>. Now use <xref ref="eq_changebasis_matrix_prop"/>:
+          <md>
+            <mrow> [\boldx]_{B'} \amp =\underset{B\rightarrow B'}{P}[\boldx]_B </mrow>
+            <mrow> \amp = \begin{bmatrix}\frac{3}{5}\amp -\frac{1}{5}\\ \frac{1}{5}\amp \frac{3}{5} \end{bmatrix} \begin{amatrix}[c]1 \\ 3  \end{amatrix}</mrow>
+            <mrow>  \amp = \begin{amatrix}[r]0\\ 2   \end{amatrix}</mrow>
+          </md>.
+          This should come as now surprise since
+          <me>\boldx=(4,-2)=2(2,-1)=0\boldw_1+2\boldw_2
+          </me>.
+        </p>
+      </li>
+    </ol>
+  </solution>
+</example>
+<example>
+  <statement>
     <p>
-      Take <m>V=P_2</m>,
-      <m>B=\{1,x,x^2\}</m> and <m>B'=\{1,(x-2), (x-2)^2\}</m>.
-      Compute <m>\underset{B\rightarrow B'}{P}</m>.
+      Let <m>V=P_2</m>, <m>B=(x^2,x,1)</m>, <m>B'=(p_1=(x-2)^2, p_2(x)=(x-2), p_3(x)=1)</m>.
     </p>
+    <ol>
+      <li>
+        <p>
+          Compute <m>\underset{B\rightarrow B'}{P}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Compute <m>[x^2+x+1]_{B'}</m> using <xref ref="eq_changebasis_matrix_prop"/>.
+        </p>
+      </li>
+    </ol>
+  </statement>
+  <solution>
+    <ol>
+      <li>
+        <p>
+          We have
+          <md>
+            <mrow>\underset{B\rightarrow B'}{P} \amp = \begin{bmatrix}
+              \vert \amp \vert \amp \vert \\
+              [x^2]_{B'}\amp [x]_{B'}\amp [1]_{B'} \\
+              \vert \amp \vert \amp \vert
+            \end{bmatrix} </mrow>
+            <mrow> \amp = \begin{bmatrix}
+              1\amp 0\amp 0 \\
+              4\amp 1\amp 0\\
+              4\amp 2\amp 1
+            \end{bmatrix} </mrow>
+          </md>.
+          The first two coordinate vector computations are nontrivial; you can verify for yourself that <m>x^2=1(x-2)^2+4(x-2)+4</m> and  <m>x=0(x-2)^2+1(x-2)+2</m>. Alternatively, see  <xref ref="rm_change_of_basis_taylors"/>) for a neat trick for computing these coordinate vectors.
+        </p>
+      </li>
+      <li>
+        <p>
+          Since <m>B</m> is the standard basis, we see easily that <m>[x^2+x+1]_{B}=(1,1,1)</m>. Using <xref ref="eq_changebasis_matrix_prop"/> we have
+          <md>
+            <mrow>[x^2+x+1]_{B'} \amp = \underset{B\rightarrow B'}{P}\begin{bmatrix}
+              1\\ 1\\ 1
+            \end{bmatrix}</mrow>
+            <mrow> \amp =\begin{bmatrix}
+              1\\ 5\\ 7
+            \end{bmatrix} </mrow>
+          </md>.
+          Verify for yourself that we do indeed have
+          <me>
+            x^2+x+1=1(x-2)^2+5(x-2)+7
+          </me>.
+        </p>
+      </li>
+    </ol>
+  </solution>
+</example>
+    <remark xml:id="rm_change_of_basis_taylors">
+  <title>Taylor's formula and change of basis</title>
+  <statement>
     <p>
-      Follow the recipe:
-      let <m>\boldp_j</m> be the <m>j</m>-th column of <m>\underset{B\rightarrow B'}{P}</m>.
-      We have (after some computation)
+      Let <m>B=(x^n, x^{n-1}, \dots, x, 1)</m> be the standard basis of <m>P_n</m>. Fix any constant <m>a\in \R</m>, and let <m>B'=((x-a)^n, (x-a)^{n-1}, \dots, (x-a), 1)</m>. It is easy to see that <m>B'</m> is also an ordered basis: a simple degree argument shows that the polynomials <m>p_k(x)=(x-a)^k</m> are linearly independent. It follows from Taylor's theorem (from single-variable calculus) that given any polynomial <m>p\in P_n</m> we have
       <me>
-      \boldp_1=[1]_{B'}=(1,0,0), \ \boldp_2=[x]_{B'}=(2,1,0), \ \boldp_3=[x^2]_{B'}=(4,4,1)
+        p(x)=p(a)+p'(a)(x-a)+\frac{p''(x)}{2}(x-a)^2+\cdots \frac{p^{(n)}(a)}{n!}(x-a)^n
       </me>.
+      We call this expression the expansion of <m>p(x)</m> about <m>x=a</m>. In terms of coordinate vectors, this means that
+      <men xml:id="eq_taylors">
+        [p]_{B'}=(\frac{p^{(n)}(a)}{n!}, \frac{p^{(n-1)}(a)}{(n-1)!}, \dots, p'(a), p(a))
+      </men>.
+      In other words, Taylor's theorem provides a simple derivative formula for computing coordinate vectors with respect to the basis <m>B'</m>.
     </p>
-    <p>
-      Thus <m>\underset{B\rightarrow B'}{P}=\begin{bmatrix}1\amp 2\amp 4\\ 0\amp 1\amp 4\\ 0\amp 0\amp 1 \end{bmatrix}</m>
-    </p>
-    <p>
-      Let's check with the test vector <m>p(x)=1+x+x^2</m>.
-      We have <m>(p)_B=(1,1,1)</m>.
-      Thus we should have <m>[p]_{B'}=\underset{B\rightarrow B'}{P}[p]_B=\begin{bmatrix}1\amp 2\amp 4\\ 0\amp 1\amp 4\\ 0\amp 0\amp 1 \end{bmatrix} \begin{bmatrix}1 \\ 1 \\ 1 \end{bmatrix} =\begin{bmatrix}7\\ 5\\ 1 \end{bmatrix}</m>.
-      Equivalently, this means that
-      <m>p(x)=7+5(x-2)+(x-2)^2</m>, as one easily verifies.
-    </p>
-
-    <subsection>
-      <title>Cool fact</title>
-      <p>
-        We could have derived the last equality using the theory of Taylor series.
-        Namely any polynomial can be
-        <q>expanded around <m>x=a</m></q>
-        as <m>p(x)=\sum_{i=0}^n\frac{p^{(i)}(a)}{a!}(x-a)^i</m>.
-      </p>
-    </subsection>
-    <p>
-      More generally, this means
-      <me>
-      (p(x))_{B'}=(p(a), p'(a), p''(a)/2, \dots , p^{(n)}(a)/n!)
-      </me>
-      where <m>B'=\{1,x-a, (x-a)^2,\dots , (x-a)^n\}</m>.
-    </p>
-  </subsection>
+  </statement>
+</remark>
+<p>
+  The following properties are often useful when computing various change of basis matrices.
+</p>
   <theorem xml:id="th_change_of_basis_properties">
     <title>Change of basis matrix properties</title>
     <statement>
@@ -207,46 +276,73 @@
             </me>.
           </p>
         </li>
+
       </ol>
     </statement>
+    <proof>
+      <ol>
+        <li>
+          <p>
+          Let <m>B=(\boldv_1, \boldv_2, \dots, \boldv_n)</m>. By definition, the <m>j</m>-th column of <m>\underset{B\rightarrow B'}{P}</m> is <m>[\boldv_j]_B</m>. Since <m>\boldv_j=0\boldv_1+0\boldv_2+\cdots +1\boldv_j+\cdots</m>, we see that <m>[\boldv_j]_B=\bolde_j</m>, and hence that <m>\underset{B\rightarrow B'}{P}=I</m>, as claimed.
+          </p>
+        </li>
+        <li>
+          <p>
+            Let <m>A=\underset{B\rightarrow B'}{P}</m> and <m>B=\underset{B'\rightarrow B"}{P}</m>. For any <m>\boldv\in V</m> we have
+            <md>
+              <mrow>BA[\boldv]_B \amp = \underset{B'\rightarrow B}{P}\, \underset{B\rightarrow B'}{P}[\boldv]</mrow>
+              <mrow> \amp =\underset{B'\rightarrow B}{P}[\boldv]_{B'} </mrow>
+              <mrow>  \amp = [\boldv]_{B}</mrow>
+            </md>.
+            It follows from (3) of <xref ref="th_change_of_basis_coordinates"/> that <m>BA=\underset{B\rightarrow B}{P}</m>. Since <m>\underset{B\rightarrow B}{P}=I</m> by (1), we conclude that <m>BA=I</m>, and hence <m>B=A^{-1}</m>, as desired.
+          </p>
+        </li>
+        <li>
+          <p>
+            See <xref ref="ex_changebasis_three_bases"/>.
+          </p>
+        </li>
+      </ol>
+    </proof>
+
   </theorem>
 
-
-  <subsection>
-    <title>Example: <m>V=\R^n</m> and <m>B</m> is standard</title>
+<example xml:id="eg_changebasis_standard">
+  <title><m>V=\R^n</m>, <m>B</m> standard basis</title>
+  <statement>
     <p>
-      Consider the simple example where <m>V=\R^n</m>,
+      Consider the special situation where <m>V=\R^n</m>,
       <m>B</m> is the standard basis,
       and <m>B'=\{\boldv_1,\dots,\boldv_n\}</m> is some nonstandard basis.
-      I claim the matrix <m>P=\begin{bmatrix}\vert\amp \dots \amp \vert \\ \boldv_1\amp \cdots\amp \boldv_n\\ \vert\amp \dots \amp \vert \end{bmatrix}</m> whose columns are the elements of <m>B'</m> is the change of basis matrix <m>\underset{B'\rightarrow B} P</m>.
-      This follows from our recipe since <m>\boldv_j=[\boldv_j]_B</m>. (Recall:
-      when <m>B</m> is the standard basis
-      <m>[(a_1,a_2,\dots, a_n)]_B=(a_1,a_2,\dots,
-      a_n)</m> for all <m>(a_1,a_2,\dots, a_n)\in\R^n</m>. )
+      In this case we have
+    <md>
+      <mrow> \underset{B'\rightarrow B}{P}\amp =\begin{bmatrix}\vert\amp\vert\amp  \amp \vert \\ [\boldv_1]_B\amp [\boldv_2]_B \cdots\amp [\boldv_n]_B\\ \vert\amp \vert\amp  \amp \vert \end{bmatrix}
+      </mrow>
+      <mrow>  \amp = \begin{bmatrix}\vert\amp\vert\amp  \amp \vert \\ \boldv_1\amp \boldv_2\amp\cdots\amp \boldv_n\\ \vert\amp \vert\amp  \amp \vert \end{bmatrix} \amp (B \text{ standard basis})</mrow>
+    </md>.
+    In other words, <m>\underset{B'\rightarrow B}{P}</m> is the matrix whose <m>j</m>-th column is just the <m>j</m>-th element of <m>B'</m>. Thus, in this situation we can compute <m>\underset{B'\rightarrow B}{P}</m> by placing the elements of <m>B'</m> as columns of a matrix, and then use (2) of <xref ref="th_change_of_basis_properties"/> to compute <m>\underset{B\rightarrow B'}{P}=\left(\underset{B'\rightarrow B}{P}\right)^{-1}</m>.
     </p>
+  </statement>
+</example>
+<example>
+  <statement>
     <p>
-      Since <m>\underset{B\rightarrow B'}{P}=(\underset{B'\rightarrow B}{P})^{-1}</m>,
-      we see that in this special case we can compute
-      <m>\underset{B'\rightarrow B}{P}</m> by placing the elements of <m>B'</m> as columns of a matrix,
-      and then compute <m>\underset{B\rightarrow B'}{P}</m> by taking the inverse of this matrix!
+      Let <m>V=\R^2</m>, <m>B=((1,0),(0,1))</m>, <m>B'=\{(1,\sqrt{3}),(-\sqrt{3},1)\}</m>. Compute <m>P_{B\rightarrow B'}</m> and <m>\underset{B'\rightarrow B}{P}</m>.
     </p>
-    <subsection>
-      <title>Example</title>
-      <p>
-        Let <m>V=\R^2</m>, <m>B</m> the standard basis for <m>\R^2</m>,
-        and <m>B'=\{(1,\sqrt{3}),(-\sqrt{3},1)\}</m>.
-      </p>
-    </subsection>
+  </statement>
+  <solution>
     <p>
-      Find <m>P_{B\rightarrow B'}</m>. \begin{bsolution} The recipe above tells us that <m>\underset{B'\rightarrow B}{P}=\begin{bmatrix}1\amp -\sqrt{3}\\ \sqrt{3}\amp 1 \end{bmatrix}</m> and hence that
+      According to <xref ref="eg_changebasis_standard"/> we have
+      <me>\underset{B'\rightarrow B}{P}=\begin{bmatrix}1\amp -\sqrt{3}\\ \sqrt{3}\amp 1 \end{bmatrix}</me>. We then compute
       <me>
       \underset{B\rightarrow B'}{P}=(\underset{B'\rightarrow B}{P})^{-1}=\left(\begin{bmatrix}1\amp -\sqrt{3}\\ \sqrt{3}\amp 1 \end{bmatrix} \right)^{-1}=\frac{1}{4}\begin{bmatrix}1\amp \sqrt{3}\\ -\sqrt{3}\amp 1 \end{bmatrix}
       </me>.
     </p>
-    <p>
-      \end{bsolution}
-    </p>
-  </subsection>
+  </solution>
+</example>
+
+</subsection>
+
 <subsection xml:id="ss_changebasis_orthonormal">
   <title>Working with orthonormal bases</title>
   <p>
