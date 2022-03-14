@@ -171,7 +171,7 @@
 <example>
   <statement>
     <p>
-      Let <m>V=P_2</m>, <m>B=(x^2,x,1)</m>, <m>B'=(p_1=(x-2)^2, p_2(x)=(x-2), p_3(x)=1)</m>.
+      Let <m>V=P_2</m>, <m>B=(x^2,x,1)</m>, <m>B'=(p_1(x)=(x-2)^2, p_2(x)=x-2, p_3(x)=1)</m>.
     </p>
     <ol>
       <li>
@@ -236,7 +236,7 @@
       </me>.
       We call this expression the expansion of <m>p(x)</m> about <m>x=a</m>. In terms of coordinate vectors, this means that
       <men xml:id="eq_taylors">
-        [p]_{B'}=(\frac{p^{(n)}(a)}{n!}, \frac{p^{(n-1)}(a)}{(n-1)!}, \dots, p'(a), p(a))
+        [p]_{B'}=\left(\frac{p^{(n)}(a)}{n!}, \frac{p^{(n-1)}(a)}{(n-1)!}, \dots, p'(a), p(a)\right)
       </men>.
       In other words, Taylor's theorem provides a simple derivative formula for computing coordinate vectors with respect to the basis <m>B'</m>.
     </p>
@@ -316,7 +316,7 @@
       and <m>B'=\{\boldv_1,\dots,\boldv_n\}</m> is some nonstandard basis.
       In this case we have
     <md>
-      <mrow> \underset{B'\rightarrow B}{P}\amp =\begin{bmatrix}\vert\amp\vert\amp  \amp \vert \\ [\boldv_1]_B\amp [\boldv_2]_B \cdots\amp [\boldv_n]_B\\ \vert\amp \vert\amp  \amp \vert \end{bmatrix}
+      <mrow> \underset{B'\rightarrow B}{P}\amp =\begin{bmatrix}\vert\amp\vert\amp  \amp \vert \\ [\boldv_1]_B\amp [\boldv_2]_B \amp \cdots\amp [\boldv_n]_B\\ \vert\amp \vert\amp  \amp \vert \end{bmatrix}
       </mrow>
       <mrow>  \amp = \begin{bmatrix}\vert\amp\vert\amp  \amp \vert \\ \boldv_1\amp \boldv_2\amp\cdots\amp \boldv_n\\ \vert\amp \vert\amp  \amp \vert \end{bmatrix} \amp (B \text{ standard basis})</mrow>
     </md>.
@@ -324,10 +324,11 @@
     </p>
   </statement>
 </example>
+
 <example>
   <statement>
     <p>
-      Let <m>V=\R^2</m>, <m>B=((1,0),(0,1))</m>, <m>B'=\{(1,\sqrt{3}),(-\sqrt{3},1)\}</m>. Compute <m>P_{B\rightarrow B'}</m> and <m>\underset{B'\rightarrow B}{P}</m>.
+      Let <m>V=\R^2</m>, <m>B=((1,0),(0,1))</m>, <m>B'=\{(1,\sqrt{3}),(-\sqrt{3},1)\}</m>. Compute <m>\underset{B\rightarrow B'}{P}</m> and <m>\underset{B'\rightarrow B}{P}</m>.
     </p>
   </statement>
   <solution>
@@ -340,6 +341,68 @@
     </p>
   </solution>
 </example>
+<remark xml:id="rm_changebasis_standard">
+<title><m>B</m> standard basis of <m>V</m></title>
+    <p>
+      The observation from <xref ref="eg_changebasis_standard"/> applies more generally when <m>B</m> is the standard basis of the given vector space <m>V</m> and <m>B'=(\boldv_1, \boldv_2, \dots, \boldv_n)</m> is nonstandard. In this case computing <m>\underset{B'\rightarrow B}{P}</m> will be easy as the coordinate vectors <m>[\boldv_j]_{B}</m> can be produced by inspection. See <xref ref="eg_changebasis_standard_mat"/>.
+    </p>
+</remark>
+<example xml:id="eg_changebasis_standard_mat">
+  <statement>
+    <p>
+      Let <m>V=M_{22}</m>, <m>B=(E_{11}, E_{12}, E_{21}, E_{22})</m> (standard basis) and <m>B'=(A_1,A_2,A_3,A_4)</m>, where
+      <me>
+        A_1=\begin{amatrix}[rr]
+          1\amp 1\\ 1\amp 1
+      \end{amatrix}, A_2=\begin{amatrix}[rr]
+        1\amp -1\\ 1\amp -1
+    \end{amatrix}, A_3=\begin{amatrix}[rr]
+      1\amp 1\\ -1\amp -1
+  \end{amatrix}, A_4=\begin{amatrix}[rr]
+    -1\amp 1\\ 1\amp -1
+\end{amatrix}
+  </me>.
+    Compute <m>\underset{B'\rightarrow B}{P}</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      We have
+      <md>
+        <mrow> \underset{B'\rightarrow B}{P}\amp = \begin{bmatrix}
+          \vert\amp \vert\amp \vert\amp \vert\\
+          [A_1]_{B}\amp [A_2]_B\amp [A_3]_B\amp [A_4]_B\\
+          \vert\amp \vert\amp \vert\amp \vert
+        \end{bmatrix}</mrow>
+        <mrow> \amp = \begin{amatrix}[rrrr]
+          1\amp 1\amp 1\amp -1\\
+          1\amp -1\amp 1\amp 1\\
+          1\amp 1\amp -1\amp 1\\
+          1\amp -1\amp -1\amp -1
+        \end{amatrix} </mrow>
+      </md>.
+      Here the coordinate vectors <m>[A_i]_B</m> are easily computed by inspection since <m>B</m> is the standard basis.
+    </p>
+    <p>
+      It turns out that <m>\underset{B\rightarrow B'}{P}=(\underset{B'\rightarrow B}{P})^{-1}</m> is not so difficult to compute in this case since the columns <m>\boldc_j</m> of <m>\underset{B'\rightarrow B}{P}</m> satisfy
+      <me>
+        \boldc_i\cdot\boldc_j=\begin{cases} 4\amp \text{if } i=j\\ 0\amp \text{if } i\ne j
+      \end{cases}
+      </me>.
+      From this observation and <xref ref="th_dotproduct_method"/> it is easy to see that
+      <me>
+        \underset{B\rightarrow B'}{P}=(\underset{B'\rightarrow B}{P})^{-1}=\frac{1}{4}
+        \begin{amatrix}[rrrr]
+          1\amp 1\amp 1\amp 1\\
+          1\amp -1\amp 1\amp -1\\
+          1\amp 1\amp -1\amp -1\\
+          -1\amp -1\amp 1\amp -1
+        \end{amatrix}
+      </me>.
+    </p>
+  </solution>
+</example>
+
 
 </subsection>
 
@@ -479,7 +542,79 @@
   </proof>
 
 </theorem>
-
+<example>
+  <statement>
+    <p>
+      Consider the vector space <m>P_1</m> with inner product <m>\langle p(x), q(x)\rangle=p(-1)q(-1)+p(1)q(1)</m>. The ordered bases
+      <me>B=\left(p_1(x)=\frac{1}{\sqrt{2}}x,p_2(x)=\frac{1}{\sqrt{2}}\right), B'=\left(q_1(x)=\frac{1}{2}(x-1), q_2(x)=\frac{1}{2}(x+1)\right)
+      </me>
+      are both orthonormal with respect to this inner product. Compute <m>\underset{B\rightarrow B'}{P}</m> and <m>\underset{B'\rightarrow B}{P}</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      Since <m>B'</m> is orthonormal, we use  <xref ref="th_coordinates_orthogonal"/> to compute
+      <md>
+        <mrow> [p_1(x)]_{B'} \amp = \left(\langle p_1(x),q_1(x)\rangle, \langle p_1(x),q_2(x)\rangle\right)</mrow>
+        <mrow> \amp =(p_1(-1)q_1(-1)+p_1(1)q_2(1),p_1(1)q_1(1)+p_1(1)q_2(1))=\frac{1}{\sqrt{2}}(1,1)</mrow>
+        <mrow> [p_2(x)]_{B'} \amp = \left(\langle p_2(x),q_1(x)\rangle, \langle p_1(x),q_2(x)\rangle\right)</mrow>
+        <mrow> \amp =(p_2(-1)q_1(-1)+p_2(1)q_2(1),p_2(1)q_1(1)+p_2(1)q_2(1))=\frac{1}{\sqrt{2}}(-1,1)</mrow>
+      </md>.
+      Thus
+      <me>
+      \underset{B\rightarrow B'}{P}=\frac{1}{\sqrt{2}}\begin{amatrix}[rr]
+      1\amp -1\\
+      1\amp 1
+      \end{amatrix}
+      </me>
+      and by <xref ref="th_changebasis_orthonormal"/>
+      <me>
+        \underset{B'\rightarrow B}{P}=(\underset{B\rightarrow B'}{P})^T=\frac{1}{\sqrt{2}}\begin{amatrix}[rr]
+        1\amp 1\\
+        -1\amp 1
+        \end{amatrix}
+      </me>.
+    </p>
+  </solution>
+</example>
+<p>
+  Before connecting change of basis matrices with matrix representations of linear transformations, it is worth gathering some the different techniques for computing change of basis matrices we have discussed so far.
+</p>
+<algorithm xml:id="proc_changebasis_tips">
+<title>Change of basis computational tips</title>
+  <statement>
+    <p>
+      Let <m>B=(\boldv_1, \boldv_2, \dots, \boldv_n)</m> and <m>B'</m> be ordered bases of the vector space <m>V</m>. Below you find a variety of techniques for computing <m>\underset{B\rightarrow B'}{P}</m> and <m>\underset{B'\rightarrow B}{P}</m>.
+    </p>
+    <ol>
+      <li>
+        <p>
+          To compute <m>\underset{B\rightarrow B'}{P}</m> directly, we must compute <m>[\boldv_j]_{B'}</m> for each <m>1\leq j\leq n</m>. This typically involves setting up and solving a linear system.
+        </p>
+      </li>
+      <li>
+        <p>
+          We have <m>\underset{B'\rightarrow B}{P}=(\underset{B\rightarrow B'}{P})^{-1}</m>. This observation is useful in situations where (a) one change of basis matrix is easier to compute than the other and (b) computing inverse matrices is not too onerous.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>B</m> is the standard basis of <m>V</m>, then <m>\underset{B'\rightarrow B}{P}</m> is easy to compute. (See <xref ref="rm_changebasis_standard"/>.)
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>B'</m> is orthogonal with respect to some inner product on <m>V</m>, then we can easily compute <m>[\boldv_j]_{B'}</m> for each <m>1\leq j\leq n</m> using <xref ref="th_coordinates_orthogonal"/>.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>B</m> and <m>B'</m> are both orthonormal bases of <m>V</m> with respect to a common inner product, then both change of basis matrices are orthogonal and we have <m>\underset{B'\rightarrow B}{P}=(\underset{B\rightarrow B'}{P})^T</m>.
+        </p>
+      </li>
+    </ol>
+  </statement>
+</algorithm>
 </subsection>
   <subsection>
     <title>Change of basis for transformations</title>
@@ -495,15 +630,33 @@
         <p>
           Let <m>V</m> be finite-dimensional,
           let <m>T\colon V\rightarrow V</m> be linear,
-          and let <m>B</m> and <m>B'</m> be two bases for <m>V</m>. The matrices <m>[T]_B</m> and <m>[T]_{B'}</m> representing <m>T</m> with respect to <m>B</m> and <m>B'</m>, respectively,  are related as follows:
-          <md>
-          <mrow>[T]_{B'}\amp =\underset{B\rightarrow B'}{P}\, [T]_B\, \underset{B'\rightarrow B}{P}</mrow>[2ex]
-          <mrow>\amp =\underset{B'\rightarrow B}{P}^{-1}\, [T]_B\, \underset{B'\rightarrow B}{P}</mrow>
-          </md>.
+          and let <m>B</m> and <m>B'</m> be two ordered bases for <m>V</m>. We have
+          <men xml:id="eq_changebasis_transform">
+            [T]_{B'}=\underset{B\rightarrow B'}{P}\, [T]_B\, \underset{B'\rightarrow B}{P}
+          </men>,
+           or equivalently
+           <men xml:id="eq_changebasis_transform_inverse">
+             [T]_{B'}=\underset{B'\rightarrow B}{P}^{-1}\, [T]_B\, \underset{B'\rightarrow B}{P}
+           </men>.
         </p>
       </statement>
+      <proof>
+        <p>
+          First observe that <xref ref="eq_changebasis_transform_inverse"/> follows from <xref ref="eq_changebasis_transform"/> and (2) of <xref ref="th_change_of_basis_properties"/>. Next, to prove <xref ref="eq_changebasis_transform"/>, it suffices by (2) of <xref ref="th_matrixrep"/> to show that the matrix <m>A=\underset{B\rightarrow B'}{P}\, [T]_B\, \underset{B'\rightarrow B}{P}</m> satisfies
+          <me>
+            A[\boldv]_{B'}=[T(\boldv)]_{B'}
+          </me>
+          for all <m>\boldv\in V</m>. To this end, given any <m>\boldv\in V</m>, we have
+          <md>
+            <mrow>A[\boldv]_{B'}=\underset{B\rightarrow B'}{P}\, [T]_B\, \underset{B'\rightarrow B}{P}[\boldv]_{B'} \amp= \underset{B\rightarrow B'}{P}\, [T]_B [\boldv]_B \amp (<xref ref="th_change_of_basis_coordinates"/>)</mrow>
+            <mrow> \amp= \underset{B\rightarrow B'}{P}[T(\boldv)]_{B} \amp (<xref ref="th_matrixrep"/>, (1)) </mrow>
+            <mrow>  \amp = [\boldv]_{B'} \amp (<xref ref="th_change_of_basis_coordinates"/>)</mrow>
+          </md>.
+        </p>
+      </proof>
+
     </theorem>
-  </subsection>
+
   <remark xml:id="rm_change_of_basis_transformations">
     <title>Getting change of basis formulas correct</title>
     <statement>
@@ -550,52 +703,126 @@
       </p>
     </statement>
   </remark>
-
-  <subsection>
-    <title>Example</title>
+<example>
+  <statement>
     <p>
       Let <m>T\colon P_2\rightarrow P_2</m> be defined as <m>T(p(x))=p(x)+2p'(x)+xp''(x)</m>.
       <ol>
         <li>
           <p>
-            Let <m>B=\{1, x, x^2\}</m>.
+            Let <m>B=(x^2, x, 1)</m>.
             Compute <m>[T]_B</m>.
           </p>
         </li>
         <li>
           <p>
-            Let <m>B'=\{1+x+x^2, 1+x, 1+x^2\}</m>.
+            Let <m>B'=(x^2+x+1, x^2+1, x+1)</m>.
             Use the change of basis formula to compute <m>[T]_{B'}</m>.
           </p>
         </li>
       </ol>
     </p>
+  </statement>
+  <solution>
+    <ol>
+      <li>
+        <p>
+            We easily compute <m>[T]_B=\begin{bmatrix}1\amp 0\amp 0\\ 6\amp 1\amp 0\\ 0\amp 2\amp 1 \end{bmatrix}</m> using our usual recipe.
+        </p>
+      </li>
+      <li>
+        <p>
+          We need to compute both change of basis matrices. Since <m>B</m> is standard we compute
+          <me>
+            \underset{B'\rightarrow B}{P}=\begin{bmatrix}1\amp 1\amp 0\\ 1\amp 0\amp 1\\ 1\amp 1\amp 1 \end{bmatrix}
+          </me>
+          essentially by inspection. It follows that
+          <me>
+            \underset{B\rightarrow B'}{P}=(\underset{B'\rightarrow B}{P})^{-1}=\begin{amatrix}[rrr]
+            1\amp 1\amp -1\\ 0\amp -1\amp 1\\ -1\amp 0\amp 1
+            \end{amatrix}
+          </me>.
+          Lastly, using <xref ref="eq_changebasis_transform"/> we have
+          <md>
+            <mrow> [T]_{B'}\amp =\underset{B\rightarrow B'}{P}[T]_B\underset{B'\rightarrow B}{P} </mrow>
+            <mrow>  \amp = \begin{amatrix}[rrr]
+            1\amp 1\amp -1\\ 0\amp -1\amp 1\\ -1\amp 0\amp 1
+            \end{amatrix}
+            \begin{bmatrix}1\amp 0\amp 0\\ 6\amp 1\amp 0\\ 0\amp 2\amp 1 \end{bmatrix}
+              \begin{bmatrix}1\amp 1\amp 0\\ 1\amp 0\amp 1\\ 1\amp 1\amp 1 \end{bmatrix}
+            </mrow>
+            <mrow>  \amp = \begin{amatrix}[rrr]
+            5\amp 6\amp -2\\ -4\amp -5\amp 2\\ 2\amp 0\amp 3
+            \end{amatrix}
+            </mrow>
+          </md>.
+        </p>
+      </li>
+    </ol>
+  </solution>
+</example>
+<remark xml:id="rm_changebasis_matrix_formulas">
+<title>Computing matrix formulas with <xref ref="th_change_of_basis_transformations"/></title>
+<p>
+  Consider the special case where <m>T\colon \R^n\rightarrow \R^n</m>: that is, when <m>V=\R^n</m> is a space of <m>n</m>-tuples. We know from <xref ref="cor_matrix_transformations"/> that <m>T=T_A</m> for a unique <m>n\times n</m> matrix <m>A</m>; and furthermore we have <m>A=[T]_B</m>, where <m>B=(\bolde_1, \bolde_2, \dots, \bolde_n)</m> is the <em>standard</em> ordered basis of <m>\R^n</m>. (See <xref ref="eg_matrixreps_matrixtransforms"/>.)
+</p>
+<p>
+  To compute <m>A=[T]_B</m> directly, we must compute <m>T(\bolde_j)</m> for each of the standard basis elements <m>\bolde_j</m>. However, for many naturally occurring transformations <m>T</m>, computing <m>A=[T]_B</m> directly is often not as convenient as computing <m>A'=[T]_{B'}</m> for some nonstandard basis <m>B'</m>. When this is the case <xref ref="th_change_of_basis_transformations"/> allows to us derive the desired matrix <m>A</m> from the more conveniently computed <m>A'</m>: namely, we have
+  <me>
+    A=P^{-1}A'P
+  </me>,
+  where <m>P=\underset{B\rightarrow B'}{P}</m>.
+  This gives us a powerful technique for computing matrix formulas for many interesting geometric linear transformations of <m>\R^n</m> whose very definitions involve an implicit choice nonstandard basis. Rotations, reflections and orthogonal projections are all examples of such transformations.
+</p>
+</remark>
+<example>
+  <title>Orthogonal projection (again)</title>
+  <statement>
     <p>
-      We easily compute <m>[T]_B=\begin{bmatrix}1\amp 2\amp 0\\ 0\amp 1\amp 4\\ 0\amp 0\amp 1 \end{bmatrix}</m> using our usual recipe.
-    </p>
-    <p>
-      We can also easily compute <m>\underset{B'\rightarrow B}{P}=\begin{bmatrix}1\amp 1\amp 1\\ 1\amp 1\amp 0\\ 1\amp 0\amp 1 \end{bmatrix}</m>,
-      essentially by inspection.
-    </p>
-    <p>
-      (In general it is easy to compute the change of basis matrix from a nonstandard basis to the standard basis.)
-    </p>
-    <p>
-      It follows that
+      Consider <m>V=\R^3</m> together with the dot product. Let's derive (once again) a matrix formula for orthogonal projection  <m>\operatorname{proj}_W\colon \R^3\rightarrow \R^3</m>, where <m>W=\{(x,y,z)\colon x+y+z=0\}</m>. (See <xref ref="eg_projection_plane"/> and <xref ref="eg_matrixreps_proj"/>) In other words we want to compute <m>A=[\operatorname{proj}_W]_B</m>, where <m>B=((1,0,0), (0,1,0), (0,0,1))</m> is the standard basis. We will do so <em>indirectly</em> by first computing <m>[\operatorname{proj}_W]_{B'}</m>
+      with respect to a more convenient basis: namely, <m>B'=((1,-1,0),(1,1,-2), (1,1,1))</m>. This is the same basis from <xref ref="eg_matrixreps_proj"/>, and was selected deliberateley so that the first two vectors form a basis of <m>W</m>, and the third vector spans the normal line to <m>W</m>. As in <xref ref="eg_matrixreps_proj"/> we then easily compute
+      <me>
+        [\operatorname{proj}_W]_{B'}=\begin{bmatrix}
+          1\amp 0\amp 0\\
+          0\amp 1\amp 0\\
+          0\amp 0\amp 0
+      \end{bmatrix}
+      </me>.
+      Now use <xref ref="eq_changebasis_transform_inverse"/> to compute
       <md>
-      <mrow>_B'\amp =\underset{B\rightarrow B'}{P}[T]_B\underset{B'\rightarrow B}{P}=\left( \underset{B'\rightarrow B}{P}\right)^{-1}[T]_B\underset{B'\rightarrow B}{P}</mrow>
-      <mrow>\amp =\left( \begin{bmatrix} 1\amp 1\amp 1</mrow>
-      <mrow>1\amp 1\amp 0</mrow>
-      <mrow>1\amp 0\amp 1 \end{bmatrix}\right)^{-1}\begin{bmatrix} 1\amp 2\amp 0</mrow>
-      <mrow>0\amp 1\amp 4</mrow>
-      <mrow>0\amp 0\amp 1 \end{bmatrix} \begin{bmatrix} 1\amp 1\amp 1</mrow>
-      <mrow>1\amp 1\amp 0</mrow>
-      <mrow>1\amp 0\amp 1 \end{bmatrix}= \begin{amatrix}[rrr] 3\amp -2\amp 4</mrow>
-      <mrow>2\amp 3\amp 0</mrow>
-      <mrow>-2\amp 2\amp -3 \end{amatrix}</mrow>
-      </md>
+        <mrow> A=[\operatorname{proj}_W]_{B}\amp = \underset{B'\rightarrow B}{P}[\operatorname{proj}_W]_{B'}\underset{B\rightarrow B'}{P} </mrow>
+        <mrow> \amp= \begin{amatrix}[rrr]
+        1\amp 1\amp 1\\
+        -1\amp 1\amp 1\\
+        0\amp -2\amp 1
+        \end{amatrix}
+         \begin{bmatrix}
+          1\amp 0\amp 0\\
+          0\amp 1\amp 0\\
+          0\amp 0\amp 0
+      \end{bmatrix}
+      \begin{amatrix}[rrr]
+      \frac{1}{2}\amp -\frac{1}{2}\amp 0\\
+      \frac{1}{6}\amp \frac{1}{6}\amp -\frac{1}{3}\\
+      \frac{1}{3}\amp \frac{1}{3}\amp \frac{1}{3}
+      \end{amatrix}
+      </mrow>
+      <mrow>  \amp = \frac{1}{3}\begin{amatrix}[rrr]
+      2\amp -1\amp -1\\ -1\amp 2\amp -1\\ -1\amp -1\amp 2
+      \end{amatrix}
+      </mrow>
+      </md>.
+    Lo and behold, we've discovered our matrix formula for projection onto <m>W</m> once again!
     </p>
-  </subsection>
+  </statement>
+</example>
+</subsection>
+<subsection xml:id="ss_changebasis_similarity">
+<title>Similarity and the holy commutative tent of linear algebra</title>
+<p>
+  <xref ref="th_change_of_basis_transformations"/> supplies an algebraic answer to the question: What is the relation between two matrix representations <m>A=[T]_B</m> and <m>A'=[T]_{B'}</m>? Letting <m>P=\underset{B'\rightarrow B}{P}</m>, equation <xref ref="eq_changebasis_transform_inverse"/> becomes <m>A'=P^{-1}AP</m>. Matrices satisfying such a relation are said to be <em>similar</em>.
+</p>
+
   <definition xml:id="d_similar">
     <idx><h>similar matrices</h></idx><statement>
       <p>
@@ -604,101 +831,53 @@
       </p>
     </statement>
   </definition>
-  <remark xml:id="rm_holy_commutative_tent">
-    <p>
-      As we will see in coming sections, matrices that are similar in the techinical sense given by <xref ref="d_similar"/> are indeed similar algebraically speaking: <ie />, similar matrices share many of the same properties.
-      We now have the theoretical foundation to understand why this is so:
-      they simply inherit these common properties from the overlying linear transformation <m>T</m>,
-      of which they are but earthly shadows. (See <xref ref="fig_comm_tent"/>.) There is but one true <m>T</m>!
-    </p>
-  </remark>
+  <p>
+    So any two matrix representations of a linear transformation <m>T\colon V\rightarrow V</m> are similar in the technical sense of <xref ref="d_similar"/>. In fact, a converse of sorts is also true, as articulated in the theorem below.
+  </p>
+    <theorem xml:id="th_similarity_matrixreps">
+      <title>Similarity and matrix representations</title>
 
-  <!-- <figure xml:id="fig_comm_tent">
-    <caption>Holy commutative tent of linear algebra: <m>P=\underset{B\rightarrow B'}{P}</m>, <m>B=P^{-1}AP</m></caption>
-    <image xml:id="im_holycomm">
-      <latex-image>
-        \begin{tikzcd}
-        \amp V \arrow[rrr, "T"] \arrow[ddl, leftrightarrow, "{[\hspace{5pt}]_B}"'] \arrow[drr, leftrightarrow,"{[\hspace{5pt}]_{B'}}"]  \amp \amp \amp V \arrow[ddl, leftrightarrow,"{[\hspace{5pt}]_B}", pos=11/20] \arrow[drr, leftrightarrow, "{[\hspace{5pt}]_{B'}}"]\\
-        \amp  \amp   \amp\R^n \arrow[rrr, "T_B"] \arrow[dlll, "P^{-1}"', pos=.4] \amp \amp \amp \R^n \\
-        \R^n \arrow[rrr, "T_A"']\amp   \amp \amp \R^n  \arrow[urrr, "P"']\amp
-        \end{tikzcd}
-      </latex-image>
-    </image>
+      <statement>
+        <p>
+          Two <m>n\times n</m> matrices <m>A</m> and <m>A'</m> are similar if and only if there is a linear transformation <m>T\colon \R^n\rightarrow \R^n</m> and bases <m>B, B'</m> of <m>\R^n</m> satisfying <m>A=[T]_B</m> and <m>A'=[T]_{B'}</m>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          The discussion above shows that if <m>A=[T]_B</m> and <m>A'=[T]_{B'}</m>, then <m>A'=P^{-1}AP</m>, where <m>P=\underset{B'\rightarrow B}{P}</m>; thus <m>A</m> and <m>A'</m> are similar in this case.
+        </p>
+        <p>
+          Now assume that <m>A</m> and <m>A'</m> are similar. Then there is an invertible matrix <m>P</m> such that <m>A'=P^{-1}AP</m>. Letting <m>T=T_A</m>, we have <m>A=[T]_B</m> where <m>B</m> is the standard basis of <m>\R^n</m> (<xref ref="eg_matrixreps_matrixtransforms"/>). Next, if we let <m>B'</m> be the ordered basis whose <m>j</m>-th element is the <m>j</m>-th column of <m>P</m>, then we have <m>P=\underset{B'\rightarrow B}{P}</m> (<xref ref="eg_changebasis_standard"/>), and hence
+          <me>
+            A'=P^{-1}AP=\underset{B\rightarrow B'}{P}[T]_B\underset{B'\rightarrow B}{P}=[T]_{B'}
+          </me>,
+          as desired.
+        </p>
+      </proof>
+    </theorem>
+      <p>
+      We will see in coming sections that similar matrices are indeed similar algebraically speaking: <ie />, they share many of the same properties. <xref ref="th_similarity_matrixreps"/> provides the theoretical foundation to understand why this should be so: if <m>A</m> and <m>A'</m> are similar, then they are two matrix representations of a common linear transformation <m>T</m>; their many shared properties are simply inherited from the single overlying linear transformation that they both represent! This circle of ideas is neatly encompassed by <xref ref="fig_comm_tent"/>.
+    </p>
+    <figure xml:id="fig_comm_tent">
+      <title>Holy commutative tent of linear algebra: <m>P=\underset{B\rightarrow B'}{P}</m>, <m>B=P^{-1}AP</m></title>
+      <caption>Holy commutative tent of linear algebra: <m>P=\underset{B\rightarrow B'}{P}</m>, <m>B=P^{-1}AP</m>
+    </caption>
+      <image xml:id="im_holycomm" width="100%" source="images/im_holycomm"/>
+      <!-- <image xml:id="im_holycomm" width="100%">
+        <latex-image>
+          \begin{tikzcd}
+          \ampV \arrow[rrr, "T"] \arrow[ddl, leftrightarrow, "{[\hspace{5pt}]_B}"'] \arrow[drr, leftrightarrow,"{[\hspace{5pt}]_{B'}}"]  \amp \amp \amp V \arrow[ddl, leftrightarrow,"{[\hspace{5pt}]_B}", pos=11/20] \arrow[drr, leftrightarrow, "{[\hspace{5pt}]_{B'}}"]\\
+          \amp  \amp   \amp\R^n \arrow[rrr, "A' "] \arrow[dlll, "P^{-1}"', pos=.4] \amp \amp \amp \R^n \\
+          \R^n \arrow[rrr, "A"']\amp   \amp \amp \R^n  \arrow[urrr, "P"']\amp
+          \end{tikzcd}
+        </latex-image>
+      </image> -->
+    </figure>
+    <p>
+    Perhaps a little exegesis is in order here. Think of the map <m>T\colon V\rightarrow V</m> as a linear transformation up in abstract heaven. The two slanted sides of the tent are both commutative diagrams (<xref ref="fig_comm_diag"/>), and give us two models of <m>T</m> as matrices <m>A=[T]_B</m> and <m>A'=[T]_{B'}</m>. Think of these as earthly shadows of <m>T</m>. We translate back and forth between these worldly <m>\R^n</m> models and the linear transformation <m>T</m> up in abstract heaven via the vertical coordinate vector transformations <m>[\phantom{\boldv}]_B</m> and <m>[\phantom{\boldv}]_{B'}</m>. On the earthly plane the two models <m>A</m> and <m>A'</m> are related via the equation <m>A'=P^{-1}AP</m>,
+    where <m>P=\underset{B\rightarrow B'}{P}</m>. This can be interpreted as saying that the base of our tent is also a commutative diagram. It follows that all faces of our tent are commutative diagrams (including the triangular end faces); hence we have a commutative tent. 
+    </p>
 
-  </figure> -->
-  <figure xml:id="fig_comm_tent">
-    <caption>Holy commutative tent of linear algebra: <m>P=\underset{B\rightarrow B'}{P}</m>, <m>B=P^{-1}AP</m>
-  </caption>
-    <image xml:id="im_holycomm" source="./images/im_holycomm.svg"/>
-
-  </figure>
-
-  <subsection>
-    <title>Change of basis for <m>V=\R^n</m></title>
-
-    <p>
-      Let's consider the special case where <m>T\colon \R^n\rightarrow \R^n</m>: that is, when <m>V=\R^n</m> is a space of <m>n</m>-tuples. We know from <xref ref="cor_matrix_transformations"/> that <m>T=T_A</m> for a unique <m>n\times n</m> matrix <m>A</m>; in fact we know from the proof that <m>A=[T]_B</m>, where <m>B=(\bolde_1, \bolde_2, \dots, \bolde_n)</m> is the <em>standard</em> ordered basis of <m>\R^n</m>.
-    </p>
-    <p>
-      To compute <m>A=[T]_B</m> directly, we must compute <m>T(\bolde_j)</m> for each of the standard basis elements <m>\bolde_j</m>. However, for many naturally occurring transformations <m>T</m>, computing with respect to the standard basis is often not as convenient as computing with respect to some other basis <m>B'</m>: <ie />, it is often easier to compute <m>A'=[T]_{B'}</m> for some nonstandard basis <m>B'</m>. When this is the case <xref ref="th_change_of_basis_transformations"/> allows to us derive the desired matrix <m>A</m> from the more conveniently computed <m>A'</m>: namely, we have
-      <me>
-        A=P^{-1}A'P
-      </me>,
-      where <m>P=\underset{B\rightarrow B'}{P}</m>.
-    </p>
-    <p>
-      This gives us a powerful technique for computing matrix formulas for many interesting geometric linear transformations of <m>\R^n</m> whose very definitions involve an implicit choice nonstandard basis. Rotations, reflections and orthogonal projections are all examples of such transformations.
-    </p>
-
-
-  </subsection>
-
-  <subsection>
-    <title>Example: orthogonal projection revisited</title>
-    <p>
-      Let <m>T\colon \R^3\rightarrow\R^3</m> be orthogonal projection onto the plane <m>\mathcal{P}: x+y+z=0</m>,
-      as defined earlier.
-      We would like to derive a formula for <m>T</m>,
-      which amounts to finding the <m>A</m> such that <m>T=T_A</m>.
-    </p>
-    <p>
-      As previously observed we have <m>A=[T]_B</m>,
-      where <m>B</m> is the <em>standard basis</em> for <m>\R^3</m>.
-      We can compute <m>[T]_B</m> by first computing
-      <m>[T]_{B'}</m> for a cleverly chosen
-      <em>nonstandard</em> basis <m>B'</m>,
-      and then using the change of basis formula.
-    </p>
-    <p>
-      As done previously, we let <m>B'=\{(1,-1,0), (1,0,-1), (1,1,1)</m>.
-      Since <m>T</m> maps the first two vectors to themselves,
-      and the third vector to <m>(0,0,0)</m>,
-      we have <m>[T]_{B'}=\begin{bmatrix}1\amp 0\amp 0\\ 0\amp 1\amp 0\\ 0\amp 0\amp 0 \end{bmatrix}</m>.
-      (Go back to original example for details.)
-    </p>
-    <p>
-      Then
-      <md>
-        <mrow>A\amp =[T]_B=\underset{B'\rightarrow B}{P}[T]_{B'}\underset{B\rightarrow B'}{P}</mrow>
-        <mrow>\amp =\begin{amatrix}[rrr] 1\amp 1\amp 1</mrow>
-        <mrow>-1\amp 0\amp 1</mrow>
-        <mrow>0\amp -1\amp 1 \end{amatrix} \begin{bmatrix} 1\amp 0\amp 0</mrow>
-        <mrow>0\amp 1\amp 0</mrow>
-        <mrow>0\amp 0\amp 0 \end{bmatrix} \left( \begin{amatrix}[rrr] 1\amp 1\amp 1</mrow>
-        <mrow>-1\amp 0\amp 1</mrow>
-        <mrow>0\amp -1\amp 1 \end{amatrix}\right)^{-1} =\frac{1}{3}\begin{amatrix}[rrr] 2\amp -1\amp -1</mrow>
-        <mrow>-1\amp 2\amp -1</mrow>
-        <mrow>-1\amp -1\amp 2 \end{amatrix}</mrow>
-      </md>
-    </p>
-    <p>
-      Lo and behold,
-      we have rediscovered our matrix formula for orthogonal projection onto <m>\mathcal{P}</m>!!
-    </p>
-    <p>
-      (Note: since <m>B</m> is the standard basis in this case,
-      <m>\underset{B'\rightarrow B}{P}</m> was easy to compute. )
-    </p>
   </subsection>
 <xi:include href="./s_changeofbasis_ex.ptx"/>
 </section>
