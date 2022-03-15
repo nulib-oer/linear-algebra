@@ -908,11 +908,13 @@
     </me>.
     </p>
     </case>
-    In summary, the holy commuative tent conveys a unity between the three maps
+    <p>
+      In summary, the holy commuative tent conveys a unity between the three maps
     <me>
       \R^n\xrightarrow{A}\R^n, \R^n\xrightarrow{A'}\R^n, V\xrightarrow{T}V
     </me>.
-    Since the base of the tent is commutative, and since the maps given by  <m>P</m> and <m>P^{-1}</m> are invertible, we can translate back and forth between the matrices <m>A</m> and <m>A'</m>. Furthermore, since the two slanted sides of the tent are commutative, and since the coordinate vector transformations are invertible, we can translate up and down between our two matrix representations <m>A</m> and <m>A'</m> and the overlying linear transformation <m>T</m>. There is one true <m>T</m>!
+      Since the base of the tent is commutative, and since the maps given by  <m>P</m> and <m>P^{-1}</m> are invertible, we can translate back and forth between the matrices <m>A</m> and <m>A'</m>. Furthermore, since the two slanted sides of the tent are commutative, and since the coordinate vector transformations are invertible, we can translate up and down between our two matrix representations <m>A</m> and <m>A'</m> and the overlying linear transformation <m>T</m>. There is one true <m>T</m>!
+    </p>
   </subsection>
 <xi:include href="./s_changeofbasis_ex.ptx"/>
 </section>
