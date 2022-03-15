@@ -779,7 +779,7 @@
   <title>Orthogonal projection (again)</title>
   <statement>
     <p>
-      Consider <m>V=\R^3</m> together with the dot product. Let's derive (once again) a matrix formula for orthogonal projection  <m>\operatorname{proj}_W\colon \R^3\rightarrow \R^3</m>, where <m>W=\{(x,y,z)\colon x+y+z=0\}</m>. (See <xref ref="eg_projection_plane"/> and <xref ref="eg_matrixreps_proj"/>) In other words we want to compute <m>A=[\operatorname{proj}_W]_B</m>, where <m>B=((1,0,0), (0,1,0), (0,0,1))</m> is the standard basis. We will do so <em>indirectly</em> by first computing <m>[\operatorname{proj}_W]_{B'}</m>
+      Consider <m>V=\R^3</m> together with the dot product. Let's derive (once again) a matrix formula for orthogonal projection  <m>\operatorname{proj}_W\colon \R^3\rightarrow \R^3</m>, where <m>W=\{(x,y,z)\colon x+y+z=0\}</m>. In other words we want to compute <m>A=[\operatorname{proj}_W]_B</m>, where <m>B=((1,0,0), (0,1,0), (0,0,1))</m> is the standard basis. We will do so <em>indirectly</em> by first computing <m>[\operatorname{proj}_W]_{B'}</m>
       with respect to a more convenient basis: namely, <m>B'=((1,-1,0),(1,1,-2), (1,1,1))</m>. This is the same basis from <xref ref="eg_matrixreps_proj"/>, and was selected deliberateley so that the first two vectors form a basis of <m>W</m>, and the third vector spans the normal line to <m>W</m>. As in <xref ref="eg_matrixreps_proj"/> we then easily compute
       <me>
         [\operatorname{proj}_W]_{B'}=\begin{bmatrix}
@@ -812,8 +812,8 @@
       \end{amatrix}
       </mrow>
       </md>.
-    Lo and behold, we've discovered our matrix formula for projection onto <m>W</m> once again!
-    </p>
+    Lo and behold, we've discovered our matrix formula for projection onto <m>W</m> once again! (Compare with  <xref ref="eg_projection_plane"/> and <xref ref="eg_matrixreps_proj"/>.)
+  </p>
   </statement>
 </example>
 </subsection>
@@ -847,37 +847,72 @@
           The discussion above shows that if <m>A=[T]_B</m> and <m>A'=[T]_{B'}</m>, then <m>A'=P^{-1}AP</m>, where <m>P=\underset{B'\rightarrow B}{P}</m>; thus <m>A</m> and <m>A'</m> are similar in this case.
         </p>
         <p>
-          Now assume that <m>A</m> and <m>A'</m> are similar. Then there is an invertible matrix <m>P</m> such that <m>A'=P^{-1}AP</m>. Letting <m>T=T_A</m>, we have <m>A=[T]_B</m> where <m>B</m> is the standard basis of <m>\R^n</m> (<xref ref="eg_matrixreps_matrixtransforms"/>). Next, if we let <m>B'</m> be the ordered basis whose <m>j</m>-th element is the <m>j</m>-th column of <m>P</m>, then we have <m>P=\underset{B'\rightarrow B}{P}</m> (<xref ref="eg_changebasis_standard"/>), and hence
+          Now assume that <m>A</m> and <m>A'</m> are similar. By definition this means there is an invertible matrix <m>P</m> such that <m>A'=P^{-1}AP</m>. Letting <m>T=T_A</m>, we have <m>A=[T]_B</m> where <m>B</m> is the standard basis of <m>\R^n</m> (<xref ref="eg_matrixreps_matrixtransforms"/>). Next, if we let <m>B'</m> be the ordered basis whose <m>j</m>-th element is the <m>j</m>-th column of <m>P</m>, then we have <m>P=\underset{B'\rightarrow B}{P}</m> (<xref ref="eg_changebasis_standard"/>), and hence
           <me>
-            A'=P^{-1}AP=\underset{B\rightarrow B'}{P}[T]_B\underset{B'\rightarrow B}{P}=[T]_{B'}
+            A'=P^{-1}AP=\underset{B\rightarrow B'}{P}\, [T]_B\, \underset{B'\rightarrow B}{P}=[T]_{B'}
           </me>,
           as desired.
         </p>
       </proof>
     </theorem>
       <p>
-      We will see in coming sections that similar matrices are indeed similar algebraically speaking: <ie />, they share many of the same properties. <xref ref="th_similarity_matrixreps"/> provides the theoretical foundation to understand why this should be so: if <m>A</m> and <m>A'</m> are similar, then they are two matrix representations of a common linear transformation <m>T</m>; their many shared properties are simply inherited from the single overlying linear transformation that they both represent! This circle of ideas is neatly encompassed by <xref ref="fig_comm_tent"/>.
+      We will see in <xref ref="s_eigenvectors"/> that similar matrices are indeed similar algebraically speaking: <ie />, they share many of the same properties. <xref ref="th_similarity_matrixreps"/> provides the theoretical foundation to understand why this should be so: if <m>A</m> and <m>A'</m> are similar, then they are two matrix representations of a common linear transformation <m>T</m>; their many shared properties are simply inherited from the single overlying linear transformation that they both represent! This circle of ideas is neatly encompassed by <xref ref="fig_comm_tent"/>.
     </p>
     <figure xml:id="fig_comm_tent">
-      <title>Holy commutative tent of linear algebra: <m>P=\underset{B\rightarrow B'}{P}</m>, <m>B=P^{-1}AP</m></title>
-      <caption>Holy commutative tent of linear algebra: <m>P=\underset{B\rightarrow B'}{P}</m>, <m>B=P^{-1}AP</m>
+      <title>The holy commutative tent of linear algebra</title>
+      <caption>The holy commutative tent of linear algebra. Here we have <m>P=\underset{B'\rightarrow B}{P}</m> and <m>A'=P^{-1}AP</m>.
     </caption>
-      <image xml:id="im_holycomm" width="100%" source="images/im_holycomm"/>
-      <!-- <image xml:id="im_holycomm" width="100%">
+      <!-- <image xml:id="im_holycomm" width="100%" source="images/im_holycomm"/> -->
+      <image xml:id="im_holycomm" width="100%">
         <latex-image>
           \begin{tikzcd}
-          \ampV \arrow[rrr, "T"] \arrow[ddl, leftrightarrow, "{[\hspace{5pt}]_B}"'] \arrow[drr, leftrightarrow,"{[\hspace{5pt}]_{B'}}"]  \amp \amp \amp V \arrow[ddl, leftrightarrow,"{[\hspace{5pt}]_B}", pos=11/20] \arrow[drr, leftrightarrow, "{[\hspace{5pt}]_{B'}}"]\\
-          \amp  \amp   \amp\R^n \arrow[rrr, "A' "] \arrow[dlll, "P^{-1}"', pos=.4] \amp \amp \amp \R^n \\
-          \R^n \arrow[rrr, "A"']\amp   \amp \amp \R^n  \arrow[urrr, "P"']\amp
+          \amp V \arrow[rrr, "T"] \arrow[ddl, leftrightarrow, "{[\hspace{5pt}]_B}"'] \arrow[drr, leftrightarrow,"{[\hspace{5pt}]_{B'}}"]  \amp \amp \amp V \arrow[ddl, leftrightarrow,"{[\hspace{5pt}]_B}", pos=11/20] \arrow[drr, leftrightarrow, "{[\hspace{5pt}]_{B'}}"]\\
+          \amp  \amp   \amp\R^n \arrow[rrr, "A'={[T]}_{B'} "] \arrow[dlll, "P"', pos=.4] \amp \amp \amp \R^n \\
+          \R^n \arrow[rrr, "A={[T]}_B"']\amp   \amp \amp \R^n  \arrow[urrr, "P^{-1}"']\amp
           \end{tikzcd}
         </latex-image>
-      </image> -->
+      </image>
     </figure>
     <p>
-    Perhaps a little exegesis is in order here. Think of the map <m>T\colon V\rightarrow V</m> as a linear transformation up in abstract heaven. The two slanted sides of the tent are both commutative diagrams (<xref ref="fig_comm_diag"/>), and give us two models of <m>T</m> as matrices <m>A=[T]_B</m> and <m>A'=[T]_{B'}</m>. Think of these as earthly shadows of <m>T</m>. We translate back and forth between these worldly <m>\R^n</m> models and the linear transformation <m>T</m> up in abstract heaven via the vertical coordinate vector transformations <m>[\phantom{\boldv}]_B</m> and <m>[\phantom{\boldv}]_{B'}</m>. On the earthly plane the two models <m>A</m> and <m>A'</m> are related via the equation <m>A'=P^{-1}AP</m>,
-    where <m>P=\underset{B\rightarrow B'}{P}</m>. This can be interpreted as saying that the base of our tent is also a commutative diagram. It follows that all faces of our tent are commutative diagrams (including the triangular end faces); hence we have a commutative tent. 
+    Perhaps a little exegesis is in order here. Think of the map <m>T\colon V\rightarrow V</m> as a linear transformation up in abstract heaven; and think of the two matrices <m>A=[T]_B</m> and <m>A'=[T]_{B'}</m> as two earthly shadows of <m>T</m>. OK, this gets at the holy bit somewhat, but why commutative? Each face of the tent is a commutative diagram, as we now explain.
+  </p>
+    <case>
+     <title>Slanted sides of the tent</title>
+    <p>
+    The commutativity of the two slanted sides of the tent is a consequence of <xref ref="th_matrixreps_model"/>:
+    <md>
+      <mrow>[T(\boldv)]_B[\boldv]_B \amp = [T(\boldv)]_B  \amp [T]_{B'}[\boldv]_{B'}\amp =[T(\boldv)]_{B'}</mrow>
+    </md>.
     </p>
-
+    </case>
+    <case>
+     <title>Triangular ends of the tent</title>
+    <p>
+    Let <m>P=\underset{B'\rightarrow B}{P}</m>, so that <m>P^{-1}=\underset{B\rightarrow B'}{P}</m>. The commutativity of the two triangular ends of the tent are consequences of <xref ref="th_change_of_basis_coordinates"/>:
+    <md>
+      <mrow>P[\boldv]_{B'} \amp=[\boldv]_B \amp
+      P^{-1}[\boldv]_B\amp=[\boldv]_{B'} </mrow>
+    </md>.
+    </p>
+    </case>
+    <case>
+     <title>Base of tent</title>
+    <p>
+    Lastly the commutativity of the base of the tent is a consequence of <xref ref="th_change_of_basis_transformations"/>:
+    <me>
+      [T]_{B'}=\underset{B\rightarrow B'}{P}[T]_B\underset{B'\rightarrow B}{P},
+    </me>
+    or equivalently,
+    <me>
+      A'=P^{-1}AP
+    </me>.
+    </p>
+    </case>
+    In summary, the holy commuative tent conveys a unity between the three maps
+    <me>
+      \R^n\xrightarrow{A}\R^n, \R^n\xrightarrow{A'}\R^n, V\xrightarrow{T}V
+    </me>.
+    Since the base of the tent is commutative, and since the maps given by  <m>P</m> and <m>P^{-1}</m> are invertible, we can translate back and forth between the matrices <m>A</m> and <m>A'</m>. Furthermore, since the two slanted sides of the tent are commutative, and since the coordinate vector transformations are invertible, we can translate up and down between our two matrix representations <m>A</m> and <m>A'</m> and the overlying linear transformation <m>T</m>. There is one true <m>T</m>!
   </subsection>
 <xi:include href="./s_changeofbasis_ex.ptx"/>
 </section>
