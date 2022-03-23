@@ -262,7 +262,7 @@
           <men xml:id="eq_eigenvectors_adhoc_derivative">
             f'=\lambda f
           </men>
-          for some <m>\lambda\in\R</m>. Thus <m>\lambda</m> is an eigenvalue of <m>T</m> if and only if the differential equation <xref ref="eq_eigenvectors_adhoc_derivative"/> has a nonzero solution. This is true for all <m>\lambda\in \R</m>! Indeed for any <m>lambda</m> the exponential function <m>f(x)=e^{\lambda x}</m> satisfies <m>f'(x)=\lambda e^{\lambda x}=\lambda f(x)</m> for all <m>x\in \R</m>. Furthermore, any solution to <xref ref="eq_eigenvectors_adhoc_derivative"/> is of the form <m>f(x)=Ce^{\lambda x}</m> for some <m>C\in \R</m>.
+          for some <m>\lambda\in\R</m>. Thus <m>\lambda</m> is an eigenvalue of <m>T</m> if and only if the differential equation <xref ref="eq_eigenvectors_adhoc_derivative"/> has a nonzero solution. This is true for all <m>\lambda\in \R</m>! Indeed for any <m>\lambda</m> the exponential function <m>f(x)=e^{\lambda x}</m> satisfies <m>f'(x)=\lambda e^{\lambda x}=\lambda f(x)</m> for all <m>x\in \R</m>. Furthermore, any solution to <xref ref="eq_eigenvectors_adhoc_derivative"/> is of the form <m>f(x)=Ce^{\lambda x}</m> for some <m>C\in \R</m>.
           We conclude that (a) every <m>\lambda\in \R</m> is an eigenvalue of <m>T</m>, and (b) for a given <m>\lambda</m>, the <m>\lambda</m>-eigenvectors of <m>T</m> are presicely the functions of the form <m>f(x)=Ce^{\lambda x}</m> for some <m>C\ne 0</m>.
         </p>
       </solution>
