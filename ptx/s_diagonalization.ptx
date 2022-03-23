@@ -99,7 +99,7 @@ The phrase <q>an ordered basis consisting of eigenvectors of <m>T</m></q> is a b
       Let <m>T\colon \R^2\rightarrow \R^2</m> be rotation by <m>\pi/4</m>: <ie />, <m>T=T_A</m>, where
       <me>
       A=\frac{1}{2}\begin{amatrix}[rr]\sqrt{2}\amp -\sqrt{2}\\ \sqrt{2}\amp \sqrt{2} \end{amatrix}
-      </me>. As discussed in <xref ref="eg_eigenvector_adhoc_rotation"/>, <m>T</m> has no eigenvectors whatsoever. It follows that there is no eigenbasis of <m>T</m>, and hence that <m>T</m> is not diagaonlizable.
+      </me>. As discussed in <xref ref="eg_eigenvector_adhoc_rotation"/>, <m>T</m> has no eigenvectors whatsoever. It follows that there is no eigenbasis of <m>T</m>, and hence that <m>T</m> is not diagonalizable.
     </p>
   </statement>
 </example>
@@ -249,7 +249,7 @@ makes no assumption about the dimension of <m>V</m> and can thus can be applied 
   </statement>
   <proof>
     <p>
-      Before proving the result, we point out one subtelty here: although the <m>\boldw_i\in W_{\lambda_i}</m> for all <m>i</m>, we cannot assume that each <m>\boldw_i</m> is an eigenvector. Indeed, <m>\boldw_i</m> is an eigenvector in this case if and only if <m>\boldw_i\ne 0</m>. This observation guides the proof that follows.
+      Before proving the result, we point out one subtlety here: although the <m>\boldw_i\in W_{\lambda_i}</m> for all <m>i</m>, we cannot assume that each <m>\boldw_i</m> is an eigenvector. Indeed, <m>\boldw_i</m> is an eigenvector in this case if and only if <m>\boldw_i\ne 0</m>. This observation guides the proof that follows.
     </p>
     <p>
       To pick out the terms of <xref ref="eq_independent_eigenspaces"/> that are nonzero (if any), we define
@@ -377,38 +377,7 @@ makes no assumption about the dimension of <m>V</m> and can thus can be applied 
     <p>
       We now collect our various results about diagonalizability into one procedure that (a) decides whether a linear transformation <m>T</m> is diagonalizable, and (b) if it is, computes an eigenbasis for <m>T</m>. The procedure applies to any linear transformation of a finite-dimensional vector space, not just matrix transformations. As usual, the first step is to choose a matrix representation <m>A=[T]_B</m> for <m>T</m>.
     </p>
-    <!-- <corollary xml:id="cor_diagonalizability">
-      <statement>
-        <p>
-          Let <m>T\colon V\rightarrow V</m> be a linear transformation of the <m>n</m>-dimensional space <m>V</m>, let <m>B</m> be an ordered basis of <m>V</m>, and let <m>A=[T]_B</m>. The following are equivalent:
-          <ol>
-            <li>
-              <p>
-                <m>T</m> is diagonalizable;
-              </p>
-            </li>
-            <li>
-              <p>
-                <m>A</m> is diagonalizable;
-              </p>
-            </li>
-            <li>
-              <p>
-                there is a basis of <m>\R^n</m> consisting of eigenvectors of <m>A</m>;
-              </p>
-            </li>
-            <li>
-              <p>
-                if <m>\lambda_1,\lambda_2, \dots, \lambda_r</m> are the distinct eigenvalues of <m>A</m>, then
-                <me>
-                  \sum_{i=1}^r\dim W_{\lambda_i}=n
-                </me>.
-              </p>
-            </li>
-          </ol>
-        </p>
-      </statement>
-    </corollary> -->
+
     <algorithm xml:id="proc_diagonalize">
       <title>Deciding whether a linear transformation is diagonalizable</title>
       <statement>
@@ -468,7 +437,7 @@ makes no assumption about the dimension of <m>V</m> and can thus can be applied 
           <ul>
             <li>
               <p>
-                That <m>T</m> is diagonalizable if and only if <m>A=[T]_B</m> is diagonalizable follows from the fact that a basis of the <m>\lambda</m>-eigenspace of <m>A</m> to a basis of the <m>\lambda</m>-eigenspace of <m>T</m> using the coordintate vector transformation <m>[\phantom{v}]_B</m>.
+                That <m>T</m> is diagonalizable if and only if <m>A=[T]_B</m> is diagonalizable follows from the fact that a basis of the <m>\lambda</m>-eigenspace of <m>A</m> to a basis of the <m>\lambda</m>-eigenspace of <m>T</m> using the coordinate vector transformation <m>[\phantom{v}]_B</m>.
               </p>
             </li>
             <li>
@@ -499,7 +468,7 @@ makes no assumption about the dimension of <m>V</m> and can thus can be applied 
         <p>
          Note first that <m>A=[T]_B</m> where <m>B</m> is the standard basis of <m>\R^3</m>. (See <xref ref="eg_matrixreps_matrixtransforms"/>.) Since <m>A</m> is upper triangular, we easily see that its characteristic polynomial is <m>p(t)=(t-1)(t-3)^2</m>. Next we investigate the eigenspaces:
          <me>
-           W_2=\NS(2I-A)=\NS \begin{amatrix}[rrr]0\amp -1\amp -1\\ 0\amp 1\amp -2\\ 0\amp 0\amp 1  \end{amatrix},
+           W_2=\NS(2I-A)=\NS \begin{amatrix}[rrr]0\amp -1\amp -1\\ 0\amp 1\amp -2\\ 0\amp 0\amp 1  \end{amatrix},coordinatecoordinate
            W_3=\NS(3I-A)=\NS \begin{amatrix}[rrr]-1\amp -1\amp -1\\ 0\amp 0\amp -2\\ 0\amp 0\amp 0  \end{amatrix}
          </me>.
           By inspection we see that both <m>2I-A</m> and <m>3I-A</m> have rank 2, and hence nullity <m>3-2=1</m> by the rank-nullity theorem. Thus both eigenspaces have dimension one, and we have <m>\dim W_2+\dim W_3=1+1=2\lt 3</m>. We conclude that <m>A</m>, and hence <m>T_A</m>, is not diagonalizable.
@@ -560,11 +529,11 @@ makes no assumption about the dimension of <m>V</m> and can thus can be applied 
 <subsection xml:id="ss_diagonalizable_matrices">
   <title>Diagonalizable matrices</title>
   <p>
-    In this subsection we will focus on matrix transformations <m>T=T_A\colon \R^n\rightarrow \R^n</m>. Recall (<xref ref="eg_matrixreps_matrixtransforms" text="global"/>) that in this situation we have <m>A=[T]_B</m> where <m>B</m> is the <em>standard basis</em> of <m>\R^n</m>. As such <xref ref="proc_diagonalize"/> boils down to steps (2)-(3), and the eigenbasis <m>B'</m> of <m>A</m> found in (3) is itself an eigenbasis for <m>T=T_A</m>. Letting <m>D=[T]_{B'}</m> the change of basis formula (<xref ref="th_change_of_basis_transformations" text="global" />) yields
+    In this subsection we will focus on matrix transformations <m>T_A\colon \R^n\rightarrow \R^n</m>. Recall (<xref ref="eg_matrixreps_matrixtransforms" text="global"/>) that in this situation we have <m>A=[T]_B</m> where <m>B</m> is the <em>standard basis</em> of <m>\R^n</m>. As such <xref ref="proc_diagonalize"/> boils down to steps (2)-(3), and the eigenbasis <m>B'</m> of <m>A</m> found in (3) is itself an eigenbasis for <m>T=T_A</m>. Letting <m>D=[T]_{B'}</m> the change of basis formula (<xref ref="th_change_of_basis_transformations" text="global" />) yields
     <me>
       D=P^{-1}AP
     </me>,
-    where <m>P=\underset{B'\rightarrow B}{P}</m>. Lastly, since <m>B</m> is the standard basis of <m>\R^n</m>, <m>\underset{B'\rightarrow B}{P}</m> is the matrix whose <m>j</m>-th column is the <m>j</m>-th element of <m>B'</m>. We record these observations as a separate procedure specifically for matrix transformations.
+    where <m>P=\underset{B'\rightarrow B}{P}</m>. Lastly, since <m>B</m> is the standard basis of <m>\R^n</m>, the change of basis matrix <m>\underset{B'\rightarrow B}{P}</m> is obtained by placing the <m>j</m>-th element of <m>B'</m> as the <m>j</m>-th column for all <m>1\leq j\leq n</m>. We record these observations as a separate procedure specifically for matrix transformations.
   </p>
    <algorithm xml:id="proc_diagonalize_matrixtransform">
      <title>Deciding whether a matrix is diagonalizable</title>
@@ -696,74 +665,44 @@ makes no assumption about the dimension of <m>V</m> and can thus can be applied 
 
   </corollary>
   <p>
-   We know from <xref ref="th_similarity_matrixreps"/> that similar matrices can be thought of as two matrix representations of the same overlying linear transformation <m>T</m>. As such they similar matrices share many of the same algebraic properties, as <xref ref="th_conjugation"/> and <xref ref="th_similarity"/> detail. 
+   We know from <xref ref="th_similarity_matrixreps"/> that similar matrices can be thought of as two matrix representations of the same overlying linear transformation <m>T</m>. As such similar matrices share many of the same algebraic properties, as <xref ref="th_similarity"/> details.
 </p>
-<theorem xml:id="th_conjugation">
-  <title>Properties of conjugation</title>
-  <statement>
-    <p>
-      Let <m>P</m> be any invertible <m>n\times n</m> matrix.
-      <ol>
-        <li>
-          <p>
-            For all <m>A_1,A_2\in M_{nn}</m> and <m>c_1,c_2\in \R</m>, we have <m>P^{-1}(c_1A_1+c_2A_2)P=c_1P^{-1}A_1P+c_2P^{-1}A_2P</m>.
-          </p>
-        </li>
-        <li>
-          <p>
-            Let <m>A\in M_{nn}</m>. For all integers <m>k\geq 0</m>, we have <m>P^{-1}A^kP=(P^{-1}AP)^k</m>.
-            If <m>A</m> is invertible,
-            this equality holds for <em>all</em>
-            integers <m>n</m>.
-          </p>
-        </li>
-        <li>
-          <p>
-            Recall that given any polynomial <m>f(x)=a_rx^r+a_{r-1}x^{r-1}+\cdots +a_1x+a_0</m> and any
-            <m>n\times n</m> matrix <m>A</m> we define <m>f(A)=a_rA^r+a_{r-1}A^{r-1}+\cdots +a_1A+a_0I_n</m>.
-            We have <m>f(P^{-1}AP)=P^{-1}f(A)P</m> for any polynomial <m>f(x)</m>.
-          </p>
-        </li>
-      </ol>
-    </p>
-  </statement>
-</theorem>
-
 <theorem xml:id="th_similarity">
   <title>Properties of similarity</title>
   <statement>
     <p>
-      Suppose <m>A</m> is similar to <m>B</m>:
-      <ie />, there is an invertible matrix <m>P</m> such that <m>B=P^{-1}AP</m>. The following hold:
+      Suppose <m>A</m> is similar to <m>A'</m>:
+      <ie />, there is an invertible matrix <m>P</m> such that <m>A'=P^{-1}AP</m>. The following hold:
       <ol>
         <li>
           <p>
-            <m>B</m> is similar to <m>A</m>;
+            <m>A'</m> is similar to <m>A</m>: <ie />, there is an invertible matrix <m>Q</m> such that <m>A=Q^{-1}AQ</m>.
           </p>
         </li>
         <li>
           <p>
-            <m>A</m> and <m>B</m> have the same trace and determinant;
+            <m>A</m> and <m>A'</m> have the same characteristic polynomial.
           </p>
         </li>
         <li>
           <p>
-            <m>A</m> and <m>B</m> have the same rank;
+            <m>A</m> and <m>A'</m> have the same eigenvalues.
           </p>
         </li>
         <li>
           <p>
-            <m>A</m> and <m>B</m> have the same characteristic polynomial;
+            <m>A</m> and <m>A'</m> have the same trace and determinant.
           </p>
         </li>
         <li>
           <p>
-            <m>A</m> and <m>B</m> have the same eigenvalues;
+            <m>A</m> and <m>A'</m> have the same rank.
           </p>
         </li>
+
         <li>
           <p>
-            for any <m>\lambda\in \R</m> we have <m>\dim W_{\lambda}=\dim W_{\lambda}'</m>, where <m>W_\lambda, W_\lambda'</m> are the <m>\lambda</m>-eigen spaces of <m>A</m> and <m>B</m>, respectively.
+            For any <m>\lambda\in \R</m> we have <m>\dim W_{\lambda}=\dim W_{\lambda}'</m>, where <m>W_\lambda, W_\lambda'</m> are the <m>\lambda</m>-eigenspaces of <m>A</m> and <m>A'</m>, respectively.
           </p>
         </li>
       </ol>
@@ -771,108 +710,170 @@ makes no assumption about the dimension of <m>V</m> and can thus can be applied 
   </statement>
   <proof>
     <p>
-      By definition we have <m>B=P^{-1}AP</m> for some matrix <m>P</m>.
-      We wish to show the characteristic polynomials <m>p_A(t)</m> and <m>p_B(t)</m> of the two matrices are equal.
-      Compute:
+      Statement (1) follows by taking <m>Q=P^{-1}</m>.
+    </p>
+    <p>
+      Let <m>p_A(t)</m> and <m>p_{A'}(t)</m> be the characteristic polynomials of <m>A</m> and <m>A'</m>, repsectively. We have
       <md>
-        <mrow>p_B(t)\amp =\amp \det(tI-B)</mrow>
-        <mrow>\amp =\amp \det(tI-P^{-1}AP)</mrow>
-        <mrow>\amp =\amp \det(tP^{-1}IP-P^{-1}AP) \ \text{ (since \(P^{-1}IP=I\))}</mrow>
-        <mrow>\amp =\amp \det(P^{-1}tIP-P^{-1}AP) \ \text{ (\(t\) behaves as scalar) }</mrow>
-        <mrow>\amp =\amp \det(P^{-1}(tI-A)P)</mrow>
-        <mrow>\amp =\amp \det(P^{-1})\det(tI-A)\det(P)</mrow>
-        <mrow>\amp =\amp (\det(P))^{-1}\det(P)\det(tI-A)</mrow>
-        <mrow>\amp =\amp \det(tI-A)=p_A(t)</mrow>
+        <mrow>p_{A'}(t)\amp =\det(tI-A')</mrow>
+        <mrow>\amp =\det(tI-P^{-1}AP) \amp (A'=P^{-1}AP)</mrow>
+        <mrow>\amp = \det(P^{-1}tIP-P^{-1}AP) \amp (\text{algebra}) </mrow>
+        <mrow>\amp = \det(P^{-1}(tI-A)P) \amp (\text{left/right dist.}) </mrow>
+        <mrow>\amp = \det(P^{-1})\det(tI-A)\det(P) \amp (<xref ref="th_det_mult" text="global"/>) </mrow>
+        <mrow>\amp = (\det(P))^{-1}\det(P)\det(tI-A)  </mrow>
+        <mrow>\amp = \det(tI-A)=p_A(t)</mrow>
       </md>.
+      This proves statement (2).
+    </p>
+    <p>
+      Statement (3) follows from (2) since the eigenvalues of a matrix are the real roots of its characteristic polynomial. Furthermore, by <xref ref="th_characteristic_polynomial"/> the trace and determinant of a matrix are equal to the sum and product of its complex eigenvalues (the roots of its characteristic polynomial). Thus (4) also follows from (2).
+    </p>
+    <p>
+      The proofs of statements (5)-(6) are left as exercises.
     </p>
   </proof>
 </theorem>
 <p>
-  In this spirit, a good way of thinking about a diagonalizable matrix <m>A</m> is that it is <q>as good as diagonal</q>. In practical terms, if <m>A</m> satisfies
-  <men xml:id="eq_diagonalizable">
-    D=P^{-1}AP
-  </men>,
-  where <m>D</m> is diagonal,
-  then we can answer many computational and theoretical questions about <m>A</m> by first answering them about <m>D</m> and then using the relation <xref ref="eq_diagonalizable"/>. The following examples are nice illustrations of this technique.
+  A diagonalizable matrix is similar to a diagonal matrix (<xref ref="cor_diagonalizable_matrix" text="global"/>) and similar matrices share many essential properties (<xref ref="th_similarity_matrixreps" text="global"/>, <xref ref="th_similarity" text="global"/>) In this spirit, a good way of thinking about a diagonalizable matrix is that it is <q>as good as diagonal</q>.
 </p>
+<principle xml:id="mantra_diagonalizable">
+  <title>Diagonalizable mantra</title>
+  <statement>
+    <p>
+      A diagonalizable matrix is as good as diagonal.
+    </p>
+  </statement>
+</principle>
+<p>
+  In practical terms, if <m>A</m> is diagonalizable, then we have
+  <mdn>
+    <mrow xml:id="eq_diagonalize_matrix_2"> D\amp=P^{-1}AP \amp A\amp=PDP^{-1} </mrow>
+  </mdn>
+  where <m>D</m> is diagonal. This allows us to answer questions about <m>A</m> by first answering the question for <m>D</m> and then use the equations in <xref ref="eq_diagonalize_matrix_2"/> to translate the results back to <m>A</m>. What makes this method effective is that algebraic questions involving diagonal matrices are easy to answer! Before getting to some illustrative examples, we need a few results about the operation <m>A\mapsto P^{-1}AP</m>, which is called <em>conjugation</em> by <m>P</m>.
+</p>
+<theorem xml:id="th_conjugation">
+  <title>Properties of conjugation</title>
+  <statement>
+    <p>
+      Let <m>P</m> be an invertible <m>n\times n</m> matrix.
+      <ol>
+        <li>
+          <title>Conjugation is linear</title>
+          <p>
+            For all <m>A_1,A_2\in M_{nn}</m> and <m>c_1,c_2\in \R</m>, we have <m>P^{-1}(c_1A_1+c_2A_2)P=c_1P^{-1}A_1P+c_2P^{-1}A_2P</m>.
+          </p>
+        </li>
+        <li>
+          <title>Conjugation commutes with powers</title>
+          <p>
+            For all <m>A\in M_{nn}</m> and integers <m>k\geq 0</m>, we have
+            <me>(P^{-1}AP)^k=P^{-1}A^kP</me>.
+            If <m>A</m> is invertible,
+            this equality holds for <em>all</em>
+            integers <m>n</m>.
+          </p>
+        </li>
+        <li>
+          <title>Conjugation commutes with polynomials</title>
+          <p>
+            Given any polynomial <m>f(x)=a_rx^r+a_{r-1}x^{r-1}+\cdots +a_1x+a_0</m> with real coefficients,
+            we have
+            <me>f(P^{-1}AP)=P^{-1}f(A)P</me>.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+  <proof>
+    <p>
+      The proof is left as an exercise.
+    </p>
+  </proof>
+</theorem>
 <example xml:id="eg_diagonalizable_matrix_powers">
   <title>Diagonalizable: matrix powers</title>
   <statement>
     <p>
       Assume <m>D=P^{-1}AP</m>, where <m>D</m> is diagonal.
-      To normally difficult matrix power computation <m>A^{n}</m> can be accomplished by computing <m>D^{n}</m> (easy) and then observing that
+      The normally difficult computation <m>A^{k}</m> can be accomplished by first computing <m>D^{k}</m> (easy) and then observing that
       <md>
-        <mrow>A^n\amp = (PDP^{-1})^n \amp </mrow>
-        <mrow> \amp =PD^nP^{-1} \amp (<xref ref="th_conjugation"/>, 2) </mrow>
+        <mrow>A^k\amp = (PDP^{-1})^k \amp </mrow>
+        <mrow> \amp =PD^kP^{-1} \amp (<xref ref="th_conjugation"/>, (2)) </mrow>
       </md>.
-      For example,
-      take <m>A=\begin{bmatrix}1\amp 3\\ 1\amp -1 \end{bmatrix}</m>.
-      Using <xref ref="proc_diagonalize"/>, we see that <m>D=P^{-1}AP</m>,
-      where <m>D=\begin{bmatrix}2\amp 0\\ 0\amp -2 \end{bmatrix}</m>
-      and <m>P=\begin{bmatrix}3\amp 1\\ 1\amp -1 \end{bmatrix}</m>.
-      It follows that for any <m>n\in \Z</m> we have
+      For example, the matrix
+      <me>
+      A=\begin{amatrix}[rr]1\amp 3\\ 1\amp -1 \end{amatrix}
+      </me>
+      is diagonalizable and satisfies <m>D=P^{-1}AP</m>, where
+      <me>
+        P=\begin{amatrix}[rr]3\amp 1\\ 1\amp -1 \end{amatrix}, D=\begin{amatrix}[rr]2\amp 0\\ 0\amp -2 \end{amatrix}
+      </me>.
+      It follows that for any <m>k\in \Z</m> we have
       <md>
-        <mrow>A^n \amp=PD^nP^{-1} </mrow>
-        <mrow> \amp = P\begin{bmatrix}2^{n}\amp 0\\ 0\amp (-2)^{n} \end{bmatrix} P^{-1}</mrow>
-        <mrow>  \amp = \frac{1}{4}\begin{bmatrix}3\cdot2^n+(-2)^n\amp 3\cdot 2^n-3(-2)^{n}\\ 2^{n}-(-2)^n\amp 2^n+3(-2)^{n} \end{bmatrix}</mrow>
+        <mrow>A^k \amp=PD^kP^{-1} </mrow>
+        <mrow> \amp = P\begin{amatrix}[rr]2^{k}\amp 0\\ 0\amp (-2)^{k} \end{amatrix} P^{-1}</mrow>
+        <mrow>  \amp = \frac{1}{4}\begin{amatrix}[rr]3\cdot2^k+(-2)^k\amp 3\cdot 2^k-3(-2)^{k}\\ 2^{k}-(-2)^k\amp 2^k+3(-2)^{k} \end{amatrix}</mrow>
       </md>.
     </p>
   </statement>
 </example>
 <example xml:id="eg_diagonalizable_matrix_polynomials">
   <title>Diagonalizable: matrix polynomials</title>
-
   <statement>
     <p>
       Assume <m>D=P^{-1}AP</m>, where <m>D</m> is a diagonal <m>n\times n</m> matrix. Let <m>[D]_{ii}=d_{i}</m>. Given any polynomial <m>f(x)=\anpoly</m>, we have
       <md>
         <mrow>f(A) \amp= f(PDP^{-1}) </mrow>
-        <mrow> \amp =Pf(D)P^{-1}  \amp (<xref ref="th_conjugation"/>)</mrow>
+        <mrow> \amp =Pf(D)P^{-1}  \amp (<xref ref="th_conjugation"/>,(3))</mrow>
       </md>.
-      Furthemore, since <m>D</m> is diagonal, it follows that <m>f(D)</m> is also diagonal, and in fact its diagonal entries are given by <m>f(d_i)</m>. This gives us an easy method of computing arbitary polynomials of the matrix <m>A</m>.
+      Furthermore, since <m>D</m> is diagonal, it follows that <m>f(D)</m> is also diagonal, and in fact its diagonal entries are given by <m>f(d_i)</m>. This gives us an easy method of computing arbitrary polynomials of the matrix <m>A</m>.
     </p>
     <p>
-      Take the matrix <m>A=\begin{bmatrix}1\amp 3\\ 1\amp -1 \end{bmatrix}</m> from <xref ref="eg_diagonalizable_matrix_powers"/>, which satisfies <m>D=P^{-1}AP</m>,
-      where <m>D=\begin{bmatrix}2\amp 0\\ 0\amp -2 \end{bmatrix}</m>
-      and <m>P=\begin{bmatrix}3\amp 1\\ 1\amp -1 \end{bmatrix}</m>. Let <m>f(x)=x^2 -4</m>. Since <m>f(2)=f(-2)=0</m>, it follows that <m>f(D)=D^2-4I=\boldzero</m> and hence
+      Consider again the matrix <m>A</m> (and <m>P</m> and <m>D</m>) from  <xref ref="eg_diagonalizable_matrix_powers"/>.  Let <m>f(x)=x^2 -4</m>. Since <m>f(2)=f(-2)=0</m>, it follows that <m>f(D)=D^2-4I=\boldzero</m>. We conclude that
       <me>
         f(A)=A^2-4I=Pf(D)P^{-1}=P\boldzero P^{-1}=\boldzero
       </me>,
-      as you can easily check.
+      as you can check directly.
     </p>
   </statement>
 </example>
   <example>
     <statement>
       <p>
-        <m>A</m> has a <em>square-root</em>
-        (i.e., a matrix <m>B</m> such that <m>B^2=A</m>) iff <m>D</m> has a square-root.
-      </p>
-      <p>
-        Indeed, suppose <m>B^2=A</m>.
-        Set <m>C=P^{-1}BP</m>.
-        Then <m>C^2=P^{-1}B^2P=P^{-1}AP=D</m>.
-        Similarly, if <m>C^2=D</m>, then <m>B^2=A</m>, where <m>B=PCP^{-1}</m>.
-      </p>
-      <p>
+        A <em>square-root</em> of an <m>n\times n</m> matrix <m>A</m> is a matrix <m>B</m> such that <m>B^2=A</m>. If <m>A</m> and <m>A'</m> are similar matrices, satisfying <m>A'=P^{-1}AP</m>, then <m>A</m> has a square-root if and only if <m>A'</m> has a square-root.
+        Indeed, if <m>B</m> satisfies <m>B^2=A</m>, then  <m>C=P^{-1}BP</m> satisfies
+        <me>
+          C^2=(P^{-1}BP)^2=P^{-1}B^2P=P^{-1}AP=A'
+        </me>.
+        Similarly, if <m>C</m> satisfies <m>C^2=A'</m>, then <m>B=PCP^{-1}</m> satisfies
+        <me>
+          B^2=(PCP^{-1})^2=PC^2P^{-1}=PA'P^{-1}=A
+        </me>.
         As an example,
-        the matrix <m>A=\begin{bmatrix}0\amp -2\\ 1 \amp 3 \end{bmatrix}</m>,
+        the matrix
+        <me>A=\begin{amatrix}[rr]0\amp -2\\ 1 \amp 3 \end{amatrix}
+        </me>
         satisfies <m>D=P^{-1}AP</m>,
-        where <m>D=\begin{bmatrix}1\amp 0\\ 0\amp 2 \end{bmatrix}</m>,
-        and <m>P=\begin{bmatrix}2\amp 1\\ -1\amp -1 \end{bmatrix}</m>.
-        Since <m>C=\begin{bmatrix}1\amp 0\\ 0\amp \sqrt{2} \end{bmatrix}</m> is a square-root of <m>D</m>,
-        <m>B=PCP^{-1}=\begin{bmatrix}2-\sqrt{2}\amp 2-2\sqrt{2}\\ -1+\sqrt{2}\amp -1+2\sqrt{2} \end{bmatrix}</m> is a square-root of <m>A</m>,
-        as you can easily check.
+        where
+        <me>
+          P=\begin{amatrix}[rr]2\amp 1\\ -1\amp -1 \end{amatrix}, D=\begin{amatrix}[rr]1\amp 0\\ 0\amp 2 \end{amatrix}
+        </me>.
+        Since
+        <me>C=\begin{bmatrix}1\amp 0\\ 0\amp \sqrt{2} \end{bmatrix}
+        </me> is a square-root of <m>D</m>,
+        <me>
+        B=PCP^{-1}=\begin{amatrix}[rr]2-\sqrt{2}\amp 2-2\sqrt{2}\\ -1+\sqrt{2}\amp -1+2\sqrt{2} \end{amatrix}
+        </me> is a square-root of <m>A</m>.
       </p>
       <p>
         So when exactly does a diagonal matrix <m>D</m> have a square-root?
-        Clearly, it is sufficient that
+        Clearly, it is <em>sufficient</em>  that the diagonal entries <m>d_i</m> satisfy
         <m>d_i\geq 0</m> for all <m>i</m>, as in the example above.
         Interestingly, this is not a necessary condition!
         Indeed, consider the following example:
-      </p>
-      <p>
-        <m>\begin{bmatrix}-1\amp 0\\ 0\amp -1 \end{bmatrix} =\begin{bmatrix}0\amp -1\\ 1\amp 0 \end{bmatrix} ^2</m>.
+        <me>
+        \begin{amatrix}[rr]-1\amp 0\\ 0\amp -1 \end{amatrix} =\begin{amatrix}[rr]0\amp -1\\ 1\amp 0 \end{amatrix} ^2
+        </me>.
       </p>
     </statement>
   </example>
@@ -880,44 +881,248 @@ makes no assumption about the dimension of <m>V</m> and can thus can be applied 
 
 </subsection>
   <subsection>
-    <title>Geometric and algebraic multiplicity</title>
+    <title>Algebraic and geometric multiplicity</title>
     <p>
-      Take <m>A</m>
-      (or <m>T</m>)
-      and suppose the characteristic polynomial <m>p(t)</m> factors as
-      <me>
-        p(t)=(t-\lambda_1)^{n_1}(t-\lambda_2)^{n_2}\cdots (t-\lambda_r)^{n_r}
-      </me>,
-      where the <m>\lambda_i</m> are the
-      <em>distinct</em> eigenvalues of <m>A</m>
-      (or <m>T</m>).
-      It turns out that the exponent <m>n_i</m>,
-      called the <term>algebraic multiplicity</term>
-      of the eigenvalue <m>\lambda_i</m>,
-      is an upper bound on <m>m_i=\dim W_{\lambda_i}</m>,
-      called the <term>geometric multiplicity</term>.
+      We end this section with a deeper look at what the characteristic polynomial reveals about eigenspaces. To begin with, we first define the characteristic polynomial of a general linear transformation <m>T\colon V\rightarrow V</m>, where <m>V</m> is a finite-dimensional vector space.
     </p>
-    <theorem>
-      <title>Algebraic and geometric multiplicity theorem</title>
+    <definition xml:id="d_char_poly_transform">
+      <title>Characteristic polynomial of a transformation</title>
       <statement>
         <p>
-          Let <m>A</m>
-          (or <m>T</m>)
-          have characteristic polynomial
+          Let <m>T\colon V\rightarrow V</m> be a linear transformation, where <m>V</m> is finite-dimensional. Let <m>B</m> be an ordered basis of <m>V</m>, and let <m>A=[T]_B</m>. We define the <term>characteristic polynomial</term> of <m>T</m> to be the characteristic polynomial of <m>A</m>: <ie />, the characteristic polynomial of <m>T</m> is
           <me>
-            p(t)=(t-\lambda_1)^{n_1}(t-\lambda_2)^{n_2}\cdots (t-\lambda_r)^{n_r}
-          </me>,
-          where the <m>\lambda_i</m> are the
-          <em>distinct</em> eigenvalues of <m>A</m>
-          (or <m>T</m>).
-          Then
-          <me>
-            \dim W_{\lambda_i}\leq n_i:
-          </me>
-          i.e., the geometric multiplicity is less than or equal to the algebraic multiplicity.
+            p(t)=\det(tI-A)
+          </me>.
         </p>
       </statement>
-    </theorem>
+    </definition>
+        <remark xml:id="rm_char_poly_transform">
+      <statement>
+        <p>
+          For the characteristic polynomial of a linear transformation <m>T\colon V\rightarrow V</m> to be well-defined, it should not depend on the choice of basis. This is true thanks to <xref ref="th_similarity"/> and <xref ref="th_change_of_basis_transformations"/>. Indeed, given two choice of ordered bases <m>B, B'</m> of <m>V</m>, the matrices <m>A=[T]_B</m> and <m>A'=[T]_{B'}</m> are similar (<xref ref="th_change_of_basis_transformations" text="global"/>), and thus their characteristic polynomials are equal (<xref ref="th_similarity" text="global"/>,(2)).
+        </p>
+      </statement>
+    </remark>
+    <p>
+      Let <m>T\colon V\rightarrow V</m> be a linear transformation, where <m>V</m> is finite-dimensional. If <m>\lambda\in \R</m> is an eigenvalue of <m>T</m>, then we can factor the chacteristic polynomial <m>p(t)</m> of <m>T</m> as <m>p(t)=(t-\lambda)^mq(t)</m>, where <m>\lambda</m> is not a root of <m>q(t)</m>. As we will see, the exponent <m>m</m> is an upper bound for the dimension of <m>W_\lambda</m>. We call <m>m</m> the <em>algebraic multiplicity</em> of the eigenvalue <m>\lambda</m>.
+    </p>
+    <definition xml:id="d_alg_geom_mult">
+      <idx><h>multiplicity of an eigenvalue</h><h>algebraic</h></idx>
+      <idx><h>multiplicity of an eigenvalue</h><h>geometric</h></idx>
+      <title>Algebraic/geometric multiplicity</title>
+      <statement>
+        <p>
+          Let <m>T\colon V\rightarrow V</m> be a linear transformation, where <m>V</m> is finite-dimensional, and let <m>p(t)</m> be the characteristic polynomial of <m>T</m>. Given an eigenvalue <m>\lambda\in \R</m> of <m>T</m>, we can factor <m>p(t)</m> as
+          <m>
+            p(t)=(t-\lambda)^mq(t)
+          </m>,
+          where <m>\lambda</m> is not a root of the polynomial <m>q(t)</m>: <ie />, <m>q(\lambda)\ne 0</m>. We call <m>m</m> the <term>geometric multiplicity</term> of the eigenvalue <m>\lambda</m>, and we call <m>\dim W_\lambda</m> its <term>geometric multiplicity</term>. If <m>m\gt 1</m>, we say <m>\lambda</m> is a <term>repeated</term> eigenvalue of <m>T</m>.
+        </p>
+      </statement>
+    </definition>
+    <theorem xml:id="th_alg_geom_mult">
+      <title>Algebraic and geometric multiplicity</title>
+      <statement>
+        <p>
+        Let <m>T\colon V\rightarrow V</m> be a linear transformation, where <m>
+        dim V=n</m>, let <m>p(t)</m> be the characteristic polynomial of <m>T</m>, and suppose <m>\lambda\in\R</m> is an eigenvalue of <m>T</m> of algebraic multiplicity <m>m\geq 1</m>: <ie />, <m>p(t)=(t-\lambda)^mq(t)</m> and <m>q(\lambda)\ne 0</m>. We have
+        <me>1\leq \dim W_\lambda\leq m
+        </me>.
+        In other words, the geometric multiplicity of an eigenvalue is bounded above by its algebraic multiplicity.
+        </p>
+      </statement>
+
+    <proof>
+      <p>
+        Since <m>\lambda</m> is an eigenvalue, we have <m>W_\lambda\ne \{\boldzero\}</m>, and thus <m>\dim W_\lambda\geq 1</m>.
+        Assume by contradiction that <m>\dim W_{\lambda}\gt m</m>. Let <m>m'=\dim W_{\lambda}</m>, and let <m>S_{\lambda}=\{\boldv_1,\boldv_2,\dots, \boldv_{m'}\}</m> be a basis for <m>W_{\lambda}</m>. We can extend <m>S_{\lambda}</m> to an ordered basis
+        <me>
+          B=(\boldv_1, \dots, \boldv_{m'}, \boldv_{m'+1},\dots, \boldv_n)
+        </me>
+        of <m>V</m>. By definition, the characteristic polynomial of <m>T</m> is given my <m>p(t)=\det(tI-A)</m>, where <m>A=[T]_B</m>w. Since <m>\boldv_1,\boldv_2,\dots, \boldv_{m'}</m> are <m>\lambda</m>-eigenvectors of <m>T</m>, the matrix <m>A=[T]_B</m> is of the form
+        <image xml:id="im_alg_geom_mult" width="40%">
+        <latex-image>
+        \begin{tikzpicture}[
+        Brace/.style={
+           decorate,
+           decoration={
+               brace,
+               raise=-2pt
+                }
+           },
+       DL/.style={
+          left delimiter=[,
+          right delimiter=],
+          inner sep=-2pt,
+              }
+        ]
+    \matrix[% General option for all nodes
+       matrix of math nodes,
+       text height=2.5ex,
+       text depth=0.75ex,
+       text width=3.25ex,
+       align=center,
+       column sep=5pt,
+       row sep=5pt,
+       nodes in empty cells,
+       ] at (0,0) (M){ % Matrix contents
+      \lambda 	\amp 0  			\amp \dots   		\amp 0   \amp *   \amp * \\
+      0  		\amp \lambda  	\amp   			\amp \vdots  \amp *  \amp*  \\
+      \vdots	  	\amp    	0		\amp \ddots		\amp   \amp *  \amp *  \\
+      0		\amp  \vdots 		\amp   			\amp \lambda   \amp *   \amp *  \\
+      \vdots 	\amp   			\amp   			\amp \vdots  \amp  * \amp * \\
+     0 		\amp 0   			\amp \dots  		\amp0  \amp  * \amp * \\
+   };
+   \node[DL,fit=(M-1-1)(M-6-6)](subM-1){};
+   \draw[Brace] (M-1-1.north)
+   -- (M-1-4.north)
+   node[midway,above]{$m'$};
+   \draw[Brace] (M-4-1.west)
+   -- (M-1-1.west)
+   node[midway,left]{$m'$};
+
+   \end{tikzpicture}
+    </latex-image>
+    </image>
+    An easy proof by induction on <m>m'</m> shows that for such a matrix <m>A</m> we have  <m>p(t)=\det(tI-A)=(t-\lambda)^{m'}r(t)</m> for some polynomial <m>r(t)</m>. On the other hand, since <m>\lambda</m> has algebraic multiplicity <m>m</m> we have <m>p(t)=(t-\lambda)^mq(t)</m> for some polynomial <m>q(t)</m> with <m>q(\lambda)=0</m>. Setting these two expressions equal to one another we see that
+    <me>
+      (t-\lambda)^{m'}r(t)=(t-\lambda)^mq(t)
+    </me>,
+    or equivalently,
+    <me>
+      (t-\lambda)^{m'-m}r(t)=q(t)
+    </me>.
+    Since <m>m'\gt m</m> it follows that <m>q(\lambda)=(\lambda-\lambda)^{m'-m}r(\lambda)=0</m>. Contradiction! We conclude that <m>\dim W_{\lambda}\leq m</m>, as desired.
+      </p>
+    </proof>
+</theorem>
+<corollary xml:id="cor_alg_geom_mult">
+  <statement>
+    <p>
+      Let <m>T\colon V\rightarrow V</m> be a linear transformation, where <m>\dim V=n</m>, and suppose the characteristic polynomial of <m>T</m> factors over <m>\mathbb{C}</m> as
+      <men xml:id="eq_cor_alg_geom_mult">
+        p(t)=(t-\lambda_1)^{m_1}(t-\lambda_2)^{m_2}\cdots (t-\lambda_r)^{m_r}
+      </men>,
+      where <m>\lambda_i\ne \lambda_j</m> for all <m>1\leq i\lt j\leq n</m>. The following are equivalent:
+      <ol>
+        <li>
+          <p>
+            <m>T</m> is diagonalizable.
+          </p>
+        </li>
+        <li>
+          <p>
+            For all <m>1\leq i\leq n</m> we have <m>\lambda_i\in \R</m> and <m>\dim W_{\lambda_i}=m_i</m>.
+          </p>
+        </li>
+      </ol>
+      In other words, <m>T</m> is diagonalizable if and only if all roots of <m>p(t)</m> are real, and the geometric multiplicity of each eigenvalue is equal to its algebraic multiplicity.
+    </p>
+  </statement>
+  <proof>
+    <case>
+     <title>Implication: <m>(2)\implies (1)</m></title>
+    <p>
+    If (2) is true, then each <m>\lambda_i</m> is an eigenvalue of <m>T</m> and we have
+    <me>
+      \sum_{i=1}^r\dim W_{\lambda_i}=\sum_{i=1}^r m_i=n
+    </me>,
+    by counting degrees in <xref ref="eq_cor_alg_geom_mult"/>. It follows from <xref ref="th_diagonalizability_eigenbasis"/> that <m>T</m> is diagonalizable.
+    </p>
+    </case>
+    <case>
+     <title>Implication: <m>(1)\implies (2)</m></title>
+    <p>
+    If <m>T</m> is diagonalizable, then there is an ordered basis <m>B</m> of <m>V</m> for which <m>D=[T]_B</m> is diagonal. Letting <m>d_i</m> be the <m>i</m>-th diagonal element of <m>D</m>, we have
+    <me>
+    p(t)=\det(tI-D)=(t-d_1)(t-d_2)\dots (t-d_n)
+    </me>.
+    This expression tells us that <m>d_1, d_2, \dots, d_n</m> are the roots of <m>p(t)</m>, and hence that all roots are real since since <m>d_i\in \R</m> for all <m>1\leq i\leq n</m>. On the other hand  each <m>\lambda_i</m> is a root of <m>p(t)</m>, and thus <m>\lambda_i\in \R</m> for all <m>1\leq i\leq r</m>. It follows that <m>\lambda_1, \lambda_2, \dots, \lambda_r</m> are the distinct eigenvalues of <m>T</m>. By <xref ref="th_diagonalizability_eigenspaces"/>, since <m>T</m> is diagonalizable we must have
+    <men xml:id="eq_cor_alg_geom_mult_proof">
+    \sum_{i=1}^r\dim W_{\lambda_i}=n
+  </men>.
+    Since <m>\dim W_{\lambda_i}\leq m_i</m>
+    for all <m>1\leq i\leq n</m> (<xref ref="th_alg_geom_mult" text="global"/>), and since <m>\sum_{i=1}^rm_i=n</m> (counting degrees in <xref ref="eq_cor_alg_geom_mult" text="global"/>), for the equality <xref ref="eq_cor_alg_geom_mult_proof"/> to hold we must have <m>\dim W_{\lambda_i}=m_i</m> for all <m>1\leq i\leq r</m>, as desired.
+    </p>
+    </case>
+  </proof>
+
+</corollary>
+<p>
+  From <xref ref="th_alg_geom_mult"/> and <xref ref="cor_alg_geom_mult"/> we can deduce a much finer picture of the eigenspaces of a linear transformation from its factored characteristic polynomial. This often reduces our workload when treating questions of diagonalizability, as the next examples illustrate.
+</p>
+<example xml:id="eg_alg_geom_1">
+  <statement>
+    <p>
+      The matrix
+      <me>
+        A=\begin{amatrix}[rrrr]
+        2 \amp -1 \amp 1 \amp 0 \\
+        -4 \amp 2 \amp 0 \amp -4 \\
+        -4 \amp 1 \amp 1 \amp -4 \\
+        -4 \amp 1 \amp -1 \amp -2
+        \end{amatrix}
+      </me>
+      has characteristic polynomial <m>p(t)=(t-1)(t+2)(t-2)^2</m>. Decide whether <m>A</m> is diagonalizable.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      The eigenvalues of <m>A</m> are <m>1,-2, 2</m>. Since the eigenvalues <m>1</m> and <m>-2</m> both have algebraic multiplicity <m>1</m>, we have by <xref ref="th_alg_geom_mult"/>
+      <me>
+        1\leq \dim W_1, \dim W_{-2}\leq 1
+      </me>,
+      and hence
+      <me>
+        \dim W_1=\dim W_{-2}=1
+      </me>.
+      It follows that <m>A</m> is diagonalizable if and only if <m>\dim W_{2}=2</m>. We have <m>W_{2}=\NS(2I-A)</m>, where
+      <me>
+        2I-A=
+        \begin{amatrix}[rrrr]
+        0 \amp 1 \amp -1 \amp 0 \\
+        4 \amp 0 \amp 0 \amp -4 \\
+        4 \amp -1 \amp 1 \amp -4 \\
+        4 \amp -1 \amp 1 \amp -4
+        \end{amatrix}
+      </me>.
+      This matrix clearly has rank 2 (the first two columns form a basis for its column space), and hence nullity <m>4-2=2</m>. We conclude that <m>A</m> is diagonalizable.
+    </p>
+  </solution>
+</example>
+<example xml:id="eg_alg_geom_2">
+  <statement>
+    <p>
+      The matrix
+      <me>
+        A=\begin{amatrix}[rrrr]
+        1 \amp 0 \amp -3 \amp 1 \\
+        0 \amp 1 \amp 1 \amp 1 \\
+        0 \amp 0 \amp -2 \amp 1 \\
+        0 \amp 0 \amp -1 \amp 0  \end{amatrix}
+      </me>
+    has characterisic polynomial <m>p(t)=(t-1)^2(t+1)^2</m>. Decide whether <m>A</m> is diagonalizable.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      The eigenvalues of <m>A</m> are <m>1</m> and <m>-1</m>, and each has algebraic multiplicity <m>2</m>. Thus <m>1\leq\dim W_1, \dim W_{-1}\leq 2</m>, and <m>A</m> is diagonalizable if and only if
+      <me>
+        \dim W_1=\dim W_{-1}=2
+      </me>.
+      By inspection we see that <m>(1,0,0,0)</m> and <m>(0,1,0,0)</m> are <m>1</m>-eigenvectors, and thus we must have <m>\dim W_1=2</m>. Next we have <m>W_{-1}=\NS(-I-A)</m> where
+      <me>
+        -I-A=\begin{amatrix}[rrrr]
+        -2 \amp 0 \amp 3 \amp -1 \\
+        0 \amp -2 \amp -1 \amp -1 \\
+        0 \amp 0 \amp 1 \amp -1 \\
+        0 \amp 0 \amp 1 \amp -1
+      \end{amatrix}
+      </me>.
+      It is not difficult to see (either using Gaussian elimination or inspection) that this matrix has rank 3, and hence nullity 1. We conclude that <m>\dim W_{-1}=1\lt 2</m>, and hence <m>A</m> is not diagonalizable. 
+    </p>
+  </solution>
+</example>
   </subsection>
 
 
