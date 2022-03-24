@@ -1,8 +1,8 @@
-<exercises xml:id="s_basis_dimension_ex">
+<exercises xml:id="s_basis_ex">
 <exercisegroup>
 <introduction>
 <p>
-For each vector space <m>V</m> and subset <m>S</m>, use the one-step technique (<xref ref="eg_basis_onestep"/>to decide whether <m>S</m> is a basis for <m>V</m>.
+For each vector space <m>V</m> and subset <m>S</m>, use the one-step technique (<xref ref="proc_basis_onestep"/>to decide whether <m>S</m> is a basis for <m>V</m>.
 </p>
 </introduction>
 <exercise>

@@ -112,7 +112,7 @@
 </exercisegroup>
 <exercisegroup>
 <introduction><p>
-  Use the adjoint formula to compute the inverse of each matrix.
+  Use the adjoint matrix formula to compute the inverse of each matrix.
 </p></introduction>
 <exercise>
   <statement>

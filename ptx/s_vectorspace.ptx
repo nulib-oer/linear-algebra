@@ -272,22 +272,33 @@ In each of the examples below we carefully lay out the details of items (1)-(3) 
     </case>
   </statement>
 </definition>
-<remark>
+<p>
+  Why introduce a new vector space, <m>\R^n</m>, if it is essentially the same thing as <m>M_{1n}</m>, or even <m>M_{n1}</m> for that matter? Recall that a matrix is not simply an ordered sequence: it is an ordered sequence arranged in a very particular way. This subtlety is baked into the very definition of matrix equality, and allows us to say that <me>
+    \begin{amatrix}[rr]1\amp 2  \end{amatrix}\ne \begin{amatrix}[r]1\\ 2  \end{amatrix}
+    </me>.
+    There are situations, however, where we don't need this extra layer of structure, where we want to treat an ordered sequence simply as an ordered sequence. In such situations tuples are preferred to row or column vectors.
+</p>
+<p>
+  That said, the close connection between linear systems and matrix equations makes it very convenient to treat an <m>n</m>-tuple <m>(c_1,c_2,\dots, c_n)</m> as if it were the column vector
+  <me>
+    \colvec{c_1\\ c_2\\ \vdots \\ c_n}
+  </me>.
+  This conflation is so convenient, in fact, that we will simply declare it to be true by fiat!
+</p>
+<assumption xml:id="declaration_tuples_columns">
+  <title>Tuples shall be column vectors, and vice versa</title>
   <statement>
     <p>
-    Why introduce a new vector space, <m>\R^n</m>, if it is essentially the same thing as <m>M_{1n}</m>, or even <m>M_{n1}</m> for that matter? Recall that a matrix is not simply an ordered sequence: it is an ordered sequence arranged in a very particular way. This subtlety is baked into the very definition of matrix equality, and allows us to say that <m>\begin{amatrix}[rr]1\amp 2  \end{amatrix}</m> is not equal to <m>\begin{amatrix}[r]1\\ 2  \end{amatrix}</m>. There are situations, however, where we don't need this extra layer of structure, and want to treat an ordered sequence simply as an ordered sequence: for example, when describing solutions to the linear system
-    <me>
-      \begin{linsys}{2}
-        2x\amp +\amp 7y\amp=\amp 5\\
-        3x\amp-\amp 5y\amp =\amp -2
-      \end{linsys}{2}
-    </me>.
-    In this situation it is most natural to think of a solution simply as an pair <m>(s_1,s_2)\in \R^2</m>, as opposed to a row vector in <m>M_{12}</m> or column vector in <m>M_{21}</m>.
+      We hereby declare that for all <m>\boldx=(c_1,c_2,\dots, c_n)\in \R^n</m> we have
+      <me>
+        \boldx=(c_1,c_2,\dots, c_n)=\colvec{c_1\\ c_2\\ \vdots \\ c_n}
+      </me>.
+      In other words, tuples are henceforth the same as column vectors.
     </p>
   </statement>
-</remark>
+</assumption>
 <p>
-  We do not end our catalog of vector spaces here, but rather move on to more exotic examples, starting with the <em>zero (or trivial) vector space</em>.
+  We now continue our catalog of vector spaces by moving on to more exotic examples, starting with the <em>zero (or trivial) vector space</em>.
 </p>
 <definition xml:id="ex_vs_zerospace">
   <title>Zero vector space</title>
@@ -401,7 +412,7 @@ In each of the examples below we carefully lay out the details of items (1)-(3) 
    <case>
     <title>Vector operations</title>
     <p>
-      The vector operations on <m>F(X,\R)</m> defined below are generalizations of operations you may have seen before when learning about function transformations. 
+      The vector operations on <m>F(X,\R)</m> defined below are generalizations of operations you may have seen before when learning about function transformations.
     </p>
    <p>
      <em>Scalar multiplication</em>. Given <m>c\in \R</m> and a real-valued function <m>f\colon X\rightarrow \R</m>, we let <m>cf</m> be the function defined as
@@ -449,7 +460,7 @@ In each of the examples below we carefully lay out the details of items (1)-(3) 
       is also an element of <m>F(\R,\R)</m>.
     </p>
     <p>
-      Hopefully this discussion gives some indication of how a vector space like <m>F(\R,\R)</m> is in some sense <em>much larger</em> than spaces like <m>\R^n</m> or <m>M_{mn}</m>, whose general elements can be described in a finite manner. This vague intuition can be made precise with the notion of the <em>dimension</em> of a vector space, which we develop in <xref ref="s_basis_dimension"/>.
+      Hopefully this discussion gives some indication of how a vector space like <m>F(\R,\R)</m> is in some sense <em>much larger</em> than spaces like <m>\R^n</m> or <m>M_{mn}</m>, whose general elements can be described in a finite manner. This vague intuition can be made precise with the notion of the <em>dimension</em> of a vector space, which we develop in <xref ref="s_dimension"/>.
     </p>
 
   </statement>

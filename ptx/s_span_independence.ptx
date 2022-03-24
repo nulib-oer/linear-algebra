@@ -8,7 +8,7 @@
       A similar issue arises when describing vector spaces and their subspaces. As we know, any vector space is either the zero space or infinite (<xref ref="ex_vs_zero_or_infinite"/>). If we happen to be dealing with a subspace of <m>\R^n</m>, then there is the possibility of giving a parametric description; but how do we proceed when working in one of our more exotic vector spaces like <m>C^1(\R)</m>?
     </p>
     <p>
-    As we will see in <xref ref="s_basis_dimension"/> the relevant linear algebraic tool for this purpose is the concept of a <em>basis</em>. Loosely speaking, a basis for a vector space <m>V</m> is a set of vectors that is large enough to <em>generate</em> the entire space, and small enough to contain <em>no redundancies</em>. What exactly we mean by <q>generate</q> is captured by the rigorous notion of <em>span</em>; and what we mean by <q>no redundancies</q> is captured by <em>linear independence</em>.
+    As we will see in <xref ref="s_basis"/> the relevant linear algebraic tool for this purpose is the concept of a <em>basis</em>. Loosely speaking, a basis for a vector space <m>V</m> is a set of vectors that is large enough to <em>generate</em> the entire space, and small enough to contain <em>no redundancies</em>. What exactly we mean by <q>generate</q> is captured by the rigorous notion of <em>span</em>; and what we mean by <q>no redundancies</q> is captured by <em>linear independence</em>.
     </p>
   </introduction>
 
