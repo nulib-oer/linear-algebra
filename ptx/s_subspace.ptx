@@ -144,6 +144,20 @@
         </ol>
       </statement>
     </remark>
+    <paragraphs xml:id="ss_vid_eg_subspace1">
+      <title>Video example: deciding if <m>W\subseteq V</m> is a subspace</title>
+      <figure xml:id="fig_vid_subspace1">
+        <title>Video: deciding if <m>W\subseteq V</m> is a subspace</title>
+      <caption>Video: deciding if <m>W\subseteq V</m> is a subspace</caption>
+      <video xml:id="vid_subspace1" youtube="y1t5ijAopz4" />
+      </figure>
+      
+      <figure xml:id="fig_vid_subspace2">
+        <title>Video: deciding if <m>W\subseteq V</m> is a subspace</title>
+      <caption>Video: deciding if <m>W\subseteq V</m> is a subspace</caption>
+      <video xml:id="vid_subspace2" youtube="Sup7AxtjZDw" />
+      </figure>
+    </paragraphs>
 
         <remark xml:id="rm_subspace_is_vectorspace">
           <title>Subspaces are vector spaces</title>

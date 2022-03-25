@@ -523,7 +523,14 @@ makes no assumption about the dimension of <m>V</m> and can thus can be applied 
     </solution>
   </example>
 
-
+<paragraphs xml:id="ss_vid_eg_diag">
+  <title>Video example: deciding if diagonalizable</title>
+  <figure xml:id="fig_vid_diag">
+    <title>Video: deciding if diagonalizable</title>
+  <caption>Video: deciding if diagonalizable</caption>
+  <video xml:id="vid_diag" youtube="_5z8kv1rDKQ" />
+  </figure>
+</paragraphs>
 
 </subsection>
 <subsection xml:id="ss_diagonalizable_matrices">
@@ -1119,7 +1126,7 @@ makes no assumption about the dimension of <m>V</m> and can thus can be applied 
         0 \amp 0 \amp 1 \amp -1
       \end{amatrix}
       </me>.
-      It is not difficult to see (either using Gaussian elimination or inspection) that this matrix has rank 3, and hence nullity 1. We conclude that <m>\dim W_{-1}=1\lt 2</m>, and hence <m>A</m> is not diagonalizable. 
+      It is not difficult to see (either using Gaussian elimination or inspection) that this matrix has rank 3, and hence nullity 1. We conclude that <m>\dim W_{-1}=1\lt 2</m>, and hence <m>A</m> is not diagonalizable.
     </p>
   </solution>
 </example>

@@ -226,6 +226,8 @@
     </case>
   </solution>
 </example>
+
+
 <p>
   Proceeding directly from the definition, to show a set <m>B</m> is a basis of <m>V</m> we have to do two steps: (i) show <m>\Span B= V</m>; (ii) show that <m>B</m> is linearly independent. The following theorem offers gives rise to a one-step technique for proving <m>B</m> is a basis: show that every element of <m>V</m> can be written as a linear combination of elements of <m>B</m> in a <em>unique way</em>.
 </p>
@@ -388,6 +390,23 @@
           </p>
   </solution>
 </example>
+<paragraphs xml:id="ss_vid_eg_basis">
+  <title>Video example: deciding if a set is a basis</title>
+  <figure xml:id="fig_vid_basis">
+    <title>Video: deciding if a basis of <m>\R^n</m></title>
+  <caption>Video: deciding if a basis of <m>\R^n</m></caption>
+  <video xml:id="vid_basis" youtube="WL2DfblK1BI" />
+  </figure>
+</paragraphs>
+
+<paragraphs xml:id="ss_vid_eg_basis_exotic">
+  <title>Video example: deciding if a basis of <m>V</m></title>
+  <figure xml:id="fig_vid_basis_exotic">
+    <title>Video: deciding if a basis of <m>V</m></title>
+  <caption>Video: deciding if a basis of <m>V</m></caption>
+  <video xml:id="vid_basis_exotic" youtube="JvPn5X93lGw" />
+  </figure>
+</paragraphs>
 </subsection>
 <subsection xml:id="ss_bases_transformations">
   <title>Bases and linear transformations</title>

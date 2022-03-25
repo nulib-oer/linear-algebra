@@ -188,7 +188,17 @@
     </ul>
   </statement>
 </remark>
+<paragraphs xml:id="ss_vid_eg_computing_dim">
+  <title>Video example: computing dimension</title>
+  <figure xml:id="fig_vid_computing_dim">
+    <title>Video: computing dimension</title>
+  <caption>Video: computing dimension</caption>
+  <video xml:id="vid_computing_dim" youtube="yzDPJDwkRe4" />
+  </figure>
+</paragraphs>
+<p>
 The <q>contracting and expanding</q> theorem below is very useful theoretical consequence of <xref ref="th_basis_dimension"/>. It allows us to construct a customized basis from a given set <m>S</m>. This method is used prominently in the proof of the <xref ref="th_rank-nullity" text="custom">rank-nullity theorem </xref>.
+</p>
 <theorem xml:id="th_basis_contract_expand">
   <title>Contracting and expanding to bases</title>
   <statement>

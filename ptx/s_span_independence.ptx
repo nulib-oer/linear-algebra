@@ -199,6 +199,14 @@
       </p>
       </solution>
     </example>
+    <paragraphs xml:id="ss_vid_eg_span">
+      <title>Video example: computing span</title>
+      <figure xml:id="fig_vid_span">
+        <title>Video: computing span</title>
+      <caption>Video: computing span</caption>
+      <video xml:id="vid_span" youtube="WN_5qI2r2ks" />
+      </figure>
+    </paragraphs>
     <p>
       You may have noticed that each span computation in the previous example produced a subspace of <m>\R^2</m>. This is no accident!
     </p>
@@ -895,6 +903,14 @@
     </ol>
   </solution>
 </example>
+<paragraphs xml:id="ss_vid_eg_ind_func">
+  <title>Video example: linear independence of functions</title>
+  <figure xml:id="fig_vid_ind_func">
+    <title>Video: linear independence of functions</title>
+  <caption>Video: linear independence of functions</caption>
+  <video xml:id="vid_ind_func" youtube="kgb0N70RKtE" />
+  </figure>
+</paragraphs>
   </subsection>
 <xi:include href="./s_span_independence_ex.ptx"/>
 

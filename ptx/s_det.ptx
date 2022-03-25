@@ -305,7 +305,7 @@
   </proof>
 </theorem>
 <p>
-  Suprisingly, it turns out that we can compute the determinant of a matrix by expanding along any <em>column</em> (<xref ref="cor_expansion_columns"/>). This is a consequence of the following theorem, which is useful in its own right. The proof uses induction and a wonderful trick starting from the observation that <m>c=\frac{1}{n}\sum_{i=1}^n c</m> for any <m>c\in\R</m>.
+  Surprisingly, it turns out that we can compute the determinant of a matrix by expanding along any <em>column</em> (<xref ref="cor_expansion_columns"/>). This is a consequence of the following theorem, which is useful in its own right. The proof uses induction and a wonderful trick starting from the observation that <m>c=\frac{1}{n}\sum_{i=1}^n c</m> for any <m>c\in\R</m>.
 </p>
 <theorem xml:id="th_det_transpose">
   <title>Determinant and transposition</title>
@@ -412,6 +412,14 @@
     </p>
   </statement>
 </remark>
+<paragraphs xml:id="ss_vid_eg_det">
+  <title>Video example: determinant</title>
+  <figure xml:id="fig_vid_det">
+    <title>Video: determinant</title>
+  <caption>Video: determinant</caption>
+  <video xml:id="vid_det" youtube="OoNYGwJS-M4" />
+  </figure>
+</paragraphs>
 <p>
   The freedom to compute the determinant by expanding along any row or column gives rise to the following intuitive property.
 </p>

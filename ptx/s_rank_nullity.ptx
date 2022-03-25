@@ -461,6 +461,14 @@ As we will see, this elegant result can be used to significantly simplify comput
         </ol>
       </statement>
     </algorithm>
+    <paragraphs xml:id="ss_vid_eg_fund_space">
+      <title>Video example: fundamental spaces</title>
+      <figure xml:id="fig_vid_fund_space">
+        <title>Video: computing fundamental spaces</title>
+      <caption>Video: computing fundamental spaces</caption>
+      <video xml:id="vid_fund_space" youtube="Ua3RDLgVoTg" />
+      </figure>
+    </paragraphs>
     <p>
       <xref ref="th_fundamental_spaces"/> allows us to add seven more equivalent statements to our invertibility theorem, bringing us to a total of fourteen!
     </p>
@@ -628,6 +636,15 @@ As we will see, this elegant result can be used to significantly simplify comput
       </proof>
 
     </algorithm>
+    <paragraphs xml:id="ss_vid_eg_contract_basis">
+      <title>Video example: contracting to a basis</title>
+      <figure xml:id="fig_vid_contract_basis">
+        <title>Video: contracting to a basis</title>
+      <caption>Video: contracting to a basis</caption>
+      <video xml:id="vid_contract_basis" youtube="ZjbqE8yR7aU" />
+      </figure>
+    </paragraphs>
+
   </subsection>
   <xi:include href="./s_rank_nullity_ex.ptx"/>
 </section>

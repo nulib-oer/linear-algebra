@@ -626,16 +626,16 @@
 
 </subsection>
 <paragraphs xml:id="ss_transormation_video_examples">
-  <title>Video examples</title>
+  <title>Video examples: deciding if <m>T</m> is linear</title>
 <p>
   <figure>
-    <title>Linear transformation or not?</title>
-  <caption>Linear transformation or not?</caption>
+    <title>Video: deciding if <m>T</m> is linear</title>
+  <caption>Video: deciding if <m>T</m> is linear</caption>
   <video xml:id="vid_transform_1" youtube="STYVF5cprEU" />
   </figure>
   <figure>
-    <title>Linear transformation or not?</title>
-  <caption>Linear transformation or not?</caption>
+    <title>Video: deciding if <m>T</m> is linear</title>
+  <caption>Video: deciding if <m>T</m> is linear</caption>
   <video xml:id="vid_transform_2" youtube="weETKP8p7cE" />
   </figure>
 </p>

@@ -403,6 +403,14 @@
   </solution>
 </example>
 
+<paragraphs xml:id="ss_vid_eg_changeofbasis">
+  <title>Video example: change of basis matrix</title>
+  <figure xml:id="fig_vid_changeofbasis">
+    <title>Video: change of basis matrix</title>
+  <caption>Video: change of basis matrix</caption>
+  <video xml:id="vid_changeofbasis" youtube="Se4F3CRay-k" />
+  </figure>
+</paragraphs>
 
 </subsection>
 
@@ -816,6 +824,22 @@
   </p>
   </statement>
 </example>
+<paragraphs xml:id="ss_vid_eg_changebasis_transform">
+  <title>Video example: change of basis for transformations</title>
+  <figure xml:id="fig_vid_changebasis_transform">
+    <title>Video: change of basis for transformations</title>
+  <caption>Video: change of basis for transformations</caption>
+  <video xml:id="vid_changebasis_transform" youtube="zvsIs1N195c" />
+  </figure>
+</paragraphs>
+<paragraphs xml:id="ss_vid_eg_changebasis_reflection">
+  <title>Video example: change of basis and reflection</title>
+  <figure xml:id="fig_vid_changebasis_reflection">
+    <title>Video: computing reflection via change of basis</title>
+  <caption>Video: computing reflection via change of basis</caption>
+  <video xml:id="vid_changebasis_reflection" youtube="4LNYEeVE8Ms" />
+  </figure>
+</paragraphs>
 </subsection>
 <subsection xml:id="ss_changebasis_similarity">
 <title>Similarity and the holy commutative tent of linear algebra</title>

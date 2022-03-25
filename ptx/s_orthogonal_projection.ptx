@@ -361,7 +361,14 @@
     </solution>
   </example>
 
-
+<paragraphs xml:id="ss_vid_eg_orthoproj_functions">
+  <title>Video example: orthogonal projection in function space</title>
+  <figure xml:id="fig_vid_orthoproj_functions">
+    <title>Video: orthogonal projection in function space</title>
+  <caption>Video: orthogonal projection in function space</caption>
+  <video xml:id="vid_orthoproj_functions" youtube="xWuzNdExSEk" />
+  </figure>
+</paragraphs>
   <corollary xml:id="cor_orthocomp_selfdual">
     <statement>
       <p>

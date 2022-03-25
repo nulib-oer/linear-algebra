@@ -279,6 +279,7 @@
       Let <m>T\colon V\rightarrow W</m>, <m>B</m>, and <m>B'</m> be as in <xref ref="th_matrixrep"/>. The defining property <xref ref="eq_matrixrep_prop"/> of <m>[T]_B^{B'}</m> can be summarized by saying that the following diagram is <em>commutative</em>.
     </p>
     <figure xml:id="fig_comm_diag">
+      <title>Commutative diagram for <m>[T]_B^{B'}</m></title>
       <caption>Commutative diagram for <m>[T]_B^{B'}</m></caption>
       <image xml:id="im_comm_diag" width="30%">
         <latex-image>
@@ -412,7 +413,14 @@
       </p>
   </statement>
 </example>
-
+<paragraphs xml:id="ss_vid_eg_coordinatemaps">
+  <title>Video example: matrix representations </title>
+  <figure xml:id="fig_vid_matrix_reps">
+    <title>Video: matrix representations</title>
+  <caption>Video: matrix representations</caption>
+  <video xml:id="vid_vid_matrix_reps" youtube="aIxeh_1Ztr4" />
+  </figure>
+</paragraphs>
 </subsection>
 
 <subsection>
