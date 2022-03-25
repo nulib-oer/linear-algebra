@@ -397,16 +397,14 @@
   <caption>Video: deciding if a basis of <m>\R^n</m></caption>
   <video xml:id="vid_basis" youtube="WL2DfblK1BI" />
   </figure>
-</paragraphs>
 
-<paragraphs xml:id="ss_vid_eg_basis_exotic">
-  <title>Video example: deciding if a basis of <m>V</m></title>
   <figure xml:id="fig_vid_basis_exotic">
     <title>Video: deciding if a basis of <m>V</m></title>
   <caption>Video: deciding if a basis of <m>V</m></caption>
   <video xml:id="vid_basis_exotic" youtube="JvPn5X93lGw" />
   </figure>
 </paragraphs>
+
 </subsection>
 <subsection xml:id="ss_bases_transformations">
   <title>Bases and linear transformations</title>
