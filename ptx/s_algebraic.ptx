@@ -86,7 +86,7 @@
     </p>
 
   <proof>
-    <title>Proof of (iv)</title>
+    <title>Proof of (iii)</title>
     <p>We prove only the <xref ref="th_matrixmult_assoc" text="custom">multiplication associative law</xref>.
     Let <m>A=[a_{ij}]_{m\times r}</m>,
       <m>B=[b_{ij}]_{r\times s}</m>,

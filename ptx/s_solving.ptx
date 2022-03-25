@@ -88,7 +88,7 @@
       </men>
       Alternatively, we can describe the solutions to <m>L</m> with the <em>parametric equations</em>
       <men xml:id="s_solving_eq_parametric">
-        x_1=7-2s-3t, x_2=s, x_3=1, t=t, x_5=2, \ t,s\in\R.
+        x_1=7-2s-3t, x_2=s, x_3=1, x_4=t, x_5=2, \ t,s\in\R.
       </men>
     </p>
     <remark xml:id="s_solving_rm_parametric">
