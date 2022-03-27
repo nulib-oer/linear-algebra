@@ -466,7 +466,7 @@ makes no assumption about the dimension of <m>V</m> and can thus can be applied 
       </statement>
       <solution>
         <p>
-         Note first that <m>A=[T]_B</m> where <m>B</m> is the standard basis of <m>\R^3</m>. (See <xref ref="eg_matrixreps_matrixtransforms"/>.) Since <m>A</m> is upper triangular, we easily see that its characteristic polynomial is <m>p(t)=(t-1)(t-3)^2</m>. Next we investigate the eigenspaces:
+         Note first that <m>A=[T]_B</m> where <m>B</m> is the standard basis of <m>\R^3</m>. (See <xref ref="th_matrixreps_matrixtransforms"/>.) Since <m>A</m> is upper triangular, we easily see that its characteristic polynomial is <m>p(t)=(t-1)(t-3)^2</m>. Next we investigate the eigenspaces:
          <me>
            W_2=\NS(2I-A)=\NS \begin{amatrix}[rrr]0\amp -1\amp -1\\ 0\amp 1\amp -2\\ 0\amp 0\amp 1  \end{amatrix},coordinatecoordinate
            W_3=\NS(3I-A)=\NS \begin{amatrix}[rrr]-1\amp -1\amp -1\\ 0\amp 0\amp -2\\ 0\amp 0\amp 0  \end{amatrix}
@@ -536,7 +536,7 @@ makes no assumption about the dimension of <m>V</m> and can thus can be applied 
 <subsection xml:id="ss_diagonalizable_matrices">
   <title>Diagonalizable matrices</title>
   <p>
-    In this subsection we will focus on matrix transformations <m>T_A\colon \R^n\rightarrow \R^n</m>. Recall (<xref ref="eg_matrixreps_matrixtransforms" text="global"/>) that in this situation we have <m>A=[T]_B</m> where <m>B</m> is the <em>standard basis</em> of <m>\R^n</m>. As such <xref ref="proc_diagonalize"/> boils down to steps (2)-(3), and the eigenbasis <m>B'</m> of <m>A</m> found in (3) is itself an eigenbasis for <m>T=T_A</m>. Letting <m>D=[T]_{B'}</m> the change of basis formula (<xref ref="th_change_of_basis_transformations" text="global" />) yields
+    In this subsection we will focus on matrix transformations <m>T_A\colon \R^n\rightarrow \R^n</m>. Recall (<xref ref="th_matrixreps_matrixtransforms" text="global"/>) that in this situation we have <m>A=[T]_B</m> where <m>B</m> is the <em>standard basis</em> of <m>\R^n</m>. As such <xref ref="proc_diagonalize"/> boils down to steps (2)-(3), and the eigenbasis <m>B'</m> of <m>A</m> found in (3) is itself an eigenbasis for <m>T=T_A</m>. Letting <m>D=[T]_{B'}</m> the change of basis formula (<xref ref="th_change_of_basis_transformations" text="global" />) yields
     <me>
       D=P^{-1}AP
     </me>,

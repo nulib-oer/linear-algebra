@@ -769,20 +769,46 @@
     </ol>
   </solution>
 </example>
-<remark xml:id="rm_changebasis_matrix_formulas">
-<title>Computing matrix formulas with <xref ref="th_change_of_basis_transformations"/></title>
 <p>
-  Consider the special case where <m>T\colon \R^n\rightarrow \R^n</m>: that is, when <m>V=\R^n</m> is a space of <m>n</m>-tuples. We know from <xref ref="cor_matrix_transformations"/> that <m>T=T_A</m> for a unique <m>n\times n</m> matrix <m>A</m>; and furthermore we have <m>A=[T]_B</m>, where <m>B=(\bolde_1, \bolde_2, \dots, \bolde_n)</m> is the <em>standard</em> ordered basis of <m>\R^n</m>. (See <xref ref="eg_matrixreps_matrixtransforms"/>.)
+  Consider the special case where <m>T\colon \R^n\rightarrow \R^n</m>: that is, when <m>V=\R^n</m> is a space of <m>n</m>-tuples. We know from <xref ref="cor_matrix_transformations"/> that <m>T=T_A</m> for a unique <m>n\times n</m> matrix <m>A</m>. Recall that <m>A</m> is called the standard matrix of <m>T</m> (<xref ref="d_transformation_standard_matrix" text="global"/>), and satisfies <m>T(\boldx)=A\boldx</m> for all <m>\boldx\in \R^n</m>. We often wish to compute <m>A</m>, as it provides a convenient matrix formula for <m>T</m>.
 </p>
 <p>
-  To compute <m>A=[T]_B</m> directly, we must compute <m>T(\bolde_j)</m> for each of the standard basis elements <m>\bolde_j</m>. However, for many naturally occurring transformations <m>T</m>, computing <m>A=[T]_B</m> directly is often not as convenient as computing <m>A'=[T]_{B'}</m> for some nonstandard basis <m>B'</m>. When this is the case <xref ref="th_change_of_basis_transformations"/> allows to us derive the desired matrix <m>A</m> from the more conveniently computed <m>A'</m>: namely, we have
-  <me>
-    A=P^{-1}A'P
-  </me>,
-  where <m>P=\underset{B\rightarrow B'}{P}</m>.
-  This gives us a powerful technique for computing matrix formulas for many interesting geometric linear transformations of <m>\R^n</m> whose very definitions involve an implicit choice nonstandard basis. Rotations, reflections and orthogonal projections are all examples of such transformations.
+  To compute <m>A</m> <em>directly</em> using the recipe in <xref ref="cor_matrix_transformations" text="global"/>, we must compute <m>T(\bolde_j)</m> for each of the standard basis elements <m>\bolde_j</m>. For many naturally occurring transformations <m>T</m>, this is often not so easy to do. <xref ref="th_change_of_basis_transformations"/> provides an indirect method in such cases.
 </p>
-</remark>
+<p>
+  According to <xref ref="th_matrixreps_matrixtransforms"/> we have <m>A=[T]_B</m>: <ie />, the standard matrix of <m>T</m> is none other than the matrix representing <m>T</m> with respect to the standard basis. This connection allows us to compute <m>A=[T]_B</m> by first computing <m>[T]_{B'}</m> for some more convenient basis <m>B'</m>, and then using the change of basis formula.
+</p>
+<algorithm xml:id="proc_standard_matrix_via_change_of_basis">
+  <title>Computing the standard matrix using change of basis</title>
+  <statement>
+    <p>
+      Let <m>T\colon \R^n\rightarrow \R^n</m> be a linear transformation, and let <m>A</m> be its standard matrix. To compute <m>A</m> using the change of basis formula <xref ref="eq_changebasis_transform"/>, proceed as follows.
+    </p>
+    <ol>
+      <li>
+        <p>
+          Find a more convenient basis <m>B'</m> for which the action of <m>T</m> is easily understood.
+        </p>
+      </li>
+      <li>
+        <p>
+          Compute <m>A'=[T]_{B'}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Compute <m>A</m> using the change of basis formula as
+          <me>
+            A=\underset{B'\rightarrow B}{P}\, A'\, \underset{B\rightarrow B'}{P}
+          </me>.
+        </p>
+      </li>
+    </ol>
+  </statement>
+</algorithm>
+<p>
+  <xref ref="proc_standard_matrix_via_change_of_basis"/> is a powerful technique for computing matrix formulas for many interesting geometric linear transformations of <m>\R^n</m>: <eg />, rotations, reflections, and orthogonal projections. Often the very definition of such transformations will suggest a more convenient nonstandard basis <m>B'</m>: one that reflects the geometry involved. The next example illustrates this nicely.
+</p>
 <example>
   <title>Orthogonal projection (again)</title>
   <statement>
@@ -863,7 +889,7 @@
 
       <statement>
         <p>
-          Two <m>n\times n</m> matrices <m>A</m> and <m>A'</m> are similar if and only if there is a linear transformation <m>T\colon \R^n\rightarrow \R^n</m> and bases <m>B, B'</m> of <m>\R^n</m> satisfying <m>A=[T]_B</m> and <m>A'=[T]_{B'}</m>.
+          Two <m>n\times n</m> matrices <m>A</m> and <m>A'</m> are similar if and only if there is a linear transformation <m>T\colon V\rightarrow V</m> and bases <m>B, B'</m> of <m>V</m> satisfying <m>A=[T]_B</m> and <m>A'=[T]_{B'}</m>.
         </p>
       </statement>
       <proof>
@@ -871,7 +897,7 @@
           The discussion above shows that if <m>A=[T]_B</m> and <m>A'=[T]_{B'}</m>, then <m>A'=P^{-1}AP</m>, where <m>P=\underset{B'\rightarrow B}{P}</m>; thus <m>A</m> and <m>A'</m> are similar in this case.
         </p>
         <p>
-          Now assume that <m>A</m> and <m>A'</m> are similar. By definition this means there is an invertible matrix <m>P</m> such that <m>A'=P^{-1}AP</m>. Letting <m>T=T_A</m>, we have <m>A=[T]_B</m> where <m>B</m> is the standard basis of <m>\R^n</m> (<xref ref="eg_matrixreps_matrixtransforms"/>). Next, if we let <m>B'</m> be the ordered basis whose <m>j</m>-th element is the <m>j</m>-th column of <m>P</m>, then we have <m>P=\underset{B'\rightarrow B}{P}</m> (<xref ref="eg_changebasis_standard"/>), and hence
+          Now assume that <m>A</m> and <m>A'</m> are similar. By definition this means there is an invertible matrix <m>P</m> such that <m>A'=P^{-1}AP</m>. Define <m>T\colon \R^n\rightarrow \R^n</m> as the matrix transformation <m>T=T_A</m>. According to <xref ref="th_matrixreps_matrixtransforms"/> we have <m>A=[T]_B</m> where <m>B</m> is the standard basis of <m>\R^n</m>.  Next, letting <m>B'</m> be the ordered basis whose <m>j</m>-th element is the <m>j</m>-th column of <m>P</m>, we have <m>P=\underset{B'\rightarrow B}{P}</m> (<xref ref="eg_changebasis_standard"/>), and hence
           <me>
             A'=P^{-1}AP=\underset{B\rightarrow B'}{P}\, [T]_B\, \underset{B'\rightarrow B}{P}=[T]_{B'}
           </me>,
@@ -939,6 +965,14 @@
     </me>.
       Since the base of the tent is commutative, and since the maps given by  <m>P</m> and <m>P^{-1}</m> are invertible, we can translate back and forth between the matrices <m>A</m> and <m>A'</m>. Furthermore, since the two slanted sides of the tent are commutative, and since the coordinate vector transformations are invertible, we can translate up and down between our two matrix representations <m>A</m> and <m>A'</m> and the overlying linear transformation <m>T</m>. There is one true <m>T</m>!
     </p>
+    <principle xml:id="princ_similar_matrices">
+      <title>Similar matrices mantra</title>
+      <statement>
+        <p>
+          Similar matrices are but two shadows of the same overlying linear transformation. 
+        </p>
+      </statement>
+    </principle>
   </subsection>
 <xi:include href="./s_changeofbasis_ex.ptx"/>
 </section>

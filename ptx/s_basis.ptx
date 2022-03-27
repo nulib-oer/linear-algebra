@@ -417,7 +417,7 @@
       <p>
         Let <m>B</m> be a basis for the vector space <m>V</m>.
       </p>
-      <ol label="i">
+      <ol>
         <li>
           <p>
             Let <m>T</m> and <m>T'</m> be linear transformations from <m>V</m> to <m>W</m>. If <m>T(\boldu)=T'(\boldu)</m> for all <m>\boldu\in B</m>, then <m>T=T'</m>.
@@ -548,7 +548,7 @@
   As a corollary to <xref ref="th_bases_transformations"/> we can at last complete the partial description of linear transformations of the form <m>T\colon \R^n\rightarrow \R^m</m> given in <xref ref="th_matrix_transform_i"/>.
 </p>
 <corollary xml:id="cor_matrix_transformations">
-  <title>Matrix transformations II</title>
+  <title>Matrix transformations</title>
   <statement>
     <p>
     Given any linear transformation <m>T\colon \R^n\rightarrow \R^m</m> there is a unique <m>m\times n</m> matrix <m>A</m> such that <m>T=T_A</m>. In fact we have
@@ -576,13 +576,68 @@
   </proof>
 </corollary>
 <p>
-  Besides rounding out our theoretical discussion of linear transformations from <m>\R^n</m> to <m>\R^m</m>, <xref ref="cor_matrix_transformations"/>, computationally it provides a recipe for computing a matrix formula for a linear transformation <m>T\colon \R^n\colon \rightarrow \R^m</m>. In other words, it tells us how to build the <m>A</m>, column by column, such that <m>T=T_A</m>. Of course, to use <xref ref="cor_matrix_transformations"/> we first need to know that the function <m>T</m> in question is linear.
+  Besides rounding out our theoretical discussion of linear transformations from <m>\R^n</m> to <m>\R^m</m>, computationally <xref ref="cor_matrix_transformations"/> provides a recipe for computing a <q>matrix formula</q> for a linear transformation <m>T\colon \R^n\colon \rightarrow \R^m</m>. In other words, it tells us how to build the <m>A</m>, column by column, such that <m>T\boldx=A\boldx</m> for all <m>\boldx\in R^n</m>. For reasons that will be made more clear in <xref ref="s_matrixreps"/>, we will call <m>A</m> the <em>standard matrix</em> of <m>T</m>.
 </p>
-<example>
+<definition xml:id="d_transformation_standard_matrix">
+  <title>Standard matrix of linear <m>T\colon \R^n\rightarrow \R^m</m></title>
+  <statement>
+    <p>
+      Let <m>T\colon \R^n\rightarrow \R^m</m> be a linear transformation. The <term>standard matrix</term> of <m>T</m> is the unique <m>m\times n</m> matrix <m>A</m> satisfying <m>T=T_A</m>. Equivalently, <m>A</m> is the unique matrix satisfying
+      <me>
+        T(\boldx)=A\boldx
+      </me>
+      for all <m>\boldx\in \R^n</m>.
+    </p>
+  </statement>
+</definition>
+<example xml:id="eg_standard_matrix">
+  <title>Standard matrix computation</title>
+  <statement>
+    <p>
+      The function <m>T\colon \R^3\rightarrow \R^2</m> defined as <m>T(x,y,z)=T(x+y+z, 2x+3y-4z)</m> is linear.
+      </p>
+      <ol>
+        <li>
+          <p>
+            Use <xref ref="cor_matrix_transformations" text="global"/> to compute the standard matrix of <m>A</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Use <m>A</m> to compute <m>T((-2,3,4))</m>.
+          </p>
+        </li>
+      </ol>
+  </statement>
+  <solution>
+    <p>
+      We have
+      <md>
+        <mrow>A \amp = \begin{amatrix}[ccc]\vert\amp \vert\amp \vert\\
+        T((1,0,0))\amp T((0,1,0))\amp T((0,0,1)) \\
+        \vert\amp \vert\amp vert  \end{amatrix} </mrow>
+        <mrow> \amp =
+        \begin{amatrix}[rrr]
+        1 \amp 1 \amp 1 \\ 2\amp 3 \amp -4 \end{amatrix} </mrow>
+      </md>.
+      Let <m>\boldx=(-2,3,4)</m>. Since <m>A</m> provides a <q>matrix formula</q> for <m>T</m> we have
+      <md>
+        <mrow>T(\boldx) \amp = A\boldx </mrow>
+        <mrow> \amp =
+        \begin{amatrix}[rrr]
+        1 \amp 1 \amp 1 \\ 2\amp 3 \amp -4 \end{amatrix}
+        \colvec{-2\\ 3\\ 4}</mrow>
+        <mrow>  \amp = \colvec{5\\ -9} </mrow>
+      </md>.
+      Thus <m>T((-2,3,4))=(5,-9)</m>, as you can confirm.
+    </p>
+  </solution>
+</example>
+<example xml:id="eg_rotation_via_standard_matrix">
   <title>Rotation matrices revisited</title>
   <statement>
     <p>
-      Fix an angle <m>\alpha</m>. Taking for granted that the rotation operation <m>\rho_\alpha\colon\R^2\rightarrow\R^2</m> is a linear transformation, re-derive the matrix formula for <m>\rho_\alpha\colon \R^2\rightarrow\R^2</m>: i.e., find the matrix <m>A</m> such that <m>\rho_\alpha=T_A</m>.
+      Fix an angle <m>\alpha</m>. Taking for granted that the rotation operation <m>\rho_\alpha\colon\R^2\rightarrow\R^2</m> is a linear transformation, re-derive the matrix formula for <m>\rho_\alpha\colon \R^2\rightarrow\R^2</m>: <ie />, compute <m>A</m>, the standard matrix of <m>\rho_\alpha</m>.
     </p>
   </statement>
   <solution>

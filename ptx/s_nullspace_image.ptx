@@ -1,0 +1,513 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_nullspace_image">
+  <title>Null space and image</title>
+  <introduction>
+    <p>
+      In this section we introduce two subspaces that are associated naturally to a linear transformation <m>T\colon V\rightarrow W</m>: the <em>null space</em> and <em>image</em>.
+    </p>
+  </introduction>
+
+
+  <subsection xml:id="ss_nullspace_image">
+    <title>Null space and image of a linear transformation</title>
+    <definition xml:id="d_nullspace_image">
+      <title>Null space and image</title>
+      <idx><h>linear transformation</h><h>null space</h></idx>
+      <idx><h>linear transformation</h><h>image</h></idx>
+      <idx><h>null space</h></idx>
+      <idx><h>image</h></idx>
+
+      <statement>
+        <p>
+          Let <m>T\colon V\rightarrow W</m> be a linear transformation.
+        </p>
+        <ol>
+          <li>
+            <title>Null space</title>
+            <p>
+              The <term>null space</term> of <m>T</m>, denoted <m>\NS T</m>, is defined as
+              <me>
+                \NS T=\{\boldv\in V\colon T(\boldv)=\boldzero_W\}
+              </me>.
+            </p>
+          </li>
+          <li>
+            <title>Image</title>
+            <p>
+              The <term>image</term> (or <term>range</term>) of <m>T</m>, denoted <m>\im T</m>, is defined as
+              <me>
+                \im T=\{\boldw\in W\colon \boldw=T(\boldv) \text{ for some }  \boldv\in V \}
+              </me>.
+            </p>
+          </li>
+        </ol>
+      </statement>
+    </definition>
+      <remark xml:id="rm_nullspace_image">
+    <statement>
+      <p>
+      A few remarks:
+      </p>
+      <ol>
+        <li>
+          <p>
+            Let <m>T\colon V\rightarrow W</m>. It is useful to keep in mind where <m>\NS T</m> and <m>\im T</m> <q>live</q> in this picture: we have <m>\NS T\subseteq V</m> and <m>\im T\subseteq W</m>. In other words, the null space is a subset of the domain, and the image is a subset of the codomain.
+          </p>
+        </li>
+        <li>
+          <p>
+            Note that the image <m>\im T</m> of a linear transformation is just its image when considered simply as a function of sets. (See <xref ref="d_image"/>.)
+          </p>
+        </li>
+        <li>
+          <p>
+            The notion of a null space is analogous to the set of zeros (or roots) of a real-valued function <m>f\colon X\rightarrow \R</m>,
+            <me>
+              \{x\in X\colon f(x)=0\}
+            </me>,
+            and <q>the zeros of <m>T</m></q> is a useful English shorthand for <m>\NS T</m>.
+             However, there is an important difference between the null space of a linear transformation and the zeros of an arbitrary real-valued function: the null space of a linear transformation comes with the added structure of a vector space (<xref ref="th_nullspace_image"/>), whereas the zeros of an arbitrary function in general do not.
+          </p>
+          <p>
+            The same observation can be made about the image of a linear transformation (<xref ref="th_nullspace_image"/>), in comparison to the image of an arbitrary function.
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </remark>
+  <example xml:id="eg_nullspace_image_matrix">
+    <title>Matrix transformation</title>
+    <statement>
+      <p>
+        Let
+        <me>
+          A=\begin{amatrix}[rrrr] 1\amp 2\amp 3\amp 4\\ 2\amp 4\amp 6\amp 8  \end{amatrix}
+        </me>,
+        and let <m>T_A\colon \R^4\rightarrow \R^2</m> be its associated matrix transformation.
+        Give parametric descriptions of <m>\NS T_A</m> and <m>\im T_A</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        By definition
+        <md>
+          <mrow>\NS T_A \amp=\{\boldx=(x_1,x_2,x_3,x_4)\colon A\boldx=\boldzero\} </mrow>
+        </md>.
+        Thus we must solve the matrix equation <m>A\boldx=\boldzero</m>. The corresponding augmented matrix row reduces to
+        <me>
+            \begin{amatrix}[rrrr|r] \boxed{1}\amp 2\amp 3\amp 4\amp 0\\ 0\amp 0\amp 0\amp 0\amp 0  \end{amatrix}
+        </me>.
+        Following <xref ref="proc_solveSystem"/> we conclude that
+        <me>
+          \NS T_A=\{(-2r-3s-4t,r,s,t)\colon r,s,t\in \R\}
+        </me>.
+        Next, <m>\im T_A</m> is the set of <m>\boldy=(a,b)</m> for which there is an <m>\boldx\in \R^4</m> satisfying <m>A\boldx=\boldy</m>. Thus we are asking which choices of <m>\boldy=(a,b)</m> make the linear system
+        <me>
+          \begin{linsys}{4}
+            x_1\amp +\amp 2x_2\amp +\amp 3x_3\amp+\amp 4x_4\amp=\amp a\\
+            2x_1\amp +\amp 4x_2\amp +\amp 6x_3\amp+\amp 8x_4\amp=\amp b
+          \end{linsys}
+        </me>
+        consistent. Again, Gaussian elimination gives us our answer. The corresponding augmented matrix row reduces to
+        <me>
+          \begin{amatrix}[rrrr|r] \boxed{1}\amp 2\amp 3\amp 4\amp a\\ 0\amp 0\amp 0\amp 0 \amp b-a \end{amatrix}
+        </me>,
+        and conclude from <xref ref="proc_solveSystem"/> that the system is consistent if and only if <m>a-b=0</m>, or <m>a=b</m>. Thus
+        <me>
+          \im T_A=\{(a,b)\in \R^2\colon a=b\}=\{(t,t)\colon t\in \R\}
+        </me>.
+      </p>
+    </solution>
+  </example>
+  <p>
+    This first example illustrates that in the special case of a matrix transformation <m>T_A\colon \R^n\rightarrow \R^m</m>, where <m>A</m> is an <m>m\times n</m> matrix, we have
+    <me>
+      \NS T_A=\{\boldx\in \R^n\colon T_A(\boldx)=\boldzero\}=\{\boldx\in \R^n\colon A\boldx=\boldzero\}
+    </me>.
+    In other words, the null space of a matrix transformation <m>T_A</m> is just the set of solutions to the matrix equation <m>A\boldx=\boldzero</m>. The situation arises frequently enough that it deserves its own notation.
+  </p>
+  <definition xml:id="d_nullspace_matrix">
+    <statement>
+      <p>
+        Let <m>A</m> be an <m>m\times n</m> matrix. The <term>null space</term> of <m>A</m>, denoted <m>\NS A</m>,  is defined as
+        <me>
+          W=\{\boldx\in \R^n\colon A\boldx=\boldzero\}
+        </me>.
+        Equivalently, <m>\NS A=\NS T_A</m>.
+      </p>
+    </statement>
+  </definition>
+  <example xml:id="eg_nullspace_image_transposition">
+    <statement>
+      <p>
+        Define <m>S\colon M_{nn}\rightarrow M_{nn}</m> as <m>S(A)=A^T-A</m>.
+      </p>
+      <ol>
+        <li>
+          <p>
+            Prove that <m>S</m> is linear.
+          </p>
+        </li>
+        <li>
+          <p>
+            Identify <m>\NS S</m> as a familiar family of matrices.
+          </p>
+        </li>
+        <li>
+          <p>
+            Identify <m>\im S</m> as a familiar family of matrices.
+          </p>
+        </li>
+      </ol>
+    </statement>
+    <solution>
+      <p>
+        <ol>
+          <li>
+            <p>
+              Linearity is an easy consequence of transpose properties. For any <m>A_1, A_2\in M_{nn}</m> and <m>c_1,c_2\in \R</m>, we have
+              <md>
+                <mrow>S(c_1A_1+c_2A_2)  \amp= (c_1A_1+c_2A_2)^T-(c_1A_1+c_2A_2)  </mrow>
+                <mrow> \amp = c_1A_1^T+c_2A_2^T-c_1A_1-c_2A_2\amp (<xref ref="eg_transform_transpose" text="global"/>) </mrow>
+                <mrow>  \amp =c_1(A_1^T-A_1)+c_2(A_2^T-A_2)</mrow>
+                <mrow>  \amp =c_1S(A_1)+c_2S(A_2)</mrow>
+              </md>.
+            </p>
+          </li>
+          <li>
+            <p>
+              We have
+              <md>
+                <mrow>\NS S \amp= \{A\in M_{nn}\colon S(A)=\boldzero\} </mrow>
+                <mrow> \amp=\{A\in M_{22}\colon A^T-A=\boldzero\} </mrow>
+                <mrow>  \amp=\{A\in M_{22}\colon A^T=A\} </mrow>
+              </md>.
+              Thus <m>\NS S</m> is the subspace of symmetric <m>n\times n</m> matrices!
+            </p>
+          </li>
+          <li>
+            <p>
+              Let <m>W=\{B\in M_{nn}\colon B^T=-B\}</m>, subspace of skew-symmetric <m>n\times n</m> matrices. We claim <m>\im S=W</m>. As this is a set equality, we prove it by showing the two set inclusions <m>\im S\subseteq W</m> and <m>W\subseteq \im S</m>. (See <xref ref="ss_set_properties" text="title"/>)
+            </p>
+            <p>
+              The inclusion <m>\im S\subseteq W</m> is the easier of the two. If <m>B\in \im S</m>, then <m>B=S(A)=A^T-A</m> for some <m>A\in M_{nn}</m>. Using various properties of transposition, we have
+              <me>
+                B^T=(A^T-A)^T=(A^T)^T-A^T=-(A^T-A)=-B
+              </me>,
+              showing that <m>B</m> is skew-symmetric, and thus <m>B\in W</m>, as desired.
+            </p>
+            <p>
+              The inclusion <m>W\subseteq \im S</m> is trickier: we must show that if <m>B</m> is skew-symmetric, then there is an <m>A</m> such that <m>B=S(A)=A^T-A</m>. Assume we have a <m>B</m> with <m>B^T=-B</m>. Letting <m>A=-\frac{1}{2}B</m> we have
+              <me>
+                A^T-A=(-\frac{1}{2}B)^T+\frac{1}{2}B=\frac{1}{2}(-B^T+B)=\frac{1}{2}(B+B)=B
+              </me>.
+              Thus we have found a matrix <m>A</m> satisfying <m>S(A)=B</m>. It follows that <m>B\in\im T</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
+  </example>
+  <example xml:id="eg_nullspace_image_derivative">
+    <title>The derivative (calculus refresher)</title>
+    <statement>
+      <p>
+        Let <m>T\colon C^1(\R)\rightarrow C(\R)</m> be the differential operator <m>T(f)=f'</m>. (See <xref ref="rm_subspaces_derivatives" text="global"/>.)  Recall that for function spaces the zero vector <m>\boldzero</m> is by definition the zero function on <m>\R</m>.
+      </p>
+      <p>
+        The null space of <m>T</m> is the set of all differentiable functions whose derivative is the zero function:
+        <me>
+          \NS T=\{f\in C^1(\R)\colon f'(x)=0 \text{ for all } x\in \R\}
+        </me>.
+        From calculus we know that this is precisely the set of all <em>constant</em> functions. Thus
+        <me>
+          \NS T=\{f\in C^1(\R)\colon f \text{ a constant function}\}
+        </me>.
+        The image of <m>T</m> is defined as
+        <md>
+          <mrow>\im T\amp =\{g\in C(\R)\colon g=T(f) \text{ for some } f\in C^1(\R)\}</mrow>
+          <mrow>  \amp= \{g\in C(\R)\colon g=f' \text{ for some } f\in C^1(\R)\}</mrow>
+        </md>.
+        In other words, <m>\im T</m> is the set of continuous functions that are the derivative of some other function: <ie />, the set of continuous functions that have an antiderivative. The fundamental theorem of calculus implies that in fact every continuous function <m>g</m> has an antiderivative! Indeed, we may take <m>f(x)=\int_0^xg(t)\, dt</m>. We conclude that <m>\im T=C(\R)</m>.
+      </p>
+    </statement>
+  </example>
+  <p>
+    You may have noticed that in the examples above the null space and image of the given linear transformation turned out to be subspaces. This is no accident!
+  </p>
+  <theorem xml:id="th_nullspace_image">
+    <title>Null space and image</title>
+    <statement>
+      <p>
+      If <m>T\colon V\rightarrow W</m> is a linear transformation, then <m>\NS T</m> is a subspace of <m>V</m>, and <m>\im T</m> is a subspace of <m>W</m>.
+      </p>
+    </statement>
+    <proof>
+        <case>
+         <title>Null space of <m>T</m></title>
+        <p>
+        We use the two-step technique to prove <m>\NS T</m> is a subspace.
+        </p>
+        <ol>
+          <li>
+            <p>
+              Since <m>T(\boldzero_V)=\boldzero_W</m> (<xref ref="th_trans_props"/>), we see that <m>\boldzero_V\in \NS T</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Suppose <m>\boldv_1, \boldv_2\in \NS T</m>. Given any <m>c,d\in \R</m>, we have
+              <md>
+                <mrow>T(c\boldv_1+d\boldv_2) \amp=cT(\boldv_1)+dT(\boldv_2) \amp (T \text{ is linear, } <xref ref="th_trans_props"/>)</mrow>
+                <mrow> \amp=c\boldzero_W+d\boldzero_W \amp (\boldv_1, \boldv_2\in \NS T) </mrow>
+                <mrow>  \amp = \boldzero_W</mrow>
+              </md>.
+              This shows that <m>c\boldv_1+d\boldv_2\in \NS T</m>, completing our proof.
+            </p>
+          </li>
+        </ol>
+        </case>
+        <case>
+         <title>Image of <m>T</m></title>
+        <p>
+          The proof proceeds in a similar manner.
+        </p>
+        <ol>
+          <li>
+            <p>
+              Since <m>T(\boldzero_V)=\boldzero_W</m> (<xref ref="th_trans_props"/>), we see that <m>\boldzero_W</m> is <q>hit</q> by <m>T</m>, and hence is a member of <m>\im T</m>.
+            </p>
+          </li>
+        </ol>
+        </case>
+    </proof>
+  </theorem>
+
+  <corollary xml:id="cor_nullspace_matrix">
+    <title>Null space of a matrix</title>
+    <statement>
+      <p>
+       Given an <m>m\times n</m> matrix <m>A</m>, its null space <m>\NS A</m> is a subspace of <m>\R^n</m>. In other words, the set of solutions to the homogeneous linear system given by the matrix equation <m>A\boldx=\boldzero</m> is a subspace of <m>\R^n</m>.
+      </p>
+    </statement>
+    <proof>
+      <p>
+      As discussed above, we have <m>\NS A=\NS T_A</m>. The result now follows directly from <xref ref="th_nullspace_image"/>.
+      </p>
+    </proof>
+  </corollary>
+  <p>
+    <xref ref="th_nullspace_image"/> and its corollary provide us a with a useful indirect way of proving a subset <m>W\subseteq V</m> is a subspace:
+    namely, identify <m>W</m> as the null space of some linear transformation or matrix.
+  </p>
+  <example>
+    <statement>
+      <p>
+        Define the subset <m>W</m> of <m>\R^3</m> as
+        <me>
+          W=\{(x,y,z)\in \R^3\colon x+2y+3z=x-y-z=0\}
+        </me>.
+        Prove that <m>W</m> is a subspace by identifying it as the null space of a matrix.
+      </p>
+    </statement>
+    <solution>
+      <p>
+          It is easy to see that <m>W=\NS A</m>, where
+          <me>A=\begin{bmatrix}1\amp 2\amp 3\\ 1\amp -1\amp -1 \end{bmatrix}
+          </me>.
+          Thus <m>W</m> is a subspace.
+      </p>
+    </solution>
+  </example>
+  <example xml:id="eg_lines_planes">
+  <title>Lines and planes</title>
+<statement>
+  <p>
+    Recall that a line <m>\ell</m> in <m>\R^2</m> that <em>passes through the origin </em> can be expressed as the set of solutions
+    <m>(x_1,x_2)\in\R^2</m> to an equation of the form
+    <me>
+    \ell\colon  ax_1+bx_2=0
+    </me>.
+    Similarly, a plane <m>\mathcal{P}</m> in <m>\R^3</m> that <em>passes through the origin</em> can be expressed as the the set of solutions
+    <m>(x_1,x_2,x_3)</m> to an equation of the form
+    <me>
+      \mathcal{P}\colon ax_1+bx_2+cx_3=0
+    </me>.
+  We see immediately that both objects can be described as null spaces of a certain matrix: <me>
+    \ell=\NS \begin{bmatrix} a \amp b\end{bmatrix}, \mathcal{P}=\NS \begin{bmatrix}a\amp b\amp c\end{bmatrix}
+  </me>.
+  We conclude from <xref ref="cor_nullspace_matrix"/>
+    that lines in <m>\R^2</m>, and planes in <m>\R^3</m>, are subspaces, <em>as long as they pass through the origin</em>.
+  </p>
+  <p>
+    On the other hand, a line or plane that does <em>not</em>
+    pass through the origin is not a subspace,
+    since it does not contain the zero vector.
+  </p>
+  <p>
+    The question arises: Can we describe <em>all</em> the subspaces of <m>\R^2</m> or <m>\R^3</m>? The answer is yes, as we will see in <xref ref="s_dimension"/>
+  </p>
+</statement>
+</example>
+<example>
+  <statement>
+    <p>
+      Define the subset <m>W</m> of <m>P_2</m> as
+      <me>
+        W=\{p\in P_2\colon p(-1)=p(2)=p(3)=0\}
+      </me>.
+    Prove that <m>W</m> is a subspace by identifying it as the null space of a linear transformation.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      Define <m>T\colon P_2\rightarrow \R^3</m> to be the <em>evaluation transformation</em> defined as <m>T(p)=(p(-1), p(2), p(3))</m>. It is a straightforward exercise to show <m>T</m> is a linear transformation. Furthermore, it is clear that <m>W=\NS T</m>. We conclude that <m>W</m> is a subspace. 
+    </p>
+  </solution>
+</example>
+
+  <p>
+    The next two examples illustrate how to compute the image of a given linear transformation <m>T\colon V\rightarrow W</m>. The examples make clear that computing images (i.e., determining the set of elements of <m>W</m> that are hit by <m>T</m>) is often more onerous than computing null spaces.
+  </p>
+  <example xml:id="ex_subspace_image">
+    <title>Image computation</title>
+    <statement>
+      <p>
+        Let <m>T=T_A\colon \R^2\rightarrow\R^3</m>,
+        where <m>A=\begin{bmatrix}1\amp 1\\ 2\amp 1\\ 3\amp 5 \end{bmatrix}</m>.
+        According to <xref ref="th_nullspace_image"/>, <m>\im T_A</m> is a subspace of <m>\R^3</m>.
+        Identify this subspace as a familiar geometric object.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        By definition <m>\im T_A</m> is the set
+        <me>
+          \{\boldy\in\R^3\colon \boldy=T_A(\boldx) \text{ for some \(\boldx\in \R^3\) } \}=\left\{\boldy\colon \boldy=A\boldx \text{ for some \(\boldx\in\R^2\) } \right\}
+        </me>.
+      </p>
+      <p>
+        Thus to compute <m>\im T_A</m> we must determine which choice of
+        <m>\boldy=(a,b,c)</m> makes the system <m>A\boldx=\boldy</m> consistent.
+        We answer this using our old friend Gaussian elimination!
+        <md>
+          <mrow> \begin{amatrix}[rr|r] 1\amp 1\amp a\\ 2\amp 1\amp b\\ 3\amp 5\amp c \end{amatrix} \amp \xrightarrow[r_3-3r_1]{r_2-2r_1} \begin{amatrix}[rr|r] 1\amp 1\amp a\\ 0\amp 1\amp 2a-b\\ 0\amp 0\amp -7a+2b+c \end{amatrix}</mrow>
+        </md>.
+        To be consistent we need <m>-7a+2b+c=0</m>.
+        We conclude that <m>\im T</m> is the set of all <m>(a,b,c)</m> satisfying <m>-7a+2b+c=0</m>.
+        Geometrically this is the plane passing through <m>(0,0,0)</m> with normal vector <m>\boldn=(-7,2,1)</m>.
+      </p>
+    </solution>
+  </example>
+
+<p>
+  We end with an example that illustrates how the notions of linear transformation, null space, and image can be applied to differential equations.
+</p>
+  <example xml:id="eg_diff_eq_ex">
+    <title>A differential equation</title>
+    <statement>
+      <p>
+      Fix an interval <m>X\subseteq \R</m>. Let
+      <m>S</m> be the set of functions of <m>C^1(X)</m> satisfying the differential equation
+      <men tag='star' xml:id="eq_diff_eq_ex">
+        f'=f
+      </men>: <ie />,
+      <me>
+        S=\{f\in C^1(\R)\colon f'(x)=f(x) \text{ for all } x\in X\}
+      </me>.
+      Define <m>T\colon C^1(X)\rightarrow C(X)</m> as the differential operator <m>T(f)=f'-f</m>. We have
+      <md>
+        <mrow>f\in S \amp\iff f'=f </mrow>
+        <mrow> \amp\iff f'-f=\boldzero </mrow>
+        <mrow>  \amp\iff T(f)=\boldzero </mrow>
+        <mrow>  \amp \iff f\in \NS T</mrow>
+      </md>. Thus <m>S=\NS T</m>, and we see that the set of solutions to <xref ref="eq_diff_eq_ex"/> has the structure of a subspace. That is helpful information for us. For example, since <m>S=\NS T</m> is closed under vector addition and scalar multiplication, we know that if <m>f</m> and <m>g</m> are solutions to <xref ref="eq_diff_eq_ex"/>, then so is <m>cf+dg</m> for any <m>c,d\in\R</m>.
+      </p>
+      <p>
+        It is an interesting exercise to try and understand what <m>\im T</m> means in terms of the given differential equation. By definition, <m>\im T</m> is the set of <m>g\in C(X)</m> such that <m>g=T(f)=f'-f</m>, for some <m>f\in C^1(X)</m>. In the language of differential equations, this is the set of all continuous functions <m>g\in C(X)</m> for which the differential equation
+        <me>
+          f'-f=g
+        </me>
+        <em>can be solved</em> for <m>f</m>.
+      </p>
+    </statement>
+  </example>
+  </subsection>
+  <subsection xml:id="ss_injective_surjective_transforms">
+    <title>Injective and surjective linear transformations</title>
+    <p>
+      Recall that a function <m>f\colon X\rightarrow Y</m> is surjective if <m>\im f=f(X)=Y</m>. (See <xref ref="d_injective_surjective_bijective"/>.) Similarly, there is a connection between the null space of a lineaThe next theorem indicates how the null space can be understood as a measure of a transformation being injective (one-to-one) or not. (See <xref ref="d_injective_surjective_bijective"/>.)
+    </p>
+    <theorem xml:id="th_nullspace_injective">
+      <title>Nullspace and injectivity</title>
+      <statement>
+        <p>
+          Let <m>T\colon V\rightarrow W</m> be a linear transformation. The following are equivalent:
+        </p>
+        <ol>
+          <li>
+            <p>
+              <m>T</m> is injective (<ie />, one-to-one);
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\NS T=\{\boldzero\}</m>.
+            </p>
+          </li>
+        </ol>
+        In fact, we have
+        <men xml:id="eq_nullspace_injective">
+          T(\boldv)=T(\boldv') \iff \boldv'=\boldv+\boldu \text{ for some } \boldu\in \NS T
+        </men>
+
+      </statement>
+      <proof>
+        <case>
+         <title>Implication: <m>(1)\implies (2)</m></title>
+        <p>
+        In general we always have <m>\{\boldzero\}\subseteq \NS T</m> for a linear transformation <m>T</m>. If <m>T</m> is injective, this inclusion is an equality since
+        <md>
+        <mrow>  \boldv\in\NS T \amp \iff T(\boldv)=\boldzero \amp (\text{def. } \NS T)</mrow>
+        <mrow>  \amp \implies T(\boldv)=T(\boldzero)</mrow>
+        <mrow>  \amp \implies \boldv=\boldzero \amp (T \text{ injective})</mrow>
+        </md>.
+        </p>
+        </case>
+        <case>
+         <title>Implication: <m>(2)\implies (1)</m></title>
+        <p>
+          This implication is a consequence of the equivalence in <xref ref="eq_nullspace_injective"/>. Indeed assuming <xref ref="eq_nullspace_injective"/>, we have
+          <md>
+            <mrow>T(\boldv)=T(\boldv') \amp\iff \boldv'=\boldv+\boldu \text{ for some } \boldu\in \NS T </mrow>
+            <mrow> \amp\implies \boldv'=\boldv+\boldzero \amp (\NS T=\{\boldzero\}) </mrow>
+            <mrow>  \amp\implies \boldv=\boldv' </mrow>
+          </md>,
+          as desired. Thus it remains only to prove <xref ref="eq_nullspace_injective"/>. We do so via a chain of equivalences:
+          <md>
+            <mrow>T(\boldv)=T(\boldv') \amp \iff T(\boldv')-T(\boldv)=\boldzero</mrow>
+            <mrow> \amp \iff T(\boldv'-\boldv)=\boldzero \amp (T \text{ is linear})</mrow>
+            <mrow>  \amp \iff \boldu=\boldv'-\boldv\in\NS T \amp (\text{def. } \NS T)</mrow>
+            <mrow>  \amp \iff \boldv'=\boldv+\boldu \text{ for some } \boldu\in\NS T </mrow>
+          </md>.
+        </p>
+        </case>
+      </proof>
+
+    </theorem>
+
+    <remark>
+      <p>To determine whether a function of sets <m>f\colon X\rightarrow Y</m> is injective, we normally have show that <em>for each</em> output <m>y</m> in the range of <m>f</m> there is exactly one input <m>x</m> satisfying <m>f(x)=y</m>. Think of this as checking injectivity at every output. <xref ref="th_nullspace_injective"/> tells us that in the special case of a linear transformation <m>T\colon V\rightarrow W</m> it is enough to check injectivity at exactly one ouput: namely, <m>\boldzero\in W</m>.
+      </p>
+      <p>
+        To see that this is a special property of linear transformations, consider the function
+        <md>
+          <mrow>f\colon \R \amp \rightarrow \R</mrow>
+          <mrow> x \amp\mapsto f(x)=(x-1)^2 </mrow>
+        </md>.
+        The function is injective at the output <m>0=f(1)</m>, but not injective in general.
+      </p>
+    </remark>
+  </subsection>
+<!-- <xi:include href="./s_nullspace_image_ex.ptx"/> -->
+
+</section>

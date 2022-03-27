@@ -429,5 +429,5 @@ That was quite a dose of theory! For your convenience, we collect the various re
 </theorem>
 
 </subsection>
-<!-- <xi:include href="./s_dimension_ex.ptx"/> -->
+<xi:include href="./s_dimension_ex.ptx"/>
 </section>

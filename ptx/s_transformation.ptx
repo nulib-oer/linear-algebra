@@ -323,10 +323,7 @@
 <subsection xml:id="ss_matrix_transforms">
   <title>Matrix transformations</title>
   <p>
-    We now describe what turns out to be an entire family of examples of linear transformations: so-called <em>matrix transformations</em> of the form <m>T_A\colon \R^n\rightarrow \R^m</m>, where <m>A</m> is a given <m>m\times n</m> matrix. This is a good place to recall the <xref ref="princ_matrix_mantra" text='custom'> matrix mantra </xref>. Not only can a matrix represent a system of linear equations, it can represent a linear transformation. These are two very different concepts, and the <xref ref="princ_matrix_mantra" text='custom'> matrix mantra </xref> helps us to not confuse the two. In the end a matrix is just a matrix: a mathematical tool that can be employed to diverse ends.
-  </p>
-  <p>
-    The definition of a <em>matrix transformation</em> below marks the first point where we take some artistic license and conflate the vector space <m>\R^n</m> with the vector space <m>M_{n\times 1}</m> of column vectors. The rationale here is partly notational in nature (<m>\R^n</m> is less clunky than <m>M_{n\times 1}</m>), and partly conceptual. We will see that the spaces <m>\R^n</m> come equipped with a natural geometric structure, allowing us to interpret the linear transformations among them in a more conceptual manner, especially when <m>n=2, 3</m>.
+    We now describe what turns out to be an entire family of examples of linear transformations: so-called <em>matrix transformations</em> of the form <m>T_A\colon \R^n\rightarrow \R^m</m>, where <m>A</m> is a given <m>m\times n</m> matrix. This is a good place to recall the <xref ref="princ_matrix_mantra" text='custom'> matrix mantra </xref>. Not only can a matrix represent a system of linear equations, it can represent a linear transformation. These are two very different concepts, and the <xref ref="princ_matrix_mantra" text='custom'> matrix mantra </xref> helps us to not confuse the two. In the end a matrix is just a matrix: a mathematical tool that can be employed to diverse ends. Observe that the definition of matrix multiplication marks the first point where <xref ref="declaration_tuples_columns"/> comes into play.
   </p>
   <definition xml:id="d_matrix_transform">
     <title>Matrix transformations</title>
@@ -337,12 +334,12 @@
     </notation>
     <statement>
       <p>
-      Let <m>A</m> be an <m>m\times n</m> matrix. Identifying <m>n</m>-tuples <m>(x_1,x_2,\dots, x_n)\in \R^n</m> with their corresponding column vectors <m>\boldx=[x_i]_{n\times 1}</m>, and <m>m</m>-tuples <m>(y_1,y_2,\dots, y_m)\in\R^m</m> with their corresponding column vectors <m>[y_i]_{m\times 1}</m>,  the <term>matrix transformation associated to <m>A</m></term> is the function <m>T_A</m> defined as follows:
+      Let <m>A</m> be an <m>m\times n</m> matrix. The <term>matrix transformation associated to <m>A</m></term> is the function <m>T_A</m> defined as follows:
       <md>
         <mrow>T_A\colon \R^n \amp\rightarrow \R^m </mrow>
         <mrow> \boldx\amp\mapsto T_A(\boldx)=A\boldx </mrow>
       </md>.
-      In other words, given input <m>\boldx_{n\times 1}</m>, the output is the <m>m\times 1</m> column vector <m>A\boldx</m>.
+      In other words, given input <m>\boldx\in \R^n</m>, the output <m>T(\boldx)</m> is defined as <m>A\boldx</m>.
       </p>
     </statement>
   </definition>
@@ -566,7 +563,7 @@
     We now proceed to some examples involving our more exotic vector spaces.
   </p>
 </introduction>
-<example>
+<example xml:id="eg_transform_transpose">
   <title>Transposition is linear</title>
   <statement>
     <p>

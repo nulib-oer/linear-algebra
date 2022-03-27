@@ -23,7 +23,7 @@
 
 <subsection xml:id="ss_workingExample">
   <title>Model example</title>
-  <p> We begin by illustrating the general method for solving a linear system using our model example; a careful  description of the procedure, along with a proof of its validity, is found in <xref ref="th_solveSystem"/>.
+  <p> We begin by illustrating the general method for solving a linear system using our model example; a careful  description of the procedure, along with a proof of its validity, is found in <xref ref="proc_solveSystem"/>.
 </p>
 <p>
   A key first step involves separating the variables of the system into <em>free</em> and <em>leading</em> variables.
@@ -125,7 +125,7 @@
       We are now in a position to describe an algorithm for computing the set of solutions of a linear system.
 
     </p>
-    <theorem xml:id="th_solveSystem">
+    <algorithm xml:id="proc_solveSystem">
       <title>Solving linear systems</title>
 
       <statement>
@@ -180,7 +180,7 @@
         </li>
       </dl>
     </statement>
-  </theorem>
+  </algorithm>
   <proof>
     <p>
       First recall that <m>L</m> and <m>L'</m> have the same set of solutions (<xref ref="s_systems_th_rowops"/>). So it suffices to show that the algorithm returns the correct set of solutions to <m>L'</m>.
@@ -252,7 +252,7 @@
       </p>
     </case>
   </proof>
-  <p>Interesting in its own right is the following corollary of <xref ref="th_solveSystem"/>, which tells us that a linear system has either no solutions, exactly one solutions, or infinitely many solutions.
+  <p>Interesting in its own right is the following corollary of <xref ref="proc_solveSystem"/>, which tells us that a linear system has either no solutions, exactly one solutions, or infinitely many solutions.
   </p>
   <corollary xml:id="c_qualitative">
     <title><m>0</m>, <m>1</m>, or <m>\infty</m>-many solutions</title>

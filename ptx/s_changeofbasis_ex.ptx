@@ -243,7 +243,7 @@ In each exercise an inner product space <m>(V,\langle\, , \rangle)</m> is given 
       <title>Reflection in <m>\R^2</m></title>
       <statement>
         <p>
-          Let <m>\boldv=(a,b)\in \R^2</m> be nonzero and define <m>\ell=\Span\{\boldv\}</m>, the line passing through the origin with direction vector <m>\boldv</m>. Let <m>T\colon \R^2\rightarrow \R^2</m> be reflection through <m>\ell</m>. (See <xref ref="d_reflection"/>.) In this exercise we will use a change of basis argument to find a formula for the matrix <m>A</m> such that <m>T=T_A</m>, expressed in terms of <m>a</m> and <m>b</m>.
+          Let <m>\boldv=(a,b)\in \R^2</m> be nonzero and define <m>\ell=\Span\{\boldv\}</m>, the line passing through the origin with direction vector <m>\boldv</m>. Let <m>T\colon \R^2\rightarrow \R^2</m> be reflection through <m>\ell</m>. (See <xref ref="d_reflection"/>.) In this exercise we will use a change of basis argument to find a formula for the standard matrix of <m>T</m>: <ie />, the matrix <m>A</m> satisfying <m>T(\boldx)=A\boldx</m> for all <m>\boldx\in \R^2</m>. Our answer will be expressed in terms  of <m>a</m> and <m>b</m>.
         </p>
         <ol>
           <li>
@@ -258,7 +258,7 @@ In each exercise an inner product space <m>(V,\langle\, , \rangle)</m> is given 
           </li>
           <li>
             <p>
-              Explain why <m>T=T_A</m>.
+              How do we know that <m>A</m> is the standard matrix of <m>T</m>?
             </p>
           </li>
           <li>

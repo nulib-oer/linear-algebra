@@ -96,25 +96,33 @@
   </solution>
 </example>
 <p>
-  The formula for <m>[T]_{B}^{B'}</m> should remind you of the formula from <xref ref="cor_matrix_transformations"/> used for computing the matrix <m>A</m> satisfying <m>T=T_A</m> for a linear transformation <m>T\colon \R^n\rightarrow \R^m</m>. The next example explicates this resemblance.
+  The formula for <m>[T]_{B}^{B'}</m> should remind you of the formula from <xref ref="cor_matrix_transformations"/> used for computing the standard matrix for a linear transformation <m>T\colon \R^n\rightarrow \R^m</m>: <ie />, the matrix <m>A</m> such that <m>T(\boldx)=A\boldx</m> for all <m>\boldx\in \R^n</m>. <xref ref="th_matrixreps_matrixtransforms"/> explicates this resemblance.
 </p>
-<example xml:id="eg_matrixreps_matrixtransforms">
-  <title>Relation to matrix transformations</title>
+<theorem xml:id="th_matrixreps_matrixtransforms">
+  <title>Standard matrix as a matrix representation</title>
   <statement>
     <p>
-    Consider a linear transformation of the form <m>T\colon \R^n\rightarrow \R^m</m>. This is the special case where we have the domain <m>V</m> and codomain <m>W</m> of <m>T</m> both equal to spaces of tuples. We know from  <xref ref="cor_matrix_transformations"/> that <m>T=T_A</m> where <m>A</m> is the <m>m\times n</m> matrix defined as
+    Let <m>T\colon \R^n\rightarrow \R^m</m> be a linear transformation, and let <m>A</m> be its standard matrix: <ie />, <m>A</m> satisfies <m>T(\boldx)=A\boldx</m> for all <m>\boldx\in \R^n</m>. We have
+    <me>
+      A=[T]_{B}^{B'}
+    </me>
+    where <m>B</m> and <m>B'</m> are the standard bases of <m>\R^n</m> and <m>\R^m</m>, respectively. In other words, the matrix representing <m>T</m> with respect to the standard bases of <m>\R^n</m> and <m>\R^m</m> is none other than the standard matrix of <m>T</m>.
+  </p>
+</statement>
+<proof>
+  <p>
+    According to the recipe in <xref ref="cor_matrix_transformations"/> we have
     <me>
     A= \begin{bmatrix}\vert\amp \vert\amp  \amp \vert \\ T(\bolde_1)\amp  T(\bolde_2)\amp \cdots \amp T(\bolde_n)\\ \vert\amp \vert\amp  \amp \vert \end{bmatrix}
     </me>.
-    Let <m>B</m> and <m>B'</m> be the standard ordered bases of <m>\R^n</m> and <m>\R^m</m>, respectively. We claim that <m>A=[T]_{B}^{B'}</m>: <ie />, <m>A</m> is the matrix representation of <m>T</m> obtained by choosing the standard bases of <m>\R^n</m> and <m>\R^m</m>. To prove the claim, we observe that for all <m>1\leq j\leq n</m> the <m>j</m>-th columns of <m>A</m> and <m>[T]_B^{B'}</m> are equal: <ie />, <m>T(\bolde_j)=[T(\bolde_j)]_{B'}</m>.
-    This is a result of the fact that for all vectors <m>\boldw\in \R^m</m> we have <m>[\boldw]_{B'}=\boldw</m>: that is, the coordinate vector of a vector <m>\boldw\in \R^m</m> with respect to the <em>standard basis</em> is just <m>\boldw</m> itself. (See <xref ref="eg_coordinatevector_standard"/>).
+    Let <m>B</m> and <m>B'</m> be the standard ordered bases of <m>\R^n</m> and <m>\R^m</m>, respectively. To see why <m>A=[T]_{B}^{B'}</m>, observe that for all <m>1\leq j\leq n</m> the <m>j</m>-th column of <m>A</m> is <m>T(\bolde_j)</m> and the <m>j</m>-th column of <m>[T]_B^{B'}</m> is <m>[T(\bolde_j)]_{B''}</m>. That these are equal is a result of the fact that for all vectors <m>\boldw\in \R^m</m> we have <m>[\boldw]_{B'}=\boldw</m>: that is, the coordinate vector of a vector <m>\boldw\in \R^m</m> with respect to the <em>standard basis</em> is just <m>\boldw</m> itself. (See <xref ref="eg_coordinatevector_standard"/>).
   </p>
-  </statement>
-</example>
+</proof>
+</theorem>
     <remark xml:id="rm_better_basis">
   <statement>
     <p>
-      According to <xref ref="eg_matrixreps_matrixtransforms"/>, given a linear transformation <m>T\colon \R^n\rightarrow \R^m</m>, the matrix <m>A</m> such that <m>T=T_A</m> is just one way of representing <m>T</m>: namely, the representation with respect to the standard bases of <m>\R^n</m> and <m>\R^m</m>. This begs the question of whether a different choice of bases might give rise to a more convenient matrix representation of <m>T</m>. The answer is yes, as we will see over the course of this chapter.
+      Let <m>T\colon \R^n\rightarrow \R^m</m> be a linear transformation, and let <m>A</m> be its standard matrix: <ie />, <m>A</m> is the <m>m\times n</m> matrix satisfying <m>T(\boldx)=A\boldx</m> for all <m>\boldx\in \R^n</m>. According to <xref ref="th_matrixreps_matrixtransforms"/>,  the standard matrix <m>A</m> is just one way of representing <m>T</m>: namely, the representation with respect to the standard bases of <m>\R^n</m> and <m>\R^m</m>. This begs the question of whether a different choice of bases might give rise to a more convenient matrix representation of <m>T</m>. The answer is yes, as we will see over the course of this chapter.
     </p>
   </statement>
 </remark>
@@ -140,7 +148,7 @@
     <ol>
       <li>
         <p>
-          According to <xref ref="eg_matrixreps_matrixtransforms"/>, since <m>B</m> is the standard basis <m>[T]_B</m> is the matrix <m>A</m> such that <m>T=T_A</m>:
+          According to <xref ref="th_matrixreps_matrixtransforms"/>, since <m>B</m> is the standard basis <m>[T]_B</m> is the matrix <m>A</m> such that <m>T=T_A</m>:
           <md>
             <mrow>[T]_B\amp=\begin{bmatrix}
               \vert \amp \vert \\
@@ -437,7 +445,7 @@
         <me>
           W=\{(x,y,z)\in \R^3\colon x+y+z\}
         </me>.
-        Consider the orthogonal projection transformation <m>\operatorname{proj}_W\colon \R^3\rightarrow \R^3</m>. With respect to the standard basis <m>B=(\bolde_1, \bolde_2, \bolde_3)</m> we know from <xref ref="eg_matrixreps_matrixtransforms"/> that <m>[\operatorname{proj}_W]_B=[\operatorname{proj}_W]_B^B</m> is just the matrix <m>A</m> such that <m>\operatorname{proj}_W=T_A</m>. Using the general formaul for projection onto a plane derived in <xref ref="eg_projection_plane"/>, we conclude:
+        Consider the orthogonal projection transformation <m>\operatorname{proj}_W\colon \R^3\rightarrow \R^3</m>. With respect to the standard basis <m>B=(\bolde_1, \bolde_2, \bolde_3)</m> we know from <xref ref="th_matrixreps_matrixtransforms"/> that <m>[\operatorname{proj}_W]_B=[\operatorname{proj}_W]_B^B</m> is just the matrix <m>A</m> such that <m>\operatorname{proj}_W=T_A</m>. Using the general formaul for projection onto a plane derived in <xref ref="eg_projection_plane"/>, we conclude:
         <me>
           [T]_B=A=\frac{1}{3}\begin{amatrix}[rrr]
           2\amp -1\amp -1\\

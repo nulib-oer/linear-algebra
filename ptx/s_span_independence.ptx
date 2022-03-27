@@ -653,20 +653,8 @@
   </statement>
 </algorithm>
 <p>
-  As you can see, even as we move into more and more abstract realms of linear algebra, Gaussian elimination remains our most important tool. We memorialize this in a new principle.
+  This is a fitting point to recall our <xref ref="princ_GE" text="title"/>. As you can see, even as we move into more and more abstract realms of linear algebra (linear independence, span, <etc />), Gaussian elimination remains our most important tool.
 </p>
-
-<principle xml:id="princ_GE">
-  <title>Gaussian elimination mantra</title>
-  <statement>
-    <p>
-      Gaussian elimination is the workhorse of linear algebra.
-    </p>
-    <p>
-      Most linear algebraic computations (<m>\NS T</m>, <m>\im T</m>,<m>\Span S</m>, questions of linear independence, <etc />) boil down to a question about a certain system of linear equations. The trick is to produce the <em>relevant</em> linear system for a given question.
-    </p>
-  </statement>
-</principle>
     <!-- <theorem>
       <statement>
         <p>
@@ -679,8 +667,6 @@
     </theorem> -->
   <example xml:id="ex_linear_independence">
     <title>Linear independence</title>
-
-
     <statement>
       <p>
         For each subset <m>S</m> of the given vector space <m>V</m>, decide whether <m>S</m> is linearly independent.

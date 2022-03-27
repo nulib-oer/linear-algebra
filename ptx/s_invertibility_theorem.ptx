@@ -465,7 +465,7 @@
   <case>
    <title><m>(3)\implies (4)</m></title>
   <p>
-  Row reduce <m>A</m> to a matrix <m>U</m> in <em>reduced</em> row echelon form using Gauss-Jordan elimination. (See <xref ref="th_matrixforms"/>.) Since the set of solutions to <m>A\boldx=\boldzero</m> is identical to the set of solutions to <m>U\boldx=\boldzero</m> (apply <xref ref="s_systems_th_rowops"/> to their corresponding linear systems), we see that <m>\boldzero</m> is the only solution to <m>U\boldx=\boldzero</m>. <xref ref="th_solveSystem"/> now implies <m>U</m> has a leading one in each column. Since <m>U</m> is <m>n\times n</m> and in <em>reduced</em> row echelon form, it follows that <m>U</m> must be the identity matrix. (Convince yourself of this.) Thus <m>A</m> is row equivalent to <m>U=I</m>, the identity matrix.
+  Row reduce <m>A</m> to a matrix <m>U</m> in <em>reduced</em> row echelon form using Gauss-Jordan elimination. (See <xref ref="th_matrixforms"/>.) Since the set of solutions to <m>A\boldx=\boldzero</m> is identical to the set of solutions to <m>U\boldx=\boldzero</m> (apply <xref ref="s_systems_th_rowops"/> to their corresponding linear systems), we see that <m>\boldzero</m> is the only solution to <m>U\boldx=\boldzero</m>. <xref ref="proc_solveSystem"/> now implies <m>U</m> has a leading one in each column. Since <m>U</m> is <m>n\times n</m> and in <em>reduced</em> row echelon form, it follows that <m>U</m> must be the identity matrix. (Convince yourself of this.) Thus <m>A</m> is row equivalent to <m>U=I</m>, the identity matrix.
   </p>
   </case>
   <case>
@@ -641,7 +641,7 @@
     </proof>
   </theorem>
   <p>
-    From the proof of <xref ref="th_invertibility"/> we also derive an algorithm for writing an invertible matrix as a product of elementary matrices.
+    From the proof of <xref ref="th_invertibility"/> we also derive an algorithm for writing an invertible matrix as a product of elementary matrices. You should think of this as a first example of the great versatility of Gaussian elimination, as conveyed by our <xref ref="princ_GE"/>.
   </p>
   <theorem xml:id="th_elem_matrices_alg">
     <title>Product of elementary matrices algorithm</title>
@@ -947,7 +947,7 @@ Lastly, we provide at last the proof of the third statement of <xref ref="th_mat
     <men xml:id="eq_unique_rref">
       (U-U')\boldx=[x_{n+1}(u_{i(n+1)}-u'_{i(n+1)})]=\boldzero
     </men>.
-    Since <m>U\ne U'</m>, there is some <m>1\leq i\leq m</m> such that <m>u_{i(n+1)}\ne u'_{i(n+1)}</m>. Since <m>x_{n+1}(u_{i(n+1)}-u'_{i(n+1)})=0</m> by <xref ref="eq_unique_rref"/>, we must have <m>x_{n+1}=0</m>. We have shown that for any <m>\boldx=[x_j]</m> satisfying <m>U\boldx=\boldzero</m>, we must have <m>x_{n+1}=0</m>. It follows from <xref ref="th_solveSystem"/> that <m>U</m> must have a leading in its last column, since otherwise the variable <m>x_{n+1}</m> in the system <m>U\boldx=0</m> would be free, and could assume any value. To see that <m>U'</m> also has a leading one in the last column, we use the same argument, starting with the equation <m>Q^{-1}U'=U</m>.
+    Since <m>U\ne U'</m>, there is some <m>1\leq i\leq m</m> such that <m>u_{i(n+1)}\ne u'_{i(n+1)}</m>. Since <m>x_{n+1}(u_{i(n+1)}-u'_{i(n+1)})=0</m> by <xref ref="eq_unique_rref"/>, we must have <m>x_{n+1}=0</m>. We have shown that for any <m>\boldx=[x_j]</m> satisfying <m>U\boldx=\boldzero</m>, we must have <m>x_{n+1}=0</m>. It follows from <xref ref="proc_solveSystem"/> that <m>U</m> must have a leading in its last column, since otherwise the variable <m>x_{n+1}</m> in the system <m>U\boldx=0</m> would be free, and could assume any value. To see that <m>U'</m> also has a leading one in the last column, we use the same argument, starting with the equation <m>Q^{-1}U'=U</m>.
     </p>
     <p>
       To summarize, starting with row equivalent matrices  <m>U</m> and <m>U'</m> in reduced row echelon form, and assuming by contradiction that <m>U\ne U'</m>, we conclude that (a) the first <m>n</m> columns of <m>U</m> and <m>U'</m> are equal and form matrices in reduced row echelon form, and (b) the last columns of <m>U</m> and <m>U'</m> have leading ones. Since <m>U</m> and <m>U'</m> are in reduced row echelon form, and since the first <m>n</m> columns of <m>U</m> and <m>U'</m> are equal, we see that the leading ones in the last columns of <m>U</m> and <m>U'</m> must occur in the same row: namely, the first zero row of <m>V=V'</m>. It follows that <m>U=U'</m>, a contradiction.
