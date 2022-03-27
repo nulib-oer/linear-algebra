@@ -360,11 +360,10 @@
   </statement>
   <solution>
     <p>
-      Define <m>T\colon P_2\rightarrow \R^3</m> to be the <em>evaluation transformation</em> defined as <m>T(p)=(p(-1), p(2), p(3))</m>. It is a straightforward exercise to show <m>T</m> is a linear transformation. Furthermore, it is clear that <m>W=\NS T</m>. We conclude that <m>W</m> is a subspace. 
+      Define <m>T\colon P_2\rightarrow \R^3</m> to be the <em>evaluation transformation</em> defined as <m>T(p)=(p(-1), p(2), p(3))</m>. It is a straightforward exercise to show <m>T</m> is a linear transformation. Furthermore, it is clear that <m>W=\NS T</m>. We conclude that <m>W</m> is a subspace.
     </p>
   </solution>
 </example>
-
   <p>
     The next two examples illustrate how to compute the image of a given linear transformation <m>T\colon V\rightarrow W</m>. The examples make clear that computing images (i.e., determining the set of elements of <m>W</m> that are hit by <m>T</m>) is often more onerous than computing null spaces.
   </p>

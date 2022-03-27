@@ -190,7 +190,7 @@ As we will see, this elegant result can be used to significantly simplify comput
   <subsection xml:id="ss_fundamental_spaces">
     <title>Fundamental spaces of matrices</title>
     <p>
-      As usual the special case of matrix transformations <m>T_A\colon \R^n\rightarrow \R^m</m> deserve some special attention. The <em>fundamenal spaces</em> of a matrix <m>A</m> defined below are intimately connected to <m>\NS T_A</m> and <m>\im T_A</m>, and hence the rank-nullity theorem comes to bear. Observe that <m>\NS A</m> was defined previously (<xref ref="d_nullspace_matrix" text="global"/>). We include it below to gather all the fundamental spaces together under one definition.
+      We now treat the special case of matrix transformations <m>T_A\colon \R^n\rightarrow \R^m</m>. The <em>fundamenal spaces</em> of a matrix <m>A</m> defined below are can each be connected to <m>\NS T_A</m> and <m>\im T_A</m>, and hence the rank-nullity theorem comes to bear in their analysis. Observe that <m>\NS A</m> was defined previously (<xref ref="d_nullspace_matrix" text="global"/>). We include it below to gather all the fundamental spaces together under one definition.
     </p>
 
     <definition xml:id="d_fundamental_space">
@@ -259,91 +259,57 @@ As we will see, this elegant result can be used to significantly simplify comput
       </statement>
     </definition>
     <p>
-      The next theorem is an omnibus result that relates the fundamental spaces of a matrix to the linear transformation <m>T_A</m>, applies the rank-nullity theorem to relate dimensions of fundamental spaces, and indicates how row reduction can be used to compute these spaces.  
+      How do the fundamental spaces of a matrix <m>A</m> relate to its associated matrix transformation <m>T_A</m>? It is easy to see that <m>\NS T_A=\NS A</m>, and indeed we made this connection earlier (<xref ref="cor_nullspace_matrix" text="global"/>). What about <m>\im T_A</m>? We claim that <m>\im T_A=\CS A</m>. To see why, let
+      <m>\boldc_1, \boldc_2,\dots, \boldc_n</m> be the columns of <m>A</m> and consider the following chain of equivalences:
+        <md>
+          <mrow> \boldy\in \im T_A \amp\iff \boldy=T_A(\boldx) \text{ for some } \boldx\in \mathbb{R}^n </mrow>
+          <mrow> \amp\iff  \boldy=A \boldx \text{ for some } \boldx=(x_1,x_2,\dots, x_n)\in \mathbb{R}^n
+          \amp (\text{definition of } T_A) </mrow>
+          <mrow>  \amp \iff \boldy=x_1\boldc_1+x_2\boldc_2+\cdots +x_n\boldc_n \text{ for some } x_i\in \mathbb{\R} \amp (<xref ref="th_column_method"/>)</mrow>
+          <mrow>  \amp \iff \boldy\in\CS A</mrow>
+        </md>.
+        We now highlight three equivalent statments in this chain
+        <me>
+          \boldy\in\CS A \iff \boldy=A \boldx \text{ for some } \boldx\in \R^n \iff \boldy\in \im\CS A
+        </me>.
+        The first equivalence tells us that <m>\CS A</m> is the set of <m>\boldy\in \R^m</m>
+        for which the matrix equation <m>A\boldx=\boldy</m> is consistent. The second equivalence tells us that <m>\CS A=\im T_A</m>. In sum, we have proven the following result.
     </p>
-    <theorem xml:id="th_fundamental_spaces">
-      <title>Fundamental spaces</title>
+    <theorem xml:id="th_fundspaces_matrixtransform">
+      <title>Null space and image as fundamental spaces</title>
       <statement>
         <p>
-          Let <m>A</m> be an <m>m\times n</m> matrix. Suppose <m>A</m> is row equivalent to the row echelon matrix <m>U</m>.
+          Let <m>A</m> be an <m>m\times n</m> matrix, and let <m>T_A\colon \R^n\rightarrow \R^m</m> be its corresponding matrix transformation. The following equalities hold:
+          <mdn>
+            <mrow xml:id="eq_null_matrixtransform"> \NS A\amp=\NS T_A </mrow>
+            <mrow xml:id="eq_col_image"> \CS A\amp=\im T_A </mrow>
+            <mrow xml:id="eq_col_consistent"> \CS A \amp= \{\boldy\in \R^m\colon A\boldx=\boldy \text{ is consistent}\} </mrow>
+          </mdn>.
         </p>
-        <ol>
-          <li>
-            <p>
-              Let <m>T_A\colon \R^n\rightarrow \R^m</m> be the matrix transformation associated to <m>A</m>. Then <m>\NS A=\NS T_A</m> and <m>\CS A=\im T_A</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              We have
-              <ul>
-                <li>
-                  <p>
-                    <m>\NS A=\NS U</m>
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    <m>\RS A=\RS U</m>
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    <m>\dim\CS A=\dim \CS U</m> (but in general it is <em>not</em> the case that <m>\CS A=\CS U</m>).
-                  </p>
-                </li>
-              </ul>
-            </p>
-          </li>
-          <li>
-            <p>
-              Let <m>r </m> be the number of leading ones in <m>U</m>, and let <m>s=n-r</m>; <ie />, <m>r</m> and <m>k</m> are the number of leading and free variables, respectively, of the system corresponding to <m>\begin{amatrix}[r|r]U\amp \boldzero\end{amatrix}</m>. Then
-              <md>
-              <mrow>\rank A\amp =\dim\CS A=\dim \RS A=r </mrow>
-              <mrow> \nullity A\amp=\dim\NS A=s </mrow>
-              </md>.
-            </p>
-          </li>
-          <li>
-            <title>Rank-nullity for matrices</title>
-            <p>
-              We have
-              <me>
-              n=\dim\NS A+\dim\CS A=\dim\NS A+\dim\RS A
-              </me>.
-            </p>
-          </li>
-        </ol>
+      </statement>
+    </theorem>
+    <p>
+      The next theorem indicates how row reduction affects fundamental spaces.
+    </p>
+    <theorem xml:id="th_fundspaces_rowreduce">
+      <title>Fundamental spaces and row equivalence</title>
+      <statement>
+        <p>
+          Let <m>A</m> be an <m>m\times n</m> matrix, and suppose <m>A</m> is row equivalent to <m>B</m>. The following equalities hold
+          <mdn>
+            <mrow xml:id="eq_nullA_nullB"> \NS A\amp =\NS B </mrow>
+            <mrow xml:id="eq_rowA_rowB"> \RS A\amp =\RS B </mrow>
+            <mrow xml:id="eq_colA_colB"> \dim\CS A \amp = \CS B </mrow>
+          </mdn>.
+          Although <m>\CS A</m> and <m>\CS B</m> have the same dimension, they are in general not equal as subspaces.
+          </p>
       </statement>
       <proof>
-        <p>
-          We prove each statement in turn.
+          <p>
+          First observe that <m>A=\begin{bmatrix}1\amp 1\\ 1\amp 1 \end{bmatrix}</m> is row equivalent to <m>B=\begin{bmatrix}1\amp 1\\ 0 \amp 0\end{bmatrix}</m> and yet <m>\CS A=\Span\{(1,1)\}=\{(t,t)\colon t\in \R\}\ne \CS B=\Span\{(1,0)\}=\{(t,0)\colon t\in\R\}</m>.
+          Thus we do not have <m>\CS A=\CS B</m> in general.
         </p>
-        <proof>
-          <title>Proof of (1)</title>
-          <p>
-            Recall that <m>T_A</m> is defined as <m>T_A(\boldx)=A\boldx</m> for all <m>\boldx\in \mathbb{R}^n </m>. Then clearly <m>T_A(\boldx)=\boldzero</m> if and only if <m>A\boldx=\boldzero</m>, showing that <m>\NS T=\NS A</m>.
-          </p>
-          <p>
-            Let <m>\boldc_1, \boldc_2,\dots, \boldc_n</m> be the columns of <m>A</m>. We have
-            <md>
-              <mrow> \boldy\in \im T_A \amp\iff \boldy=T_A(\boldx) \text{ for some } \boldx\in \mathbb{R}^n </mrow>
-              <mrow> \amp\iff  \boldy=A \boldx \text{ for some } \boldx=(x_1,x_2,\dots, x_n)\in \mathbb{R}^n
-              \amp (\text{definition of } T_A) </mrow>
-              <mrow>  \amp \iff \boldy=x_1\boldc_1+x_2\boldc_2+\cdots +x_n\boldc_n \text{ for some } x_i\in \mathbb{\R} \amp (<xref ref="th_column_method"/>)</mrow>
-              <mrow>  \amp \iff \boldy\in\CS A</mrow>
-            </md>.
-            Thus <m>\im T_A=\CS A</m>.
-          </p>
-        </proof>
-        <proof>
-          <title>Proof of (2)</title>
-          <p>
-          First observe that <m>A=\begin{bmatrix}1\amp 1\\ 1\amp 1 \end{bmatrix}</m> is row equivalent to <m>U=\begin{bmatrix}1\amp 1\\ 0 \amp 0\end{bmatrix}</m> and yet <m>\CS A=\Span\{(1,1)\}=\{(t,t)\colon t\in \R\}\ne \CS U=\Span\{(1,0)\}=\{(t,0)\colon t\in\R\}</m>. Thus we do not have <m>\CS A=\CS U</m> in general.
-        </p>
-        <p> Next, we show more generally that if <m>A</m> is row equivalent to <m>B</m>, then <m>\NS A=\NS B</m>, <m>\RS A=\RS B</m>, and <m>\dim\CS A=\dim \CS B</m>.
-      </p>
-      <p>
+        <p> We now turn to the the equalities <xref first="eq_nullA_nullB" last="eq_colA_colB"/>.
         Assume that <m>A</m> is row equivalent to <m>B</m>. Using the formulation of row reduction in terms of multiplication by elementary matrices, we see that there is an invertible matrix <m>Q</m> such that <m>B=QA</m>, and hence also <m>A=Q^{-1}B</m>. Then:
         <md>
           <mrow> \boldx\in\NS A\amp\iff A\boldx=\boldzero </mrow>
@@ -351,10 +317,10 @@ As we will see, this elegant result can be used to significantly simplify comput
           <mrow> \amp \iff B\boldx=\boldzero </mrow>
           <mrow>  \amp \iff \boldx\in\NS B</mrow>
         </md>.
-        This proves <m>\NS A=\NS B</m>.
+      This proves <m>\NS A=\NS B</m>.
       </p>
       <p>
-        Next, by (1) we have <m>\NS A=\NS T_A</m>, <m>\CS A=\im T_A</m> and <m>\NS B=\NS T_B</m>, <m>\CS B=\im T_B</m>. Then
+        Next, by <xref ref="th_fundspaces_matrixtransform"/> we have <m>\NS A=\NS T_A</m>, <m>\CS A=\im T_A</m> and <m>\NS B=\NS T_B</m>, <m>\CS B=\im T_B</m>. It follows that
         <md>
           <mrow>\dim \CS A \amp=\dim\im T_A </mrow>
           <mrow> \amp=n-\dim\NS A \amp (<xref ref="th_rank-nullity"/>) </mrow>
@@ -362,18 +328,32 @@ As we will see, this elegant result can be used to significantly simplify comput
           <mrow>  \amp =\dim\im T_B \amp ( <xref ref="th_rank-nullity"/></mrow>
           <mrow>  \amp =\dim \CS B</mrow>
         </md>.
-      </p>
-      <p>
       Lastly, we turn to the row spaces. We will show that each row of <m>B</m> is an element of <m>\RS A</m>, from whence it follows that <m>\RS B\subseteq \RS A</m>. Let <m>\boldr_i</m> be the <m>i</m>-th row of <m>B</m>, and let <m>\boldq_i</m> be the <m>i</m>-th column of <m>Q</m>. By <xref ref="th_row_method"/>, we have <m>\boldr_i=\boldq_i A</m>, and furthermore, <m>\boldq_i A</m> is the linear combination of the rows of <m>A</m> whose coefficients come from the entries of <m>\boldq_i</m>. Thus <m>\boldr_i\in\RS A</m>, as desired.
       </p>
       <p>
       Having shown that <m>\RS B\subseteq \RS A</m>, we see that the same argument works <em>mutatis mutandis</em> (swapping the roles of <m>A</m> and <m>B</m> and using <m>Q^{-1}</m> in place of <m>Q</m>) to show that <m>\RS A\subseteq \RS B</m>. We conclude that <m>\RS A=\RS B</m>.
       </p>
-        </proof>
-      <proof>
-        <title>Proof of (3)</title>
+      </proof>
+    </theorem>
+<p>
+ Now that we better understand the role row reduction plays in fundamental spaces, we investigate the special case of a matrix in row echelon form.
+</p>
+<theorem xml:id="th_fundspaces_rowechelon">
+  <title>Fundamental spaces and row echelon forms</title>
+  <statement>
+    <p>
+      Let <m>A</m> be an <m>m\times n</m> matrix, and suppose <m>A</m> is row equivalent to the matrix <m>U</m> in row echelon form.
+      Let <m>r </m> be the number of leading ones in <m>U</m>, and let <m>s=n-r</m>; <ie />, <m>r</m> and <m>s</m> are the number of leading and free variables, respectively, of the system corresponding to <m>\begin{amatrix}[r|r]U\amp \boldzero\end{amatrix}</m>. We have
+          <mdn>
+          <mrow xml:id="eq_rank_col_row">\rank A\amp =\dim\CS A=\dim \RS A=r </mrow>
+          <mrow xml:id="eq_nullity_free"> \nullity A\amp=\dim\NS A=s </mrow>
+        </mdn>.
+      </p>
+
+  </statement>
+  <proof>
         <p>
-         By (2) we know that <m>\NS A=\NS U, \RS A=\RS U</m>, and <m>\dim\CS A=\dim\CS U</m>. So it is enough to show that <m>\dim \NS U=\dim\RS U=r</m> and <m>\dim \NS U=s</m>.
+         By <xref ref="th_fundspaces_rowreduce"/> we know that <m>\NS A=\NS U, \RS A=\RS U</m>, and <m>\dim\CS A=\dim\CS U</m>. So it is enough to show that <m>\dim \NS U=\dim\RS U=r</m> and <m>\dim \NS U=s</m>.
         </p>
         <p>
           First, we will show that the <m>r</m> nonzero rows of <m>U</m> form a basis for <m>\RS U</m>, proving <m>\dim\RS U=r</m>. Clearly the nonzero rows span <m>\RS U</m>, since any linear combination of all the rows of <m>U</m> can be expressed as a linear combination of the nonzero rows. Furthermore, since <m>U</m> is in row echelon form, the staircase pattern of the leading ones appearing in the nonzero rows assures that these row vectors are linearly independent.
@@ -387,10 +367,8 @@ As we will see, this elegant result can be used to significantly simplify comput
             choice of scalars <m>c_1, c_2,\dots,
             c_r</m> such that <m>c_1\boldu_{i_1}+\cdots +c_r\boldu_{i_r}=\boldy</m>.
             (Recall that the uniqueness of this choice implies linear independence.)
-          </p>
-          <p>
-            So assume <m>\boldy\in \CS U</m>.
-            Then we can find <m>\boldx\in\R^n</m> such that <m>U\boldx=\boldy</m>,
+            Given <m>\boldy\in \CS U</m>,
+            we can find <m>\boldx\in\R^n</m> such that <m>U\boldx=\boldy</m> (<xref ref="th_fundspaces_matrixtransform" text="global"/>),
             which means the linear system with augmented matrix <m>[\ U\ \vert \ \boldy]</m> is consistent.
             Using our Gaussian elimination theory (specifically, <xref ref="proc_solveSystem"/>),
             we know that the solutions
@@ -407,35 +385,49 @@ As we will see, this elegant result can be used to significantly simplify comput
             This proves the claim, and shows that the columns with leading ones form a basis for <m>\CS U</m>. We conclude that <m>\dim\CS U=r</m>.
         </p>
         <p>
-          Lastly,  again using the results of (1), we have
+          Lastly, we have
           <md>
             <mrow>\dim \NS U \amp =\dim \NS T_U </mrow>
-            <mrow> \amp =n-\dim\im T_U \amp (<xref ref="th_rank-nullity"/>) </mrow>
-            <mrow>  \amp =n-\dim\CS U</mrow>
+            <mrow> \amp =n-\dim\im T_U \amp (<xref ref="th_rank-nullity" text="global"/>) </mrow>
+            <mrow>  \amp =n-\dim\CS U \amp (<xref ref="th_fundspaces_matrixtransform" text="global"/>)</mrow>
             <mrow>  \amp =n-r </mrow>
             <mrow>  \amp =s </mrow>
           </md>,
           where the last equality uses the fact that the sum of the number of columns with leading ones (<m>r</m>) and the number of columns without leading ones (<m>s</m>) is <m>n</m>, the total number of columns.
         </p>
       </proof>
-      <proof>
-        <title>Proof of (4)</title>
-        <p>
-          We have
-          <md>
-            <mrow> n \amp =\dim\NS T_A+\dim\im T_A \amp (<xref ref="th_rank-nullity"/>)</mrow>
-            <mrow> \amp =\dim\NS A+\dim\CS A \amp (\text{by (1)})\</mrow>
-            <mrow>  \amp =\dim\NS A+\dim\RS A \amp (\text{ by (3)})</mrow>
-          </md>.
-        </p>
-      </proof>
-
-      </proof>
-    </theorem>
+</theorem>
 <p>
-
+  <xref ref="th_rank_nullity_matrix"/> is now an easy consequence of the foregoing.
 </p>
-
+<theorem xml:id="th_rank_nullity_matrix">
+  <title>Rank-nullity for matrices</title>
+  <statement>
+    <p>
+      Let <m>A</m> be an <m>m\times n</m> matrix.
+      We have
+        <mdn>
+          <mrow xml:id="eq_rank_nullity_rank">n \amp= \nullity A+\rank A </mrow>
+          <mrow xml:id="eq_rank_nullity_col"> \amp =\dim\NS A+\CS A </mrow>
+          <mrow xml:id="eq_rank_nullity_row"> \amp =\dim\NS A+\RS A </mrow>
+        </mdn>.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      We have
+      <md>
+        <mrow> n \amp =\dim\NS T_A+\dim\im T_A \amp (<xref ref="th_rank-nullity"/>)</mrow>
+        <mrow> \amp =\dim\NS A+\dim\CS A \amp <xref ref="eq_col_image"/> </mrow>
+        <mrow>  \amp =\dim\NS A+\dim\RS A \amp <xref ref="eq_rank_col_row"/> </mrow>
+        <mrow>  \amp =\nullity A+\rank A \amp (<xref ref="d_fundamental_space"/>) </mrow>
+      </md>.
+    </p>
+  </proof>
+</theorem>
+<p>
+  We now gather this suite of results into one overall procedure for computing with fundamental spaces.
+</p>
     <algorithm xml:id="proc_fund_spaces">
       <title>Computing bases of fundamental spaces</title>
       <statement>
@@ -475,7 +467,7 @@ As we will see, this elegant result can be used to significantly simplify comput
       </figure>
     </paragraphs>
     <p>
-      <xref ref="th_fundamental_spaces"/> allows us to add seven more equivalent statements to our invertibility theorem, bringing us to a total of fourteen!
+      The results <xref ref="th_fundspaces_matrixtransform" first="th_fundspaces_matrixtransform" last="th_rank_nullity_matrix" text="global"/> allow us to add seven more equivalent statements to our invertibility theorem, bringing us to a total of fourteen!
     </p>
     <theorem xml:id="th_invertibility_supersized">
       <title>Invertibility theorem (supersized)</title>

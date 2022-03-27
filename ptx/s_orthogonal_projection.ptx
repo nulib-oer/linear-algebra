@@ -777,7 +777,7 @@ The last two computations, <m>\proj{(-2,-4,-2)}{\ell}=(-2,-4,-2)</m> and <m>\pro
       <men xml:id="eq_least-squares_orig">\underset{m\times n}{A}\, \underset{n\times 1}{\boldx}=\underset{m\times 1}{\boldy}</men>,
       where <m>A</m> and <m>\boldy</m> are given, and <m>\boldx</m> is treated as an unknown vector. Recall that
       <md>
-        <mrow>A\boldx=\boldy \text{ has a solution } \amp\iff \boldy\in \CS A \amp (<xref ref="th_fundamental_spaces"/>) </mrow>
+        <mrow>A\boldx=\boldy \text{ has a solution } \amp\iff \boldy\in \CS A \amp (<xref ref="th_fundspaces_matrixtransform"/>) </mrow>
       </md>.
       When <m>\boldy\notin \CS A</m>, and hence <xref ref="eq_least-squares_orig"/> does not have a solution, the least-squares method proceeds by replacing <m>\boldy</m> with the element of <m>W=\CS A</m> closest to it: that is, with its <em>orthogonal projection</em> onto <m>W</m>.  Let <m>\hat{\boldy}=\proj{\boldy}{W}</m>, where orthogonal projection is taken with respect to the dot product on <m>\R^m</m>, and consider the adjusted matrix equation
       <men xml:id="eq_least-squares_new">
