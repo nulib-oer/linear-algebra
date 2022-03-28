@@ -25,6 +25,7 @@
       <usage><m>\underset{r_i+c\,r_j}{E}</m></usage>
       <description>Row addition elementary matrix</description>
     </notation>
+    <title>Elementary matrices</title>
     <statement>
       <p>
         An <m>m\times m</m>  matrix <m>E</m> is
@@ -508,39 +509,43 @@
 <p>
   The family of <em>triangular</em> matrices (upper, lower, and diagonal) defined below provides an easy testing ground for our new invertibility theorem.
 </p>
-<definition>
+<definition xml:id="d_diagonal_triangular">
+  <idx><h>matrices</h><h>diagonal</h></idx>
+  <idx><h>matrices</h><h>triangular</h></idx>
+  <idx><h>matrices</h><h>upper triangular</h></idx>
+  <idx><h>matrices</h><h>lower triangular</h></idx>
+  <title>Diagonal and triangular matrices</title>
   <statement>
     <p>
       Let <m>A=[a_{ij}]</m> be <m>n\times n</m>.
-      We say
       <ol type="i">
-        <li>
-          <p>
-            <m>A</m> is <term>diagonal</term>
-            if <m>a_{ij}=0</m> for all <m>(i,j)</m> with <m>i\ne j</m>. (
-            <q><m>A</m> is zero off the diagonal.</q>
-            )
+          <li>
+            <p>
+            For each <m>1\leq i\leq n</m> the entry <m>a_{ii}</m> is called the <m>i</m>-th <term>diagonal entry</term> of <m>A</m>, and subarray of <m>A</m> consisting of  <m>a_{11}, a_{22}, \dots, a_{nn}</m> is called the <term>diagonal</term>. An <term>off-diagonal</term> entry of <m>A</m> is any entry not among the diagonal entries.
+            </p>
+          </li>
+          <li>
+            <p>
+            The matrix <m>A</m> is <term>diagonal</term> if all off-diagonal entries are zero: <ie />,
+            if <m>a_{ij}=0</m> for all <m>1\leq i,j\leq n</m> with <m>i\ne j</m>.
           </p>
         </li>
         <li>
           <p>
-            <m>A</m> is <term>upper triangular</term>
-            if <m>a_{ij}=0</m> for all <m>(i,j)</m> with <m>i \lt j</m>. (
-            <q><m>A</m> is zero below the diagonal.</q>
-            )
+            The matrix <m>A</m> is <term>upper triangular</term>
+            if all entries below the diagonal are zero: <ie />, if <m>a_{ij}=0</m> for all <m>1
+            leq j\lt i</m>.
           </p>
         </li>
         <li>
           <p>
-            <m>A</m> is <term>lower triangular</term>
-            if <m>a_{ij}=0</m> for all <m>(i,j)</m> with <m>i>j</m>. (
-            <q><m>A</m> is zero above the diagonal.</q>
-            )
+            The matrix <m>A</m> is <term>lower triangular</term>
+            if all entries above the diagonal are zero: <ie />, if <m>a_{ij}=0</m> for all <m>1\leq i\lt j </m>.
           </p>
         </li>
         <li>
           <p>
-            <m>A</m> is <term>triangular</term>
+            The matrix <m>A</m> is <term>triangular</term>
             if <m>A</m> is upper triangular or lower triangular.
           </p>
         </li>
@@ -548,6 +553,26 @@
     </p>
   </statement>
 </definition>
+<example xml:id="eg_triang_matrices">
+  <title>Triangular <m>3\times 3</m> matrices</title>
+  <statement>
+    <p>
+      The set <m>W_1</m> of all diagonal <m>3\times 3</m> matrices can be described as
+      <me>
+        W_1=\left\{ \begin{amatrix}[ccc]r\amp 0\amp 0\\ 0\amp s\amp 0 \\ 0\amp 0\amp t  \end{amatrix}\colon r,s,t\in \R\right\}
+      </me>.
+      The set <m>W_2</m> of all upper triangular <m>3\times 3</m> matrices can be described as
+      <me>
+        W_2=\left\{ \begin{amatrix}[ccc]r\amp s\amp t\\ 0\amp u\amp v \\ 0\amp 0\amp w  \end{amatrix}\colon r,s,t,u,v,w\in \R\right\}
+      </me>.
+      The set <m>W_3</m> of all lower triangular <m>3\times 3</m> matrices can be described as
+      <me>
+        W_3=\left\{ \begin{amatrix}[ccc]r\amp 0\amp 0\\ s\amp t\amp 0 \\ u\amp v\amp w  \end{amatrix}\colon r,s,t,u,v,w\in \R\right\}
+      </me>.
+
+    </p>
+  </statement>
+</example>
 <theorem xml:id="th_invertible_triangular">
   <title>Invertibility of triangular matrices</title>
   <statement>

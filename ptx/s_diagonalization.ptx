@@ -733,7 +733,7 @@ makes no assumption about the dimension of <m>V</m> and can thus can be applied 
       This proves statement (2).
     </p>
     <p>
-      Statement (3) follows from (2) since the eigenvalues of a matrix are the real roots of its characteristic polynomial. Furthermore, by <xref ref="th_characteristic_polynomial"/> the trace and determinant of a matrix are equal to the sum and product of its complex eigenvalues (the roots of its characteristic polynomial). Thus (4) also follows from (2).
+      Statement (3) follows from (2) since the eigenvalues of a matrix are the real roots of its characteristic polynomial. Furthermore, by <xref ref="th_characteristic_polynomial"/> the trace and determinant of a matrix are equal to the sum and product of the roots of its characteristic polynomial. Thus (4) also follows from (2).
     </p>
     <p>
       The proofs of statements (5)-(6) are left as exercises.

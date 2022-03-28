@@ -6,9 +6,12 @@
 
 <subsection xml:id="ss_isomorphisms">
   <title>Isomorphisms</title>
-  <introduction>
+  <p>
     The word <q>isomorphism</q> is derived from the Greek terms <foreign>iso</foreign>, meaning <q>same</q>, and <foreign>morphe</foreign>, meaning <q>form</q>. As we will see, isomorphic vector spaces <m>V</m> and <m>W</m> are essentially the same creature, at least as far as linear algebraic properties are concerned. Furthermore, an isomorphism <m>T\colon V\rightarrow W</m> provides a one-to-one correspondence between them: a dictionary that allows us to translate statements about <m>V</m> to statements about <m>W</m>, and vice versa.
-  </introduction>
+  </p>
+  <p>
+    Before getting to the definition, recall that by definition a function <m>f\colon X\rightarrow Y</m> is <em>bijective</em> if it is injective and surjective (<xref ref="d_injective_surjective_bijective" text="global"/>)
+  </p>
   <definition xml:id="d_isomorphism">
     <title>Isomorphism</title>
     <!-- <p>
@@ -17,10 +20,8 @@
     <idx><h>isomorphism</h></idx>
     <idx><h>invertible</h><h>linear transformation</h></idx><statement>
       <p>
-        A linear transformation <m>T\colon V\rightarrow W</m> is an <term>isomorphism</term> if <m>T</m> is an invertible function (<xref ref="d_invertible_function"/>): equivalently (<xref ref="th_invertible_bijective"/>), if <m>T</m> is bijective (<xref ref="d_injective_surjective_bijective"/>).
-      </p>
-      <p>
-        Vector spaces <m>V</m> and <m>W</m> are <term>isomorphic</term> if there is an isomorphism <m>T\colon V\rightarrow W</m>.
+        Let <m>V</m> and <m>W</m> be vector spaces. An <term>isomorphism</term> from <m>V</m> to <m>W</m> is a bijective linear transformation <m>T\colon V\rightarrow W</m>.
+        Vector spaces <m>V</m> and <m>W</m> are <term>isomorphic</term> if there is an isomorphism from <m>V</m> to <m>W</m>.
       </p>
     </statement>
   </definition>
@@ -56,7 +57,9 @@
     Which approach, (a) or (b), is more convenient depends on the linear transformation <m>T</m> in question.
   </p>
    </remark>
-       <remark xml:id="rm_isomorphism_inverse">
+
+
+  <remark xml:id="rm_isomorphism_inverse">
     <title>Inverse of isomorphism is an isomorphism</title>
      <statement>
        <p>
@@ -64,6 +67,26 @@
        </p>
      </statement>
    </remark>
+   <theorem xml:id="th_bijective_transformation">
+     <title>Isomorphism equivalence</title>
+     <statement>
+       <p>
+         Let <m>T\colon V\rightarrow W</m> be a linear transformation. The following are equivalent.
+         <ol>
+           <li>
+             <p>
+               <m>T</m> is an isomorphism;
+             </p>
+           </li>
+           <li>
+             <p>
+               <m>\NS T=\{\boldzero_V\}</m> and <m>\im T=W</m>.
+             </p>
+           </li>
+         </ol>
+       </p>
+     </statement>
+   </theorem>
 <p>
   We mentioned in the introduction that two isomorphic vector spaces are, for all linear algebraic intents and purposes, essentially the same thing. The next theorem provides some evidence for this claim. It also illustrates how a given isomorphism <m>T\colon V\rightarrow W</m> can translate back and forth between two isomorphic vector spaces. Recall (<xref ref="d_image"/>) that for a subset <m>S\subseteq V</m>, the image <m>T(S)</m> of <m>S</m> under <m>T</m> is the set
   <me>

@@ -298,7 +298,7 @@
   </statement>
 </remark>
 
-    <remark xml:id="rm_transform_prooftip">
+    <algorithm xml:id="proc_transform_onestep">
   <title>The one-step linear transformation proof</title>
   <statement>
     <p>
@@ -316,7 +316,7 @@
       for all <m>c, d\in \R</m> and <m>\boldv_1,\boldv_2\in V</m>.
     </p>
   </statement>
-</remark>
+</algorithm>
 
 </subsection>
 

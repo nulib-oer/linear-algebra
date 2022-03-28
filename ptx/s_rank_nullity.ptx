@@ -259,7 +259,7 @@ As we will see, this elegant result can be used to significantly simplify comput
       </statement>
     </definition>
     <p>
-      How do the fundamental spaces of a matrix <m>A</m> relate to its associated matrix transformation <m>T_A</m>? It is easy to see that <m>\NS T_A=\NS A</m>, and indeed we made this connection earlier (<xref ref="cor_nullspace_matrix" text="global"/>). What about <m>\im T_A</m>? We claim that <m>\im T_A=\CS A</m>. To see why, let
+      How do the fundamental spaces of a matrix <m>A</m> relate to its associated matrix transformation <m>T_A</m>? It is easy to see that <m>\NS T_A=\NS A</m>, and indeed we made this connection in <xref ref="s_nullspace_image"/>. What about <m>\im T_A</m>? We claim that <m>\im T_A=\CS A</m>. To see why, let
       <m>\boldc_1, \boldc_2,\dots, \boldc_n</m> be the columns of <m>A</m> and consider the following chain of equivalences:
         <md>
           <mrow> \boldy\in \im T_A \amp\iff \boldy=T_A(\boldx) \text{ for some } \boldx\in \mathbb{R}^n </mrow>

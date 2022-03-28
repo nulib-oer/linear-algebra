@@ -748,12 +748,12 @@ We will show below that <m>p(t)=\det(tI-A)</m> is indeed a polynomial (<xref ref
           <me>
             p(t)=(t-\lambda_1)(t-\lambda_2)\cdots (t-\lambda_n),
           </me>
-          where the <m>\lambda_i\in \C</m> are the (not necessarily distinct) roots of <m>p(t)</m>. We call the <m>\lambda_i</m> the <term>complex eigenvalues</term> of <m>A</m>.
+          where the <m>\lambda_i\in \C</m> are the (not necessarily distinct) roots of <m>p(t)</m>.
         </p>
       </li>
       <li>
         <p>
-          The (usual) eigenvalues of <m>A</m> are precisely the real roots of <m>p(t)</m>: <ie />, the <m>\lambda_i</m> for which <m>\lambda_i\in \R</m>.
+          The eigenvalues of <m>A</m> are precisely the real roots of <m>p(t)</m>: <ie />, the <m>\lambda_i</m> for which <m>\lambda_i\in \R</m>.
         </p>
       </li>
       <li>
