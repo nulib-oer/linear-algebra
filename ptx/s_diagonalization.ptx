@@ -171,7 +171,7 @@ The phrase <q>an ordered basis consisting of eigenvectors of <m>T</m></q> is a b
   <proof>
     <p>
       Let <m>S=\{\boldv_1, \boldv_2,\dots, \boldv_n\}</m> be a set eigenvectors of <m>T</m> with distinct eigenvalues.
-      According to <xref ref="th_independent_eigenvectors"/> the set <m>S=\{\bold</m>
+      According to <xref ref="th_independent_eigenvectors"/>  the set <m>S</m>
       is linearly independent. Since <m>\val{S}=n=\dim V</m> it follows that <m>B=(\boldv_1,\boldv_2,\dots, \boldv_n)</m> is an eigenbasis for <m>T</m> and hence <m>T</m> is diagonalizable.
     </p>
   </proof>
@@ -305,7 +305,7 @@ makes no assumption about the dimension of <m>V</m> and can thus can be applied 
               <mrow> \amp = \sum_{i=1}^r n_i </mrow>
               <mrow>  \amp = n</mrow>
             </md>.
-            Proceeding then to the claim, observe that each set <m>S_{\lambda_i}</m> is linearly independent, since the underlying set of <m>B</m> is linearly independent. Thus it suffices to show that <m>\Span S_{\lambda_i}=W_{\lambda_i}</m> for all <m>1\leq i\leq r</m>. To this end, fix an <m>i</m> with <m>1\leq i\leq n</m> and take any <m>\boldv\in W_{\lambda_i}\</m>. Since <m>B</m> is a basis we can write
+            Proceeding then to the claim, observe that each set <m>S_{\lambda_i}</m> is linearly independent, since the underlying set of <m>B</m> is linearly independent. Thus it suffices to show that <m>\Span S_{\lambda_i}=W_{\lambda_i}</m> for all <m>1\leq i\leq r</m>. To this end, fix an <m>i</m> with <m>1\leq i\leq n</m> and take any <m>\boldv\in W_{\lambda_i}</m>. Since <m>B</m> is a basis we can write
             <md>
               <mrow>\boldv \amp=
               \underset{\boldw_{\lambda_1}}{\underbrace{\sum_{j=1}^{n_1}c_{1,j}\boldv_{\lambda_1, j}}}+\dots +\underset{\boldw_{\lambda_i}}{\underbrace{\sum_{j=1}^{n_i}c_{i,j}\boldv_{\lambda_i, j}}}+\dots \underset{\boldw_{\lambda_r}}{\underbrace{\sum_{j=1}^{n_r}c_{r,j}\boldv_{\lambda_r, j}}} </mrow>
@@ -317,7 +317,7 @@ makes no assumption about the dimension of <m>V</m> and can thus can be applied 
             </me>.
             Bringing <m>\boldv</m> to the right-hand side of the equation above yields
             <me>
-              \boldzer=\boldw_1+\boldw_2+\cdots +(\boldw_i-\boldv)+\cdots +\boldw_r
+              \boldzero=\boldw_1+\boldw_2+\cdots +(\boldw_i-\boldv)+\cdots +\boldw_r
             </me>.
             Recall that <m>\boldv\in W_{\lambda_i}</m>, and thus <m>\boldw_{i}-\boldv\in W){\lambda_i}</m>. Since <m>\boldw_k\in W_{\lambda_k}</m> for all <m>k\ne i</m>, it follows from <xref ref="cor_independent_eigenspaces"/> that
             <me>
