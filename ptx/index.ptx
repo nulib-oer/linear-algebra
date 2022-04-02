@@ -238,6 +238,18 @@
         </author>
 
       </titlepage>
+
+    <colophon>
+      <copyright>
+        <holder>Aaron Greicius</holder>
+        <year>2020<mdash />2023</year>
+        <shortlicense>Permission is granted to copy, distribute and/or modify this document under the terms of the Creative Commons Attribution-ShareAlike (CC BY-SA) 4.0 International License</shortlicense>
+      </copyright>
+    </colophon>
+    <acknowledgements>
+      <p>Work on this text was supported by an Open Educational Resource Faculty Grant awarded to the author in 2020 by Northwestern University's Affordable Instructional Resources (AIR) initiative. The OER grants are funded by Northwestern's Office of the Provost and University Libraries. Special thanks are due to Lauren McKeen McDonald (Open Education Librarian) and Chris Diaz (Digital Publishing Librarian)  for their
+      </p>
+    </acknowledgements>
     </frontmatter>
     <xi:include href="./c_foundations.ptx"/>
     <xi:include href="./c_linear_systems.ptx"/>
