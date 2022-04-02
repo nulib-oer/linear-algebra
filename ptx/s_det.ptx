@@ -305,7 +305,7 @@
   </proof>
 </theorem>
 <p>
-  Surprisingly, it turns out that we can compute the determinant of a matrix by expanding along any <em>column</em> (<xref ref="cor_expansion_columns"/>). This is a consequence of the following theorem, which is useful in its own right. The proof uses induction and a wonderful trick starting from the observation that <m>c=\frac{1}{n}\sum_{i=1}^n c</m> for any <m>c\in\R</m>.
+  Surprisingly, it turns out that we can compute the determinant of a matrix by expanding along any <em>column</em> (<xref ref="cor_expansion_columns"/>). This is a consequence of the following theorem, which is useful in its own right. The proof below is taken from Robert Beezer's <url href="http://linear.ups.edu/fcla" visual="linear.ups.edu/fcla"><em>A First Course in Linear Algebra </em></url>. (See <url href="http://linear.ups.edu/fcla/section-DM.html#theorem-DT" visual="http://linear.ups.edu/fcla/section-DM.html#theorem-DT">Theorem DT</url>.) It uses induction and a wonderful trick starting from the observation that <m>c=\frac{1}{n}\sum_{i=1}^n c</m> for any <m>c\in\R</m>.
 </p>
 <theorem xml:id="th_det_transpose">
   <title>Determinant and transposition</title>
