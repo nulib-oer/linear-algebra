@@ -273,17 +273,16 @@ As defined more thoroughly in <xref ref="d_matrix"/>, a matrix is just a rectang
     denote the operations that replace row <m>r_i</m> in <m>A</m> with <m>c\, r_i</m>, swap rows <m>r_i</m> and <m>r_j</m> in <m>A</m>, and replace <m>r_i</m> in <m>A</m> with <m>r_i+c\, r_j</m>, respectively.
   </remark>
   <p>
-  At last we are ready to define Gaussian elimination. This is a procedure, or <em>algorithm</em>, that takes an input matrix <m>A</m> and row reduces it to a matrix <m>B</m> in row echelon form.
+  At last we are ready to define Gaussian elimination. In its essence this is simply a procedure, or <em>algorithm</em>, that takes an input matrix <m>A</m> and row reduces it to a matrix <m>B</m> in row echelon form. It is important to note that although we employ Gaussian elimination in this chapter primarily to the end of simplifying and solving linear systems, this is not its only application. Indeed, we will come back to the procedure again and again, in a great variety of contexts and to greatly diverse ends. Gaussian elimination is one of linear algebra's most important tools. We memorialize this here as an official principle. 
   </p>
-  <principle xml:id="pr_GE-has-many-uses">
-  <title>Gaussian elimination is the workhorse of linear algebra</title>
-  <statement>
-    <p>
-      Simplifying linear systems is but one of the many useful applications of Gaussian elimination, and you should think of it as having a life independent of its role in solving systems of linear equations. In its essence Gaussian elimination is simply a certain procedure performed on matrices: one that we will come back to again and again, and to diverse ends.
-    </p>
-  </statement>
-</principle>
-
+  <principle xml:id="princ_GE">
+    <title>Gaussian elimination mantra</title>
+    <statement>
+      <p>
+        Gaussian elimination is the workhorse of linear algebra.
+      </p>
+    </statement>
+  </principle>
   <definition xml:id="d_GE">
   <title>Gaussian elimination</title>
     <idx><h>Gaussian elimination</h></idx>
@@ -436,7 +435,7 @@ As defined more thoroughly in <xref ref="d_matrix"/>, a matrix is just a rectang
   </statement>
 </theorem>
 
-<p>We will make heavy use of the first two results of <xref ref="th_matrixforms"/>. The proofs of these statements are not difficult, but not especially illuminating. Accordingly we omit them here, and point the interested reader to Robert Beezer's <url href="http://linear.ups.edu/fcla"><em>A First Course in Linear Algebra </em></url> (<url href="http://linear.ups.edu/fcla/section-RREF.html#theorem-REMEF">Theorem REMEF</url>).
+<p>We will make heavy use of the first two results of <xref ref="th_matrixforms"/>. The proofs of these statements are not difficult, but not especially illuminating. Accordingly we omit them here, and point the interested reader to Robert Beezer's <url href="http://linear.ups.edu/fcla" visual="linear.ups.edu/fcla"><em>A First Course in Linear Algebra </em></url>. (See <url href="http://linear.ups.edu/fcla/section-RREF.html#theorem-REMEF" visual="linear.ups.edu/fcla/section-RREF.html#theorem-REMEF">Theorem REMEF</url>.)
 </p>
 <p>The third statement of <xref ref="th_matrixforms"/>, that every matrix is row equivalent to a <em>unique</em> matrix in reduced row echelon form, does in fact have an enlightening proof. We will postpone this proof, however, until we have a little more theory at our disposal. (See <xref ref="cor_RRE_uniqueness"/>.) Until then we will conscientiously <em>not</em> make use of this result in developing any of our further theory.</p>
 <example xml:id="s_ge_ex_REFnotunique">
@@ -453,6 +452,8 @@ As defined more thoroughly in <xref ref="d_matrix"/>, a matrix is just a rectang
     </p>
   </solution>
 </example>
+
+
 
 </subsection>
 

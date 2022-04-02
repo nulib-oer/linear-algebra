@@ -25,6 +25,7 @@
       <usage><m>\underset{r_i+c\,r_j}{E}</m></usage>
       <description>Row addition elementary matrix</description>
     </notation>
+    <title>Elementary matrices</title>
     <statement>
       <p>
         An <m>m\times m</m>  matrix <m>E</m> is
@@ -465,7 +466,7 @@
   <case>
    <title><m>(3)\implies (4)</m></title>
   <p>
-  Row reduce <m>A</m> to a matrix <m>U</m> in <em>reduced</em> row echelon form using Gauss-Jordan elimination. (See <xref ref="th_matrixforms"/>.) Since the set of solutions to <m>A\boldx=\boldzero</m> is identical to the set of solutions to <m>U\boldx=\boldzero</m> (apply <xref ref="s_systems_th_rowops"/> to their corresponding linear systems), we see that <m>\boldzero</m> is the only solution to <m>U\boldx=\boldzero</m>. <xref ref="th_solveSystem"/> now implies <m>U</m> has a leading one in each column. Since <m>U</m> is <m>n\times n</m> and in <em>reduced</em> row echelon form, it follows that <m>U</m> must be the identity matrix. (Convince yourself of this.) Thus <m>A</m> is row equivalent to <m>U=I</m>, the identity matrix.
+  Row reduce <m>A</m> to a matrix <m>U</m> in <em>reduced</em> row echelon form using Gauss-Jordan elimination. (See <xref ref="th_matrixforms"/>.) Since the set of solutions to <m>A\boldx=\boldzero</m> is identical to the set of solutions to <m>U\boldx=\boldzero</m> (apply <xref ref="s_systems_th_rowops"/> to their corresponding linear systems), we see that <m>\boldzero</m> is the only solution to <m>U\boldx=\boldzero</m>. <xref ref="proc_solveSystem"/> now implies <m>U</m> has a leading one in each column. Since <m>U</m> is <m>n\times n</m> and in <em>reduced</em> row echelon form, it follows that <m>U</m> must be the identity matrix. (Convince yourself of this.) Thus <m>A</m> is row equivalent to <m>U=I</m>, the identity matrix.
   </p>
   </case>
   <case>
@@ -508,39 +509,43 @@
 <p>
   The family of <em>triangular</em> matrices (upper, lower, and diagonal) defined below provides an easy testing ground for our new invertibility theorem.
 </p>
-<definition>
+<definition xml:id="d_diagonal_triangular">
+  <idx><h>matrices</h><h>diagonal</h></idx>
+  <idx><h>matrices</h><h>triangular</h></idx>
+  <idx><h>matrices</h><h>upper triangular</h></idx>
+  <idx><h>matrices</h><h>lower triangular</h></idx>
+  <title>Diagonal and triangular matrices</title>
   <statement>
     <p>
       Let <m>A=[a_{ij}]</m> be <m>n\times n</m>.
-      We say
       <ol type="i">
-        <li>
-          <p>
-            <m>A</m> is <term>diagonal</term>
-            if <m>a_{ij}=0</m> for all <m>(i,j)</m> with <m>i\ne j</m>. (
-            <q><m>A</m> is zero off the diagonal.</q>
-            )
+          <li>
+            <p>
+            For each <m>1\leq i\leq n</m> the entry <m>a_{ii}</m> is called the <m>i</m>-th <term>diagonal entry</term> of <m>A</m>, and subarray of <m>A</m> consisting of  <m>a_{11}, a_{22}, \dots, a_{nn}</m> is called the <term>diagonal</term>. An <term>off-diagonal</term> entry of <m>A</m> is any entry not among the diagonal entries.
+            </p>
+          </li>
+          <li>
+            <p>
+            The matrix <m>A</m> is <term>diagonal</term> if all off-diagonal entries are zero: <ie />,
+            if <m>a_{ij}=0</m> for all <m>1\leq i,j\leq n</m> with <m>i\ne j</m>.
           </p>
         </li>
         <li>
           <p>
-            <m>A</m> is <term>upper triangular</term>
-            if <m>a_{ij}=0</m> for all <m>(i,j)</m> with <m>i \lt j</m>. (
-            <q><m>A</m> is zero below the diagonal.</q>
-            )
+            The matrix <m>A</m> is <term>upper triangular</term>
+            if all entries below the diagonal are zero: <ie />, if <m>a_{ij}=0</m> for all <m>1
+            leq j\lt i</m>.
           </p>
         </li>
         <li>
           <p>
-            <m>A</m> is <term>lower triangular</term>
-            if <m>a_{ij}=0</m> for all <m>(i,j)</m> with <m>i>j</m>. (
-            <q><m>A</m> is zero above the diagonal.</q>
-            )
+            The matrix <m>A</m> is <term>lower triangular</term>
+            if all entries above the diagonal are zero: <ie />, if <m>a_{ij}=0</m> for all <m>1\leq i\lt j </m>.
           </p>
         </li>
         <li>
           <p>
-            <m>A</m> is <term>triangular</term>
+            The matrix <m>A</m> is <term>triangular</term>
             if <m>A</m> is upper triangular or lower triangular.
           </p>
         </li>
@@ -548,6 +553,26 @@
     </p>
   </statement>
 </definition>
+<example xml:id="eg_triang_matrices">
+  <title>Triangular <m>3\times 3</m> matrices</title>
+  <statement>
+    <p>
+      The set <m>W_1</m> of all diagonal <m>3\times 3</m> matrices can be described as
+      <me>
+        W_1=\left\{ \begin{amatrix}[ccc]r\amp 0\amp 0\\ 0\amp s\amp 0 \\ 0\amp 0\amp t  \end{amatrix}\colon r,s,t\in \R\right\}
+      </me>.
+      The set <m>W_2</m> of all upper triangular <m>3\times 3</m> matrices can be described as
+      <me>
+        W_2=\left\{ \begin{amatrix}[ccc]r\amp s\amp t\\ 0\amp u\amp v \\ 0\amp 0\amp w  \end{amatrix}\colon r,s,t,u,v,w\in \R\right\}
+      </me>.
+      The set <m>W_3</m> of all lower triangular <m>3\times 3</m> matrices can be described as
+      <me>
+        W_3=\left\{ \begin{amatrix}[ccc]r\amp 0\amp 0\\ s\amp t\amp 0 \\ u\amp v\amp w  \end{amatrix}\colon r,s,t,u,v,w\in \R\right\}
+      </me>.
+
+    </p>
+  </statement>
+</example>
 <theorem xml:id="th_invertible_triangular">
   <title>Invertibility of triangular matrices</title>
   <statement>
@@ -641,7 +666,7 @@
     </proof>
   </theorem>
   <p>
-    From the proof of <xref ref="th_invertibility"/> we also derive an algorithm for writing an invertible matrix as a product of elementary matrices.
+    From the proof of <xref ref="th_invertibility"/> we also derive an algorithm for writing an invertible matrix as a product of elementary matrices. You should think of this as a first example of the great versatility of Gaussian elimination, as conveyed by our <xref ref="princ_GE"/>.
   </p>
   <theorem xml:id="th_elem_matrices_alg">
     <title>Product of elementary matrices algorithm</title>
@@ -664,7 +689,7 @@
           <p>
             If you are able to row reduce <m>A</m> to <m>I_n</m> with a sequence of row operatons corresponding to the elementary matrices <m>E_1, E_2, \dots, E_r</m>, then
             <me>
-              A=E_1^{-1}E_2^{-1}\cdots E_{r}.
+              A=E_1^{-1}E_2^{-1}\cdots E_{r}^{-1}.
             </me>
             Since the inverse of an elementary matrix is elementary, we have written <m>A</m> as a product of elementary matrices.
 
@@ -741,6 +766,14 @@
             </mrow>
         </md>.
     </p>
+    <paragraphs xml:id="ss_vid_eg_inver_alg">
+      <title>Video example: inverse algorithm</title>
+      <figure xml:id="fig_vid_inver_alg">
+        <title>Video: inverse algorithm</title>
+      <caption>Video: inverse algorithm</caption>
+      <video xml:id="vid_inver_alg" youtube="yB80PXgNl7E" />
+      </figure>
+    </paragraphs>
 </subsection>
 <subsection xml:id="ss_invertible_loose_ends">
   <title>Some theoretical loose ends</title>
@@ -939,7 +972,7 @@ Lastly, we provide at last the proof of the third statement of <xref ref="th_mat
     <men xml:id="eq_unique_rref">
       (U-U')\boldx=[x_{n+1}(u_{i(n+1)}-u'_{i(n+1)})]=\boldzero
     </men>.
-    Since <m>U\ne U'</m>, there is some <m>1\leq i\leq m</m> such that <m>u_{i(n+1)}\ne u'_{i(n+1)}</m>. Since <m>x_{n+1}(u_{i(n+1)}-u'_{i(n+1)})=0</m> by <xref ref="eq_unique_rref"/>, we must have <m>x_{n+1}=0</m>. We have shown that for any <m>\boldx=[x_j]</m> satisfying <m>U\boldx=\boldzero</m>, we must have <m>x_{n+1}=0</m>. It follows from <xref ref="th_solveSystem"/> that <m>U</m> must have a leading in its last column, since otherwise the variable <m>x_{n+1}</m> in the system <m>U\boldx=0</m> would be free, and could assume any value. To see that <m>U'</m> also has a leading one in the last column, we use the same argument, starting with the equation <m>Q^{-1}U'=U</m>.
+    Since <m>U\ne U'</m>, there is some <m>1\leq i\leq m</m> such that <m>u_{i(n+1)}\ne u'_{i(n+1)}</m>. Since <m>x_{n+1}(u_{i(n+1)}-u'_{i(n+1)})=0</m> by <xref ref="eq_unique_rref"/>, we must have <m>x_{n+1}=0</m>. We have shown that for any <m>\boldx=[x_j]</m> satisfying <m>U\boldx=\boldzero</m>, we must have <m>x_{n+1}=0</m>. It follows from <xref ref="proc_solveSystem"/> that <m>U</m> must have a leading in its last column, since otherwise the variable <m>x_{n+1}</m> in the system <m>U\boldx=0</m> would be free, and could assume any value. To see that <m>U'</m> also has a leading one in the last column, we use the same argument, starting with the equation <m>Q^{-1}U'=U</m>.
     </p>
     <p>
       To summarize, starting with row equivalent matrices  <m>U</m> and <m>U'</m> in reduced row echelon form, and assuming by contradiction that <m>U\ne U'</m>, we conclude that (a) the first <m>n</m> columns of <m>U</m> and <m>U'</m> are equal and form matrices in reduced row echelon form, and (b) the last columns of <m>U</m> and <m>U'</m> have leading ones. Since <m>U</m> and <m>U'</m> are in reduced row echelon form, and since the first <m>n</m> columns of <m>U</m> and <m>U'</m> are equal, we see that the leading ones in the last columns of <m>U</m> and <m>U'</m> must occur in the same row: namely, the first zero row of <m>V=V'</m>. It follows that <m>U=U'</m>, a contradiction.

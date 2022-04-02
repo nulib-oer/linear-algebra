@@ -4,7 +4,7 @@
     <p>
       Matrices played a small supporting role in our discussion of linear systems in <xref ref="c_linear_systems"/>. In this chapter we bring them to center stage and give them a full-blown treatment as independent mathematical objects in their own right.
     </p>
-    <p>Like any mathematical object worth its salt, matrices can be employed in a vast multitude of ways. As such it is important to allow matrices to transcend their humble beginnings in this course as boiled down systems of linear equations. We record this observation as an official principle.
+    <p>Like any mathematical object worth its salt, matrices can be employed in a vast multitude of ways. As such it is important to allow matrices to transcend their humble beginnings in this course as boiled down systems of linear equations. We record this observation as another principle.
 
       <principle xml:id="princ_matrix_mantra">
         <title>Matrix mantra</title>
@@ -612,8 +612,8 @@ DL/.style={
     <paragraphs xml:id="ss_matrix_mult_vid">
       <title>Video example of matrix multiplication</title>
       <figure xml:id="fig_vid_matrix_mult_methods">
-        <title>Three methods of matrix multiplication</title>
-      <caption>Three methods of matrix multiplication</caption>
+        <title>Video: three methods of matrix multiplication</title>
+      <caption>Video: three methods of matrix multiplication</caption>
       <video xml:id="vid_matrix_mult_methods" youtube="Kx4K8TTbl98" />
       </figure>
     </paragraphs>

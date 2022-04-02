@@ -223,7 +223,7 @@
     <!-- Renamings -->
     <rename element="algorithm">Procedure</rename>
     <rename element="principle">Mantra</rename>
-
+    <rename element="assumption">Fiat</rename>
     <brandlogo url="http://linear-algebra.northwestern.pub/" source="images/im_holycomm.svg" />
 
   </docinfo>
@@ -277,9 +277,13 @@
         <list-of elements="example" divisions="section" />
       </appendix>
 
-      <appendix xml:id="appendix-vids">
+      <appendix xml:id="appendix-mantras">
         <title>Video examples and figures</title>
         <list-of elements="figure" divisions="section" />
+      </appendix>
+      <appendix xml:id="appendix-vids">
+        <title>Mantras and fiats</title>
+        <list-of elements="principle assumption"  />
       </appendix>
       <!-- <xi:include href="./bibliography.ptx"/> -->
 

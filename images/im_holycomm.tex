@@ -7,11 +7,11 @@
 \usepackage{tikz-cd}
 \usepackage{tkz-graph}
 \usepackage{tkz-euclide}
+\usetikzlibrary{matrix,shapes,decorations.pathreplacing,fit,backgrounds}
 \usetikzlibrary{patterns}
 \usetikzlibrary{positioning}
-\usetikzlibrary{matrix,arrows}
+\usetikzlibrary{arrows}
 \usetikzlibrary{calc}
-\usetikzlibrary{shapes}
 \usetikzlibrary{through,intersections,decorations,shadows,fadings}
 \usepackage{pgfplots}
 \ifdefined\tikzset
@@ -102,7 +102,6 @@
 \def\Zm{\Z/m\Z}
 \def\Zn{\Z/n\Z}
 \def\Fp{\F_p}
-\newcommand{\longminus}{\scalebox{1.5}[1.0]{$-$}}
 \newcommand{\surjects}{\twoheadrightarrow}
 \newcommand{\injects}{\hookrightarrow}
 \newcommand{\bijects}{\leftrightarrow}
@@ -208,7 +207,7 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 #1_{#3,1} \amp #1_{#3,2} \amp \ldots  \amp #1_{#3,#2}
 \end{array}
 \right)  }
-\newcommand{\colvec}[2][c]{\begin{bmatrix}[#1] #2 \end{bmatrix}}
+\newcommand{\colvec}[2][c]{\begin{amatrix}[#1] #2 \end{amatrix}}
 \DeclareMathOperator{\size}{size}
 \DeclareMathOperator{\adjoint}{adj}
 \DeclareMathOperator{\sgn}{sgn}
@@ -221,9 +220,11 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 \newcommand{\amp}{&}
 \begin{document}
 \pagestyle{empty}
+\resizebox{\width}{\height}{
 \begin{tikzcd}
 \amp V \arrow[rrr, "T"] \arrow[ddl, leftrightarrow, "{[\hspace{5pt}]_B}"'] \arrow[drr, leftrightarrow,"{[\hspace{5pt}]_{B'}}"]  \amp \amp \amp V \arrow[ddl, leftrightarrow,"{[\hspace{5pt}]_B}", pos=11/20] \arrow[drr, leftrightarrow, "{[\hspace{5pt}]_{B'}}"]\\
-\amp  \amp   \amp\R^n \arrow[rrr, "T_B"] \arrow[dlll, "P^{-1}"', pos=.4] \amp \amp \amp \R^n \\
-\R^n \arrow[rrr, "T_A"']\amp   \amp \amp \R^n  \arrow[urrr, "P"']\amp
+\amp  \amp   \amp\R^n \arrow[rrr, "A'={[T]}_{B'} "] \arrow[dlll, "P"', pos=.4] \amp \amp \amp \R^n \\
+\R^n \arrow[rrr, "A={[T]}_B"']\amp   \amp \amp \R^n  \arrow[urrr, "P^{-1}"']\amp
 \end{tikzcd}
+}
 \end{document}

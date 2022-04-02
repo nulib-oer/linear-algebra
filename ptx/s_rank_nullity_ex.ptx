@@ -87,10 +87,15 @@
     <statement>
       <p>
         Let <m>A</m> be <m>m\times n</m> with <m>n\lt m</m>.
-        Prove, using <xref ref="th_fundamental_spaces"/> that there is a
+        Prove that there is a
         <m>\boldb\in\R^m</m> such that the system <m>A\boldx=\boldb</m> is inconsistent.
       </p>
     </statement>
+    <hint>
+      <p>
+        Use <xref ref="th_fundspaces_matrixtransform"/> and <xref ref="th_rank_nullity_matrix"/>.
+      </p>
+    </hint>
   </exercise>
   <exercise>
     <statement>
@@ -300,7 +305,7 @@
         </li>
         <li>
           <p>
-            Show that statements (8)-(14) are equivalent with the help of <xref ref="th_fundamental_spaces"/>.
+            Show that statements (8)-(14) are equivalent with the help of <xref ref="th_rank_nullity_matrix"/>.
           </p>
         </li>
         <li>

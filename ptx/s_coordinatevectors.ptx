@@ -221,6 +221,14 @@
       </ol>
     </solution>
   </example>
+  <paragraphs xml:id="ss_vid_eg_coordinatevec">
+    <title>Video example: coordinate vectors</title>
+    <figure xml:id="fig_vid_coordvecs">
+      <title>Video: coordinate vectors</title>
+    <caption>Video: coordinate vectors</caption>
+    <video xml:id="vid_coordvecs" youtube="QOIogczPF0c" />
+    </figure>
+  </paragraphs>
   <p>
     When <m>B=(\boldv_1, \boldv_2, \dots, \boldv_n)</m> is an orthogonal basis with respect to some inner product <m>\langle , \rangle </m>, then by <xref ref="th_orthogonal_basis_formula"/> we have
     <me>

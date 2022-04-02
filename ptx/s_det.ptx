@@ -305,7 +305,7 @@
   </proof>
 </theorem>
 <p>
-  Suprisingly, it turns out that we can compute the determinant of a matrix by expanding along any <em>column</em> (<xref ref="cor_expansion_columns"/>). This is a consequence of the following theorem, which is useful in its own right. The proof uses induction and a wonderful trick starting from the observation that <m>c=\frac{1}{n}\sum_{i=1}^n c</m> for any <m>c\in\R</m>.
+  Surprisingly, it turns out that we can compute the determinant of a matrix by expanding along any <em>column</em> (<xref ref="cor_expansion_columns"/>). This is a consequence of the following theorem, which is useful in its own right. The proof uses induction and a wonderful trick starting from the observation that <m>c=\frac{1}{n}\sum_{i=1}^n c</m> for any <m>c\in\R</m>.
 </p>
 <theorem xml:id="th_det_transpose">
   <title>Determinant and transposition</title>
@@ -412,6 +412,14 @@
     </p>
   </statement>
 </remark>
+<paragraphs xml:id="ss_vid_eg_det">
+  <title>Video example: determinant</title>
+  <figure xml:id="fig_vid_det">
+    <title>Video: determinant</title>
+  <caption>Video: determinant</caption>
+  <video xml:id="vid_det" youtube="OoNYGwJS-M4" />
+  </figure>
+</paragraphs>
 <p>
   The freedom to compute the determinant by expanding along any row or column gives rise to the following intuitive property.
 </p>
@@ -481,7 +489,7 @@
   </proof>
 </theorem>
 <p>
-As a further consequence of <xref ref="th_expansion_row"/> and <xref ref="cor_expansion_columns"/>, we can derive the <em>adjoint formula</em>.
+As a further consequence of <xref ref="th_expansion_row"/> and <xref ref="cor_expansion_columns"/>, we can derive the <em>adjoint matrix formula</em>.
 </p>
 <definition xml:id="d_adjoint">
   <title>Adjoint matrix</title>
@@ -492,7 +500,7 @@ As a further consequence of <xref ref="th_expansion_row"/> and <xref ref="cor_ex
   </notation>
   <statement>
     <p>
-    Let <m>A</m> be <m>n\times n</m>. The <term>adjoint</term> of <m>A</m>, denoted <m>\adj A</m>, is the <m>n\times n</m> matrix whose <m>ij</m>-th entry is defined as follows:
+    Let <m>A</m> be an <m>n\times n</m> matrix. The <term>adjoint matrix</term> of <m>A</m>, denoted <m>\adj A</m>, is the <m>n\times n</m> matrix whose <m>ij</m>-th entry is defined as follows:
     <me>
       (\adj A)_{ij}=(-1)^{i+j}M_{ji}
     </me>.
@@ -535,10 +543,10 @@ As a further consequence of <xref ref="th_expansion_row"/> and <xref ref="cor_ex
   </statement>
 </remark>
 <theorem xml:id="th_adjoint">
-  <title>Adjoint formula</title>
+  <title>Adjoint matrix formula</title>
   <statement>
     <p>
-    Let <m>A</m> be an <m>n\times n</m> matrix. Then
+      Given an <m>n\times n</m> matrix <m>A</m>, we have
     <men xml:id="eq_adj_form">
       A\,(\adj A)=(\adj A)\, A=(\det A)I
     </men>.
@@ -600,7 +608,7 @@ As a further consequence of <xref ref="th_expansion_row"/> and <xref ref="cor_ex
 <example>
   <statement>
     <p>
-      Use the adjoint formula to compute <m>A^{-1}</m>, where
+      Use the adjoint matrix formula to compute <m>A^{-1}</m>, where
       <me>
         A=\begin{amatrix}[rrr]1\amp 2\amp 1 \\ -1\amp 1\amp -1\\ 0\amp 2\amp 2  \end{amatrix}
       </me>.
@@ -626,7 +634,7 @@ As a further consequence of <xref ref="th_expansion_row"/> and <xref ref="cor_ex
     <remark xml:id="rm_adjoint_form">
   <statement>
     <p>
-      Before you get too excited about the adjoint formula, you should know that as <m>n</m> grows, this procedure becomes much more costly in terms of number of arithmetic operations involved than our inverse algorithm based on Gauss-Jordan elimination. You get a sense of this already from the previous <m>3\times 3</m> example. In general, the Gauss-Jordan inverse algorithm is the way to go.
+      Before you get too excited about the adjoint matrix formula, you should know that as <m>n</m> grows, this procedure becomes much more costly in terms of number of arithmetic operations involved than our inverse algorithm based on Gauss-Jordan elimination. You get a sense of this already from the previous <m>3\times 3</m> example. In general, the Gauss-Jordan inverse algorithm is the way to go.
     </p>
   </statement>
 </remark>
@@ -717,7 +725,7 @@ As a further consequence of <xref ref="th_expansion_row"/> and <xref ref="cor_ex
       <title>Column operations and the determinant</title>
   <statement>
     <p>
-    As shown in <xref ref="ex_det_col_ops"/> the determinant behaves in a similar manner with respect to <em>elementary column operations</em>: <ie />, scaling a column by a nonzero constant scales the determinant by <m>c</m>, swapping columns multiplies the determinant by <m>-1</m>, adding a multiple of one column to another leaves the determinant unchanged.    
+    As shown in <xref ref="ex_det_col_ops"/> the determinant behaves in a similar manner with respect to <em>elementary column operations</em>: <ie />, scaling a column by a nonzero constant scales the determinant by <m>c</m>, swapping columns multiplies the determinant by <m>-1</m>, adding a multiple of one column to another leaves the determinant unchanged.
     </p>
   </statement>
 </remark>

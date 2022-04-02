@@ -8,7 +8,7 @@
       A similar issue arises when describing vector spaces and their subspaces. As we know, any vector space is either the zero space or infinite (<xref ref="ex_vs_zero_or_infinite"/>). If we happen to be dealing with a subspace of <m>\R^n</m>, then there is the possibility of giving a parametric description; but how do we proceed when working in one of our more exotic vector spaces like <m>C^1(\R)</m>?
     </p>
     <p>
-    As we will see in <xref ref="s_basis_dimension"/> the relevant linear algebraic tool for this purpose is the concept of a <em>basis</em>. Loosely speaking, a basis for a vector space <m>V</m> is a set of vectors that is large enough to <em>generate</em> the entire space, and small enough to contain <em>no redundancies</em>. What exactly we mean by <q>generate</q> is captured by the rigorous notion of <em>span</em>; and what we mean by <q>no redundancies</q> is captured by <em>linear independence</em>.
+    As we will see in <xref ref="s_basis"/> the relevant linear algebraic tool for this purpose is the concept of a <em>basis</em>. Loosely speaking, a basis for a vector space <m>V</m> is a set of vectors that is large enough to <em>generate</em> the entire space, and small enough to contain <em>no redundancies</em>. What exactly we mean by <q>generate</q> is captured by the rigorous notion of <em>span</em>; and what we mean by <q>no redundancies</q> is captured by <em>linear independence</em>.
     </p>
   </introduction>
 
@@ -18,7 +18,7 @@
       Recall that a linear combination
       in a vector space <m>V</m> is a vector of the form
       <me>
-        \boldv=c_1\boldv_1+c_2\boldv_2\cdots +c_r\boldv_r
+        \boldv=c_1\boldv_1+c_2\boldv_2\cdots +c_n\boldv_n
       </me>,
       where <m>c_i\in \R</m> are scalars.
       We use this notion to define the
@@ -44,7 +44,7 @@
                 <p>
                   Otherwise we define <m>\Span S</m> to be the set of all linear combinations of elements of <m>S</m>: <ie />,
                   <me>
-                    \Span S=\{\boldv\in V\colon \boldv=c_1\boldv_1+c_2\boldv_2\cdots +c_r\boldv_r \text{ for some } \boldv_i\in S \text{ and } c_i\in \R\}
+                    \Span S=\{\boldv\in V\colon \boldv=c_1\boldv_1+c_2\boldv_2\cdots +c_n\boldv_n \text{ for some } \boldv_i\in S \text{ and } c_i\in \R\}
                   </me>.
                 </p>
               </li>
@@ -199,6 +199,14 @@
       </p>
       </solution>
     </example>
+    <paragraphs xml:id="ss_vid_eg_span">
+      <title>Video example: computing span</title>
+      <figure xml:id="fig_vid_span">
+        <title>Video: computing span</title>
+      <caption>Video: computing span</caption>
+      <video xml:id="vid_span" youtube="WN_5qI2r2ks" />
+      </figure>
+    </paragraphs>
     <p>
       You may have noticed that each span computation in the previous example produced a subspace of <m>\R^2</m>. This is no accident!
     </p>
@@ -536,45 +544,41 @@
       As it turns out, the notion of <em>linear independence</em> defined below is precisely what we need to guarantee that a given spanning set has no <q>redundancies</q>.
     </p>
     <definition xml:id="d_linear_independence">
-      <title>Linear independence</title>
+      <title>Linear independence (for finite subsets)</title>
       <idx><h>linear independence</h></idx>
       <statement>
         <p>
-          A subset <m>S</m> of a vector space <m>V</m> is
-          <term>linear independent</term> if the following condition holds:
+          Let <m>V</m> be a vector space, let <m>S</m> be a finite subset, and let <m>\boldv_1, \boldv_2, \dots, \boldv_n</m> the distinct elements of <m>S</m>: <ie />, <m>\boldv_i\ne \boldv_j</m> for all <m>i\ne j</m>.  We say <m>S</m> is <term>linearly independent</term> if the following condition holds:
           <me>
-            \text{if } c_1\boldv_1+c_2\boldv_2+\cdots +c_r\boldv_r=\boldzero \text{ for some distinct vectors } \boldv_i\in S \text{ and scalars } c_i\in \R , \text{ then } c_i=0 \text{ for all } i
+            \text{if } c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n=\boldzero \text{ for some } c_i\in \R , \text{ then } c_i=0 \text{ for all } i
           </me>.
-          The set <m>S</m> is <term>linearly dependent</term>
+          We say <m>S</m>is <term>linearly dependent</term>
           if it is not linearly independent;
-          i.e., if we have
+          i.e., if we can find scalars <m>c_1, c_2,\dots, c_n</m> with <m>c_i\ne 0</m> for some <m>i</m> and
           <me>
-            c_1\boldv_1+c_2\boldv_2+\cdots +c_r\boldv_r=\boldzero
-          </me>
-          for some distinct <m>\boldv_i\in S</m> and <m>c_i\in \R</m>, <em>and</em> we have <m>c_i\ne 0</m> for some <m>i</m>.
-        </p>
-        <p>
-          We call a linear combination <m>c_1\boldv_1+c_2\boldv_2+\cdots c_r\boldv_r</m>  <term>trivial</term> if <m>c_i=0</m> for all <m>i</m>, and <term>nontrivial</term> if <m>c_i\ne 0</m> for some <m>i</m>. Using this terminology, a set <m>S</m> is linearly independent if the only linear combination of elements of <m>S</m> yielding the zero vector is the trivial one.
+            c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n=\boldzero
+          </me>.
+          We call a linear combination <m>c_1\boldv_1+c_2\boldv_2+\cdots c_n\boldv_n</m>  <term>trivial</term> if <m>c_i=0</m> for all <m>i</m>, and <term>nontrivial</term> if <m>c_i\ne 0</m> for some <m>i</m>. Using this terminology, a set <m>S</m> is linearly independent if the only linear combination of distinct elements of <m>S</m> yielding the zero vector is the trivial one.
         </p>
       </statement>
     </definition>
-        <remark xml:id="rm_linear_independence">
+      <remark xml:id="rm_linear_independence">
       <statement>
         <p>
         The definition of linear independence is quite a mouthful! Some clarifying remarks:
         <ol>
           <li>
             <p>
-              To prove a subset <m>S</m> of a vector space <m>V</m> is linearly independent, we must prove an <em>implication</em>:
+              To prove a set <m>S=\{\boldv_1, \boldv_2, \dots, \boldv_n\}</m> of <m>n</m> distinct vectors is linearly independent, we must prove an <em>implication</em>:
               <me>
-                c_1\boldv_1+c_2\boldv_2+\cdots +c_r\boldv_r=\boldzero \implies c_1=c_2=\dots=c_r=0
+                c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n=\boldzero \implies c_1=c_2=\dots=c_n=0
               </me>.
               More often than not you will do so in the direct manner: <ie />, assume you have a linear combination equal to the zero vector, then show that all coefficients must be zero.
             </p>
           </li>
           <li>
             <p>
-              By the same token, to show a set <m>S</m> is linearly dependent, we must produce a <em>nontrivial</em> linear combination of elements of <m>S</m> equal to the zero vector.
+              By the same token, to show <m>S</m> is linearly dependent, we must produce a <em>nontrivial</em> linear combination of distinct elements equal to the zero vector.
             </p>
           </li>
           <li>
@@ -585,6 +589,17 @@
                 This makes precise what it means for a spanning set <m>S</m> to have redundancies or not.  If <m>S</m> is linearly dependent, then one of its vectors can be written as a linear combination of the others, and thus can be <q>thrown out</q> when computing <m>\Span S</m>, the set of all linear combinations of <m>S</m>. Conversely, if <m>S</m> is linearly independent, then no element of <m>S</m> can be written as a linear combination of the others; throwing any element out would thus result in <m>\Span S</m> being strictly smaller.
             </p>
           </li>
+        </ol>
+        </p>
+      </statement>
+    </remark>
+    <example xml:id="eg_independence_basic_examples">
+      <title>Elementary examples</title>
+      <statement>
+        <p>
+          Let <m>V</m> be a vector space, and let <m>S</m> be a subset.
+        </p>
+        <ol>
           <li>
             <p>
               If <m>\boldzero\in S</m>, then <m>S</m> is linearly dependent: indeed, we have the nontrivial linear combination <m>1\boldzero=\boldzero</m>.
@@ -599,18 +614,17 @@
           </li>
           <li>
             <p>
-              Suppose <m>S=\{\boldv, \boldw\}</m> contains exactly two distinct elements. From the last remark, it follows that <m>S</m> is linearly independent if and only if one of its elements is a scalar multiple of the other.
+              Suppose <m>S=\{\boldv, \boldw\}</m>, where <m>\boldv\ne\boldw</m>. From the last remark, it follows that <m>S</m> is linearly independent if and only if one of its elements is a scalar multiple of the other.
             </p>
             <p>
               This makes it very easy to decide whether a two-element set is linearly independent. Note however, that the same observation does not apply to larger sets: <eg />, <m>S=\{(1,1),(1,0), (0,1)\}</m> can be shown to be linearly dependent, and yet no element of <m>S</m> is a scalar multiple of any other element.
             </p>
           </li>
         </ol>
-        </p>
       </statement>
-    </remark>
+    </example>
     <p>
-        Deciding whether a specific subset <m>S</m> of a specific vector space <m>V</m> is linearly independent usually boils down to a question about the solutions to a certain system of linear equations. The procedure below outlines the steps necessary to extract the relevant linear system and draw the relevant conclusions.
+        Deciding whether a subset <m>S</m> of a vector space <m>V</m> is linearly independent usually boils down to a question about the solutions to a certain system of linear equations. The procedure below outlines the steps necessary to extract the relevant linear system and draw the relevant conclusions.
     </p>
 <algorithm xml:id="proc_linear_independence">
   <title>Investigating linear independence</title>
@@ -620,14 +634,14 @@
         <p>
           Write out the general <em>vector equation</em>
           <me>
-          c_1\boldv_1+c_2\boldv_2+\cdots +c_r\boldv_r=\boldzero
+          c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n=\boldzero
           </me>
           where the <m>\boldv_i</m> are arbitrary elements of the given set <m>S</m>.
         </p>
       </li>
       <li>
         <p>
-          Translate this vector equation into a <em>homogeneous linear system</em> in the unknowns <m>c_1,c_2,\dots, c_r </m>, using the definition of equality for your vector space.
+          Translate this vector equation into a <em>homogeneous linear system</em> in the unknowns <m>c_1,c_2,\dots, c_n </m>, using the definition of equality for your vector space.
         </p>
       </li>
       <li>
@@ -639,20 +653,8 @@
   </statement>
 </algorithm>
 <p>
-  As you can see, even as we move into more and more abstract realms of linear algebra, Gaussian elimination remains our most important tool. We memorialize this in a new principle.
+  This is a fitting point to recall our <xref ref="princ_GE" text="title"/>. As you can see, even as we move into more and more abstract realms of linear algebra (linear independence, span, <etc />), Gaussian elimination remains our most important tool.
 </p>
-
-<principle xml:id="princ_GE">
-  <title>Gaussian elimination mantra</title>
-  <statement>
-    <p>
-      Gaussian elimination is the workhorse of linear algebra.
-    </p>
-    <p>
-      Most linear algebraic computations (<m>\NS T</m>, <m>\im T</m>,<m>\Span S</m>, questions of linear independence, <etc />) boil down to a question about a certain system of linear equations. The trick is to produce the <em>relevant</em> linear system for a given question.
-    </p>
-  </statement>
-</principle>
     <!-- <theorem>
       <statement>
         <p>
@@ -665,8 +667,6 @@
     </theorem> -->
   <example xml:id="ex_linear_independence">
     <title>Linear independence</title>
-
-
     <statement>
       <p>
         For each subset <m>S</m> of the given vector space <m>V</m>, decide whether <m>S</m> is linearly independent.
@@ -746,6 +746,25 @@
     </ol>
     </solution>
   </example>
+  <p>
+    So far we have only defined linead independence for <em>finite</em> subsets of a vector space. The notion is easily extended to arbitrary (potentially infinite) subsets.
+  </p>
+  <definition xml:id="d_linear_independence_arbitrary">
+    <title>Linear independence (for arbitrary subsets)</title>
+    <statement>
+      <p>
+        Let <m>V</m> be a vector space. A subset <m>S\subseteq V</m> is linearly independent if and only if every finite subset of <m>S</m> is lineary independent in the sense of <xref ref="d_linear_independence"/>.
+      </p>
+    </statement>
+  </definition>
+      <remark xml:id="rm_linear_independence_arbitrary">
+    <statement>
+      <p>
+        A subtle question arises here: namely, whether our definition of linear indepencence for arbitrary sets is consistent with our definition for finite ones. In other words, given a set <m>S=\{\boldv_1, \boldv_2, \dots, \boldv_n\}</m> of <m>n</m> distinct vectors, is it true that <m>S</m> is linearly independent (in the sense of <xref ref="d_linear_independence" text="global"/>) if and only if every subset <m>\{\boldv_{i_1}, \boldv_{i_2}, \dots, \boldv_{i_k}\}</m> is linearly independent (in the sense of <xref ref="d_linear_independence" text="global"/>)? The answer of course is yes. One direction is easy: since <m>S</m> is a subset of itself, clearly if every subset is linearly independent, then <m>S</m> is linearly independent. The other direction is left as an exercise (<xref ref="ex_linear_independence_arbitrary"/>).
+      </p>
+    </statement>
+  </remark>
+
   </subsection>
   <subsection xml:id="ss_linear_independence_functionspace">
   <title>Linear independence in function spaces</title>
@@ -759,7 +778,7 @@
       <title>Investigating linear independence of functions</title>
       <statement>
         <p>
-        Let <m>X\subseteq \R</m> be an interval and let <m>S=\{f_1,f_2,\dots, f_r\}</m> be a subset of <m>F(X,\R)</m>.
+        Let <m>X\subseteq \R</m>, let <m>V=F(X,\R)</m>, and let  <m>S=\{f_1,f_2,\dots, f_n\}</m> be a set of <m>n</m> distinct elements of <m>V</m>.
         </p>
         <ul>
           <li>
@@ -772,11 +791,11 @@
                 <p>
                   Write out the <em>function equation</em>
                   <me>
-                    c_1f+c_2f_2+\cdots +c_rf_r=\boldzero
+                    c_1f+c_2f_2+\cdots +c_nf_n=\boldzero
                   </me>.
                   Since the zero vector of <m>F(X,\R)</m> is the zero function, the definition of function equality implies
                   <men xml:id="eq_function_equality">
-                    c_1f(x)+c_2f_2(x)+\cdots +c_rf(x)_r=0
+                    c_1f(x)+c_2f_2(x)+\cdots +c_nf(x)_n=0
                   </men>
                   for <em>all</em>  <m>x\in X</m>.
                 </p>
@@ -785,13 +804,13 @@
                 <p>
               Since <xref ref="eq_function_equality"/> is true for all <m>x\in X</m>, we can produce a homogeneous system of linear equations in the unknowns <m>c_j</m> by picking elements <m>x_1,x_2,\dots </m> of <m>X</m>, and <em>evaluating</em>  <xref ref="eq_function_equality"/> at <m>x_i</m>. The <m>i</m>-th equation of the resulting system is thus
               <me>
-                f_1(x_i)c_1+f_2(x_i)c_2+\cdots +f_r(x_i)c_r=0
+                f_1(x_i)c_1+f_2(x_i)c_2+\cdots +f_n(x_i)c_n=0
               </me>.
             </p>
           </li>
               <li>
                 <p>
-                  If you can find elements <m>x_1, x_2, \dots, x_t\in X</m> so that the resulting homogeneous system in the unknowns <m>c_j</m> has the unique solution <m>c_1=c_2=\dots=c_r=0</m>, then we conclude that <m>S</m> is linearly independent.
+                  If you can find elements <m>x_1, x_2, \dots, x_t\in X</m> so that the resulting homogeneous system in the unknowns <m>c_j</m> has the unique solution <m>c_1=c_2=\dots=c_n=0</m>, then we conclude that <m>S</m> is linearly independent.
                 </p>
               </li>
             </ul>
@@ -814,7 +833,7 @@
     <remark xml:id="rm_linear_independence_functions">
   <statement>
     <p>
-    When using <xref ref="proc_linear_independence_functions"/> to show <m>S=\{f_1, f_2, \dots, f_r\}</m> is linearly independent, you want to produce enough linear equations to <em>force</em> the unknowns <m>c_i</m> to all be equal to 0. Note that since you you have <m>r</m> unknowns, you need at <em>at least</em> <m>r</m> equations, and so must pick at least <m>r</m> elements <m>x_i\in X</m>. Do so judiciously in order to (a) force the <m>c_i</m> to all be equal to 0, and (b) make the necessary computations palatable.
+    When using <xref ref="proc_linear_independence_functions"/> to show <m>S=\{f_1, f_2, \dots, f_n\}</m> is linearly independent, you want to produce enough linear equations to <em>force</em> the unknowns <m>c_i</m> to all be equal to 0. Note that since you you have <m>n</m> unknowns, you need at <em>at least</em> <m>n</m> equations, and so must pick at least <m>n</m> elements <m>x_i\in X</m>. Do so judiciously in order to (a) force the <m>c_i</m> to all be equal to 0, and (b) make the necessary computations palatable.
     </p>
   </statement>
 </remark>
@@ -895,6 +914,14 @@
     </ol>
   </solution>
 </example>
+<paragraphs xml:id="ss_vid_eg_ind_func">
+  <title>Video example: linear independence of functions</title>
+  <figure xml:id="fig_vid_ind_func">
+    <title>Video: linear independence of functions</title>
+  <caption>Video: linear independence of functions</caption>
+  <video xml:id="vid_ind_func" youtube="kgb0N70RKtE" />
+  </figure>
+</paragraphs>
   </subsection>
 <xi:include href="./s_span_independence_ex.ptx"/>
 

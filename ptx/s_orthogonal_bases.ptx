@@ -106,6 +106,9 @@
 </subsection>
   <subsection>
     <title>Orthogonal bases</title>
+    <p>
+      Given an inner product space <m>V</m> we will see that working with orthogonal sets of vectors is extremely convenient computationally speaking. In particular, when picking basis of <m>V</m>, we will look for one consisting of orthogonal vectors. Not surprisingly, this is called an <em>orthogonal basis</em>.
+    </p>
     <definition xml:id="d_orthogonal_basis">
       <title>Orthogonal and orthonormal bases</title>
       <idx><h>orthogonal</h><h>basis</h></idx>
@@ -116,6 +119,18 @@
         </p>
       </statement>
     </definition>
+    <p>
+      <xref ref="th_orthogonal_basis_formula"/> serves as a first example illustrating the virtue of orthogonal and orthonormal base.  We preface it with a mantra conveying the general principle.
+    </p>
+    <principle xml:id="princ_orthogonalbasis_mantra">
+      <title>Orthogonal basis mantra</title>
+      <statement>
+        <p>
+          Working with an orthogonal basis is nice; working with an orthonormal basis is even nicer.
+        </p>
+      </statement>
+    </principle>
+
     <theorem xml:id="th_orthogonal_basis_formula">
       <title>Calculating with orthogonal bases</title>
       <statement>

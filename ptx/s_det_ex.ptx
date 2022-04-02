@@ -112,7 +112,7 @@
 </exercisegroup>
 <exercisegroup>
 <introduction><p>
-  Use the adjoint formula to compute the inverse of each matrix.
+  Use the adjoint matrix formula to compute the inverse of each matrix.
 </p></introduction>
 <exercise>
   <statement>
@@ -147,11 +147,7 @@
       Show <m>\det A=0</m> without computing the determinant directly. In other words, use a row reduction technique or <xref ref="th_invertibility_expanded"/>.
     </p>
   </statement>
-  <solution>
-    <p>
 
-    </p>
-  </solution>
 </exercise>
 <exercise>
   <statement>
@@ -160,7 +156,7 @@
       State and prove a formula relating <m>\det(cA)</m> with <m>\det(A)</m>.
     </p>
   </statement>
-  <solution>
+  <!-- <solution>
     <p>
       Warning: in general <m>\det(cA)\ne c\det(A)</m>!
       We claim in fact that if <m>A</m> is <m>n\times n</m>, then <m>\det(cA)=c^n\det(A)</m>. We give two proofs: one uses only induction and the definition of the determinant; the other uses the multiplicative property of the determinant.
@@ -189,8 +185,8 @@
       </md>.
       </p>
       </case>
-    </proof>
-    <proof>
+    </proof> -->
+    <!-- <proof>
       <title>Proof using determinant properties</title>
       <p>
         We have <me>
@@ -206,7 +202,7 @@
       </p>
     </proof>
 
-  </solution>
+  </solution> -->
 </exercise>
 <exercise>
   <statement>
@@ -258,7 +254,7 @@
       </li>
     </ol>
   </statement>
-  <solution>
+  <!-- <solution>
     <p>
       We prove (a).
       <md>
@@ -270,7 +266,7 @@
         \det B\, \det B^{-1}=1\implies \det B^{-1}=\frac{1}{\det B},
       </me>.
     </p>
-  </solution>
+  </solution> -->
 </exercise>
 <exercise>
   <statement>

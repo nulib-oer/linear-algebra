@@ -176,7 +176,7 @@
     <p>
       When this is the case, we have
       <me>
-        \abcdmatrix{a}{b}{c}{d}=\frac{1}{ad-bc}\begin{amatrix}[rr]d\amp -b \\ -c\amp a
+        \abcdmatrix{a}{b}{c}{d}^{-1}=\frac{1}{ad-bc}\begin{amatrix}[rr]d\amp -b \\ -c\amp a
       \end{amatrix}
       </me>.
     </p>

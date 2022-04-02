@@ -118,6 +118,30 @@
   <exercise>
     <statement>
       <p>
+        Prove statement (5) of <xref ref="th_characteristic_polynomial"/>.
+      </p>
+    </statement>
+    <hint>
+      <p>
+        Use <xref ref="th_similarity_matrixreps"/> and <xref ref="th_matrixreps_model"/>.
+      </p>
+    </hint>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Prove statement (6) of <xref ref="th_characteristic_polynomial"/>.
+      </p>
+    </statement>
+    <hint>
+      <p>
+        Use <xref ref="th_similarity_matrixreps"/> and <xref ref="proc_eigenspaces_transformation"/>.
+      </p>
+    </hint>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
         According to <xref ref="th_similarity"/> if <m>A</m> and <m>B</m> are similar, then they have the same rank. Show that the converse is false by showing that the matrices
         <me>
           A=\begin{amatrix}[rr]
@@ -142,6 +166,13 @@
           \end{amatrix}
         </me>
         have the same characteristic polynomial, but are not similar.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Prove all statements of <xref ref="th_conjugation"/>.
       </p>
     </statement>
   </exercise>

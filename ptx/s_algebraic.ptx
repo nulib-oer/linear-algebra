@@ -86,7 +86,7 @@
     </p>
 
   <proof>
-    <title>Proof of (iv)</title>
+    <title>Proof of (iii)</title>
     <p>We prove only the <xref ref="th_matrixmult_assoc" text="custom">multiplication associative law</xref>.
     Let <m>A=[a_{ij}]_{m\times r}</m>,
       <m>B=[b_{ij}]_{r\times s}</m>,
@@ -411,14 +411,14 @@ The example in our warning above is but one instance of the general failure of t
       <title>Video examples: proving matrix equalities</title>
 
       <figure xml:id="fig_proof_assoc">
-        <title>Matrix multiplication is associative</title>
-        <caption>Matrix multiplication is associative</caption>
+        <title>Video: matrix multiplication is associative</title>
+        <caption>Video: matrix multiplication is associative</caption>
         <video xml:id="vid_proof_assoc" youtube="EDGxkEV5mm0" />
       </figure>
 
       <figure xml:id="fig_proof_transp">
-        <title>Transpose property</title>
-        <caption>Transpose property</caption>
+        <title>Video: transpose property</title>
+        <caption>Video: transpose property</caption>
         <video xml:id="vid_proof_transp" youtube="twq0_HdpC3w" />
       </figure>
 

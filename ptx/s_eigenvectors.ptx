@@ -262,8 +262,8 @@
           <men xml:id="eq_eigenvectors_adhoc_derivative">
             f'=\lambda f
           </men>
-          for some <m>\lambda\in\R</m>. Thus <m>\lambda</m> is an eigenvalue of <m>T</m> if and only if the differential equation <xref ref="eq_eigenvectors_adhoc_derivative"/> has a nonzero solution. This is true for all <m>\lambda\in \R</m>! Indeed for any <m>lambda</m> the exponential function <m>f(x)=e^{\lambda x}</m> satisfies <m>f'(x)=\lambda e^{\lambda x}=\lambda f(x)</m> for all <m>x\in \R</m>. Furthermore, any solution to <xref ref="eq_eigenvectors_adhoc_derivative"/> is of the form <m>f(x)=Ce^{\lambda x}</m> for some <m>C\in \R</m>.
-          We conclude that (a) every <m>\lambda\in \R</m> is an eigenvalue of <m>T</m>, and (b) for a given <m>\lambda</m>, the <m>\lambda</m>-eigenvectors of <m>T</m> are presicely the functions of the form <m>f(x)=Ce^{\lambda x}</m> for some <m>C\ne 0</m>.
+          for some <m>\lambda\in\R</m>. Thus <m>\lambda</m> is an eigenvalue of <m>T</m> if and only if the differential equation <xref ref="eq_eigenvectors_adhoc_derivative"/> has a nonzero solution. This is true for all <m>\lambda\in \R</m>! Indeed for any <m>\lambda</m> the exponential function <m>f(x)=e^{\lambda x}</m> satisfies <m>f'(x)=\lambda e^{\lambda x}=\lambda f(x)</m> for all <m>x\in \R</m>. Furthermore, any solution to <xref ref="eq_eigenvectors_adhoc_derivative"/> is of the form <m>f(x)=Ce^{\lambda x}</m> for some <m>C\in \R</m>.
+          We conclude that (a) every <m>\lambda\in \R</m> is an eigenvalue of <m>T</m>, and (b) for a given <m>\lambda</m>, the <m>\lambda</m>-eigenvectors of <m>T</m> are precisely the functions of the form <m>f(x)=Ce^{\lambda x}</m> for some <m>C\ne 0</m>.
         </p>
       </solution>
     </example>
@@ -304,7 +304,7 @@
             <mrow>  \amp \iff \boldx\ne 0 \text{ and } A\boldx=\lambda\boldx</mrow>
             <mrow>  \amp \iff \boldx \text{ is an eigenvector of } A</mrow>
           </md>.
-          From (1) it follows directly that if <m>\lambda</m> is an an eigenvalue of <m>T</m>, then it is an eigenvalue of <m>A=[T]_B</m>. Conversey, if <m>\lambda</m> is an eigenvalue of <m>A=[T]_B</m>, then there is a nonzero <m>\boldx\in\R^n </m> such that <m>A\boldx=\lambda \boldx</m>. Since <m>[\phantom{\boldv}]_B</m> is surjective (<xref ref="th_coordinates"/>, (3)), there is a vector <m>\boldv\in V</m> such that <m>[\boldv]_B</m>. It follows from (1) that <m>\boldv</m> is a <m>\lambda</m>-eigenvector of <m>T</m>, and thus that <m>\lambda</m> is an eigenvalue of <m>T</m>.
+          From (1) it follows directly that if <m>\lambda</m> is an an eigenvalue of <m>T</m>, then it is an eigenvalue of <m>A=[T]_B</m>. Conversely, if <m>\lambda</m> is an eigenvalue of <m>A=[T]_B</m>, then there is a nonzero <m>\boldx\in\R^n </m> such that <m>A\boldx=\lambda \boldx</m>. Since <m>[\phantom{\boldv}]_B</m> is surjective (<xref ref="th_coordinates"/>, (3)), there is a vector <m>\boldv\in V</m> such that <m>[\boldv]_B</m>. It follows from (1) that <m>\boldv</m> is a <m>\lambda</m>-eigenvector of <m>T</m>, and thus that <m>\lambda</m> is an eigenvalue of <m>T</m>.
         </p>
       </proof>
     </theorem>
@@ -366,7 +366,7 @@
   </statement>
 </definition>
 <p>
-  We nearly have a complete method for computing the eigenvalues and eigenectors of a square matrix <m>A</m>. The last step is to identify the values of <m>\lambda</m> for which <m>\lambda I-A</m> is not invertible. By the <xref ref="th_invertibility_supersized" text="custom">invertibility theorem</xref>, the matrix <m>\lambda I-A</m> is not invertible if and only if <m>\det (\lambda I-A)=0</m>. Thus the eigenvalues of <m>A</m> are precisely the <em>zeros</em> of the function <m>p(t)=\det(tI-A)</m>. We have proved the following corollary.
+  We nearly have a complete method for computing the eigenvalues and eigenvectors of a square matrix <m>A</m>. The last step is to identify the values of <m>\lambda</m> for which <m>\lambda I-A</m> is not invertible. By the <xref ref="th_invertibility_supersized" text="custom">invertibility theorem</xref>, the matrix <m>\lambda I-A</m> is not invertible if and only if <m>\det (\lambda I-A)=0</m>. Thus the eigenvalues of <m>A</m> are precisely the <em>zeros</em> of the function <m>p(t)=\det(tI-A)</m>. We have proved the following corollary.
 </p>
 <corollary xml:id="cor_eigenvalues">
   <title>Eigenvalues of a matrix</title>
@@ -628,7 +628,7 @@ We will show below that <m>p(t)=\det(tI-A)</m> is indeed a polynomial (<xref ref
 
 </corollary>
 <p>
-  Of course statement (2) of <xref ref="cor_eigenvalue_invertible"/> gives rise to yet another equivalent formulation of invertibility, and we include this in our ever-expanding <xref ref="th_invertibility_penultimate" text="custom">invertibility theorem</xref> at the end of the section. We end our current discusion with an example illustrating how to compute the eigenvalues and eigenvectors of an arbitrary linear transformation <m>T\colon V\rightarrow V</m> of a finite-dimensional space. The idea is to first represent <m>T</m> as a matrix with respect to some basis <m>B</m>, apply <xref ref="proc_eigenspaces_matrix"/> to this matrix, and then <q>lift</q> the results back to <m>V</m>.
+  Of course statement (2) of <xref ref="cor_eigenvalue_invertible"/> gives rise to yet another equivalent formulation of invertibility, and we include this in our ever-expanding <xref ref="th_invertibility_penultimate" text="custom">invertibility theorem</xref> at the end of the section. We end our current discussion with an example illustrating how to compute the eigenvalues and eigenvectors of an arbitrary linear transformation <m>T\colon V\rightarrow V</m> of a finite-dimensional space. The idea is to first represent <m>T</m> as a matrix with respect to some basis <m>B</m>, apply <xref ref="proc_eigenspaces_matrix"/> to this matrix, and then <q>lift</q> the results back to <m>V</m>.
 </p>
 <algorithm xml:id="proc_eigenspaces_transformation">
   <title>Computing eigenspaces of a linear transformation</title>
@@ -696,7 +696,7 @@ We will show below that <m>p(t)=\det(tI-A)</m> is indeed a polynomial (<xref ref
       0\amp 0\amp 0\amp 1
     \end{bmatrix} </mrow>
       </md>.
-    Now apply <xref ref="proc_eigenspaces_matrix"/> to <m>A</m>. From <m>p(t)=\det(tI-A)=(t-1)^2(t^2-1)=(t-1)^3(t+1)</m> we conclude that <m>\lambda=1</m> and <m>\lambda=-1</m> are the only eigenvalues of <m>A</m> (and hence also <m>S</m>). Basese for the corresponding eigenspaces of <m>A</m> are easily computed as
+    Now apply <xref ref="proc_eigenspaces_matrix"/> to <m>A</m>. From <m>p(t)=\det(tI-A)=(t-1)^2(t^2-1)=(t-1)^3(t+1)</m> we conclude that <m>\lambda=1</m> and <m>\lambda=-1</m> are the only eigenvalues of <m>A</m> (and hence also <m>S</m>). Bases for the corresponding eigenspaces of <m>A</m> are easily computed as
     <md>
       <mrow>\NS(I-A) \amp= \Span\{(1,0,0,0), (0,1,1,0), (0,0,0,1)\} </mrow>
       <mrow> \NS(-I-A) \amp =\Span\{(0,1,-1,0)\} </mrow>
@@ -717,7 +717,7 @@ We will show below that <m>p(t)=\det(tI-A)</m> is indeed a polynomial (<xref ref
         0\amp 1\\ -1 \amp 0
       \end{amatrix} \right\} </mrow>
     </md>.
-    It is easy to see that <m>W_1</m> and <m>W_2</m> are the subspaces of symmetric and skew-symmetric matricies, respectively. This is consistent with our analysis in <xref ref="eg_eigenvector_adhoc_transposition"/>.
+    It is easy to see that <m>W_1</m> and <m>W_2</m> are the subspaces of symmetric and skew-symmetric matrices, respectively. This is consistent with our analysis in <xref ref="eg_eigenvector_adhoc_transposition"/>.
     </p>
   </solution>
 </example>
@@ -748,12 +748,12 @@ We will show below that <m>p(t)=\det(tI-A)</m> is indeed a polynomial (<xref ref
           <me>
             p(t)=(t-\lambda_1)(t-\lambda_2)\cdots (t-\lambda_n),
           </me>
-          where the <m>\lambda_i\in \C</m> are the (not necessarily distinct) roots of <m>p(t)</m>. We call the <m>\lambda_i</m> the <term>complex eigenvalues</term> of <m>A</m>.
+          where the <m>\lambda_i\in \C</m> are the (not necessarily distinct) roots of <m>p(t)</m>.
         </p>
       </li>
       <li>
         <p>
-          The (usual) eigenvalues of <m>A</m> are precisely the real roots of <m>p(t)</m>: <ie />, the <m>\lambda_i</m> for which <m>\lambda_i\in \R</m>.
+          The eigenvalues of <m>A</m> are precisely the real roots of <m>p(t)</m>: <ie />, the <m>\lambda_i</m> for which <m>\lambda_i\in \R</m>.
         </p>
       </li>
       <li>
@@ -767,10 +767,10 @@ We will show below that <m>p(t)=\det(tI-A)</m> is indeed a polynomial (<xref ref
       <li>
         <p>
           The coefficient <m>a_0</m> in <xref ref="eq_char_poly"/> satisfies
-        </p>
         <men xml:id="eq_char_poly_det">
           a_0=(-1)^n\det A=(-1)^n\lambda_1\lambda_2\cdots \lambda_n
         </men>.
+        </p>
       </li>
       <li>
         <p>
