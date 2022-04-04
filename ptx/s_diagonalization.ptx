@@ -160,6 +160,7 @@ The phrase <q>an ordered basis consisting of eigenvectors of <m>T</m></q> is a b
 </theorem>
 
 <corollary xml:id="cor_independent_eigenvectors">
+  <title>Diagonalizable if distinct eigenvalues</title>
   <statement>
     <p>
       Let <m>T\colon V\rightarrow V</m> be a linear transformation,

@@ -1,0 +1,13 @@
+<exercises xml:id="s_spectral_theorem_ex">
+  <exercise xml:id="ex_self-adjoint_symmetric">
+    <statement>
+      <p>
+        Let <m>(V, \langle\, , \rangle)</m> be an inner product space, let <m>T\colon V\rightarrow V</m> be a linear transformation, and let <m>B=(\boldv_1, \boldv_2, \dots, \boldv_n)</m> be an ordered basis of <m>V</m>.
+
+        Prove: <m>T</m> is self-adjoint if and only if
+        <me>\langle T(\boldv_i),\boldv_j\rangle=\langle \boldv_i, T(\boldv_j)\rangle
+        </me> for all <m>1\leq i,j\leq n</m>. In other words, if to prove <m>T</m> is self-adjoint it suffice to show property <xref ref="eq_self-adjoint"/> holds for all elements of a basis of <m>V</m>. 
+      </p>
+    </statement>
+  </exercise>
+</exercises>

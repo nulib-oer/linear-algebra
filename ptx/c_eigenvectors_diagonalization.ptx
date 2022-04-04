@@ -5,4 +5,6 @@
   <xi:include  href="s_changeofbasis.ptx"/>
   <xi:include  href="s_eigenvectors.ptx"/>
   <xi:include  href="s_diagonalization.ptx"/>
+  <!-- <xi:include  href="s_spectral_theorem.ptx"/> -->
+
 </chapter>
