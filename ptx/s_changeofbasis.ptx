@@ -787,7 +787,7 @@
     <ol>
       <li>
         <p>
-          Find a more convenient basis <m>B'</m> for which the action of <m>T</m> is easily understood.
+          Find a convenient basis <m>B'</m> for which the action of <m>T</m> is easily understood.
         </p>
       </li>
       <li>
@@ -797,7 +797,7 @@
       </li>
       <li>
         <p>
-          Compute <m>A</m> using the change of basis formula as
+          Let <m>B</m> be the standard basis of <m>\R^n</m>. Recall that <m>A=[T]_B</m>. Now compute <m>A</m> using the change of basis formula as
           <me>
             A=\underset{B'\rightarrow B}{P}\, A'\, \underset{B\rightarrow B'}{P}
           </me>.
@@ -969,7 +969,7 @@
       <title>Similar matrices mantra</title>
       <statement>
         <p>
-          Similar matrices are but two shadows of the same overlying linear transformation. 
+          Similar matrices are but two shadows of the same overlying linear transformation.
         </p>
       </statement>
     </principle>
