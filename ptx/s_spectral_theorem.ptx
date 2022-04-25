@@ -1,0 +1,161 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_spectral_theorem">
+  <title>The spectral theorem</title>
+<introduction>
+  <p>
+  Among the many takeaways from <xref ref="s_diagonalization"/> is the simple fact that not all matrices are diagonalizable. In principle <xref ref="th_diagonalizability_eigenspaces"/> gives a complete answer to the question of diagonalizability in terms of eigenspaces. However, you should not be mislead by the artificially simple examples from <xref ref="s_diagonalization"/>. In practice even the determination (or approximation) of the distinct eigenvalues of an <m>n\times n</m> matrix poses a very challenging computational problem as <m>n</m> grows. As such the general question of whether a matrix is diagonalizable is a difficult one. The main result of this section should thus come as somewhat of a shock: <em>all</em> symmetric matrices are diagonalizable! We call this the <em>spectral theorem</em>, though really it is a special case of a more general spectral theorem
+  </p>
+</introduction>
+<subsection xml:id="ss_self-adjoint">
+  <title>Self-adjoint operators</title>
+  <p>
+    Though we are mainly interested in the diagonalizability of symmetric matrices, our arguments are made more elegant by abstracting somewhat to the realm of linear transformations of inner product spaces. In this setting the appropriate analogue of a symmetric matrix is a <em>self-adjoint</em> linear transformation.
+  </p>
+  <definition xml:id="d_self-adjoint">
+    <title>Self-adjoint operators</title>
+    <statement>
+      <p>
+        Let <m>(V, \langle\, , \rangle)</m> be a finite-dimensional inner product space. A linear transformation <m>T\colon V\rightarrow V</m> is called a <term>self-adjoint operator</term> if
+        <men xml:id="eq_self-adjoint">
+          \langle T(\boldv), \boldw\rangle=\langle \boldv, T(\boldw)\rangle
+        </men>
+        for all <m>\boldv, \boldw\in V</m>.
+      </p>
+    </statement>
+  </definition>
+  <p>
+    The next theorem makes clear the connection between self-adjoint operators and symmetric matrices.
+  </p>
+  <theorem xml:id="th_self-adjoint_symmetric">
+    <title>Self-adjoint operators and symmetry</title>
+    <statement>
+      <p>
+        Let <m>(V, \langle\, , \rangle)</m> be a finite-dimensional inner product space, let <m>T\colon V\rightarrow V</m> be a linear transformation, and let <m>B</m> be an orthonormal ordered basis of <m>V</m>. The following are equivalent.
+      </p>
+      <ol>
+        <li>
+          <p>
+            <m>T</m> is self-adjoint.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>A=[T]_B</m> is symmetric.
+          </p>
+        </li>
+      </ol>
+    </statement>
+    <proof>
+      <p>
+        Let <m>B=(\boldv_1, \boldv_2, \dots, \boldv_n)</m>. We have
+        <me>
+          A=\begin{amatrix}[cccc]\vert \amp \vert \amp \amp\vert \\
+        [T(\boldv_1)]_B\amp [T(\boldv_2)]_B\amp \cdots \amp [T(\boldv_n)]_B\\
+        \vert \amp \vert \amp \amp\vert
+         \end{amatrix}
+        </me>.
+        Furthermore, since <m>B</m> is orthonormal, the <m>i</m>-th entry of <m>[T(\boldv_j)]_B</m> is computed as <m>\langle T(\boldv_j), \boldv_i\rangle</m> (<xref ref="th_orthogonal_basis_formula" text="global"/>). Thus <m>A=[a_{ij}]</m>, where
+        <me>
+        a_{ij}=\langle T(\boldv_j), \boldv_i\rangle.
+        </me>
+        It follows that
+        <md>
+          <mrow>A \text{ symmetric} \amp\iff a_{ij}=a_{ji} \text{ for all } 1\leq i,j\leq n  </mrow>
+          <mrow> \amp\iff \langle T(\boldv_j), \boldv_i\rangle=\langle T(\boldv_i), \boldv_j\rangle \text{ for all } 1\leq i,j\leq n </mrow>
+          <mrow>  \amp \iff \langle T(\boldv_j), \boldv_i\rangle=\langle \boldv_j, T(\boldv_i)\rangle \text{ for all } 1\leq i,j\leq n \amp (<xref ref="d_innerproduct" text="global"/>, ii)</mrow>
+        </md>.
+        The last equality in this chain of equivalences states that <m>T</m> satisfies property <xref ref="eq_self-adjoint"/> for all elements of <m>B</m>. Not surprisingly, this is equivalent to <m>T</m> satisfying the property for <em>all</em> elements in <m>V</m>. (See <xref ref="ex_self-adjoint_symmetric"/>.) We conclude that <m>A</m> is symmetric if and only if <m>T</m> is self-adjoint.
+      </p>
+
+    </proof>
+
+  </theorem>
+<corollary xml:id="cor_self-adjoint_symmetric">
+  <title>Symmetry and dot product</title>
+  <statement>
+    <p>
+      An <m>n\times n</m> matrix is symmetric if and only if
+      <men xml:id="eq_self-adjoint_matrix">
+      A\boldx\, \cdot \boldy=\boldx\cdot A\boldy
+    </men>
+      for all <m>\boldx, \boldy\in \R^n</m>.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      The corollary follows directly from <xref ref="th_self-adjoint_symmetric"/> by choosing <m>\R^n</m> with the dot product as our inner product space, <m>T_A</m> as our linear transformation, and the standard basis <m>B=(\bolde_1, \bolde_2, \dots, \bolde_n)</m> as our orthonormal basis.
+    </p>
+  </proof>
+
+</corollary>
+<p>
+  The next result, impressive in its own right, is also key to the induction argument we will use to prove <xref ref="th_spectral_operator"/>. A proper proof would require a careful treatment of complex vector spaces: a topic which lies just outside the scope of this text. The proof sketch we provide can easily be upgraded to a complete argument simply by justifying a few statements about <m>\C^n</m> and its standard inner product.  
+</p>
+<theorem xml:id="th_self-adjoint_eigenvalue">
+  <title>Eigenvalues of self-adjoint operators</title>
+  <statement>
+    <p>
+      Let <m>(V, \langle\, , \rangle)</m> be a finite-dimensional inner product space. If <m>T\colon V\rightarrow V</m> is self-adjoint, then <m>T</m> has an eigenvalue: <ie />, there is a scalar <m>\lambda\in R</m> and nonzero vector <m>\boldv\in V</m> satisfying <m>T(\boldv)=\lambda\boldv</m>.
+    </p>
+  </statement>
+  <proof xml:id="proof_sketch">
+    <title>Proof sketch of <xref ref="th_self-adjoint_symmetric"/></title>
+    <p>
+      Pick an orthonormal ordered basis <m>B</m> of <m>V</m>, and let <m>A=[T]_B</m>. By <xref ref="th_self-adjoint_symmetric"/>, <m>A</m> is symmetric. To prove <m>T</m> has an  eigenvalue, it suffices to show that the characteristic polynomial <m>p(t)=\det(tI-A)</m> has a real root. We will prove that in fact <em>all</em> the roots of <m>p(t)</m> are real.
+    </p>
+    <p>
+      To do so, we make a slight detour into complex vector spaces. The set
+      <me>
+        \C^n=\{(z_1,z_2,\dots, z_n)\colon z_i\in \C \text{ for all } 1\leq i\leq n\}
+      </me>
+      of all complex <m>n</m>-tuples, together with the operations
+      <me>
+        (z_1,z_2,\dots, z_n)+(w_1, w_2,\dots, w_n)=(z_1+w_1, z_2+w_2, \dots, z_n+w_n)
+      </me>
+      and
+      <me>
+        \alpha\, (z_1, z_2, \dots, z_n)=(\alpha\, z_1, \alpha\, z_2, \dots, \alpha\, z_n),
+      </me>
+      where <m>\alpha=a+bi\in \C</m>, forms what is called a
+      a <em>vector space over <m>\C</m></em>. This means that <m>V=\C^n</m> satisfies the strengthened axioms of <xref ref="d_vector_space"/> obtained by replacing every mention of a scalar <m>c\in \R</m> with a scalar <m>\alpha\in \C</m>. Additionally, the vector space <m>\C^n</m> has the structure of a complex inner product defined as
+      <me>
+        \langle (z_1,z_2,\dots, z_n), (w_1,w_2,\dots, w_n)\rangle=z_1\overline{w_1}+z_2\overline{w_2}+\cdots +z_n\overline{w_n}
+      </me>,
+      where <m>\overline{w_i}</m> denotes the complex conjugate of <m>w_i</m> for each <m>i</m>.
+      Essentially all of our theory of real vector spaces can be <q>transported</q> to complex vector spaces, including definitions and results about eigenvectors and inner products. The rest of this argument makes use of this principle by citing without proof some of these properties, and this is why it has been downgraded to a <q>proof sketch</q>.
+    </p>
+    <p>
+      We now return to <m>A</m> and its characteristic polynomial <m>p(x)</m>. Recall that we want to show that all roots of <m>p(x)</m> are real.  Let <m>\lambda\in \C</m> be a root of <m>p(x)</m>. The complex theory of eigenvectors implies that there is a nonzero vector <m>\boldz\in \C^n</m> satisfying <m>A\boldz=\lambda \boldz</m>. On the one hand, we have
+      <me>
+        \langle A\boldz, z\rangle =\langle \lambda\boldz, \boldz\rangle=\lambda\langle \boldz, \boldz\rangle
+      </me>
+      using properties of our complex inner product. On the other hand, since <m>A^T=A</m> it is easy to see that <xref ref="cor_self-adjoint_symmetric"/> extends to our complex inner product: <ie />,
+      <me>
+        \langle A\boldz, \boldw\rangle=\langle \boldz, A\boldw\rangle
+      </me>
+      for all <m>\boldz, \boldw\in \C^n</m>. Thus
+      <md>
+        <mrow> \langle A\boldz, \boldz\rangle  \amp=  </mrow>
+        <mrow> \amp= \langle \boldz, A\boldz\rangle </mrow>
+        <mrow>  \amp = \langle \boldz, \lambda\boldz\rangle</mrow>
+        <mrow>  \amp =\overline{\lambda}\langle \boldz, \boldz\rangle </mrow>
+      </md>.
+      (In the last equality we use the fact that our complex inner product satisfies
+      <m>\langle \boldz, \alpha\boldw\rangle=\overline{\alpha} \langle \boldz, \boldw\rangle</m> for any <m>\alpha\in \C</m> and vectors <m>\boldz, \boldw\in \C^n</m>.) It follows that
+      <me>
+        \lambda\langle \boldz, \boldz\rangle=\overline{\lambda}\langle \boldz, \boldz\rangle
+      </me>.
+      Since <m>\boldz\ne \boldzero</m>, we have <m>langle \boldz, \boldz\rangle\ne 0</m> (another property of our complex inner product), and thus <m>\lambda=\overline{\lambda}</m>. Since a complex number <m>z=a+bi</m> satisfies <m>\overline{z}=z</m> if and only if <m>b=0</m> if and only if <m>z</m> is real, we conclude that <m>\lambda</m> is a real number, as claimed.
+    </p>
+  </proof>
+
+</theorem>
+
+
+</subsection>
+<subsection xml:id="ss_spectal_theorem_operators">
+  <title></title>
+
+</subsection>
+
+<xi:include href="./s_spectral_theorem_ex.ptx"/>
+</section>
