@@ -787,15 +787,15 @@ We will show below that <m>p(t)=\det(tI-A)</m> is indeed a polynomial (<xref ref
     <proof>
       <title>Proof of (1)</title>
       <p>
-       We show the claim by strong induction on <m>n\geq 1</m>. The claim is easily seen to be true for all <m>1\times 1</m>.
+       We show the claim by induction on <m>n\geq 1</m>. The claim is easily seen to be true for all <m>1\times 1</m> and <m>2\times 2</m> matrices.
       </p>
       <p>
-        Fix <m>n\geq 2</m> and assume the claim is true for all <m>(n-1)\times (n-1)</m> matrices. Let <m>A=[a_{ij}]_{1\leq i,j\leq n}</m>.  Expanding  <m>p(t)=\det (tI-A)</m> along the first row yields
+        Fix <m>n\geq 3</m> and assume the claim is true for all <m>(n-1)\times (n-1)</m> matrices. Let <m>A=[a_{ij}]_{1\leq i,j\leq n}</m>.  Expanding  <m>p(t)=\det (tI-A)</m> along the first row yields
         <men xml:id="eq_char_poly_proof">
           p(t)=(t-a_{11})\det(t-A)_{11}-a_{12}\det(t-A)_{12}+a_{13}\det(t-A)_{13}+\cdots,
         </men>.
         (Recall that for any matrix <m>B</m> the notation <m>B_{ij}</m> denotes the submatrix obtained by removing the <m>i</m>-th row and <m>j</m>-th column of <m>B</m>.) First observe that <m>(t-A)_{11}=t-A_{11}</m>, and thus <m>\det(t-A)_{11}</m> is the characteristic polynomial of the <m>(n-1)\times (n-1)</m> matrix <m>A_{11}</m>. By induction this is a monic polynomial of degree <m>n-1</m>, and hence the
-        first term of <xref ref="eq_char_poly_proof"/>, <m>(t-a_{11})\det(t-A)_{11}</m> is a monic polynomial of degree <m>n</m>. The result follows once we can show the remaining terms of <xref ref="eq_char_poly_proof"/> are polynomials of degree <m>n-1</m>. To see this, observe that each submatrix <m>(t-A)_{1j}</m> can be realized as an <m>(n-1)\times (n-1)</m> matrix of the form <m>t-B</m> after a row swap and a column swap. (Convince yourself of this!) These two operations taken together leave the determinant unchanged, and we conclude by induction that the <m>j</m>-th term <m>(-1)^{1+j}a_{1j}\det(t-A)_{1j}=(-1)^{1+j}a_{1j}\det(t-B)</m> is a monic polynomial of degree <m>(n-1)</m>, as claimed.
+        first term of <xref ref="eq_char_poly_proof"/>, <m>(t-a_{11})\det(t-A)_{11}</m> is a monic polynomial of degree <m>n</m>. Unfortunately, the remaining terms in the expansion <xref ref="eq_char_poly_proof"/> do not lend themselves to a direct application of the induction hypothesis. However, we observe that the <m>(n-1)\times (n-1)</m> submatrices <m>(t-A)_{1j}</m> for <m>j\geq 2</m> all satisfy the following property: their first columns contains only scalars; the remaining columns contain exactly one entry of the form <m>t-c</m>, while the rest of the entries are scalars. An easy (additional) induction argument shows that the determinant of such a matrix is polynomial of degree at most <m>n-2</m>. (We leave this to you!) Since the first term of <xref ref="eq_char_poly_proof"/> is a monic polynomial of degree <m>n</m> and the rest of the terms are polynomials of degree at most <m>n-2</m>, we conclude that <m>p(t)</m> itself is a monic polynomial of degree <m>n</m>, as desired. 
       </p>
     </proof>
     <proof>
