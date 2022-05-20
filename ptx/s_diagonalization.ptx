@@ -73,6 +73,9 @@ The phrase <q>an ordered basis consisting of eigenvectors of <m>T</m></q> is a b
 </p>
 <definition xml:id="d_eigenbasis">
   <idx><h>eigenbasis</h></idx>
+  <title>Eigenbasis</title>
+
+
   <statement>
     <p>
     Let <m>T\colon V\rightarrow V</m> be a linear transformation. An ordered basis <m>B=(\boldv_1, \boldv_2,\dots, \boldv_n)</m> is an <term>eigenbasis</term> of <m>T</m> if <m>\boldv_j</m> is an eigenvector of <m>T</m> for all <m>1\leq j\leq n</m>.
