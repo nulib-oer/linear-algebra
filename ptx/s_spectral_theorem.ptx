@@ -411,10 +411,88 @@ An operator that admits an orthogonal (and hence an orthonormal) eigenbasis is c
   </statement>
   <proof>
     <p>
-      By <xref ref="cor_self-adjoint"/> we have <m>A</m> symmetric if and only if <m>T_A</m> is self-adjoint with respect to the dot product. Statements (1)-(3) are seen to be equivalent by applying <xref ref="th_spectral"/> to <m>T_A</m> (with respect to the dot product). Let <m>B</m> be the standard basis of <m>\R^n</m>. We see (4) is equivalent to (3) by observing that <m>B'</m> is an orthonormal eigenbasis of <m>T_A</m> if and only if the matrix <m>Q=\underset{B'\rightarrow B}{P}</m> obtained by placing the elements of <m>B'</m> as columns is orthogonal and diagonalizes <m>A</m>.
+      By <xref ref="cor_self-adjoint_symmetric"/> we have <m>A</m> symmetric if and only if <m>T_A</m> is self-adjoint with respect to the dot product. Statements (1)-(3) are seen to be equivalent by applying <xref ref="th_spectral"/> to <m>T_A</m> (with respect to the dot product). Let <m>B</m> be the standard basis of <m>\R^n</m>. We see that (4) is equivalent to (3) by observing that <m>B'</m> is an orthonormal eigenbasis of <m>T_A</m> if and only if the matrix <m>Q=\underset{B'\rightarrow B}{P}</m> obtained by placing the elements of <m>B'</m> as columns is orthogonal and diagonalizes <m>A</m>.
     </p>
   </proof>
 </corollary>
+<p>
+  The process of finding matrices <m>Q</m> and <m>D</m> satisfying <xref ref="eq_ortho_diag"/> is called <em>orthogonal diagonalization</em>. A close look at the proof of <xref ref="th_spectral"/> gives rise to the following orthogonal diagonalization method for matrices.
+</p>
+<algorithm xml:id="proc_ortho_diag">
+  <title>Orthogonal diagonalization</title>
+  <statement>
+    <p>
+      Let <m>A</m> be a symmetric matrix. To orthogonally diagonalize <m>A</m> proceed as follows.
+    </p>
+    <ol>
+      <li>
+        <p>
+          Let <m>\lambda_1, \lambda_2, \dots, \lambda_r</m> be the distinct eigenvalues of <m>A</m>. For each <m>1\leq i\leq r</m>, compute an <em>orthonormal</em> ordered basis of <m>W_{\lambda_i}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>B'=(\boldv_1, \bodv_2, \dots, \boldv_n)</m> be the ordered basis obtained by concatenating the orthonormal bases computed in (1). This is an orthonormal basis of eigenvectors. It follows that the matrix
+          <me>
+            Q=\begin{bmatrix}
+              \vert\amp \vert\amp \amp \vert\\
+              \boldv_1\amp \boldv_2\amp\cdots \amp \boldv_n\\
+              \vert\amp \vert\amp \amp \vert
+          \end{bmatrix}
+          </me>
+          is orthogonal (<ie />, <m>Q^{-1}=Q^T</m>), and the matrix <m>D=Q^{-1}AQ=Q^TAQ</m> is diagonal.
+        </p>
+      </li>
+    </ol>
+  </statement>
+</algorithm>
+<example xml:id="eg_ortho_diag">
+  <title>Orthogonal diagonalization</title>
+  <statement>
+    <p>
+      The symmetric matrix
+      <me>
+        A=\frac{1}{3}\begin{amatrix}[rrr]
+        -1\amp 2\amp 2\\
+  2 \amp -1 \amp 2 \\
+  2\amp 2 \amp -1  \end{amatrix}
+      </me>
+      has characteristic polynomial <m>p(x)=x^3+x^2-x-1</m>.
+      Find an orthogonal matrix <m>Q</m> and diagonal matrix <m>D</m> such that <m>D=Q^TAQ</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      First we factor <m>p(x)</m>. An integer root would divide <m>1</m>, and we quickly see that <m>1</m> is a root. Polynomial division yields the factorization <m>p(x)=(x-1)(x^2+2x+1)</m>; further factorization of <m>x^2+2x+1</m> gives us  <m>p(x)=(x-1)(x+1)^2</m>.
+    </p>
+    <p>
+      Next we compute <em>orthonormal</em> bases of the eigenspaces <m>W_1</m> and <m>W_{-1}</m>, yielding
+      <md>
+          <mrow>B_1\amp=\left(\frac{1}{\sqrt{3}}(1,1,1)\right) \amp B_{2}\amp =\left(\frac{1}{\sqrt{2}}(1,-1,0), \frac{1}{\sqrt{6}}(1,1,-2)\right)
+          </mrow>
+      </md>.
+    Assembling these bases elements into the orthogonal matrix
+    <me>
+      Q=\begin{amatrix}[rrr]1/\sqrt{3}\amp 1/\sqrt{2}\amp 1/\sqrt{6}\\
+      1/\sqrt{3}\amp -1/\sqrt{2}\amp 1/\sqrt{6}\\
+      1/\sqrt{3}\amp 0\amp -2/\sqrt{6}\end{amatrix}
+    </me>,
+    we conclude that <m>D=Q^{-1}AQ=Q^TAQ</m>, where
+    <me>
+      D=\begin{amatrix}[rrr]1\amp 0\amp 0\\ 0\amp -1\amp 0\\ 0\amp 0\amp -1  \end{amatrix}
+    </me>.
+    </p>
+  </solution>
+</example>
+<p>
+  Observe that the two eigenspaces <m>W_1</m> and <m>W_{-1}</m> of the matrix <m>A</m> in <xref ref="eg_ortho_diag"/> are orthogonal to one another, as predicted by the spectral theorem. Indeed, <m>W_1</m> is the line passing through the origin with direction vector <m>\boldn=(1,1,1)</m>, and <m>W_{-1}</m> is its orthogonal complement, the plane passing through the origin with normal vector <m>\boldn</m>. <xref ref="fig_ortho_diag"/> depicts this orthogonal configuration of the eigenspaces of this example. This is a useful
+</p>
+<figure xml:id="fig_ortho_diag">
+  <title>Eigenspaces of a symmetric matrix are orthogonal</title>
+  <interactive xml:id="interactive_ortho_diag" geogebra="zkqwe4mq" width="60%" aspect="2:3" />
+  <caption>Eigenspaces of a symmetric matrix are orthogonal</caption>
+</figure>
+
 </subsection>
 
 <xi:include href="./s_spectral_theorem_ex.ptx"/>
