@@ -432,7 +432,7 @@ An operator that admits an orthogonal (and hence an orthonormal) eigenbasis is c
       </li>
       <li>
         <p>
-          Let <m>B'=(\boldv_1, \bodv_2, \dots, \boldv_n)</m> be the ordered basis obtained by concatenating the orthonormal bases computed in (1). This is an orthonormal basis of eigenvectors. It follows that the matrix
+          Let <m>B'=(\boldv_1, \boldv_2, \dots, \boldv_n)</m> be the ordered basis obtained by concatenating the orthonormal bases computed in (1). This is an orthonormal basis of eigenvectors. It follows that the matrix
           <me>
             Q=\begin{bmatrix}
               \vert\amp \vert\amp \amp \vert\\
@@ -485,14 +485,34 @@ An operator that admits an orthogonal (and hence an orthonormal) eigenbasis is c
   </solution>
 </example>
 <p>
-  Observe that the two eigenspaces <m>W_1</m> and <m>W_{-1}</m> of the matrix <m>A</m> in <xref ref="eg_ortho_diag"/> are orthogonal to one another, as predicted by the spectral theorem. Indeed, <m>W_1</m> is the line passing through the origin with direction vector <m>\boldn=(1,1,1)</m>, and <m>W_{-1}</m> is its orthogonal complement, the plane passing through the origin with normal vector <m>\boldn</m>. <xref ref="fig_ortho_diag"/> depicts this orthogonal configuration of the eigenspaces of this example. This is a useful
+  Observe that the two eigenspaces <m>W_1</m> and <m>W_{-1}</m> of the matrix <m>A</m> in <xref ref="eg_ortho_diag"/> are orthogonal to one another, as predicted by the spectral theorem. Indeed, <m>W_1</m> is the line passing through the origin with direction vector <m>\boldn=(1,1,1)</m>, and <m>W_{-1}</m> is its orthogonal complement, the plane passing through the origin with normal vector <m>\boldn</m>. <xref ref="fig_ortho_diag"/> depicts the orthogonal configuration of the eigenspaces of this example. This is an excellent illustration of what makes the diagonalizability of symmetric matrices (and self-adjoint operators) special. Keep it in mind!
 </p>
 <figure xml:id="fig_ortho_diag">
   <title>Eigenspaces of a symmetric matrix are orthogonal</title>
-  <interactive xml:id="geogebra_ortho_diag" geogebra="zkqwe4mq" width="100%" aspect="4:3" label="geogebra_ortho_diag" />
+  <interactive xml:id="geogebra_ortho_diag" geogebra="yg2rdrtn" width="100%" aspect="4:3" label="geogebra_ortho_diag" />
   <caption>Eigenspaces of a symmetric matrix are orthogonal</caption>
 </figure>
-
+<p>
+  Do not neglect the reverse implication of our equivalence <xref ref="eq_ortho_diag"/>. As the next example illustrates, we can show an operator is self-adjoint by examining the geometry of its eigenspaces.
+</p>
+<example xml:id="eg_ortho_proj_selfadjoint">
+  <title>Orthogonal projections are self-adjoint</title>
+  <statement>
+    <p>
+      Let <m>(V,\angvec{\, , \,})</m> be a finite-dimensional inner product space, let <m>W</m> be a subpsace of <m>V</m>, and let <m>T=\operatorname{proj}_W</m> be orthogonal projection onto <m>W</m>. Prove that <m>T</m> is self-adjoint.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      By <xref ref="th_spectral"/> it suffices to show that <m>T</m> is orthogonally diagonalizable. According to <xref ref="ex_orthoproj_props"/> we have
+      <md>
+        <mrow>\boldv\in W \amp \iff T(\boldv)=\boldv</mrow>
+        <mrow>\boldv\in W^\perp \amp \iff T(\boldv)=\boldzero</mrow>
+      </md>.
+      Equivalently, <m>W=W_1</m> and <m>W^\perp=W_0</m> are the 1- and 0-eigenspaces of <m>T</m>, respectively. Since <m>\dim W+\dim W^\perp=\dim V</m> we conclude that <m>T</m> is diagonalizable. Since clearly <m>W</m> and <m>W^\perp</m> are orthogonal, we conclude that <m>T</m> is in fact othogonally diagonalizable, hence self-adjoint.
+    </p>
+  </solution>
+</example>
 </subsection>
 
 <xi:include href="./s_spectral_theorem_ex.ptx"/>
