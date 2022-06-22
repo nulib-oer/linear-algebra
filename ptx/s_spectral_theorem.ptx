@@ -489,11 +489,15 @@ An operator that admits an orthogonal (and hence an orthonormal) eigenbasis is c
 </p>
 <figure xml:id="fig_ortho_diag">
   <title>Eigenspaces of a symmetric matrix are orthogonal</title>
-  <interactive xml:id="geogebra_ortho_diag" geogebra="zkqwe4mq" width="100%" aspect="4:3" label="geogebra_ortho_diag" />
+  <interactive xml:id="geogebra_ortho_diag" platform="geogebra" width="100%" aspect="4:3">
+    <slate surface="geogebra" material="zkqwe4mq" aspect="4:3" label="train-distance">
+    enableLabelDrags(false);
+    </slate>
+  </interactive>
   <caption>Eigenspaces of a symmetric matrix are orthogonal</caption>
 </figure>
 <p>
-  Do not neglect the reverse implication of our equivalence <xref ref="eq_ortho_diag"/>. As the next example illustrates, we can show an operator is self-adjoint by examining the geometry of its eigenspaces.
+ Do not overlook the reverse implication of equivalence <xref ref="eq_ortho_diag"/>. As the next example illustrates, we can show an operator is self-adjoint by examining the geometry of its eigenspaces.
 </p>
 <example xml:id="eg_ortho_proj_selfadjoint">
   <title>Orthogonal projections are self-adjoint</title>
