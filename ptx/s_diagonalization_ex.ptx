@@ -2,7 +2,7 @@
   <exercisegroup>
     <introduction>
     <p>
-    For each matrix <m>A</m> use <xref ref="proc_diagonalize"/> to determine whether it is diagoanlizable. If yes, then produce an invertible matrix <m>P</m> and diagonal matrix <m>D</m> satisfying <m>D=P^{-1}AP</m>. For the last matrix the characteristic polynomial <m>p(t)</m> is provided for convenience.
+    For each matrix <m>A</m> use <xref ref="proc_diagonalize"/> to determine whether it is diagonalizable. If yes, then produce an invertible matrix <m>P</m> and diagonal matrix <m>D</m> satisfying <m>D=P^{-1}AP</m>. For the last matrix the characteristic polynomial <m>p(t)</m> is provided for convenience.
     </p>
     </introduction>
     <exercise>

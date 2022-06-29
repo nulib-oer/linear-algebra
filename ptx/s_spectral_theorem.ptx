@@ -291,16 +291,16 @@
           <mrow> \amp\implies \lambda\angvec{\boldv, \boldv'}=\lambda'\angvec{\boldv, \boldv'} </mrow>
           <mrow>  \amp \implies \angvec{\boldv, \boldv'}=0 \amp (\lambda\ne \lambda')</mrow>
         </md>.
-        We now prove by induction on <m>\dim V</m> that if <m>T</m> is self-adjoint, then <m>T</m> is diagonalizable. The base case <m>\dim V=1</m> is trivial. Assume the result is true of any <m>n</m>-dimensional inner product space, and suppose <m>\dim V=n+1</m>. By <xref ref="cor_self-adjoint_eigenvalue"/> there is a nonzero <m>\boldv\in V</m> with <m>T(\boldv)=\lambda\boldv</m>. Let <m>W=\Span\{\boldv\}</m>. Since <m>\dim W=1</m>, we have <m>\dim W^\perp=\dim V-1=n</m>. The following two facts are crucial for the rest of the argument and are left as an exercise.
+        We now prove by induction on <m>\dim V</m> that if <m>T</m> is self-adjoint, then <m>T</m> is diagonalizable. The base case <m>\dim V=1</m> is trivial. Assume the result is true of any <m>n</m>-dimensional inner product space, and suppose <m>\dim V=n+1</m>. By <xref ref="cor_self-adjoint_eigenvalue"/> there is a nonzero <m>\boldv\in V</m> with <m>T(\boldv)=\lambda\boldv</m>. Let <m>W=\Span\{\boldv\}</m>. Since <m>\dim W=1</m>, we have <m>\dim W^\perp=\dim V-1=n</m>. The following two facts are crucial for the rest of the argument and are left as an exercise (<xref ref="ex_selfadjoint_complement" text="global"/>).
         <ol class="a">
           <li>
             <p>
-              For all <m>\boldw'\in W^\perp</m> we have <m>T(\boldw')\in W^\perp</m>, and thus by restricting <m>T</m> to <m>W^\perp</m> we get a linear transformation <m>T\vert_{W^{\perp}}\colon W^\perp\rightarrow W^\perp</m>.
+              For all <m>\boldv\in W^\perp</m> we have <m>T(\boldv)\in W^\perp</m>, and thus by restricting <m>T</m> to <m>W^\perp</m> we get a linear transformation <m>T\vert_{W^{\perp}}\colon W^\perp\rightarrow W^\perp</m>.
             </p>
           </li>
           <li>
             <p>
-              The restriction <m>T\vert_{W^\perp}</m> is self-adjoint, considered as a linear transformation of the inner product space <m>W^\perp</m>. Here the inner product on <m>W^\perp</m> is inherited from <m>V</m> by restriction.
+              The restriction <m>T\vert_{W^\perp}</m> is self-adjoint, considered as a linear transformation of the inner product space <m>W^\perp</m>.  Here the inner product on the subspace <m>W^\perp</m> is inherited from <m>(V, \angvec{\, , \,})</m> by restriction.
             </p>
           </li>
         </ol>
@@ -463,7 +463,7 @@ An operator that admits an orthogonal (and hence an orthonormal) eigenbasis is c
   </statement>
   <solution>
     <p>
-      First we factor <m>p(x)</m>. An integer root would divide <m>1</m>, and we quickly see that <m>1</m> is a root. Polynomial division yields the factorization <m>p(x)=(x-1)(x^2+2x+1)</m>; further factorization of <m>x^2+2x+1</m> gives us  <m>p(x)=(x-1)(x+1)^2</m>.
+      First we factor <m>p(x)</m>. Looking at the constant term we see that the only possible integer roots of <m>p(x)</m> are <m>\pm 1</m>. It is easily verified that <m>p(1)=0</m>, and  polynomial division yields the factorization <m>p(x)=(x-1)(x^2+2x+1)</m>.  Further factorization of <m>x^2+2x+1</m> gives us  <m>p(x)=(x-1)(x+1)^2</m>.
     </p>
     <p>
       Next we compute <em>orthonormal</em> bases of the eigenspaces <m>W_1</m> and <m>W_{-1}</m>, yielding
