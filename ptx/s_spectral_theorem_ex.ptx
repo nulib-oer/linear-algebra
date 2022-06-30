@@ -75,11 +75,13 @@
   <exercise>
     <statement>
       <p>
-        A=\begin{amatrix}[rrrr] 1\amp 1\amp 1\amp 1\\
-         1\amp 1\amp 1\amp 1\\
-         1\amp 1\amp 1\amp 1\\
+        <m>A=\begin{amatrix}[rrrr]
+        1\amp 1\amp 1\amp 1\\
+         1\amp 1\amp 1\amp 1 \\
+         1\amp 1\amp 1\amp 1 \\
          1\amp 1\amp 1\amp 1
          \end{amatrix}
+        </m>
       </p>
     </statement>
   </exercise>
