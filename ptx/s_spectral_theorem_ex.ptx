@@ -129,4 +129,86 @@
       </p>
     </statement>
   </exercise>
+  <exercisegroup>
+  <introduction>
+  <p>
+    Let <m>\mathcal{C}\subseteq \R^2</m> be a conic curve defined by a quadratic equation of the form
+    <men xml:id="eq_conic_eqn">
+    \mathcal{C}\colon ax^2+bxy+cy^2=d
+  </men>
+    where <m>a,b,c\in \R</m> are fixed constants. You may have learned that <m>\mathcal{C}</m> can be rotated to a conic <m>\mathcal{C}'</m> with a <q>standard equation</q> of the form <m>ex^2+fy^2=d</m>. In the following exercises we will see why this is true.
+  </p>
+  </introduction>
+  <exercise>
+    <statement>
+      <p>
+        Find a symmetric matrix <m>A\in M_{22}</m> satisfying the following property: <m>\boldx=(x,y)</m> satisfies <xref ref="eq_conic_eqn"/> if and only if
+        <men xml:id="eq_conic_eqn_matrix">
+          \boldx \cdot (A\boldx)=\boldx^TA\boldx=d
+        </men>.
+        (Here we conflate the <m>1\times 1</m> matrix <m>\begin{bmatrix}d
+        \end{bmatrix}</m> with the scalar <m>d\in \R</m>.)
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Show that there is a rotation matrix <m>Q\in M_{22}</m> satisfying <m>D=Q^TAQ</m>, where
+        <me>
+          D=\begin{amatrix}[rr] e\amp 0\\ 0\amp f \end{amatrix}
+        </me>
+        for some <m>e,f\in \R</m>. 
+      </p>
+    </statement>
+    <hint>
+      <p>
+        See <xref ref="ex_ortho_matrix_rotation_reflection"/>.
+      </p>
+    </hint>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Show that <m>\boldx</m> satisfies <xref ref="eq_conic_eqn_matrix"/> if and only if <m>\boldx'=Q^{-1}\boldx=Q^T\boldx</m> satisfies
+        <men xml:id="eq_conic_std">
+          ex+fy=d
+        </men>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Explain why we can conclude that there is a rotation that maps the conic <m>\mathcal{C}</m> with equation <xref ref="eq_conic_eqn"/> to the conic <m>\mathcal{C}'</m> with <q>standard equation</q> <xref ref="eq_conic_std"/>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>\mathcal{C}\subseteq\R^2</m> be the conic curve with equation
+        <me>
+          x^2+4xy+y^2=1
+        </me>.
+      </p>
+      <ol>
+        <li>
+          <p>
+            Find an angle <m>\theta</m> and constants <m>a,b\in \R</m> such that the rotation <m>\rho_\theta</m> maps <m>\mathcal{C}</m> to a conic <m>\mathcal{C}'</m> with defining equation
+            <me>
+              ax^2+by^2=1
+            </me>.
+          </p>
+        </li>
+        <li>
+          <p>
+            First graph <m>\mathcal{C}'</m>, and then graph <m>\mathcal{C}</m> using the result of (a). What type of conics (parabolas, ellipses, hyperbolas) are <m>\mathcal{C}</m> and <m>\mathcal{C'}</m> ?
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </exercise>
+  </exercisegroup>
+
 </exercises>

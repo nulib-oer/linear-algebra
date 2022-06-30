@@ -201,6 +201,42 @@ In each exercise an inner product space <m>(V,\langle\, , \rangle)</m> is given 
     </statement>
   </exercise>
   </exercisegroup>
+  <exercise xml:id="ex_ortho_matrix_det">
+    <title>Determinant of orthogonal matrices</title>
+    <statement>
+      <p>
+        Prove: if <m>Q\in M_{nn}</m>, then <m>\det Q=\pm 1</m>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="ex_ortho_matrix_rotation_reflection">
+    <statement>
+      <p>
+        Let <m>Q</m> be an orthogonal <m>2\times 2</m> matrix. Prove the following statements.
+      </p>
+      <ol>
+        <li>
+          <p>
+            If <m>\det Q=1</m>, then <m>Q</m> is a rotation matrix: <ie />, there is a <m>\theta\in [0,2\pi]</m> such that
+            <me>
+              Q=\begin{amatrix}[rr] \cos\theta\amp -\sin\theta\\ \sin\theta\amp \cos\theta \end{amatrix}
+            </me>.
+            See <xref ref="th_transform_rotation"/>.
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>\det Q=-1</m>, then <m>Q</m> is a reflection matrix: <ie />, there is a <m>\theta\in [0,\pi]</m> such that
+            <me>
+              Q=\begin{amatrix}[rr] \cos 2\theta\amp \sin 2\theta\\ \sin 2\theta \amp -\cos 2\theta \end{amatrix}
+            </me>.
+            See <xref ref="th_transform_reflection"/>.
+          </p>
+        </li>
+      </ol>
+      It is easy to verify that rotation and reflection matrices are orthogonal. We now know that conversely any orthogonal matrix is either a rotation or a reflection matrix. 
+    </statement>
+  </exercise>
   <exercise>
     <statement>
       <p>
