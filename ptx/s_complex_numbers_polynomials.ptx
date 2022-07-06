@@ -1,0 +1,152 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_complex_numbers_polynomials">
+  <title>Complex numbers and polynomials</title>
+  <introduction>
+    In this section we begin with a brief treatment of the complex numbers <m>\C</m>. One very useful application of the complex numbers is that any polynomial with real coefficients factors as a product of linear terms over <m>\C</m> (<xref ref="cor_fund_alg"/>). Accordingly we will also give a brief review of definitions and properties related to polynomials. All theorems in this section will be given without a proof. The results here are all elementary, with the exception of course of the proof of <xref ref="th_fund_alg" text="custom">the fundamental theorem of algebra</xref>.
+  </introduction>
+<subsection xml:id="ss_complex_numbers">
+  <title>Complex numbers</title>
+  <p>
+    As we see below, the complex numbers is a number system built by taking the set of all <em>pairs</em> of real numbers and defining operations on these pairs that we call <em>complex addition</em> and <em>complex multiplication</em>.
+  </p>
+<definition xml:id="d_complex_numbers">
+  <idx><h>complex numbers</h></idx>
+  <notation>
+    <usage><m>\C</m></usage>
+    <description>complex numbers</description>
+  </notation>
+  <statement>
+  <p>
+    The set <m>\C</m> of <term>complex numbers</term>  is defined as the set of all pairs of real numbers: <ie />,
+  <me>
+    \C=\{(a, b)\colon a, b\in \R\}
+  </me>.
+  As a notational convention, given a complex number <m>z=(a,b)</m>, we write <m>z=a+bi</m>. As further conventions, we will write <m>a=a+0i</m>, <m>bi=0+bi</m>, and <m>i=0+1i</m>.
+</p>
+<p>
+  We define <term>addition</term> and <term>multiplication</term> operations on <m>\C</m> as follows.
+</p>
+<ol>
+
+  <li>
+    <title>Complex addition</title>
+    <p>
+      Given <m>z=(a,b)</m> and <m>w=(c,d)</m>, we define
+      <me>
+        z+w=(a+c,b+d)
+      </me>.
+      Using our notational convention:
+      <me>(a+bi)+(c+di)=(a+c)+(b+d)i</me>.
+    </p>
+  </li>
+  <li>
+    <title>Complex multiplication</title>
+    <p>
+      Given <m>z=(a,b)</m> and <m>w=(c,d)</m>, we define
+      <me>
+        z\, w=(ac-bd, ad+bc)
+      </me>.
+      Using our notational convention:
+      <me>(a+bi)(c+di)=(ac-bd)+(ad+bc)i</me>.
+    </p>
+  </li>
+</ol>
+</statement>
+</definition>
+<definition xml:id="d_real_imaginary">
+<title>Real and imaginary parts</title>
+<statement>
+<p>
+  Given complex number <m>z=(a,b)=a+bi</m> we define its <term>real part</term> <m>\Re z</m> as <m>\Re z=a</m> and its <term>imaginary part</term> <m>\Im z</m> as <m>\Im z=b</m>.
+</p>
+</statement>
+</definition>
+<remark xml:id="rm_complex_equality">
+<title>Complex equality</title>
+<statement>
+<p>
+  Let <m>z=(a,b)=a+bi</m> and <m>w=(c,d)=c+di</m>. According to the definition of equality for tuples (<xref ref="d_cartesian_product" text="global"/>), we have <m>z=w</m> if and only if <m>a=c</m> and <m>b=d</m>: equivalently, if and only if <m>\Re z=\Re w</m> and <m>\Im z=\Im w</m>.
+</p>
+</statement>
+</remark>
+<p>
+  Our first theorem indicates that complex addition and multiplication satisfy many of the same properies of real addition and multiplication.
+</p>
+<theorem xml:id="th_complex_arithmetic_basic">
+  <title>Basic properties of complex arithmetic</title>
+  <statement>
+    <ol label="i">
+      <li>
+        <title>Commutativity</title>
+        <p>
+        For all <m>z, w\in \C</m> we have
+        <md>
+          <mrow>z+ w \amp =  w+z</mrow>
+          <mrow> z w  \amp= wz </mrow>
+        </md>.
+        </p>
+      </li>
+      <li>
+      <title>Associativity</title>
+      <p>
+      For all <m>z, w, u \in \C</m> we have
+      <md>
+        <mrow>z+( w+ u) \amp = (z+ w)+ u</mrow>
+        <mrow> z( w u)  \amp=(z w) u </mrow>
+      </md>.
+      </p>
+    </li>
+    <li>
+    <title>Distributivity</title>
+    <p>
+    For all <m>z, w, u \in \C</m> we have
+    <me>
+      z( w+ u)=z w+z u
+    </me>.
+    </p>
+  </li>
+      <li>
+        <title>Additive identity</title>
+        <p>
+        The complex number <m>0=0+0i\in \C</m> satisfies
+        <me>
+          0+z=z
+        </me>
+          for all <m>z\in \C</m>. We call <m>0</m> the <term>additive identity</term> of <m>\C</m>.
+        </p>
+      </li>
+      <li>
+        <title>Additive inverse</title>
+        <p>
+        For all <m>z=(a,b)=a+bi\in \C</m> the element <m>-z=(-a,-b)=-a+(-b)i\in \C</m> satisfies
+        <me>
+          z+ -z=0
+        </me>.
+        We call <m>-z</m> the <term>additive inverse</term>of <m>z</m>.
+        </p>
+      </li>
+      <li>
+        <title>Multiplicative identity</title>
+        <p>
+        The complex number <m>1=1+0i</m> satisfies
+        <me>
+          1\cdot z=z
+        </me>
+          for all <m>z\in \C</m>. We call <m>1</m> the <term>multiplicative identity</term> of <m>\C</m>.
+        </p>
+      </li>
+      <li>
+        <title>Multiplicative inverse</title>
+        <p>
+        For all <em>nonzero</em> complex numbers <m>z=(a,b)=a+bi\in \C</m> (<ie />, <m>a\ne 0</m> of <m>b\ne 0</m>), the complex number <m>z^{-1}=\frac{a}{a^2+b^2}-\frac{b}{a^2+b^2}i \in \C</m> satisfies
+        <me>
+          z\,z^{-1}=1
+        </me>.
+        The complex number <m>z^{-1}</m>, also denoted <m>1/z</m>, is called the <term>multiplicative inverse</term> of <m>z</m>.
+        </p>
+      </li>
+    </ol>
+  </statement>
+</theorem>
+
+</subsection>
+</section>

@@ -117,10 +117,7 @@
   <proof xml:id="proof_sketch">
     <title>Proof sketch of <xref ref="th_self-adjoint_symmetric"/></title>
     <p>
-      Pick an orthonormal ordered basis <m>B</m> of <m>V</m>, and let <m>A=[T]_B</m>. By <xref ref="th_self-adjoint_symmetric"/>, <m>A</m> is symmetric. To prove <m>T</m> has an  eigenvalue, it suffices to show that the characteristic polynomial <m>p(t)=\det(tI-A)</m> has a real root. We will prove that in fact <em>all</em> the roots of <m>p(t)</m> are real.
-    </p>
-    <p>
-      To do so, we make a slight detour into complex vector spaces. The set
+      Pick an orthonormal ordered basis <m>B</m> of <m>V</m>, and let <m>A=[T]_B</m>. By <xref ref="th_self-adjoint_symmetric"/>, <m>A</m> is symmetric. To prove that all roots of the characteristic polynomial <m>p(t)=\det(tI-A)</m> are real, we make a slight detour into complex vector spaces. The set
       <me>
         \C^n=\{(z_1,z_2,\dots, z_n)\colon z_i\in \C \text{ for all } 1\leq i\leq n\}
       </me>
@@ -130,10 +127,10 @@
       </me>
       and
       <me>
-        \alpha\, (z_1, z_2, \dots, z_n)=(\alpha\, z_1, \alpha\, z_2, \dots, \alpha\, z_n),
+        \alpha (z_1, z_2, \dots, z_n)=(\alpha z_1, \alpha z_2, \dots, \alpha z_n),
       </me>
-      where <m>\alpha=a+bi\in \C</m>, forms what is called a
-      a <em>vector space over <m>\C</m></em>. This means that <m>V=\C^n</m> satisfies the strengthened axioms of <xref ref="d_vector_space"/> obtained by replacing every mention of a scalar <m>c\in \R</m> with a scalar <m>\alpha\in \C</m>. Additionally, the vector space <m>\C^n</m> has the structure of a complex inner product defined as
+      where <m>\alpha\in \C</m>, forms what is called a
+      <em>vector space over <m>\C</m></em>. This means that <m>V=\C^n</m> satisfies the strengthened axioms of <xref ref="d_vector_space"/> obtained by replacing every mention of a scalar <m>c\in \R</m> with a scalar <m>\alpha\in \C</m>. Additionally, the vector space <m>\C^n</m> has the structure of a complex inner product defined as
       <me>
         \langle (z_1,z_2,\dots, z_n), (w_1,w_2,\dots, w_n)\rangle=z_1\overline{w_1}+z_2\overline{w_2}+\cdots +z_n\overline{w_n}
       </me>,
