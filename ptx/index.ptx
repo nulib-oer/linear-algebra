@@ -259,11 +259,11 @@
     </acknowledgement>
     </frontmatter>
     <xi:include href="./c_foundations.ptx"/>
-    <!-- <xi:include href="./c_linear_systems.ptx"/>
+    <xi:include href="./c_linear_systems.ptx"/>
     <xi:include href="./c_matrices.ptx"/>
     <xi:include href="./c_vectorspace.ptx"/>
     <xi:include href="./c_innerproductspaces.ptx"/>
-    <xi:include href="./c_eigenvectors_diagonalization.ptx"/> -->
+    <xi:include href="./c_eigenvectors_diagonalization.ptx"/>
 
     <backmatter>
       <appendix xml:id="appendix-notation">
