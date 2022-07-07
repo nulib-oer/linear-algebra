@@ -22,6 +22,7 @@
     \C=\{(a, b)\colon a, b\in \R\}
   </me>.
 </p>
+</statement>
 </definition>
 <convention>
 <p>
@@ -49,7 +50,7 @@ Furthermore, we will use the notational abbreviations <m>a=a+0i</m>, <m>bi=0+bi<
   <li>
     <title>Complex addition</title>
     <p>
-      The <term>sum</term> <m>z+w</m> if defined as 
+      The <term>sum</term> <m>z+w</m> if defined as
       <me>
         z+w=(a+c)+(b+d)i</me>.
     </p>
