@@ -10,6 +10,7 @@
   </p>
 <definition xml:id="d_complex_numbers">
   <idx><h>complex numbers</h></idx>
+  <title>Complex numbers</title>
   <notation>
     <usage><m>\C</m></usage>
     <description>complex numbers</description>
@@ -20,33 +21,45 @@
   <me>
     \C=\{(a, b)\colon a, b\in \R\}
   </me>.
-  As a notational convention, given a complex number <m>z=(a,b)</m>, we write <m>z=a+bi</m>. As further conventions, we will write <m>a=a+0i</m>, <m>bi=0+bi</m>, and <m>i=0+1i</m>.
+</p>
+</definition>
+<convention>
+<p>
+  Henceforth we will denote a complex number <m>z=(a,b)</m> as
+<men xml:id="eq_complex_notation">
+  z=a+bi
+</men>.
+Furthermore, we will use the notational abbreviations <m>a=a+0i</m>, <m>bi=0+bi</m>, and <m>i=0+1i</m>.
 </p>
 <p>
-  We define <term>addition</term> and <term>multiplication</term> operations on <m>\C</m> as follows.
+  In what follows we will give some arithmetic meaning to the notation <xref ref="eq_complex_notation"/>, but first and foremost it should simply be thought of as an alternative manner of denoting the pair <m>(a,b)</m>.
+</p>
+</convention>
+<definition xml:id="d_complex_arithmetic">
+  <idx><h>complex numbers</h><h>addition</h></idx>
+  <idx><h>complex numbers</h><h>multiplication</h></idx>
+
+  <title>Complex addition and multiplication</title>
+
+  <statement>
+<p>
+  We define <term>addition</term> and <term>multiplication</term> operations on <m>\C</m> as follows. Let <m>z=a+bi</m> and <m>w=c+di</m>, where <m>a,b,c,d\in \R</m>.
 </p>
 <ol>
-
   <li>
     <title>Complex addition</title>
     <p>
-      Given <m>z=(a,b)</m> and <m>w=(c,d)</m>, we define
+      The <term>sum</term> <m>z+w</m> if defined as 
       <me>
-        z+w=(a+c,b+d)
-      </me>.
-      Using our notational convention:
-      <me>(a+bi)+(c+di)=(a+c)+(b+d)i</me>.
+        z+w=(a+c)+(b+d)i</me>.
     </p>
   </li>
   <li>
     <title>Complex multiplication</title>
     <p>
-      Given <m>z=(a,b)</m> and <m>w=(c,d)</m>, we define
+      Given <m>z=(a,b)=a+bi</m> and <m>w=(c,d)=c+di</m>, we define
       <me>
-        z\, w=(ac-bd, ad+bc)
-      </me>.
-      Using our notational convention:
-      <me>(a+bi)(c+di)=(ac-bd)+(ad+bc)i</me>.
+        z\, w=(ac-bd)+(ad+bc)i</me>.
     </p>
   </li>
 </ol>
@@ -69,12 +82,12 @@
 </statement>
 </remark>
 <p>
-  Our first theorem indicates that complex addition and multiplication satisfy many of the same properies of real addition and multiplication.
+  Our first theorem indicates that complex addition and multiplication satisfy many of the same properies of real addition and multiplication. A number system that satisfies the properties below is called a <em>field</em>.
 </p>
 <theorem xml:id="th_complex_arithmetic_basic">
   <title>Basic properties of complex arithmetic</title>
   <statement>
-    <ol label="i">
+    <ol>
       <li>
         <title>Commutativity</title>
         <p>
@@ -142,6 +155,87 @@
           z\,z^{-1}=1
         </me>.
         The complex number <m>z^{-1}</m>, also denoted <m>1/z</m>, is called the <term>multiplicative inverse</term> of <m>z</m>.
+        </p>
+      </li>
+    </ol>
+  </statement>
+</theorem>
+    <remark xml:id="rm_complex_reals">
+      <title>Complex numbers as extension of the reals</title>
+  <statement>
+    <p>
+      From now on we identify the real numbers as a subset of the complex numbers via the injective map
+      <md>
+        <mrow>\R \amp\rightarrow \C </mrow>
+        <mrow> a\amp\mapsto a+0i </mrow>
+      </md>.
+      It is easy to verify that under this identification the various complex operations agree with their real counterparts when restricting to real numbers: <eg />,
+      <md>
+        <mrow>(a+0i)+(b+0i) \amp = (a+b)+0i</mrow>
+        <mrow> (a+0i)(b+0i)\amp=ab+0i </mrow>
+        <mrow> -(a+0i) \amp =-a+0i</mrow>
+        <mrow> (a+0i)^{-1} \amp =a^{-1}+0i</mrow>
+      </md>.
+      This allows us to think of the complex numbers as a larger number system containing the reals, whose arithmetic operations are extensions of real number operations.
+    </p>
+  </statement>
+</remark>
+<p>
+  We end our introduction to the complex numbers with two further operations: the complex <em>absolute value</em> and <em>complex conjugation</em>. <xref ref="th_complex_conjugation_modulus"/> is an indication of the usefulness of these operations, and articulates how they ineract with the arithmetic complex operations.
+</p>
+<definition xml:id="d_complex_absolute_conjugation">
+  <idx><h>complex numbers</h><h>modulus</h></idx>
+  <idx><h>complex numbers</h><h>absolute value</h></idx>
+  <idx><h>complex numbers</h><h>conjugation</h></idx>
+  <title>Absolute value and complex conjugation</title>
+  <statement>
+    <p>
+      Let <m>z=(a,b)=a+bi</m> be a complex number. The  <term>absolute value</term> (or <term>modulus</term>) of <m>z</m>, denoted <m>\abs{z}</m>, is defined as
+      <me>
+        \abs{z}=\sqrt{a^2+b^2}
+      </me>.
+      The <term>complex conjugate</term> of <m>z</m>, denoted <m>\overline{z}</m>, is defined as
+      <me>
+        \overline{z}=a-bi
+      </me>.
+    </p>
+  </statement>
+</definition>
+<theorem xml:id="th_complex_conjugation_modulus">
+  <title>Properties of conjugation and modulus</title>
+  <statement>
+    <p>
+      The following properties hold for any complex numbers <m>\boldz</m> and <m>\boldw</m>.
+    </p>
+    <ol>
+      <li>
+        <p>
+        <md>
+          <mrow>\overline{z+w} \amp =\overline{z}+\overline{w}</mrow>
+          <mrow>\overline{zw} \amp =\overline{z}\overline{w}</mrow>
+          <mrow> \abs{zw} \amp =\abs{z}\abs{w}</mrow>
+        </md>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <me>
+            \abs{z}=\sqrt{z\overline{z}}
+          </me>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <me>
+            z\ne 0\implies z^{-1}=\frac{z}{\abs{z}}
+          </me>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <me>
+            z\in \R\iff \overline{z}=z
+          </me>.
         </p>
       </li>
     </ol>

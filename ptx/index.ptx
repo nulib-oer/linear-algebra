@@ -98,6 +98,7 @@
       \newcommand{\ceiling}[1]{\left\lceil#1\right\rceil}
       \newcommand{\mclass}[2][m]{[#2]_{#1}}
       \newcommand{\val}[2][]{\left\lvert #2\right\rvert_{#1}}
+      \newcommand{\abs}[2][]{\left\lvert #2\right\rvert_{#1}}
       \newcommand{\valuation}[2][]{\left\lvert #2\right\rvert_{#1}}
       \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
       \newcommand{\anpoly}{a_nx^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
@@ -222,6 +223,7 @@
     </latex-image-preamble>
 
     <!-- Renamings -->
+    <rename element="convention">Notation</rename>
     <rename element="algorithm">Procedure</rename>
     <rename element="principle">Mantra</rename>
     <rename element="assumption">Fiat</rename>
