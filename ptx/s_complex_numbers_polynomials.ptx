@@ -10,6 +10,20 @@
   </p>
 <definition xml:id="d_complex_numbers">
   <idx><h>complex numbers</h></idx>
+  <idx><h>complex numbers</h><h>real part</h></idx>
+  <idx><h>complex numbers</h><h>imaginary part</h></idx>
+  <notation>
+    <usage><m>\C</m></usage>
+    <description>the complex numbers</description>
+  </notation>
+  <notation>
+    <usage><m>\Re z</m></usage>
+    <description>real part of complex number <m>z</m></description>
+  </notation>
+  <notation>
+    <usage><m>\Im z</m></usage>
+    <description>imaginary part of complex number <m>z</m></description>
+  </notation>
   <title>Complex numbers</title>
   <notation>
     <usage><m>\C</m></usage>
@@ -21,21 +35,33 @@
   <me>
     \C=\{(a, b)\colon a, b\in \R\}
   </me>.
+  Given a complex number <m>z=(a,b)</m>, its first entry <m>a</m> is called the <term>real part</term> of <m>z</m>, denoted <m>\Re z</m>, and its second entry <m>b</m> is called the <term>imaginary part</term> of <m>z</m>, denoted <m>\Im z</m>.
 </p>
 </statement>
 </definition>
 <convention>
 <p>
-  Henceforth we will denote a complex number <m>z=(a,b)</m> as
+Henceforth we will primarily denote a complex number <m>z=(a,b)</m> as
 <men xml:id="eq_complex_notation">
   z=a+bi
 </men>.
-Furthermore, we will use the notational abbreviations <m>a=a+0i</m>, <m>bi=0+bi</m>, and <m>i=0+1i</m>.
+Since <m>a=\Re z</m> and <m>b=\Im z</m>, you can think of the notation <xref ref="eq_complex_notation"/> as a decomposition of <m>z</m> as a sum of its real and imaginary components. In what follows we give actual arithmetic meaning to the symbols <sq><m>+</m></sq> and <sq><m>i</m></sq> in this notation, but first and foremost <xref ref="eq_complex_equality"/> should simply be thought of as an alternative manner of denoting the pair <m>(a,b)</m>.
 </p>
 <p>
-  In what follows we will give some arithmetic meaning to the notation <xref ref="eq_complex_notation"/>, but first and foremost it should simply be thought of as an alternative manner of denoting the pair <m>(a,b)</m>.
+Additionally we will adopt the following notational conventions: <m>a-bi=a+(-b)i</m>, <m>a=a+0i</m>, <m>a+i=a+1i</m>, <m>bi=0+bi</m>, and <m>i=0+1i</m>.
 </p>
 </convention>
+<remark xml:id="rm_complex_equality">
+<title>Complex equality</title>
+<statement>
+<p>
+  When moving to the notation <xref ref="eq_complex_notation"/> do not lose sight of the essential nature of complex numbers as pairs of real numbers. This is important, for example, for understanding what it means for complex numbers <m>z=(a,b)=a+bi</m> and <m>w=(c,d)=c+di</m> to be equal. According to the general definition of equality for tuples (<xref ref="d_cartesian_product" text="global"/>), we have
+  <men xml:id="eq_complex_equality">
+    z=w\iff a=c \text{ and } b=d \iff \Re z=\Re w \text{ and } \Im z=\Im w
+  </men>.
+</p>
+</statement>
+</remark>
 <definition xml:id="d_complex_arithmetic">
   <idx><h>complex numbers</h><h>addition</h></idx>
   <idx><h>complex numbers</h><h>multiplication</h></idx>
@@ -50,15 +76,16 @@ Furthermore, we will use the notational abbreviations <m>a=a+0i</m>, <m>bi=0+bi<
   <li>
     <title>Complex addition</title>
     <p>
-      The <term>sum</term> <m>z+w</m> if defined as
+      The <term>sum</term> <m>z+w</m> is the complex number defined as
       <me>
-        z+w=(a+c)+(b+d)i</me>.
+        z+w=(a+c)+(b+d)i
+        </me>.
     </p>
   </li>
   <li>
     <title>Complex multiplication</title>
     <p>
-      Given <m>z=(a,b)=a+bi</m> and <m>w=(c,d)=c+di</m>, we define
+      The <term>product</term> <m>zw</m> is the complex number defined as
       <me>
         z\, w=(ac-bd)+(ad+bc)i</me>.
     </p>
@@ -66,24 +93,20 @@ Furthermore, we will use the notational abbreviations <m>a=a+0i</m>, <m>bi=0+bi<
 </ol>
 </statement>
 </definition>
-<definition xml:id="d_real_imaginary">
-<title>Real and imaginary parts</title>
-<statement>
+<example xml:id="eg_complex_add_mult">
+  <statement>
+    <p>
+      Let <m>z=2+3i</m> and <m>w=-1+2i</m>. We have
+      <md>
+        <mrow>z+w \amp =(2-1)+(3+2)i=1+5i</mrow>
+        <mrow>zw  \amp=(-2-6)+(4-3)i=-8+i </mrow>
+      </md>
+    </p>
+  </statement>
+</example>
+
 <p>
-  Given complex number <m>z=(a,b)=a+bi</m> we define its <term>real part</term> <m>\Re z</m> as <m>\Re z=a</m> and its <term>imaginary part</term> <m>\Im z</m> as <m>\Im z=b</m>.
-</p>
-</statement>
-</definition>
-<remark xml:id="rm_complex_equality">
-<title>Complex equality</title>
-<statement>
-<p>
-  Let <m>z=(a,b)=a+bi</m> and <m>w=(c,d)=c+di</m>. According to the definition of equality for tuples (<xref ref="d_cartesian_product" text="global"/>), we have <m>z=w</m> if and only if <m>a=c</m> and <m>b=d</m>: equivalently, if and only if <m>\Re z=\Re w</m> and <m>\Im z=\Im w</m>.
-</p>
-</statement>
-</remark>
-<p>
-  Our first theorem indicates that complex addition and multiplication satisfy many of the same properies of real addition and multiplication. A number system that satisfies the properties below is called a <em>field</em>.
+  Our first theorem indicates that complex addition and multiplication behave in much the same way as real addition and multiplication. A number system that satisfies the properties of <xref ref="th_complex_arithmetic_basic"/> is called a <em>field</em>. These properties guarantee that we can perform arithmetic in a field essentially as we do with real numbers.
 </p>
 <theorem xml:id="th_complex_arithmetic_basic">
   <title>Basic properties of complex arithmetic</title>
@@ -143,7 +166,7 @@ Furthermore, we will use the notational abbreviations <m>a=a+0i</m>, <m>bi=0+bi<
         <p>
         The complex number <m>1=1+0i</m> satisfies
         <me>
-          1\cdot z=z
+          1z=z
         </me>
           for all <m>z\in \C</m>. We call <m>1</m> the <term>multiplicative identity</term> of <m>\C</m>.
         </p>
@@ -151,7 +174,7 @@ Furthermore, we will use the notational abbreviations <m>a=a+0i</m>, <m>bi=0+bi<
       <li>
         <title>Multiplicative inverse</title>
         <p>
-        For all <em>nonzero</em> complex numbers <m>z=(a,b)=a+bi\in \C</m> (<ie />, <m>a\ne 0</m> of <m>b\ne 0</m>), the complex number <m>z^{-1}=\frac{a}{a^2+b^2}-\frac{b}{a^2+b^2}i \in \C</m> satisfies
+        For all <em>nonzero</em> complex numbers <m>z=(a,b)=a+bi\in \C</m> (<ie />, <m>a\ne 0</m> of <m>b\ne 0</m>), the complex number <m>z^{-1}=\frac{a}{a^2+b^2}+\frac{-b}{a^2+b^2}i \in \C</m> satisfies
         <me>
           z\,z^{-1}=1
         </me>.
@@ -161,28 +184,43 @@ Furthermore, we will use the notational abbreviations <m>a=a+0i</m>, <m>bi=0+bi<
     </ol>
   </statement>
 </theorem>
+<example>
+  <statement>
+    <p>
+      Let <m>z=-2+i</m>. According to <xref ref="th_complex_arithmetic_basic"/>, the multiplicative inverse of <m>z</m>  is
+      <me>
+        z^{-1}=\frac{-2}{4+1}+\frac{-1}{4+1}i=\frac{-2}{5}+{-1}{5}i
+      </me>.
+      Let's check that <m>zz^{-1}=1</m>:
+      <md>
+        <mrow>zz^{-1} \amp =(-2+i)(\frac{-2}{5}+{-1}{5}i)</mrow>
+        <mrow> \amp = (\frac{4}{5}+\frac{1}{5})+(\frac{2}{5}+\frac{-2}{5})i </mrow>
+        <mrow>  \amp = 1+0i=1</mrow>
+      </md>.
+    </p>
+  </statement>
+</example>
     <remark xml:id="rm_complex_reals">
       <title>Complex numbers as extension of the reals</title>
   <statement>
     <p>
-      From now on we identify the real numbers as a subset of the complex numbers via the injective map
-      <md>
-        <mrow>\R \amp\rightarrow \C </mrow>
-        <mrow> a\amp\mapsto a+0i </mrow>
-      </md>.
-      It is easy to verify that under this identification the various complex operations agree with their real counterparts when restricting to real numbers: <eg />,
+      From now on we identify the real numbers as the set of complex numbers of the form <m>a=a+0i</m>, where <m>a\in \C</m>: equivalently, the set of complex numbers <m>z</m> satisfying <m>\Im z=0</m>. Under this identification <m>\R</m> can be thought of as a subset of <m>\C</m>, and we may add one more link to the chain of subsets given in <xref ref="eq_chain_numbersystems"/>:
+      <men xml:id="eq_chain_numbersystems_complex">
+        \Z\subseteq\Q\subseteq\R\subseteq\C
+      </men>.
+      Furthermore, it is easy to verify that the various operations on <m>\C</m> agree with their real counterparts when restricting to <m>\R</m>: <eg />,
       <md>
         <mrow>(a+0i)+(b+0i) \amp = (a+b)+0i</mrow>
         <mrow> (a+0i)(b+0i)\amp=ab+0i </mrow>
         <mrow> -(a+0i) \amp =-a+0i</mrow>
-        <mrow> (a+0i)^{-1} \amp =a^{-1}+0i</mrow>
+        <mrow> \frac{1}{a+0i} \amp =\frac{1}{a}+0i</mrow>
       </md>.
-      This allows us to think of the complex numbers as a larger number system containing the reals, whose arithmetic operations are extensions of real number operations.
+      This allows us to think of the complex numbers as a larger number system containing the reals, whose arithmetic operations are <em>extensions</em> of real number operations.
     </p>
   </statement>
 </remark>
 <p>
-  We end our introduction to the complex numbers with two further operations: the complex <em>absolute value</em> and <em>complex conjugation</em>. <xref ref="th_complex_conjugation_modulus"/> is an indication of the usefulness of these operations, and articulates how they ineract with the arithmetic complex operations.
+  We end our introduction to the complex numbers with two further operations: the <em>absolute value</em> and <em>complex conjugation</em>. <xref ref="th_complex_conjugation_modulus"/> is an indication of their usefulness, and articulates how they interact with the other operations on <m>\C</m>.
 </p>
 <definition xml:id="d_complex_absolute_conjugation">
   <idx><h>complex numbers</h><h>modulus</h></idx>
@@ -206,42 +244,60 @@ Furthermore, we will use the notational abbreviations <m>a=a+0i</m>, <m>bi=0+bi<
   <title>Properties of conjugation and modulus</title>
   <statement>
     <p>
-      The following properties hold for any complex numbers <m>\boldz</m> and <m>\boldw</m>.
+      The following properties hold for all <m>\boldz, \boldw\in \C</m>.
     </p>
     <ol>
       <li>
-        <p>
-        <md>
-          <mrow>\overline{z+w} \amp =\overline{z}+\overline{w}</mrow>
-          <mrow>\overline{zw} \amp =\overline{z}\overline{w}</mrow>
-          <mrow> \abs{zw} \amp =\abs{z}\abs{w}</mrow>
-        </md>.
-        </p>
+        <m>\overline{z+w} =\overline{z}+\overline{w}</m>.
       </li>
-      <li>
-        <p>
-          <me>
-            \abs{z}=\sqrt{z\overline{z}}
-          </me>.
-        </p>
-      </li>
-      <li>
-        <p>
-          <me>
-            z\ne 0\implies z^{-1}=\frac{z}{\abs{z}}
-          </me>.
-        </p>
-      </li>
-      <li>
-        <p>
-          <me>
-            z\in \R\iff \overline{z}=z
-          </me>.
-        </p>
-      </li>
+    <li>
+      <p>
+        <m>\overline{zw}=\overline{z}\overline{w}</m>.
+      </p>
+    </li>
+  <li>
+    <p>
+      <m>\abs{zw}=\abs{z}\abs{w}</m>.
+    </p>
+  </li>
+  <li>
+    <p>
+      <m>z\overline{z}=\abs{z}^2</m>.
+    </p>
+  </li>
+  <li>
+    <p>
+      <m>z^{-1}=\frac{z}{\abs{z}}</m> (if <m>z\ne 0</m>).
+    </p>
+  </li>
+  <li>
+    <p>
+      <m>z\in \R\iff \overline{z}=z</m>.
+    </p>
+  </li>
     </ol>
   </statement>
 </theorem>
+<example>
+  <statement>
+    <p>
+      Let <m>z=3-i</m>. Observe that
+      <md>
+        <mrow>z\overline{z} \amp=(3-i)(3+i) </mrow>
+        <mrow> \amp=(9+1)+0i </mrow>
+        <mrow>  \amp =\abs{z}^2</mrow>
+      </md>
+      and
+      <md>
+        <mrow>z^{-1} \amp =\frac{3}{10}+\frac{1}{10}i</mrow>
+        <mrow> \amp=\frac{3+i}{10} </mrow>
+        <mrow>  \amp = \frac{\overline{z}}{\abs{z}^2}</mrow>
+      </md>,
+      as claimed in <xref ref="th_complex_conjugation_modulus"/>.
 
+    </p>
+  </statement>
+
+</example>
 </subsection>
 </section>

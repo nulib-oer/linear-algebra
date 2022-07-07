@@ -203,11 +203,6 @@
     <usage><m>\mathbb{R}</m></usage>
     <description>the real numbers</description>
   </notation>
-  <idx><h>complex numbers</h></idx>
-  <notation>
-    <usage><m>\mathbb{C}</m></usage>
-    <description>the complex numbers</description>
-  </notation>
   <idx><h>integers</h></idx>
   <notation>
     <usage><m>\mathbb{Z}</m></usage>
@@ -226,10 +221,10 @@
         <mrow>\mathbb{Z} \amp =\{0,1,2,3,\dots\}\cup \{-1,-2,-3,\dots\} </mrow>
         <mrow> \mathbb{Q} \amp = \{x\in\mathbb{R}\colon x=\tfrac{m}{n} \text{ for some } m,n\in\Z\}  </mrow>
       </md>.
-      The <term>complex numbers</term> <m>\mathbb{C}</m> are defined as the set of all formal expressions of the form <m>a+bi</m>, where <m>a,b\in\mathbb{R}</m>. Identifying a real number <m>a</m> with the complex number <m>a+0i</m>, we have the following chain of subsets:
-      <me>
-        \mathbb{Z}\subseteq\mathbb{Q}\subseteq\mathbb{R}\subseteq\mathbb{C}
-      </me>.
+      This yields the following chain of subsets:
+      <men xml:id="eq_chain_numbersystems">
+        \mathbb{Z}\subseteq\mathbb{Q}\subseteq\mathbb{R}
+      </men>.
       The <term>empty set</term> is the set containing no objects, denoted <m>\{\ \}</m> or <m>\emptyset</m>.
     </p>
   </statement>
@@ -480,7 +475,7 @@
   </definition>
     <theorem xml:id="th_invertible_bijective">
       <title>Invertible is equivalent to bijective</title>
-      
+
 
       <statement>
         <p>
