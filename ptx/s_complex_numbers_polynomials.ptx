@@ -300,4 +300,93 @@ Additionally we will adopt the following notational conventions: <m>a-bi=a+(-b)i
 
 </example>
 </subsection>
+<subsection xml:id="ss_polynomials">
+  <title>Polynomials</title>
+<introduction>
+  Polynomials will play an important role in our treatment of linear algebra both as examples of vector spaces (<xref ref="d_subspace_functions" text="global"/>) and as tools for studying linear operators (<xref ref="d_char_poly_transform" text="global"/>). We gather here some basic definitions and properties of polynomials. Although we will primarily be concerned with polynomials with real coefficents in this course, it is convenient to develop the theory over the complex numbers.
+</introduction>
+<definition xml:id="d_polynomials">
+  <title>Polynomial expression</title>
+  <idx><h>polynomial</h><h>expression</h></idx>
+  <idx><h>polynomial</h><h>degree</h></idx>
+  <idx><h>polynomial</h><h>coefficient</h></idx>
+  <idx><h>polynomial</h><h>leading coefficient</h></idx>
+  <idx><h>polynomial</h><h>leading term</h></idx>
+  <idx><h>polynomial</h><h>constant term</h></idx>
+  <statement>
+    <p>
+      Assume <m>X\subseteq \C</m> and that <m>Y=\R</m> or <m>Y=\C</m>. A function <m>f\colon X\rightarrow Y</m> is called a <term>polynomial</term> if there is a nonnegative integer <m>n</m> and elements <m>a_i\in \C</m> such that
+      <men xml:id="eq_poly">
+        f(x)=\anpoly
+      </men>
+      for all <m>x\in X</m>. We call the right-hand side of <xref ref="eq_poly"/> a <term>polynomial expression</term> of <m>f</m>. For each <m>1\leq i\leq n</m> we call <m>a_ix^i</m> the <m>i</m>-th <term>term</term> of this polynomial expression and <m>a_i</m> its <m>i</m>-th coefficient; we call <m>a_0</m> the <term>constant term</term>. Furthermore, if <m>a_n\ne 0</m>, then <m>a_nx^{n}</m> is called the <term>leading term</term> of the polynomial expression in <xref ref="eq_poly"/>, and <m>a_{n}</m>
+      its <term>leading coefficient</term>.
+    </p>
+    <p>
+      A <term>root</term> of a polynomial <m>f\colon X\rightarrow Y</m> is an element <m>c\in X</m> satisfying <m>f(c)=0</m>.
+    </p>
+    <p>
+      A function <m>f\colon X\rightarrow Y</m> is called a <term>real</term> (resp. <term>rational</term>, resp. <term>integer</term>) polynomial if it has a polynomial expression as in <xref ref="eq_poly"/> for which each coefficient <m>a_i</m> is real (resp. rational, resp. an integer).
+    </p>
+
+  </statement>
+</definition>
+<theorem xml:id="th_poly_basic">
+  <title>Basic properties of polynomials</title>
+  <statement>
+    Assume <m>X\subseteq \C</m> and that <m>Y=\R</m> or <m>Y=\C</m>.
+    <ol>
+      <li>
+        <p>
+          If <m>f</m> and <m>g</m> are polynomials from <m>X</m> to <m>Y</m>, then so are <m>f+g</m>, <m>fg</m>, and <m>cf</m>, where <m>c</m> is any element of <m>Y</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>f\colon X\rightarrow Y</m> is a polynomial and <m>c\in X</m> is a root of <m>f(x)</m>, then there is a polynomial <m>g\colon X\rightarrow Y</m> such that
+          <men xml:id="eq_poly_factor">
+            f(x)=(x-c)g(x)
+          </men>
+          for all <m>x\in X</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>f\colon X\rightarrow Y</m> has a polynomial expression <m>f(x)=\anpoly</m> where <m>a_n\ne 0</m>, then <m>f</m> has at most <m>n</m> distinct roots in <m>X</m>.
+        </p>
+      </li>
+    </ol>
+
+    <p>
+    </p>
+  </statement>
+</theorem>
+<p>
+  As a result of the last property of <xref ref="th_poly_basic"/> the expression <xref ref="eq_poly"/> of a polynomial <m>f\colon X\rightarrow Y</m> is <em>unique</em>, as long as the domain <m>X</m> has enough elements. This is made precise in the following corollary.
+</p>
+<corollary xml:id="cor_poly_equality">
+  <statement>
+    <p>
+      If <m>f\colon X\rightarrow Y</m> is a polynomial and <m>X</m> is infinite, then the expression <m>f(x)=\anpoly</m> is unique. More precisely:
+      <ul>
+        <li>
+          <p>
+            If <m>f</m> is the zero function, then <m>a_i=0</m> for all <m>1\leq i\leq n</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>f</m> is not the zero function and we have two polynomial expressions
+            <me>
+              f(x)=\anpoly=\bmpoly
+            </me>,
+            where <m>a_n, b_m\ne 0</m>, then <m>n=m</m> and <m>a_i=b_i</m> for all <m>1\leq i\leq n</m>.
+          </p>
+        </li>
+      </ul>
+    </p>
+  </statement>
+</corollary>
+
+</subsection>
 </section>
