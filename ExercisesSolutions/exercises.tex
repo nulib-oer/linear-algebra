@@ -1,0 +1,1499 @@
+%********************************************%
+%*       Generated from PreTeXt source      *%
+%*       on 2021-06-27T20:57:44-05:00       *%
+%*   A recent stable commit (2020-08-09):   *%
+%* 98f21740783f166a773df4dc83cab5293ab63a4a *%
+%*                                          *%
+%*         https://pretextbook.org          *%
+%*                                          *%
+%********************************************%
+%% We elect to always write snapshot output into <job>.dep file
+\RequirePackage{snapshot}
+\documentclass[oneside,10pt,]{book}
+%% Custom Preamble Entries, early (use latex.preamble.early)
+%% Default LaTeX packages
+%%   1.  always employed (or nearly so) for some purpose, or
+%%   2.  a stylewriter may assume their presence
+\usepackage{geometry}
+%% Some aspects of the preamble are conditional,
+%% the LaTeX engine is one such determinant
+\usepackage{ifthen}
+%% etoolbox has a variety of modern conveniences
+\usepackage{etoolbox}
+\usepackage{ifxetex,ifluatex}
+%% Raster graphics inclusion
+\usepackage{graphicx}
+%% Color support, xcolor package
+%% Always loaded, for: add/delete text, author tools
+%% Here, since tcolorbox loads tikz, and tikz loads xcolor
+\PassOptionsToPackage{usenames,dvipsnames,svgnames,table}{xcolor}
+\usepackage{xcolor}
+%% begin: defined colors, via xcolor package, for styling
+%% end: defined colors, via xcolor package, for styling
+%% Colored boxes, and much more, though mostly styling
+%% skins library provides "enhanced" skin, employing tikzpicture
+%% boxes may be configured as "breakable" or "unbreakable"
+%% "raster" controls grids of boxes, aka side-by-side
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+\tcbuselibrary{breakable}
+\tcbuselibrary{raster}
+%% We load some "stock" tcolorbox styles that we use a lot
+%% Placement here is provisional, there will be some color work also
+%% First, black on white, no border, transparent, but no assumption about titles
+\tcbset{ bwminimalstyle/.style={size=minimal, boxrule=-0.3pt, frame empty,
+colback=white, colbacktitle=white, coltitle=black, opacityfill=0.0} }
+%% Second, bold title, run-in to text/paragraph/heading
+%% Space afterwards will be controlled by environment,
+%% independent of constructions of the tcb title
+%% Places \blocktitlefont onto many block titles
+\tcbset{ runintitlestyle/.style={fonttitle=\blocktitlefont\upshape\bfseries, attach title to upper} }
+%% Spacing prior to each exercise, anywhere
+\tcbset{ exercisespacingstyle/.style={before skip={1.5ex plus 0.5ex}} }
+%% Spacing prior to each block
+\tcbset{ blockspacingstyle/.style={before skip={2.0ex plus 0.5ex}} }
+%% xparse allows the construction of more robust commands,
+%% this is a necessity for isolating styling and behavior
+%% The tcolorbox library of the same name loads the base library
+\tcbuselibrary{xparse}
+%% Hyperref should be here, but likes to be loaded late
+%%
+%% Inline math delimiters, \(, \), need to be robust
+%% 2016-01-31:  latexrelease.sty  supersedes  fixltx2e.sty
+%% If  latexrelease.sty  exists, bugfix is in kernel
+%% If not, bugfix is in  fixltx2e.sty
+%% See:  https://tug.org/TUGboat/tb36-3/tb114ltnews22.pdf
+%% and read "Fewer fragile commands" in distribution's  latexchanges.pdf
+\IfFileExists{latexrelease.sty}{}{\usepackage{fixltx2e}}
+%% Text height identically 9 inches, text width varies on point size
+%% See Bringhurst 2.1.1 on measure for recommendations
+%% 75 characters per line (count spaces, punctuation) is target
+%% which is the upper limit of Bringhurst's recommendations
+\geometry{letterpaper,total={340pt,9.0in}}
+%% Custom Page Layout Adjustments (use latex.geometry)
+%% This LaTeX file may be compiled with pdflatex, xelatex, or lualatex executables
+%% LuaTeX is not explicitly supported, but we do accept additions from knowledgeable users
+%% The conditional below provides  pdflatex  specific configuration last
+%% begin: engine-specific capabilities
+\ifthenelse{\boolean{xetex} \or \boolean{luatex}}{%
+%% begin: xelatex and lualatex-specific default configuration
+\ifxetex\usepackage{xltxtra}\fi
+%% realscripts is the only part of xltxtra relevant to lualatex
+\ifluatex\usepackage{realscripts}\fi
+%% end:   xelatex and lualatex-specific default configuration
+}{
+%% begin: pdflatex-specific default configuration
+%% We assume a PreTeXt XML source file may have Unicode characters
+%% and so we ask LaTeX to parse a UTF-8 encoded file
+%% This may work well for accented characters in Western language,
+%% but not with Greek, Asian languages, etc.
+%% When this is not good enough, switch to the  xelatex  engine
+%% where Unicode is better supported (encouraged, even)
+\usepackage[utf8]{inputenc}
+%% end: pdflatex-specific default configuration
+}
+%% end:   engine-specific capabilities
+%%
+%% Fonts.  Conditional on LaTex engine employed.
+%% Default Text Font: The Latin Modern fonts are
+%% "enhanced versions of the [original TeX] Computer Modern fonts."
+%% We use them as the default text font for PreTeXt output.
+%% Automatic Font Control
+%% Portions of a document, are, or may, be affected by defined commands
+%% These are perhaps more flexible when using  xelatex  rather than  pdflatex
+%% The following definitions are meant to be re-defined in a style, using \renewcommand
+%% They are scoped when employed (in a TeX group), and so should not be defined with an argument
+\newcommand{\divisionfont}{\relax}
+\newcommand{\blocktitlefont}{\relax}
+\newcommand{\contentsfont}{\relax}
+\newcommand{\pagefont}{\relax}
+\newcommand{\tabularfont}{\relax}
+\newcommand{\xreffont}{\relax}
+\newcommand{\titlepagefont}{\relax}
+%%
+\ifthenelse{\boolean{xetex} \or \boolean{luatex}}{%
+%% begin: font setup and configuration for use with xelatex
+%% Generally, xelatex is necessary for non-Western fonts
+%% fontspec package provides extensive control of system fonts,
+%% meaning *.otf (OpenType), and apparently *.ttf (TrueType)
+%% that live *outside* your TeX/MF tree, and are controlled by your *system*
+%% (it is possible that a TeX distribution will place fonts in a system location)
+%%
+%% The fontspec package is the best vehicle for using different fonts in  xelatex
+%% So we load it always, no matter what a publisher or style might want
+%%
+\usepackage{fontspec}
+%%
+%% begin: xelatex main font ("font-xelatex-main" template)
+%% Latin Modern Roman is the default font for xelatex and so is loaded with a TU encoding
+%% *in the format* so we can't touch it, only perhaps adjust it later
+%% in one of two ways (then known by NFSS names such as "lmr")
+%% (1) via NFSS with font family names such as "lmr" and "lmss"
+%% (2) via fontspec with commands like \setmainfont{Latin Modern Roman}
+%% The latter requires the font to be known at the system-level by its font name,
+%% but will give access to OTF font features through optional arguments
+%% https://tex.stackexchange.com/questions/470008/
+%% where-and-how-does-fontspec-sty-specify-the-default-font-latin-modern-roman
+%% http://tex.stackexchange.com/questions/115321
+%% /how-to-optimize-latin-modern-font-with-xelatex
+%%
+%% end:   xelatex main font ("font-xelatex-main" template)
+%% begin: xelatex mono font ("font-xelatex-mono" template)
+%% (conditional on non-trivial uses being present in source)
+%% end:   xelatex mono font ("font-xelatex-mono" template)
+%% begin: xelatex font adjustments ("font-xelatex-style" template)
+%% end:   xelatex font adjustments ("font-xelatex-style" template)
+%%
+%% Extensive support for other languages
+\usepackage{polyglossia}
+%% Set main/default language based on pretext/@xml:lang value
+%% document language code is "en-US", US English
+%% usmax variant has extra hypenation
+\setmainlanguage[variant=usmax]{english}
+%% Enable secondary languages based on discovery of @xml:lang values
+%% Enable fonts/scripts based on discovery of @xml:lang values
+%% Western languages should be ably covered by Latin Modern Roman
+%% end:   font setup and configuration for use with xelatex
+}{%
+%% begin: font setup and configuration for use with pdflatex
+%% begin: pdflatex main font ("font-pdflatex-main" template)
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+%% end:   pdflatex main font ("font-pdflatex-main" template)
+%% begin: pdflatex mono font ("font-pdflatex-mono" template)
+%% (conditional on non-trivial uses being present in source)
+%% end:   pdflatex mono font ("font-pdflatex-mono" template)
+%% begin: pdflatex font adjustments ("font-pdflatex-style" template)
+%% end:   pdflatex font adjustments ("font-pdflatex-style" template)
+%% end:   font setup and configuration for use with pdflatex
+}
+%% Micromanage spacing, etc.  The named "microtype-options"
+%% template may be employed to fine-tune package behavior
+\usepackage{microtype}
+%% Symbols, align environment, commutative diagrams, bracket-matrix
+\usepackage{amsmath}
+\usepackage{amscd}
+\usepackage{amssymb}
+%% allow page breaks within display mathematics anywhere
+%% level 4 is maximally permissive
+%% this is exactly the opposite of AMSmath package philosophy
+%% there are per-display, and per-equation options to control this
+%% split, aligned, gathered, and alignedat are not affected
+\allowdisplaybreaks[4]
+%% allow more columns to a matrix
+%% can make this even bigger by overriding with  latex.preamble.late  processing option
+\setcounter{MaxMatrixCols}{30}
+%%
+%%
+%% Division Titles, and Page Headers/Footers
+%% titlesec package, loading "titleps" package cooperatively
+%% See code comments about the necessity and purpose of "explicit" option.
+%% The "newparttoc" option causes a consistent entry for parts in the ToC
+%% file, but it is only effective if there is a \titleformat for \part.
+%% "pagestyles" loads the  titleps  package cooperatively.
+\usepackage[explicit, newparttoc, pagestyles]{titlesec}
+%% The companion titletoc package for the ToC.
+\usepackage{titletoc}
+%% Fixes a bug with transition from chapters to appendices in a "book"
+%% See generating XSL code for more details about necessity
+\newtitlemark{\chaptertitlename}
+%% begin: customizations of page styles via the modal "titleps-style" template
+%% Designed to use commands from the LaTeX "titleps" package
+%% Plain pages should have the same font for page numbers
+\renewpagestyle{plain}{%
+\setfoot{}{\pagefont\thepage}{}%
+}%
+%% Single pages as in default LaTeX
+\renewpagestyle{headings}{%
+\sethead{\pagefont\slshape\MakeUppercase{\ifthechapter{\chaptertitlename\space\thechapter.\space}{}\chaptertitle}}{}{\pagefont\thepage}%
+}%
+\pagestyle{headings}
+%% end: customizations of page styles via the modal "titleps-style" template
+%%
+%% Create globally-available macros to be provided for style writers
+%% These are redefined for each occurence of each division
+\newcommand{\divisionnameptx}{\relax}%
+\newcommand{\titleptx}{\relax}%
+\newcommand{\subtitleptx}{\relax}%
+\newcommand{\shortitleptx}{\relax}%
+\newcommand{\authorsptx}{\relax}%
+\newcommand{\epigraphptx}{\relax}%
+%% Create environments for possible occurences of each division
+%% Environment for a PTX "chapter" at the level of a LaTeX "chapter"
+\NewDocumentEnvironment{chapterptx}{mmmmmm}
+{%
+\renewcommand{\divisionnameptx}{Chapter}%
+\renewcommand{\titleptx}{#1}%
+\renewcommand{\subtitleptx}{#2}%
+\renewcommand{\shortitleptx}{#3}%
+\renewcommand{\authorsptx}{#4}%
+\renewcommand{\epigraphptx}{#5}%
+\chapter[{#3}]{#1}%
+\label{#6}%
+}{}%
+%% Environment for a PTX "section" at the level of a LaTeX "section"
+\NewDocumentEnvironment{sectionptx}{mmmmmm}
+{%
+\renewcommand{\divisionnameptx}{Section}%
+\renewcommand{\titleptx}{#1}%
+\renewcommand{\subtitleptx}{#2}%
+\renewcommand{\shortitleptx}{#3}%
+\renewcommand{\authorsptx}{#4}%
+\renewcommand{\epigraphptx}{#5}%
+\section[{#3}]{#1}%
+\label{#6}%
+}{}%
+%% Environment for a PTX "exercises" at the level of a LaTeX "subsection"
+\NewDocumentEnvironment{exercises-subsection}{mmmmmm}
+{%
+\renewcommand{\divisionnameptx}{Exercises}%
+\renewcommand{\titleptx}{#1}%
+\renewcommand{\subtitleptx}{#2}%
+\renewcommand{\shortitleptx}{#3}%
+\renewcommand{\authorsptx}{#4}%
+\renewcommand{\epigraphptx}{#5}%
+\subsection[{#3}]{#1}%
+\label{#6}%
+}{}%
+%% Environment for a PTX "exercises" at the level of a LaTeX "subsection"
+\NewDocumentEnvironment{exercises-subsection-numberless}{mmmmmm}
+{%
+\renewcommand{\divisionnameptx}{Exercises}%
+\renewcommand{\titleptx}{#1}%
+\renewcommand{\subtitleptx}{#2}%
+\renewcommand{\shortitleptx}{#3}%
+\renewcommand{\authorsptx}{#4}%
+\renewcommand{\epigraphptx}{#5}%
+\subsection*{#1}%
+\addcontentsline{toc}{subsection}{#3}
+\label{#6}%
+}{}%
+%%
+%% Styles for six traditional LaTeX divisions
+\titleformat{\part}[display]
+{\divisionfont\Huge\bfseries\centering}{\divisionnameptx\space\thepart}{30pt}{\Huge#1}
+[{\Large\centering\authorsptx}]
+\titleformat{\chapter}[display]
+{\divisionfont\huge\bfseries}{\divisionnameptx\space\thechapter}{20pt}{\Huge#1}
+[{\Large\authorsptx}]
+\titleformat{name=\chapter,numberless}[display]
+{\divisionfont\huge\bfseries}{}{0pt}{#1}
+[{\Large\authorsptx}]
+\titlespacing*{\chapter}{0pt}{50pt}{40pt}
+\titleformat{\section}[hang]
+{\divisionfont\Large\bfseries}{\thesection}{1ex}{#1}
+[{\large\authorsptx}]
+\titleformat{name=\section,numberless}[block]
+{\divisionfont\Large\bfseries}{}{0pt}{#1}
+[{\large\authorsptx}]
+\titlespacing*{\section}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+\titleformat{\subsection}[hang]
+{\divisionfont\large\bfseries}{\thesubsection}{1ex}{#1}
+[{\normalsize\authorsptx}]
+\titleformat{name=\subsection,numberless}[block]
+{\divisionfont\large\bfseries}{}{0pt}{#1}
+[{\normalsize\authorsptx}]
+\titlespacing*{\subsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\titleformat{\subsubsection}[hang]
+{\divisionfont\normalsize\bfseries}{\thesubsubsection}{1em}{#1}
+[{\small\authorsptx}]
+\titleformat{name=\subsubsection,numberless}[block]
+{\divisionfont\normalsize\bfseries}{}{0pt}{#1}
+[{\normalsize\authorsptx}]
+\titlespacing*{\subsubsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\titleformat{\paragraph}[hang]
+{\divisionfont\normalsize\bfseries}{\theparagraph}{1em}{#1}
+[{\small\authorsptx}]
+\titleformat{name=\paragraph,numberless}[block]
+{\divisionfont\normalsize\bfseries}{}{0pt}{#1}
+[{\normalsize\authorsptx}]
+\titlespacing*{\paragraph}{0pt}{3.25ex plus 1ex minus .2ex}{1.5em}
+%%
+%% Styles for five traditional LaTeX divisions
+\titlecontents{part}%
+[0pt]{\contentsmargin{0em}\addvspace{1pc}\contentsfont\bfseries}%
+{\Large\thecontentslabel\enspace}{\Large}%
+{}%
+[\addvspace{.5pc}]%
+\titlecontents{chapter}%
+[0pt]{\contentsmargin{0em}\addvspace{1pc}\contentsfont\bfseries}%
+{\large\thecontentslabel\enspace}{\large}%
+{\hfill\bfseries\thecontentspage}%
+[\addvspace{.5pc}]%
+\dottedcontents{section}[3.8em]{\contentsfont}{2.3em}{1pc}%
+\dottedcontents{subsection}[6.1em]{\contentsfont}{3.2em}{1pc}%
+\dottedcontents{subsubsection}[9.3em]{\contentsfont}{4.3em}{1pc}%
+%%
+%% Begin: Semantic Macros
+%% To preserve meaning in a LaTeX file
+%%
+%% \mono macro for content of "c", "cd", "tag", etc elements
+%% Also used automatically in other constructions
+%% Simply an alias for \texttt
+%% Always defined, even if there is no need, or if a specific tt font is not loaded
+\newcommand{\mono}[1]{\texttt{#1}}
+%%
+%% Following semantic macros are only defined here if their
+%% use is required only in this specific document
+%%
+%% Style of a title on a list item, for ordered and unordered lists
+%% Also "task" of exercise, PROJECT-LIKE, EXAMPLE-LIKE
+\newcommand{\lititle}[1]{{\slshape#1}}
+%% End: Semantic Macros
+%% Divisional exercises (and worksheet) as LaTeX environments
+%% Third argument is option for extra workspace in worksheets
+%% Hanging indent occupies a 5ex width slot prior to left margin
+%% Experimentally this seems just barely sufficient for a bold "888."
+%% Division exercises, not in exercise group
+\tcbset{ divisionexercisestyle/.style={bwminimalstyle, runintitlestyle, exercisespacingstyle, left=5ex, breakable, parbox=false } }
+\newtcolorbox{divisionexercise}[4]{divisionexercisestyle, before title={\hspace{-5ex}\makebox[5ex][l]{#1.}}, title={\notblank{#2}{#2\space}{}}, phantom={\hypertarget{#4}{}}, after={\notblank{#3}{\newline\rule{\workspacestrutwidth}{#3}\newline}{}}}
+%% Division exercises, in exercise group, no columns
+\tcbset{ divisionexerciseegstyle/.style={bwminimalstyle, runintitlestyle, exercisespacingstyle, left=5ex, left skip=\egindent, breakable, parbox=false } }
+\newtcolorbox{divisionexerciseeg}[4]{divisionexerciseegstyle, before title={\hspace{-5ex}\makebox[5ex][l]{#1.}}, title={\notblank{#2}{#2\space}{}}, phantom={\hypertarget{#4}{}}, after={\notblank{#3}{\newline\rule{\workspacestrutwidth}{#3}\newline}{}}}
+%% Localize LaTeX supplied names (possibly none)
+\renewcommand*{\chaptername}{Chapter}
+%% Equation Numbering
+%% Controlled by  numbering.equations.level  processing parameter
+%% No adjustment here implies document-wide numbering
+\numberwithin{equation}{section}
+%% More flexible list management, esp. for references
+%% But also for specifying labels (i.e. custom order) on nested lists
+\usepackage{enumitem}
+%% Indented groups of "exercise" within an "exercises" division
+%% Lengths control the indentation (always) and gaps (multi-column)
+\newlength{\egindent}\setlength{\egindent}{0.05\linewidth}
+\newlength{\exggap}\setlength{\exggap}{0.05\linewidth}
+%% Thin "xparse" environments will represent the entire exercise
+%% group, in the case when it does not hold multiple columns.
+\NewDocumentEnvironment{exercisegroup}{}
+{}{}
+%% hyperref driver does not need to be specified, it will be detected
+%% Footnote marks in tcolorbox have broken linking under
+%% hyperref, so it is necessary to turn off all linking
+%% It *must* be given as a package option, not with \hypersetup
+\usepackage[hyperfootnotes=false]{hyperref}
+%% Hyperlinking active in electronic PDFs, all links solid and blue
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,filecolor=blue,urlcolor=blue}
+\hypersetup{pdftitle={Exercises from Linear algebra: the theory of vector spaces and linear transformations}}
+%% If you manually remove hyperref, leave in this next command
+%% This will allow LaTeX compilation, employing this no-op command
+\providecommand\phantomsection{}
+%% Division Numbering: Chapters, Sections, Subsections, etc
+%% Division numbers may be turned off at some level ("depth")
+%% A section *always* has depth 1, contrary to us counting from the document root
+%% The latex default is 3.  If a larger number is present here, then
+%% removing this command may make some cross-references ambiguous
+%% The precursor variable $numbering-maxlevel is checked for consistency in the common XSL file
+\setcounter{secnumdepth}{3}
+%%
+%% AMS "proof" environment is no longer used, but we leave previously
+%% implemented \qedhere in place, should the LaTeX be recycled
+\newcommand{\qedhere}{\relax}
+%%
+%% A faux tcolorbox whose only purpose is to provide common numbering
+%% facilities for most blocks (possibly not projects, 2D displays)
+%% Controlled by  numbering.theorems.level  processing parameter
+\newtcolorbox[auto counter, number within=section]{block}{}
+%%
+%% This document is set to number PROJECT-LIKE on a separate numbering scheme
+%% So, a faux tcolorbox whose only purpose is to provide this numbering
+%% Controlled by  numbering.projects.level  processing parameter
+\newtcolorbox[auto counter, number within=section]{project-distinct}{}
+%% A faux tcolorbox whose only purpose is to provide common numbering
+%% facilities for 2D displays which are subnumbered as part of a "sidebyside"
+\makeatletter
+\newtcolorbox[auto counter, number within=tcb@cnt@block, number freestyle={\noexpand\thetcb@cnt@block(\noexpand\alph{\tcbcounter})}]{subdisplay}{}
+\makeatother
+%%
+%% tcolorbox, with styles, for miscellaneous environments
+%%
+\NewDocumentEnvironment{case}{mmm}
+{\par\medskip\noindent\notblank{#1}{#1\space{}}{}\textit{\notblank{#2}{#2\space{}}{}\notblank{#1#2}{}{Case.\space{}}}\hypertarget{#3}{}}{}
+%% Graphics Preamble Entries
+\usepackage{tikz}
+\usepackage{tkz-graph}
+\usepackage{tkz-euclide}
+\usetikzlibrary{patterns}
+\usetikzlibrary{positioning}
+\usetikzlibrary{matrix,arrows}
+\usetikzlibrary{calc}
+\usetikzlibrary{shapes}
+\usetikzlibrary{through,intersections,decorations,shadows,fadings}
+\usepackage{pgfplots}
+%% If tikz has been loaded, replace ampersand with \amp macro
+%% extpfeil package for certain extensible arrows,
+%% as also provided by MathJax extension of the same name
+%% NB: this package loads mtools, which loads calc, which redefines
+%%     \setlength, so it can be removed if it seems to be in the
+%%     way and your math does not use:
+%%
+%%     \xtwoheadrightarrow, \xtwoheadleftarrow, \xmapsto, \xlongequal, \xtofrom
+%%
+%%     we have had to be extra careful with variable thickness
+%%     lines in tables, and so also load this package late
+\usepackage{extpfeil}
+%% Custom Preamble Entries, late (use latex.preamble.late)
+%% Begin: Author-provided packages
+%% (From  docinfo/latex-preamble/package  elements)
+%% End: Author-provided packages
+%% Begin: Author-provided macros
+%% (From  docinfo/macros  element)
+%% Plus three from MBX for XML characters
+\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\C}{{\mathbb C}}
+\newcommand{\T}{{\mathbb T}}
+\newcommand{\F}{{\mathbb F}}
+\newcommand{\HH}{{\mathbb H}}
+\newcommand{\compose}{\circ}
+\newcommand{\bolda}{{\mathbf a}}
+\newcommand{\boldb}{{\mathbf b}}
+\newcommand{\boldc}{{\mathbf c}}
+\newcommand{\boldd}{{\mathbf d}}
+\newcommand{\bolde}{{\mathbf e}}
+\newcommand{\boldi}{{\mathbf i}}
+\newcommand{\boldj}{{\mathbf j}}
+\newcommand{\boldk}{{\mathbf k}}
+\newcommand{\boldn}{{\mathbf n}}
+\newcommand{\boldp}{{\mathbf p}}
+\newcommand{\boldq}{{\mathbf q}}
+\newcommand{\boldr}{{\mathbf r}}
+\newcommand{\bolds}{{\mathbf s}}
+\newcommand{\boldt}{{\mathbf t}}
+\newcommand{\boldu}{{\mathbf u}}
+\newcommand{\boldv}{{\mathbf v}}
+\newcommand{\boldw}{{\mathbf w}}
+\newcommand{\boldx}{{\mathbf x}}
+\newcommand{\boldy}{{\mathbf y}}
+\newcommand{\boldz}{{\mathbf z}}
+\newcommand{\boldzero}{{\mathbf 0}}
+\newcommand{\boldmod}{\boldsymbol{ \bmod }}
+\newcommand{\boldT}{{\mathbf T}}
+\newcommand{\boldN}{{\mathbf N}}
+\newcommand{\boldB}{{\mathbf B}}
+\newcommand{\boldF}{{\mathbf F}}
+\newcommand{\boldS}{{\mathbf S}}
+\newcommand{\boldG}{{\mathbf G}}
+\newcommand{\boldK}{{\mathbf K}}
+\newcommand{\boldL}{{\mathbf L}}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\NS}{null}
+\DeclareMathOperator{\RS}{row}
+\DeclareMathOperator{\CS}{col}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\range}{range}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\nullity}{nullity}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\Fix}{Fix}
+\DeclareMathOperator{\Aff}{Aff}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\mdeg}{mdeg}
+\DeclareMathOperator{\Lt}{Lt}
+\DeclareMathOperator{\Lc}{Lc}
+\DeclareMathOperator{\disc}{disc}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\adj}{adj}
+\DeclareMathOperator{\curl}{curl}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\diver}{div}
+\DeclareMathOperator{\flux}{flux}
+\def\Gal{\operatorname{Gal}}
+\def\ord{\operatorname{ord}}
+\def\ML{\operatorname{M}}
+\def\GL{\operatorname{GL}}
+\def\PGL{\operatorname{PGL}}
+\def\SL{\operatorname{SL}}
+\def\PSL{\operatorname{PSL}}
+\def\GSp{\operatorname{GSp}}
+\def\PGSp{\operatorname{PGSp}}
+\def\Sp{\operatorname{Sp}}
+\def\PSp{\operatorname{PSp}}
+\def\Aut{\operatorname{Aut}}
+\def\Inn{\operatorname{Inn}}
+\def\Hom{\operatorname{Hom}}
+\def\End{\operatorname{End}}
+\def\ch{\operatorname{char}}
+\def\Zp{\Z/p\Z}
+\def\Zm{\Z/m\Z}
+\def\Zn{\Z/n\Z}
+\def\Fp{\F_p}
+\newcommand{\surjects}{\twoheadrightarrow}
+\newcommand{\injects}{\hookrightarrow}
+\newcommand{\bijects}{\leftrightarrow}
+\newcommand{\isomto}{\overset{\sim}{\rightarrow}}
+\newcommand{\floor}[1]{\lfloor#1\rfloor}
+\newcommand{\ceiling}[1]{\left\lceil#1\right\rceil}
+\newcommand{\mclass}[2][m]{[#2]_{#1}}
+\newcommand{\val}[2][]{\left\lvert #2\right\rvert_{#1}}
+\newcommand{\valuation}[2][]{\left\lvert #2\right\rvert_{#1}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\anpoly}{a_nx^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+\newcommand{\anmonic}{x^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+\newcommand{\bmpoly}{b_mx^m+b_{m-1}x^{m-1}\cdots +b_1x+b_0}
+\newcommand{\pder}[2]{\frac{\partial#1}{\partial#2}}
+\renewcommand{\c}{\cancel}
+\newcommand{\normalin}{\trianglelefteq}
+\newcommand{\angvec}[1]{\langle #1\rangle}
+\newcommand{\varpoly}[2]{#1_{#2}x^{#2}+#1_{#2-1}x^{#2-1}\cdots +#1_1x+#1_0}
+\newcommand{\varpower}[1][a]{#1_0+#1_1x+#1_1x^2+\cdots}
+\newcommand{\limasto}[2][x]{\lim_{#1\rightarrow #2}}
+\def\ntoinfty{\lim_{n\rightarrow\infty}}
+\def\xtoinfty{\lim_{x\rightarrow\infty}}
+\def\ii{\item}
+\def\bb{\begin{enumerate}}
+\def\ee{\end{enumerate}}
+\def\ds{\displaystyle}
+\def\p{\partial}
+\newcommand{\abcdmatrix}[4]{\begin{bmatrix}#1\amp #2\\ #3\amp #4 \end{bmatrix}
+}
+\newenvironment{amatrix}[1][ccc|c]{\left[\begin{array}{#1}}{\end{array}\right]}
+\newenvironment{linsys}[2][m]{
+\begin{array}[#1]{@{}*{#2}{rc}r@{}}
+}{
+\end{array}}
+\newcommand{\eqsys}{\begin{array}{rcrcrcr}
+a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp b_1\\
+a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp b_2\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \vdots\\
+a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp b_m
+\end{array}
+}
+\newcommand{\numeqsys}{\begin{array}{rrcrcrcr}
+e_1:\amp  a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp b_1\\
+e_2: \amp a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp b_2\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \vdots\\
+e_m: \amp a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp b_m
+\end{array}
+}
+\newcommand{\homsys}{\begin{array}{rcrcrcr}
+a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp 0\\
+a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp 0\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \vdots\\
+a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp 0
+\end{array}
+}
+\newcommand{\vareqsys}[4]{
+\begin{array}{ccccccc}
+#3_{11}x_{1}\amp +\amp #3_{12}x_{2}\amp +\cdots+\amp  #3_{1#2}x_{#2}\amp =\amp #4_1\\
+#3_{21}x_{1}\amp +\amp #3_{22}x_{2}\amp +\cdots+\amp #3_{2#2}x_{#2}\amp =\amp #4_2\\
+\vdots \amp \amp \vdots \amp  \amp \vdots \amp =\amp  \vdots\\
+#3_{#1 1}x_{1}\amp +\amp #3_{#1 2}x_{2}\amp +\cdots +\amp #3_{#1 #2}x_{#2}\amp =\amp #4_{#1}
+\end{array}
+}
+\newcommand{\genmatrix}[1][a]{
+\begin{bmatrix}
+#1_{11} \amp  #1_{12} \amp  \cdots \amp  #1_{1n} \\
+#1_{21} \amp  #1_{22} \amp  \cdots \amp  #1_{2n} \\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \\
+#1_{m1} \amp  #1_{m2} \amp  \cdots \amp  #1_{mn}
+\end{bmatrix}
+}
+\newcommand{\varmatrix}[3]{
+\begin{bmatrix}
+#3_{11} \amp  #3_{12} \amp  \cdots \amp  #3_{1#2} \\
+#3_{21} \amp  #3_{22} \amp  \cdots \amp  #3_{2#2} \\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \\
+#3_{#1 1} \amp  #3_{#1 2} \amp  \cdots \amp  #3_{#1 #2}
+\end{bmatrix}
+}
+\newcommand{\augmatrix}{
+\begin{amatrix}[cccc|c]
+a_{11} \amp  a_{12} \amp  \cdots \amp  a_{1n} \amp b_{1}\\
+a_{21} \amp  a_{22} \amp  \cdots \amp  a_{2n} \amp b_{2}\\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \amp \vdots\\
+a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
+\end{amatrix}
+}
+\newcommand{\varaugmatrix}[4]{
+\begin{amatrix}[cccc|c]
+#3_{11} \amp  #3_{12} \amp  \cdots \amp  #3_{1#2} \amp #4_{1}\\
+#3_{21} \amp  #3_{22} \amp  \cdots \amp  #3_{2#2} \amp #4_{2}\\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \amp \vdots\\
+#3_{#1 1} \amp  #3_{#1 2} \amp  \cdots \amp  #3_{#1 #2}\amp #4_{#1}
+\end{amatrix}
+}
+\newcommand{\spaceforemptycolumn}{\makebox[\wd\boxofmathplus]{\ }}
+\newcommand{\grstep}[2][\relax]{
+\mathrel{
+\hspace{\grsteplength}\mathop{\longrightarrow}\limits^{#2\mathstrut}_{
+\begin{subarray}{l} #1 \end{subarray}}\hspace{\grsteplength}}}
+\newcommand{\repeatedgrstep}[2][\relax]{\hspace{-\grsteplength}\grstep[#1]{#2}}
+\newcommand{\swap}{\leftrightarrow}
+\newcommand{\deter}[1]{ \mathchoice{\left|#1\right|}{|#1|}{|#1|}{|#1|} }
+\newcommand{\generalmatrix}[3]{
+\left(
+\begin{array}{cccc}
+#1_{1,1}  \amp #1_{1,2}  \amp \ldots  \amp #1_{1,#2}  \\
+#1_{2,1}  \amp #1_{2,2}  \amp \ldots  \amp #1_{2,#2}  \\
+\amp \vdots                         \\
+#1_{#3,1} \amp #1_{#3,2} \amp \ldots  \amp #1_{#3,#2}
+\end{array}
+\right)  }
+\newcommand{\colvec}[2][c]{\begin{amatrix}[#1] #2 \end{amatrix}}
+\newcommand{\rowvec}[1]{\setlength{\arraycolsep}{3pt}\begin{bmatrix} #1 \end{bmatrix}}
+\DeclareMathOperator{\trace}{tr}
+\newcommand{\isomorphicto}{\cong}
+\newcommand{\rangespace}[1]{ \mathscr{R}(#1) }
+\newcommand{\nullspace}[1]{ \mathscr{N}(#1) }
+\newcommand{\genrangespace}[1]{ \mathscr{R}_\infty(#1) }
+\newcommand{\gennullspace}[1]{ \mathscr{N}_\infty(#1) }
+\newcommand{\zero}{ \vec{0} }
+\newcommand{\polyspace}{\mathcal{P}}
+\newcommand{\matspace}{\mathcal{M}}
+\DeclareMathOperator{\size}{size}
+\DeclareMathOperator{\adjoint}{adj}
+\DeclareMathOperator{\sgn}{sgn}
+\newcommand{\definend}[1]{\emph{#1}}
+\renewcommand{\Re}{\mathbb{R}}
+\newcommand{\map}[3]{\mbox{$#1\colon #2\to #3$}}
+\newcommand{\mapsunder}[1]{\stackrel{#1}{\longmapsto}}
+\newcommand{\mapsvia}[1]{\xrightarrow{#1}}
+\newcommand{\xmapsunder}[1]{\mapsunder{#1}}
+\newcommand{\composed}[2]{#1\mathbin{\circ} #2}
+\DeclareMathOperator{\identity}{id}
+\newcommand{\restrictionmap}[2]{{#1}\mathpunct\upharpoonright\hbox{}_{#2}}
+\renewcommand{\emptyset}{\varnothing}
+\newcommand{\setspacing}{0.1em}
+\newcommand{\set}[1]{\mbox{$\{\hspace{\setspacing}#1\hspace{\setspacing}\}$}}
+\newcommand{\suchthat}{\mid}
+\newcommand{\union}{\cup}
+\newcommand{\intersection}{\cap}
+\newcommand{\sequence}[1]{ \langle#1\rangle }
+\newcommand{\interval}[2]{#1\,\ldots\, #2}
+\newcommand{\setinterval}[2]{\mbox{$\{\interval{#1}{#2}\}$}}
+\newcommand{\openinterval}[2]{(\interval{#1}{#2})}
+\newcommand{\closedinterval}[2]{[\interval{#1}{#2}]}
+\newcommand{\clopinterval}[2]{[\interval{#1}{#2})}
+\newcommand{\opclinterval}[2]{(\interval{#1}{#2}]}
+\newcommand{\isimpliedby}{\Longleftarrow}
+\newcommand{\Sage}{\textit{Sage}}
+\newcommand{\Maple}{\textit{Maple}}
+\newcommand{\cat}[2]{#1\!\mathbin{\raise.6ex\hbox{\left( {}^\frown \right)}}\!#2}
+\newcommand{\alignedvdots}[1][10pt]{\mskip2.5mu\makebox[.5\equalsignwd][r]{}
+\smash{\vdots}}
+\newcommand{\stdbasis}{{\cal E}}
+\newcommand{\basis}[2]{\sequence{\vec{#1}_1,\ldots,\vec{#1}_{#2}}}
+\newcommand{\rowspace}[1]{ \mathop{{\mbox{Rowspace}}}(#1) }
+\newcommand{\colspace}[1]{ \mathop{{\mbox{Columnspace}}}(#1) }
+\newcommand{\linmaps}[2]{ \mathop{{\cal L}}(#1,#2) }
+\newcommand{\lincombo}[2]{
+#1_1#2_1+#1_2#2_2+\cdots +#1_n#2_n}
+\newcommand{\rep}[2]{ { Rep}_{#2}(#1) }
+\newcommand{\wrt}[1]{{\mbox{\scriptsize \textit{wrt}\hspace{.25em}\left( #1 \right)} }}
+\newcommand{\trans}[1]{ {{#1}^{\mathsf{T}}} }
+\newcommand{\proj}[2]{\mbox{proj}_{#2}({#1}) }
+\newcommand{\spanof}[1]{\relax [#1\relax ]}
+\newcommand{\directsum}{\oplus}
+\DeclareMathOperator{\dist}{dist}
+\newcommand{\nbyn}[1]{#1 \! \times \! #1 }
+\newcommand{\nbym}[2]{#1 \! \times \! #2 }
+\newcommand{\degs}[1]{#1^\circ\relax}
+\newcommand{\votepreflist}[3]{\colvec{#1 \\ #2 \\ #3}}
+\newcommand{\votinggraphic}[1]{\hspace{1.15em}\mathord{[.3in][.2in]{\includegraphics{voting.#1}}}\hspace{1.15em}}
+\newcommand{\magicsquares}{\mathscr{M}}
+\newcommand{\semimagicsquares}{\mathscr{H}}
+\newcommand{\circuitfont}{\sffamily}
+\newcommand{\digitinsq}[1]{\fbox{\left( #1 \right)} }
+\newcommand{\matrixvenlarge}[1]{\vbox{
+\vspace{\extramatrixvspace}
+\hbox{$#1$}
+\vspace{\extramatrixvspace}
+}}
+\def\bspace{
+{\vspace{.05in}}}
+\newcommand{\lt}{<}
+\newcommand{\gt}{>}
+\newcommand{\amp}{&}
+%% End: Author-provided macros
+\begin{document}
+\frontmatter
+%% begin: half-title
+\thispagestyle{empty}
+{\titlepagefont\centering
+\vspace*{0.28\textheight}
+{\Huge Exercises from Linear algebra: the theory of vector spaces and linear transformations}\\}
+\clearpage
+%% end:   half-title
+%% begin: title page
+%% Inspired by Peter Wilson's "titleDB" in "titlepages" CTAN package
+\thispagestyle{empty}
+{\titlepagefont\centering
+\vspace*{0.14\textheight}
+%% Target for xref to top-level element is ToC
+\addtocontents{toc}{\protect\hypertarget{g:book:idm437161228528}{}}
+{\Huge Exercises from Linear algebra: the theory of vector spaces and linear transformations}\\[3\baselineskip]
+{\Large Aaron Greicius}\\}
+\clearpage
+%% end:   title page
+%% begin: copyright-page
+\thispagestyle{empty}
+\vspace*{\stretch{2}}
+\vspace*{\stretch{1}}
+\null\clearpage
+%% end:   copyright-page
+%% begin: table of contents
+%% Adjust Table of Contents
+\setcounter{tocdepth}{1}
+\renewcommand*\contentsname{Contents}
+\tableofcontents
+%% end:   table of contents
+\mainmatter
+%
+%
+\typeout{************************************************}
+\typeout{Chapter 1 Systems of linear equations}
+\typeout{************************************************}
+%
+\begin{chapterptx}{Systems of linear equations}{}{Systems of linear equations}{}{}{x:chapter:c_linear_systems}
+%
+%
+\typeout{************************************************}
+\typeout{Section 1.1 Systems of linear equations}
+\typeout{************************************************}
+%
+\begin{sectionptx}{Systems of linear equations}{}{Systems of linear equations}{}{}{x:section:s_systems}
+%
+%
+\typeout{************************************************}
+\typeout{Exercises 1.1 Exercises}
+\typeout{************************************************}
+%
+\begin{exercises-subsection-numberless}{Exercises}{}{Exercises}{}{}{x:exercises:s_systems_ex}
+\begin{divisionexercise}{1}{Geometry of linear systems.}{}{x:exercise:ex_solving_sys_geom}%
+Recall that the set of solutions \((x,y)\) to a single linear equation in 2 variables constitutes a line \(\ell\) in \(\R^2\). We denote this \(\ell\colon ax+by=c\). Similarly, the set of solutions \((x,y,z)\) to a single linear equation in 3 variables \(ax+by+cz=d\) constitutes a plane \(\mathcal{P}\) in \(\R^3\). We denote this \(\mathcal{P}\colon ax+by+cz=d\).%
+%
+\begin{enumerate}[marker=(\alph*)]
+\item{}Fix \(m>1\) and consider a system of \(m\) linear equations in the 2 unknowns \(x\) and \(y\). What do solutions \((x,y)\) to this \emph{system} of linear equations correspond to geometrically?%
+\item{}Use your interpretation to give a \emph{geometric} argument that a system of \(m\) equations in 2 unknowns will have either (i) 0 solutions, (ii) 1 solution, or (iii) infinitely many solutions.%
+\item{}Use your geometric interpretation to help produce explicit examples of systems in 2 variables satisfying these three different cases (i)-(iii).%
+\item{}Now repeat (a)-(b) for systems of linear equations in 3 variables \(x,y, z\).%
+\end{enumerate}
+\par\smallskip%
+\noindent\textbf{\blocktitlefont Solution}.\hypertarget{g:solution:idm437161211920}{}\quad{}(a) Geometrically, each equation in the system represents a line \(\ell_i\colon a_ix+b_iy=c_i\). A solution \((x,y)\) to the \(i\)-th equation corresponds to a point on \(\ell_i\). Thus a solution \((x,y)\) to the system corresponds to a point lying on \emph{all} of the lines: i.e., a point of intersection of the lines.%
+\par
+(b) First of all to prove the desired ``or'' statement it suffices to prove that if the number of solutions is greater than 1, then there are infinitely many solutions.%
+\par
+Now suppose there is more than one solution. Then there are at least two different solutions: \(P_1=(x_1,y_1)\) and \(P_2=(x_2,y_2)\). Take any of the two lines \(\ell_i, \ell_j\). By above the intersection of \(\ell_i\) and \(\ell_j\) contains \(P_1\) and \(P_2\). But two \emph{distinct} lines intersect in at most one point. It follows that \(\ell_i\) and \(\ell_j\) must be equal. Since \(\ell_i\) and \(\ell_j\) were arbitrary, it follows \emph{all} of the lines \(\ell_i\) are in fact the same line \(\ell\). But this means the common intersection of the lines is \(\ell\), which has infinitely many points. It follows that the system has infinitely many solutions.%
+\par
+(c) We will get 0 solutions if the system includes two different parallel lines: e.g., \(\ell_1\colon x+y=5\) and \(\ell_2\colon x+y=1\).%
+\par
+We will get exactly one solution when the slopes of each line in the system are distinct.%
+\par
+We will get infinitely many solutions when \emph{all} equations in the system represent the \emph{same line}. This happens when all equations are multiples of one another.%
+\par
+(d) Now each equation in our system defines a plane \(\mathcal{P}_i\colon a_ix+b_iy+c_iz=d_i\). A solution \((x,y,z)\) to the system corresponds to a point \(P=(x,y,z)\) of intersection of the planes. We recall two facts from Euclidean geometry:%
+\begin{enumerate}[marker=(\alph*)]
+\item{}\lititle{Fact 1.}\par%
+Given two distinct points, there is a unique line containing both of them.%
+\item{}\lititle{Fact 2.}\par%
+Given any number of distinct planes, they either do not intersect, or intersect in a line.%
+\end{enumerate}
+%
+\par
+We proceed as in part (b) above: that is show that if there are two distinct solutions to the system, then there are infinitely many solutions. First, for simplicity, we may assume that the equations \(\mathcal{P}_i\colon a_ix+b_iy+c_iz=d_i\) define \emph{distinct} planes; if we have two equations defining the same plane, we can delete one of them and not change the set of solutions to the system.%
+\par
+Now suppose \(P=(x_1,y_1,z_1)\) and \(Q=(x_2,y_2,z_2)\) are two distinct solutions to the system. Let \(\ell\) be the unique line containing \(P\) and \(Q\) (Fact 1). I claim that \(\ell\) is precisely the set of solutions to the system. To see this, take any two equations in the system \(\mathcal{P}_i\colon a_ix+b_iy+c_iz=d_i\) and \(\mathcal{P}_j\colon a_jx+b_jy+c_iz=d_j\). Since the two corresponding planes are distinct, and intersect in at least the points \(P\) and \(Q\), they must intersect in a line (Fact 2); since this line contains \(P\) and \(Q\), it must be the line \(\ell\) (Fact 1). Thus any two planes in the system intersect in the line \(\ell\). From this it follows that: (a) a point satisfying the system must lie in \(\ell\); and (b) all points on \(\ell\) satisfy the system (since we have shown that \(\ell\) lies in all the planes). It follows that \(\ell\) is precisely the set of solutions, and hence that there are infinitely many solutions.%
+\end{divisionexercise}%
+\begin{divisionexercise}{2}{Row operations preserve solutions.}{}{x:exercise:solving_ex_row_ops}%
+We made the claim that each of our three row operations%
+\begin{enumerate}[marker=(\alph*)]
+\item{}scalar multiplication (\(e_i\mapsto c\cdot e_i\) for \(c\ne 0\)),%
+\item{}swap (\(e_i\leftrightarrow e_j\)),%
+\item{}addition (\(e_i\mapsto e_i+c\cdot e_j\) for some \(c\))%
+\end{enumerate}
+%
+ do not change the set of solutions of a linear system. To prove this claim, let \(L\) be a general linear system%
+\begin{equation*}
+\numeqsys\text{.}
+\end{equation*}
+Now consider each type of row operation separately, write down the new system \(L'\) you get by applying this row operation, and prove that an \(n\)-tuple \(s=(s_1,s_2,\dots ,s_n)\) is a solution to the original system \(L\) if and only if it is a solution to the new system \(L'\).\par\smallskip%
+\noindent\textbf{\blocktitlefont Solution}.\hypertarget{g:solution:idm437161183152}{}\quad{}Let \(L\) be the original system with equations \(e_1,e_2,\dots ,e_m\). For each specified row operation, we will call the resulting new system \(L'\) and its equations \(e'_1,e'_2,\dots , e'_m\).%
+\begin{case}{}{Row swap.}{g:case:idm437161172560}
+In this case systems \(L\) and \(L'\) have exactly the same equations, just written in a different order. Thus the \(n\)-tuple \(s\) satisfies \(L\) if and only if it satisfies each of the equations \(e_i\), if and only if it satisfies each of the equations \(e'_i\), since these are the same equations! It follows that \(s\) is a solution of \(L\) if and only if it is a solution to \(L'\).%
+\end{case}
+\begin{case}{}{Scalar multiplication.}{g:case:idm437161171968}
+In this case \(e_j=e'_j\) for all \(j\ne i\), and \(e'_i=c\cdot e_i\) for some \(c\ne 0\). Since only the \(i\)-th equation has changed, it suffices to show that \(s\) is a solution to \(e_i\) if and only if \(s\) is a solution to \(c\cdot e_i\). Let's prove each direction of this if and only if separately.%
+\par
+If \(s\) satisfies \(e_1\), then \(a_{i1}s_1+a_{i2}s_2+\cdots +a_{in}s_n=b_i\). Multiplying both sides by \(c\) we see that%
+\begin{equation*}
+ca_{i1}s_1+ca_{i2}s_2+\cdots +ca_{in}s_n=cb_i,
+\end{equation*}
+and hence that \(s\) is also a solution of \(c\,e_i=e_i'\).%
+\par
+For the other direction, if \(s\) satisfies \(c e_i=e_i'\), then%
+\begin{equation*}
+ca_{ii}s_1+ca_{i2}s_2+\cdots ca_{in}s_n=cb_i.
+\end{equation*}
+Now, since \(c\ne 0\), we can multiply both sides of this equation by \(1/c\) to see that%
+\begin{equation*}
+a_{i1}s_1+a_{i2}s_2+\cdots +a_{in}s_n=b_i
+\end{equation*}
+and hence that \(s\) is a solution to \(e_i\).%
+\end{case}
+\begin{case}{}{Row addition.}{g:case:idm437161159136}
+The only equation of \(L'\) that differs from \(L\) is%
+\begin{equation*}
+e_i'=e_i+ce_j\text{.}
+\end{equation*}
+Writing this equation out in terms of coefficients gives us%
+\begin{equation*}
+e_i': a_{i1}x_1+a_{i2}x_2+\cdots +a_{in}x_n+c(a_{j1}x_1+a_{j2}x_2+\cdots +a_{jn}x_n)=b_i+cb_j\text{.}
+\end{equation*}
+Now if \(s\) satisfies \(L\), then it satisfies \(e_i\) and \(e_j\), in which case evaluating the RHS of the \(e_i'\) above at \(s\) yields%
+\begin{align*}
+a_{i1}s_1+a_{i2}s_2+\cdots +a_{in}s_n+c(a_{j1}s_1+a_{j2}s_2+\cdots +a_{jn}s_n)\amp =b_i+cb_j
+\end{align*}
+showing that \(s\) satisfies \(e_i'\). Now suppose \(s=(s_1,s_2,\dots,
+s_n)\) satisfies \(L'\). Since \(s\) satisfies \(e_j'=e_j\), we have%
+\begin{gather}
+a_{j1}s_1+a_{j2}s_2+\cdots +a_{jn}s_n=b_j\text{.}\tag{\(\star\)}\label{x:mrow:solveeqn}
+\end{gather}
+Since \(s\) satisfies \(e_i'\), we have%
+\begin{equation*}
+a_{i1}s_1+a_{i2}s_2+\cdots +a_{in}s_n+c(a_{j1}s_1+a_{j2}s_2+\cdots +a_{jn}s_n)=b_i+cb_j
+\end{equation*}
+Substituting \hyperref[x:mrow:solveeqn]{({\xreffont\ref{x:mrow:solveeqn}})} into the equation above we get%
+\begin{equation*}
+a_{i1}s_1+a_{i2}s_2+\cdots +a_{in}s_n+c(b_j)=b_i+cb_j\text{,}
+\end{equation*}
+and hence%
+\begin{equation*}
+a_{i1}s_1+a_{i2}s_2+\cdots +a_{in}s_n=b_i\text{.}
+\end{equation*}
+This shows that \(s\) satisfies \(e_i\). It follows that \(s\) satisfies \(L\).%
+\end{case}
+\end{divisionexercise}%
+\end{exercises-subsection-numberless}
+\end{sectionptx}
+%
+%
+\typeout{************************************************}
+\typeout{Section 1.2 Gaussian elimination}
+\typeout{************************************************}
+%
+\begin{sectionptx}{Gaussian elimination}{}{Gaussian elimination}{}{}{x:section:s_ge}
+%
+%
+\typeout{************************************************}
+\typeout{Exercises 1.2 Exercises}
+\typeout{************************************************}
+%
+\begin{exercises-subsection-numberless}{Exercises}{}{Exercises}{}{}{x:exercises:s_ge_ex}
+\par\medskip\noindent%
+%
+Explain why each of the following matrices fails to be in row echelon form.\begin{exercisegroup}
+\begin{divisionexerciseeg}{1}{}{}{g:exercise:idm437161139552}%
+\(A=\begin{bmatrix}
+1 \amp 2\amp 2\amp -3\\
+0\amp -3\amp 4\amp 0\\
+0\amp 0\amp 0\amp 1
+\end{bmatrix}\)%
+\par\smallskip%
+\noindent\textbf{\blocktitlefont Solution}.\hypertarget{g:solution:idm437161138112}{}\quad{}The first nonzero term in the second row is not a one.%
+\end{divisionexerciseeg}%
+\begin{divisionexerciseeg}{2}{}{}{g:exercise:idm437161137728}%
+\(A=\begin{bmatrix}
+0\amp 1\amp 2\amp -3\\
+0\amp 1\amp 4\amp 0\\
+0\amp 0\amp 0\amp 1
+\end{bmatrix}\)%
+\end{divisionexerciseeg}%
+\begin{divisionexerciseeg}{3}{}{}{g:exercise:idm437161136624}%
+\(A=\begin{bmatrix}
+1\amp 1\amp 2\amp -3\\
+0\amp 0\amp 0\amp 0\\
+0\amp 1\amp 1\amp 1
+\end{bmatrix}\)%
+\end{divisionexerciseeg}%
+\end{exercisegroup}
+\par\medskip\noindent
+\par\medskip\noindent%
+%
+For each of the given linear systems, find an equivalent system in row echelon form. Use augmented matrices and follow the Gaussian elimination algorithm to the letter.\begin{exercisegroup}
+\begin{divisionexerciseeg}{4}{}{}{x:exercise:s_ge_equivsys}%
+%
+\begin{equation*}
+\begin{linsys}{4} x_1\amp +\amp 2x_2\amp =\amp x_3\amp +\amp x_4\amp +\amp 3\\ 3x_1\amp +\amp 6x_2\amp =\amp 2x_3\amp -\amp 4x_4\amp +\amp 8\\ -x_1\amp +\amp 2x_3\amp =\amp 2x_2\amp -\amp x_4\amp -\amp 1 \end{linsys}
+\end{equation*}
+%
+\par\smallskip%
+\noindent\textbf{\blocktitlefont Solution}.\hypertarget{g:solution:idm437161133520}{}\quad{}First bring the system into standard form:%
+\begin{equation*}
+L\colon \
+\begin{linsys}{4} x_1\amp +\amp 2x_2\amp -\amp x_3\amp-\amp x_4\amp=\amp 3\\ 3x_1\amp +\amp 6x_2\amp - \amp 2x_3\amp + \amp 4x_4\amp =\amp 8\\ -x_1\amp - \amp 2x_2 \amp +\amp 2x_3\amp + \amp x_4\amp = \amp -1 \end{linsys}\text{.}
+\end{equation*}
+Then perform Gaussian elimination on the associated augmented matrix:%
+\begin{align*}
+\begin{bmatrix}1\amp 2\amp -1\amp -1\amp 3\\ 3\amp 6\amp -2\amp 4\amp 8\\ -1\amp -2\amp 2\amp 1\amp -1 \end{bmatrix} \amp \xrightarrow[\hspace{35pt}]{r_2-3r_1}\amp \begin{bmatrix}1\amp 2\amp -1\amp -1\amp 3\\ 0\amp 0\amp 1\amp 7\amp -1\\ -1\amp -2\amp 2\amp 1\amp -1 \end{bmatrix}\\
+\amp \xrightarrow[\hspace{35pt}]{r_3+r_1 }\amp \begin{bmatrix}1\amp 2\amp -1\amp -1\amp 3\\ 0\amp 0\amp 1\amp 7\amp -1\\ 0\amp 0\amp 1\amp 0\amp 2 \end{bmatrix}\\
+\amp \xrightarrow[\hspace{35pt}]{r_3-r_2 }\amp \begin{bmatrix}1\amp 2\amp -1\amp -1\amp 3\\ 0\amp 0\amp 1\amp 7\amp -1\\ 0\amp 0\amp 0\amp -7\amp 3 \end{bmatrix}\\
+\amp \xrightarrow[\hspace{35pt}]{-\frac{1}{7}r_3}\amp \begin{bmatrix}1\amp 2\amp -1\amp -1\amp 3\\ 0\amp 0\amp 1\amp 7\amp -1\\ 0\amp 0\amp 0\amp 1\amp -\frac{3}{7} \end{bmatrix}\text{.}
+\end{align*}
+The corresponding equivalent system is%
+\begin{equation*}
+L'\colon \
+\begin{linsys}{4} x_1\amp +\amp 2x_2\amp -\amp x_3\amp-\amp x_4\amp=\amp 3\\  \amp \amp \amp \amp x_3\amp + \amp 7x_4\amp =\amp -1\\ \amp \amp \amp \amp \amp  \amp x_4\amp = \amp -\frac{3}{7} \end{linsys}\text{.}
+\end{equation*}
+%
+\end{divisionexerciseeg}%
+\begin{divisionexerciseeg}{5}{}{}{g:exercise:idm437161129504}%
+%
+\begin{equation*}
+\begin{linsys}{4} x_1\amp +\amp x_2\amp -\amp x_3\amp +\amp x_4\amp =\amp 1\\ -2x_1\amp -\amp 2x_2\amp +\amp 2x_3\amp -\amp 2x_4\amp =\amp -2\\ x_1\amp +\amp x_2\amp +\amp x_3\amp +\amp 2x_4\amp =\amp 3 \end{linsys}
+\end{equation*}
+%
+\end{divisionexerciseeg}%
+\begin{divisionexerciseeg}{6}{}{}{g:exercise:idm437161128368}%
+%
+\begin{equation*}
+\begin{linsys}{3} 2x_1 \amp +\amp  2x_2  \amp +\amp 2x_3\amp =\amp 0\\ -2x_1 \amp +\amp  5x_2 \amp +\amp 2x_3\amp =\amp 1\\ 8x_1 \amp +\amp   x_2   \amp +\amp 4x_3\amp =\amp -1 \end{linsys}
+\end{equation*}
+%
+\end{divisionexerciseeg}%
+\begin{divisionexerciseeg}{7}{}{}{g:exercise:idm437161127184}%
+%
+\begin{equation*}
+\begin{linsys}{3} \amp \amp -2b  \amp +\amp 3c\amp =\amp 1\\ 3a \amp +\amp  6b \amp -\amp 3c\amp =\amp -2\\ 6a \amp +\amp   6b   \amp +\amp 3c\amp =\amp 5 \end{linsys}
+\end{equation*}
+%
+\end{divisionexerciseeg}%
+\begin{divisionexerciseeg}{8}{}{}{g:exercise:idm437161126096}%
+%
+\begin{equation*}
+\begin{linsys}{5} \amp  \amp  \amp \amp  T_3\amp +\amp T_4\amp +\amp T_5 \amp =\amp 0\\ -T_1\amp -\amp T_2 \amp +\amp 2T_3 \amp -\amp 3T_4\amp +\amp T_5 \amp =\amp 0\\ T_1\amp + \amp T_2 \amp -\amp 2T_3 \amp \amp \amp -\amp T_5 \amp =\amp 0\\ 2T_1\amp + \amp 2T_2 \amp -\amp T_3 \amp \amp \amp +\amp T_5 \amp =\amp 0 \end{linsys}
+\end{equation*}
+%
+\end{divisionexerciseeg}%
+\end{exercisegroup}
+\par\medskip\noindent
+\end{exercises-subsection-numberless}
+\end{sectionptx}
+%
+%
+\typeout{************************************************}
+\typeout{Section 1.3 Solving linear systems}
+\typeout{************************************************}
+%
+\begin{sectionptx}{Solving linear systems}{}{Solving linear systems}{}{}{x:section:s_solving}
+%
+%
+\typeout{************************************************}
+\typeout{Exercises 1.3 Exercises}
+\typeout{************************************************}
+%
+\begin{exercises-subsection-numberless}{Exercises}{}{Exercises}{}{}{x:exercises:s_solving_ex}
+\par\medskip\noindent%
+%
+Solve the following systems of equations.%
+\begin{itemize}[marker=\textbullet]
+\item{}When row reducing follow Gaussian elimination to the letter.%
+\item{}Make sure to indicate how variables are sorted into free and dependent variables.%
+\item{}Express your answer in both the parametric equation format and set notation format.%
+\end{itemize}
+%
+\begin{exercisegroup}
+\begin{divisionexerciseeg}{1}{}{}{g:exercise:idm437161120496}%
+%
+\begin{equation*}
+\begin{linsys}{4} x_1\amp +\amp 2x_2\amp =\amp x_3\amp +\amp x_4\amp +\amp 3\\ 3x_1\amp +\amp 6x_2\amp =\amp 2x_3\amp -\amp 4x_4\amp +\amp 8\\ -x_1\amp +\amp 2x_3\amp =\amp 2x_2\amp -\amp x_4\amp -\amp 1 \end{linsys}
+\end{equation*}
+%
+\par\smallskip%
+\noindent\textbf{\blocktitlefont Solution}.\hypertarget{g:solution:idm437161119264}{}\quad{}We saw in \hyperlink{x:exercise:s_ge_equivsys}{Exercise~{\xreffont 1.2.4}} that the system is equivalent to a system \(L'\) with augmented matrix%
+\begin{equation*}
+\begin{amatrix}[rrrr|r]\boxed{1}\amp 2\amp -1\amp -1\amp 3\\ 0\amp 0\amp \boxed{1}\amp 7\amp -1\\ 0\amp 0\amp 0\amp \boxed{1}\amp -\frac{3}{7} \end{amatrix}\text{.}
+\end{equation*}
+The row echelon matrix tells us that \(x_2=t\) is the only free variable of \(L'\). Back substitution then yields the parametric equation description:%
+\begin{align*}
+x_1\amp = \frac{32}{7}-2t\\
+x_2\amp = t\\
+x_3\amp = 2\\
+x_4\amp = -\frac{3}{7}\text{.}
+\end{align*}
+Thus the set of solutions is%
+\begin{equation*}
+\left\{ \left(\frac{32}{7}-2t, t, 2, -\frac{3}{7}\right)\colon t\in \R\right\}\text{.}
+\end{equation*}
+%
+\end{divisionexerciseeg}%
+\begin{divisionexerciseeg}{2}{}{}{g:exercise:idm437161119008}%
+%
+\begin{equation*}
+\begin{linsys}{4} x_1\amp +\amp x_2\amp -\amp x_3\amp +\amp x_4\amp =\amp 1\\ -2x_1\amp -\amp 2x_2\amp +\amp 2x_3\amp -\amp 2x_4\amp =\amp -2\\ x_1\amp +\amp x_2\amp +\amp x_3\amp +\amp 2x_4\amp =\amp 3 \end{linsys}
+\end{equation*}
+%
+\par\smallskip%
+\noindent\textbf{\blocktitlefont Solution}.\hypertarget{g:solution:idm437161113296}{}\quad{}%
+\begin{align*}
+\begin{bmatrix}1\amp 1\amp -1\amp 1\amp 1\\ -2\amp -2\amp 2\amp -2\amp -2\\ 1\amp 1\amp 1\amp 2\amp 3 \end{bmatrix} \amp \xrightarrow[\hspace{35pt}]{r_2+2r_1}\amp \begin{bmatrix}1\amp 1\amp -1\amp 1\amp 1\\ 0\amp 0\amp 0\amp 0\amp 0\\ 1\amp 1\amp 1\amp 2\amp 3 \end{bmatrix}\\
+\amp \xrightarrow[\hspace{35pt}]{r_3-r_1}\amp \begin{bmatrix}1\amp 1\amp -1\amp 1\amp 1\\ 0\amp 0\amp 0\amp 0\amp 0\\ 0\amp 0\amp 2\amp 1\amp 2 \end{bmatrix}\\
+\amp \xrightarrow[\hspace{35pt}]{r_2\leftrightarrow r_3 }\amp \begin{bmatrix}1\amp 1\amp -1\amp 1\amp 1\\ 0\amp 0\amp 2\amp 1\amp 2\\ 0\amp 0\amp 0\amp 0\amp 0 \end{bmatrix}\\
+\amp \xrightarrow[\hspace{35pt}]{\frac{1}{2}r_2}\amp \begin{bmatrix}\boxed{1}\amp 1\amp -1\amp 1\amp 1\\ 0\amp 0\amp \boxed{1}\amp 1/2\amp 1\\ 0\amp 0\amp 0\amp 0\amp 0 \end{bmatrix}
+\end{align*}
+The row echelon matrix tells us that \(x_2=s\) and \(x_4=t\) are the free variables. Back substitution then yields the parametric equation description:%
+\begin{align*}
+x_1\amp = 2-s-\frac{3t}{2}\\
+x_2\amp = s\\
+x_3\amp = 1-\frac{t}{2}\\
+x_4\amp = t\text{,}
+\end{align*}
+%
+ \par
+Alternatively, the set of solutions is%
+\begin{equation*}
+S=\left\{\left(2-s-\frac{3t}{2},s,1-\frac{t}{2},t\right)\colon s, t\in\R\right\}\text{.}
+\end{equation*}
+%
+%
+\end{divisionexerciseeg}%
+\begin{divisionexerciseeg}{3}{}{}{g:exercise:idm437161106992}%
+%
+\begin{equation*}
+\begin{linsys}{3} 2x_1 \amp +\amp  2x_2  \amp +\amp 2x_3\amp =\amp 0\\ -2x_1 \amp +\amp  5x_2 \amp +\amp 2x_3\amp =\amp 1\\ 8x_1 \amp +\amp   x_2   \amp +\amp 4x_3\amp =\amp -1 \end{linsys}
+\end{equation*}
+%
+\par\smallskip%
+\noindent\textbf{\blocktitlefont Solution}.\hypertarget{g:solution:idm437161105888}{}\quad{}The corresponding augmented matrix is%
+\begin{equation*}
+\begin{bmatrix}2\amp 2\amp 2\amp 0\\ -2\amp 5\amp 2\amp 1\\ 8\amp 1\amp 4\amp -1 \end{bmatrix}\text{,}
+\end{equation*}
+which row reduces first to%
+\begin{equation*}
+\begin{bmatrix}1\amp 1\amp 1\amp 0\\ 0\amp 1\amp \frac{4}{7}\amp \frac{1}{7}\\ 0\amp 0\amp 0\amp 0 \end{bmatrix}
+\end{equation*}
+and then further to%
+\begin{equation*}
+\begin{bmatrix}1\amp 0\amp \frac{3}{7}\amp -\frac{1}{7}\\[1ex] 0\amp 1\amp \frac{4}{7}\amp \frac{1}{7}\\[1ex] 0\amp 0\amp 0\amp 0 \end{bmatrix}
+\end{equation*}
+%
+\par
+The corresponding system has solution set%
+\begin{equation*}
+S=\left\{\left(-\frac{1}{7}-\frac{3}{7}r,\frac{1}{7}-\frac{4}{7}r ,r\right)\colon r\in \R\right\}\text{.}
+\end{equation*}
+%
+\end{divisionexerciseeg}%
+\begin{divisionexerciseeg}{4}{}{}{g:exercise:idm437161102928}%
+%
+\begin{equation*}
+\begin{linsys}{3} \amp \amp -2b  \amp +\amp 3c\amp =\amp 1\\ 3a \amp +\amp  6b \amp -\amp 3c\amp =\amp -2\\ 6a \amp +\amp   6b   \amp +\amp 3c\amp =\amp 5 \end{linsys}
+\end{equation*}
+%
+\par\smallskip%
+\noindent\textbf{\blocktitlefont Solution}.\hypertarget{g:solution:idm437161101840}{}\quad{}Take the corresponding augmented matrix and perform row reduction:%
+\begin{align*}
+\begin{amatrix}[rcl|r] 0\amp -2\amp 3\amp 1\\
+3\amp 6\amp -3\amp -2\\
+6\amp 6\amp 3\amp 5 \end{amatrix} \amp \xrightarrow[]{r_1 \leftrightarrow r_2} \begin{amatrix}[rcl|r] 3\amp 6\amp -3\amp -2\\
+0\amp -2\amp 3\amp 1\\
+6\amp 6\amp 3\amp 5 \end{amatrix}\\
+\amp \xrightarrow[]{r_3-2r_1} \begin{amatrix}[rcl|r] 3\amp 6\amp -3\amp -2\\
+0\amp -2\amp 3\amp 1\\
+0\amp -6\amp 9\amp 9 \end{amatrix}\\
+\amp \xrightarrow[]{-\frac{1}{2}r_2} \begin{amatrix}[rcl|r] 3\amp 6\amp -3\amp -2\\
+0\amp 1\amp -\frac{3}{2}\amp -\frac{1}{2}\\
+0\amp -6\amp 9\amp 9 \end{amatrix}\\
+\amp \xrightarrow[]{r_3+6r_2} \begin{amatrix}[rcl|r] 3\amp 6\amp -3\amp -2\\
+0\amp 1\amp -\frac{3}{2}\amp -\frac{1}{2}\\
+0\amp 0\amp 0\amp 6 \end{amatrix}\\
+\amp \xrightarrow[]{\frac{1}{3}r_1} \begin{amatrix}[rcl|r] \boxed{1}\amp 2\amp -1\amp -2/3\\
+0\amp 1\amp -\frac{3}{2}\amp -\frac{1}{2}\\
+0\amp 0\amp 0\amp 6 \end{amatrix}\\
+\amp \xrightarrow[]{\frac{1}{6}r_3} \begin{amatrix}[rcl|r] \boxed{1}\amp 2\amp -1\amp -2/3\\
+0\amp \boxed{1}\amp -\frac{3}{2}\amp -\frac{1}{2}\\
+0\amp 0\amp 0\amp \boxed{1} \end{amatrix}
+\end{align*}
+Since there is a leading one in the last column, we conclude that the original system is inconsistent.%
+\end{divisionexerciseeg}%
+\begin{divisionexerciseeg}{5}{}{}{g:exercise:idm437165624448}%
+%
+\begin{equation*}
+\begin{linsys}{5} \amp  \amp  \amp \amp  T_3\amp +\amp T_4\amp +\amp T_5 \amp =\amp 0\\ -T_1\amp -\amp T_2 \amp +\amp 2T_3 \amp -\amp 3T_4\amp +\amp T_5 \amp =\amp 0\\ T_1\amp + \amp T_2 \amp -\amp 2T_3 \amp \amp \amp -\amp T_5 \amp =\amp 0\\ 2T_1\amp + \amp 2T_2 \amp -\amp T_3 \amp \amp \amp +\amp T_5 \amp =\amp 0 \end{linsys}
+\end{equation*}
+%
+\par\smallskip%
+\noindent\textbf{\blocktitlefont Solution}.\hypertarget{g:solution:idm437165623200}{}\quad{}%
+\begin{align*}
+\begin{bmatrix}0\amp 0\amp 1\amp 1\amp 1\amp 0\\ -1\amp -1\amp 2\amp -3\amp 1\amp 0\\ 1\amp 1\amp -2\amp 0\amp -1\amp 0\\ 2\amp 2\amp -1\amp 0\amp 1\amp 0 \end{bmatrix} \amp \xrightarrow[]{-r_2 \leftrightarrow r_1} \begin{bmatrix}1\amp 1\amp -2\amp 3\amp -1\amp 0\\ 0\amp 0\amp 1\amp 1\amp 1\amp 0\\ 1\amp 1\amp -2\amp 0\amp -1\amp 0\\ 2\amp 2\amp -1\amp 0\amp 1\amp 0 \end{bmatrix}\\
+\amp \xrightarrow[]{r_3-r_1} \begin{bmatrix}1\amp 1\amp -2\amp 3\amp -1\amp 0\\ 0\amp 0\amp 1\amp 1\amp 1\amp 0\\ 0\amp 0\amp 0\amp -3\amp 0\amp 0\\ 2\amp 2\amp -1\amp 0\amp 1\amp 0 \end{bmatrix}\\
+\amp \xrightarrow[]{r_4-2r_1} \begin{bmatrix}1\amp 1\amp -2\amp 3\amp -1\amp 0\\ 0\amp 0\amp 1\amp 1\amp 1\amp 0\\ 0\amp 0\amp 0\amp -3\amp 0\amp 0\\ 0\amp 0\amp 3\amp -6\amp 3\amp 0 \end{bmatrix}\\
+\amp \xrightarrow[]{r_1-2r_2} \begin{bmatrix}1\amp 1\amp 0\amp 5\amp 1\amp 0\\ 0\amp 0\amp 1\amp 1\amp 1\amp 0\\ 0\amp 0\amp 0\amp -3\amp 0\amp 0\\ 0\amp 0\amp 3\amp -6\amp 3\amp 0 \end{bmatrix}\\
+\amp \xrightarrow[]{r_4-3r_2} \begin{bmatrix}1\amp 1\amp 0\amp 5\amp 1\amp 0\\ 0\amp 0\amp 1\amp 1\amp 1\amp 0\\ 0\amp 0\amp 0\amp -3\amp 0\amp 0\\ 0\amp 0\amp 0\amp -9\amp 0\amp 0 \end{bmatrix}\\
+\amp \xrightarrow[]{-\frac{1}{3}r_3} \begin{bmatrix}1\amp 1\amp 0\amp 5\amp 1\amp 0\\ 0\amp 0\amp 1\amp 1\amp 1\amp 0\\ 0\amp 0\amp 0\amp 1\amp 0\amp 0\\ 0\amp 0\amp 0\amp -9\amp 0\amp 0 \end{bmatrix}\\
+\amp \xrightarrow[]{r_4+9r_3} \begin{bmatrix}1\amp 1\amp 0\amp 5\amp 1\amp 0\\ 0\amp 0\amp 1\amp 1\amp 1\amp 0\\ 0\amp 0\amp 0\amp 1\amp 0\amp 0\\ 0\amp 0\amp 0\amp 0\amp 0\amp 0 \end{bmatrix}\\
+\amp \xrightarrow[]{r_2-r_3} \begin{bmatrix}1\amp 1\amp 0\amp 5\amp 1\amp 0\\ 0\amp 0\amp 1\amp 0\amp 1\amp 0\\ 0\amp 0\amp 0\amp 1\amp 0\amp 0\\ 0\amp 0\amp 0\amp 0\amp 0\amp 0 \end{bmatrix}\\
+\amp \xrightarrow[]{r_1-5r_3} \begin{bmatrix}1\amp 1\amp 0\amp 0\amp 1\amp 0\\ 0\amp 0\amp 1\amp 0\amp 1\amp 0\\ 0\amp 0\amp 0\amp 1\amp 0\amp 0\\ 0\amp 0\amp 0\amp 0\amp 0\amp 0 \end{bmatrix}
+\end{align*}
+Now solve. We set the free variables \(x_2=r\) and \(x_5 = s\) and substitute:%
+\begin{align*}
+T_1\amp =\amp -r-s\\
+T_2\amp =\amp r\\
+T_3\amp =\amp -s\\
+T_4\amp =\amp 0\\
+T_5\amp =\amp s
+\end{align*}
+%
+\end{divisionexerciseeg}%
+\end{exercisegroup}
+\par\medskip\noindent
+\begin{divisionexercise}{6}{}{}{g:exercise:idm437165456480}%
+For each system below determine all values of \(a\) for which the system below has (a) no solutions, (b) a unique solution, and (c) infinitely many solutions.%
+%
+\begin{enumerate}[marker=(\alph*)]
+\item{}%
+\begin{equation*}
+\begin{linsys}{3} x\amp +\amp 2y\amp +\amp z\amp =\amp 2\\ 2x\amp -\amp 2y\amp +\amp 3z\amp =\amp 1\\ x\amp +\amp 2y\amp -\amp (a^2-3)z\amp =\amp a \end{linsys}
+\end{equation*}
+%
+\item{}%
+\begin{equation*}
+\begin{linsys}{3} x\amp +\amp 2y\amp -\amp 3z\amp =\amp 4\\ 3x\amp -\amp y\amp +\amp 5z\amp =\amp 2\\ 4x\amp +\amp y\amp +\amp (a^2-14)z\amp =\amp a+2 \end{linsys}
+\end{equation*}
+%
+\end{enumerate}
+\par\smallskip%
+\noindent\textbf{\blocktitlefont Solution}.\hypertarget{g:solution:idm437165453280}{}\quad{}%
+\begin{enumerate}[marker=(\alph*)]
+\item{}Take the corresponding augmented matrix and row reduce:%
+\begin{align*}
+\begin{bmatrix}1\amp 2\amp 1\amp 2\\ 2\amp -2\amp 3\amp 1\\ 1\amp 2\amp 3-a^2\amp a \end{bmatrix} \amp \xrightarrow[]{r_1 - r_3} \begin{bmatrix}1\amp 2\amp 1\amp 2\\ 2\amp -2\amp 3\amp 1\\ 0\amp 0\amp a^2-2\amp 2-a \end{bmatrix}\\
+\amp \xrightarrow[]{2r_1 - r_2} \begin{bmatrix}1\amp 2\amp 1\amp 2\\ 0\amp 6\amp -1\amp 3\\ 0\amp 0\amp a^2-2\amp 2-a \end{bmatrix}\\
+\amp \xrightarrow[]{\frac{1}{6}r_2} \begin{bmatrix}1\amp 2\amp 1\amp 2\\ 0\amp 1\amp -\frac{1}{6}\amp \frac{1}{2}\\ 0\amp 0\amp a^2-2\amp 2-a \end{bmatrix}
+\end{align*}
+The row echelon form, and thus the set of solutions, now depends on whether \(a^2-2=0\) or not: equivalently, whether \(a=\pm\sqrt{2}\) or not. This gives us two cases:%
+%
+\begin{itemize}[marker=\textbullet]
+\item{}\lititle{Case: \(a=\pm \sqrt{2}\).}\par%
+In this case \(2-a\ne 0\), which means the row echelon matrix will end up having a leading 1 in the last column, resulting in an inconsistent system. There are no solutions in this case.%
+\item{}\lititle{Case: \(a\ne \pm\sqrt{2}\).}\par%
+In this case the third column of the row echelon form will have a leading 1, and all variables are leading variables. Thus there is a unique solution in this case, obtained by back substitution.%
+\par
+Since our two cases above are exhaustive, we see that there is no choice of \(a\) that yields infinitely many solutions in this case%
+\end{itemize}
+\item{}The augmented matrix row reduces to%
+\begin{equation*}
+\begin{bmatrix}1\amp 2\amp 3\amp 4\\ 0\amp -7\amp 14\amp -10\\ 0\amp 0\amp (a^2-16)\amp a-4 \end{bmatrix}
+\end{equation*}
+%
+\par
+From this it follows that the system has:%
+\par
+a) 0 solutions iff \(a^2-16=0\) and \(a-4\ne 0\) iff \(a=-4\);%
+\par
+(b) exactly one solution iff \(a^2-16\ne 0\) iff \(a\ne\pm 4\);%
+\par
+(c) infinitely many solutions iff \(a^2-16=0\) and \(a-4=0\) iff \(a=4\).%
+\end{enumerate}
+%
+\end{divisionexercise}%
+\begin{divisionexercise}{7}{}{}{g:exercise:idm437165439024}%
+Show that a linear system with more unknowns than equations has  either 0 solutions or infinitely many solutions.%
+\par\smallskip%
+\noindent\textbf{\blocktitlefont Solution}.\hypertarget{g:solution:idm437165438384}{}\quad{}Suppose we have a system of \(m\) equations in \(n\) unknowns \(x_1,x_2,\dots, x_n\). We assume \(n>m\). Let \(A\) be the augmented matrix associated to the system, and suppose \(A\) is reduced to a matrix \(U\) in row echelon form.%
+\par
+Since \(U\) has \(m\) rows, there are \emph{at most} \(m\) leading ones in \(U\), which means there are at most \(m\) leading variables among the \(x_i\). Since \(n>m\), not all the \(x_i\) can be leading. Thus the system \emph{must} have a free variable.%
+\par
+What does this mean? Note that the system could still be inconsistent, meaning no solutions. However, the existence of a free variable means if there is a solution, then there are infinitely many, because the parametric equations for the \(x_i\) will involve at least one parameter.%
+\par
+We conclude that the system is either inconsistent, or has infinitely many solutions.%
+\end{divisionexercise}%
+\begin{divisionexercise}{8}{}{}{g:exercise:idm437165429840}%
+True or false. If true, provide a proof; if false, provide an explicit counterexample.%
+%
+\begin{enumerate}[marker=(\alph*)]
+\item{}Every matrix has a unique row echelon form.%
+\item{}Any homogeneous linear system with more unknowns than equations has infinitely many solutions.%
+\item{}If a homogeneous linear system of \(n\) equations in \(n\) unknowns has a corresponding augmented matrix with a reduced row echelon form containing \(n\) leading ones, then the linear system has the unique solution \(s=(0,0,\dots, 0)\).%
+\item{}All leading ones in of a matrix in row echelon form must occur in distinct columns.%
+\item{}If the reduced row echelon form of the augmented matrix for a linear system has a zero row, then the system must have infinitely many solutions.%
+\item{}If a linear system has more unknowns than equations, then it must have infinitely many solutions.%
+\end{enumerate}
+\par\smallskip%
+\noindent\textbf{\blocktitlefont Solution}.\hypertarget{g:solution:idm437165423088}{}\quad{}%
+\begin{enumerate}[marker=(\alph*)]
+\item{}False. Let \(A=\begin{bmatrix}1\amp 1\\ 0\amp 1 \end{bmatrix}\). Then \(A\) is already in row echelon form, but can be further reduced to \(I=\begin{bmatrix}1\amp 0\\0\amp 1 \end{bmatrix}\), which is also in row echelon form. Thus \(A\) and \(I\) are two different row echelon forms of \(A\).%
+\item{}True. First observe that since the system is homogeneous, it is consistent: thus we have either 1 or infinitely many solutions.%
+\par
+Let \(m\) be the number of equations, and let \(n\) be the number of unknowns. We assume that \(n>m\). The corresponding augmented matrix \(A\) is \(m\times (n+1)\). Suppose it reduces to a matrix \(U\) in row echelon form.%
+\par
+Since there are \emph{at most} \(m\) leading ones in \(U\) (at most one leading one per row), and since \(n>m\), it follows that at least one of the first \(n\) columns does not contain a leading one. The corresponding variable in the system is free, and we see that the system has infinitely many solutions.%
+\item{}True. Let \(U\) be the matrix mentioned. Since the system is homogenous, the as last column of \(U\) is a zero column. Since \(U\) has \(n\) leading ones, and since a row echelon matrix has \emph{at most} one leading one per column (to get the staircase pattern), we see that each of the first \(n\) columns must contain a leading one (remember, the last column is a zero column).  It follows that the corresponding system has no free variables, and hence that \(s=(0,0,\dots, 0)\) is the only solution.%
+\item{}True. If one of the columns of the matrix contained two leading ones, say in the \(i\)th and \(j\)th rows, with \(i < j\), then the matrix would fail the third condition of being in row echelon form.%
+\item{}False. Such a system might be inconsistent. For example, consider a system with augmented matrix%
+\begin{equation*}
+\begin{amatrix}[rr|r]0\amp 0\amp 1\\ 0\amp 0\amp 0  \end{amatrix}\text{.}
+\end{equation*}
+%
+\item{}False. The inconsistent system \(0x_1+0x_2=1\) has more variables then equations.%
+\end{enumerate}
+\end{divisionexercise}%
+\begin{divisionexercise}{9}{}{}{g:exercise:idm437165405824}%
+Interpret each matrix below as an augmented matrix of a linear system. Asterisks represent an unspecified real number. For each matrix, determine whether the corresponding system is consistent or inconsistent. If the system is consistent, decide further whether the solution is unique or not. If there is not enough information answer `inconclusive' and back up your claim by giving an explicit example where the system is consistent, and an explicit example where the system is inconsistent.%
+\begin{enumerate}[marker=(\alph*)]
+\item{}\(\displaystyle \begin{bmatrix}1\amp *\amp *\amp *\\ 0\amp 1\amp *\amp *\\ 0\amp 0\amp 1\amp 1 \end{bmatrix}\)%
+\item{}\(\displaystyle \begin{bmatrix}1\amp 0\amp 0\amp *\\ *\amp 1\amp 0\amp *\\ *\amp *\amp 1\amp * \end{bmatrix}\)%
+\item{}\(\displaystyle \begin{bmatrix}1\amp 0\amp 0\amp 0\\ 1\amp 0\amp 0\amp 1\\ 1\amp *\amp *\amp * \end{bmatrix}\)%
+\item{}\(\displaystyle \begin{bmatrix}1\amp *\amp *\amp *\\ 1\amp 0\amp 0\amp 1\\ 1\amp 0\amp 0\amp 1 \end{bmatrix}\)%
+\end{enumerate}
+%
+\par\smallskip%
+\noindent\textbf{\blocktitlefont Solution}.\hypertarget{g:solution:idm437165399520}{}\quad{}(a) The corresponding system is consistent since the row echelon form of the augmented matrix has no leading 1 in the last column. Since the three columns corresponding to the three variables all have leading 1's, there are no free variables. Hence the system has a unique solution.%
+\par
+(b) This system has a unique solution. You can see this either by noting that the ``reverse staircase pattern'' allows us to do ``forwards substitution'', solving first for \(x_1\), then for \(x_2\), etc., or else by noting that the 1's along the diagonal (and 0's above them) allow us to row reduce the matrix further to one have exactly three leading 1's in the first three columns.%
+\par
+(c) Inconsistent. Rows 1 and 2 give%
+\begin{equation*}
+x_1 = 0 \hspace{7mm} x_1 = 1
+\end{equation*}
+%
+\par
+(d) Inconclusive. Consider%
+\begin{align*}
+\begin{bmatrix}1\amp a\amp b\amp c\\ 1\amp 0\amp 0\amp 1\\ 1\amp 0\amp 0\amp 1 \end{bmatrix}
+\end{align*}
+%
+\par
+If \(a=b=0\) and \(c=2\) the system is inconsistent: the matrix row reduces to one with a leading 1 in the last column. If \(a = b = 0\) and \(c=1\), the system has infinitely many solutions: the matrix row reduces to one with a leading 1 in the first column only.%
+\end{divisionexercise}%
+\begin{divisionexercise}{10}{}{}{g:exercise:idm437192562832}%
+What condition must \(a, b,\) and \(c\) satisfy in order for the system below to be consistent? Express your answer as an equation involving \(a, b,\) and \(c\).%
+\begin{equation*}
+\begin{linsys}{3} x\amp +\amp 3y\amp +\amp z\amp =\amp a\\ -x\amp -\amp 2y\amp +\amp z\amp =\amp b\\ 3x\amp +\amp 7y\amp -\amp z\amp =\amp c \end{linsys}
+\end{equation*}
+%
+\par\smallskip%
+\noindent\textbf{\blocktitlefont Solution}.\hypertarget{g:solution:idm437192605280}{}\quad{}Take the corresponding augmented matrix and row reduce:%
+\begin{align*}
+\begin{bmatrix}1\amp 3\amp 1\amp a\\ -1\amp -2\amp 1\amp b\\ 3\amp 7\amp -1\amp c \end{bmatrix} \amp \xrightarrow[]{r_1 + r_2}\amp \begin{bmatrix}1\amp 3\amp 1\amp a\\ 0\amp 1\amp 2\amp a+b\\ 3\amp 7\amp -1\amp c \end{bmatrix}\\
+\amp \xrightarrow[]{3r_1 - r_3}\amp \begin{bmatrix}1\amp 3\amp 1\amp a\\ 0\amp 1\amp 2\amp a+b\\ 0\amp 2\amp 4\amp 3a-c \end{bmatrix}\\
+\amp \xrightarrow[]{2r_2 - r_3}\amp \begin{bmatrix}\boxed{1}\amp 3\amp 1\amp a\\ 0\amp \boxed{1}\amp 2\amp a+b\\ 0\amp 0\amp 0\amp a-2b-c \end{bmatrix}
+\end{align*}
+We see the system is consistent as long as \(a-2b-c = 0\), which guarantees there is no leading 1 in the last column.%
+\end{divisionexercise}%
+\begin{divisionexercise}{11}{}{}{g:exercise:idm437192624464}%
+Solve the system of equations below for \(x\), \(y\), and \(z\).%
+\begin{equation*}
+\begin{linsys}{3} \frac{1}{x}\amp +\amp \frac{2}{y}\amp -\amp \frac{4}{z}\amp =\amp 1\\ \\ \frac{2}{x}\amp +\amp \frac{3}{y}\amp +\amp \frac{8}{z}\amp =\amp 0\\ \\ -\frac{1}{x}\amp +\amp \frac{9}{y}\amp +\amp \frac{10}{z}\amp =\amp 5 \end{linsys}
+\end{equation*}
+%
+\par\smallskip%
+\noindent\textbf{\blocktitlefont Hint}.\hypertarget{g:hint:idm437161094448}{}\quad{}First replace the given \emph{nonlinear} system with a linear one using a change of variable substitution.%
+\par\smallskip%
+\noindent\textbf{\blocktitlefont Solution}.\hypertarget{g:solution:idm437161093680}{}\quad{}Start by replacing variables. Let \(X = \frac{1}{x}\), \(Y = \frac{1}{y}\), and \(Z = \frac{1}{z}\). Now we can solve the new system as we normally would.%
+\begin{align*}
+\begin{bmatrix}1\amp 2\amp -4\amp 1\\ 2\amp 3\amp 8\amp 0\\ -1\amp 9\amp 10\amp 5 \end{bmatrix} \amp \xrightarrow[]{r_1 + r_3} \begin{bmatrix}1\amp 2\amp -4\amp 1\\ 2\amp 3\amp 8\amp 0\\ 0\amp 11\amp 6\amp 6 \end{bmatrix}\\
+\amp \xrightarrow[]{2r_1 - r_2} \begin{bmatrix}1\amp 2\amp -4\amp 1\\ 0\amp 1\amp -16\amp 2\\ 0\amp 11\amp 6\amp 6 \end{bmatrix}\\
+\amp \xrightarrow[]{11r_2 - r_3} \begin{bmatrix}1\amp 2\amp -4\amp 1\\ 0\amp 1\amp -16\amp 2\\ 0\amp 0\amp -182\amp 16 \end{bmatrix}
+\end{align*}
+%
+\par
+Now solve the system for \(X, Y, Z\):%
+\begin{align*}
+X\amp =-\frac{7}{13}\\
+Y\amp = \frac{54}{91}\\
+Z\amp = -\frac{8}{91}
+\end{align*}
+%
+\par
+Now we solve for the original \(x, y\), and \(z\):%
+\begin{align*}
+x\amp =-\frac{13}{7}\\
+y\amp = \frac{91}{54}\\
+z\amp = -\frac{91}{8}
+\end{align*}
+%
+\end{divisionexercise}%
+\begin{divisionexercise}{12}{}{}{g:exercise:idm437161086336}%
+If \(A\) is a matrix with three rows and five columns, then what is the maximum possible number of leading ones in its reduced row echelon form? Justify your answer.%
+\par
+Provide an explicit example of a matrix that attains this maximum number of leading ones.%
+\par\smallskip%
+\noindent\textbf{\blocktitlefont Solution}.\hypertarget{g:solution:idm437161084816}{}\quad{}The maximum possible number of leading 1's in the reduced row echelon form of a matrix with 3 rows and 5 columns is 3. It is indeed possible to obtain this maximal number, as the matrix%
+\begin{equation*}
+\begin{bmatrix}1\amp 0\amp 0\amp 0\amp 0\\ 0\amp 1\amp 0\amp 0\amp 0\\ 0\amp 0\amp 1\amp 0\amp 0 \end{bmatrix}
+\end{equation*}
+illustrates.%
+\end{divisionexercise}%
+\begin{divisionexercise}{13}{}{}{g:exercise:idm437161083712}%
+If \(A\) is a matrix with three rows and six columns, then what is the maximum possible number of free variables in the general solution of the linear system with augmented matrix \(A\)? Justify your answer.%
+\par
+Provide an explicit example of a matrix that attains this maximal number of free variables.%
+\par\smallskip%
+\noindent\textbf{\blocktitlefont Solution}.\hypertarget{g:solution:idm437161081792}{}\quad{}The matrix \(B\) corresponds to a linear system of 3 equations in 5 unknowns \(x_1, x_2, \dots, x_5\).%
+\par
+Let \(U\) be a row echelon form of \(B\), and let \(k\) be the number of leading 1's \emph{among the first five columns} of \(U\). Then the number of parameters in the general solution to the system corresponding to \(B\) is \(5-k\). Thus we see, that the number of parameters is at most 5 (when \(k=5\)).%
+\par
+This case is indeed possible, as the matrix \(B=\underset{3\times 6}{\boldzero}\) illustrates.%
+\end{divisionexercise}%
+\begin{divisionexercise}{14}{}{}{g:exercise:idm437161075904}%
+If \(A\) is a matrix with five rows and three columns, then what is the minimum possible number of zero rows in any row echelon form of \(A\)?%
+\par
+Provide an explicit example of a matrix that attains this minimal number of zero rows.%
+\par\smallskip%
+\noindent\textbf{\blocktitlefont Solution}.\hypertarget{g:solution:idm437161076320}{}\quad{}If a row echelon form of \(A\) has \(r\) zero rows, then all other rows have leading 1's. Thus there are \(5-r\) leading 1's in this case. Since the number of leading 1's is at most 3 (the number of columns), we have \(5-r\leq 3\). It follows that \(2\leq r\), and thus there are at least \(2\) zero rows in a row echelon form of \(A\). It is indeed possible to achieve this minimum number of zero rows, as the matrix%
+\begin{equation*}
+U=\begin{bmatrix}1\amp 0\amp 0\\ 0\amp 1\amp 0\\ 0\amp 0\amp 1\\ 0\amp 0\amp 0\\ 0\amp 0\amp 0 \end{bmatrix}
+\end{equation*}
+illustrates.%
+\end{divisionexercise}%
+\end{exercises-subsection-numberless}
+\end{sectionptx}
+\end{chapterptx}
+%
+%
+\typeout{************************************************}
+\typeout{Chapter 2 Matrics, their arithmetic, and their algebra}
+\typeout{************************************************}
+%
+\begin{chapterptx}{Matrics, their arithmetic, and their algebra}{}{Matrics, their arithmetic, and their algebra}{}{}{x:chapter:c_matrices}
+%
+%
+\typeout{************************************************}
+\typeout{Section 2.1 Matrices and their arithmetic}
+\typeout{************************************************}
+%
+\begin{sectionptx}{Matrices and their arithmetic}{}{Matrices and their arithmetic}{}{}{x:section:s_matrix}
+%
+%
+\typeout{************************************************}
+\typeout{Exercises 2.1 Exercises}
+\typeout{************************************************}
+%
+\begin{exercises-subsection-numberless}{Exercises}{}{Exercises}{}{}{x:exercises:s_matrix_ex}
+\begin{divisionexercise}{1}{}{}{g:exercise:idm437161068224}%
+For each part below write down the most general \(3\times 3\) matrix \(A=[a_{ij}]\) satisfying the given condition (use letter names \(a,b,c\),etc. for entries).%
+%
+\begin{enumerate}[marker=(\alph*)]
+\item{}\(a_{ij}=a_{ji}\) for all \(i,j\).%
+\item{}\(a_{ij}=-a_{ji}\) for all \(i,j\)%
+\item{}\(a_{ij}=0\) for \(i\ne j\).%
+\end{enumerate}
+\par\smallskip%
+\noindent\textbf{\blocktitlefont Solution}.\hypertarget{g:solution:idm437161066368}{}\quad{}%
+\begin{enumerate}[marker=(\alph*)]
+\item{}\(\displaystyle A=\begin{bmatrix}a\amp b\amp c\\ b\amp d\amp e\\ c\amp e\amp f \end{bmatrix}\)%
+\item{}\(\displaystyle A=\begin{bmatrix}0\amp a\amp b\\ -a\amp 0\amp c\\ -b\amp -c\amp 0 \end{bmatrix}\)%
+\item{}\(\displaystyle A=\begin{bmatrix}a\amp 0\amp 0\\ 0\amp b\amp 0\\ 0\amp 0\amp c \end{bmatrix}\)%
+\end{enumerate}
+\end{divisionexercise}%
+\begin{divisionexercise}{2}{}{}{g:exercise:idm437161068512}%
+Let%
+\begin{equation*}
+A = \begin{bmatrix}3\amp 0\\ -1\amp 2\\ 1\amp 1 \end{bmatrix} , \hspace{5pt} B = \begin{bmatrix}4\amp -1\\ 0\amp 2 \end{bmatrix} , \hspace{5pt} C = \begin{bmatrix}1\amp 4\amp 2\\ 3\amp 1\amp 5 \end{bmatrix}
+\end{equation*}
+%
+\begin{equation*}
+D = \begin{bmatrix}1\amp 5\amp 2\\ -1\amp 0\amp 1\\ 3\amp 2\amp 4 \end{bmatrix} ,  \hspace{5pt} E = \begin{bmatrix}6\amp 1\amp 3\\ -1\amp 1\amp 2\\ 4\amp 1\amp 3 \end{bmatrix}\text{.}
+\end{equation*}
+Compute the following matrices, or else explain why the given expression is not well defined.%
+\begin{enumerate}[marker=(\alph*)]
+\item{}\(\displaystyle (2D^T-E)A\)%
+\item{}\(\displaystyle (4B)C+2B\)%
+\item{}\(\displaystyle B^T(CC^T-A^TA)\)%
+\end{enumerate}
+%
+\par\smallskip%
+\noindent\textbf{\blocktitlefont Solution}.\hypertarget{g:solution:idm437161058048}{}\quad{}(a)%
+\begin{align*}
+\left(\begin{bmatrix}2\amp -2\amp 6\\ 10\amp 0\amp 4\\ 4\amp 2\amp 8 \end{bmatrix} - \begin{bmatrix}6\amp 1\amp 3\\ -1\amp 1\amp 2\\ 4\amp 1\amp 3 \end{bmatrix} \right) \begin{bmatrix}3\amp 0\\ -1\amp 2\\ 1\amp 1 \end{bmatrix} \amp =\begin{bmatrix}-4\amp -3\amp 3\\ 11\amp -1\amp 2\\ 0\amp 1\amp 5 \end{bmatrix} \begin{bmatrix}3\amp 0\\ -1\amp 2\\ 1\amp 1 \end{bmatrix}\\
+\amp =\begin{bmatrix}-6\amp -3\\ 36\amp 0\\ 4\amp 7 \end{bmatrix}
+\end{align*}
+%
+\par
+(b)%
+\begin{align*}
+\begin{bmatrix}16\amp -4\\ 0\amp 8 \end{bmatrix} \begin{bmatrix}1\amp 4\amp 2\\ 3\amp 1\amp 5 \end{bmatrix} + \begin{bmatrix}8\amp -2\\ 0\amp 4 \end{bmatrix} \amp = \begin{bmatrix}4\amp 60\amp 12\\ 24\amp 8\amp 40 \end{bmatrix} + \begin{bmatrix}8\amp -2\\ 0\amp 4 \end{bmatrix}
+\end{align*}
+%
+\par
+The matrix sum on the right is not defined. Thus the operation is not defined.%
+\par
+(c)%
+\begin{align*}
+\begin{bmatrix}4\amp 0\\ -1\amp 2 \end{bmatrix} \left( \begin{bmatrix}1\amp 4\amp 2\\ 3\amp 1\amp 5 \end{bmatrix} \begin{bmatrix}1\amp 3\\ 4\amp 1\\ 2\amp 5 \end{bmatrix} - \begin{bmatrix}3\amp -1\amp 1\\ 0\amp 2\amp 1 \end{bmatrix} \begin{bmatrix}3\amp 0\\ -1\amp 2\\ 1\amp 1 \end{bmatrix} \right)\\
+= \begin{bmatrix}4\amp 0\\ -1\amp 2 \end{bmatrix} \left( \begin{bmatrix}21\amp 17\\ 17\amp 35 \end{bmatrix} - \begin{bmatrix}11\amp -1\\ -1\amp 5 \end{bmatrix} \right) = \begin{bmatrix}40\amp 72\\ 26\amp 42 \end{bmatrix}
+\end{align*}
+%
+\end{divisionexercise}%
+\begin{divisionexercise}{3}{}{}{g:exercise:idm437161047360}%
+Let%
+\begin{equation*}
+A = \begin{bmatrix}3\amp -2\amp 7\\ 6\amp 5\amp 4\\ 0\amp 4\amp 9 \end{bmatrix} , \hspace{5pt} B = \begin{bmatrix}6\amp -2\amp 4\\ 0\amp 1\amp 3\\ 7\amp 7\amp 5 \end{bmatrix}\text{.}
+\end{equation*}
+Compute the following using either the row or column method of matrix multiplication. Make sure to show how you are using the relevant method.%
+\begin{enumerate}[marker=(\alph*)]
+\item{}the first column of \(AB\);%
+\item{}the second row of \(BB\);%
+\item{}the third column of \(AA\).%
+\end{enumerate}
+%
+\par\smallskip%
+\noindent\textbf{\blocktitlefont Solution}.\hypertarget{g:solution:idm437161042256}{}\quad{}%
+\begin{enumerate}[marker=(\alph*)]
+\item{}Using expansion by columns, the first column of \(AB\) is given by \(A\) times the first column of \(B\). We compute:%
+\begin{equation*}
+\begin{bmatrix}3\amp -2\amp 7\\ 6\amp 5\amp 4\\ 0\amp 4\amp 9 \end{bmatrix} \begin{bmatrix}6\\ 0\\ 7 \end{bmatrix} = 6 \begin{amatrix}[r]3 \\ 6 \\ 0  \end{amatrix}+0 \begin{amatrix}[r]-2 \\ 5 \\ 4  \end{amatrix}+7\begin{amatrix}[r]7 \\ 4 \\ 9  \end{amatrix}= \begin{bmatrix}67\\ 64\\ 63 \end{bmatrix}
+\end{equation*}
+%
+\item{}The second row of \(BB\) is given by the second row of \(B\) times \(B\) it self. We compute:%
+\begin{align*}
+\begin{amatrix}[rrr]0\amp 1\amp 3\end{amatrix}
+\begin{amatrix}[rrr]6\amp -2\amp 4\\ 0\amp 1\amp 3\\ 7\amp 7\amp 5 \end{amatrix}\amp =0 \begin{amatrix}[rrr]6\amp -2\amp 4  \end{amatrix}+1 \begin{amatrix}[rrr]0\amp 1\amp 3  \end{amatrix}+3 \begin{amatrix}[rrr]7\amp 7\amp 5  \end{amatrix}\\
+\amp=\begin{amatrix}[rrr]21\amp 22\amp 18  \end{amatrix}
+\end{align*}
+%
+\item{}The third column of \(AA\) is given by \(A\) times the third column of \(A\). We compute:%
+\begin{equation*}
+A\colvec{7 \\ 4 \\ 9}=\begin{bmatrix}3\amp -2\amp 7\\ 6\amp 5\amp 4\\ 0\amp 4\amp 9 \end{bmatrix} \colvec{7 \\ 4 \\ 9}=\colvec{76\\98\\97}
+\end{equation*}
+%
+\end{enumerate}
+\end{divisionexercise}%
+\begin{divisionexercise}{4}{}{}{g:exercise:idm437161033504}%
+Use the row or column method to quickly compute the following product:%
+\begin{equation*}
+\begin{amatrix}[rrrrr]1\amp -1\amp 1\amp -1\amp 1\\ 1\amp -1\amp 1\amp -1\amp 1\\ 1\amp -1\amp 1\amp -1\amp 1\\ 1\amp -1\amp 1\amp -1\amp 1\\ 1\amp -1\amp 1\amp -1\amp 1 \end{amatrix}
+\begin{amatrix}[rrrr]1\amp 1\amp 1\amp 1\\ -1\amp 0\amp 0\amp 0\\ 0\amp 1\amp 0\amp 0\\ 0\amp 0\amp 2\amp 0\\ 0\amp 0\amp 0\amp 3 \end{amatrix}
+\end{equation*}
+%
+\par\smallskip%
+\noindent\textbf{\blocktitlefont Solution}.\hypertarget{g:solution:idm437161032144}{}\quad{}I'll just describe the row method here.%
+\par
+Note that the rows of \(A\) are all identical, and equal to \(\begin{bmatrix}1 \amp -1 \amp 1 \amp -1 \amp 1 \end{bmatrix}\). From the row method it follows that each row of \(AB\) is given by%
+\begin{equation*}
+\begin{bmatrix}1 \amp -1 \amp 1 \amp -1 \amp 1 \end{bmatrix} B\text{.}
+\end{equation*}
+%
+\par
+Thus the rows of \(AB\) are all identical, and the row method computes the product above by taking the corresponding alternating sum of the rows of \(B\):%
+\begin{equation*}
+\begin{bmatrix}1 \amp -1 \amp 1 \amp -1 \amp 1 \end{bmatrix} B=\begin{bmatrix}2\amp 2\amp -1\amp 4 \end{bmatrix}\text{.}
+\end{equation*}
+%
+\par
+Thus \(AB\) is the the \(5\times 4\) matrix, all of whose rows are \(\begin{bmatrix}2\amp 2\amp -1\amp 4 \end{bmatrix}\).%
+\end{divisionexercise}%
+\begin{divisionexercise}{5}{}{}{g:exercise:idm437161026368}%
+Each of the \(3\times 3\) matrices \(B_i\) below performs a specific row operation when multiplying a \(3\times n\) matrix \(A=\begin{bmatrix}-\boldr_1-\\ -\boldr_2-\\ -\boldr_3- \end{bmatrix}\) on the left; i.e., the matrix \(B_iA\) is the result of performing a certain row operation on the matrix \(A\). Use the row method of matrix multiplication to decide what row operation each \(B_i\) performs.%
+\begin{equation*}
+B_1=\begin{bmatrix}1\amp 0\amp 0\\ 0\amp 1\amp 0\\ -2\amp 0\amp 1 \end{bmatrix} , B_2=\begin{bmatrix}1\amp 0\amp 0\\ 0\amp \frac{1}{2}\amp 0\\ 0\amp 0\amp 1 \end{bmatrix} , B_3=\begin{bmatrix}0\amp 0\amp 1\\ 0\amp 1\amp 0\\ 1\amp 0\amp 0 \end{bmatrix}\text{.}
+\end{equation*}
+%
+\par\smallskip%
+\noindent\textbf{\blocktitlefont Solution}.\hypertarget{g:solution:idm437161025984}{}\quad{}The matrix \(B_1\), when multiplied on the left, replaces the third row of \(A\) with \(\boldr_3-2\boldr_2\).%
+\par
+The matrix \(B_2\), when multiplied on the left, replaces the second row of \(A\) with \(\frac{1}{2}\boldr_2\).%
+\par
+The matrix \(B_3\), when multiplied on the left, swaps \(\boldr_1\) and \(\boldr_3\).%
+\end{divisionexercise}%
+\end{exercises-subsection-numberless}
+\end{sectionptx}
+\end{chapterptx}
+\end{document}

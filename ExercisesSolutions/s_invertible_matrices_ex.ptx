@@ -1,0 +1,95 @@
+<exercises xml:id="s_invertible_matrices_ex">
+  <exercise>
+    <statement>
+      <p>
+        Assume <m>A</m> is <m>n\times n</m> for <m>n\geq 2</m>.
+      </p>
+      <ol>
+        <li>
+          <p>
+            Prove: if <m>A</m> has two identical columns, then <m>A</m> is not invertible.
+          </p>
+        </li>
+        <li>
+          <p>
+            Prove: if <m>A</m> has a row that is a scalar multiple of another row, then <m>A</m> is not invertible.
+          </p>
+        </li>
+      </ol>
+    </statement>
+    <exercise>
+      <statement>
+        <p>
+          Find all <em>invertible</em> matrices <m>A</m> satisfying the given equation, or show there is no such <m>A</m>. Justify your answer.
+        </p>
+        <ol>
+          <li>
+            <p>
+              <m>A^5=\boldzero_{n\times n}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>A^{-3}=A^{-4}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>A^2-3A=\boldzero_{n\times n}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>(A^2A)^T-(A^{-1}(A^-1)^T)^{-1}=\boldzero_{n\times n}</m>
+            </p>
+          </li>
+        </ol>
+      </statement>
+      <solution>
+        <p>
+
+        </p>
+      </solution>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Let <m>A=[1]_{n\times n}</m>, the <m>n\times n</m> matrix consisting of all ones.
+        </p>
+        <p>
+          Find a formula for <m>A^r</m>, <m>r\geq 1</m>. Justify your answer using a proof by induction.
+        </p>
+      </statement>
+    </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+          Assuming <m>A, B, C</m> and <m>D</m> are all invertible square matrixes,
+          solve the following equation for <m>D</m> in terms of <m>A</m>,
+          <m>B</m> and <m>C</m>.
+          <me>
+            ABC^TDBA^TC=AB^T.\\
+          </me>
+      </p>
+      <solution>
+        <md>
+          <mrow>ABC^TDBA^TC\amp = AB^T</mrow>
+          <mrow>(ABC^T)^{-1}ABC^TDBA^TC\amp = (ABC^T)^{-1}AB^T</mrow>
+          <mrow>DBA^TC\amp = (ABC^T)^{-1}AB^T</mrow>
+          <mrow>DBA^TC(BA^TC)^{-1}\amp = (ABC^T)^{-1}AB^T(BA^TC)^{-1}</mrow>
+          <mrow>D\amp = (ABC^T)^{-1}AB^T(BA^TC)^{-1}</mrow>
+        </md>
+        <p>
+          Side note: You can also work with one matrix at a time and multiply on the correct side of both sides by the inverse.
+          It takes longer, but gives the same result.
+        </p>
+      </solution>
+    </statement>
+    <solution>
+      <p>
+
+      </p>
+    </solution>
+  </exercise>
+</exercises>
