@@ -1,0 +1,207 @@
+<exercises xml:id="s_coordinatevectors_ex">
+  <exercisegroup>
+    <introduction>
+      <p>In each exercise an ordered basis <m>B</m> is given for <m>\R^3</m>. Compute <m>[\boldx]_B</m> for the given <m>\boldx\in \R^3</m>.
+    </p>
+    </introduction>
+    <exercise>
+      <statement>
+        <p>
+          <m>B=\left((1,0,0), (2,2,0), (3,3,3) \right)</m>, <m>\boldx=(2,-1,3)</m>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <m>B=\left((5,-12,3), (1,2,3), (-4,5,6) \right)</m>, <m>\boldx=(2,-1,3)</m>
+        </p>
+      </statement>
+    </exercise>
+
+  </exercisegroup>
+  <exercisegroup>
+    <introduction>
+      <p>
+        In each exercise an ordered basis <m>B</m> is given for <m>P_2</m>. Compute <m>[p]_B</m> for the given polynomial <m>p\in P_2</m>.
+      </p>
+
+    </introduction>
+    <exercise>
+      <statement>
+        <p>
+          <m>B=(1,x,x^2)</m>, <m>p(x)=-2x^2+3x-5</m>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <m>B=(x^2+1, x+1, x^2+x)</m>, <m>p(x)=x^2-x+2</m>
+        </p>
+      </statement>
+    </exercise>
+  </exercisegroup>
+  <exercisegroup>
+    <introduction>
+      <p>
+        In each exercise an inner product space <m>(V,\langle\, \rangle)</m> and <em>orthogonal</em> ordered basis is given. Use <xref ref="th_coordinates_orthogonal"/> to compute the requested coordinate vector.
+      </p>
+    </introduction>
+
+  <exercise>
+    <statement>
+      <p>
+        <m>V=\R^3</m> with dot product; <m>B=\left((1,1,1),(1,-1,0),(1,1,-2)\right)</m>. Compute <m>[(-3,2,4)]_B</m>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        <m>V=\R^3</m> with dot product with weights <m>k_1=1, k_2=2, k_3=2</m>; <m>B=\left((1,1,1),(2,1,-2),(4,-3,1)\right)</m>. Compute <m>[(0,1,0)]_B</m>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        <m>V=\Span\{\cos x, \cos 2x, \cos 3x\}\subseteq C([0,2\pi])</m> with integral inner product <m>\langle f, g\rangle=\int_0^{2\pi}f(x)g(x)\, dx</m>; <m>B=(\cos x, \cos 2x, \cos 3x)</m>. Compute <m>[\cos^3 x]_B</m>. (Yes, <m>\cos^3(x)</m> can indeed be written as a linear combination of <m>\cos x, \cos 2x, \cos 3x</m>. In this exercise you will discover what the corresponding identity is using inner products!)
+      </p>
+    </statement>
+  </exercise>
+  </exercisegroup>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>B=(A_1,A_2,A_3,A_4)</m> where
+        <me>
+          A_1=\begin{bmatrix}
+            1\amp 0\\ 1\amp 0
+        \end{bmatrix}, A_2=\begin{bmatrix}
+          1\amp 1\\ 0\amp 0
+      \end{bmatrix}, A_3=\begin{bmatrix}
+        1\amp 0\\ 0\amp 1
+    \end{bmatrix}, A_4=\begin{bmatrix}
+      0\amp 0\\ 1\amp 0
+  \end{bmatrix}
+        </me>.
+        You may take for granted that <m>B</m> is an ordered basis of <m>M_{22}</m>.
+      </p>
+      <ol>
+        <li>
+          <p>
+            Compute <m>\left [ \begin{bmatrix}
+              6\amp 2\\ 5\amp 3
+            \end{bmatrix}\right]_B</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Compute <m>[A]_B</m> for an arbitrary matrix <m>\begin{bmatrix}
+              a\amp b\\ c\amp d
+            \end{bmatrix}\in M_{22}</m>.
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>S=\{p_1(x)=2x^2+x+1, p_2(x)=x-1, p_3(x)=x^2+1, p_4(x)=x^2-x-1\}\subseteq P_2 </m>.
+      </p>
+      <ol>
+        <li>
+          <p>
+            Use one of the techniques described in <xref ref="proc_contract_extend_general"/> to contract <m>S</m> to a basis of <m>W=\Span S</m>. To begin, choose your favorite ordered basis of <m>P_2</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Use your result in (a) to describe <m>W</m> is as simple a manner as possible.
+          </p>
+        </li>
+      </ol>
+    </statement>
+
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>S=\{ p_1=x^3+1, p_2=2x^3+x+1, p_3=3x^3+2x+1, p_4=2x^3+x^2+x+1\}\subseteq P_3</m>.
+      </p>
+      <ol>
+        <li>
+          <p>
+            Use one of the techniques described in <xref ref="proc_contract_extend_general"/> to contract <m>S</m> to a basis of <m>W=\Span S</m>. To begin, choose your favorite ordered basis of <m>P_3</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Using your result in (a) to decide whether <m>W=P_3</m>.
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>S=\{p_1(x)=x^2+x+1, p_2(x)=3x^2+6x\}\subseteq P_2</m>. Use one of the techniques described in <xref ref="proc_contract_extend_general"/> to extend <m>S</m> to a basis of <m>P_2</m>.
+      </p>
+    </statement>
+
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let
+        <me>
+          S=\left\{A_1=\begin{amatrix}[rr]1\amp 2\\1\amp 1 \end{amatrix}, \ A_2=\begin{amatrix}[rr] 1\amp 1\\2\amp 1\end{amatrix}, A_3=\begin{amatrix}[rr] -1\amp 1\\ -4\amp -1 \end{amatrix} , A_4=\begin{amatrix}[rr] 0\amp 1\\ 2\amp 0\end{amatrix}\right\}\subseteq M_{22}
+        </me>.
+        <ol>
+          <li>
+            <p>
+              Use one of the techniques described in <xref ref="proc_contract_extend_general"/> to contract <m>S</m> to a basis of <m>W=\Span S</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Show that
+              <me>
+                W=\{\begin{bmatrix}a\amp b\\ c\amp a\end{bmatrix}\colon a,b,c\in \R\}.
+              </me>
+              Use a dimension argument to make your life easier.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+
+  </exercise>
+  <exercise xml:id="ex_coordinates_orthonormal">
+    <title>Orthonormal coordinate vectors</title>  
+    <statement>
+      <p>
+        Let <m>(V, \langle\, , \rangle)</m> be an inner product space, and suppose <m>B=(\boldv_1, \boldv_2, \dots, \boldv_n)</m> is an orthonormal ordered basis of <m>V</m>.
+      </p>
+      <ol>
+        <li>
+          <p>
+            Prove that
+            <me>
+              \langle \boldv, \boldw\rangle =[\boldv]_B\cdot [\boldw]_B
+            </me>
+            for all <m>\boldv, \boldw\in V</m>. In other words we can compute the inner product of vectors by computing the dot product of their coordinate vectors with respect to the orthonormal basis <m>B</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Prove that a set <m>S=\{\boldw_1, \boldw_2, \dots, \boldw_r\}\subseteq V</m> is orthogonal (resp. orthonormal) with respect to <m>\langle\, , \rangle</m> if and only if <m>S'=\{[\boldw_1]_B, [\boldw_2]_B, \dots, [\boldw_r]_B\subseteq \R^n</m> is orthogonal (resp. orthonormal) with respect to the dot product.
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </exercise>
+</exercises>

@@ -1,0 +1,178 @@
+<exercises xml:id="s_orthogonal_bases_ex">
+
+  <exercise>
+    <statement>
+      <p>
+        The vectors
+        <me>
+          \boldv_1=(1,1,1,1), \boldv_2=(1,-1,1,-1), \boldv_3=(1,1,-1,-1), \boldv_4=(1,-1,-1,1)
+        </me>
+        are pairwise orthogonal with respect to the dot product, as is easily verified. For each <m>\boldv</m> below, find the scalars  <m>c_i</m> such that
+        <me>
+          \boldv=c_1\boldv_1+c_2\boldv_2+c_3\boldv_3+c_4\boldv_4
+        </me>.
+      </p>
+      <ol>
+        <li>
+          <p>
+            <m>\boldv=(3,0,-1,0)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\boldv=(1,2,0,1)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+           <m>\boldv=(a,b,c,d)</m> (Your answer will be expressed in terms of <m>a,b,c</m>, and <m>d</m>. )
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </exercise>
+<exercise xml:id="ex_extend_orthogonal">
+  <statement>
+    <p>
+      Consider the inner product space given by <m>\R^4</m> together with the dot product. Construct an orthogonal basis of <m>\R^4</m> containing <m>\boldv_1=(1,1,1,1)</m> following the steps below.
+    </p>
+    <ol>
+      <li>
+        <p>
+          Produce a vector <m>\boldv_2</m> orthogonal to <m>\boldv_1</m> by inspection.
+        </p>
+      </li>
+      <li>
+        <p>
+          Produce a vector <m>\boldv_3</m> orthogonal to <m>\boldv_1</m> and <m>\boldv_2</m> by setting up an appropriate matrix equation of the form <m>A\boldx=\boldzero</m> and finding a nontrivial solution. (Use <xref ref="th_dotproduct_method"/>.)
+        </p>
+      </li>
+      <li>
+        <p>
+          Produce a vector <m>\boldv_4</m> orthogonal to <m>\boldv_1, \boldv_2, \boldv_3</m> by setting up an appropriate matrix equation of the form <m>B\boldx=\boldzero</m> and finding a nontrivial solution. (Use <xref ref="th_dotproduct_method"/>.)
+        </p>
+      </li>
+    </ol>
+  </statement>
+</exercise>
+  <exercise>
+    <statement>
+      <p>
+        Consider the inner product space given by <m>V=\R^3</m> together with the dot product. Let <m>W</m> be the plane with defining equation <m>x+2y-z=0</m>. Compute an orthogonal basis of <m>W</m>, and then extend this to an orthogonal basis of <m>\R^3</m>.
+      </p>
+    </statement>
+    <hint>
+      You do not have to use Gram-Schmidt here, but can proceed using a combination of inspection, your geometric understanding of <m>W</m>, and/or along similar lines of <xref ref="ex_extend_orthogonal"/>.
+    </hint>
+  </exercise>
+
+<exercise>
+  <statement>
+    <p>
+      Consider the inner product space given by <m>\R^3</m> together with the weighted dot product
+      <me>
+        \langle (x_1,x_2,x_3),(y_1,y_2,y_3)\rangle=x_1y_1+2x_2y_2+3x_3y_3
+      </me>
+      Use the Gram-Schmidt procedure to convert the basis <m>B=\{(1,1,0),(0,1,1), (1,0,1)\}</m> into a basis that is orthogonal with respect to this weighted dot product.
+
+    </p>
+  </statement>
+</exercise>
+  <exercise>
+    <statement>
+      <p>
+        Consider the vector space <m>V=C([0,1])</m> with the integral inner product.
+        Let <m>B=\{x^2,x^4,x^6\}</m>, and define <m>W=\Span B</m>. Apply Gram-Schmidt to <m>B</m> to obtain an orthogonal basis of <m>W</m>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Consider the vector space <m>V=P_2</m> with the
+        evaluation at <m>-1, 0, 1</m> inner product:
+        <me>
+        \angvec{p(x),q(x)}=p(-1)q(-1)+p(0)q(0)+p(1)q(1)
+        </me>.
+        Apply Gram-Schmidt to the standard basis of <m>P_2</m> to obtain an orthogonal basis of <m>P_2</m>.
+      </p>
+    </statement>
+
+  </exercise>
+
+<exercise>
+  <statement>
+    <p>
+      Consider the inner product space <m>\R^4</m> together with the dot product.
+      <me>
+        W=\{\boldx\in \R^4\colon \boldx\cdot (1,2,-1,-1)=0\}
+      </me>.
+    </p>
+    <ol>
+      <li>
+        <p>
+         Show that <m>W</m> is a subspace of <m>\R^4</m> by finding a matrix <m>A</m> for which <m>W=\NS A</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Use (a) and an appropriate fundamental space algorithm to find a basis for <m>W</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Use Gram-Schmidt to convert your basis in (b) to an orthgonal basis of <m>W</m>.
+        </p>
+      </li>
+    </ol>
+  </statement>
+</exercise>
+
+
+  <exercise xml:id="ex_ortho_pythag">
+    <statement>
+      <p>
+        Let <m>(V,\langle , \rangle )</m> be an inner produce space. Prove:
+        if <m>\angvec{\boldv,\ \boldw}=0</m>, then
+        <me>
+        \norm{\boldv+\boldw}^2=\norm{\boldv}^2+\norm{\boldw}^2
+        </me>.
+        This result can be thought of as the <em>Pythagorean theorem for general inner product spaces</em>.
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Let <m>(V, \langle , \rangle )</m> be an inner product space, and suppose <m>B=\{\boldv_1, \boldv_2, \dots, \boldv_n\}</m> is an orthonormal basis of <m>V</m>. Suppose <m>\boldv, \boldw\in V</m> satisfy
+        <me>
+          \boldv=\sum_{i=1}^nc_i\boldv_i, \boldw=\sum_{i=1}^nd_i\boldv_i
+        </me>.
+      </p>
+      <ol>
+        <li>
+          <p>
+            Prove:
+            <me>
+              \langle \boldv, \boldw\rangle =\sum_{i=1}^nc_id_i
+            </me>.
+
+          </p>
+        </li>
+        <li>
+          <p>
+            Prove:
+            <me>
+              \norm{\boldv}=\sqrt{\sum_{i=1}^nc_i^2}
+            </me>.
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </exercise>
+
+
+
+
+</exercises>
