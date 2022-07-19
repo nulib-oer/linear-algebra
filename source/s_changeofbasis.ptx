@@ -2,7 +2,7 @@
   <title>Change of basis</title>
   <introduction>
     <p>
-      Coordinate vectors and matrix reprsentations work in tandem to model vectors in an abstract vector space <m>V</m> as column vectors in <m>\R^n</m>, and linear transformations <m>T\colon V\rightarrow W</m> as <m>m\times n</m> matrices.
+      Coordinate vectors and matrix representations work in tandem to model vectors in an abstract vector space <m>V</m> as column vectors in <m>\R^n</m>, and linear transformations <m>T\colon V\rightarrow W</m> as <m>m\times n</m> matrices.
       In both cases the model depends on our choice of basis. In this section we investigate how different basis choices affect these various models. Specifically, we consider the two questions below.
       <ol>
         <li>
