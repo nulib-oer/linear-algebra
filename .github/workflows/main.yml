@@ -40,6 +40,12 @@ jobs:
       - name: Install pdfCropMargins
         run: pip3 install pdfCropMargins
 
+      - name: Install lxml
+        run: pip3 install lxml
+
+      - name: Install GhostScript
+        run: sudo apt-get -y install ghostscript
+
       # Runs a single command using the runners shell
       - name: Build Book Assets
         run: pretext generate
