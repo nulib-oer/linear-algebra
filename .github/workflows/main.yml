@@ -21,19 +21,22 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-        with:
-          submodules: true
 
-      - name: Install XSLT and Python Dependencies 
+      - name: Update System Packages
+        run: sudo apt-get update -y
+
+      - name: Install PreTeXt
         run: |
-          sudo apt-get update -y
-          sudo apt-get install -y xsltproc
-          pip3 install lxml
-          pip3 install pdfCropMargins
+          python3 --version
+          pip3 --version
+          python3 -m pip3 install --user pretextbook
 
       # Runs a single command using the runners shell
-      - name: Build HTML Files
-        run: bash build.sh
+      - name: Build Book Assets
+        run: pretext generate
+
+      - name: Build Book
+        run: pretext build
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
@@ -44,4 +47,4 @@ jobs:
 
       - name: Deploy HTML to NUL Servers
         run: |
-          aws s3 sync ./public ${{ secrets.AWS_S3_BUCKET_NAME }} --delete
+          aws s3 sync ./output/web ${{ secrets.AWS_S3_BUCKET_NAME }} --delete
