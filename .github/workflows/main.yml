@@ -25,8 +25,8 @@ jobs:
       - name: Update System Packages
         run: sudo apt-get update -y
 
-      - name: Install LaTeX
-        run: sudo apt install texlive-latex-recommended
+      - name: Install XeLaTeX
+        run: sudo apt-get install texlive-xetex
 
       - name: Install pdf2svg
         run: sudo apt install pdf2svg
