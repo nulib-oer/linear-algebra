@@ -49,7 +49,7 @@
         Let <m>B=(\boldv_1, \boldv_2, \dots, \boldv_n)</m>. We have
         <me>
           A=\begin{amatrix}[cccc]\vert \amp \vert \amp \amp\vert \\
-        [T(\boldv_1)]_B\amp [T(\boldv_2)]_B\amp \cdots \amp [T(\boldv_n)]_B\\
+        \left[T(\boldv_1)\right]_B\amp [T(\boldv_2)]_B\amp \cdots \amp [T(\boldv_n)]_B\\
         \vert \amp \vert \amp \amp\vert
          \end{amatrix}
         </me>.
