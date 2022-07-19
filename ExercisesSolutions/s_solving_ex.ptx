@@ -1,0 +1,616 @@
+<exercises xml:id="s_solving_ex">
+<exercisegroup>
+<introduction>
+<p>Solve the following systems of equations.
+<ul>
+  <li>
+    <p>
+      When row reducing follow Gaussian elimination to the letter.
+    </p>
+  </li>
+  <li>
+    <p>
+      Make sure to indicate how variables are sorted into free and dependent variables.
+    </p>
+  </li>
+  <li>
+    <p>
+      Express your answer in both the parametric equation format and set notation format.
+    </p>
+  </li>
+</ul>
+</p>
+</introduction>
+<exercise>
+  <statement>
+    <p>
+      <me>
+        \begin{linsys}{4} x_1\amp +\amp 2x_2\amp =\amp x_3\amp +\amp x_4\amp +\amp 3\\ 3x_1\amp +\amp 6x_2\amp =\amp 2x_3\amp -\amp 4x_4\amp +\amp 8\\ -x_1\amp +\amp 2x_3\amp =\amp 2x_2\amp -\amp x_4\amp -\amp 1 \end{linsys}
+      </me>
+    </p>
+  </statement>
+  <solution>
+    <p>
+    We saw in <xref ref="s_ge_equivsys"/> that the system is equivalent to a system <m>L'</m> with augmented matrix
+    <me>
+    \begin{amatrix}[rrrr|r]\boxed{1}\amp 2\amp -1\amp -1\amp 3\\ 0\amp 0\amp \boxed{1}\amp 7\amp -1\\ 0\amp 0\amp 0\amp \boxed{1}\amp -\frac{3}{7} \end{amatrix}
+    </me>.
+    The row echelon matrix tells us that <m>x_2=t</m> is the only free variable of <m>L'</m>. Back substitution then yields the parametric equation description:
+    <md>
+      <mrow>x_1\amp = \frac{32}{7}-2t</mrow>
+      <mrow>x_2\amp = t</mrow>
+      <mrow>x_3\amp = 2</mrow>
+      <mrow>x_4\amp = -\frac{3}{7}</mrow>
+    </md>.
+    Thus the set of solutions is
+    <me>
+      \left\{ \left(\frac{32}{7}-2t, t, 2, -\frac{3}{7}\right)\colon t\in \R\right\}
+    </me>.
+  </p>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>
+      <me>\begin{linsys}{4} x_1\amp +\amp x_2\amp -\amp x_3\amp +\amp x_4\amp =\amp 1\\ -2x_1\amp -\amp 2x_2\amp +\amp 2x_3\amp -\amp 2x_4\amp =\amp -2\\ x_1\amp +\amp x_2\amp +\amp x_3\amp +\amp 2x_4\amp =\amp 3 \end{linsys}
+      </me>
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <md>
+        <mrow>\begin{bmatrix}1\amp 1\amp -1\amp 1\amp 1\\ -2\amp -2\amp 2\amp -2\amp -2\\ 1\amp 1\amp 1\amp 2\amp 3 \end{bmatrix} \amp \xrightarrow[\hspace{35pt}]{r_2+2r_1}\amp \begin{bmatrix}1\amp 1\amp -1\amp 1\amp 1\\ 0\amp 0\amp 0\amp 0\amp 0\\ 1\amp 1\amp 1\amp 2\amp 3 \end{bmatrix}</mrow>
+        <mrow>\amp \xrightarrow[\hspace{35pt}]{r_3-r_1}\amp \begin{bmatrix}1\amp 1\amp -1\amp 1\amp 1\\ 0\amp 0\amp 0\amp 0\amp 0\\ 0\amp 0\amp 2\amp 1\amp 2 \end{bmatrix}</mrow>
+        <mrow>\amp \xrightarrow[\hspace{35pt}]{r_2\leftrightarrow r_3 }\amp \begin{bmatrix}1\amp 1\amp -1\amp 1\amp 1\\ 0\amp 0\amp 2\amp 1\amp 2\\ 0\amp 0\amp 0\amp 0\amp 0 \end{bmatrix}</mrow>
+        <mrow>\amp \xrightarrow[\hspace{35pt}]{\frac{1}{2}r_2}\amp \begin{bmatrix}\boxed{1}\amp 1\amp -1\amp 1\amp 1\\ 0\amp 0\amp \boxed{1}\amp 1/2\amp 1\\ 0\amp 0\amp 0\amp 0\amp 0 \end{bmatrix}</mrow>
+      </md>
+      <p>
+        The row echelon matrix tells us that <m>x_2=s</m> and <m>x_4=t</m> are the free variables.
+        Back substitution then yields the parametric equation description:
+        <md>
+          <mrow>x_1\amp = 2-s-\frac{3t}{2}</mrow>
+          <mrow>x_2\amp = s</mrow>
+          <mrow>x_3\amp = 1-\frac{t}{2}</mrow>
+          <mrow>x_4\amp = t</mrow>
+        </md>,
+      </p>
+      <p>
+        Alternatively, the set of solutions is
+        <me>
+          S=\left\{\left(2-s-\frac{3t}{2},s,1-\frac{t}{2},t\right)\colon s, t\in\R\right\}
+        </me>.
+      </p>
+    </p>
+  </solution>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      <me>
+        \begin{linsys}{3} 2x_1 \amp +\amp  2x_2  \amp +\amp 2x_3\amp =\amp 0\\ -2x_1 \amp +\amp  5x_2 \amp +\amp 2x_3\amp =\amp 1\\ 8x_1 \amp +\amp   x_2   \amp +\amp 4x_3\amp =\amp -1 \end{linsys}
+      </me>
+    </p>
+  </statement>
+  <solution>
+    <p>
+      The corresponding augmented matrix is
+      <me>
+        \begin{bmatrix}2\amp 2\amp 2\amp 0\\ -2\amp 5\amp 2\amp 1\\ 8\amp 1\amp 4\amp -1 \end{bmatrix}
+      </me>,
+      which row reduces first to
+      <me>
+        \begin{bmatrix}1\amp 1\amp 1\amp 0\\ 0\amp 1\amp \frac{4}{7}\amp \frac{1}{7}\\ 0\amp 0\amp 0\amp 0 \end{bmatrix}
+      </me>
+      and then further to
+      <me>
+        \begin{bmatrix}1\amp 0\amp \frac{3}{7}\amp -\frac{1}{7}\\[1ex] 0\amp 1\amp \frac{4}{7}\amp \frac{1}{7}\\[1ex] 0\amp 0\amp 0\amp 0 \end{bmatrix}
+      </me>
+    </p>
+    <p>
+      The corresponding system has solution set
+      <me>
+        S=\left\{\left(-\frac{1}{7}-\frac{3}{7}r,\frac{1}{7}-\frac{4}{7}r ,r\right)\colon r\in \R\right\}
+      </me>.
+    </p>
+  </solution>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      <me>
+        \begin{linsys}{3} \amp \amp -2b  \amp +\amp 3c\amp =\amp 1\\ 3a \amp +\amp  6b \amp -\amp 3c\amp =\amp -2\\ 6a \amp +\amp   6b   \amp +\amp 3c\amp =\amp 5 \end{linsys}
+      </me>
+
+    </p>
+  </statement>
+  <solution>
+    <p>Take the corresponding augmented matrix and perform row reduction:
+      <md>
+        <mrow>\begin{amatrix}[rcl|r] 0\amp -2\amp 3\amp 1</mrow>
+        <mrow>3\amp 6\amp -3\amp -2</mrow>
+        <mrow>6\amp 6\amp 3\amp 5 \end{amatrix} \amp \xrightarrow[]{r_1 \leftrightarrow r_2} \begin{amatrix}[rcl|r] 3\amp 6\amp -3\amp -2</mrow>
+        <mrow>0\amp -2\amp 3\amp 1</mrow>
+        <mrow>6\amp 6\amp 3\amp 5 \end{amatrix}</mrow>
+        <mrow>\amp \xrightarrow[]{r_3-2r_1} \begin{amatrix}[rcl|r] 3\amp 6\amp -3\amp -2</mrow>
+        <mrow>0\amp -2\amp 3\amp 1</mrow>
+        <mrow>0\amp -6\amp 9\amp 9 \end{amatrix}</mrow>
+        <mrow>\amp \xrightarrow[]{-\frac{1}{2}r_2} \begin{amatrix}[rcl|r] 3\amp 6\amp -3\amp -2</mrow>
+        <mrow>0\amp 1\amp -\frac{3}{2}\amp -\frac{1}{2}</mrow>
+        <mrow>0\amp -6\amp 9\amp 9 \end{amatrix}</mrow>
+        <mrow>\amp \xrightarrow[]{r_3+6r_2} \begin{amatrix}[rcl|r] 3\amp 6\amp -3\amp -2</mrow>
+        <mrow>0\amp 1\amp -\frac{3}{2}\amp -\frac{1}{2}</mrow>
+        <mrow>0\amp 0\amp 0\amp 6 \end{amatrix}</mrow>
+        <mrow>\amp \xrightarrow[]{\frac{1}{3}r_1} \begin{amatrix}[rcl|r] \boxed{1}\amp 2\amp -1\amp -2/3</mrow>
+        <mrow>0\amp 1\amp -\frac{3}{2}\amp -\frac{1}{2}</mrow>
+        <mrow>0\amp 0\amp 0\amp 6 \end{amatrix}</mrow>
+        <mrow>\amp \xrightarrow[]{\frac{1}{6}r_3} \begin{amatrix}[rcl|r] \boxed{1}\amp 2\amp -1\amp -2/3</mrow>
+        <mrow>0\amp \boxed{1}\amp -\frac{3}{2}\amp -\frac{1}{2}</mrow>
+        <mrow>0\amp 0\amp 0\amp \boxed{1} \end{amatrix}</mrow>
+      </md>
+    Since there is a leading one in the last column, we conclude that the original system is inconsistent.
+    </p>
+  </solution>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      <me>
+        \begin{linsys}{5} \amp  \amp  \amp \amp  T_3\amp +\amp T_4\amp +\amp T_5 \amp =\amp 0\\ -T_1\amp -\amp T_2 \amp +\amp 2T_3 \amp -\amp 3T_4\amp +\amp T_5 \amp =\amp 0\\ T_1\amp + \amp T_2 \amp -\amp 2T_3 \amp \amp \amp -\amp T_5 \amp =\amp 0\\ 2T_1\amp + \amp 2T_2 \amp -\amp T_3 \amp \amp \amp +\amp T_5 \amp =\amp 0 \end{linsys}
+      </me>
+
+    </p>
+  </statement>
+  <solution>
+    <md>
+      <mrow>\begin{bmatrix}0\amp 0\amp 1\amp 1\amp 1\amp 0\\ -1\amp -1\amp 2\amp -3\amp 1\amp 0\\ 1\amp 1\amp -2\amp 0\amp -1\amp 0\\ 2\amp 2\amp -1\amp 0\amp 1\amp 0 \end{bmatrix} \amp \xrightarrow[]{-r_2 \leftrightarrow r_1} \begin{bmatrix}1\amp 1\amp -2\amp 3\amp -1\amp 0\\ 0\amp 0\amp 1\amp 1\amp 1\amp 0\\ 1\amp 1\amp -2\amp 0\amp -1\amp 0\\ 2\amp 2\amp -1\amp 0\amp 1\amp 0 \end{bmatrix}</mrow>
+      <mrow>\amp \xrightarrow[]{r_3-r_1} \begin{bmatrix}1\amp 1\amp -2\amp 3\amp -1\amp 0\\ 0\amp 0\amp 1\amp 1\amp 1\amp 0\\ 0\amp 0\amp 0\amp -3\amp 0\amp 0\\ 2\amp 2\amp -1\amp 0\amp 1\amp 0 \end{bmatrix}</mrow>
+      <mrow>\amp \xrightarrow[]{r_4-2r_1} \begin{bmatrix}1\amp 1\amp -2\amp 3\amp -1\amp 0\\ 0\amp 0\amp 1\amp 1\amp 1\amp 0\\ 0\amp 0\amp 0\amp -3\amp 0\amp 0\\ 0\amp 0\amp 3\amp -6\amp 3\amp 0 \end{bmatrix}</mrow>
+      <mrow>\amp \xrightarrow[]{r_1-2r_2} \begin{bmatrix}1\amp 1\amp 0\amp 5\amp 1\amp 0\\ 0\amp 0\amp 1\amp 1\amp 1\amp 0\\ 0\amp 0\amp 0\amp -3\amp 0\amp 0\\ 0\amp 0\amp 3\amp -6\amp 3\amp 0 \end{bmatrix}</mrow>
+      <mrow>\amp \xrightarrow[]{r_4-3r_2} \begin{bmatrix}1\amp 1\amp 0\amp 5\amp 1\amp 0\\ 0\amp 0\amp 1\amp 1\amp 1\amp 0\\ 0\amp 0\amp 0\amp -3\amp 0\amp 0\\ 0\amp 0\amp 0\amp -9\amp 0\amp 0 \end{bmatrix}</mrow>
+      <mrow>\amp \xrightarrow[]{-\frac{1}{3}r_3} \begin{bmatrix}1\amp 1\amp 0\amp 5\amp 1\amp 0\\ 0\amp 0\amp 1\amp 1\amp 1\amp 0\\ 0\amp 0\amp 0\amp 1\amp 0\amp 0\\ 0\amp 0\amp 0\amp -9\amp 0\amp 0 \end{bmatrix}</mrow>
+      <mrow>\amp \xrightarrow[]{r_4+9r_3} \begin{bmatrix}1\amp 1\amp 0\amp 5\amp 1\amp 0\\ 0\amp 0\amp 1\amp 1\amp 1\amp 0\\ 0\amp 0\amp 0\amp 1\amp 0\amp 0\\ 0\amp 0\amp 0\amp 0\amp 0\amp 0 \end{bmatrix}</mrow>
+      <mrow>\amp \xrightarrow[]{r_2-r_3} \begin{bmatrix}1\amp 1\amp 0\amp 5\amp 1\amp 0\\ 0\amp 0\amp 1\amp 0\amp 1\amp 0\\ 0\amp 0\amp 0\amp 1\amp 0\amp 0\\ 0\amp 0\amp 0\amp 0\amp 0\amp 0 \end{bmatrix}</mrow>
+      <mrow>\amp \xrightarrow[]{r_1-5r_3} \begin{bmatrix}1\amp 1\amp 0\amp 0\amp 1\amp 0\\ 0\amp 0\amp 1\amp 0\amp 1\amp 0\\ 0\amp 0\amp 0\amp 1\amp 0\amp 0\\ 0\amp 0\amp 0\amp 0\amp 0\amp 0 \end{bmatrix}</mrow>
+    </md>
+    <p>
+      Now solve.
+      We set the free variables <m>x_2=r</m> and <m>x_5 = s</m> and substitute:
+      <md>
+        <mrow>T_1\amp =\amp -r-s</mrow>
+        <mrow>T_2\amp =\amp r</mrow>
+        <mrow>T_3\amp =\amp -s</mrow>
+        <mrow>T_4\amp =\amp 0</mrow>
+        <mrow>T_5\amp =\amp s</mrow>
+      </md>
+    </p>
+  </solution>
+</exercise>
+</exercisegroup>
+<exercise>
+  <statement>
+    <p>
+      For each system below determine all values of <m>a</m> for which the system below has (a) no solutions,
+      (b) a unique solution, and (c) infinitely many solutions.
+    </p>
+    <ol>
+      <li>
+        <me>
+            \begin{linsys}{3} x\amp +\amp 2y\amp +\amp z\amp =\amp 2\\ 2x\amp -\amp 2y\amp +\amp 3z\amp =\amp 1\\ x\amp +\amp 2y\amp -\amp (a^2-3)z\amp =\amp a \end{linsys}
+          </me>
+      </li>
+
+      <li>
+        <p>
+          <me>
+            \begin{linsys}{3} x\amp +\amp 2y\amp -\amp 3z\amp =\amp 4\\ 3x\amp -\amp y\amp +\amp 5z\amp =\amp 2\\ 4x\amp +\amp y\amp +\amp (a^2-14)z\amp =\amp a+2 \end{linsys}
+          </me>
+        </p>
+      </li>
+    </ol>
+  </statement>
+  <solution>
+    <p>
+      <ol>
+        <li>
+            <p>
+              Take the corresponding augmented matrix and row reduce:
+              <md>
+                <mrow>\begin{bmatrix}1\amp 2\amp 1\amp 2\\ 2\amp -2\amp 3\amp 1\\ 1\amp 2\amp 3-a^2\amp a \end{bmatrix} \amp \xrightarrow[]{r_1 - r_3} \begin{bmatrix}1\amp 2\amp 1\amp 2\\ 2\amp -2\amp 3\amp 1\\ 0\amp 0\amp a^2-2\amp 2-a \end{bmatrix}</mrow>
+                <mrow>\amp \xrightarrow[]{2r_1 - r_2} \begin{bmatrix}1\amp 2\amp 1\amp 2\\ 0\amp 6\amp -1\amp 3\\ 0\amp 0\amp a^2-2\amp 2-a \end{bmatrix}</mrow>
+                <mrow>\amp \xrightarrow[]{\frac{1}{6}r_2} \begin{bmatrix}1\amp 2\amp 1\amp 2\\ 0\amp 1\amp -\frac{1}{6}\amp \frac{1}{2}\\ 0\amp 0\amp a^2-2\amp 2-a \end{bmatrix}</mrow>
+              </md>
+              The row echelon form, and thus the set of solutions,
+              now depends on whether <m>a^2-2=0</m> or not:
+              equivalently, whether <m>a=\pm\sqrt{2}</m> or not.
+              This gives us two cases:
+              </p>
+              <ul>
+                <li>
+                  <title>Case: <m>a=\pm \sqrt{2}</m></title>
+                  <p>
+                    In this case <m>2-a\ne 0</m>,
+                    which means the row echelon matrix will end up having a leading 1 in the last column,
+                    resulting in an inconsistent system.
+                    There are no solutions in this case.
+                  </p>
+                </li>
+                <li>
+                  <title>Case: <m>a\ne \pm\sqrt{2}</m></title>
+                  <p>
+                    In this case the third column of the row echelon form will have a leading 1, and all variables are leading variables.
+                    Thus there is a unique solution in this case,
+                    obtained by back substitution.
+                  </p>
+                  <p>
+                    Since our two cases above are exhaustive, we see that there is no choice of <m>a</m> that yields infinitely many solutions in this case
+                  </p>
+                </li>
+              </ul>
+        </li>
+        <li>
+          <p>
+            The augmented matrix row reduces to
+            <me>
+              \begin{bmatrix}1\amp 2\amp 3\amp 4\\ 0\amp -7\amp 14\amp -10\\ 0\amp 0\amp (a^2-16)\amp a-4 \end{bmatrix}
+            </me>
+          </p>
+          <p>
+            From this it follows that the system has:
+          </p>
+          <p>
+            a) 0 solutions iff <m>a^2-16=0</m> and <m>a-4\ne 0</m> iff <m>a=-4</m>;
+          </p>
+          <p>
+            (b) exactly one solution iff
+            <m>a^2-16\ne 0</m> iff <m>a\ne\pm 4</m>;
+          </p>
+          <p>
+            (c) infinitely many solutions iff
+            <m>a^2-16=0</m> and <m>a-4=0</m> iff <m>a=4</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </solution>
+  </exercise>
+<exercise>
+  <statement>
+      <p>
+        Show that a linear system with more unknowns than equations has  either 0 solutions or infinitely many solutions.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      Suppose we have a system of <m>m</m> equations in <m>n</m> unknowns <m>x_1,x_2,\dots, x_n</m>.
+      We assume <m>n>m</m>.
+      Let <m>A</m> be the augmented matrix associated to the system,
+      and suppose <m>A</m> is reduced to a matrix <m>U</m> in row echelon form.
+    </p>
+    <p>
+      Since <m>U</m> has <m>m</m> rows,
+      there are <em>at most</em> <m>m</m> leading ones in <m>U</m>,
+      which means there are at most <m>m</m> leading variables among the <m>x_i</m>.
+      Since <m>n>m</m>, not all the <m>x_i</m> can be leading.
+      Thus the system <em>must</em> have a free variable.
+    </p>
+    <p>
+      What does this mean?
+      Note that the system could still be inconsistent, meaning no solutions.
+      However, the existence of a free variable means if there is a solution,
+      then there are infinitely many,
+      because the parametric equations for the <m>x_i</m> will involve at least one parameter.
+    </p>
+    <p>
+      We conclude that the system is either inconsistent,
+      or has infinitely many solutions.
+    </p>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>
+        True or false. If true, provide a proof; if false, provide an explicit counterexample.
+    </p>
+    <ol>
+      <li>
+        <p>
+        Every matrix has a unique row echelon form.
+        </p>
+      </li>
+      <li>
+      <p>
+      Any homogeneous linear system with more unknowns than equations has infinitely many solutions.
+      </p>
+      </li>
+      <li>
+        <p> If a homogeneous linear system of <m>n</m> equations in <m>n</m> unknowns has a corresponding augmented matrix with a reduced row echelon form containing <m>n</m> leading ones, then the linear system has the unique solution <m>s=(0,0,\dots, 0)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          All leading ones in of a matrix in row echelon form must occur in distinct columns.
+        </p>
+      </li>
+      <li>
+        <p>
+          If the reduced row echelon form of the augmented matrix for a linear system has a zero row,
+          then the system must have infinitely many solutions.
+        </p>
+      </li>
+      <li>
+        <p>
+          If a linear system has more unknowns than equations,
+          then it must have infinitely many solutions.
+        </p>
+      </li>
+      </ol>
+      </statement>
+      <solution>
+      <ol>
+        <li>
+          <p>
+            False.
+            Let <m>A=\begin{bmatrix}1\amp 1\\ 0\amp 1 \end{bmatrix}</m>.
+            Then <m>A</m> is already in row echelon form,
+            but can be further reduced to <m>I=\begin{bmatrix}1\amp 0\\0\amp 1 \end{bmatrix}</m>,
+            which is also in row echelon form.
+            Thus <m>A</m> and <m>I</m> are two different row echelon forms of <m>A</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            True.
+                First observe that since the system is homogeneous, it is consistent:
+                thus we have either 1 or infinitely many solutions.
+            </p>
+            <p> Let <m>m</m> be the number of equations, and let <m>n</m> be the number of unknowns. We assume that <m>n>m</m>. The corresponding augmented matrix <m>A</m> is <m>m\times (n+1)</m>. Suppose it reduces to a matrix <m>U</m> in row echelon form.
+          </p>
+          <p> Since there are <em>at most</em> <m>m</m> leading ones in <m>U</m> (at most one leading one per row), and since <m>n>m</m>, it follows that at least one of the first <m>n</m> columns does not contain a leading one. The corresponding variable in the system is free, and we see that the system has infinitely many solutions.
+          </p>
+        </li>
+        <li>
+          <p>
+            True. Let <m>U</m> be the matrix mentioned. Since the system is homogenous, the as last column of <m>U</m> is a zero column. Since <m>U</m> has <m>n</m> leading ones, and since a row echelon matrix has <em>at most</em> one leading one per column (to get the staircase pattern), we see that each of the first <m>n</m> columns must contain a leading one (remember, the last column is a zero column).  It follows that the corresponding system has no free variables, and hence that <m>s=(0,0,\dots, 0)</m> is the only solution.
+          </p>
+        </li>
+        <li>
+          <p>
+            True. If one of the columns of the matrix contained two leading ones, say in the <m>i</m>th and <m>j</m>th rows, with <m>i &lt; j</m>, then the matrix would fail the third condition of being in row echelon form.
+          </p>
+        </li>
+        <li>
+          <p>
+            False. Such a system might be inconsistent. For example, consider a system with augmented matrix
+            <me>
+              \begin{amatrix}[rr|r]0\amp 0\amp 1\\ 0\amp 0\amp 0  \end{amatrix}
+            </me>.
+
+          </p>
+        </li>
+        <li>
+          <p>
+            False. The inconsistent system <m>0x_1+0x_2=1</m> has more variables then equations.
+          </p>
+        </li>
+      </ol>
+</solution>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Interpret each matrix below as an augmented matrix of a linear system.
+      Asterisks represent an unspecified real number.
+      For each matrix,
+      determine whether the corresponding system is consistent or inconsistent.
+      If the system is consistent,
+      decide further whether the solution is unique or not.
+      If there is not enough information answer <sq>inconclusive</sq> and back up your claim by giving an explicit example where the system is consistent,
+      and an explicit example where the system is inconsistent.
+      <ol marker="(a)">
+        <li>
+          <p>
+            <m>\begin{bmatrix}1\amp *\amp *\amp *\\ 0\amp 1\amp *\amp *\\ 0\amp 0\amp 1\amp 1 \end{bmatrix}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\begin{bmatrix}1\amp 0\amp 0\amp *\\ *\amp 1\amp 0\amp *\\ *\amp *\amp 1\amp * \end{bmatrix}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\begin{bmatrix}1\amp 0\amp 0\amp 0\\ 1\amp 0\amp 0\amp 1\\ 1\amp *\amp *\amp * \end{bmatrix}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\begin{bmatrix}1\amp *\amp *\amp *\\ 1\amp 0\amp 0\amp 1\\ 1\amp 0\amp 0\amp 1 \end{bmatrix}</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+  <solution>
+    <p>
+      (a) The corresponding system is consistent since the row echelon form of the augmented matrix has no leading 1 in the last column.
+      Since the three columns corresponding to the three variables all have leading 1's, there are no free variables.
+      Hence the system has a unique solution.
+    </p>
+    <p>
+      (b) This system has a unique solution.
+      You can see this either by noting that the
+      <q>reverse staircase pattern</q>
+      allows us to do
+      <q>forwards substitution</q>, solving first for <m>x_1</m>, then for <m>x_2</m>,
+      etc., or else by noting that the 1's along the diagonal (and 0's above them) allow us to row reduce the matrix further to one have exactly three leading 1's in the first three columns.
+    </p>
+    <p>
+      (c) Inconsistent.
+      Rows 1 and 2 give
+      <me>
+        x_1 = 0 \hspace{7mm} x_1 = 1
+      </me>
+    </p>
+    <p>
+      (d) Inconclusive.
+      Consider
+      <md>
+        <mrow>\begin{bmatrix}1\amp a\amp b\amp c\\ 1\amp 0\amp 0\amp 1\\ 1\amp 0\amp 0\amp 1 \end{bmatrix}</mrow>
+      </md>
+    </p>
+    <p>
+      If <m>a=b=0</m> and <m>c=2</m> the system is inconsistent:
+      the matrix row reduces to one with a leading 1 in the last column.
+      If <m>a = b = 0</m> and <m>c=1</m>,
+      the system has infinitely many solutions:
+      the matrix row reduces to one with a leading 1 in the first column only.
+    </p>
+  </solution>
+</exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        What condition must <m>a, b,</m> and <m>c</m> satisfy in order for the system below to be consistent? Express your answer as an equation involving <m>a, b,</m> and <m>c</m>.
+        <me>
+          \begin{linsys}{3} x\amp +\amp 3y\amp +\amp z\amp =\amp a\\ -x\amp -\amp 2y\amp +\amp z\amp =\amp b\\ 3x\amp +\amp 7y\amp -\amp z\amp =\amp c \end{linsys}
+        </me>
+      </p>
+    </statement>
+    <solution>
+      <p> Take the corresponding augmented matrix and row reduce:
+      <md>
+        <mrow>\begin{bmatrix}1\amp 3\amp 1\amp a\\ -1\amp -2\amp 1\amp b\\ 3\amp 7\amp -1\amp c \end{bmatrix} \amp \xrightarrow[]{r_1 + r_2}\amp \begin{bmatrix}1\amp 3\amp 1\amp a\\ 0\amp 1\amp 2\amp a+b\\ 3\amp 7\amp -1\amp c \end{bmatrix}</mrow>
+        <mrow>\amp \xrightarrow[]{3r_1 - r_3}\amp \begin{bmatrix}1\amp 3\amp 1\amp a\\ 0\amp 1\amp 2\amp a+b\\ 0\amp 2\amp 4\amp 3a-c \end{bmatrix}</mrow>
+        <mrow>\amp \xrightarrow[]{2r_2 - r_3}\amp \begin{bmatrix}\boxed{1}\amp 3\amp 1\amp a\\ 0\amp \boxed{1}\amp 2\amp a+b\\ 0\amp 0\amp 0\amp a-2b-c \end{bmatrix}</mrow>
+      </md>
+        We see the system is consistent as long as <m>a-2b-c = 0</m>,
+        which guarantees there is no leading 1 in the last column.
+      </p>
+    </solution>
+  </exercise>
+<exercise>
+  <statement>
+    <p>
+      Solve the system of equations below for <m>x</m>, <m>y</m>, and <m>z</m>.
+      <me>
+        \begin{linsys}{3} \frac{1}{x}\amp +\amp \frac{2}{y}\amp -\amp \frac{4}{z}\amp =\amp 1\\ \\ \frac{2}{x}\amp +\amp \frac{3}{y}\amp +\amp \frac{8}{z}\amp =\amp 0\\ \\ -\frac{1}{x}\amp +\amp \frac{9}{y}\amp +\amp \frac{10}{z}\amp =\amp 5 \end{linsys}
+      </me>
+    </p>
+  </statement>
+  <hint>
+    <p>
+      First replace the given <em>nonlinear</em> system with a linear one using a change of variable substitution.
+    </p>
+  </hint>
+  <solution>
+    <p>
+      Start by replacing variables.
+      Let <m>X = \frac{1}{x}</m>,
+      <m>Y = \frac{1}{y}</m>, and <m>Z = \frac{1}{z}</m>.
+      Now we can solve the new system as we normally would.
+      <md>
+        <mrow>\begin{bmatrix}1\amp 2\amp -4\amp 1\\ 2\amp 3\amp 8\amp 0\\ -1\amp 9\amp 10\amp 5 \end{bmatrix} \amp \xrightarrow[]{r_1 + r_3} \begin{bmatrix}1\amp 2\amp -4\amp 1\\ 2\amp 3\amp 8\amp 0\\ 0\amp 11\amp 6\amp 6 \end{bmatrix}</mrow>
+        <mrow>\amp \xrightarrow[]{2r_1 - r_2} \begin{bmatrix}1\amp 2\amp -4\amp 1\\ 0\amp 1\amp -16\amp 2\\ 0\amp 11\amp 6\amp 6 \end{bmatrix}</mrow>
+        <mrow>\amp \xrightarrow[]{11r_2 - r_3} \begin{bmatrix}1\amp 2\amp -4\amp 1\\ 0\amp 1\amp -16\amp 2\\ 0\amp 0\amp -182\amp 16 \end{bmatrix}</mrow>
+      </md>
+    </p>
+    <p>
+      Now solve the system for <m>X, Y, Z</m>:
+      <md>
+        <mrow>X\amp =-\frac{7}{13}</mrow>
+        <mrow>Y\amp = \frac{54}{91}</mrow>
+        <mrow>Z\amp = -\frac{8}{91}</mrow>
+      </md>
+    </p>
+    <p>
+      Now we solve for the original <m>x, y</m>, and <m>z</m>:
+      <md>
+        <mrow>x\amp =-\frac{13}{7}</mrow>
+        <mrow>y\amp = \frac{91}{54}</mrow>
+        <mrow>z\amp = -\frac{91}{8}</mrow>
+      </md>
+    </p>
+  </solution>
+  </exercise>
+  <exercise>
+  <statement>
+    <p>
+      If <m>A</m> is a matrix with three rows and five columns,
+      then what is the maximum possible number of leading ones in its reduced row echelon form? Justify your answer.
+    </p>
+    <p>
+      Provide an explicit example of a matrix that attains this maximum number of leading ones.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      The maximum possible number of leading 1's in the reduced row echelon form of a matrix with 3 rows and 5 columns is 3.
+      It is indeed possible to obtain this maximal number, as the matrix
+      <me>
+        \begin{bmatrix}1\amp 0\amp 0\amp 0\amp 0\\ 0\amp 1\amp 0\amp 0\amp 0\\ 0\amp 0\amp 1\amp 0\amp 0 \end{bmatrix}
+      </me>
+      illustrates.
+    </p>
+  </solution>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      If <m>A</m> is a matrix with three rows and six columns,
+      then what is the maximum possible number of free variables in the general solution of the linear system with augmented matrix <m>A</m>? Justify your answer.
+    </p>
+    <p>
+      Provide an explicit example of a matrix that attains this maximal number of free variables.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      The matrix <m>B</m> corresponds to a linear system of 3 equations in 5 unknowns <m>x_1, x_2, \dots, x_5</m>.
+    </p>
+    <p>
+      Let <m>U</m> be a row echelon form of <m>B</m>,
+      and let <m>k</m> be the number of leading 1's
+      <em>among the first five columns</em> of <m>U</m>.
+      Then the number of parameters in the general solution to the system corresponding to <m>B</m> is <m>5-k</m>.
+      Thus we see, that the number of parameters is at most 5
+      (when <m>k=5</m>).
+    </p>
+    <p>
+      This case is indeed possible,
+      as the matrix <m>B=\underset{3\times 6}{\boldzero}</m> illustrates.
+    </p>
+  </solution>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      If <m>A</m> is a matrix with five rows and three columns,
+      then what is the minimum possible number of zero rows in any row echelon form of <m>A</m>?
+    </p>
+    <p>
+      Provide an explicit example of a matrix that attains this minimal number of zero rows.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      If a row echelon form of <m>A</m> has <m>r</m> zero rows,
+      then all other rows have leading 1's.
+      Thus there are <m>5-r</m> leading 1's in this case.
+      Since the number of leading 1's is at most 3
+      (the number of columns),
+      we have <m>5-r\leq 3</m>.
+      It follows that <m>2\leq r</m>,
+      and thus there are at least <m>2</m> zero rows in a row echelon form of <m>A</m>.
+      It is indeed possible to achieve this minimum number of zero rows,
+      as the matrix
+      <me>
+        U=\begin{bmatrix}1\amp 0\amp 0\\ 0\amp 1\amp 0\\ 0\amp 0\amp 1\\ 0\amp 0\amp 0\\ 0\amp 0\amp 0 \end{bmatrix}
+      </me>
+      illustrates.
+    </p>
+  </solution>
+</exercise>
+</exercises>

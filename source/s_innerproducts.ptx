@@ -43,7 +43,7 @@
         <mrow>(\boldv_1,\boldv_2)\amp \mapsto \langle \boldv_1,\boldv_2\rangle</mrow>
         </md>.
         Furthermore, this operation must satisfy the following axioms.
-        <ol label="i">
+        <ol marker="i">
           <li>
             <title>Symmetry</title>
             <p>

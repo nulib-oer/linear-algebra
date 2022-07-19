@@ -200,7 +200,7 @@
       decide further whether the solution is unique or not.
       If there is not enough information answer <sq>inconclusive</sq> and back up your claim by giving an explicit example where the system is consistent,
       and an explicit example where the system is inconsistent.
-      <ol label="(a)">
+      <ol marker="(a)">
         <li>
           <p>
             <m>\begin{bmatrix}1\amp *\amp *\amp *\\ 0\amp 1\amp *\amp *\\ 0\amp 0\amp 1\amp 1 \end{bmatrix}</m>

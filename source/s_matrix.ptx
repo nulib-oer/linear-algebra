@@ -570,7 +570,7 @@ DL/.style={
         </p>
       </statement>
       <solution>
-        <ol label="(a)">
+        <ol marker="(a)">
           <li>
             <p>
               Using the definition, we see easily that

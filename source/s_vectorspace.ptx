@@ -61,7 +61,7 @@
         <p>
           Furthermore, these two operations must satisfy the following list of axioms.
         </p>
-        <ol label="i">
+        <ol marker="i">
           <li>
             <title>Vector addition is commutative</title>
             <p>

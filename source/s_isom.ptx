@@ -29,7 +29,7 @@
   <title>Proving <m>T</m> is an isomorphism</title>
   <p>
     According to <xref ref="d_isomorphism"/>, to prove a function <m>T\colon V\rightarrow W</m> is an isomorphism, we must show that
-    <ol label="i">
+    <ol marker="i">
       <li>
         <p>
           <m>T</m> is linear, and
@@ -42,7 +42,7 @@
       </li>
     </ol>
     Since being invertible is equivalent to being bijective, there are two main approaches to proving that (ii) holds for a linear transformation <m>T\colon V\rightarrow W</m>:
-    <ol label="a">
+    <ol marker="a">
       <li>
         <p>
           we can show directly that <m>T</m> is invertible by providing an inverse <m>T^{-1}\colon W\rightarrow V</m>;
@@ -98,7 +98,7 @@
   <statement>
     <p>
       Let <m>T\colon V\rightarrow W</m> be an isomorphism. The following properties hold:
-      <ol label="i">
+      <ol marker="i">
         <li>
           <p>
             <m>S\subseteq V</m> is linearly independent if and only if <m>T(S)\subseteq W</m> is linearly independent;
@@ -163,7 +163,7 @@
       <li>
         <p>
           Assume <m>\dim V=n</m>. Then the following are equivalent:
-          <ol label="i">
+          <ol marker="i">
             <li>
               <p>
                 <m>T</m> is an isomorphism;

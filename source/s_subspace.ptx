@@ -21,7 +21,7 @@
           A subset <m>W\subseteq V</m> is a
           <term>subspace</term> of <m>V</m> if the following conditions hold:
         </p>
-        <ol label="i">
+        <ol marker="i">
           <li>
             <title><m>W</m> contains the zero vector</title>
             <p>
@@ -58,7 +58,7 @@
     <p>
       We must show properties (i)-(iii) hold for <m>W</m>.
     </p>
-    <ol label="i">
+    <ol marker="i">
       <li>
         <p>
           The zero element of <m>V</m> is <m>\boldzero=(0,0)</m>,
@@ -100,7 +100,7 @@
     </p>
   </statement>
   <solution>
-    <ol label="i">
+    <ol marker="i">
       <li>
         <p>
           Clearly <m>\boldzero=(0,0)\in W</m>.
@@ -126,7 +126,7 @@
     <p>
       As with proofs regarding linearity of functions, we can merge conditions (ii)-(iii) of <xref ref="d_subspace"/> into a single statement about linear combinations, deriving the following two-step method for proving a set <m>W</m> is a subspace of a vector space <m>V</m>.
     </p>
-    <ol label="i">
+    <ol marker="i">
       <li>
         <p>
           Show <m>\boldzero_V\in W</m>

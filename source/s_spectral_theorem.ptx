@@ -487,7 +487,7 @@ An operator that admits an orthogonal (and hence an orthonormal) eigenbasis is c
 <figure xml:id="fig_ortho_diag">
   <title>Eigenspaces of a symmetric matrix are orthogonal</title>
   <interactive xml:id="geogebra_ortho_diag" platform="geogebra" width="100%" aspect="4:3">
-    <slate surface="geogebra" material="zkqwe4mq" aspect="4:3" label="train-distance">
+    <slate surface="geogebra" material="zkqwe4mq" aspect="4:3" marker="train-distance">
     enableLabelDrags(false);
     </slate>
   </interactive>

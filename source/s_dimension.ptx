@@ -253,7 +253,7 @@ The <q>contracting and expanding</q> theorem below is very useful theoretical co
             </li>
             </ul>
             Some observations:
-            <ol label="i">
+            <ol marker="i">
               <li>
                 <p>
                 Each <m>S_i</m> is linearly independent. This can be shown by induction, the crucial point being that if <m>S_i</m> is linearly independent, and if <m>\boldv\notin \Span S_i</m>, then <m>S_{i+1}=S_i\cup \{\boldv_0\}</m> is linearly independent. The proof is left as an exercise.
@@ -293,7 +293,7 @@ The following corollary follows from <xref ref="th_basis_dimension"/> and <xref 
       <li>
         <p>
           If <m>\val{S}=n</m>, then the following are equivalent:
-          <ol label="i">
+          <ol marker="i">
             <li>
               <p>
                 The set <m>S</m> is a basis.

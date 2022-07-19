@@ -918,7 +918,7 @@ We conclude with two results related to row reduction. The first provides an equ
   <statement>
     <p>
      With the help of <xref ref="cor_row_equivalence_invertibility"/>, we can easily show that the row equivalence relation is <em>reflexive</em>, <em>symmetric</em>, and <em>transitive</em>. In other words, letting <m>A\sim B</m> denote that <m>A</m> is row equivalent to <m>B</m>, the following properties hold.
-     <ol label="i">
+     <ol marker="i">
        <li>
          <title>Reflexivity</title>
          <p>

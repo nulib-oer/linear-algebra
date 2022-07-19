@@ -24,6 +24,25 @@
       </li>
     </ol>
   </statement>
+  <solution>
+    <ol>
+      <li>
+        <p>
+          <m>A=\begin{bmatrix}a\amp b\amp c\\ b\amp d\amp e\\ c\amp e\amp f \end{bmatrix}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>A=\begin{bmatrix}0\amp a\amp b\\ -a\amp 0\amp c\\ -b\amp -c\amp 0 \end{bmatrix}</m>
+        </p>
+        </li>
+      <li>
+        <p>
+          <m>A=\begin{bmatrix}a\amp 0\amp 0\\ 0\amp b\amp 0\\ 0\amp 0\amp c \end{bmatrix}</m>
+        </p>
+      </li>
+    </ol>
+  </solution>
 </exercise>
 <exercise>
   <statement>
@@ -56,6 +75,32 @@
       </ol>
     </p>
   </statement>
+  <solution>
+    <p>
+      (a)
+      <md>
+        <mrow>\left(\begin{bmatrix}2\amp -2\amp 6\\ 10\amp 0\amp 4\\ 4\amp 2\amp 8 \end{bmatrix} - \begin{bmatrix}6\amp 1\amp 3\\ -1\amp 1\amp 2\\ 4\amp 1\amp 3 \end{bmatrix} \right) \begin{bmatrix}3\amp 0\\ -1\amp 2\\ 1\amp 1 \end{bmatrix} \amp =\begin{bmatrix}-4\amp -3\amp 3\\ 11\amp -1\amp 2\\ 0\amp 1\amp 5 \end{bmatrix} \begin{bmatrix}3\amp 0\\ -1\amp 2\\ 1\amp 1 \end{bmatrix}</mrow>
+        <mrow>\amp =\begin{bmatrix}-6\amp -3\\ 36\amp 0\\ 4\amp 7 \end{bmatrix}</mrow>
+      </md>
+    </p>
+    <p>
+      (b)
+      <md>
+        <mrow>\begin{bmatrix}16\amp -4\\ 0\amp 8 \end{bmatrix} \begin{bmatrix}1\amp 4\amp 2\\ 3\amp 1\amp 5 \end{bmatrix} + \begin{bmatrix}8\amp -2\\ 0\amp 4 \end{bmatrix} \amp = \begin{bmatrix}4\amp 60\amp 12\\ 24\amp 8\amp 40 \end{bmatrix} + \begin{bmatrix}8\amp -2\\ 0\amp 4 \end{bmatrix}</mrow>
+      </md>
+    </p>
+    <p>
+      The matrix sum on the right is not defined.
+      Thus the operation is not defined.
+    </p>
+    <p>
+      (c)
+      <md>
+        <mrow>\begin{bmatrix}4\amp 0\\ -1\amp 2 \end{bmatrix} \left( \begin{bmatrix}1\amp 4\amp 2\\ 3\amp 1\amp 5 \end{bmatrix} \begin{bmatrix}1\amp 3\\ 4\amp 1\\ 2\amp 5 \end{bmatrix} - \begin{bmatrix}3\amp -1\amp 1\\ 0\amp 2\amp 1 \end{bmatrix} \begin{bmatrix}3\amp 0\\ -1\amp 2\\ 1\amp 1 \end{bmatrix} \right)</mrow>
+        <mrow>= \begin{bmatrix}4\amp 0\\ -1\amp 2 \end{bmatrix} \left( \begin{bmatrix}21\amp 17\\ 17\amp 35 \end{bmatrix} - \begin{bmatrix}11\amp -1\\ -1\amp 5 \end{bmatrix} \right) = \begin{bmatrix}40\amp 72\\ 26\amp 42 \end{bmatrix}</mrow>
+      </md>
+    </p>
+  </solution>
 </exercise>
 <exercise>
   <statement>
@@ -85,14 +130,33 @@
     </p>
   </statement>
   <solution>
-    <ol label="(a)">
+    <ol>
       <li>
         <p>
           Using expansion by columns,
           the first column of <m>AB</m> is given by <m>A</m> times the first column of <m>B</m>.
-          We compute
+          We compute:
           <me>
             \begin{bmatrix}3\amp -2\amp 7\\ 6\amp 5\amp 4\\ 0\amp 4\amp 9 \end{bmatrix} \begin{bmatrix}6\\ 0\\ 7 \end{bmatrix} = 6 \begin{amatrix}[r]3 \\ 6 \\ 0  \end{amatrix}+0 \begin{amatrix}[r]-2 \\ 5 \\ 4  \end{amatrix}+7\begin{amatrix}[r]7 \\ 4 \\ 9  \end{amatrix}= \begin{bmatrix}67\\ 64\\ 63 \end{bmatrix}
+          </me>
+        </p>
+      </li>
+      <li>
+        <p>
+          The second row of <m>BB</m> is given by the second row of <m>B</m> times <m>B</m> it self. We compute:
+          <md>
+            <mrow> \begin{amatrix}[rrr]0\amp 1\amp 3\end{amatrix}
+            \begin{amatrix}[rrr]6\amp -2\amp 4\\ 0\amp 1\amp 3\\ 7\amp 7\amp 5 \end{amatrix}\amp =0 \begin{amatrix}[rrr]6\amp -2\amp 4  \end{amatrix}+1 \begin{amatrix}[rrr]0\amp 1\amp 3  \end{amatrix}+3 \begin{amatrix}[rrr]7\amp 7\amp 5  \end{amatrix}</mrow>
+            <mrow> \amp=\begin{amatrix}[rrr]21\amp 22\amp 18  \end{amatrix} </mrow>
+          </md>
+        </p>
+      </li>
+      <li>
+        <p>
+          The third column of <m>AA</m> is given by <m>A</m> times the third column of <m>A</m>.
+          We compute:
+          <me>
+            A\colvec{7 \\ 4 \\ 9}=\begin{bmatrix}3\amp -2\amp 7\\ 6\amp 5\amp 4\\ 0\amp 4\amp 9 \end{bmatrix} \colvec{7 \\ 4 \\ 9}=\colvec{76\\98\\97}
           </me>
         </p>
       </li>
@@ -146,7 +210,7 @@
       </me>.
       </p>
   </statement>
-  <!-- <solution>
+  <solution>
     <p>
       The matrix <m>B_1</m>, when multiplied on the left,
       replaces the third row of <m>A</m> with <m>\boldr_3-2\boldr_2</m>.
@@ -159,17 +223,6 @@
       The matrix <m>B_3</m>, when multiplied on the left,
       swaps <m>\boldr_1</m> and <m>\boldr_3</m>.
     </p>
-  </solution> -->
-</exercise>
-<exercise xml:id="ex_entry_lin_comb">
-  <statement>
-    <p>
-      Let <m>r\geq 2</m> be an integer. Prove, by induction on <m>r</m>, that for any <m>m\times n</m> matrices <m>A_1, A_2,\dots, A_r</m> and scalars <m>c_1,c_2,\dots, c_r</m>, we have
-      <me>
-        [c_1A_1+c_2A_2+\cdots +c_rA_r]_{ij} =c_1[A_1]_{ij}+c_2[A_2]_{ij}+\cdots c_r[A_r]_{ij}
-      </me>
-      for all <m>1\leq i\leq m</m>, <m>1\leq j\leq n</m>.
-    </p>
-  </statement>
+  </solution>
 </exercise>
 </exercises>

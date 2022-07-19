@@ -14,7 +14,7 @@
           The following properties hold for all matrices <m>A, B, C</m> and scalars
           <m>a,
           b, c\in \R</m> for which the given expression makes sense.
-          <ol label="(i)">
+          <ol marker="(i)">
             <li xml:id="th_matrix_comm">
             <title>Addition commutative law</title>
               <p>
@@ -368,7 +368,7 @@ The example in our warning above is but one instance of the general failure of t
   The following properties hold for all matrices <m>A, B, C</m> and scalars
   <m>c\in \R</m> for which the given expression makes sense. </p>
       <statement>
-        <ol label="(i)">
+        <ol marker="(i)">
           <li xml:id="th_trans_add" >
             <p>
               <m>(A+B)^T=A^T+B^T</m>

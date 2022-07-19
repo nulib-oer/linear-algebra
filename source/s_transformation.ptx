@@ -57,7 +57,7 @@
       <statement>
         <p>
         Functions <m>f</m> and <m>g</m> are <term>equal</term> if
-        <ol label="i">
+        <ol marker="i">
           <li>
             <p>
               they have the same domain <m>A</m> and codomain <m>B</m>, and
@@ -103,7 +103,7 @@
         Let <m>V</m> and <m>W</m> be vector spaces.
         A function <m>T\colon V\rightarrow W</m> is a <term>linear transformation</term> (or <term>linear</term>)
         if it satisfies the following properties:
-        <ol label="i">
+        <ol marker="i">
           <li>
             <p>
               For all <m>\boldv_1, \boldv_2\in V</m>, we have <m>T(\boldv_1+\boldv_2)=T(\boldv_1)+T(\boldv_2)</m>.
@@ -167,7 +167,7 @@
     </p>
     <p>
     Let <m>V</m> and <m>W</m> be vector spaces, and let <m>T_0\colon V\rightarrow W</m> be the zero function. We verify each defining property separately.
-    <ol label="i">
+    <ol marker="i">
       <li>
         <p>
           Given <m>\boldv, \boldw\in V</m>, we have
@@ -193,7 +193,7 @@
     </p>
     <p>
     Now let <m>V</m> be a vector spaces, and let <m>\id_V\colon V\rightarrow V</m> be the identity function.
-    <ol label="i">
+    <ol marker="i">
       <li>
         <p>
           Given <m>\boldv, \boldw\in V</m>, we have

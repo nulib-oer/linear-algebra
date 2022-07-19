@@ -349,7 +349,7 @@
             <statement>
               <p>
               Functions <m>f</m> and <m>g</m> are <term>equal</term> if
-              <ol label="i">
+              <ol marker="i">
                 <li>
                   <p>
                     they have the same domain <m>X</m> and codomain <m>Y</m>, and

@@ -225,7 +225,7 @@ What this suggests is that you are in fact proving an implication: namely, <em>i
   <title>Function equality</title>
   <p>
     By <xref ref="d_function_equality"/>, in order to show functions <m>f</m> and <m>g</m> are equal we must
-    <ol label="i">
+    <ol marker="i">
       <li>
         <p>
           show that <m>f</m> and <m>g</m> have the same domain <m>X</m> and codomain <m>Y</m>, and
