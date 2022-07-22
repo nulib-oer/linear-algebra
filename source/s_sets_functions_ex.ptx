@@ -1,34 +1,23 @@
 <exercises xml:id="s_sets_functions_ex">
   <exercise>
-  <!-- 1. union of sets -->
-    <webwork source="Library/SDSU/Discrete/Sets/unionB3.pg" />
+  <!-- 1. union and intersections of sets -->
+    <webwork source="Library/ASU-topics/setSets/ur_st_1_2.pg" />
   </exercise>
   <exercise>
-  <!-- 2. intersection of sets -->
-    <webwork source="Library/SDSU/Discrete/Sets/intersectA2.pg" />
+  <!-- 2. products of sets -->
+    <webwork source="Library/SDSU/Discrete/Sets/cartesianprodB4.pg" />
   </exercise>
   <exercise>
-  <!-- 3. difference of sets -->
-    <webwork source="Library/SDSU/Discrete/Sets/differenceB4.pg" />
-  </exercise>
-  <exercise>
-  <!-- 4. products of sets -->
-    <webwork source="Library/Rochester/setSetTheory1/ur_st_1_7.pg" />
-  </exercise>
-  <exercise>
-  <!-- 5. integer subsets -->
-    <webwork source="Library/SDSU/Discrete/Sets/subsetB3.pg" />
-  </exercise> 
-  <exercise>
-  <!-- 6. image of intervals under a function -->
+  <!-- 3. image of intervals under a function -->
     <webwork source="Library/MontanaState/Sets/5.2A13Sets1.pg" />
   </exercise>
   <exercise>
-  <!-- 7. one-to-one and onto -->
+  <!-- 4. one-to-one and onto -->
     <webwork source="Library/SUNYSB/oneToOneOnto1.pg" />
   </exercise>
   <exercise>
-  <!-- 8. inverses -->
+  <!-- 5. inverses -->
     <webwork source="Library/LoyolaChicago/Precalc/Chap8Sec2/Q08.pg" />
   </exercise>
+  <!-- No exercises on set differences. -->
 </exercises>
