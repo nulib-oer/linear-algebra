@@ -31,12 +31,12 @@
       <!-- For use with a book organized by parts
     <divisions part-structure="decorative" chapter-start="1" level="3"/>
       -->
-      <divisions chapter-start="0" level="3"/>
+      <divisions chapter-start="0" level="2"/>
     <!-- The next elements say how the levels deep to break up the    -->
     <!-- numbering of the respective elements. Can't be more than the -->
     <!-- @level on divisions above.                                   -->
     <blocks level="2"/>
-    <projects level="2"/>
+    <projects level="0"/>
     <equations level="2"/>
     <footnotes level="2"/>
   </numbering>
@@ -52,7 +52,7 @@
   <html>
     <!-- Whether to knowl a particular elements is set here    -->
     <!-- Lots of elements have this possibility; see the guide -->
-    <knowl remark="no" example="no" proof="yes"/>
+    <knowl remark="no" project="yes" example="no" proof="yes"  />
     <!-- Specify the style of the html by giving names to      -->
     <!-- override defaults.  Ex: to use "style_oscarlevin.css" -->
     <!-- put <css style="oscarlevin"/>                         -->

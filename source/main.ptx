@@ -227,6 +227,7 @@
     <rename element="algorithm">Procedure</rename>
     <rename element="principle">Mantra</rename>
     <rename element="assumption">Fiat</rename>
+    <rename element="project">Sage example</rename>
     <brandlogo url="http://linear-algebra.northwestern.pub/" source="images/im_holycomm.svg" />
 
   </docinfo>
@@ -285,6 +286,10 @@
         <title>Examples</title>
         <list-of elements="example" divisions="section" />
       </appendix>
+      <appendix xml:id="appendix-sage" >
+        <title>Sage examples</title>
+        <list-of elements="project" divisions="section" />
+    </appendix>
 
       <appendix xml:id="appendix-mantras">
         <title>Video examples and figures</title>
