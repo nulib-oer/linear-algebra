@@ -10,7 +10,7 @@
       <format>html</format>
       <source>source/main.ptx</source>
       <publication>publication/publication.ptx</publication>
-      <output-dir>output/web</output-dir>      
+      <output-dir>output/web</output-dir>
       <!-- Webwork exercises are non-interactive by default -->
       <!-- We disable this behavior -->
       <stringparam key="webwork.divisional.static" value="no"/>
@@ -35,15 +35,11 @@
       <stringparam key="debug.skip-knowls" value="yes"/>
       <!-- edit this to change the section/chapter/etc. to include
            in your subset build -->
-<<<<<<< HEAD
-      <xmlid-root>c_foundations</xmlid-root>
+      <xmlid-root>c_linear_systems</xmlid-root>
       <!-- Webwork exercises are non-interactive by default -->
       <!-- We disable this behavior -->
       <stringparam key="webwork.divisional.static" value="no"/>
 
-=======
-      <xmlid-root>c_linear_systems</xmlid-root>
->>>>>>> dev
     </target>
   </targets>
   <executables>
