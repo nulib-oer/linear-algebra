@@ -35,11 +35,15 @@
       <stringparam key="debug.skip-knowls" value="yes"/>
       <!-- edit this to change the section/chapter/etc. to include
            in your subset build -->
+<<<<<<< HEAD
       <xmlid-root>c_foundations</xmlid-root>
       <!-- Webwork exercises are non-interactive by default -->
       <!-- We disable this behavior -->
       <stringparam key="webwork.divisional.static" value="no"/>
 
+=======
+      <xmlid-root>c_linear_systems</xmlid-root>
+>>>>>>> dev
     </target>
   </targets>
   <executables>
