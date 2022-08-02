@@ -555,6 +555,15 @@
   </proof>
 
 </theorem>
+<figure xml:id="fig_rot_refl">
+  <title>Eigenspaces of a symmetric matrix are orthogonal</title>
+  <interactive xml:id="geogebra_rot_refl" platform="geogebra" width="100%" aspect="4:3">
+    <slate surface="geogebra" material="bwnxf7b9" aspect="4:3" marker="train-distance">
+    enableLabelDrags(false);
+    </slate>
+  </interactive>
+  <caption>Visualizing reflection and rotation</caption>
+</figure>
 </subsection>
 <subsection xml:id="ss_transform_exotic_examples">
 <title>Additional examples</title>
