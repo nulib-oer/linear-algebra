@@ -166,4 +166,6 @@
   </theorem>
 
 </subsection>
+  
+  <xi:include href="./s_polynomials_ex.ptx"/>
 </section>
