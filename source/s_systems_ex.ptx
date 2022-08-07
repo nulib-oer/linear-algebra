@@ -1,7 +1,33 @@
 <exercises xml:id="s_systems_ex">
+  
+  <subsexercises>
+    <exercise>
+      <webwork source="Library/TCNJ/TCNJ_LinearSystems/problem1.pg" />
+    </exercise>
+    <exercise>
+    <!-- 1.  -->
+      <webwork source="Library/TCNJ/TCNJ_RowReduction/problem5.pg" />
+    </exercise>
+    <exercise>
+    <!-- 1.  -->
+      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/holt_01_01_024.pg" />
+    </exercise>
+    <exercise>
+      <webwork source="Library/TCNJ/TCNJ_LinearSystems/problem17.pg" />
+    </exercise>
+   <!-- <exercise>
+      <webwork source="Library/TCNJ/TCNJ_RowReduction/problem8.pg" />
+    </exercise>
+    <exercise>
+      <webwork source="Library/TCNJ/TCNJ_RowReduction/problem10.pg" />
+    </exercise>
+    <exercise>
+      <webwork source="Library/TCNJ/TCNJ_RowReduction/problem3.pg" />
+    </exercise>  -->
+  </subsexercises>
+
   <exercise xml:id="ex_solving_sys_geom">
     <title>Geometry of linear systems</title>
-
     <statement>
       <p>
         Recall that the <em>graph</em> of an equation is the set of all solutions to the equation. Graphs of linear equations correspond to some familiar geometric objects:
@@ -150,6 +176,16 @@
       </p>
     </solution>
   </exercise>
+
+  <subsexercises>
+    <exercise>
+      <webwork source="Library/TCNJ/TCNJ_LinearSystems/problem3.pg" />
+    </exercise>
+    <exercise>
+      <webwork source="Library/TCNJ/TCNJ_LinearSystems/problem4.pg" />
+    </exercise>
+  </subsexercises>
+
   <exercise xml:id="ex_row_ops_preserve">
     <title>Row operations preserve solutions</title>
     <statement>
