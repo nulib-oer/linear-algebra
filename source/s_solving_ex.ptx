@@ -1,4 +1,16 @@
 <exercises xml:id="s_solving_ex">
+<subexercises>
+  <exercise>
+    <webwork source="Library/TCNJ/TCNJ_RowReduction/problem8.pg" />
+  </exercise>
+  <exercise>
+    <webwork source="Library/TCNJ/TCNJ_RowReduction/problem10.pg" />
+  </exercise>
+  <exercise>
+    <webwork source="Library/TCNJ/TCNJ_RowReduction/problem3.pg" />
+  </exercise>
+</subexercises>
+
 <exercisegroup>
 <introduction>
 <p>Solve the following systems of equations.

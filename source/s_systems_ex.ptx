@@ -2,28 +2,21 @@
   
   <subsexercises>
     <exercise>
+      <!-- 1. Systems of equations in 2 variables -->
       <webwork source="Library/TCNJ/TCNJ_LinearSystems/problem1.pg" />
     </exercise>
     <exercise>
-    <!-- 1.  -->
+      <!-- 2. System of equations in 2 variable with unknown constant -->
       <webwork source="Library/TCNJ/TCNJ_RowReduction/problem5.pg" />
     </exercise>
     <exercise>
-    <!-- 1.  -->
+      <!-- 3. System of equations in 3 variables -->
       <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/holt_01_01_024.pg" />
     </exercise>
     <exercise>
+      <!-- 4. Systems of equations in 3 variables -->
       <webwork source="Library/TCNJ/TCNJ_LinearSystems/problem17.pg" />
     </exercise>
-   <!-- <exercise>
-      <webwork source="Library/TCNJ/TCNJ_RowReduction/problem8.pg" />
-    </exercise>
-    <exercise>
-      <webwork source="Library/TCNJ/TCNJ_RowReduction/problem10.pg" />
-    </exercise>
-    <exercise>
-      <webwork source="Library/TCNJ/TCNJ_RowReduction/problem3.pg" />
-    </exercise>  -->
   </subsexercises>
 
   <exercise xml:id="ex_solving_sys_geom">
@@ -179,9 +172,11 @@
 
   <subsexercises>
     <exercise>
+      <!-- 6. Geometry in 2 variables -->
       <webwork source="Library/TCNJ/TCNJ_LinearSystems/problem3.pg" />
     </exercise>
     <exercise>
+      <!-- 7. Geometry in 3 variables -->      
       <webwork source="Library/TCNJ/TCNJ_LinearSystems/problem4.pg" />
     </exercise>
   </subsexercises>
