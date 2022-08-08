@@ -13,10 +13,6 @@
       <!-- 3. System of equations in 3 variables -->
       <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/holt_01_01_024.pg" />
     </exercise>
-    <exercise>
-      <!-- 4. Systems of equations in 3 variables -->
-      <webwork source="Library/TCNJ/TCNJ_LinearSystems/problem17.pg" />
-    </exercise>
   </subsexercises>
 
   <exercise xml:id="ex_solving_sys_geom">
@@ -172,11 +168,11 @@
 
   <subsexercises>
     <exercise>
-      <!-- 6. Geometry in 2 variables -->
+      <!-- 5. Geometry in 2 variables -->
       <webwork source="Library/TCNJ/TCNJ_LinearSystems/problem3.pg" />
     </exercise>
     <exercise>
-      <!-- 7. Geometry in 3 variables -->      
+      <!-- 6. Geometry in 3 variables -->      
       <webwork source="Library/TCNJ/TCNJ_LinearSystems/problem4.pg" />
     </exercise>
   </subsexercises>
