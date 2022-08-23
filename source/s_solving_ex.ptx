@@ -1,97 +1,115 @@
 <exercises xml:id="s_solving_ex">
+
+<subexercises>
+  <!-- 1. solve a system of equations in 4 variables -->
+  <exercise>
+    <webwork source="Library/Utah/Business_Algebra/set11_Inequalities_and_Linear_Programming/p02.pg" />
+  </exercise>
+</subexercises>
+
 <exercisegroup>
-<introduction>
-<p>Solve the following systems of equations.
-<ul>
-  <li>
-    <p>
-      When row reducing follow Gaussian elimination to the letter.
-    </p>
-  </li>
-  <li>
-    <p>
-      Make sure to indicate how variables are sorted into free and leading variables.
-    </p>
-  </li>
-  <li>
-    <p>
-      Express your answer in both the parametric equation format and set notation format.
-    </p>
-  </li>
-</ul>
-</p>
-</introduction>
-<exercise>
-  <statement>
-    <p>
-      <me>
-        \begin{linsys}{4} x_1\amp +\amp 2x_2\amp =\amp x_3\amp +\amp x_4\amp +\amp 3\\ 3x_1\amp +\amp 6x_2\amp =\amp 2x_3\amp -\amp 4x_4\amp +\amp 8\\ -x_1\amp +\amp 2x_3\amp =\amp 2x_2\amp -\amp x_4\amp -\amp 1 \end{linsys}
-      </me>
-    </p>
-  </statement>
-  <solution>
-    <p>
-    We saw in <xref ref="s_ge_equivsys"/> that the system is equivalent to a system <m>L'</m> with augmented matrix
-    <me>
-    \begin{amatrix}[rrrr|r]\boxed{1}\amp 2\amp -1\amp -1\amp 3\\ 0\amp 0\amp \boxed{1}\amp 7\amp -1\\ 0\amp 0\amp 0\amp \boxed{1}\amp -\frac{3}{7} \end{amatrix}
-    </me>.
-    The row echelon matrix tells us that <m>x_2=t</m> is the only free variable of <m>L'</m>. Back substitution then yields the parametric equation description:
-    <md>
-      <mrow>x_1\amp = \frac{32}{7}-2t</mrow>
-      <mrow>x_2\amp = t</mrow>
-      <mrow>x_3\amp = 2</mrow>
-      <mrow>x_4\amp = -\frac{3}{7}</mrow>
-    </md>.
-    Thus the set of solutions is
-    <me>
-      \left\{ \left(\frac{32}{7}-2t, t, 2, -\frac{3}{7}\right)\colon t\in \R\right\}
-    </me>.
+  <introduction>
+  <p>Solve the following systems of equations.
+  <ul>
+    <li>
+      <p>
+        When row reducing follow Gaussian elimination to the letter.
+      </p>
+    </li>
+    <li>
+      <p>
+        Make sure to indicate how variables are sorted into free and leading variables.
+      </p>
+    </li>
+    <li>
+      <p>
+        Express your answer in both the parametric equation format and set notation format.
+      </p>
+    </li>
+  </ul>
   </p>
-  </solution>
-</exercise>
-
-<exercise>
-  <statement>
-    <p>
-      <me>\begin{linsys}{4} x_1\amp +\amp x_2\amp -\amp x_3\amp +\amp x_4\amp =\amp 1\\ -2x_1\amp -\amp 2x_2\amp +\amp 2x_3\amp -\amp 2x_4\amp =\amp -2\\ x_1\amp +\amp x_2\amp +\amp x_3\amp +\amp 2x_4\amp =\amp 3 \end{linsys}
-      </me>
-    </p>
-  </statement>
-
-</exercise>
-<exercise>
-  <statement>
-    <p>
+  </introduction>
+  <exercise>
+    <statement>
+      <p>
+        <me>
+          \begin{linsys}{4} x_1\amp +\amp 2x_2\amp =\amp x_3\amp +\amp x_4\amp +\amp 3\\ 3x_1\amp +\amp 6x_2\amp =\amp 2x_3\amp -\amp 4x_4\amp +\amp 8\\ -x_1\amp +\amp 2x_3\amp =\amp 2x_2\amp -\amp x_4\amp -\amp 1 \end{linsys}
+        </me>
+      </p>
+    </statement>
+    <solution>
+      <p>
+      We saw in <xref ref="s_ge_equivsys"/> that the system is equivalent to a system <m>L'</m> with augmented matrix
       <me>
-        \begin{linsys}{3} 2x_1 \amp +\amp  2x_2  \amp +\amp 2x_3\amp =\amp 0\\ -2x_1 \amp +\amp  5x_2 \amp +\amp 2x_3\amp =\amp 1\\ 8x_1 \amp +\amp   x_2   \amp +\amp 4x_3\amp =\amp -1 \end{linsys}
-      </me>
-    </p>
-  </statement>
-
-</exercise>
-<exercise>
-  <statement>
-    <p>
+      \begin{amatrix}[rrrr|r]\boxed{1}\amp 2\amp -1\amp -1\amp 3\\ 0\amp 0\amp \boxed{1}\amp 7\amp -1\\ 0\amp 0\amp 0\amp \boxed{1}\amp -\frac{3}{7} \end{amatrix}
+      </me>.
+      The row echelon matrix tells us that <m>x_2=t</m> is the only free variable of <m>L'</m>. Back substitution then yields the parametric equation description:
+      <md>
+        <mrow>x_1\amp = \frac{32}{7}-2t</mrow>
+        <mrow>x_2\amp = t</mrow>
+        <mrow>x_3\amp = 2</mrow>
+        <mrow>x_4\amp = -\frac{3}{7}</mrow>
+      </md>.
+      Thus the set of solutions is
       <me>
-        \begin{linsys}{3} \amp \amp -2b  \amp +\amp 3c\amp =\amp 1\\ 3a \amp +\amp  6b \amp -\amp 3c\amp =\amp -2\\ 6a \amp +\amp   6b   \amp +\amp 3c\amp =\amp 5 \end{linsys}
-      </me>
-
+        \left\{ \left(\frac{32}{7}-2t, t, 2, -\frac{3}{7}\right)\colon t\in \R\right\}
+      </me>.
     </p>
-  </statement>
+    </solution>
+  </exercise>
 
-</exercise>
-<exercise>
-  <statement>
-    <p>
-      <me>
-        \begin{linsys}{5} \amp  \amp  \amp \amp  T_3\amp +\amp T_4\amp +\amp T_5 \amp =\amp 0\\ -T_1\amp -\amp T_2 \amp +\amp 2T_3 \amp -\amp 3T_4\amp +\amp T_5 \amp =\amp 0\\ T_1\amp + \amp T_2 \amp -\amp 2T_3 \amp \amp \amp -\amp T_5 \amp =\amp 0\\ 2T_1\amp + \amp 2T_2 \amp -\amp T_3 \amp \amp \amp +\amp T_5 \amp =\amp 0 \end{linsys}
-      </me>
+  <exercise>
+    <statement>
+      <p>
+        <me>\begin{linsys}{4} x_1\amp +\amp x_2\amp -\amp x_3\amp +\amp x_4\amp =\amp 1\\ -2x_1\amp -\amp 2x_2\amp +\amp 2x_3\amp -\amp 2x_4\amp =\amp -2\\ x_1\amp +\amp x_2\amp +\amp x_3\amp +\amp 2x_4\amp =\amp 3 \end{linsys}
+        </me>
+      </p>
+    </statement>
 
-    </p>
-  </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        <me>
+          \begin{linsys}{3} 2x_1 \amp +\amp  2x_2  \amp +\amp 2x_3\amp =\amp 0\\ -2x_1 \amp +\amp  5x_2 \amp +\amp 2x_3\amp =\amp 1\\ 8x_1 \amp +\amp   x_2   \amp +\amp 4x_3\amp =\amp -1 \end{linsys}
+        </me>
+      </p>
+    </statement>
 
-</exercise>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        <me>
+          \begin{linsys}{3} \amp \amp -2b  \amp +\amp 3c\amp =\amp 1\\ 3a \amp +\amp  6b \amp -\amp 3c\amp =\amp -2\\ 6a \amp +\amp   6b   \amp +\amp 3c\amp =\amp 5 \end{linsys}
+        </me>
+
+      </p>
+    </statement>
+
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        <me>
+          \begin{linsys}{5} \amp  \amp  \amp \amp  T_3\amp +\amp T_4\amp +\amp T_5 \amp =\amp 0\\ -T_1\amp -\amp T_2 \amp +\amp 2T_3 \amp -\amp 3T_4\amp +\amp T_5 \amp =\amp 0\\ T_1\amp + \amp T_2 \amp -\amp 2T_3 \amp \amp \amp -\amp T_5 \amp =\amp 0\\ 2T_1\amp + \amp 2T_2 \amp -\amp T_3 \amp \amp \amp +\amp T_5 \amp =\amp 0 \end{linsys}
+        </me>
+
+      </p>
+    </statement>
+
+  </exercise>
+
 </exercisegroup>
+
+
+<subexercises>
+  <exercise>
+    <!-- 7. Systems of equations in 3 variables -->
+    <webwork source="Library/TCNJ/TCNJ_LinearSystems/problem17.pg" />
+  </exercise>
+</subexercises>
+
 <exercise>
   <statement>
     <p>
