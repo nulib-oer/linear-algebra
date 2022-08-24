@@ -505,7 +505,7 @@
         <p>
         Let <m>\ell\colon ax+by=c</m> be a line in <m>\R^2</m>. This line does not necessarily pass through the origin, but the line <m>\ell_0\colon ax+by=0</m> does. Using linear algebra we recognize <m>\ell</m> and <m>\ell_0</m> as the solutions to the matrix equations <m>A\boldx=c</m> and <m>A\boldx=0</m>, respectively, where
         <me>
-          A=\begin{amatrix}[]a\amp b \end{amatrix}
+          A=\begin{bmatrix}a\amp b \end{bmatrix}
         </me>.
         Furthermore we see that <em>\ell_0</em> is none other than <m>\NS A</m>.
         Now, fix a particular point <m>P=(x_0,y_0)\in \ell</m>. Since <m>(x_0, y_0)</m> is a solution to <m>A\boldx=c</m>, according to <xref ref="cor_matrix_equations"/> we have
