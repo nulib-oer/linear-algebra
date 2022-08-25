@@ -1,7 +1,7 @@
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_polynomials">
   <title>Polynomials</title>
 <introduction>
-  Polynomials will play an important role in our treatment of linear algebra both in terms of building examples of vector spaces (<xref ref="d_subspace_functions" text="global"/>) and as tools for studying linear operators (<xref ref="d_char_poly_transform" text="global"/>). We gather here some basic definitions and properties of polynomials. Although we will primarily be concerned with polynomials with real coefficients in this course, it is convenient to develop the theory over the complex numbers. As with <xref ref="s_complex_numbers"/>, all theorems will be stated without proof. 
+  Polynomials will play an important role in our treatment of linear algebra both in terms of building examples of vector spaces (<xref ref="d_subspace_functions" text="global"/>) and as tools for studying linear operators (<xref ref="d_char_poly_transform" text="global"/>). We gather here some basic definitions and properties of polynomials. Although we will primarily be concerned with polynomials with real coefficients in this course, it is convenient to develop the theory over the complex numbers. As with <xref ref="s_complex_numbers"/>, all theorems will be stated without proof.
 </introduction>
 <subsection xml:id="ss_poly_def">
   <title>Basic definitions</title>
@@ -104,11 +104,11 @@
   </notation>
   <statement>
     <p>
-      Assume <m>X</m> is an infinite subset of <m>\C</m> and that <m>Y=\R</m> or <m>Y=\C</m>. Let <m>f\colon X\rightarrow Y</m> be a nonzero polynomial function, and let <m>f(x)=\anpoly</m> be its unique polynomial expression with <m>a_n\ne 0</m>. The integer <m>n</m> is called the <term>degree</term> of <m>f</m>, denoted <m>\deg f</m>.  is defined as follows:
+      Assume <m>X</m> is an infinite subset of <m>\C</m> and that <m>Y=\R</m> or <m>Y=\C</m>. Let <m>f\colon X\rightarrow Y</m> be a nonzero polynomial function, and let <m>f(x)=\anpoly</m> be its unique polynomial expression with <m>a_n\ne 0</m>. The <term>degree</term> of <m>f</m>, denoted <m>\deg f</m>, is defined as follows:
       <ul>
         <li>
           <p>
-            if <m>f</m> is the zero function, then we define <m>\deg f=-\infty</m>.
+            if <m>f</m> is the zero function, then we define <m>\deg f=-\infty</m>;
           </p>
         </li>
         <li>
@@ -138,7 +138,7 @@
       </li>
       <li>
         <p>
-          <m>\deg f+g\leq \max\{\deg f, \deg g\}</m>.
+          <m>\deg (f+g)\leq \max\{\deg f, \deg g\}</m>.
         </p>
       </li>
     </ol>
@@ -166,6 +166,6 @@
   </theorem>
 
 </subsection>
-  
+
   <xi:include href="./s_polynomials_ex.ptx"/>
 </section>
