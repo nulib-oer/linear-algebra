@@ -2,6 +2,9 @@
 # ensure this file is tracked
 !.gitignore
 
+# don't track knowls
+knowls
+
 # don't track unpublished builds
 output
 

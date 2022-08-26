@@ -455,7 +455,7 @@ As defined more thoroughly in <xref ref="d_matrix"/>, a matrix is just a rectang
 <project xml:id="sage_ge">
   <title>Gaussian elimination</title>
 <p>
-Below you find a recursive implementation of Gaussian elimination in Sage.
+In the first Sage cell below you find a recursive implementation of Gaussian elimination in Sage that includes explanatory comments. Evaluate this cell in order to load the <c>row_echelon_form</c> function. The second cell allows you to apply the Gaussian elimination algorithm to a matrix of your choosing. As you can see, the <c>show</c> function provides a nice <latex /> version of the output.
 </p>
 <sage>
 <input>
@@ -470,18 +470,26 @@ Below you find a recursive implementation of Gaussian elimination in Sage.
         while A.column(j).is_zero(): #Find first nonzero column of A
             j+=1
         i=0
-        while A[i,j]==0:
+        while A[i,j]==0: #Find first nonzero entry in nonzero column
             i+=1
         c=A[i,j]
-        A.swap_rows(0,i)
-        A.rescale_row(0,1/c)
-        for k in range(i+1,m):
+        A.swap_rows(0,i) #Bring nonzero entry to top
+        A.rescale_row(0,1/c) #Make nonzero entry a leading one
+        for k in range(i+1,m): #Clear entries below leading one
             A.add_multiple_of_row(k,0,-A[k,j])
-        B=A[1:,:]
-        A[1:,:]=row_echelon_form(B)
+        B=A[1:,:] #Concentrate on matrix below first row
+        A[1:,:]=row_echelon_form(B) #Apply recursion
         return A
+</input>
+<output>
+</output>
+</sage>
+<sage>
+<input>
   A=matrix([[0,0,3],[0,2,5],[0,3,3]])
-  row_echelon_form(A)
+  B=row_echelon_form(A)
+  B
+  show(B)
 </input>
 <output>
 [  0   1 5/2]
@@ -489,6 +497,39 @@ Below you find a recursive implementation of Gaussian elimination in Sage.
 [  0   0   0]
 </output>
 </sage>
+<p>
+  Sage has its own row reduction method, <c>rref</c>, which transforms a matrix to <em>reduced</em> row echelon form. Compare the outputs of these two algorithms.
+</p>
+<sage>
+<input>
+  A=matrix([[0,0,3],[0,2,5],[0,3,3]])
+  B=row_echelon_form(A)
+  C=A.rref()
+  show(B)
+  show(C)
+  B is C
+</input>
+<output>
+[  0   1 5/2]
+[  0   0   1]
+[  0   0   0]
+</output>
+</sage>
+<p>
+  Some further activities:
+  <ul>
+    <li>
+      <p>
+        Modify the <c>row_echelon_form</c> code to make a non-recursive algorithm.
+      </p>
+    </li>
+    <li>
+      <p>
+        Add <c>show</c> commands to your non-recursive <c>row_echelon_form</c> code to show steps in the row reduction.
+      </p>
+    </li>
+  </ul>
+</p>
 </project>
 </subsection>
 
