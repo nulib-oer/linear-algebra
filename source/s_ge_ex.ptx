@@ -57,6 +57,20 @@
   </solution> -->
 </exercise>
 </exercisegroup>
+
+<subexercises>
+<title>Webwork Exercises</title>
+<exercise>
+  <!-- Individual row reductions for a 3x3 matrix -->
+  <webwork source="Library/Mizzou/Finite_Math/MatrixOperations/RowOp3by3e.pg" />
+</exercise>
+
+<exercise>
+  <!-- Combined row reductions for a 3x3 matrix -->
+  <webwork source="Library/ASU-topics/set119LinearSystems/p28.pg" />
+</exercise>
+</subexercises>
+
 <exercisegroup>
 <introduction>
   For each of the given linear systems, find an equivalent system in row echelon form. Use augmented matrices and follow the Gaussian elimination algorithm to the letter.

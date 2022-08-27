@@ -3,13 +3,20 @@
 <subexercises>
   <title>WeBWork Exercises</title>
 
-
-  <!-- 1. solve a system of equations in 4 variables -->
   <exercise>
-    <webwork source="Library/Utah/Business_Algebra/set11_Inequalities_and_Linear_Programming/p02.pg" />
+  <!-- 1. steps for solving a system of equations in 2 variables -->
+    <webwork source="Library/Mizzou/Finite_Math/Augmented_Matrices/AugMatrix1a.pg" />
   </exercise>
 
-
+  <exercise>
+  <!-- 2. steps for solving a system of equations in 3 variables -->
+    <webwork source="Library/Mizzou/Finite_Math/Gauss-Jordan_Elimination/3by3a.pg" />
+  </exercise>
+  
+  <exercise>
+  <!-- 3. solve a system of equations in 4 variables -->
+    <webwork source="Library/Utah/Business_Algebra/set11_Inequalities_and_Linear_Programming/p02.pg" />
+  </exercise>
 
 </subexercises>
 
