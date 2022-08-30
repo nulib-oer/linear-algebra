@@ -488,8 +488,8 @@ In the first Sage cell below you find a recursive implementation of Gaussian eli
 <input>
   A=matrix([[0,0,3],[0,2,5],[0,3,3]])
   B=row_echelon_form(A)
-  B
   show(B)
+  B
 </input>
 <output>
 [  0   1 5/2]
@@ -525,7 +525,7 @@ In the first Sage cell below you find a recursive implementation of Gaussian eli
     </li>
     <li>
       <p>
-        Add <c>show</c> commands to your non-recursive <c>row_echelon_form</c> code to show steps in the row reduction.
+        Add <c>show</c> commands to your non-recursive version of <c>row_echelon_form</c> to show steps in the row reduction.
       </p>
     </li>
   </ul>

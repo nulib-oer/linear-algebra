@@ -399,20 +399,8 @@
   <subsection xml:id="ss_injective_surjective_transforms">
     <title>Injective and surjective linear transformations</title>
     <p>
-      It turns out that the null space and image of a linear transformation <m>T</m> tell us whether <m>T</m> is injective and/or surjective as a function. Recall from <xref ref="d_injective_surjective_bijective"/> that a function <m>f\colon X\rightarrow Y</m> is:
-      <ul>
-        <li>
-          <p>
-            injective (or one-to-one) if for all <m>x,x'\in X</m> we have <m>f(x)=f(x')</m> implies <m>x=x'</m>;
-          </p>
-        </li>
-        <li>
-          <p>
-            surjective (or onto) if for all <m>y\in Y</m> there is an <m>x\in X</m> with <m>f(x)=y</m>.
-          </p>
-        </li>
-      </ul>
-      As observed in <xref ref="d_injective_surjective_bijective"/>, we can express surjectivity in terms of image as follows: <m>f</m> is surjective if and only if <m>\im f=Y</m>. Returning to our linear transformation <m>T\colon V\rightarrow W</m>, it follows immediately that <m>T</m> is surjective as a function if and only if <m>\im T=W</m>. Similarly, <xref ref="th_nullspace_injective"/> tells us that <m>T</m> is injective as a function if and only if <m>\NS T=\{\boldzero_V\}</m>.
+       Recall the notions of injectivity and surjectivity from <xref ref="d_injective_surjective_bijective"/>: a function <m>f\colon X\rightarrow Y</m> is injective (or one-to-one) if for all <m>x,x'\in X</m> we have <m>f(x)=f(x')</m> implies <m>x=x'</m>; it is surjective (or onto) if for all <m>y\in Y</m> there is an <m>x\in X</m> with <m>f(x)=y</m>. As with all functions, we will be interested to know whether a given linear transformation is injective or surjective; as it turns out, the concepts of null space and image give us a convenient manner of answering these questions.
+       As remarked in <xref ref="d_injective_surjective_bijective"/>, there is in general a direct connection between the surjectivity and the image of a function: namely, <m>f\colon X\rightarrow Y</m> is surjective if and only if <m>\im f=Y</m>. It follows immediately that a linear transformation <m>T\colon V\rightarrow W</m> is surjective if and only if <m>\im T=W</m>. As for injectivity, it is relatively easy to see that <em>if</em> a linear transformation <m>T</m> is injective, <em>then</em> its null space must consist of just the zero vector of <m>V</m>. What is somewhat surprising is that the converse is also true, as described in (2) of the theorem below.
     </p>
     <theorem xml:id="th_nullspace_injective">
       <title>Null space and injectivity</title>
@@ -478,7 +466,7 @@
        <me>
          X_\boldw=\{\boldv_p+\boldu\colon \boldu\in \NS T\}
        </me>.
-       This set <m>X</m> is not necessarily a subspace. Indeed, if <m>\boldw\ne \boldzero_W</m>, then <m>\boldzero\notin X</m>, since <m>T(\boldzero)=\boldzero_W</m>! Instead, <m>X</m> is what is called the <em>translate</em> of the subspace <m>\NS T</m> by the vector <m>\boldv_p</m>, and is denoted as <m>X=\boldv_p+\NS T</m>. The corollary below is an application to solutions to matrix equations (equivalently, linear systems) obtained by treating the special case where <m>T=T_A</m> is a matrix transformation associated to an <m>m\times n</m> matrix <m>A</m>.
+       This set <m>X_\boldw</m> is not necessarily a subspace. Indeed, if <m>\boldw\ne \boldzero_W</m>, then <m>\boldzero\notin X_\boldw</m>! Instead, <m>X_\boldw</m> is what is called the <em>translate</em> of the subspace <m>\NS T</m> by the vector <m>\boldv_p</m>, and is denoted as <m>X_\boldw=\boldv_p+\NS T</m>. The corollary below is an application of this observation to solutions to matrix equations (equivalently, linear systems). It is obtained by treating the special case of <xref ref="th_nullspace_injective"/> where <m>T=T_A</m> is a matrix transformation.
     </p>
     <corollary xml:id="cor_matrix_equations">
       <title>Solutions to matrix equations</title>
@@ -496,8 +484,95 @@
         </p>
       </statement>
     </corollary>
+    <project xml:id="sage_solve_matrix_eqn">
+      <title>Solving matrix equations</title>
+      <p>
+        Let's use Sage and  <xref ref="cor_matrix_equations"/> to find the set of solutions <m>S\subseteq \R^5</m> to the matrix equation
+        <men xml:id="eq_sage_matrix_eqn">
+          \begin{amatrix}[rrrrr]
+            0\amp 0\amp -2\amp 0\amp 7\\
+            2\amp 4\amp -10\amp 6\amp 12\\
+            2\amp 4\amp -5\amp 6\amp -5
+          \end{amatrix}
+          \begin{amatrix}[c] x_1\\ x_2\\ x_3\\ x_4\\ x_5   \end{amatrix}=
+          \begin{amatrix}[r] 12\\ 28\\ -1  \end{amatrix}
+        </men>.
+        This is the matrix equation form of the linear system we investigated in <xref ref="sage_solve_system"/>.
+        The method <c>solve_right</c> can be used to find a <em>particular solution</em> <m>\boldx_p</m> to <xref ref="eq_sage_matrix_eqn"/>.
+      </p>
+      <sage>
+      <input>
+        A=Matrix([[0,0,-2,0,7],[2,4,-10,6,12],[2,4,-5,6,-5]])
+        b=vector([12,28,-1])
+        xp=A.solve_right(b)
+        xp
+        A*xp # Check xp is solution
+      </input>
+      <output>
+      (7, 0, 1, 0, 2)
+      </output>
+      </sage>
+      <p>
+        We get the entire set of solutions <m>S</m> by translating <m>\NS A</m> by the particular solution <m>\boldx_p</m>:
+        <me>
+          S=\{\boldx_p+\boldu\colon \boldu\in \NS A\}=\boldx_p+\NS A
+        </me>.
+        We can illustrate this in Sage by taking random elements of <m>\NS A</m> (computed using <c>right_kernel</c>), adding them to <c>xp</c>, and verifying that the result is a solution to <xref ref="eq_sage_matrix_eqn"/>. Each time you evaluate the cell below, a randomly generated element of <m>S</m> will be outputted.
+      </p>
+      <sage>
+      <input>
+        NS=A.right_kernel()
+        u=NS.random_element(1,-50,50)
+        x=xp+u
+        show(x) # A solution
+        show(A*x) # Check that A*x=(12,28,-1)
+      </input>
+      <output>
+        (22, -99, 1, 61, 2)
+
+        (12, 28, -1)
+      </output>
+      </sage>
+      <p>
+        You may wonder just how random these elements of <m>S</m> are, considering that the entries always seem to be integers! Indeed, soliciting information about <c>NS</c> from Sage, we see that it has the structure of a <q>free module</q> defined over the the <q>Integer Ring</q>.
+      </p>
+      <sage>
+      <input>
+      NS
+      </input>
+      <output>
+        Free module of degree 5 and rank 2 over Integer Ring
+        Echelon basis matrix:
+        [ 1  1  0 -1  0]
+        [ 0  3  0 -2  0]
+      </output>
+      </sage>
+      <p>
+        Without getting too far into the weeds, this is a result of our initial definition of <m>A</m> using <c>Matrix()</c>.
+        Without further information, Sage interprets this as a matrix with <em>integer</em> coefficients, as opposed to <em>real</em> coefficients. All further computations (<eg />, <c>xp</c> and <c>NS</c>) are done in a similar spirit. More precisely, the object <c>NS</c> generated by Sage consists of all <em>integer</em> linear combinations of the two rows in the <q>echelon basis matrix</q> displayed in the cell above.
+        The next cell shows you how things change when we alert Sage to the fact that we are dealing with matrices over the reals. The only change is adding <c>RR</c> to <c>Matrix()</c>,
+        which specifies that matrix coefficients should be understood as real numbers.
+      </p>
+      <sage>
+      <input>
+        A=Matrix(RR,[[0,0,-2,0,7],[2,4,-10,6,12],[2,4,-5,6,-5]])
+        b=vector([12,28,-1])
+        xp=A.solve_right(b)
+        NS=A.right_kernel()
+        u=NS.random_element(1,-50,50)
+        x=xp+u
+        show(x) # A solution
+        show(A*x) # Check that A*x=(12,28,-1)
+      </input>
+      <output>
+          (-33.2604254229467, -14.3105503616973, 1.00000000000000, 22.9605087154471, 2.00000000000000)
+          (12.0000000000000, 28.0000000000000, -1.00000000000000)
+      </output>
+
+      </sage>
+    </project>
     <p>
-      We end with a nice geometric illustration of <xref ref="cor_matrix_equations"/>.
+      Our final example uses <xref ref="cor_matrix_equations"/> to nicely round out the discussion of lines and planes in <m>\R^2</m> and <m>\R^3</m> begun in <xref ref="eg_lines_planes"/>. The conclusion is that although it is not the case that all lines and planes are subspaces, it is the case that they are <em>translates</em> of subspaces. 
     </p>
     <example xml:id="eg_lines_planes_general">
       <title>Lines and planes (again)</title>
@@ -507,7 +582,7 @@
         <me>
           A=\begin{bmatrix}a\amp b \end{bmatrix}
         </me>.
-        Furthermore we see that <em>\ell_0</em> is none other than <m>\NS A</m>.
+        Furthermore we see that <m>\ell_0</m> is none other than <m>\NS A</m>.
         Now, fix a particular point <m>P=(x_0,y_0)\in \ell</m>. Since <m>(x_0, y_0)</m> is a solution to <m>A\boldx=c</m>, according to <xref ref="cor_matrix_equations"/> we have
         <me>
           \ell=\{P+Q\colon Q=(x,y)\in \NS A\}=\{P+Q\colon Q\in \ell_0\}

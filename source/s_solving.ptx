@@ -252,7 +252,70 @@
       </p>
     </case>
   </proof>
-  <p>Interesting in its own right is the following corollary of <xref ref="proc_solveSystem"/>, which tells us that a linear system has either no solutions, exactly one solutions, or infinitely many solutions.
+  <paragraphs xml:id="ss_GE_video_examples">
+    <title>Video examples of solving linear systems</title>
+    <p>
+      <figure>
+        <title>Video: solving linear systems</title>
+      <caption>Video: solving linear systems</caption>
+      <video xml:id="vid_GE_solving_1" youtube="ocmtUODkMQQ" />
+      </figure>
+      <figure>
+        <title>Video: solving linear systems 2</title>
+      <caption>Video: solving linear systems 2</caption>
+      <video xml:id="vid_GE_solving_2" youtube="PQ2lJWdTEAY" />
+      </figure>
+    </p>
+  </paragraphs>
+  <project xml:id="sage_solve_system">
+    <title>Solving linear systems</title>
+    <p>
+      Sage has a number of means of solving systems of equations, both linear and nonlinear. In the cell below we compute the set of solutions to this section's working example. Note that the three equations are entered as a list.
+    </p>
+    <sage>
+    <input>
+      l=var('x y z w u')
+      solve([-2*z+7*u == 12,2*x+4*y-10*z+6*w+12*u==28, 2*x+4*y-5*z+6*w-5*u == -1], x,y,z,w,u)
+    </input>
+    <output>
+    [[x == r3, y == -1/2*r3 - 3/2*r4 + 7/2, z == 1, w == r4, u == 2]]
+    </output>
+    </sage>
+    <p>
+      Notice that the algorithm used here does not seem to follow the method we describe: the unknowns <m>x</m> and <m>w</m> are set as free parameters <c>r1</c> and <c>r2</c>, and the rest of the unknowns are expressed in terms of these.  The <c>solve</c> routine in Sage allows for an additional option that selects a specific algorithm for solving the system. In the next cell, we specify the <c>sympy</c> algorithm and get an answer more in line with our example.
+    </p>
+    <sage>
+    <input>
+      l=var('x y z w u')
+      solve([-2*z+7*u == 12,2*x+4*y-10*z+6*w+12*u==28, 2*x+4*y-5*z+6*w-5*u == -1],
+      x,y,z,w,u, algorithm='sympy')
+    </input>
+    <output>
+    [{x: -3*w - 2*y + 7, z: 1, u: 2}]
+    </output>
+    </sage>
+    <p>
+      Now all unknowns are expressed in terms of the second and fourth unknowns <m>y</m> and <m>w</m>, which are treated as free variables, just as in our computed example.
+    </p>
+    <p>
+      Lastly, we can take a matrix approach with Sage to solve the system. Below we create the augmented matrix associated to our starting system and then reduce the system to reduced row echelon form using the <c>rref</c> method. From there it is a simple matter of assigning parameter names and using back-substitution, as described in <xref ref="proc_solveSystem"/>. We will elaborate this method further in <xref ref="sage_solve_matrix_eqn"/>
+    </p>
+    <sage>
+    <input>
+      A=Matrix([[0,0,-2,0,7],[2,4,-10,6,12],[2,4,-5,6,-5]])
+      b=vector([12,28,-1])
+      B=A.augment(b)
+      show(B)
+      show(B.rref())
+    </input>
+    <output>
+      [1 2 0 3 0 7]
+      [0 0 1 0 0 1]
+      [0 0 0 0 1 2]
+    </output>
+    </sage>
+  </project>
+  <p>In addition to providing a recipe for describing the full set of solutions to a linear system, <xref ref="proc_solveSystem"/> also tells us that qualitatively this set must take one of three forms: the set is empty (inconsistent, no solutions); there is a unique solution (consistent, no free variables); there are infinitely many solutions (consistent, free variables). We record this fact, useful in its own right, as a corollary.
   </p>
   <corollary xml:id="c_qualitative">
     <title><m>0</m>, <m>1</m>, or <m>\infty</m>-many solutions</title>
@@ -308,21 +371,9 @@
   <image xml:id="im_decision_tree" source="./images/im_decision_tree.svg"/>
 </figure> -->
 
-<paragraphs xml:id="ss_GE_video_examples">
-  <title>Video examples of solving linear systems</title>
-  <p>
-    <figure>
-      <title>Video: solving linear systems</title>
-    <caption>Video: solving linear systems</caption>
-    <video xml:id="vid_GE_solving_1" youtube="ocmtUODkMQQ" />
-    </figure>
-    <figure>
-      <title>Video: solving linear systems 2</title>
-    <caption>Video: solving linear systems 2</caption>
-    <video xml:id="vid_GE_solving_2" youtube="PQ2lJWdTEAY" />
-    </figure>
-  </p>
-</paragraphs>
+
+
+
 </subsection>
 
 <paragraphs xml:id="ss_homogeneous">
