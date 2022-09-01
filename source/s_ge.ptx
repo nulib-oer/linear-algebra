@@ -498,7 +498,7 @@ In the first Sage cell below you find a recursive implementation of Gaussian eli
 </output>
 </sage>
 <p>
-  Sage has its own row reduction method, <c>rref</c>, which transforms a matrix to <em>reduced</em> row echelon form. Compare the outputs of these two algorithms.
+  Sage has its own row reduction method, <c>rref</c>, which transforms a matrix to <em>reduced</em> row echelon form. Let's compare the outputs of these two algorithms.
 </p>
 <sage>
 <input>

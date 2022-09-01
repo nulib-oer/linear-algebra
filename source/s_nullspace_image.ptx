@@ -505,8 +505,8 @@
         A=Matrix([[0,0,-2,0,7],[2,4,-10,6,12],[2,4,-5,6,-5]])
         b=vector([12,28,-1])
         xp=A.solve_right(b)
-        xp
-        A*xp # Check xp is solution
+        show(xp)
+        show(A*xp) # Check xp is solution
       </input>
       <output>
       (7, 0, 1, 0, 2)
@@ -572,7 +572,7 @@
       </sage>
     </project>
     <p>
-      Our final example uses <xref ref="cor_matrix_equations"/> to nicely round out the discussion of lines and planes in <m>\R^2</m> and <m>\R^3</m> begun in <xref ref="eg_lines_planes"/>. The conclusion is that although it is not the case that all lines and planes are subspaces, it is the case that they are <em>translates</em> of subspaces. 
+      Our final example uses <xref ref="cor_matrix_equations"/> to nicely round out the discussion of lines and planes in <m>\R^2</m> and <m>\R^3</m> begun in <xref ref="eg_lines_planes"/>. The conclusion is that although it is not the case that all lines and planes are subspaces, it is the case that they are <em>translates</em> of subspaces.
     </p>
     <example xml:id="eg_lines_planes_general">
       <title>Lines and planes (again)</title>

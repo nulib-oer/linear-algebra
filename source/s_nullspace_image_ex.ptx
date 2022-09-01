@@ -40,7 +40,7 @@
   <exercisegroup>
   <introduction>
   <p>
-  For linear transformation <m>T</m> prove the given claim.
+  For the given linear transformation <m>T</m> prove the claim about <m>\im T</m>.
   </p>
   </introduction>
   <exercise>
@@ -63,7 +63,7 @@
         </md>.
         Claim: <m>\im T</m> is the set of all continuous symmetric functions. In other words,
         <me>
-          \im T=\{f\in C(x)\colon f(-x)=f(x)\}.
+          \im T=\{f\in C(\R)\colon f(-x)=f(x)\}.
         </me>
       </p>
     </statement>
@@ -72,7 +72,7 @@
 <exercise>
   <statement>
     <p>
-      Define <m>T\colon P_5\rightarrow \R^3</m> as <m>T(p(x))=(p(-2), p(3), p(7))</m>: <ie />, the value of <m>T</m> at the input polynomial <m>p(x)\in P_5</m> is computed by evluating <m>p</m> at the inputs <m>x=-2,3,7</m>.
+      Define <m>T\colon P_5\rightarrow \R^3</m> as <m>T(p(x))=(p(-2), p(3), p(7))</m>: <ie />, the value of <m>T</m> at the input polynomial <m>p(x)\in P_5</m> is computed by evaluating <m>p</m> at the inputs <m>x=-2,3,7</m>.
     </p>
     <ol>
       <li>
