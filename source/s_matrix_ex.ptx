@@ -1,4 +1,35 @@
 <exercises xml:id="s_matrix_ex">
+
+<subexercises>
+  <title>Webwork Exercises</title>
+  
+  <exercise>
+    <!-- true/false about matrix multiplication -->
+    <webwork source="Library/ASU-topics/set119MatrixAlgebra/p17.pg" />
+  </exercise>
+
+  <exercise>
+    <!-- which of the following matrix multiplications make sense -->
+    <webwork source="Library/Dartmouth/setMTWCh1S5/problem_1.pg" />
+  </exercise>
+
+  <exercise>
+    <!-- write down the dimensions multiplication products -->
+    <webwork source="Library/ASU-topics/set119MatrixAlgebra/p32.pg" />
+  </exercise>
+  
+  <exercise>
+    <!-- find the missing matrix entry, matrix addition -->
+    <webwork source="Library/ASU-topics/set119MatrixAlgebra/p7.pg" />
+  </exercise>
+
+  <exercise>
+    <!-- find the missing matrix entry, matrix multiplication -->
+    <webwork source="Library/ASU-topics/set119MatrixAlgebra/p14.pg" />
+  </exercise>
+
+</subexercises>
+
 <exercise>
   <statement>
     <p>
@@ -172,4 +203,25 @@
     </p>
   </statement>
 </exercise>
+
+<subexercises>
+<!-- Webwork Exercises about transpose -->
+<title>Webwork Exercises</title>
+
+  <exercise>
+    <!-- write down the dimensions of the transpose matrix -->
+    <webwork source="Library/Utah/Business_Algebra/set10_Matrices/p17.pg" />
+  </exercise>
+  
+  <exercise>
+    <!-- computation problem involving transposes and addition of matrices -->
+    <webwork source="Library/Utah/Business_Algebra/set10_Matrices/p21.pg" />
+  </exercise>
+
+  <exercise>
+    <!-- computation problem involving transposes and addition of matrices -->
+    <webwork source="Library/Utah/Business_Algebra/set10_Matrices/p24.pg" />
+  </exercise>
+
+</subexercises>
 </exercises>
