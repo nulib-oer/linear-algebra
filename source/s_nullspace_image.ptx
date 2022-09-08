@@ -74,6 +74,69 @@
       </ol>
     </statement>
   </remark>
+  <figure xml:id="fig_null_image">
+    <title>Null space and image</title>
+    <caption>Null space and image</caption>
+    <sbsgroup>
+    <sidebyside>
+        <figure>
+        <caption>Null space lives in the domain; image lives in the codomain.</caption>
+        <image xml:id="im_null_image">
+        <latex-image>
+          \begin{tikzpicture}
+\node[name=V,shape=ellipse,draw, thick,minimum width=2.5in, minimum height=3in, label={135:$V$}] at (0,0) {};
+\node[name=W,shape=ellipse,draw, thick,minimum width=2.5in, minimum height=3in, label={45:$W$}] at (10,0) {};
+\draw (0,0)  node[diamond,draw, minimum width=2in,minimum height=2in, rotate=20,fill=red!25, label={135:$\operatorname{null} T$}] (null) {};
+ \draw (10,0)  node[minimum width=2in, minimum height=2in,diamond,draw,label={45:$\text{im} T$},fill=blue!25] (im) {};
+\path[->] (V) edge[bend left] node[above] {$T$} (W);
+          \end{tikzpicture}
+        </latex-image>
+      </image>
+      </figure>
+    </sidebyside>
+
+      <sidebyside>
+        <figure xml:id="fig_nullspace_to_zero">
+          <caption>The entire null space gets mapped to <m>\boldzero_W</m>.</caption>
+          <image xml:id="im_nullspace_to_zero">
+            <latex-image>
+              \begin{tikzpicture}
+  \filldraw [black] (10,0) circle (2pt);
+  \node[name=V,shape=ellipse,draw, thick,minimum width=2.5in, minimum height=3in, label={135:$V$}] at (0,0) {};
+  \draw (0,0)  node[diamond,draw, minimum width=2in,minimum height=2in, rotate=20,fill=red!25, label={135:$\operatorname{null} T$}] (null) {};
+  \node[name=W,shape=ellipse,draw, thick,minimum width=2.5in, minimum height=3in, label={45:$W$}] at (10,0) {};
+  \draw node[above right] at (10,0) {$\mathbf{0}_W$};
+  \filldraw [black] (10,0) circle (2pt);
+  \path (null.east) edge[-{Latex[length=3mm, width=2mm]}] node[below] {$T$} (10,0){};
+  \path (null.north) edge[-] node[above] {$T$} (10,0){};
+  \path (null.south) edge[-] node[below] {$T$} (10,0){};
+              \end{tikzpicture}
+            </latex-image>
+          </image>
+        </figure>
+      </sidebyside>
+      <sidebyside>
+        <figure xml:id="fig_domain_to_image">
+          <caption>The entire domain is mapped to <m>\im T</m>.</caption>
+          <image xml:id="im_domain_to_image">
+            <latex-image>
+              \begin{tikzpicture}
+\node[name=V,shape=ellipse,draw, thick,minimum width=2.5in, minimum height=3in, fill=green!25,label={135:$V$}] at (0,0) {};
+\node[name=W,shape=ellipse,draw, thick,minimum width=2.5in, minimum height=3in, label={45:$W$}] at (10,0) {};
+\begin{scope}[on background layer]%
+ \draw (10,0)  node[minimum width=2in, minimum height=2in,diamond,draw,label={45:$\text{im} T$},fill=blue!25] (im) {};
+ \end{scope}
+  \path (V.north) edge[-{Latex[length=3mm, width=2mm]}] node[below] {$T$} (im.north)[left]{};
+   \path (V.east) edge[-{Latex[length=3mm, width=2mm]}] node[below] {$T$} (im.west)[left]{};
+    \path (V.south) edge[-{Latex[length=3mm, width=2mm]}] node[below] {$T$} (im.south){};
+              \end{tikzpicture}
+            </latex-image>
+          </image>
+        </figure>
+      </sidebyside>
+    </sbsgroup>
+  </figure>
+
   <example xml:id="eg_nullspace_image_matrix">
     <title>Matrix transformation</title>
     <statement>

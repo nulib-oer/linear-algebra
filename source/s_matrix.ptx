@@ -719,7 +719,7 @@ DL/.style={
     <project>
       <title>Column and row methods</title>
       <p>
-        Let's verify the validity of the column and row methods using Sage. Below we generate random integer matrices <m>A</m> and <m>B</m> of dimension <m>3\times 5</m> and <m>5\times 4</m>, respectively, and compute their product <m>C=AB</m>.
+        Let's verify the validity of the column and row methods using Sage in some specific examples. Below we generate random integer matrices <m>A</m> and <m>B</m> of dimension <m>3\times 5</m> and <m>5\times 4</m>, respectively, and compute their product <m>C=AB</m>.
       </p>
       <sage>
       <input>
@@ -834,7 +834,10 @@ DL/.style={
   </subsection>
 
   <subsection>
-  <title>Transpose of a matrix</title> We end this section with one last operation, <em>matrix transposition</em>. We will not make much use of this operation until later, but this is as good a place as any to introduce it.
+  <title>Transpose of a matrix</title>
+  <p>
+    We end this section with one last operation, <em>matrix transposition</em>. We will not make much use of this operation until later, but this is as good a place as any to introduce it.
+  </p>
   <definition xml:id="d_transpose">
     <title>Matrix transposition</title>
     <idx><h>matrix transposition</h></idx>
@@ -877,6 +880,26 @@ DL/.style={
       </p>
     </statement>
   </example>
+  <project>
+    <title>Matrix transposition</title>
+    <p>
+      Matrix transposition is implemented in Sage as the <c>transpose()</c> method. In the cell below we compute the transpose of a random integer matrix <m>A</m> of size <m>3\times 5</m> and verify using <c>dimensions()</c> that <m>A^T</m> is of dimension <m>5\times 3</m>.
+    </p>
+    <sage>
+    <input>
+    R=MatrixSpace(ZZ,3,5)
+    A=R.random_element()
+    B=A.transpose()
+    show(A)
+    show(B)
+    show(B.dimensions())
+    </input>
+    <output>
+
+    </output>
+    </sage>
+
+  </project>
   </subsection>
 <xi:include  href="s_matrix_ex.ptx"/>
 </section>

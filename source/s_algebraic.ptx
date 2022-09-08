@@ -151,7 +151,7 @@
       \vdots \\
      0\amp 0\amp \dots \amp 0\amp 1\end{bmatrix}
       </me>
-        with ones along the diagonal and zeros everywhere else. In other words, for all <m>1\leq i\leq n</m> ans <m>1\leq j\leq n</m>, we have
+        with ones along the diagonal and zeros everywhere else. In other words, for all <m>1\leq i\leq n</m> and <m>1\leq j\leq n</m>, we have
       <me>
         (I_n)_{ij}=\begin{cases} 1 \amp \text{if } i=j \\ 0\amp \text{if } i\ne j
       \end{cases}
