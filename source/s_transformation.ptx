@@ -555,15 +555,47 @@
   </proof>
 
 </theorem>
-<figure xml:id="fig_rot_refl">
-  <title>Eigenspaces of a symmetric matrix are orthogonal</title>
-  <interactive xml:id="geogebra_rot_refl" platform="geogebra" width="100%" aspect="4:3">
-    <slate surface="geogebra" material="bwnxf7b9" aspect="4:3" marker="train-distance">
-    enableLabelDrags(false);
-    </slate>
-  </interactive>
-  <caption>Visualizing reflection and rotation</caption>
-</figure>
+<example xml:id="eg_rot_refl">
+  <title>Visualizing reflection and rotation</title>
+  <statement>
+    <p>
+      The <url href="https://www.geogebra.org" visual="geogebra.org">GeoGebra</url> interactive below helps visualize the operation of rotations and reflections on the plane by showing how they act on the triangle <m>\triangle ABC</m>.
+      <ul>
+        <li>
+          <p>
+            Move or alter the triangle as you see fit.
+          </p>
+        </li>
+        <li>
+          <p>
+            Check the box of the desired operation, rotation or reflection.
+          </p>
+        </li>
+        <li>
+          <p>
+            If rotation is selected, the slider adjusts the angle <m>\alpha</m> of rotation.
+          </p>
+        </li>
+        <li>
+          <p>
+            If reflection is selected, the slider adjusts the angle <m>\alpha</m> determining the line <m>\ell_\alpha</m> of reflection. Click the <q>Draw perps</q> box to see the the perpendicular lines used to define the reflections of vertices <m>A, B, C</m>.
+          </p>
+        </li>
+      </ul>
+    </p>
+    <figure xml:id="fig_rot_refl">
+      <title>Eigenspaces of a symmetric matrix are orthogonal</title>
+      <interactive xml:id="geogebra_rot_refl" platform="geogebra" width="100%" aspect="4:3">
+        <slate surface="geogebra" material="bwnxf7b9" aspect="4:3" marker="train-distance">
+        enableLabelDrags(false);
+        </slate>
+      </interactive>
+      <caption>Visualizing reflection and rotation. Made with <url href="https://www.geogebra.org" visual="geogebra.org">GeoGebra</url>.</caption>
+    </figure>
+  </statement>
+
+</example>
+
 </subsection>
 <subsection xml:id="ss_transform_exotic_examples">
 <title>Additional examples</title>
