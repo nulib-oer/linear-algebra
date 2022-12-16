@@ -1,4 +1,28 @@
 <exercises xml:id="s_det_ex">
+<subexercises>
+  <title>Webwork Exercises</title>
+
+  <exercise>
+    <!-- determinant of -A -->
+    <webwork source="Library/UMN/algebraKaufmannSchwitters/ks_11_4_prob02.pg" />
+  </exercise>
+
+  <exercise>
+    <!-- determinant using elementary matrices -->
+    <webwork source="Library/NAU/setLinearAlgebra/detElementary.pg" />
+  </exercise>
+
+
+  <exercise>
+    <!-- find k for which matrix is singular -->
+    <webwork source="Library/Rochester/setLinearAlgebra6Determinants/ur_la_6_8.pg" />
+  </exercise>
+
+  <exercise>
+    <!-- determinants of multiples and transposes -->
+    <webwork source="Library/Rochester/setLinearAlgebra6Determinants/ur_la_6_9.pg" />
+  </exercise>
+</subexercises>
 <exercise>
   <statement>
     <p>
