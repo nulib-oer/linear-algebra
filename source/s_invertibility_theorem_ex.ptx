@@ -1,4 +1,37 @@
 <exercises xml:id="s_invertibility_theorem_ex">
+  <subexercises>
+    <title>Webwork Exercises</title>
+    
+    <exercise>
+      <!-- true false multiple types of products -->
+      <webwork source="Contrib/MountAllison/1-3_Matrices_and_Matrix_Operations/true_false.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- true/false elementary matrices -->
+      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/3.4.67.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- inverse of a 3x3 matrix -->
+      <webwork source="Library/Utah/Business_Algebra/set11_Inequalities_and_Linear_Programming/p08.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- solve AX = B for 2x2 matrices -->
+      <webwork source="Library/Utah/Business_Algebra/set11_Inequalities_and_Linear_Programming/p09.pg" />
+    </exercise>
+    <exercise>
+      <!-- solve 2x2 linear system using inverses -->
+      <webwork source="Library/Rochester/setAlgebra35SystemMatrices/sw7_5_19.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- solve 3x3 linear system using inverses -->
+      <webwork source="Library/Rochester/setAlgebra35SystemMatrices/sw7_5_23.pg" />
+    </exercise>
+  </subexercises>
+
   <exercisegroup>
     <title>Inverse algorithm</title>
     <introduction>
@@ -9,42 +42,41 @@
         You are not required to follow Gaussian elimination to the letter, and you may perform multiple operations at the same time, as long as they are independent of one another. For example, do not do <m>r_2\rightarrow r_2-r+1</m> and <m>r_3\rightarrow r_3+2r_2</m> in the same step.
       </p>
     </introduction>
-  <exercise>
-    <statement>
+    <exercise>
+      <statement>
 
-          <p>
-            <m>A=\begin{amatrix}[rrr]1/5\amp 1/5\amp -2/5\\ 1/5\amp 1/5\amp 1/10\\ 1/5\amp -4/5\amp 1/10 \end{amatrix}</m>
-          </p>
-    </statement>
-    <solution>
-      <p>
+        <p>
+          <m>A=\begin{amatrix}[rrr]1/5\amp 1/5\amp -2/5\\ 1/5\amp 1/5\amp 1/10\\ 1/5\amp -4/5\amp 1/10 \end{amatrix}</m>
+        </p>
+      </statement>
+      <solution>
+        <p>
       We use the inverse algorithm:
-      <md>
-        <mrow>\begin{amatrix}[rrr|rrr]1/5\amp 1/5\amp -2/5\amp 1\amp 0\amp 0\\ 1/5\amp 1/5\amp 1/10\amp 0\amp 1\amp 0\\ 1/5\amp -4/5\amp 1/10\amp 0\amp 0\amp 1 \end{amatrix} \amp \xrightarrow[]{r_2 - r_1} \begin{amatrix}[rrr|rrr]1/5\amp 1/5\amp -2/5\amp 1\amp 0\amp 0\\ 0\amp 0\amp 1/2\amp -1\amp 1\amp 0\\ 1/5\amp -4/5\amp 1/10\amp 0\amp 0\amp 1 \end{amatrix}</mrow>
+          <md>
+            <mrow>\begin{amatrix}[rrr|rrr]1/5\amp 1/5\amp -2/5\amp 1\amp 0\amp 0\\ 1/5\amp 1/5\amp 1/10\amp 0\amp 1\amp 0\\ 1/5\amp -4/5\amp 1/10\amp 0\amp 0\amp 1 \end{amatrix} \amp \xrightarrow[]{r_2 - r_1} \begin{amatrix}[rrr|rrr]1/5\amp 1/5\amp -2/5\amp 1\amp 0\amp 0\\ 0\amp 0\amp 1/2\amp -1\amp 1\amp 0\\ 1/5\amp -4/5\amp 1/10\amp 0\amp 0\amp 1 \end{amatrix}</mrow>
 
-        <mrow>\amp \xrightarrow[]{r_3 - r_1} \begin{amatrix}[rrr|rrr]1/5\amp 1/5\amp -2/5\amp 1\amp 0\amp 0\\ 0\amp 0\amp 1/2\amp -1\amp 1\amp 0\\ 0\amp -1\amp 1/2\amp -1\amp 0\amp 1 \end{amatrix}</mrow>
-        <mrow>\amp \xrightarrow[]{5r_1} \begin{amatrix}[rrr|rrr]1\amp 1\amp -2\amp 5\amp 0\amp 0\\0\amp 0\amp 1/2\amp -1\amp 1\amp 0\\  0\amp -1\amp 1/2\amp -1\amp 0\amp 1 \end{amatrix}</mrow>
+            <mrow>\amp \xrightarrow[]{r_3 - r_1} \begin{amatrix}[rrr|rrr]1/5\amp 1/5\amp -2/5\amp 1\amp 0\amp 0\\ 0\amp 0\amp 1/2\amp -1\amp 1\amp 0\\ 0\amp -1\amp 1/2\amp -1\amp 0\amp 1 \end{amatrix}</mrow>
+            <mrow>\amp \xrightarrow[]{5r_1} \begin{amatrix}[rrr|rrr]1\amp 1\amp -2\amp 5\amp 0\amp 0\\0\amp 0\amp 1/2\amp -1\amp 1\amp 0\\  0\amp -1\amp 1/2\amp -1\amp 0\amp 1 \end{amatrix}</mrow>
 
-        <mrow>\amp \xrightarrow[]{r_2 \leftrightarrow r_3} \begin{amatrix}[rrr|rrr]1\amp 1\amp -2\amp 5\amp 0\amp 0\\  0\amp -1\amp 1/2\amp -1\amp 0\amp 1\\ 0\amp 0\amp 1/2\amp -1\amp 1\amp 0 \end{amatrix}</mrow>
+            <mrow>\amp \xrightarrow[]{r_2 \leftrightarrow r_3} \begin{amatrix}[rrr|rrr]1\amp 1\amp -2\amp 5\amp 0\amp 0\\  0\amp -1\amp 1/2\amp -1\amp 0\amp 1\\ 0\amp 0\amp 1/2\amp -1\amp 1\amp 0 \end{amatrix}</mrow>
 
-        <mrow>\amp \xrightarrow[]{(-1)r_2} \begin{amatrix}[rrr|rrr]1\amp 1\amp -2\amp 5\amp 0\amp 0\\  0\amp 1\amp -1/2\amp 1\amp 0\amp -1\\ 0\amp 0\amp 1/2\amp -1\amp 1\amp 0 \end{amatrix}</mrow>
+            <mrow>\amp \xrightarrow[]{(-1)r_2} \begin{amatrix}[rrr|rrr]1\amp 1\amp -2\amp 5\amp 0\amp 0\\  0\amp 1\amp -1/2\amp 1\amp 0\amp -1\\ 0\amp 0\amp 1/2\amp -1\amp 1\amp 0 \end{amatrix}</mrow>
 
-        <mrow>\amp \xrightarrow[]{r_1- r_2} \begin{amatrix}[rrr|rrr]1\amp 0\amp -3/2\amp 4\amp 0\amp 1\\ 0\amp 1\amp -1/2\amp 1\amp 0\amp -1\\ 0\amp 0\amp 1/2\amp -1\amp 1\amp 0 \end{amatrix}</mrow>
+            <mrow>\amp \xrightarrow[]{r_1- r_2} \begin{amatrix}[rrr|rrr]1\amp 0\amp -3/2\amp 4\amp 0\amp 1\\ 0\amp 1\amp -1/2\amp 1\amp 0\amp -1\\ 0\amp 0\amp 1/2\amp -1\amp 1\amp 0 \end{amatrix}</mrow>
 
-        <mrow>\amp \xrightarrow[]{2r_3} \begin{amatrix}[rrr|rrr]1\amp 0\amp -3/2\amp 4\amp 0\amp 1\\ 0\amp 1\amp -1/2\amp 1\amp 0\amp -1\\ 0\amp 0\amp 1\amp -2\amp 2\amp 0 \end{amatrix}</mrow>
+            <mrow>\amp \xrightarrow[]{2r_3} \begin{amatrix}[rrr|rrr]1\amp 0\amp -3/2\amp 4\amp 0\amp 1\\ 0\amp 1\amp -1/2\amp 1\amp 0\amp -1\\ 0\amp 0\amp 1\amp -2\amp 2\amp 0 \end{amatrix}</mrow>
 
-        <mrow>\amp \xrightarrow[]{r_2 + \frac{1}{2}r_3} \begin{amatrix}[rrr|rrr]1\amp 0\amp -3/2\amp 4\amp 0\amp 1\\ 0\amp 1\amp 0\amp 0\amp 1\amp -1\\ 0\amp 0\amp 1\amp -2\amp 2\amp 0 \end{amatrix}</mrow>
+            <mrow>\amp \xrightarrow[]{r_2 + \frac{1}{2}r_3} \begin{amatrix}[rrr|rrr]1\amp 0\amp -3/2\amp 4\amp 0\amp 1\\ 0\amp 1\amp 0\amp 0\amp 1\amp -1\\ 0\amp 0\amp 1\amp -2\amp 2\amp 0 \end{amatrix}</mrow>
 
-        <mrow>\amp \xrightarrow[]{r_1 + \frac{3}{2}r_3} \begin{amatrix}[rrr|rrr]1\amp 0\amp 0\amp 1\amp 3\amp 1\\ 0\amp 1\amp 0\amp 0\amp 1\amp -1\\ 0\amp 0\amp 1\amp -2\amp 2\amp 0 \end{amatrix}</mrow>
-      </md>.
+            <mrow>\amp \xrightarrow[]{r_1 + \frac{3}{2}r_3} \begin{amatrix}[rrr|rrr]1\amp 0\amp 0\amp 1\amp 3\amp 1\\ 0\amp 1\amp 0\amp 0\amp 1\amp -1\\ 0\amp 0\amp 1\amp -2\amp 2\amp 0 \end{amatrix}</mrow>
+          </md>.
       We conclude that
-      <me>
-        A^{-1}=\begin{amatrix}[rrr] 1\amp 3\amp 1\\ 0\amp 1\amp -1\\ -2\amp 2\amp 0\end{amatrix}
-      </me>.
+          <me> A^{-1}=\begin{amatrix}[rrr] 1\amp 3\amp 1\\ 0\amp 1\amp -1\\ -2\amp 2\amp 0\end{amatrix}
+          </me>.
 
-      </p>
-    </solution>
-  </exercise>
+        </p>
+      </solution>
+    </exercise>
     <exercise>
       <statement>
         <p>
@@ -60,96 +92,95 @@
 
       </statement>
     </exercise>
-      <exercise>
-        <statement>
-          <p>
-            <m>A=\begin{amatrix}[rrrr]1\amp -1\amp -1\amp 1\\ 2\amp 1\amp -3\amp 0 \\ 3\amp -1\amp -1\amp -1 \\ 5\amp 1\amp -4\amp -2\end{amatrix}</m>
-          </p>
-        </statement>
-      </exercise>
-
     <exercise>
       <statement>
         <p>
-          <m>A=\begin{bmatrix}0\amp 0\amp 0\amp c_1\\ 0\amp 0\amp c_2\amp 0\\ 0\amp c_3\amp 0\amp 0\\ c_4\amp 0\amp 0\amp 0 \end{bmatrix}</m>, <m>c_i\ne 0</m>
-      </p>
-
-
-      </statement>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          <m>A=\begin{bmatrix}c\amp 0\amp 0\amp 0\\ 1\amp c\amp 0\amp 0\\ 0\amp 1\amp c\amp 0\\ 0\amp 0\amp 1\amp c \end{bmatrix}</m>, <m>c\ne 0</m>
+          <m>A=\begin{amatrix}[rrrr]1\amp -1\amp -1\amp 1\\ 2\amp 1\amp -3\amp 0 \\ 3\amp -1\amp -1\amp -1 \\ 5\amp 1\amp -4\amp -2\end{amatrix}</m>
         </p>
       </statement>
     </exercise>
-</exercisegroup>
+
+    <exercise>
+      <statement>
+        <p>
+          <m>A=\begin{bmatrix}0\amp 0\amp 0\amp c_1\\ 0\amp 0\amp c_2\amp 0\\ 0\amp c_3\amp 0\amp 0\\ c_4\amp 0\amp 0\amp 0 \end{bmatrix}</m>,          <m>c_i\ne 0</m>
+        </p>
+
+
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <m>A=\begin{bmatrix}c\amp 0\amp 0\amp 0\\ 1\amp c\amp 0\amp 0\\ 0\amp 1\amp c\amp 0\\ 0\amp 0\amp 1\amp c \end{bmatrix}</m>,          <m>c\ne 0</m>
+        </p>
+      </statement>
+    </exercise>
+  </exercisegroup>
   <exercisegroup>
     <title>Product of elementary matrices algorithm</title>
-  <introduction>
-    <p>
+    <introduction>
+      <p>
       Each matrix below is invertible. Use the product of elementary matrices algorithm to write <m>A</m> as a product of elementary matrices.
-    </p>
-    <p>
+      </p>
+      <p>
       Here you should perform Gaussian elimination to the letter, one row operation at a time.
-    </p>
-  </introduction>
-  <exercise>
-    <statement>
-
-            <p>
-              <m>A=\begin{amatrix}[rr]0\amp 1\\2\amp -5 \end{amatrix}</m>
-            </p>
-
-    </statement>
-    <solution>
-      <p> Row reduce <m>A</m> to the identity matrix:
-        <md>
-          <mrow>\begin{amatrix}[rr]0\amp 1\\2\amp -5 \end{amatrix} \amp \xrightarrow[]{r_1\leftrightarrow r_1} \begin{amatrix}[rr]2\amp -5 \\0\amp 1 \end{amatrix}</mrow>
-          <mrow>\amp \xrightarrow[]{\frac{1}{2}r_1} \begin{amatrix}[rr]1\amp -5/2\\ 0\amp 1 \end{amatrix}</mrow>
-          <mrow> \amp \xrightarrow[]{r_1+\frac{5}{2}r_2} \begin{amatrix}[rr]1\amp 0\\ 0\amp 1 \end{amatrix} </mrow>
-          </md>
       </p>
-      <p>
-        The corresponding elementary matrices are
-        <me>E_1 = \begin{amatrix}[rr]0\amp 1\\ 1\amp 0 \end{amatrix} , E_2 = \begin{amatrix}[rr]1/2\amp 0\\ 0\amp 1 \end{amatrix}, E_3=\begin{amatrix}[rr]1\amp 5/2\\ 0\amp 1 \end{amatrix}
-        </me>.
-        It follows that <m>E_3E_2E_1A=I</m>, and hence that
-        <me>
-          A=E_1^{-1}E_{2}^{-1}E_3^{-1}=\begin{amatrix}[rr]0\amp 1\\ 1\amp 0 \end{amatrix}
-          \begin{amatrix}[rr]2\amp 0\\ 0\amp 1 \end{amatrix}
-          \begin{amatrix}[rr]1\amp -5/2\\ 0\amp 1 \end{amatrix}
-        </me>.
-      </p>
+    </introduction>
+    <exercise>
+      <statement>
 
-    </solution>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>
-        <m>A=\begin{amatrix}[rr]7\amp 1\\ 5\amp 1  \end{amatrix}</m>.
-      </p>
-    </statement>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>
         <p>
-          <m>A=\begin{amatrix}[rrr]1\amp 1\amp 0\\ 1\amp 1\amp 1\\ 0\amp 1\amp 1 \end{amatrix}</m>
+          <m>A=\begin{amatrix}[rr]0\amp 1\\2\amp -5 \end{amatrix}</m>
         </p>
 
+      </statement>
+      <solution>
+        <p> Row reduce <m>A</m> to the identity matrix:
+          <md>
+            <mrow>\begin{amatrix}[rr]0\amp 1\\2\amp -5 \end{amatrix} \amp \xrightarrow[]{r_1\leftrightarrow r_1} \begin{amatrix}[rr]2\amp -5 \\0\amp 1 \end{amatrix}</mrow>
+            <mrow>\amp \xrightarrow[]{\frac{1}{2}r_1} \begin{amatrix}[rr]1\amp -5/2\\ 0\amp 1 \end{amatrix}</mrow>
+            <mrow> \amp \xrightarrow[]{r_1+\frac{5}{2}r_2} \begin{amatrix}[rr]1\amp 0\\ 0\amp 1 \end{amatrix} </mrow>
+          </md>
+        </p>
+        <p>
+        The corresponding elementary matrices are
+          <me>E_1 = \begin{amatrix}[rr]0\amp 1\\ 1\amp 0 \end{amatrix} , E_2 = \begin{amatrix}[rr]1/2\amp 0\\ 0\amp 1 \end{amatrix}, E_3=\begin{amatrix}[rr]1\amp 5/2\\ 0\amp 1 \end{amatrix}
+          </me>.
+        It follows that <m>E_3E_2E_1A=I</m>, and hence that
+          <me> A=E_1^{-1}E_{2}^{-1}E_3^{-1}=\begin{amatrix}[rr]0\amp 1\\ 1\amp 0 \end{amatrix}
+          \begin{amatrix}[rr]2\amp 0\\ 0\amp 1 \end{amatrix}
+          \begin{amatrix}[rr]1\amp -5/2\\ 0\amp 1 \end{amatrix}
+          </me>.
+        </p>
 
-      </p>
-    </statement>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>
-        <m>A=\begin{amatrix}[rrr]1\amp 1\amp 1\\ 1\amp -1\amp 0\\ 1\amp 0\amp -1 \end{amatrix}</m>.
-      </p>
-    </statement>
-  </exercise>
+      </solution>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <m>A=\begin{amatrix}[rr]7\amp 1\\ 5\amp 1  \end{amatrix}</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <p>
+            <m>A=\begin{amatrix}[rrr]1\amp 1\amp 0\\ 1\amp 1\amp 1\\ 0\amp 1\amp 1 \end{amatrix}</m>
+          </p>
+
+
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <m>A=\begin{amatrix}[rrr]1\amp 1\amp 1\\ 1\amp -1\amp 0\\ 1\amp 0\amp -1 \end{amatrix}</m>.
+        </p>
+      </statement>
+    </exercise>
   </exercisegroup>
   <exercise>
     <statement>
@@ -158,7 +189,7 @@
         <blockquote>
             (2') The matrix equation <m>A\boldx=\boldb</m> has <em>a</em> solution for any column vector <m>\boldb</m>.
         </blockquote>
-        </p>
+      </p>
 
     </statement>
     <hint>
@@ -166,7 +197,8 @@
         Try to logically weave Statement (2') into our original list of equivalent statements by (a) finding a statement from our original list that implies (2'), and (b) find a statement in our original list that is implied by (2').
       </p>
       <p>
-        You may make use of <xref ref="cor_left-right_inverse"/> in your argument.
+        You may make use of <xref ref="cor_left-right_inverse"/>
+ in your argument.
       </p>
     </hint>
   </exercise>
@@ -174,50 +206,51 @@
     <title>Properties of row equivalence</title>
     <statement>
       <p>
-        Let <m>A\sim B</m> denote that matrix <m>A</m> is row equivalent to <m>B</m>. Use <xref ref="cor_row_equivalence_invertibility"/> to show that the relation <m>A\sim B</m> is reflexive, symmetric, and transitive, as described in <xref ref="rm_row_equivalence_props"/>.
-      </p>
-    </statement>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>
+        Let <m>A\sim B</m> denote that matrix <m>A</m> is row equivalent to <m>B</m>. Use <xref ref="cor_row_equivalence_invertibility"/>
+ to show that the relation <m>A\sim B</m> is reflexive, symmetric, and transitive, as described in <xref ref="rm_row_equivalence_props"/>
+.
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
         Let <m>A</m> be an <m>m\times n</m> matrix, and let <m>Q</m> be an invertible <m>m\times m</m> matrix.
-      </p>
-      <p>
+    </p>
+    <p>
         Show that the two matrix equations
-        <md>
-          <mrow>A\underset{n\times 1}{\boldx} \amp=\underset{m\times 1}{\boldzero} </mrow>[2ex]
-          <mrow>(QA)\underset{n\times 1}{\boldx} \amp=\underset{m\times 1}{\boldzero} </mrow>
-        </md>
+      <md>
+        <mrow>A\underset{n\times 1}{\boldx} \amp=\underset{m\times 1}{\boldzero} </mrow>[2ex]
+        <mrow>(QA)\underset{n\times 1}{\boldx} \amp=\underset{m\times 1}{\boldzero} </mrow>
+      </md>
         have the same set of solutions. In other words show that
-        <me>
-          A\boldx=\boldzero \iff (QA)\boldx=\boldzero
-        </me>.
-      </p>
-    </statement>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
+      <me> A\boldx=\boldzero \iff (QA)\boldx=\boldzero
+      </me>.
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
           Suppose <m>A</m> and <m>B</m> are row equivalent square matrices. Prove: <m>A</m> is invertible if and only if <m>B</m> is invertible.
-        </p>
-      </statement>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
         Use the provided information to determine whether the given square matrix <m>A</m> is invertible. Justify your answer using the inveribility theorem or one of its corollaries.
-      </p>
-      <task>
-        <p>
+    </p>
+    <task>
+      <p>
         There are column vectors <m>\boldx_1\ne \boldx_2</m> such that <m>A\boldx_1=A\boldx_2</m>.
-        </p>
-      </task>
-      <task>
-        <p>
+      </p>
+    </task>
+    <task>
+      <p>
         <m>A^2</m> is invertible.
       </p>
-      </task>
+    </task>
     <task>
       <p>
         <m>A^r=\boldzero</m> for some <m>r\geq 1</m>.
@@ -228,78 +261,75 @@
         The sum of the columns of <m>A</m> is equal to the zero column vector.
       </p>
     </task>
-      </statement>
+  </statement>
 
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
+</exercise>
+<exercise>
+  <statement>
+    <p>
           Answer true or false.
           If true, provide a proof; if false,
           exhibit an explicit counterexample.
-        </p>
-        <task>
-          <p>
+    </p>
+    <task>
+      <p>
             The product of two <m>n\times n</m> elementary matrices is elementary.
-          </p>
-        </task>
-        <task>
-          <p>
+      </p>
+    </task>
+    <task>
+      <p>
             The product of two <m>n\times n</m> elementary matrices is invertible.
-          </p>
-        </task>
-        <task>
-          <p>
+      </p>
+    </task>
+    <task>
+      <p>
             The sum of two invertible <m>n\times n</m> matrices is invertible.
-          </p>
-        </task>
+      </p>
+    </task>
 
 
-        <task>
-          <p>
+    <task>
+      <p>
             If <m>A</m> is a singular <m>n\times n</m> matrix,
             then the linear system <m>A\boldx=\boldzero</m> has infinitely many solutions.
-          </p>
-        </task>
-          <task>
-            <p>
+      </p>
+    </task>
+    <task>
+      <p>
               If <m>B</m> is obtained from the invertible matrix <m>A</m> by replacing its second row with the sum of its first and second rows, then <m>B</m> is invertible.
-            </p>
-          </task>
-            <task>
-              <p>
+      </p>
+    </task>
+    <task>
+      <p>
                 If <m>A</m> is square matrix, and <m>\boldb</m> is a column vector such that the matrix equation <m>A\boldx=\boldb</m> has a unique solution, then <m>A</m> is invertible.
-              </p>
-            </task>
-            <task>
-              <p>
+      </p>
+    </task>
+    <task>
+      <p>
                 If <m>A</m> and <m>B</m> are row equivalent,
                 then the matrix equations <m>Ax=\boldzero</m> and <m>Bx=\boldzero</m> have the same solution set.
-              </p>
-            </task>
-            <task>
-              <p>
+      </p>
+    </task>
+    <task>
+      <p>
                 If <m>A</m> or <m>B</m> is singular, then <m>AB</m> is singular.
-              </p>
-            </task>
-        </statement>
-        <solution>
-          <ol>
-            <li>
-              <p>
+      </p>
+    </task>
+  </statement>
+  <solution>
+    <ol>
+      <li>
+        <p>
                 False. The matrices
-                <me>
-                E_1=\begin{amatrix}[rr]1\amp 2\\ 0\amp 1  \end{amatrix},
-                E_2=\begin{amatrix}[rr]1\amp 0\\ 3\amp 1  \end{amatrix}
-                </me>
+          <me> E_1=\begin{amatrix}[rr]1\amp 2\\ 0\amp 1  \end{amatrix}, E_2=\begin{amatrix}[rr]1\amp 0\\ 3\amp 1  \end{amatrix}
+          </me>
                 are both elementary, but
-                <me>
-                E_1E_2=\begin{amatrix}[rr]7\amp 2\\ 3\amp 1  \end{amatrix}
-                </me>
+          <me> E_1E_2=\begin{amatrix}[rr]7\amp 2\\ 3\amp 1  \end{amatrix}
+          </me>
                 is not elementary.
-              </p>
-            </li>
-          </ol>
-        </solution>
-  </exercise>
+        </p>
+      </li>
+    </ol>
+  </solution>
+</exercise>
 </exercises>

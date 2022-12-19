@@ -1,4 +1,26 @@
 <exercises xml:id="s_invertible_matrices_ex">
+  <subexercises>
+    <title>Webwork Exercises</title>
+    <exercise>
+      <!-- true/false -->
+      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/3.3.48.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- solve for X using matrix inverses -->
+      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/3.3.54.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- true/false invertible 2x2 matrices -->
+      <webwork source="Library/Rochester/setLinearAlgebra4InverseMatrix/ur_Ch2_1_4.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- 2x2 invertibility involving a variable -->
+      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/3.3.59.pg" />
+    </exercise>
+  </subexercises>
   <exercise>
     <statement>
       <p>
@@ -50,7 +72,8 @@
   <exercise>
     <statement>
       <p>
-        Suppose <m>A</m> is an invertible matrix. Prove: for any <em>nonzero</em> <m>c\in\R</m> the matrix <m>cA</m> is invertible.
+        Suppose <m>A</m> is an invertible matrix. Prove: for any <em>nonzero</em>
+        <m>c\in\R</m> the matrix <m>cA</m> is invertible.
       </p>
     </statement>
   </exercise>
@@ -78,53 +101,53 @@
       </p>
     </hint>
   </exercise>
-    <exercise>
-      <statement>
-        <p>
+  <exercise>
+    <statement>
+      <p>
           Find all <em>invertible</em> matrices <m>A</m> satisfying the given equation, or show there is no such <m>A</m>. Justify your answer.
-        </p>
-        <ol>
-          <li>
-            <p>
-              <m>A^5=\boldzero_{n\times n}</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>A^{-3}=A^{-4}</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>A^2-3A=\boldzero_{n\times n}</m>
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>((A^T)^2A)^T-(A^{-1}(A^{-1})^T)^{-1}=\boldzero_{n\times n}</m>
-            </p>
-          </li>
-        </ol>
-      </statement>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
+      </p>
+      <ol>
+        <li>
+          <p>
+            <m>A^5=\boldzero_{n\times n}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>A^{-3}=A^{-4}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>A^2-3A=\boldzero_{n\times n}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>((A^T)^2A)^T-(A^{-1}(A^{-1})^T)^{-1}=\boldzero_{n\times n}</m>
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
           Let <m>A=\begin{bmatrix}
             1\amp 1\\ 0\amp 1
           \end{bmatrix}</m>.
           Find a formula for <m>A^r</m>, where <m>r\geq 1</m> is an integer. Justify your answer using a proof by induction.
-        </p>
-      </statement>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
           Let <m>A=[1]_{n\times n}</m>, the <m>n\times n</m> matrix consisting of all ones.
           Find a formula for <m>A^r</m>, where <m>r\geq 1</m> is an integer. Justify your answer using a proof by induction.
-        </p>
-      </statement>
-    </exercise>
+      </p>
+    </statement>
+  </exercise>
   <exercise>
     <statement>
       <p>
@@ -149,12 +172,11 @@
     <title>Polynomial expressions of <m>A</m> commute</title>
     <statement>
       <p>
-        Let <m>p(x)=\anpoly</m>, <m>a_n\ne 0</m>, and <m>q(x)=\bmpoly</m>, <m>b_m\ne 0</m> be polynomials with real coefficients.
+        Let <m>p(x)=\anpoly</m>,        <m>a_n\ne 0</m>, and <m>q(x)=\bmpoly</m>,        <m>b_m\ne 0</m> be polynomials with real coefficients.
       </p>
       <p>
         For any square matrix <m>A</m>, show that the matrices <m>p(A)</m> and <m>q(A)</m> commute: i.e.,
-        <me>
-          p(A)q(A)=q(A)p(A)
+        <me> p(A)q(A)=q(A)p(A)
         </me>.
       </p>
     </statement>
@@ -168,47 +190,47 @@
       We prove by induction that <m>A^nq(A)=q(A)A^n</m> for any <m>n\geq 0</m>, a special case of the result.
       </p>
       <case>
-        <title>Base step: <m>n=0</m></title>
+        <title>Base step: <m>n=0</m>
+        </title>
         <p>
           In this case we have <m>A^n=A^0=I</m>, and thus
-          <me>
-            A^nq(A)=Iq(A)=q(A)=q(A)I=q(A)A^n
+          <me> A^nq(A)=Iq(A)=q(A)=q(A)I=q(A)A^n
           </me>,
           as desired.
         </p>
       </case>
       <case>
-        <title>Case: <m>n=1</m></title>
+        <title>Case: <m>n=1</m>
+        </title>
         <p>
         In this case we have <m>A^n=A</m>, and it is easy to see that
-        <me>
-          Aq(A)=q(A)A=b_mA^{m+1}+b_{m-1}A^{m-1}+\cdots +b_1A^2+b_0A
-        </me>.
-      </p>
+          <me> Aq(A)=q(A)A=b_mA^{m+1}+b_{m-1}A^{m-1}+\cdots +b_1A^2+b_0A
+          </me>.
+        </p>
       </case>
       <case>
         <title>Induction step </title>
         <p>
         Assume that <m>A^nq(A)=q(A)A^n</m>. Then
-        <md>
-          <mrow>A^{n+1}q(A) \amp= A^n\,A\,q(A) </mrow>
-          <mrow> \amp= A^nq(A)A \amp (n=1 \text{ case})</mrow>
-          <mrow> \amp= q(A)A^nA \amp (\text{induction}) </mrow>
-          <mrow> \amp=q(A)A^{n+1} </mrow>
-        </md>.
-      </p>
+          <md>
+            <mrow>A^{n+1}q(A) \amp= A^n\,A\,q(A) </mrow>
+            <mrow> \amp= A^nq(A)A \amp (n=1 \text{ case})</mrow>
+            <mrow> \amp= q(A)A^nA \amp (\text{induction}) </mrow>
+            <mrow> \amp=q(A)A^{n+1} </mrow>
+          </md>.
+        </p>
       </case>
       <p>This proves the special case that <m>A^nq(A)=q(A)A^n</m> for all <m>n\geq 0</m>.
-    </p>
-    <p>
+      </p>
+      <p>
       To show the result for an arbitrary polynomial <m>p(x)=\anpoly</m> we use various distributive properties:
-      <md>
-        <mrow>p(A)q(A)=(a_nA^n+a_{n-1}A^{n-1}+\cdots +a_1A+a_0I)q(A) \amp= a_nA^nq(A)+a_{n-1}A^{n-1}q(A)+\cdots +a_1Aq(A)+a_0q(A) </mrow>
-        <mrow>  \amp=a_nq(A)A^n+a_{n-1}q(A)A^{n-1}+\cdots +a_1q(A)A+a_0q(A) \amp (\text{by special}) </mrow>
-        <mrow> \amp=q(A)(a_nA^n+a_{n-1}A^{n-1}+\cdots +a_1A+a_0I) </mrow>
-        <mrow>  \amp= q(A)p(A) </mrow>
-      </md>
-    </p>
+        <md>
+          <mrow>p(A)q(A)=(a_nA^n+a_{n-1}A^{n-1}+\cdots +a_1A+a_0I)q(A) \amp= a_nA^nq(A)+a_{n-1}A^{n-1}q(A)+\cdots +a_1Aq(A)+a_0q(A) </mrow>
+          <mrow>  \amp=a_nq(A)A^n+a_{n-1}q(A)A^{n-1}+\cdots +a_1q(A)A+a_0q(A) \amp (\text{by special}) </mrow>
+          <mrow> \amp=q(A)(a_nA^n+a_{n-1}A^{n-1}+\cdots +a_1A+a_0I) </mrow>
+          <mrow>  \amp= q(A)p(A) </mrow>
+        </md>
+      </p>
 
     </solution>
   </exercise>
@@ -219,10 +241,10 @@
       </p>
       <p>
         Show that <m>(A-I)</m> is invertible, and that in fact
-        <me>
-          (A-I)^{-1}=-(A^{r-1}+A^{r-2}+\cdots +A+I)
+        <me> (A-I)^{-1}=-(A^{r-1}+A^{r-2}+\cdots +A+I)
         </me>.
-        You may use the result of <xref ref="ex_poly_inA_commute"/>.
+        You may use the result of <xref ref="ex_poly_inA_commute"/>
+.
       </p>
     </statement>
   </exercise>
