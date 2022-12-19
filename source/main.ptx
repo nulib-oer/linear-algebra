@@ -273,6 +273,10 @@
         <title>Notation</title>
         <notation-list/>
       </appendix>
+      <appendix xml:id="appendix-exercises">
+        <title>Exercises</title>
+        <list-of elements="exercise" divisions="section" />
+      </appendix>
       <appendix xml:id="appendix-defs">
         <title>Definitions</title>
         <list-of elements="definition" divisions="section" />
@@ -299,6 +303,8 @@
         <title>Mantras and fiats</title>
         <list-of elements="principle assumption"  />
       </appendix>
+
+
       <!-- <xi:include href="./bibliography.ptx"/> -->
 
       <index>
