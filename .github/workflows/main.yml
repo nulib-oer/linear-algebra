@@ -20,6 +20,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      # python3 -m pip install --user pretextbook
       - uses: actions/checkout@v2
 
       - name: Update System Packages
@@ -35,7 +36,6 @@ jobs:
         run: |
           python3 --version
           pip3 --version
-        # python3 -m pip install --user pretextbook
           pip3 uninstall pretextbook
           pip3 install --user --upgrade pretext
 
