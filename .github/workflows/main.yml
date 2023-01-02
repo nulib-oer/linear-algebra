@@ -36,7 +36,6 @@ jobs:
         run: |
           python3 --version
           pip3 --version
-          pip3 uninstall pretextbook
           pip3 install --user --upgrade pretext
 
       - name: Install pdfCropMargins
