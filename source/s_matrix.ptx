@@ -256,6 +256,17 @@
   [(1, 2, 3, 4), (5, 6, 7, 8), (9, 10, 11, 12)]
     </output>
     </sage>
+    <p>
+      Use the empty cell below to try out some of these commands.
+    </p>
+    <sage>
+    <input>
+
+    </input>
+    <output>
+
+    </output>
+    </sage>
   </project>
 
 </subsection>
@@ -513,7 +524,7 @@ DL/.style={
       </output>
       </sage>
       <p>
-        As evidence of Sage's flexibility, we also use <c>*</c> for scalar multiplication.
+        As evidence of Sage's flexibility, the same symbol <c>*</c> is also used for scalar multiplication.
       </p>
       <sage>
       <input>
@@ -524,6 +535,18 @@ DL/.style={
   [  30   -6  -42  -78 -114]
   [  30   21   12    3   -6]
   [  30   48   66   84  102]
+      </output>
+      </sage>
+      <p>
+        Edit the cell below to practice these operations.
+      </p>
+      <sage>
+      <input>
+      A=matrix([[1,0,-1],[2,-6,6],[4,4,5]])
+      B=matrix([[1,2],[2,-4],[0,1]])
+      </input>
+      <output>
+
       </output>
       </sage>
     </project>
@@ -883,16 +906,28 @@ DL/.style={
   <project>
     <title>Matrix transposition</title>
     <p>
-      Matrix transposition is implemented in Sage as the <c>transpose()</c> method. In the cell below we compute the transpose of a random integer matrix <m>A</m> of size <m>3\times 5</m> and verify using <c>dimensions()</c> that <m>A^T</m> is of dimension <m>5\times 3</m>.
+      Matrix transposition is implemented in Sage as the <c>transpose()</c> method. In the cell below we (a) choose random integers <m>1\leq m,n\leq 6</m>, (b) choose a random  <m>m\times n</m> matrix <m>A</m> with integer entries, and (c) compute the transpose of <m>A</m>.
     </p>
     <sage>
     <input>
-    R=MatrixSpace(ZZ,3,5)
-    A=R.random_element()
-    B=A.transpose()
-    show(A)
-    show(B)
-    show(B.dimensions())
+      m=ZZ.random_element(1,7)
+  n=ZZ.random_element(1,7)
+  R=MatrixSpace(ZZ,m,n)
+  A=R.random_element()
+  B=A.transpose()
+  show(A)
+  show(B)
+    </input>
+    <output>
+
+    </output>
+    </sage>
+    <p>
+      As usual, experiment with the Sage cell below.
+    </p>
+    <sage>
+    <input>
+    
     </input>
     <output>
 

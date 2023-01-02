@@ -268,7 +268,7 @@ A^-1=
       <p>
         Let <m>A,B</m> be <m>n\times n</m> matrices. If <m>A</m> and <m>B</m> are both invertible, then so is their product <m>AB</m>. Using logical notation:
         <men xml:id="eq_inv_implies_prod">
-          A \text{ and }  B  \text{ invertible } \implies AB \text{ invertible }
+          A, B  \text{ invertible } \implies AB \text{ invertible }
         </men>.
         In fact when this is the case we have
         <men xml:id="eq_inv_prod_form">(AB)^{-1}=B^{-1}A^{-1}</men>.

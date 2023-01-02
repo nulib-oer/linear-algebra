@@ -516,7 +516,7 @@ In the first Sage cell below you find a recursive implementation of Gaussian eli
 </output>
 </sage>
 <p>
-  Some possible further activities:
+  The following activities could be useful for implementing Gaussian elimination in a manner that shows all intervening steps. Use the empty Sage cell below to experiment.
   <ul>
     <li>
       <p>
@@ -530,6 +530,14 @@ In the first Sage cell below you find a recursive implementation of Gaussian eli
     </li>
   </ul>
 </p>
+<sage>
+<input>
+
+</input>
+<output>
+
+</output>
+</sage>
 </project>
 </subsection>
 

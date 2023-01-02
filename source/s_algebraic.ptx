@@ -310,7 +310,7 @@ The example in our warning above is but one instance of the general failure of t
           <p>
             Suppose matrices <m>A, B, C</m> satisfy <m>AB=AC</m>. We <em>cannot</em> conclude that <m>B=C</m>. In logical notation:
             <md>
-              <mrow>AB=AC \amp \;\not\!\!\!\!\implies B=C</mrow>
+              <mrow>AB=AC \;\not\!\!\!\!\implies B=C</mrow>
             </md>
           </p>
         </li>
@@ -318,7 +318,7 @@ The example in our warning above is but one instance of the general failure of t
           <p>
             Suppose matrices <m>B, C, D</m> satisfy <m>BD=CD</m>. We <em>cannot</em> conclude that <m>B=C</m>. In logical notation:
             <md>
-              <mrow>BD=CD \amp \;\not\!\!\!\!\implies B=C</mrow>
+              <mrow>BD=CD \;\not\!\!\!\!\implies B=C</mrow>
             </md>
           </p>
         </li>
