@@ -2,8 +2,7 @@
 <title>Logic</title>
 <introduction>
   <p>
-    When dealing with mathematical statements and arguments, we must pay close attention to logical structure. This section addresses Different logical connectors give rise to different proof approaches. For the rest of this section, the symbols <m>\mathcal{P}</m> and <m>\mathcal{Q}</m> will stand for propositions.
-
+    When dealing with mathematical statements and arguments, we must pay close attention to logical structure. This section introduces both logical connectors and quantifiers, and carefully describes how to determine the truth values of propositions built from these operations.  
   </p>
 </introduction>
 <subsection xml:id="ss_propositional_calculus">

@@ -125,12 +125,16 @@
       Next we use set builder notation, the set membership relation, and some basic logic to define the union, intersection, and difference of sets.
     </p>
     <definition xml:id="d_set_operations">
-      <title>Basic set operations</title>
+      <title>Union, intersection, difference, and complement</title>
       <idx><h>sets</h><h>union</h></idx>
       <idx><h>sets</h><h>intersection</h></idx>
       <notation>
         <usage><m>A\cup B</m></usage>
         <description>set union</description>
+      </notation>
+      <notation>
+        <usage><m>A^c</m></usage>
+        <description>set complement</description>
       </notation>
       <notation>
         <usage><m>A\cap B</m></usage>
@@ -158,8 +162,8 @@
               </me>.
               More generally, the union <m>A_1\cup A_2\dots \cup A_n</m> of a collection of subsets of <m>A_i\subseteq X</m> is defined as
               <me>
-                A_1\cup A_2\dots \cup A_n=\{x\in X\colon x\in A_i \text{ for some } 1\leq i\leq n\}.
-              </me>
+                A_1\cup A_2\dots \cup A_n=\{x\in X\colon x\in A_i \text{ for some } 1\leq i\leq n\}
+              </me>.
 
             </p>
           </li>
