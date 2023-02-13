@@ -148,7 +148,7 @@
               <me>
                 S=\{a(1,0)+b(0,1)\colon a,b\in \R\}=\{(a,b)\colon a,b\in\R\}
               </me>.
-              Thus <m>S=\R^2</m>, the entire <m>xy</m>-plane.
+              Thus <m>\Span S=\R^2</m>, the entire <m>xy</m>-plane.
             </p>
           </li>
           <li>

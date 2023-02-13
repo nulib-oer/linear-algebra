@@ -245,7 +245,7 @@ As defined more thoroughly in <xref ref="d_matrix"/>, a matrix is just a rectang
           </li>
         </dl>
     <p>
-      The act of transforming a matrix using elementary row operations is called <term>row reduction</term>
+      The act of transforming a matrix using elementary row operations is called <term>row reduction</term>.
     </p>
     <p>
       Two matrices are <term>row equivalent</term> if the one can be obtained from the other by performing a finite sequence of elementary row operations.

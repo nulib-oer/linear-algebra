@@ -240,7 +240,7 @@
   </proof>
 </theorem>
 <p>
-  Elementary matrices provide us a way of understanding row reduction as a series of matrix multiplications (on the left). Recall that wow operations on linear systems are useful in so far as they preserve the set of solutions, and that this is the result of each operation being in some sense  <q>reversible</q>. (See <xref ref="ex_row_ops_preserve"/>.) In terms of matrix multiplication, this reversible attribute is reflected in the fact that elementary matrices are <em>invertible</em>.
+  Elementary matrices provide us a way of understanding row reduction as a series of matrix multiplications (on the left). Recall that row operations on linear systems are useful in so far as they preserve the set of solutions, and that this is the result of each operation being in some sense  <q>reversible</q>. (See <xref ref="ex_row_ops_preserve"/>.) In terms of matrix multiplication, this reversible attribute is reflected in the fact that elementary matrices are <em>invertible</em>.
 </p>
   <theorem xml:id="th_inverse_elem">
     <title>Inverses of elementary matrices</title>
@@ -319,7 +319,7 @@
   <title>Interlude on matrix equations</title>
   <p>
     We take a moment to make the following simple,
-    somewhat overdo observation.
+    somewhat overdue observation.
     Namely, we can represent a <em>system of linear equations</em>
     <men xml:id="eq_lin_sys">
       \eqsys
