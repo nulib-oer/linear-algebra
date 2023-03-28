@@ -101,7 +101,7 @@
           <li>
             <p>
               <m>B=\begin{amatrix}[rrr]
-              -2\amp -3\amp -3\\ -3\amp -3\amp 4\\ -3\amp -4\amp 5
+              -2\amp -3\amp 3\\ -3\amp -3\amp 4\\ -3\amp -4\amp 5
               \end{amatrix}
               </m>
             </p>
