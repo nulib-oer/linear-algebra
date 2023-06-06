@@ -1,4 +1,28 @@
 <exercises xml:id="s_transformation_ex">
+  <subexercises>
+    <title>Webwork Exercises</title>
+    <exercise>
+      <webwork source="Library/TCNJ/TCNJ_IntroLinearTransformations/problem17.pg" />
+    </exercise>
+
+    <exercise>
+      <webwork source="Library/Rochester/setLinearAlgebra15TransfOfLinSpaces/ur_la_15_18.pg" />
+    </exercise>
+
+    <exercise>
+      <webwork source="Library/Rochester/setLinearAlgebra15TransfOfLinSpaces/ur_la_15_17.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- similar question: Library/Rochester/setLinearAlgebra15TransfOfLinSpaces/ur_la_15_16.pg -->
+      <webwork source="Library/Rochester/setLinearAlgebra15TransfOfLinSpaces/ur_la_15_3.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- similar question: Library/TCNJ/TCNJ_IntroLinearTransformations/problem18.pg -->
+      <webwork source="Library/Rochester/setLinearAlgebra14TransfOfRn/ur_la_14_30.pg" />
+    </exercise>
+  </subexercises>
   <exercise>
     <statement>
       <p>
