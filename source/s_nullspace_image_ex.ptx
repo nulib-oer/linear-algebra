@@ -73,12 +73,14 @@
       <webwork source="Library/TCNJ/TCNJ_IntroLinearTransformations/problem11.pg" />
     </exercise>
 
-    <exercise>
-      <!-- transformation of matrices -->
-      <webwork source="Library/NAU/setLinearAlgebra/LinTransImage.pg" />
-    </exercise>
+    <!-- <exercise>
+              transformation of matrices
+              this problem uses basis
+              should come in a later chapter
+              <webwork source="Library/NAU/setLinearAlgebra/LinTransImage.pg" />
+            </exercise> -->
   </subexercises>
-  
+
   <exercisegroup>
     <introduction>
       <p>
