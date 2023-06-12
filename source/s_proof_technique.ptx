@@ -33,11 +33,13 @@
   </subsubsection>
   <subsubsection xml:id="sss_equivalence">
     <title>Equivalence</title>
-    The equivalence <m>\mathcal{P}\iff\mathcal{Q}</m> is logically equivalent to the conjunction
+    <p>
+      The equivalence <m>\mathcal{P}\iff\mathcal{Q}</m> is logically equivalent to the conjunction
     <me>
       (\mathcal{P}\implies\mathcal{Q})\text{ and } (\mathcal{Q}\implies \mathcal{P})
     </me>.
      Accordingly, the standard way of proving <m>\mathcal{P}\iff \mathcal{Q}</m> is to prove the two implications  <m>\mathcal{P}\implies\mathcal{Q}</m> and <m>\mathcal{Q}\implies\mathcal{P}</m> separately. (Exercise: use a truth table to show these propositions are indeed equivalent!)
+    </p>
   </subsubsection>
   <subsubsection xml:id="sss_logical_chains">
     <title>Chains of implications/equivalences</title>
@@ -134,7 +136,9 @@
   </subsubsection>
   <subsubsection xml:id="sss_proof_by_contradiction">
     <title>Proof by contradiction</title>
-    The technique of <em>proof by contradiction</em> (or <em>reductio ad absurdum</em>) proves a proposition <m>\mathcal{P}</m> by (a) assuming the negation <m>\neg\mathcal{P}</m> is true, and then (b) using this assumption to derive a proposition <m>\mathcal{Q}</m> known to be false. The choice of falsehood <m>\mathcal{Q}</m> is completely up to the person providing the proof. However, in order for the proof to be convincing, it should be clear, either logically or because of theory assumed to be known, that <m>\mathcal{Q}</m> is indeed false.
+    <p>
+      The technique of <em>proof by contradiction</em> (or <em>reductio ad absurdum</em>) proves a proposition <m>\mathcal{P}</m> by (a) assuming the negation <m>\neg\mathcal{P}</m> is true, and then (b) using this assumption to derive a proposition <m>\mathcal{Q}</m> known to be false. The choice of falsehood <m>\mathcal{Q}</m> is completely up to the person providing the proof. However, in order for the proof to be convincing, it should be clear, either logically or because of theory assumed to be known, that <m>\mathcal{Q}</m> is indeed false.
+    </p>
     <example xml:id="ex_proof_by_contradiction">
       <title>Proof by contradiction</title>
       <statement>

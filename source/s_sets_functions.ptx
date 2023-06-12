@@ -116,7 +116,7 @@
           </me>,
           or alternatively,
           <me>
-            B=\{x\in A\colon x=2k \text{ for some integer} k\}
+            B=\{x\in A\colon x=2k \text{ for some integer } k\}
           </me>.
             </p>
       </statement>
@@ -187,6 +187,12 @@
               </me>.
             </p>
           </li>
+          <li>
+            <title>Set complement</title>
+            <p>
+              The <term>complement</term> of <m>A</m> in <m>X</m> is defined as <m>X-A</m>. In contexts where there is clear what the larger set <m>X</m> is, we denote the complement of <m>A</m> in <m>X</m> as <m>A^c</m>.
+            </p>
+          </li>
         </ul>
 
       </statement>
@@ -235,18 +241,19 @@
   Lastly, we define the <em>cartesian product</em> of sets, which is a formal description of an ordered collection of objects.
 </p>
 <definition xml:id="d_cartesian_product">
-  <idx><h>Cartesian product</h></idx>
+  <idx><h>Cartesian product</h><h>finite</h></idx>
   <notation>
     <usage> <m>A\times B</m> </usage>
     <description>Cartesian product</description>
   </notation>
-  <title>Cartesian product</title>
+  <title>Cartesian product (finite)</title>
   <statement>
     <p>
       An <term><m>n</m>-tuple</term> (or <term>sequence</term>) of the sets <m>A_1, A_2,\dots, A_n</m> is an ordered list <m>(a_1,a_2,\dots, a_n)</m> such that <m>a_i\in A_i</m> for all <m>1\leq i\leq n</m>. We define two <m>n</m>-tuples <m>(a_1,a_2,\dots, a_n)</m>, and <m> (a_1',a_2',\dots, a_n')</m> to be equal, denoted <m>(a_1,a_2,\dots, a_n)=(a_1',a_2',\dots, a_n')</m>, if <m>a_i=a_i'</m> for all <m>1\leq i\leq n</m>.
-      We call <m>n</m> the <term>length</term> of the sequence <m>(a_1,a_2,\dots, a_n)</m>, and we call <m>a_i</m> its <term><m>i</m>-th entry</term> for all <m>1\leq i\leq n</m>.
+      We call <m>n</m> the <term>length</term> of the sequence <m>(a_1,a_2,\dots, a_n)</m>, and we call <m>a_i</m> its <term><m>i</m>-th entry</term> or <term>coordinate</term> for all <m>1\leq i\leq n</m>.
     </p>
-    <p>The
+    <p>
+      The
     <term>(Cartesian) product</term> of the sets <m>A_1, A_2,\dots, A_n</m>, denoted <m>A_1\times A_2\times\cdots \times A_n</m> or <m>\displaystyle\prod_{i=1}^nA_i</m>, is the set of all <m>n</m>-tuples: <ie />,
     <me>
       \prod_{i=1}^nA_i=A_1\times A_2\times\cdots \times A_n=\{(a_1,a_2,\dots, a_n)\colon a_i\in A_i \text{ for all } 1\leq i\leq n\}
@@ -277,6 +284,48 @@
 </p>
 </statement>
 </remark>
+<p>
+  The notion of a Cartesian product can be generalized to an infinite list of sets <m>A_1, A_2, \dots</m>, and indeed to any collection <m>\{A_i\}_{i\in I}</m> indexed by a set <m>I</m>. 
+</p>
+<definition xml:id="d_Ituple">
+  <idx><h>tuple</h><h>arbitrary</h></idx>
+  <notation>
+    <usage><m>\boldx=(x_i)_{i\in I}</m></usage>
+    <description><m>I</m>-tuple</description>
+  </notation>
+  <title>I-tuple</title>
+  <statement>
+    <p>
+      Let <m>I</m> be a set. Given a set <m>X</m>, an <term><m>I</m>-tuple</term> of elements of <m>X</m> is a function
+      <m>
+        f\colon I\rightarrow X
+      </m>.
+      Given an <m>I</m>-tuple <m>f</m> and element <m>i\in I</m> we will often denote the value <m>f(i)</m> as <m>x_i</m>, and denote
+      <m>f</m> itself as <m>f=(x_i)_{i\in I}</m>. In analogy to finite tuples, we call <m>x_i</m> the <m>i</m>-th <term>entry</term> or <term>coordinate</term> of <m>f</m>.
+    </p>
+  </statement>
+</definition>
+<definition xml:id="d_cartesian_product_arbitrary">
+  <idx><h>Cartesian product</h><h>arbitrary</h></idx>
+  <notation>
+    <usage><m>\prod_{i\in I}A_i</m></usage>
+    <description>Cartesian product of the sets <m>A_i</m></description>
+  </notation>
+  <title>Cartesian product (arbitrary)</title>
+  <statement>
+    <p>
+      Let <m>X</m> be a set, and let <m>\{A_i\}_{i\in I}</m> be a collection of subsets <m>A_i\subseteq X</m> indexed by the set <m>I</m>. The <term>Cartesian product</term> <m>\prod_{i\in I}A_i</m> of this collection is defined as
+      <md>
+      <mrow> \prod_{i\in I}A_i\amp =\{f\colon I\rightarrow X\colon f(i)\in A_i \text{ for all } i\in I\} </mrow>
+      <mrow>  \amp =\{(x_i)_{i\in I}\colon x_i\in A_i \text{ for all } i\in I\}</mrow>
+      </md>.
+      In other words, the Cartesian product is the set of all <m>I</m>-tuples of elements of <m>X</m> whose <m>i</m>-th coordinate is an element of <m>A_i</m> for all <m>i\in I</m>.
+    </p>
+    <p>
+      In the special case where <m>A_i=A</m> for all <m>i\in I</m>, we denote <m>\prod_{i\in I}A</m> as <m>A^I</m>.
+    </p>
+  </statement>
+</definition>
 
     </subsection>
     <subsection xml:id="ss_functions">
