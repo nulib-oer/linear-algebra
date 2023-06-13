@@ -277,7 +277,7 @@
 <remark xml:id="rm_tuple_ordered">
 <statement>
 <p>
-  Observe how tuples capture the notion of an <em>ordered</em> collection of object. For example, whereas the sets <m>\{1, 1, 2, 3\}</m> and <m>\{1,2,2,3\}</m> are all equal to one another, the 4-tuples <m>(1,1,2,3)</m> and <m>(1,2,2,3)</m> are not: they differ in their second entries.
+  Observe how tuples capture the notion of an <em>ordered</em> collection of objects. For example, whereas the sets <m>\{3, 1, 2, 4\}</m> and <m>\{1,2,3,4\}</m> are equal to one another, the 4-tuples <m>(3,1,2,4)</m> and <m>(1,2,3,4)</m> are not.
 </p>
 <p>
   What about the tuples <m>(1,1,1)</m> and <m>(1,1,1,1)</m>? Are these equal? Technically our definition of equality only applies to tuples living in the same fixed Cartesian product. In particular, for the question of equality to make sense, the tuples must have the same length. As such we will officially avoid writing things like <m>(1,1,1)\ne (1,1,1,1)</m>, although unofficially we consider these two objects as completely different. You should think of <m>(1,1,1)</m> and <m>(1,1,1,1)</m> as creatures living on two different planets in the universe of tuples.
@@ -285,7 +285,7 @@
 </statement>
 </remark>
 <p>
-  The notion of a Cartesian product can be generalized to an infinite list of sets <m>A_1, A_2, \dots</m>, and indeed to any collection <m>\{A_i\}_{i\in I}</m> indexed by a set <m>I</m>. 
+  The notion of a Cartesian product can be generalized to an infinite list of sets <m>A_1, A_2, \dots</m>, and indeed to any collection <m>\{A_i\}_{i\in I}</m> indexed by a set <m>I</m>. This is accomplished by looking at tuples in a slightly different manner: namely, we can describe a tuple $(a_1,a_2,\dots, a_n)\in \prod_{k=1}^nA_i$ as an <em>assignment</em> to each distinct element $i\in \{1,2,\dots, n}$ of an element $a_i\in A_i$ that we call the coordinate of <m>i</m>. In other words, a tuple $(a_1,a_2,\dots, a_n)$ is just a <em>function</em> that assigns to each $i$ in our <em>index set</em> <m>\{1,2,\dots, n\}</m> an element $a_i\in A_i$. This notion generalize easily by replacing the finite index set <m>\{1,2,\dots, n\}</m> with an arbitrary set <m>I</m> (finite or infinite). 
 </p>
 <definition xml:id="d_Ituple">
   <idx><h>tuple</h><h>arbitrary</h></idx>

@@ -228,7 +228,7 @@ What this suggests is that you are in fact proving an implication: namely, <em>i
 <subsubsection xml:id="sss_function_equality">
   <title>Function equality</title>
   <p>
-    By <xref ref="d_function_equality"/>, in order to show functions <m>f</m> and <m>g</m> are equal we must
+    According to <xref ref="d_function_equality"/>, in order to show functions <m>f</m> and <m>g</m> are equal we must
     <ol marker="i">
       <li>
         <p>
@@ -241,8 +241,8 @@ What this suggests is that you are in fact proving an implication: namely, <em>i
         </p>
       </li>
     </ol>
-  </p> By <xref ref="d_function_equality"/>
 The universal quantifier <q>for all <m>x\in X</m></q> of item (ii) gives this subtask the feel of proving an <em>identity</em>: we must show that equality <m>f(x)=g(x)</m> holds <em>for all </em> <m>x\in X</m>. By the same token, to show (ii) does not hold, it suffices to show that <m>f(x)\ne g(x)</m> for some <m>x\in X</m>.
+</p>
 </subsubsection>
 <subsubsection xml:id="sss_injective_surjective_bijective">
   <title>Injective, surjective, bijective</title>
