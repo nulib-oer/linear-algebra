@@ -1,6 +1,5 @@
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_ge">
   <title>Gaussian elimination</title>
-  <introduction>
     <p>
       In <xref ref="s_systems"/> we sketched a procedure for solving a linear system <m>L</m>. That procedure involved applying a sequence of row operations to <m>L</m> to obtain a <q>simpler</q> system <m>L'</m>.
     </p>
@@ -28,7 +27,6 @@
 <p>
     Before we embark on these steps, we introduce a useful bit of notation. As you may have noticed, when performing row operations on a system of equations, we essentially treat the unknowns, as well as the plus and equals symbols, as placeholders; the only things that actually change in a given step are the coefficients in the equations. The <em>augmented matrix associated to a linear system</em> is a formal way of extracting just the information of the coefficients from a linear system.
   </p>
-</introduction>
 
 <definition xml:id="d_augmented_matrix">
   <title>Augmented matrix</title>
@@ -412,7 +410,7 @@ As defined more thoroughly in <xref ref="d_matrix"/>, a matrix is just a rectang
 <theorem xml:id="th_matrixforms">
   <title>Row equivalent matrix forms</title>
   <statement>
-    <dl>
+    <ol>
       <li xml:id="th_REexistence">
         <title>Row echelon forms exist</title>
         <p>
@@ -431,7 +429,7 @@ As defined more thoroughly in <xref ref="d_matrix"/>, a matrix is just a rectang
         Any matrix <m>A</m> is row equivalent to a <em>unique</em> matrix in reduced row echelon form.
         </p>
       </li>
-    </dl>
+    </ol>
   </statement>
 </theorem>
 

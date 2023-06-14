@@ -127,21 +127,21 @@
       \newcommand{\eqsys}{\begin{array}{rcrcrcr}
       a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp b_1\\
       a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp b_2\\
-      \amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \vdots\\
+      \amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \\
       a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp b_m
       \end{array}
       }
       \newcommand{\numeqsys}{\begin{array}{rrcrcrcr}
       e_1:\amp  a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp b_1\\
       e_2: \amp a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp b_2\\
-      \amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \vdots\\
+      \amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \\
       e_m: \amp a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp b_m
       \end{array}
       }
       \newcommand{\homsys}{\begin{array}{rcrcrcr}
       a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp 0\\
       a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp 0\\
-      \amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \vdots\\
+      \amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp \\
       a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp 0
       \end{array}
       }
@@ -149,7 +149,7 @@
       \begin{array}{ccccccc}
       #3_{11}x_{1}\amp +\amp #3_{12}x_{2}\amp +\cdots+\amp  #3_{1#2}x_{#2}\amp =\amp #4_1\\
       #3_{21}x_{1}\amp +\amp #3_{22}x_{2}\amp +\cdots+\amp #3_{2#2}x_{#2}\amp =\amp #4_2\\
-      \vdots \amp \amp \vdots \amp  \amp \vdots \amp =\amp  \vdots\\
+      \vdots \amp \amp \vdots \amp  \amp \vdots \amp =\amp  \\
       #3_{#1 1}x_{1}\amp +\amp #3_{#1 2}x_{2}\amp +\cdots +\amp #3_{#1 #2}x_{#2}\amp =\amp #4_{#1}
       \end{array}
       }

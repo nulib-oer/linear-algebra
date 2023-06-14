@@ -1,8 +1,8 @@
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_systems">
   <title>Systems of linear equations</title>
-  <introduction>
-    We begin in a deceptively simple manner with the study of systems of linear equations and their solutions.
-  </introduction>
+  <p>
+     We begin in a deceptively simple manner with the study of systems of linear equations and their solutions.
+  </p>
   <definition xml:id="d_lin-equation" >
     <title>Linear equations</title>
     <idx><h>linear equation</h></idx>
@@ -30,7 +30,8 @@
   <example>
     <title>Linear and nonlinear equations</title>
     <statement>
-      <ol>
+      <p>
+        <ol>
         <li>
           <p>
             Consider <m>\sqrt{3}x+\sin(5)=2z-e^4y</m>.
@@ -45,6 +46,7 @@
           </p>
         </li>
       </ol>
+      </p>
     </statement>
   </example>
 
@@ -77,7 +79,7 @@ A homogeneous system is thus typically written as:
 <remark>
     <p>
       You will want to get comfortable with the double-indexing used to display linear systems as quickly as possible. Here is a good way to orient yourself:
-    </p>
+    
   <ul>
     <li>
       <p>
@@ -91,8 +93,9 @@ A homogeneous system is thus typically written as:
       </p>
     </li>
   </ul>
+  </p>
 </remark>
-    <definition xml:id="d_lin-sys-sols" index="solutions to linear systems">
+    <definition xml:id="d_lin-sys-sols">
       <title>Solutions to linear systems</title>
       <idx><h>solutions to linear systems</h></idx>
       <statement>
@@ -101,7 +104,7 @@ A homogeneous system is thus typically written as:
           <me>
             a_1x_1+a_2x_2+\cdots a_nx_n=b
           </me>
-          is an ordered sequence
+          is an <m>n</m>-tuple
           <m>(s_1,s_2,\dots,
           s_n)</m> of real numbers for which the variable assignment <m>x_1=s_1, x_2=s_2,\dots, x_n=s_n</m> makes the equation true.
           We say <m>(s_1,\dots ,s_n)</m> <term>solves the equation</term> in this case.
@@ -111,7 +114,7 @@ A homogeneous system is thus typically written as:
           <me>
             \eqsys
           </me>
-          is a sequence <m>(s_1,s_2,\dots,s_n)</m> that is a solution to each of the system's <m>m</m> equations.
+          is an <m>n</m>-tuple <m>(s_1,s_2,\dots,s_n)</m> that is a solution to each of the system's <m>m</m> equations.
           We say <m>(s_1,s_2,\dots,
           s_n)</m> <term>solves the system</term> in this case.
         </p>
@@ -149,7 +152,7 @@ A homogeneous system is thus typically written as:
     <statement>
     <p>
     For each system, compute the set of solutions.
-    </p>
+    
     <ol>
       <li>
         <me>\begin{linsys}{2} x\amp -\amp y\amp =\amp 0\\ x\amp -\amp y\amp =\amp 1\end{linsys}</me>
@@ -161,9 +164,11 @@ A homogeneous system is thus typically written as:
         <me>\begin{linsys}{2} x\amp -\amp y\amp =\amp 1\\ 2x\amp -\amp 2y\amp =\amp 2\end{linsys}</me>
       </li>
     </ol>
+    </p>
     </statement>
    <solution>
-    <ol>
+    <p>
+     <ol>
       <li><p>The first equation implies <m>x=y</m>.
     Substituting <m>y</m> for <m>x</m> in the second equation, we would then have <m>0=1</m>, a contradiction.
     Thus there are no solutions: i.e., <m>S</m> is the empty set, denoted <m>S=\{ \ \}</m> or <m>S=\emptyset</m>.
@@ -188,7 +193,8 @@ A homogeneous system is thus typically written as:
           and thus <m>S=\{(t,t-1)\colon t\in\R\}</m>, an infinite set!
         </p>
       </li>
-  </ol>
+  </ol> 
+    </p>
   </solution>
 
 </example>
@@ -200,7 +206,7 @@ A homogeneous system is thus typically written as:
     <men xml:id="s_systems_eq_runningexample">
       \begin{linsys}{3} 2x\amp -\amp y\amp -\amp z\amp =\amp 3\\ x\amp \amp \amp -\amp z\amp =\amp 2 \\ x\amp -\amp y\amp \amp \amp =\amp 1 \end{linsys}
     </men>
-  Observe first that the sequence <m>(5,2,5)</m> is not a solution to the system; one easily checks that is satisfies the first and second equations, but not the third. Similarly, it is easy to verify that <m>(4,2,3)</m> and <m>(0,-1,2)</m> are both solutions to the system. The question remains: How do we find <em>all</em> solutions to the linear system in a systematic way?
+  Observe first that the triple <m>(5,2,5)</m> is not a solution to the system; one easily checks that is satisfies the first and second equations, but not the third. Similarly, it is easy to verify that <m>(4,2,3)</m> and <m>(0,-1,2)</m> are both solutions to the system. The question remains: How do we find <em>all</em> solutions to the linear system in a systematic way?
 </p>
 <remark>
   <p>Observe the somewhat funny spacing in <xref ref="s_systems_eq_runningexample"/>. This is in force in order to align the unknowns in separate columns. In general, when handed a linear system in the wild, your first step should be to write each equation in standard form, and make sure the unknowns are aligned vertically in this manner.
@@ -247,7 +253,7 @@ A homogeneous system is thus typically written as:
     the same solutions as the original system!
     To this end we will restrict our permissible transformations to the <em>elementary  operations</em> define below.
   </p>
-  <definition index="elementary row operations" xml:id="d_eqops">
+  <definition xml:id="d_eqops">
     <title>Elementary operations on linear systems</title>
     <idx><h>elementary operations</h><h>linear systems</h></idx>
     <idx><h>elementary operations</h><h>linear systems</h><h>scalar multiplication</h></idx>
@@ -257,11 +263,10 @@ A homogeneous system is thus typically written as:
     <statement>
       <p>
         An <term>elementary operation</term> (or <term>elementary row operation</term>) is one of the three types of operations on linear systems described below.
-      </p>
         <dl>
           <li xml:id="d_eq_scale">
             <title>Scalar multiplication</title>
-              <p>Multiply an equation by a <em>nonzero</em> number <m>c\ne 0</m>:
+              <p> Multiply an equation by a <em>nonzero</em> number <m>c\ne 0</m>:
               i.e., replace the <m>i</m>-th equation <m>e_i</m> of the system with <m>c\cdot e_i</m> for <m>c\ne 0</m>. Note: <m>c\cdot e_i</m> is the result of multiplying the left and right sides of equation <m>e_i</m> by <m>c</m>.
             </p>
           </li>
@@ -280,7 +285,6 @@ A homogeneous system is thus typically written as:
             </p>
           </li>
         </dl>
-    <p>
       The act of transforming a system of equations using elementary operations is called <term>reduction</term> (or <term>row reduction</term>).
     </p>
     </statement>
@@ -391,7 +395,7 @@ A homogeneous system is thus typically written as:
   <p>
     We end by making official a claim made earlier. First we introduce the notion of <em>equivalent linear systems</em>, mainly to spare ourselves from the mouthful that is <q>obtained by applying a finite sequence of elementary row operations</q>.
   </p>
-  <definition xml:id="d_rowequivalent" index="row equivalent systems">
+  <definition xml:id="d_rowequivalent">
     <title>Equivalence of linear systems</title>
 
     <statement>
@@ -410,7 +414,9 @@ A homogeneous system is thus typically written as:
       </p>
     </statement>
     <proof>
-      We prove by induction that if system <m>L'</m> is the result of applying <m>n</m> elementary operations to system <m>L</m>, <m>n\geq 0</m>, then <m>L</m> and <m>L'</m> have the same set of solutions.
+      <p>
+        We prove by induction that if system <m>L'</m> is the result of applying <m>n</m> elementary operations to system <m>L</m>, <m>n\geq 0</m>, then <m>L</m> and <m>L'</m> have the same set of solutions.
+      </p>
       <case>
         <title> Base case: <m>n=0</m></title>
         <p>
