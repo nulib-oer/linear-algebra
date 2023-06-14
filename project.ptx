@@ -38,7 +38,7 @@
       <xmlid-root>c_linear_systems</xmlid-root>
       <!-- Webwork exercises are non-interactive by default -->
       <!-- We disable this behavior -->
-      <stringparam key="webwork.divisional.static" value="no"/>
+      <!-- <stringparam key="webwork.divisional.static" value="no"/> -->
 
     </target>
   </targets>

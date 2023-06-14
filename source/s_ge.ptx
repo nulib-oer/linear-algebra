@@ -1,5 +1,6 @@
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_ge">
   <title>Gaussian elimination</title>
+   <introduction>
     <p>
       In <xref ref="s_systems"/> we sketched a procedure for solving a linear system <m>L</m>. That procedure involved applying a sequence of row operations to <m>L</m> to obtain a <q>simpler</q> system <m>L'</m>.
     </p>
@@ -23,14 +24,17 @@
         </li>
       </ol>
     </p>
+   </introduction> 
 
-<p>
-    Before we embark on these steps, we introduce a useful bit of notation. As you may have noticed, when performing row operations on a system of equations, we essentially treat the unknowns, as well as the plus and equals symbols, as placeholders; the only things that actually change in a given step are the coefficients in the equations. The <em>augmented matrix associated to a linear system</em> is a formal way of extracting just the information of the coefficients from a linear system.
+<subsection xml:id="ss_ge_row_echelon">
+  <title>Row echelon matrices</title>
+  <p>
+    Our first step in this direction will be to introduce a notational convenience. As you may have noticed, when performing row operations on a system of equations, we essentially treat the unknowns, as well as the plus and equals symbols, as placeholders; the only things that actually change in a given step are the coefficients in the equations. The <em>augmented matrix associated to a linear system</em> is a formal way of extracting just the information of the coefficients from a linear system.
   </p>
 
 <definition xml:id="d_augmented_matrix">
   <title>Augmented matrix</title>
-  <!-- <idx><h>augmented matrix</h></idx> -->
+  <idx><h>augmented matrix</h></idx>
 <notation>
   <usage><m>\begin{amatrix}[c|c]A\amp \mathbb{b}\end{amatrix}</m></usage>
   <description>augmented matrix</description>
@@ -53,15 +57,12 @@
 </definition>
 
 <remark xml:id="s_ge_rm_see_def">
-<statement>
+
 <p>
 As defined more thoroughly in <xref ref="d_matrix"/>, a matrix is just a rectangular array of numbers.
 </p>
-</statement>
-</remark>
 
-<subsection xml:id="ss_ge_row_echelon">
-  <title>Row echelon matrices</title>
+</remark>
  <p>
    Here is our precise formulation of a <q>simple</q> linear system; it is a system whose associated augmented matrix is in <em>row echelon form</em>, as described below.
 </p>

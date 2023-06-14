@@ -18,7 +18,13 @@
     <webwork source="Library/Utah/Business_Algebra/set11_Inequalities_and_Linear_Programming/p02.pg" />
   </exercise>
 
+  <exercise>
+    <!-- 7. Systems of equations in 3 variables -->
+    <webwork source="Library/TCNJ/TCNJ_LinearSystems/problem17.pg" />
+  </exercise>
 </subexercises>
+<subexercises>
+<title>Written Exercises</title>
 
 <exercisegroup>
   <introduction>
@@ -116,12 +122,7 @@
 </exercisegroup>
 
 
-<subexercises>
-  <exercise>
-    <!-- 7. Systems of equations in 3 variables -->
-    <webwork source="Library/TCNJ/TCNJ_LinearSystems/problem17.pg" />
-  </exercise>
-</subexercises>
+
 
 <exercise>
   <statement>
@@ -184,7 +185,7 @@
     <p>
         True or false. If true, provide a proof; if false, provide an explicit counterexample.
     </p>
-    <ol type="(a)">
+    <ol marker="(a)">
       <li>
         <p>
         Every matrix has a unique row echelon form.
@@ -318,4 +319,5 @@
   </statement>
 
 </exercise>
+</subexercises>
 </exercises>

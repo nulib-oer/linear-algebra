@@ -16,6 +16,7 @@
     <directories external="../assets" generated="../generated-assets"/>
   </source>
 
+  <!-- <webwork divisional="dynamic"/> -->
   <common>
         <tableofcontents level="2"/>
   </common>
