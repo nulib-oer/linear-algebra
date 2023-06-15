@@ -1,6 +1,6 @@
 <exercises xml:id="s_transformation_ex">
   <subexercises>
-    <title>Webwork Exercises</title>
+    <title>WeBWork Exercises</title>
     <exercise>
       <webwork source="Library/TCNJ/TCNJ_IntroLinearTransformations/problem17.pg" />
     </exercise>

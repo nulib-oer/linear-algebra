@@ -1,6 +1,6 @@
 <exercises xml:id="s_subspace_ex">
   <subexercises>
-    <title>Webwork Exercises</title>
+    <title>WeBWork Exercises</title>
     <exercise>
       <!-- subspaces of polynomials -->
       <webwork source="Library/TCNJ/TCNJ_VectorSpaces/problem6.pg" />

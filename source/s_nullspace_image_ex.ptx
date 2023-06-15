@@ -27,7 +27,7 @@
     </exercise>
   </subexercises>
   <subexercises>
-    <title>Webwork Exercises</title>
+    <title>WeBWork Exercises</title>
     <exercise>
       <!-- injective dimensions -->
       <webwork source="Library/TCNJ/TCNJ_MatrixLinearTransformation/problem16.pg" />

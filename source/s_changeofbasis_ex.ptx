@@ -1,5 +1,8 @@
 <exercises xml:id="s_changeofbasis_ex">
   <exercisegroup>
+  <title>Change of basis matrix</title>
+  
+  
   <introduction>
   <p>
   In each exercise a vector space <m>V</m> is given along with two ordered bases <m>B</m> and <m>B'</m>. Compute <m>\underset{B\rightarrow B'}{P}</m> and <m>\underset{B'\rightarrow B}{P}</m>.
@@ -92,6 +95,7 @@
   </statement>
 </exercise>
 <exercisegroup>
+<title>Orthonormal change of basis</title>
 <introduction>
 <p>
 In each exercise an inner product space <m>(V,\langle\, , \rangle)</m> is given along with two <em>orthonormal</em> ordered bases <m>B</m> and <m>B'</m>. Compute <m>\underset{B\rightarrow B'}{P}</m> and <m>\underset{B'\rightarrow B}{P}</m>. Use <xref ref="th_changebasis_orthonormal"/> to reduce your workload.
@@ -169,6 +173,7 @@ In each exercise an inner product space <m>(V,\langle\, , \rangle)</m> is given 
     </statement>
   </exercise>
   <exercisegroup>
+  <title>Change of basis methods</title>
   <introduction>
   <p>
   In each exercise a vector space <m>V</m> is given along with two ordered bases <m>B'</m> and <m>B''</m>.

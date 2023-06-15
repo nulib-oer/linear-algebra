@@ -1,6 +1,6 @@
 <exercises xml:id="s_det_ex">
 <subexercises>
-  <title>Webwork Exercises</title>
+  <title>WeBWork Exercises</title>
 
   <exercise>
     <!-- determinant of -A -->
@@ -23,6 +23,8 @@
     <webwork source="Library/Rochester/setLinearAlgebra6Determinants/ur_la_6_9.pg" />
   </exercise>
 </subexercises>
+<subexercises>
+<title>Written Exercises</title>
 <exercise>
   <statement>
     <p>
@@ -46,6 +48,7 @@
   </statement>
 </exercise>
 <exercisegroup>
+<title>Row/column expansion</title>
 <introduction>
   <p>
     Compute the determinant of the given matrix. Indicate which row or column you expand along.
@@ -83,6 +86,8 @@
 </exercise>
 </exercisegroup>
 <exercisegroup>
+<title>Determinant and invertibility</title>
+
 <introduction>
 <p>
   For each matrix, find all values of <m>c</m> (if any) making the matrix invertible. Use the determinant.
@@ -135,6 +140,7 @@
 </exercise>
 </exercisegroup>
 <exercisegroup>
+<title>Adjoint matrix formula</title>
 <introduction><p>
   Use the adjoint matrix formula to compute the inverse of each matrix.
 </p></introduction>
@@ -307,6 +313,7 @@
   </statement>
 </exercise>
 <exercisegroup>
+<title>Adjoint matrix</title>
 <introduction>
 <p>
 The following exercises explore the relationship between a square matrix <m>A</m> and its adjoint <m>\adj A</m>.
@@ -402,4 +409,5 @@ The following exercises explore the relationship between a square matrix <m>A</m
     </p>
   </statement>
 </exercise>
+</subexercises>
 </exercises>

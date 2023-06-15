@@ -1,7 +1,7 @@
 <exercises xml:id="s_vectorspace_ex">
 
   <subexercises>
-    <title>Webwork Exercises</title>
+    <title>WeBWork Exercises</title>
 
     <exercise>
       <webwork source="Library/NAU/setLinearAlgebra/shiftedSpace.pg" />

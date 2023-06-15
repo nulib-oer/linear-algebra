@@ -1,7 +1,7 @@
 <exercises xml:id="s_matrix_ex">
 
 <subexercises>
-  <title>Webwork Exercises</title>
+  <title>WeBWork Exercises</title>
   
   <exercise>
     <!-- true/false about matrix multiplication -->
@@ -205,8 +205,8 @@
 </exercise>
 
 <subexercises>
-<!-- Webwork Exercises about transpose -->
-<title>Webwork Exercises</title>
+<!-- WeBWork Exercises about transpose -->
+<title>WeBWork Exercises</title>
 
   <exercise>
     <!-- write down the dimensions of the transpose matrix -->

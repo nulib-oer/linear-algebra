@@ -11,7 +11,7 @@
       <source>source/main.ptx</source>
       <publication>publication/publication.ptx</publication>
       <output-dir>output/web</output-dir>
-      <!-- Webwork exercises are non-interactive by default -->
+      <!-- WeBWork exercises are non-interactive by default -->
       <!-- We disable this behavior -->
       <stringparam key="webwork.divisional.static" value="no"/>
     </target>
@@ -36,7 +36,7 @@
       <!-- edit this to change the section/chapter/etc. to include
            in your subset build -->
       <xmlid-root>c_linear_systems</xmlid-root>
-      <!-- Webwork exercises are non-interactive by default -->
+      <!-- WeBWork exercises are non-interactive by default -->
       <!-- We disable this behavior -->
       <!-- <stringparam key="webwork.divisional.static" value="no"/> -->
 
