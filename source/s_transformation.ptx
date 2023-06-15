@@ -22,79 +22,12 @@
       it is the theory of vector spaces and the linear transformations between them. Go shout it from the rooftops!
     </p>
   </introduction>
-  <!-- <subsection xml:id="ss_functions">
-    <title>Function definitions</title>
-    <p>
-      Before getting to the main attraction, we first establish some basic definitions and notation regarding functions.
-    </p>
-    <definition xml:id="d_functions">
-      <title>Functions</title>
-      <idx><h>function</h></idx>
-      <notation>
-        <usage><m>f\colon A\rightarrow B</m></usage>
-        <description>function from <m>A</m> to <m>B</m></description>
-      </notation>
-      <statement>
-        <p>
-        Let <m>A</m> and <m>B</m> be two sets. A <term>function from <m>A</m> to <m>B</m></term>, denoted <m>f\colon A\rightarrow B</m>, is a rule which, given any <term>input</term> <m>a\in A</m>, returns an <term>output</term> <m>b\in B</m>. In this case we write <m>b=f(a)</m> and call <m>b</m> the <term>image of <m>a</m> under <m>f</m></term>, or the <term>value of <m>f</m> at <m>a</m> </term>. Similarly, we say <m>f</m> <term>maps</term> (or <term>sends</term>) the input <m>a</m> to the output <m>b</m>.
-        </p>
-        <p>
-          The set <m>A</m> is called the <term>domain</term> of <m>f</m>; the set <m>B</m> is called the <term>codomain</term> of <m>f</m>.
-        </p>
-        <p>
-          When we wish to indicate what rule defines the function, we use the elaborated notation
-          <md>
-            <mrow>f\colon A \amp\rightarrow B </mrow>
-            <mrow> a \amp\mapsto f(a)</mrow>
-          </md>.
-          This is read as <q>The function <m>f</m> from <m>A</m> to <m>B</m> maps an input <m>a</m> to the output <m>f(a)</m></q>.
-        </p>
-      </statement>
-    </definition>
-    <definition xml:id="d_function_equality">
-      <title>Function equality</title>
-      <idx><h>function</h><h>equality</h></idx>
-      <statement>
-        <p>
-        Functions <m>f</m> and <m>g</m> are <term>equal</term> if
-        <ol marker="i">
-          <li>
-            <p>
-              they have the same domain <m>A</m> and codomain <m>B</m>, and
-            </p>
-          </li>
-          <li>
-            <p>
-              for all <m>a\in A</m>, we have <m>f(a)=g(a)</m>.
-            </p>
-          </li>
-        </ol>
-        </p>
-      </statement>
-    </definition> -->
-    <!-- <definition xml:id="d_function_composition">
-      <title>Function composition</title>
-      <idx><h>function</h><h>composition</h></idx>
-      <notation>
-        <usage><m>f\circ g</m></usage>
-        <description>the composition of <m>f</m> and <m>g</m></description>
-      </notation>
-      <statement>
-        <p>
-          Suppose <m>f\colon C\rightarrow D</m> and <m>g\colon A\rightarrow B</m> are functions satisfying <m>B\subseteq C</m>.  The <term>composition of <m>f</m> and <m>g</m></term>, denoted <m>f\circ g</m>, is the function from <m>A</m> to <m>D</m> defined as
-          <me>
-            f\circ g(a)=f(g(a))
-          </me>.
-        In other words, to evaluate <m>f\circ g</m> at the input <m>a</m> we <em>first</em> compute <m>g(a)</m>, and <em>then</em> compute <m>f(g(a))</m>.
-        </p>
-      </statement>
-    </definition> -->
-  <!-- </subsection> -->
   <subsection xml:id="ss_linear_transform">
     <title>Linear transformations</title>
-    <introduction>
-      First and foremost, a linear transformation is a function. Before continuing on in this section, you may want to reaquiant yourself with the basic function concepts and notation outlined in <xref ref="ss_functions" text="title"/>.
-    </introduction>
+    <p>
+       First and foremost, a linear transformation is a function. Before continuing on in this section, you may want to reaquiant yourself with the basic function concepts and notation outlined in <xref ref="s_functions" text="title"/>.
+    </p>
+     
   <definition xml:id="d_linear_transform">
     <title>Linear transformations</title>
 
@@ -121,14 +54,12 @@
       </p>
     </statement>
   </definition>
-    <remark>
-  <statement>
+  <remark>
     <p>
       How precisely does a linear transformation <q>respect</q> vector space structure?
       In plain English: the image of a sum is the sum of the images,
       and the image of a scalar multiple is the scalar multiple of the image.
     </p>
-  </statement>
 </remark>
   <p>
     As our first examples of linear transformations, we define the <em>zero transformation</em> and <em>identity transformation</em> on a vector space.
@@ -161,7 +92,6 @@
   </definition>
   <remark xml:id="rm_transform_zero_identity">
   <title>Model of linear transformation proof</title>
-  <statement>
     <p>
     Let's show that the zero and identity functions are indeed linear transformations.
     </p>
@@ -215,14 +145,12 @@
     </ol>
     This proves that <m>\id_V\colon V\rightarrow V</m> is a linear transformation.
     </p>
-  </statement>
 </remark>
 <theorem xml:id="th_transform_basic_props">
   <title>Basic properties of linear transformations</title>
   <statement>
     <p>
       Let <m>T\colon V\rightarrow W</m> be a linear transformation. Let <m>\boldzero_V</m> and <m>\boldzero_W</m> be the zero vectors of <m>V</m> and <m>W</m>, respectively.
-    </p>
     <ol>
       <li>
         <p>
@@ -245,6 +173,7 @@
         </p>
       </li>
     </ol>
+    </p>
   </statement>
   <proof>
     <p>
@@ -290,12 +219,10 @@
     </p>
   </proof>
 </theorem>
-    <remark xml:id="rm_transform_dist">
-  <statement>
-    <p>
-    Statement (3) of <xref ref="th_transform_basic_props"/> provides a more algebraic interpretation of how linear transformations preserve vector space structure: namely, they <em>distribute</em> over linear combinations of vectors.
-    </p>
-  </statement>
+  <remark xml:id="rm_transform_dist">
+  <p>
+  Statement (3) of <xref ref="th_transform_basic_props"/> provides a more algebraic interpretation of how linear transformations preserve vector space structure: namely, they <em>distribute</em> over linear combinations of vectors.
+  </p>
 </remark>
 
     <algorithm xml:id="proc_transform_onestep">
@@ -365,46 +292,40 @@
 
   </theorem>
     <remark xml:id="rm_matrix_transform">
-  <statement>
-    <p>
-      As the title of <xref ref="th_matrix_transform_i"/> suggests, there is a follow-up result (<xref ref="cor_matrix_transformations"/>), and this states that in fact <em>any</em> linear transformation <m>T\colon\R^n\rightarrow\R^m </m> is of the form <m>T=T_A</m> for some <m>m\times n</m> matrix <m>A</m>. In other words, all linear transformations from <m>\R^n</m> to <m>\R^m</m> are matrix transformations.
-    </p>
-    <p>
-      As general as these two results are, mark well the <em>restriction</em> that remains: they apply only to functions with domain and codomain equal to a vector spaces of tuples. They say nothing for example about functions from <m>\R^\infty</m> to <m>F([0,1],\R)</m>.
-    </p>
-  </statement>
+  <p>
+    As the title of <xref ref="th_matrix_transform_i"/> suggests, there is a follow-up result (<xref ref="cor_matrix_transformations"/>), and this states that in fact <em>any</em> linear transformation <m>T\colon\R^n\rightarrow\R^m </m> is of the form <m>T=T_A</m> for some <m>m\times n</m> matrix <m>A</m>. In other words, all linear transformations from <m>\R^n</m> to <m>\R^m</m> are matrix transformations.
+  </p>
+  <p>
+    As general as these two results are, mark well the <em>restriction</em> that remains: they apply only to functions with domain and codomain equal to a vector spaces of tuples. They say nothing for example about functions from <m>\R^\infty</m> to <m>F([0,1],\R)</m>.
+  </p>
 </remark>
     <remark xml:id="rm_matrix_transform_example">
-  <statement>
-    <p>
-    <xref ref="th_matrix_transform_i"/> gives rise to an alternative technique for showing a function <m>T\colon \R^n\rightarrow \R^m</m> is a linear transformation: show that <m>T=T_A</m> for some matrix <m>A</m>.
-    </p>
-    <p>
-      As an example, consider the function
-      <md>
-        <mrow>T\colon \R^2 \amp\rightarrow  \R^3 </mrow>
-        <mrow> (x,y)\amp\mapsto (7x+2y, -y, x) </mrow>
-      </md>.
-    </p>
-    Conflating tuples with column vectors as described in <xref ref="d_matrix_transform"/> we see that <m>T=T_A</m> where
-    <me>
-      A=\begin{amatrix}[rr]7\amp 2\\ 0\amp -1\\ 1\amp 0  \end{amatrix}
-    </me>.
-    In other words, the original formula is just a description in terms of tuples of the function
-    <me>
-      \begin{amatrix}[c]x\\ y  \end{amatrix}\mapsto A\begin{amatrix}[c]x\\ y  \end{amatrix}=\begin{amatrix}[c]7x+2y\\ -y\\ x  \end{amatrix}
-    </me>.
-    It follows from <xref ref="th_matrix_transform_i"/> that <m>T=T_A</m> is linear.
-  </statement>
+  <p>
+  <xref ref="th_matrix_transform_i"/> gives rise to an alternative technique for showing a function <m>T\colon \R^n\rightarrow \R^m</m> is a linear transformation: show that <m>T=T_A</m> for some matrix <m>A</m>.
+  </p>
+  <p>
+    As an example, consider the function
+    <md>
+      <mrow>T\colon \R^2 \amp\rightarrow  \R^3 </mrow>
+      <mrow> (x,y)\amp\mapsto (7x+2y, -y, x) </mrow>
+    </md>.
+  Conflating tuples with column vectors as described in <xref ref="d_matrix_transform"/> we see that <m>T=T_A</m> where
+  <me>
+    A=\begin{amatrix}[rr]7\amp 2\\ 0\amp -1\\ 1\amp 0  \end{amatrix}
+  </me>.
+  In other words, the original formula is just a description in terms of tuples of the function
+  <me>
+    \begin{amatrix}[c]x\\ y  \end{amatrix}\mapsto A\begin{amatrix}[c]x\\ y  \end{amatrix}=\begin{amatrix}[c]7x+2y\\ -y\\ x  \end{amatrix}
+  </me>.
+  It follows from <xref ref="th_matrix_transform_i"/> that <m>T=T_A</m> is linear.
+  </p>
 </remark>
 </subsection>
 <subsection xml:id="ss_rotations_reflections">
   <title>Rotations and reflections in the plane</title>
-<introduction>
-  <p>
-    We now introduce two very important geometric examples of linear transformations: rotations and reflections in the plane. These operations are described in detail below; we use <xref ref="th_matrix_transform_i"/> to prove these operations are in fact linear transformations.
-   </p>
-</introduction>
+<p>
+  We now introduce two very important geometric examples of linear transformations: rotations and reflections in the plane. These operations are described in detail below; we use <xref ref="th_matrix_transform_i"/> to prove these operations are in fact linear transformations.
+ </p>
 <definition xml:id="d_rotation">
   <title>Rotation in the plane</title>
   <idx><h>rotation</h><h>as linear transformation</h></idx>
@@ -462,8 +383,7 @@
   </proof>
 </theorem>
     <remark xml:id="rm_rotation_matrix">
-  <statement>
-    <p>
+  <p>
       Observe that it is not at all obvious geometrically that the rotation operation is <em>linear</em>: <ie />, that it preserves addition and scalar multiplication of vectors in <m>\R^2</m>. Indeed, our proof does not even show this directly, but instead first gives a matrix formula for rotation and then uses <xref ref="th_transform_rotation"/>.
     </p>
     <p>
@@ -475,7 +395,6 @@
     </me>
     can be understood as defining rotations of the plane, we call them <em>rotation matrices</em>.
     </p>
-  </statement>
 </remark>
 <example>
   <title>Rotation matrices</title>
@@ -521,8 +440,8 @@
   A second example of a geometric linear transformation is furnished by reflection through a line in <m>\R^2</m>.
 </p>
 <definition xml:id="d_reflection">
-  <idx><h>reflection</h><h>through a line</h></idx>
   <title>Reflection through a line</title>
+    <idx><h>reflection</h><h>through a line</h></idx>
   <statement>
       <p>
       Fix an angle <m>\alpha</m> with <m>0\leq \alpha \leq \pi </m>, and let <m>\ell_\alpha</m> be the line through the origin that makes an angle of <m>\alpha</m> with the positive <m>x</m>-axis.
@@ -599,11 +518,9 @@
 </subsection>
 <subsection xml:id="ss_transform_exotic_examples">
 <title>Additional examples</title>
-<introduction>
-  <p>
-    We now proceed to some examples involving our more exotic vector spaces.
-  </p>
-</introduction>
+<p>
+  We now proceed to some examples involving our more exotic vector spaces.
+</p>
 <example xml:id="eg_transform_transpose">
   <title>Transposition is linear</title>
   <statement>
@@ -721,93 +638,4 @@ Thus, we can now understand the definition of matrix multiplication as being cho
 <xi:include href="./s_transformation_ex.ptx"/>
 
 
-
-
-    <!-- <subsection>   ADD THESE TO LATER SECTIONS!!
-    <title>Exotic example: \alert{differentiaton}</title>
-    <p>
-      Let <m>V=C^\infty(\R)</m>,
-      the vector space of all infinitely differentiable functions on <m>\R</m>.
-      Define <m>T\colon C^\infty(\R)\rightarrow C^\infty(\R)</m> by <m>T(f)=f'</m>.
-      In other words, <m>T</m> takes as an input a function <m>f</m>,
-      and returns as an output its derivative function <m>f'</m>.
-    </p>
-    <subsection>
-      <title>Claim</title>
-      <p>
-        : <m>T</m> is a linear transformation.
-      </p>
-    </subsection>
-    <proof>
-      <p>
-        We must show <m>T(cf+dg)=cT(f)+dT(g)</m> for any scalars
-        <m>c,d\in\R</m> and any functions <m>f, g\in C^\infty(\R)</m>.
-      </p>
-      <p>
-        This follows easily from certain properties of the derivative:
-        <md>
-          <mrow>T(cf+dg)\amp =(cf+dg)' \amp \text{ (def. of \(T\)) }</mrow>
-          <mrow>\amp =(cf)'+(dg)'\amp \text{ (addition prop. of derivative) }</mrow>
-          <mrow>\amp =cf'+dg' \amp \text{ (scalar prop. of derivative) }</mrow>
-          <mrow>\amp =cT(f)+dT(g) \amp \text{ (def. of \(T\)) }</mrow>
-        </md>
-      </p>
-    </proof>
-    </subsection>
-    \item Let <m>V=P_n</m> and <m>W=P_{n+1}</m>,
-    the function \item Let <m>V=M_{mn}</m>, <m>W=M_{nm}</m>.
-    The function \item Let <m>V=C^1(-\infty,\infty)</m>,
-    <m>W=C(-\infty,\infty)</m>.
-    The function
-  </p>
-  <p>
-    \item Both <m>\NS(T)</m> and
-    <m>\range(T)</m> are indeed <em>subspaces</em>.
-    Note that they live in different spaces:
-    <m>\NS(T)\subseteq V</m> and <m>\range(T)\subseteq W</m>. \item We define
-    <m>\nullity(T)=\dim(\NS(T))</m> and <m>\rank(T)=\dim(\range(T))</m>.
-  </p>
-  <p>
-    \item We must show <m>\boldzero_W\in \range(T)</m>.
-    But <m>\boldzero_W=T(\boldzero_V)</m>.
-    Thus there is a <m>\boldv\in V</m> with <m>T(\boldv)=\boldzero_W</m>,
-    which proves that <m>\boldzero_W\in\range(T)</m>. \item Suppose <m>\boldw_1,\boldw_2\in \range(T)</m>.
-    This means there are <m>\boldv_1, \boldv_2\in V</m> such that <m>T(\boldv_i)=\boldw_i</m> for <m>i=1,2</m>.
-    We must show <m>\boldw=\boldw_1+\boldw_2\in\range(T)</m>.
-  </p>
-  <p>
-    \item Suppose <m>\boldw\in\range(T)</m>.
-    Then there is a <m>\boldv\in V</m> with <m>T(\boldv)=\boldw</m>.
-    Then <m>T(k\boldv)=kT(\boldv)=k\boldw</m>,
-    showing <m>k\boldw\in\range(T)</m>.
-  </p>
-  <p>
-    Let <m>S=\{\boldv_1,\boldv_2,\dots, \boldv_r\}</m> be a basis of <m>\NS(T)</m>; \alert{extend} this basis to a full basis <m>\{\boldv_1,\boldv_2,\dots, \boldv_r, \boldu_{1},\dots \boldu_{n-r}\}</m> of <m>V</m>.
-    Claim: <m>S'=\{T(\boldu_{1}),\dots, T(\boldu_{n-r})\}</m> is a basis of <m>\range(T)</m>.
-    If this is true we are done,
-    since we have <m>\dim(\NS(T))=\#S=r</m> and <m>\dim(\range(T))=\#S'=n-r</m>,
-    and thus Now ask your professor to prove the claim.
-  </p>
-  <p>
-    \item easily check whether two linear transformations are equal simply by checking that they agree on the basis elements <m>\boldv_i</m>.
-  </p>
-  <p>
-    Then
-  </p>
-  <p>
-    A simple drawing on the unit circle tells us what happens to these vectors when we rotate them by <m>\theta</m>.
-    We get:
-  </p>
-  <p>
-    Note further, that if we let <m>\phi</m> be the angle between
-    <m>\boldy=(y_1,y_2)</m> and <m>(1,0)</m>, then
-  </p>
-  <p>
-    Thus <m>\text{ proj } _W=T_A</m>,
-    where $A=\frac{1}{a^2+b^2+c^2}\begin{bmatrix}
-  </p>
-  <p>
-    Thus $\text{ proj } _W=T_A<m>,
-    where</m>A=\frac{1}{a^2+b^2+c^2}\begin{bmatrix}
-  </p> -->
-</section>
+   </section>

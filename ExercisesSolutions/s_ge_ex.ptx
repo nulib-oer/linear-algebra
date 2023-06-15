@@ -1,5 +1,6 @@
 <exercises xml:id="s_ge_ex">
 <exercisegroup>
+<title>Row echelon form</title>
   <introduction>
     Explain why each of the following matrices fails to be in row echelon form.
   </introduction>
@@ -53,6 +54,7 @@
 </exercise>
 </exercisegroup>
 <exercisegroup>
+<title>Gaussian elimination</title>
 <introduction>
   For each of the given linear systems, find an equivalent system in row echelon form. Use augmented matrices and follow the Gaussian elimination algorithm to the letter.
 </introduction>
