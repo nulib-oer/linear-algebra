@@ -1,4 +1,28 @@
 <exercises xml:id="s_basis_ex">
+<subexercises>
+  <title>Webwork Exercises</title>
+    <exercise>
+      <!-- basis of space of polynomials -->
+      <webwork source="Library/NAU/setLinearAlgebra/P3subspaceBasis.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- basis of kernel, transformation of polynomials -->
+      <webwork source="Library/NAU/setLinearAlgebra/P3kernelBasis.pg" />
+    </exercise>
+
+
+    <exercise>
+      <!-- basis of trace 0 matrices -->
+      <webwork source="Library/NAU/setLinearAlgebra/basisTrace0.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- basis of half magic matrices -->
+      <webwork source="Library/NAU/setLinearAlgebra/basisHalfMagic.pg" />
+    </exercise>
+</subexercises>
+
 <exercisegroup>
 <title>One-step basis technique</title>
 <introduction>
