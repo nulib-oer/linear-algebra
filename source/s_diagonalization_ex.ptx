@@ -177,33 +177,36 @@
     </statement>
   </exercise>
   <exercise>
-    <statement>
-      <p>
+    <p>
         In each case information about a matrix <m>A</m> is given. Decide whether <m>A</m> is diagonalizable.
       </p>
-      <ol>
-        <li>
-          <p>
-            <m>A\in M_{33}</m>, <m>p(t)=\det(tI-A)=t^3-t^2</m>, <m>\nullity A=2</m>
-          </p>
-        </li>
-        <li>
-          <p>
-            <m>A\in M_{33}</m>, <m>p(t)=\det(tI-A)=t^3+t^2-t</m>
-          </p>
-        </li>
-        <li>
-          <p>
+    <task>
+      <statement>
+        <p>
+           <m>A\in M_{33}</m>, <m>p(t)=\det(tI-A)=t^3-t^2</m>, <m>\nullity A=2</m>
+        </p>
+      </statement>
+    </task>
+    <task>
+      <statement>
+        <p>
+          <m>A\in M_{33}</m>, <m>p(t)=\det(tI-A)=t^3+t^2-t</m>
+        </p>
+      </statement>
+    </task>
+    <task>
+      <statement>
+        <p>
             <m>A\in M_{22}</m>, <m>\tr A=4</m>, <m>\det A=3</m>
-          </p>
-          <hint>
+        </p>
+      </statement>
+      <hint>
             <p>
               See <xref ref="rm_char_poly_trick"/>.
             </p>
           </hint>
-        </li>
-      </ol>
-    </statement>
+    </task>
+     
   </exercise>
   <exercise xml:id="ex_diagonalization">
     <statement>

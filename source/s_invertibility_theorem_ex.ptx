@@ -237,31 +237,32 @@
   </statement>
 </exercise>
 <exercise>
-  <statement>
+  <introduction>
+   <p>
+      Use the provided information to determine whether the given square matrix <m>A</m> is invertible. Justify your answer using the inveribility theorem or one of its corollaries.
+  </p>
+  </introduction>
+  
+  <task>
     <p>
-        Use the provided information to determine whether the given square matrix <m>A</m> is invertible. Justify your answer using the inveribility theorem or one of its corollaries.
+      There are column vectors <m>\boldx_1\ne \boldx_2</m> such that <m>A\boldx_1=A\boldx_2</m>.
     </p>
-    <task>
-      <p>
-        There are column vectors <m>\boldx_1\ne \boldx_2</m> such that <m>A\boldx_1=A\boldx_2</m>.
-      </p>
-    </task>
-    <task>
-      <p>
-        <m>A^2</m> is invertible.
-      </p>
-    </task>
-    <task>
-      <p>
-        <m>A^r=\boldzero</m> for some <m>r\geq 1</m>.
-      </p>
-    </task>
-    <task>
-      <p>
-        The sum of the columns of <m>A</m> is equal to the zero column vector.
-      </p>
-    </task>
-  </statement>
+  </task>
+  <task>
+    <p>
+      <m>A^2</m> is invertible.
+    </p>
+  </task>
+  <task>
+    <p>
+      <m>A^r=\boldzero</m> for some <m>r\geq 1</m>.
+    </p>
+  </task>
+  <task>
+    <p>
+      The sum of the columns of <m>A</m> is equal to the zero column vector.
+    </p>
+  </task>
 
 </exercise>
 <exercise>

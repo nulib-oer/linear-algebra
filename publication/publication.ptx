@@ -16,7 +16,6 @@
     <directories external="../assets" generated="../generated-assets"/>
   </source>
 
-  <!-- <webwork divisional="dynamic"/> -->
   <common>
         <tableofcontents level="2"/>
   </common>
@@ -55,6 +54,7 @@
     <!-- Whether to knowl a particular elements is set here    -->
     <!-- Lots of elements have this possibility; see the guide -->
     <knowl remark="no" project="yes" example="no" proof="yes"  />
+    <webwork divisional="dynamic"/>
     <!-- Specify the style of the html by giving names to      -->
     <!-- override defaults.  Ex: to use "style_oscarlevin.css" -->
     <!-- put <css style="oscarlevin"/>                         -->

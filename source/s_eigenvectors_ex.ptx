@@ -118,39 +118,42 @@
     </statement>
   </exercise>
   <exercise>
-    <statement>
+    <introduction>
       <p>
-        Let <m>A</m> be a square matrix.
-        <ol>
-          <li>
-            <p>
-              Prove: <m>A</m> and <m>A^T</m> have the same characteristic polynomial.
-            </p>
-            <hint>
-              <p>
-                First show that <m>(tI-A^T)=(tI-A)^T</m>, then use a relevant property of the determinant.
-              </p>
-            </hint>
-          </li>
-          <li>
-            <p>
-              Prove: <m>A</m> and <m>A^T</m> have the same eigenvalues.
-            </p>
-          </li>
-          <li>
-            <p>
-              Fix <m>\lambda\in \R</m> and let <m>W_\lambda, W_\lambda'</m> be the <m>\lambda</m>-eigenspaces of <m>A</m> and <m>A^T</m>, respectively. Prove: <m>\dim W_\lambda=\dim W_\lambda'</m>.
-            </p>
-            <hint>
-              <p>
-                First show that <m>(\lambda I-A^T)=(\lambda I -A)^T</m>, then use the rank-nullity theorem.
-              </p>
-            </hint>
-          </li>
-        </ol>
-
+      Let <m>A</m> be a square matrix.
       </p>
-    </statement>
+    </introduction>
+      <task>
+        <statement>
+          <p>
+        Prove: <m>A</m> and <m>A^T</m> have the same characteristic polynomial.
+      </p>
+        </statement>
+        <hint>
+        <p>
+          First show that <m>(tI-A^T)=(tI-A)^T</m>, then use a relevant property of the determinant.
+        </p>
+      </hint>
+      </task>
+      <task>
+        <statement>
+          <p>
+        Prove: <m>A</m> and <m>A^T</m> have the same eigenvalues.
+      </p>
+        </statement>
+      </task>
+      <task>
+        <statement>
+          <p>
+        Fix <m>\lambda\in \R</m> and let <m>W_\lambda, W_\lambda'</m> be the <m>\lambda</m>-eigenspaces of <m>A</m> and <m>A^T</m>, respectively. Prove: <m>\dim W_\lambda=\dim W_\lambda'</m>.
+      </p>
+        </statement>
+        <hint>
+        <p>
+          First show that <m>(\lambda I-A^T)=(\lambda I -A)^T</m>, then use the rank-nullity theorem.
+        </p>
+      </hint>
+      </task>
   </exercise>
 
   <exercise>

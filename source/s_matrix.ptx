@@ -122,7 +122,12 @@
   <example xml:id="ex_inequality">
     <statement>
       <p>
-        The matrix <m>A=\begin{bmatrix}1\amp 2\amp 3\amp 4 \end{bmatrix}</m> is not equal to <m>B=\begin{bmatrix} 1\\ 2\\ 3\\ 4\end{bmatrix}</m>, despite their having the same entries roughly in the same order: 1 is first, 2 is second, \<etc /> In this case equality does not hold as <m>A</m> and <m>B</m> have different shapes: <m>A</m> is <m>1\times 4</m>, and <m>B</m> is <m>4\times 1</m>.
+        The matrices 
+        <md>
+          <mrow>A \amp =\begin{bmatrix}1\amp 2\amp 3\amp 4 \end{bmatrix} 
+          \amp B\amp = \begin{bmatrix} 1\\ 2\\ 3\\ 4\end{bmatrix}</mrow>
+        </md>
+         are not equal to one another, despite their having the same entries that appear roughly in the same order. In this case equality does not hold as <m>A</m> and <m>B</m> have different shapes: <m>A</m> is <m>1\times 4</m>, and <m>B</m> is <m>4\times 1</m>.
       </p>
       <p>
         The matrices <m>A=\begin{bmatrix}1\amp 2 \\3\amp 4 \end{bmatrix}</m> and <m>B=\begin{bmatrix}1\amp 2\\ 5\amp 4\end{bmatrix}</m> have the same dimension, but are not equal since <m>[A]_{21}=3\ne 5=[B]_{21}</m>.
@@ -294,7 +299,9 @@
       </statement>
     </definition>
   <remark>
-  Observe that matrix addition/subtraction is not defined for any old pair of matrices. The ingredients of matrix addition (or subtraction) are two matrices <em>of the same dimension</em>; and the output is a third matrix of this common dimension.
+  <p>
+    Observe that matrix addition/subtraction is not defined for any pair of matrices. The ingredients of matrix addition (or subtraction) are two matrices <em>of the same dimension</em>; and the output is a third matrix of this common dimension.
+  </p>
   </remark>
   <definition xml:id="d_matrix_scalar_mult">
       <title>Scalar multiplication of matrices</title>
@@ -313,7 +320,11 @@
         </p>
       </statement>
     </definition>
-    <remark> Whereas matrix addition and subtraction closely resemble corresponding operations involving real numbers, there is no obvious real arithmetic analogue to matrix scalar multiplication. In particular, notice how matrix scalar multiplication is a sort of  <em>hybrid</em> operation that combines mathematical objects of two very different natures: a real number (or scalar) on the one hand, and a matrix on the other.</remark>
+    <remark> 
+    <p>
+    Whereas matrix addition and subtraction closely resemble corresponding operations involving real numbers, there is no obvious real arithmetic analogue to matrix scalar multiplication. In particular, notice how matrix scalar multiplication is a sort of  <em>hybrid</em> operation that combines mathematical objects of two very different natures: a real number (or scalar) on the one hand, and a matrix on the other.  
+    </p>
+    </remark>
     <p>
     We call the result of applying a sequence of matrix additions and scalar multiplications a <em>linear combination of matrices</em>.
     </p>
@@ -380,21 +391,19 @@
       </solution>
     </example>
         <remark xml:id="rm_entry_lin_comb">
-      <statement>
-        <p>
-          Let <m>A_1, A_2,\dots, A_r</m> be <m>m\times n</m> matrices,  An easy induction argument on <m>r</m> shows that for any scalars <m>c_1,c_2,\dots, c_r</m> we have
-          <me>
-             [c_1A_1+c_2A_2+\cdots +c_rA_r]_{ij} =c_1[A_1]_{ij}+c_2[A_2]_{ij}+\cdots c_r[A_r]_{ij}
-          </me>
-          for all <m>1\leq i\leq m</m>, <m>1\leq j\leq n</m>.
-          (See <xref ref="ex_entry_lin_comb"/>. )
-        </p>
-      </statement>
+      <p>
+        Let <m>A_1, A_2,\dots, A_r</m> be <m>m\times n</m> matrices,  An easy induction argument on <m>r</m> shows that for any scalars <m>c_1,c_2,\dots, c_r</m> we have
+        <me>
+           [c_1A_1+c_2A_2+\cdots +c_rA_r]_{ij} =c_1[A_1]_{ij}+c_2[A_2]_{ij}+\cdots c_r[A_r]_{ij}
+        </me>
+        for all <m>1\leq i\leq m</m>, <m>1\leq j\leq n</m>.
+        (See <xref ref="ex_entry_lin_comb"/>. )
+      </p>
     </remark>
 
   </subsection>
   <subsection xml:id="ss_matrix_mult">
-  <title>Matrix arithmetic: matrix multiplication</title>
+  <title>Matrix multiplication</title>
     <p>
       So how do we define the product of two matrices? Looking at the previous operations, you might have guessed that we should define the product of two <m>m\times n</m> matrices by taking the product of their corresponding entries. Not so!
     </p>
@@ -465,13 +474,40 @@ DL/.style={
       </latex-image>
     </image>
   </figure>
-
-    <p>
-    The formula for <m>[AB]_{ij}</m> is undoubtedly more complicated than you expected, and seems to come completely out of the blue. We will be able to retroactively motivate this definition once we introduce linear transformations. For now let's focus on understanding how and when we can compute the product of two matrices. In particular, let's concentrate on how matrix dimension comes into play.
+  <p>
+    The formula for the <m>ij</m>-th entry of a matrix product <m>AB</m> can be succinctly described as the <em>dot product</em> of the <m>i</m>-th row of <m>A</m> with the <m>j</m>-th column of <m>B</m>. We will have a lot more to say about the dot product and related operations in <xref ref="c_innerproductspaces"/>. For now we will provide an official definition so that we can conveniently describe matrix multiplication in terms of dot products. 
   </p>
+  <definition xml:id="d_dot_product">
+  <title>Dot product</title>
+    <statement>
+      <p>
+        Given <m>n</m>-tuples <m>\boldx=(x_1,x_2,\dots, x_n)</m> and <m>\boldy=(y_1,y_2,\dots, y_n)</m>, their <term>dot product</term>, denoted <m>\boldx\cdot \boldy</m>, is defined as 
+        <me>
+          \boldx\cdot \boldy=x_1y_1+x_2y_2+\cdots +x_ny_n
+        </me>.        
+      </p>
+    </statement>
+  </definition>
+  <theorem xml:id="th_matrix_mult_dot_product">
+    <statement>
+      <p>
+         Let <m>A</m> be an <m>m\times n</m> matrix, and let <m>B</m> be a <m>n\times r</m> matrix. For all <m>1\leq i\leq m</m>, let <m>\boldr_i</m> be the <m>i</m>-th row of <m>A</m>; and for all <m>1\leq k\leq r</m> let <m>\boldc_j</m> be the <m>j</m>-th column of <m>B</m>. For all <m>1\leq i\leq m, 1\leq j\leq n</m>, we have
+      <me>
+        (AB)_{ij}=\boldr_i\cdot \boldc_j
+      </me>,
+      where <m>\boldr_i</m> and <m>\boldc_j</m> are treated as <m>n</m>-tuples.
+      In other words, the <m>ij</m>-th entry of <m>AB</m> is the dot product of the <m>i</m>-th row of <m>A</m> and the <m>j</m>-th column of <m>B</m>.
+      </p>
+    </statement>
+  </theorem>
+  <remark>
+    <title>Size and matrix multiplication</title>
     <p>
-      For the product of <m>A_{mn}</m> and <m>B_{pr}</m> to be defined,
-      we need <m>n=p</m>. In other words for the product below to make sense we need the
+      Observe how, like addition, matrix multiplication is not defined for any pair of matrices: there must be a certain agreement in their dimensions. 
+    </p>
+    <p>
+      In more detail, for the product of <m>A_{mn}</m> and <m>B_{pr}</m> to be defined,
+      we need <m>n=p</m>. In other words we need the
       <q>inner</q> dimensions of <m>A</m> and <m>B</m> to be equal:
       <me>
         \underset{m\times \boxed{n}}{A}\hspace{5pt} \underset{\boxed{n}\times r}{B}
@@ -481,13 +517,16 @@ DL/.style={
           \underset{\boxed{m}\times\cancel{n}}{A}\hspace{5pt}\underset{\cancel{n}\times\boxed{r}}{B}=\underset{m\times r}{AB}.
         </me>
       </p>
-      <p>
-      All of this will make more sense once we begin thinking of matrices <m>A</m> as defining certain functions <m>T_A</m>.
+  </remark>
+
+  <p>
+    The formula for <m>AB</m> is undoubtedly more complicated than you expected, and seems to come completely out of the blue.
+      All of this will make more sense once we begin thinking of matrices <m>A</m> as defining certain functions <m>T_A</m>. 
       Our formula for the entries of
       <m>AB</m> is chosen precisely so that this new matrix corresponds to the <em>composition</em>
       of the functions <m>T_A</m> and <m>T_B</m>: <ie /> so that
-      <me> T_{AB}=T_A\circ T_B</me>.
-      The ponderous restriction on the dimensions of the ingredient matrices ensures that the two functions <m>T_A</m> and <m>T_B</m> can be composed. (See <xref ref="ss_transform_composition" text="custom">Composition of linear transformations and matrix multiplication</xref>.)
+      <me> T_{AB}=T_A\circ T_B</me>. (See <xref ref="th_transform_composition"/>.)
+      Under this interpretation, the ponderous restriction on the dimensions of the ingredient matrices ensures that the two functions <m>T_A</m> and <m>T_B</m> can be composed. 
     </p>
     <project>
       <title>Matrix arithmetic</title>

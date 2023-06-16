@@ -13,7 +13,7 @@
       <output-dir>output/web</output-dir>
       <!-- WeBWork exercises are non-interactive by default -->
       <!-- We disable this behavior -->
-      <stringparam key="webwork.divisional.static" value="no"/>
+      <!-- <stringparam key="webwork.divisional.static" value="no"/> -->
     </target>
     <target name="print" pdf-method="xelatex">
       <format>pdf</format>

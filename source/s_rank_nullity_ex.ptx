@@ -182,7 +182,7 @@
     <ol>
       <li>
       <p>
-        Clearly, <m>B=\{(1,1)\}</m> is a basis for <m>\CS A</m>, and <m>B'=\{(1,1,1,1)\}</m> is a basis for <m>\RS A</m>. It follows that <m>\rank A=1</m> and hence <m>\nullity A=4-1=3</m>. Thus we need to find three linearly independent elements of <m>\NS A</m> to find a basis. We can do so by inspection with the help of the column method. Namely, observe that <m>\boldv_1=(1,-1,0,0), \boldv_2=(0,1,-1,0), \boldv_3=(0,0,1,-1)</m> are all in <m>\NS A</m> (column method). The location of zeros in these vectors make it clear that <m>B''=\{\boldv_1,\boldv_2, \bolv_3\}</m> are linearly independent. Since <m>\dim NS A=3</m>, and <m>\val{B''}=3</m>, we conclude that <m>B''</m> is a basis of <m>\NS A</m> (<xref ref="cor_dimension_subspace" text="global"/>).
+        Clearly, <m>B=\{(1,1)\}</m> is a basis for <m>\CS A</m>, and <m>B'=\{(1,1,1,1)\}</m> is a basis for <m>\RS A</m>. It follows that <m>\rank A=1</m> and hence <m>\nullity A=4-1=3</m>. Thus we need to find three linearly independent elements of <m>\NS A</m> to find a basis. We can do so by inspection with the help of the column method. Namely, observe that <m>\boldv_1=(1,-1,0,0), \boldv_2=(0,1,-1,0), \boldv_3=(0,0,1,-1)</m> are all in <m>\NS A</m> (column method). The location of zeros in these vectors make it clear that <m>B''=\{\boldv_1,\boldv_2, \boldv_3\}</m> are linearly independent. Since <m>\dim NS A=3</m>, and <m>\val{B''}=3</m>, we conclude that <m>B''</m> is a basis of <m>\NS A</m> (<xref ref="cor_dimension_subspace" text="global"/>).
       </p>
     </li>
   </ol>
