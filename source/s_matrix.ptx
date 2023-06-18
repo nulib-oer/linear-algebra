@@ -981,7 +981,7 @@ DL/.style={
       <p>
         Given an <m>m\times n</m> matrix
         <m>A=[a_{ij}]</m> its transpose <m>A^T</m> is the matrix whose <m>ij</m>-entry is the <m>ji</m>-th entry of <m>A</m>.
-        In other words, <m>A^T</m> is the <m>n\times m</m> matrix satisfying <m>(A^T)_{ij}=(A)_{ji}</m> for all <m>1\leq i\leq n</m> and <m>1\leq j\leq m</m>.
+        In other words, <m>A^T</m> is the <m>n\times m</m> matrix satisfying <m>[A^T]_{ij}=[A]_{ji}</m> for all <m>1\leq i\leq n</m> and <m>1\leq j\leq m</m>.
       </p>
     </statement>
   </definition>
