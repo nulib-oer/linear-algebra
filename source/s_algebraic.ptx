@@ -262,46 +262,57 @@ The example in our warning above is but one instance of the general failure of t
     <theorem xml:id="th_matrix_abnormalities">
       <title>Matrix algebra abnormalities</title>
       <statement>
-        <ol>
-        <li>
+        <p>
+          <ol>
+        <li xml:id="th_mult_not_commutative">
         <title>Matrix multiplication is not commutative</title>
           <p>
             For two <m>n\times n</m> matrices <m>A</m> and <m>B</m>, we do <em>not</em> necessarily have <m>AB=BA</m>.
           </p>
         </li>
-        <li>
+        <li xml:id="th_mult_has_zero_divisors">
         <title>Products of nonzero matrices may be equal to zero</title>
         <p>
           If the product of two matrices is the zero matrix,
           we <em>cannot</em> conclude that one of matrices is the zero matrix. In logical notation:
-          <me>
-            \underset{m\times n}{A}\underset{n\times r}{B}=0_{m\times r}\;\not\!\!\!\!\implies A=0_{m\times n} \text{ or }  B=0_{n\times r}
-          </me>.
+          <men xml:id="eq_mult_has_zero_divisors">
+            \underset{m\times n}{A}\, \underset{n\times r}{B}=\boldzero_{m\times r}\;\not\!\!\!\!\implies A=\boldzero_{m\times n} \text{ or }  B=\boldzero_{n\times r}
+          </men>.
               </p>
             </li>
-
           </ol>
+        </p>
+        
       </statement>
     </theorem>
-  <proof>
-    <p>
-      To prove that an identity does not hold, it suffices to provide a single counterexample to that effect. We do so for each statement in turn. There is no significance to the particular counterexamples chosen here, and indeed there are infinitely many counterexamples to choose from in both cases.
-    </p>
+  <p>
+      This is a good place to point out that to prove an identity does not hold, it suffices to provide a single counterexample to that effect. We do so for each failed identity of <xref ref="th_matrix_abnormalities"/> in turn. There is no significance to the particular counterexamples chosen here, and indeed there are infinitely many counterexamples to choose from in both cases.
     <ol>
       <li>
-        <p>Observe that <m>\begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix} \begin{bmatrix}0\amp 1\\ 0\amp 0 \end{bmatrix} \ne \begin{bmatrix}0\amp 1\\ 0\amp 0 \end{bmatrix} \begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix} </m>.
+        <p>We have 
+        <md>
+          <mrow> \begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix} \begin{bmatrix}0\amp 1\\ 0\amp 0 \end{bmatrix}\amp = \begin{matrix} 0\amp 1 \\ 0 \amp 0\end{bmatrix}</mrow>
+          <mrow> \begin{bmatrix}0\amp 1\\ 0\amp 0 \end{bmatrix} \begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix} \amp= \begin{bmatrix} 0\amp 0\\ 0\amp 0 \end{bmatrix} </mrow>
+        </md>
+        and thus 
+        <me>\begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix} \begin{bmatrix}0\amp 1\\ 0\amp 0 \end{bmatrix} \ne \begin{bmatrix}0\amp 1\\ 0\amp 0 \end{bmatrix} \begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix}
+        </me>.
         </p>
       </li>
       <li>
         <p>
-            Observe that <m>\begin{bmatrix}0\amp 1\\ 0\amp 0 \end{bmatrix} \begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix} =\begin{bmatrix}0\amp 0\\ 0\amp 0 \end{bmatrix} </m>. This is an example of two nonzero matrices whose product is the zero matrix.
+            Observe that 
+            <me>
+              \begin{bmatrix}0\amp 1\\ 0\amp 0 \end{bmatrix} \begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix} =\begin{bmatrix}0\amp 0\\ 0\amp 0 \end{bmatrix} 
+            </me>.
+         This is an example of two nonzero matrices whose product is the zero matrix.
         </p>
       </li>
     </ol>
-
-  </proof>
-
-
+</p>
+<p>
+  An important consequence of the abnormality <xref ref="eq_mult_has_zero_divisors"/> is that matrix algebra does not enjoy the property of <em>multiplicative cancellation</em>. 
+</p>
   <corollary xml:id="th_matrix_cancel">
     <title>Failure of multiplicative cancellation</title>
     <statement>
