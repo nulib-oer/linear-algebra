@@ -24,26 +24,27 @@
       <p>
         An <m>n\times n</m> matrix <m>A</m>  is <term>invertible</term> (or <term>nonsingular</term>)
         if there is a <m>n\times n</m> matrix <m>B</m> satisfying
-        <me>
+        <men xml:id="eq_matrix_inverse">
           AB=BA=I_n
-        </me>.
+        </men>.
         When this is the case we call <m>B</m> an
         <term>inverse</term> of <m>A</m>,
         and we say that <m>A</m> and <m>B</m> are
         <term>inverses</term> of one another.
       </p>
       <p>
-        A square matrix that is not invertible is called <term>singular</term>.
+        A matrix <m>B</m> satisfying <xref ref="eq_matrix_inverse"/> is called an <term>inverse</term> of <m>A</m>, denoted <m>A^{-1}</m>. 
       </p>
       <p>
-      According to <xref ref="th_inverse_unique"/> the inverse of a matrix <m>A</m>, if it exists, is unique. We denote this unique inverse <m>A^{-1}</m>.
+        A square matrix that is not invertible is called <term>singular</term>.
       </p>
     </statement>
   </definition>
-  The phrase <q>an inverse</q> in <xref ref="d_invertible_matrix"/> is somewhat jarring. Shouldn't we speak of <em>the inverse</em> of a matrix? Not surprisingly, if a matrix is invertible, then it has one and only one inverse. As intuitive as this fact may seem, however, it still requires proof.
+  <p>
+    The phrase <q>an inverse</q> in <xref ref="d_invertible_matrix"/> is somewhat jarring. Shouldn't we speak of <em>the inverse</em> of a matrix? Not surprisingly, if a matrix is invertible, then it has one and only one inverse. As intuitive as this fact may seem, however, it still requires proof.
+  </p>
 <theorem xml:id="th_inverse_unique">
   <title>Inverses are unique</title>
-
   <statement>
     <p>
       If <m>A</m> is an invertible matrix, then its inverse is unique: that is, there is only one matrix <m>B</m> satisfying <m>AB=BA=I</m>.
@@ -68,11 +69,10 @@
     </p>
   </proof>
 <p>
-  The next theorem tells us that we can multiplicatively <q>cancel</q> a matrix if it is <em>invertible</em>.
+  The next theorem tells us that we <em>can</em> multiplicatively cancel a matrix if it is <em>invertible</em>.
 </p>
 <theorem xml:id="th_inverse_cancel">
   <title>Solving with invertible matrices</title>
-
   <statement>
     <p>
       Suppose <m>A</m> is an invertible <m>n\times n</m> matrix. Then

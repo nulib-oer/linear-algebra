@@ -292,7 +292,7 @@ The example in our warning above is but one instance of the general failure of t
         <p>We have 
         <md>
           <mrow> \begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix} \begin{bmatrix}0\amp 1\\ 0\amp 0 \end{bmatrix}\amp = \begin{matrix} 0\amp 1 \\ 0 \amp 0\end{bmatrix}</mrow>
-          <mrow> \begin{bmatrix}0\amp 1\\ 0\amp 0 \end{bmatrix} \begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix} \amp= \begin{bmatrix} 0\amp 0\\ 0\amp 0 \end{bmatrix} </mrow>
+          <mrow> \begin{bmatrix}0\amp 1\\ 0\amp 0 \end{bmatrix} \begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix} \amp = \begin{bmatrix} 0\amp 0\\ 0\amp 0 \end{bmatrix} </mrow>
         </md>
         and thus 
         <me>\begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix} \begin{bmatrix}0\amp 1\\ 0\amp 0 \end{bmatrix} \ne \begin{bmatrix}0\amp 1\\ 0\amp 0 \end{bmatrix} \begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix}
@@ -320,17 +320,17 @@ The example in our warning above is but one instance of the general failure of t
         <li>
           <p>
             Suppose matrices <m>A, B, C</m> satisfy <m>AB=AC</m>. We <em>cannot</em> conclude that <m>B=C</m>. In logical notation:
-            <md>
-              <mrow>AB=AC \;\not\!\!\!\!\implies B=C</mrow>
-            </md>
+            <men xml:id="eq_no_left_cancel" >
+              AB=AC \;\not\!\!\!\!\implies B=C
+            </men>
           </p>
         </li>
         <li>
           <p>
             Suppose matrices <m>B, C, D</m> satisfy <m>BD=CD</m>. We <em>cannot</em> conclude that <m>B=C</m>. In logical notation:
-            <md>
-              <mrow>BD=CD \;\not\!\!\!\!\implies B=C</mrow>
-            </md>
+            <men xml:id="eq_no_right_cancel">
+              BD=CD \;\not\!\!\!\!\implies B=C
+            </men>
           </p>
         </li>
       </ol>
