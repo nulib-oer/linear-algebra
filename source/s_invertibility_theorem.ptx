@@ -2,7 +2,7 @@
   <title>The invertibility theorem</title>
   <introduction>
     <p>
-    We saw in <xref ref="ex_invertible_matrices"/> that verifying directly whether a matrix is invertible, using only <xref ref="d_invertible_matrix"/>, can be quite an involved task. The goal of this section is to make this invertibility less onerous by developing some equivalent methods of testing invertibility. Our work culminates in <xref ref="th_invertibility"/> and <xref ref="th_invertibility_algorithm"/>, which draw connections between invertibility, solutions to linear systems, and row echelon forms of a square matrix. Not surprisingly, our old friend Gaussian elimination emerges as the fundamental computational tool.
+    We saw in <xref ref="ex_invertible_matrices"/> that verifying directly whether a matrix is invertible, using only <xref ref="d_invertible_matrix"/>, can be quite an involved task. The goal of this section is to make this less onerous by developing some equivalent methods of testing invertibility. Our work culminates in <xref ref="th_invertibility"/> and <xref ref="th_invertibility_algorithm"/>, which draw connections between invertibility, solutions to linear systems, and row echelon forms of a square matrix. Not surprisingly, our old friend Gaussian elimination emerges as the fundamental computational tool.
     </p>
   </introduction>
 <subsection xml:id="ss_elementary_matrix">
@@ -61,7 +61,7 @@
   <title>Elementary matrix formulas</title>
   <statement>
     <p>
-    Fix an integer <m>m\geq 2</m>. The three types of <m>n\times n</m> elementary matrices can be described as follows:
+    Fix an integer <m>n\geq 2</m>. The three types of <m>n\times n</m> elementary matrices can be described as follows:
     </p>
     <ul>
       <li>
@@ -207,7 +207,7 @@
         \matrix[Matrix] at (0,0) (M){ % Matrix contents
     \amp   \amp\text{$j$-th}  \amp  \amp\text{$i$-th} \amp \amp \\
   \amp 1 \amp 0 \amp 0 \amp 0 \amp \dots \amp 0\\
-  \amp 0 \amp 1 \amp 0 \amp 0 \amp \dots \amp 0\\
+  \text{$j$-th}\amp 0 \amp 1 \amp 0 \amp 0 \amp \dots \amp 0\\
  \amp \amp  \vdots \amp  \amp  \amp  \vdots \amp   \\
  \text{$i$-th} \amp \dots\amp c \amp \dots \amp1  \amp \dots \amp 0 \\
   \amp  \amp \vdots \amp  \amp  \amp \vdots \amp  \\
@@ -844,7 +844,7 @@ The two inveribility algorithms above are nice examples of how a <em>theoretical
         Let <m>A</m> and <m>B</m> be <m>n\times n</m>.
         Then <m>AB</m> is invertible if and only if <m>A</m> and <m>B</m> are both invertible: <ie />,
         <me>
-          A, B \text{ invertible }\iff AB \text{ invertibe}
+          A, B \text{ invertible }\iff AB \text{ invertible}
         </me>
       </p>
     </statement>
@@ -881,7 +881,9 @@ The two inveribility algorithms above are nice examples of how a <em>theoretical
 
     </proof>
   </corollary>
-We conclude with two results related to row reduction. The first provides an equivalent formulation of row equivalence in terms of matrix arithmetic.
+<p>
+  We conclude with two results related to row reduction. The first provides an equivalent formulation of row equivalence in terms of matrix arithmetic: an elaboration of our discussion in <xref ref="ss_systems_to_matrix_eqns"/>.
+</p>
 <corollary xml:id="cor_row_equivalence_invertibility">
   <title>Row equivalence and invertible matrices</title>
   <statement>
@@ -895,6 +897,14 @@ We conclude with two results related to row reduction. The first provides an equ
         </li>
         <li>
           <p>
+            There are elementary matrices <m>E_1, E_2, \dots, E_r</m> such that 
+            <m>
+              E_rE_{r-1}\cdots E_1A=B
+            </m>. 
+          </p>
+        </li>
+        <li>
+          <p>
             There is an invertible <m>m\times m</m> matrix <m>Q</m> such that <m>QA=B</m>.
           </p>
         </li>
@@ -902,47 +912,45 @@ We conclude with two results related to row reduction. The first provides an equ
     </p>
   </statement>
   <proof>
-    As discussed in <xref ref="ss_systems_to_matrix_eqns"/> the matrices <m>A</m> and <m>B</m> are row equivalent if and only if there are <m>m\times m</m> elementary matrices <m>E_1, E_2, \dots, E_r</m> satisfying
-    <me>
-      E_rE_{r-1}\cdots E_1 A=B
-    </me>.
-    The corollary now follows from (5) of <xref ref="th_invertibility"/> since a matrix <m>Q</m> is invertible if and only if it can be written as
+   <p>
+    The equivalence of (1) and (2) was shown in the course of our discussion in <xref ref="ss_systems_to_matrix_eqns"/>. The equivalence of (2) and (3) is a direct consequence of (5) of <xref ref="th_invertibility"/> since a matrix <m>Q</m> is invertible if and only if it can be written as
     <me>
       Q=E_rE_{r-1}\cdots E_1
     </me>
     for some elementary matrices <m>E_i</m>.
+   </p> 
   </proof>
 </corollary>
-    <remark xml:id="rm_row_equivalence_props">
+  <remark xml:id="rm_row_equivalence_props">
   <title>Properties of row equivalence</title>
-  <statement>
-    <p>
-     With the help of <xref ref="cor_row_equivalence_invertibility"/>, we can easily show that the row equivalence relation is <em>reflexive</em>, <em>symmetric</em>, and <em>transitive</em>. In other words, letting <m>A\sim B</m> denote that <m>A</m> is row equivalent to <m>B</m>, the following properties hold.
-     <ol marker="i">
-       <li>
-         <title>Reflexivity</title>
-         <p>
-        For any matrix <m>A</m>,  we have <m>A\sim A</m>: <ie />, every matrix is row equivalent to itself.
-         </p>
-       </li>
-       <li>
-         <title>Symmetry</title>
-         <p>
-           For all matrices <m>A</m> and <m>B</m>, if <m>A\sim B</m>, then <m>B\sim A</m>.
-         </p>
-       </li>
-       <li>
-         <title>Transitivity</title>
-         <p>
-           For all matrices <m>A, B, C</m>, if <m>A\sim B</m> and <m>B\sim C</m>, then <m>A\sim C</m>.
-         </p>
-       </li>
-     </ol>
-     The proof of these facts is left as an exercise (<xref ref="ex_row_equiv_props"/>).
-    </p>
-  </statement>
+  <p>
+   With the help of <xref ref="cor_row_equivalence_invertibility"/>, we can easily show that the row equivalence relation is <em>reflexive</em>, <em>symmetric</em>, and <em>transitive</em>. In other words, letting <m>A\sim B</m> denote that <m>A</m> is row equivalent to <m>B</m>, the following properties hold.
+   <ol marker="i">
+     <li>
+       <title>Reflexivity</title>
+       <p>
+      For any matrix <m>A</m>,  we have <m>A\sim A</m>: <ie />, every matrix is row equivalent to itself.
+       </p>
+     </li>
+     <li>
+       <title>Symmetry</title>
+       <p>
+         For all matrices <m>A</m> and <m>B</m>, if <m>A\sim B</m>, then <m>B\sim A</m>.
+       </p>
+     </li>
+     <li>
+       <title>Transitivity</title>
+       <p>
+         For all matrices <m>A, B, C</m>, if <m>A\sim B</m> and <m>B\sim C</m>, then <m>A\sim C</m>.
+       </p>
+     </li>
+   </ol>
+   The proof of these facts is left as an exercise (<xref ref="ex_row_equiv_props"/>).
+  </p>
 </remark>
-Lastly, we provide at last the proof of the third statement of <xref ref="th_matrixforms"/> promised back in <xref ref="s_ge"/>. This proof is due to Thomas Yuster<fn>Thomas Yuster. <em>The reduced row echelon form of a matrix is unique: a simple proof</em>, Mathematics Magazine <term>57</term> (1984), no. 2, 93-94. </fn>.
+<p>
+  Lastly, we provide at last the proof of the third statement of <xref ref="th_matrixforms"/> promised back in <xref ref="s_ge"/>. This proof is due to Thomas Yuster<fn>Thomas Yuster. <em>The reduced row echelon form of a matrix is unique: a simple proof</em>, Mathematics Magazine <term>57</term> (1984), no. 2, 93-94. </fn>.
+</p>
 <corollary xml:id="cor_RRE_uniqueness">
   <title>Uniqueness of reduced row echelon form</title>
   <statement>

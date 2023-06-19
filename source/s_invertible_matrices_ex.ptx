@@ -20,7 +20,14 @@
       <!-- 2x2 invertibility involving a variable -->
       <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/3.3.59.pg" />
     </exercise>
+
+    <exercise>
+    <!-- computation problem involving transposes and addition of matrices -->
+    <webwork source="Library/Utah/Business_Algebra/set10_Matrices/p24.pg" />
+  </exercise>
   </subexercises>
+  <subexercises>
+  <title>Written Exercises</title>
   <exercise>
     <statement>
       <p>
@@ -158,6 +165,8 @@
           <p>
             Prove: if <m>c\ne 0</m>, then <m>A</m> is invertible.
           </p>
+        </li>
+        <li>
           <p>
             Suppose further that <m>A</m> is not a scalar multiple of <m>I_n</m>.
           </p>
@@ -168,19 +177,38 @@
       </ol>
     </statement>
   </exercise>
+  <exercise xml:id="ex_expand_matrix_prod">
+  <title>Expanding matrix products</title>
+    <p>
+      Fix a positive integer <m>n</m>. Given linear combinations of <m>n\times n</m> matrices  
+    <md>
+      <mrow>A \amp =c_1A_1+c_2A_2+\cdots c_rA_r=\sum_{i=1}^rc_iA_i</mrow>
+      <mrow>B \amp =d_1B_1+d_2B_2+\cdots +d_sB_s=\sum_{j=1}^sd_jB_j</mrow>
+    </md>,
+    prove by induction on <m>r\geq 1</m> that 
+    <me>
+      AB=\sum_{i=1}^r\sum_{j=1}^sc_id_jA_iB_j
+    </me>.
+    Note that each step (base and induction) of your induction on <m>r</m> will require an argument that uses induction on <m>s</m>! This is sometimes called <em>double induction</em>.  For example, in the base step <m>r=1</m> you must show that  
+    <me>
+      c_1A_1(d_1B_1+d_2B_2+\cdots +d_sB_s)=c_1d_1A_1B_1+c_1d_2A_1B_2+\cdots c_1d_sA_1B_s
+    </me>
+    for any <m>s\geq 1</m>; this should be proved by induction on <m>s</m>. 
+    </p>
+    
+  </exercise>
   <exercise xml:id="ex_poly_inA_commute">
     <title>Polynomial expressions of <m>A</m> commute</title>
     <statement>
       <p>
-        Let <m>p(x)=\anpoly</m>,        <m>a_n\ne 0</m>, and <m>q(x)=\bmpoly</m>,        <m>b_m\ne 0</m> be polynomials with real coefficients.
-      </p>
-      <p>
+        Let <m>p(x)=\anpoly</m> and <m>q(x)=\bmpoly</m> be polynomials with real coefficients. 
         For any square matrix <m>A</m>, show that the matrices <m>p(A)</m> and <m>q(A)</m> commute: i.e.,
         <me> p(A)q(A)=q(A)p(A)
         </me>.
+        You may use the result of <xref ref="ex_expand_matrix_prod"/>. 
       </p>
     </statement>
-    <hint>
+    <!-- <hint>
       <p>
         First show by induction that <m>A^nq(A)=q(A)A^n</m> for any <m>n\geq 0</m>.
       </p>
@@ -188,7 +216,6 @@
     <solution>
       <p>
       We prove by induction that <m>A^nq(A)=q(A)A^n</m> for any <m>n\geq 0</m>, a special case of the result.
-      </p>
       <case>
         <title>Base step: <m>n=0</m>
         </title>
@@ -220,9 +247,8 @@
           </md>.
         </p>
       </case>
-      <p>This proves the special case that <m>A^nq(A)=q(A)A^n</m> for all <m>n\geq 0</m>.
       </p>
-      <p>
+      <p>This proves the special case that <m>A^nq(A)=q(A)A^n</m> for all <m>n\geq 0</m>.
       To show the result for an arbitrary polynomial <m>p(x)=\anpoly</m> we use various distributive properties:
         <md>
           <mrow>p(A)q(A)=(a_nA^n+a_{n-1}A^{n-1}+\cdots +a_1A+a_0I)q(A) \amp= a_nA^nq(A)+a_{n-1}A^{n-1}q(A)+\cdots +a_1Aq(A)+a_0q(A) </mrow>
@@ -232,7 +258,7 @@
         </md>
       </p>
 
-    </solution>
+    </solution> -->
   </exercise>
   <exercise>
     <statement>
@@ -243,9 +269,10 @@
         Show that <m>(A-I)</m> is invertible, and that in fact
         <me> (A-I)^{-1}=-(A^{r-1}+A^{r-2}+\cdots +A+I)
         </me>.
-        You may use the result of <xref ref="ex_poly_inA_commute"/>
+        You may use the results of <xref ref="ex_expand_matrix_prod"/> and/or <xref ref="ex_poly_inA_commute"/>.
 .
       </p>
     </statement>
   </exercise>
+  </subexercises>
 </exercises>

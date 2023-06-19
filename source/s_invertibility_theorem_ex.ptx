@@ -2,10 +2,7 @@
   <subexercises>
     <title>WeBWork Exercises</title>
     
-    <exercise>
-      <!-- true false multiple types of products -->
-      <webwork source="Contrib/MountAllison/1-3_Matrices_and_Matrix_Operations/true_false.pg" />
-    </exercise>
+    
 
     <exercise>
       <!-- true/false elementary matrices -->
@@ -31,7 +28,79 @@
       <webwork source="Library/Rochester/setAlgebra35SystemMatrices/sw7_5_23.pg" />
     </exercise>
   </subexercises>
+  <subexercises>
+  <title>Written Exercises</title>
+  <exercisegroup>
+    <title>Linear systems and matrix equations</title>
+    <introduction>
+      <p>
+        Find a matrix <m>A</m> and column vectors <m>\boldx</m> and <m>\boldb</m> such that the given linear system is equivalent to the matrix equation <m>A\boldx=\boldb</m>. 
+      </p>
+    </introduction>
 
+    <exercise>
+      <statement>
+        <p>
+          <me>
+            \begin{linsys}{3}
+              x\amp +\amp 2y \amp -\amp z\amp =\amp 3 \\ 
+              -3x \amp \amp \amp  +\amp 2z\amp = \amp 0
+            \end{linsys}
+          </me>
+          
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          <me>
+            \begin{linsys}{2} 
+              2x\amp +\amp 3y\amp =\amp 5z+10 \\ 
+              y \amp -\amp z \amp =\amp -x+2 \\ 
+              z\amp +\amp x\amp = \amp -2y-4
+            \end{linsys} 
+          </me>
+  
+        </p>
+      </statement>
+    </exercise>
+  </exercisegroup>
+  <exercisegroup>
+    <title>Solving linear systems with matrix inverses</title>
+    <introduction>
+      <p>
+        Find an <em>invertible</em> matrix <m>A</m> and column vectors <m>\boldx</m> and <m>\boldb</m> such that the given linear system is equivalent to the matrix equation <m>A\boldx=\boldb</m>. Compute <m>A^{-1}</m> and use this to find the unique solution to the linear system.  (See <xref ref="rm_inv_solutions"/>.)
+      </p>
+    </introduction>
+    <exercise>
+      <statement>
+        <p>
+          <me>
+            \begin{linsys}{2}
+            7x\amp +\amp 2y\amp =\amp 3 \\ 
+            2x\amp +\amp y \amp =\amp -5
+            \end{linsys}
+          </me>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <me>
+            \begin{linsys}{3}
+             \amp \amp 2y\amp +\amp 3z \amp =\amp -2 \\ 
+             x\amp -\amp y \amp +\amp 2z \amp =\amp 1 \\ 
+             x \amp +\amp y \amp +\amp  6z \amp =\amp 1
+            \end{linsys}
+          </me>
+        </p>
+      </statement>
+    </exercise>
+  
+  </exercisegroup>
   <exercisegroup>
     <title>Inverse algorithm</title>
     <introduction>
@@ -166,11 +235,7 @@
     <exercise>
       <statement>
         <p>
-          <p>
             <m>A=\begin{amatrix}[rrr]1\amp 1\amp 0\\ 1\amp 1\amp 1\\ 0\amp 1\amp 1 \end{amatrix}</m>
-          </p>
-
-
         </p>
       </statement>
     </exercise>
@@ -186,10 +251,13 @@
     <statement>
       <p>
         According to Statement (2) of the invertibility theorem, a matrix <m>A</m> is invertible if and only if for all column vectors <m>\boldb</m> the matrix equation <m>A\boldx=\boldb</m> has a <em>unique</em> solution. Show that we can add the following, weaker-looking version of (2) to our list of equivalent statements:
+        </p>
         <blockquote>
-            (2') The matrix equation <m>A\boldx=\boldb</m> has <em>a</em> solution for any column vector <m>\boldb</m>.
+            <p>
+              (2') The matrix equation <m>A\boldx=\boldb</m> has <em>a</em> solution for any column vector <m>\boldb</m>.
+            </p>
         </blockquote>
-      </p>
+      
 
     </statement>
     <hint>
@@ -220,7 +288,7 @@
     <p>
         Show that the two matrix equations
       <md>
-        <mrow>A\underset{n\times 1}{\boldx} \amp=\underset{m\times 1}{\boldzero} </mrow>[2ex]
+        <mrow>A\underset{n\times 1}{\boldx} \amp=\underset{m\times 1}{\boldzero} </mrow>
         <mrow>(QA)\underset{n\times 1}{\boldx} \amp=\underset{m\times 1}{\boldzero} </mrow>
       </md>
         have the same set of solutions. In other words show that
@@ -266,12 +334,13 @@
 
 </exercise>
 <exercise>
-  <statement>
+  <introduction>
     <p>
           Answer true or false.
           If true, provide a proof; if false,
           exhibit an explicit counterexample.
     </p>
+  </introduction>
     <task>
       <p>
             The product of two <m>n\times n</m> elementary matrices is elementary.
@@ -316,21 +385,6 @@
                 If <m>A</m> or <m>B</m> is singular, then <m>AB</m> is singular.
       </p>
     </task>
-  </statement>
-  <solution>
-    <ol>
-      <li>
-        <p>
-                False. The matrices
-          <me> E_1=\begin{amatrix}[rr]1\amp 2\\ 0\amp 1  \end{amatrix}, E_2=\begin{amatrix}[rr]1\amp 0\\ 3\amp 1  \end{amatrix}
-          </me>
-                are both elementary, but
-          <me> E_1E_2=\begin{amatrix}[rr]7\amp 2\\ 3\amp 1  \end{amatrix}
-          </me>
-                is not elementary.
-        </p>
-      </li>
-    </ol>
-  </solution>
 </exercise>
+</subexercises>
 </exercises>

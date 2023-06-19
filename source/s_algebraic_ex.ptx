@@ -1,4 +1,26 @@
 <exercises xml:id="s_algebraic_ex">
+<subexercises>
+<title>WeBWork Exercises</title>
+<exercise>
+      <!-- true false multiple types of products -->
+      <webwork source="Contrib/MountAllison/1-3_Matrices_and_Matrix_Operations/true_false.pg" />
+    </exercise>
+
+    <!-- WeBWork Exercises about transpose -->
+
+  <exercise>
+    <!-- write down the dimensions of the transpose matrix -->
+    <webwork source="Library/Utah/Business_Algebra/set10_Matrices/p17.pg" />
+  </exercise>
+  
+  <exercise>
+    <!-- computation problem involving transposes and addition of matrices -->
+    <webwork source="Library/Utah/Business_Algebra/set10_Matrices/p21.pg" />
+  </exercise>
+
+</subexercises>
+<subexercises>
+<title>Written Exercises</title>
 <exercise>
   <statement>
     <p>
@@ -47,7 +69,7 @@
       </li>
     </ol>
   </statement>
-  <proof>
+  <solution>
     <p>
       <ol>
         <li>
@@ -62,7 +84,7 @@
         </li>
       </ol>
     </p>
-  </proof>
+  </solution>
 
 </exercise>
 <exercise>
@@ -192,8 +214,6 @@
         </p>
       </hint>
     </task>
-      
-    
-  
 </exercise>
+</subexercises>
 </exercises>

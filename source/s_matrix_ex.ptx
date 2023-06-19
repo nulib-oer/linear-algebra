@@ -28,8 +28,13 @@
     <webwork source="Library/ASU-topics/set119MatrixAlgebra/p14.pg" />
   </exercise>
 
-</subexercises>
+  
 
+  
+
+</subexercises>
+<subexercises>
+<title>Written Exercises</title>
 <exercise>
   <statement>
     <p>
@@ -116,6 +121,7 @@
     </p>
   </statement>
   <solution>
+   <p>
     <ol marker="(a)">
       <li>
         <p>
@@ -128,6 +134,7 @@
         </p>
       </li>
     </ol>
+   </p> 
   </solution>
 </exercise>
 <exercise>
@@ -203,25 +210,5 @@
     </p>
   </statement>
 </exercise>
-
-<subexercises>
-<!-- WeBWork Exercises about transpose -->
-<title>WeBWork Exercises</title>
-
-  <exercise>
-    <!-- write down the dimensions of the transpose matrix -->
-    <webwork source="Library/Utah/Business_Algebra/set10_Matrices/p17.pg" />
-  </exercise>
-  
-  <exercise>
-    <!-- computation problem involving transposes and addition of matrices -->
-    <webwork source="Library/Utah/Business_Algebra/set10_Matrices/p21.pg" />
-  </exercise>
-
-  <exercise>
-    <!-- computation problem involving transposes and addition of matrices -->
-    <webwork source="Library/Utah/Business_Algebra/set10_Matrices/p24.pg" />
-  </exercise>
-
 </subexercises>
 </exercises>
