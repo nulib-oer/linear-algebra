@@ -1,4 +1,38 @@
 <exercises xml:id="s_rank_nullity_ex">
+<subexercises>
+  <title>Webwork Exercises</title>
+    <exercise>
+      <!-- fill in the blanks -->
+      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.3.15.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- true/false -->
+      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.2.48_54a.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- true/false -->
+      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.2.41_47a.pg" />
+    </exercise>
+
+
+    <exercise>
+      <!-- compute rank and nullity -->
+      <webwork source="Library/Rochester/setLinearAlgebra10Bases/ur_la_10_22.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- computate rank and nullity -->
+      <webwork source="Library/Hope/Multi1/04-02-Kernel-image/Ker_im_12.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- computate rank and nullity -->
+      <webwork source="Library/Mizzou/Matrix_Theory/HW_4/prob_3.pg" />
+    </exercise>
+</subexercises>
+
   <exercise>
     <statement>
       <p>
