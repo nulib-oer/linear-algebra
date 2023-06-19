@@ -291,7 +291,7 @@ The example in our warning above is but one instance of the general failure of t
       <li>
         <p>We have 
         <md>
-          <mrow> \begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix} \begin{bmatrix}0\amp 1\\ 0\amp 0 \end{bmatrix}\amp = \begin{matrix} 0\amp 1 \\ 0 \amp 0\end{bmatrix}</mrow>
+          <mrow> \begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix} \begin{bmatrix}0\amp 1\\ 0\amp 0 \end{bmatrix}\amp = \begin{bmatrix} 0\amp 1 \\ 0 \amp 0\end{bmatrix}</mrow>
           <mrow> \begin{bmatrix}0\amp 1\\ 0\amp 0 \end{bmatrix} \begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix} \amp = \begin{bmatrix} 0\amp 0\\ 0\amp 0 \end{bmatrix} </mrow>
         </md>
         and thus 
