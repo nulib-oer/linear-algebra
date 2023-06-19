@@ -2,8 +2,6 @@
   <subexercises>
     <title>WeBWork Exercises</title>
     
-    
-
     <exercise>
       <!-- true/false elementary matrices -->
       <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/3.4.67.pg" />
