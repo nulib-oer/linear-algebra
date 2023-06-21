@@ -9,8 +9,8 @@
       2x_1+4x_2-10x_3+6x_4+12x_5\amp = \amp 28 \\
       2x_1+4x_2-5x_3+6x_4-5x_5\amp =\amp -1
     \end{array}
-    \amp \xrightarrow[]{\text{ aug. mat. } }\begin{bmatrix}0\amp 0\amp -2\amp 0\amp 7\amp 12\\ 2\amp 4\amp -10\amp 6\amp 12\amp 28\\ 2\amp 4\amp -5\amp 6\amp -5\amp -1 \end{bmatrix}</mrow>
-    <mrow>\amp \xrightarrow[]{\text{ Gauss. elim. } }\begin{bmatrix}1\amp 2\amp -5\amp 3\amp 6\amp 14\\ 0\amp 0\amp 1\amp 0\amp -\frac{7}{2}\amp -6\\ 0\amp 0\amp 0\amp 0\amp 1\amp 2 \end{bmatrix}</mrow>
+    \amp \xrightarrow[]{\text{ aug. mat. } }\begin{amatrix}[rrrrr|r]0\amp 0\amp -2\amp 0\amp 7\amp 12\\ 2\amp 4\amp -10\amp 6\amp 12\amp 28\\ 2\amp 4\amp -5\amp 6\amp -5\amp -1 \end{amatrix}</mrow>
+    <mrow>\amp \xrightarrow[]{\text{ Gauss. elim. } }\begin{amatrix}[rrrrr|r]1\amp 2\amp -5\amp 3\amp 6\amp 14\\ 0\amp 0\amp 1\amp 0\amp -\frac{7}{2}\amp -6\\ 0\amp 0\amp 0\amp 0\amp 1\amp 2 \end{amatrix}</mrow>
     <mrow>\amp \xrightarrow[]{\text{ new system } }\begin{array}{rcc} x_1+2x_2-5x_3+3x_4+6x_5\amp =\amp 14\\
     x_3-\frac{7}{2}x_5\amp =\amp -6\\
     x_5\amp =\amp 2 \end{array}</mrow>
@@ -92,17 +92,14 @@
       </men>
     </p>
     <remark xml:id="s_solving_rm_parametric">
-      <idx><h>parametric equations</h></idx>
       <title>Mandate</title>
-
-      <statement>
+      <idx><h>parametric equations</h></idx>
         <p>
           Get used to describing solutions to linear systems using either the set notation format of <xref ref="s_solving_eq_setnotation"/> or the parametric equation format of <xref ref="s_solving_eq_parametric"/>.
         </p>
         <p>
           Note also the distinct roles played by free and leading variables in the description of solutions. We assign each free variable <em>freely</em> to any choice of real parameters (<m>s</m> and <m>t</m> in our example), and then solve for the leading variables in terms of these parameters in a unique manner. In particular, the leading variables are completely determined by our assignment of free variables.
         </p>
-      </statement>
     </remark>
   </subsection>
   <subsection xml:id="ss_solveSystem">
@@ -111,10 +108,9 @@
       Before describing a precise algorithm for computing the set of solutions to a linear system, we must address the possibility that there are no solutions to the system whatsoever. Such a system is called <em>inconsistent</em>.
     </p>
     <definition xml:id="d_consistent">
+      <title>Consistent and inconsistent systems</title>
       <idx><h>consistent</h></idx>
       <idx><h>inconsistent</h></idx>
-      <title>Consistent and inconsistent systems</title>
-
       <statement>
         <p>
           A linear system is <term>consistent</term> if it has at least one solution; it is <term>inconsistent</term> if it has no solutions.
