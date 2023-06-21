@@ -59,11 +59,6 @@
     </exercise>
 
     <exercise>
-      <!-- computate rank and nullity -->
-      <webwork source="Library/Mizzou/Matrix_Theory/HW_4/prob_3.pg" />
-    </exercise>
-
-    <exercise>
       <!-- find vector in image -->
       <webwork source="Library/TCNJ/TCNJ_IntroLinearTransformations/problem23.pg" />
     </exercise>
