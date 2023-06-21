@@ -25,7 +25,7 @@
       </notation>
       <statement>
         <p>
-          Let <m>A</m> be an <m>n\times n</m> matrix with <m>n\geq 2</m>. Given <m>1\leq i, j\leq n</m>, the <term>submatrix of <m>A</m></term> obtained by removing the <m>i</m>-th row and <m>j</m>-th column of <m>A</m> is denoted <m>A_{i  k}</m>.
+          Let <m>A</m> be an <m>n\times n</m> matrix with <m>n\geq 2</m>. Given <m>1\leq i, j\leq n</m>, the <term>submatrix of <m>A</m></term> obtained by removing the <m>i</m>-th row and <m>j</m>-th column of <m>A</m> is denoted <m>A_{i  j}</m>.
         </p>
       </statement>
     </definition>
@@ -135,14 +135,14 @@
       <me>
         ( A_{11})_{ij}=a_{i+1,j+1}=0
       </me>
-      for all <m>1\leq i\lt; j\leq n </m>, proving the claim.
+      for all <m>1\leq i &lt; j\leq n </m>, proving the claim.
     </p>
     <p>
       Lastly, assuming <m>P(n)</m> is true (the induction hypothesis) we have
       <md>
         <mrow> \det A \amp=a_{11}\det A_{11} </mrow>
-        <mrow> \amp=a_{11}(a_{22}a_{33}\cdots a_{n+1,n+1})\amp \text{(induction)} </mrow>
-        <mrow>  \amp=a_{11}a_{22}\cdots a_{n+1,n+1} </mrow>
+        <mrow> \amp =a_{11}(a_{22}a_{33}\cdots a_{n+1,n+1})\amp \text{(induction)} </mrow>
+        <mrow>  \amp =a_{11}a_{22}\cdots a_{n+1,n+1} </mrow>
       </md>,
       as desired.
     </p>
