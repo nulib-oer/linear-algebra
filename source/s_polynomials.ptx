@@ -15,75 +15,80 @@
   <idx><h>polynomial</h><h>constant term</h></idx>
   <statement>
     <p>
-      Assume <m>X\subseteq \C</m> and that <m>Y=\R</m> or <m>Y=\C</m>. A function <m>f\colon X\rightarrow Y</m> is called a <term>polynomial</term> if there is a nonnegative integer <m>n</m> and elements <m>a_i\in \C</m> such that
+      Assume <m>X\subseteq \C</m> a <term>polynomial</term> on <m>X</m> is a function <m>f</m> of the form 
+      <men xml:id="eq_poly_powerseries">
+      f(x)=\sum_{i=1}^\infty a_ix^i
+      </men>,
+      where <m>a_i\in \C</m> for all <m>i</m>, and there is a positive integer <m>n</m> such that <m>a_i=0</m> for all <m>i&gt; n</m>. Equivalently, <m>f</m> is a function of the form 
       <men xml:id="eq_poly">
-        f(x)=\anpoly
-      </men>
-      for all <m>x\in X</m>. We call the right-hand side of <xref ref="eq_poly"/> a <term>polynomial expression</term> of <m>f</m>. For each <m>1\leq i\leq n</m> we call <m>a_ix^i</m> the <m>i</m>-th <term>term</term> of this polynomial expression, and <m>a_i</m> its <m>i</m>-th coefficient; we call <m>a_0</m> the <term>constant term</term>. Furthermore, if <m>a_n\ne 0</m>, then <m>a_nx^{n}</m> is called the <term>leading term</term> of the polynomial expression in <xref ref="eq_poly"/>, and <m>a_{n}</m>
-      its <term>leading coefficient</term>.
-    </p>
-    <p>
-      A <term>root</term> of a polynomial <m>f\colon X\rightarrow Y</m> is an element <m>c\in X</m> satisfying <m>f(c)=0</m>.
-    </p>
-    <p>
-      A function <m>f\colon X\rightarrow Y</m> is called a <term>real</term> (resp. <term>rational</term>, resp. <term>integer</term>) polynomial if it has a polynomial expression as in <xref ref="eq_poly"/> for which each coefficient <m>a_i</m> is real (resp. rational, resp. an integer).
-    </p>
-
+      f(x)=\anpoly
+      </men>,
+      where <m>a_i\in \C</m> for all <m>1\leq i\leq n</m>. 
+      </p>
+      <p>
+        We call <m>a_ix^i</m> the <m>i</m>-th <term>term</term> of <m>f</m>, and <m>a_i</m> the <m>i</m>-th <term>coefficient</term>; <m>a_0</m> is called the <term>constant term</term> of <m>f</m>. Furthermore, if in the expression <xref ref="eq_poly"/> we have <m>a_n\ne 0</m>, then <m>a_nx^{n}</m> is called the <term>leading term</term> of <m>f</m>, and <m>a_{n}</m>
+      its <term>leading coefficient</term>. Lastly, a <term>root</term> of <m>f</m> is a an element <m>c\in X</m> such that <m>f(c)=0</m>. 
+      </p>
   </statement>
 </definition>
+<remark xml:id="rm_polynomials_powerseries">
+<title>Polynomials as finite power series</title>
+<p>
+  As we see in the expression <xref ref="eq_poly_powerseries"/> we have essentially defined a polynomial to be a function with a finite power series representation. This may seem somewhat overkill in terms of the level of abstraction, but makes for simpler exposition in the discussion below. In any case you are always welcome to revert to the more familiar characterization in <xref ref="eq_poly"/>. 
+</p>
+</remark>
 <theorem xml:id="th_poly_basic">
   <title>Basic properties of polynomials</title>
   <statement>
-    Assume <m>X\subseteq \C</m> and that <m>Y=\R</m> or <m>Y=\C</m>.
+    <p>
+      Assume <m>X\subseteq \C</m>.
     <ol>
       <li>
         <p>
-          If <m>f</m> and <m>g</m> are polynomials from <m>X</m> to <m>Y</m>, then so are <m>f+g</m>, <m>fg</m>, and <m>cf</m>, where <m>c</m> is any element of <m>Y</m>.
+          If <m>f</m> and <m>g</m> are polynomials on <m>X</m>, then so are <m>f+g</m>, <m>fg</m>, and <m>cf</m> for any <m>c\in \C</m>. 
         </p>
       </li>
       <li>
         <p>
-          If <m>f\colon X\rightarrow Y</m> is a polynomial and <m>c\in X</m> is a root of <m>f(x)</m>, then there is a polynomial <m>g\colon X\rightarrow Y</m> such that
+          If <m>f</m> is a polynomial on <m>X</m> and <m>c\in X</m> is a root of <m>f</m>, then there is a polynomial <m>g</m> on <m>X</m> such that
           <men xml:id="eq_poly_factor">
             f(x)=(x-c)g(x)
-          </men>
-          for all <m>x\in X</m>.
+          </men>.
         </p>
       </li>
-      <li>
+      <li xml:id="th_at_most_n_roots">
         <p>
-          If <m>f\colon X\rightarrow Y</m> has a polynomial expression <m>f(x)=\anpoly</m> where <m>a_n\ne 0</m>, then <m>f</m> has at most <m>n</m> distinct roots in <m>X</m>.
+          If <m>f(x)=\anpoly</m> is a nonzero polynomial on <m>X</m>, then <m>f</m> has at most <m>n</m> distinct roots.
         </p>
       </li>
     </ol>
-
-    <p>
     </p>
   </statement>
 </theorem>
 <p>
-  As a result of the last property of <xref ref="th_poly_basic"/> the expression <xref ref="eq_poly"/> of a polynomial <m>f\colon X\rightarrow Y</m> is <em>unique</em>, as long as the domain <m>X</m> is <em>infinite</em>. This is made precise in the following corollary.
+  An important consequence of statement (<xref ref="th_at_most_n_roots" text="local"/>) of <xref ref="th_poly_basic"/> is that the coefficients <m>a_i</m> of a polynomial <m>f(x)=\sum_{i=1}^\infty a_ix^i</m> are uniquely determined by <m>f</m>, as long as the domain <m>X</m> is <em>infinite</em>. This furnishes us with a useful criterion for polynomial equality based on comparing coefficients.  
 </p>
 <corollary xml:id="cor_poly_equality">
+  <title>Polynomial equality via coefficients</title>
   <statement>
     <p>
-        Assume <m>X</m> is an infinite subset of <m>\C</m> and that <m>Y=\R</m> or <m>Y=\C</m>. If <m>f\colon X\rightarrow Y</m> is a polynomial and <m>X</m> is infinite, then the expression <m>f(x)=\anpoly</m> is unique. More precisely:
-      <ul>
-        <li>
+        Assume <m>X</m> is an infinite subset of <m>\C</m>. Let <m>f</m> and <m>g</m> be polynomials on <m>X</m> of the form 
+        <md>
+          <mrow>f(x) \amp =\sum_{i=1}^\inftya_ix^i </mrow>
+          <mrow>g(x)\amp =\sum_{i=1}^\infty b_ix^i</mrow>
+        </md>. 
+      <ol>
+        <li xml:id="cor_f_is_g">
           <p>
-            If <m>f</m> is the zero function, then <m>a_i=0</m> for all <m>1\leq i\leq n</m>.
+            We have <m>f=g</m> if and only if <m>a_i=b_i</m> for all <m>i</m>. 
           </p>
         </li>
-        <li>
+        <li xml:id="cor_f_is_0">
           <p>
-            If <m>f</m> is not the zero function and we have two polynomial expressions
-            <me>
-              f(x)=\anpoly=\bmpoly
-            </me>,
-            where <m>a_n, b_m\ne 0</m>, then <m>n=m</m> and <m>a_i=b_i</m> for all <m>1\leq i\leq n</m>.
+            In particular, <m>f</m> is the zero function on <m>X</m> if and only if <m>a_i=0</m> for all <m>i</m>.
           </p>
         </li>
-      </ul>
+      </ol>
     </p>
   </statement>
 </corollary>
@@ -92,7 +97,7 @@
   <title>Degree of a polynomial</title>
 <introduction>
   <p>
-    Once we know that the expression <m>f(x)=\anpoly</m> is unique, the various attributes of the polynomial expression (<eg />, leading term, leading coefficient, <etc />) can now be understood as properties of the function <m>f</m> itself. The following definition introduces once more such property, the <em>degree</em> of a polynomial. Note that the definition assumes we are in the setting stipulated in <xref ref="cor_poly_equality"/> to ensure uniqueness of the polynomial expression.
+    It follows from <xref ref="cor_poly_equality"/> that if <m>X</m> is an infinite subset of <m>\C</m> and <m>f</m> is a nonzero polynomial on <m>X</m>, then <m>f</m> has a unique expression of the form <m>f(x)=\anpoly</m>, where <m>a_n\ne 0</m>. The integer <m>n</m> appearing in this expression is an important invariant of <m>f</m> called its <em>degree</em>. 
   </p>
 </introduction>
 <definition xml:id="d_poly_degree">
@@ -104,21 +109,12 @@
   </notation>
   <statement>
     <p>
-      Assume <m>X</m> is an infinite subset of <m>\C</m> and that <m>Y=\R</m> or <m>Y=\C</m>. Let <m>f\colon X\rightarrow Y</m> be a nonzero polynomial function, and let <m>f(x)=\anpoly</m> be its unique polynomial expression with <m>a_n\ne 0</m>. The <term>degree</term> of <m>f</m>, denoted <m>\deg f</m>, is defined as follows:
-      <ul>
-        <li>
-          <p>
-            if <m>f</m> is the zero function, then we define <m>\deg f=-\infty</m>;
-          </p>
-        </li>
-        <li>
-          <p>
-            otherwise, we can write <m>f(x)=\anpoly</m> where <m>a_n\ne 0</m>, and we define <m>\deg f=n</m>.
-          </p>
-        </li>
-      </ul>
-      We call the polynomial <m>f</m> <term>linear</term> if <m>\deg f=1</m>, <term>quadratic</term> if <m>\deg f=2</m>, and <term>cubic</term> if <m>\deg f=3</m>.
+      Assume <m>X</m> is an infinite subset of <m>\C</m> and let <m>f</m> be a nonzero polynomial on <m>X</m> of the form <m>f(x)=\anpoly</m> with <m>a_n\ne 0</m>. The integer <m>n</m> in this expression is called the <term>degree</term> of <m>f</m>, denoted <m>\deg f</m>.
+      </p>
+      <p>
+        We call the polynomial <m>f</m> <term>linear</term> if <m>\deg f=1</m>, <term>quadratic</term> if <m>\deg f=2</m>, and <term>cubic</term> if <m>\deg f=3</m>.
     </p>
+      
   </statement>
 </definition>
 <p>
@@ -128,7 +124,7 @@
   <title>Basic properties of degree</title>
   <statement>
     <p>
-      Assume <m>X</m> is an infinite subset of <m>\C</m> and that <m>Y=\R</m> or <m>Y=\C</m>. Let <m>f</m> and <m>g</m> be polynomial functions from <m>X</m> to <m>Y</m>.
+      Assume <m>X</m> is an infinite subset of <m>\C</m>. Let <m>f</m> and <m>g</m> be polynomials on <m>X</m>. 
     </p>
     <ol>
       <li>

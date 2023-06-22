@@ -527,7 +527,7 @@ Geometrically this is the line in <m>\R^3</m> passing through <m>(0,0,0)</m> wit
         </li>
         <li>
           <p>
-            A <term>polynomial on <m>X</m></term> is a function <m>f\colon X\rightarrow \R</m> of the form <m>f(x)=\anpoly</m>, where <m>a_i\in \R</m> and <m>a_n\ne 0</m>. We call <m>n</m> the <term>degree of f</term>, denoted <m>\deg f=n</m>; and we call <m>a_n</m> the <term>leading term of <m>f</m></term>.
+            A <term>polynomial on <m>X</m> of degree at most <m>n</m></term> is a polynomial of the form <m>f(x)=\anpoly</m>, where <m>a_i\in \R</m>. (See <xref ref="s_polynomials"/>, and in particular <xref ref="d_polynomials"/> for more details about polynomials.) Recall that if <m>a_n\ne 0</m>, we call <m>n</m> the the degree of <m>f</m>, denoted <m>\deg f</m>.
           </p>
           <p>
             The set of polynomials of degree at most <m>n</m> on <m>X</m> is denoted <m>P_n(X)</m>; the set of all polynomials on <m>X</m> is denoted <m>P(X)</m>. When <m>X=\R</m>, we shorten the notation to <m>P_n</m> and <m>P</m>.
@@ -567,22 +567,34 @@ Geometrically this is the line in <m>\R^3</m> passing through <m>(0,0,0)</m> wit
       </p>
     </proof>
   </theorem>
-
-
-  <remark xml:id="rm_polynomial_equality">
-    <title>Polynomial equality</title>
-    <statement>
       <p>
-        An important fact that we will make frequent use of is that for two polynomials <m>f(x)=\anpoly</m> and <m>g(x)=\bmpoly</m> of degree <m>n</m> and <m>m</m>,respectively,  we have <m>f(x)=g(x)</m> on an interval <m>X</m> if and only if (1) <m>n=m</m>, and (2) <m>a_i=b_i</m> for all <m>0\leq i\leq n</m>.
+         When working within the polynomial spaces <m>P_n(X)</m> or <m>P(X)</m>, we will constantly make use of the fact that a polynomial <m>f(x)=\anpoly</m> is completely determined by its coefficients <m>a_i</m>, and that equality between polynomials can be decided by comparing their coefficients. This is the content of <xref ref="cor_poly_equality"/>. We restate the result here in a more convenient form. 
       </p>
-      <p>
-        In particular, we have <m>f(x)=\boldzero</m> (the zero function) on <m>X</m> if and only if <m>a_i=0</m> for all <m>1\leq i\leq n</m>.
-      </p>
-    </statement>
-  </remark>
-  <p>
-    With this new wealth of function spaces comes a family of linear transformations, <em>differential operators</em>, and these serve as important tools for studying properties of continuous and differentiable functions.
-  </p>
+      <theorem xml:id="th_poly_equality">
+        <title>Polynomial equality</title>
+        <statement>
+          <p>
+            Let <m>X\subseteq \R</m> be a nondegenerate interval, and let
+            <md>
+              <mrow>f(x) \amp =\anpoly \amp g(x)\amp=\bnpoly</mrow>
+            </md>
+            be polynomials on <m>X</m>. 
+            <ol>
+        <li xml:id="th_f_is_g">
+          <p>
+            We have <m>f=g</m> if and only if <m>a_i=b_i</m> for all <m>1\leq i\leq n</m>. 
+          </p>
+        </li>
+        <li xml:id="th_f_is_0">
+          <p>
+            In particular, <m>f=\boldzero</m> if and only if <m>a_i=0</m> for all <m>1\leq i\leq n</m>.
+          </p>
+        </li>
+      </ol>
+          </p>
+        </statement>
+      </theorem>
+      
   <remark xml:id="rm_subspaces_derivatives">
     <title>Differential operators</title>
     <statement>

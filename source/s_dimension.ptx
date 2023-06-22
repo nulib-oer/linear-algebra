@@ -66,7 +66,9 @@
       </p>
     </proof>
   </theorem>
-  The next theorem not only ensures that our definition of dimension (<xref text="global" ref="d_dimension"/>) is well-defined, it also characterizes dimension as the minimal cardinality of a spanning set, and the maximal cardinality of a linearly independent set.
+  <p>
+    The next theorem not only ensures that our definition of dimension (<xref text="global" ref="d_dimension"/>) is well-defined, it also characterizes dimension as the minimal cardinality of a spanning set, and the maximal cardinality of a linearly independent set.
+  </p>
   <theorem xml:id="th_basis_dimension">
     <title>Basis bounds</title>
     <statement>

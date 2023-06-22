@@ -104,6 +104,7 @@
       \newcommand{\anpoly}{a_nx^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
       \newcommand{\anmonic}{x^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
       \newcommand{\bmpoly}{b_mx^m+b_{m-1}x^{m-1}\cdots +b_1x+b_0}
+      \newcommand{\bnpoly}{b_nx^n+b_{n-1}x^{n-1}\cdots +b_1x+b_0}
       \newcommand{\pder}[2]{\frac{\partial#1}{\partial#2}}
       \newcommand{\normalin}{\trianglelefteq}
       \newcommand{\angvec}[1]{\langle #1\rangle}

@@ -410,7 +410,7 @@
                 <me>
                   (c_1+c_2)x^2+(c_1+c_3)x+(c_1-c_2-c_3)=ax^2+bx+c
                 </me>.
-                According to <xref ref="rm_polynomial_equality"/> this equality is true if and only if
+                According to <xref ref="th_poly_equality"/> this equality holds if and only if
                 <me>
                   \begin{linsys}{3}
                     c_1 \amp +\amp c_2 \amp  \amp \amp = \amp a\\
@@ -541,14 +541,14 @@
   <subsection  xml:id="ss_linear_independence">
     <title>Linear independence</title>
     <p>
-      As it turns out, the notion of <em>linear independence</em> defined below is precisely what we need to guarantee that a given spanning set has no <q>redundancies</q>.
+      As mentioned at the top, the notion of <em>linear independence</em> is precisely what we need to guarantee that a given spanning set has no <q>redundancies</q>. We first define linear independence of a finite set of vectors (<xref ref="d_linear_independence"/>) and later generalize to an arbitrary set of vectors (<xref ref="d_linear_independence_arbitrary"/>). 
     </p>
     <definition xml:id="d_linear_independence">
       <title>Linear independence (for finite subsets)</title>
       <idx><h>linear independence</h></idx>
       <statement>
         <p>
-          Let <m>V</m> be a vector space, let <m>S</m> be a finite subset, and let <m>\boldv_1, \boldv_2, \dots, \boldv_n</m> the distinct elements of <m>S</m>: <ie />, <m>\boldv_i\ne \boldv_j</m> for all <m>i\ne j</m>.  We say <m>S</m> is <term>linearly independent</term> if the following condition holds:
+          Let <m>V</m> be a vector space, let <m>S</m> be a finite subset, and let <m>\boldv_1, \boldv_2, \dots, \boldv_n</m> be the distinct elements of <m>S</m>: <ie />, <m>\boldv_i\ne \boldv_j</m> for all <m>i\ne j</m>.  We say <m>S</m> is <term>linearly independent</term> if the following condition holds:
           <me>
             \text{if } c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n=\boldzero \text{ for some } c_i\in \R , \text{ then } c_i=0 \text{ for all } i
           </me>.
@@ -760,16 +760,34 @@
       <remark xml:id="rm_linear_independence_arbitrary">
     <statement>
       <p>
-        A subtle question arises here: namely, whether our definition of linear indepencence for arbitrary sets is consistent with our definition for finite ones. In other words, given a set <m>S=\{\boldv_1, \boldv_2, \dots, \boldv_n\}</m> of <m>n</m> distinct vectors, is it true that <m>S</m> is linearly independent (in the sense of <xref ref="d_linear_independence" text="global"/>) if and only if every subset <m>\{\boldv_{i_1}, \boldv_{i_2}, \dots, \boldv_{i_k}\}</m> is linearly independent (in the sense of <xref ref="d_linear_independence" text="global"/>)? The answer of course is yes. One direction is easy: since <m>S</m> is a subset of itself, clearly if every subset is linearly independent, then <m>S</m> is linearly independent. The other direction is left as an exercise (<xref ref="ex_linear_independence_arbitrary"/>).
+        A subtle question arises here: namely, whether our definition of linear independence for arbitrary sets is consistent with our definition for finite ones. In other words, given a set <m>S=\{\boldv_1, \boldv_2, \dots, \boldv_n\}</m> of <m>n</m> distinct vectors, is it true that <m>S</m> is linearly independent (in the sense of <xref ref="d_linear_independence" text="global"/>) if and only if every subset <m>\{\boldv_{i_1}, \boldv_{i_2}, \dots, \boldv_{i_k}\}</m> is linearly independent (in the sense of <xref ref="d_linear_independence" text="global"/>)? The answer of course is yes. One direction is easy: since <m>S</m> is a subset of itself, clearly if every subset is linearly independent, then <m>S</m> is linearly independent. The other direction is left as an exercise (<xref ref="ex_linear_independence_arbitrary"/>).
       </p>
     </statement>
   </remark>
+  <example xml:id="eg_lin_ind_P">
+    <title>Linear independence in <m>P</m></title>
+    <p>
+      Consider the vector space <m>P</m> of polynomial functions on <m>\R</m>. We show that the set 
+      <me>
+      S=\{1,x, x^2, \dots\}=\{x^n\colon n\geq 0\}  
+      </me>
+      is linearly independent. Given a finite subset <m>T\subseteq S</m>, we can write <m>T=\{x^{n_1}, x^{n_2}, \dots, x^{n_r}\}</m>,where <m>n_1&lt; n_2 &lt; \cdots &lt; n_r</m>. By <xref ref="cor_poly_equality"/>, we have 
+      <me>
+        c_1x^{n_1}+c_2x^{n_2}+\cdots +c_rx^{n_r}=\boldzero
+      </me>
+      if and only if 
+      <me>
+        c_1=c_2=\cdots =c_r=0
+      </me>.       
+      This proves <m>T</m> is linearly independent. We have thus shown that any finite subset of <m>S</m> is linearly independent, and thus conclude that <m>S</m> is linearly independent by <xref ref="d_linear_independence_arbitrary"/>. 
+    </p>
+  </example>
 
   </subsection>
   <subsection xml:id="ss_linear_independence_functionspace">
   <title>Linear independence in function spaces</title>
     <p>
-      In each part of <xref ref="ex_linear_independence"/> it was easy to derive a relevant linear system as the notion of equality in these spaces amounts to checking a <em>finite</em> number of numeric equalities: <eg />, between the entries of two triples, the coefficients of two polynomials, or the entries of two <m>2\times 2</m> matrices.
+      In each computation of <xref ref="ex_linear_independence"/> it was easy to derive a relevant linear system since the notion of equality in each of these spaces amounts to checking a <em>finite</em> number of numeric equalities: <eg />, between the entries of two triples, the coefficients of two polynomials, or the entries of two <m>2\times 2</m> matrices.
     </p>
     <p>
       Things are slightly more complicated when working in function spaces on an interval <m>X</m> (<eg /> <m>C(X), C^\infty(X)</m>, <etc />), since by definition functions <m>f</m> and <m>g</m> are equal if and only if <m>f(x)=g(x)</m> for all <m>x\in X</m>. Thus, in principle verifying two functions are equal amounts to showing <em>infinitely many</em> equalities hold: one for each <m>x\in X</m>. Despite this added complexity, we can still investigate linear independence of functions with certain linear systems, as described in the procedure below.
