@@ -74,7 +74,7 @@
     <p>
         Assume <m>X</m> is an infinite subset of <m>\C</m>. Let <m>f</m> and <m>g</m> be polynomials on <m>X</m> of the form 
         <md>
-          <mrow>f(x) \amp =\sum_{i=1}^\inftya_ix^i </mrow>
+          <mrow>f(x) \amp =\sum_{i=1}^\infty a_ix^i </mrow>
           <mrow>g(x)\amp =\sum_{i=1}^\infty b_ix^i</mrow>
         </md>. 
       <ol>
