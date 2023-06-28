@@ -241,9 +241,9 @@
           <li>
             <title>Orthogonalize</title>
             <p>
-              Proceeding in succession for each <m>2\leq r\leq n</m>, replace <m>\boldv_r</m> with
+              Proceeding in succession for each <m>2\leq r\leq n</m>, replace <m>\boldv_r</m> with the vector <m>\boldw_r</m> defined as 
               <me>
-                \boldw_r:=\boldv_r-\frac{\angvec{\boldv_r, \boldw_{r-1}}}{\angvec{\boldw_{r-1},\boldw_{r-1}}}\boldw_{r-1}-\frac{\angvec{\boldv_r, \boldw_{r-2}}}{\angvec{\boldw_{r-2},\boldw_{r-2}}}\boldw_{r-2}-\cdots -\frac{\angvec{\boldv_r, \boldw_{1}}}{\angvec{\boldw_{1},\boldw_{1}}}\boldw_1
+                \boldw_r=\boldv_r-\frac{\angvec{\boldv_r, \boldw_{r-1}}}{\angvec{\boldw_{r-1},\boldw_{r-1}}}\boldw_{r-1}-\frac{\angvec{\boldv_r, \boldw_{r-2}}}{\angvec{\boldw_{r-2},\boldw_{r-2}}}\boldw_{r-2}-\cdots -\frac{\angvec{\boldv_r, \boldw_{1}}}{\angvec{\boldw_{1},\boldw_{1}}}\boldw_1
               </me>.
               The resulting set <m>B'=\{\boldw_1, \boldw_2, \dots, \boldw_n\}</m> is an orthogonal basis of <m>V</m>.
             </p>
