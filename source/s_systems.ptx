@@ -203,7 +203,7 @@ A homogeneous system is thus typically written as:
 
 </example>
 <p>
-  As you may recall, a (nontrivial) linear equation in two unknowns defines a line in <m>\R^2</m>; and a (nontrivial) equation in three unknowns defines a plane in <m>\R^3</m>. This observation allows us to bring powerful geometric intuition to analyzing systems of linear equations in two or three unknowns. As lines and planes will also serve as a rich source of examples in this course, we recall below some of their basic notions. 
+  As you may recall, a (nontrivial) linear equation in two unknowns defines a line in <m>\R^2</m>; and a (nontrivial) equation in three unknowns defines a plane in <m>\R^3</m>. This observation allows us to bring powerful geometric intuition to the analysis of systems of linear equations in two or three unknowns. As lines and planes will also serve as a rich source of examples in this course, we recall below some of their basic notions. 
 </p>
 <example xml:id="eg_lines_planes_review">
   <title>Lines and planes review</title>
@@ -236,9 +236,10 @@ A homogeneous system is thus typically written as:
       to introduce the line <m>\ell</m> with defining equation <m>ax+by=c</m> or plane <m>\mathcal{P}</m> with defining equation <m>ax+by+cz=d</m>.
       </p>
       <p>
-        Given a plane <m>\mathcal{P}\colon ax+by+cz=d</m>, we call <m>\boldn=(a,b,c)</m> a <term>normal vector</term> of <m>\mathcal{P}</m>. Equipped with the normal vector <m>\boldn</m> and a single point <m>P=(x_0,y_0,z_0)</m> lying on <m>\mathcal{P}</m>, we can quickly visualize <m>\mathcal{P}</m> as the set of all points <m>Q=(x,y,z)</m> such that the vector <m>\overrightarrow{PQ}=(x-x_0, y-y_0, z-z_0)</m> is orthogonal to <m>\mathcal{n}</m>. This allows us to envision <m>\mathcal{P}</m> as <q>the plane passing through <m>P</m> and orthogonal to <m>\boldn</m></q>. The customizable SageCell below nicely demonstrates this method of visualization.
+        Given a plane <m>\mathcal{P}\colon ax+by+cz=d</m>, we call <m>\boldn=(a,b,c)</m> a <term>normal vector</term> of <m>\mathcal{P}</m>. Equipped with the normal vector <m>\boldn</m> and a single point <m>P=(x_0,y_0,z_0)</m> lying on <m>\mathcal{P}</m>, we can quickly visualize <m>\mathcal{P}</m> as the set of all points <m>Q=(x,y,z)</m> such that the vector <m>\overrightarrow{PQ}=(x-x_0, y-y_0, z-z_0)</m> is orthogonal to <m>\mathcal{n}</m>. This allows us to envision <m>\mathcal{P}</m> as <q>the plane passing through <m>P</m> and orthogonal to <m>\boldn</m></q>. The customizable Sage Cell below nicely demonstrates this method of visualization.
       </p>
       <figure width="100%" xml:id="fig_visualize_plane">
+        <title>Using Sage to visualize <m>\mathcal{P}\colon ax+by+cz=d</m> via normal vector <m>\boldn=(a,b,c)</m></title>
         <caption>Using Sage to visualize <m>\mathcal{P}\colon ax+by+cz=d</m> via normal vector <m>\boldn=(a,b,c)</m></caption>
         <sage>
           <input>
@@ -268,7 +269,7 @@ Pt1+Pt2+Ar1+Ar2+T1+T2+T3+Plane
           <output>
           </output>
         </sage>
-        
+
       </figure>
   
 </example>
