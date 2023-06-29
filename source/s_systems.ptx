@@ -271,6 +271,33 @@ Pt1+Pt2+Ar1+Ar2+T1+T2+T3+Plane
         </sage>
 
       </figure>
+<image xml:id="im_plane">
+  <description>A plane and its normal vector</description>
+  <sageplot variant="3d" aspect="1.0">
+a=-8
+b=3
+c=10
+d=3
+#Following finds two points, P and Q on plane
+n=matrix([a,b,c])
+NS=n.right_kernel()
+P=vector(n.solve_right(matrix([d])))
+Q=NS.basis()[0].normalized()
+#The rest produces graphics and labels
+Pt1=point(P, color="blue", size=10)
+Pt2=point(vector(P)+2*NS.basis()[0].normalized(), color="red", size=10)
+Ar1=arrow3d(P,P+2*Q, color="green")
+Ar2=arrow3d(P,P+2*vector(n).normalized(), color="red")
+T1=text3d("P",P+vector([0,0,.25]),color="black",fontsize=20)
+T2=text3d("Q",P+2*Q+vector([0,0,.25]),color="black",fontsize=20)
+T3=text3d("n",P+vector(n).normalized()+vector([0,0,.25]),color="black",fontsize=20)
+var("x y z")
+Plane=implicit_plot3d(a*x+b*y+c*z-d,(x,P[0]-2,P[0]+2),(y,P[1]-2,P[1]+2),(z,P[2]-2,P[2]+2), color="green", opacity=".1")
+Pt1+Pt2+Ar1+Ar2+T1+T2+T3+Plane
+</sageplot>
+
+</image>
+
   
 </example>
 <example xml:id="eg_system_of_lines">
