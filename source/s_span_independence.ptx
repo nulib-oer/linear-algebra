@@ -725,7 +725,7 @@
             <mrow>  \amp </mrow>
             <mrow>\amp \iff
             \begin{linsys}{3} a\amp +\amp 2b\amp +\amp c\amp =\amp 0\\ a\amp \amp \amp -\amp c\amp =\amp 0\\ -2a\amp +\amp b \amp \amp  \amp =\amp 0 \end{linsys}
-              \amp (<xref ref="rm_polynomial_equality"/>)</mrow>
+              \amp (<xref ref="th_polynomial_equality"/>)</mrow>
           </md>.
           Gaussian elimination shows that <m>(a,b,c)=(0,0,0)</m> is the unique solution to this last system. We conclude that <m>S</m> is linearly independent.
         </p>

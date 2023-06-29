@@ -438,6 +438,9 @@ Geometrically this is the line in <m>\R^3</m> passing through <m>(0,0,0)</m> wit
     It will come as no surprise that all of the afore mentioned matrix families are in fact subspaces of <m>M_{nn}</m>.
   </p>
   <theorem xml:id="th_matrix_subspaces">
+    <title>Matrix subspaces</title>
+    
+    
     <statement>
       <p>
       Fix an integer <m>n\geq 1</m>.  Each of the following subsets of <m>M_{nn}</m> is a subspace.
@@ -537,6 +540,7 @@ Geometrically this is the line in <m>\R^3</m> passing through <m>(0,0,0)</m> wit
     </statement>
   </definition>
   <theorem xml:id="th_subspace_functions">
+    <title>Function subspaces</title>
     <statement>
       <p>
         Let <m>X\subseteq \R</m> be an interval. The sets <m>C(X), C^n(X), C^\infty(X), P_n(X), P(X)</m> are all subspaces of <m>F(X,\R)</m>. Thus we have the following chain of subspaces:

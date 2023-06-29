@@ -1,9 +1,13 @@
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_systems">
   <title>Systems of linear equations</title>
-  <p>
-     We begin in a deceptively simple manner with the study of systems of linear equations and their solutions.
+  <introduction>
+    <p>
+     Computing and studying solutions to equations, and <em>systems of equations</em>, unquestionably plays an important role in mathematics; though we hasten to add that this is not all that mathematicians do! In this chapter we will develop an essentially complete theory of a particularly simple family of mathematical equations: namely, <em>linear equations</em>.  This will serve as a somewhat indirect introduction to our study of linear algebra, as lurking below our parametric descriptions of solutions to linear systems lie vector space notions like subspace, span, and linear independence. Furthermore, we will meet one of the most important computational tools of linear algebra: <xref ref="d_GE" text="custom">Gaussian elimination</xref>.  
   </p>
-  <definition xml:id="d_lin-equation" >
+  </introduction>
+  <subsection xml:id="ss_linear_equations">
+  <title>Systems of linear equations</title>
+    <definition xml:id="d_lin-equation" >
     <title>Linear equations</title>
     <idx><h>linear equation</h></idx>
     <statement>
@@ -199,7 +203,110 @@ A homogeneous system is thus typically written as:
 
 </example>
 <p>
-  In <xref ref="s_systems_eg_2eqns2varss"/> we were able to combine some simple logic and arithmetic to solve each system completely. (A more geometric approach is discussed in <xref ref="ex_solving_sys_geom"/>.) Of course, things get more complicated as the number of equations and/or unknowns in the system increases.
+  As you may recall, a (nontrivial) linear equation in two unknowns defines a line in <m>\R^2</m>; and a (nontrivial) equation in three unknowns defines a plane in <m>\R^3</m>. This observation allows us to bring powerful geometric intuition to analyzing systems of linear equations in two or three unknowns. As lines and planes will also serve as a rich source of examples in this course, we recall below some of their basic notions. 
+</p>
+<example xml:id="eg_lines_planes_review">
+  <title>Lines and planes review</title>
+  <p>
+        Below we define lines (in <m>\R^2</m>) and planes (in <m>\R^3</m>) as sets of solutions of linear equations in two or three unknowns. Recall that the <term>graph</term> of an equation is the set of all solutions to the equation.
+        <ul>
+          <li>
+            <title>Lines</title>
+            <p>
+              A <term>line</term> in <m>\R^2</m> is the set of solutions (or graph) <m>\ell</m> of a linear equation of the form <m>ax+by=c</m>, where <m>a, b, c\in\R</m> are fixed constants, and at least one of <m>a</m> and <m>b</m> is nonzero: <ie />,
+              <me>
+                \ell=\{(x,y)\in\R^2\colon ax+by=c\}.
+              </me>
+            </p>
+          </li>
+          <li>
+            <title>Planes</title>
+            <p>
+              A <term>plane</term> in <m>\R^3</m> is the set of solutions (or graph) <m>\mathcal{P}</m> of a linear equation of the form <m>ax+by+cz=d</m>, where <m>a, b, c, d\in\R</m> are fixed constants, and at least one of <m>a, b, c</m> is nonzero: <ie />,
+              <me>
+                \mathcal{P}=\{(x,y,z)\in\R^3\colon ax+by+cz=d\}.
+              </me>
+            </p>
+          </li>
+        </ul>
+      We often use the abbreviated notation
+      <md>
+        <mrow>\ell \amp\colon ax+by=c \amp \mathcal{P}\amp\colon ax+by+cz=d</mrow>
+      </md>
+      to introduce the line <m>\ell</m> with defining equation <m>ax+by=c</m> or plane <m>\mathcal{P}</m> with defining equation <m>ax+by+cz=d</m>.
+      </p>
+      <p>
+        Given a plane <m>\mathcal{P}\colon ax+by+cz=d</m>, we call <m>\boldn=(a,b,c)</m> a <term>normal vector</term> of <m>\mathcal{P}</m>. Equipped with the normal vector <m>\boldn</m> and a single point <m>P=(x_0,y_0,z_0)</m> lying on <m>\mathcal{P}</m>, we can quickly visualize <m>\mathcal{P}</m> as the set of all points <m>Q=(x,y,z)</m> such that the vector <m>\overrightarrow{PQ}=(x-x_0, y-y_0, z-z_0)</m> is orthogonal to <m>\mathcal{n}</m>. This allows us to envision <m>\mathcal{P}</m> as <q>the plane passing through <m>P</m> and orthogonal to <m>\boldn</m></q>. The customizable SageCell below nicely demonstrates this method of visualization.
+      </p>
+      <figure width="100%" xml:id="fig_visualize_plane">
+        <caption>Using Sage to visualize <m>\mathcal{P}\colon ax+by+cz=d</m> via normal vector <m>\boldn=(a,b,c)</m></caption>
+        <sage>
+          <input>
+            #Choose a,b,c,d to define plane
+#with equation ax+by+cz=d
+a=-8
+b=3
+c=10
+d=3
+#Following finds two points, P and Q on plane
+n=matrix([a,b,c])
+NS=n.right_kernel()
+P=vector(n.solve_right(matrix([d])))
+Q=NS.basis()[0].normalized()
+#The rest produces graphics and labels
+Pt1=point(P, color="blue", size=10)
+Pt2=point(vector(P)+2*NS.basis()[0].normalized(), color="red", size=10)
+Ar1=arrow3d(P,P+2*Q, color="green")
+Ar2=arrow3d(P,P+2*vector(n).normalized(), color="red")
+T1=text3d("P",P+vector([0,0,.25]),color="black",fontsize=20)
+T2=text3d("Q",P+2*Q+vector([0,0,.25]),color="black",fontsize=20)
+T3=text3d("n",P+vector(n).normalized()+vector([0,0,.25]),color="black",fontsize=20)
+var("x y z")
+Plane=implicit_plot3d(a*x+b*y+c*z-d,(x,P[0]-2,P[0]+2),(y,P[1]-2,P[1]+2),(z,P[2]-2,P[2]+2), color="green", opacity=".1")
+Pt1+Pt2+Ar1+Ar2+T1+T2+T3+Plane
+          </input>
+          <output>
+          </output>
+        </sage>
+        
+      </figure>
+  
+</example>
+<example xml:id="eg_system_of_lines">
+<title>Solutions to elementary systems (again)</title>
+<statement>
+  <p>
+  For each system in <xref ref="s_systems_eg_2eqns2varss"/>, use a geometric argument to determine <em>how many</em> solutions there are. 
+</p>
+</statement>
+<solution>
+  <p>
+    We proceed geometrically by observing that each equation in a given system defines a line, that a pair <m>(x,y)</m> is a solution to the given equation if and only if it is a point on the corresponding line, and thus that a pair <m>(x,y)</m> is a solution to both equations if and only if it is a point lying on both lines. Thus, geometrically speaking, the set of solutions to a given system is equal to the intersection of the two corresponding lines. 
+    <ol>
+      <li>
+        <p>
+          In this case the two lines <m>\ell_1\colon x-y=0</m> and <m>\ell_2\colon x-y=1</m> are parallel (and not equal to one another). It follows that their intersection is empty. We conclude that there are no solutions to the system. 
+        </p>
+      </li>
+      <li>
+        <p>
+          In this case the two lines <m>\ell_1\colon x-y=0</m> and <m>\ell_2\colon x+y=1</m> are nonparallel. It follows that they intersect in a single point. We conclude that the system has a unique solution.  
+        </p>
+      </li>
+      <li>
+        <p>
+          In this case the two equations <m>x-y=1</m> and <m>2x-2y=2</m> define the same line <m>\ell</m>, and thus that their intersection is also equal to <m>\ell</m>. The set of solutions to the system is then equal to the set of points of <m>\ell</m>, which is infinite. 
+        </p>
+      </li>
+    </ol>
+  </p>
+</solution>
+</example>
+</subsection>
+  <subsection xml:id="ss_row_equivalence">
+   <title>Row operations</title>
+   <p>
+  In <xref ref="s_systems_eg_2eqns2varss"/> we were able to combine some simple logic and arithmetic to solve each system completely.  Of course, things get more complicated as the number of equations and/or unknowns in the system increases.
 </p>
 <p>
   For example, consider the system
@@ -209,7 +316,7 @@ A homogeneous system is thus typically written as:
   Observe first that the triple <m>(5,2,5)</m> is not a solution to the system; one easily checks that is satisfies the first and second equations, but not the third. Similarly, it is easy to verify that <m>(4,2,3)</m> and <m>(0,-1,2)</m> are both solutions to the system. The question remains: How do we find <em>all</em> solutions to the linear system in a systematic way?
 </p>
 <remark>
-  <p>Observe the somewhat funny spacing in <xref ref="s_systems_eq_runningexample"/>. This is in force in order to align the unknowns in separate columns. In general, when handed a linear system in the wild, your first step should be to write each equation in standard form, and make sure the unknowns are aligned vertically in this manner.
+  <p>Notice the somewhat funny spacing in <xref ref="s_systems_eq_runningexample"/>. This is in force in order to align the unknowns in separate columns. In general, when handed a linear system in the wild, your first step should be to write each equation in standard form, and make sure the unknowns are aligned vertically in this manner.
 </p>
 </remark>
   <paragraphs xml:id="pars-">
@@ -292,10 +399,53 @@ A homogeneous system is thus typically written as:
     <p>
       After reducing a linear system <m>L</m> using elementary operations, we are left with a new system <m>L'</m>. The systems <m>L</m> and <m>L'</m> will generally look very different from one another. Note, however, that the two systems will have the same <em>number</em> of equations, and the same <em>number</em> of variables. More importantly, the two systems will have identical sets of solutions; that is, the set of solutions of the new system <m>L'</m> is identical to the set of solutions to <m>L</m>!
     </p>
-    <p> To convince ourselves of this last assertion, it suffices to show that the application of any one of these elementary row operations produces a new system <m>L'</m> with exactly the same set of solutions as <m>L</m>; if this is so, then performing any finite sequence of elementary row operations must also preserve the set of solutions in this sense. <xref ref="s_systems_th_rowops"/> will make these claims official. For now let's look at an example.
-    </p>
+    <p> To convince ourselves of this last assertion, it suffices to show that the application of any one of these elementary row operations produces a new system <m>L'</m> with exactly the same set of solutions as <m>L</m>; if this is so, then performing any finite sequence of elementary row operations must also preserve the set of solutions in this sense. <xref ref="s_systems_th_rowops"/> makes this argument official. First we introduce the notion of <em>equivalent linear systems</em>, mainly to spare ourselves from the mouthful that is <q>obtained by applying a finite sequence of elementary row operations</q>.
+  </p>
+  <definition xml:id="d_rowequivalent">
+    <title>Row equivalent linear systems</title>
+    <statement>
+      <p>
+        We say two systems of linear equations are
+        <term>row equivalent</term> 
+        if the one can be obtained from the other by a finite sequence of elementary operations.
+      </p>
+    </statement>
+  </definition>
+  <theorem xml:id="s_systems_th_rowops">
+    <title>Row equivalence theorem</title>
+    <statement>
+      <p>
+        Row equivalent systems of linear equations have identical sets of solutions.
+      </p>
+    </statement>
+    <proof>
+      <p>
+        We prove by induction that if system <m>L'</m> is the result of applying <m>n</m> elementary operations to system <m>L</m>, <m>n\geq 0</m>, then <m>L</m> and <m>L'</m> have the same set of solutions.
+      </p>
+      <case>
+        <title> Base case: <m>n=0</m></title>
+        <p>
+          In this case <m>L=L'</m> (we have applied no operations) and the statement is obvious.
+        </p>
+      </case>
+      <case>
+        <title>Induction step</title>
+        <p>Assume that applying a sequence of <m>n</m> elementary operations to a linear system preserves the set of solutions.
+      </p>
+      <p>
+        Suppose <m>L'</m> is the result of applying <m>n+1</m> elementary operations to the system <m>L</m>. Let <m>L''</m> be the result of applying the first <m>n</m> of these operations. By the induction hypothesis, systems <m>L</m> and <m>L''</m> have the same set of solutions.
+      </p>
+      <p>
+        Since the system <m>L'</m> is obtained from <m>L''</m> by applying exactly one elementary operation, it now suffices to show that applying a single row operation does not change the set of solutions to a linear system. This is the result of <xref ref="ex_row_ops_preserve"/>. (Note that a solution is provided to that exercise.)
+      </p>
+      <p>
+        We conclude that <m>L</m> and <m>L'</m> have the same set of solutions, as desired.
+      </p>
+      </case>
+    </proof>
+  </theorem>
   </paragraphs>
-  <paragraphs xml:id="s_systems_eg_long">
+  <example xml:id="eg_systems_eg_long">
     <title>Complete example</title>
     <p>
       Consider again the linear system
@@ -350,7 +500,7 @@ A homogeneous system is thus typically written as:
     <p>
       Thus <m>(x,y,z)=(4,4,2)</m> is the only solution to the original system!
     </p>
-  </paragraphs>
+  </example>
   <remark xml:id="s_systems_notation_rowops">
  <title>Notation</title>
  <p>
@@ -392,53 +542,11 @@ A homogeneous system is thus typically written as:
   Furthermore, if later on you do give in to this temptation, make sure that the two (or more row operations) you perform are independent of one another. For example, do not swap <m>e_2</m> with <m>e_1</m> and replace <m>e_3</m> with <m>e_3-5e_2</m> in the same step.
 </p>
   </remark>
-  <p>
-    We end by making official a claim made earlier. First we introduce the notion of <em>equivalent linear systems</em>, mainly to spare ourselves from the mouthful that is <q>obtained by applying a finite sequence of elementary row operations</q>.
-  </p>
-  <definition xml:id="d_rowequivalent">
-    <title>Equivalence of linear systems</title>
+  
+   
+    
+  </subsection>
 
-    <statement>
-      <p>
-        We say two systems of linear equations are
-        <term>equivalent</term> (or <term>row equivalent</term>)
-        if the one can be obtained from the other by a finite sequence of elementary operations.
-      </p>
-    </statement>
-  </definition>
-  <theorem xml:id="s_systems_th_rowops">
-    <title>Row equivalence theorem</title>
-    <statement>
-      <p>
-        Equivalent systems of linear equations have identical sets of solutions.
-      </p>
-    </statement>
-    <proof>
-      <p>
-        We prove by induction that if system <m>L'</m> is the result of applying <m>n</m> elementary operations to system <m>L</m>, <m>n\geq 0</m>, then <m>L</m> and <m>L'</m> have the same set of solutions.
-      </p>
-      <case>
-        <title> Base case: <m>n=0</m></title>
-        <p>
-          In this case <m>L=L'</m> (we have applied no operations) and the statement is obvious.
-        </p>
-      </case>
-      <case>
-        <title>Induction step</title>
-        <p>Assume that applying a sequence of <m>n</m> elementary operations to a linear system preserves the set of solutions.
-      </p>
-      <p>
-        Suppose <m>L'</m> is the result of applying <m>n+1</m> elementary operations to the system <m>L</m>. Let <m>L''</m> be the result of applying the first <m>n</m> of these operations. By the induction hypothesis, systems <m>L</m> and <m>L''</m> have the same set of solutions.
-      </p>
-      <p>
-        Since the system <m>L'</m> is obtained from <m>L''</m> by applying exactly one elementary operation, <xref ref="ex_row_ops_preserve"/> implies <m>L'</m> and <m>L''</m> have the same set of solutions.
-      </p>
-      <p>
-        We conclude that <m>L</m> and <m>L'</m> have the same set of solutions, as desired.
-      </p>
-      </case>
-    </proof>
-  </theorem>
 
 
 

@@ -34,33 +34,7 @@
     <title>Geometry of linear systems</title>
     <statement>
       <p>
-        Recall that the <em>graph</em> of an equation is the set of all solutions to the equation. Graphs of linear equations correspond to some familiar geometric objects:
-        <ul>
-          <li>
-            <title>Lines</title>
-            <p>
-              A <em>line</em> in <m>\R^2</m> is the graph <m>\ell</m> of a linear equation of the form <m>ax+by=c</m>, where <m>a, b, c\in\R</m> are fixed constants, and at least one of <m>a</m> and <m>b</m> is nonzero: <ie />,
-              <me>
-                \ell=\{(x,y)\in\R^2\colon ax+by=c\}.
-              </me>
-            </p>
-          </li>
-          <li>
-            <title>Planes</title>
-            <p>
-              A <em>plane</em> in <m>\R^3</m> is the graph <m>\mathcal{P}</m> of a linear equation of the form <m>ax+by+cz=d</m>, where <m>a, b, c, d\in\R</m> are fixed constants, and at least one of <m>a, b, c</m> is nonzero: <ie />,
-              <me>
-                \mathcal{P}=\{(x,y,z)\in\R^3\colon ax+by+cz=d\}.
-              </me>
-            </p>
-          </li>
-        </ul>
-      We often use the abbreviated notation
-      <md>
-        <mrow>\ell \amp\colon ax+by=c \amp \mathcal{P}\amp\colon ax+by+cz=d</mrow>
-      </md>
-      to introduce the line <m>\ell</m> with defining equation <m>ax+by=c</m> or plane <m>\mathcal{P}</m> with definining equation <m>ax+by+cz=d</m>.
-      </p>
+        In this exercise we will use the geometry of lines in <m>\R^2</m> and planes in <m>\R^3</m> to help analyze solutions to systems of equations in two and three unknowns, respectively. See <xref ref="eg_lines_planes_review"/> for a refresher on these concepts. 
       <ol>
         <li>
           <p>
@@ -87,6 +61,7 @@
           </p>
         </li>
       </ol>
+      </p>
     </statement>
     <solution>
       <p>
@@ -206,7 +181,6 @@
             </p>
           </li>
         </ol>
-      </p>
       do not change the set of solutions of a linear system.
       To prove this claim, let <m>L</m> be a general linear system
       <me>
@@ -216,7 +190,7 @@
       write down the new system <m>L'</m> you get by applying this row operation,
       and prove that an <m>n</m>-tuple
       <m>s=(s_1,s_2,\dots ,s_n)</m> is a solution to the original system <m>L</m> if and only if it is a solution to the new system <m>L'</m>.
-
+      </p>
     </statement>
     <solution>
         <p>
