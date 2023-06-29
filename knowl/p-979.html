@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:15:59Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -15,12 +12,25 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p><em class="emphasis">Vector addition</em>. Given real-valued functions <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> with domain <span class="process-math">\(X\text{,}\)</span> we let <span class="process-math">\(f+g\)</span> be the function defined as</p>
-<div class="displaymath process-math">
+<div class="para logical">
+<div class="para">When <span class="process-math">\(i\ne j\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/d_adjoint.html ./knowl/th_det_zero_repeated_row.html">
+\begin{align*}
+[A\, \adj A]_{ij} \amp =\sum_{k=1}^na_{ik}[\adj A]_{kj}  \\
+\amp =\sum_{k=1}^n a_{ik}((-1)^{k+j}M_{jk}) \amp (\knowl{./knowl/d_adjoint.html}{\text{Definition 2.5.15}} )\\
+\amp =\sum_{k=1}^n(-1)^{k+j}a_{ik}M_{jk} \\
+\amp =\det C \text{,}
+\end{align*}
+</div>
+<div class="para">where <span class="process-math">\(C\)</span> is the matrix obtained by replacing the <span class="process-math">\(j\)</span>-th row of <span class="process-math">\(A\)</span> with a copy of its <span class="process-math">\(i\)</span>-th row. Since <span class="process-math">\(C\)</span> has two identical rows <a href="" class="xref" data-knowl="./knowl/th_det_zero_repeated_row.html" title="Theorem 2.5.14: Zero rows/columns, swapping rows/columns, identical rows/columns">Theorem 2.5.14</a> implies</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/d_adjoint.html ./knowl/th_det_zero_repeated_row.html">
 \begin{equation*}
-(f+g)(x)=f(x)+g(x) \text{ for all } x\in X\text{.}
+[A\, \adj A]_{ij}=\det C=0\text{,}
 \end{equation*}
 </div>
-<span class="incontext"><a href="s_vectorspace.html#p-979">in-context</a></span>
+<div class="para">as desired. Once again, a similar argument using expansion along a column shows that <span class="process-math">\([\adj A\, A]_{ij}=0\text{.}\)</span>
+</div>
+</div>
+<span class="incontext"><a href="s_det.html#p-979" class="internal">in-context</a></span>
 </body>
 </html>

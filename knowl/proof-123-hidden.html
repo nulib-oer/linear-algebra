@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><article class="hiddenproof"> <div class="para logical">
+<div class="para">Assume <span class="process-math">\(T\)</span> is self adjoint. First we show that eigenvectors with distinct eigenvalues are orthogonal. To this end, suppose we have <span class="process-math">\(T(\boldv)=\lambda\boldv\)</span> and <span class="process-math">\(T(\boldv')=\lambda'\boldv'\text{,}\)</span> where <span class="process-math">\(\lambda\ne \lambda'\text{.}\)</span> Using the definition of self-adjoint, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/cor_self-adjoint_eigenvalue.html ./knowl/ex_selfadjoint_complement.html">
+\begin{align*}
+\angvec{T(\boldv), \boldv'}=\angvec{\boldv, T(\boldv')} \amp\implies \angvec{\lambda\boldv, \boldv'}=\angvec{\boldv, \lambda'\boldv'} \\
+\amp\implies \lambda\angvec{\boldv, \boldv'}=\lambda'\angvec{\boldv, \boldv'} \\
+\amp \implies \angvec{\boldv, \boldv'}=0 \amp (\lambda\ne \lambda')\text{.}
+\end{align*}
+</div>
+<div class="para">We now prove by induction on <span class="process-math">\(\dim V\)</span> that if <span class="process-math">\(T\)</span> is self-adjoint, then <span class="process-math">\(T\)</span> is diagonalizable. The base case <span class="process-math">\(\dim V=1\)</span> is trivial. Assume the result is true of any <span class="process-math">\(n\)</span>-dimensional inner product space, and suppose <span class="process-math">\(\dim V=n+1\text{.}\)</span> By <a href="" class="xref" data-knowl="./knowl/cor_self-adjoint_eigenvalue.html" title="Corollary 5.6.5: Eigenvalues of self-adjoint operators">Corollary 5.6.5</a> there is a nonzero <span class="process-math">\(\boldv\in V\)</span> with <span class="process-math">\(T(\boldv)=\lambda\boldv\text{.}\)</span> Let <span class="process-math">\(W=\Span\{\boldv\}\text{.}\)</span> Since <span class="process-math">\(\dim W=1\text{,}\)</span> we have <span class="process-math">\(\dim W^\perp=\dim V-1=n\text{.}\)</span> The following two facts are crucial for the rest of the argument and are left as an exercise (<a href="" class="xref" data-knowl="./knowl/ex_selfadjoint_complement.html" title="Exercise 5.6.3.10">5.6.3.10</a>).</div>
+<ol class="decimal">
+<li><div class="para">For all <span class="process-math">\(\boldv\in W^\perp\)</span> we have <span class="process-math">\(T(\boldv)\in W^\perp\text{,}\)</span> and thus by restricting <span class="process-math">\(T\)</span> to <span class="process-math">\(W^\perp\)</span> we get a linear transformation <span class="process-math">\(T\vert_{W^{\perp}}\colon W^\perp\rightarrow W^\perp\text{.}\)</span>
+</div></li>
+<li><div class="para">The restriction <span class="process-math">\(T\vert_{W^\perp}\)</span> is self-adjoint, considered as a linear transformation of the inner product space <span class="process-math">\(W^\perp\text{.}\)</span>  Here the inner product on the subspace <span class="process-math">\(W^\perp\)</span> is inherited from <span class="process-math">\((V, \angvec{\, , \,})\)</span> by restriction.</div></li>
+</ol>
+<div class="para">Now since <span class="process-math">\(\dim W^\perp=n-1\)</span> and <span class="process-math">\(T\vert_{W^\perp}\)</span> is self-adjoint, we may assume by induction that <span class="process-math">\(T\vert_{W^\perp}\)</span> has an eigenbasis <span class="process-math">\(B'=(\boldv_1, \boldv_2,\dots, \boldv_n)\text{.}\)</span> We claim that <span class="process-math">\(B=(\boldv, \boldv_2, \dots, \boldv_n)\)</span> is an eigenbasis of <span class="process-math">\(V\text{.}\)</span> Since by definition <span class="process-math">\(T\vert_{W^\perp}(\boldw')=T(\boldw')\)</span> for all <span class="process-math">\(\boldw'\in W^\perp\text{,}\)</span> we see that the vectors <span class="process-math">\(\boldv_i\)</span> are also eigenvectors of <span class="process-math">\(T\text{,}\)</span> and thus that <span class="process-math">\(B\)</span> consists of eigenvectors. To show <span class="process-math">\(B\)</span> is a basis it is enought to prove linear independence, since  <span class="process-math">\(\dim V=n+1\text{.}\)</span> Suppose we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/cor_self-adjoint_eigenvalue.html ./knowl/ex_selfadjoint_complement.html">
+\begin{equation*}
+c\boldv+c_1\boldv_1+\cdots +c_n\boldv_n=\boldzero
+\end{equation*}
+</div>
+<div class="para">for scalars <span class="process-math">\(c, c_i\in \R\text{.}\)</span> Taking the inner product with <span class="process-math">\(\boldv\text{,}\)</span> we have :</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/cor_self-adjoint_eigenvalue.html ./knowl/ex_selfadjoint_complement.html">
+\begin{align*}
+c\boldv+c_1\boldv_1+\cdots +c_n\boldv_n=\boldzero\amp\implies\\
+\langle\boldv, c\boldv+c_1\boldv_1+\cdots +c_n\boldv_n\rangle=\langle\boldv, \boldzero\rangle
+\amp\implies c\angvec{\boldv, \boldv}+\sum_{i=1}^nc_i\angvec{\boldv, \boldv_i}=0 \\
+\amp \implies
+c\angvec{\boldv, \boldv}=0 \amp (\angvec{\boldv, \boldv_i}=0)\\
+\amp \implies c=0 \amp (\angvec{\boldv, \boldv}\ne 0)\text{.}
+\end{align*}
+</div>
+<div class="para">It follows that we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/cor_self-adjoint_eigenvalue.html ./knowl/ex_selfadjoint_complement.html">
+\begin{equation*}
+c_1\boldv_1+\cdots +c_n\boldv_n=\boldzero\text{,}
+\end{equation*}
+</div>
+<div class="para">and thus <span class="process-math">\(c_i=0\)</span> for all <span class="process-math">\(1\leq i\leq n\text{,}\)</span> since <span class="process-math">\(B'\)</span> is linearly independent. Having proved that <span class="process-math">\(B\)</span> is an eigenbasis, we conclude that <span class="process-math">\(T\)</span> is diagonalizable.</div>
+</div></article></body>
+</html>

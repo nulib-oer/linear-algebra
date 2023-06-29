@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:15:54Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -15,37 +12,6 @@
 </head>
 <body class="ignore-math">
 <article class="hiddenproof"><h4 class="heading"><span class="type">Proof</span></h4>
-<p>We only give the proof for lower triangular matrices; the proof in the upper triangular case is nearly identical.</p>
-<p>For any <span class="process-math">\(n\geq 1\)</span> let <span class="process-math">\(P(n)\)</span> denote the proposition: “The determinant of any <span class="process-math">\(n\times n\)</span> lower triangular matrix is the product of its diagonal entries”. We prove by induction that <span class="process-math">\(P(n)\)</span> is true for all <span class="process-math">\(n\geq 1\text{.}\)</span></p>
-<article class="case"><h5 class="heading">Base step: show <span class="process-math">\(P(1)\)</span> is true.</h5>
-<p>In this case <span class="process-math">\(A=[a_{11}]\text{,}\)</span> and <span class="process-math">\(\det A=a_{11} \)</span> is indeed the product of the diagonal entries of <span class="process-math">\(A\text{.}\)</span></p></article><article class="case"><h5 class="heading">Induction step: show <span class="process-math">\(P(n)\implies P(n+1)\)</span> for all <span class="process-math">\(n\geq 1\)</span>.</h5>
-<p>Let <span class="process-math">\(A=[a_{ij}]_{(n+1)\times (n+1)}\)</span> be a lower triangular matrix. Then <span class="process-math">\(a_{1j}=0\)</span> for all <span class="process-math">\(j\geq 2\text{,}\)</span> and hence the determinant of <span class="process-math">\(A\)</span> is given by</p>
-<div class="displaymath process-math">
-\begin{equation*}
-\det A=a_{11}\det  A_{11}\text{.}
-\end{equation*}
-</div>
-<p class="continuation">Claim: <span class="process-math">\(A_{i  k}\)</span> is lower triangular. Indeed, first observe that we have</p>
-<div class="displaymath process-math">
-\begin{equation*}
-( A_{11})_{ij}=a_{i+1,j+1}
-\end{equation*}
-</div>
-<p class="continuation">for all <span class="process-math">\(1\leq i,j\leq n\text{;}\)</span> by deleting the first row and first column we effectively bump each index up by one. Since <span class="process-math">\(A\)</span> is lower triangular we have  <span class="process-math">\(a_{ij}=0\)</span> for all <span class="process-math">\(1\leq i \lt; j\leq n+1\text{,}\)</span> and hence also</p>
-<div class="displaymath process-math">
-\begin{equation*}
-( A_{11})_{ij}=a_{i+1,j+1}=0
-\end{equation*}
-</div>
-<p class="continuation">for all <span class="process-math">\(1\leq i\lt; j\leq n \text{,}\)</span> proving the claim.</p>
-<p>Lastly, assuming <span class="process-math">\(P(n)\)</span> is true (the induction hypothesis) we have</p>
-<div class="displaymath process-math">
-\begin{align*}
-\det A \amp=a_{11}\det A_{11} \\
-\amp=a_{11}(a_{22}a_{33}\cdots a_{n+1,n+1})\amp \text{(induction)} \\
-\amp=a_{11}a_{22}\cdots a_{n+1,n+1} \text{,}
-\end{align*}
-</div>
-<p class="continuation">as desired.</p></article></article><span class="incontext"><a href="s_det.html#proof-30">in-context</a></span>
+<div class="para">This follows directly from <a href="" class="xref" data-knowl="./knowl/th_det_triangular.html" title="Theorem 2.5.5: Determinant of triangular matrices">Theorem 2.5.5</a> since the diagonal entries of <span class="process-math">\(I\)</span> are all ones.</div></article><span class="incontext"><a href="s_det.html#proof-30" class="internal">in-context</a></span>
 </body>
 </html>

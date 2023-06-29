@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:16:18Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -13,28 +10,38 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><article class="hiddenproof"><p>First observe that <span class="process-math">\(A=\begin{bmatrix}1\amp 1\\ 1\amp 1 \end{bmatrix}\)</span> is row equivalent to <span class="process-math">\(U=\begin{bmatrix}1\amp 1\\ 0 \amp 0\end{bmatrix}\)</span> and yet <span class="process-math">\(\CS A=\Span\{(1,1)\}=\{(t,t)\colon t\in \R\}\ne \CS U=\Span\{(1,0)\}=\{(t,0)\colon t\in\R\}\text{.}\)</span> Thus we do not have <span class="process-math">\(\CS A=\CS U\)</span> in general.</p>
-<p>Next, we show more generally that if <span class="process-math">\(A\)</span> is row equivalent to <span class="process-math">\(B\text{,}\)</span> then <span class="process-math">\(\NS A=\NS B\text{,}\)</span> <span class="process-math">\(\RS A=\RS B\text{,}\)</span> and <span class="process-math">\(\dim\CS A=\dim \CS B\text{.}\)</span></p>
-<p>Assume that <span class="process-math">\(A\)</span> is row equivalent to <span class="process-math">\(B\text{.}\)</span> Using the formulation of row reduction in terms of multiplication by elementary matrices, we see that there is an invertible matrix <span class="process-math">\(Q\)</span> such that <span class="process-math">\(B=QA\text{,}\)</span> and hence also <span class="process-math">\(A=Q^{-1}B\text{.}\)</span> Then:</p>
+<body class="ignore-math"><article class="hiddenproof"> <article class="case"><h5 class="heading">
+<span class="process-math">\(B''\)</span> is linearly independent.</h5> <div class="para logical">
+<div class="para">Suppose <span class="process-math">\(a_kT(\boldv_k)+a_{k+1}T(\boldv_{k+1})+\cdots +a_nT(\boldv_n)=\boldzero\text{.}\)</span> Then the vector <span class="process-math">\(\boldv=a_k\boldv_k+a_{k+1}\boldv_{k+1}+\cdots +a_n\boldv_n\)</span> satisfies <span class="process-math">\(T(\boldv)=\boldzero\)</span> (using linearity of <span class="process-math">\(T\)</span>), and hence <span class="process-math">\(\boldv\in \NS T\text{.}\)</span> Then, using the fact that <span class="process-math">\(B'\)</span> is a basis of <span class="process-math">\(\NS T\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+b_1\boldv_1+b_2\boldv_2+\cdots +\boldv_k=\boldv=a_k\boldv_k+a_{k+1}\boldv_{k+1}+\cdots +a_n\boldv_n,
+\end{equation*}
+</div>
+<div class="para">and hence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+b_1\boldv_1+b_2\boldv_2+\cdots +\boldv_k-a_k\boldv_k-a_{k+1}\boldv_{k+1}-\cdots -a_n\boldv_n=\boldzero.
+\end{equation*}
+</div>
+<div class="para">Since the set <span class="process-math">\(B\)</span> is linearly independent, we conclude that <span class="process-math">\(b_i=a_j=0\)</span> for all <span class="process-math">\(1\leq i\leq k\)</span> and <span class="process-math">\(k+1\leq j\leq n\text{.}\)</span> In particular, <span class="process-math">\(a_{k+1}=a_{k+2}=\cdots=a_n=0\text{,}\)</span> as desired.</div>
+</div></article> <article class="case"><h5 class="heading">
+<span class="process-math">\(B''\)</span> spans <span class="process-math">\(\im T\)</span>.</h5> <div class="para">It is clear that <span class="process-math">\(\Span B''\subseteq \im T\)</span> since <span class="process-math">\(T(\boldv_i)\in \im T\)</span> for all <span class="process-math">\(k+1\leq i\leq n\)</span> and <span class="process-math">\(\im T\)</span> is closed under linear combinations.</div> <div class="para logical">
+<div class="para">For the other direction, suppose <span class="process-math">\(\boldw\in \im T\text{.}\)</span> Then there is a <span class="process-math">\(\boldv\in V\)</span> such that <span class="process-math">\(\boldw=T(\boldv)\text{.}\)</span> Since <span class="process-math">\(B\)</span> is a basis of <span class="process-math">\(V\)</span> we may write</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\boldv=a_1\boldv_1+a_2\boldv_2+\cdots a_k\boldv_k+a_{k+1}\boldv_{k+1}+\cdots +a_n\boldv_n\text{,}
+\end{equation*}
+</div>
+<div class="para">in which case</div>
 <div class="displaymath process-math">
 \begin{align*}
-\boldx\in\NS A\amp\iff A\boldx=\boldzero \\
-\amp\iff QA\boldx=Q\boldzero \amp (\knowl{./knowl/th_inverse_cancel.html}{\text{Theorem 3.3.3}}) \\
-\amp \iff B\boldx=\boldzero \\
-\amp iff \boldx\in\NS B
+\boldw=T(\boldv)\amp= T(a_1\boldv_1+a_2\boldv_2+\cdots a_k\boldv_k+a_{k+1}\boldv_{k+1}+\cdots +a_n\boldv_n)\\
+\amp=a_1T(\boldv_1)+a_2T(\boldv_2)+\cdots a_kT(\boldv_k)+a_{k+1}T(\boldv_{k+1})+\cdots +a_nT(\boldv_n)
+\amp (T \text{ is linear })\\
+\amp=\boldzero +a_kT(\boldv_k)+a_{k+1}T(\boldv_{k+1})+\cdots +a_nT(\boldv_n) \amp (\boldv_i\in\NS T \text{ for } 1\leq i\leq k) \text{.}
 \end{align*}
 </div>
-<p class="continuation">. This proves <span class="process-math">\(\NS A=\NS B\text{.}\)</span></p>
-<p>Next, by (1) we have <span class="process-math">\(\NS A=\NS T_A\text{,}\)</span> <span class="process-math">\(\CS A=\im T_A\)</span> and <span class="process-math">\(\NS B=\NS T_B\text{,}\)</span> <span class="process-math">\(\CS B=\im T_B\text{.}\)</span> Then</p>
-<div class="displaymath process-math">
-\begin{align*}
-\dim \CS A \amp=\dim\im T_A \\
-\amp=n-\dim\NS A \amp (\knowl{./knowl/th_rank-nullity.html}{\text{Theorem 4.6.2}}) \\
-\amp=n-\dim NS B \amp (\NS A=\NS B)\\
-\amp =\dim\im T_B \amp ( \knowl{./knowl/th_rank-nullity.html}{\text{Theorem 4.6.2}}\\
-\amp =\dim \CS B\text{.}
-\end{align*}
-</div>
-<p>Lastly, we turn to the row spaces. We will show that each row of <span class="process-math">\(B\)</span> is an element of <span class="process-math">\(\RS A\text{,}\)</span> from whence it follows that <span class="process-math">\(\RS B\subseteq \RS A\text{.}\)</span> Let <span class="process-math">\(\boldr_i\)</span> be the <span class="process-math">\(i\)</span>-th row of <span class="process-math">\(B\text{,}\)</span> and let <span class="process-math">\(\boldq_i\)</span> be the <span class="process-math">\(i\)</span>-th column of <span class="process-math">\(Q\text{.}\)</span> By <a href="" class="xref" data-knowl="./knowl/th_row_method.html" title="Theorem 3.1.21: Row method of matrix multiplication">Theorem 3.1.21</a>, we have <span class="process-math">\(\boldr_i=\boldq_i A\text{,}\)</span> and furthermore, <span class="process-math">\(\boldq_i A\)</span> is the linear combination of the rows of <span class="process-math">\(A\)</span> whose coefficients come from the entries of <span class="process-math">\(\boldq_i\text{.}\)</span> Thus <span class="process-math">\(\boldr_i\in\RS A\text{,}\)</span> as desired.</p>
-<p>Having shown that <span class="process-math">\(\RS B\subseteq \RS A\text{,}\)</span> we see that the same argument works <em class="emphasis">mutatis mutandis</em> (swapping the roles of <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> and using <span class="process-math">\(Q^{-1}\)</span> in place of <span class="process-math">\(Q\)</span>) to show that <span class="process-math">\(\RS A\subseteq \RS B\text{.}\)</span> We conclude that <span class="process-math">\(\RS A=\RS B\text{.}\)</span></p></article></body>
+<div class="para">This shows that <span class="process-math">\(\boldw=a_kT(\boldv_k)+a_{k+1}T(\boldv_{k+1})+\cdots +a_nT(\boldv_n)\in \Span B''\text{,}\)</span> as desired.</div>
+</div></article></article></body>
 </html>

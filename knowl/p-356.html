@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:15:43Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -15,7 +12,19 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>All leading ones in of a matrix in row echelon form must occur in distinct columns.</p>
-<span class="incontext"><a href="s_solving.html#p-356">in-context</a></span>
+<div class="para logical">
+<div class="para">Below you find the matrix with leading ones boxed. This matrix fails to be in row echelon form (and hence also reduced row echelon form) for a variety of reasons: the zero rows are not all grouped at the bottom; the first row is nonzero, but does not have a leading one; the leading one of the fourth row is to the left of the leading one of the leading one in the row above it.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix}0\amp 2\amp 1\amp 0\amp 0\\
+0\amp 0\amp 0\amp 0\amp 0\\
+0\amp \boxed{1}\amp 0\amp 0\amp 1\\
+\boxed{1}\amp 0\amp 0\amp 0\amp 0\\
+0\amp 0\amp 0\amp 0\amp 0
+\end{bmatrix}
+\end{equation*}
+</div>
+</div>
+<span class="incontext"><a href="s_ge.html#p-356" class="internal">in-context</a></span>
 </body>
 </html>

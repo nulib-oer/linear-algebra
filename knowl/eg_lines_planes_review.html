@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.7</span><span class="period">.</span><span class="space"> </span><span class="title">Lines and planes review.</span>
+</h4> <div class="para logical">
+<div class="para">Below we define lines (in <span class="process-math">\(\R^2\)</span>) and planes (in <span class="process-math">\(\R^3\)</span>) as sets of solutions of linear equations in two or three unknowns. Recall that the <dfn class="terminology">graph</dfn> of an equation is the set of all solutions to the equation.</div>
+<ul class="disc">
+<li>
+<span class="heading"><span class="title">Lines.</span></span><div class="para logical">
+<div class="para">A <dfn class="terminology">line</dfn> in <span class="process-math">\(\R^2\)</span> is the set of solutions (or graph) <span class="process-math">\(\ell\)</span> of a linear equation of the form <span class="process-math">\(ax+by=c\text{,}\)</span> where <span class="process-math">\(a, b, c\in\R\)</span> are fixed constants, and at least one of <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> is nonzero: i.e.,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\ell=\{(x,y)\in\R^2\colon ax+by=c\}.
+\end{equation*}
+</div>
+</div>
+</li>
+<li>
+<span class="heading"><span class="title">Planes.</span></span><div class="para logical">
+<div class="para">A <dfn class="terminology">plane</dfn> in <span class="process-math">\(\R^3\)</span> is the set of solutions (or graph) <span class="process-math">\(\mathcal{P}\)</span> of a linear equation of the form <span class="process-math">\(ax+by+cz=d\text{,}\)</span> where <span class="process-math">\(a, b, c, d\in\R\)</span> are fixed constants, and at least one of <span class="process-math">\(a, b, c\)</span> is nonzero: i.e.,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathcal{P}=\{(x,y,z)\in\R^3\colon ax+by+cz=d\}.
+\end{equation*}
+</div>
+</div>
+</li>
+</ul>
+<div class="para">We often use the abbreviated notation</div>
+<div class="displaymath process-math">
+\begin{align*}
+\ell \amp\colon ax+by=c \amp \mathcal{P}\amp\colon ax+by+cz=d
+\end{align*}
+</div>
+<div class="para">to introduce the line <span class="process-math">\(\ell\)</span> with defining equation <span class="process-math">\(ax+by=c\)</span> or plane <span class="process-math">\(\mathcal{P}\)</span> with defining equation <span class="process-math">\(ax+by+cz=d\text{.}\)</span>
+</div>
+</div> <div class="para">Given a plane <span class="process-math">\(\mathcal{P}\colon ax+by+cz=d\text{,}\)</span> we call <span class="process-math">\(\boldn=(a,b,c)\)</span> a <dfn class="terminology">normal vector</dfn> of <span class="process-math">\(\mathcal{P}\text{.}\)</span> Equipped with the normal vector <span class="process-math">\(\boldn\)</span> and a single point <span class="process-math">\(P=(x_0,y_0,z_0)\)</span> lying on <span class="process-math">\(\mathcal{P}\text{,}\)</span> we can quickly visualize <span class="process-math">\(\mathcal{P}\)</span> as the set of all points <span class="process-math">\(Q=(x,y,z)\)</span> such that the vector <span class="process-math">\(\overrightarrow{PQ}=(x-x_0, y-y_0, z-z_0)\)</span> is orthogonal to <span class="process-math">\(\mathcal{n}\text{.}\)</span> This allows us to envision <span class="process-math">\(\mathcal{P}\)</span> as “the plane passing through <span class="process-math">\(P\)</span> and orthogonal to <span class="process-math">\(\boldn\)</span>”. The customizable SageCell below nicely demonstrates this method of visualization.</div> <figure class="figure figure-like"><pre class="ptx-sagecell sagecell-sage" id="sage-1"><script type="text/x-sage">            #Choose a,b,c,d to define plane
+#with equation ax+by+cz=d
+a=-8
+b=3
+c=10
+d=3
+#Following finds two points, P and Q on plane
+n=matrix([a,b,c])
+NS=n.right_kernel()
+P=vector(n.solve_right(matrix([d])))
+Q=NS.basis()[0].normalized()
+#The rest produces graphics and labels
+Pt1=point(P, color="blue", size=10)
+Pt2=point(vector(P)+2*NS.basis()[0].normalized(), color="red", size=10)
+Ar1=arrow3d(P,P+2*Q, color="green")
+Ar2=arrow3d(P,P+2*vector(n).normalized(), color="red")
+T1=text3d("P",P+vector([0,0,.25]),color="black",fontsize=20)
+T2=text3d("Q",P+2*Q+vector([0,0,.25]),color="black",fontsize=20)
+T3=text3d("n",P+vector(n).normalized()+vector([0,0,.25]),color="black",fontsize=20)
+var("x y z")
+Plane=implicit_plot3d(a*x+b*y+c*z-d,(x,P[0]-2,P[0]+2),(y,P[1]-2,P[1]+2),(z,P[2]-2,P[2]+2), color="green", opacity=".1")
+Pt1+Pt2+Ar1+Ar2+T1+T2+T3+Plane
+</script></pre>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.8<span class="period">.</span></span><span class="space"> </span>Using Sage to visualize <span class="process-math">\(\mathcal{P}\colon ax+by+cz=d\)</span> via normal vector <span class="process-math">\(\boldn=(a,b,c)\)</span></figcaption></figure></article><span class="incontext"><a href="s_systems.html#eg_lines_planes_review" class="internal">in-context</a></span>
+</body>
+</html>

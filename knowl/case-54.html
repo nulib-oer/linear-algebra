@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:15:55Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -14,22 +11,13 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<article class="case"><h5 class="heading">Case: <span class="process-math">\(i\ne j\)</span>.</h5>
-<p>When <span class="process-math">\(i\ne j\)</span> we have</p>
-<div class="displaymath process-math">
-\begin{align*}
-[A\, \adj A]_{ij} \amp =\sum_{k=1}^na_{ik}[\adj A]_{kj}  \\
-\amp =\sum_{k=1}^n a_{ik}((-1)^{k+j}M_{jk}) \amp (\knowl{./knowl/d_adjoint.html}{\text{Definition 3.5.14}} )\\
-\amp =\sum_{k=1}^n(-1)^{k+j}a_{ik}M_{jk} \\
-\amp =\det C \text{,}
-\end{align*}
-</div>
-<p class="continuation">where <span class="process-math">\(C\)</span> is the matrix obtained by replacing the <span class="process-math">\(j\)</span>-th row of <span class="process-math">\(A\)</span> with a copy of its <span class="process-math">\(i\)</span>-th row. Since <span class="process-math">\(C\)</span> has two identical rows <a href="" class="xref" data-knowl="./knowl/th_det_zero_repeated_row.html" title="Theorem 3.5.13: Zero rows/columns, swapping rows/columns, identical rows/columns">Theorem 3.5.13</a> implies</p>
+<article class="case"><h5 class="heading">Underlying set.</h5> <div class="para logical">
+<div class="para">The <dfn class="terminology">vector space of <span class="process-math">\(m\times n\)</span> matrices</dfn>, denoted <span class="process-math">\(M_{mn}\text{,}\)</span> is the set of all <span class="process-math">\(m\times n\)</span> matrices: i.e.,</div>
 <div class="displaymath process-math">
 \begin{equation*}
-[A\, \adj A]_{ij}=\det C=0\text{,}
+M_{mn}=\left\{ A=[a_{ij}]_{m\times n}\colon a_{ij}\in \R\right\}\text{.}
 \end{equation*}
 </div>
-<p class="continuation">as desired. Once again, a similar argument using expansion along a column shows that <span class="process-math">\([\adj A\, A]_{ij}=0\text{.}\)</span></p></article><span class="incontext"><a href="s_det.html#case-54">in-context</a></span>
+</div></article><span class="incontext"><a href="s_vectorspace.html#case-54" class="internal">in-context</a></span>
 </body>
 </html>

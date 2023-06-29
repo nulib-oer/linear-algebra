@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:16:23Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -13,44 +10,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><article class="hiddenproof"><p>First we show that axioms (i) and (ii) are satsified for <em class="emphasis">any</em> choice of <span class="process-math">\(k_i\text{.}\)</span> Let</p>
+<body class="ignore-math"><article class="hiddenproof"><div class="para logical">
+<div class="para">That axioms (i)-(ii) are satisfied is left as an exercise. For axiom (iii), note that</div>
 <div class="displaymath process-math">
 \begin{equation*}
-K=\begin{amatrix}[rrrr]k_1\amp 0\amp \dots \amp 0 \\ 0\amp k_2\amp 0\amp \dots \\ \vdots \\ 0\amp \dots\amp 0\amp k_n \end{amatrix}\text{,}
+\langle p(x), p(x) \rangle =p(c_0)^2+p(c_1)^2+\cdots +p(c_n)^2\geq 0\text{,}
 \end{equation*}
 </div>
-<p class="continuation">the diagonal matrix whose <span class="process-math">\(i\)</span>-th diagonal entry is <span class="process-math">\(k_i\text{.}\)</span> Then for all <span class="process-math">\(\boldx=(x_1,x_2,\dots, x_n), \boldy=(y_1,y_2,\dots, y_n)\in \R^n\)</span> we have</p>
-<div class="displaymath process-math">
-\begin{equation*}
-\langle \boldx, \boldy  \rangle=\boldx^TK\boldy=\begin{amatrix}[cccc]x_1\amp x_2\amp \dots\amp x_n \end{amatrix} K\begin{bmatrix}y_1\\ y_2\\ \vdots \\ y_n\end{bmatrix}\text{.}
-\end{equation*}
-</div>
-<p class="continuation">Here we treat <span class="process-math">\(\boldx, \boldy\)</span> as column vectors, and we treat the resulting <span class="process-math">\(1\times 1\)</span> matrix <span class="process-math">\(\boldx^T K\boldy\)</span> as a scalar. Axioms (i)-(ii) now follow from various matrix properties. For linearity, for example, we have</p>
-<div class="displaymath process-math">
-\begin{align*}
-\langle c\boldx_1+d\boldx_2, \boldy \rangle \amp = (c\boldx_1+d\boldx_2)^TK\boldy\\
-\amp =(c\boldx_1^T+d\boldx_2^T)K\boldy \amp (\knowl{./knowl/th_trans_props.html}{\text{3.2.11}})\\
-\amp =c\boldx_1^TK\boldy+d\boldx_2^TK\boldy \\
-\amp =c \langle \boldx_1, \boldy \rangle +d \langle \boldx_2,\boldy  \rangle \text{.}
-\end{align*}
-</div>
-<p class="continuation">Symmetry requires a little more trickery:</p>
-<div class="displaymath process-math">
-\begin{align*}
-\langle \boldy, \boldx  \rangle   \amp = \boldy^TK\boldx \\
-\amp = \boldy^TK^T\boldx \amp (K^T=K) \\
-\amp = (\boldx^T K\boldy)^T \amp (\knowl{./knowl/th_trans_props.html}{\text{Theorem 3.2.11}})\\
-\amp =\boldx^T K \boldy \amp \\
-\amp = \langle \boldx, \boldy \rangle \text{.}
-\end{align*}
-</div>
-<p class="continuation">Note that <span class="process-math">\((\boldx^T K\boldy)^T=\boldx^T K\boldy\)</span> as <span class="process-math">\(\boldx^T K\boldy\)</span> is just a <span class="process-math">\(1\times 1\)</span> matrix.</p>
-<p>Lastly, we show that axiom (iii) is satisfied if and only if <span class="process-math">\(k_i&gt;0\)</span> for all <span class="process-math">\(i\text{.}\)</span> To this end consider the formula</p>
-<div class="displaymath process-math">
-\begin{equation*}
-\langle \boldx, \boldx \rangle=k_1x_1^2+k_2x_2^2+\cdots k_nx_n^2\text{.}
-\end{equation*}
-</div>
-<p class="continuation">If <span class="process-math">\(k_i&gt;0\text{,}\)</span> then since <span class="process-math">\(x_i^2\geq 0\)</span> for all <span class="process-math">\(i\text{,}\)</span> we have <span class="process-math">\(\langle \boldx, \boldx \rangle\geq 0\)</span> for any <span class="process-math">\(\boldx\text{,}\)</span> and <span class="process-math">\(\langle \boldx, \boldx \rangle=0\)</span> if and only if <span class="process-math">\(x_i=0\)</span> for all <span class="process-math">\(i\)</span> if and only if <span class="process-math">\(\boldx=\boldzero\text{.}\)</span></p>
-<p>For the other direction suppose <span class="process-math">\(k_i\leq 0\)</span> for some <span class="process-math">\(i\text{.}\)</span> Let <span class="process-math">\(\boldx=\bolde_i\text{,}\)</span> the  <span class="process-math">\(i\)</span>-th element of the standard basis of <span class="process-math">\(\R^n\text{.}\)</span> Then <span class="process-math">\(\langle \boldx, \boldx \rangle=k_i\leq 0\text{,}\)</span> in contradiction to the positivity axiom.</p></article></body>
+<div class="para">and we have equality if and only if <span class="process-math">\(p(c_0)=p(c_1)=\dots p(c_n)=0\text{.}\)</span> Since a nonzero polynomial of degree <span class="process-math">\(n\)</span> or less has <em class="emphasis">at most</em> <span class="process-math">\(n\)</span> distinct roots, we conclude that <span class="process-math">\(p(x)=\boldzero\text{,}\)</span> the zero polynomial.</div>
+</div></article></body>
 </html>

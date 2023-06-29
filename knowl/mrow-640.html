@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:16:32Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -14,16 +11,14 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_ortho_proj_distance.html ./knowl/ex_ortho_pythag.html">
 \begin{align*}
-\text{ \(\lambda\in\R\) is an eigenvalue of \(A\) } \amp \Leftrightarrow\amp  A\boldx=\lambda\boldx \text{ for some \(\boldx\ne 0\) } \ \text{ (by def.) }\\
-\amp \Leftrightarrow\amp \lambda\boldx-A\boldx=\boldzero\\
-\amp \Leftrightarrow\amp (\lambda I_n)\boldx-A\boldx=\boldzero \ \text{ (since \(\lambda\boldx=(\lambda I_n)\boldx\)) }\\
-\amp \Leftrightarrow\amp (\lambda I_n-A)\boldx=\boldzero \text{ for some \(\boldx\ne \boldzero\) }\\
-\amp \Leftrightarrow\amp \lambda I_n-A \text{ is noninvertible }\\
-\amp \Leftrightarrow\amp \det(\lambda I_n-A)=0 \ \text{ (invertibility theorem) }
+\norm{\boldv-\boldw'}^2\amp = \norm{\boldw^\perp+(\boldw-\boldw')}^2\\
+\amp =\norm{\boldw^\perp}^2+\norm{\boldw-\boldw'}^2 \amp (\knowl{./knowl/ex_ortho_pythag.html}{\text{Exercise 4.2.3.13}})\\
+\amp \geq \norm{\boldw^\perp}^2\\
+\amp =\norm{\boldv-\boldw}^2
 \end{align*}
 </div>
-<span class="incontext"><a href="ss_eigenvectors.html#mjx-eqn:mrow-640">in-context</a></span>
+<span class="incontext"><a href="s_orthogonal_projection.html#md-205" class="internal">in-context</a></span>
 </body>
 </html>

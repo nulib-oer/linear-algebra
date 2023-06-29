@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="hiddenproof"><h4 class="heading"><span class="type">Proof</span></h4>
+<div class="para">Before proving the result, we point out one subtlety here: although the <span class="process-math">\(\boldw_i\in W_{\lambda_i}\)</span> for all <span class="process-math">\(i\text{,}\)</span> we cannot assume that each <span class="process-math">\(\boldw_i\)</span> is an eigenvector. Indeed, <span class="process-math">\(\boldw_i\)</span> is an eigenvector in this case if and only if <span class="process-math">\(\boldw_i\ne 0\text{.}\)</span> This observation guides the proof that follows.</div> <div class="para logical">
+<div class="para">To pick out the terms of <a href="" class="xref" data-knowl="./knowl/eq_independent_eigenspaces.html" title="Equation 5.5.6">(5.5.6)</a> that are nonzero (if any), we define</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_independent_eigenspaces.html ./knowl/th_independent_eigenvectors.html">
+\begin{equation*}
+J=\{j \colon \boldw_j\ne 0\}=\{j_1, j_2,\dots, j_k\}\text{.}
+\end{equation*}
+</div>
+<div class="para">Assume by contradiction that <span class="process-math">\(J\)</span> is nonempty: i.e., <span class="process-math">\(\val{J}=k\geq 1\text{.}\)</span> In this case we would have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_independent_eigenspaces.html ./knowl/th_independent_eigenvectors.html">
+\begin{align*}
+\boldzero \amp= \boldw_1+\boldw_2+\cdots \boldw_r \\
+\amp = \boldw_{j_1}+\boldw_{j_2}+\cdots +\boldw_{j_k} \text{,}
+\end{align*}
+</div>
+<div class="para">since <span class="process-math">\(\boldw_i=\boldzero\)</span> for all <span class="process-math">\(i\notin J\text{.}\)</span> But then</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_independent_eigenspaces.html ./knowl/th_independent_eigenvectors.html">
+\begin{equation*}
+\boldw_{j_1}+\boldw_{j_2}+\cdots +\boldw_{j_k}=\boldzero
+\end{equation*}
+</div>
+<div class="para">would be a nontrivial linear combination of the eigenvectors <span class="process-math">\(\boldw_{j_i}\)</span> equal to <span class="process-math">\(\boldzero\text{.}\)</span> Since the eigenvectors <span class="process-math">\(\boldw_{j_i}\)</span> have distinct eigenvalues, this contradicts <a href="" class="xref" data-knowl="./knowl/th_independent_eigenvectors.html" title="Theorem 5.5.7: Linear independence of eigenvectors">Theorem 5.5.7</a>. Thus <span class="process-math">\(J=\{\, \}\text{.}\)</span> Equivalently, <span class="process-math">\(\boldw_i=\boldzero\)</span> for all <span class="process-math">\(1\leq i\leq r\text{,}\)</span> as desired.</div>
+</div></article><span class="incontext"><a href="s_diagonalization.html#proof-108" class="internal">in-context</a></span>
+</body>
+</html>

@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:16:13Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -13,9 +10,39 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><article class="hiddenproof"><ol class="decimal">
-<li><p>Suppose by contradiction that <span class="process-math">\(\Span S=V\)</span> and <span class="process-math">\(\val{S} &lt; n\text{.}\)</span> Then <a href="" class="xref" data-knowl="./knowl/th_basis_span_bounds.html" title="Theorem 4.5.10">Theorem 4.5.10</a> would imply <span class="process-math">\(B\)</span> is linearly dependent. Since this is a contradiction, we conclude that <span class="process-math">\(\val{S}\geq n\text{.}\)</span></p></li>
-<li><p>This also follows from <a href="" class="xref" data-knowl="./knowl/th_basis_span_bounds.html" title="Theorem 4.5.10">Theorem 4.5.10</a>: since <span class="process-math">\(B\)</span> is a spanning set of <span class="process-math">\(V\)</span> any set containing more than <span class="process-math">\(n=\val{B}\)</span> elements must be linearly dependent.</p></li>
-<li><p>This follows from (1) and (2): if <span class="process-math">\(B'\)</span> is a basis, then since <span class="process-math">\(B'\)</span> spans, we have <span class="process-math">\(\val{B'}\geq n\)</span> (1); and since <span class="process-math">\(B\)</span> is linearly independent we have <span class="process-math">\(\val{B'}\leq n\)</span> (2). We conclude that <span class="process-math">\(\val{B'}=n\text{.}\)</span></p></li>
-</ol></article></body>
+<body class="ignore-math"><article class="hiddenproof"> <div class="para">That there can me <em class="emphasis">at most</em> one such <span class="process-math">\(T\colon V\rightarrow W\)</span> follows from (i). Thus we need only show that such a <span class="process-math">\(T\)</span> exists.</div> <div class="para logical">
+<div class="para">Since any <span class="process-math">\(\boldv\in V\)</span> has a <em class="emphasis">unique</em> expression of the form</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_bases_transformations.html ./knowl/eq_bases_transformations.html">
+\begin{equation*}
+\boldv=c_1\boldu_1+c_2\boldu_2+\cdots +c_r\boldu_r\text{,}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(c_i\ne 0\)</span> for all <span class="process-math">\(1\leq i\leq r\text{,}\)</span> the formula in <a href="" class="xref" data-knowl="./knowl/eq_bases_transformations.html" title="Equation 3.6.2">(3.6.2)</a> defines a function <span class="process-math">\(T\colon V\rightarrow W\)</span> in a well-defined manner. Note also that the formula still applies even if some of the coefficients are equal to 0: if <span class="process-math">\(c_i=0\text{,}\)</span> then <span class="process-math">\(c_iT(\boldv_i)=\boldzero\text{,}\)</span> and the right-hand side of <a href="" class="xref" data-knowl="./knowl/eq_bases_transformations.html" title="Equation 3.6.2">(3.6.2)</a> is unchanged. We will use this fact below.</div>
+</div> <div class="para logical">
+<div class="para">We now show that <span class="process-math">\(T\)</span> is linear. Given <span class="process-math">\(\boldv, \boldv'\in V\)</span> we can find a common collection of elements <span class="process-math">\(\boldu_1,\boldu_2,\dots, \boldu_r\in B\)</span> for which</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_bases_transformations.html">
+\begin{align*}
+\boldv \amp = c_1\boldu_1+c_2\boldu_2+\cdots +c_r\boldu_r\\
+\boldv'\amp=d_1\boldu_1+d_2\boldu_2+\cdots +d_r\boldu_r 
+\end{align*}
+</div>
+<div class="para">for some <span class="process-math">\(c_i, d_i\in \R\text{.}\)</span> We can no longer assume that <span class="process-math">\(c_i\ne 0\)</span> and <span class="process-math">\(d_i\ne 0\)</span> for all <span class="process-math">\(1\leq i\leq r\text{,}\)</span> but as observed above we still have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_bases_transformations.html">
+\begin{align*}
+T(\boldv) \amp = c_1T(\boldu_1)+c_2T(\boldu_2)+\cdots +c_rT(\boldu_r)\\
+T(\boldv')\amp=d_1T(\boldu_1)+d_2T(\boldu_2)+\cdots +d_rT(\boldu_r) \text{.}
+\end{align*}
+</div>
+<div class="para">Given any <span class="process-math">\(c, d\in \R\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_bases_transformations.html">
+\begin{align*}
+T(c\boldv+d\boldv')\amp=T(cc_1\boldu_1+cc_2\boldu_2+\cdots +cc_r\boldu_r+dd_1\boldu_1+dd_2\boldu_2+\cdots +dd_r\boldu_r) \\
+\amp= T\left((cc_1+dd_1)\boldu_1+(cc_2+dd_2)\boldu_2+\cdots +(cc_r+dd_r)\boldu_r\right) \\
+\amp =(cc_1+dd_1)T(\boldu_1)+(cc_2+dd_2)T(\boldu_2)+\cdots +(cc_r+dd_r)T(\boldu_r) \amp (\knowl{./knowl/eq_bases_transformations.html}{\text{(3.6.2)}}) \\
+\amp= c(c_1T(\boldu_1)+c_2T(\boldu_2)+\cdots +c_rT(\boldu_r))+d(d_1T(\boldu_1)+d_2T(\boldu_2)+\cdots +d_rT(\boldu_r)\\
+\amp =cT(\boldv)+dT(\boldv')\text{.}
+\end{align*}
+</div>
+<div class="para">Thus <span class="process-math">\(T\)</span> is a linear transformation.</div>
+</div></article></body>
 </html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><article class="hiddenproof"> <div class="para logical">
+<div class="para">Let <span class="process-math">\(n_i=\dim W_{\lambda_i}\)</span>  for all <span class="process-math">\(1\leq i\leq r\)</span> . We assume that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/cor_independent_eigenspaces.html">
+\begin{equation*}
+n=\dim W_{\lambda_1}+
+\dim W_{\lambda_2}+\cdots \dim W_{\lambda_r}=n_1+n_2+\cdots +n_r\text{.}
+\end{equation*}
+</div>
+<div class="para">For each <span class="process-math">\(1\leq i\leq n\text{,}\)</span> let</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/cor_independent_eigenspaces.html">
+\begin{equation*}
+S_{\lambda_i}=\{\boldv_{\lambda_i, 1}, \boldv_{\lambda_i,2},\dots, \boldv_{\lambda_{i,n_i}}\}
+\end{equation*}
+</div>
+<div class="para">be a basis of the eigenspace <span class="process-math">\(W_{\lambda_i}\text{.}\)</span> We claim</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/cor_independent_eigenspaces.html">
+\begin{equation*}
+B=(\underset{W_{\lambda_1}}{\underbrace{\boldv_{\lambda_1,1},\dots, \boldv_{\lambda_1,n_1}}},\underset{W_{\lambda_2}}{\underbrace{\boldv_{\lambda_2,1},\dots, \boldv_{\lambda_2,n_2}}},\dots, \underset{W_{\lambda_r}}{\underbrace{\boldv_{\lambda_r,1},\dots, \boldv_{\lambda_r,n_r}}} )
+\end{equation*}
+</div>
+<div class="para">is an eigenbasis of <span class="process-math">\(T\text{.}\)</span> Since <span class="process-math">\(\boldzero\ne \boldv_{\lambda_i, j}\in W_{\lambda_i}\)</span> for all <span class="process-math">\(1\leq i\leq r\)</span> and <span class="process-math">\(1\leq j\leq n_i\text{,}\)</span> we see that <span class="process-math">\(B\)</span> consists of eigenvectors of <span class="process-math">\(T\text{.}\)</span> Since</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/cor_independent_eigenspaces.html">
+\begin{equation*}
+n_1+n_2+\cdots n_r=n=\dim V\text{,}
+\end{equation*}
+</div>
+<div class="para">to show that <span class="process-math">\(B\)</span> is a basis it suffices to show that it is linearly independent. To this end, assume we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/cor_independent_eigenspaces.html">
+\begin{align*}
+\boldzero \amp=
+\underset{\boldw_{\lambda_1}}{\underbrace{\sum_{j=1}^{n_1}c_{1,j}\boldv_{\lambda_1, j}}} +\underset{\boldw_{\lambda_2}}{\underbrace{\sum_{j=1}^{n_2}c_{2,j}\boldv_{\lambda_2, j}}}+\dots \underset{\boldw_{\lambda_r}}{\underbrace{\sum_{j=1}^{n_r}c_{r,j}\boldv_{\lambda_r, j}}} \\
+\amp=\boldw_1+\boldw_2+\cdots +\boldw_r \text{,}
+\end{align*}
+</div>
+<div class="para">where for each <span class="process-math">\(1\leq i\leq r\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/cor_independent_eigenspaces.html">
+\begin{equation*}
+\boldw_i=\sum_{i=1}^{n_i}c_{i,j}\boldv_{\lambda_i, j}\in W_{\lambda_k}\text{.}
+\end{equation*}
+</div>
+<div class="para">By <a href="" class="xref" data-knowl="./knowl/cor_independent_eigenspaces.html" title="Corollary 5.5.12">Corollary 5.5.12</a> we must have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/cor_independent_eigenspaces.html">
+\begin{equation*}
+\boldzero=\boldw_i=\sum_{i=1}^{n_i}c_{i,j}\boldv_{\lambda_i, j}
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(i\text{.}\)</span> Finally, since the set</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/cor_independent_eigenspaces.html">
+\begin{equation*}
+S_{\lambda_i}=\{\boldv_{\lambda_i, 1}, \boldv_{\lambda_i,2},\dots, \boldv_{\lambda_{i,n_i}}\}
+\end{equation*}
+</div>
+<div class="para">is linearly independent for each <span class="process-math">\(i\text{,}\)</span> we must have <span class="process-math">\(c_{i,j}=0\)</span> for all <span class="process-math">\(1\leq i\leq r\)</span> and <span class="process-math">\(1\leq j\leq n_i\text{.}\)</span> This proves that <span class="process-math">\(B\)</span> is linearly independent, hence a basis.</div>
+</div></article></body>
+</html>

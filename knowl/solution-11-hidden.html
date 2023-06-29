@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:15:41Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -13,33 +10,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><div class="solution solution-like"><ol class="decimal">
+<body class="ignore-math"><div class="solution solution-like">
+<div class="para">(a) Geometrically, each equation in the system represents a line <span class="process-math">\(\ell_i\colon a_ix+b_iy=c_i\text{.}\)</span> A solution <span class="process-math">\((x,y)\)</span> to the <span class="process-math">\(i\)</span>-th equation corresponds to a point on <span class="process-math">\(\ell_i\text{.}\)</span> Thus a solution <span class="process-math">\((x,y)\)</span> to the system corresponds to a point lying on <em class="emphasis">all</em> of the lines: i.e., a point of intersection of the lines.</div> <div class="para">(b) First of all to prove the desired “or” statement it suffices to prove that if the number of solutions is greater than 1, then there are infinitely many solutions.</div> <div class="para">Now suppose there is more than one solution. Then there are at least two different solutions: <span class="process-math">\(P_1=(x_1,y_1)\)</span> and <span class="process-math">\(P_2=(x_2,y_2)\text{.}\)</span> Take any of the two lines <span class="process-math">\(\ell_i, \ell_j\text{.}\)</span> By above the intersection of <span class="process-math">\(\ell_i\)</span> and <span class="process-math">\(\ell_j\)</span> contains <span class="process-math">\(P_1\)</span> and <span class="process-math">\(P_2\text{.}\)</span> But two <em class="emphasis">distinct</em> lines intersect in at most one point. It follows that <span class="process-math">\(\ell_i\)</span> and <span class="process-math">\(\ell_j\)</span> must be equal. Since <span class="process-math">\(\ell_i\)</span> and <span class="process-math">\(\ell_j\)</span> were arbitrary, it follows <em class="emphasis">all</em> of the lines <span class="process-math">\(\ell_i\)</span> are in fact the same line <span class="process-math">\(\ell\text{.}\)</span> But this means the common intersection of the lines is <span class="process-math">\(\ell\text{,}\)</span> which has infinitely many points. It follows that the system has infinitely many solutions.</div> <div class="para">(c) We will get 0 solutions if the system includes two different parallel lines: e.g., <span class="process-math">\(\ell_1\colon x+y=5\)</span> and <span class="process-math">\(\ell_2\colon x+y=1\text{.}\)</span>
+</div> <div class="para">We will get exactly one solution when the slopes of each line in the system are distinct.</div> <div class="para">We will get infinitely many solutions when <em class="emphasis">all</em> equations in the system represent the <em class="emphasis">same line</em>. This happens when all equations are multiples of one another.</div> <div class="para logical">
+<div class="para">(d) Now each equation in our system defines a plane <span class="process-math">\(\mathcal{P}_i\colon a_ix+b_iy+c_iz=d_i\text{.}\)</span> A solution <span class="process-math">\((x,y,z)\)</span> to the system corresponds to a point <span class="process-math">\(P=(x,y,z)\)</span> of intersection of the planes. We recall two facts from Euclidean geometry:</div>
+<ol class="lower-alpha">
 <li>
-<p>Below you find the matrix with leading ones boxed. This matrix fails to be in row echelon form (and hence also reduced row echelon form) for a variety of reasons: the zero rows are not all grouped at the bottom; the first row is nonzero, but does not have a leading one; the leading one of the fourth row is to the left of the leading one of the leading one in the row above it.</p>
-<div class="displaymath process-math">
-\begin{equation*}
-\begin{bmatrix}0\amp 2\amp 1\amp 0\amp 0\\
-0\amp 0\amp 0\amp 0\amp 0\\
-0\amp \boxed{1}\amp 0\amp 0\amp 1\\
-\boxed{1}\amp 0\amp 0\amp 0\amp 0\\
-0\amp 0\amp 0\amp 0\amp 0
-\end{bmatrix}
-\end{equation*}
-</div>
+<span class="heading"><span class="title">Fact 1.</span></span><div class="para">Given two distinct points, there is a unique line containing both of them.</div>
 </li>
 <li>
-<p>Below you find the matrix with leading ones boxed. This matrix is in row echelon form: the zero rows (rows 4 and 5) are grouped at the bottom; each nonzero row has a leading one (boxed in the matrix below); the leading ones step strictly to the right as we move down the rows.</p>
-<div class="displaymath process-math">
-\begin{equation*}
-\begin{bmatrix}\boxed{1}\amp 0\amp 0\amp -3\amp -7\\
-0\amp 0\amp \boxed{1}\amp 2\amp 0\\
-0\amp 0\amp 0\amp 0\amp \boxed{1}\\
-0\amp 0\amp 0\amp 0\amp 0\\
-0\amp 0\amp 0\amp 0\amp 0
-\end{bmatrix}
-\end{equation*}
-</div>
-<p class="continuation">The matrix is <em class="emphasis">not</em> in reduced row echelon form, as the last column contains a leading one in its third row, and a nonzero entry in its first row.</p>
+<span class="heading"><span class="title">Fact 2.</span></span><div class="para">Given any number of distinct planes, they either do not intersect, or intersect in a line.</div>
 </li>
-</ol></div></body>
+</ol>
+</div> <div class="para">We proceed as in part (b) above: that is show that if there are two distinct solutions to the system, then there are infinitely many solutions. First, for simplicity, we may assume that the equations <span class="process-math">\(\mathcal{P}_i\colon a_ix+b_iy+c_iz=d_i\)</span> define <em class="emphasis">distinct</em> planes; if we have two equations defining the same plane, we can delete one of them and not change the set of solutions to the system.</div> <div class="para">Now suppose <span class="process-math">\(P=(x_1,y_1,z_1)\)</span> and <span class="process-math">\(Q=(x_2,y_2,z_2)\)</span> are two distinct solutions to the system. Let <span class="process-math">\(\ell\)</span> be the unique line containing <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> (Fact 1). I claim that <span class="process-math">\(\ell\)</span> is precisely the set of solutions to the system. To see this, take any two equations in the system <span class="process-math">\(\mathcal{P}_i\colon a_ix+b_iy+c_iz=d_i\)</span> and <span class="process-math">\(\mathcal{P}_j\colon a_jx+b_jy+c_iz=d_j\text{.}\)</span> Since the two corresponding planes are distinct, and intersect in at least the points <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\text{,}\)</span> they must intersect in a line (Fact 2); since this line contains <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\text{,}\)</span> it must be the line <span class="process-math">\(\ell\)</span> (Fact 1). Thus any two planes in the system intersect in the line <span class="process-math">\(\ell\text{.}\)</span> From this it follows that: (a) a point satisfying the system must lie in <span class="process-math">\(\ell\text{;}\)</span> and (b) all points on <span class="process-math">\(\ell\)</span> satisfy the system (since we have shown that <span class="process-math">\(\ell\)</span> lies in all the planes). It follows that <span class="process-math">\(\ell\)</span> is precisely the set of solutions, and hence that there are infinitely many solutions.</div>
+</div></body>
 </html>

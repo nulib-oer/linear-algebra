@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:16:22Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -13,19 +10,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><article class="hiddenproof"><p>Let <span class="process-math">\(B=\{\bolde_1, \bolde_2, \dots, \bolde_n\}\)</span> be the standard basis of <span class="process-math">\(\R^n\text{,}\)</span> and let <span class="process-math">\(A\)</span> be the <span class="process-math">\(m\times n\)</span> matrix defined as</p>
+<body class="ignore-math"><article class="hiddenproof"><ol class="decimal"><li><div class="para">See <a href="" class="xref" data-knowl="./knowl/rm_dotproduct.html" title="Remark 4.1.8">Remark 4.1.8</a> and the proof of <a href="" class="xref" data-knowl="./knowl/th_weighted_dotproduct.html" title="Theorem 4.1.3: Weighted dot product">Theorem 4.1.3</a>.</div></li></ol> <div class="para logical">
+<div class="para">Let <span class="process-math">\(A=[a_{ij}]_{m\times n}\)</span> and <span class="process-math">\(B=[b_{ij}]_{n\times r}\text{.}\)</span> Then</div>
 <div class="displaymath process-math">
 \begin{equation*}
-A=\begin{bmatrix}\vert\amp \vert\amp  \amp \vert \\ T(\bolde_1)\amp  T(\bolde_2)\amp \cdots \amp T(\bolde_n)\\ \vert\amp \vert\amp  \amp \vert \end{bmatrix}\text{.}
+(AB)_{ij}=\sum_{k=1}^na_{ik}b_{kj}=\boldr_i\cdot \boldc_j\text{,}
 \end{equation*}
 </div>
-<p class="continuation">In other words, the <span class="process-math">\(j\)</span>-th column of <span class="process-math">\(A\)</span> is <span class="process-math">\(T(\bolde_j)\text{,}\)</span> considered as an <span class="process-math">\(m\times 1\)</span> column vector. The corresponding matrix transformation <span class="process-math">\(T_A\colon \R^n\rightarrow \R^m\)</span> is linear by <a href="" class="xref" data-knowl="./knowl/th_matrix_transform_i.html" title="Theorem 4.2.9: Matrix transformations I">Theorem 4.2.9</a>. Since <span class="process-math">\(T\)</span> is linear by assumption, <a href="" class="xref" data-knowl="./knowl/th_bases_transformations.html" title="Theorem 4.7.1: Bases and linear transformations">Theorem 4.7.1</a> applies: to show <span class="process-math">\(T=T_A\)</span> we need only show that <span class="process-math">\(T(\bolde_j)=T_A(\bolde_j)\)</span> for all <span class="process-math">\(1\leq j\leq n\text{.}\)</span> We have</p>
-<div class="displaymath process-math">
-\begin{align*}
-T_A(\bolde_j) \amp =A\bolde_j  \amp (\knowl{./knowl/d_matrix_transform.html}{\text{Definition 4.2.8}})\\
-\amp=(j\text{-th column of } A) \amp (\knowl{./knowl/th_column_method.html}{\text{Theorem 3.1.19}}) \\
-\amp = T(\bolde_j) \amp (\text{def. of } A)\text{.}
-\end{align*}
+<div class="para">since <span class="process-math">\(\boldr_i=(a_{i1}, a_{i2}, \dots, a_{in})\)</span> and <span class="process-math">\(\boldc_j=(b_{j1}, b_{2j},\dots, b_{nj})\text{.}\)</span>
 </div>
-<p class="continuation">Thus <span class="process-math">\(T=T_A\text{,}\)</span> as claimed.</p></article></body>
+</div></article></body>
 </html>

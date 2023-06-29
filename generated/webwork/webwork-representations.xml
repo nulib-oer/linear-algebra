@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-representations>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-18" ww-id="webwork-18">
+    <static seed="18" source="Library/TCNJ/TCNJ_LinearSystems/problem1.pg">
+      <statement><p>Determine whether the following system has no solution, an infinite number of solutions or a unique solution.</p>
+<p><ol>
+<li>
+<p><m>\left\lbrace\begin{array}{rllrrr}
+-8 x \amp  - 7 y \amp = \amp 3 \cr
+4 x \amp + 4 y \amp = \amp 8 \cr
+-16 x \amp  - 13 y \amp = \amp 25
+\end{array} \right.</m></p>
+</li>
+<li>
+<p><m>\left\lbrace\begin{array}{rllrrr}
+-8 x \amp  - 7 y \amp = \amp 3 \cr
+4 x \amp + 4 y \amp = \amp 8 \cr
+-16 x \amp  - 13 y \amp = \amp 27
+\end{array} \right.</m></p>
+</li>
+<li>
+<p><m>\left\lbrace\begin{array}{rllrrr}
+25 x \amp  - 15 y  \amp = \amp 10 \cr
+-15 x \amp + 9 y \amp = \amp -6 \cr
+30 x \amp  - 18 y \amp = \amp 12
+\end{array} \right.</m></p>
+</li>
+</ol></p>
+</statement>
+    </static>
+    <server-data sourceFilePath="Library/TCNJ/TCNJ_LinearSystems/problem1.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/TCNJ/TCNJ_LinearSystems/problem1.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-19" ww-id="webwork-19">
+    <static seed="19" source="Library/TCNJ/TCNJ_RowReduction/problem5.pg">
+      <statement><p>Suppose that the following</p>
+<p><m>\left\lbrace\begin{array}{rrrrrr}\amp  4 \,x\amp +\amp  8 \, y\amp =\amp 4\\\amp  12 \,x\amp +\amp  24 \, y\amp =\amp k\\\amp  8 \,x\amp +\amp  16 \, y\amp =\amp 8\\ \end{array}\right.</m></p>
+<p>is a consistent system.   Then <m>k=</m> <fillin name="AnSwEr0001" characters="10"/></p>
+</statement>
+      <answer>
+        <p>
+          <m>12</m>
+        </p>
+      </answer>
+    </static>
+    <server-data sourceFilePath="Library/TCNJ/TCNJ_RowReduction/problem5.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/TCNJ/TCNJ_RowReduction/problem5.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-20" ww-id="webwork-20">
+    <static seed="20" source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/holt_01_01_024.pg">
+      <statement><p>Find the set of solutions for the linear system</p>
+<p><me>\begin{array}{rcrcrcr} x_1  \amp  + \amp  4 x_{2} \amp  + \amp  6 x_{3} \amp  = \amp  -10 \\ \amp  - \amp  x_{2} \amp  - \amp  4 x_{3} \amp  = \amp  -9 \\ \amp  \amp   \amp   \amp  3 x_{3} \amp  = \amp  9\end{array}</me> Use <alert>s1</alert>, <alert>s2</alert>, etc. for the free variables if necessary.</p>
+<p><m>(x_1, x_2, x_3) = \bigg(</m> <fillin name="AnSwEr0001" characters="10"/>, <fillin name="AnSwEr0002" characters="10"/>, <fillin name="AnSwEr0003" characters="10"/> <m>\bigg)</m></p>
+</statement>
+      <answer>
+        <p>
+          <m>-16</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>-3</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>3</m>
+        </p>
+      </answer>
+      <solution><p><alert>SOLUTION:</alert>
+Equation 3 <m>\Rightarrow x_3 = 3</m>. Substitute into equation 2, <m>-x_2  - 4(3) = -9 \Rightarrow x_2 = -3</m>. Substitute into equation 1, <m>x_1 + 4(-3) + 6(3) = -10 \Rightarrow x_1 = -16</m>.</p>
+</solution>
+    </static>
+    <server-data sourceFilePath="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/holt_01_01_024.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/holt_01_01_024.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-21" ww-id="webwork-21">
+    <static seed="21" source="Library/TCNJ/TCNJ_LinearSystems/problem3.pg">
+      <statement><p>Give a geometric description of the following systems of equations</p>
+<p><ol>
+<li>
+<p><m>\left\lbrace\begin{array}{rrrrrr}\amp  7 \,x\amp +\amp   \, y\amp =\amp 9\\\amp  4 \,x\amp +\amp  3 \, y\amp =\amp 2\\\amp  -23 \, x\amp - \amp 13 \,y\amp =\amp -15\\ \end{array}\right.</m></p>
+</li>
+<li>
+<p><m>\left\lbrace\begin{array}{rrrrrr}\amp  -8 \, x\amp +\amp  12 \, y\amp =\amp -4\\\amp  -4 \, x\amp +\amp  6 \, y\amp =\amp -2\\\amp  14 \,x\amp - \amp 21 \,y\amp =\amp 7\\ \end{array}\right.</m></p>
+</li>
+<li>
+<p><m>\left\lbrace\begin{array}{rrrrrr}\amp  7 \,x\amp +\amp   \, y\amp =\amp 9\\\amp  4 \,x\amp +\amp  3 \, y\amp =\amp 2\\\amp  -23 \, x\amp - \amp 13 \,y\amp =\amp -17\\ \end{array}\right.</m></p>
+</li>
+</ol></p>
+</statement>
+    </static>
+    <server-data sourceFilePath="Library/TCNJ/TCNJ_LinearSystems/problem3.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/TCNJ/TCNJ_LinearSystems/problem3.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-22" ww-id="webwork-22">
+    <static seed="22" source="Library/TCNJ/TCNJ_LinearSystems/problem4.pg">
+      <statement><p>Give a geometric description of the following system of equations</p>
+<p><ol>
+<li>
+<p><m>\left\lbrace\begin{array}{rrrrrrr}
+2x \amp  + \amp  4y \amp  - \amp  6z \amp  = \amp  -12 \cr
+-3x \amp  - \amp  6y \amp  + \amp  9z \amp  = \amp  18
+\end{array} \right.</m></p>
+</li>
+<li>
+<p><m>\left\lbrace\begin{array}{rrrrrrr}
+2x \amp  + \amp  4y \amp  - \amp  6z \amp  = \amp  12 \cr
+-x \amp  + \amp  5y \amp  - \amp  9z \amp  = \amp  1
+\end{array} \right.</m></p>
+</li>
+<li>
+<p><m>\left\lbrace\begin{array}{rrrrrrr}
+2x \amp  + \amp  4y \amp  - \amp  6z \amp  = \amp  12 \cr
+-3x \amp  - \amp  6y \amp  + \amp  9z \amp  = \amp  16
+\end{array}\right.</m></p>
+</li>
+</ol></p>
+</statement>
+    </static>
+    <server-data sourceFilePath="Library/TCNJ/TCNJ_LinearSystems/problem4.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/TCNJ/TCNJ_LinearSystems/problem4.pg"/>
+  </webwork-reps>
+</webwork-representations>

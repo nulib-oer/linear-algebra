@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:16:31Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -14,8 +11,31 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h3 class="heading"><span class="type">Paragraph</span></h3>
-<p>Given <span class="process-math">\(T\colon V\rightarrow W\)</span> and two choices of pairs of bases, <span class="process-math">\((B, B')\)</span> and <span class="process-math">\((B'', B''')\text{,}\)</span> what is the relation between <span class="process-math">\([T]_{B}^{B'}\)</span> and <span class="process-math">\([T]_{B''}^{B'''}\text{?}\)</span></p>
-<span class="incontext"><a href="s_changeofbasis.html#p-2025">in-context</a></span>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<div class="para logical">
+<div class="para">First compute</div>
+<div class="displaymath process-math">
+\begin{align*}
+\langle (1,1), (1,0)\rangle \amp= 2(1)+1(0)=2 \\
+\norm{(1,1)}\amp =\sqrt{\langle (1,1),(1,1)\rangle} \\
+\amp =\sqrt{2+1}=\sqrt{3} \\
+\norm{(1,0)}\amp =\sqrt{\langle (1,0),(1,0)\rangle} \\
+\amp =\sqrt{2} 
+\end{align*}
+</div>
+<div class="para">By definition <span class="process-math">\(\theta\)</span> is the unique value in <span class="process-math">\([0,\pi]\)</span> satisfying</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\cos\theta=\frac{\langle (1,1), (1,0)\rangle}{\norm{(1,1)}\norm{(1,0)}}=\frac{2}{\sqrt{3}\sqrt{2}}=\frac{\sqrt{6}}{3}\text{.}
+\end{equation*}
+</div>
+<div class="para">We see that <span class="process-math">\(\theta\)</span> is not one of our familiar angles from the unit circle (e.g., <span class="process-math">\(\pi/6, \pi/4\text{,}\)</span> etc.) and so express <span class="process-math">\(\theta\)</span> in terms of the <span class="process-math">\(\arccos\)</span> function:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\theta=\arccos(\sqrt{6}/3)\approx 35.3^\circ\text{.}
+\end{equation*}
+</div>
+</div>
+<span class="incontext"><a href="s_innerproducts.html#p-2025" class="internal">in-context</a></span>
 </body>
 </html>

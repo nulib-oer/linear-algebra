@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:15:49Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -14,38 +11,22 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math"><div class="solution solution-like">
-<p>We prove by induction that <span class="process-math">\(A^nq(A)=q(A)A^n\)</span> for any <span class="process-math">\(n\geq 0\text{,}\)</span> a special case of the result.</p>
-<article class="case"><h5 class="heading">Base step: <span class="process-math">\(n=0\)</span>.</h5>
-<p>In this case we have <span class="process-math">\(A^n=A^0=I\text{,}\)</span> and thus</p>
+<div class="para">I’ll just describe the row method here.</div> <div class="para logical">
+<div class="para">Note that the rows of <span class="process-math">\(A\)</span> are all identical, and equal to <span class="process-math">\(\begin{bmatrix}1 \amp -1 \amp 1 \amp -1 \amp 1 \end{bmatrix}\text{.}\)</span> From the row method it follows that each row of <span class="process-math">\(AB\)</span> is given by</div>
 <div class="displaymath process-math">
 \begin{equation*}
-A^nq(A)=Iq(A)=q(A)=q(A)I=q(A)A^n\text{,}
+\begin{bmatrix}1 \amp -1 \amp 1 \amp -1 \amp 1 \end{bmatrix} B\text{.}
 \end{equation*}
 </div>
-<p class="continuation">as desired.</p></article><article class="case"><h5 class="heading">Case: <span class="process-math">\(n=1\)</span>.</h5>
-<p>In this case we have <span class="process-math">\(A^n=A\text{,}\)</span> and it is easy to see that</p>
+</div> <div class="para logical">
+<div class="para">Thus the rows of <span class="process-math">\(AB\)</span> are all identical, and the row method computes the product above by taking the corresponding alternating sum of the rows of <span class="process-math">\(B\text{:}\)</span>
+</div>
 <div class="displaymath process-math">
 \begin{equation*}
-Aq(A)=q(A)A=b_mA^{m+1}+b_{m-1}A^{m-1}+\cdots +b_1A^2+b_0A\text{.}
+\begin{bmatrix}1 \amp -1 \amp 1 \amp -1 \amp 1 \end{bmatrix} B=\begin{bmatrix}2\amp 2\amp -1\amp 4 \end{bmatrix}\text{.}
 \end{equation*}
-</div></article><article class="case"><h5 class="heading">Induction step.</h5>
-<p>Assume that <span class="process-math">\(A^nq(A)=q(A)A^n\text{.}\)</span> Then</p>
-<div class="displaymath process-math">
-\begin{align*}
-A^{n+1}q(A) \amp= A^n\,A\,q(A) \\
-\amp= A^nq(A)A \amp (n=1 \text{ case})\\
-\amp= q(A)A^nA \amp (\text{induction}) \\
-\amp=q(A)A^{n+1} \text{.}
-\end{align*}
-</div></article><p>This proves the special case that <span class="process-math">\(A^nq(A)=q(A)A^n\)</span> for all <span class="process-math">\(n\geq 0\text{.}\)</span></p>
-<p>To show the result for an arbitrary polynomial <span class="process-math">\(p(x)=\anpoly\)</span> we use various distributive properties:</p>
-<div class="displaymath process-math">
-\begin{align*}
-p(A)q(A)=(a_nA^n+a_{n-1}A^{n-1}+\cdots +a_1A+a_0I)q(A) \amp= a_nA^nq(A)+a_{n-1}A^{n-1}q(A)+\cdots +a_1Aq(A)+a_0q(A) \\
-\amp=a_nq(A)A^n+a_{n-1}q(A)A^{n-1}+\cdots +a_1q(A)A+a_0q(A) \amp (\text{by special}) \\
-\amp=q(A)(a_nA^n+a_{n-1}A^{n-1}+\cdots +a_1A+a_0I) \\
-\amp= q(A)p(A) 
-\end{align*}
+</div>
+</div> <div class="para">Thus <span class="process-math">\(AB\)</span> is the the <span class="process-math">\(5\times 4\)</span> matrix, all of whose rows are <span class="process-math">\(\begin{bmatrix}2\amp 2\amp -1\amp 4 \end{bmatrix}\text{.}\)</span>
 </div>
 </div></body>
 </html>

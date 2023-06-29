@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:15:42Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -14,8 +11,23 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h4 class="heading"><span class="type">Paragraph</span></h4>
-<p>Before describing a precise algorithm for computing the set of solutions to a linear system, we must address the possibility that there are no solutions to the system whatsoever. Such a system is called <em class="emphasis">inconsistent</em>.</p>
-<span class="incontext"><a href="s_solving.html#p-312">in-context</a></span>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<div class="para logical">
+<div class="para">We made the claim that each of our three row operations</div>
+<ol class="lower-alpha">
+<li><div class="para">scalar multiplication (<span class="process-math">\(e_i\mapsto c\cdot e_i\)</span> for <span class="process-math">\(c\ne 0\)</span>),</div></li>
+<li><div class="para">swap (<span class="process-math">\(e_i\leftrightarrow e_j\)</span>),</div></li>
+<li><div class="para">addition (<span class="process-math">\(e_i\mapsto e_i+c\cdot e_j\)</span> for some <span class="process-math">\(c\)</span>)</div></li>
+</ol>
+<div class="para">do not change the set of solutions of a linear system. To prove this claim, let <span class="process-math">\(L\)</span> be a general linear system</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\numeqsys\text{.}
+\end{equation*}
+</div>
+<div class="para">Now consider each type of row operation separately, write down the new system <span class="process-math">\(L'\)</span> you get by applying this row operation, and prove that an <span class="process-math">\(n\)</span>-tuple <span class="process-math">\(s=(s_1,s_2,\dots ,s_n)\)</span> is a solution to the original system <span class="process-math">\(L\)</span> if and only if it is a solution to the new system <span class="process-math">\(L'\text{.}\)</span>
+</div>
+</div>
+<span class="incontext"><a href="s_systems.html#p-312" class="internal">in-context</a></span>
 </body>
 </html>

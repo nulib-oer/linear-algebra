@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:15:55Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -14,33 +11,30 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math"><div class="solution solution-like">
-<p>First we compute <span class="process-math">\(A\)</span> by expanding along the second row. The only nonzero term of this expansion is the last one, yielding</p>
+<div class="para logical">
+<div class="para">Row reduce <span class="process-math">\(A\)</span> to the identity matrix:</div>
+<div class="displaymath process-math">
+\begin{align*}
+\begin{amatrix}[rr]0\amp 1\\2\amp -5 \end{amatrix} \amp \xrightarrow[]{r_1\leftrightarrow r_1} \begin{amatrix}[rr]2\amp -5 \\0\amp 1 \end{amatrix}\\
+\amp \xrightarrow[]{\frac{1}{2}r_1} \begin{amatrix}[rr]1\amp -5/2\\ 0\amp 1 \end{amatrix}\\
+\amp \xrightarrow[]{r_1+\frac{5}{2}r_2} \begin{amatrix}[rr]1\amp 0\\ 0\amp 1 \end{amatrix} 
+\end{align*}
+</div>
+</div> <div class="para logical">
+<div class="para">The corresponding elementary matrices are</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\det A=(-1)^{2+4}[A]_{24}M_{24}=2\det A_{24}\text{.}
+E_1 = \begin{amatrix}[rr]0\amp 1\\ 1\amp 0 \end{amatrix} , E_2 = \begin{amatrix}[rr]1/2\amp 0\\ 0\amp 1 \end{amatrix}, E_3=\begin{amatrix}[rr]1\amp 5/2\\ 0\amp 1 \end{amatrix}\text{.}
 \end{equation*}
 </div>
-<p class="continuation">We have</p>
+<div class="para">It follows that <span class="process-math">\(E_3E_2E_1A=I\text{,}\)</span> and hence that</div>
 <div class="displaymath process-math">
 \begin{equation*}
-A_{24}=\begin{bmatrix}
-2\amp 1\amp 0\\ 0\amp 2\amp 0\\ 4\amp 2\amp 1
-\end{bmatrix}\text{.}
+A=E_1^{-1}E_{2}^{-1}E_3^{-1}=\begin{amatrix}[rr]0\amp 1\\ 1\amp 0 \end{amatrix}
+\begin{amatrix}[rr]2\amp 0\\ 0\amp 1 \end{amatrix}
+\begin{amatrix}[rr]1\amp -5/2\\ 0\amp 1 \end{amatrix}\text{.}
 \end{equation*}
 </div>
-<p class="continuation">To compute its determinant we expand along its third column:</p>
-<div class="displaymath process-math">
-\begin{equation*}
-\det A_{24}=(-1)^{3+3}1\det \begin{bmatrix}
-2\amp 1\\ 0\amp 2
-\end{bmatrix}=4.
-\end{equation*}
-</div>
-<p class="continuation">We conclude that</p>
-<div class="displaymath process-math">
-\begin{equation*}
-\det A=2\det A_{24}=2(4)=8\text{.}
-\end{equation*}
 </div>
 </div></body>
 </html>

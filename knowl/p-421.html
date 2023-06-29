@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:15:44Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -15,12 +12,28 @@
 </head>
 <body class="ignore-math">
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Let <span class="process-math">\(\bolda_j\)</span> be the <span class="process-math">\(j\)</span>-th column of <span class="process-math">\(A\text{,}\)</span> considered as a column vector. Given <em class="emphasis">any</em> column vector <span class="process-math">\(\boldb=[b_{i}]_{n\times 1}\)</span> we have</p>
+<div class="para logical">
+<div class="para">Otherwise, let <span class="process-math">\(x_{i_1}, x_{i_2},\dots , x_{i_r}\)</span> be the leading variables of <span class="process-math">\(L'\text{,}\)</span> and let <span class="process-math">\(x_{j_1},x_{j_2},\dots, x_{j_s}\)</span> be the free variables. Back-substitution allows us to express each leading variable in terms of the free variables. In other words, we can write</div>
 <div class="displaymath process-math">
-\begin{equation*}
-A\,\boldb=A\,\begin{bmatrix}b_1\\b_2\\ \vdots \\b_n \end{bmatrix} = b_1\bolda_1+b_2\bolda_2+\cdots +b_n\bolda_n\text{.}
-\end{equation*}
+\begin{align*}
+x_{i_1}\amp=F_1(x_{j_1},x_{j_2},\dots, x_{j_s}) \\
+x_{i_2}\amp =F_2(x_{j_1},x_{j_2},\dots, x_{j_s}) \\
+\vdots \amp \\
+x_{i_r} \amp =F_s(x_{j_1},x_{j_2},\dots, x_{j_s})\text{,}
+\end{align*}
 </div>
-<span class="incontext"><a href="s_matrix.html#p-421">in-context</a></span>
+<div class="para">where each <span class="process-math">\(F_i(x_{j_1},x_{j_2},\dots, x_{j_s})\)</span> is a linear expression in the free variables. Each solution of <span class="process-math">\(L\)</span> thus corresponds to a <em class="emphasis">unique</em> variable assignment of the form</div>
+<div class="displaymath process-math">
+\begin{align*}
+\text{Free variables: } x_{j_1}\amp=t_{1}, \ x_{j_2}=t_{2},\dots, x_{j_s}=t_{s}\\
+\text{Leading variables: } x_{i_1}\amp =F_1(t_1,t_2,\dots, t_s) \\
+x_{i_2}\amp =F_2(t_1,t_2,\dots, t_s) \\
+\vdots \amp \\
+x_{i_r} \amp =F_s(t_1,t_2,\dots, t_s)\text{,}
+\end{align*}
+</div>
+<div class="para">where <span class="process-math">\(t_1,t_2,\dots, t_s\)</span> are any real numbers.</div>
+</div>
+<span class="incontext"><a href="s_solving.html#p-421" class="internal">in-context</a></span>
 </body>
 </html>

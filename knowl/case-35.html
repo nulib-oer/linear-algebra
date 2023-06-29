@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:15:49Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -14,13 +11,16 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<article class="case"><h5 class="heading">Base step: <span class="process-math">\(n=0\)</span>.</h5>
-<p>In this case we have <span class="process-math">\(A^n=A^0=I\text{,}\)</span> and thus</p>
-<div class="displaymath process-math">
-\begin{equation*}
-A^nq(A)=Iq(A)=q(A)=q(A)I=q(A)A^n\text{,}
-\end{equation*}
+<article class="case"><h5 class="heading">
+<span class="process-math">\((1)\implies (2)\)</span>.</h5> <div class="para logical">
+<div class="para">Suppose <span class="process-math">\(A^{-1}\)</span> exists. Given any column vector <span class="process-math">\(\boldb\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_inverse_cancel.html">
+\begin{align*}
+A\boldx=\boldb \iff \boldx=A^{-1}\boldb \amp (\knowl{./knowl/th_inverse_cancel.html}{\text{Theorem 2.3.3}})\text{,}
+\end{align*}
 </div>
-<p class="continuation">as desired.</p></article><span class="incontext"><a href="s_invertible_matrices.html#case-35">in-context</a></span>
+<div class="para">which shows that <span class="process-math">\(\boldx=A^{-1}\boldb\)</span> is the unique solution to <span class="process-math">\(A\boldx=\boldb\text{.}\)</span>
+</div>
+</div></article><span class="incontext"><a href="s_invertibility_theorem.html#case-35" class="internal">in-context</a></span>
 </body>
 </html>

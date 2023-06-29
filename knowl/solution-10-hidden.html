@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:15:40Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -13,74 +10,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><div class="solution solution-like">
-<p>Let <span class="process-math">\(L\)</span> be the original system with equations <span class="process-math">\(e_1,e_2,\dots ,e_m\text{.}\)</span> For each specified row operation, we will call the resulting new system <span class="process-math">\(L'\)</span> and its equations <span class="process-math">\(e'_1,e'_2,\dots , e'_m\text{.}\)</span></p>
-<article class="case"><h5 class="heading">Row swap.</h5>
-<p>In this case systems <span class="process-math">\(L\)</span> and <span class="process-math">\(L'\)</span> have exactly the same equations, just written in a different order. Thus the <span class="process-math">\(n\)</span>-tuple <span class="process-math">\(s\)</span> satisfies <span class="process-math">\(L\)</span> if and only if it satisfies each of the equations <span class="process-math">\(e_i\text{,}\)</span> if and only if it satisfies each of the equations <span class="process-math">\(e'_i\text{,}\)</span> since these are the same equations! It follows that <span class="process-math">\(s\)</span> is a solution of <span class="process-math">\(L\)</span> if and only if it is a solution to <span class="process-math">\(L'\text{.}\)</span></p></article><article class="case"><h5 class="heading">Scalar multiplication.</h5>
-<p>In this case <span class="process-math">\(e_j=e'_j\)</span> for all <span class="process-math">\(j\ne i\text{,}\)</span> and <span class="process-math">\(e'_i=c\cdot e_i\)</span> for some <span class="process-math">\(c\ne 0\text{.}\)</span> Since only the <span class="process-math">\(i\)</span>-th equation has changed, it suffices to show that <span class="process-math">\(s\)</span> is a solution to <span class="process-math">\(e_i\)</span> if and only if <span class="process-math">\(s\)</span> is a solution to <span class="process-math">\(c\cdot e_i\text{.}\)</span> Let's prove each direction of this if and only if separately.</p>
-<p>If <span class="process-math">\(s\)</span> satisfies <span class="process-math">\(e_1\text{,}\)</span> then <span class="process-math">\(a_{i1}s_1+a_{i2}s_2+\cdots +a_{in}s_n=b_i\text{.}\)</span> Multiplying both sides by <span class="process-math">\(c\)</span> we see that</p>
-<div class="displaymath process-math">
-\begin{equation*}
-ca_{i1}s_1+ca_{i2}s_2+\cdots +ca_{in}s_n=cb_i,
-\end{equation*}
-</div>
-<p class="continuation">and hence that <span class="process-math">\(s\)</span> is also a solution of <span class="process-math">\(c\,e_i=e_i'\text{.}\)</span></p>
-<p>For the other direction, if <span class="process-math">\(s\)</span> satisfies <span class="process-math">\(c e_i=e_i'\text{,}\)</span> then</p>
-<div class="displaymath process-math">
-\begin{equation*}
-ca_{ii}s_1+ca_{i2}s_2+\cdots ca_{in}s_n=cb_i.
-\end{equation*}
-</div>
-<p class="continuation">Now, since <span class="process-math">\(c\ne 0\text{,}\)</span> we can multiply both sides of this equation by <span class="process-math">\(1/c\)</span> to see that</p>
-<div class="displaymath process-math">
-\begin{equation*}
-a_{i1}s_1+a_{i2}s_2+\cdots +a_{in}s_n=b_i
-\end{equation*}
-</div>
-<p class="continuation">and hence that <span class="process-math">\(s\)</span> is a solution to <span class="process-math">\(e_i\text{.}\)</span></p></article><article class="case"><h5 class="heading">Row addition.</h5>
-<p>The only equation of <span class="process-math">\(L'\)</span> that differs from <span class="process-math">\(L\)</span> is</p>
-<div class="displaymath process-math">
-\begin{equation*}
-e_i'=e_i+ce_j\text{.}
-\end{equation*}
-</div>
-<p class="continuation">Writing this equation out in terms of coefficients gives us</p>
-<div class="displaymath process-math">
-\begin{equation*}
-e_i': a_{i1}x_1+a_{i2}x_2+\cdots +a_{in}x_n+c(a_{j1}x_1+a_{j2}x_2+\cdots +a_{jn}x_n)=b_i+cb_j\text{.}
-\end{equation*}
-</div>
-<p class="continuation">Now if <span class="process-math">\(s\)</span> satisfies <span class="process-math">\(L\text{,}\)</span> then it satisfies <span class="process-math">\(e_i\)</span> and <span class="process-math">\(e_j\text{,}\)</span> in which case evaluating the RHS of the <span class="process-math">\(e_i'\)</span> above at <span class="process-math">\(s\)</span> yields</p>
-<div class="displaymath process-math">
-\begin{align*}
-a_{i1}s_1+a_{i2}s_2+\cdots +a_{in}s_n+c(a_{j1}s_1+a_{j2}s_2+\cdots +a_{jn}s_n)\amp =b_i+cb_j
-\end{align*}
-</div>
-<p class="continuation">showing that <span class="process-math">\(s\)</span> satisfies <span class="process-math">\(e_i'\text{.}\)</span> Now suppose <span class="process-math">\(s=(s_1,s_2,\dots,
-s_n)\)</span> satisfies <span class="process-math">\(L'\text{.}\)</span> Since <span class="process-math">\(s\)</span> satisfies <span class="process-math">\(e_j'=e_j\text{,}\)</span> we have</p>
-<div class="displaymath process-math">
-\begin{equation}
-a_{j1}s_1+a_{j2}s_2+\cdots +a_{jn}s_n =b_j\tag{2.1.3}
-\end{equation}
-</div>
-<p class="continuation">Since <span class="process-math">\(s\)</span> satisfies <span class="process-math">\(e_i'\text{,}\)</span> we have</p>
-<div class="displaymath process-math">
-\begin{equation*}
-a_{i1}s_1+a_{i2}s_2+\cdots +a_{in}s_n+c(a_{j1}s_1+a_{j2}s_2+\cdots +a_{jn}s_n)=b_i+cb_j
-\end{equation*}
-</div>
-<p class="continuation">Substituting <a href="" class="xref" data-knowl="./knowl/solveeqn.html" title="Equation 2.1.3">(2.1.3)</a> into the equation above we get</p>
-<div class="displaymath process-math">
-\begin{equation*}
-a_{i1}s_1+a_{i2}s_2+\cdots +a_{in}s_n+c(b_j)=b_i+cb_j\text{,}
-\end{equation*}
-</div>
-<p class="continuation">and hence</p>
-<div class="displaymath process-math">
-\begin{equation*}
-a_{i1}s_1+a_{i2}s_2+\cdots +a_{in}s_n=b_i\text{.}
-\end{equation*}
-</div>
-<p class="continuation">This shows that <span class="process-math">\(s\)</span> satisfies <span class="process-math">\(e_i\text{.}\)</span> It follows that <span class="process-math">\(s\)</span> satisfies <span class="process-math">\(L\text{.}\)</span></p></article>
-</div></body>
+<body class="ignore-math"><div class="solution solution-like"><div class="para">
+<em class="alert">SOLUTION:</em> Equation 3 <span class="process-math">\(\Rightarrow x_3 = 3\text{.}\)</span> Substitute into equation 2, <span class="process-math">\(-x_2  - 4(3) = -9 \Rightarrow x_2 = -3\text{.}\)</span> Substitute into equation 1, <span class="process-math">\(x_1 + 4(-3) + 6(3) = -10 \Rightarrow x_1 = -16\text{.}\)</span>
+</div></div></body>
 </html>

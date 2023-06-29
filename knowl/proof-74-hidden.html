@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:16:23Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -13,11 +10,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><article class="hiddenproof"><p>That axioms (i)-(ii) are satisfied is left as an exercise. For axiom (iii), note that</p>
-<div class="displaymath process-math">
-\begin{equation*}
-\langle p(x), p(x) \rangle =p(c_0)^2+p(c_1)^2+\cdots +p(c_n)^2\geq 0\text{,}
-\end{equation*}
+<body class="ignore-math"><article class="hiddenproof"><div class="para">We prove (2) and leave the rest as an exercise (<a href="" class="xref" data-knowl="./knowl/ex_norm_props.html" title="Exercise 4.1.5.16">Exercise 4.1.5.16</a>).</div> <div class="para logical">
+<div class="para">Given <span class="process-math">\(c\in \R\)</span> and <span class="process-math">\(\boldv\in V\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/d_innerproduct.html">
+\begin{align*}
+\norm{c\boldv} \amp =\sqrt{\langle c\boldv, c\boldv\rangle}\\
+\amp=\sqrt{c^2\langle \boldv, \boldv\rangle} \amp (\knowl{./knowl/d_innerproduct.html}{\text{Definition 4.1.1}})\\
+\amp =\val{c}\sqrt{\langle \boldv, \boldv\rangle} \amp (\sqrt{c^2}=\val{c})\text{.}
+\end{align*}
 </div>
-<p class="continuation">and we have equality if and only if <span class="process-math">\(p(c_0)=p(c_1)=\dots p(c_n)=0\text{.}\)</span> Since a nonzero polynomial of degree <span class="process-math">\(n\)</span> or less has <em class="emphasis">at most</em> <span class="process-math">\(n\)</span> distinct roots, we conclude that <span class="process-math">\(p(x)=\boldzero\text{,}\)</span> the zero polynomial.</p></article></body>
+</div></article></body>
 </html>

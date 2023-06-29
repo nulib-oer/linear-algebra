@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:15:59Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -16,21 +13,20 @@
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">4.1.12.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">3.2.20.1</span><span class="period">.</span>
 </h4>
-<p>By definition of scalar multiplication in <span class="process-math">\(\R_{&gt;0}\)</span> (<a href="" class="xref" data-knowl="./knowl/ex_vs_positivereals.html" title="Definition 4.1.10: Vector space of positive real numbers">Definition 4.1.10</a>) we have</p>
-<div class="displaymath process-math">
-\begin{equation*}
-3\boldv=2^3=8 \text{ and }(-1/5)\boldw=(1/2)^{-1/5}=\sqrt[5]{2}\text{.}
-\end{equation*}
-</div>
-<p class="continuation">Next, since vector addition in <span class="process-math">\(\R_{&gt;0}\)</span> is defined as real number multiplication (<a href="" class="xref" data-knowl="./knowl/ex_vs_positivereals.html" title="Definition 4.1.10: Vector space of positive real numbers">Definition 4.1.10</a>), we conclude</p>
-<div class="displaymath process-math">
-\begin{equation*}
-3\boldv+(-1/5)\boldw=8\sqrt[5]{2}\text{.}
-\end{equation*}
+<div class="para logical">
+<div class="para">We must show <span class="process-math">\(f(cA+dB)=cf(A)+df(B)\)</span> for all scalars <span class="process-math">\(c,d\in\R\)</span> and all matrices <span class="process-math">\(A, B\in M_{mn}\text{.}\)</span> This follows easily from properties of transpose:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_trans_props.html ./knowl/th_trans_props.html">
+\begin{align*}
+f(cA+dB)\amp =(cA+dB)^T \amp \text{ (by def.) }\\
+\amp =(cA)^T+(dB)^T \amp (\knowl{./knowl/th_trans_props.html}{\text{Theorem 2.2.11}})\\
+\amp =cA^T+dB^T \amp (\knowl{./knowl/th_trans_props.html}{\text{Theorem 2.2.11}})\\
+\amp =cf(A)+df(B)
+\end{align*}
 </div>
 </div>
-<span class="incontext"><a href="s_vectorspace.html#solution-33">in-context</a></span>
+</div>
+<span class="incontext"><a href="s_transformation.html#solution-33" class="internal">in-context</a></span>
 </body>
 </html>

@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:16:33Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -15,7 +12,20 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<p>Let <span class="process-math">\(f_i(x)=e^{k_ix}\text{,}\)</span> where the <span class="process-math">\(k_i\)</span> are all distinct constants. I claim <span class="process-math">\(S=\{f_1,f_2,\dots , f_r\}\)</span> is linearly independent.</p>
-<span class="incontext"><a href="ss_diagonalization.html#p-2183">in-context</a></span>
+<div class="para logical">
+<div class="para">Thus, given a continuous function <span class="process-math">\(f\)</span> on <span class="process-math">\([0,2\pi]\text{,}\)</span> linear algebra shows us how to find its best trigonometric polynomial approximation of the form</div>
+<div class="displaymath process-math">
+\begin{equation*}
+g(x)=a_0+\sum_{k=1}^na_k\cos kx +b_k\sin kx\text{.}
+\end{equation*}
+</div>
+<div class="para">However, linear algebra does not tell us just how good this approximation is. This question, among others, is tackled by another mathematical theory: <em class="emphasis">Fourier analysis</em>. There we learn that the trigonometric polynomial approximations get arbitrarily close to <span class="process-math">\(f\)</span> as we let <span class="process-math">\(n\)</span> increase. More precisely, letting <span class="process-math">\(\hat{f}_n\)</span> be the orthogonal projection of <span class="process-math">\(f\)</span> onto the space of trigonometric polynomials of degree at most <span class="process-math">\(n\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim_{n\to\infty}\norm{f-\hat{f}_n}=0\text{.}
+\end{equation*}
+</div>
+</div>
+<span class="incontext"><a href="s_orthogonal_projection.html#p-2183" class="internal">in-context</a></span>
 </body>
 </html>

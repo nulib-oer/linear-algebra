@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:15:45Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -14,9 +11,29 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<article class="li"><h5 class="heading">
-<span class="type">Item</span><span class="space"> </span><span class="codenumber">3.1.6.2.a</span><span class="period">.</span>
-</h5>
-<p><span class="process-math">\(\displaystyle (2D^T-E)A\)</span></p></article><span class="incontext"><a href="s_matrix.html#li-130">in-context</a></span>
+<article class="li"><h5 class="heading"><span class="title">Step 4</span></h5>
+<div class="para">If there are no free variables, solve for each unknown using back-substitution. In this case, there is a unique solution to <span class="process-math">\(L\text{:}\)</span> i.e., <span class="process-math">\(S=\{(s_1,s_2,\dots, s_n)\}\)</span> contains exactly one element.</div>
+<div class="para logical">
+<div class="para">Otherwise, let <span class="process-math">\(x_{i_1}, x_{i_2},\dots , x_{i_r}\)</span> be the leading variables of <span class="process-math">\(L'\text{,}\)</span> and let <span class="process-math">\(x_{j_1},x_{j_2},\dots, x_{j_s}\)</span> be the free variables. Back-substitution allows us to express each leading variable in terms of the free variables. In other words, we can write</div>
+<div class="displaymath process-math">
+\begin{align*}
+x_{i_1}\amp=F_1(x_{j_1},x_{j_2},\dots, x_{j_s}) \\
+x_{i_2}\amp =F_2(x_{j_1},x_{j_2},\dots, x_{j_s}) \\
+\vdots \amp \\
+x_{i_r} \amp =F_s(x_{j_1},x_{j_2},\dots, x_{j_s})\text{,}
+\end{align*}
+</div>
+<div class="para">where each <span class="process-math">\(F_i(x_{j_1},x_{j_2},\dots, x_{j_s})\)</span> is a linear expression in the free variables. Each solution of <span class="process-math">\(L\)</span> thus corresponds to a <em class="emphasis">unique</em> variable assignment of the form</div>
+<div class="displaymath process-math">
+\begin{align*}
+\text{Free variables: } x_{j_1}\amp=t_{1}, \ x_{j_2}=t_{2},\dots, x_{j_s}=t_{s}\\
+\text{Leading variables: } x_{i_1}\amp =F_1(t_1,t_2,\dots, t_s) \\
+x_{i_2}\amp =F_2(t_1,t_2,\dots, t_s) \\
+\vdots \amp \\
+x_{i_r} \amp =F_s(t_1,t_2,\dots, t_s)\text{,}
+\end{align*}
+</div>
+<div class="para">where <span class="process-math">\(t_1,t_2,\dots, t_s\)</span> are any real numbers.</div>
+</div></article><span class="incontext"><a href="s_solving.html#li-130" class="internal">in-context</a></span>
 </body>
 </html>

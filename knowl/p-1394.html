@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:16:12Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -15,7 +12,29 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p><span class="process-math">\(V=P_2\text{,}\)</span> <span class="process-math">\(B=\{1+x+x^2, -x+x^2, -1+x^2\}\text{.}\)</span></p>
-<span class="incontext"><a href="s_basis_dimension.html#p-1394">in-context</a></span>
+<div class="para logical">
+<div class="para">The null space of <span class="process-math">\(T\)</span> is the set of all differentiable functions whose derivative is the zero function:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\NS T=\{f\in C^1(\R)\colon f'(x)=0 \text{ for all } x\in \R\}\text{.}
+\end{equation*}
+</div>
+<div class="para">From calculus we know that this is precisely the set of all <em class="emphasis">constant</em> functions. Thus</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\NS T=\{f\in C^1(\R)\colon f \text{ a constant function}\}\text{.}
+\end{equation*}
+</div>
+<div class="para">The image of <span class="process-math">\(T\)</span> is defined as</div>
+<div class="displaymath process-math">
+\begin{align*}
+\im T\amp =\{g\in C(\R)\colon g=T(f) \text{ for some } f\in C^1(\R)\}\\
+\amp= \{g\in C(\R)\colon g=f' \text{ for some } f\in C^1(\R)\}\text{.}
+\end{align*}
+</div>
+<div class="para">In other words, <span class="process-math">\(\im T\)</span> is the set of continuous functions that are the derivative of some other function: i.e., the set of continuous functions that have an antiderivative. The fundamental theorem of calculus implies that in fact every continuous function <span class="process-math">\(g\)</span> has an antiderivative! Indeed, we may take <span class="process-math">\(f(x)=\int_0^xg(t)\, dt\text{.}\)</span> We conclude that <span class="process-math">\(\im T=C(\R)\text{.}\)</span>
+</div>
+</div>
+<span class="incontext"><a href="s_nullspace_image.html#p-1394" class="internal">in-context</a></span>
 </body>
 </html>

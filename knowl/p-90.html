@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:15:37Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -15,25 +12,15 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>The relation “<span class="process-math">\(\mathcal{P}\)</span> implies <span class="process-math">\(\mathcal{Q}\)</span>” is transitive: i.e., if <span class="process-math">\(\mathcal{P}\implies\mathcal{Q}\)</span> and <span class="process-math">\(\mathcal{Q}\implies\mathcal{R}\text{,}\)</span> then <span class="process-math">\(\mathcal{P}\implies\mathcal{R}\text{.}\)</span> Similarly, the relation “<span class="process-math">\(\mathcal{P}\)</span> is equivalent to <span class="process-math">\(\mathcal{Q}\)</span>” is transitive. This allows us to prove an implication or equivalence via a <em class="emphasis">chain of implications</em> or <em class="emphasis">chain of equivalences</em>. When writing up a proof using this technique, use a vertically aligned format like the example below, treating one implication or equivalence per line, and adding a brief justification to the right:</p>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(f(x)\)</span> be a function with domain <span class="process-math">\(\R\text{,}\)</span> and let <span class="process-math">\(c\in \R\)</span> be a point of this domain. By definition, the proposition that <span class="process-math">\(\lim\limits_{x\to c}f(x)\)</span> exists is equivalent to the following proposition:</div>
 <div class="displaymath process-math">
-\begin{align*}
-\mathcal{P} \amp \iff \mathcal{P_1}\amp\text{(justification)}\\
-\amp \iff \mathcal{P_2}\amp\text{(justification)} \\
-\amp \phantom{=}\vdots\\
-\amp \iff \mathcal{P_n}\amp\text{(justification)} \\
-\amp \iff \mathcal{Q}\amp\text{(justification)}\text{.}
-\end{align*}
+\begin{equation}
+\exists L\in\R\,  \forall \epsilon \gt 0\, \exists \delta \gt0\,  \forall x\in\mathbb{R}\ (\val{x-c}\lt\delta\implies \val{f(x)-L}\lt\epsilon)\text{.}\tag{0.4.1}
+\end{equation}
 </div>
-<p class="continuation">It is also possible to build an argument as a hybrid chain of equivalences and implications. In this case the chain is only as strong as its weakest link. For example, a chain of the form</p>
-<div class="displaymath process-math">
-\begin{align*}
-\mathcal{P} \amp\iff\mathcal{Q} \amp\text{(justification)} \\
-\amp\implies \mathcal{R} \amp\text{(justification)} \\
-\amp\iff \mathcal{S} \amp\text{(justification)}
-\end{align*}
+<div class="para">(We made a number of shortcuts in our logical notation above (e.g. <span class="process-math">\(\forall \epsilon\gt 0\text{,}\)</span> <span class="process-math">\(\exists\delta\gt 0\)</span>) in order to simplify the expression somewhat; the intended meaning should still be clear. )</div>
 </div>
-<p class="continuation">only shows that <span class="process-math">\(\mathcal{P}\implies\mathcal{S}\text{.}\)</span> Indeed, we will have <span class="process-math">\(\mathcal{P}\iff\mathcal{S}\)</span> if and only if the intervening implication <span class="process-math">\(\mathcal{Q}\implies\mathcal{R}\)</span> is in fact an equivalence (i.e., the arrow goes both ways).</p>
-<span class="incontext"><a href="s_proof_technique.html#p-90">in-context</a></span>
+<span class="incontext"><a href="s_logic.html#p-90" class="internal">in-context</a></span>
 </body>
 </html>

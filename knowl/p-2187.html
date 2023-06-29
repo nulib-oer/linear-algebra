@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:16:33Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -14,8 +11,17 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h4 class="heading"><span class="type">Paragraph</span></h4>
-<p>Lastly, we can add one final statement to the invertibility theorem: <span class="process-math">\(A\)</span> is invertible if and only if <span class="process-math">\(0\)</span> is not an eigenvalue of <span class="process-math">\(A\text{.}\)</span></p>
-<span class="incontext"><a href="ss_diagonalization.html#p-2187">in-context</a></span>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<div class="para logical">
+<div class="para">
+<a href="" class="xref" data-knowl="./knowl/fig_leastsquares.html" title="Figure 4.3.21: Least-squares visualization">Figure 4.3.21</a> helps us give a graphical interpretation of how the line <span class="process-math">\(\ell\colon y=(5/14)x+2\)</span> best approximates the points <span class="process-math">\(P_1=(-3,1), P_2=(1,2), P_3=(2,3)\text{.}\)</span> <figure class="figure figure-like"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/images/im_leastsquares.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.21<span class="period">.</span></span><span class="space"> </span>Least-squares visualization</figcaption></figure> Let <span class="process-math">\(\boldy=(1,2,3)=(y_1,y_2,y_3)\)</span> be the given <span class="process-math">\(y\)</span>-values of the points, and let <span class="process-math">\(\hat{\boldy}=(y_1',y_2',y_3')\)</span> be the orthogonal projection of <span class="process-math">\(\boldy\)</span> onto <span class="process-math">\(\CS A\text{.}\)</span> In the graph the values <span class="process-math">\(\epsilon_i\)</span> denote the vertical difference <span class="process-math">\(\epsilon_i=y_i-y_i'\)</span> between the data points, and our fitting line. The projection <span class="process-math">\(\hat{\boldy}\)</span> makes the error <span class="process-math">\(\norm{\boldy-\hat{\boldy}}=\sqrt{ \epsilon_1^2+\epsilon_2^2+\epsilon_3^2}\)</span> as small as possible. This means if I draw <em class="emphasis">any other line</em> and compute the corresponding differences <span class="process-math">\(\epsilon_i'\)</span> at the <span class="process-math">\(x\)</span>-values  -3, 1 and 2, then</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig_leastsquares.html">
+\begin{equation*}
+\epsilon_1^2+\epsilon_2^2+\epsilon_3^2\leq (\epsilon_1')^2+(\epsilon_2')^2+(\epsilon_3')^2
+\end{equation*}
+</div>
+</div>
+<span class="incontext"><a href="s_orthogonal_projection.html#p-2187" class="internal">in-context</a></span>
 </body>
 </html>

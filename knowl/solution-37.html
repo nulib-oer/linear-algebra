@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:16:03Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -16,33 +13,42 @@
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">4.3.2.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">3.3.13.1</span><span class="period">.</span>
 </h4>
-<p>We must show properties (i)-(iii) hold for <span class="process-math">\(W\text{.}\)</span></p>
-<ol class="lower-roman">
-<li><p>The zero element of <span class="process-math">\(V\)</span> is <span class="process-math">\(\boldzero=(0,0)\text{,}\)</span> which is certainly of the form <span class="process-math">\((t,t)\text{.}\)</span> Thus <span class="process-math">\(\boldzero\in W\text{.}\)</span></p></li>
-<li>
-<p>We must prove the implication <span class="process-math">\(\boldv_1, \boldv_2\in W\Rightarrow \boldv_1+\boldv_2\in W\text{.}\)</span></p>
+<ol class="decimal">
+<li><div class="para logical">
+<div class="para">It is easy to see that</div>
 <div class="displaymath process-math">
-\begin{align*}
-\boldv_1,\boldv_2\in W\amp \Rightarrow\amp  \boldv_1=(t,t), \boldv_2=(s,s) \text{ for some \(t,s\in\R\) }\\
-\amp \Rightarrow\amp \boldv_1+\boldv_2=(t+s,t+s)\\
-\amp \Rightarrow\amp \boldv_1+\boldv_2\in W\text{.}
-\end{align*}
+\begin{equation*}
+W=\{\boldx\in \R^n\colon A\boldx=\boldzero\}
+\end{equation*}
 </div>
-</li>
-<li>
-<p>We must prove the implication <span class="process-math">\(\boldv\in W\Rightarrow c\boldv\in W\text{,}\)</span> for any <span class="process-math">\(c\in \R\text{.}\)</span> We have</p>
+<div class="para">where</div>
 <div class="displaymath process-math">
-\begin{align*}
-\boldv\in W\amp \Rightarrow\amp  \boldv=(t,t)\\
-\amp \Rightarrow\amp  c\boldv=(ct,ct)\\
-\amp \Rightarrow\amp  c\boldv\in W
-\end{align*}
+\begin{equation*}
+A=\begin{amatrix}[rrr]1\amp 2\amp 3\\ 1\amp -1\amp -1  \end{amatrix}\text{.}
+\end{equation*}
 </div>
-</li>
+<div class="para">We conclude <span class="process-math">\(W\)</span> is a subspace.</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">The augmented matrix <span class="process-math">\(\begin{amatrix}[c|c]A\amp\boldzero \end{amatrix}\)</span> row reduces to</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/proc_solveSystem.html">
+\begin{equation*}
+U=\begin{amatrix}[rrr|r]\boxed{1}\amp 2\amp 3\amp 0\\ 0 \amp \boxed{1}\amp 1\amp 0  \end{amatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">Following <a href="" class="xref" data-knowl="./knowl/proc_solveSystem.html" title="Procedure 1.3.5: Solving linear systems">Procedure 1.3.5</a> we conclude that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/proc_solveSystem.html">
+\begin{equation*}
+W=\{(-t,-2t,t)\colon t\in \R\}\text{.}
+\end{equation*}
+</div>
+<div class="para">Geometrically this is the line in <span class="process-math">\(\R^3\)</span> passing through <span class="process-math">\((0,0,0)\)</span> with direction vector <span class="process-math">\((1,2,-1)\text{.}\)</span>
+</div>
+</div></li>
 </ol>
 </div>
-<span class="incontext"><a href="s_subspace.html#solution-37">in-context</a></span>
+<span class="incontext"><a href="s_subspace.html#solution-37" class="internal">in-context</a></span>
 </body>
 </html>

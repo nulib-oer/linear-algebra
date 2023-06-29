@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:16:28Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -15,50 +12,23 @@
 </head>
 <body class="ignore-math">
 <article class="hiddenproof"><h4 class="heading"><span class="type">Proof</span></h4>
-<ol class="decimal">
-<li>
-<p>Suppose <span class="process-math">\(T(\boldv)=[\boldv]_B=(a_1,a_2,\dots, a_n), T(\boldw)=[\boldw]_B=(b_1, b_2, \dots, b_n)\text{.}\)</span> By definition this means</p>
-<div class="displaymath process-math">
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(W=\CS A\text{,}\)</span> and let <span class="process-math">\(\hat{\boldy}=\proj{\boldy}{W}\text{.}\)</span> The key observation is that a vector <span class="process-math">\(\hat{\boldx}\)</span> satisfies <span class="process-math">\(A\hat{\boldx}=\hat{\boldy}\)</span> if and only if</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_row_null_comp.html">
+\begin{equation*}
+\boldy=A\hat{\boldx}+(\boldy-A\hat{\boldx})
+\end{equation*}
+</div>
+<div class="para">is an orthogonal decomposition of <span class="process-math">\(\boldy\)</span> with respect to <span class="process-math">\(W=\CS A\text{;}\)</span> and this is true if and only if <span class="process-math">\(\boldy-A\hat{\boldx}\in (\CS A)^\perp\text{.}\)</span> Thus we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_row_null_comp.html">
 \begin{align*}
-\boldv \amp =\sum_{i=1}^na_i\boldv_i \amp \boldw\amp =\sum_{i=1}^nb_i\boldv_i\text{.}
+A\hat{\boldx}=\hat{\boldy} \amp\iff \boldy-A\hat{\boldx}\in (\CS A)^\perp \\
+\amp\iff \boldy-A\hat{\boldx}\in \NS A^T \amp ((\CS A)^\perp=\NS A^T, \knowl{./knowl/th_row_null_comp.html}{\text{Theorem 4.3.7}}) \\
+\amp\iff A^T(\boldy-A\hat{\boldx})=\boldzero \\
+\amp \iff A^T\boldy-A^TA\hat{\boldx}=\boldzero\\
+\amp \iff A^TA\hat{\boldx}=A^T\boldy\text{.}
 \end{align*}
 </div>
-<p class="continuation">Then</p>
-<div class="displaymath process-math">
-\begin{equation*}
-c\boldv+d\boldw=\sum_{i=1}^n(ca_i+db_i)\boldv_i\text{,}
-\end{equation*}
-</div>
-<p class="continuation">and hence</p>
-<div class="displaymath process-math">
-\begin{align*}
-T(c\boldv+d\boldw)\amp =[c\boldv+d\boldw]_B \\
-\amp =(ca_1+db_1,ca_2+db_2,\dots, ca_n+db_n) \\
-\amp =c(a_1,a_2,\dots, a_n)+d(b_1,b_2,\dots, b_n)\\
-\amp =c[\boldv]_B+d[\boldw]_B\\
-\amp =cT(\boldv)+dT(\boldw) \text{.}
-\end{align*}
-</div>
-<p class="continuation">This proves <span class="process-math">\(T\)</span> is linear.</p>
-</li>
-<li>
-<p>Suppose <span class="process-math">\(T(\boldv)=T(\boldw)=(c_1,c_2,\dots, c_n)\text{,}\)</span> then by definition of <span class="process-math">\([\hspace{.5pt}]_B\)</span> we have</p>
-<div class="displaymath process-math">
-\begin{equation*}
-\boldv=\boldw=c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n\text{.}
-\end{equation*}
-</div>
-</li>
-<li>
-<p>Given any <span class="process-math">\(\boldb=(b_1,b_2,\dots, b_n)\in \R^n\text{,}\)</span> we have <span class="process-math">\(\boldb=T(\boldv)\text{,}\)</span> where</p>
-<div class="displaymath process-math">
-\begin{equation*}
-\boldv=b_1\boldv_1+b_2\boldv_2+\cdots +b_n\boldv_n\text{.}
-\end{equation*}
-</div>
-<p class="continuation">This proves <span class="process-math">\(\im T=\R^n\text{.}\)</span></p>
-</li>
-<li><p>This follows from (1)-(3) and <a href="" class="xref" data-knowl="./knowl/th_isomorphisms.html" title="Theorem 6.1.12: Isomorphism compendium">Theorem 6.1.12</a>.</p></li>
-</ol></article><span class="incontext"><a href="s_coordinatevectors_isomorphisms.html#proof-84">in-context</a></span>
+</div></article><span class="incontext"><a href="s_orthogonal_projection.html#proof-84" class="internal">in-context</a></span>
 </body>
 </html>

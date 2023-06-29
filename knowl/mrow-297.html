@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:15:57Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -14,14 +11,17 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_expansion_row.html ./knowl/th_expansion_row.html">
 \begin{align*}
-\det(cA) \amp=\det((cI)A) \\
-\amp =\det(cI)\, \det A\amp (\knowl{./knowl/th_det_mult.html}{\text{Theorem 3.5.25}}) \\
-\amp =(\underset{n \text{times}}{\underbrace{c\cdot c\cdots c}})\,\det A \amp (\knowl{./knowl/th_det_triangular.html}{\text{Theorem 3.5.5}}) \\
-\amp =c^n\det A 
+\det A^T \amp = \frac{1}{n}\sum_{i=1}^{n}\det A^T \\
+\amp =\frac{1}{n}\sum_{i=1}^n\sum_{j=1}^n(-1)^{i+j}[A^T]_{ij}\det \left((A^T)_{ij}\right) \amp (\knowl{./knowl/th_expansion_row.html}{\text{Theorem 2.5.8}}) \\
+\amp = \frac{1}{n}\sum_{i=1}^n\sum_{j=1}^n(-1)^{i+j}[A]_{ji}\det (A_{ji})^T \amp ([A^T]_{ij}=A_{ji}, (A^T)_{ij}=(A_{ji})^T)\\
+\amp = \frac{1}{n}\sum_{i=1}^n\sum_{j=1}^n(-1)^{i+j}[A]_{ji}\det A_{ji} \amp (\det (A_{ji})^T=\det A_{ji}, \text{ by induction})\\
+\amp= \frac{1}{n}\sum_{j=1}^n\sum_{i=1}^n(-1)^{i+j}[A]_{ji}\det A_{ji} \amp (\text{props. of addition})\\
+\amp =\frac{1}{n}\sum_{j=1}^n\det A \amp (\knowl{./knowl/th_expansion_row.html}{\text{Theorem 2.5.8}})\\
+\amp = \det A
 \end{align*}
 </div>
-<span class="incontext"><a href="s_det.html#mjx-eqn:mrow-297">in-context</a></span>
+<span class="incontext"><a href="s_det.html#md-94" class="internal">in-context</a></span>
 </body>
 </html>

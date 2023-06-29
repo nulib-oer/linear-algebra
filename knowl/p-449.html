@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:15:45Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -14,24 +11,30 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>Let</p>
-<div class="displaymath process-math">
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<div class="para logical">
+<div class="para">We saw in <a href="" class="xref" data-knowl="./knowl/s_ge_equivsys.html" title="Exercise 1.2.3.7">Exercise 1.2.3.7</a> that the system is equivalent to a system <span class="process-math">\(L'\)</span> with augmented matrix</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/s_ge_equivsys.html">
 \begin{equation*}
-A = \begin{bmatrix}3\amp 0\\ -1\amp 2\\ 1\amp 1 \end{bmatrix} , \hspace{5pt} B = \begin{bmatrix}4\amp -1\\ 0\amp 2 \end{bmatrix} , \hspace{5pt} C = \begin{bmatrix}1\amp 4\amp 2\\ 3\amp 1\amp 5 \end{bmatrix}
+\begin{amatrix}[rrrr|r]\boxed{1}\amp 2\amp -1\amp -1\amp 3\\ 0\amp 0\amp \boxed{1}\amp 7\amp -1\\ 0\amp 0\amp 0\amp \boxed{1}\amp -\frac{3}{7} \end{amatrix}\text{.}
 \end{equation*}
 </div>
-<div class="displaymath process-math">
+<div class="para">The row echelon matrix tells us that <span class="process-math">\(x_2=t\)</span> is the only free variable of <span class="process-math">\(L'\text{.}\)</span> Back substitution then yields the parametric equation description:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/s_ge_equivsys.html">
+\begin{align*}
+x_1\amp = \frac{32}{7}-2t\\
+x_2\amp = t\\
+x_3\amp = 2\\
+x_4\amp = -\frac{3}{7}\text{.}
+\end{align*}
+</div>
+<div class="para">Thus the set of solutions is</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/s_ge_equivsys.html">
 \begin{equation*}
-D = \begin{bmatrix}1\amp 5\amp 2\\ -1\amp 0\amp 1\\ 3\amp 2\amp 4 \end{bmatrix} ,  \hspace{5pt} E = \begin{bmatrix}6\amp 1\amp 3\\ -1\amp 1\amp 2\\ 4\amp 1\amp 3 \end{bmatrix}\text{.}
+\left\{ \left(\frac{32}{7}-2t, t, 2, -\frac{3}{7}\right)\colon t\in \R\right\}\text{.}
 \end{equation*}
 </div>
-<p class="continuation">Compute the following matrices, or else explain why the given expression is not well defined.</p>
-<ol class="lower-alpha">
-<li><p><span class="process-math">\(\displaystyle (2D^T-E)A\)</span></p></li>
-<li><p><span class="process-math">\(\displaystyle (4B)C+2B\)</span></p></li>
-<li><p><span class="process-math">\(\displaystyle B^T(CC^T-A^TA)\)</span></p></li>
-</ol>
-<span class="incontext"><a href="s_matrix.html#p-449">in-context</a></span>
+</div>
+<span class="incontext"><a href="s_solving.html#p-449" class="internal">in-context</a></span>
 </body>
 </html>

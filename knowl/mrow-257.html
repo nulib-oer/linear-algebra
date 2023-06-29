@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:15:54Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -14,22 +11,12 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_invertibility.html ./knowl/th_invertibility.html">
 \begin{align*}
-\det A \amp= \sum_{j=1}^n (-1)^{1+j}a_{1 j}\det  A_{1j}\\
-\amp = \sum_{j=1}^n (-1)^{1+j}a_{1 j}\sum_{k=1}^{n-1}(-1)^{i-1+k}[ A_{1j}]_{(i-1)k}\det {( A_{1j})}_{(i-1)k} \amp \knowl{./knowl/eq_det_submatrix.html}{\text{(3.5.3)}}\\
-\amp
-= \underset{k\lt j \text{ terms}}{\underbrace{\sum_{j=2}^n \sum_{k=1}^{j-1}(-1)^{i+j+k}a_{1 j}a_{i  k}\det (A_{i  k})_{1  (j-1)}}}+\underset{k\geq j \text{ terms}}{\underbrace{\sum_{j=1}^{n-1} \sum_{k=j}^{n-1}(-1)^{i+j+k}a_{1 j}a_{i  (k+1)}\det (A_{i  (k+1)})_{1  j}}}
-\amp \knowl{./knowl/eq_entry_formula_1.html}{\text{(3.5.4)}}, \knowl{./knowl/eq_iterated_submatrix.html}{\text{(3.5.6)}}\\
-\amp = \underset{j\geq k \text{ terms}}{\underbrace{\sum_{j=1}^{n-1} \sum_{k=1}^{j}(-1)^{i+j+k+1}a_{i  k}[A_{ik}]_{1j}\det (A_{i  k})_{1  j}}}+\underset{j\lt k \text{ terms}}{\underbrace{\sum_{j=1}^{n-1} \sum_{k=j+1}^{n}(-1)^{i+j+k-1}a_{ik}[A_{ik}]_{1 j}\det (A_{ik})_{1  j}}}
-\amp (\text{re-labeled } j=j-1, k=k+1)\\
-\amp = \underset{j\geq k \text{ terms}}{\underbrace{\sum_{j=1}^{n-1} \sum_{k=1}^{j}(-1)^{i+j+k+1}a_{i  k}[A_{ik}]_{1j}\det (A_{i  k})_{1  j}}}+\underset{j\lt k \text{ terms}}{\underbrace{\sum_{j=1}^{n-1} \sum_{k=j+1}^{n}(-1)^{i+j+k+1}a_{ik}[A_{ik}]_{1 j}\det (A_{ik})_{1  j}}}
-\amp ((-1)^{c+2}=(-1)^c)\\
-\amp =\sum_{k=1}^{n}(-1)^{i+k}a_{ik}\sum_{j=1}^{n-1}(-1)^{j+1}[A_{ik}]_{1j}\det (A_{ik})_{1j}
-\amp (\text{re-order terms})\\
-\amp =\sum_{k=1}^{n}(-1)^{i+k}a_{ik}\det A_{ik} 
+B\boldx=\boldzero\amp \implies  AB\boldx=\boldzero \\
+\amp \implies  \boldx=\boldzero
 \end{align*}
 </div>
-<span class="incontext"><a href="s_det.html#mjx-eqn:mrow-257">in-context</a></span>
+<span class="incontext"><a href="s_invertibility_theorem.html#md-85" class="internal">in-context</a></span>
 </body>
 </html>

@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:16:21Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -15,17 +12,25 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>Assume <span class="process-math">\(T\)</span> and <span class="process-math">\(T'\)</span> are linear transformations from <span class="process-math">\(V\)</span> to <span class="process-math">\(W\)</span> satisfying <span class="process-math">\(T(\boldu)=T'(\boldu)\)</span> for all <span class="process-math">\(\boldu\in B\text{.}\)</span> Given any <span class="process-math">\(\boldv\in V\)</span> we can write <span class="process-math">\(\boldv=c_1\boldu_1+c_2\boldu_2+\cdots +c_r\boldu_r\text{.}\)</span> It follows that</p>
-<div class="displaymath process-math">
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(B=\{\bolde_1, \bolde_2\}=\{(1,0), (0,1)\}\text{.}\)</span> According to <a href="" class="xref" data-knowl="./knowl/cor_matrix_transformations.html" title="Corollary 3.6.16: Matrix transformations">Corollary 3.6.16</a>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/cor_matrix_transformations.html">
 \begin{align*}
-T(\boldv) \amp = T(c_1\boldu_1+c_2\boldu_2+\cdots +c_r\boldu_r)\\
-\amp = c_1T(\boldu_1)+c_2T(\boldu_2)+\cdots +c_rT(\boldu_r) \amp (T \text{ is linear})\\
-\amp =c_1T'(\boldu_1)+c_2T'(\boldu_2)+\cdots +c_rT'(\boldu_r)\\
-\amp = T'(c_1\boldu_1+c_2\boldu_2+\cdots +c_r\boldu_r) \amp (T' \text{ is linear}) \\
-\amp = T'(\boldv)\text{.}
+A \amp=\begin{bmatrix}
+\vert\amp \vert \\
+\rho_\alpha(1,0)\amp \rho_\alpha(0,1) \\
+\vert \amp \vert
+\end{bmatrix} \\
+\amp=\begin{amatrix}[rr]
+\cos\alpha \amp -\sin\alpha \\
+\sin\alpha \amp \cos\alpha
+\end{amatrix} \text{,}
 \end{align*}
 </div>
-<p class="continuation">Since <span class="process-math">\(T(\boldv)=T'(\boldv)\)</span> for all <span class="process-math">\(\boldv\in V\text{,}\)</span> we have <span class="process-math">\(T=T'\text{.}\)</span></p>
-<span class="incontext"><a href="s_isom.html#p-1654">in-context</a></span>
+<div class="para">since <span class="process-math">\((1,0)\)</span> gets rotated by <span class="process-math">\(\rho_\alpha\)</span> to <span class="process-math">\((\cos\alpha, \sin\alpha)\text{,}\)</span> and <span class="process-math">\((0,1)\)</span> gets rotated to <span class="process-math">\((-\sin\alpha, \cos\alpha)\text{.}\)</span>
+</div>
+</div>
+<span class="incontext"><a href="s_basis.html#p-1654" class="internal">in-context</a></span>
 </body>
 </html>

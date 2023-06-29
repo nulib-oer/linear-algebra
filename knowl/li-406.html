@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:16:09Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -17,6 +14,18 @@
 <article class="li"><h5 class="heading">
 <span class="type">Item</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
 </h5>
-<p><span class="process-math">\(V=\R^3\text{,}\)</span> <span class="process-math">\(S=\{(1,1,2),(1,0,1), (-2,1,-1)\}\)</span></p></article><span class="incontext"><a href="s_span_independence.html#li-406">in-context</a></span>
+<div class="para logical">
+<div class="para">We have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_nullspace_inverseimage.html ./knowl/eq_nullspace_injective.html">
+\begin{align*}
+T(\boldv)=T(\boldv') \amp \iff T(\boldv')-T(\boldv)=\boldzero\\
+\amp \iff T(\boldv'-\boldv)=\boldzero \amp (T \text{ is linear})\\
+\amp \iff \boldu=\boldv'-\boldv\in\NS T \amp (\text{def. } \NS T)\\
+\amp \iff \boldv'=\boldv+\boldu \text{ for some } \boldu\in\NS T \text{.}
+\end{align*}
+</div>
+<div class="para">Equation <a href="" class="xref" data-knowl="./knowl/eq_nullspace_inverseimage.html" title="Equation 3.4.3">(3.4.3)</a> follows directly from <a href="" class="xref" data-knowl="./knowl/eq_nullspace_injective.html" title="Equation 3.4.2">(3.4.2)</a> by observing that if <span class="process-math">\(T(\boldv)=\boldw\text{,}\)</span> then <span class="process-math">\(T(\boldv')=\boldw\)</span> if and only if <span class="process-math">\(T(\boldv)=T(\boldv')\text{.}\)</span>
+</div>
+</div></article><span class="incontext"><a href="s_nullspace_image.html#li-406" class="internal">in-context</a></span>
 </body>
 </html>

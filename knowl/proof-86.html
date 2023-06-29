@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:16:30Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -15,60 +12,14 @@
 </head>
 <body class="ignore-math">
 <article class="hiddenproof"><h4 class="heading"><span class="type">Proof</span></h4>
-<p>We must prove two things: (1) the matrix <span class="process-math">\(A=[T]_{B}^{B'}\)</span> satisfies <a href="" class="xref" data-knowl="./knowl/eq_matrixrep_prop.html" title="Equation 6.2.1">(6.2.1)</a>; (2) if <span class="process-math">\(A\)</span> satisfies <span class="process-math">\(A[\boldv]_B=[T(\boldv)]_{B}\)</span> for all <span class="process-math">\(\boldv\in V\text{,}\)</span> then <span class="process-math">\(A=[T]_{B}^{B'}\text{.}\)</span></p>
-<p>Assume we have <span class="process-math">\(B=(\boldv_1, \boldv_2, \dots, \boldv_n)\text{.}\)</span></p>
-<ol class="decimal">
-<li>
-<p>By definition we have</p>
-<div class="displaymath process-math">
+<div class="para logical">
+<div class="para">According to the recipe in <a href="" class="xref" data-knowl="./knowl/cor_matrix_transformations.html" title="Corollary 3.6.16: Matrix transformations">Corollary 3.6.16</a> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/cor_matrix_transformations.html ./knowl/eg_coordinatevector_standard.html">
 \begin{equation*}
-[T]_B^{B'}=\begin{amatrix}[cccc]\vert \amp \vert \amp \amp \vert \\
-\left[T(\boldv_1)\right]_{B'}\amp [T(\boldv_2)]_{B'}\amp \dots \amp [T(\boldv_n)]_{B'} \\
-\vert \amp \vert \amp  \amp \vert
-\end{amatrix}\text{.}
+A= \begin{bmatrix}\vert\amp \vert\amp  \amp \vert \\ T(\bolde_1)\amp  T(\bolde_2)\amp \cdots \amp T(\bolde_n)\\ \vert\amp \vert\amp  \amp \vert \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<p class="continuation">Given any <span class="process-math">\(\boldv\in V\text{,}\)</span> we can write</p>
-<div class="displaymath process-math">
-\begin{equation*}
-\boldv=c_1\boldv_1+c_2\boldv_2+\dots +c_n\boldv_n
-\end{equation*}
-</div>
-<p class="continuation">for some <span class="process-math">\(c_i\in \R\text{.}\)</span> Then</p>
-<div class="displaymath process-math">
-\begin{align*}
-[T]_{B}^{B'}[\boldv] \amp= [T]_{B}^{B'} \begin{bmatrix}
-c_1\\ c_2\\ \vdots \\ v_n
-\end{bmatrix} \\
-\amp=c_1[T(\boldv_1)]_{B'}+c_n[T(\boldv_n)]_{B'}+\cdots +c_n[T(\boldv_n)]_{B'} \amp (\text{column method})\\
-\amp = [c_1T(\boldv_1)+c_2T(\boldv_2)+\cdots +c_nT(\boldv_n)]_{B'} \amp (\knowl{./knowl/th_coordinates.html}{\text{6.1.9}})\\
-\amp=[T(c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n)]_{B'} \amp (T \text{ is linear})\\
-\amp =[T(\boldv)]_{B'}\text{,}
-\end{align*}
-</div>
-<p class="continuation">as desired.</p>
-</li>
-<li>
-<p>Assume <span class="process-math">\(A\)</span> satisfies</p>
-<div class="displaymath process-math">
-\begin{equation*}
-A[\boldv]_B=[T(\boldv)]_{B'}
-\end{equation*}
-</div>
-<p class="continuation">for all <span class="process-math">\(\boldv\in V\text{.}\)</span> Then in particular we have</p>
-<div class="displaymath process-math">
-\begin{equation}
-A[\boldv_i]_B=[T(\boldv_i)]_{B'}\tag{6.2.2}
-\end{equation}
-</div>
-<p class="continuation">for all <span class="process-math">\(1\leq i\leq n\text{.}\)</span> Since <span class="process-math">\(\boldv_i\)</span> is the <span class="process-math">\(i\)</span>-th element of <span class="process-math">\(B\text{,}\)</span> we have <span class="process-math">\([\boldv_i]_B=\bolde_i\text{,}\)</span> the <span class="process-math">\(i\)</span>-th standard basis element of <span class="process-math">\(\R^n\text{.}\)</span> Using the column method (<a href="" class="xref" data-knowl="./knowl/th_column_method.html" title="Theorem 3.1.19: Column method of matrix multiplication">3.1.19</a>), we see that</p>
-<div class="displaymath process-math">
-\begin{equation*}
-A[\boldv_i]_B=A\bolde_i=\boldc_i,
-\end{equation*}
-</div>
-<p class="continuation">where <span class="process-math">\(\boldc_i\)</span> is the <span class="process-math">\(i\)</span>-th column of <span class="process-math">\(A\text{.}\)</span> Thus <a href="" class="xref" data-knowl="./knowl/eq_matrixrep_proof.html" title="Equation 6.2.2">(6.2.2)</a> implies that the <span class="process-math">\(i\)</span>-th column of <span class="process-math">\(A\)</span> is equal to <span class="process-math">\([T(\boldv_i)]_{B}\text{,}\)</span> the <span class="process-math">\(i\)</span>-th column of <span class="process-math">\([T]_B^{B'}\text{,}\)</span> for all <span class="process-math">\(1\leq i\leq n\text{.}\)</span> Since <span class="process-math">\(A\)</span> and <span class="process-math">\([T]_{B}^{B'}\)</span> have identical columns, we conclude that <span class="process-math">\(A=[T]_{B}^{B'}\text{,}\)</span> as desired.</p>
-</li>
-</ol></article><span class="incontext"><a href="s_matrixreps.html#proof-86">in-context</a></span>
+<div class="para">Let <span class="process-math">\(B\)</span> and <span class="process-math">\(B'\)</span> be the standard ordered bases of <span class="process-math">\(\R^n\)</span> and <span class="process-math">\(\R^m\text{,}\)</span> respectively. To see why <span class="process-math">\(A=[T]_{B}^{B'}\text{,}\)</span> observe that for all <span class="process-math">\(1\leq j\leq n\)</span> the <span class="process-math">\(j\)</span>-th column of <span class="process-math">\(A\)</span> is <span class="process-math">\(T(\bolde_j)\)</span> and the <span class="process-math">\(j\)</span>-th column of <span class="process-math">\([T]_B^{B'}\)</span> is <span class="process-math">\([T(\bolde_j)]_{B''}\text{.}\)</span> That these are equal is a result of the fact that for all vectors <span class="process-math">\(\boldw\in \R^m\)</span> we have <span class="process-math">\([\boldw]_{B'}=\boldw\text{:}\)</span> that is, the coordinate vector of a vector <span class="process-math">\(\boldw\in \R^m\)</span> with respect to the <em class="emphasis">standard basis</em> is just <span class="process-math">\(\boldw\)</span> itself. (See <a href="" class="xref" data-knowl="./knowl/eg_coordinatevector_standard.html" title="Example 5.1.5: Standard bases">Example 5.1.5</a>).</div>
+</div></article><span class="incontext"><a href="s_matrixreps.html#proof-86" class="internal">in-context</a></span>
 </body>
 </html>

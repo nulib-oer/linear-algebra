@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:16:05Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -15,16 +12,31 @@
 </head>
 <body class="ignore-math">
 <article class="theorem theorem-like"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.3.15</span><span class="period">.</span><span class="space"> </span><span class="title">Nullspace and injectivity.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.4.14</span><span class="period">.</span><span class="space"> </span><span class="title">Null space and injectivity.</span>
 </h4>
-<p>Let <span class="process-math">\(T\colon V\rightarrow W\)</span> be a linear transformation. The following are equivalent:</p>
-<ol class="decimal">
-<li><p><span class="process-math">\(T\)</span> is injective (i.e., one-to-one);</p></li>
-<li><p><span class="process-math">\(\NS T=\{\boldzero\}\text{.}\)</span></p></li>
-</ol> In fact, we have<div class="displaymath process-math">
+<div class="para">Let <span class="process-math">\(T\colon V\rightarrow W\)</span> be a linear transformation.</div> <ol class="decimal">
+<li><div class="para logical">
+<div class="para">Given vectors <span class="process-math">\(\boldv, \boldv'\in V\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
 \begin{equation}
-T(\boldv)=T(\boldv') \iff \boldv'=\boldv+\boldu \text{ for some } \boldu\in \NS T\tag{4.3.1}
+T(\boldv)=T(\boldv') \iff \boldv'=\boldv+\boldu \text{ for some } \boldu\in \NS T\text{.}\tag{3.4.2}
 \end{equation}
-</div></article><article class="hiddenproof"><a href="" class="proof-knowl original" data-knowl="./knowl/proof-52-hidden.html" title="Proof 4.3.15.1"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><span class="incontext"><a href="s_subspace.html#th_nullspace_injective">in-context</a></span>
+</div>
+<div class="para">Equivalently, given <span class="process-math">\(\boldw\in W\)</span> and <span class="process-math">\(\boldv\in V\)</span> satisfying <span class="process-math">\(T(\boldv)=\boldw\text{,}\)</span> the set <span class="process-math">\(X\)</span> of all <span class="process-math">\(\boldv'\)</span> satisfying <span class="process-math">\(T(\boldv')=\boldw\)</span> can be described as</div>
+<div class="displaymath process-math">
+\begin{equation}
+X=\{\boldv+\boldu\colon \boldu\in \NS T\}\text{.}\tag{3.4.3}
+\end{equation}
+</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">We have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+T\text{ injective}\iff \NS T=\{\boldzero_V\}\text{.}
+\end{equation*}
+</div>
+</div></li>
+</ol></article><article class="hiddenproof"><a href="" class="proof-knowl original" data-knowl="./knowl/proof-51-hidden.html" title="Proof 3.4.14.1"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><span class="incontext"><a href="s_nullspace_image.html#th_nullspace_injective" class="internal">in-context</a></span>
 </body>
 </html>

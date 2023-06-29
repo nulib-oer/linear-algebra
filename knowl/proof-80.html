@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:16:25Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -15,15 +12,15 @@
 </head>
 <body class="ignore-math">
 <article class="hiddenproof"><h4 class="heading"><span class="type">Proof</span></h4>
-<p>Using some trig identities, one can show the following:</p>
-<div class="displaymath process-math">
-\begin{align*}
-\langle \cos(nx),\cos(mx)\rangle=\int_0^{2\pi}\cos(nx)\cos(mx)\, dx\amp =\begin{cases} 0\amp  \text{ if \(n\ne m\) }\\
-\pi\amp  \text{ if \(n=m\) }  \end{cases}\\
-\langle \sin(nx),\sin(mx)\rangle=\int_0^{2\pi}\sin(nx)\sin(mx)\, dx\amp =\begin{cases} 0\amp  \text{ if \(n\ne m\) }\\
-\pi\amp  \text{ if \(n=m\) }  \end{cases}\\
-\langle \cos(nx),\sin(mx)\rangle=\int_0^{2\pi}\cos(nx)\sin(mx)\, dx\amp =0 \text{ for any \(n,m\) }
-\end{align*}
-</div></article><span class="incontext"><a href="s_orthogonality.html#proof-80">in-context</a></span>
+<ol class="decimal">
+<li>
+<div class="para">Using the dot product method of matrix multiplication, we see that a vector <span class="process-math">\(\boldx\in\NS(A)\)</span> if and only if <span class="process-math">\(\boldx\cdot\boldr_i=0\)</span> for each row <span class="process-math">\(\boldr_i\)</span> of <span class="process-math">\(A\text{,}\)</span> if and only if <span class="process-math">\(\boldx\cdot \boldw=0\)</span> for all <span class="process-math">\(\boldw\in \Span \{\boldr_1, \boldr_2, \dots, \boldr_m\}=\RS A\)</span> (see <a href="" class="xref" data-knowl="./knowl/rm_computing_ortho_comp.html" title="Remark 4.3.2: Computing W^\perp">Remark 4.3.2</a>), if and only if <span class="process-math">\(\boldx\in (\RS A)^\perp\text{.}\)</span> This shows <span class="process-math">\(\NS A=(\RS A)^\perp\text{.}\)</span>
+</div>
+<div class="para">We can use <a href="" class="xref" data-knowl="./knowl/cor_orthocomp_selfdual.html" title="Corollary 4.3.13">Corollary 4.3.13</a> to conclude <span class="process-math">\(\RS A=(\NS A)^\perp\text{.}\)</span> Alternatively, and more directly, the argument above shows that <span class="process-math">\(\boldw\in \RS A\implies \boldw\in (\NS A)^\perp\text{,}\)</span> proving <span class="process-math">\(\RS A\subseteq (\NS A)^\perp\text{.}\)</span> Next, by the rank-nullity theorem we have <span class="process-math">\(\dim \RS A=n-\dim\NS A\text{;}\)</span> and by <a href="" class="xref" data-knowl="./knowl/th_orthogonal_complement.html" title="Theorem 4.3.5: Orthogonal complement">Theorem 4.3.5</a> we have <span class="process-math">\(\dim (\NS A)^\perp=n-\dim\NS A\text{.}\)</span> It follows that <span class="process-math">\(\dim\RS A=\dim (\NS A)^\perp\text{.}\)</span> Since <span class="process-math">\(\RS A\subseteq (\NS A)^\perp\)</span> and <span class="process-math">\(\dim \RS A=\dim (\NS A)^\perp\text{,}\)</span> we conclude by <a href="" class="xref" data-knowl="./knowl/cor_dimension_subspace.html" title="Corollary 3.7.10: Dimension of subspaces">Corollary 3.7.10</a> that <span class="process-math">\(\RS A=(\NS A)^\perp\text{.}\)</span>
+</div>
+</li>
+<li><div class="para">This follows from (1) and the fact that <span class="process-math">\(\CS(A)=\RS(A^T)\text{.}\)</span>
+</div></li>
+</ol></article><span class="incontext"><a href="s_orthogonal_projection.html#proof-80" class="internal">in-context</a></span>
 </body>
 </html>

@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:16:34Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -14,8 +11,27 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>As an example, the matrix <span class="process-math">\(A=\begin{bmatrix}0\amp -2\\ 1 \amp 3 \end{bmatrix}\text{,}\)</span> satisfies <span class="process-math">\(D=P^{-1}AP\text{,}\)</span> where <span class="process-math">\(D=\begin{bmatrix}1\amp 0\\ 0\amp 2 \end{bmatrix}\text{,}\)</span> and <span class="process-math">\(P=\begin{bmatrix}2\amp 1\\ -1\amp -1 \end{bmatrix}\text{.}\)</span> Since <span class="process-math">\(C=\begin{bmatrix}1\amp 0\\ 0\amp \sqrt{2} \end{bmatrix}\)</span> is a square-root of <span class="process-math">\(D\text{,}\)</span> <span class="process-math">\(B=PCP^{-1}=\begin{bmatrix}2-\sqrt{2}\amp 2-2\sqrt{2}\\ -1+\sqrt{2}\amp -1+2\sqrt{2} \end{bmatrix}\)</span> is a square-root of <span class="process-math">\(A\text{,}\)</span> as you can easily check.</p>
-<span class="incontext"><a href="ss_diagonalization.html#p-2215">in-context</a></span>
+<h3 class="heading"><span class="type">Paragraph</span></h3>
+<div class="para logical">
+<div class="para">Suppose <span class="process-math">\(V\)</span> is an <span class="process-math">\(n\)</span>-dimensional vector space. Once we choose a basis <span class="process-math">\(B=\{\boldv_1, \boldv_2, \dots, \boldv_n\}\)</span> of <span class="process-math">\(V\text{,}\)</span> we know from <a href="" class="xref" data-knowl="./knowl/th_basis_equivalence.html" title="Theorem 3.6.7: Basis equivalence">Theorem 3.6.7</a> that any <span class="process-math">\(\boldv\in V\)</span> can be expressed <em class="emphasis">in a unique way</em> as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_basis_equivalence.html ./knowl/eq_coordinate_correspondence.html ./knowl/eq_coordinate_correspondence.html ./knowl/eq_coordinate_correspondence.html ./knowl/eq_coordinate_correspondence.html">
+\begin{equation*}
+\boldv=c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n, c_i\in \R\text{.}
+\end{equation*}
+</div>
+<div class="para">
+<em class="emphasis">Coordinate vectors</em> turn this observation into a computational tool by exploiting the resulting one-to-one correspondence</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_basis_equivalence.html ./knowl/eq_coordinate_correspondence.html ./knowl/eq_coordinate_correspondence.html ./knowl/eq_coordinate_correspondence.html ./knowl/eq_coordinate_correspondence.html">
+\begin{equation}
+\boldv\in V \longleftrightarrow (c_1,c_2,\dots, c_n)\in \R^n\text{.}\tag{5.1.1}
+\end{equation}
+</div>
+<div class="para">We will use the correspondence <a href="" class="xref" data-knowl="./knowl/eq_coordinate_correspondence.html" title="Equation 5.1.1">(5.1.1)</a> in two distinct ways, as described below.</div>
+<ol class="decimal">
+<li><div class="para">Given an <span class="process-math">\(n\)</span>-dimensional vector space <span class="process-math">\(V\)</span> and basis <span class="process-math">\(B\text{,}\)</span> the correspondence <a href="" class="xref" data-knowl="./knowl/eq_coordinate_correspondence.html" title="Equation 5.1.1">(5.1.1)</a> allow us to treat elements of the abstract space <span class="process-math">\(V\)</span> as if they were elements of <span class="process-math">\(\R^n\text{,}\)</span> and to then make use of our wealth of computational procedures related to <span class="process-math">\(n\)</span>-tuples.</div></li>
+<li><div class="para">The correspondence <a href="" class="xref" data-knowl="./knowl/eq_coordinate_correspondence.html" title="Equation 5.1.1">(5.1.1)</a> is also useful when working in <span class="process-math">\(\R^n\)</span> itself. Namely, there will be situations where it is convenient to represent vectors with a particular nonstandard basis <span class="process-math">\(B\text{,}\)</span> as opposed to the standard basis <span class="process-math">\(\{\bolde_1, \bolde_2, \dots, \bolde_n\}\text{.}\)</span> In this setting the correspondence <a href="" class="xref" data-knowl="./knowl/eq_coordinate_correspondence.html" title="Equation 5.1.1">(5.1.1)</a> will be used as a “change of coordinates” technique.</div></li>
+</ol>
+</div>
+<span class="incontext"><a href="s_coordinatevectors.html#p-2215" class="internal">in-context</a></span>
 </body>
 </html>

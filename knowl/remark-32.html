@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="remark remark-like"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.3.8</span><span class="period">.</span>
+</h4>
+<div class="para">Whenever confronted with a logical implication of the form <span class="process-math">\(\mathcal{P}\implies\mathcal{Q}\text{,}\)</span> where <span class="process-math">\(\mathcal{P}\)</span> and <span class="process-math">\(\mathcal{Q}\)</span> denote arbitrary propositions, you should always ask whether the implication “goes the other way”. In other words, does the converse implication  <span class="process-math">\(\mathcal{Q}\implies \mathcal{P} \)</span> also hold?</div> <div class="para">The answer with regard to the implication <a href="" class="xref" data-knowl="./knowl/eq_inv_implies_prod.html" title="Equation 2.3.2">(2.3.2)</a> is yes, though the proof of this is more difficult then you think. (See <a href="" class="xref" data-knowl="./knowl/cor_inv_prod_eq.html" title="Corollary 2.4.14: Invertibility of product equivalence">Corollary 2.4.14</a>.)</div> <div class="para logical">
+<div class="para">The following argument is a common <em class="emphasis">invalid</em> proof of the reverse implication:</div>
+<ol class="decimal">
+<li><div class="para">Assume <span class="process-math">\(AB\)</span> is invertible.</div></li>
+<li><div class="para">Then <span class="process-math">\(AB\)</span> has an inverse matrix.</div></li>
+<li><div class="para">Then the inverse of <span class="process-math">\(AB\)</span> is <span class="process-math">\(B^{-1}A^{-1}\text{.}\)</span>
+</div></li>
+<li><div class="para">Then <span class="process-math">\(A^{-1}\)</span> and <span class="process-math">\(B^{-1}\)</span> exist. Hence <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are invertible.</div></li>
+</ol>
+<div class="para">Where is the flaw in our logic here? The second statement only allows us to conclude that there is some mystery matrix <span class="process-math">\(C\)</span> satisfying <span class="process-math">\((AB)C=C(AB)=I\text{.}\)</span> We cannot yet say that <span class="process-math">\(C=B^{-1}A^{-1}\text{,}\)</span> as this formula from <a href="" class="xref" data-knowl="./knowl/th_invertible_prod.html" title="Theorem 2.3.6: Invertibility of products">Theorem 2.3.6</a> only applies when we already know that <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are both invertible. But this is exactly what we are trying to prove! As such we are guilty here of “begging the question”, or <i class="foreign">petitio principii</i> in Latin.</div>
+</div></article><span class="incontext"><a href="s_invertible_matrices.html#remark-32" class="internal">in-context</a></span>
+</body>
+</html>

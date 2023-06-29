@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:16:00Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -15,23 +12,27 @@
 </head>
 <body class="ignore-math">
 <article class="hiddenproof"><h4 class="heading"><span class="type">Proof</span></h4>
-<p>We prove (1), leaving (2)-(4) as an exercise.</p>
-<p>First observe that <span class="process-math">\(0\boldv=(0+0)\boldv\text{,}\)</span> since <span class="process-math">\(0=0+0\text{.}\)</span></p>
-<p>By Axiom (vi) we have <span class="process-math">\((0+0)\boldv=0\boldv+0\boldv\text{.}\)</span> Thus <span class="process-math">\(0\boldv=0\boldv+0\boldv\text{.}\)</span></p>
-<p>Now add <span class="process-math">\(-0\boldv\text{,}\)</span> the vector inverse of <span class="process-math">\(0\boldv\text{,}\)</span> to both sides of the last equation:</p>
-<div class="displaymath process-math">
-\begin{equation*}
--0\boldv+0\boldv=-0\boldv+(0\boldv+0\boldv)\text{.}
-\end{equation*}
-</div>
-<p>Now simplify this equation step by step using the axioms:</p>
+<div class="para">By  <a href="" class="xref" data-knowl="./knowl/rm_matrix_transform_example.html" title="Remark 3.2.11">Remark 3.2.11</a>, we need only show that <span class="process-math">\(\rho_\alpha=T_A\)</span> for the matrix indicated.</div> <div class="para logical">
+<div class="para">If the point <span class="process-math">\(P=(x,y)\)</span> has polar coordinates <span class="process-math">\((r,\theta)\)</span> (so that <span class="process-math">\(x=r\cos\theta\)</span> and <span class="process-math">\(y=r\sin\theta\)</span>), then its image <span class="process-math">\(P'=\rho_{\alpha}(P)\)</span> under our rotation has polar coordinates <span class="process-math">\((r,\theta+\alpha)\text{.}\)</span> Translating back to rectangular coordinates, we see that</div>
 <div class="displaymath process-math">
 \begin{align*}
--0\boldv+0\boldv=-0\boldv+(0\boldv+0\boldv)\amp\implies
-\boldzero=(-0\boldv+0\boldv)+0\boldv \amp (\text{Axiom (iv) and Axiom (ii)}) \\
-\amp\implies \boldzero=\boldzero+0\boldv \amp (\text{(Axiom (iv))})\\
-\amp\implies \boldzero=0\boldv \text{.}
+\rho_\alpha(P)\amp= P' \\
+\amp =\left(r\cos(\theta+\alpha),r\sin(\theta+\alpha)\right)\\
+\amp =(r\cos\theta\cos\alpha-r\sin\theta\sin\alpha, r\sin\theta\cos\alpha+r\cos\theta\sin\alpha)
+\amp (\text{trig. identities}) \\
+\amp=(\cos\alpha\, x-\sin\alpha\, y, \sin\alpha\, x+\cos\alpha\, y)
+\amp (\text{since } x=r\cos\theta, y=r\sin\theta) \text{.}
 \end{align*}
-</div></article><span class="incontext"><a href="s_vectorspace.html#proof-43">in-context</a></span>
+</div>
+<div class="para">It follows that <span class="process-math">\(\rho_{\alpha}=T_A\text{,}\)</span> where</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A=\begin{amatrix}[rr]
+\cos\alpha\amp -\sin\alpha\\ \sin\alpha \amp \cos\alpha
+\end{amatrix}\text{,}
+\end{equation*}
+</div>
+<div class="para">as claimed.</div>
+</div></article><span class="incontext"><a href="s_transformation.html#proof-43" class="internal">in-context</a></span>
 </body>
 </html>

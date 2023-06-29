@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:16:33Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -14,8 +11,35 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h3 class="heading"><span class="type">Paragraph</span></h3>
-<p>At last we relate the property of being diagonalizable with the notion of eigenvectors. In the process we make clear what we mean when we say <span class="process-math">\(T\)</span> is diagonalizable if and only if it has “enough” linearly independent eigenvectors.</p>
-<span class="incontext"><a href="ss_diagonalization.html#p-2144">in-context</a></span>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(B=\{\boldw_1, \boldw_2, \dots, \boldw_r\}\text{.}\)</span> We first show that the vectors</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_ortho_decomp.html ./knowl/eq_ortho_proj_formula_proof.html">
+\begin{equation}
+\boldw=\sum_{i=1}^r\frac{\angvec{\boldv,\boldw_i}}{\angvec{\boldw_i, \boldw_i}}\boldw_i\tag{4.3.4}
+\end{equation}
+</div>
+<div class="para">and <span class="process-math">\(\boldw^\perp=\boldv-\boldw\)</span> satisfy the conditions in <a href="" class="xref" data-knowl="./knowl/eq_ortho_decomp.html" title="Equation 4.3.1">(4.3.1)</a>. It is clear that the <span class="process-math">\(\boldw\)</span> defined in <a href="" class="xref" data-knowl="./knowl/eq_ortho_proj_formula_proof.html" title="Equation 4.3.4">(4.3.4)</a> is an element of <span class="process-math">\(W\text{,}\)</span> since it is a linear combination of the <span class="process-math">\(\boldw_i\text{.}\)</span> Furthermore, we see easily that our choice <span class="process-math">\(\boldw^\perp=\boldv-\boldw\)</span> satisfies</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_ortho_decomp.html ./knowl/eq_ortho_proj_formula_proof.html">
+\begin{equation*}
+\boldw+\boldw^\perp=\boldw+(\boldv-\boldw)=\boldv\text{.}
+\end{equation*}
+</div>
+<div class="para">It remains only to show that <span class="process-math">\(\boldw^\perp=\boldv-\boldw\in W^\perp\text{.}\)</span> Since <span class="process-math">\(B\)</span> is a basis of <span class="process-math">\(W\text{,}\)</span> it suffices to show that <span class="process-math">\(\langle \boldw^\perp,\boldw_j\rangle=0\)</span> for all <span class="process-math">\(1\leq i\leq r\text{.}\)</span> We compute:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_ortho_decomp.html ./knowl/eq_ortho_proj_formula_proof.html">
+\begin{align*}
+\langle \boldw^\perp, \boldw_j \rangle\amp = \langle \boldv-\proj{\boldv}{W}, \boldw_i \rangle\\
+\amp =
+\left\langle \boldv-\sum_{i=1}^r\frac{\angvec{\boldv,\boldw_i}}{\angvec{\boldw_i, \boldw_i}}\boldw_i, \boldw_j\right\rangle \\
+\amp =
+\langle \boldv, \boldw_j\rangle -\sum_{i=1}^r\frac{\angvec{\boldv,\boldw_i}}{\angvec{\boldw_i, \boldw_i}}\langle \boldw_i, \boldw_j\rangle \\
+\amp =
+\langle \boldv, \boldw_j\rangle -\frac{\langle \boldv, \boldw_j\rangle}{\cancel{\langle \boldw_j, \boldw_j\rangle}}\cancel{\langle \boldw_j, \boldw_j\rangle}\\
+\amp = 0 \text{,}
+\end{align*}
+</div>
+<div class="para">as desired.</div>
+</div>
+<span class="incontext"><a href="s_orthogonal_projection.html#p-2144" class="internal">in-context</a></span>
 </body>
 </html>

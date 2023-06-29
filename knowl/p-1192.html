@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:16:05Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -14,8 +11,28 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h4 class="heading"><span class="type">Paragraph</span></h4>
-<p><a href="" class="xref" data-knowl="./knowl/th_nullspace_image.html" title="Theorem 4.3.14: Null space and image">Theorem 4.3.14</a> provides us a with a useful indirect way of proving a subset <span class="process-math">\(W\subseteq V\)</span> is a subspace: namely, find a linear transformation $T$ for which <span class="process-math">\(W=\NS T\text{.}\)</span> (You could also identify <span class="process-math">\(W=\im T\)</span> for some linear transformation <span class="process-math">\(T\text{,}\)</span> but this approach tends to be not as convenient.</p>
-<span class="incontext"><a href="s_subspace.html#p-1192">in-context</a></span>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<div class="para logical">
+<div class="para">We employ some similar trickery to what was done in the proof of <a href="" class="xref" data-knowl="./knowl/th_vectorspace_props.html" title="Theorem 3.1.13: Basic vector space properties">Theorem 3.1.13</a>. Assuming <span class="process-math">\(T\)</span> is linear:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_vectorspace_props.html ./knowl/d_linear_transform.html">
+\begin{align*}
+T(\boldzero_V)  \amp= T(\boldzero_V+\boldzero_V)\\
+\amp =T(\boldzero_V)+T(\boldzero_V) \amp (\knowl{./knowl/d_linear_transform.html}{\text{Definition 3.2.1}}) \text{.}
+\end{align*}
+</div>
+<div class="para">Thus, whatever <span class="process-math">\(T(\boldzero_V)\in W\)</span> may be, it satisfies</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_vectorspace_props.html ./knowl/d_linear_transform.html">
+\begin{equation*}
+T(\boldzero_V)=T(\boldzero_V)+T(\boldzero_V)\text{.}
+\end{equation*}
+</div>
+<div class="para">Canceling <span class="process-math">\(T(\boldzero_V)\)</span> on both sides using <span class="process-math">\(-T(\boldzero_V)\text{,}\)</span> we conclude</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_vectorspace_props.html ./knowl/d_linear_transform.html">
+\begin{equation*}
+\boldzero_W=T(\boldzero_V)\text{.}
+\end{equation*}
+</div>
+</div>
+<span class="incontext"><a href="s_transformation.html#p-1192" class="internal">in-context</a></span>
 </body>
 </html>

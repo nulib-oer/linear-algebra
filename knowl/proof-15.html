@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:15:48Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -15,22 +12,14 @@
 </head>
 <body class="ignore-math">
 <article class="hiddenproof"><h4 class="heading"><span class="type">Proof</span></h4>
-<p>If <span class="process-math">\(ad-bc\ne 0\text{,}\)</span> the proposed matrix is indeed an inverse of <span class="process-math">\(A\text{,}\)</span> as one readily verifies.</p>
-<p>Assume <span class="process-math">\(ad-bc=0\text{.}\)</span> If <span class="process-math">\(A=\boldzero\text{,}\)</span> then <span class="process-math">\(A\)</span> is not invertible, as we saw in the example above. Thus we can assume <span class="process-math">\(A\)</span> is nonzero, in which case <span class="process-math">\(B=\begin{amatrix}[rr]d\amp -b\\ -c\amp a
-\end{amatrix}\)</span> is also nonzero. An easy computation shows</p>
-<div class="displaymath process-math">
-\begin{equation*}
-AB=\abcdmatrix{ad-bc}{0}{0}{ad-bc}=\abcdmatrix{0}{0}{0}{0}.
-\end{equation*}
-</div>
-<p class="continuation">This implies <span class="process-math">\(A\)</span> is not invertible. Indeed if it were, then the inverse <span class="process-math">\(A^{-1}\)</span> would exist, and we'd have</p>
+<div class="para logical">
+<div class="para">Assume <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are invertible. The statement of the theorem proposes a candidate for the inverse of <span class="process-math">\(AB\text{:}\)</span> namely, <span class="process-math">\(C=B^{-1}A^{-1}\text{.}\)</span> We need only show that <span class="process-math">\(C\)</span> satisfies <span class="process-math">\(C(AB)=(AB)C=I\text{.}\)</span> Here goes:</div>
 <div class="displaymath process-math">
 \begin{align*}
-AB=\boldzero \amp\implies A^{-1}AB=\boldzero \\
-\amp \implies IB=\boldzero \\
-\amp \implies B=\boldzero \text{,}
+C(AB)\amp =\amp (B^{-1}A^{-1})AB=B^{-1}A^{-1}AB=B^{-1}IB=B^{-1}B=I\\
+(AB)C\amp =\amp (AB)B^{-1}A^{-1}=ABB^{-1}A^{-1}=AIA^{-1}=AA^{-1}=I\text{.}
 \end{align*}
 </div>
-<p class="continuation">which is a contradiction. We have proved that if <span class="process-math">\(ad-bc=0\text{,}\)</span> then <span class="process-math">\(A\)</span> is not invertible.</p></article><span class="incontext"><a href="s_invertible_matrices.html#proof-15">in-context</a></span>
+</div></article><span class="incontext"><a href="s_invertible_matrices.html#proof-15" class="internal">in-context</a></span>
 </body>
 </html>

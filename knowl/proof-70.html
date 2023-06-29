@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:16:21Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -14,39 +11,49 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<article class="hiddenproof"><h5 class="heading"><span class="title">Proof of (ii).</span></h5>
-<p>That there can me <em class="emphasis">at most</em> one such <span class="process-math">\(T\colon V\rightarrow W\)</span> follows from (i). Thus we need only show that such a <span class="process-math">\(T\)</span> exists.</p>
-<p>Since any <span class="process-math">\(\boldv\in V\)</span> has a <em class="emphasis">unique</em> expression of the form</p>
-<div class="displaymath process-math">
+<article class="hiddenproof"><h4 class="heading"><span class="type">Proof</span></h4>
+<div class="para logical">
+<div class="para">First we show that axioms (i) and (ii) are satsified for <em class="emphasis">any</em> choice of <span class="process-math">\(k_i\text{.}\)</span> Let</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_trans_props.html ./knowl/th_trans_props.html">
 \begin{equation*}
-\boldv=c_1\boldu_1+c_2\boldu_2+\cdots +c_r\boldu_r\text{,}
+K=\begin{amatrix}[rrrr]k_1\amp 0\amp \dots \amp 0 \\ 0\amp k_2\amp 0\amp \dots \\ \vdots \\ 0\amp \dots\amp 0\amp k_n \end{amatrix}\text{,}
 \end{equation*}
 </div>
-<p class="continuation">where <span class="process-math">\(c_i\ne 0\)</span> for all <span class="process-math">\(1\leq i\leq r\text{,}\)</span> the formula in <a href="" class="xref" data-knowl="./knowl/eq_bases_transformations.html" title="Equation 4.7.1">(4.7.1)</a> defines a function <span class="process-math">\(T\colon V\rightarrow W\)</span> in a well-defined manner. Note also that the formula still applies even if some of the coefficients are equal to 0: if <span class="process-math">\(c_i=0\text{,}\)</span> then <span class="process-math">\(c_iT(\boldv_i)=\boldzero\text{,}\)</span> and the right-hand side of <a href="" class="xref" data-knowl="./knowl/eq_bases_transformations.html" title="Equation 4.7.1">(4.7.1)</a> is unchanged. We will use this fact below.</p>
-<p>We now show that <span class="process-math">\(T\)</span> is linear. Given <span class="process-math">\(\boldv, \boldv'\in V\)</span> we can find a common collection of elements <span class="process-math">\(\boldu_1,\boldu_2,\dots, \boldu_r\in B\)</span> for which</p>
-<div class="displaymath process-math">
+<div class="para">the diagonal matrix whose <span class="process-math">\(i\)</span>-th diagonal entry is <span class="process-math">\(k_i\text{.}\)</span> Then for all <span class="process-math">\(\boldx=(x_1,x_2,\dots, x_n), \boldy=(y_1,y_2,\dots, y_n)\in \R^n\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_trans_props.html ./knowl/th_trans_props.html">
+\begin{equation*}
+\langle \boldx, \boldy  \rangle=\boldx^TK\boldy=\begin{amatrix}[cccc]x_1\amp x_2\amp \dots\amp x_n \end{amatrix} K\begin{bmatrix}y_1\\ y_2\\ \vdots \\ y_n\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">Here we treat <span class="process-math">\(\boldx, \boldy\)</span> as column vectors, and we treat the resulting <span class="process-math">\(1\times 1\)</span> matrix <span class="process-math">\(\boldx^T K\boldy\)</span> as a scalar. Axioms (i)-(ii) now follow from various matrix properties. For linearity, for example, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_trans_props.html ./knowl/th_trans_props.html">
 \begin{align*}
-\boldv \amp = c_1\boldu_1+c_2\boldu_2+\cdots +c_r\boldu_r\\
-\boldv'\amp=d_1\boldu_1+d_2\boldu_2+\cdots +d_r\boldu_r 
+\langle c\boldx_1+d\boldx_2, \boldy \rangle \amp = (c\boldx_1+d\boldx_2)^TK\boldy\\
+\amp =(c\boldx_1^T+d\boldx_2^T)K\boldy \amp (\knowl{./knowl/th_trans_props.html}{\text{2.2.11}})\\
+\amp =c\boldx_1^TK\boldy+d\boldx_2^TK\boldy \\
+\amp =c \langle \boldx_1, \boldy \rangle +d \langle \boldx_2,\boldy  \rangle \text{.}
 \end{align*}
 </div>
-<p class="continuation">for some <span class="process-math">\(c_i, d_i\in \R\text{.}\)</span> We can no longer assume that <span class="process-math">\(c_i\ne 0\)</span> and <span class="process-math">\(d_i\ne 0\)</span> for all <span class="process-math">\(1\leq i\leq r\text{,}\)</span> but as observed above we still have</p>
-<div class="displaymath process-math">
+<div class="para">Symmetry requires a little more trickery:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_trans_props.html ./knowl/th_trans_props.html">
 \begin{align*}
-T(\boldv) \amp = c_1T(\boldu_1)+c_2T(\boldu_2)+\cdots +c_rT(\boldu_r)\\
-T(\boldv')\amp=d_1T(\boldu_1)+d_2T(\boldu_2)+\cdots +d_rT(\boldu_r) \text{.}
+\langle \boldy, \boldx  \rangle   \amp = \boldy^TK\boldx \\
+\amp = \boldy^TK^T\boldx \amp (K^T=K) \\
+\amp = (\boldx^T K\boldy)^T \amp (\knowl{./knowl/th_trans_props.html}{\text{Theorem 2.2.11}})\\
+\amp =\boldx^T K \boldy \amp \\
+\amp = \langle \boldx, \boldy \rangle \text{.}
 \end{align*}
 </div>
-<p class="continuation">Given any <span class="process-math">\(c, d\in \R\text{,}\)</span> we have</p>
+<div class="para">Note that <span class="process-math">\((\boldx^T K\boldy)^T=\boldx^T K\boldy\)</span> as <span class="process-math">\(\boldx^T K\boldy\)</span> is just a <span class="process-math">\(1\times 1\)</span> matrix.</div>
+</div> <div class="para logical">
+<div class="para">Lastly, we show that axiom (iii) is satisfied if and only if <span class="process-math">\(k_i&gt;0\)</span> for all <span class="process-math">\(i\text{.}\)</span> To this end consider the formula</div>
 <div class="displaymath process-math">
-\begin{align*}
-T(c\boldv+d\boldv')\amp=T(cc_1\boldu_1+cc_2\boldu_2+\cdots +cc_r\boldu_r+dd_1\boldu_1+dd_2\boldu_2+\cdots +dd_r\boldu_r) \\
-\amp= T\left((cc_1+dd_1)\boldu_1+(cc_2+dd_2)\boldu_2+\cdots +(cc_r+dd_r)\boldu_r\right) \\
-\amp =(cc_1+dd_1)T(\boldu_1)+(cc_2+dd_2)T(\boldu_2)+\cdots +(cc_r+dd_r)T(\boldu_r) \amp (\knowl{./knowl/eq_bases_transformations.html}{\text{(4.7.1)}}) \\
-\amp= c(c_1T(\boldu_1)+c_2T(\boldu_2)+\cdots +c_rT(\boldu_r))+d(d_1T(\boldu_1)+d_2T(\boldu_2)+\cdots +d_rT(\boldu_r)\\
-\amp =cT(\boldv)+dT(\boldv')\text{.}
-\end{align*}
+\begin{equation*}
+\langle \boldx, \boldx \rangle=k_1x_1^2+k_2x_2^2+\cdots k_nx_n^2\text{.}
+\end{equation*}
 </div>
-<p class="continuation">Thus <span class="process-math">\(T\)</span> is a linear transformation.</p></article><span class="incontext"><a href="s_isom.html#proof-70">in-context</a></span>
+<div class="para">If <span class="process-math">\(k_i&gt;0\text{,}\)</span> then since <span class="process-math">\(x_i^2\geq 0\)</span> for all <span class="process-math">\(i\text{,}\)</span> we have <span class="process-math">\(\langle \boldx, \boldx \rangle\geq 0\)</span> for any <span class="process-math">\(\boldx\text{,}\)</span> and <span class="process-math">\(\langle \boldx, \boldx \rangle=0\)</span> if and only if <span class="process-math">\(x_i=0\)</span> for all <span class="process-math">\(i\)</span> if and only if <span class="process-math">\(\boldx=\boldzero\text{.}\)</span>
+</div>
+</div> <div class="para">For the other direction suppose <span class="process-math">\(k_i\leq 0\)</span> for some <span class="process-math">\(i\text{.}\)</span> Let <span class="process-math">\(\boldx=\bolde_i\text{,}\)</span> the  <span class="process-math">\(i\)</span>-th element of the standard basis of <span class="process-math">\(\R^n\text{.}\)</span> Then <span class="process-math">\(\langle \boldx, \boldx \rangle=k_i\leq 0\text{:}\)</span> a counterexample to the definiteness property of axiom (iii).</div></article><span class="incontext"><a href="s_innerproducts.html#proof-70" class="internal">in-context</a></span>
 </body>
 </html>

@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:16:13Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -15,7 +12,16 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>If <span class="process-math">\(S\)</span> spans <span class="process-math">\(V\text{,}\)</span> then <span class="process-math">\(\val{S}\geq n\text{.}\)</span></p>
-<span class="incontext"><a href="s_basis_dimension.html#p-1424">in-context</a></span>
+<div class="para logical">
+<div class="para">We get the entire set of solutions <span class="process-math">\(S\)</span> by translating <span class="process-math">\(\NS A\)</span> by the particular solution <span class="process-math">\(\boldx_p\text{:}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_sage_matrix_eqn.html">
+\begin{equation*}
+S=\{\boldx_p+\boldu\colon \boldu\in \NS A\}=\boldx_p+\NS A\text{.}
+\end{equation*}
+</div>
+<div class="para">We can illustrate this in Sage by taking random elements of <span class="process-math">\(\NS A\)</span> (computed using <code class="code-inline tex2jax_ignore">right_kernel</code>), adding them to <code class="code-inline tex2jax_ignore">xp</code>, and verifying that the result is a solution to <a href="" class="xref" data-knowl="./knowl/eq_sage_matrix_eqn.html" title="Equation 3.4.5">(3.4.5)</a>. Each time you evaluate the cell below, a randomly generated element of <span class="process-math">\(S\)</span> will be outputted.</div>
+</div>
+<span class="incontext"><a href="s_nullspace_image.html#p-1424" class="internal">in-context</a></span>
 </body>
 </html>

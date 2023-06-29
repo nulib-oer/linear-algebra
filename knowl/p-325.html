@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:15:42Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -14,38 +11,8 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h4 class="heading"><span class="type">Paragraph</span></h4>
-<p>Suppose now that <span class="process-math">\(x_{i_1}, x_{i_2},\dots , x_{i_r}\)</span> are the leading variables of <span class="process-math">\(L'\text{,}\)</span> and <span class="process-math">\(x_{j_1}, x_{j_2},\dots, x_{j_s}\)</span> are the free variables. Again, since <span class="process-math">\(U\)</span> does not have a leading one in the last column, there are exactly <span class="process-math">\(r\)</span> nonzero equations in <span class="process-math">\(L'\text{:}\)</span> one for each leading variable. After bringing any terms involving free variables to the right, the <span class="process-math">\(k\)</span>-th such equation takes the form</p>
-<div class="displaymath process-math">
-\begin{equation*}
-x_{i_k}+c_{k,k+1}x_{i_{k+1}}+\cdots c_{k,r}x_{i_{r}}=d_k-G_k(x_{j_1},x_{j_2},\dots, x_{j_s})\text{.}
-\end{equation*}
-</div>
-<p class="continuation">As in the previous case, back-substitution now allows us to solve for each leading variable as a function of the free variables:</p>
-<div class="displaymath process-math">
-\begin{align*}
-x_{i_r}\amp =d_r-G_r(x_{j_1},x_{j_2},\dots, x_{j_s})\\
-\amp =F_s(x_{j_1},x_{j_2},\dots, x_{j_s})\\
-x_{i_{r-1}}\amp=d_{r-1}-c_{r}x_{i_r}-G_{r-1}(x_{j_1},x_{j_2},\dots, x_{j_s})\\
-\amp = d_{r-1}-c_{r}F_r(x_{j_1},x_{j_2},\dots, x_{j_s})-G_{r-1}(x_{j_1},x_{j_2},\dots, x_{j_s})\\
-\amp =F_{r-1}(x_{j_1},x_{j_2},\dots, x_{j_s})\\
-\amp \vdots \\
-x_1 \amp=F_1(x_{j_1},x_{j_2},\dots, x_{j_s}) 
-\end{align*}
-</div>
-<p class="continuation">This new system of equations clearly has the same set of solutions as <span class="process-math">\(L'\)</span> (and <span class="process-math">\(L\)</span>), since it was obtained from <span class="process-math">\(L'\)</span> by deleting zero rows of <span class="process-math">\(U\)</span> and using only addition and subtraction operations. Furthermore, it is clear that any assignment of the free variables</p>
-<div class="displaymath process-math">
-\begin{equation*}
-x_{j_1}=t_1, x_{j_2}=t_2,\dots, x_{j_s}=t_s
-\end{equation*}
-</div>
-<p class="continuation">extends uniquely to the solution of <span class="process-math">\(L'\)</span> that further assigns</p>
-<div class="displaymath process-math">
-\begin{equation*}
-x_{i_1}=F_1(t_1,t_2,\dots, t_s), x_{i_2}=F_2(t_1,t_2,\dots, t_s), \dots, x_r=F_r(t_1,t_2,\dots, t_s)\text{.}
-\end{equation*}
-</div>
-<p class="continuation">The idea behind uniqueness here, is that once you assign values to the free variables, the values of the leading variables are completely determined by the equations <span class="process-math">\(x_{i_k}=F_k(x_{j_1},x_{j_2},\dots, x_{j_s})\text{.}\)</span></p>
-<span class="incontext"><a href="s_solving.html#p-325">in-context</a></span>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<div class="para">Compute the set of all solutions to the system algebraically.</div>
+<span class="incontext"><a href="s_systems.html#p-325" class="internal">in-context</a></span>
 </body>
 </html>

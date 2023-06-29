@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:16:20Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -16,10 +13,28 @@
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">4.6.4.8.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">3.6.19.1</span><span class="period">.</span>
 </h4>
-<ol class="lower-alpha"><li><p>Clearly, <span class="process-math">\(B=\{(1,1)\}\)</span> is a basis for <span class="process-math">\(\CS A\text{,}\)</span> and <span class="process-math">\(B'=\{(1,1,1,1)\}\)</span> is a basis for <span class="process-math">\(\RS A\text{.}\)</span> It follows that <span class="process-math">\(\rank A=1\)</span> and hence <span class="process-math">\(\nullity A=4-1=3\text{.}\)</span> Thus we need to find three linearly independent elements of <span class="process-math">\(\NS A\)</span> to find a basis. We can do so by inspection with the help of the column method. Namely, observe that <span class="process-math">\(\boldv_1=(1,-1,0,0), \boldv_2=(0,1,-1,0), \boldv_3=(0,0,1,-1)\)</span> are all in <span class="process-math">\(\NS A\)</span> (column method). The location of zeros in these vectors make it clear that <span class="process-math">\(B''=\{\boldv_1,\boldv_2, \bolv_3\}\)</span> are linearly independent. Since <span class="process-math">\(\dim NS A=3\text{,}\)</span> and <span class="process-math">\(\val{B''}=3\text{,}\)</span> we conclude that <span class="process-math">\(B''\)</span> is a basis of <span class="process-math">\(\NS A\)</span> (<a href="" class="xref" data-knowl="./knowl/cor_dimension_subspace.html" title="Corollary 4.5.17: Dimension of subspaces">4.5.17</a>).</p></li></ol>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(B=\{\bolde_1, \bolde_2\}=\{(1,0), (0,1)\}\text{.}\)</span> According to <a href="" class="xref" data-knowl="./knowl/cor_matrix_transformations.html" title="Corollary 3.6.16: Matrix transformations">Corollary 3.6.16</a>
 </div>
-<span class="incontext"><a href="s_rank_nullity.html#solution-53">in-context</a></span>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/cor_matrix_transformations.html">
+\begin{align*}
+A \amp=\begin{bmatrix}
+\vert\amp \vert \\
+\rho_\alpha(1,0)\amp \rho_\alpha(0,1) \\
+\vert \amp \vert
+\end{bmatrix} \\
+\amp=\begin{amatrix}[rr]
+\cos\alpha \amp -\sin\alpha \\
+\sin\alpha \amp \cos\alpha
+\end{amatrix} \text{,}
+\end{align*}
+</div>
+<div class="para">since <span class="process-math">\((1,0)\)</span> gets rotated by <span class="process-math">\(\rho_\alpha\)</span> to <span class="process-math">\((\cos\alpha, \sin\alpha)\text{,}\)</span> and <span class="process-math">\((0,1)\)</span> gets rotated to <span class="process-math">\((-\sin\alpha, \cos\alpha)\text{.}\)</span>
+</div>
+</div>
+</div>
+<span class="incontext"><a href="s_basis.html#solution-53" class="internal">in-context</a></span>
 </body>
 </html>

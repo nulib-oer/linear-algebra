@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like"><ol class="decimal">
+<li><div class="para logical">
+<div class="para">To compute <span class="process-math">\([(3,3)]_B\)</span> we must find the unique pair <span class="process-math">\((c_1, c_2)\)</span> satisfying</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(3,3)=c_1(1,2)+c_2(1,1)\text{.}
+\end{equation*}
+</div>
+<div class="para">By inspection, we see that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(3,3)=3(1,1)=0(1,2)+3(1,1)\text{.}
+\end{equation*}
+</div>
+<div class="para">We conclude that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+[\boldv]_{B}=(0,3)\text{.}
+\end{equation*}
+</div>
+<div class="para">More generally, to compute <span class="process-math">\([\boldv]_B\)</span> for an arbitrary <span class="process-math">\(\boldv=(a,b)\in \R^2\text{,}\)</span> we must find the pair <span class="process-math">\((c_1,c_2)\)</span> satisfying <span class="process-math">\((a,b)=c_1(1,2)+c_2(1,1)\text{,}\)</span> or equivalently</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{linsys}{2}
+c_1\amp +\amp c_2 \amp =\amp a\\
+2c_1\amp +\amp c_2\amp =\amp b
+\end{linsys}\text{.}
+\end{equation*}
+</div>
+<div class="para">The usual techniques yield the unique solution <span class="process-math">\((c_1,c_2)=(-a+b,2a-b)\text{,}\)</span> and thus</div>
+<div class="displaymath process-math">
+\begin{equation*}
+[\boldv]_B=(-a+b, 2a-b)
+\end{equation*}
+</div>
+<div class="para">for <span class="process-math">\(\boldv=(a,b)\text{.}\)</span>
+</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">To compute <span class="process-math">\([x^2]_B\)</span> we must find the unique triple <span class="process-math">\((c_1,c_2,c_3)\)</span> satisfying</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x^2=c_1(x^2+x+1)+c_2(x^2-x)+c_3(x^2-1)\text{.}
+\end{equation*}
+</div>
+<div class="para">The equivalent linear system once we combine like terms and equate coefficients is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{linsys}{3}
+c_1\amp +\amp c_2\amp +\amp c_3\amp =\amp 1\\
+c_1\amp -\amp c_2\amp \amp \amp =\amp 0\\
+c_1\amp \amp \amp -\amp c_3\amp =\amp 0\\
+\end{linsys}\text{.}
+\end{equation*}
+</div>
+<div class="para">The unique solution to this system is <span class="process-math">\((c_1,c_2,c_3)=(1/3, 1/3, 1/3)\text{.}\)</span> We conclude</div>
+<div class="displaymath process-math">
+\begin{equation*}
+[x^2]_B=\frac{1}{3}(1, 1, 1)\text{.}
+\end{equation*}
+</div>
+<div class="para">The same reasoning shows that more generally, given polynomial <span class="process-math">\(p(x)=ax^2+bx+c\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+[p(x)]_B=\frac{1}{3}(a+b+c, a-2b+c, a+b-2)\text{.}
+\end{equation*}
+</div>
+</div></li>
+</ol></div></body>
+</html>

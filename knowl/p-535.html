@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:15:47Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -14,14 +11,16 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>In real number algebra we have the identity <span class="process-math">\((x+y)^2=x^2+2xy+y^2\text{.}\)</span> Show that two <span class="process-math">\(n\times n\)</span> matrices <span class="process-math">\(A\text{,}\)</span> <span class="process-math">\(B\)</span> satisfy</p>
-<div class="displaymath process-math">
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<div class="para logical">
+<div class="para">The definition of a matrix product <span class="process-math">\(AB\)</span> is undoubtedly more complicated than you expected, and seems to come completely out of the blue. All of this will make more sense once we begin thinking of matrices <span class="process-math">\(A\)</span> as defining certain functions <span class="process-math">\(T_A\text{.}\)</span> Our formula for the entries of <span class="process-math">\(AB\)</span> is chosen precisely so that this new matrix corresponds to the <em class="emphasis">composition</em> of the functions <span class="process-math">\(T_A\)</span> and <span class="process-math">\(T_B\text{:}\)</span> i.e. so that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_transform_composition.html">
 \begin{equation*}
-(A+B)^2=A^2+2AB+B^2
+T_{AB}=T_A\circ T_B\text{.}
 \end{equation*}
 </div>
-<p class="continuation">if and only if <span class="process-math">\(AB=BA\text{.}\)</span></p>
-<span class="incontext"><a href="s_algebraic.html#p-535">in-context</a></span>
+<div class="para">(See <a href="" class="xref" data-knowl="./knowl/th_transform_composition.html" title="Theorem 3.2.24: Composition of linear transformations">Theorem 3.2.24</a>.) Under this interpretation, the ponderous restriction on the dimensions of the ingredient matrices ensures that the two functions <span class="process-math">\(T_A\)</span> and <span class="process-math">\(T_B\)</span> can be composed.</div>
+</div>
+<span class="incontext"><a href="s_matrix.html#p-535" class="internal">in-context</a></span>
 </body>
 </html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">5.3.4.1</span><span class="period">.</span>
+</h4>
+<ol class="decimal">
+<li><div class="para logical">
+<div class="para">We have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/rm_change_of_basis_taylors.html">
+\begin{align*}
+\underset{B\rightarrow B'}{P} \amp = \begin{bmatrix}
+\vert \amp \vert \amp \vert \\
+[x^2]_{B'}\amp [x]_{B'}\amp [1]_{B'} \\
+\vert \amp \vert \amp \vert
+\end{bmatrix} \\
+\amp = \begin{bmatrix}
+1\amp 0\amp 0 \\
+4\amp 1\amp 0\\
+4\amp 2\amp 1
+\end{bmatrix} \text{.}
+\end{align*}
+</div>
+<div class="para">The first two coordinate vector computations are nontrivial; you can verify for yourself that <span class="process-math">\(x^2=1(x-2)^2+4(x-2)+4\)</span> and  <span class="process-math">\(x=0(x-2)^2+1(x-2)+2\text{.}\)</span> Alternatively, see  <a href="" class="xref" data-knowl="./knowl/rm_change_of_basis_taylors.html" title="Remark 5.3.5: Taylor’s formula and change of basis">Remark 5.3.5</a>) for a neat trick for computing these coordinate vectors.</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">Since <span class="process-math">\(B\)</span> is the standard basis, we see easily that <span class="process-math">\([x^2+x+1]_{B}=(1,1,1)\text{.}\)</span> Using <a href="" class="xref" data-knowl="./knowl/eq_changebasis_matrix_prop.html" title="Equation 5.3.1">(5.3.1)</a> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_changebasis_matrix_prop.html">
+\begin{align*}
+[x^2+x+1]_{B'} \amp = \underset{B\rightarrow B'}{P}\begin{bmatrix}
+1\\ 1\\ 1
+\end{bmatrix}\\
+\amp =\begin{bmatrix}
+1\\ 5\\ 7
+\end{bmatrix} \text{.}
+\end{align*}
+</div>
+<div class="para">Verify for yourself that we do indeed have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_changebasis_matrix_prop.html">
+\begin{equation*}
+x^2+x+1=1(x-2)^2+5(x-2)+7\text{.}
+\end{equation*}
+</div>
+</div></li>
+</ol>
+</div>
+<span class="incontext"><a href="s_changeofbasis.html#solution-81" class="internal">in-context</a></span>
+</body>
+</html>

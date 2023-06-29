@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:15:47Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -15,7 +12,23 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>Optional: can you describe in a parametric manner the set of <em class="emphasis">all</em> matrices <span class="process-math">\(A\)</span> satisfying <span class="process-math">\(A^2=\boldzero_{2\times 2}\text{?}\)</span></p>
-<span class="incontext"><a href="s_algebraic.html#p-533">in-context</a></span>
+<div class="para logical">
+<div class="para">Fix a pair <span class="process-math">\((i,j)\)</span> with <span class="process-math">\(1\leq i\leq m\)</span> and <span class="process-math">\(1\leq j\leq r\text{.}\)</span> Considered as <span class="process-math">\(n\)</span>-tuples, the <span class="process-math">\(i\)</span>-th row of <span class="process-math">\(A\)</span> and <span class="process-math">\(j\)</span>-th column of <span class="process-math">\(B\)</span> are given as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/d_matrix_mult.html ./knowl/d_dot_product.html">
+\begin{align*}
+\boldr_i \amp =(a_{i1}, a_{i2},\dots, a_{in})\\
+\boldc_j \amp =(b_{1j},b_{2j},\dots, b_{nj})\text{.}
+\end{align*}
+</div>
+<div class="para">We have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/d_matrix_mult.html ./knowl/d_dot_product.html">
+\begin{align*}
+[AB]_{ij} \amp = \sum_{k=1}^na_{ik}b_{kj} \amp( \knowl{./knowl/d_matrix_mult.html}{\text{2.1.17}}) \\
+\amp =\boldr_i\cdot \boldc_j \amp (\knowl{./knowl/d_dot_product.html}{\text{2.1.21}}) \text{,}
+\end{align*}
+</div>
+<div class="para">as claimed.</div>
+</div>
+<span class="incontext"><a href="s_matrix.html#p-533" class="internal">in-context</a></span>
 </body>
 </html>

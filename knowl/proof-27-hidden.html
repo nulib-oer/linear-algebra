@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:15:52Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -13,22 +10,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><article class="hiddenproof"><article class="case"><h5 class="heading">Implication: <span class="process-math">\(A \text{ and } B \text{ invertible }\implies AB \text{ invertibe}\)</span>.</h5>
-<p>We know from <a href="" class="xref" data-knowl="./knowl/th_invertible_prod.html" title="Theorem 3.3.6: Invertibility of products">Theorem 3.3.6</a>  that if <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are invertible, then so is <span class="process-math">\(AB\text{.}\)</span></p></article><article class="case"><h5 class="heading">Implication: <span class="process-math">\(AB\)</span> invertible <span class="process-math">\(\implies\)</span> <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> invertible.</h5>
-<p>Assume <span class="process-math">\(AB\)</span> is invertible and let <span class="process-math">\(C\)</span> be its inverse. Thus <span class="process-math">\(C(AB)=(AB)C=I_n\text{.}\)</span> We first prove <span class="process-math">\(B\)</span> is invertible. We have</p>
-<div class="displaymath process-math">
-\begin{align*}
-B\boldx=\boldzero\amp \implies  AB\boldx=\boldzero \\
-\amp \implies  \boldx=\boldzero\text{.}
-\end{align*}
-</div>
-<p class="continuation">The last implication uses Statement (3) of <a href="" class="xref" data-knowl="./knowl/th_invertibility.html" title="Theorem 3.4.5: Invertibility theorem">Theorem 3.4.5</a> and the fact that <span class="process-math">\(AB\)</span> is invertible. We have shown that</p>
-<div class="displaymath process-math">
+<body class="ignore-math"><article class="hiddenproof"><div class="para logical">
+<div class="para">The equivalence of (1) and (2) was shown in the course of our discussion in <a href="s_invertibility_theorem.html#ss_systems_to_matrix_eqns" class="internal" title="Subsection 2.4.2: Interlude on matrix equations">Subsection 2.4.2</a>. The equivalence of (2) and (3) is a direct consequence of (5) of <a href="" class="xref" data-knowl="./knowl/th_invertibility.html" title="Theorem 2.4.5: Invertibility theorem">Theorem 2.4.5</a> since a matrix <span class="process-math">\(Q\)</span> is invertible if and only if it can be written as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ss_systems_to_matrix_eqns.html ./knowl/th_invertibility.html">
 \begin{equation*}
-B\boldx=\boldzero\implies \boldx=\boldzero\text{,}
+Q=E_rE_{r-1}\cdots E_1
 \end{equation*}
 </div>
-<p class="continuation">and hence that <span class="process-math">\(B\)</span> is invertible, using once again Statement (3) of <a href="" class="xref" data-knowl="./knowl/th_invertibility.html" title="Theorem 3.4.5: Invertibility theorem">Theorem 3.4.5</a>.</p>
-<p>Next we prove directly that <span class="process-math">\(A\)</span> is invertible. Namely, we claim that <span class="process-math">\(A^{-1}=BC\text{.}\)</span> Indeed, since <span class="process-math">\(C\)</span> is the inverse of <span class="process-math">\(AB\text{,}\)</span> we have <span class="process-math">\(A(BC)=(AB)C=I\text{.}\)</span> Thus <span class="process-math">\(BC\)</span> is a right-inverse of <span class="process-math">\(A\text{.}\)</span> <a href="" class="xref" data-knowl="./knowl/cor_left-right_inverse.html" title="Corollary 3.4.11: Left-inverse if and only if right-inverse">Corollary 3.4.11</a> now implies <span class="process-math">\((BC)A=I\text{,}\)</span> and hence that <span class="process-math">\(A^{-1}=BC\text{,}\)</span> as claimed.</p>
-<p>This completes the proof that if <span class="process-math">\(AB\)</span> is invertible, then <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are invertible.</p></article></article></body>
+<div class="para">for some elementary matrices <span class="process-math">\(E_i\text{.}\)</span>
+</div>
+</div></article></body>
 </html>

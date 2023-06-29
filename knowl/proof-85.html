@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:16:30Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -15,26 +12,73 @@
 </head>
 <body class="ignore-math">
 <article class="hiddenproof"><h4 class="heading"><span class="type">Proof</span></h4>
-<ol class="decimal"><li>
-<p>Assume <span class="process-math">\(T\)</span> is injective. Then</p>
+<ol class="decimal">
+<li><div class="para logical">
+<div class="para">Suppose <span class="process-math">\(T(\boldv)=[\boldv]_B=(a_1,a_2,\dots, a_n), T(\boldw)=[\boldw]_B=(b_1, b_2, \dots, b_n)\text{.}\)</span> By definition this means</div>
 <div class="displaymath process-math">
 \begin{align*}
-T(\boldv)=\boldzero_W\amp \implies T(\boldv)=T(\boldzero_V) \\
-\amp\implies \boldv=\boldzero_V \text{.}
+\boldv \amp =\sum_{i=1}^na_i\boldv_i,  \amp \boldw\amp =\sum_{i=1}^nb_i\boldv_i\text{.}
 \end{align*}
 </div>
-<p class="continuation">It follows that <span class="process-math">\(\NS T=\{\boldzero_V\}\text{.}\)</span></p>
-<p>Now assume <span class="process-math">\(\NS T=\{\boldzero_V\}\text{.}\)</span> Then</p>
+<div class="para">It follows that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+c\boldv+d\boldw=\sum_{i=1}^n(ca_i+db_i)\boldv_i\text{,}
+\end{equation*}
+</div>
+<div class="para">and hence</div>
 <div class="displaymath process-math">
 \begin{align*}
-T(\boldv)=T(\boldv') \amp\implies T(\boldv)-T(\boldv')=\boldzero_W \\
-\amp\implies T(\boldv-\boldv')=\boldzero_W \\
-\amp \implies \boldv-\boldv'\in \NS T=\{\boldzero_V\}\\
-\amp\implies \boldv-\boldv'=\boldzero_V \\
-\amp \implies \boldv=\boldv'\text{.}
+T(c\boldv+d\boldw)\amp =[c\boldv+d\boldw]_B \amp (\text{def. of } [\phantom{\boldv}]_B) \\
+\amp =(ca_1+db_1,ca_2+db_2,\dots, ca_n+db_n) \\
+\amp =c(a_1,a_2,\dots, a_n)+d(b_1,b_2,\dots, b_n)\\
+\amp =c[\boldv]_B+d[\boldw]_B\\
+\amp =cT(\boldv)+dT(\boldw) \text{.}
 \end{align*}
 </div>
-<p class="continuation">Thus <span class="process-math">\(T\)</span> is injective.</p>
-</li></ol></article><span class="incontext"><a href="s_coordinatevectors_isomorphisms.html#proof-85">in-context</a></span>
+<div class="para">This proves <span class="process-math">\(T\)</span> is linear.</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">Clearly, if <span class="process-math">\(\boldv=\boldw\text{,}\)</span> then <span class="process-math">\([\boldv]_B=[\boldw]_B\text{.}\)</span> If <span class="process-math">\(T(\boldv)=T(\boldw)=(c_1,c_2,\dots, c_n)\text{,}\)</span> then by definition of <span class="process-math">\([\phantom{\boldv}]_B\)</span> we must have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\boldv=c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n==\boldw\text{.}
+\end{equation*}
+</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">Given any <span class="process-math">\(\boldb=(b_1,b_2,\dots, b_n)\in \R^n\text{,}\)</span> we have <span class="process-math">\(\boldb=T(\boldv)\text{,}\)</span> where</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\boldv=b_1\boldv_1+b_2\boldv_2+\cdots +b_n\boldv_n\text{.}
+\end{equation*}
+</div>
+<div class="para">This proves <span class="process-math">\(\im T=\R^n\text{.}\)</span>
+</div>
+</div></li>
+<li>
+<div class="para logical">
+<div class="para">We have</div>
+<div class="displaymath process-math">
+\begin{align*}
+\boldv\in \Span S \amp \iff \boldv=\sum_{i=1}^rc_i\boldv_i\\
+\amp\iff [\boldv]_{B}=\left[ \sum_{i=1}^rc_i\boldv_i\right] \\
+\amp \iff [\boldv]_B=\sum_{i=1}^rc_i[\boldv_i]_B\amp ([\phantom{\boldv}]_B \text{ is linear})\\
+\amp \iff [\boldv]_B\in \Span S'\text{.}
+\end{align*}
+</div>
+</div>
+<div class="para logical">
+<div class="para">Similarly, we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+\sum_{i=1}^rc_i\boldv_i=\boldzero \amp \iff \left[\sum_{i=1}^rc_i\boldv_i\right]_B=[\boldzero]_B \amp (\boldv=\boldw\iff [\boldv]_B=[\boldw]_B) \\
+\amp\iff \sum_{i=1}^rc_i[\boldv_i]_B=(0,0,\dots, 0) \amp ([\phantom{\boldv}]_B \text{ is linear}) \text{.}
+\end{align*}
+</div>
+<div class="para">From this equivalence we see that there is a nontrivial linear combination of <span class="process-math">\(S\)</span> yielding <span class="process-math">\(\boldzero\in V\)</span> if and only if there is a nontrivial linear combination of <span class="process-math">\(S'\)</span> yielding <span class="process-math">\(\boldzero\in \R^n\text{.}\)</span> In other words, <span class="process-math">\(S\)</span> is linearly independent if and only if <span class="process-math">\(S'\)</span> is linearly independent.</div>
+</div>
+</li>
+</ol></article><span class="incontext"><a href="s_coordinatevectors.html#proof-85" class="internal">in-context</a></span>
 </body>
 </html>

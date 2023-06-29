@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
+</head>
+<body class="ignore-math"><article class="project project-like"> <div class="para">An integer matrix power <span class="process-math">\(A^n\)</span> is computed in Sage as <code class="code-inline tex2jax_ignore">A^n</code>.</div> <pre class="ptx-sagecell sagecell-sage" id="sage-27"><script type="text/x-sage">A=Matrix([[1,1,1],[1,2,1],[-1,1,0]])
+show(A^3)
+show(A^-1)
+show(A^-2)
+</script></pre> <div class="para">Of course the matrix needs to be invertible for a negative of power to be computed. Sage will throw an error in this case if the matrix is singular.</div> <pre class="ptx-sagecell sagecell-sage" id="sage-28"><script type="text/x-sage">B=Matrix([[1,1],[1,1]])
+show(B.is_invertible())
+show(B^-2)
+</script></pre> <div class="para">Polynomial expressions can then be easily computed manually in Sage. The next cell computes <span class="process-math">\(f(A)\)</span> and <span class="process-math">\(f(B)\)</span> for <span class="process-math">\(f(x)=x^2-3x+33\text{.}\)</span>
+</div> <pre class="ptx-sagecell sagecell-sage" id="sage-29"><script type="text/x-sage">show(A^2-3*A+33*identity_matrix(3))
+show(B^2-3*B+33*identity_matrix(2))
+</script></pre> <div class="para">We took care to heed the warning in <a href="" class="xref" data-knowl="./knowl/rem_matrix_polynomials.html" title="Remark 2.3.11">Remark 2.3.11</a>, making sure to include <span class="process-math">\(I_3\)</span> for <span class="process-math">\(f(A)\)</span> (<code class="code-inline tex2jax_ignore">identity_matrix(3)</code>) and <span class="process-math">\(I_2\)</span> for <span class="process-math">\(f(B)\)</span> (<code class="code-inline tex2jax_ignore">identity_matrix(2)</code>). Interestingly, Sage is smart enough to figure out what we mean even if we are sloppy in this regard.</div> <pre class="ptx-sagecell sagecell-sage" id="sage-30"><script type="text/x-sage">show(A^2-3*A+33)
+show(B^2-3*B+33)
+</script></pre></article></body>
+</html>

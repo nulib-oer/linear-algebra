@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:15:42Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -15,24 +12,24 @@
 </head>
 <body class="ignore-math">
 <article class="hiddenproof"><h4 class="heading"><span class="type">Proof</span></h4>
-<p>First recall that <span class="process-math">\(L\)</span> and <span class="process-math">\(L'\)</span> have the same set of solutions (<a href="" class="xref" data-knowl="./knowl/s_systems_th_rowops.html" title="Theorem 2.1.12: Row equivalence theorem">Theorem 2.1.12</a>). So it suffices to show that the algorithm returns the correct set of solutions to <span class="process-math">\(L'\text{.}\)</span></p>
-<p>Regarding consistency: if the last column of the augmented matrix <span class="process-math">\(U\)</span> associated to <span class="process-math">\(L'\)</span> has a leading one in the <span class="process-math">\(i\)</span>-th row, then the corresponding equation in <span class="process-math">\(L'\)</span> is</p>
+<div class="para">First recall that <span class="process-math">\(L\)</span> and <span class="process-math">\(L'\)</span> have the same set of solutions (<a href="" class="xref" data-knowl="./knowl/s_systems_th_rowops.html" title="Theorem 1.1.13: Row equivalence theorem">Theorem 1.1.13</a>). So it suffices to show that the algorithm returns the correct set of solutions to <span class="process-math">\(L'\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">Regarding consistency: if the last column of the augmented matrix <span class="process-math">\(U\)</span> associated to <span class="process-math">\(L'\)</span> has a leading one in the <span class="process-math">\(i\)</span>-th row, then the corresponding equation in <span class="process-math">\(L'\)</span> is</div>
 <div class="displaymath process-math">
 \begin{equation*}
 0x_1+0x_2+\cdots 0x_n=1.
 \end{equation*}
 </div>
-<p class="continuation">Clearly this equation has no solutions, and hence the set of solutions to <span class="process-math">\(L'\)</span> is empty.</p>
-<p>Suppose now that the last column of <span class="process-math">\(U\)</span> does not have a leading one.</p>
-<article class="case"><h4 class="heading">Case 1: no free variables.</h4>
-<p>Suppose in Step 3 you determine that there are no free variables. Then each of the first <span class="process-math">\(n\)</span> columns of <span class="process-math">\(U\)</span> has a leading one in it. If follows that for each <span class="process-math">\(1\leq i \leq n\)</span> the <span class="process-math">\(i\)</span>-th equation of <span class="process-math">\(L'\)</span> is of the form</p>
-<div class="displaymath process-math">
+<div class="para">Clearly this equation has no solutions, and hence the set of solutions to <span class="process-math">\(L'\)</span> is empty.</div>
+</div> <div class="para">Suppose now that the last column of <span class="process-math">\(U\)</span> does not have a leading one.</div> <article class="case"><h4 class="heading">Case 1: no free variables.</h4> <div class="para logical">
+<div class="para">Suppose in Step 3 you determine that there are no free variables. Then each of the first <span class="process-math">\(n\)</span> columns of <span class="process-math">\(U\)</span> has a leading one in it. If follows that for each <span class="process-math">\(1\leq i \leq n\)</span> the <span class="process-math">\(i\)</span>-th equation of <span class="process-math">\(L'\)</span> is of the form</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/s_solving_case1eq.html">
 \begin{equation}
-x_i+c_{i,i+1}x_{i+1}+\cdots c_{i,n}x_n=b_i.\tag{2.3.4}
+x_i+c_{i,i+1}x_{i+1}+\cdots c_{i,n}x_n=b_i.\tag{1.3.4}
 \end{equation}
 </div>
-<p class="continuation">Since <span class="process-math">\(U\)</span> does not have a leading one in the last column, it follows that all equations beyond the <span class="process-math">\(n\)</span>-th equation are of the form <span class="process-math">\(0x_1+0x_2+\cdots 0x_n=0\text{,}\)</span> and as such may be disregarded since they are satisfied by any choice of the <span class="process-math">\(x_i\text{.}\)</span> The remaining system of <span class="process-math">\(n\)</span> equations in <span class="process-math">\(n\)</span> unknowns can be solved by back-substitution, yielding a <em class="emphasis">unique</em> solution <span class="process-math">\((x_1,x_2,\dots, x_n)\)</span> of the form</p>
-<div class="displaymath process-math">
+<div class="para">Since <span class="process-math">\(U\)</span> does not have a leading one in the last column, it follows that all equations beyond the <span class="process-math">\(n\)</span>-th equation are of the form <span class="process-math">\(0x_1+0x_2+\cdots 0x_n=0\text{,}\)</span> and as such may be disregarded since they are satisfied by any choice of the <span class="process-math">\(x_i\text{.}\)</span> The remaining system of <span class="process-math">\(n\)</span> equations in <span class="process-math">\(n\)</span> unknowns can be solved by back-substitution, yielding a <em class="emphasis">unique</em> solution <span class="process-math">\((x_1,x_2,\dots, x_n)\)</span> of the form</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/s_solving_case1eq.html">
 \begin{align*}
 x_n \amp =b_n \\
 x_{n-1}\amp =b_{n-1}-c_{n-1,n}x_n=b_{n-1}-c_{n-1,n}b_n \\
@@ -41,14 +38,15 @@ x_{n-2}\amp = b_{n-2}-c_{n-2,n}x_{n}-c_{n-2,n-1}x_{n-1}\\
 \amp \vdots 
 \end{align*}
 </div>
-<p class="continuation">Do not concern yourself overly with the exact formulas. The important point here is that once we know there is a unique assignment of the variables <span class="process-math">\(x_n, x_{n-1},\dots, x_{i+1}\)</span> that satisfies the system, <a href="" class="xref" data-knowl="./knowl/s_solving_case1eq.html" title="Equation 2.3.4">(2.3.4)</a> allows us to solve for <span class="process-math">\(x_i\)</span> in terms of the the <span class="process-math">\(x_j\text{,}\)</span> <span class="process-math">\(j&gt;i\text{.}\)</span> As such working our way up from the last equation, we find there is a unique solution to the system.</p></article><article class="case"><h4 class="heading">Case 2: free variables.</h4>
-<p>Suppose now that <span class="process-math">\(x_{i_1}, x_{i_2},\dots , x_{i_r}\)</span> are the leading variables of <span class="process-math">\(L'\text{,}\)</span> and <span class="process-math">\(x_{j_1}, x_{j_2},\dots, x_{j_s}\)</span> are the free variables. Again, since <span class="process-math">\(U\)</span> does not have a leading one in the last column, there are exactly <span class="process-math">\(r\)</span> nonzero equations in <span class="process-math">\(L'\text{:}\)</span> one for each leading variable. After bringing any terms involving free variables to the right, the <span class="process-math">\(k\)</span>-th such equation takes the form</p>
+<div class="para">Do not concern yourself overly with the exact formulas. The important point here is that once we know there is a unique assignment of the variables <span class="process-math">\(x_n, x_{n-1},\dots, x_{i+1}\)</span> that satisfies the system, <a href="" class="xref" data-knowl="./knowl/s_solving_case1eq.html" title="Equation 1.3.4">(1.3.4)</a> allows us to solve for <span class="process-math">\(x_i\)</span> in terms of the the <span class="process-math">\(x_j\text{,}\)</span> <span class="process-math">\(j&gt;i\text{.}\)</span> As such working our way up from the last equation, we find there is a unique solution to the system.</div>
+</div></article> <article class="case"><h4 class="heading">Case 2: free variables.</h4> <div class="para logical">
+<div class="para">Suppose now that <span class="process-math">\(x_{i_1}, x_{i_2},\dots , x_{i_r}\)</span> are the leading variables of <span class="process-math">\(L'\text{,}\)</span> and <span class="process-math">\(x_{j_1}, x_{j_2},\dots, x_{j_s}\)</span> are the free variables. Again, since <span class="process-math">\(U\)</span> does not have a leading one in the last column, there are exactly <span class="process-math">\(r\)</span> nonzero equations in <span class="process-math">\(L'\text{:}\)</span> one for each leading variable. After bringing any terms involving free variables to the right, the <span class="process-math">\(k\)</span>-th such equation takes the form</div>
 <div class="displaymath process-math">
 \begin{equation*}
 x_{i_k}+c_{k,k+1}x_{i_{k+1}}+\cdots c_{k,r}x_{i_{r}}=d_k-G_k(x_{j_1},x_{j_2},\dots, x_{j_s})\text{.}
 \end{equation*}
 </div>
-<p class="continuation">As in the previous case, back-substitution now allows us to solve for each leading variable as a function of the free variables:</p>
+<div class="para">As in the previous case, back-substitution now allows us to solve for each leading variable as a function of the free variables:</div>
 <div class="displaymath process-math">
 \begin{align*}
 x_{i_r}\amp =d_r-G_r(x_{j_1},x_{j_2},\dots, x_{j_s})\\
@@ -60,30 +58,33 @@ x_{i_{r-1}}\amp=d_{r-1}-c_{r}x_{i_r}-G_{r-1}(x_{j_1},x_{j_2},\dots, x_{j_s})\\
 x_1 \amp=F_1(x_{j_1},x_{j_2},\dots, x_{j_s}) 
 \end{align*}
 </div>
-<p class="continuation">This new system of equations clearly has the same set of solutions as <span class="process-math">\(L'\)</span> (and <span class="process-math">\(L\)</span>), since it was obtained from <span class="process-math">\(L'\)</span> by deleting zero rows of <span class="process-math">\(U\)</span> and using only addition and subtraction operations. Furthermore, it is clear that any assignment of the free variables</p>
+<div class="para">This new system of equations clearly has the same set of solutions as <span class="process-math">\(L'\)</span> (and <span class="process-math">\(L\)</span>), since it was obtained from <span class="process-math">\(L'\)</span> by deleting zero rows of <span class="process-math">\(U\)</span> and using only addition and subtraction operations. Furthermore, it is clear that any assignment of the free variables</div>
 <div class="displaymath process-math">
 \begin{equation*}
 x_{j_1}=t_1, x_{j_2}=t_2,\dots, x_{j_s}=t_s
 \end{equation*}
 </div>
-<p class="continuation">extends uniquely to the solution of <span class="process-math">\(L'\)</span> that further assigns</p>
+<div class="para">extends uniquely to the solution of <span class="process-math">\(L'\)</span> that further assigns</div>
 <div class="displaymath process-math">
 \begin{equation*}
 x_{i_1}=F_1(t_1,t_2,\dots, t_s), x_{i_2}=F_2(t_1,t_2,\dots, t_s), \dots, x_r=F_r(t_1,t_2,\dots, t_s)\text{.}
 \end{equation*}
 </div>
-<p class="continuation">The idea behind uniqueness here, is that once you assign values to the free variables, the values of the leading variables are completely determined by the equations <span class="process-math">\(x_{i_k}=F_k(x_{j_1},x_{j_2},\dots, x_{j_s})\text{.}\)</span></p>
-<p>Lastly, we show that every solution of <span class="process-math">\(L'\)</span> (and <span class="process-math">\(L\)</span>) is obtained in this way. Suppose <span class="process-math">\(u=(u_1,u_2,\dots, u_n)\)</span> is a solution. According to the discussion above <span class="process-math">\(u\)</span> must be the unique solution to <span class="process-math">\(L'\)</span> corresponding to the free variable assignment</p>
+<div class="para">The idea behind uniqueness here, is that once you assign values to the free variables, the values of the leading variables are completely determined by the equations <span class="process-math">\(x_{i_k}=F_k(x_{j_1},x_{j_2},\dots, x_{j_s})\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">Lastly, we show that every solution of <span class="process-math">\(L'\)</span> (and <span class="process-math">\(L\)</span>) is obtained in this way. Suppose <span class="process-math">\(u=(u_1,u_2,\dots, u_n)\)</span> is a solution. According to the discussion above <span class="process-math">\(u\)</span> must be the unique solution to <span class="process-math">\(L'\)</span> corresponding to the free variable assignment</div>
 <div class="displaymath process-math">
 \begin{equation*}
 x_{j_1}=u_{j_1}, x_{j_2}=u_{j_2},\dots , x_{j_s}=u_{j_s}
 \end{equation*}
 </div>
-<p class="continuation">and corresponding leading variable assignment</p>
+<div class="para">and corresponding leading variable assignment</div>
 <div class="displaymath process-math">
 \begin{equation*}
 x_{i_1}=F_1(u_{j_1},x_{j_2},\dots, x_{i_2}), x_{i_2}=F_2(u_{j_1},x_{j_2},\dots, x_{j_s}),\dots, x_{i_r}=F_r(u_{j_1},x_{j_2},\dots, x_{j_s})\text{.}
 \end{equation*}
-</div></article></article><span class="incontext"><a href="s_solving.html#proof-3">in-context</a></span>
+</div>
+</div></article></article><span class="incontext"><a href="s_solving.html#proof-3" class="internal">in-context</a></span>
 </body>
 </html>

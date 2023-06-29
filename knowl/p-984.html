@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:15:59Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -15,7 +12,20 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>Hopefully this discussion gives some indication of how a vector space like <span class="process-math">\(F(\R,\R)\)</span> is in some sense <em class="emphasis">much larger</em> than spaces like <span class="process-math">\(\R^n\)</span> or <span class="process-math">\(M_{mn}\text{,}\)</span> whose general elements can be described in a finite manner. This vague intuition can be made precise with the notion of the <em class="emphasis">dimension</em> of a vector space, which we develop in <a href="s_basis_dimension.html" class="internal" title="Section 4.5: Bases and dimension">Section 4.5</a>.</p>
-<span class="incontext"><a href="s_vectorspace.html#p-984">in-context</a></span>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(n\times n\)</span> matrix. Using the notation from <a href="" class="xref" data-knowl="./knowl/d_elementary_matrix.html" title="Definition 2.4.1: Elementary matrices">Definition 2.4.1</a> we have:</div>
+<ol class="decimal">
+<li><div class="para"><span class="process-math">\(\displaystyle \det(\underset{c\cdot r_i}{E}\, A)=c\det(A)\)</span></div></li>
+<li><div class="para"><span class="process-math">\(\displaystyle \det(\underset{r_i\leftrightarrow r_j}{E}\, A)=-\det(A)\)</span></div></li>
+<li><div class="para"><span class="process-math">\(\det(\underset{r_i+cr_j}{E}\, A)=\det(A)\text{.}\)</span></div></li>
+</ol>
+<div class="para">In particular, taking <span class="process-math">\(A=I\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/d_elementary_matrix.html">
+\begin{align*}
+\det\underset{c\cdot r_i}{E}\amp =c \amp \det\underset{r_i\leftrightarrow r_j}{E}\amp =-1 \amp \det \underset{r_i+cr_j}{E}\amp =1  \text{.}
+\end{align*}
+</div>
+</div>
+<span class="incontext"><a href="s_det.html#p-984" class="internal">in-context</a></span>
 </body>
 </html>

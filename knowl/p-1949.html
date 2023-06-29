@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:16:29Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -15,13 +12,19 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>The set</p>
-<div class="displaymath process-math">
-\begin{equation*}
-S=\left \{ A_1=\begin{bmatrix}2\amp 1\\ 0\amp -2 \end{bmatrix} , A_2=\begin{bmatrix}1\amp 1\\ 1\amp -1 \end{bmatrix} , A_3=\begin{bmatrix}0\amp 1\\ 2\amp 0 \end{bmatrix} , A_4=\begin{bmatrix}-1\amp 0\\ 1\amp 1 \end{bmatrix} \right\}
-\end{equation*}
+<div class="para logical">
+<div class="para">We will have many opportunities to “expand out” an inner product of two linear combinations of vectors. Using axioms (i) and (ii) in series, this process resembles the procedure for multiplying two polynomials. For example, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/d_innerproduct.html ./knowl/d_innerproduct.html ./knowl/d_innerproduct.html">
+\begin{align*}
+\langle c\boldv+d\boldw, e\boldv+f\boldw\rangle
+\amp = c \langle \boldv,  e\boldv+f\boldw \rangle +d \langle \boldw, e\boldv+f\boldw \rangle \amp (\knowl{./knowl/d_innerproduct.html}{\text{4.1.1}}, \text{(ii)})\\
+\amp=ce \langle \boldv, \boldv\rangle+cf\langle \boldv,\boldw \rangle +de \langle \boldw, \boldv\rangle+df\langle \boldw, \boldw\rangle \amp (\knowl{./knowl/d_innerproduct.html}{\text{4.1.1}}, \text{(ii)}) \\
+\amp = ce\langle \boldv, \boldv\rangle +(cf+de)\langle \boldv, \boldw\rangle +df\langle \boldw, \boldw\rangle
+\amp (\knowl{./knowl/d_innerproduct.html}{\text{4.1.1}}, \text{(i)})\text{.}
+\end{align*}
 </div>
-<p class="continuation">is a subset of the space <span class="process-math">\(W=\{ A\in M_{22}\colon \tr A=0\}\text{.}\)</span> Let <span class="process-math">\(W'=\Span S\text{.}\)</span> Contract <span class="process-math">\(S\)</span> to a basis of <span class="process-math">\(W'\)</span> and determine whether <span class="process-math">\(W'=W\text{.}\)</span></p>
-<span class="incontext"><a href="s_coordinatevectors_isomorphisms.html#p-1949">in-context</a></span>
+<div class="para">Note how in the last step we are able to group the “cross terms”, <span class="process-math">\(\langle \boldv, \boldw\rangle=\langle \boldw, \boldv\rangle\)</span> using the symmetry axiom.</div>
+</div>
+<span class="incontext"><a href="s_innerproducts.html#p-1949" class="internal">in-context</a></span>
 </body>
 </html>

@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:16:26Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -15,35 +12,11 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>Let <span class="process-math">\((V,\langle \ , \rangle)\)</span> be an inner product space, and let <span class="process-math">\(W\subseteq V\)</span> be a <em class="emphasis">finite-dimensional</em> subspace.</p>
-<ol class="decimal">
-<li>
-<span class="heading"><span class="title">Orthogonal decomposition.</span></span><p>For all <span class="process-math">\(\boldv\in V\)</span> there is a unique choice of vectors <span class="process-math">\(\boldw\in W\)</span> and <span class="process-math">\(\boldw^\perp\in W^\perp\)</span> such that <span class="process-math">\(\boldv=\boldw+\boldw^\perp\text{.}\)</span> We call this vector expression an <dfn class="terminology">orthogonal decomposition</dfn> of <span class="process-math">\(\boldv\text{,}\)</span> and denote <span class="process-math">\(\boldw=\proj{\boldv}{W}\)</span> and <span class="process-math">\(\boldw^\perp=\proj{\boldv}{W^\perp}\text{,}\)</span> the <dfn class="terminology">orthogonal projections</dfn> of <span class="process-math">\(\boldv\)</span> onto <span class="process-math">\(W\)</span> and <span class="process-math">\(W^\perp\text{,}\)</span> respectively.</p>
-</li>
-<li>
-<span class="heading"><span class="title">Distance to <span class="process-math">\(W\)</span>.</span></span><p>The orthogonal projection <span class="process-math">\(\boldw=\proj{\boldv}{W}\)</span> is the unique element of <span class="process-math">\(W\)</span> that <em class="emphasis">minimizes</em> the distance to <span class="process-math">\(\boldv\text{.}\)</span> In other words</p>
-<div class="displaymath process-math">
-\begin{equation*}
-\norm{\boldv-\proj{\boldv}{W}}\leq\norm{\boldv-\boldw'}
-\end{equation*}
+<div class="para">Next, we show that the columns of <span class="process-math">\(U\)</span> containing leading ones form a basis of <span class="process-math">\(\CS U\text{.}\)</span> Let <span class="process-math">\(\boldu_{i_1},\dots, \boldu_{i_r}\)</span> be the columns of <span class="process-math">\(U\)</span> with leading ones, and let <span class="process-math">\(\boldu_{j_1}, \boldu_{j_2}, \dots, \boldu_{j_s}\)</span> be the columns without leading ones. To prove the <span class="process-math">\(\boldu_{i_k}\)</span> form a basis for <span class="process-math">\(\CS U\text{,}\)</span> we will show that given any <span class="process-math">\(\boldy\in \CS U\)</span> there is a <em class="emphasis">unique</em> choice of scalars <span class="process-math">\(c_1, c_2,\dots,
+c_r\)</span> such that <span class="process-math">\(c_1\boldu_{i_1}+\cdots +c_r\boldu_{i_r}=\boldy\text{.}\)</span> (Recall that the uniqueness of this choice implies linear independence.) Given <span class="process-math">\(\boldy\in \CS U\text{,}\)</span> we can find <span class="process-math">\(\boldx\in\R^n\)</span> such that <span class="process-math">\(U\boldx=\boldy\)</span> (<a href="" class="xref" data-knowl="./knowl/th_fundspaces_matrixtransform.html" title="Theorem 3.8.6: Null space and image as fundamental spaces">3.8.6</a>), which means the linear system with augmented matrix <span class="process-math">\([\ U\ \vert \ \boldy]\)</span> is consistent. Using our Gaussian elimination theory (specifically, <a href="" class="xref" data-knowl="./knowl/proc_solveSystem.html" title="Procedure 1.3.5: Solving linear systems">Procedure 1.3.5</a>), we know that the solutions <span class="process-math">\(\boldx=(x_1,x_2,\dots,
+x_n)\)</span> to this system are in 1-1 correspondence with choices for the free variables <span class="process-math">\(x_{j_1}=t_{j_1}, x_{j_2}=t_{j_2}, \dots,
+x_{j_s}=t_{j_s}\text{.}\)</span> (Remember that the columns <span class="process-math">\(\boldu_{j_k}\)</span> without leading ones correspond to the free variables.) In particular, there is a unique solution to <span class="process-math">\(U\boldx=\boldy\)</span> where we set all the free variables equal to 0. By the column method (<a href="" class="xref" data-knowl="./knowl/th_column_method.html" title="Theorem 2.1.24: Column method of matrix multiplication">Theorem 2.1.24</a>), this gives us a unique linear combination of only the columns <span class="process-math">\(\boldu_{i_k}\)</span> with leading ones equal to <span class="process-math">\(\boldy\text{.}\)</span> This proves the claim, and shows that the columns with leading ones form a basis for <span class="process-math">\(\CS U\text{.}\)</span> We conclude that <span class="process-math">\(\dim\CS U=r\text{.}\)</span>
 </div>
-<p class="continuation">for all <span class="process-math">\(\boldw'\in W\text{.}\)</span></p>
-<p>Accordingly, we define the <dfn class="terminology">distance from <span class="process-math">\(\boldv\)</span> to <span class="process-math">\(W\)</span></dfn>, denoted <span class="process-math">\(d(\boldw, W)\text{,}\)</span> as</p>
-<div class="displaymath process-math">
-\begin{equation*}
-d(\boldv, W)=d(\boldv, \proj{\boldv}{W}=\norm{\boldw^\perp}\text{.}
-\end{equation*}
-</div>
-</li>
-<li>
-<span class="heading"><span class="title">Orthogonal projection formula.</span></span><p>Pick an <em class="emphasis">orthogonal</em> basis <span class="process-math">\(B=\{\boldv_1,\boldv_2,\dots, \boldv_r\}\)</span> of <span class="process-math">\(W\text{.}\)</span> Then</p>
-<div class="displaymath process-math">
-\begin{equation*}
-\proj{\boldv}{W}=\sum_{i=1}^r\frac{\angvec{\boldv,\boldv_i}}{\angvec{\boldv_i, \boldv_i}}\boldv_i\text{.}
-\end{equation*}
-</div>
-</li>
-</ol>
-<span class="incontext"><a href="s_orthogonality.html#p-1821">in-context</a></span>
+<span class="incontext"><a href="s_rank_nullity.html#p-1821" class="internal">in-context</a></span>
 </body>
 </html>

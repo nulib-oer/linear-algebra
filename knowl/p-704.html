@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:15:51Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -14,8 +11,16 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Attempt to row reduce <span class="process-math">\(A\)</span> to the identity, keeping track of your sequence of row operations in the form of elementary matrices.</p>
-<span class="incontext"><a href="s_invertibility_theorem.html#p-704">in-context</a></span>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<div class="para logical">
+<div class="para">Assume <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are invertible. The statement of the theorem proposes a candidate for the inverse of <span class="process-math">\(AB\text{:}\)</span> namely, <span class="process-math">\(C=B^{-1}A^{-1}\text{.}\)</span> We need only show that <span class="process-math">\(C\)</span> satisfies <span class="process-math">\(C(AB)=(AB)C=I\text{.}\)</span> Here goes:</div>
+<div class="displaymath process-math">
+\begin{align*}
+C(AB)\amp =\amp (B^{-1}A^{-1})AB=B^{-1}A^{-1}AB=B^{-1}IB=B^{-1}B=I\\
+(AB)C\amp =\amp (AB)B^{-1}A^{-1}=ABB^{-1}A^{-1}=AIA^{-1}=AA^{-1}=I\text{.}
+\end{align*}
+</div>
+</div>
+<span class="incontext"><a href="s_invertible_matrices.html#p-704" class="internal">in-context</a></span>
 </body>
 </html>

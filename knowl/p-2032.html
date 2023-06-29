@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:16:31Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -14,13 +11,17 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h3 class="heading"><span class="type">Paragraph</span></h3>
-<p>For <span class="process-math">\(\boldv=1(1,1)+3(1,-1)=(4,-2)\text{,}\)</span> we have <span class="process-math">\((\boldv)_B=(1,3)\text{.}\)</span> Thus we should have</p>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<div class="para logical">
+<div class="para">Take <span class="process-math">\(C[a,b]\)</span> with the standard inner product <span class="process-math">\(\langle f, g \rangle=\int_a^b f(x)g(x) \ dx\text{.}\)</span> Here the distance between two functions is defined as</div>
 <div class="displaymath process-math">
 \begin{equation*}
-[\boldv]_{B'}=\underset{B\rightarrow B'}{P}[\boldv]_B=\begin{bmatrix}1/3\amp -1\\ 1/3\amp 1 \end{bmatrix} \begin{bmatrix}1\\ 3 \end{bmatrix} =\begin{bmatrix}-8/3\\ 10/3 \end{bmatrix}\text{.}
+\norm{f-g}=\sqrt{\int_a^b (f(x)-g(x))^2 \ dx}\text{,}
 \end{equation*}
 </div>
-<span class="incontext"><a href="s_changeofbasis.html#p-2032">in-context</a></span>
+<div class="para">which we can think of as an aggregate measure of the difference of values <span class="process-math">\(f(x)-g(x)\)</span> for all <span class="process-math">\(x\in [a,b]\text{.}\)</span> Thus <span class="process-math">\(d(f,g)\)</span> is a global measure of the similarity between <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> that takes into account their values over the entire interval <span class="process-math">\([a,b]\text{.}\)</span>
+</div>
+</div>
+<span class="incontext"><a href="s_innerproducts.html#p-2032" class="internal">in-context</a></span>
 </body>
 </html>

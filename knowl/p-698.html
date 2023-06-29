@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:15:51Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -14,8 +11,16 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Build the <span class="process-math">\(n\times 2n\)</span> augmented matrix <span class="process-math">\(\begin{amatrix}[c|c]A\amp I_n\end{amatrix}\)</span> and use Gaussian elimination to row reduce to the form <span class="process-math">\(\begin{amatrix}[c|c]U\amp B\end{amatrix} \text{,}\)</span> where <span class="process-math">\(U\)</span> is in row echelon form.</p>
-<span class="incontext"><a href="s_invertibility_theorem.html#p-698">in-context</a></span>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<div class="para logical">
+<div class="para">Sage has a number of useful tools related to invertibility. The boolean function <code class="code-inline tex2jax_ignore">is_invertible()</code> tests for invertibility, and the method <code class="code-inline tex2jax_ignore">inverse()</code> computes the inverse of an invertible matrix. Below we generate a random matrix with rational coefficients, test whether it is invertible, and compute its inverse if it is invertible. The <code class="code-inline tex2jax_ignore">density=0.5</code> ensures that roughly half of the matrix entries are zero; and this in turn increases the likelihood that the matrix is singular, for reasons that will become somewhat clearer later.</div>
+<ul class="disc">
+<li><div class="para">Evaluate the Sage cell below multiple times.</div></li>
+<li><div class="para">When the matrix is invertible, verify that <span class="process-math">\(AA^{-1}=A^{-1}A=I\text{.}\)</span> If you like, use the blank Sage cell to compute <span class="process-math">\(AA^{-1}\)</span> and <span class="process-math">\(A^{-1}A\text{.}\)</span>
+</div></li>
+<li><div class="para">Try increasing the density setting in <code class="code-inline tex2jax_ignore">random_element()</code> (e.g., <code class="code-inline tex2jax_ignore">density=0.75</code>, <code class="code-inline tex2jax_ignore">density=.875</code>) and see if the matrix is more or less likely to be invertible.</div></li>
+</ul>
+</div>
+<span class="incontext"><a href="s_invertible_matrices.html#p-698" class="internal">in-context</a></span>
 </body>
 </html>

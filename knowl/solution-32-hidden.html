@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-07T16:15:57Z       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -14,18 +11,44 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math"><div class="solution solution-like">
-<p>We prove (a).</p>
-<div class="displaymath process-math">
-\begin{align*}
-BB^{-1}=I \amp\implies \det(BB^{-1})=\det I \\
-\amp\implies \det B\, \det B^{-1}=1 \amp (\knowl{./knowl/th_det_mult.html}{\text{Theorem 3.5.25}}, \det I=1) \text{.}
-\end{align*}
-</div>
-<p class="continuation">Furthermore, since <span class="process-math">\(B\)</span> is invertible, we know <span class="process-math">\(\det B\ne 0\)</span> (<a href="" class="xref" data-knowl="./knowl/th_invertibility_expanded.html" title="Theorem 3.5.26: Invertibility theorem (extended cut)">Theorem 3.5.26</a>), allowing us to solve the last equation for <span class="process-math">\(\det B^{-1}\text{:}\)</span></p>
+<div class="para logical">
+<div class="para">The rotation matrix corresponding to <span class="process-math">\(\alpha=\pi\)</span> is</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\det B\, \det B^{-1}=1\implies \det B^{-1}=\frac{1}{\det B},\text{.}
+A=\begin{amatrix}[rr]\cos\pi\amp -\sin\pi\\ \sin\pi \amp \cos\pi  \end{amatrix}=
+\begin{amatrix}[rr]-1\amp 0\\ 0 \amp -1  \end{amatrix}\text{.}
 \end{equation*}
+</div>
+<div class="para">Thus <span class="process-math">\(\rho_\pi=T_A\)</span> has formula</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\rho_{\pi}(x,y)=(-x,-y)=-(x,y)\text{.}
+\end{equation*}
+</div>
+<div class="para">Note: this is as expected! Rotating by 180 degrees produces the inverse vector.</div>
+</div> <div class="para logical">
+<div class="para">The rotation matrix corresponding to <span class="process-math">\(\alpha=2\pi/3\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+B=\begin{amatrix}[rr]\cos(2\pi/3)\amp -\sin(2\pi/3)\\ \sin(2\pi/3) \amp \cos(2\pi/3)  \end{amatrix}=
+\begin{amatrix}[rr]-\frac{1}{2}\amp -\frac{\sqrt{3}}{2}\\ \frac{\sqrt{3}}{2} \amp -\frac{1}{2}  \end{amatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">Thus <span class="process-math">\(\rho_{2\pi/3}=T_B\)</span> has formula</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\rho_{2\pi/3}(x,y)=\frac{1}{2}(-x-\sqrt{3}y, \sqrt{3}x-y)\text{.}
+\end{equation*}
+</div>
+<div class="para">Let’s check our formula for <span class="process-math">\(\rho_{2\pi/3}\)</span>for the vectors <span class="process-math">\((1,0)\)</span> and <span class="process-math">\((0,1)\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{align*}
+\rho_{2\pi/3}(1,0) \amp =(-1/2, \sqrt{3}/2) \\
+\rho_{2\pi/3}(0,1) \amp =(-\sqrt{3}/2, -1/2) \text{.}
+\end{align*}
+</div>
+<div class="para">Confirm for yourself geometrically that these are the points you get by rotating <span class="process-math">\((1,0)\)</span> and <span class="process-math">\((0,1)\)</span> by an angle of <span class="process-math">\(2\pi/3\)</span> about the origin.</div>
 </div>
 </div></body>
 </html>
