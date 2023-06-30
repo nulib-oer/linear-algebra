@@ -11,9 +11,20 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">The third statement follows from the second. Indeed, if <span class="process-math">\(A\)</span> has two identical rows or columns, then the matrix <span class="process-math">\(A'\)</span> obtained from <span class="process-math">\(A\)</span> by swapping the rows (or columns) in question is <span class="process-math">\(A\)</span> itself. Thus <span class="process-math">\(\det A=-\det A\)</span> by the second statement, and we conclude that <span class="process-math">\(\det A=0\text{.}\)</span>
+<h3 class="heading"><span class="type">Paragraph</span></h3>
+<div class="para logical">
+<div class="para">(2) Given any  <span class="process-math">\((i,j)\)</span> with <span class="process-math">\(1\leq i\leq m\)</span> and <span class="process-math">\(1\leq j\leq n\text{,}\)</span> we have:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/d_matrix_mult.html ./knowl/d_matrix_mult.html">
+\begin{align*}
+[A(BC)]_{ij}\amp=\sum_{\ell=1}^ra_{i\ell}[BC]_{\ell j}  \amp (\knowl{./knowl/d_matrix_mult.html}{\text{Definition 2.1.17}})\\
+\amp=\sum_{\ell=1}^ra_{i\ell}\left(\sum_{k=1}^sb_{\ell k}c_{kj}\right) \amp (\knowl{./knowl/d_matrix_mult.html}{\text{Definition 2.1.17}})\\
+=\amp \sum_{\ell=1}^r\sum_{k=1}^sa_{i\ell}(b_{\ell k}c_{kj}) \amp \text{ (real dist.) }\\
+=\amp \sum_{k=1}^s\sum_{\ell=1}^r(a_{i\ell}b_{\ell k})c_{kj} \amp \text{ (real comm., real assoc.) }\\
+=\amp \sum_{k=1}^s\left(\sum_{\ell=1}^ra_{i\ell}b_{\ell k}\right)c_{kj} \amp \text{ (real dist.) }\\
+=\amp \sum_{k=1}^s[AB]_{ik}c_{kj}  =\Bigl[(AB)C]_{ij}
+\end{align*}
 </div>
-<span class="incontext"><a href="s_det.html#p-964" class="internal">in-context</a></span>
+</div>
+<span class="incontext"><a href="s_algebraic.html#p-964" class="internal">in-context</a></span>
 </body>
 </html>

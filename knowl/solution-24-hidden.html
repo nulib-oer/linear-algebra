@@ -11,41 +11,28 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math"><div class="solution solution-like"><div class="para logical">
-<div class="para">We have</div>
-<div class="displaymath process-math">
-\begin{align*}
-f(A) \amp =A^2-2A+I_2\\
-\amp= \begin{bmatrix}
-1\amp 2\\ 0\amp 1
-\end{bmatrix}-2\begin{bmatrix}
-1\amp 1\\ 0\amp 1
-\end{bmatrix}+\begin{bmatrix}
-1\amp 0\\ 0 \amp 1
-\end{bmatrix} \\
-\amp = \begin{bmatrix}
-0\amp 0 \\ 0\amp 0
-\end{bmatrix}=\underset{2\times 2}\boldzero
-\end{align*}
+<div class="para">We must solve the matrix (or row vector) equation</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/d_matrix_equality.html">
+\begin{equation*}
+aA_1+bA_2+cA_3=B
+\end{equation*}
 </div>
-<div class="para">and</div>
-<div class="displaymath process-math">
-\begin{align*}
-f(B) \amp=B^2-2B+I_3 \\
-\amp=\begin{bmatrix}
-3\amp 3\amp 3\\ 3\amp 3\amp 3\\ 3\amp 3\amp 3
-\end{bmatrix}-2\begin{bmatrix}
-1\amp 1\amp 1\\
-1\amp 1\amp 1\\
-1\amp 1\amp 1
-\end{bmatrix}+\begin{bmatrix}
-1\amp 0\amp 0 \\ 0\amp 1\amp 0\\ 0\amp 0\amp 1
-\end{bmatrix} \\
-\amp = \begin{bmatrix}
-2\amp 1\amp 1\\
-1\amp 2\amp 1\\
-1\amp 1\amp 2
-\end{bmatrix}\text{.}
-\end{align*}
+<div class="para">for the scalars <span class="process-math">\(a,b,c\text{.}\)</span> Computing the linear combination on the left yields the matrix equation</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/d_matrix_equality.html">
+\begin{equation*}
+\begin{amatrix}[rrr]a+b+c\amp a-b+c\amp a-2c\end{amatrix}=\begin{amatrix}[rrr]3\amp -3\amp 3\end{amatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">Using the definition of matrix equality (<a href="" class="xref" data-knowl="./knowl/d_matrix_equality.html" title="Definition 2.1.5: Matrix equality">Definition 2.1.5</a>), we get the system of equations</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/d_matrix_equality.html">
+\begin{equation*}
+\begin{linsys}{3} 1a \amp +\amp b \amp + \amp c \amp = \amp 3\\
+a \amp-\amp b\amp +\amp c\amp =\amp -3\\
+a \amp \amp \amp -\amp 2c\amp =\amp 3
+\end{linsys}\text{.}
+\end{equation*}
+</div>
+<div class="para">Using Gaussian elimination we find that there is a unique solution to this system: namely, <span class="process-math">\((a,b,c)=(1,3,-1)\text{.}\)</span> We conclude that <span class="process-math">\(B=A_1+3A_2+(-1)A_3=A_1+3A_2-A_3\text{.}\)</span>
 </div>
 </div></div></body>
 </html>

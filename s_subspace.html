@@ -761,18 +761,18 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="s_subspace"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">3.3</span> <span class="title">Subspaces</span>
 </h2>
-<section class="introduction" id="introduction-40"><div class="para" id="p-1267">The definition of a <em class="emphasis">subspace</em> of a vector space <span class="process-math">\(V\)</span> is very much in the same spirit as our definition of linear transformations. It is a subset of <span class="process-math">\(V\)</span> that in some sense respects the vector space structure: in the language of <a href="" class="xref" data-knowl="./knowl/d_subspace.html" title="Definition 3.3.1: Subspace">Definition 3.3.1</a>, it is a subset that is <em class="emphasis">closed under addition</em> and <em class="emphasis">closed under scalar multiplication</em>.</div> <div class="para" id="p-1268">In fact the connection between linear transformations and subspaces goes deeper than this. As we will see in <a href="" class="xref" data-knowl="./knowl/d_nullspace_image.html" title="Definition 3.4.1: Null space and image">Definition 3.4.1</a>, a linear transformation <span class="process-math">\(T\colon V\rightarrow W\)</span> naturally gives rise to two important subspaces: the <em class="emphasis">null space of <span class="process-math">\(T\)</span></em> and the <em class="emphasis">image of <span class="process-math">\(T\)</span></em>.</div></section><section class="subsection" id="ss_subspace"><h3 class="heading hide-type">
+<section class="introduction" id="introduction-40"><div class="para" id="p-1870">The definition of a <em class="emphasis">subspace</em> of a vector space <span class="process-math">\(V\)</span> is very much in the same spirit as our definition of linear transformations. It is a subset of <span class="process-math">\(V\)</span> that in some sense respects the vector space structure: in the language of <a href="" class="xref" data-knowl="./knowl/d_subspace.html" title="Definition 3.3.1: Subspace">Definition 3.3.1</a>, it is a subset that is <em class="emphasis">closed under addition</em> and <em class="emphasis">closed under scalar multiplication</em>.</div> <div class="para" id="p-1871">In fact the connection between linear transformations and subspaces goes deeper than this. As we will see in <a href="" class="xref" data-knowl="./knowl/d_nullspace_image.html" title="Definition 3.4.1: Null space and image">Definition 3.4.1</a>, a linear transformation <span class="process-math">\(T\colon V\rightarrow W\)</span> naturally gives rise to two important subspaces: the <em class="emphasis">null space of <span class="process-math">\(T\)</span></em> and the <em class="emphasis">image of <span class="process-math">\(T\)</span></em>.</div></section><section class="subsection" id="ss_subspace"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.3.1</span> <span class="title">Definition of subspace</span>
 </h3>
 <article class="definition definition-like" id="d_subspace"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">Subspace.</span>
-</h4>  <div class="para" id="p-1269">Let <span class="process-math">\(V\)</span> be a vector space. A subset <span class="process-math">\(W\subseteq V\)</span> is a <dfn class="terminology">subspace</dfn> of <span class="process-math">\(V\)</span> if the following conditions hold:</div> <ol class="lower-roman">
-<li id="li-358">
-<span class="heading"><span class="title"><span class="process-math">\(W\)</span> contains the zero vector.</span></span><div class="para" id="p-1270">We have <span class="process-math">\(\boldzero\in W\text{.}\)</span>
+</h4>  <div class="para" id="p-1872">Let <span class="process-math">\(V\)</span> be a vector space. A subset <span class="process-math">\(W\subseteq V\)</span> is a <dfn class="terminology">subspace</dfn> of <span class="process-math">\(V\)</span> if the following conditions hold:</div> <ol class="lower-roman">
+<li id="li-421">
+<span class="heading"><span class="title"><span class="process-math">\(W\)</span> contains the zero vector.</span></span><div class="para" id="p-1873">We have <span class="process-math">\(\boldzero\in W\text{.}\)</span>
 </div>
 </li>
-<li id="li-359">
-<span class="heading"><span class="title"><span class="process-math">\(W\)</span> is closed under addition.</span></span><div class="para logical" id="p-1271">
+<li id="li-422">
+<span class="heading"><span class="title"><span class="process-math">\(W\)</span> is closed under addition.</span></span><div class="para logical" id="p-1874">
 <div class="para">For all <span class="process-math">\(\boldv_1,\boldv_2\in V\text{,}\)</span> if <span class="process-math">\(\boldv_1,\boldv_2\in W\text{,}\)</span> then <span class="process-math">\(\boldv_1+\boldv_2\in W\text{.}\)</span> Using logical notation:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -781,8 +781,8 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 </div>
 </div>
 </li>
-<li id="li-360">
-<span class="heading"><span class="title"><span class="process-math">\(W\)</span> is closed under scalar multiplication.</span></span><div class="para logical" id="p-1272">
+<li id="li-423">
+<span class="heading"><span class="title"><span class="process-math">\(W\)</span> is closed under scalar multiplication.</span></span><div class="para logical" id="p-1875">
 <div class="para">For all <span class="process-math">\(c\in \R\)</span> and <span class="process-math">\(\boldv\in V\text{,}\)</span> if <span class="process-math">\(\boldv\in W\text{,}\)</span> then <span class="process-math">\(c\boldv\in W\text{.}\)</span> In logical notation:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -794,7 +794,7 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 </ol></article><article class="example example-like" id="example-42"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.3.2</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-1273">
+<div class="para logical" id="p-1876">
 <div class="para">Let <span class="process-math">\(V=\R^2\)</span> and let</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -804,12 +804,12 @@ W=\{(t,t)\in\R^2 \colon t\in\R\}\text{.}
 <div class="para">Prove that <span class="process-math">\(W\)</span> is a subspace.</div>
 </div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-35" id="solution-35"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-35"><div class="solution solution-like">
-<div class="para" id="p-1274">We must show properties (i)-(iii) hold for <span class="process-math">\(W\text{.}\)</span>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-44" id="solution-44"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-44"><div class="solution solution-like">
+<div class="para" id="p-1877">We must show properties (i)-(iii) hold for <span class="process-math">\(W\text{.}\)</span>
 </div> <ol class="lower-roman">
-<li id="li-361"><div class="para" id="p-1275">The zero element of <span class="process-math">\(V\)</span> is <span class="process-math">\(\boldzero=(0,0)\text{,}\)</span> which is certainly of the form <span class="process-math">\((t,t)\text{.}\)</span> Thus <span class="process-math">\(\boldzero\in W\text{.}\)</span>
+<li id="li-424"><div class="para" id="p-1878">The zero element of <span class="process-math">\(V\)</span> is <span class="process-math">\(\boldzero=(0,0)\text{,}\)</span> which is certainly of the form <span class="process-math">\((t,t)\text{.}\)</span> Thus <span class="process-math">\(\boldzero\in W\text{.}\)</span>
 </div></li>
-<li id="li-362"><div class="para logical" id="p-1276">
+<li id="li-425"><div class="para logical" id="p-1879">
 <div class="para">We must prove the implication <span class="process-math">\(\boldv_1, \boldv_2\in W\Rightarrow \boldv_1+\boldv_2\in W\text{.}\)</span>
 </div>
 <div class="displaymath process-math" id="md-130">
@@ -820,7 +820,7 @@ W=\{(t,t)\in\R^2 \colon t\in\R\}\text{.}
 \end{align*}
 </div>
 </div></li>
-<li id="li-363"><div class="para logical" id="p-1277">
+<li id="li-426"><div class="para logical" id="p-1880">
 <div class="para">We must prove the implication <span class="process-math">\(\boldv\in W\Rightarrow c\boldv\in W\text{,}\)</span> for any <span class="process-math">\(c\in \R\text{.}\)</span> We have</div>
 <div class="displaymath process-math" id="md-131">
 \begin{align*}
@@ -835,7 +835,7 @@ W=\{(t,t)\in\R^2 \colon t\in\R\}\text{.}
 </div></article><article class="example example-like" id="example-43"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.3.3</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-1278">
+<div class="para logical" id="p-1881">
 <div class="para">Let <span class="process-math">\(V=\R^n\)</span> and let</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/d_subspace.html">
 \begin{equation*}
@@ -846,21 +846,21 @@ W=\{(x,y)\in \R^2\colon x, y\geq 0\}\text{.}
 </div>
 </div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-36" id="solution-36"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-36"><div class="solution solution-like"><ol class="lower-roman">
-<li id="li-364"><div class="para" id="p-1279">Clearly <span class="process-math">\(\boldzero=(0,0)\in W\text{.}\)</span>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-45" id="solution-45"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-45"><div class="solution solution-like"><ol class="lower-roman">
+<li id="li-427"><div class="para" id="p-1882">Clearly <span class="process-math">\(\boldzero=(0,0)\in W\text{.}\)</span>
 </div></li>
-<li id="li-365"><div class="para" id="p-1280">Suppose <span class="process-math">\(\boldv_1=(x_1,y_1), \boldv_2=(x_2,y_2)\in W\text{.}\)</span> Then <span class="process-math">\(x_1, x_2, y_1, y_2\geq 0\text{,}\)</span> in which case <span class="process-math">\(x_1+x_2, y_1+y_2\geq 0\text{,}\)</span> and hence <span class="process-math">\(\boldv_1+\boldv_2\in W\text{.}\)</span> Thus <span class="process-math">\(W\)</span> is closed under addition.</div></li>
-<li id="li-366"><div class="para" id="p-1281">The set <span class="process-math">\(W\)</span> is <em class="emphasis">not</em> closed under scalar multiplication. Indeed, let <span class="process-math">\(\boldv=(1,1)\in W\text{.}\)</span> Then <span class="process-math">\((-2)\boldv=(-2,-2)\notin W\text{.}\)</span>
+<li id="li-428"><div class="para" id="p-1883">Suppose <span class="process-math">\(\boldv_1=(x_1,y_1), \boldv_2=(x_2,y_2)\in W\text{.}\)</span> Then <span class="process-math">\(x_1, x_2, y_1, y_2\geq 0\text{,}\)</span> in which case <span class="process-math">\(x_1+x_2, y_1+y_2\geq 0\text{,}\)</span> and hence <span class="process-math">\(\boldv_1+\boldv_2\in W\text{.}\)</span> Thus <span class="process-math">\(W\)</span> is closed under addition.</div></li>
+<li id="li-429"><div class="para" id="p-1884">The set <span class="process-math">\(W\)</span> is <em class="emphasis">not</em> closed under scalar multiplication. Indeed, let <span class="process-math">\(\boldv=(1,1)\in W\text{.}\)</span> Then <span class="process-math">\((-2)\boldv=(-2,-2)\notin W\text{.}\)</span>
 </div></li>
 </ol></div></div>
 </div></article><article class="algorithm theorem-like" id="proc_twostep_proof"><h4 class="heading">
 <span class="type">Procedure</span><span class="space"> </span><span class="codenumber">3.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">Two-step proof for subspaces.</span>
 </h4>
-<div class="para" id="p-1282">As with proofs regarding linearity of functions, we can merge conditions (ii)-(iii) of <a href="" class="xref" data-knowl="./knowl/d_subspace.html" title="Definition 3.3.1: Subspace">Definition 3.3.1</a> into a single statement about linear combinations, deriving the following two-step method for proving a set <span class="process-math">\(W\)</span> is a subspace of a vector space <span class="process-math">\(V\text{.}\)</span>
+<div class="para" id="p-1885">As with proofs regarding linearity of functions, we can merge conditions (ii)-(iii) of <a href="" class="xref" data-knowl="./knowl/d_subspace.html" title="Definition 3.3.1: Subspace">Definition 3.3.1</a> into a single statement about linear combinations, deriving the following two-step method for proving a set <span class="process-math">\(W\)</span> is a subspace of a vector space <span class="process-math">\(V\text{.}\)</span>
 </div> <ol class="lower-roman">
-<li id="li-367"><div class="para" id="p-1283">Show <span class="process-math">\(\boldzero_V\in W\)</span>
+<li id="li-430"><div class="para" id="p-1886">Show <span class="process-math">\(\boldzero_V\in W\)</span>
 </div></li>
-<li id="li-368"><div class="para logical" id="p-1284">
+<li id="li-431"><div class="para logical" id="p-1887">
 <div class="para">Show that</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -874,9 +874,9 @@ W=\{(x,y)\in \R^2\colon x, y\geq 0\}\text{.}
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.5<span class="period">.</span></span><span class="space"> </span>Video: deciding if <span class="process-math">\(W\subseteq V\)</span> is a subspace</figcaption></figure> <figure class="figure figure-like" id="fig_vid_subspace2"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="vid_subspace2" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/Sup7AxtjZDw?&amp;modestbranding=1&amp;rel=0"></iframe></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.6<span class="period">.</span></span><span class="space"> </span>Video: deciding if <span class="process-math">\(W\subseteq V\)</span> is a subspace</figcaption></figure></section><article class="remark remark-like" id="rm_subspace_is_vectorspace"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.3.7</span><span class="period">.</span><span class="space"> </span><span class="title">Subspaces are vector spaces.</span>
-</h4> <div class="para" id="p-1285">If <span class="process-math">\(W\)</span> is a subspace of a vector space <span class="process-math">\(V\text{,}\)</span> then it <em class="emphasis">inherits</em> a vector space structure from <span class="process-math">\(V\)</span> by simply  <em class="emphasis">restricting</em> the vector operations defined on <span class="process-math">\(V\)</span> to the subset <span class="process-math">\(W\text{.}\)</span>
-</div> <div class="para" id="p-1286">It is important to understand how conditions (ii)-(iii) of <a href="" class="xref" data-knowl="./knowl/d_subspace.html" title="Definition 3.3.1: Subspace">Definition 3.3.1</a> come into play here. Without them we would not be able to say that restricting the vector operations of <span class="process-math">\(V\)</span> to elements of <span class="process-math">\(W\)</span> actually gives rise to well-defined operations on <span class="process-math">\(W\text{.}\)</span> To be well-defined the operations must output elements that lie not just in <span class="process-math">\(V\text{,}\)</span> but in <span class="process-math">\(W\)</span> itself. This is precisely what being closed under addition and scalar multiplication guarantees.</div> <div class="para" id="p-1287">Once we know restriction gives rise to well-defined operations on <span class="process-math">\(W\text{,}\)</span> verifying the axioms of  <a href="" class="xref" data-knowl="./knowl/d_vector_space.html" title="Definition 3.1.1: Vector space">Definition 3.1.1</a> mostly amounts to observing that if a condition is true for all <span class="process-math">\(\boldv\)</span> in <span class="process-math">\(V\text{,}\)</span> it is certainly true for all <span class="process-math">\(\boldv\)</span> in the subset <span class="process-math">\(W\text{.}\)</span>
-</div> <div class="para logical" id="p-1288">
+</h4> <div class="para" id="p-1888">If <span class="process-math">\(W\)</span> is a subspace of a vector space <span class="process-math">\(V\text{,}\)</span> then it <em class="emphasis">inherits</em> a vector space structure from <span class="process-math">\(V\)</span> by simply  <em class="emphasis">restricting</em> the vector operations defined on <span class="process-math">\(V\)</span> to the subset <span class="process-math">\(W\text{.}\)</span>
+</div> <div class="para" id="p-1889">It is important to understand how conditions (ii)-(iii) of <a href="" class="xref" data-knowl="./knowl/d_subspace.html" title="Definition 3.3.1: Subspace">Definition 3.3.1</a> come into play here. Without them we would not be able to say that restricting the vector operations of <span class="process-math">\(V\)</span> to elements of <span class="process-math">\(W\)</span> actually gives rise to well-defined operations on <span class="process-math">\(W\text{.}\)</span> To be well-defined the operations must output elements that lie not just in <span class="process-math">\(V\text{,}\)</span> but in <span class="process-math">\(W\)</span> itself. This is precisely what being closed under addition and scalar multiplication guarantees.</div> <div class="para" id="p-1890">Once we know restriction gives rise to well-defined operations on <span class="process-math">\(W\text{,}\)</span> verifying the axioms of  <a href="" class="xref" data-knowl="./knowl/d_vector_space.html" title="Definition 3.1.1: Vector space">Definition 3.1.1</a> mostly amounts to observing that if a condition is true for all <span class="process-math">\(\boldv\)</span> in <span class="process-math">\(V\text{,}\)</span> it is certainly true for all <span class="process-math">\(\boldv\)</span> in the subset <span class="process-math">\(W\text{.}\)</span>
+</div> <div class="para logical" id="p-1891">
 <div class="para">The “existential axioms” (iii) and (iv) of <a href="" class="xref" data-knowl="./knowl/d_vector_space.html" title="Definition 3.1.1: Vector space">Definition 3.1.1</a>, however, require special consideration. By definition, a subspace <span class="process-math">\(W\)</span> contains the zero vector of <span class="process-math">\(V\text{,}\)</span> and clearly this still acts as the zero vector when we restrict the vector operations to <span class="process-math">\(W\text{.}\)</span> What about vector inverses? We know that for any <span class="process-math">\(\boldv\in W\)</span> there is a vector inverse <span class="process-math">\(-\boldv\)</span> lying somewhere in <span class="process-math">\(V\text{.}\)</span> We must show that in fact <span class="process-math">\(-\boldv\)</span> lies in <span class="process-math">\(W\text{:}\)</span> i.e. we need to show that the operation of taking the vector inverse is well-defined on <span class="process-math">\(W\text{.}\)</span> We prove this as follows:</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/d_vector_space.html ./knowl/d_subspace.html ./knowl/th_vectorspace_props.html" id="md-132">
 \begin{align*}
@@ -884,11 +884,11 @@ W=\{(x,y)\in \R^2\colon x, y\geq 0\}\text{.}
 \amp\implies -\boldv\in W \amp (\knowl{./knowl/th_vectorspace_props.html}{\text{Theorem 3.1.13}}, (iii)) \text{.}
 \end{align*}
 </div>
-</div></article><div class="para" id="p-1289">We now know how to determine whether a given subset of a vector space is in fact a subspace. We are also interested in means of constructing subspaces from some given ingredients. The result below tells us that taking the intersection of a given collection of subspaces results in a subspace. In <a href="s_nullspace_image.html#ss_nullspace_image" class="internal" title="Subsection 3.4.1: Null space and image of a linear transformation">Subsection 3.4.1</a> we see how a linear transformation automatically gives rise to two subspaces.</div>
+</div></article><div class="para" id="p-1892">We now know how to determine whether a given subset of a vector space is in fact a subspace. We are also interested in means of constructing subspaces from some given ingredients. The result below tells us that taking the intersection of a given collection of subspaces results in a subspace. In <a href="s_nullspace_image.html#ss_nullspace_image" class="internal" title="Subsection 3.4.1: Null space and image of a linear transformation">Subsection 3.4.1</a> we see how a linear transformation automatically gives rise to two subspaces.</div>
 <article class="theorem theorem-like" id="th_subspace_intersection"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.3.8</span><span class="period">.</span><span class="space"> </span><span class="title">Intersection of subspaces.</span>
 </h4>
-<div class="para logical" id="p-1290">
+<div class="para logical" id="p-1893">
 <div class="para">Let <span class="process-math">\(V\)</span> be a vector space. Given a collection <span class="process-math">\(W_1, W_2,\dots, W_r\text{,}\)</span> where each <span class="process-math">\(W_i\)</span> is a subspace of <span class="process-math">\(V\text{,}\)</span> the intersection</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -896,13 +896,13 @@ W=W_1\cap W_2\cdots \cap W_r
 \end{equation*}
 </div>
 <div class="para">is a subspace.</div>
-</div></article><article class="hiddenproof" id="proof-46"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-46"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-46"><article class="hiddenproof"><div class="para" id="p-1291">Exercise.</div></article></div>
+</div></article><article class="hiddenproof" id="proof-46"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-46"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-46"><article class="hiddenproof"><div class="para" id="p-1894">Exercise.</div></article></div>
 <article class="remark remark-like" id="rm_subspace_union"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.3.9</span><span class="period">.</span><span class="space"> </span><span class="title">Unions of subspaces.</span>
-</h4> <div class="para" id="p-1292">While the intersection of subspaces is again a subspace, the same is not true for unions of subspaces.</div> <div class="para" id="p-1293">For example, take <span class="process-math">\(V=\R^2\text{,}\)</span> <span class="process-math">\(W_1=\{(t,t)\colon t\in\R\}\)</span> and <span class="process-math">\(W_2=\{(t,-t)\colon t\in\R\}\text{.}\)</span> Then each <span class="process-math">\(W_i\)</span> is a subspace, but their union <span class="process-math">\(W_1\cup W_2\)</span> is not.</div> <div class="para" id="p-1294">Indeed, observe that <span class="process-math">\(\boldw_1=(1,1)\in W_1\subset W_1\cup W_2\)</span> and <span class="process-math">\(\boldw_2=(1,-1)\in W_2\subset W_1\cup W_2\text{,}\)</span> but <span class="process-math">\(\boldw_1+\boldw_2=(2,0)\notin W_1\cup W_2\text{.}\)</span> Thus <span class="process-math">\(W_1\cup W_2\)</span> is not closed under addition. (Interestingly, it is closed under scalar multiplication.)</div></article></section><section class="subsection" id="ss_subspaces_tuples"><h3 class="heading hide-type">
+</h4> <div class="para" id="p-1895">While the intersection of subspaces is again a subspace, the same is not true for unions of subspaces.</div> <div class="para" id="p-1896">For example, take <span class="process-math">\(V=\R^2\text{,}\)</span> <span class="process-math">\(W_1=\{(t,t)\colon t\in\R\}\)</span> and <span class="process-math">\(W_2=\{(t,-t)\colon t\in\R\}\text{.}\)</span> Then each <span class="process-math">\(W_i\)</span> is a subspace, but their union <span class="process-math">\(W_1\cup W_2\)</span> is not.</div> <div class="para" id="p-1897">Indeed, observe that <span class="process-math">\(\boldw_1=(1,1)\in W_1\subset W_1\cup W_2\)</span> and <span class="process-math">\(\boldw_2=(1,-1)\in W_2\subset W_1\cup W_2\text{,}\)</span> but <span class="process-math">\(\boldw_1+\boldw_2=(2,0)\notin W_1\cup W_2\text{.}\)</span> Thus <span class="process-math">\(W_1\cup W_2\)</span> is not closed under addition. (Interestingly, it is closed under scalar multiplication.)</div></article></section><section class="subsection" id="ss_subspaces_tuples"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.3.2</span> <span class="title">Subspaces of <span class="process-math">\(\R^n\)</span></span>
 </h3>
-<div class="para logical" id="p-1295">
+<div class="para logical" id="p-1898">
 <div class="para">The following theorem gives a convenient method of producing a subspace <span class="process-math">\(W\)</span> of <span class="process-math">\(\R^n\text{:}\)</span> namely, given any <span class="process-math">\(m\times n\)</span> matrix <span class="process-math">\(A\text{,}\)</span> the subset <span class="process-math">\(W\)</span> defined as</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/s_nullspace_image.html ./knowl/d_nullspace_image.html ./knowl/th_nullspace_image.html ./knowl/th_subspace_matrix_solutions.html">
 \begin{equation*}
@@ -914,7 +914,7 @@ W=\{\boldx\in \R^n\colon A\boldx=\boldzero\}
 <article class="theorem theorem-like" id="th_subspace_matrix_solutions"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.3.10</span><span class="period">.</span><span class="space"> </span><span class="title">Solutions to <span class="process-math">\(A\boldx=\boldzero\)</span> form a subspace.</span>
 </h4>
-<div class="para logical" id="p-1296">
+<div class="para logical" id="p-1899">
 <div class="para">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(m\times n\)</span> matrix. The set</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -923,8 +923,8 @@ W=\{\boldx\in \R^n\colon A\boldx=\boldzero\}
 </div>
 <div class="para">of solutions to the homogeneous matrix equation <span class="process-math">\(A\boldx=\boldzero\)</span> is a subspace of <span class="process-math">\(\R^n\text{.}\)</span>
 </div>
-</div></article><article class="hiddenproof" id="proof-47"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-47"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-47"><article class="hiddenproof"><div class="para" id="p-1297">Following the two-step technique, we first show that <span class="process-math">\(\boldzero_n
-\in W\text{.}\)</span> This is clear, since <span class="process-math">\(A\boldzero_n=\boldzero_m\text{.}\)</span> (We introduce the subscripts to distinguish between the zero vectors of the domain <span class="process-math">\(\R^n\)</span> and <span class="process-math">\(\R^m\text{.}\)</span>)</div> <div class="para logical" id="p-1298">
+</div></article><article class="hiddenproof" id="proof-47"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-47"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-47"><article class="hiddenproof"><div class="para" id="p-1900">Following the two-step technique, we first show that <span class="process-math">\(\boldzero_n
+\in W\text{.}\)</span> This is clear, since <span class="process-math">\(A\boldzero_n=\boldzero_m\text{.}\)</span> (We introduce the subscripts to distinguish between the zero vectors of the domain <span class="process-math">\(\R^n\)</span> and <span class="process-math">\(\R^m\text{.}\)</span>)</div> <div class="para logical" id="p-1901">
 <div class="para">Next, we show that for any <span class="process-math">\(\boldx_1, \boldx_2\in \R^n\)</span> and any <span class="process-math">\(c_1, c_2\in \R\)</span> we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/th_matrix_alg_props.html">
 \begin{equation*}
@@ -943,13 +943,13 @@ A(c_1\boldx_1+c_2\boldx_2)  \amp= c_1A\boldx_1+c_2A\boldx_2 \amp (\knowl{./knowl
 </div></article></div>
 <article class="remark remark-like" id="rm_subspace_matrix_solution"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.3.11</span><span class="period">.</span><span class="space"> </span><span class="title">Solutions to homogeneous linear systems form a subspace.</span>
-</h4> <div class="para" id="p-1299">Recall from <a href="s_invertibility_theorem.html#ss_systems_to_matrix_eqns" class="internal" title="Subsection 2.4.2: Interlude on matrix equations">Interlude on matrix equations</a> that the set of solutions to a matrix equation <span class="process-math">\(A\boldx=\boldb\)</span> is the same thing as the set of solutions to the system of linear equations with augmented matrix <span class="process-math">\(\begin{amatrix}[c|c] A\amp \boldb  \end{amatrix}\text{.}\)</span> Thus, <a href="" class="xref" data-knowl="./knowl/th_subspace_matrix_solutions.html" title="Theorem 3.3.10: Solutions to A\boldx=\boldzero form a subspace">Theorem 3.3.10</a> implies that the set of solutions to a homogeneous system of linear equations forms a subspace.</div></article><article class="remark remark-like" id="rm_subspace_alt"><h4 class="heading">
+</h4> <div class="para" id="p-1902">Recall from <a href="s_invertibility_theorem.html#ss_systems_to_matrix_eqns" class="internal" title="Subsection 2.4.2: Interlude on matrix equations">Interlude on matrix equations</a> that the set of solutions to a matrix equation <span class="process-math">\(A\boldx=\boldb\)</span> is the same thing as the set of solutions to the system of linear equations with augmented matrix <span class="process-math">\(\begin{amatrix}[c|c] A\amp \boldb  \end{amatrix}\text{.}\)</span> Thus, <a href="" class="xref" data-knowl="./knowl/th_subspace_matrix_solutions.html" title="Theorem 3.3.10: Solutions to A\boldx=\boldzero form a subspace">Theorem 3.3.10</a> implies that the set of solutions to a homogeneous system of linear equations forms a subspace.</div></article><article class="remark remark-like" id="rm_subspace_alt"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.3.12</span><span class="period">.</span><span class="space"> </span><span class="title">Alternative subspace method.</span>
-</h4> <div class="para" id="p-1300">
+</h4> <div class="para" id="p-1903">
 <a href="" class="xref" data-knowl="./knowl/th_subspace_matrix_solutions.html" title="Theorem 3.3.10: Solutions to A\boldx=\boldzero form a subspace">Theorem 3.3.10</a> provides an alternative way of showing that a subset <span class="process-math">\(W\subseteq \R^n\text{:}\)</span> namely, find an <span class="process-math">\(m\times n\)</span> matrix <span class="process-math">\(A\)</span> for which we have <span class="process-math">\(W=\{\boldx\in \R^n\colon A\boldx=\boldzero\}\text{.}\)</span> This is often much faster than using the two-step technique.</div></article><article class="example example-like" id="example-44"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.3.13</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-1301">
+<div class="para logical" id="p-1904">
 <div class="para">Define the subset <span class="process-math">\(W\)</span> of <span class="process-math">\(\R^3\)</span> as</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -957,14 +957,14 @@ W=\{(x,y,z)\in \R^3\colon x+2y+3z=x-y-z=0\}\text{.}
 \end{equation*}
 </div>
 <ol class="decimal">
-<li id="li-369"><div class="para" id="p-1302">Prove that <span class="process-math">\(W\)</span> is a subspace by identifying it as the set of solutions to a homogeneous matrix equation.</div></li>
-<li id="li-370"><div class="para" id="p-1303">Use (a) and Gaussian elimination to compute a parametric description of <span class="process-math">\(W\text{.}\)</span>
+<li id="li-432"><div class="para" id="p-1905">Prove that <span class="process-math">\(W\)</span> is a subspace by identifying it as the set of solutions to a homogeneous matrix equation.</div></li>
+<li id="li-433"><div class="para" id="p-1906">Use (a) and Gaussian elimination to compute a parametric description of <span class="process-math">\(W\text{.}\)</span>
 </div></li>
 </ol>
 </div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-37" id="solution-37"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-37"><div class="solution solution-like"><ol class="decimal">
-<li id="li-371"><div class="para logical" id="p-1304">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-46" id="solution-46"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-46"><div class="solution solution-like"><ol class="decimal">
+<li id="li-434"><div class="para logical" id="p-1907">
 <div class="para">It is easy to see that</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -979,7 +979,7 @@ A=\begin{amatrix}[rrr]1\amp 2\amp 3\\ 1\amp -1\amp -1  \end{amatrix}\text{.}
 </div>
 <div class="para">We conclude <span class="process-math">\(W\)</span> is a subspace.</div>
 </div></li>
-<li id="li-372"><div class="para logical" id="p-1305">
+<li id="li-435"><div class="para logical" id="p-1908">
 <div class="para">The augmented matrix <span class="process-math">\(\begin{amatrix}[c|c]A\amp\boldzero \end{amatrix}\)</span> row reduces to</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/proc_solveSystem.html">
 \begin{equation*}
@@ -999,7 +999,7 @@ W=\{(-t,-2t,t)\colon t\in \R\}\text{.}
 </div></article><article class="example example-like" id="eg_lines_planes"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.3.14</span><span class="period">.</span><span class="space"> </span><span class="title">Lines and planes.</span>
 </h4>
-<div class="para logical" id="p-1306">
+<div class="para logical" id="p-1909">
 <div class="para">Recall that a line <span class="process-math">\(\ell\)</span> in <span class="process-math">\(\R^2\)</span> that <em class="emphasis">passes through the origin</em> can be expressed as the set of solutions <span class="process-math">\((x_1,x_2)\in\R^2\)</span> to an equation of the form</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/th_subspace_matrix_solutions.html">
 \begin{equation*}
@@ -1019,13 +1019,13 @@ W=\{(-t,-2t,t)\colon t\in \R\}\text{.}
 \end{equation*}
 </div>
 <div class="para">We conclude from <a href="" class="xref" data-knowl="./knowl/th_subspace_matrix_solutions.html" title="Theorem 3.3.10: Solutions to A\boldx=\boldzero form a subspace">Theorem 3.3.10</a> that lines in <span class="process-math">\(\R^2\text{,}\)</span> and planes in <span class="process-math">\(\R^3\text{,}\)</span> are subspaces, <em class="emphasis">as long as they pass through the origin</em>.</div>
-</div> <div class="para" id="p-1307">On the other hand, a line or plane that does <em class="emphasis">not</em> pass through the origin is not a subspace, since it does not contain the zero vector.</div> <div class="para" id="p-1308">Question: How do we classify <em class="emphasis">all</em> subspaces of <span class="process-math">\(\R^2\)</span> of <span class="process-math">\(\R^3\text{?}\)</span> We will be able to answer this easily with dimension theory. (See <a href="s_dimension.html" class="internal" title="Section 3.7: Dimension">Section 3.7</a>.)</div></article></section><section class="subsection" id="ss_subspace_matrices"><h3 class="heading hide-type">
+</div> <div class="para" id="p-1910">On the other hand, a line or plane that does <em class="emphasis">not</em> pass through the origin is not a subspace, since it does not contain the zero vector.</div> <div class="para" id="p-1911">Question: How do we classify <em class="emphasis">all</em> subspaces of <span class="process-math">\(\R^2\)</span> of <span class="process-math">\(\R^3\text{?}\)</span> We will be able to answer this easily with dimension theory. (See <a href="s_dimension.html" class="internal" title="Section 3.7: Dimension">Section 3.7</a>.)</div></article></section><section class="subsection" id="ss_subspace_matrices"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.3.3</span> <span class="title">Important subspaces of <span class="process-math">\(M_{nn}\)</span></span>
 </h3>
-<div class="para" id="p-1309">In <a href="s_invertibility_theorem.html" class="internal" title="Section 2.4: The invertibility theorem">The invertibility theorem</a> we met three families of square matrices: namely, the diagonal, upper triangular, and lower triangular matrices. (See <a href="" class="xref" data-knowl="./knowl/d_diagonal_triangular.html" title="Definition 2.4.7: Diagonal and triangular matrices">Definition 2.4.7</a>). We now introduce three more naturally occuring families. Before doing so, we give an official definition of the trace function. (See <a href="" class="xref" data-knowl="./knowl/ex_transformation_trace.html" title="Exercise 3.2.6.11: Trace">Exercise 3.2.6.11</a>.)</div>
+<div class="para" id="p-1912">In <a href="s_invertibility_theorem.html" class="internal" title="Section 2.4: The invertibility theorem">The invertibility theorem</a> we met three families of square matrices: namely, the diagonal, upper triangular, and lower triangular matrices. (See <a href="" class="xref" data-knowl="./knowl/d_diagonal_triangular.html" title="Definition 2.4.7: Diagonal and triangular matrices">Definition 2.4.7</a>). We now introduce three more naturally occuring families. Before doing so, we give an official definition of the trace function. (See <a href="" class="xref" data-knowl="./knowl/ex_transformation_trace.html" title="Exercise 3.2.6.11: Trace">Exercise 3.2.6.11</a>.)</div>
 <article class="definition definition-like" id="d_trace"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.3.15</span><span class="period">.</span><span class="space"> </span><span class="title">Trace of a matrix.</span>
-</h4>  <div class="para logical" id="p-1310">
+</h4>  <div class="para logical" id="p-1913">
 <div class="para">Let <span class="process-math">\(A=[a_{ij}]\)</span> be an <span class="process-math">\(n\times n\)</span> matrix. The <dfn class="terminology">trace</dfn> of <span class="process-math">\(A\text{,}\)</span> denoted <span class="process-math">\(\tr A\)</span> is defined as the sum of the diagonal entries of <span class="process-math">\(A\text{:}\)</span> i.e.,</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1034,18 +1034,18 @@ W=\{(-t,-2t,t)\colon t\in \R\}\text{.}
 </div>
 </div></article><article class="definition definition-like" id="d_tracezero_symmetric_skewsymmetric"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.3.16</span><span class="period">.</span><span class="space"> </span><span class="title">Trace-zero, symmetric, and skew-symmetric.</span>
-</h4>  <div class="para" id="p-1311">Fix an integer <span class="process-math">\(n\geq 1\text{.}\)</span>
+</h4>  <div class="para" id="p-1914">Fix an integer <span class="process-math">\(n\geq 1\text{.}\)</span>
 </div> <ol class="decimal">
-<li id="li-373"><div class="para" id="p-1312">A matrix <span class="process-math">\(A\in M_{nn}\)</span> is said to be a <dfn class="terminology">trace-zero</dfn> matrix if <span class="process-math">\(\tr A=0\text{.}\)</span>
+<li id="li-436"><div class="para" id="p-1915">A matrix <span class="process-math">\(A\in M_{nn}\)</span> is said to be a <dfn class="terminology">trace-zero</dfn> matrix if <span class="process-math">\(\tr A=0\text{.}\)</span>
 </div></li>
-<li id="li-374"><div class="para" id="p-1313">A matrix <span class="process-math">\(A\in M_{nn}\)</span> is <dfn class="terminology">symmetric</dfn> if <span class="process-math">\(A^T=A\text{:}\)</span> equivalently, if <span class="process-math">\([A]_{ij}=[A]_{ji}\)</span> for all <span class="process-math">\(1\leq i,j\leq n\text{.}\)</span>
+<li id="li-437"><div class="para" id="p-1916">A matrix <span class="process-math">\(A\in M_{nn}\)</span> is <dfn class="terminology">symmetric</dfn> if <span class="process-math">\(A^T=A\text{:}\)</span> equivalently, if <span class="process-math">\([A]_{ij}=[A]_{ji}\)</span> for all <span class="process-math">\(1\leq i,j\leq n\text{.}\)</span>
 </div></li>
-<li id="li-375"><div class="para" id="p-1314">A matrix <span class="process-math">\(A\in M_{nn}\)</span> is <dfn class="terminology">skew-symmetric</dfn> if <span class="process-math">\(A^T=-A\text{:}\)</span> equivalently, if <span class="process-math">\([A]_{ij}=-[A]_{ji}\)</span> for all <span class="process-math">\(1\leq i,j\leq n\text{.}\)</span>
+<li id="li-438"><div class="para" id="p-1917">A matrix <span class="process-math">\(A\in M_{nn}\)</span> is <dfn class="terminology">skew-symmetric</dfn> if <span class="process-math">\(A^T=-A\text{:}\)</span> equivalently, if <span class="process-math">\([A]_{ij}=-[A]_{ji}\)</span> for all <span class="process-math">\(1\leq i,j\leq n\text{.}\)</span>
 </div></li>
 </ol></article><article class="example example-like" id="example-46"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.3.17</span><span class="period">.</span><span class="space"> </span><span class="title">Trace-zero symmetric, and skew-symmetric <span class="process-math">\(2\times 2\)</span> matrices.</span>
 </h4>
-<div class="para logical" id="p-1315">
+<div class="para logical" id="p-1918">
 <div class="para">The set <span class="process-math">\(W_1\)</span> of all trace-zero <span class="process-math">\(2\times 2\)</span> matrices can be described as</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1067,40 +1067,40 @@ W_3=\left\{ \begin{amatrix}[rr]0\amp a\\ -a\amp 0  \end{amatrix}\colon a,b\in \R
 </div></article><article class="remark remark-like" id="rm_skew-symmetric"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.3.18</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-1316">Assume <span class="process-math">\(A\)</span> is a skew-symmetric <span class="process-math">\(n\times n\)</span> matrix. By definition, for all <span class="process-math">\(1\leq i\leq n\)</span> we must have <span class="process-math">\([A]_{ii}=-[A]_{ii}\text{.}\)</span> It follows that <span class="process-math">\([A]_{ii}=0\)</span> for all <span class="process-math">\(1\leq i\leq n\text{.}\)</span> Thus the diagonal entries of a skew-symmetric matrix are always equal to 0.</div></article><div class="para" id="p-1317">It will come as no surprise that all of the afore mentioned matrix families are in fact subspaces of <span class="process-math">\(M_{nn}\text{.}\)</span>
+<div class="para" id="p-1919">Assume <span class="process-math">\(A\)</span> is a skew-symmetric <span class="process-math">\(n\times n\)</span> matrix. By definition, for all <span class="process-math">\(1\leq i\leq n\)</span> we must have <span class="process-math">\([A]_{ii}=-[A]_{ii}\text{.}\)</span> It follows that <span class="process-math">\([A]_{ii}=0\)</span> for all <span class="process-math">\(1\leq i\leq n\text{.}\)</span> Thus the diagonal entries of a skew-symmetric matrix are always equal to 0.</div></article><div class="para" id="p-1920">It will come as no surprise that all of the afore mentioned matrix families are in fact subspaces of <span class="process-math">\(M_{nn}\text{.}\)</span>
 </div>
 <article class="theorem theorem-like" id="th_matrix_subspaces"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.3.19</span><span class="period">.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.3.19</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix subspaces.</span>
 </h4>
-<div class="para" id="p-1318">Fix an integer <span class="process-math">\(n\geq 1\text{.}\)</span>  Each of the following subsets of <span class="process-math">\(M_{nn}\)</span> is a subspace.</div> <ol class="decimal">
-<li id="li-376">
-<span class="heading"><span class="title">Diagonal matrices.</span></span><div class="para" id="p-1319"><span class="process-math">\(\displaystyle W=\{A\in M_{nn}\colon A\text{ is diagonal}\}\)</span></div>
+<div class="para" id="p-1921">Fix an integer <span class="process-math">\(n\geq 1\text{.}\)</span>  Each of the following subsets of <span class="process-math">\(M_{nn}\)</span> is a subspace.</div> <ol class="decimal">
+<li id="li-439">
+<span class="heading"><span class="title">Diagonal matrices.</span></span><div class="para" id="p-1922"><span class="process-math">\(\displaystyle W=\{A\in M_{nn}\colon A\text{ is diagonal}\}\)</span></div>
 </li>
-<li id="li-377">
-<span class="heading"><span class="title">Upper triangular matrices.</span></span><div class="para" id="p-1320"><span class="process-math">\(\displaystyle W=\{A\in M_{nn}\colon A\text{ is upper triangular}\}\)</span></div>
+<li id="li-440">
+<span class="heading"><span class="title">Upper triangular matrices.</span></span><div class="para" id="p-1923"><span class="process-math">\(\displaystyle W=\{A\in M_{nn}\colon A\text{ is upper triangular}\}\)</span></div>
 </li>
-<li id="li-378">
-<span class="heading"><span class="title">Lower triangular matrices.</span></span><div class="para" id="p-1321"><span class="process-math">\(\displaystyle W=\{A\in M_{nn}\colon A\text{ is lower triangular}\}\)</span></div>
+<li id="li-441">
+<span class="heading"><span class="title">Lower triangular matrices.</span></span><div class="para" id="p-1924"><span class="process-math">\(\displaystyle W=\{A\in M_{nn}\colon A\text{ is lower triangular}\}\)</span></div>
 </li>
-<li id="li-379">
-<span class="heading"><span class="title">Trace-zero matrix.</span></span><div class="para" id="p-1322"><span class="process-math">\(\displaystyle W=\{A\in M_{nn}\colon \tr A=\boldzero \}\)</span></div>
+<li id="li-442">
+<span class="heading"><span class="title">Trace-zero matrix.</span></span><div class="para" id="p-1925"><span class="process-math">\(\displaystyle W=\{A\in M_{nn}\colon \tr A=\boldzero \}\)</span></div>
 </li>
-<li id="li-380">
-<span class="heading"><span class="title">Symmetric matrices.</span></span><div class="para" id="p-1323"><span class="process-math">\(\displaystyle W=\{A\in M_{nn}\colon A^T=A \}\)</span></div>
+<li id="li-443">
+<span class="heading"><span class="title">Symmetric matrices.</span></span><div class="para" id="p-1926"><span class="process-math">\(\displaystyle W=\{A\in M_{nn}\colon A^T=A \}\)</span></div>
 </li>
-<li id="li-381">
-<span class="heading"><span class="title">Skew-symmetric matrices.</span></span><div class="para" id="p-1324"><span class="process-math">\(\displaystyle W=\{A\in M_{nn}\colon A^T=-A \}\)</span></div>
+<li id="li-444">
+<span class="heading"><span class="title">Skew-symmetric matrices.</span></span><div class="para" id="p-1927"><span class="process-math">\(\displaystyle W=\{A\in M_{nn}\colon A^T=-A \}\)</span></div>
 </li>
-</ol></article><article class="hiddenproof" id="proof-48"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-48"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-48"><article class="hiddenproof"><div class="para" id="p-1325">See <a href="" class="xref" data-knowl="./knowl/ex_matrix_subspaces.html" title="Exercise 3.3.5.20">Exercise 3.3.5.20</a>
+</ol></article><article class="hiddenproof" id="proof-48"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-48"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-48"><article class="hiddenproof"><div class="para" id="p-1928">See <a href="" class="xref" data-knowl="./knowl/ex_matrix_subspaces.html" title="Exercise 3.3.5.20">Exercise 3.3.5.20</a>
 </div></article></div></section><section class="subsection" id="ss_subspace_functions"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.3.4</span> <span class="title">Important subspaces of <span class="process-math">\(F(X,\R)\)</span></span>
 </h3>
-<div class="para" id="p-1326">Let <span class="process-math">\(X\)</span> be an <em class="emphasis">nondegenerate</em> interval of <span class="process-math">\(\R\text{:}\)</span> i.e., an interval containing at least two elements. Recall that <span class="process-math">\(F(X,\R)\)</span> is the set of <em class="emphasis">all</em> functions from <span class="process-math">\(X\)</span> to <span class="process-math">\(\R\text{.}\)</span> This is a pretty unwieldy vector space, containing some pathological characters, and when studying functions on an interval we will often restrict our attention to certain more well-behaved subsets: e.g., continuous, differentiable, or infinitely differentiable functions. Not surprisingly, these subsets turn out to be subspaces of <span class="process-math">\(F(X,\R)\text{.}\)</span>
+<div class="para" id="p-1929">Let <span class="process-math">\(X\)</span> be an <em class="emphasis">nondegenerate</em> interval of <span class="process-math">\(\R\text{:}\)</span> i.e., an interval containing at least two elements. Recall that <span class="process-math">\(F(X,\R)\)</span> is the set of <em class="emphasis">all</em> functions from <span class="process-math">\(X\)</span> to <span class="process-math">\(\R\text{.}\)</span> This is a pretty unwieldy vector space, containing some pathological characters, and when studying functions on an interval we will often restrict our attention to certain more well-behaved subsets: e.g., continuous, differentiable, or infinitely differentiable functions. Not surprisingly, these subsets turn out to be subspaces of <span class="process-math">\(F(X,\R)\text{.}\)</span>
 </div>
 <article class="definition definition-like" id="d_subspace_functions"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.3.20</span><span class="period">.</span>
-</h4> <div class="para" id="p-1327">Let <span class="process-math">\(X\subseteq \R\)</span> be a nondegenerate interval.</div> <ol class="decimal">
-<li id="li-382"><div class="para logical" id="p-1328">
+</h4> <div class="para" id="p-1930">Let <span class="process-math">\(X\subseteq \R\)</span> be a nondegenerate interval.</div> <ol class="decimal">
+<li id="li-445"><div class="para logical" id="p-1931">
 <div class="para">We denote by <span class="process-math">\(C(X)\)</span> the set of all continuous functions on <span class="process-math">\(X\text{:}\)</span> i.e.,</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1108,40 +1108,40 @@ C(X)=\{f\in F(X,\R)\colon f \text{ is continuous on } X\}\text{.}
 \end{equation*}
 </div>
 </div></li>
-<li id="li-383"><div class="para" id="p-1329">Fix <span class="process-math">\(n\geq 1\text{.}\)</span> A function <span class="process-math">\(f\in F(X,\R)\)</span> is <dfn class="terminology"><span class="process-math">\(C^n\)</span> on X</dfn> if <span class="process-math">\(f\)</span> is <span class="process-math">\(n\)</span>-times differentiable on <span class="process-math">\(X\)</span> and its <span class="process-math">\(n\)</span>-th derivative <span class="process-math">\(f^{(n)}(x)\)</span> is continuous. The set of all <span class="process-math">\(C^n\)</span> functions on <span class="process-math">\(X\)</span> is denoted <span class="process-math">\(C^n(X)\text{.}\)</span>
+<li id="li-446"><div class="para" id="p-1932">Fix <span class="process-math">\(n\geq 1\text{.}\)</span> A function <span class="process-math">\(f\in F(X,\R)\)</span> is <dfn class="terminology"><span class="process-math">\(C^n\)</span> on X</dfn> if <span class="process-math">\(f\)</span> is <span class="process-math">\(n\)</span>-times differentiable on <span class="process-math">\(X\)</span> and its <span class="process-math">\(n\)</span>-th derivative <span class="process-math">\(f^{(n)}(x)\)</span> is continuous. The set of all <span class="process-math">\(C^n\)</span> functions on <span class="process-math">\(X\)</span> is denoted <span class="process-math">\(C^n(X)\text{.}\)</span>
 </div></li>
-<li id="li-384"><div class="para" id="p-1330">A function <span class="process-math">\(f\in F(X,\R)\)</span> is <dfn class="terminology"><span class="process-math">\(C^\infty\)</span> on X</dfn> if <span class="process-math">\(f\)</span> is infinitely differentiable on <span class="process-math">\(X\text{.}\)</span> The set of all <span class="process-math">\(C^\infty\)</span> functions on <span class="process-math">\(X\)</span> is denoted <span class="process-math">\(C^\infty(X)\text{.}\)</span>
+<li id="li-447"><div class="para" id="p-1933">A function <span class="process-math">\(f\in F(X,\R)\)</span> is <dfn class="terminology"><span class="process-math">\(C^\infty\)</span> on X</dfn> if <span class="process-math">\(f\)</span> is infinitely differentiable on <span class="process-math">\(X\text{.}\)</span> The set of all <span class="process-math">\(C^\infty\)</span> functions on <span class="process-math">\(X\)</span> is denoted <span class="process-math">\(C^\infty(X)\text{.}\)</span>
 </div></li>
-<li id="li-385">
-<div class="para" id="p-1331">A <dfn class="terminology">polynomial on <span class="process-math">\(X\)</span> of degree at most <span class="process-math">\(n\)</span></dfn> is a polynomial of the form <span class="process-math">\(f(x)=\anpoly\text{,}\)</span> where <span class="process-math">\(a_i\in \R\text{.}\)</span> (See <a href="s_polynomials.html" class="internal" title="Section 0.7: Polynomials">Section 0.7</a>, and in particular <a href="" class="xref" data-knowl="./knowl/d_polynomials.html" title="Definition 0.7.1: Polynomials">Definition 0.7.1</a> for more details about polynomials.) Recall that if <span class="process-math">\(a_n\ne 0\text{,}\)</span> we call <span class="process-math">\(n\)</span> the the degree of <span class="process-math">\(f\text{,}\)</span> denoted <span class="process-math">\(\deg f\text{.}\)</span>
+<li id="li-448">
+<div class="para" id="p-1934">A <dfn class="terminology">polynomial on <span class="process-math">\(X\)</span> of degree at most <span class="process-math">\(n\)</span></dfn> is a polynomial of the form <span class="process-math">\(f(x)=\anpoly\text{,}\)</span> where <span class="process-math">\(a_i\in \R\text{.}\)</span> (See <a href="s_polynomials.html" class="internal" title="Section 0.7: Polynomials">Section 0.7</a>, and in particular <a href="" class="xref" data-knowl="./knowl/d_polynomials.html" title="Definition 0.7.1: Polynomials">Definition 0.7.1</a> for more details about polynomials.) Recall that if <span class="process-math">\(a_n\ne 0\text{,}\)</span> we call <span class="process-math">\(n\)</span> the the degree of <span class="process-math">\(f\text{,}\)</span> denoted <span class="process-math">\(\deg f\text{.}\)</span>
 </div>
-<div class="para" id="p-1332">The set of polynomials of degree at most <span class="process-math">\(n\)</span> on <span class="process-math">\(X\)</span> is denoted <span class="process-math">\(P_n(X)\text{;}\)</span> the set of all polynomials on <span class="process-math">\(X\)</span> is denoted <span class="process-math">\(P(X)\text{.}\)</span> When <span class="process-math">\(X=\R\text{,}\)</span> we shorten the notation to <span class="process-math">\(P_n\)</span> and <span class="process-math">\(P\text{.}\)</span>
+<div class="para" id="p-1935">The set of polynomials of degree at most <span class="process-math">\(n\)</span> on <span class="process-math">\(X\)</span> is denoted <span class="process-math">\(P_n(X)\text{;}\)</span> the set of all polynomials on <span class="process-math">\(X\)</span> is denoted <span class="process-math">\(P(X)\text{.}\)</span> When <span class="process-math">\(X=\R\text{,}\)</span> we shorten the notation to <span class="process-math">\(P_n\)</span> and <span class="process-math">\(P\text{.}\)</span>
 </div>
 </li>
 </ol></article><article class="theorem theorem-like" id="th_subspace_functions"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.3.21</span><span class="period">.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.3.21</span><span class="period">.</span><span class="space"> </span><span class="title">Function subspaces.</span>
 </h4>
-<div class="para logical" id="p-1333">
+<div class="para logical" id="p-1936">
 <div class="para">Let <span class="process-math">\(X\subseteq \R\)</span> be an interval. The sets <span class="process-math">\(C(X), C^n(X), C^\infty(X), P_n(X), P(X)\)</span> are all subspaces of <span class="process-math">\(F(X,\R)\text{.}\)</span> Thus we have the following chain of subspaces:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 P_n(X)\subseteq P(X)\subseteq C^\infty(X)\subseteq C^n(X)\subseteq C(X)\subseteq F(X,\R)\text{.}
 \end{equation*}
 </div>
-</div></article><article class="hiddenproof" id="proof-49"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-49"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-49"><article class="hiddenproof"><div class="para logical" id="p-1334">
+</div></article><article class="hiddenproof" id="proof-49"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-49"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-49"><article class="hiddenproof"><div class="para logical" id="p-1937">
 <div class="para">The proof amounts to the following observations:</div>
 <ul class="disc">
-<li id="li-386"><div class="para" id="p-1335">The zero function <span class="process-math">\(0_X\colon X\rightarrow \R\)</span> is an element of all of these sets: i.e. the zero function is continuous, <span class="process-math">\(C^n\text{,}\)</span> <span class="process-math">\(C^\infty\text{,}\)</span> a polynomial, etc..</div></li>
-<li id="li-387"><div class="para" id="p-1336">If <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> both satisfy one of these properties (continuous, <span class="process-math">\(C^n\text{,}\)</span> <span class="process-math">\(C^\infty\text{,}\)</span> polynomial, etc.), then so does <span class="process-math">\(cf+dg\)</span> for any <span class="process-math">\(c,d\in \R\text{.}\)</span>
+<li id="li-449"><div class="para" id="p-1938">The zero function <span class="process-math">\(0_X\colon X\rightarrow \R\)</span> is an element of all of these sets: i.e. the zero function is continuous, <span class="process-math">\(C^n\text{,}\)</span> <span class="process-math">\(C^\infty\text{,}\)</span> a polynomial, etc..</div></li>
+<li id="li-450"><div class="para" id="p-1939">If <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> both satisfy one of these properties (continuous, <span class="process-math">\(C^n\text{,}\)</span> <span class="process-math">\(C^\infty\text{,}\)</span> polynomial, etc.), then so does <span class="process-math">\(cf+dg\)</span> for any <span class="process-math">\(c,d\in \R\text{.}\)</span>
 </div></li>
 </ul>
 <div class="para">The second, “closed under linear combinations” observation is easily seen for <span class="process-math">\(P(X)\)</span> and <span class="process-math">\(P_n(X)\)</span> (i.e., the sum of two polynomials of degree at most <span class="process-math">\(n\)</span> is clearly a polynomial of degree at most <span class="process-math">\(n\)</span>); for the other spaces, this is a result of calculus properties to the effect that adding and scaling functions preserves continuity and differentiability.</div>
-</div> <div class="para" id="p-1337">Lastly, that each subset relation holds in the given chain follows from similar observations: polynomials are infinitely differentiable, differentiable functions are continuous, etc..</div></article></div>
-<div class="para" id="p-1338">When working within the polynomial spaces <span class="process-math">\(P_n(X)\)</span> or <span class="process-math">\(P(X)\text{,}\)</span> we will constantly make use of the fact that a polynomial <span class="process-math">\(f(x)=\anpoly\)</span> is completely determined by its coefficients <span class="process-math">\(a_i\text{,}\)</span> and that equality between polynomials can be decided by comparing their coefficients. This is the content of <a href="" class="xref" data-knowl="./knowl/cor_poly_equality.html" title="Corollary 0.7.4: Polynomial equality via coefficients">Corollary 0.7.4</a>. We restate the result here in a more convenient form.</div>
+</div> <div class="para" id="p-1940">Lastly, that each subset relation holds in the given chain follows from similar observations: polynomials are infinitely differentiable, differentiable functions are continuous, etc..</div></article></div>
+<div class="para" id="p-1941">When working within the polynomial spaces <span class="process-math">\(P_n(X)\)</span> or <span class="process-math">\(P(X)\text{,}\)</span> we will constantly make use of the fact that a polynomial <span class="process-math">\(f(x)=\anpoly\)</span> is completely determined by its coefficients <span class="process-math">\(a_i\text{,}\)</span> and that equality between polynomials can be decided by comparing their coefficients. This is the content of <a href="" class="xref" data-knowl="./knowl/cor_poly_equality.html" title="Corollary 0.7.4: Polynomial equality via coefficients">Corollary 0.7.4</a>. We restate the result here in a more convenient form.</div>
 <article class="theorem theorem-like" id="th_poly_equality"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.3.22</span><span class="period">.</span><span class="space"> </span><span class="title">Polynomial equality.</span>
 </h4>
-<div class="para logical" id="p-1339">
+<div class="para logical" id="p-1942">
 <div class="para">Let <span class="process-math">\(X\subseteq \R\)</span> be a nondegenerate interval, and let</div>
 <div class="displaymath process-math" id="md-134">
 \begin{align*}
@@ -1151,15 +1151,15 @@ f(x) \amp =\anpoly \amp g(x)\amp=\bnpoly
 <div class="para">be polynomials on <span class="process-math">\(X\text{.}\)</span>
 </div>
 <ol class="decimal">
-<li id="th_f_is_g"><div class="para" id="p-1340">We have <span class="process-math">\(f=g\)</span> if and only if <span class="process-math">\(a_i=b_i\)</span> for all <span class="process-math">\(1\leq i\leq n\text{.}\)</span>
+<li id="th_f_is_g"><div class="para" id="p-1943">We have <span class="process-math">\(f=g\)</span> if and only if <span class="process-math">\(a_i=b_i\)</span> for all <span class="process-math">\(1\leq i\leq n\text{.}\)</span>
 </div></li>
-<li id="th_f_is_0"><div class="para" id="p-1341">In particular, <span class="process-math">\(f=\boldzero\)</span> if and only if <span class="process-math">\(a_i=0\)</span> for all <span class="process-math">\(1\leq i\leq n\text{.}\)</span>
+<li id="th_f_is_0"><div class="para" id="p-1944">In particular, <span class="process-math">\(f=\boldzero\)</span> if and only if <span class="process-math">\(a_i=0\)</span> for all <span class="process-math">\(1\leq i\leq n\text{.}\)</span>
 </div></li>
 </ol>
 </div></article><article class="remark remark-like" id="rm_subspaces_derivatives"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.3.23</span><span class="period">.</span><span class="space"> </span><span class="title">Differential operators.</span>
-</h4> <div class="para" id="p-1342">Let <span class="process-math">\(X\subseteq \R\)</span> be an interval. Define <span class="process-math">\(T_1\colon C^1(X)\rightarrow C(X)\)</span> as <span class="process-math">\(T_1(f)=f'\text{:}\)</span> i.e., <span class="process-math">\(T_1\)</span> takes as input a <span class="process-math">\(C^1\)</span> function on the interval <span class="process-math">\(X\text{,}\)</span> and returns its (first) derivative. Note that the definition of <span class="process-math">\(C^1\)</span> ensures that <span class="process-math">\(f'\)</span> exists and is continuous on <span class="process-math">\(X\text{:}\)</span> hence <span class="process-math">\(f'
-\in C(X)\text{,}\)</span> as claimed.</div> <div class="para logical" id="p-1343">
+</h4> <div class="para" id="p-1945">Let <span class="process-math">\(X\subseteq \R\)</span> be an interval. Define <span class="process-math">\(T_1\colon C^1(X)\rightarrow C(X)\)</span> as <span class="process-math">\(T_1(f)=f'\text{:}\)</span> i.e., <span class="process-math">\(T_1\)</span> takes as input a <span class="process-math">\(C^1\)</span> function on the interval <span class="process-math">\(X\text{,}\)</span> and returns its (first) derivative. Note that the definition of <span class="process-math">\(C^1\)</span> ensures that <span class="process-math">\(f'\)</span> exists and is continuous on <span class="process-math">\(X\text{:}\)</span> hence <span class="process-math">\(f'
+\in C(X)\text{,}\)</span> as claimed.</div> <div class="para logical" id="p-1946">
 <div class="para">The operator <span class="process-math">\(T_1\)</span> is a linear transformation. Indeed, given <span class="process-math">\(c,d\in \R\)</span> and <span class="process-math">\(f,g\in C^1(X)\text{,}\)</span> we have</div>
 <div class="displaymath process-math" id="md-135">
 \begin{align*}
@@ -1169,7 +1169,7 @@ T_1(cf+dg)   \amp = (cf+dg)' \amp \text{(by def.)} \\
 \amp = cT_1(f)+dT_1(g)\text{.}
 \end{align*}
 </div>
-</div> <div class="para logical" id="p-1344">
+</div> <div class="para logical" id="p-1947">
 <div class="para">Since taking <span class="process-math">\(n\)</span>-th derivatives amounts to <em class="emphasis">composing</em> the derivative operator <span class="process-math">\(T_1\)</span> with itself <span class="process-math">\(n\)</span> times, it follows from <a href="" class="xref" data-knowl="./knowl/th_transform_composition.html" title="Theorem 3.2.24: Composition of linear transformations">Theorem 3.2.24</a> that for any <span class="process-math">\(n\geq 1\)</span> the  map</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/th_transform_composition.html" id="md-136">
 \begin{align*}
@@ -1178,7 +1178,7 @@ f \amp\mapsto f^{(n)} \text{,}
 \end{align*}
 </div>
 <div class="para">which takes a function <span class="process-math">\(f\)</span> to its <span class="process-math">\(n\)</span>-th derivative, is also linear. (Note that we are careful to pick the domain <span class="process-math">\(C^n(X)\)</span> to guarantee this operation is well-defined!)</div>
-</div> <div class="para logical" id="p-1345">
+</div> <div class="para logical" id="p-1948">
 <div class="para">Lastly, by <a href="" class="xref" data-knowl="./knowl/ex_transformation_add_scale.html" title="Exercise 3.2.6.17: Adding and scaling linear transformations">Exercise 3.2.6.17</a>, we can add and scale these various operators to obtain more general linear transformations of the form</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/ex_transformation_add_scale.html ./knowl/eg_diff_eq_ex.html">
 \begin{equation*}
@@ -1190,63 +1190,77 @@ T(f)=c_nf^{(n)}+c_{n-1}f^{(n-1)}+\cdots c_1f'+c_0f\text{.}
 <span class="type">Exercises</span> <span class="codenumber">3.3.5</span> <span class="title">Exercises</span>
 </h3>
 <article class="subexercises" id="subexercises-19"><h4 class="heading"><span class="title">WeBWork Exercises</span></h4>
-<article class="exercise exercise-like" id="exercise-180"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5></article></article><div class="exercisegroup" id="exercisegroup-14">
+<article class="exercise exercise-like" id="exercise-180"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
+<div id="webwork-63" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="63" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-sourceFilePath="Library/TCNJ/TCNJ_VectorSpaces/problem6.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-63')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="p-1949">Determine if each of the following sets is a subspace of <span class="process-math">\({\mathbb P}_{n}\text{,}\)</span> for an appropriate value of <span class="process-math">\(n\text{.}\)</span> Type "yes" or "no" for each answer.</div> <div class="para" id="p-1950">Let <span class="process-math">\(W_{1}\)</span> be the set of all polynomials of the form <span class="process-math">\(p(t)= at^{2}\text{,}\)</span> where <span class="process-math">\(a\)</span> is in <span class="process-math">\({\mathbb R}\text{.}\)</span> <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span>
+</div> <div class="para" id="p-1951">Let <span class="process-math">\(W_{2}\)</span> be the set of all polynomials of the form <span class="process-math">\(p(t)= t^{2} + a\text{,}\)</span> where <span class="process-math">\(a\)</span> is in <span class="process-math">\({\mathbb R}\text{.}\)</span> <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span>
+</div> <div class="para" id="p-1952">Let <span class="process-math">\(W_{3}\)</span> be the set of all polynomials of the form <span class="process-math">\(p(t)= at^{2} + at\text{,}\)</span> where <span class="process-math">\(a\)</span> is in <span class="process-math">\({\mathbb R}\text{.}\)</span> <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-276" id="answer-276"><span class="type">Answer</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-276"><div class="answer solution-like"><div class="para" id="p-1953">yes</div></div></div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-277" id="answer-277"><span class="type">Answer</span><span class="space"> </span><span class="codenumber">2</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-277"><div class="answer solution-like"><div class="para" id="p-1954">no</div></div></div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-278" id="answer-278"><span class="type">Answer</span><span class="space"> </span><span class="codenumber">3</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-278"><div class="answer solution-like"><div class="para" id="p-1955">yes</div></div></div>
+</div>
+</div>
+</div></article></article><div class="exercisegroup" id="exercisegroup-14">
 <h4 class="heading"><span class="title">Exercise Group.</span></h4>
-<div class="introduction" id="introduction-41"><div class="para" id="p-1346">For each subset <span class="process-math">\(W\)</span> of <span class="process-math">\(\R^2\)</span> described below: (a) sketch <span class="process-math">\(W\)</span> as a region of <span class="process-math">\(\R^2\text{,}\)</span> and (b) determine whether <span class="process-math">\(W\)</span> is a subspace. Justify your answer either with a proof or explicit counterexample.</div></div>
+<div class="introduction" id="introduction-41"><div class="para" id="p-1956">For each subset <span class="process-math">\(W\)</span> of <span class="process-math">\(\R^2\)</span> described below: (a) sketch <span class="process-math">\(W\)</span> as a region of <span class="process-math">\(\R^2\text{,}\)</span> and (b) determine whether <span class="process-math">\(W\)</span> is a subspace. Justify your answer either with a proof or explicit counterexample.</div></div>
 <div class="exercisegroup-exercises">
 <article class="exercise exercise-like" id="exercise-181"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
-<div class="para" id="p-1347"><span class="process-math">\(W=\{(x,y)\in \R^2\colon 2x+3y=0\}\)</span></div></article><article class="exercise exercise-like" id="exercise-182"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
-<div class="para" id="p-1348"><span class="process-math">\(W=\{(x,y)\in \R^2\colon \val{x}\geq \val{y}\}\)</span></div></article><article class="exercise exercise-like" id="exercise-183"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
-<div class="para" id="p-1349"><span class="process-math">\(W=\{(x,y)\in \R^2\colon x^2+2y^2\leq 1\}\)</span></div></article>
+<div class="para" id="p-1957"><span class="process-math">\(W=\{(x,y)\in \R^2\colon 2x+3y=0\}\)</span></div></article><article class="exercise exercise-like" id="exercise-182"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
+<div class="para" id="p-1958"><span class="process-math">\(W=\{(x,y)\in \R^2\colon \val{x}\geq \val{y}\}\)</span></div></article><article class="exercise exercise-like" id="exercise-183"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
+<div class="para" id="p-1959"><span class="process-math">\(W=\{(x,y)\in \R^2\colon x^2+2y^2\leq 1\}\)</span></div></article>
 </div>
 </div>
 <div class="exercisegroup" id="exercisegroup-15">
 <h4 class="heading"><span class="title">Exercise Group.</span></h4>
-<div class="introduction" id="introduction-42"><div class="para" id="p-1350">Determine whether the subset <span class="process-math">\(W\)</span> of <span class="process-math">\(M_{nn}\)</span> described is a subspace of <span class="process-math">\(M_{nn}\text{.}\)</span> Justify your answer either with a proof or explicit counterexample.</div></div>
+<div class="introduction" id="introduction-42"><div class="para" id="p-1960">Determine whether the subset <span class="process-math">\(W\)</span> of <span class="process-math">\(M_{nn}\)</span> described is a subspace of <span class="process-math">\(M_{nn}\text{.}\)</span> Justify your answer either with a proof or explicit counterexample.</div></div>
 <div class="exercisegroup-exercises">
 <article class="exercise exercise-like" id="exercise-184"><h5 class="heading"><span class="codenumber">5<span class="period">.</span></span></h5>
-<div class="para" id="p-1351"><span class="process-math">\(W=\{A\in M_{nn}\colon \det A=0\}\)</span></div></article><article class="exercise exercise-like" id="exercise-185"><h5 class="heading"><span class="codenumber">6<span class="period">.</span></span></h5>
-<div class="para" id="p-1352"><span class="process-math">\(W=\{A\in M_{nn}\colon A_{11}=A_{nn}\}\)</span></div></article><article class="exercise exercise-like" id="exercise-186"><h5 class="heading"><span class="codenumber">7<span class="period">.</span></span></h5>
-<div class="para" id="p-1353">Fix a matrix <span class="process-math">\(B\in A\)</span> and define <span class="process-math">\(W=\{A\in M_{nn}\colon AB=BA\}\text{,}\)</span> the set of matrices that <em class="emphasis">commute</em> with <span class="process-math">\(B\text{.}\)</span>
+<div class="para" id="p-1961"><span class="process-math">\(W=\{A\in M_{nn}\colon \det A=0\}\)</span></div></article><article class="exercise exercise-like" id="exercise-185"><h5 class="heading"><span class="codenumber">6<span class="period">.</span></span></h5>
+<div class="para" id="p-1962"><span class="process-math">\(W=\{A\in M_{nn}\colon A_{11}=A_{nn}\}\)</span></div></article><article class="exercise exercise-like" id="exercise-186"><h5 class="heading"><span class="codenumber">7<span class="period">.</span></span></h5>
+<div class="para" id="p-1963">Fix a matrix <span class="process-math">\(B\in A\)</span> and define <span class="process-math">\(W=\{A\in M_{nn}\colon AB=BA\}\text{,}\)</span> the set of matrices that <em class="emphasis">commute</em> with <span class="process-math">\(B\text{.}\)</span>
 </div></article>
 </div>
 </div>
 <div class="exercisegroup" id="exercisegroup-16">
 <h4 class="heading"><span class="title">Exercise Group.</span></h4>
-<div class="introduction" id="introduction-43"><div class="para" id="p-1354">Determine whether the subset <span class="process-math">\(W\)</span> of <span class="process-math">\(P_2\)</span> is a subspace. Justify your answer either with a proof or explicit counterexample.</div></div>
+<div class="introduction" id="introduction-43"><div class="para" id="p-1964">Determine whether the subset <span class="process-math">\(W\)</span> of <span class="process-math">\(P_2\)</span> is a subspace. Justify your answer either with a proof or explicit counterexample.</div></div>
 <div class="exercisegroup-exercises">
 <article class="exercise exercise-like" id="exercise-187"><h5 class="heading"><span class="codenumber">8<span class="period">.</span></span></h5>
-<div class="para" id="p-1355"><span class="process-math">\(W=\{f(x)=ax^2+bx+c \colon c=0\}\)</span></div></article><article class="exercise exercise-like" id="exercise-188"><h5 class="heading"><span class="codenumber">9<span class="period">.</span></span></h5>
-<div class="para" id="p-1356"><span class="process-math">\(W=\{f(x)=ax^2+bx+c \colon abc=0\}\)</span></div></article><article class="exercise exercise-like" id="exercise-189"><h5 class="heading"><span class="codenumber">10<span class="period">.</span></span></h5>
-<div class="para" id="p-1357"><span class="process-math">\(W=\{f(x)\in P_2 \colon xf'(x)=f(x)\)</span></div></article>
+<div class="para" id="p-1965"><span class="process-math">\(W=\{f(x)=ax^2+bx+c \colon c=0\}\)</span></div></article><article class="exercise exercise-like" id="exercise-188"><h5 class="heading"><span class="codenumber">9<span class="period">.</span></span></h5>
+<div class="para" id="p-1966"><span class="process-math">\(W=\{f(x)=ax^2+bx+c \colon abc=0\}\)</span></div></article><article class="exercise exercise-like" id="exercise-189"><h5 class="heading"><span class="codenumber">10<span class="period">.</span></span></h5>
+<div class="para" id="p-1967"><span class="process-math">\(W=\{f(x)\in P_2 \colon xf'(x)=f(x)\)</span></div></article>
 </div>
 </div>
 <div class="exercisegroup" id="exercisegroup-17">
 <h4 class="heading"><span class="title">Exercise Group.</span></h4>
-<div class="introduction" id="introduction-44"><div class="para" id="p-1358">Determine whether the subset <span class="process-math">\(W\)</span> of <span class="process-math">\(C(\R)\)</span> described is a subspace. Justify your answer either with a proof or explicit counterexample.</div></div>
+<div class="introduction" id="introduction-44"><div class="para" id="p-1968">Determine whether the subset <span class="process-math">\(W\)</span> of <span class="process-math">\(C(\R)\)</span> described is a subspace. Justify your answer either with a proof or explicit counterexample.</div></div>
 <div class="exercisegroup-exercises">
 <article class="exercise exercise-like" id="exercise-190"><h5 class="heading"><span class="codenumber">11<span class="period">.</span></span></h5>
-<div class="para" id="p-1359"><span class="process-math">\(W=\{f\in C(\R)\colon f(4)=0\} \)</span></div></article><article class="exercise exercise-like" id="exercise-191"><h5 class="heading"><span class="codenumber">12<span class="period">.</span></span></h5>
-<div class="para" id="p-1360"><span class="process-math">\(W=\{f\in C(\R)\colon f(0)=4\} \)</span></div></article><article class="exercise exercise-like" id="exercise-192"><h5 class="heading"><span class="codenumber">13<span class="period">.</span></span></h5>
-<div class="para" id="p-1361"><span class="process-math">\(W=\{f\in C(\R)\colon f(x)=f(-x)\} \)</span></div></article><article class="exercise exercise-like" id="exercise-193"><h5 class="heading"><span class="codenumber">14<span class="period">.</span></span></h5>
-<div class="para" id="p-1362"><span class="process-math">\(W=\{f\in C(\R)\colon f(x+\pi)=f(x)\} \)</span></div></article><article class="exercise exercise-like" id="exercise-194"><h5 class="heading"><span class="codenumber">15<span class="period">.</span></span></h5>
-<div class="para" id="p-1363"><span class="process-math">\(W=\{f\in C(\R)\colon f\in P \text{ and } \deg f=5\}. \)</span></div></article>
+<div class="para" id="p-1969"><span class="process-math">\(W=\{f\in C(\R)\colon f(4)=0\} \)</span></div></article><article class="exercise exercise-like" id="exercise-191"><h5 class="heading"><span class="codenumber">12<span class="period">.</span></span></h5>
+<div class="para" id="p-1970"><span class="process-math">\(W=\{f\in C(\R)\colon f(0)=4\} \)</span></div></article><article class="exercise exercise-like" id="exercise-192"><h5 class="heading"><span class="codenumber">13<span class="period">.</span></span></h5>
+<div class="para" id="p-1971"><span class="process-math">\(W=\{f\in C(\R)\colon f(x)=f(-x)\} \)</span></div></article><article class="exercise exercise-like" id="exercise-193"><h5 class="heading"><span class="codenumber">14<span class="period">.</span></span></h5>
+<div class="para" id="p-1972"><span class="process-math">\(W=\{f\in C(\R)\colon f(x+\pi)=f(x)\} \)</span></div></article><article class="exercise exercise-like" id="exercise-194"><h5 class="heading"><span class="codenumber">15<span class="period">.</span></span></h5>
+<div class="para" id="p-1973"><span class="process-math">\(W=\{f\in C(\R)\colon f\in P \text{ and } \deg f=5\}. \)</span></div></article>
 </div>
 </div>
 <div class="exercisegroup" id="exercisegroup-18">
 <h4 class="heading"><span class="title">Exercise Group.</span></h4>
-<div class="introduction" id="introduction-45"><div class="para" id="p-1364">For each given subset <span class="process-math">\(W\subseteq \R^n\text{:}\)</span> (a) show that <span class="process-math">\(W\)</span> is a subspace by identifying it with the set of solutions to a matrix equation, and (b) give a parametric description of <span class="process-math">\(W\text{.}\)</span>
+<div class="introduction" id="introduction-45"><div class="para" id="p-1974">For each given subset <span class="process-math">\(W\subseteq \R^n\text{:}\)</span> (a) show that <span class="process-math">\(W\)</span> is a subspace by identifying it with the set of solutions to a matrix equation, and (b) give a parametric description of <span class="process-math">\(W\text{.}\)</span>
 </div></div>
 <div class="exercisegroup-exercises">
 <article class="exercise exercise-like" id="exercise-195"><h5 class="heading"><span class="codenumber">16<span class="period">.</span></span></h5>
-<div class="para" id="p-1365"><span class="process-math">\(W=\{(x,y,z)\colon 2x+y-z=0\}\)</span></div></article><article class="exercise exercise-like" id="exercise-196"><h5 class="heading"><span class="codenumber">17<span class="period">.</span></span></h5>
-<div class="para" id="p-1366"><span class="process-math">\(W=\{(x_1,x_2,x_3,x_4)\colon x_1-x_4=x_2+x_3=x_1+x_2+x_3=0\}\subseteq \R^4\)</span></div></article><article class="exercise exercise-like" id="exercise-197"><h5 class="heading"><span class="codenumber">18<span class="period">.</span></span></h5>
-<div class="para" id="p-1367"><span class="process-math">\(W=\{(x,y)\colon x+3y=-x+2y=0\}\subseteq \R^2\)</span></div></article>
+<div class="para" id="p-1975"><span class="process-math">\(W=\{(x,y,z)\colon 2x+y-z=0\}\)</span></div></article><article class="exercise exercise-like" id="exercise-196"><h5 class="heading"><span class="codenumber">17<span class="period">.</span></span></h5>
+<div class="para" id="p-1976"><span class="process-math">\(W=\{(x_1,x_2,x_3,x_4)\colon x_1-x_4=x_2+x_3=x_1+x_2+x_3=0\}\subseteq \R^4\)</span></div></article><article class="exercise exercise-like" id="exercise-197"><h5 class="heading"><span class="codenumber">18<span class="period">.</span></span></h5>
+<div class="para" id="p-1977"><span class="process-math">\(W=\{(x,y)\colon x+3y=-x+2y=0\}\subseteq \R^2\)</span></div></article>
 </div>
 </div>
 <article class="exercise exercise-like" id="exercise-198"><h4 class="heading"><span class="codenumber">19<span class="period">.</span></span></h4>
-<div class="para" id="p-1368">Prove <a href="" class="xref" data-knowl="./knowl/th_subspace_intersection.html" title="Theorem 3.3.8: Intersection of subspaces">Theorem 3.3.8</a>.</div></article><article class="exercise exercise-like" id="ex_matrix_subspaces"><h4 class="heading"><span class="codenumber">20<span class="period">.</span></span></h4>
-<div class="para" id="p-1369">Prove (1)-(6) of <a href="" class="xref" data-knowl="./knowl/th_matrix_subspaces.html" title="Theorem 3.3.19">Theorem 3.3.19</a>.</div></article></section></section></div>
+<div class="para" id="p-1978">Prove <a href="" class="xref" data-knowl="./knowl/th_subspace_intersection.html" title="Theorem 3.3.8: Intersection of subspaces">Theorem 3.3.8</a>.</div></article><article class="exercise exercise-like" id="ex_matrix_subspaces"><h4 class="heading"><span class="codenumber">20<span class="period">.</span></span></h4>
+<div class="para" id="p-1979">Prove (1)-(6) of <a href="" class="xref" data-knowl="./knowl/th_matrix_subspaces.html" title="Theorem 3.3.19: Matrix subspaces">Theorem 3.3.19</a>.</div></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="s_transformation.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="s_nullspace_image.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>

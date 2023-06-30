@@ -12,8 +12,18 @@
 </head>
 <body class="ignore-math">
 <article class="li"><h5 class="heading">
-<span class="type">Item</span><span class="period">.</span>
+<span class="type">Item</span><span class="space"> </span><span class="codenumber">2</span><span class="period">.</span>
 </h5>
-<div class="para">If you can find elements <span class="process-math">\(x_1, x_2, \dots, x_t\in X\)</span> so that the resulting homogeneous system in the unknowns <span class="process-math">\(c_j\)</span> has the unique solution <span class="process-math">\(c_1=c_2=\dots=c_n=0\text{,}\)</span> then we conclude that <span class="process-math">\(S\)</span> is linearly independent.</div></article><span class="incontext"><a href="s_span_independence.html#li-465" class="internal">in-context</a></span>
+<div class="para logical">
+<div class="para">Suppose <span class="process-math">\(\boldv_1, \boldv_2\in \NS T\text{.}\)</span> Given any <span class="process-math">\(c,d\in \R\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_trans_props.html">
+\begin{align*}
+T(c\boldv_1+d\boldv_2) \amp=cT(\boldv_1)+dT(\boldv_2) \amp (T \text{ is linear, } \knowl{./knowl/th_trans_props.html}{\text{Theorem 2.2.11}})\\
+\amp=c\boldzero_W+d\boldzero_W \amp (\boldv_1, \boldv_2\in \NS T) \\
+\amp = \boldzero_W\text{.}
+\end{align*}
+</div>
+<div class="para">This shows that <span class="process-math">\(c\boldv_1+d\boldv_2\in \NS T\text{,}\)</span> completing our proof.</div>
+</div></article><span class="incontext"><a href="s_nullspace_image.html#li-465" class="internal">in-context</a></span>
 </body>
 </html>

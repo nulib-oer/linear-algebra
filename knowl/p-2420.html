@@ -13,15 +13,22 @@
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
 <div class="para logical">
-<div class="para">Consider the vector space <span class="process-math">\(P_1\)</span> with inner product <span class="process-math">\(\langle p(x), q(x)\rangle=p(-1)q(-1)+p(1)q(1)\text{.}\)</span> The ordered bases</div>
-<div class="displaymath process-math">
+<div class="para">Let <span class="process-math">\(B=\{\bolde_1, \bolde_2, \dots, \bolde_n\}\)</span> be the standard basis of <span class="process-math">\(\R^n\text{,}\)</span> and let <span class="process-math">\(A\)</span> be the <span class="process-math">\(m\times n\)</span> matrix defined as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_matrix_transform_i.html ./knowl/th_bases_transformations.html ./knowl/d_matrix_transform.html ./knowl/th_column_method.html">
 \begin{equation*}
-B=\left(p_1(x)=\frac{1}{\sqrt{2}}x,p_2(x)=\frac{1}{\sqrt{2}}\right), B'=\left(q_1(x)=\frac{1}{2}(x-1), q_2(x)=\frac{1}{2}(x+1)\right)
+A=\begin{bmatrix}\vert\amp \vert\amp  \amp \vert \\ T(\bolde_1)\amp  T(\bolde_2)\amp \cdots \amp T(\bolde_n)\\ \vert\amp \vert\amp  \amp \vert \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<div class="para">are both orthonormal with respect to this inner product. Compute <span class="process-math">\(\underset{B\rightarrow B'}{P}\)</span> and <span class="process-math">\(\underset{B'\rightarrow B}{P}\text{.}\)</span>
+<div class="para">In other words, the <span class="process-math">\(j\)</span>-th column of <span class="process-math">\(A\)</span> is <span class="process-math">\(T(\bolde_j)\text{,}\)</span> considered as an <span class="process-math">\(m\times 1\)</span> column vector. The corresponding matrix transformation <span class="process-math">\(T_A\colon \R^n\rightarrow \R^m\)</span> is linear by <a href="" class="xref" data-knowl="./knowl/th_matrix_transform_i.html" title="Theorem 3.2.9: Matrix transformations I">Theorem 3.2.9</a>. Since <span class="process-math">\(T\)</span> is linear by assumption, <a href="" class="xref" data-knowl="./knowl/th_bases_transformations.html" title="Theorem 3.6.13: Bases and linear transformations">Theorem 3.6.13</a> applies: to show <span class="process-math">\(T=T_A\)</span> we need only show that <span class="process-math">\(T(\bolde_j)=T_A(\bolde_j)\)</span> for all <span class="process-math">\(1\leq j\leq n\text{.}\)</span> We have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_matrix_transform_i.html ./knowl/th_bases_transformations.html ./knowl/d_matrix_transform.html ./knowl/th_column_method.html">
+\begin{align*}
+T_A(\bolde_j) \amp =A\bolde_j  \amp (\knowl{./knowl/d_matrix_transform.html}{\text{Definition 3.2.8}})\\
+\amp=(j\text{-th column of } A) \amp (\knowl{./knowl/th_column_method.html}{\text{Theorem 2.1.24}}) \\
+\amp = T(\bolde_j) \amp (\text{def. of } A)\text{.}
+\end{align*}
 </div>
+<div class="para">Thus <span class="process-math">\(T=T_A\text{,}\)</span> as claimed.</div>
 </div>
-<span class="incontext"><a href="s_changeofbasis.html#p-2420" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_basis.html#p-2420" class="internal">in-context</a></span>
 </body>
 </html>

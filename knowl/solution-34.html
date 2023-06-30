@@ -12,22 +12,63 @@
 </head>
 <body class="ignore-math">
 <div class="solution solution-like">
-<h4 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">3.2.21.1</span><span class="period">.</span>
-</h4>
+<h5 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">2.4.7.1.1</span><span class="period">.</span>
+</h5>
 <div class="para logical">
-<div class="para">Let <span class="process-math">\(\boldv=(a_i)_{i=1}^\infty\)</span> and <span class="process-math">\(\boldw=(b_i)_{i=1}^\infty\)</span> be two infinite sequences in <span class="process-math">\(\R^\infty\text{.}\)</span> For any <span class="process-math">\(c,d\in\R\)</span> we have</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex_vs_infinitesequences.html ./knowl/ex_vs_infinitesequences.html">
-\begin{align*}
-T_\ell(c\boldv+d\boldw) \amp=T_\ell\left((ca_i+db_i)_{i=1}^\infty \right)\amp (\knowl{./knowl/ex_vs_infinitesequences.html}{\text{Definition 3.1.7}}) \\
-\amp= (ca_{i+1}+db_{i+1})_{i=1}^\infty \amp (\text{by def.})\\
-\amp=c(a_{i+1})_{i=1}^\infty+d(b_{i+1})_{i=1}^\infty \amp (\knowl{./knowl/ex_vs_infinitesequences.html}{\text{Definition 3.1.7}})\\
-\amp=cT_\ell(\boldv)+dT_\ell(\boldw)\amp (\text{by def.}) \text{.}
-\end{align*}
+<div class="para">
+<em class="alert">SOLUTION:</em> False. If</div>
+<div class="displaymath process-math">
+\begin{equation*}
+E_1 = \left[\begin{array}{ccc}
+0 \amp 1 \amp 0\cr
+1 \amp 0 \amp 0\cr
+0 \amp 0 \amp 1
+\end{array}\right] \quad \mbox{and} \quad E_2 = \left[\begin{array}{ccc}
+1 \amp 0 \amp 0\cr
+0 \amp 0 \amp 1\cr
+0 \amp 1 \amp 0
+\end{array}\right],
+\end{equation*}
 </div>
-<div class="para">This proves <span class="process-math">\(T_\ell\)</span> is a linear transformation.</div>
+<div class="para">then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+E_1 E_2 = \left[\begin{array}{ccc}
+0 \amp 1 \amp 0\cr
+1 \amp 0 \amp 0\cr
+0 \amp 0 \amp 1
+\end{array}\right] \left[\begin{array}{ccc}
+1 \amp 0 \amp 0\cr
+0 \amp 0 \amp 1\cr
+0 \amp 1 \amp 0
+\end{array}\right] = \left[\begin{array}{ccc}
+0 \amp 0 \amp 1\cr
+1 \amp 0 \amp 0\cr
+0 \amp 1 \amp 0
+\end{array}\right],
+\end{equation*}
+</div>
+<div class="para">but</div>
+<div class="displaymath process-math">
+\begin{equation*}
+E_2 E_1 = \left[\begin{array}{ccc}
+1 \amp 0 \amp 0\cr
+0 \amp 0 \amp 1\cr
+0 \amp 1 \amp 0
+\end{array}\right] \left[\begin{array}{ccc}
+0 \amp 1 \amp 0\cr
+1 \amp 0 \amp 0\cr
+0 \amp 0 \amp 1
+\end{array}\right] = \left[\begin{array}{ccc}
+0 \amp 1 \amp 0\cr
+0 \amp 0 \amp 1\cr
+1 \amp 0 \amp 0
+\end{array}\right] \neq E_1 E_2.
+\end{equation*}
 </div>
 </div>
-<span class="incontext"><a href="s_transformation.html#solution-34" class="internal">in-context</a></span>
+</div>
+<span class="incontext"><a href="s_invertibility_theorem.html#solution-34" class="internal">in-context</a></span>
 </body>
 </html>

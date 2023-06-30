@@ -12,33 +12,39 @@
 </head>
 <body class="ignore-math">
 <div class="solution solution-like">
-<h6 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">1.3.3.5.1</span><span class="period">.</span>
-</h6>
-<div class="para logical">
-<div class="para">We saw in <a href="" class="xref" data-knowl="./knowl/s_ge_equivsys.html" title="Exercise 1.2.3.7">Exercise 1.2.3.7</a> that the system is equivalent to a system <span class="process-math">\(L'\)</span> with augmented matrix</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/s_ge_equivsys.html">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">1.2.4.1</span><span class="period">.</span>
+</h4>
+<ol class="decimal">
+<li><div class="para logical">
+<div class="para">Below you find the matrix with leading ones boxed. This matrix fails to be in row echelon form (and hence also reduced row echelon form) for a variety of reasons: the zero rows are not all grouped at the bottom; the first row is nonzero, but does not have a leading one; the leading one of the fourth row is to the left of the leading one of the leading one in the row above it.</div>
+<div class="displaymath process-math">
 \begin{equation*}
-\begin{amatrix}[rrrr|r]\boxed{1}\amp 2\amp -1\amp -1\amp 3\\ 0\amp 0\amp \boxed{1}\amp 7\amp -1\\ 0\amp 0\amp 0\amp \boxed{1}\amp -\frac{3}{7} \end{amatrix}\text{.}
+\begin{bmatrix}0\amp 2\amp 1\amp 0\amp 0\\
+0\amp 0\amp 0\amp 0\amp 0\\
+0\amp \boxed{1}\amp 0\amp 0\amp 1\\
+\boxed{1}\amp 0\amp 0\amp 0\amp 0\\
+0\amp 0\amp 0\amp 0\amp 0
+\end{bmatrix}
 \end{equation*}
 </div>
-<div class="para">The row echelon matrix tells us that <span class="process-math">\(x_2=t\)</span> is the only free variable of <span class="process-math">\(L'\text{.}\)</span> Back substitution then yields the parametric equation description:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/s_ge_equivsys.html">
-\begin{align*}
-x_1\amp = \frac{32}{7}-2t\\
-x_2\amp = t\\
-x_3\amp = 2\\
-x_4\amp = -\frac{3}{7}\text{.}
-\end{align*}
-</div>
-<div class="para">Thus the set of solutions is</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/s_ge_equivsys.html">
+</div></li>
+<li><div class="para logical">
+<div class="para">Below you find the matrix with leading ones boxed. This matrix is in row echelon form: the zero rows (rows 4 and 5) are grouped at the bottom; each nonzero row has a leading one (boxed in the matrix below); the leading ones step strictly to the right as we move down the rows.</div>
+<div class="displaymath process-math">
 \begin{equation*}
-\left\{ \left(\frac{32}{7}-2t, t, 2, -\frac{3}{7}\right)\colon t\in \R\right\}\text{.}
+\begin{bmatrix}\boxed{1}\amp 0\amp 0\amp -3\amp -7\\
+0\amp 0\amp \boxed{1}\amp 2\amp 0\\
+0\amp 0\amp 0\amp 0\amp \boxed{1}\\
+0\amp 0\amp 0\amp 0\amp 0\\
+0\amp 0\amp 0\amp 0\amp 0
+\end{bmatrix}
 \end{equation*}
 </div>
+<div class="para">The matrix is <em class="emphasis">not</em> in reduced row echelon form, as the last column contains a leading one in its third row, and a nonzero entry in its first row.</div>
+</div></li>
+</ol>
 </div>
-</div>
-<span class="incontext"><a href="s_solving.html#solution-17" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_ge.html#solution-17" class="internal">in-context</a></span>
 </body>
 </html>

@@ -11,19 +11,22 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h6 class="heading"><span class="type">Paragraph</span></h6>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
 <div class="para logical">
-<div class="para">Matrices <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> below both have characteristic polynomial <span class="process-math">\(p(t)=t^3-3t+2\text{.}\)</span> For each matrix compute a basis of <span class="process-math">\(W_\lambda\)</span> for each eigenvalue <span class="process-math">\(\lambda\text{.}\)</span>
+<div class="para">Suppose <span class="process-math">\(a_kT(\boldv_k)+a_{k+1}T(\boldv_{k+1})+\cdots +a_nT(\boldv_n)=\boldzero\text{.}\)</span> Then the vector <span class="process-math">\(\boldv=a_k\boldv_k+a_{k+1}\boldv_{k+1}+\cdots +a_n\boldv_n\)</span> satisfies <span class="process-math">\(T(\boldv)=\boldzero\)</span> (using linearity of <span class="process-math">\(T\)</span>), and hence <span class="process-math">\(\boldv\in \NS T\text{.}\)</span> Then, using the fact that <span class="process-math">\(B'\)</span> is a basis of <span class="process-math">\(\NS T\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+b_1\boldv_1+b_2\boldv_2+\cdots +\boldv_k=\boldv=a_k\boldv_k+a_{k+1}\boldv_{k+1}+\cdots +a_n\boldv_n,
+\end{equation*}
 </div>
-<ol class="lower-alpha">
-<li><div class="para"><span class="process-math">\(\displaystyle A=\begin{amatrix}[rrr]
--5\amp 0\amp 3\\ -6\amp 1\amp 3\\ -6\amp 0\amp 4
-\end{amatrix}\)</span></div></li>
-<li><div class="para"><span class="process-math">\(\displaystyle B=\begin{amatrix}[rrr]
--2\amp -3\amp 3\\ -3\amp -3\amp 4\\ -3\amp -4\amp 5
-\end{amatrix}\)</span></div></li>
-</ol>
+<div class="para">and hence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+b_1\boldv_1+b_2\boldv_2+\cdots +\boldv_k-a_k\boldv_k-a_{k+1}\boldv_{k+1}-\cdots -a_n\boldv_n=\boldzero.
+\end{equation*}
 </div>
-<span class="incontext"><a href="s_eigenvectors.html#p-2630" class="internal">in-context</a></span>
+<div class="para">Since the set <span class="process-math">\(B\)</span> is linearly independent, we conclude that <span class="process-math">\(b_i=a_j=0\)</span> for all <span class="process-math">\(1\leq i\leq k\)</span> and <span class="process-math">\(k+1\leq j\leq n\text{.}\)</span> In particular, <span class="process-math">\(a_{k+1}=a_{k+2}=\cdots=a_n=0\text{,}\)</span> as desired.</div>
+</div>
+<span class="incontext"><a href="s_rank_nullity.html#p-2630" class="internal">in-context</a></span>
 </body>
 </html>

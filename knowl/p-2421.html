@@ -11,37 +11,9 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para logical">
-<div class="para">Since <span class="process-math">\(B'\)</span> is orthonormal, we use  <a href="" class="xref" data-knowl="./knowl/th_coordinates_orthogonal.html" title="Theorem 5.1.9: Coordinate vectors for orthogonal bases">Theorem 5.1.9</a> to compute</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_coordinates_orthogonal.html ./knowl/th_changebasis_orthonormal.html">
-\begin{align*}
-[p_1(x)]_{B'} \amp = \left(\langle p_1(x),q_1(x)\rangle, \langle p_1(x),q_2(x)\rangle\right)\\
-\amp =(p_1(-1)q_1(-1)+p_1(1)q_2(1),p_1(1)q_1(1)+p_1(1)q_2(1))=\frac{1}{\sqrt{2}}(1,1)\\
-[p_2(x)]_{B'} \amp = \left(\langle p_2(x),q_1(x)\rangle, \langle p_1(x),q_2(x)\rangle\right)\\
-\amp =(p_2(-1)q_1(-1)+p_2(1)q_2(1),p_2(1)q_1(1)+p_2(1)q_2(1))=\frac{1}{\sqrt{2}}(-1,1)\text{.}
-\end{align*}
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<div class="para">Besides rounding out our theoretical discussion of linear transformations from <span class="process-math">\(\R^n\)</span> to <span class="process-math">\(\R^m\text{,}\)</span> computationally <a href="" class="xref" data-knowl="./knowl/cor_matrix_transformations.html" title="Corollary 3.6.16: Matrix transformations">Corollary 3.6.16</a> provides a recipe for computing a “matrix formula” for a linear transformation <span class="process-math">\(T\colon \R^n\colon \rightarrow \R^m\text{.}\)</span> In other words, it tells us how to build the <span class="process-math">\(A\text{,}\)</span> column by column, such that <span class="process-math">\(T\boldx=A\boldx\)</span> for all <span class="process-math">\(\boldx\in R^n\text{.}\)</span> For reasons that will be made more clear in <a href="s_matrixreps.html" class="internal" title="Section 5.2: Matrix representations of linear transformations">Section 5.2</a>, we will call <span class="process-math">\(A\)</span> the <em class="emphasis">standard matrix</em> of <span class="process-math">\(T\text{.}\)</span>
 </div>
-<div class="para">Thus</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_coordinates_orthogonal.html ./knowl/th_changebasis_orthonormal.html">
-\begin{equation*}
-\underset{B\rightarrow B'}{P}=\frac{1}{\sqrt{2}}\begin{amatrix}[rr]
-1\amp -1\\
-1\amp 1
-\end{amatrix}
-\end{equation*}
-</div>
-<div class="para">and by <a href="" class="xref" data-knowl="./knowl/th_changebasis_orthonormal.html" title="Theorem 5.3.17: Orthonormal change of basis">Theorem 5.3.17</a>
-</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_coordinates_orthogonal.html ./knowl/th_changebasis_orthonormal.html">
-\begin{equation*}
-\underset{B'\rightarrow B}{P}=(\underset{B\rightarrow B'}{P})^T=\frac{1}{\sqrt{2}}\begin{amatrix}[rr]
-1\amp 1\\
--1\amp 1
-\end{amatrix}\text{.}
-\end{equation*}
-</div>
-</div>
-<span class="incontext"><a href="s_changeofbasis.html#p-2421" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_basis.html#p-2421" class="internal">in-context</a></span>
 </body>
 </html>

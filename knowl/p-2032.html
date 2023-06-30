@@ -13,15 +13,21 @@
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
 <div class="para logical">
-<div class="para">Take <span class="process-math">\(C[a,b]\)</span> with the standard inner product <span class="process-math">\(\langle f, g \rangle=\int_a^b f(x)g(x) \ dx\text{.}\)</span> Here the distance between two functions is defined as</div>
-<div class="displaymath process-math">
+<div class="para">Fix an <span class="process-math">\(m\times n\)</span> matrix <span class="process-math">\(A\)</span> and column vector <span class="process-math">\(\boldb\in \R^m\text{.}\)</span> If <span class="process-math">\(\boldx_p\)</span> is a solution to</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_nonhomo_eq.html">
+\begin{equation}
+A\boldx=\boldb\text{,}\tag{3.4.4}
+\end{equation}
+</div>
+<div class="para">then the set <span class="process-math">\(X_\boldb\)</span> of all solutions to <a href="" class="xref" data-knowl="./knowl/eq_nonhomo_eq.html" title="Equation 3.4.4">(3.4.4)</a> is described as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_nonhomo_eq.html">
 \begin{equation*}
-\norm{f-g}=\sqrt{\int_a^b (f(x)-g(x))^2 \ dx}\text{,}
+X=\{\boldx_p+\boldu\colon \boldu\in \NS A\}\text{.}
 \end{equation*}
 </div>
-<div class="para">which we can think of as an aggregate measure of the difference of values <span class="process-math">\(f(x)-g(x)\)</span> for all <span class="process-math">\(x\in [a,b]\text{.}\)</span> Thus <span class="process-math">\(d(f,g)\)</span> is a global measure of the similarity between <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> that takes into account their values over the entire interval <span class="process-math">\([a,b]\text{.}\)</span>
+<div class="para">In other words, <span class="process-math">\(X_\boldb\)</span> is the translate of <span class="process-math">\(\NS A\)</span> by the vector <span class="process-math">\(\boldx_p\text{.}\)</span>
 </div>
 </div>
-<span class="incontext"><a href="s_innerproducts.html#p-2032" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_nullspace_image.html#p-2032" class="internal">in-context</a></span>
 </body>
 </html>

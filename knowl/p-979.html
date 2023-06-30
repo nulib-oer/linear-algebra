@@ -11,26 +11,8 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para logical">
-<div class="para">When <span class="process-math">\(i\ne j\)</span> we have</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/d_adjoint.html ./knowl/th_det_zero_repeated_row.html">
-\begin{align*}
-[A\, \adj A]_{ij} \amp =\sum_{k=1}^na_{ik}[\adj A]_{kj}  \\
-\amp =\sum_{k=1}^n a_{ik}((-1)^{k+j}M_{jk}) \amp (\knowl{./knowl/d_adjoint.html}{\text{Definition 2.5.15}} )\\
-\amp =\sum_{k=1}^n(-1)^{k+j}a_{ik}M_{jk} \\
-\amp =\det C \text{,}
-\end{align*}
-</div>
-<div class="para">where <span class="process-math">\(C\)</span> is the matrix obtained by replacing the <span class="process-math">\(j\)</span>-th row of <span class="process-math">\(A\)</span> with a copy of its <span class="process-math">\(i\)</span>-th row. Since <span class="process-math">\(C\)</span> has two identical rows <a href="" class="xref" data-knowl="./knowl/th_det_zero_repeated_row.html" title="Theorem 2.5.14: Zero rows/columns, swapping rows/columns, identical rows/columns">Theorem 2.5.14</a> implies</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/d_adjoint.html ./knowl/th_det_zero_repeated_row.html">
-\begin{equation*}
-[A\, \adj A]_{ij}=\det C=0\text{,}
-\end{equation*}
-</div>
-<div class="para">as desired. Once again, a similar argument using expansion along a column shows that <span class="process-math">\([\adj A\, A]_{ij}=0\text{.}\)</span>
-</div>
-</div>
-<span class="incontext"><a href="s_det.html#p-979" class="internal">in-context</a></span>
+<h3 class="heading"><span class="type">Paragraph</span></h3>
+<div class="para">The example in our warning above is but one instance of the general failure of the principle of multiplicative cancellation in matrix algebra. This in turn is a consequence of the following theorem, which identifies the two crucial places where matrix algebra differs significantly from real number algebra.</div>
+<span class="incontext"><a href="s_algebraic.html#p-979" class="internal">in-context</a></span>
 </body>
 </html>

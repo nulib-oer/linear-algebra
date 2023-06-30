@@ -13,21 +13,16 @@
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
 <div class="para logical">
-<div class="para">Consider again the matrix equation <span class="process-math">\(A\boldx=\boldy\)</span> from <a href="" class="xref" data-knowl="./knowl/eg_least-squares.html" title="Example 4.3.19: Best fitting line">Example 4.3.19</a>. According to <a href="" class="xref" data-knowl="./knowl/th_leastsquares.html" title="Theorem 4.3.22: Least-squares matrix formula">Theorem 4.3.22</a> the least-squares solution can be found by solving the equation <span class="process-math">\(A^TA\boldx=A^T\boldy\)</span> for <span class="process-math">\(\boldx\text{.}\)</span> We compute</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/eg_least-squares.html ./knowl/th_leastsquares.html">
-\begin{align*}
-A^TA\amp=\begin{amatrix}[rr]14\amp 0\\ 0\amp 3  \end{amatrix} \amp A^T\boldy\amp =\begin{amatrix}[r] 5\\ 6 \end{amatrix}
-\end{align*}
+<div class="para">Let <span class="process-math">\(S\)</span> be a subset of the vector space <span class="process-math">\(V\text{.}\)</span>
 </div>
-<div class="para">and solve</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/eg_least-squares.html ./knowl/th_leastsquares.html">
-\begin{equation*}
-\begin{amatrix}[rr]14\amp 0\\ 0\amp 3  \end{amatrix}\boldx=\begin{amatrix}[r] 5\\ 6 \end{amatrix}\iff
-\boldx=(5/14, 2),
-\end{equation*}
+<ol class="decimal">
+<li><div class="para">The set <span class="process-math">\(\Span S\)</span> is a subspace of <span class="process-math">\(V\text{.}\)</span>
+</div></li>
+<li><div class="para">If <span class="process-math">\(W\)</span> is any subspace containing <span class="process-math">\(S\text{,}\)</span> then <span class="process-math">\(\Span S\subseteq W\text{.}\)</span>
+</div></li>
+</ol>
+<div class="para">Taken together, (1) and (2) imply that <span class="process-math">\(\Span S\)</span> is the <em class="emphasis">smallest subspace of <span class="process-math">\(V\)</span> containing <span class="process-math">\(S\)</span></em>.</div>
 </div>
-<div class="para">just as before.</div>
-</div>
-<span class="incontext"><a href="s_orthogonal_projection.html#p-2191" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_span_independence.html#p-2191" class="internal">in-context</a></span>
 </body>
 </html>

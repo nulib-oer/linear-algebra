@@ -761,14 +761,14 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="s_vectorspace"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">3.1</span> <span class="title">Real vector spaces</span>
 </h2>
-<section class="introduction" id="introduction-36"><div class="para" id="p-1060">When discussing matrix algebra we saw that operations from real number arithmetic have natural analogues in the world of matrices. Furthermore, the act of comparing these two different algebraic systems brought to light many interesting features of matrix algebra.</div> <div class="para" id="p-1061">Why stop at matrices? Are there other interesting algebraic systems that admit analogous operations? If so, to what degree do these systems agree with or differ from real number or matrix algebra?</div> <div class="para" id="p-1062">A common technique in mathematics for such investigations is to distill the important properties of the motivating operations into a list of <em class="emphasis">axioms</em>, and then to prove statements that apply to any system that satisfies these axioms.</div> <div class="para" id="p-1063">We now embark on just such an axiomatic approach. The notion of a <em class="emphasis">vector space</em> arises from focusing on just two operations from matrix algebra: matrix addition and matrix scalar multiplication. As we saw in <a href="s_algebraic.html" class="internal" title="Section 2.2: Matrix algebra">Section 2.2</a>, these two operations satisfy many useful properties: e.g., commutativity, associativity, distributivity, etc.. Whereas earlier we showed directly that matrix algebra satisfies these properties, now we will come at things the other way: we record these various properties as a list of axioms, and declare <em class="emphasis">any</em> system that satisfies these axioms to be a vector space.</div> <div class="para" id="p-1064">Once we’ve established the definition of a vector space, when we go on to investigate the properties enjoyed by vector spaces we make no assumptions beyond the fact that the basic axioms are satisfied. This approach comes off as somewhat abstract, but has the advantage that our conclusions now apply to any vector space you can think of. You don’t have to reinvent the wheel each time you stumble across a new vector space.</div></section><section class="subsection" id="ss_vector_space"><h3 class="heading hide-type">
+<section class="introduction" id="introduction-36"><div class="para" id="p-1578">When discussing matrix algebra we saw that operations from real number arithmetic have natural analogues in the world of matrices. Furthermore, the act of comparing these two different algebraic systems brought to light many interesting features of matrix algebra.</div> <div class="para" id="p-1579">Why stop at matrices? Are there other interesting algebraic systems that admit analogous operations? If so, to what degree do these systems agree with or differ from real number or matrix algebra?</div> <div class="para" id="p-1580">A common technique in mathematics for such investigations is to distill the important properties of the motivating operations into a list of <em class="emphasis">axioms</em>, and then to prove statements that apply to any system that satisfies these axioms.</div> <div class="para" id="p-1581">We now embark on just such an axiomatic approach. The notion of a <em class="emphasis">vector space</em> arises from focusing on just two operations from matrix algebra: matrix addition and matrix scalar multiplication. As we saw in <a href="s_algebraic.html" class="internal" title="Section 2.2: Matrix algebra">Section 2.2</a>, these two operations satisfy many useful properties: e.g., commutativity, associativity, distributivity, etc.. Whereas earlier we showed directly that matrix algebra satisfies these properties, now we will come at things the other way: we record these various properties as a list of axioms, and declare <em class="emphasis">any</em> system that satisfies these axioms to be a vector space.</div> <div class="para" id="p-1582">Once we’ve established the definition of a vector space, when we go on to investigate the properties enjoyed by vector spaces we make no assumptions beyond the fact that the basic axioms are satisfied. This approach comes off as somewhat abstract, but has the advantage that our conclusions now apply to any vector space you can think of. You don’t have to reinvent the wheel each time you stumble across a new vector space.</div></section><section class="subsection" id="ss_vector_space"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.1.1</span> <span class="title">Definition of a vector space</span>
 </h3>
 <article class="definition definition-like" id="d_vector_space"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Vector space.</span>
-</h4>  <div class="para" id="p-1065">A <dfn class="terminology">(real) vector space</dfn> is a set <span class="process-math">\(V\)</span> together with two operations, <dfn class="terminology">scalar multiplication</dfn> and <dfn class="terminology">vector addition</dfn>, described in detail below.</div> <dl class="description-list">
-<dt id="li-309">Scalar multiplication</dt>
-<dd><div class="para logical" id="p-1066">
+</h4>  <div class="para" id="p-1583">A <dfn class="terminology">(real) vector space</dfn> is a set <span class="process-math">\(V\)</span> together with two operations, <dfn class="terminology">scalar multiplication</dfn> and <dfn class="terminology">vector addition</dfn>, described in detail below.</div> <dl class="description-list">
+<dt id="li-372">Scalar multiplication</dt>
+<dd><div class="para logical" id="p-1584">
 <div class="para">This operation takes as input any real number <span class="process-math">\(c\in R\)</span> and any element <span class="process-math">\(\boldv\in V\text{,}\)</span> and outputs another element of <span class="process-math">\(V\text{,}\)</span> denoted <span class="process-math">\(c\boldv\text{.}\)</span> We describe this operation using function notation as follows:</div>
 <div class="displaymath process-math" id="md-103">
 \begin{align*}
@@ -777,8 +777,8 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 \end{align*}
 </div>
 </div></dd>
-<dt id="li-310">Vector addition</dt>
-<dd><div class="para logical" id="p-1067">
+<dt id="li-373">Vector addition</dt>
+<dd><div class="para logical" id="p-1585">
 <div class="para">This operation takes as input any pair of elements <span class="process-math">\(\boldv, \boldw\in V\)</span> and returns another element of <span class="process-math">\(V\text{,}\)</span> denoted <span class="process-math">\(\boldv+\boldw\text{.}\)</span>  In function notation:</div>
 <div class="displaymath process-math" id="md-104">
 \begin{align*}
@@ -787,9 +787,9 @@ V\times V\amp \rightarrow  V\\
 \end{align*}
 </div>
 </div></dd>
-</dl> <div class="para" id="p-1068">Furthermore, these two operations must satisfy the following list of axioms.</div> <ol class="lower-roman">
-<li id="li-311">
-<span class="heading"><span class="title">Vector addition is commutative.</span></span><div class="para logical" id="p-1069">
+</dl> <div class="para" id="p-1586">Furthermore, these two operations must satisfy the following list of axioms.</div> <ol class="lower-roman">
+<li id="li-374">
+<span class="heading"><span class="title">Vector addition is commutative.</span></span><div class="para logical" id="p-1587">
 <div class="para">For all <span class="process-math">\(\boldv, \boldw\in V\text{,}\)</span> we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -798,8 +798,8 @@ V\times V\amp \rightarrow  V\\
 </div>
 </div>
 </li>
-<li id="li-312">
-<span class="heading"><span class="title">Vector addition is associative.</span></span><div class="para logical" id="p-1070">
+<li id="li-375">
+<span class="heading"><span class="title">Vector addition is associative.</span></span><div class="para logical" id="p-1588">
 <div class="para">For all <span class="process-math">\(\boldu, \boldv, \boldw\in V\text{,}\)</span> we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -808,8 +808,8 @@ V\times V\amp \rightarrow  V\\
 </div>
 </div>
 </li>
-<li id="li-313">
-<span class="heading"><span class="title">Existence of additive identity.</span></span><div class="para logical" id="p-1071">
+<li id="li-376">
+<span class="heading"><span class="title">Existence of additive identity.</span></span><div class="para logical" id="p-1589">
 <div class="para">There is an element <span class="process-math">\(\boldzero\in V\)</span> such that for all <span class="process-math">\(\boldv\in V\text{,}\)</span> we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -819,8 +819,8 @@ V\times V\amp \rightarrow  V\\
 <div class="para">The element <span class="process-math">\(\boldzero\)</span> is called the <dfn class="terminology">zero vector of <span class="process-math">\(V\)</span></dfn>.</div>
 </div>
 </li>
-<li id="li-314">
-<span class="heading"><span class="title">Existence of additive inverses.</span></span><div class="para logical" id="p-1072">
+<li id="li-377">
+<span class="heading"><span class="title">Existence of additive inverses.</span></span><div class="para logical" id="p-1590">
 <div class="para">For all <span class="process-math">\(\boldv\in V\text{,}\)</span> there is another element <span class="process-math">\(-\boldv\)</span> satisfying</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -830,8 +830,8 @@ V\times V\amp \rightarrow  V\\
 <div class="para">Given <span class="process-math">\(\boldv\in V\text{,}\)</span> the element <span class="process-math">\(-\boldv\)</span> is called the <dfn class="terminology">vector inverse of <span class="process-math">\(\boldv\)</span></dfn>.</div>
 </div>
 </li>
-<li id="li-315">
-<span class="heading"><span class="title">Distribution over vector addition.</span></span><div class="para logical" id="p-1073">
+<li id="li-378">
+<span class="heading"><span class="title">Distribution over vector addition.</span></span><div class="para logical" id="p-1591">
 <div class="para">For all <span class="process-math">\(c\in \R\)</span> and <span class="process-math">\(\boldv, \boldw\in V\text{,}\)</span> we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -840,8 +840,8 @@ c(\boldv+\boldw)=c\boldv+c\boldw\text{.}
 </div>
 </div>
 </li>
-<li id="li-316">
-<span class="heading"><span class="title">Distribution over scalar addition.</span></span><div class="para logical" id="p-1074">
+<li id="li-379">
+<span class="heading"><span class="title">Distribution over scalar addition.</span></span><div class="para logical" id="p-1592">
 <div class="para">For all <span class="process-math">\(c, d\in \R\)</span> and <span class="process-math">\(\boldv\in V\text{,}\)</span> we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -850,8 +850,8 @@ c(\boldv+\boldw)=c\boldv+c\boldw\text{.}
 </div>
 </div>
 </li>
-<li id="li-317">
-<span class="heading"><span class="title">Scalar multiplication is associative.</span></span><div class="para logical" id="p-1075">
+<li id="li-380">
+<span class="heading"><span class="title">Scalar multiplication is associative.</span></span><div class="para logical" id="p-1593">
 <div class="para">For all <span class="process-math">\(c,d\in \R\)</span> and all <span class="process-math">\(\boldv\in V\text{,}\)</span> we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -860,8 +860,8 @@ c(d\boldv)=(cd)\boldv\text{.}
 </div>
 </div>
 </li>
-<li id="li-318">
-<span class="heading"><span class="title">Scalar multiplicative identity.</span></span><div class="para logical" id="p-1076">
+<li id="li-381">
+<span class="heading"><span class="title">Scalar multiplicative identity.</span></span><div class="para logical" id="p-1594">
 <div class="para">For all <span class="process-math">\(\boldv\in V\text{,}\)</span> we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -870,45 +870,45 @@ c(d\boldv)=(cd)\boldv\text{.}
 </div>
 </div>
 </li>
-</ol> <div class="para" id="p-1077">We call the elements of a vector space <dfn class="terminology">vectors</dfn>.</div></article><article class="remark remark-like" id="rm_vectorspace_real"><h4 class="heading">
+</ol> <div class="para" id="p-1595">We call the elements of a vector space <dfn class="terminology">vectors</dfn>.</div></article><article class="remark remark-like" id="rm_vectorspace_real"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.1.2</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-1078">What’s the deal with the ‘real’ modifier? The reals are one example of a type of number system called a <em class="emphasis">field</em>. Other examples of fields are given by the complex numbers (<span class="process-math">\(\C\)</span>) and the rational numbers (<span class="process-math">\(\Q\)</span>). If <span class="process-math">\(K\)</span> is a field, and if we replace each mention of <span class="process-math">\(\R\)</span> in <a href="" class="xref" data-knowl="./knowl/d_vector_space.html" title="Definition 3.1.1: Vector space">Definition 3.1.1</a> with a mention of <span class="process-math">\(K\text{,}\)</span> then we are left with the definition of a vector space over <span class="process-math">\(K\text{.}\)</span> Setting <span class="process-math">\(K=\C\text{,}\)</span> for example, we get the definition of a complex vector space.</div> <div class="para" id="p-1079">In our treatment of linear algebra we will largely focus on real vector spaces, and as such will often drop this modifier: hence the parentheses in the definition.</div></article></section><section class="subsection" id="ss_vectorspace_examples"><h3 class="heading hide-type">
+<div class="para" id="p-1596">What’s the deal with the ‘real’ modifier? The reals are one example of a type of number system called a <em class="emphasis">field</em>. Other examples of fields are given by the complex numbers (<span class="process-math">\(\C\)</span>) and the rational numbers (<span class="process-math">\(\Q\)</span>). If <span class="process-math">\(K\)</span> is a field, and if we replace each mention of <span class="process-math">\(\R\)</span> in <a href="" class="xref" data-knowl="./knowl/d_vector_space.html" title="Definition 3.1.1: Vector space">Definition 3.1.1</a> with a mention of <span class="process-math">\(K\text{,}\)</span> then we are left with the definition of a vector space over <span class="process-math">\(K\text{.}\)</span> Setting <span class="process-math">\(K=\C\text{,}\)</span> for example, we get the definition of a complex vector space.</div> <div class="para" id="p-1597">In our treatment of linear algebra we will largely focus on real vector spaces, and as such will often drop this modifier: hence the parentheses in the definition.</div></article></section><section class="subsection" id="ss_vectorspace_examples"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.1.2</span> <span class="title">Examples</span>
 </h3>
-<div class="para logical" id="p-1080">
+<div class="para logical" id="p-1598">
 <div class="para">When introducing a new vector space there are many details in <a href="" class="xref" data-knowl="./knowl/d_vector_space.html" title="Definition 3.1.1: Vector space">Definition 3.1.1</a> that must be verified. To help organize this task, follow this checklist:</div>
 <ol class="decimal">
-<li id="li-319"><div class="para" id="p-1081">Make explicit the underlying set <span class="process-math">\(V\)</span> of the vector space.</div></li>
-<li id="li-320"><div class="para" id="p-1082">Make explicit what the scalar multiplication and vector addition operations are.</div></li>
-<li id="li-321"><div class="para" id="p-1083">Identify an element of <span class="process-math">\(V\)</span> that serves as the zero vector and indicate the rule that assigns vector inverses to elements of <span class="process-math">\(V\text{.}\)</span>
+<li id="li-382"><div class="para" id="p-1599">Make explicit the underlying set <span class="process-math">\(V\)</span> of the vector space.</div></li>
+<li id="li-383"><div class="para" id="p-1600">Make explicit what the scalar multiplication and vector addition operations are.</div></li>
+<li id="li-384"><div class="para" id="p-1601">Identify an element of <span class="process-math">\(V\)</span> that serves as the zero vector and indicate the rule that assigns vector inverses to elements of <span class="process-math">\(V\text{.}\)</span>
 </div></li>
-<li id="li-322"><div class="para" id="p-1084">Show that the two vector operations and our choice of zero vector and vector inverses satisfy the axioms of <a href="" class="xref" data-knowl="./knowl/d_vector_space.html" title="Definition 3.1.1: Vector space">Definition 3.1.1</a>.</div></li>
+<li id="li-385"><div class="para" id="p-1602">Show that the two vector operations and our choice of zero vector and vector inverses satisfy the axioms of <a href="" class="xref" data-knowl="./knowl/d_vector_space.html" title="Definition 3.1.1: Vector space">Definition 3.1.1</a>.</div></li>
 </ol>
 <div class="para">Think of items (1)-(3) of our checklist as official declarations about the makeup of our vector space: “The underlying set shall be as stated”; “We declare the vector operations thusly”; “The zero vector shall be this element here, and vector inverses shall be assigned in this manner”. Item (4) is where we get down to the nitty gritty of showing that the our proposed vector space structure articulated in (1)-(3) does indeed satisfy all the necessary properties.</div>
 </div>
-<div class="para" id="p-1085">In each of the examples below we carefully lay out the details of items (1)-(3) while often leaving much of the work of item (4) to you. You will meet these vector spaces frequently throughout the rest of your life. Each time you do, it will be helpful for orientation purposes to mentally run through items (1)-(3). Ask yourself: What is the underlying set? What are vector operations? What acts as the zero vector, and how do I assign vector inverses?</div>
+<div class="para" id="p-1603">In each of the examples below we carefully lay out the details of items (1)-(3) while often leaving much of the work of item (4) to you. You will meet these vector spaces frequently throughout the rest of your life. Each time you do, it will be helpful for orientation purposes to mentally run through items (1)-(3). Ask yourself: What is the underlying set? What are vector operations? What acts as the zero vector, and how do I assign vector inverses?</div>
 <article class="definition definition-like" id="ex_vs_matrices"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">Vector space of <span class="process-math">\(m\times n\)</span> matrices.</span>
-</h4>  <article class="case" id="case-54"><h5 class="heading">Underlying set.</h5> <div class="para logical" id="p-1086">
+</h4>  <article class="case" id="case-54"><h5 class="heading">Underlying set.</h5> <div class="para logical" id="p-1604">
 <div class="para">The <dfn class="terminology">vector space of <span class="process-math">\(m\times n\)</span> matrices</dfn>, denoted <span class="process-math">\(M_{mn}\text{,}\)</span> is the set of all <span class="process-math">\(m\times n\)</span> matrices: i.e.,</div>
 <div class="displaymath process-math">
 \begin{equation*}
 M_{mn}=\left\{ A=[a_{ij}]_{m\times n}\colon a_{ij}\in \R\right\}\text{.}
 \end{equation*}
 </div>
-</div></article> <article class="case" id="case-55"><h5 class="heading">Vector operations.</h5> <div class="para" id="p-1087">Scalar multiplication and vector addition in <span class="process-math">\(M_{mn}\)</span> are defined as matrix scalar multiplication and matrix addition, respectively.</div></article> <article class="case" id="case-56"><h5 class="heading">Zero vector and vector inverses.</h5> <div class="para" id="p-1088">The zero vector of <span class="process-math">\(M_{mn}\)</span> is the <span class="process-math">\(m\times n\)</span> zero matrix: i.e., <span class="process-math">\(\boldzero=\boldzero_{m\times n}\text{.}\)</span>
-</div> <div class="para" id="p-1089">Given an element <span class="process-math">\(A=[a_{ij}]\in M_{mn}\text{,}\)</span> its vector inverse is the matrix additive inverse <span class="process-math">\(-A=[-a_{ij}]\text{.}\)</span>
-</div></article> <article class="case" id="case-57"><h5 class="heading">Verification of axioms.</h5> <div class="para" id="p-1090">We showed in <a href="" class="xref" data-knowl="./knowl/th_matrix_alg_props.html" title="Theorem 2.2.1: Properties of matrix addition, multiplication and scalar multiplication">Theorem 2.2.1</a> that matrix scalar multiplication and vector addition, satisfy axioms (i), (ii), (v)-(viii). <a href="" class="xref" data-knowl="./knowl/th_matrix_add_mult_ident.html" title="Theorem 2.2.4: Additive identities, additive inverses, and multiplicative identities">Theorem 2.2.4</a> implies that our choice of zero vector (<span class="process-math">\(\boldzero_{m\times n}\)</span>) and vector inverses (<span class="process-math">\(-A\)</span>) satisfies axioms (iii)-(iv).</div></article></article><article class="definition definition-like" id="ex_vs_ntuples"><h4 class="heading">
+</div></article> <article class="case" id="case-55"><h5 class="heading">Vector operations.</h5> <div class="para" id="p-1605">Scalar multiplication and vector addition in <span class="process-math">\(M_{mn}\)</span> are defined as matrix scalar multiplication and matrix addition, respectively.</div></article> <article class="case" id="case-56"><h5 class="heading">Zero vector and vector inverses.</h5> <div class="para" id="p-1606">The zero vector of <span class="process-math">\(M_{mn}\)</span> is the <span class="process-math">\(m\times n\)</span> zero matrix: i.e., <span class="process-math">\(\boldzero=\boldzero_{m\times n}\text{.}\)</span>
+</div> <div class="para" id="p-1607">Given an element <span class="process-math">\(A=[a_{ij}]\in M_{mn}\text{,}\)</span> its vector inverse is the matrix additive inverse <span class="process-math">\(-A=[-a_{ij}]\text{.}\)</span>
+</div></article> <article class="case" id="case-57"><h5 class="heading">Verification of axioms.</h5> <div class="para" id="p-1608">We showed in <a href="" class="xref" data-knowl="./knowl/th_matrix_alg_props.html" title="Theorem 2.2.1: Properties of matrix addition, multiplication and scalar multiplication">Theorem 2.2.1</a> that matrix scalar multiplication and vector addition, satisfy axioms (i), (ii), (v)-(viii). <a href="" class="xref" data-knowl="./knowl/th_matrix_add_mult_ident.html" title="Theorem 2.2.4: Additive identities, additive inverses, and multiplicative identities">Theorem 2.2.4</a> implies that our choice of zero vector (<span class="process-math">\(\boldzero_{m\times n}\)</span>) and vector inverses (<span class="process-math">\(-A\)</span>) satisfies axioms (iii)-(iv).</div></article></article><article class="definition definition-like" id="ex_vs_ntuples"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">Vector space of real <span class="process-math">\(n\)</span>-tuples.</span>
-</h4>  <article class="case" id="case-58"><h5 class="heading">Underlying set.</h5> <div class="para logical" id="p-1091">
+</h4>  <article class="case" id="case-58"><h5 class="heading">Underlying set.</h5> <div class="para logical" id="p-1609">
 <div class="para">The <dfn class="terminology">vector space of real <span class="process-math">\(n\)</span>-tuples</dfn>, denoted <span class="process-math">\(\R^n\text{,}\)</span> is the set of all real <span class="process-math">\(n\)</span>-tuples with real coefficients: i.e.,</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \R^n=\{ (a_1,a_2,\dots, a_n) \colon a_i\in \R \}\text{.}
 \end{equation*}
 </div>
-</div></article> <article class="case" id="case-59"><h5 class="heading">Vector operations.</h5> <div class="para" id="p-1092">The vector operations on <span class="process-math">\(n\)</span>-tuples are defined entry-wise.</div> <div class="para logical" id="p-1093">
+</div></article> <article class="case" id="case-59"><h5 class="heading">Vector operations.</h5> <div class="para" id="p-1610">The vector operations on <span class="process-math">\(n\)</span>-tuples are defined entry-wise.</div> <div class="para logical" id="p-1611">
 <div class="para">
 <em class="emphasis">Scalar multiplication</em>. Given <span class="process-math">\(c\in \R\)</span> and <span class="process-math">\(\boldv=(a_1,a_2,\dots, a_n)\in \R^n\text{,}\)</span> we define</div>
 <div class="displaymath process-math">
@@ -916,7 +916,7 @@ M_{mn}=\left\{ A=[a_{ij}]_{m\times n}\colon a_{ij}\in \R\right\}\text{.}
 c\boldv=(ca_1,ca_2,\dots, ca_n)\text{.}
 \end{equation*}
 </div>
-</div> <div class="para logical" id="p-1094">
+</div> <div class="para logical" id="p-1612">
 <div class="para">
 <em class="emphasis">Vector addition</em>. Given <span class="process-math">\(\boldv=(a_1,a_2,\dots, a_n)\)</span> and <span class="process-math">\(\boldw=(b_1,b_2,\dots, b_n)\text{,}\)</span> we define</div>
 <div class="displaymath process-math">
@@ -924,9 +924,9 @@ c\boldv=(ca_1,ca_2,\dots, ca_n)\text{.}
 \boldv+\boldw=(a_1+b_1, a_2+b_2,\dots, a_n+b_n)\text{.}
 \end{equation*}
 </div>
-</div></article> <article class="case" id="case-60"><h5 class="heading">Zero vector and vector inverses.</h5> <div class="para" id="p-1095">The zero vector <span class="process-math">\(\R^n\)</span> is the <span class="process-math">\(n\)</span>-tuple of all zeros: i.e., <span class="process-math">\(\boldzero=(0,0,\dots, 0)\text{.}\)</span>
-</div> <div class="para" id="p-1096">Given a vector <span class="process-math">\(\boldv=(a_1,a_2,\dots, a_n)\text{,}\)</span> we have <span class="process-math">\(-\boldv=(-a_1,-a_2,\dots, -a_n)\text{.}\)</span>
-</div></article> <article class="case" id="case-61"><h5 class="heading">Verification of axioms.</h5> <div class="para" id="p-1097">It is clear that structurally speaking <span class="process-math">\(\R^n\)</span> behaves exactly like <span class="process-math">\(M_{1n}\text{,}\)</span> the vector space of <span class="process-math">\(1\times n\)</span> row vectors: we have essentially just replaced brackets with parentheses. As such it follows from the previous example that <span class="process-math">\(\R^n\text{,}\)</span> along with the given operations, constitutes a vector space.</div></article></article><div class="para logical" id="p-1098">
+</div></article> <article class="case" id="case-60"><h5 class="heading">Zero vector and vector inverses.</h5> <div class="para" id="p-1613">The zero vector <span class="process-math">\(\R^n\)</span> is the <span class="process-math">\(n\)</span>-tuple of all zeros: i.e., <span class="process-math">\(\boldzero=(0,0,\dots, 0)\text{.}\)</span>
+</div> <div class="para" id="p-1614">Given a vector <span class="process-math">\(\boldv=(a_1,a_2,\dots, a_n)\text{,}\)</span> we have <span class="process-math">\(-\boldv=(-a_1,-a_2,\dots, -a_n)\text{.}\)</span>
+</div></article> <article class="case" id="case-61"><h5 class="heading">Verification of axioms.</h5> <div class="para" id="p-1615">It is clear that structurally speaking <span class="process-math">\(\R^n\)</span> behaves exactly like <span class="process-math">\(M_{1n}\text{,}\)</span> the vector space of <span class="process-math">\(1\times n\)</span> row vectors: we have essentially just replaced brackets with parentheses. As such it follows from the previous example that <span class="process-math">\(\R^n\text{,}\)</span> along with the given operations, constitutes a vector space.</div></article></article><div class="para logical" id="p-1616">
 <div class="para">Why introduce a new vector space, <span class="process-math">\(\R^n\text{,}\)</span> if it is essentially the same thing as <span class="process-math">\(M_{1n}\text{,}\)</span> or even <span class="process-math">\(M_{n1}\)</span> for that matter? Recall that a matrix is not simply an ordered sequence: it is an ordered sequence arranged in a very particular way. This subtlety is baked into the very definition of matrix equality, and allows us to say that</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -935,7 +935,7 @@ c\boldv=(ca_1,ca_2,\dots, ca_n)\text{.}
 </div>
 <div class="para">There are situations, however, where we don’t need this extra layer of structure, where we want to treat an ordered sequence simply as an ordered sequence. In such situations tuples are preferred to row or column vectors.</div>
 </div>
-<div class="para logical" id="p-1099">
+<div class="para logical" id="p-1617">
 <div class="para">That said, the close connection between linear systems and matrix equations makes it very convenient to treat an <span class="process-math">\(n\)</span>-tuple <span class="process-math">\((c_1,c_2,\dots, c_n)\)</span> as if it were the column vector</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -947,7 +947,7 @@ c\boldv=(ca_1,ca_2,\dots, ca_n)\text{.}
 <article class="assumption theorem-like" id="declaration_tuples_columns"><h4 class="heading">
 <span class="type">Fiat</span><span class="space"> </span><span class="codenumber">3.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">Tuples shall be column vectors, and vice versa.</span>
 </h4>
-<div class="para logical" id="p-1100">
+<div class="para logical" id="p-1618">
 <div class="para">We hereby declare that for all <span class="process-math">\(\boldx=(c_1,c_2,\dots, c_n)\in \R^n\)</span> we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -955,25 +955,25 @@ c\boldv=(ca_1,ca_2,\dots, ca_n)\text{.}
 \end{equation*}
 </div>
 <div class="para">In other words, tuples are henceforth the same as column vectors.</div>
-</div></article><div class="para" id="p-1101">We now continue our catalog of vector spaces by moving on to more exotic examples, starting with the <em class="emphasis">zero (or trivial) vector space</em>.</div>
+</div></article><div class="para" id="p-1619">We now continue our catalog of vector spaces by moving on to more exotic examples, starting with the <em class="emphasis">zero (or trivial) vector space</em>.</div>
 <article class="definition definition-like" id="ex_vs_zerospace"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.6</span><span class="period">.</span><span class="space"> </span><span class="title">Zero vector space.</span>
-</h4>  <article class="case" id="case-62"><h5 class="heading">Underlying set.</h5> <div class="para" id="p-1102">A <dfn class="terminology">zero (or trivial) vector space</dfn> is a set containing exactly one element: i.e., <span class="process-math">\(V=\{\boldv\}\text{.}\)</span>
-</div></article> <article class="case" id="case-63"><h5 class="heading">Vector operations.</h5> <div class="para" id="p-1103">Since <span class="process-math">\(V=\{\boldv\}\)</span> contains only one element we have no real choice in defining our vector operations.</div> <div class="para" id="p-1104">
+</h4>  <article class="case" id="case-62"><h5 class="heading">Underlying set.</h5> <div class="para" id="p-1620">A <dfn class="terminology">zero (or trivial) vector space</dfn> is a set containing exactly one element: i.e., <span class="process-math">\(V=\{\boldv\}\text{.}\)</span>
+</div></article> <article class="case" id="case-63"><h5 class="heading">Vector operations.</h5> <div class="para" id="p-1621">Since <span class="process-math">\(V=\{\boldv\}\)</span> contains only one element we have no real choice in defining our vector operations.</div> <div class="para" id="p-1622">
 <em class="emphasis">Scalar multiplication</em>. Define <span class="process-math">\(c\boldv=\boldv\)</span> for any <span class="process-math">\(c\in \R\)</span> and the unique element <span class="process-math">\(\boldv\in V\text{.}\)</span>
-</div> <div class="para" id="p-1105">
+</div> <div class="para" id="p-1623">
 <em class="emphasis">Vector addition</em>. Define <span class="process-math">\(\boldv+\boldv=\boldv\)</span> for the unique element <span class="process-math">\(\boldv\in V\text{.}\)</span>
-</div></article> <article class="case" id="case-64"><h5 class="heading">Zero vector and vector inverses.</h5> <div class="para" id="p-1106">We declare <span class="process-math">\(\boldzero=\boldv\text{.}\)</span> Accordingly we will write <span class="process-math">\(V=\{\boldzero\}\)</span> from now on.</div> <div class="para" id="p-1107">We declare <span class="process-math">\(-\boldv=\boldv\text{.}\)</span>
-</div></article> <article class="case" id="case-65"><h5 class="heading">Verification of axioms.</h5> <div class="para" id="p-1108">It is clear that <span class="process-math">\(V=\{\boldzero\}\)</span> satisfies the axioms of <a href="" class="xref" data-knowl="./knowl/d_vector_space.html" title="Definition 3.1.1: Vector space">Definition 3.1.1</a>: for axioms (i)-(ii) and (v)-(viii) both sides of the desired equality are equal to <span class="process-math">\(\boldzero\text{;}\)</span> axioms (iii)-(iv) boil down to the fact that <span class="process-math">\(\boldv+\boldv=\boldv\)</span> by definition.</div></article></article><article class="definition definition-like" id="ex_vs_infinitesequences"><h4 class="heading">
+</div></article> <article class="case" id="case-64"><h5 class="heading">Zero vector and vector inverses.</h5> <div class="para" id="p-1624">We declare <span class="process-math">\(\boldzero=\boldv\text{.}\)</span> Accordingly we will write <span class="process-math">\(V=\{\boldzero\}\)</span> from now on.</div> <div class="para" id="p-1625">We declare <span class="process-math">\(-\boldv=\boldv\text{.}\)</span>
+</div></article> <article class="case" id="case-65"><h5 class="heading">Verification of axioms.</h5> <div class="para" id="p-1626">It is clear that <span class="process-math">\(V=\{\boldzero\}\)</span> satisfies the axioms of <a href="" class="xref" data-knowl="./knowl/d_vector_space.html" title="Definition 3.1.1: Vector space">Definition 3.1.1</a>: for axioms (i)-(ii) and (v)-(viii) both sides of the desired equality are equal to <span class="process-math">\(\boldzero\text{;}\)</span> axioms (iii)-(iv) boil down to the fact that <span class="process-math">\(\boldv+\boldv=\boldv\)</span> by definition.</div></article></article><article class="definition definition-like" id="ex_vs_infinitesequences"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.7</span><span class="period">.</span><span class="space"> </span><span class="title">The vector space of infinite real sequences.</span>
-</h4>  <article class="case" id="case-66"><h5 class="heading">Underlying set.</h5> <div class="para logical" id="p-1109">
+</h4>  <article class="case" id="case-66"><h5 class="heading">Underlying set.</h5> <div class="para logical" id="p-1627">
 <div class="para">The <dfn class="terminology">vector space of real infinite sequences</dfn>, denoted <span class="process-math">\(\R^\infty\text{,}\)</span> is the set of all infinite sequences <span class="process-math">\((a_i)_{i=1}^\infty=(a_1,a_2,\dots,)\text{,}\)</span> where <span class="process-math">\(a_i\in \R\)</span> for all <span class="process-math">\(i\text{:}\)</span> i.e.,</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \R^\infty=\{ (a_i)_{i=1}^\infty \colon a_i\in \R \}\text{.}
 \end{equation*}
 </div>
-</div></article> <article class="case" id="case-67"><h5 class="heading">Vector operations.</h5> <div class="para" id="p-1110">As in <span class="process-math">\(\R^n\)</span> we define our vector operations on infinite sequences entry-wise.</div> <div class="para logical" id="p-1111">
+</div></article> <article class="case" id="case-67"><h5 class="heading">Vector operations.</h5> <div class="para" id="p-1628">As in <span class="process-math">\(\R^n\)</span> we define our vector operations on infinite sequences entry-wise.</div> <div class="para logical" id="p-1629">
 <div class="para">
 <em class="emphasis">Scalar multiplication</em>. Given <span class="process-math">\(c\in \R\)</span> and <span class="process-math">\(\boldv=(a_i)_{i=1}^\infty\in \R^\infty\text{,}\)</span> we define</div>
 <div class="displaymath process-math">
@@ -981,7 +981,7 @@ c\boldv=(ca_1,ca_2,\dots, ca_n)\text{.}
 c\boldv=(ca_{i})_{i=1}^\infty=(ca_1,ca_2,\dots)\text{.}
 \end{equation*}
 </div>
-</div> <div class="para logical" id="p-1112">
+</div> <div class="para logical" id="p-1630">
 <div class="para">
 <em class="emphasis">Vector addition</em>. Given <span class="process-math">\(\boldv=(a_i)_{i=1}^\infty\)</span> and <span class="process-math">\(\boldw=(b_i)_{i=1}^\infty\text{,}\)</span> we define</div>
 <div class="displaymath process-math">
@@ -989,13 +989,13 @@ c\boldv=(ca_{i})_{i=1}^\infty=(ca_1,ca_2,\dots)\text{.}
 \boldv+\boldw=(a_i+b_i)_{i=1}^\infty=(a_1+b_1, a_2+b_2,\dots)\text{.}
 \end{equation*}
 </div>
-</div></article> <article class="case" id="case-68"><h5 class="heading">Zero vector and vector inverses.</h5> <div class="para" id="p-1113">The zero vector <span class="process-math">\(\R^\infty\)</span> is the sequence of all zeros: i.e., <span class="process-math">\(\boldzero=(0,0,\dots)\text{.}\)</span>
-</div> <div class="para" id="p-1114">Given a vector <span class="process-math">\(\boldv=(a_i)_{i=1}^\infty\text{,}\)</span> we let <span class="process-math">\(-\boldv=(-a_i)_{i=1}^\infty=(-a_1,-a_2,\dots )\text{.}\)</span>
-</div></article> <article class="case" id="case-69"><h5 class="heading">Verification of axioms.</h5> <div class="para" id="p-1115">Exercise. Observe that since the vector operations are defined entry-wise, the vector arithmetic in <span class="process-math">\(\R^\infty\)</span> not so very different from that of <span class="process-math">\(\R^n\text{.}\)</span>
+</div></article> <article class="case" id="case-68"><h5 class="heading">Zero vector and vector inverses.</h5> <div class="para" id="p-1631">The zero vector <span class="process-math">\(\R^\infty\)</span> is the sequence of all zeros: i.e., <span class="process-math">\(\boldzero=(0,0,\dots)\text{.}\)</span>
+</div> <div class="para" id="p-1632">Given a vector <span class="process-math">\(\boldv=(a_i)_{i=1}^\infty\text{,}\)</span> we let <span class="process-math">\(-\boldv=(-a_i)_{i=1}^\infty=(-a_1,-a_2,\dots )\text{.}\)</span>
+</div></article> <article class="case" id="case-69"><h5 class="heading">Verification of axioms.</h5> <div class="para" id="p-1633">Exercise. Observe that since the vector operations are defined entry-wise, the vector arithmetic in <span class="process-math">\(\R^\infty\)</span> not so very different from that of <span class="process-math">\(\R^n\text{.}\)</span>
 </div></article></article><article class="definition definition-like" id="ex_vs_functions"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.8</span><span class="period">.</span><span class="space"> </span><span class="title">Real-valued functions.</span>
-</h4>  <article class="case" id="case-70"><h5 class="heading">Underlying set.</h5> <div class="para" id="p-1116">Let <span class="process-math">\(X\)</span> be a set. The <dfn class="terminology">vector space of functions from <span class="process-math">\(X\)</span> to <span class="process-math">\(\R\)</span></dfn>, denoted <span class="process-math">\(F(X,\R)\text{,}\)</span> is the set of all real-valued functions <span class="process-math">\(f\colon X\rightarrow \R\text{:}\)</span> i.e., the set of all functions with domain <span class="process-math">\(X\)</span> and codomain <span class="process-math">\(\R\text{.}\)</span>
-</div></article> <article class="case" id="case-71"><h5 class="heading">Vector operations.</h5> <div class="para" id="p-1117">The vector operations on <span class="process-math">\(F(X,\R)\)</span> defined below are generalizations of operations you may have seen before when learning about function transformations.</div> <div class="para logical" id="p-1118">
+</h4>  <article class="case" id="case-70"><h5 class="heading">Underlying set.</h5> <div class="para" id="p-1634">Let <span class="process-math">\(X\)</span> be a set. The <dfn class="terminology">vector space of functions from <span class="process-math">\(X\)</span> to <span class="process-math">\(\R\)</span></dfn>, denoted <span class="process-math">\(F(X,\R)\text{,}\)</span> is the set of all real-valued functions <span class="process-math">\(f\colon X\rightarrow \R\text{:}\)</span> i.e., the set of all functions with domain <span class="process-math">\(X\)</span> and codomain <span class="process-math">\(\R\text{.}\)</span>
+</div></article> <article class="case" id="case-71"><h5 class="heading">Vector operations.</h5> <div class="para" id="p-1635">The vector operations on <span class="process-math">\(F(X,\R)\)</span> defined below are generalizations of operations you may have seen before when learning about function transformations.</div> <div class="para logical" id="p-1636">
 <div class="para">
 <em class="emphasis">Scalar multiplication</em>. Given <span class="process-math">\(c\in \R\)</span> and a real-valued function <span class="process-math">\(f\colon X\rightarrow \R\text{,}\)</span> we let <span class="process-math">\(cf\)</span> be the function defined as</div>
 <div class="displaymath process-math">
@@ -1003,7 +1003,7 @@ c\boldv=(ca_{i})_{i=1}^\infty=(ca_1,ca_2,\dots)\text{.}
 (cf)(x)=c(f(x)) \text{ for all } x\in X\text{.}
 \end{equation*}
 </div>
-</div> <div class="para logical" id="p-1119">
+</div> <div class="para logical" id="p-1637">
 <div class="para">
 <em class="emphasis">Vector addition</em>. Given real-valued functions <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> with domain <span class="process-math">\(X\text{,}\)</span> we let <span class="process-math">\(f+g\)</span> be the function defined as</div>
 <div class="displaymath process-math">
@@ -1011,8 +1011,8 @@ c\boldv=(ca_{i})_{i=1}^\infty=(ca_1,ca_2,\dots)\text{.}
 (f+g)(x)=f(x)+g(x) \text{ for all } x\in X\text{.}
 \end{equation*}
 </div>
-</div></article> <article class="case" id="case-72"><h5 class="heading">Zero vector and vector inverses.</h5> <div class="para" id="p-1120">The zero vector <span class="process-math">\(F(X,\R)\)</span> is the constant function <span class="process-math">\(O_X\)</span> that assigns a value of 0 to all elements of <span class="process-math">\(X\text{:}\)</span> i.e., <span class="process-math">\(0_X(x)=0\)</span> for all <span class="process-math">\(x\in X\text{.}\)</span>
-</div> <div class="para logical" id="p-1121">
+</div></article> <article class="case" id="case-72"><h5 class="heading">Zero vector and vector inverses.</h5> <div class="para" id="p-1638">The zero vector <span class="process-math">\(F(X,\R)\)</span> is the constant function <span class="process-math">\(O_X\)</span> that assigns a value of 0 to all elements of <span class="process-math">\(X\text{:}\)</span> i.e., <span class="process-math">\(0_X(x)=0\)</span> for all <span class="process-math">\(x\in X\text{.}\)</span>
+</div> <div class="para logical" id="p-1639">
 <div class="para">Given a function <span class="process-math">\(f\in F(X,\R)\text{,}\)</span> its vector inverse is the function <span class="process-math">\(-f\)</span> defined as</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1022,7 +1022,7 @@ c\boldv=(ca_{i})_{i=1}^\infty=(ca_1,ca_2,\dots)\text{.}
 </div></article> <article class="case" id="case-73"><h5 class="heading">Verification of axioms.</h5> Exercise.</article></article><article class="remark remark-like" id="rm_vs_functions"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.1.9</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-1122">Take a moment to let the exotic quality of this example sink in. The things we are calling <em class="emphasis">vectors</em> in this case are entire <em class="emphasis">functions</em>!</div> <div class="para logical" id="p-1123">
+<div class="para" id="p-1640">Take a moment to let the exotic quality of this example sink in. The things we are calling <em class="emphasis">vectors</em> in this case are entire <em class="emphasis">functions</em>!</div> <div class="para logical" id="p-1641">
 <div class="para">Consider <span class="process-math">\(F(\R,\R)\text{.}\)</span> A vector of <span class="process-math">\(F(\R,\R)\)</span> is a function <span class="process-math">\(f\colon \R\rightarrow \R\text{:}\)</span> a rule that assigns to any input <span class="process-math">\(x\in \R\)</span> a unique output <span class="process-math">\(y\in \R\text{.}\)</span> Thus the functions <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> defined as <span class="process-math">\(f(x)=x^2+1\)</span> and <span class="process-math">\(g(x)=\sin x-x\)</span> are both vectors of <span class="process-math">\(F(\R,\R)\text{,}\)</span> as is any function given by a formula involving familiar mathematical functions and operations (as long as the formula is defined for all <span class="process-math">\(x\in \R\)</span>). That’s a lot of vectors! And yet we are only beginning to scratch the surface, since a function of <span class="process-math">\(F(\R,\R)\)</span> need not be given by a nice formula; it simply has to be a well-defined rule. For example, the function <span class="process-math">\(h\)</span> defined as</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1034,17 +1034,17 @@ h(x)=\begin{cases}
 </div>
 <div class="para">is also an element of <span class="process-math">\(F(\R,\R)\text{.}\)</span>
 </div>
-</div> <div class="para" id="p-1124">Hopefully this discussion gives some indication of how a vector space like <span class="process-math">\(F(\R,\R)\)</span> is in some sense <em class="emphasis">much larger</em> than spaces like <span class="process-math">\(\R^n\)</span> or <span class="process-math">\(M_{mn}\text{,}\)</span> whose general elements can be described in a finite manner. This vague intuition can be made precise with the notion of the <em class="emphasis">dimension</em> of a vector space, which we develop in <a href="s_dimension.html" class="internal" title="Section 3.7: Dimension">Section 3.7</a>.</div></article><div class="para" id="p-1125">We end with an example that illustrates how we can define the vector operations to be anything we like, as long as they satisfy the axioms of <a href="" class="xref" data-knowl="./knowl/d_vector_space.html" title="Definition 3.1.1: Vector space">Definition 3.1.1</a>. In this case scalar multiplication will be defined as real number <em class="emphasis">exponentiation</em>, and vector addition will be defined as real number <em class="emphasis">multiplication</em>.</div>
+</div> <div class="para" id="p-1642">Hopefully this discussion gives some indication of how a vector space like <span class="process-math">\(F(\R,\R)\)</span> is in some sense <em class="emphasis">much larger</em> than spaces like <span class="process-math">\(\R^n\)</span> or <span class="process-math">\(M_{mn}\text{,}\)</span> whose general elements can be described in a finite manner. This vague intuition can be made precise with the notion of the <em class="emphasis">dimension</em> of a vector space, which we develop in <a href="s_dimension.html" class="internal" title="Section 3.7: Dimension">Section 3.7</a>.</div></article><div class="para" id="p-1643">We end with an example that illustrates how we can define the vector operations to be anything we like, as long as they satisfy the axioms of <a href="" class="xref" data-knowl="./knowl/d_vector_space.html" title="Definition 3.1.1: Vector space">Definition 3.1.1</a>. In this case scalar multiplication will be defined as real number <em class="emphasis">exponentiation</em>, and vector addition will be defined as real number <em class="emphasis">multiplication</em>.</div>
 <article class="definition definition-like" id="ex_vs_positivereals"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.10</span><span class="period">.</span><span class="space"> </span><span class="title">Vector space of positive real numbers.</span>
-</h4>  <article class="case" id="case-74"><h5 class="heading">Underlying set.</h5> <div class="para logical" id="p-1126">
+</h4>  <article class="case" id="case-74"><h5 class="heading">Underlying set.</h5> <div class="para logical" id="p-1644">
 <div class="para">The <dfn class="terminology">vector space of positive real numbers</dfn>, denoted <span class="process-math">\(\R_{&gt;0}\text{,}\)</span> is defined as</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \R_{&gt;0}=\{x\in \R\colon x&gt;0\}\text{.}
 \end{equation*}
 </div>
-</div></article> <article class="case" id="case-75"><h5 class="heading">Vector operations.</h5> <div class="para" id="p-1127">Scalar multiplication is defined via exponentiation and vector addition is defined as multiplication.</div> <div class="para logical" id="p-1128">
+</div></article> <article class="case" id="case-75"><h5 class="heading">Vector operations.</h5> <div class="para" id="p-1645">Scalar multiplication is defined via exponentiation and vector addition is defined as multiplication.</div> <div class="para logical" id="p-1646">
 <div class="para">
 <em class="emphasis">Scalar multiplication</em>. Given <span class="process-math">\(c\in \R\)</span> and <span class="process-math">\(\boldv=a\in \R_{&gt;0}\)</span> we define</div>
 <div class="displaymath process-math">
@@ -1052,7 +1052,7 @@ h(x)=\begin{cases}
 c\boldv=a^c\text{.}
 \end{equation*}
 </div>
-</div> <div class="para logical" id="p-1129">
+</div> <div class="para logical" id="p-1647">
 <div class="para">
 <em class="emphasis">Vector addition</em>. Given <span class="process-math">\(\boldv=a, \boldw=b\in \R_{&gt;0}\text{,}\)</span> we define</div>
 <div class="displaymath process-math">
@@ -1060,19 +1060,19 @@ c\boldv=a^c\text{.}
 \boldv+\boldw=ab\text{.}
 \end{equation*}
 </div>
-</div></article> <article class="case" id="case-76"><h5 class="heading">Zero vector and vector inverses.</h5> <div class="para" id="p-1130">The zero vector of <span class="process-math">\(\R_{&gt;0}\)</span> is the number 1: i.e., we have <span class="process-math">\(\boldzero=1\)</span> in the vector space <span class="process-math">\(\R_{&gt;0}\text{.}\)</span>
-</div> <div class="para logical" id="p-1131">
+</div></article> <article class="case" id="case-76"><h5 class="heading">Zero vector and vector inverses.</h5> <div class="para" id="p-1648">The zero vector of <span class="process-math">\(\R_{&gt;0}\)</span> is the number 1: i.e., we have <span class="process-math">\(\boldzero=1\)</span> in the vector space <span class="process-math">\(\R_{&gt;0}\text{.}\)</span>
+</div> <div class="para logical" id="p-1649">
 <div class="para">Given <span class="process-math">\(\boldv=a\in \R_{&gt;0}\)</span> the vector inverse is defined as</div>
 <div class="displaymath process-math">
 \begin{equation*}
 -\boldv=\frac{1}{a}\text{.}
 \end{equation*}
 </div>
-</div></article> <article class="case" id="case-77"><h5 class="heading">Verification of axioms.</h5> <div class="para" id="p-1132">Exercise. We point out, however, that in this case the fact that the operations are actually well-defined should be justified. This is where the positivity of elements of <span class="process-math">\(\R_{&gt;0}\)</span> comes into play: since <span class="process-math">\(\boldv=a\)</span> is a positive number, the power <span class="process-math">\(a^c\)</span> is defined for any <span class="process-math">\(c\in \R\)</span> and is again positive. Thus <span class="process-math">\(c\boldv=a^c\)</span> is indeed an element of <span class="process-math">\(\R_{&gt;0}\text{.}\)</span> Similarly, if <span class="process-math">\(\boldv=a\)</span> and <span class="process-math">\(\boldw=b\)</span> are both positive numbers, then so is <span class="process-math">\(\boldv+\boldw=ab\text{.}\)</span>
-</div></article></article><div class="para" id="p-1133">The notion of a linear combination of matrices (<a href="" class="xref" data-knowl="./knowl/d_matrix_lin_comb.html" title="Definition 2.1.13: Linear combination of matrices">Definition 2.1.13</a>) generalizes easily to any vector space, and will be an important concept in the further development of our theory.</div>
+</div></article> <article class="case" id="case-77"><h5 class="heading">Verification of axioms.</h5> <div class="para" id="p-1650">Exercise. We point out, however, that in this case the fact that the operations are actually well-defined should be justified. This is where the positivity of elements of <span class="process-math">\(\R_{&gt;0}\)</span> comes into play: since <span class="process-math">\(\boldv=a\)</span> is a positive number, the power <span class="process-math">\(a^c\)</span> is defined for any <span class="process-math">\(c\in \R\)</span> and is again positive. Thus <span class="process-math">\(c\boldv=a^c\)</span> is indeed an element of <span class="process-math">\(\R_{&gt;0}\text{.}\)</span> Similarly, if <span class="process-math">\(\boldv=a\)</span> and <span class="process-math">\(\boldw=b\)</span> are both positive numbers, then so is <span class="process-math">\(\boldv+\boldw=ab\text{.}\)</span>
+</div></article></article><div class="para" id="p-1651">The notion of a linear combination of matrices (<a href="" class="xref" data-knowl="./knowl/d_matrix_lin_comb.html" title="Definition 2.1.13: Linear combination of matrices">Definition 2.1.13</a>) generalizes easily to any vector space, and will be an important concept in the further development of our theory.</div>
 <article class="definition definition-like" id="d_vector_lin_comb"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.11</span><span class="period">.</span><span class="space"> </span><span class="title">Linear combination of vectors.</span>
-</h4>  <div class="para logical" id="p-1134">
+</h4>  <div class="para logical" id="p-1652">
 <div class="para">Let <span class="process-math">\(V\)</span> be a vector space. An expression of the form</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1083,7 +1083,7 @@ c_1\boldv_1+c_2\boldv_2+\cdots +c_r\boldv_r\text{,}
 </div></article><article class="example example-like" id="example-37"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.12</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-1135">
+<div class="para logical" id="p-1653">
 <div class="para">Let <span class="process-math">\(V=\R_{&gt;0}\text{.}\)</span> Given the vectors <span class="process-math">\(\boldv=2\)</span> and <span class="process-math">\(\boldw=\frac{1}{2}\text{,}\)</span> compute the linear combination</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1092,7 +1092,7 @@ c_1\boldv_1+c_2\boldv_2+\cdots +c_r\boldv_r\text{,}
 </div>
 </div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-31" id="solution-31"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-31"><div class="solution solution-like"><div class="para logical" id="p-1136">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-40" id="solution-40"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-40"><div class="solution solution-like"><div class="para logical" id="p-1654">
 <div class="para">By definition of scalar multiplication in <span class="process-math">\(\R_{&gt;0}\)</span> (<a href="" class="xref" data-knowl="./knowl/ex_vs_positivereals.html" title="Definition 3.1.10: Vector space of positive real numbers">Definition 3.1.10</a>) we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/ex_vs_positivereals.html ./knowl/ex_vs_positivereals.html">
 \begin{equation*}
@@ -1109,32 +1109,32 @@ c_1\boldv_1+c_2\boldv_2+\cdots +c_r\boldv_r\text{,}
 </div></article></section><section class="subsection" id="ss_vectorspace_properties"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.1.3</span> <span class="title">General properties</span>
 </h3>
-<div class="para" id="p-1137">When proving a general fact about vector spaces we can only invoke the defining axioms; we cannot assume the vectors of the space assume any particular form. For example, we cannot assume vectors of <span class="process-math">\(V\)</span> are <span class="process-math">\(n\)</span>-tuples, or matrices, etc. We end with an example of such an axiomatic proof.</div>
+<div class="para" id="p-1655">When proving a general fact about vector spaces we can only invoke the defining axioms; we cannot assume the vectors of the space assume any particular form. For example, we cannot assume vectors of <span class="process-math">\(V\)</span> are <span class="process-math">\(n\)</span>-tuples, or matrices, etc. We end with an example of such an axiomatic proof.</div>
 <article class="theorem theorem-like" id="th_vectorspace_props"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.1.13</span><span class="period">.</span><span class="space"> </span><span class="title">Basic vector space properties.</span>
 </h4>
-<div class="para logical" id="p-1138">
+<div class="para logical" id="p-1656">
 <div class="para">Let <span class="process-math">\(V\)</span> be a vector space.</div>
 <ol class="decimal">
-<li id="li-323"><div class="para" id="p-1139">For all <span class="process-math">\(\boldv\in V\text{,}\)</span> we have <span class="process-math">\(0\boldv=\boldzero\text{.}\)</span>
+<li id="li-386"><div class="para" id="p-1657">For all <span class="process-math">\(\boldv\in V\text{,}\)</span> we have <span class="process-math">\(0\boldv=\boldzero\text{.}\)</span>
 </div></li>
-<li id="li-324"><div class="para" id="p-1140">For all <span class="process-math">\(c\in \R\text{,}\)</span> we have <span class="process-math">\(c\boldzero=\boldzero\text{.}\)</span>
+<li id="li-387"><div class="para" id="p-1658">For all <span class="process-math">\(c\in \R\text{,}\)</span> we have <span class="process-math">\(c\boldzero=\boldzero\text{.}\)</span>
 </div></li>
-<li id="li-325"><div class="para" id="p-1141">For all <span class="process-math">\(\boldv\in V\text{,}\)</span> we have <span class="process-math">\((-1)\boldv=-\boldv\text{.}\)</span>
+<li id="li-388"><div class="para" id="p-1659">For all <span class="process-math">\(\boldv\in V\text{,}\)</span> we have <span class="process-math">\((-1)\boldv=-\boldv\text{.}\)</span>
 </div></li>
-<li id="li-326"><div class="para" id="p-1142">For all <span class="process-math">\(\boldv\in V\text{,}\)</span> if <span class="process-math">\(c\boldv=\boldzero\text{,}\)</span> then <span class="process-math">\(c=0\)</span> or <span class="process-math">\(\boldv=\boldzero\text{.}\)</span>
+<li id="li-389"><div class="para" id="p-1660">For all <span class="process-math">\(\boldv\in V\text{,}\)</span> if <span class="process-math">\(c\boldv=\boldzero\text{,}\)</span> then <span class="process-math">\(c=0\)</span> or <span class="process-math">\(\boldv=\boldzero\text{.}\)</span>
 </div></li>
 </ol>
-</div></article><article class="hiddenproof" id="proof-40"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-40"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-40"><article class="hiddenproof"><div class="para" id="p-1143">We prove (1), leaving (2)-(4) as an exercise.</div> <div class="para" id="p-1144">First observe that <span class="process-math">\(0\boldv=(0+0)\boldv\text{,}\)</span> since <span class="process-math">\(0=0+0\text{.}\)</span>
-</div> <div class="para" id="p-1145">By Axiom (vi) we have <span class="process-math">\((0+0)\boldv=0\boldv+0\boldv\text{.}\)</span> Thus <span class="process-math">\(0\boldv=0\boldv+0\boldv\text{.}\)</span>
-</div> <div class="para logical" id="p-1146">
+</div></article><article class="hiddenproof" id="proof-40"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-40"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-40"><article class="hiddenproof"><div class="para" id="p-1661">We prove (1), leaving (2)-(4) as an exercise.</div> <div class="para" id="p-1662">First observe that <span class="process-math">\(0\boldv=(0+0)\boldv\text{,}\)</span> since <span class="process-math">\(0=0+0\text{.}\)</span>
+</div> <div class="para" id="p-1663">By Axiom (vi) we have <span class="process-math">\((0+0)\boldv=0\boldv+0\boldv\text{.}\)</span> Thus <span class="process-math">\(0\boldv=0\boldv+0\boldv\text{.}\)</span>
+</div> <div class="para logical" id="p-1664">
 <div class="para">Now add <span class="process-math">\(-0\boldv\text{,}\)</span> the vector inverse of <span class="process-math">\(0\boldv\text{,}\)</span> to both sides of the last equation:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 -0\boldv+0\boldv=-0\boldv+(0\boldv+0\boldv)\text{.}
 \end{equation*}
 </div>
-</div> <div class="para logical" id="p-1147">
+</div> <div class="para logical" id="p-1665">
 <div class="para">Now simplify this equation step by step using the axioms:</div>
 <div class="displaymath process-math" id="md-105">
 \begin{align*}
@@ -1148,8 +1148,75 @@ c_1\boldv_1+c_2\boldv_2+\cdots +c_r\boldv_r\text{,}
 <span class="type">Exercises</span> <span class="codenumber">3.1.4</span> <span class="title">Exercises</span>
 </h3>
 <article class="subexercises" id="subexercises-17"><h4 class="heading"><span class="title">WeBWork Exercises</span></h4>
-<article class="exercise exercise-like" id="exercise-145"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5></article><article class="exercise exercise-like" id="exercise-146"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5></article><article class="exercise exercise-like" id="exercise-147"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5></article></article><article class="exercise exercise-like" id="exercise-148"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
-<div class="para logical" id="p-1148">
+<article class="exercise exercise-like" id="exercise-145"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
+<div id="webwork-53" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="53" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-sourceFilePath="Library/NAU/setLinearAlgebra/shiftedSpace.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-53')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="p-1666">Let <span class="process-math">\(V={\mathbb R}\text{.}\)</span> For <span class="process-math">\(u,v \in V\)</span> and <span class="process-math">\(a\in{\mathbb R}\)</span> define vector addition by <span class="process-math">\(u \boxplus v := u+v-3\)</span> and scalar multiplication by <span class="process-math">\(a \boxdot u := au-3a+3\text{.}\)</span> It can be shown that <span class="process-math">\((V,\boxplus,\boxdot)\)</span> is a vector space over the scalar field <span class="process-math">\(\mathbb R\text{.}\)</span> Find the following:</div> <div class="para" id="p-1667">the sum:</div> <div class="para" id="p-1668">
+<span class="process-math">\(4\boxplus 7 =\)</span><span class="fillin underline" role="img" aria-label="35-character blank" style="width: 15.9090909090909em;"></span>
+</div> <div class="para" id="p-1669">the scalar multiple:</div> <div class="para" id="p-1670">
+<span class="process-math">\(0\boxdot 4 =\)</span><span class="fillin underline" role="img" aria-label="35-character blank" style="width: 15.9090909090909em;"></span>
+</div> <div class="para" id="p-1671">the zero vector:</div> <div class="para" id="p-1672">
+<span class="process-math">\(\underline{0}_V =\)</span><span class="fillin underline" role="img" aria-label="35-character blank" style="width: 15.9090909090909em;"></span>
+</div> <div class="para" id="p-1673">the additive inverse of <span class="process-math">\(x\text{:}\)</span>
+</div> <div class="para" id="p-1674">
+<span class="process-math">\(\boxminus x=\)</span><span class="fillin underline" role="img" aria-label="35-character blank" style="width: 15.9090909090909em;"></span>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-243" id="answer-243"><span class="type">Answer</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-243"><div class="answer solution-like"><div class="para" id="p-1675"><span class="process-math">\(8\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-244" id="answer-244"><span class="type">Answer</span><span class="space"> </span><span class="codenumber">2</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-244"><div class="answer solution-like"><div class="para" id="p-1676"><span class="process-math">\(3\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-245" id="answer-245"><span class="type">Answer</span><span class="space"> </span><span class="codenumber">3</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-245"><div class="answer solution-like"><div class="para" id="p-1677"><span class="process-math">\(3\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-246" id="answer-246"><span class="type">Answer</span><span class="space"> </span><span class="codenumber">4</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-246"><div class="answer solution-like"><div class="para" id="p-1678"><span class="process-math">\(6-x\)</span></div></div></div>
+</div>
+</div>
+</div></article><article class="exercise exercise-like" id="exercise-146"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
+<div id="webwork-54" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="54" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-sourceFilePath="Library/NAU/setLinearAlgebra/shiftedSpace2.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-54')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="p-1679">Let <span class="process-math">\(V={\mathbb R}^2\text{.}\)</span> For <span class="process-math">\((u_1,u_2),(v_1,v_2) \in V\)</span> and <span class="process-math">\(a\in{\mathbb R}\)</span> define vector addition by <span class="process-math">\((u_1,u_2) \boxplus (v_1,v_2) := (u_1+v_1-3,u_2+v_2 + 1)\)</span> and scalar multiplication by <span class="process-math">\(a \boxdot (u_1,u_2) := (au_1-3a+3,au_2 + a - 1)\text{.}\)</span> It can be shown that <span class="process-math">\((V,\boxplus,\boxdot)\)</span> is a vector space over the scalar field <span class="process-math">\(\mathbb R\text{.}\)</span> Find the following:</div> <div class="para" id="p-1680">the sum:</div> <div class="para" id="p-1681">
+<span class="process-math">\((-4,5)\boxplus (-5,-6) =\)</span>(<span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span>,<span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span>)</div> <div class="para" id="p-1682">the scalar multiple:</div> <div class="para" id="p-1683">
+<span class="process-math">\(-2\boxdot (-4,5) =\)</span>(<span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span>,<span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span>)</div> <div class="para" id="p-1684">the zero vector:</div> <div class="para" id="p-1685">
+<span class="process-math">\(\underline{0}_V =\)</span>(<span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span>,<span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span>)</div> <div class="para" id="p-1686">the additive inverse of <span class="process-math">\(( x,y)\text{:}\)</span>
+</div> <div class="para" id="p-1687">
+<span class="process-math">\(\boxminus (x,y)=\)</span>(<span class="fillin underline" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span>,<span class="fillin underline" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span>)</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-247" id="answer-247"><span class="type">Answer</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-247"><div class="answer solution-like"><div class="para" id="p-1688"><span class="process-math">\(-12\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-248" id="answer-248"><span class="type">Answer</span><span class="space"> </span><span class="codenumber">2</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-248"><div class="answer solution-like"><div class="para" id="p-1689"><span class="process-math">\(0\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-249" id="answer-249"><span class="type">Answer</span><span class="space"> </span><span class="codenumber">3</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-249"><div class="answer solution-like"><div class="para" id="p-1690"><span class="process-math">\(17\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-250" id="answer-250"><span class="type">Answer</span><span class="space"> </span><span class="codenumber">4</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-250"><div class="answer solution-like"><div class="para" id="p-1691"><span class="process-math">\(-13\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-251" id="answer-251"><span class="type">Answer</span><span class="space"> </span><span class="codenumber">5</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-251"><div class="answer solution-like"><div class="para" id="p-1692"><span class="process-math">\(3\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-252" id="answer-252"><span class="type">Answer</span><span class="space"> </span><span class="codenumber">6</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-252"><div class="answer solution-like"><div class="para" id="p-1693"><span class="process-math">\(-1\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-253" id="answer-253"><span class="type">Answer</span><span class="space"> </span><span class="codenumber">7</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-253"><div class="answer solution-like"><div class="para" id="p-1694"><span class="process-math">\(6-x\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-254" id="answer-254"><span class="type">Answer</span><span class="space"> </span><span class="codenumber">8</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-254"><div class="answer solution-like"><div class="para" id="p-1695"><span class="process-math">\(-\left(2+y\right)\)</span></div></div></div>
+</div>
+</div>
+</div></article><article class="exercise exercise-like" id="exercise-147"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
+<div id="webwork-55" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="55" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-sourceFilePath="Library/NAU/setLinearAlgebra/shiftedSpace3.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-55')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="p-1696">Let <span class="process-math">\(V=(-8,\infty)\text{.}\)</span> For <span class="process-math">\(u,v \in V\)</span> and <span class="process-math">\(a\in{\mathbb R}\)</span> define vector addition by <span class="process-math">\(u \boxplus v := uv + 8(u+v)+56\)</span> and scalar multiplication by <span class="process-math">\(a \boxdot u := (u + 8)^a - 8\text{.}\)</span> It can be shown that <span class="process-math">\((V,\boxplus,\boxdot)\)</span> is a vector space over the scalar field <span class="process-math">\(\mathbb R\text{.}\)</span> Find the following:</div> <div class="para" id="p-1697">the sum:</div> <div class="para" id="p-1698">
+<span class="process-math">\(1\boxplus -1 =\)</span><span class="fillin underline" role="img" aria-label="35-character blank" style="width: 15.9090909090909em;"></span>
+</div> <div class="para" id="p-1699">the scalar multiple:</div> <div class="para" id="p-1700">
+<span class="process-math">\(8\boxdot 1 =\)</span><span class="fillin underline" role="img" aria-label="35-character blank" style="width: 15.9090909090909em;"></span>
+</div> <div class="para" id="p-1701">the additive inverse of <span class="process-math">\(1\text{:}\)</span>
+</div> <div class="para" id="p-1702">
+<span class="process-math">\(\boxminus 1=\)</span><span class="fillin underline" role="img" aria-label="35-character blank" style="width: 15.9090909090909em;"></span>
+</div> <div class="para" id="p-1703">the zero vector:</div> <div class="para" id="p-1704">
+<span class="process-math">\(\underline{0}_V =\)</span><span class="fillin underline" role="img" aria-label="35-character blank" style="width: 15.9090909090909em;"></span>
+</div> <div class="para" id="p-1705">the additive inverse of <span class="process-math">\(x\text{:}\)</span>
+</div> <div class="para" id="p-1706">
+<span class="process-math">\(\boxminus x=\)</span><span class="fillin underline" role="img" aria-label="35-character blank" style="width: 15.9090909090909em;"></span>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-255" id="answer-255"><span class="type">Answer</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-255"><div class="answer solution-like"><div class="para" id="p-1707"><span class="process-math">\(55\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-256" id="answer-256"><span class="type">Answer</span><span class="space"> </span><span class="codenumber">2</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-256"><div class="answer solution-like"><div class="para" id="p-1708"><span class="process-math">\(4.30467\times 10^{7}\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-257" id="answer-257"><span class="type">Answer</span><span class="space"> </span><span class="codenumber">3</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-257"><div class="answer solution-like"><div class="para" id="p-1709"><span class="process-math">\(-7.88889\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-258" id="answer-258"><span class="type">Answer</span><span class="space"> </span><span class="codenumber">4</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-258"><div class="answer solution-like"><div class="para" id="p-1710"><span class="process-math">\(1+-8\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-259" id="answer-259"><span class="type">Answer</span><span class="space"> </span><span class="codenumber">5</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-259"><div class="answer solution-like"><div class="para" id="p-1711"><span class="process-math">\(\frac{1}{x+8}-8\)</span></div></div></div>
+</div>
+</div>
+</div></article></article><article class="exercise exercise-like" id="exercise-148"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div class="para logical" id="p-1712">
 <div class="para">Verify that <span class="process-math">\(\R^\infty=\{(a_i)_{i=1}^\infty\colon a_i\in \R\}\text{,}\)</span> along with the proposed vector operations</div>
 <div class="displaymath process-math" id="md-106">
 \begin{align*}
@@ -1159,7 +1226,7 @@ c(a_i)_{i=1}^\infty\amp=(ca_i)_{i=1}^\infty \\
 </div>
 <div class="para">satisfies the defining axioms of a vector space.</div>
 </div></article><article class="exercise exercise-like" id="exercise-149"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
-<div class="para logical" id="p-1149">
+<div class="para logical" id="p-1713">
 <div class="para">Verify that <span class="process-math">\(\R_{&gt;0}=\{a\in \R\colon a&gt;0\}=(0,\infty)\text{,}\)</span> along with the proposed vector operations</div>
 <div class="displaymath process-math" id="md-107">
 \begin{align*}
@@ -1168,12 +1235,12 @@ a\oplus b \amp =ab \text{,}
 \end{align*}
 </div>
 <div class="para">satisfies the defining axioms of a vector space.</div>
-</div> <div class="para" id="p-1150">Note: we use the funny symbols <span class="process-math">\(\odot\)</span> and <span class="process-math">\(\oplus\)</span> for scalar multiplication and vector addition to prevent confusion between the vector operations of <span class="process-math">\(\R_{&gt;0}\)</span> and real number arithmetic operations.</div></article><div class="exercisegroup" id="exercisegroup-12">
+</div> <div class="para" id="p-1714">Note: we use the funny symbols <span class="process-math">\(\odot\)</span> and <span class="process-math">\(\oplus\)</span> for scalar multiplication and vector addition to prevent confusion between the vector operations of <span class="process-math">\(\R_{&gt;0}\)</span> and real number arithmetic operations.</div></article><div class="exercisegroup" id="exercisegroup-12">
 <h4 class="heading"><span class="title">Failed vector spaces.</span></h4>
-<div class="introduction" id="introduction-37"><div class="para" id="p-1151">In each exercise below, the provided set, along with proposed vector operations, does <em class="emphasis">not</em> constitute a vector space. Identify <em class="emphasis">all</em> details of the vector space definition that <em class="emphasis">fail</em> to be satisfied. In addition to checking the axioms, you should also ask whether the proposed vector operations are well-defined. Provide explicit counterexamples for each failed property.</div></div>
+<div class="introduction" id="introduction-37"><div class="para" id="p-1715">In each exercise below, the provided set, along with proposed vector operations, does <em class="emphasis">not</em> constitute a vector space. Identify <em class="emphasis">all</em> details of the vector space definition that <em class="emphasis">fail</em> to be satisfied. In addition to checking the axioms, you should also ask whether the proposed vector operations are well-defined. Provide explicit counterexamples for each failed property.</div></div>
 <div class="exercisegroup-exercises">
 <article class="exercise exercise-like" id="exercise-150"><h5 class="heading"><span class="codenumber">6<span class="period">.</span></span></h5>
-<div class="para logical" id="p-1152">
+<div class="para logical" id="p-1716">
 <div class="para">Let <span class="process-math">\(V=\R^n\text{.}\)</span> Define vector addition on <span class="process-math">\(V\)</span> to be the usual <span class="process-math">\(n\)</span>-tuple vector addition, but define scalar multiplication as</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1181,7 +1248,7 @@ c(a_1,a_2,\dots ,a_n)=(c^2a_1,c^2a_2,\dots, c^2a_n)\text{.}
 \end{equation*}
 </div>
 </div></article><article class="exercise exercise-like" id="exercise-151"><h5 class="heading"><span class="codenumber">7<span class="period">.</span></span></h5>
-<div class="para logical" id="p-1153">
+<div class="para logical" id="p-1717">
 <div class="para">Let <span class="process-math">\(V=\R^2\text{.}\)</span> Define vector addition on <span class="process-math">\(V\)</span> to be the usual <span class="process-math">\(n\)</span>-tuple vector addition, but define scalar multiplication as</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1189,7 +1256,7 @@ c(a_1,a_2)=(ca_1,0)\text{.}
 \end{equation*}
 </div>
 </div></article><article class="exercise exercise-like" id="exercise-152"><h5 class="heading"><span class="codenumber">8<span class="period">.</span></span></h5>
-<div class="para logical" id="p-1154">
+<div class="para logical" id="p-1718">
 <div class="para">Let</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1202,10 +1269,10 @@ V=\{A\in M_{nn}\colon A \text{ is invertible}\}\text{.}
 </div>
 <div class="exercisegroup" id="exercisegroup-13">
 <h4 class="heading"><span class="title">Verifying vector space axioms.</span></h4>
-<div class="introduction" id="introduction-38"><div class="para" id="p-1155">In each exercise below the provided set, along with proposed vector operations, does constitute a vector space. Verify the indicated axioms.</div></div>
+<div class="introduction" id="introduction-38"><div class="para" id="p-1719">In each exercise below the provided set, along with proposed vector operations, does constitute a vector space. Verify the indicated axioms.</div></div>
 <div class="exercisegroup-exercises">
 <article class="exercise exercise-like" id="exercise-153"><h5 class="heading"><span class="codenumber">9<span class="period">.</span></span></h5>
-<div class="para logical" id="p-1156">
+<div class="para logical" id="p-1720">
 <div class="para">Let <span class="process-math">\(x\)</span> be a variable. Define <span class="process-math">\(V=\{ax+1\colon a\in\R\}\text{,}\)</span> the set of all linear polynomials <span class="process-math">\(f(x)=ax+1\)</span> with constant coefficient equal to one. Define the vector operations as follows:</div>
 <div class="displaymath process-math" id="md-108">
 \begin{align*}
@@ -1215,7 +1282,7 @@ c(ax+1) \amp= cax+1 \\
 </div>
 <div class="para">Verify axioms (iii)-(vi).</div>
 </div></article><article class="exercise exercise-like" id="exercise-154"><h5 class="heading"><span class="codenumber">10<span class="period">.</span></span></h5>
-<div class="para logical" id="p-1157">
+<div class="para logical" id="p-1721">
 <div class="para">Let <span class="process-math">\(V=\{(a,b)\in\R^2\colon a&gt;0, \ b\lt 0\}\text{:}\)</span> i.e., <span class="process-math">\(V\)</span> is the set of pairs whose first entry is positive and whose second entry is negative.</div>
 <div class="displaymath process-math" id="md-109">
 \begin{align*}
@@ -1228,19 +1295,19 @@ c(a, b) \amp= (a^c, -\lvert b\rvert^c) \\
 </div>
 </div>
 <article class="exercise exercise-like" id="exercise-155"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
-<div class="para" id="p-1158">Prove statements (2)-(4) of <a href="" class="xref" data-knowl="./knowl/th_vectorspace_props.html" title="Theorem 3.1.13: Basic vector space properties">Theorem 3.1.13</a>. When treating a specific part you may assume the results of any part that has already been proven, including statement (1).</div></article><article class="exercise exercise-like" id="exercise-156"><h4 class="heading"><span class="codenumber">12<span class="period">.</span></span></h4>
-<div class="para logical" id="p-1159">
+<div class="para" id="p-1722">Prove statements (2)-(4) of <a href="" class="xref" data-knowl="./knowl/th_vectorspace_props.html" title="Theorem 3.1.13: Basic vector space properties">Theorem 3.1.13</a>. When treating a specific part you may assume the results of any part that has already been proven, including statement (1).</div></article><article class="exercise exercise-like" id="exercise-156"><h4 class="heading"><span class="codenumber">12<span class="period">.</span></span></h4>
+<div class="para logical" id="p-1723">
 <div class="para">Let <span class="process-math">\(V\)</span> be a vector space.</div>
 <ol class="lower-alpha">
-<li id="li-327"><div class="para" id="p-1160">Show that the zero vector of <span class="process-math">\(V\)</span> is unique: i.e., show that if <span class="process-math">\(\boldw\in V\)</span> satisfies <span class="process-math">\(\boldw+\boldv=\boldv\)</span> for all <span class="process-math">\(\boldv\in V\text{,}\)</span> then <span class="process-math">\(\boldw=\boldzero\text{.}\)</span>
+<li id="li-390"><div class="para" id="p-1724">Show that the zero vector of <span class="process-math">\(V\)</span> is unique: i.e., show that if <span class="process-math">\(\boldw\in V\)</span> satisfies <span class="process-math">\(\boldw+\boldv=\boldv\)</span> for all <span class="process-math">\(\boldv\in V\text{,}\)</span> then <span class="process-math">\(\boldw=\boldzero\text{.}\)</span>
 </div></li>
-<li id="li-328"><div class="para" id="p-1161">Fix <span class="process-math">\(\boldv\in V\text{.}\)</span> Show that the vector inverse of <span class="process-math">\(\boldv\)</span> is unique: i.e., show that if <span class="process-math">\(\boldw+\boldv=\boldzero\text{,}\)</span> then <span class="process-math">\(\boldw=-\boldv\text{.}\)</span>
+<li id="li-391"><div class="para" id="p-1725">Fix <span class="process-math">\(\boldv\in V\text{.}\)</span> Show that the vector inverse of <span class="process-math">\(\boldv\)</span> is unique: i.e., show that if <span class="process-math">\(\boldw+\boldv=\boldzero\text{,}\)</span> then <span class="process-math">\(\boldw=-\boldv\text{.}\)</span>
 </div></li>
 </ol>
 <div class="para">Thus we may speak of <em class="emphasis">the</em> zero vector of a vector space, and <em class="emphasis">the</em> vector inverse of a vector <span class="process-math">\(\boldv\text{.}\)</span>
 </div>
 </div></article><article class="exercise exercise-like" id="exercise-157"><h4 class="heading"><span class="codenumber">13<span class="period">.</span></span></h4>
-<div class="para logical" id="p-1162">
+<div class="para logical" id="p-1726">
 <div class="para">Let <span class="process-math">\(V\)</span> be a vector space. Prove:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1248,9 +1315,9 @@ c(a, b) \amp= (a^c, -\lvert b\rvert^c) \\
 \end{equation*}
 </div>
 </div></article><article class="exercise exercise-like" id="ex_vs_zero_or_infinite"><h4 class="heading"><span class="codenumber">14<span class="period">.</span></span></h4>
-<div class="para" id="p-1163">Let <span class="process-math">\(V\)</span> be a vector space. Prove that either <span class="process-math">\(V=\{\boldzero\}\)</span> (i.e., <span class="process-math">\(V\)</span> is the zero space) or <span class="process-math">\(V\)</span> is infinite. In other words, a vector space contains either exactly one element or infinitely many elements.</div>
+<div class="para" id="p-1727">Let <span class="process-math">\(V\)</span> be a vector space. Prove that either <span class="process-math">\(V=\{\boldzero\}\)</span> (i.e., <span class="process-math">\(V\)</span> is the zero space) or <span class="process-math">\(V\)</span> is infinite. In other words, a vector space contains either exactly one element or infinitely many elements.</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-7" id="hint-7"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-7"><div class="hint solution-like"><div class="para" id="p-1164">Assume <span class="process-math">\(V\)</span> contains a nonzero vector <span class="process-math">\(\boldv\ne\boldzero\text{.}\)</span> Show that if <span class="process-math">\(c\ne d\text{,}\)</span> then <span class="process-math">\(c\boldv\ne d\boldv\text{.}\)</span> You assume the results of <a href="" class="xref" data-knowl="./knowl/th_vectorspace_props.html" title="Theorem 3.1.13: Basic vector space properties">Theorem 3.1.13</a>.</div></div></div>
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-7" id="hint-7"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-7"><div class="hint solution-like"><div class="para" id="p-1728">Assume <span class="process-math">\(V\)</span> contains a nonzero vector <span class="process-math">\(\boldv\ne\boldzero\text{.}\)</span> Show that if <span class="process-math">\(c\ne d\text{,}\)</span> then <span class="process-math">\(c\boldv\ne d\boldv\text{.}\)</span> You assume the results of <a href="" class="xref" data-knowl="./knowl/th_vectorspace_props.html" title="Theorem 3.1.13: Basic vector space properties">Theorem 3.1.13</a>.</div></div></div>
 </div></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="c_vectorspace.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="s_transformation.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>

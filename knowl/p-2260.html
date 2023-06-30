@@ -11,9 +11,28 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<div class="para">Pick any ordered basis <span class="process-math">\(B\)</span> of <span class="process-math">\(V\)</span> and let <span class="process-math">\(S'=\{[\boldv_1]_B, [\boldv_2]_B, \dots, [\boldv_r]_B\}\subseteq \R^n\text{.}\)</span>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<div class="para logical">
+<div class="para">We claim <span class="process-math">\(S\)</span> is linearly dependent. As discussed in <a href="" class="xref" data-knowl="./knowl/proc_linear_independence_functions.html" title="Procedure 3.5.17: Investigating linear independence of functions">Procedure 3.5.17</a>, to prove this we have to produce an identity involving these functions. The double-angle formula from trigonometry tells us that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/proc_linear_independence_functions.html">
+\begin{equation*}
+\cos 2x=\cos^2 x-\sin^2x=2\cos^2x+1
+\end{equation*}
 </div>
-<span class="incontext"><a href="s_coordinatevectors.html#p-2260" class="internal">in-context</a></span>
+<div class="para">for all <span class="process-math">\(x\in (-2\pi, 2\pi)\)</span> (in fact for all <span class="process-math">\(x\in \R\)</span>). It follows that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/proc_linear_independence_functions.html">
+\begin{equation*}
+1-\cos 2x+2\cos^2x=0
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(x\in (-2\pi, 2\pi)\text{,}\)</span> or</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/proc_linear_independence_functions.html">
+\begin{equation*}
+f-g+2h=\boldzero\text{.}
+\end{equation*}
+</div>
+<div class="para">Since we have found a nontrivial linear combination of elements of <span class="process-math">\(S\)</span> yielding the zero vector, we conclude that <span class="process-math">\(S\)</span> is linearly dependent.</div>
+</div>
+<span class="incontext"><a href="s_span_independence.html#p-2260" class="internal">in-context</a></span>
 </body>
 </html>

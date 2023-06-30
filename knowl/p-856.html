@@ -12,7 +12,16 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">Next we prove directly that <span class="process-math">\(A\)</span> is invertible. Namely, we claim that <span class="process-math">\(A^{-1}=BC\text{.}\)</span> Indeed, since <span class="process-math">\(C\)</span> is the inverse of <span class="process-math">\(AB\text{,}\)</span> we have <span class="process-math">\(A(BC)=(AB)C=I\text{.}\)</span> Thus <span class="process-math">\(BC\)</span> is a right-inverse of <span class="process-math">\(A\text{.}\)</span> <a href="" class="xref" data-knowl="./knowl/cor_left-right_inverse.html" title="Corollary 2.4.13: Left-inverse if and only if right-inverse">Corollary 2.4.13</a> now implies <span class="process-math">\((BC)A=I\text{,}\)</span> and hence that <span class="process-math">\(A^{-1}=BC\text{,}\)</span> as claimed.</div>
-<span class="incontext"><a href="s_invertibility_theorem.html#p-856" class="internal">in-context</a></span>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(m\times n\)</span> matrix, and let <span class="process-math">\(B\)</span> be an <span class="process-math">\(n\times r\)</span> matrix. For all <span class="process-math">\(1\leq i\leq m\text{,}\)</span> let <span class="process-math">\(\boldr_i\)</span> be the <span class="process-math">\(i\)</span>-th row of <span class="process-math">\(A\text{;}\)</span> and for all <span class="process-math">\(1\leq k\leq r\)</span> let <span class="process-math">\(\boldc_j\)</span> be the <span class="process-math">\(j\)</span>-th column of <span class="process-math">\(B\text{.}\)</span> For all <span class="process-math">\(1\leq i\leq m, 1\leq j\leq n\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+[AB]_{ij}=\boldr_i\cdot \boldc_j\text{,}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(\boldr_i\)</span> and <span class="process-math">\(\boldc_j\)</span> are treated as <span class="process-math">\(n\)</span>-tuples. In other words, the <span class="process-math">\(ij\)</span>-th entry of <span class="process-math">\(AB\)</span> is the dot product of the <span class="process-math">\(i\)</span>-th row of <span class="process-math">\(A\)</span> and the <span class="process-math">\(j\)</span>-th column of <span class="process-math">\(B\text{.}\)</span>
+</div>
+</div>
+<span class="incontext"><a href="s_matrix.html#p-856" class="internal">in-context</a></span>
 </body>
 </html>

@@ -11,16 +11,16 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h6 class="heading"><span class="type">Paragraph</span></h6>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
 <div class="para logical">
-<div class="para">When meeting a proposition in the wild that we wish to prove by induction, you should first take care to model the proposition in the form</div>
+<div class="para">Let <span class="process-math">\(f(x)\)</span> be a function with domain <span class="process-math">\(\R\text{,}\)</span> and let <span class="process-math">\(c\in \R\)</span> be a point of this domain. By definition, the proposition that <span class="process-math">\(\lim\limits_{x\to c}f(x)\)</span> exists is equivalent to the following proposition:</div>
 <div class="displaymath process-math">
-\begin{equation*}
-\forall n\geq b\, P(n)\text{.}
-\end{equation*}
+\begin{equation}
+\exists L\in\R\,  \forall \epsilon \gt 0\, \exists \delta \gt0\,  \forall x\in\mathbb{R}\ (\val{x-c}\lt\delta\implies \val{f(x)-L}\lt\epsilon)\text{.}\tag{0.4.1}
+\end{equation}
 </div>
-<div class="para">Make explicit the predicate <span class="process-math">\(P\)</span> in question, as well as the base case <span class="process-math">\(b\text{.}\)</span> We illustrate this preparatory “Step 0” in the examples below.</div>
+<div class="para">(We made a number of shortcuts in our logical notation above (e.g. <span class="process-math">\(\forall \epsilon\gt 0\text{,}\)</span> <span class="process-math">\(\exists\delta\gt 0\)</span>) in order to simplify the expression somewhat; the intended meaning should still be clear. )</div>
 </div>
-<span class="incontext"><a href="s_proof_technique.html#p-133" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_logic.html#p-133" class="internal">in-context</a></span>
 </body>
 </html>

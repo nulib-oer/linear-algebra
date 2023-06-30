@@ -15,15 +15,20 @@
 <span class="type">Item</span><span class="space"> </span><span class="codenumber">2</span><span class="period">.</span>
 </h5>
 <div class="para logical">
-<div class="para">Suppose <span class="process-math">\(\boldv_1, \boldv_2\in \NS T\text{.}\)</span> Given any <span class="process-math">\(c,d\in \R\text{,}\)</span> we have</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_trans_props.html">
+<div class="para">The argument is similar:</div>
+<div class="displaymath process-math">
 \begin{align*}
-T(c\boldv_1+d\boldv_2) \amp=cT(\boldv_1)+dT(\boldv_2) \amp (T \text{ is linear, } \knowl{./knowl/th_trans_props.html}{\text{Theorem 2.2.11}})\\
-\amp=c\boldzero_W+d\boldzero_W \amp (\boldv_1, \boldv_2\in \NS T) \\
-\amp = \boldzero_W\text{.}
+\boldzero_W \amp= T(\boldzero_V) \amp (\text{by (1)})\\
+\amp =T(-\boldv+\boldv)\\
+\amp = T(-\boldv)+T(\boldv)\text{.}
 \end{align*}
 </div>
-<div class="para">This shows that <span class="process-math">\(c\boldv_1+d\boldv_2\in \NS T\text{,}\)</span> completing our proof.</div>
-</div></article><span class="incontext"><a href="s_nullspace_image.html#li-402" class="internal">in-context</a></span>
+<div class="para">Since <span class="process-math">\(\boldzero_W=T(-\boldv)+T(\boldv)\text{,}\)</span> adding <span class="process-math">\(-T(\boldv)\)</span> to both sides of the equation yields</div>
+<div class="displaymath process-math">
+\begin{equation*}
+-T(\boldv)=T(-\boldv)\text{.}
+\end{equation*}
+</div>
+</div></article><span class="incontext"><a href="s_transformation.html#li-402" class="internal">in-context</a></span>
 </body>
 </html>

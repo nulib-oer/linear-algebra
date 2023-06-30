@@ -12,8 +12,29 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">By <a href="" class="xref" data-knowl="./knowl/rm_span.html" title="Remark 3.5.2">Remark 3.5.2</a> we know that <span class="process-math">\(\boldzero\in \Span S \text{.}\)</span>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(A=[a_{ij}]_{n\times n}\text{,}\)</span> and set <span class="process-math">\(B=\underset{r_i+cr_j}{E}\cdot A\text{.}\)</span> Then <span class="process-math">\(B\)</span> is identical to <span class="process-math">\(A\)</span> with the exception of the <span class="process-math">\(i\)</span>-th row, whose <span class="process-math">\(k\)</span>-th entry is</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_det_zero_repeated_row.html">
+\begin{equation*}
+(B)_{ik}=a_{ik}+ca_{jk}\text{.}
+\end{equation*}
 </div>
-<span class="incontext"><a href="s_span_independence.html#p-1486" class="internal">in-context</a></span>
+<div class="para">It follows that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_det_zero_repeated_row.html">
+\begin{align*}
+\det B \amp=\sum_{k=1}^n(-1)^{i+k}(a_{ik}+ca_{jk})M_{ik} \\
+\amp = \sum_{k=1}^n(-1)^{i+k}a_{ik}M_{ik}+c\sum_{k=1}^n(-1)^{i+k}a_{jk}M_{ik}\\
+\amp =\det A+\det C \text{,}
+\end{align*}
+</div>
+<div class="para">where <span class="process-math">\(C\)</span> is the matrix obtained by replacing the <span class="process-math">\(i\)</span>-th row of <span class="process-math">\(A\)</span> with a row identical with its <span class="process-math">\(j\)</span>-th row. By <a href="" class="xref" data-knowl="./knowl/th_det_zero_repeated_row.html" title="Theorem 2.5.14: Zero rows/columns, swapping rows/columns, identical rows/columns">Theorem 2.5.14</a> we conclude <span class="process-math">\(\det C=0\text{,}\)</span> and thus</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_det_zero_repeated_row.html">
+\begin{equation*}
+\det(\underset{r_i+cr_j}{E}\cdot A)=\det B=\det A+\det C=\det A\text{,}
+\end{equation*}
+</div>
+<div class="para">as desired.</div>
+</div>
+<span class="incontext"><a href="s_det.html#p-1486" class="internal">in-context</a></span>
 </body>
 </html>

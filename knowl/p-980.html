@@ -11,15 +11,23 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para logical">
-<div class="para">Use the adjoint matrix formula to compute <span class="process-math">\(A^{-1}\text{,}\)</span> where</div>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<div class="para logical"><ol class="decimal">
+<li>
+<span class="heading"><span class="title">Matrix multiplication is not commutative.</span></span><div class="para">For two <span class="process-math">\(n\times n\)</span> matrices <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{,}\)</span> we do <em class="emphasis">not</em> necessarily have <span class="process-math">\(AB=BA\text{.}\)</span>
+</div>
+</li>
+<li>
+<span class="heading"><span class="title">Products of nonzero matrices may be equal to zero.</span></span><div class="para logical">
+<div class="para">If the product of two matrices is the zero matrix, we <em class="emphasis">cannot</em> conclude that one of matrices is the zero matrix. In logical notation:</div>
 <div class="displaymath process-math">
-\begin{equation*}
-A=\begin{amatrix}[rrr]1\amp 2\amp 1 \\ -1\amp 1\amp -1\\ 0\amp 2\amp 2  \end{amatrix}\text{.}
-\end{equation*}
+\begin{equation}
+\underset{m\times n}{A}\, \underset{n\times r}{B}=\boldzero_{m\times r}\;\not\!\!\!\!\implies A=\boldzero_{m\times n} \text{ or }  B=\boldzero_{n\times r}\text{.}\tag{2.2.1}
+\end{equation}
 </div>
 </div>
-<span class="incontext"><a href="s_det.html#p-980" class="internal">in-context</a></span>
+</li>
+</ol></div>
+<span class="incontext"><a href="s_algebraic.html#p-980" class="internal">in-context</a></span>
 </body>
 </html>

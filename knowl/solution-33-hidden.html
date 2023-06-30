@@ -10,15 +10,60 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><div class="solution solution-like"><div class="para logical">
-<div class="para">We must show <span class="process-math">\(f(cA+dB)=cf(A)+df(B)\)</span> for all scalars <span class="process-math">\(c,d\in\R\)</span> and all matrices <span class="process-math">\(A, B\in M_{mn}\text{.}\)</span> This follows easily from properties of transpose:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_trans_props.html ./knowl/th_trans_props.html">
-\begin{align*}
-f(cA+dB)\amp =(cA+dB)^T \amp \text{ (by def.) }\\
-\amp =(cA)^T+(dB)^T \amp (\knowl{./knowl/th_trans_props.html}{\text{Theorem 2.2.11}})\\
-\amp =cA^T+dB^T \amp (\knowl{./knowl/th_trans_props.html}{\text{Theorem 2.2.11}})\\
-\amp =cf(A)+df(B)
-\end{align*}
+<body class="ignore-math"><div class="solution solution-like"><ul class="disc">
+<li><div class="para logical">
+<div class="para">We have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\underset{2r_3}{E}=\begin{bmatrix}1\amp 0\amp 0\\0\amp 1\amp 0\\ 0\amp 0\amp 2 \end{bmatrix}
+\end{equation*}
 </div>
-</div></div></body>
+<div class="para">and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\underset{\frac{1}{2}r_3}{E}=\begin{bmatrix}1\amp 0\amp 0\\0\amp 1\amp 0\\ 0\amp 0\amp 1/2 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">You can verify for yourself that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\underset{2r_3}{E}\ \underset{\frac{1}{2}r_3}{E}=\underset{\frac{1}{2}r_3}{E}\ \underset{2r_3}{E}=I_3\text{.}
+\end{equation*}
+</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">We have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\underset{r_1\leftrightarrow r_3}{E}=\begin{bmatrix}0\amp 0\amp 1\\0\amp 1\amp 0\\ 1\amp 0\amp 0 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">You can verify for yourself that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\underset{r_1\leftrightarrow r_3}{E}\,\underset{r_1\leftrightarrow r_3}{E}=I_3\text{.}
+\end{equation*}
+</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">We have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\underset{r_1+3r_3}{E}=\begin{bmatrix}1\amp 0\amp 3\\0\amp 1\amp 0\\ 0\amp 0\amp 1 \end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\underset{r_1-3r_3}{E}=\begin{amatrix}[rrr]1\amp 0\amp -3\\0\amp 1\amp 0\\ 0\amp 0\amp 1 \end{amatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">You can verify for yourself that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\underset{r_1+3r_3}{E}\,\underset{r_1-3r_3}{E}=\underset{r_1-3r_3}{E}\,\underset{r_1+3r_3}{E}=I_3\text{.}
+\end{equation*}
+</div>
+</div></li>
+</ul></div></body>
 </html>

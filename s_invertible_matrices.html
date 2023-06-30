@@ -767,13 +767,13 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="s_invertible_matrices"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.3</span> <span class="title">Invertible matrices</span>
 </h2>
-<section class="introduction" id="introduction-22"><div class="para" id="p-674">Picking up the thread of <a href="" class="xref" data-knowl="./knowl/rm_cancel_failure.html" title="Remark 2.2.10">Remark 2.2.10</a>, we observe that the cancellation property enjoyed in real number algebra is a consequence of the fact that every nonzero real number <span class="process-math">\(a\ne 0\)</span> has a <em class="emphasis">multiplicative inverse</em>, denoted <span class="process-math">\(a^{-1}\)</span> or <span class="process-math">\(1/a\text{,}\)</span> that satisfies <span class="process-math">\(aa^{-1}=1\text{.}\)</span> Indeed, “canceling” the <span class="process-math">\(a\)</span> in the equation <span class="process-math">\(ab=ac\)</span> (assuming <span class="process-math">\(a\ne 0\)</span>) is really the act of multiplying both sides of this equation by the multiplicative inverse <span class="process-math">\(a^{-1}\text{.}\)</span>
-</div> <div class="para" id="p-675">Ever on the lookout for connections between real number and matrix algebra, we ask whether there is a sensible analogue of multiplicative inverses for matrices. We have seen already that identity matrices <span class="process-math">\(I_n\)</span> play the role of multiplicative identities for <span class="process-math">\(n\times n\)</span> matrices, just as the number <span class="process-math">\(1\)</span> does for real numbers. This suggests we should restrict our attention to <span class="process-math">\(n\times n\)</span> matrices. The following definition is then the desired analogue of the multiplicative inverse of a nonzero real number.</div></section><section class="subsection" id="subsec-"><h3 class="heading hide-type">
+<section class="introduction" id="introduction-22"><div class="para" id="p-1056">Picking up the thread of <a href="" class="xref" data-knowl="./knowl/rm_cancel_failure.html" title="Remark 2.2.10">Remark 2.2.10</a>, we observe that the cancellation property enjoyed in real number algebra is a consequence of the fact that every nonzero real number <span class="process-math">\(a\ne 0\)</span> has a <em class="emphasis">multiplicative inverse</em>, denoted <span class="process-math">\(a^{-1}\)</span> or <span class="process-math">\(1/a\text{,}\)</span> that satisfies <span class="process-math">\(aa^{-1}=1\text{.}\)</span> Indeed, “canceling” the <span class="process-math">\(a\)</span> in the equation <span class="process-math">\(ab=ac\)</span> (assuming <span class="process-math">\(a\ne 0\)</span>) is really the act of multiplying both sides of this equation by the multiplicative inverse <span class="process-math">\(a^{-1}\text{.}\)</span>
+</div> <div class="para" id="p-1057">Ever on the lookout for connections between real number and matrix algebra, we ask whether there is a sensible analogue of multiplicative inverses for matrices. We have seen already that identity matrices <span class="process-math">\(I_n\)</span> play the role of multiplicative identities for <span class="process-math">\(n\times n\)</span> matrices, just as the number <span class="process-math">\(1\)</span> does for real numbers. This suggests we should restrict our attention to <span class="process-math">\(n\times n\)</span> matrices. The following definition is then the desired analogue of the multiplicative inverse of a nonzero real number.</div></section><section class="subsection" id="subsec-"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.3.1</span> <span class="title">Invertible matrices</span>
 </h3>
 <article class="definition definition-like" id="d_invertible_matrix"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">Invertible matrix.</span>
-</h4>  <div class="para logical" id="p-676">
+</h4>  <div class="para logical" id="p-1058">
 <div class="para">An <span class="process-math">\(n\times n\)</span> matrix <span class="process-math">\(A\)</span>  is <dfn class="terminology">invertible</dfn> (or <dfn class="terminology">nonsingular</dfn>) if there is a <span class="process-math">\(n\times n\)</span> matrix <span class="process-math">\(B\)</span> satisfying</div>
 <div class="displaymath process-math" id="eq_matrix_inverse">
 \begin{equation}
@@ -781,13 +781,13 @@ AB=BA=I_n\text{.}\tag{2.3.1}
 \end{equation}
 </div>
 <div class="para">When this is the case we call <span class="process-math">\(B\)</span> an <dfn class="terminology">inverse</dfn> of <span class="process-math">\(A\text{,}\)</span> and we say that <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are <dfn class="terminology">inverses</dfn> of one another.</div>
-</div> <div class="para" id="p-677">A matrix <span class="process-math">\(B\)</span> satisfying <a href="" class="xref" data-knowl="./knowl/eq_matrix_inverse.html" title="Equation 2.3.1">(2.3.1)</a> is called an <dfn class="terminology">inverse</dfn> of <span class="process-math">\(A\text{,}\)</span> denoted <span class="process-math">\(A^{-1}\text{.}\)</span>
-</div> <div class="para" id="p-678">A square matrix that is not invertible is called <dfn class="terminology">singular</dfn>.</div></article><div class="para" id="p-679">The phrase “an inverse” in <a href="" class="xref" data-knowl="./knowl/d_invertible_matrix.html" title="Definition 2.3.1: Invertible matrix">Definition 2.3.1</a> is somewhat jarring. Shouldn’t we speak of <em class="emphasis">the inverse</em> of a matrix? Not surprisingly, if a matrix is invertible, then it has one and only one inverse. As intuitive as this fact may seem, however, it still requires proof.</div>
+</div> <div class="para" id="p-1059">A matrix <span class="process-math">\(B\)</span> satisfying <a href="" class="xref" data-knowl="./knowl/eq_matrix_inverse.html" title="Equation 2.3.1">(2.3.1)</a> is called an <dfn class="terminology">inverse</dfn> of <span class="process-math">\(A\text{,}\)</span> denoted <span class="process-math">\(A^{-1}\text{.}\)</span>
+</div> <div class="para" id="p-1060">A square matrix that is not invertible is called <dfn class="terminology">singular</dfn>.</div></article><div class="para" id="p-1061">The phrase “an inverse” in <a href="" class="xref" data-knowl="./knowl/d_invertible_matrix.html" title="Definition 2.3.1: Invertible matrix">Definition 2.3.1</a> is somewhat jarring. Shouldn’t we speak of <em class="emphasis">the inverse</em> of a matrix? Not surprisingly, if a matrix is invertible, then it has one and only one inverse. As intuitive as this fact may seem, however, it still requires proof.</div>
 <article class="theorem theorem-like" id="th_inverse_unique"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">Inverses are unique.</span>
 </h4>
-<div class="para" id="p-680">If <span class="process-math">\(A\)</span> is an invertible matrix, then its inverse is unique: that is, there is only one matrix <span class="process-math">\(B\)</span> satisfying <span class="process-math">\(AB=BA=I\text{.}\)</span>
-</div></article><article class="hiddenproof" id="proof-12"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-12"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-12"><article class="hiddenproof"><div class="para logical" id="p-681">
+<div class="para" id="p-1062">If <span class="process-math">\(A\)</span> is an invertible matrix, then its inverse is unique: that is, there is only one matrix <span class="process-math">\(B\)</span> satisfying <span class="process-math">\(AB=BA=I\text{.}\)</span>
+</div></article><article class="hiddenproof" id="proof-12"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-12"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-12"><article class="hiddenproof"><div class="para logical" id="p-1063">
 <div class="para">Suppose matrices <span class="process-math">\(B\)</span> and <span class="process-math">\(C\)</span> both satisfy the properties of the multiplicative inverse: i.e.,</div>
 <div class="displaymath process-math" id="md-64">
 \begin{align*}
@@ -806,11 +806,11 @@ AB=I\text{ and } AC=I \amp\implies  AB=AC\\
 </div>
 <div class="para">Thus we see that <span class="process-math">\(B=C\text{,}\)</span> showing that the inverse of <span class="process-math">\(A\text{,}\)</span> if it exists, is unique.</div>
 </div></article></div>
-<div class="para" id="p-682">The next theorem tells us that we <em class="emphasis">can</em> multiplicatively cancel a matrix if it is <em class="emphasis">invertible</em>.</div>
+<div class="para" id="p-1064">The next theorem tells us that we <em class="emphasis">can</em> multiplicatively cancel a matrix if it is <em class="emphasis">invertible</em>.</div>
 <article class="theorem theorem-like" id="th_inverse_cancel"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">Solving with invertible matrices.</span>
 </h4>
-<div class="para logical" id="p-683">
+<div class="para logical" id="p-1065">
 <div class="para">Suppose <span class="process-math">\(A\)</span> is an invertible <span class="process-math">\(n\times n\)</span> matrix. Then</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -825,8 +825,8 @@ ZA=W \iff Z=WA^{-1}
 </div>
 <div class="para">for any <span class="process-math">\(r\times n\)</span> matrices <span class="process-math">\(Z\)</span> and <span class="process-math">\(W\text{.}\)</span>
 </div>
-</div> <div class="para" id="p-684">In other words, matrix equations of this sort have <em class="emphasis">unique</em> solutions obtained by multiplying on the left or right by <span class="process-math">\(A^{-1}\text{.}\)</span>
-</div></article><article class="hiddenproof" id="proof-13"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-13"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-13"><article class="hiddenproof"><div class="para logical" id="p-685">
+</div> <div class="para" id="p-1066">In other words, matrix equations of this sort have <em class="emphasis">unique</em> solutions obtained by multiplying on the left or right by <span class="process-math">\(A^{-1}\text{.}\)</span>
+</div></article><article class="hiddenproof" id="proof-13"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-13"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-13"><article class="hiddenproof"><div class="para logical" id="p-1067">
 <div class="para">We give a proof only for the the first equation: <span class="process-math">\(AX=Y\text{.}\)</span> To show the equivalence we must show the two implications <span class="process-math">\(AX=Y\implies X=A^{-1}Y\)</span> and <span class="process-math">\(X=A^{-1}Y\implies AX=Y\text{.}\)</span> To this end, we have</div>
 <div class="displaymath process-math" id="md-66">
 \begin{align*}
@@ -844,15 +844,15 @@ X=A^{-1}Y \amp\implies AX=AA^{-1}Y \\
 \end{align*}
 </div>
 </div></article></div>
-<div class="para" id="p-686">Without any additional theory at our disposal, to show a matrix <span class="process-math">\(A\)</span> is invertible we must exhibit an inverse. The onus is on us to find a matrix <span class="process-math">\(B\)</span> satisfying both <span class="process-math">\(AB=I\)</span> and <span class="process-math">\(BA=I\text{.}\)</span> (Remember: since we cannot assume <span class="process-math">\(BA=AB\text{,}\)</span> we really need to show both equations hold.)</div>
-<div class="para" id="p-687">By the same token, to show <span class="process-math">\(A\)</span> is <em class="emphasis">not</em> invertible we must show that an inverse does not exist: that is, we must prove that there is no <span class="process-math">\(B\)</span> satisfying <span class="process-math">\(AB=BA=I\text{.}\)</span> The next example illustrates this technique for a variety of matrices.</div>
+<div class="para" id="p-1068">Without any additional theory at our disposal, to show a matrix <span class="process-math">\(A\)</span> is invertible we must exhibit an inverse. The onus is on us to find a matrix <span class="process-math">\(B\)</span> satisfying both <span class="process-math">\(AB=I\)</span> and <span class="process-math">\(BA=I\text{.}\)</span> (Remember: since we cannot assume <span class="process-math">\(BA=AB\text{,}\)</span> we really need to show both equations hold.)</div>
+<div class="para" id="p-1069">By the same token, to show <span class="process-math">\(A\)</span> is <em class="emphasis">not</em> invertible we must show that an inverse does not exist: that is, we must prove that there is no <span class="process-math">\(B\)</span> satisfying <span class="process-math">\(AB=BA=I\text{.}\)</span> The next example illustrates this technique for a variety of matrices.</div>
 <article class="example example-like" id="ex_invertible_matrices"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.4</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-688"><ol class="decimal">
-<li id="li-213"><div class="para" id="p-689">Identity matrices are invertible, and in fact we have <span class="process-math">\(I^{-1}=I\text{,}\)</span> as witnessed by the fact that <span class="process-math">\(II=I\text{.}\)</span>
+<div class="para logical" id="p-1070"><ol class="decimal">
+<li id="li-266"><div class="para" id="p-1071">Identity matrices are invertible, and in fact we have <span class="process-math">\(I^{-1}=I\text{,}\)</span> as witnessed by the fact that <span class="process-math">\(II=I\text{.}\)</span>
 </div></li>
-<li id="li-214"><div class="para logical" id="p-690">
+<li id="li-267"><div class="para logical" id="p-1072">
 <div class="para">Square zero matrices <span class="process-math">\(\boldzero\)</span> are never invertible, since for any square matrix <span class="process-math">\(B\)</span> of the same dimension we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_matrix_inverse.html">
 \begin{equation*}
@@ -862,7 +862,7 @@ B\,\boldzero=\boldzero B=\boldzero\ne I\text{.}
 <div class="para">Thus there is no matrix satisfying the inverse property <a href="" class="xref" data-knowl="./knowl/eq_matrix_inverse.html" title="Equation 2.3.1">(2.3.1)</a> with respect to <span class="process-math">\(\boldzero\text{.}\)</span>
 </div>
 </div></li>
-<li id="li-215"><div class="para logical" id="p-691">
+<li id="li-268"><div class="para logical" id="p-1073">
 <div class="para">The inverse of the matrix  <span class="process-math">\(\begin{amatrix}[rr]2\amp 1\\ 3\amp 2
 \end{amatrix}\)</span> is <span class="process-math">\(\begin{amatrix}
 2\amp -1\\ -3\amp 2
@@ -881,7 +881,7 @@ B\,\boldzero=\boldzero B=\boldzero\ne I\text{.}
 </div>
 <div class="para">as you can easily verify.</div>
 </div></li>
-<li id="li-216"><div class="para logical" id="p-692">
+<li id="li-269"><div class="para logical" id="p-1074">
 <div class="para">The matrix <span class="process-math">\(A= \begin{amatrix}[rrr]
 1\amp 1 \amp 1\\
 1\amp 1 \amp 1\\
@@ -895,12 +895,12 @@ B\,\boldzero=\boldzero B=\boldzero\ne I\text{.}
 </div>
 <div class="para">It follows that all the rows of <span class="process-math">\(AB\)</span> are identical, and hence that we cannot have <span class="process-math">\(AB=I_3\text{,}\)</span> since the rows of <span class="process-math">\(I_3\)</span> are not identical.</div>
 </div></li>
-</ol></div></article><div class="para" id="p-693">As the preceding example illustrates, deciding whether a matrix is invertible is not so straightforward, especially if the matrix is large. For the <span class="process-math">\(2\times 2\)</span> case, however, we have a relatively simple test for invertibility. (We will generalize this to the <span class="process-math">\(n\times n\)</span> case in <a href="s_det.html" class="internal" title="Section 2.5: The determinant">Section 2.5</a>.)</div>
+</ol></div></article><div class="para" id="p-1075">As the preceding example illustrates, deciding whether a matrix is invertible is not so straightforward, especially if the matrix is large. For the <span class="process-math">\(2\times 2\)</span> case, however, we have a relatively simple test for invertibility. (We will generalize this to the <span class="process-math">\(n\times n\)</span> case in <a href="s_det.html" class="internal" title="Section 2.5: The determinant">Section 2.5</a>.)</div>
 <article class="theorem theorem-like" id="th_2by2_inverse"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.3.5</span><span class="period">.</span><span class="space"> </span><span class="title">Inverses of <span class="process-math">\(2\times 2\)</span> matrices.</span>
 </h4>
-<div class="para" id="p-694">A matrix <span class="process-math">\(A=\abcdmatrix{a}{b}{c}{d}\)</span> is invertible if and only if <span class="process-math">\(ad-bc\ne 0\text{.}\)</span>
-</div> <div class="para logical" id="p-695">
+<div class="para" id="p-1076">A matrix <span class="process-math">\(A=\abcdmatrix{a}{b}{c}{d}\)</span> is invertible if and only if <span class="process-math">\(ad-bc\ne 0\text{.}\)</span>
+</div> <div class="para logical" id="p-1077">
 <div class="para">When this is the case, we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -908,7 +908,7 @@ B\,\boldzero=\boldzero B=\boldzero\ne I\text{.}
 \end{amatrix}\text{.}
 \end{equation*}
 </div>
-</div></article><article class="hiddenproof" id="proof-14"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-14"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-14"><article class="hiddenproof"><div class="para" id="p-696">If <span class="process-math">\(ad-bc\ne 0\text{,}\)</span> the proposed matrix is indeed an inverse of <span class="process-math">\(A\text{,}\)</span> as one readily verifies.</div> <div class="para logical" id="p-697">
+</div></article><article class="hiddenproof" id="proof-14"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-14"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-14"><article class="hiddenproof"><div class="para" id="p-1078">If <span class="process-math">\(ad-bc\ne 0\text{,}\)</span> the proposed matrix is indeed an inverse of <span class="process-math">\(A\text{,}\)</span> as one readily verifies.</div> <div class="para logical" id="p-1079">
 <div class="para">Assume <span class="process-math">\(ad-bc=0\text{.}\)</span> If <span class="process-math">\(A=\boldzero\text{,}\)</span> then <span class="process-math">\(A\)</span> is not invertible, as we saw in the example above. Thus we can assume <span class="process-math">\(A\)</span> is nonzero, in which case <span class="process-math">\(B=\begin{amatrix}[rr]d\amp -b\\ -c\amp a
 \end{amatrix}\)</span> is also nonzero. An easy computation shows</div>
 <div class="displaymath process-math">
@@ -928,13 +928,13 @@ AB=\boldzero \amp\implies A^{-1}AB=\boldzero \\
 </div></article></div>
 <article class="project project-like" id="project-7"><a href="" data-knowl="" class="id-ref project-knowl original" data-refid="hk-project-7"><h4 class="heading">
 <span class="type">Sage example</span><span class="space"> </span><span class="codenumber">7</span><span class="period">.</span><span class="space"> </span><span class="title">Invertible matrices.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-project-7"><article class="project project-like"> <div class="para logical" id="p-698">
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-project-7"><article class="project project-like"> <div class="para logical" id="p-1080">
 <div class="para">Sage has a number of useful tools related to invertibility. The boolean function <code class="code-inline tex2jax_ignore">is_invertible()</code> tests for invertibility, and the method <code class="code-inline tex2jax_ignore">inverse()</code> computes the inverse of an invertible matrix. Below we generate a random matrix with rational coefficients, test whether it is invertible, and compute its inverse if it is invertible. The <code class="code-inline tex2jax_ignore">density=0.5</code> ensures that roughly half of the matrix entries are zero; and this in turn increases the likelihood that the matrix is singular, for reasons that will become somewhat clearer later.</div>
 <ul class="disc">
-<li id="li-217"><div class="para" id="p-699">Evaluate the Sage cell below multiple times.</div></li>
-<li id="li-218"><div class="para" id="p-700">When the matrix is invertible, verify that <span class="process-math">\(AA^{-1}=A^{-1}A=I\text{.}\)</span> If you like, use the blank Sage cell to compute <span class="process-math">\(AA^{-1}\)</span> and <span class="process-math">\(A^{-1}A\text{.}\)</span>
+<li id="li-270"><div class="para" id="p-1081">Evaluate the Sage cell below multiple times.</div></li>
+<li id="li-271"><div class="para" id="p-1082">When the matrix is invertible, verify that <span class="process-math">\(AA^{-1}=A^{-1}A=I\text{.}\)</span> If you like, use the blank Sage cell to compute <span class="process-math">\(AA^{-1}\)</span> and <span class="process-math">\(A^{-1}A\text{.}\)</span>
 </div></li>
-<li id="li-219"><div class="para" id="p-701">Try increasing the density setting in <code class="code-inline tex2jax_ignore">random_element()</code> (e.g., <code class="code-inline tex2jax_ignore">density=0.75</code>, <code class="code-inline tex2jax_ignore">density=.875</code>) and see if the matrix is more or less likely to be invertible.</div></li>
+<li id="li-272"><div class="para" id="p-1083">Try increasing the density setting in <code class="code-inline tex2jax_ignore">random_element()</code> (e.g., <code class="code-inline tex2jax_ignore">density=0.75</code>, <code class="code-inline tex2jax_ignore">density=.875</code>) and see if the matrix is more or less likely to be invertible.</div></li>
 </ul>
 </div> <pre class="ptx-sagecell hidden-sagecell-sage" id="sage-25"><script type="text/x-sage">R=MatrixSpace(QQ,4,4)
 A=R.random_element(density=0.5)
@@ -945,12 +945,12 @@ if A.is_invertible():
     print(A.inverse())
 </script></pre> <pre class="ptx-sagecell hidden-sagecell-sage" id="sage-26"><script type="text/x-sage">
 </script></pre></article></div>
-<div class="para" id="p-702">The next theorem tells us that invertibility is preserved by matrix multiplication: that is, if <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are invertible <span class="process-math">\(n\times n\)</span> matrices, then so is <span class="process-math">\(C=AB\text{.}\)</span>
+<div class="para" id="p-1084">The next theorem tells us that invertibility is preserved by matrix multiplication: that is, if <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are invertible <span class="process-math">\(n\times n\)</span> matrices, then so is <span class="process-math">\(C=AB\text{.}\)</span>
 </div>
 <article class="theorem theorem-like" id="th_invertible_prod"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.3.6</span><span class="period">.</span><span class="space"> </span><span class="title">Invertibility of products.</span>
 </h4>
-<div class="para logical" id="p-703">
+<div class="para logical" id="p-1085">
 <div class="para">Let <span class="process-math">\(A,B\)</span> be <span class="process-math">\(n\times n\)</span> matrices. If <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are both invertible, then so is their product <span class="process-math">\(AB\text{.}\)</span> Using logical notation:</div>
 <div class="displaymath process-math" id="eq_inv_implies_prod">
 \begin{equation}
@@ -963,7 +963,7 @@ A, B  \text{ invertible } \implies AB \text{ invertible }\text{.}\tag{2.3.2}
 (AB)^{-1}=B^{-1}A^{-1}\text{.}\tag{2.3.3}
 \end{equation}
 </div>
-</div></article><article class="hiddenproof" id="proof-15"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-15"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-15"><article class="hiddenproof"><div class="para logical" id="p-704">
+</div></article><article class="hiddenproof" id="proof-15"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-15"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-15"><article class="hiddenproof"><div class="para logical" id="p-1086">
 <div class="para">Assume <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are invertible. The statement of the theorem proposes a candidate for the inverse of <span class="process-math">\(AB\text{:}\)</span> namely, <span class="process-math">\(C=B^{-1}A^{-1}\text{.}\)</span> We need only show that <span class="process-math">\(C\)</span> satisfies <span class="process-math">\(C(AB)=(AB)C=I\text{.}\)</span> Here goes:</div>
 <div class="displaymath process-math" id="md-69">
 \begin{align*}
@@ -975,14 +975,14 @@ C(AB)\amp =\amp (B^{-1}A^{-1})AB=B^{-1}A^{-1}AB=B^{-1}IB=B^{-1}B=I\\
 <article class="corollary theorem-like" id="c_invertible_prod"><h4 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">2.3.7</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-705">
+<div class="para logical" id="p-1087">
 <div class="para">More generally, if <span class="process-math">\(A_1,A_2,\dots A_r\)</span> are invertible <span class="process-math">\(n\times n\)</span> matrices, then their product <span class="process-math">\(A_1A_2\cdots A_r\)</span> is invertible. Furthermore, we have in this case</div>
 <div class="displaymath process-math" id="eq_inv_prod_arb_form">
 \begin{equation}
 (A_1A_2\cdots A_r)^{-1}=A_r^{-1}A_{r-1}^{-1}\cdots A_1^{-1}\text{.}\tag{2.3.4}
 \end{equation}
 </div>
-</div></article><article class="hiddenproof" id="proof-16"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-16"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-16"><article class="hiddenproof"><div class="para" id="p-706">We prove by induction on the number <span class="process-math">\(r\)</span> of matrices, <span class="process-math">\(r\geq 1\text{,}\)</span> that if the <span class="process-math">\(A_i\)</span> are invertible, then the proposed inverse formula is valid. <article class="case" id="case-33"><h4 class="heading">Base step: <span class="process-math">\(r=1\)</span>.</h4> <div class="para" id="p-707">For <span class="process-math">\(r=1\text{,}\)</span> the inverse formula reads <span class="process-math">\(A_1^{-1}=A_1^{-1}\text{,}\)</span> which is clearly true.</div></article> <article class="case" id="case-34"><h4 class="heading">Induction step.</h4> <div class="para logical" id="p-708">
+</div></article><article class="hiddenproof" id="proof-16"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-16"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-16"><article class="hiddenproof"><div class="para" id="p-1088">We prove by induction on the number <span class="process-math">\(r\)</span> of matrices, <span class="process-math">\(r\geq 1\text{,}\)</span> that if the <span class="process-math">\(A_i\)</span> are invertible, then the proposed inverse formula is valid. <article class="case" id="case-33"><h4 class="heading">Base step: <span class="process-math">\(r=1\)</span>.</h4> <div class="para" id="p-1089">For <span class="process-math">\(r=1\text{,}\)</span> the inverse formula reads <span class="process-math">\(A_1^{-1}=A_1^{-1}\text{,}\)</span> which is clearly true.</div></article> <article class="case" id="case-34"><h4 class="heading">Induction step.</h4> <div class="para logical" id="p-1090">
 <div class="para">For the induction step we assume that the inverse formula is valid for any collection of <span class="process-math">\(r-1\)</span> invertible matrices, and then show it is valid for any collection of <span class="process-math">\(r\)</span> invertible matrices. Let <span class="process-math">\(A_1,A_2,\dots, A_r\)</span> be invertible <span class="process-math">\(n\times n\)</span> matrices. Define <span class="process-math">\(A=A_1A_2\cdots A_{r-1}\text{.}\)</span> Then</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/th_invertible_prod.html" id="md-70">
 \begin{align*}
@@ -998,23 +998,23 @@ C(AB)\amp =\amp (B^{-1}A^{-1})AB=B^{-1}A^{-1}AB=B^{-1}IB=B^{-1}B=I\\
 <article class="remark remark-like" id="remark-32"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.3.8</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-709">Whenever confronted with a logical implication of the form <span class="process-math">\(\mathcal{P}\implies\mathcal{Q}\text{,}\)</span> where <span class="process-math">\(\mathcal{P}\)</span> and <span class="process-math">\(\mathcal{Q}\)</span> denote arbitrary propositions, you should always ask whether the implication “goes the other way”. In other words, does the converse implication  <span class="process-math">\(\mathcal{Q}\implies \mathcal{P} \)</span> also hold?</div> <div class="para" id="p-710">The answer with regard to the implication <a href="" class="xref" data-knowl="./knowl/eq_inv_implies_prod.html" title="Equation 2.3.2">(2.3.2)</a> is yes, though the proof of this is more difficult then you think. (See <a href="" class="xref" data-knowl="./knowl/cor_inv_prod_eq.html" title="Corollary 2.4.14: Invertibility of product equivalence">Corollary 2.4.14</a>.)</div> <div class="para logical" id="p-711">
+<div class="para" id="p-1091">Whenever confronted with a logical implication of the form <span class="process-math">\(\mathcal{P}\implies\mathcal{Q}\text{,}\)</span> where <span class="process-math">\(\mathcal{P}\)</span> and <span class="process-math">\(\mathcal{Q}\)</span> denote arbitrary propositions, you should always ask whether the implication “goes the other way”. In other words, does the converse implication  <span class="process-math">\(\mathcal{Q}\implies \mathcal{P} \)</span> also hold?</div> <div class="para" id="p-1092">The answer with regard to the implication <a href="" class="xref" data-knowl="./knowl/eq_inv_implies_prod.html" title="Equation 2.3.2">(2.3.2)</a> is yes, though the proof of this is more difficult then you think. (See <a href="" class="xref" data-knowl="./knowl/cor_inv_prod_eq.html" title="Corollary 2.4.14: Invertibility of product equivalence">Corollary 2.4.14</a>.)</div> <div class="para logical" id="p-1093">
 <div class="para">The following argument is a common <em class="emphasis">invalid</em> proof of the reverse implication:</div>
 <ol class="decimal">
-<li id="li-220"><div class="para" id="p-712">Assume <span class="process-math">\(AB\)</span> is invertible.</div></li>
-<li id="li-221"><div class="para" id="p-713">Then <span class="process-math">\(AB\)</span> has an inverse matrix.</div></li>
-<li id="li-222"><div class="para" id="p-714">Then the inverse of <span class="process-math">\(AB\)</span> is <span class="process-math">\(B^{-1}A^{-1}\text{.}\)</span>
+<li id="li-273"><div class="para" id="p-1094">Assume <span class="process-math">\(AB\)</span> is invertible.</div></li>
+<li id="li-274"><div class="para" id="p-1095">Then <span class="process-math">\(AB\)</span> has an inverse matrix.</div></li>
+<li id="li-275"><div class="para" id="p-1096">Then the inverse of <span class="process-math">\(AB\)</span> is <span class="process-math">\(B^{-1}A^{-1}\text{.}\)</span>
 </div></li>
-<li id="li-223"><div class="para" id="p-715">Then <span class="process-math">\(A^{-1}\)</span> and <span class="process-math">\(B^{-1}\)</span> exist. Hence <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are invertible.</div></li>
+<li id="li-276"><div class="para" id="p-1097">Then <span class="process-math">\(A^{-1}\)</span> and <span class="process-math">\(B^{-1}\)</span> exist. Hence <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are invertible.</div></li>
 </ol>
 <div class="para">Where is the flaw in our logic here? The second statement only allows us to conclude that there is some mystery matrix <span class="process-math">\(C\)</span> satisfying <span class="process-math">\((AB)C=C(AB)=I\text{.}\)</span> We cannot yet say that <span class="process-math">\(C=B^{-1}A^{-1}\text{,}\)</span> as this formula from <a href="" class="xref" data-knowl="./knowl/th_invertible_prod.html" title="Theorem 2.3.6: Invertibility of products">Theorem 2.3.6</a> only applies when we already know that <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are both invertible. But this is exactly what we are trying to prove! As such we are guilty here of “begging the question”, or <i class="foreign">petitio principii</i> in Latin.</div>
 </div></article></section><section class="subsection" id="subsection-26"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.3.2</span> <span class="title">Powers of matrices, matrix polynomials</span>
 </h3>
-<div class="para" id="p-716">We end this section by exploring how the matrix inverse operation fits into our matrix algebra. First, we can now use the inverse operation to define matrix powers of the form <span class="process-math">\(A^r\text{,}\)</span> where <span class="process-math">\(A\)</span> is a square matrix and <span class="process-math">\(r\)</span> is an arbitrary integer.</div>
+<div class="para" id="p-1098">We end this section by exploring how the matrix inverse operation fits into our matrix algebra. First, we can now use the inverse operation to define matrix powers of the form <span class="process-math">\(A^r\text{,}\)</span> where <span class="process-math">\(A\)</span> is a square matrix and <span class="process-math">\(r\)</span> is an arbitrary integer.</div>
 <article class="definition definition-like" id="d_matrix_powers"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.3.9</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix powers.</span>
-</h4>  <div class="para logical" id="p-717">
+</h4>  <div class="para logical" id="p-1099">
 <div class="para">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(n\times n\)</span> matrix, and let <span class="process-math">\(r\in\Z\)</span> be an integer. We define the power matrix <span class="process-math">\(A^r\)</span> as follows:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1022,11 +1022,11 @@ A^r=\begin{cases} I\amp \text{if } r=0;\\[2ex] \underset{r \text{ times}}{\under
 \end{cases}\text{.}
 \end{equation*}
 </div>
-</div></article><div class="para" id="p-718">Equipped with a notion of matrix powers, we can further define matrix polynomials for square matrices.</div>
+</div></article><div class="para" id="p-1100">Equipped with a notion of matrix powers, we can further define matrix polynomials for square matrices.</div>
 <article class="definition definition-like" id="d_matrix_polynomials"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.3.10</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-719">
+<div class="para logical" id="p-1101">
 <div class="para">Let <span class="process-math">\(f(x)=\anpoly\)</span> be a polynomial with real coefficients. For any square matrix <span class="process-math">\(A\)</span> of size <span class="process-math">\(n\times n\text{,}\)</span> we define the matrix <span class="process-math">\(f(A)\)</span> as</div>
 <div class="displaymath process-math" id="eq_matrix_polynomial">
 \begin{equation}
@@ -1040,7 +1040,7 @@ f(A)=a_nA^n+a_{n-1}A^{n-1}+\cdots +a_1A+a_0I_n\text{.}\tag{2.3.5}
 </h4>It is both easy and perilous to forget the identity matrix in the term <span class="process-math">\(a_0I_n\)</span> appearing in <a href="" class="xref" data-knowl="./knowl/eq_matrix_polynomial.html" title="Equation 2.3.5">(2.3.5)</a>. Take caution not to make this mistake; without an identity matrix of appropriate size, the expression <span class="process-math">\(f(A)\)</span> simply does not make sense.</article><article class="example example-like" id="example-31"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.12</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix polynomials.</span>
 </h4>
-<div class="para logical" id="p-720">
+<div class="para logical" id="p-1102">
 <div class="para">Let <span class="process-math">\(f(x)=x^2-2x+1\text{.}\)</span> Evaluate <span class="process-math">\(f\)</span> at  the matrices</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1062,7 +1062,7 @@ B=\begin{bmatrix}
 </div>
 </div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-24" id="solution-24"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-24"><div class="solution solution-like"><div class="para logical" id="p-721">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-29" id="solution-29"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-29"><div class="solution solution-like"><div class="para logical" id="p-1103">
 <div class="para">We have</div>
 <div class="displaymath process-math" id="md-71">
 \begin{align*}
@@ -1102,35 +1102,35 @@ f(B) \amp=B^2-2B+I_3 \\
 </div></div></div>
 </div></article><article class="project project-like" id="project-8"><a href="" data-knowl="" class="id-ref project-knowl original" data-refid="hk-project-8"><h4 class="heading">
 <span class="type">Sage example</span><span class="space"> </span><span class="codenumber">8</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix polynomials.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-project-8"><article class="project project-like"> <div class="para" id="p-722">An integer matrix power <span class="process-math">\(A^n\)</span> is computed in Sage as <code class="code-inline tex2jax_ignore">A^n</code>.</div> <pre class="ptx-sagecell hidden-sagecell-sage" id="sage-27"><script type="text/x-sage">A=Matrix([[1,1,1],[1,2,1],[-1,1,0]])
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-project-8"><article class="project project-like"> <div class="para" id="p-1104">An integer matrix power <span class="process-math">\(A^n\)</span> is computed in Sage as <code class="code-inline tex2jax_ignore">A^n</code>.</div> <pre class="ptx-sagecell hidden-sagecell-sage" id="sage-27"><script type="text/x-sage">A=Matrix([[1,1,1],[1,2,1],[-1,1,0]])
 show(A^3)
 show(A^-1)
 show(A^-2)
-</script></pre> <div class="para" id="p-723">Of course the matrix needs to be invertible for a negative of power to be computed. Sage will throw an error in this case if the matrix is singular.</div> <pre class="ptx-sagecell hidden-sagecell-sage" id="sage-28"><script type="text/x-sage">B=Matrix([[1,1],[1,1]])
+</script></pre> <div class="para" id="p-1105">Of course the matrix needs to be invertible for a negative of power to be computed. Sage will throw an error in this case if the matrix is singular.</div> <pre class="ptx-sagecell hidden-sagecell-sage" id="sage-28"><script type="text/x-sage">B=Matrix([[1,1],[1,1]])
 show(B.is_invertible())
 show(B^-2)
-</script></pre> <div class="para" id="p-724">Polynomial expressions can then be easily computed manually in Sage. The next cell computes <span class="process-math">\(f(A)\)</span> and <span class="process-math">\(f(B)\)</span> for <span class="process-math">\(f(x)=x^2-3x+33\text{.}\)</span>
+</script></pre> <div class="para" id="p-1106">Polynomial expressions can then be easily computed manually in Sage. The next cell computes <span class="process-math">\(f(A)\)</span> and <span class="process-math">\(f(B)\)</span> for <span class="process-math">\(f(x)=x^2-3x+33\text{.}\)</span>
 </div> <pre class="ptx-sagecell hidden-sagecell-sage" id="sage-29"><script type="text/x-sage">show(A^2-3*A+33*identity_matrix(3))
 show(B^2-3*B+33*identity_matrix(2))
-</script></pre> <div class="para" id="p-725">We took care to heed the warning in <a href="" class="xref" data-knowl="./knowl/rem_matrix_polynomials.html" title="Remark 2.3.11">Remark 2.3.11</a>, making sure to include <span class="process-math">\(I_3\)</span> for <span class="process-math">\(f(A)\)</span> (<code class="code-inline tex2jax_ignore">identity_matrix(3)</code>) and <span class="process-math">\(I_2\)</span> for <span class="process-math">\(f(B)\)</span> (<code class="code-inline tex2jax_ignore">identity_matrix(2)</code>). Interestingly, Sage is smart enough to figure out what we mean even if we are sloppy in this regard.</div> <pre class="ptx-sagecell hidden-sagecell-sage" id="sage-30"><script type="text/x-sage">show(A^2-3*A+33)
+</script></pre> <div class="para" id="p-1107">We took care to heed the warning in <a href="" class="xref" data-knowl="./knowl/rem_matrix_polynomials.html" title="Remark 2.3.11">Remark 2.3.11</a>, making sure to include <span class="process-math">\(I_3\)</span> for <span class="process-math">\(f(A)\)</span> (<code class="code-inline tex2jax_ignore">identity_matrix(3)</code>) and <span class="process-math">\(I_2\)</span> for <span class="process-math">\(f(B)\)</span> (<code class="code-inline tex2jax_ignore">identity_matrix(2)</code>). Interestingly, Sage is smart enough to figure out what we mean even if we are sloppy in this regard.</div> <pre class="ptx-sagecell hidden-sagecell-sage" id="sage-30"><script type="text/x-sage">show(A^2-3*A+33)
 show(B^2-3*B+33)
 </script></pre></article></div>
 <article class="theorem theorem-like" id="th_power_rules"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.3.13</span><span class="period">.</span><span class="space"> </span><span class="title">Properties of matrix powers.</span>
 </h4>
-<div class="para logical" id="p-726">
+<div class="para logical" id="p-1108">
 <div class="para">The following properties hold for all matrices <span class="process-math">\(A, B\text{,}\)</span> all scalars <span class="process-math">\(c\in \R\text{,}\)</span> and all integers <span class="process-math">\(r,s\in\Z\)</span> for which the given expression makes sense.</div>
 <ol class="decimal">
-<li id="li-224"><div class="para" id="p-727"><span class="process-math">\(\displaystyle A^{r+s}=A^rA^s\)</span></div></li>
-<li id="li-225"><div class="para" id="p-728"><span class="process-math">\(\displaystyle (A^r)^s=A^{rs}\)</span></div></li>
-<li id="li-226"><div class="para" id="p-729"><span class="process-math">\(\displaystyle (cA)^r=c^rA^r\)</span></div></li>
-<li id="li-227"><div class="para" id="p-730"><span class="process-math">\(\displaystyle (A^{-1})^{-1}=A\)</span></div></li>
-<li id="li-228"><div class="para" id="p-731"><span class="process-math">\(A^{-r}=(A^{-1})^r\text{.}\)</span></div></li>
+<li id="li-277"><div class="para" id="p-1109"><span class="process-math">\(\displaystyle A^{r+s}=A^rA^s\)</span></div></li>
+<li id="li-278"><div class="para" id="p-1110"><span class="process-math">\(\displaystyle (A^r)^s=A^{rs}\)</span></div></li>
+<li id="li-279"><div class="para" id="p-1111"><span class="process-math">\(\displaystyle (cA)^r=c^rA^r\)</span></div></li>
+<li id="li-280"><div class="para" id="p-1112"><span class="process-math">\(\displaystyle (A^{-1})^{-1}=A\)</span></div></li>
+<li id="li-281"><div class="para" id="p-1113"><span class="process-math">\(A^{-r}=(A^{-1})^r\text{.}\)</span></div></li>
 </ol>
-</div></article><article class="hiddenproof" id="proof-17"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-17"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-17"><article class="hiddenproof"><div class="para" id="p-732">The proofs of the first three statements are elementary, and closely resemble proofs of similar results in real number algebra. We leave these as an (unassigned) exercise.</div> <div class="para" id="p-733">For the fourth statement to make sense, we must assume that <span class="process-math">\(A\)</span> is invertible. The claim here is that <span class="process-math">\(A^{-1}\)</span> is invertible, and that its inverse is <span class="process-math">\(A\)</span> itself. To prove this we need only show <span class="process-math">\(A^{-1}A=AA^{-1}=I\text{,}\)</span> which follows from the definition of the inverse.</div> <div class="para" id="p-734">The fifth statement also tacitly assumes <span class="process-math">\(A\)</span> is invertible. To prove it, we consider the three cases <span class="process-math">\(r=0\text{,}\)</span> <span class="process-math">\(r&gt;0\)</span> and <span class="process-math">\(r &lt; 0\text{.}\)</span>
-</div> <div class="para" id="p-735">If <span class="process-math">\(r=0\text{,}\)</span> then by definition  <span class="process-math">\(A^{-r}=A^0=I=(A^{-1})^0=(A^{-1})^r\text{.}\)</span>
-</div> <div class="para" id="p-736">If <span class="process-math">\(r&gt;0\text{,}\)</span> then by definition <span class="process-math">\(A^{-r}=(A^{-1})^r\text{.}\)</span>
-</div> <div class="para logical" id="p-737">
+</div></article><article class="hiddenproof" id="proof-17"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-17"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-17"><article class="hiddenproof"><div class="para" id="p-1114">The proofs of the first three statements are elementary, and closely resemble proofs of similar results in real number algebra. We leave these as an (unassigned) exercise.</div> <div class="para" id="p-1115">For the fourth statement to make sense, we must assume that <span class="process-math">\(A\)</span> is invertible. The claim here is that <span class="process-math">\(A^{-1}\)</span> is invertible, and that its inverse is <span class="process-math">\(A\)</span> itself. To prove this we need only show <span class="process-math">\(A^{-1}A=AA^{-1}=I\text{,}\)</span> which follows from the definition of the inverse.</div> <div class="para" id="p-1116">The fifth statement also tacitly assumes <span class="process-math">\(A\)</span> is invertible. To prove it, we consider the three cases <span class="process-math">\(r=0\text{,}\)</span> <span class="process-math">\(r&gt;0\)</span> and <span class="process-math">\(r &lt; 0\text{.}\)</span>
+</div> <div class="para" id="p-1117">If <span class="process-math">\(r=0\text{,}\)</span> then by definition  <span class="process-math">\(A^{-r}=A^0=I=(A^{-1})^0=(A^{-1})^r\text{.}\)</span>
+</div> <div class="para" id="p-1118">If <span class="process-math">\(r&gt;0\text{,}\)</span> then by definition <span class="process-math">\(A^{-r}=(A^{-1})^r\text{.}\)</span>
+</div> <div class="para logical" id="p-1119">
 <div class="para">Suppose <span class="process-math">\(r=-s &lt; 0\text{.}\)</span> Then</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/d_matrix_powers.html" id="md-73">
 \begin{align*}
@@ -1143,8 +1143,8 @@ show(B^2-3*B+33)
 <article class="theorem theorem-like" id="th_inverse_trans"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.3.14</span><span class="period">.</span><span class="space"> </span><span class="title">Inverse and transpose.</span>
 </h4>
-<div class="para" id="p-738">Let <span class="process-math">\(A\)</span> be invertible. Then <span class="process-math">\(A^T\)</span> is invertible and <span class="process-math">\(\left(A^T\right)^{-1}=\left(A^{-1}\right)^T\text{.}\)</span>
-</div></article><article class="hiddenproof" id="proof-18"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-18"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-18"><article class="hiddenproof"><div class="para logical" id="p-739">
+<div class="para" id="p-1120">Let <span class="process-math">\(A\)</span> be invertible. Then <span class="process-math">\(A^T\)</span> is invertible and <span class="process-math">\(\left(A^T\right)^{-1}=\left(A^{-1}\right)^T\text{.}\)</span>
+</div></article><article class="hiddenproof" id="proof-18"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-18"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-18"><article class="hiddenproof"><div class="para logical" id="p-1121">
 <div class="para">Suppose <span class="process-math">\(A\)</span> is invertible with inverse <span class="process-math">\(A^{-1}\text{.}\)</span> The theorem claims <span class="process-math">\(A^T\)</span> is invertible, and that in fact <span class="process-math">\((A^T)^{-1}=(A^{-1})^T\text{.}\)</span> To prove this, we need only show that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/th_trans_props.html ./knowl/th_trans_props.html">
 \begin{equation*}
@@ -1171,51 +1171,180 @@ A^T(A^{-1})^T\amp =\left(A^{-1}A\right)^T \amp (\knowl{./knowl/th_trans_props.ht
 <span class="type">Exercises</span> <span class="codenumber">2.3.3</span> <span class="title">Exercises</span>
 </h3>
 <article class="subexercises" id="subexercises-11"><h4 class="heading"><span class="title">WeBWork Exercises</span></h4>
-<article class="exercise exercise-like" id="exercise-75"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5></article><article class="exercise exercise-like" id="exercise-76"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5></article><article class="exercise exercise-like" id="exercise-77"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5></article><article class="exercise exercise-like" id="exercise-78"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5></article><article class="exercise exercise-like" id="exercise-79"><h5 class="heading"><span class="codenumber">5<span class="period">.</span></span></h5></article></article><article class="subexercises" id="subexercises-12"><h4 class="heading"><span class="title">Written Exercises</span></h4>
+<article class="exercise exercise-like" id="exercise-75"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
+<div id="webwork-38" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="38" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-sourceFilePath="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/3.3.48.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-38')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="p-1122">If <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are invertible <span class="process-math">\(n\times n\)</span> matrices, then the inverse of <span class="process-math">\(A+B\)</span> is <span class="process-math">\(A^{-1}+B^{-1}\text{.}\)</span><ul style="list-style:circle;">
+<li id="li-282"><div class="para" id="p-derived-li-282"></div></li>
+<li id="li-283"><div class="para" id="p-1123">True</div></li>
+<li id="li-284"><div class="para" id="p-1124">False</div></li>
+</ul>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-184" id="answer-184"><span class="type">Answer</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-184"><div class="answer solution-like"><div class="para" id="p-1125"><span class="process-math">\(\text{False}\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-30" id="solution-30"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-30"><div class="solution solution-like"><div class="para" id="p-1126">
+<em class="alert">SOLUTION:</em> False. For example, let <span class="process-math">\(A = I_n\text{,}\)</span> and <span class="process-math">\(B = -I_n\text{,}\)</span> then <span class="process-math">\(A+B = 0_n\text{,}\)</span> which is not invertible.</div></div></div>
+</div>
+</div>
+</div></article><article class="exercise exercise-like" id="exercise-76"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
+<div id="webwork-39" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="39" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-sourceFilePath="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/3.3.54.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-39')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="p-1127">Solve for the matrix <span class="process-math">\(X\)</span> if <span class="process-math">\(AX(D+B X)^{-1} = C\text{.}\)</span> Assume that all matrices are <span class="process-math">\(n\times n\)</span> and invertible as needed.</div> <div class="para" id="p-1128">
+<span class="process-math">\(X =\)</span><span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-185" id="answer-185"><span class="type">Answer</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-185"><div class="answer solution-like"><div class="para" id="p-1129"><span class="process-math">\(\left(A-CB\right)^{-1}CD\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-31" id="solution-31"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-31"><div class="solution solution-like"><div class="para logical" id="p-1130">
+<div class="para">
+<em class="alert">SOLUTION:</em> Note that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{align*}
+AX(D+BX)^{-1} = C \amp \Rightarrow AX = C(D+BX) = CD + CBX \\
+\amp \Rightarrow  AX - CBX = CD\\
+\amp \Rightarrow (A-CB)X = CD \\
+\amp \Rightarrow X = (A-CB)^{-1} CD.
+\end{align*}
+\end{equation*}
+</div>
+</div></div></div>
+</div>
+</div>
+</div></article><article class="exercise exercise-like" id="exercise-77"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
+<div id="webwork-40" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="40" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-sourceFilePath="Library/Rochester/setLinearAlgebra4InverseMatrix/ur_Ch2_1_4.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-40')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="p-1131">Are the following matrices invertible?</div> <div class="para logical" id="p-1132"><ol class="lower-alpha">
+<li id="li-285"><div class="para" id="p-1133"><span class="process-math">\(\displaystyle \left[\begin{array}{cc}
+9 \amp -4\cr
+0 \amp 0
+\end{array}\right]\)</span></div></li>
+<li id="li-286"><div class="para" id="p-1134"><span class="process-math">\(\displaystyle \left[\begin{array}{cc}
+-9 \amp -4\cr
+9 \amp 4
+\end{array}\right]\)</span></div></li>
+<li id="li-287"><div class="para" id="p-1135"><span class="process-math">\(\displaystyle \left[\begin{array}{cc}
+-1 \amp 3\cr
+5 \amp 2
+\end{array}\right]\)</span></div></li>
+<li id="li-288"><div class="para" id="p-1136"><span class="process-math">\(\displaystyle \left[\begin{array}{cc}
+-1 \amp -3\cr
+-1 \amp -4
+\end{array}\right]\)</span></div></li>
+</ol></div>
+</div>
+</div></article><article class="exercise exercise-like" id="exercise-78"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
+<div id="webwork-41" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="41" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-sourceFilePath="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/3.3.59.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-41')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="p-1137">For what values of <span class="process-math">\(c\)</span> will <span class="process-math">\(\displaystyle A = \begin{bmatrix} 1 \amp  1 \\ c \amp  c^2 \end{bmatrix}\)</span> be invertible?</div> <div class="para" id="p-1138">For all <span class="process-math">\(c\)</span> such that <span class="process-math">\(c\neq\)</span> <span class="fillin underline" role="img" aria-label="6-character blank" style="width: 2.727272727272727em;"></span> and <span class="process-math">\(c\neq\)</span> <span class="fillin underline" role="img" aria-label="6-character blank" style="width: 2.727272727272727em;"></span>.</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-186" id="answer-186"><span class="type">Answer</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-186"><div class="answer solution-like"><div class="para" id="p-1139"><span class="process-math">\(0\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-187" id="answer-187"><span class="type">Answer</span><span class="space"> </span><span class="codenumber">2</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-187"><div class="answer solution-like"><div class="para" id="p-1140"><span class="process-math">\(1\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-32" id="solution-32"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-32"><div class="solution solution-like"><div class="para" id="p-1141">
+<em class="alert">SOLUTION:</em> The matrix <span class="process-math">\(\displaystyle A = \begin{bmatrix} 1 \amp  1 \\ c \amp  c^2 \end{bmatrix}\)</span> is invertible provided the columns of <span class="process-math">\(A\)</span> are linearly independent, which will be the case if <span class="process-math">\(c \neq c^2\text{.}\)</span> Thus, we require that <span class="process-math">\(c\neq 0\)</span> and <span class="process-math">\(c \neq 1\text{.}\)</span>
+</div></div></div>
+</div>
+</div>
+</div></article><article class="exercise exercise-like" id="exercise-79"><h5 class="heading"><span class="codenumber">5<span class="period">.</span></span></h5>
+<div id="webwork-42" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="42" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-sourceFilePath="Library/Utah/Business_Algebra/set10_Matrices/p24.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-42')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="p-1142">Let</div> <div class="para logical" id="p-1143"><div class="displaymath process-math">
+\begin{equation*}
+A=\left(\begin{array}{cc} 
+7 \amp  4 \cr
+-4 \amp  8
+\end{array}\right), 
+B=\left(\begin{array}{cc} 
+6 \amp  -6 \cr
+4 \amp  2 
+\end{array}\right).
+\end{equation*}
+</div></div> <div class="para" id="p-1144">Then</div> <div class="para logical" id="p-1145"><div class="displaymath process-math">
+\begin{equation*}
+AB=\left(\begin{array}{cc} 
+a_{11} \amp  a_{12} \cr
+a_{21} \amp  a_{22} 
+\end{array}\right)
+\end{equation*}
+</div></div> <div class="para" id="p-1146">where <span class="process-math">\(a_{11}=\)</span> <span class="fillin underline" role="img" aria-label="3-character blank" style="width: 1.363636363636364em;"></span>, <span class="process-math">\(a_{12}=\)</span> <span class="fillin underline" role="img" aria-label="3-character blank" style="width: 1.363636363636364em;"></span>, <span class="process-math">\(a_{21}=\)</span> <span class="fillin underline" role="img" aria-label="3-character blank" style="width: 1.363636363636364em;"></span>, <span class="process-math">\(a_{22}=\)</span> <span class="fillin underline" role="img" aria-label="3-character blank" style="width: 1.363636363636364em;"></span>,</div> <div class="para logical" id="p-1147"><div class="displaymath process-math">
+\begin{equation*}
+BA=\left(\begin{array}{cc} 
+b_{11} \amp  b_{12} \cr
+b_{21} \amp  b_{22}  
+\end{array}\right)
+\end{equation*}
+</div></div> <div class="para" id="p-1148">where <span class="process-math">\(b_{11}=\)</span> <span class="fillin underline" role="img" aria-label="3-character blank" style="width: 1.363636363636364em;"></span>, <span class="process-math">\(b_{12}=\)</span> <span class="fillin underline" role="img" aria-label="3-character blank" style="width: 1.363636363636364em;"></span>, <span class="process-math">\(b_{21}=\)</span> <span class="fillin underline" role="img" aria-label="3-character blank" style="width: 1.363636363636364em;"></span>, <span class="process-math">\(b_{22}=\)</span> <span class="fillin underline" role="img" aria-label="3-character blank" style="width: 1.363636363636364em;"></span>,</div> <div class="para" id="p-1149">and</div> <div class="para logical" id="p-1150"><div class="displaymath process-math">
+\begin{equation*}
+A^T B^T=\left(\begin{array}{cc} 
+c_{11} \amp  c_{12} \cr
+c_{21} \amp  c_{22} 
+\end{array}\right)
+\end{equation*}
+</div></div> <div class="para" id="p-1151">where <span class="process-math">\(c_{11}=\)</span> <span class="fillin underline" role="img" aria-label="3-character blank" style="width: 1.363636363636364em;"></span>, <span class="process-math">\(c_{12}=\)</span> <span class="fillin underline" role="img" aria-label="3-character blank" style="width: 1.363636363636364em;"></span>, <span class="process-math">\(c_{21}=\)</span> <span class="fillin underline" role="img" aria-label="3-character blank" style="width: 1.363636363636364em;"></span>, <span class="process-math">\(c_{22}=\)</span> <span class="fillin underline" role="img" aria-label="3-character blank" style="width: 1.363636363636364em;"></span>.</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-188" id="answer-188"><span class="type">Answer</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-188"><div class="answer solution-like"><div class="para" id="p-1152"><span class="process-math">\(58\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-189" id="answer-189"><span class="type">Answer</span><span class="space"> </span><span class="codenumber">2</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-189"><div class="answer solution-like"><div class="para" id="p-1153"><span class="process-math">\(-34\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-190" id="answer-190"><span class="type">Answer</span><span class="space"> </span><span class="codenumber">3</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-190"><div class="answer solution-like"><div class="para" id="p-1154"><span class="process-math">\(8\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-191" id="answer-191"><span class="type">Answer</span><span class="space"> </span><span class="codenumber">4</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-191"><div class="answer solution-like"><div class="para" id="p-1155"><span class="process-math">\(40\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-192" id="answer-192"><span class="type">Answer</span><span class="space"> </span><span class="codenumber">5</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-192"><div class="answer solution-like"><div class="para" id="p-1156"><span class="process-math">\(66\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-193" id="answer-193"><span class="type">Answer</span><span class="space"> </span><span class="codenumber">6</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-193"><div class="answer solution-like"><div class="para" id="p-1157"><span class="process-math">\(-24\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-194" id="answer-194"><span class="type">Answer</span><span class="space"> </span><span class="codenumber">7</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-194"><div class="answer solution-like"><div class="para" id="p-1158"><span class="process-math">\(20\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-195" id="answer-195"><span class="type">Answer</span><span class="space"> </span><span class="codenumber">8</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-195"><div class="answer solution-like"><div class="para" id="p-1159"><span class="process-math">\(32\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-196" id="answer-196"><span class="type">Answer</span><span class="space"> </span><span class="codenumber">9</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-196"><div class="answer solution-like"><div class="para" id="p-1160"><span class="process-math">\(66\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-197" id="answer-197"><span class="type">Answer</span><span class="space"> </span><span class="codenumber">10</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-197"><div class="answer solution-like"><div class="para" id="p-1161"><span class="process-math">\(20\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-198" id="answer-198"><span class="type">Answer</span><span class="space"> </span><span class="codenumber">11</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-198"><div class="answer solution-like"><div class="para" id="p-1162"><span class="process-math">\(-24\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-199" id="answer-199"><span class="type">Answer</span><span class="space"> </span><span class="codenumber">12</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-199"><div class="answer solution-like"><div class="para" id="p-1163"><span class="process-math">\(32\)</span></div></div></div>
+</div>
+</div>
+</div></article></article><article class="subexercises" id="subexercises-12"><h4 class="heading"><span class="title">Written Exercises</span></h4>
 <article class="exercise exercise-like" id="exercise-80"><h5 class="heading"><span class="codenumber">6<span class="period">.</span></span></h5>
-<div class="para" id="p-740">For each matrix either provide an inverse or show the matrix is not invertible. Justify your answer.</div> <ol class="lower-alpha">
-<li id="li-229"><div class="para" id="p-741"><span class="process-math">\(\displaystyle A=\begin{amatrix}[rr]1\amp 4\\ -2\amp -7  \end{amatrix}\)</span></div></li>
-<li id="li-230"><div class="para" id="p-742"><span class="process-math">\(\displaystyle A=\begin{amatrix}[rr] 2\amp -1 \\ 1/2 \amp -1/4  \end{amatrix}\)</span></div></li>
-<li id="li-231"><div class="para" id="p-743">
+<div class="para" id="p-1164">For each matrix either provide an inverse or show the matrix is not invertible. Justify your answer.</div> <ol class="lower-alpha">
+<li id="li-289"><div class="para" id="p-1165"><span class="process-math">\(\displaystyle A=\begin{amatrix}[rr]1\amp 4\\ -2\amp -7  \end{amatrix}\)</span></div></li>
+<li id="li-290"><div class="para" id="p-1166"><span class="process-math">\(\displaystyle A=\begin{amatrix}[rr] 2\amp -1 \\ 1/2 \amp -1/4  \end{amatrix}\)</span></div></li>
+<li id="li-291"><div class="para" id="p-1167">
 <span class="process-math">\(A=p\left( \begin{amatrix}[rr] 1\amp -2 \\ -2 \amp 0  \end{amatrix}\right)\text{,}\)</span> where <span class="process-math">\(p(x)=x^2+x+1\text{.}\)</span>
 </div></li>
 </ol></article><article class="exercise exercise-like" id="exercise-81"><h5 class="heading"><span class="codenumber">7<span class="period">.</span></span></h5>
-<div class="para" id="p-744">Each <span class="process-math">\(A\)</span> below is invertible. Find <span class="process-math">\(A^{-1}\)</span> by guess and check. You may want to use the row or column method of matrix multiplication to justify your answer.</div> <ol class="lower-alpha">
-<li id="li-232"><div class="para" id="p-745"><span class="process-math">\(\displaystyle A=\begin{amatrix}[ccc]1\amp 0\amp 0\\ 0\amp 0\amp 1\\ 0\amp 1\amp 0  \end{amatrix}\)</span></div></li>
-<li id="li-233"><div class="para" id="p-746"><span class="process-math">\(\displaystyle A=\begin{amatrix}[rrr]0\amp 0\amp 1 \\0 \amp -1 \amp 0 \\ -1 \amp 0 \amp 0   \end{amatrix}\)</span></div></li>
-<li id="li-234"><div class="para" id="p-747"><span class="process-math">\(\displaystyle A=\begin{amatrix}[rrr] 1 \amp 0\amp 0\\ 0\amp 1\amp 2 \\ 0\amp 0\amp 1  \end{amatrix}\)</span></div></li>
+<div class="para" id="p-1168">Each <span class="process-math">\(A\)</span> below is invertible. Find <span class="process-math">\(A^{-1}\)</span> by guess and check. You may want to use the row or column method of matrix multiplication to justify your answer.</div> <ol class="lower-alpha">
+<li id="li-292"><div class="para" id="p-1169"><span class="process-math">\(\displaystyle A=\begin{amatrix}[ccc]1\amp 0\amp 0\\ 0\amp 0\amp 1\\ 0\amp 1\amp 0  \end{amatrix}\)</span></div></li>
+<li id="li-293"><div class="para" id="p-1170"><span class="process-math">\(\displaystyle A=\begin{amatrix}[rrr]0\amp 0\amp 1 \\0 \amp -1 \amp 0 \\ -1 \amp 0 \amp 0   \end{amatrix}\)</span></div></li>
+<li id="li-294"><div class="para" id="p-1171"><span class="process-math">\(\displaystyle A=\begin{amatrix}[rrr] 1 \amp 0\amp 0\\ 0\amp 1\amp 2 \\ 0\amp 0\amp 1  \end{amatrix}\)</span></div></li>
 </ol></article><article class="exercise exercise-like" id="exercise-82"><h5 class="heading"><span class="codenumber">8<span class="period">.</span></span></h5>
-<div class="para" id="p-748">Suppose <span class="process-math">\(A\)</span> is an invertible matrix. Prove: for any <em class="emphasis">nonzero</em> <span class="process-math">\(c\in\R\)</span> the matrix <span class="process-math">\(cA\)</span> is invertible.</div></article><article class="exercise exercise-like" id="exercise-83"><h5 class="heading"><span class="codenumber">9<span class="period">.</span></span></h5>
-<div class="para" id="p-749">Assume <span class="process-math">\(A\)</span> is a square <span class="process-math">\(n\times n\)</span> matrix with <span class="process-math">\(n\geq 2\text{.}\)</span>
+<div class="para" id="p-1172">Suppose <span class="process-math">\(A\)</span> is an invertible matrix. Prove: for any <em class="emphasis">nonzero</em> <span class="process-math">\(c\in\R\)</span> the matrix <span class="process-math">\(cA\)</span> is invertible.</div></article><article class="exercise exercise-like" id="exercise-83"><h5 class="heading"><span class="codenumber">9<span class="period">.</span></span></h5>
+<div class="para" id="p-1173">Assume <span class="process-math">\(A\)</span> is a square <span class="process-math">\(n\times n\)</span> matrix with <span class="process-math">\(n\geq 2\text{.}\)</span>
 </div> <ol class="lower-alpha">
-<li id="li-235"><div class="para" id="p-750">Prove: if <span class="process-math">\(A\)</span> has two identical columns, then <span class="process-math">\(A\)</span> is not invertible.</div></li>
-<li id="li-236"><div class="para" id="p-751">Prove: if <span class="process-math">\(A\)</span> has a row that is a scalar multiple of another row, then <span class="process-math">\(A\)</span> is not invertible.</div></li>
+<li id="li-295"><div class="para" id="p-1174">Prove: if <span class="process-math">\(A\)</span> has two identical columns, then <span class="process-math">\(A\)</span> is not invertible.</div></li>
+<li id="li-296"><div class="para" id="p-1175">Prove: if <span class="process-math">\(A\)</span> has a row that is a scalar multiple of another row, then <span class="process-math">\(A\)</span> is not invertible.</div></li>
 </ol>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-4" id="hint-4"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-4"><div class="hint solution-like"><div class="para" id="p-752">Use the column and/or row method of matrix multiplication to show directly that <span class="process-math">\(A\)</span> cannot have an inverse matrix.</div></div></div>
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-4" id="hint-4"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-4"><div class="hint solution-like"><div class="para" id="p-1176">Use the column and/or row method of matrix multiplication to show directly that <span class="process-math">\(A\)</span> cannot have an inverse matrix.</div></div></div>
 </div></article><article class="exercise exercise-like" id="exercise-84"><h5 class="heading"><span class="codenumber">10<span class="period">.</span></span></h5>
-<div class="para" id="p-753">Find all <em class="emphasis">invertible</em> matrices <span class="process-math">\(A\)</span> satisfying the given equation, or show there is no such <span class="process-math">\(A\text{.}\)</span> Justify your answer.</div> <ol class="lower-alpha">
-<li id="li-237"><div class="para" id="p-754"><span class="process-math">\(A^5=\boldzero_{n\times n}\text{.}\)</span></div></li>
-<li id="li-238"><div class="para" id="p-755"><span class="process-math">\(A^{-3}=A^{-4}\text{.}\)</span></div></li>
-<li id="li-239"><div class="para" id="p-756"><span class="process-math">\(\displaystyle A^2-3A=\boldzero_{n\times n}\)</span></div></li>
-<li id="li-240"><div class="para" id="p-757"><span class="process-math">\(\displaystyle ((A^T)^2A)^T-(A^{-1}(A^{-1})^T)^{-1}=\boldzero_{n\times n}\)</span></div></li>
+<div class="para" id="p-1177">Find all <em class="emphasis">invertible</em> matrices <span class="process-math">\(A\)</span> satisfying the given equation, or show there is no such <span class="process-math">\(A\text{.}\)</span> Justify your answer.</div> <ol class="lower-alpha">
+<li id="li-297"><div class="para" id="p-1178"><span class="process-math">\(A^5=\boldzero_{n\times n}\text{.}\)</span></div></li>
+<li id="li-298"><div class="para" id="p-1179"><span class="process-math">\(A^{-3}=A^{-4}\text{.}\)</span></div></li>
+<li id="li-299"><div class="para" id="p-1180"><span class="process-math">\(\displaystyle A^2-3A=\boldzero_{n\times n}\)</span></div></li>
+<li id="li-300"><div class="para" id="p-1181"><span class="process-math">\(\displaystyle ((A^T)^2A)^T-(A^{-1}(A^{-1})^T)^{-1}=\boldzero_{n\times n}\)</span></div></li>
 </ol></article><article class="exercise exercise-like" id="exercise-85"><h5 class="heading"><span class="codenumber">11<span class="period">.</span></span></h5>
-<div class="para" id="p-758">Let <span class="process-math">\(A=\begin{bmatrix}
+<div class="para" id="p-1182">Let <span class="process-math">\(A=\begin{bmatrix}
 1\amp 1\\ 0\amp 1
 \end{bmatrix}\text{.}\)</span> Find a formula for <span class="process-math">\(A^r\text{,}\)</span> where <span class="process-math">\(r\geq 1\)</span> is an integer. Justify your answer using a proof by induction.</div></article><article class="exercise exercise-like" id="exercise-86"><h5 class="heading"><span class="codenumber">12<span class="period">.</span></span></h5>
-<div class="para" id="p-759">Let <span class="process-math">\(A=[1]_{n\times n}\text{,}\)</span> the <span class="process-math">\(n\times n\)</span> matrix consisting of all ones. Find a formula for <span class="process-math">\(A^r\text{,}\)</span> where <span class="process-math">\(r\geq 1\)</span> is an integer. Justify your answer using a proof by induction.</div></article><article class="exercise exercise-like" id="exercise-87"><h5 class="heading"><span class="codenumber">13<span class="period">.</span></span></h5>
-<div class="para" id="p-760">Let <span class="process-math">\(p(x)=x^2-5x+c\text{,}\)</span> where <span class="process-math">\(c\in \R\)</span> is some fixed scalar. Suppose <span class="process-math">\(A\)</span> is an <span class="process-math">\(n\times n\)</span> matrix satisfying <span class="process-math">\(p(A)=\boldzero_{n\times n}\text{.}\)</span>
+<div class="para" id="p-1183">Let <span class="process-math">\(A=[1]_{n\times n}\text{,}\)</span> the <span class="process-math">\(n\times n\)</span> matrix consisting of all ones. Find a formula for <span class="process-math">\(A^r\text{,}\)</span> where <span class="process-math">\(r\geq 1\)</span> is an integer. Justify your answer using a proof by induction.</div></article><article class="exercise exercise-like" id="exercise-87"><h5 class="heading"><span class="codenumber">13<span class="period">.</span></span></h5>
+<div class="para" id="p-1184">Let <span class="process-math">\(p(x)=x^2-5x+c\text{,}\)</span> where <span class="process-math">\(c\in \R\)</span> is some fixed scalar. Suppose <span class="process-math">\(A\)</span> is an <span class="process-math">\(n\times n\)</span> matrix satisfying <span class="process-math">\(p(A)=\boldzero_{n\times n}\text{.}\)</span>
 </div> <ol class="lower-alpha">
-<li id="li-241"><div class="para" id="p-761">Prove: if <span class="process-math">\(c\ne 0\text{,}\)</span> then <span class="process-math">\(A\)</span> is invertible.</div></li>
-<li id="li-242">
-<div class="para" id="p-762">Suppose further that <span class="process-math">\(A\)</span> is not a scalar multiple of <span class="process-math">\(I_n\text{.}\)</span>
+<li id="li-301"><div class="para" id="p-1185">Prove: if <span class="process-math">\(c\ne 0\text{,}\)</span> then <span class="process-math">\(A\)</span> is invertible.</div></li>
+<li id="li-302">
+<div class="para" id="p-1186">Suppose further that <span class="process-math">\(A\)</span> is not a scalar multiple of <span class="process-math">\(I_n\text{.}\)</span>
 </div>
-<div class="para" id="p-763">Prove: if <span class="process-math">\(c=0\text{,}\)</span> then <span class="process-math">\(A\)</span> is singular.</div>
+<div class="para" id="p-1187">Prove: if <span class="process-math">\(c=0\text{,}\)</span> then <span class="process-math">\(A\)</span> is singular.</div>
 </li>
 </ol></article><article class="exercise exercise-like" id="ex_expand_matrix_prod"><h5 class="heading">
 <span class="codenumber">14<span class="period">.</span></span><span class="space"> </span><span class="title">Expanding matrix products.</span>
 </h5>
-<div class="para logical" id="p-764">
+<div class="para logical" id="p-1188">
 <div class="para">Fix a positive integer <span class="process-math">\(n\text{.}\)</span> Given linear combinations of <span class="process-math">\(n\times n\)</span> matrices</div>
 <div class="displaymath process-math" id="md-76">
 \begin{align*}
@@ -1240,7 +1369,7 @@ c_1A_1(d_1B_1+d_2B_2+\cdots +d_sB_s)=c_1d_1A_1B_1+c_1d_2A_1B_2+\cdots c_1d_sA_1B
 </div></article><article class="exercise exercise-like" id="ex_poly_inA_commute"><h5 class="heading">
 <span class="codenumber">15<span class="period">.</span></span><span class="space"> </span><span class="title">Polynomial expressions of <span class="process-math">\(A\)</span> commute.</span>
 </h5>
-<div class="para logical" id="p-765">
+<div class="para logical" id="p-1189">
 <div class="para">Let <span class="process-math">\(p(x)=\anpoly\)</span> and <span class="process-math">\(q(x)=\bmpoly\)</span> be polynomials with real coefficients. For any square matrix <span class="process-math">\(A\text{,}\)</span> show that the matrices <span class="process-math">\(p(A)\)</span> and <span class="process-math">\(q(A)\)</span> commute: i.e.,</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/ex_expand_matrix_prod.html">
 \begin{equation*}
@@ -1249,8 +1378,8 @@ p(A)q(A)=q(A)p(A)\text{.}
 </div>
 <div class="para">You may use the result of <a href="" class="xref" data-knowl="./knowl/ex_expand_matrix_prod.html" title="Exercise 2.3.3.14: Expanding matrix products">Exercise 2.3.3.14</a>.</div>
 </div></article><article class="exercise exercise-like" id="exercise-90"><h5 class="heading"><span class="codenumber">16<span class="period">.</span></span></h5>
-<div class="para" id="p-766">Suppose <span class="process-math">\(A\)</span> is an <span class="process-math">\(n\times n\)</span> matrix satisfying <span class="process-math">\(A^r=\boldzero\)</span> for some <span class="process-math">\(r\geq 1\text{.}\)</span>
-</div> <div class="para logical" id="p-767">
+<div class="para" id="p-1190">Suppose <span class="process-math">\(A\)</span> is an <span class="process-math">\(n\times n\)</span> matrix satisfying <span class="process-math">\(A^r=\boldzero\)</span> for some <span class="process-math">\(r\geq 1\text{.}\)</span>
+</div> <div class="para logical" id="p-1191">
 <div class="para">Show that <span class="process-math">\((A-I)\)</span> is invertible, and that in fact</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/ex_expand_matrix_prod.html ./knowl/ex_poly_inA_commute.html">
 \begin{equation*}

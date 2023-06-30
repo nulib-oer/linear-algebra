@@ -11,29 +11,18 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h6 class="heading"><span class="type">Paragraph</span></h6>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
 <div class="para logical">
-<div class="para">We use the inverse algorithm:</div>
+<div class="para">Now let <span class="process-math">\(\bolda_1, \bolda_2\)</span> be the <em class="emphasis">rows</em> of <span class="process-math">\(A\text{,}\)</span> and let <span class="process-math">\(\boldb_1, \boldb_2, \boldb_3\)</span> be the <em class="emphasis">rows</em> of <span class="process-math">\(B\text{.}\)</span> We have</div>
 <div class="displaymath process-math">
 \begin{align*}
-\begin{amatrix}[rrr|rrr]1/5\amp 1/5\amp -2/5\amp 1\amp 0\amp 0\\ 1/5\amp 1/5\amp 1/10\amp 0\amp 1\amp 0\\ 1/5\amp -4/5\amp 1/10\amp 0\amp 0\amp 1 \end{amatrix} \amp \xrightarrow[]{r_2 - r_1} \begin{amatrix}[rrr|rrr]1/5\amp 1/5\amp -2/5\amp 1\amp 0\amp 0\\ 0\amp 0\amp 1/2\amp -1\amp 1\amp 0\\ 1/5\amp -4/5\amp 1/10\amp 0\amp 0\amp 1 \end{amatrix}\\
-\amp \xrightarrow[]{r_3 - r_1} \begin{amatrix}[rrr|rrr]1/5\amp 1/5\amp -2/5\amp 1\amp 0\amp 0\\ 0\amp 0\amp 1/2\amp -1\amp 1\amp 0\\ 0\amp -1\amp 1/2\amp -1\amp 0\amp 1 \end{amatrix}\\
-\amp \xrightarrow[]{5r_1} \begin{amatrix}[rrr|rrr]1\amp 1\amp -2\amp 5\amp 0\amp 0\\0\amp 0\amp 1/2\amp -1\amp 1\amp 0\\  0\amp -1\amp 1/2\amp -1\amp 0\amp 1 \end{amatrix}\\
-\amp \xrightarrow[]{r_2 \leftrightarrow r_3} \begin{amatrix}[rrr|rrr]1\amp 1\amp -2\amp 5\amp 0\amp 0\\  0\amp -1\amp 1/2\amp -1\amp 0\amp 1\\ 0\amp 0\amp 1/2\amp -1\amp 1\amp 0 \end{amatrix}\\
-\amp \xrightarrow[]{(-1)r_2} \begin{amatrix}[rrr|rrr]1\amp 1\amp -2\amp 5\amp 0\amp 0\\  0\amp 1\amp -1/2\amp 1\amp 0\amp -1\\ 0\amp 0\amp 1/2\amp -1\amp 1\amp 0 \end{amatrix}\\
-\amp \xrightarrow[]{r_1- r_2} \begin{amatrix}[rrr|rrr]1\amp 0\amp -3/2\amp 4\amp 0\amp 1\\ 0\amp 1\amp -1/2\amp 1\amp 0\amp -1\\ 0\amp 0\amp 1/2\amp -1\amp 1\amp 0 \end{amatrix}\\
-\amp \xrightarrow[]{2r_3} \begin{amatrix}[rrr|rrr]1\amp 0\amp -3/2\amp 4\amp 0\amp 1\\ 0\amp 1\amp -1/2\amp 1\amp 0\amp -1\\ 0\amp 0\amp 1\amp -2\amp 2\amp 0 \end{amatrix}\\
-\amp \xrightarrow[]{r_2 + \frac{1}{2}r_3} \begin{amatrix}[rrr|rrr]1\amp 0\amp -3/2\amp 4\amp 0\amp 1\\ 0\amp 1\amp 0\amp 0\amp 1\amp -1\\ 0\amp 0\amp 1\amp -2\amp 2\amp 0 \end{amatrix}\\
-\amp \xrightarrow[]{r_1 + \frac{3}{2}r_3} \begin{amatrix}[rrr|rrr]1\amp 0\amp 0\amp 1\amp 3\amp 1\\ 0\amp 1\amp 0\amp 0\amp 1\amp -1\\ 0\amp 0\amp 1\amp -2\amp 2\amp 0 \end{amatrix}\text{.}
+AB \amp= \begin{amatrix}[c]--\bolda_1\, B--\\ --\bolda_2\, B-- \end{amatrix}\amp \text{(Step 1)}\\
+\amp= \begin{amatrix}[c]--(1\boldb_1+1\boldb_2-2\boldb_3)-- \\
+--(1\boldb_1+3\boldb_2+2\boldb_3)-- \end{amatrix} \amp \text{(Step 2)} \\
+\amp=\begin{amatrix}[rr]5\amp 0\\ -3\amp 6 \end{amatrix} \amp \text{(arithmetic)} 
 \end{align*}
 </div>
-<div class="para">We conclude that</div>
-<div class="displaymath process-math">
-\begin{equation*}
-A^{-1}=\begin{amatrix}[rrr] 1\amp 3\amp 1\\ 0\amp 1\amp -1\\ -2\amp 2\amp 0\end{amatrix}\text{.}
-\end{equation*}
 </div>
-</div>
-<span class="incontext"><a href="s_invertibility_theorem.html#p-883" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_matrix.html#p-883" class="internal">in-context</a></span>
 </body>
 </html>

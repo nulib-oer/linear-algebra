@@ -13,78 +13,21 @@
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">3.5.8.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">3.2.21.1</span><span class="period">.</span>
 </h4>
-<div class="para logical"><ol class="decimal">
-<li><div class="para">This was shown in <a href="" class="xref" data-knowl="./knowl/eg_span_2space.html" title="Example 3.5.3: Examples in \R^2">Example 3.5.3</a>
-</div></li>
-<li><div class="para logical">
-<div class="para">We must show, given any <span class="process-math">\(A=\begin{amatrix}[rr]a\amp b\\ c\amp d  \end{amatrix}\text{,}\)</span> we can find <span class="process-math">\(c_1, c_2, c_3, c_4\in \R\)</span> such that</div>
-<div class="displaymath process-math">
-\begin{equation*}
-c_1A_1+c_2A_2+c_3A_3+c_4A_4=\begin{amatrix}[rr]a\amp b\\ c\amp d  \end{amatrix}\text{,}
-\end{equation*}
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(\boldv=(a_i)_{i=1}^\infty\)</span> and <span class="process-math">\(\boldw=(b_i)_{i=1}^\infty\)</span> be two infinite sequences in <span class="process-math">\(\R^\infty\text{.}\)</span> For any <span class="process-math">\(c,d\in\R\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex_vs_infinitesequences.html ./knowl/ex_vs_infinitesequences.html">
+\begin{align*}
+T_\ell(c\boldv+d\boldw) \amp=T_\ell\left((ca_i+db_i)_{i=1}^\infty \right)\amp (\knowl{./knowl/ex_vs_infinitesequences.html}{\text{Definition 3.1.7}}) \\
+\amp= (ca_{i+1}+db_{i+1})_{i=1}^\infty \amp (\text{by def.})\\
+\amp=c(a_{i+1})_{i=1}^\infty+d(b_{i+1})_{i=1}^\infty \amp (\knowl{./knowl/ex_vs_infinitesequences.html}{\text{Definition 3.1.7}})\\
+\amp=cT_\ell(\boldv)+dT_\ell(\boldw)\amp (\text{by def.}) \text{.}
+\end{align*}
 </div>
-<div class="para">or</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\begin{amatrix}[rr]c_1+c_2+c_4 \amp c_1-c_2+c_4\\
-c_1+c_3-c_4\amp c_1-c_3-c_4  \end{amatrix}
-=
-\begin{amatrix}[rr]a\amp b \\ c\amp d  \end{amatrix}\text{.}
-\end{equation*}
+<div class="para">This proves <span class="process-math">\(T_\ell\)</span> is a linear transformation.</div>
 </div>
-<div class="para">We can find such <span class="process-math">\(c_i\)</span> if and only if the system with augmented matrix</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\begin{amatrix}[rrrr|r]
-1\amp 1\amp 0\amp 1\amp a\\
-1\amp -1\amp 0\amp 1\amp b \\
-1\amp 0\amp 1\amp -1\amp c\\
-1\amp 0\amp -1\amp -1\amp d
-\end{amatrix}
-\end{equation*}
 </div>
-<div class="para">is consistent. This matrix row reduces to</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\begin{amatrix}[rrrr|r]
-\boxed{1}\amp 1\amp 0\amp 1\amp a\\
-0\amp \boxed{1}\amp 0\amp 0\amp \frac{a-b}{2} \\
-0\amp 0\amp \boxed{1}\amp -2\amp c-\frac{a+b}{2}\\
-0\amp 0\amp 0\amp \boxed{1}\amp \frac{a+b-c-d}{4}
-\end{amatrix}\text{.}
-\end{equation*}
-</div>
-<div class="para">Since the last column will never contain a leading one, we conclude that the system is consistent for any choice of <span class="process-math">\(a,b,c,d\text{,}\)</span> and thus that <span class="process-math">\(\Span S=M_{22}\text{,}\)</span> as claimed.</div>
-</div></li>
-<li><div class="para logical">
-<div class="para">We must show that given any <span class="process-math">\(p(x)=ax^2+bx+c\)</span> we can find <span class="process-math">\(c_1,c_2,c_3\)</span> such that</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_poly_equality.html">
-\begin{equation*}
-c_1(x^2+x+1)+c_2(x^2-1)+c_3(x-1)=ax^2+bx+c\text{,}
-\end{equation*}
-</div>
-<div class="para">or</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_poly_equality.html">
-\begin{equation*}
-(c_1+c_2)x^2+(c_1+c_3)x+(c_1-c_2-c_3)=ax^2+bx+c\text{.}
-\end{equation*}
-</div>
-<div class="para">According to <a href="" class="xref" data-knowl="./knowl/th_poly_equality.html" title="Theorem 3.3.22: Polynomial equality">Theorem 3.3.22</a> this equality holds if and only if</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_poly_equality.html">
-\begin{equation*}
-\begin{linsys}{3}
-c_1 \amp +\amp c_2 \amp  \amp \amp = \amp a\\
-c_1 \amp \amp \amp + \amp c_3 \amp = \amp b\\
-c_1 \amp -\amp c_2 \amp - \amp c_3 \amp = \amp c
-\end{linsys}\text{.}
-\end{equation*}
-</div>
-<div class="para">As in the examples above, our reasoning implies  <span class="process-math">\(\Span S=P_2\)</span> if and only if this system is consistent for <em class="emphasis">any</em> choice of <span class="process-math">\(a,b,c\text{.}\)</span> Thus usual Gaussian elimination procedure tells us that this is indeed so. We leave the details to you.</div>
-</div></li>
-</ol></div>
-</div>
-<span class="incontext"><a href="s_span_independence.html#solution-43" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_transformation.html#solution-43" class="internal">in-context</a></span>
 </body>
 </html>

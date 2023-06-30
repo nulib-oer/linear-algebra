@@ -12,7 +12,15 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">To convince ourselves of this last assertion, it suffices to show that the application of any one of these elementary row operations produces a new system <span class="process-math">\(L'\)</span> with exactly the same set of solutions as <span class="process-math">\(L\text{;}\)</span> if this is so, then performing any finite sequence of elementary row operations must also preserve the set of solutions in this sense. <a href="" class="xref" data-knowl="./knowl/s_systems_th_rowops.html" title="Theorem 1.1.13: Row equivalence theorem">Theorem 1.1.13</a> makes this argument official. First we introduce the notion of <em class="emphasis">equivalent linear systems</em>, mainly to spare ourselves from the mouthful that is “obtained by applying a finite sequence of elementary row operations”.</div>
-<span class="incontext"><a href="s_systems.html#p-249" class="internal">in-context</a></span>
+<div class="para logical">
+<div class="para">Prove the universal implication</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\forall n\geq b\, \left(P(b)\land P(b+1)\cdots \land P(n)\right) \implies P(n+1)\text{.}
+\end{equation*}
+</div>
+<div class="para">This technique is called strong induction, as now the induction hypothesis is much stronger: to prove this implication directly we assume <span class="process-math">\(P(k)\)</span> is true for all <span class="process-math">\(1\leq k\leq n\)</span> (not just <span class="process-math">\(k=n\)</span> as in weak induction), and use this assumption to show <span class="process-math">\(P(n+1)\)</span> is true.</div>
+</div>
+<span class="incontext"><a href="s_proof_technique.html#p-249" class="internal">in-context</a></span>
 </body>
 </html>

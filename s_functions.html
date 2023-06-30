@@ -763,9 +763,9 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 </h2>
 <article class="definition definition-like" id="d_function"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">0.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Functions.</span>
-</h3>  <div class="para" id="p-25">Let <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> be two sets. A <dfn class="terminology">function from <span class="process-math">\(X\)</span> to <span class="process-math">\(Y\)</span></dfn>, denoted <span class="process-math">\(f\colon X\rightarrow Y\text{,}\)</span> is a rule which, given any <dfn class="terminology">input</dfn> <span class="process-math">\(x\in X\text{,}\)</span> returns an <dfn class="terminology">output</dfn> <span class="process-math">\(y\in Y\text{.}\)</span> In this case we write <span class="process-math">\(y=f(x)\)</span> and call <span class="process-math">\(y\)</span> the <dfn class="terminology">image of <span class="process-math">\(x\)</span> under <span class="process-math">\(f\)</span></dfn>, or the <dfn class="terminology">value of <span class="process-math">\(f\)</span> at <span class="process-math">\(x\)</span></dfn>. Similarly, we say <span class="process-math">\(f\)</span> <dfn class="terminology">maps</dfn> (or <dfn class="terminology">sends</dfn>) the input <span class="process-math">\(x\)</span> to the output <span class="process-math">\(y\text{.}\)</span>
-</div> <div class="para" id="p-26">The set <span class="process-math">\(X\)</span> is called the <dfn class="terminology">domain</dfn> of <span class="process-math">\(f\text{;}\)</span> the set <span class="process-math">\(Y\)</span> is called the <dfn class="terminology">codomain</dfn> of <span class="process-math">\(f\text{.}\)</span>
-</div> <div class="para logical" id="p-27">
+</h3>  <div class="para" id="p-42">Let <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> be two sets. A <dfn class="terminology">function from <span class="process-math">\(X\)</span> to <span class="process-math">\(Y\)</span></dfn>, denoted <span class="process-math">\(f\colon X\rightarrow Y\text{,}\)</span> is a rule which, given any <dfn class="terminology">input</dfn> <span class="process-math">\(x\in X\text{,}\)</span> returns an <dfn class="terminology">output</dfn> <span class="process-math">\(y\in Y\text{.}\)</span> In this case we write <span class="process-math">\(y=f(x)\)</span> and call <span class="process-math">\(y\)</span> the <dfn class="terminology">image of <span class="process-math">\(x\)</span> under <span class="process-math">\(f\)</span></dfn>, or the <dfn class="terminology">value of <span class="process-math">\(f\)</span> at <span class="process-math">\(x\)</span></dfn>. Similarly, we say <span class="process-math">\(f\)</span> <dfn class="terminology">maps</dfn> (or <dfn class="terminology">sends</dfn>) the input <span class="process-math">\(x\)</span> to the output <span class="process-math">\(y\text{.}\)</span>
+</div> <div class="para" id="p-43">The set <span class="process-math">\(X\)</span> is called the <dfn class="terminology">domain</dfn> of <span class="process-math">\(f\text{;}\)</span> the set <span class="process-math">\(Y\)</span> is called the <dfn class="terminology">codomain</dfn> of <span class="process-math">\(f\text{.}\)</span>
+</div> <div class="para logical" id="p-44">
 <div class="para">When we wish to indicate what rule defines the function, we use the elaborated notation</div>
 <div class="displaymath process-math" id="md-2">
 \begin{align*}
@@ -777,7 +777,7 @@ x \amp\mapsto f(x)\text{.}
 </div></article><article class="example example-like" id="example-2"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">0.2.2</span><span class="period">.</span>
 </h3>
-<div class="para logical" id="p-28">
+<div class="para logical" id="p-45">
 <div class="para">Consider the function</div>
 <div class="displaymath process-math" id="md-3">
 \begin{align*}
@@ -789,7 +789,7 @@ x\amp\mapsto x^2 \text{.}
 </div></article><article class="example example-like" id="example-3"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">0.2.3</span><span class="period">.</span><span class="space"> </span><span class="title">Arithmetic operations as functions.</span>
 </h3>
-<div class="para logical" id="p-29">
+<div class="para logical" id="p-46">
 <div class="para">Our familiar arithmetic operations can be expressed as functions whose inputs are pairs of numbers: addition is the function</div>
 <div class="displaymath process-math" id="md-4">
 \begin{align*}
@@ -807,20 +807,20 @@ m\colon\mathbb{R}\times \mathbb{R} \amp \rightarrow \mathbb{R}\\
 </div></article><article class="remark remark-like" id="rm_function_as_relation"><h3 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">0.2.4</span><span class="period">.</span>
 </h3>
-<div class="para" id="p-30">Invoking the notion of a rule in the definition of a function is admittedly somewhat vague. A more precise definition can be given using the Cartesian product. Namely, given sets <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\text{,}\)</span> we define a function <span class="process-math">\(f\colon X\rightarrow Y\)</span> to be a subset <span class="process-math">\(f\subseteq X\times Y\)</span> satisfying the following property: for all <span class="process-math">\(x\in X\)</span> there is a unique element <span class="process-math">\((x,y)\in f\text{.}\)</span> The uniqueness of the pair <span class="process-math">\((x,y)\)</span> then allows us to define the value <span class="process-math">\(f(x)\)</span> of <span class="process-math">\(f\)</span> at <span class="process-math">\(x\)</span> as <span class="process-math">\(y\text{,}\)</span> denoted <span class="process-math">\(f(x)=y\text{.}\)</span>
-</div></article><div class="para" id="p-31">As with sets and tuples, we are obliged to specify what we mean for two functions to be equal. The definition below makes clear how the the domain and codomain, as well as the rule that takes inputs to outputs, are all essential ingredients of a function.</div>
+<div class="para" id="p-47">Invoking the notion of a rule in the definition of a function is admittedly somewhat vague. A more precise definition can be given using the Cartesian product. Namely, given sets <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\text{,}\)</span> we define a function <span class="process-math">\(f\colon X\rightarrow Y\)</span> to be a subset <span class="process-math">\(f\subseteq X\times Y\)</span> satisfying the following property: for all <span class="process-math">\(x\in X\)</span> there is a unique element <span class="process-math">\((x,y)\in f\text{.}\)</span> The uniqueness of the pair <span class="process-math">\((x,y)\)</span> then allows us to define the value <span class="process-math">\(f(x)\)</span> of <span class="process-math">\(f\)</span> at <span class="process-math">\(x\)</span> as <span class="process-math">\(y\text{,}\)</span> denoted <span class="process-math">\(f(x)=y\text{.}\)</span>
+</div></article><div class="para" id="p-48">As with sets and tuples, we are obliged to specify what we mean for two functions to be equal. The definition below makes clear how the the domain and codomain, as well as the rule that takes inputs to outputs, are all essential ingredients of a function.</div>
 <article class="definition definition-like" id="d_function_equality"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">0.2.5</span><span class="period">.</span><span class="space"> </span><span class="title">Function equality.</span>
-</h3>  <div class="para logical" id="p-32">
+</h3>  <div class="para logical" id="p-49">
 <div class="para">Functions <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are <dfn class="terminology">equal</dfn> if</div>
 <ol class="lower-roman">
-<li id="li-9"><div class="para" id="p-33">they have the same domain <span class="process-math">\(X\)</span> and codomain <span class="process-math">\(Y\text{,}\)</span> and</div></li>
-<li id="li-10"><div class="para" id="p-34">for all <span class="process-math">\(x\in X\text{,}\)</span> we have <span class="process-math">\(f(x)=g(x)\text{.}\)</span>
+<li id="li-9"><div class="para" id="p-50">they have the same domain <span class="process-math">\(X\)</span> and codomain <span class="process-math">\(Y\text{,}\)</span> and</div></li>
+<li id="li-10"><div class="para" id="p-51">for all <span class="process-math">\(x\in X\text{,}\)</span> we have <span class="process-math">\(f(x)=g(x)\text{.}\)</span>
 </div></li>
 </ol>
 </div></article><article class="definition definition-like" id="d_image"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">0.2.6</span><span class="period">.</span><span class="space"> </span><span class="title">Image of a set.</span>
-</h3>  <div class="para logical" id="p-35">
+</h3>  <div class="para logical" id="p-52">
 <div class="para">Given a function <span class="process-math">\(f\colon X\rightarrow Y\)</span> and a subset <span class="process-math">\(A \subseteq X\text{,}\)</span> the <dfn class="terminology">image of <span class="process-math">\(A\)</span> under <span class="process-math">\(f\)</span></dfn>, denoted <span class="process-math">\(f(A)\text{,}\)</span> is defined as</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -829,7 +829,7 @@ f(A)=\left\{ y \in Y \colon f(a)=y \text{ for some } a \in A \right\}\text{.}
 </div>
 <div class="para">In other words, <span class="process-math">\(f(A)\)</span> is the set of all outputs <span class="process-math">\(f(a)\text{,}\)</span>  where <span class="process-math">\(a\in X\text{.}\)</span>
 </div>
-</div> <div class="para logical" id="p-36">
+</div> <div class="para logical" id="p-53">
 <div class="para">The <dfn class="terminology">image of <span class="process-math">\(f\)</span></dfn>, denoted <span class="process-math">\(\operatorname{im} f\text{,}\)</span> is the set of <em class="emphasis">all</em> outputs of <span class="process-math">\(f\text{:}\)</span> i.e.,</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -838,19 +838,19 @@ f(A)=\left\{ y \in Y \colon f(a)=y \text{ for some } a \in A \right\}\text{.}
 </div>
 </div></article><article class="definition definition-like" id="d_injective_surjective_bijective"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">0.2.7</span><span class="period">.</span><span class="space"> </span><span class="title">Injective, surjective, bijective.</span>
-</h3>  <div class="para logical" id="p-37">
+</h3>  <div class="para logical" id="p-54">
 <div class="para">Let <span class="process-math">\(f\colon X\rightarrow Y\)</span> be a function.</div>
 <ul class="disc">
-<li id="li-11"><div class="para" id="p-38">The function <span class="process-math">\(f\)</span> is <dfn class="terminology">injective</dfn> (or <dfn class="terminology">one-to-one</dfn>) if for all <span class="process-math">\(x,x'\in X\text{,}\)</span> if <span class="process-math">\(f(x)=f(x')\text{,}\)</span> then <span class="process-math">\(x=x'\text{:}\)</span> equivalently, if <span class="process-math">\(x\ne x'\text{,}\)</span> then <span class="process-math">\(f(x)\ne f(x')\text{.}\)</span>
+<li id="li-11"><div class="para" id="p-55">The function <span class="process-math">\(f\)</span> is <dfn class="terminology">injective</dfn> (or <dfn class="terminology">one-to-one</dfn>) if for all <span class="process-math">\(x,x'\in X\text{,}\)</span> if <span class="process-math">\(f(x)=f(x')\text{,}\)</span> then <span class="process-math">\(x=x'\text{:}\)</span> equivalently, if <span class="process-math">\(x\ne x'\text{,}\)</span> then <span class="process-math">\(f(x)\ne f(x')\text{.}\)</span>
 </div></li>
-<li id="li-12"><div class="para" id="p-39">The function <span class="process-math">\(f\)</span> is <dfn class="terminology">surjective</dfn> (or <dfn class="terminology">onto</dfn>) if for all <span class="process-math">\(y\in Y\text{,}\)</span> there is an <span class="process-math">\(x\in X\)</span> such that <span class="process-math">\(f(x)=y\text{:}\)</span> equivalently, <span class="process-math">\(\im f=Y\text{.}\)</span>
+<li id="li-12"><div class="para" id="p-56">The function <span class="process-math">\(f\)</span> is <dfn class="terminology">surjective</dfn> (or <dfn class="terminology">onto</dfn>) if for all <span class="process-math">\(y\in Y\text{,}\)</span> there is an <span class="process-math">\(x\in X\)</span> such that <span class="process-math">\(f(x)=y\text{:}\)</span> equivalently, <span class="process-math">\(\im f=Y\text{.}\)</span>
 </div></li>
-<li id="li-13"><div class="para" id="p-40">The function <span class="process-math">\(f\)</span> is <dfn class="terminology">bijective</dfn> (or a <dfn class="terminology">one-to-one correspondence</dfn>) if it is injective and surjective.</div></li>
+<li id="li-13"><div class="para" id="p-57">The function <span class="process-math">\(f\)</span> is <dfn class="terminology">bijective</dfn> (or a <dfn class="terminology">one-to-one correspondence</dfn>) if it is injective and surjective.</div></li>
 </ul>
 </div></article><article class="example example-like" id="example-4"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">0.2.8</span><span class="period">.</span><span class="space"> </span><span class="title">Role of domain and codomain in injectivity and surjectivity.</span>
 </h3>
-<div class="para logical" id="p-41">
+<div class="para logical" id="p-58">
 <div class="para">Consider the following three functions</div>
 <div class="displaymath process-math" id="md-6">
 \begin{align*}
@@ -861,12 +861,12 @@ x \amp\mapsto x^2 \amp x \amp\mapsto x^2 \amp x \amp\mapsto x^2 \amp \text{.}
 <div class="para">Although all three functions are defined using the same rule (<span class="process-math">\(x\mapsto x^2\)</span>), they are not equal thanks to their differing domains and/or codomains. The choice of domain and codomain in these examples also plays a crucial role in determining whether the function is injective and/or surjective. The function <span class="process-math">\(f\)</span> is neither injective (<span class="process-math">\(f(-2)=f(2)=4\)</span>) nor surjective (<span class="process-math">\(f(X)=[0,\infty)\ne \R\)</span>); the function <span class="process-math">\(g\)</span> is injective but not surjective; the function <span class="process-math">\(h\)</span> is both injective and surjective, hence bijective.</div>
 </div></article><article class="definition definition-like" id="d_function_composition"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">0.2.9</span><span class="period">.</span><span class="space"> </span><span class="title">Function composition.</span>
-</h3>  <div class="para" id="p-42">Suppose <span class="process-math">\(f\colon Z\rightarrow W\)</span> and <span class="process-math">\(g\colon X\rightarrow Y\)</span> are functions satisfying <span class="process-math">\(Y\subseteq Z\text{.}\)</span>  The <dfn class="terminology">composition of <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span></dfn> is the function <span class="process-math">\(f\circ g\colon X\rightarrow W\)</span> defined as <span class="process-math">\(f\circ g\, (x)=f(g(x))
+</h3>  <div class="para" id="p-59">Suppose <span class="process-math">\(f\colon Z\rightarrow W\)</span> and <span class="process-math">\(g\colon X\rightarrow Y\)</span> are functions satisfying <span class="process-math">\(Y\subseteq Z\text{.}\)</span>  The <dfn class="terminology">composition of <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span></dfn> is the function <span class="process-math">\(f\circ g\colon X\rightarrow W\)</span> defined as <span class="process-math">\(f\circ g\, (x)=f(g(x))
 \text{,}\)</span> for all <span class="process-math">\(x\in X\text{.}\)</span>
 </div></article><article class="definition definition-like" id="d_invertible_function"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">0.2.10</span><span class="period">.</span><span class="space"> </span><span class="title">Identity and inverse functions.</span>
-</h3>  <div class="para" id="p-43">For any set <span class="process-math">\(X\)</span> the <dfn class="terminology">identity function</dfn> on <span class="process-math">\(X\)</span> is the function <span class="process-math">\(\id_X\colon X\rightarrow X\)</span> defined as <span class="process-math">\(\id_X(x)=x\)</span> for all <span class="process-math">\(x\in X\text{.}\)</span>
-</div> <div class="para logical" id="p-44">
+</h3>  <div class="para" id="p-60">For any set <span class="process-math">\(X\)</span> the <dfn class="terminology">identity function</dfn> on <span class="process-math">\(X\)</span> is the function <span class="process-math">\(\id_X\colon X\rightarrow X\)</span> defined as <span class="process-math">\(\id_X(x)=x\)</span> for all <span class="process-math">\(x\in X\text{.}\)</span>
+</div> <div class="para logical" id="p-61">
 <div class="para">A function <span class="process-math">\(f\colon X\rightarrow Y\)</span> is <dfn class="terminology">invertible</dfn> if there is a function <span class="process-math">\(g\colon Y\rightarrow X\)</span> satisfying <span class="process-math">\(g\circ f=\id_X\)</span> and <span class="process-math">\(f\circ g=\id_Y\text{:}\)</span> i.e.,</div>
 <div class="displaymath process-math" id="md-7">
 \begin{align*}
@@ -877,11 +877,103 @@ f(g(y))\amp=y  \text{ for all } y\in Y \text{.}
 </div> The function <span class="process-math">\(g\)</span> in this case is called the <dfn class="terminology">inverse</dfn> of <span class="process-math">\(f\text{,}\)</span> denoted <span class="process-math">\(g=f^{-1}\text{.}\)</span></article><article class="theorem theorem-like" id="th_invertible_bijective"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">0.2.11</span><span class="period">.</span><span class="space"> </span><span class="title">Invertible is equivalent to bijective.</span>
 </h3>
-<div class="para" id="p-45">A function <span class="process-math">\(f\colon X\rightarrow Y\)</span> is invertible if and only if it is bijective.</div></article><article class="hiddenproof" id="proof-1"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-1"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-1"><article class="hiddenproof"><div class="para" id="p-46">The proof of this theorem is left as an example of proving “if and only if” statements. See <a href="" class="xref" data-knowl="./knowl/ex_invertible_bijective.html" title="Example 0.5.3: Proof: invertible is equivalent to bijective">Example 0.5.3</a>.</div></article></div>
+<div class="para" id="p-62">A function <span class="process-math">\(f\colon X\rightarrow Y\)</span> is invertible if and only if it is bijective.</div></article><article class="hiddenproof" id="proof-1"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-1"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-1"><article class="hiddenproof"><div class="para" id="p-63">The proof of this theorem is left as an example of proving “if and only if” statements. See <a href="" class="xref" data-knowl="./knowl/ex_invertible_bijective.html" title="Example 0.5.3: Proof: invertible is equivalent to bijective">Example 0.5.3</a>.</div></article></div>
 <section class="exercises" id="s_functions_ex"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises</span>
 </h3>
-<article class="exercise exercise-like" id="exercise-3"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4></article><article class="exercise exercise-like" id="exercise-4"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4></article><article class="exercise exercise-like" id="exercise-5"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4></article></section></section></div>
+<article class="exercise exercise-like" id="exercise-3"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div id="webwork-3" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="3" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-sourceFilePath="Library/MontanaState/Sets/5.2A13Sets1.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-3')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="p-64">Let <span class="process-math">\(f(x) = x^{2}\text{.}\)</span>  Find each set.</div> <div class="para" id="p-65">
+<span class="process-math">\(f ([1, 5)) =\)</span> <span class="fillin underline" role="img" aria-label="12-character blank" style="width: 5.454545454545454em;"></span>
+</div> <div class="para" id="p-66">
+<span class="process-math">\(f ((-4, 5)) =\)</span> <span class="fillin underline" role="img" aria-label="12-character blank" style="width: 5.454545454545454em;"></span>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-7" id="answer-7"><span class="type">Answer</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-7"><div class="answer solution-like"><div class="para" id="p-67"><span class="process-math">\(\left[1,25\right)\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-8" id="answer-8"><span class="type">Answer</span><span class="space"> </span><span class="codenumber">2</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-8"><div class="answer solution-like"><div class="para" id="p-68"><span class="process-math">\(\left[0,25\right)\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2" id="solution-2"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2"><div class="solution solution-like">
+<span class="process-math">\(x^{2}\)</span> is not one-to-one, you can not simply plug the endpoints of the  interval into the function to get the endpoints of the answer.  Instead, try graphing the function and shading on the <span class="process-math">\(x\)</span>-axis the input set.  Then use the graph to see which <span class="process-math">\(y\)</span>-values you get out when you put those <span class="process-math">\(x\)</span>’s in. For instance, notice that <span class="process-math">\(0 \in (-4, 5)\text{.}\)</span>  Because <span class="process-math">\(f(0) = 0\text{,}\)</span> you should have <span class="process-math">\(0 \in f( (-4, 5))\text{.}\)</span>  Do you?</div></div>
+</div>
+</div>
+</div></article><article class="exercise exercise-like" id="exercise-4"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div id="webwork-4" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="4" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-sourceFilePath="Library/SUNYSB/oneToOneOnto1.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-4')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="p-69">For each of the following functions, <span class="process-math">\(f:\textbf{R}\longrightarrow\textbf{R}\)</span> state whether they are one-to-one, onto, both or neither. Use the following key:</div> <div class="para logical" id="p-70"><ol class="lower-alpha">
+<li id="li-14"><div class="para" id="p-71"><span class="process-math">\(\displaystyle f(x)=e^x\)</span></div></li>
+<li id="li-15"><div class="para" id="p-72"><span class="process-math">\(\displaystyle f(x)=x^3+6\)</span></div></li>
+<li id="li-16"><div class="para" id="p-73"><span class="process-math">\(\displaystyle f(x)=x(x-6)(x+6)\)</span></div></li>
+<li id="li-17"><div class="para" id="p-74"><span class="process-math">\(\displaystyle f(x)=\left|x\right|\)</span></div></li>
+<li id="li-18"><div class="para" id="p-75"><span class="process-math">\(\displaystyle f(x)=\sin(x)\)</span></div></li>
+<li id="li-19"><div class="para" id="p-76"><span class="process-math">\(\displaystyle f(x)=x^2+4\)</span></div></li>
+<li id="li-20"><div class="para" id="p-77"><span class="process-math">\(\displaystyle f(x)=x + 4\left|x\right|\)</span></div></li>
+</ol></div>
+</div>
+</div></article><article class="exercise exercise-like" id="exercise-5"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div id="webwork-5" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="5" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-sourceFilePath="Library/LoyolaChicago/Precalc/Chap8Sec2/Q08.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-5')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="p-78">Consider the functions <span class="process-math">\(f(x) = \sqrt[7]{\frac{x}{4}} + 8\text{,}\)</span> <span class="process-math">\(g(x) = -8 + 4 x^{7}\text{,}\)</span> <span class="process-math">\(h(x) = \sqrt[7]{\frac{x}{4}} - 8\text{,}\)</span> <span class="process-math">\(p(x) = \sqrt[7]{\frac{x - 8}{4}}\text{,}\)</span> <span class="process-math">\(q(x) = 8 + 4 x^{7}\text{,}\)</span> and <span class="process-math">\(r(x) = \sqrt[7]{\frac{x + 8}{4}}\text{.}\)</span>
+</div> <div class="para" id="p-79">Which of these functions are inverses of each other?</div> <div class="para" id="p-80"><ul style="list-style:circle;">
+<li id="li-21"><div class="para" id="p-81">
+<span class="process-math">\(p(x)\)</span> and <span class="process-math">\(q(x)\)</span>
+</div></li>
+<li id="li-22"><div class="para" id="p-82">
+<span class="process-math">\(g(x)\)</span> and <span class="process-math">\(p(x)\)</span>
+</div></li>
+<li id="li-23"><div class="para" id="p-83">
+<span class="process-math">\(f(x)\)</span> and <span class="process-math">\(q(x)\)</span>
+</div></li>
+<li id="li-24"><div class="para" id="p-84">
+<span class="process-math">\(h(x)\)</span> and <span class="process-math">\(q(x)\)</span>
+</div></li>
+<li id="li-25"><div class="para" id="p-85">
+<span class="process-math">\(g(x)\)</span> and <span class="process-math">\(h(x)\)</span>
+</div></li>
+<li id="li-26"><div class="para" id="p-86">
+<span class="process-math">\(q(x)\)</span> and <span class="process-math">\(r(x)\)</span>
+</div></li>
+<li id="li-27"><div class="para" id="p-87">
+<span class="process-math">\(g(x)\)</span> and <span class="process-math">\(r(x)\)</span>
+</div></li>
+<li id="li-28"><div class="para" id="p-88">
+<span class="process-math">\(f(x)\)</span> and <span class="process-math">\(g(x)\)</span>
+</div></li>
+<li id="li-29"><div class="para" id="p-89">No pairs of these functions are inverses of each other.</div></li>
+</ul></div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-3" id="solution-3"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-3"><div class="solution solution-like">
+<em class="alert">SOLUTION</em> One way we can check which functions are inverses is to make sure they satisfy the identities <span class="process-math">\(f \left( f^{-1}(x) \right)=x\)</span> and <span class="process-math">\(f^{-1} \left( f(x) \right)=x\text{.}\)</span>  This will show that <span class="process-math">\(p(x)\)</span> and <span class="process-math">\(q(x)\)</span> and <span class="process-math">\(g(x)\)</span> and <span class="process-math">\(r(x)\)</span> are inverses of each other, while the other pairs of functions are not. Let’s consider <span class="process-math">\(p(x)\)</span> and <span class="process-math">\(q(x)\text{.}\)</span>  The composition<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+p\left(q(x)\right)
+\amp = 8 +  4 \left(\sqrt[7]{ \frac{x - 8}{4}}\right)^{7} \\
+\amp = 8 + 4 \left( \frac{x - 8}{4} \right) \\
+\amp = 8 + (x-8) = x.
+\end{aligned}
+\end{equation*}
+</div>Also,<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+q\left(p(x)\right)
+\amp = \sqrt[7]{\frac{\left( 8+4 x^{7} \right)-8}{4}} \\
+\amp = \sqrt[7]{x^{7}} = x.
+\end{aligned}
+\end{equation*}
+</div>Thus these are inverses of one another.  We can similarly show that <span class="process-math">\(g(x)\)</span> and <span class="process-math">\(r(x)\)</span> are inverses of each other. However, the remaining pairs are not inverses.  For example, if we consider <span class="process-math">\(q(x)\)</span> and <span class="process-math">\(r(x)\text{,}\)</span> we have<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+q\left(r(x)\right)
+\amp = 8 +  4 \left( \sqrt[7]{ \frac{x + 8}{4}} \right)^{7}\\
+\amp = 8 + (x+8) = x + 16 \ne x.
+\end{aligned}
+\end{equation*}
+</div>Thus these functions are not inverses of each other.</div></div>
+</div>
+</div>
+</div></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="s_sets_functions.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="s_tuples.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>

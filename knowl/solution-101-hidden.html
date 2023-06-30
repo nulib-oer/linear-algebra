@@ -10,29 +10,23 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><div class="solution solution-like">
-<div class="para">First we factor <span class="process-math">\(p(x)\text{.}\)</span> Looking at the constant term we see that the only possible integer roots of <span class="process-math">\(p(x)\)</span> are <span class="process-math">\(\pm 1\text{.}\)</span> It is easily verified that <span class="process-math">\(p(1)=0\text{,}\)</span> and  polynomial division yields the factorization <span class="process-math">\(p(x)=(x-1)(x^2+2x+1)\text{.}\)</span>  Further factorization of <span class="process-math">\(x^2+2x+1\)</span> gives us  <span class="process-math">\(p(x)=(x-1)(x+1)^2\text{.}\)</span>
-</div> <div class="para logical">
-<div class="para">Next we compute <em class="emphasis">orthonormal</em> bases of the eigenspaces <span class="process-math">\(W_1\)</span> and <span class="process-math">\(W_{-1}\text{,}\)</span> yielding</div>
-<div class="displaymath process-math">
+<body class="ignore-math"><div class="solution solution-like"><div class="para logical">
+<div class="para">We have <span class="process-math">\(B=(x^3, x^2, x, 1)\)</span> and <span class="process-math">\(B'=(x^2, x, 1)\text{.}\)</span> Denote by <span class="process-math">\(\boldc_j\)</span> the <span class="process-math">\(j\)</span>-th column of <span class="process-math">\(A\text{.}\)</span> We use <a href="" class="xref" data-knowl="./knowl/eq_matrixrep_formula.html" title="Equation 5.2.1">(5.2.1)</a> to compute:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_matrixrep_formula.html">
 \begin{align*}
-B_1\amp=\left(\frac{1}{\sqrt{3}}(1,1,1)\right) \amp B_{2}\amp =\left(\frac{1}{\sqrt{2}}(1,-1,0), \frac{1}{\sqrt{6}}(1,1,-2)\right)\text{.}
+\boldc_1\amp =[T(x^3)]_{B'}=[3x^2]_{B'}=\begin{bmatrix} 3\\
+0\\
+0 \end{bmatrix} \amp \boldc_2\amp =[T(x^2)]_{B'}=[2x]_{B'}=\begin{bmatrix} 0\\
+2\\
+0 \end{bmatrix}\\
+\boldc_3\amp =[T(x)]_{B'}=[1]_{B'}=\begin{bmatrix} 0\\
+0\\
+1 \end{bmatrix} \amp \boldc_4\amp =[T(1)]_{B'}=[0]_{B'}=\begin{bmatrix} 0\\
+0\\
+0 \end{bmatrix}\text{.}
 \end{align*}
 </div>
-<div class="para">Assembling these bases elements into the orthogonal matrix</div>
-<div class="displaymath process-math">
-\begin{equation*}
-Q=\begin{amatrix}[rrr]1/\sqrt{3}\amp 1/\sqrt{2}\amp 1/\sqrt{6}\\
-1/\sqrt{3}\amp -1/\sqrt{2}\amp 1/\sqrt{6}\\
-1/\sqrt{3}\amp 0\amp -2/\sqrt{6}\end{amatrix}\text{,}
-\end{equation*}
+<div class="para">Thus <span class="process-math">\(A=\begin{bmatrix}3\amp 0\amp 0\amp 0\\ 0\amp 2\amp 0\amp 0\\ 0\amp 0\amp 1\amp 0 \end{bmatrix}\text{.}\)</span>
 </div>
-<div class="para">we conclude that <span class="process-math">\(D=Q^{-1}AQ=Q^TAQ\text{,}\)</span> where</div>
-<div class="displaymath process-math">
-\begin{equation*}
-D=\begin{amatrix}[rrr]1\amp 0\amp 0\\ 0\amp -1\amp 0\\ 0\amp 0\amp -1  \end{amatrix}\text{.}
-\end{equation*}
-</div>
-</div>
-</div></body>
+</div></div></body>
 </html>

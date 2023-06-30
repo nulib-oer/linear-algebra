@@ -12,7 +12,24 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(m\times n\)</span> matrix. Using Gauss-Jordan elimination, we can row reduce <span class="process-math">\(A\)</span> to matrix <span class="process-math">\(U\)</span> in reduced row echelon form. Suppose <span class="process-math">\(A\)</span> is also row equivalent to the matrix <span class="process-math">\(U'\)</span> in reduced row echelon form. Then <span class="process-math">\(U\)</span> and <span class="process-math">\(U'\)</span> are row equivalent, since the row equivalence relation is symmetric and transitive (<a href="" class="xref" data-knowl="./knowl/rm_row_equivalence_props.html" title="Remark 2.4.16: Properties of row equivalence">Remark 2.4.16</a>). Thus it suffices to show that if <span class="process-math">\(U\)</span> and <span class="process-math">\(U'\)</span> are row equivalent matrices in reduced row echelon form, then <span class="process-math">\(U=U'\text{.}\)</span> We do so by induction on <span class="process-math">\(n\text{.}\)</span> The base step is trivial, since there is only one <span class="process-math">\(m\times 1\)</span> matrix in reduced row echelon form.</div>
-<span class="incontext"><a href="s_invertibility_theorem.html#p-870" class="internal">in-context</a></span>
+<div class="para logical">
+<div class="para">We must show that <span class="process-math">\(A\boldb=\boldc\text{,}\)</span> where</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/rm_entry_lin_comb.html ./knowl/d_matrix_mult.html">
+\begin{equation*}
+\boldc=b_1\bolda_1+b_2\bolda_2+\cdots +b_n\bolda_n\text{.}
+\end{equation*}
+</div>
+<div class="para">The usual argument shows that both <span class="process-math">\(A\boldb\)</span> and <span class="process-math">\(\boldc\)</span> are <span class="process-math">\(m\times 1\)</span> column vectors. It remains only to show that the <span class="process-math">\(i\)</span>-th entry <span class="process-math">\([A\boldb]_i\)</span> of the column <span class="process-math">\(A\boldb\)</span> is equal to the <span class="process-math">\(i\)</span>-th entry <span class="process-math">\([\boldc]_i\)</span> of <span class="process-math">\(\boldc\)</span> for all <span class="process-math">\(1\leq i\leq m\text{.}\)</span> For any such <span class="process-math">\(i\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/rm_entry_lin_comb.html ./knowl/d_matrix_mult.html">
+\begin{align*}
+[\boldc]_i \amp = [b_1\bolda_1+b_2\bolda_2+\cdots +b_n\bolda_n]_i\\
+\amp= b_1[\bolda_1]_i+b_2[\bolda_2]_i+\cdots +b_n[\bolda_n]_i \amp (\knowl{./knowl/rm_entry_lin_comb.html}{\text{Remark 2.1.16}})\\
+\amp= b_1a_{i1}+b_2a_{i2}+\cdots +b_n\bolda_{in}\amp (\text{def. of } \bolda_j) \\
+\amp= a_{i1}b_1+a_{i2}b_2+\cdots+a_{in}b_n \\
+\amp =[A\boldb]_i \amp (\knowl{./knowl/d_matrix_mult.html}{\text{Definition 2.1.17}})\text{.}
+\end{align*}
+</div>
+</div>
+<span class="incontext"><a href="s_matrix.html#p-870" class="internal">in-context</a></span>
 </body>
 </html>

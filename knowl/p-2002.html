@@ -13,16 +13,15 @@
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
 <div class="para logical">
-<div class="para">We have</div>
+<div class="para">The inclusion <span class="process-math">\(W\subseteq \im S\)</span> is trickier: we must show that if <span class="process-math">\(B\)</span> is skew-symmetric, then there is an <span class="process-math">\(A\)</span> such that <span class="process-math">\(B=S(A)=A^T-A\text{.}\)</span> Assume we have a <span class="process-math">\(B\)</span> with <span class="process-math">\(B^T=-B\text{.}\)</span> Letting <span class="process-math">\(A=-\frac{1}{2}B\)</span> we have</div>
 <div class="displaymath process-math">
-\begin{align*}
-d(p_1,p_2) \amp = \norm{p_1-p_2} \\
-\amp = \sqrt{\langle p_1-p_2, p_1-p_2\rangle}\\
-\amp = \sqrt{(p_1(1)-p_2(1))^2+(p_1(-1)-p_2(-1))^2+(p_1(0)-p_2(0))^2}\\
-\amp = \sqrt{(-1)^2+(1)^2+(-1)^2}=\sqrt{3} 
-\end{align*}
+\begin{equation*}
+A^T-A=(-\frac{1}{2}B)^T+\frac{1}{2}B=\frac{1}{2}(-B^T+B)=\frac{1}{2}(B+B)=B\text{.}
+\end{equation*}
+</div>
+<div class="para">Thus we have found a matrix <span class="process-math">\(A\)</span> satisfying <span class="process-math">\(S(A)=B\text{.}\)</span> It follows that <span class="process-math">\(B\in\im T\text{.}\)</span>
 </div>
 </div>
-<span class="incontext"><a href="s_innerproducts.html#p-2002" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_nullspace_image.html#p-2002" class="internal">in-context</a></span>
 </body>
 </html>

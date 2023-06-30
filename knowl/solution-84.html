@@ -13,39 +13,14 @@
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">5.3.18.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">4.1.19.1</span><span class="period">.</span>
 </h4>
-<div class="para logical">
-<div class="para">Since <span class="process-math">\(B'\)</span> is orthonormal, we use  <a href="" class="xref" data-knowl="./knowl/th_coordinates_orthogonal.html" title="Theorem 5.1.9: Coordinate vectors for orthogonal bases">Theorem 5.1.9</a> to compute</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_coordinates_orthogonal.html ./knowl/th_changebasis_orthonormal.html">
-\begin{align*}
-[p_1(x)]_{B'} \amp = \left(\langle p_1(x),q_1(x)\rangle, \langle p_1(x),q_2(x)\rangle\right)\\
-\amp =(p_1(-1)q_1(-1)+p_1(1)q_2(1),p_1(1)q_1(1)+p_1(1)q_2(1))=\frac{1}{\sqrt{2}}(1,1)\\
-[p_2(x)]_{B'} \amp = \left(\langle p_2(x),q_1(x)\rangle, \langle p_1(x),q_2(x)\rangle\right)\\
-\amp =(p_2(-1)q_1(-1)+p_2(1)q_2(1),p_2(1)q_1(1)+p_2(1)q_2(1))=\frac{1}{\sqrt{2}}(-1,1)\text{.}
-\end{align*}
+<div class="para">The norms of the vectors in each case were computed in <a href="" class="xref" data-knowl="./knowl/eg_norm_dot.html" title="Example 4.1.15: Norm with respect to dot product">Example 4.1.15–4.1.17</a>. We simply scale to compute the corresponding unit vectors.</div> <ol class="decimal">
+<li><div class="para"><span class="process-math">\(\displaystyle \boldu=\frac{1}{\sqrt{7}}(1,-1,2,1)=(\sqrt{7}/7,-\sqrt{7}/7,2\sqrt{7}/7,\sqrt{7}/7)\)</span></div></li>
+<li><div class="para"><span class="process-math">\(\displaystyle \boldu=\frac{1}{\sqrt{23}}(3,1,-2)=(3\sqrt{23}/23,\sqrt{23}/23,-2\sqrt{23}/23)\)</span></div></li>
+<li><div class="para"><span class="process-math">\(\displaystyle \boldu=\frac{1}{\sqrt{(e^2-1)/2}}e^x=\frac{\sqrt{2(e^2-1)}}{e^2-1}e^x\)</span></div></li>
+</ol>
 </div>
-<div class="para">Thus</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_coordinates_orthogonal.html ./knowl/th_changebasis_orthonormal.html">
-\begin{equation*}
-\underset{B\rightarrow B'}{P}=\frac{1}{\sqrt{2}}\begin{amatrix}[rr]
-1\amp -1\\
-1\amp 1
-\end{amatrix}
-\end{equation*}
-</div>
-<div class="para">and by <a href="" class="xref" data-knowl="./knowl/th_changebasis_orthonormal.html" title="Theorem 5.3.17: Orthonormal change of basis">Theorem 5.3.17</a>
-</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_coordinates_orthogonal.html ./knowl/th_changebasis_orthonormal.html">
-\begin{equation*}
-\underset{B'\rightarrow B}{P}=(\underset{B\rightarrow B'}{P})^T=\frac{1}{\sqrt{2}}\begin{amatrix}[rr]
-1\amp 1\\
--1\amp 1
-\end{amatrix}\text{.}
-\end{equation*}
-</div>
-</div>
-</div>
-<span class="incontext"><a href="s_changeofbasis.html#solution-84" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_innerproducts.html#solution-84" class="internal">in-context</a></span>
 </body>
 </html>

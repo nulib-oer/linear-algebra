@@ -11,26 +11,17 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h4 class="heading"><span class="type">Paragraph</span></h4>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
 <div class="para logical">
-<div class="para">Turning now to matrix multiplication, suppose <span class="process-math">\(A\)</span> is <span class="process-math">\(m\times n\)</span> and <span class="process-math">\(B\)</span> is <span class="process-math">\(n\times r\text{.}\)</span> Let <span class="process-math">\(C=AB\)</span> be their product. These matrices give rise to linear transformations</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_transform_composition.html ./knowl/d_function_composition.html ./knowl/d_matrix_transform.html ./knowl/d_matrix_transform.html">
-\begin{align*}
-T_A\colon \R^n \amp\rightarrow \R^m \amp T_B\colon \R^r \amp\rightarrow \R^n \amp T_C\colon \R^r \amp\rightarrow \R^m  \text{.}
-\end{align*}
+<div class="para">The <a href="" class="xref" data-knowl="./knowl/th_invertibility.html" title="Theorem 2.4.5: Invertibility theorem">invertibility theorem</a> has an immediate application to linear systems where the number of equations is <em class="emphasis">equal to</em> the number of unknowns. In this special situation, the system is equivalent to a matrix equation of the form</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_invertibility.html">
+\begin{equation*}
+A\boldx=\boldb\text{,}
+\end{equation*}
 </div>
-<div class="para">According to <a href="" class="xref" data-knowl="./knowl/th_transform_composition.html" title="Theorem 3.2.24: Composition of linear transformations">Theorem 3.2.24</a> the composition <span class="process-math">\(T_A\circ T_B\)</span> is a linear transformation from <span class="process-math">\(\R^r\)</span> (the domain of <span class="process-math">\(T_B\)</span>) to <span class="process-math">\(\R^m\)</span> (the codomain of <span class="process-math">\(T_A\)</span>). We claim that <span class="process-math">\(T_A\circ T_B=T_C\text{.}\)</span> Indeed, identifying elements of <span class="process-math">\(\R^r\)</span> with column vectors, for all <span class="process-math">\(\boldx\in \R^n\)</span> we have</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_transform_composition.html ./knowl/d_function_composition.html ./knowl/d_matrix_transform.html ./knowl/d_matrix_transform.html">
-\begin{align*}
-T_A\circ T_B(\boldx) \amp = T_A(T_B(\boldx)) \amp (\knowl{./knowl/d_function_composition.html}{\text{Definition 0.2.9}}) \\
-\amp =T_A(B\boldx) \amp (\knowl{./knowl/d_matrix_transform.html}{\text{Definition 3.2.8}})\\
-\amp= A(B\boldx) \amp (\knowl{./knowl/d_matrix_transform.html}{\text{Definition 3.2.8}})\\
-\amp = (AB)\boldx \amp (\text{assoc.})\\
-\amp = T_C(\boldx) \amp (\text{since } C=AB)\text{.}
-\end{align*}
+<div class="para">where <span class="process-math">\(A\)</span> is a <em class="emphasis">square matrix</em>. According to the theorem, if we know <span class="process-math">\(A\)</span> is invertible, then the matrix equation, and hence the linear system, has a unique solution: namely, <span class="process-math">\(\boldx=A^{-1}\boldb\text{.}\)</span>
 </div>
-<div class="para">Thus, we can now understand the definition of matrix multiplication as being chosen precisely to encode how to compute the composition of two matrix transformations. The restriction on the dimension of the ingredient matrices is now understood as guaranteeing that the corresponding matrix transformations can be composed!</div>
 </div>
-<span class="incontext"><a href="s_transformation.html#p-1238" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_invertibility_theorem.html#p-1238" class="internal">in-context</a></span>
 </body>
 </html>

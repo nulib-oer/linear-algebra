@@ -13,45 +13,21 @@
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
 <div class="para logical">
-<div class="para">We must show, given any <span class="process-math">\(A=\begin{amatrix}[rr]a\amp b\\ c\amp d  \end{amatrix}\text{,}\)</span> we can find <span class="process-math">\(c_1, c_2, c_3, c_4\in \R\)</span> such that</div>
-<div class="displaymath process-math">
+<div class="para">For the other direction, assume <span class="process-math">\(A\)</span> is invertible. Then <a href="" class="xref" data-knowl="./knowl/th_invertibility.html" title="Theorem 2.4.5: Invertibility theorem">Theorem 2.4.5</a> implies <span class="process-math">\(A\)</span> is a product of elementary matrices:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_invertibility.html ./knowl/cor_det_prod_elem.html ./knowl/th_det_row_ops.html">
 \begin{equation*}
-c_1A_1+c_2A_2+c_3A_3+c_4A_4=\begin{amatrix}[rr]a\amp b\\ c\amp d  \end{amatrix}\text{,}
+A=E_1E_2\cdots E_r\text{.}
 \end{equation*}
 </div>
-<div class="para">or</div>
-<div class="displaymath process-math">
+<div class="para">Then <a href="" class="xref" data-knowl="./knowl/cor_det_prod_elem.html" title="Corollary 2.5.23: Determinant and products of elementary matrices">Corollary 2.5.23</a> implies</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_invertibility.html ./knowl/cor_det_prod_elem.html ./knowl/th_det_row_ops.html">
 \begin{equation*}
-\begin{amatrix}[rr]c_1+c_2+c_4 \amp c_1-c_2+c_4\\
-c_1+c_3-c_4\amp c_1-c_3-c_4  \end{amatrix}
-=
-\begin{amatrix}[rr]a\amp b \\ c\amp d  \end{amatrix}\text{.}
+\det A=\det E_1\, \det E_2\cdots \det E_1\text{.}
 \end{equation*}
 </div>
-<div class="para">We can find such <span class="process-math">\(c_i\)</span> if and only if the system with augmented matrix</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\begin{amatrix}[rrrr|r]
-1\amp 1\amp 0\amp 1\amp a\\
-1\amp -1\amp 0\amp 1\amp b \\
-1\amp 0\amp 1\amp -1\amp c\\
-1\amp 0\amp -1\amp -1\amp d
-\end{amatrix}
-\end{equation*}
+<div class="para">Since <span class="process-math">\(\det E_i\ne 0\)</span> for all <span class="process-math">\(i\)</span> (<a href="" class="xref" data-knowl="./knowl/th_det_row_ops.html" title="Theorem 2.5.20: Row operations and determinant">Theorem 2.5.20</a>), we conclude <span class="process-math">\(\det A\ne 0\text{.}\)</span>
 </div>
-<div class="para">is consistent. This matrix row reduces to</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\begin{amatrix}[rrrr|r]
-\boxed{1}\amp 1\amp 0\amp 1\amp a\\
-0\amp \boxed{1}\amp 0\amp 0\amp \frac{a-b}{2} \\
-0\amp 0\amp \boxed{1}\amp -2\amp c-\frac{a+b}{2}\\
-0\amp 0\amp 0\amp \boxed{1}\amp \frac{a+b-c-d}{4}
-\end{amatrix}\text{.}
-\end{equation*}
 </div>
-<div class="para">Since the last column will never contain a leading one, we conclude that the system is consistent for any choice of <span class="process-math">\(a,b,c,d\text{,}\)</span> and thus that <span class="process-math">\(\Span S=M_{22}\text{,}\)</span> as claimed.</div>
-</div>
-<span class="incontext"><a href="s_span_independence.html#p-1504" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_det.html#p-1504" class="internal">in-context</a></span>
 </body>
 </html>

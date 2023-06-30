@@ -12,42 +12,11 @@
 </head>
 <body class="ignore-math">
 <article class="li"><h5 class="heading">
-<span class="type">Item</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
+<span class="type">Item</span><span class="space"> </span><span class="codenumber">2</span><span class="period">.</span>
 </h5>
-<div class="para logical">
-<div class="para">We claim <span class="process-math">\(S\)</span> is linearly independent. If</div>
-<div class="displaymath process-math">
-\begin{equation*}
-c_1f+c_2g+c_3h=\boldzero\text{,}
-\end{equation*}
+<div class="para">According to <a href="" class="xref" data-knowl="./knowl/eq_nullspace_injective.html" title="Equation 3.4.2">(3.4.2)</a> we have <span class="process-math">\(T(\boldv)=T(\boldv')\)</span> if and only if <span class="process-math">\(\boldv'=\boldv+\boldu\)</span> for some <span class="process-math">\(\boldu\in \NS T\text{.}\)</span>
 </div>
-<div class="para">then</div>
-<div class="displaymath process-math">
-\begin{equation*}
-c_1x+c_2\cos x+c_3\sin x=0\text{,}
-\end{equation*}
-</div>
-<div class="para">for all <span class="process-math">\(x\in (-2\pi, 2\pi)\text{.}\)</span> In particular, the equality is true when evaluated at <span class="process-math">\(x=0, \pi/2, \pi\text{,}\)</span> yielding the following linear system:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\begin{linsys}{4}
-x=0 \colon \amp \amp 0c_1\amp +\amp \cos(0)c_2\amp +\amp \sin(0) c_3\amp= \amp 0\\
-x=\pi/2 \colon \amp \amp (\pi/2)c_1\amp +\amp \cos(\pi/2)c_2\amp +\amp \sin(\pi/2)c_3 \amp = \amp 0\\
-x=\pi \colon \amp  \amp \pi c_1\amp +\amp \cos(\pi)c_2\amp +\amp \sin(\pi)c_3 \amp= \amp 0
-\end{linsys}\text{,}
-\end{equation*}
-</div>
-<div class="para">or</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\begin{linsys}{4}
-x=0 \colon  \amp \amp \amp \amp c_2\amp \amp \amp = \amp 0\\
-x=\pi/2 \colon \amp  \amp (\pi/2)c_1\amp +\amp \amp +\amp c_3 \amp = \amp 0\\
-x=\pi \colon \amp  \amp \pi c_1\amp - \amp c_2 \amp \amp  \amp= \amp 0
-\end{linsys}\text{.}
-\end{equation*}
-</div>
-<div class="para">This system can be now be solved essentially by inspection: the first equation implies <span class="process-math">\(c_2=0\text{;}\)</span> setting <span class="process-math">\(c_2=0\text{,}\)</span> in the third equation, we conclude <span class="process-math">\(c_1=0\text{;}\)</span> the second equation now implies <span class="process-math">\(c_3=0\text{.}\)</span> We conclude that <span class="process-math">\(c_1=c_2=c_3=0\text{.}\)</span> Thus the only linear combination of <span class="process-math">\(f, g, h\)</span> yielding the zero function is the trivial one, showing that <span class="process-math">\(S\)</span> is linearly independent.</div>
-</div></article><span class="incontext"><a href="s_span_independence.html#li-470" class="internal">in-context</a></span>
+<div class="para">If <span class="process-math">\(\NS T=\{\boldzero_V\}\text{,}\)</span> then <span class="process-math">\(T(\boldv)=T(\boldv')\)</span> implies <span class="process-math">\(\boldv'=\boldv+\boldzero=\boldv\text{.}\)</span> Thus <span class="process-math">\(T\)</span> is injective in this case.</div>
+<div class="para">Conversely, if <span class="process-math">\(\NS T\ne \{\boldzero_V\}\)</span> we can find a nonzero <span class="process-math">\(\boldu\in \NS T\text{.}\)</span> It follows that for <em class="emphasis">any</em> <span class="process-math">\(\boldv\in V\)</span> we have <span class="process-math">\(T(\boldv)=T(\boldv+\boldu)\text{.}\)</span> Furthermore, since <span class="process-math">\(\boldu\ne\boldzero_V\text{,}\)</span> we have <span class="process-math">\(\boldv\ne \boldv+\boldu\text{.}\)</span> Thus <span class="process-math">\(T\)</span> is not injective in this case.</div></article><span class="incontext"><a href="s_nullspace_image.html#li-470" class="internal">in-context</a></span>
 </body>
 </html>

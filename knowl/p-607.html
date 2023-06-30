@@ -11,8 +11,32 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h3 class="heading"><span class="type">Paragraph</span></h3>
-<div class="para">How does one actually prove one of these properties? These are all <em class="emphasis">matrix equalities</em> of the form <span class="process-math">\(X=Y\text{,}\)</span> so according to the <a href="" class="xref" data-knowl="./knowl/d_matrix_equality.html" title="Definition 2.1.5: Matrix equality">matrix equality definition</a> we must show (1) that the matrices <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> have the same dimension, and (2) that <span class="process-math">\((X)_{ij}=(Y)_{ij}\)</span> for all <span class="process-math">\((i,j)\text{.}\)</span> The proof below illustrates this technique for the <a href="" class="xref" data-knowl="./knowl/th_matrixmult_assoc.html" title="Item iii: Multiplication associative law">multiplication associative law</a> of <a href="" class="xref" data-knowl="./knowl/th_matrix_alg_props.html" title="Theorem 2.2.1: Properties of matrix addition, multiplication and scalar multiplication">Theorem 2.2.1</a>.</div>
-<span class="incontext"><a href="s_algebraic.html#p-607" class="internal">in-context</a></span>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<div class="para logical">
+<div class="para">First bring the system into standard form:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L\colon \
+\begin{linsys}{4} x_1\amp +\amp 2x_2\amp -\amp x_3\amp-\amp x_4\amp=\amp 3\\ 3x_1\amp +\amp 6x_2\amp - \amp 2x_3\amp + \amp 4x_4\amp =\amp 8\\ -x_1\amp - \amp 2x_2 \amp +\amp 2x_3\amp + \amp x_4\amp = \amp -1 \end{linsys}\text{.}
+\end{equation*}
+</div>
+<div class="para">Then perform Gaussian elimination on the associated augmented matrix:</div>
+<div class="displaymath process-math">
+\begin{align*}
+\begin{bmatrix}1\amp 2\amp -1\amp -1\amp 3\\ 3\amp 6\amp -2\amp 4\amp 8\\ -1\amp -2\amp 2\amp 1\amp -1 \end{bmatrix} \amp \xrightarrow[\hspace{35pt}]{r_2-3r_1}\amp \begin{bmatrix}1\amp 2\amp -1\amp -1\amp 3\\ 0\amp 0\amp 1\amp 7\amp -1\\ -1\amp -2\amp 2\amp 1\amp -1 \end{bmatrix}\\
+\amp \xrightarrow[\hspace{35pt}]{r_3+r_1 }\amp \begin{bmatrix}1\amp 2\amp -1\amp -1\amp 3\\ 0\amp 0\amp 1\amp 7\amp -1\\ 0\amp 0\amp 1\amp 0\amp 2 \end{bmatrix}\\
+\amp \xrightarrow[\hspace{35pt}]{r_3-r_2 }\amp \begin{bmatrix}1\amp 2\amp -1\amp -1\amp 3\\ 0\amp 0\amp 1\amp 7\amp -1\\ 0\amp 0\amp 0\amp -7\amp 3 \end{bmatrix}\\
+\amp \xrightarrow[\hspace{35pt}]{-\frac{1}{7}r_3}\amp \begin{bmatrix}1\amp 2\amp -1\amp -1\amp 3\\ 0\amp 0\amp 1\amp 7\amp -1\\ 0\amp 0\amp 0\amp 1\amp -\frac{3}{7} \end{bmatrix}\text{.}
+\end{align*}
+</div>
+<div class="para">The corresponding equivalent system is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L'\colon \
+\begin{linsys}{4} x_1\amp +\amp 2x_2\amp -\amp x_3\amp-\amp x_4\amp=\amp 3\\  \amp \amp \amp \amp x_3\amp + \amp 7x_4\amp =\amp -1\\ \amp \amp \amp \amp \amp  \amp x_4\amp = \amp -\frac{3}{7} \end{linsys}\text{.}
+\end{equation*}
+</div>
+</div>
+<span class="incontext"><a href="s_ge.html#p-607" class="internal">in-context</a></span>
 </body>
 </html>

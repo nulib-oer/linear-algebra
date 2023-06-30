@@ -11,16 +11,21 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h4 class="heading"><span class="type">Paragraph</span></h4>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
 <div class="para logical">
-<div class="para">As a further consequence of <a href="" class="xref" data-knowl="./knowl/th_invertibility.html" title="Theorem 2.4.5: Invertibility theorem">Theorem 2.4.5</a>, we can at last strengthen the implication</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_invertibility.html">
+<div class="para">In more detail, for the product of <span class="process-math">\(A_{mn}\)</span> and <span class="process-math">\(B_{pr}\)</span> to be defined, we need <span class="process-math">\(n=p\text{.}\)</span> In other words we need the “inner” dimensions of <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> to be equal:</div>
+<div class="displaymath process-math">
 \begin{equation*}
-A, B \text{ invertible }\implies AB \text{ invertibe}
+\underset{m\times \boxed{n}}{A}\hspace{5pt} \underset{\boxed{n}\times r}{B}\text{.}
 \end{equation*}
 </div>
-<div class="para">to an equivalence.</div>
+<div class="para">If this condition is met, the dimension of the resulting matrix <span class="process-math">\(AB\)</span> is determined by the “outer” dimensions of <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{.}\)</span> Schematically, you can think of the inner dimensions as being “canceled out”:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\underset{\boxed{m}\times\cancel{n}}{A}\hspace{5pt}\underset{\cancel{n}\times\boxed{r}}{B}=\underset{m\times r}{AB}.
+\end{equation*}
 </div>
-<span class="incontext"><a href="s_invertibility_theorem.html#p-852" class="internal">in-context</a></span>
+</div>
+<span class="incontext"><a href="s_matrix.html#p-852" class="internal">in-context</a></span>
 </body>
 </html>

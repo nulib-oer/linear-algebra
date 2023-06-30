@@ -13,21 +13,19 @@
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
 <div class="para logical">
-<div class="para">The rotation matrix corresponding to <span class="process-math">\(\alpha=\pi\)</span> is</div>
+<div class="para">We have</div>
 <div class="displaymath process-math">
 \begin{equation*}
-A=\begin{amatrix}[rr]\cos\pi\amp -\sin\pi\\ \sin\pi \amp \cos\pi  \end{amatrix}=
-\begin{amatrix}[rr]-1\amp 0\\ 0 \amp -1  \end{amatrix}\text{.}
+\underset{r_1\leftrightarrow r_3}{E}=\begin{bmatrix}0\amp 0\amp 1\\0\amp 1\amp 0\\ 1\amp 0\amp 0 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<div class="para">Thus <span class="process-math">\(\rho_\pi=T_A\)</span> has formula</div>
+<div class="para">You can verify for yourself that</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\rho_{\pi}(x,y)=(-x,-y)=-(x,y)\text{.}
+\underset{r_1\leftrightarrow r_3}{E}\,\underset{r_1\leftrightarrow r_3}{E}=I_3\text{.}
 \end{equation*}
 </div>
-<div class="para">Note: this is as expected! Rotating by 180 degrees produces the inverse vector.</div>
 </div>
-<span class="incontext"><a href="s_transformation.html#p-1215" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_invertibility_theorem.html#p-1215" class="internal">in-context</a></span>
 </body>
 </html>

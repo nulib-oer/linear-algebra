@@ -11,19 +11,17 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
 <div class="para logical">
-<div class="para">In this case we have</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/d_adjoint.html">
-\begin{align*}
-[A\, \adj A]_{ii} \amp =\sum_{k=1}^na_{ik}[\adj A]_{ki}  \\
-\amp =\sum_{k=1}^n a_{ik}((-1)^{i+k}M_{ik}) \amp (\knowl{./knowl/d_adjoint.html}{\text{Definition 2.5.15}} )\\
-\amp =\sum_{k=1}^n(-1)^{i+k}a_{ik}M_{ik} \\
-\amp =\det A \text{.}
-\end{align*}
+<div class="para">Though we can perform additive cancellation in matrix algebra, we can <em class="emphasis">not</em> always perform <em class="emphasis">multiplicative cancellation</em>. For example, consider the matrices</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A=\begin{bmatrix}1\amp 1\\ 1\amp 1\end{bmatrix}, B=\begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix}, C=\begin{bmatrix}0\amp 0\\ 1\amp 0 \end{bmatrix}\text{.}
+\end{equation*}
 </div>
-<div class="para">A similar argument shows that <span class="process-math">\((\adj A\, A)_{ii}=\det A\text{,}\)</span> though in this case we use expansion along a column.</div>
+<div class="para">Check for yourself that <span class="process-math">\(AB=AC\text{,}\)</span> and yet <span class="process-math">\(B\ne C\text{.}\)</span> In other words, we cannot always “cancel” <span class="process-math">\(A\)</span> from the matrix equation <span class="process-math">\(AB=AC\text{.}\)</span>
 </div>
-<span class="incontext"><a href="s_det.html#p-978" class="internal">in-context</a></span>
+</div>
+<span class="incontext"><a href="s_algebraic.html#p-978" class="internal">in-context</a></span>
 </body>
 </html>

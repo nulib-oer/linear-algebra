@@ -11,18 +11,23 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<article class="li"><h6 class="heading">
-<span class="type">Item</span><span class="space"> </span><span class="codenumber">2.2.4.a</span><span class="period">.</span>
-</h6>
+<article class="li"><h5 class="heading">
+<span class="type">Item</span><span class="space"> </span><span class="codenumber">b</span><span class="period">.</span>
+</h5>
 <div class="para logical">
-<div class="para">We  need both <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> to be <span class="process-math">\(m\times n \)</span> for the expression to make sense. It is easy to see that <span class="process-math">\(A+B\)</span> and <span class="process-math">\(B+A\)</span> are both <span class="process-math">\(m\times n\)</span> matrices. We must show <span class="process-math">\((A+B)_{ij}=(B+A)_{ij}\)</span> for all <span class="process-math">\(1\leq i\leq m\text{,}\)</span> <span class="process-math">\(1\leq j\leq n\text{.}\)</span> We have</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/d_matrix_add_subtract.html ./knowl/d_matrix_add_subtract.html">
+<div class="para">Let <span class="process-math">\(\bolda_1, \bolda_2, \bolda_3\)</span> be the columns of <span class="process-math">\(A\text{,}\)</span> and let <span class="process-math">\(\boldb_1, \boldb_2\)</span> be the columns of <span class="process-math">\(B\text{.}\)</span> We have</div>
+<div class="displaymath process-math">
 \begin{align*}
-(A+B)_{ij} \amp =(A)_{ij}+(B)_{ij}\amp (\knowl{./knowl/d_matrix_add_subtract.html}{\text{Definition 2.1.9}}) \\
-\amp =(B)_{ij}+(A)_{ij}\amp \text{(real addition is comm.)} \\
-\amp =(B+A)_{ij} \amp (\knowl{./knowl/d_matrix_add_subtract.html}{\text{Definition 2.1.9}} \text{.}
+AB \amp=
+\begin{amatrix}[cc]\vert \amp \vert \\
+A\boldb_1\amp A\boldb_2 \\
+\vert\amp \vert\end{amatrix} \amp \text{(Step 1)} \\
+\amp= \begin{amatrix}[cc]\vert \amp \vert \\
+(1\bolda_1+0\bolda_2-2\bolda_3)\amp (\bolda_1+\bolda_2+\bolda_3) \\
+\vert\amp \vert\end{amatrix} \amp \text{(Step 2)}\\
+\amp= \begin{amatrix}[rr]5\amp 0\\ -3\amp 6 \end{amatrix} \amp \text{(arithmetic)}
 \end{align*}
 </div>
-</div></article><span class="incontext"><a href="s_algebraic.html#li-206" class="internal">in-context</a></span>
+</div></article><span class="incontext"><a href="s_matrix.html#li-206" class="internal">in-context</a></span>
 </body>
 </html>

@@ -13,15 +13,27 @@
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
 <div class="para logical">
-<div class="para">Suppoe <span class="process-math">\(B=\{\boldv_1,\boldv_2,\boldv_3\}\)</span> be a basis for the vector space<span class="process-math">\(V\text{.}\)</span> Let <span class="process-math">\(B'=\{\boldu_1,\boldu_2,\boldu_3\}\text{,}\)</span> where</div>
-<div class="displaymath process-math">
+<div class="para">As an example, consider the function</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/d_matrix_transform.html ./knowl/th_matrix_transform_i.html">
+\begin{align*}
+T\colon \R^2 \amp\rightarrow  \R^3 \\
+(x,y)\amp\mapsto (7x+2y, -y, x) \text{.}
+\end{align*}
+</div>
+<div class="para">Conflating tuples with column vectors as described in <a href="" class="xref" data-knowl="./knowl/d_matrix_transform.html" title="Definition 3.2.8: Matrix transformations">Definition 3.2.8</a> we see that <span class="process-math">\(T=T_A\)</span> where</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/d_matrix_transform.html ./knowl/th_matrix_transform_i.html">
 \begin{equation*}
-\boldu_1 = \boldv_1, \boldu_2 = \boldv_1 + \boldv_2, \boldu_3 = \boldv_1 +\boldv_2 +
-\boldv_3\text{.}
+A=\begin{amatrix}[rr]7\amp 2\\ 0\amp -1\\ 1\amp 0  \end{amatrix}\text{.}
 \end{equation*}
 </div>
-<div class="para">Prove that <span class="process-math">\(B'\)</span> is a basis.</div>
+<div class="para">In other words, the original formula is just a description in terms of tuples of the function</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/d_matrix_transform.html ./knowl/th_matrix_transform_i.html">
+\begin{equation*}
+\begin{amatrix}[c]x\\ y  \end{amatrix}\mapsto A\begin{amatrix}[c]x\\ y  \end{amatrix}=\begin{amatrix}[c]7x+2y\\ -y\\ x  \end{amatrix}\text{.}
+\end{equation*}
 </div>
-<span class="incontext"><a href="s_dimension.html#p-1769" class="internal">in-context</a></span>
+<div class="para">It follows from <a href="" class="xref" data-knowl="./knowl/th_matrix_transform_i.html" title="Theorem 3.2.9: Matrix transformations I">Theorem 3.2.9</a> that <span class="process-math">\(T=T_A\)</span> is linear.</div>
+</div>
+<span class="incontext"><a href="s_transformation.html#p-1769" class="internal">in-context</a></span>
 </body>
 </html>

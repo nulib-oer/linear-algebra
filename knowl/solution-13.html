@@ -13,38 +13,17 @@
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">1.2.4.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">1.1.9.1</span><span class="period">.</span>
 </h4>
+<div class="para logical">
+<div class="para">We proceed geometrically by observing that each equation in a given system defines a line, that a pair <span class="process-math">\((x,y)\)</span> is a solution to the given equation if and only if it is a point on the corresponding line, and thus that a pair <span class="process-math">\((x,y)\)</span> is a solution to both equations if and only if it is a point lying on both lines. Thus, geometrically speaking, the set of solutions to a given system is equal to the intersection of the two corresponding lines.</div>
 <ol class="decimal">
-<li><div class="para logical">
-<div class="para">Below you find the matrix with leading ones boxed. This matrix fails to be in row echelon form (and hence also reduced row echelon form) for a variety of reasons: the zero rows are not all grouped at the bottom; the first row is nonzero, but does not have a leading one; the leading one of the fourth row is to the left of the leading one of the leading one in the row above it.</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\begin{bmatrix}0\amp 2\amp 1\amp 0\amp 0\\
-0\amp 0\amp 0\amp 0\amp 0\\
-0\amp \boxed{1}\amp 0\amp 0\amp 1\\
-\boxed{1}\amp 0\amp 0\amp 0\amp 0\\
-0\amp 0\amp 0\amp 0\amp 0
-\end{bmatrix}
-\end{equation*}
-</div>
-</div></li>
-<li><div class="para logical">
-<div class="para">Below you find the matrix with leading ones boxed. This matrix is in row echelon form: the zero rows (rows 4 and 5) are grouped at the bottom; each nonzero row has a leading one (boxed in the matrix below); the leading ones step strictly to the right as we move down the rows.</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\begin{bmatrix}\boxed{1}\amp 0\amp 0\amp -3\amp -7\\
-0\amp 0\amp \boxed{1}\amp 2\amp 0\\
-0\amp 0\amp 0\amp 0\amp \boxed{1}\\
-0\amp 0\amp 0\amp 0\amp 0\\
-0\amp 0\amp 0\amp 0\amp 0
-\end{bmatrix}
-\end{equation*}
-</div>
-<div class="para">The matrix is <em class="emphasis">not</em> in reduced row echelon form, as the last column contains a leading one in its third row, and a nonzero entry in its first row.</div>
-</div></li>
+<li><div class="para">In this case the two lines <span class="process-math">\(\ell_1\colon x-y=0\)</span> and <span class="process-math">\(\ell_2\colon x-y=1\)</span> are parallel (and not equal to one another). It follows that their intersection is empty. We conclude that there are no solutions to the system.</div></li>
+<li><div class="para">In this case the two lines <span class="process-math">\(\ell_1\colon x-y=0\)</span> and <span class="process-math">\(\ell_2\colon x+y=1\)</span> are nonparallel. It follows that they intersect in a single point. We conclude that the system has a unique solution.</div></li>
+<li><div class="para">In this case the two equations <span class="process-math">\(x-y=1\)</span> and <span class="process-math">\(2x-2y=2\)</span> define the same line <span class="process-math">\(\ell\text{,}\)</span> and thus that their intersection is also equal to <span class="process-math">\(\ell\text{.}\)</span> The set of solutions to the system is then equal to the set of points of <span class="process-math">\(\ell\text{,}\)</span> which is infinite.</div></li>
 </ol>
 </div>
-<span class="incontext"><a href="s_ge.html#solution-13" class="internal">in-context</a></span>
+</div>
+<span class="incontext"><a href="s_systems.html#solution-13" class="internal">in-context</a></span>
 </body>
 </html>

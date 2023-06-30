@@ -11,16 +11,19 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<article class="li"><h5 class="heading">
-<span class="type">Item</span><span class="space"> </span><span class="codenumber">4</span><span class="period">.</span>
-</h5>
+<article class="li"><h4 class="heading">
+<span class="type">Item</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
+</h4>
 <div class="para logical">
-<div class="para">The coefficient <span class="process-math">\(a_{n-1}\)</span> in <a href="" class="xref" data-knowl="./knowl/eq_char_poly.html" title="Equation 5.4.6">(5.4.6)</a> satisfies</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_char_poly.html">
-\begin{equation}
-a_{n-1}=-\tr A=-(\lambda_1+\lambda_2+\cdots +\lambda_n)\text{.}\tag{5.4.7}
-\end{equation}
+<div class="para">We must show that <span class="process-math">\(\proj{c\boldv+d\boldw}{W}=c\,\proj{\boldv}{W}+d\,\proj{\boldw}{W}\)</span> for all <span class="process-math">\(c,d\in\R\)</span> and <span class="process-math">\(\boldv,\boldw\in V\text{.}\)</span> We pick an orthogonal basis <span class="process-math">\(B=\{\boldv_1,\boldv_2, \dots, \boldv_r\}\)</span> of <span class="process-math">\(W\)</span> and compute, using formula <a href="" class="xref" data-knowl="./knowl/eq_ortho_proj_formula.html" title="Equation 4.3.2">(4.3.2)</a>:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_ortho_proj_formula.html">
+\begin{align*}
+\proj{c\boldv+d\boldw}{W} \amp=\sum_{i=1}^{r}\frac{\langle c\boldv+d\boldw, \boldv_i\rangle}{\langle\boldv_i, \boldv_i\rangle }\boldv_i \\
+\amp=\sum_{i=1}^r\frac{c\langle \boldv,\boldv_i\rangle+d\langle \boldw, \boldv_i\rangle}{\langle \boldv_i, \boldv_i\rangle}\boldv_i \\
+\amp =c\sum_{i=1}^r\frac{\angvec{\boldv, \boldv_i}}{\angvec{\boldv_i, \boldv_i}}\boldv_i+d\sum_{i=1}^r\frac{\angvec{\boldw, \boldv_i}}{\angvec{\boldv_i, \boldv_i}}\boldv_i\\
+\amp = c\,\proj{\boldv}{W}+d\,\proj{\boldw}{W}\text{.}
+\end{align*}
 </div>
-</div></article><span class="incontext"><a href="s_eigenvectors.html#li-917" class="internal">in-context</a></span>
+</div></article><span class="incontext"><a href="s_orthogonal_projection.html#li-917" class="internal">in-context</a></span>
 </body>
 </html>

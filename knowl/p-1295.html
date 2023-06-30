@@ -11,16 +11,8 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para logical">
-<div class="para">The following theorem gives a convenient method of producing a subspace <span class="process-math">\(W\)</span> of <span class="process-math">\(\R^n\text{:}\)</span> namely, given any <span class="process-math">\(m\times n\)</span> matrix <span class="process-math">\(A\text{,}\)</span> the subset <span class="process-math">\(W\)</span> defined as</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/s_nullspace_image.html ./knowl/d_nullspace_image.html ./knowl/th_nullspace_image.html ./knowl/th_subspace_matrix_solutions.html">
-\begin{equation*}
-W=\{\boldx\in \R^n\colon A\boldx=\boldzero\}
-\end{equation*}
-</div>
-<div class="para">is guaranteed to be a subspace of <span class="process-math">\(\R^n\text{.}\)</span> We will see in <a href="s_nullspace_image.html" class="internal" title="Section 3.4: Null space and image">Section 3.4</a> that this construction is just one example of a more general subspace-building operation (see <a href="" class="xref" data-knowl="./knowl/d_nullspace_image.html" title="Definition 3.4.1: Null space and image">3.4.1</a> and <a href="" class="xref" data-knowl="./knowl/th_nullspace_image.html" title="Theorem 3.4.8: Null space and image">3.4.8</a>). We introduce the special case here for two reasons: (a) the construction allows us to easily provide examples of subspaces of <span class="process-math">\(\R^n\text{,}\)</span> and (b) the proof of <a href="" class="xref" data-knowl="./knowl/th_subspace_matrix_solutions.html" title="Theorem 3.3.10: Solutions to A\boldx=\boldzero form a subspace">Theorem 3.3.10</a> is a nice example of the two-step technique.</div>
-</div>
-<span class="incontext"><a href="s_subspace.html#p-1295" class="internal">in-context</a></span>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<div class="para">For the induction step we assume that any two row equivalent <span class="process-math">\(m\times n\)</span> matrices in reduced row echelon form are equal.  Suppose by contradiction that <span class="process-math">\(U=[u_{ij}]\)</span> and <span class="process-math">\(U'=[u'_{ij}]\)</span> are row equivalent <span class="process-math">\(m\times (n+1)\)</span> matrices in reduced row echelon form, and that <span class="process-math">\(U\ne U'\text{.}\)</span>  By <a href="" class="xref" data-knowl="./knowl/cor_row_equivalence_invertibility.html" title="Corollary 2.4.15: Row equivalence and invertible matrices">Corollary 2.4.15</a> there is an invertible matrix <span class="process-math">\(Q\)</span> such that <span class="process-math">\(QU=U'\text{.}\)</span> The first <span class="process-math">\(n\)</span> columns of <span class="process-math">\(U\)</span> and <span class="process-math">\(U'\)</span> form matrices <span class="process-math">\(V\)</span> and <span class="process-math">\(V'\text{,}\)</span> respectively, that are in reduced row echelon form, as one easily checks. Furthermore, <span class="process-math">\(V\)</span> and <span class="process-math">\(V'\)</span> are row equivalent: indeed, using <a href="" class="xref" data-knowl="./knowl/th_column_method.html" title="Theorem 2.1.24: Column method of matrix multiplication">Theorem 2.1.24</a> we see that <span class="process-math">\(QU=U'\)</span> implies <span class="process-math">\(QV=V'\text{.}\)</span> By the induction hypothesis we must have <span class="process-math">\(V=V'\text{,}\)</span> and thus <span class="process-math">\(U\)</span> and <span class="process-math">\(U'\)</span> can only differ in their last column.</div>
+<span class="incontext"><a href="s_invertibility_theorem.html#p-1295" class="internal">in-context</a></span>
 </body>
 </html>

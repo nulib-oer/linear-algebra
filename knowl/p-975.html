@@ -11,21 +11,18 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
 <div class="para logical">
-<div class="para">Given an <span class="process-math">\(n\times n\)</span> matrix <span class="process-math">\(A\text{,}\)</span> we have</div>
-<div class="displaymath process-math">
-\begin{equation}
-A\,(\adj A)=(\adj A)\, A=(\det A)I\text{.}\tag{2.5.7}
-\end{equation}
-</div>
-<div class="para">As a consequence, if <span class="process-math">\(\det A\ne 0\text{,}\)</span> then <span class="process-math">\(A\)</span> is invertible and</div>
-<div class="displaymath process-math">
-\begin{equation}
-A^{-1}=\frac{1}{\det A}\, \adj A\text{.}\tag{2.5.8}
-\end{equation}
+<div class="para">We prove this via a chain of implications:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_matrixadd_assoc.html ./knowl/th_matrix_add_inverse.html ./knowl/th_matrix_add_ident.html">
+\begin{align*}
+A+B=A+C\amp \implies -A+(A+B)=-A+(A+C) \\
+\amp\implies (-A+A)+B=(-A+A)+C\amp (\knowl{./knowl/th_matrixadd_assoc.html}{\text{Addition associative law}}) \\
+\amp\implies \boldzero_{m\times n}+B=\boldzero_{m\times n}+C \amp (\knowl{./knowl/th_matrix_add_inverse.html}{\text{Item 2}}) \\
+\amp \implies B=C \amp (\knowl{./knowl/th_matrix_add_ident.html}{\text{Item 1}}) \text{.}
+\end{align*}
 </div>
 </div>
-<span class="incontext"><a href="s_det.html#p-975" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_algebraic.html#p-975" class="internal">in-context</a></span>
 </body>
 </html>

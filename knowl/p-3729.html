@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<div class="para logical">
+<div class="para">We now return to <span class="process-math">\(A\)</span> and its characteristic polynomial <span class="process-math">\(p(x)\text{.}\)</span> Recall that we want to show that all roots of <span class="process-math">\(p(x)\)</span> are real.  Let <span class="process-math">\(\lambda\in \C\)</span> be a root of <span class="process-math">\(p(x)\text{.}\)</span> The complex theory of eigenvectors implies that there is a nonzero vector <span class="process-math">\(\boldz\in \C^n\)</span> satisfying <span class="process-math">\(A\boldz=\lambda \boldz\text{.}\)</span> On the one hand, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/cor_self-adjoint_symmetric.html">
+\begin{equation*}
+\langle A\boldz, \boldz\rangle =\langle \lambda\boldz, \boldz\rangle=\lambda\langle \boldz, \boldz\rangle
+\end{equation*}
+</div>
+<div class="para">using properties of our complex inner product. On the other hand, since <span class="process-math">\(A^T=A\)</span> it is easy to see that <a href="" class="xref" data-knowl="./knowl/cor_self-adjoint_symmetric.html" title="Corollary 5.6.3: Self-adjoint operators and symmetry">Corollary 5.6.3</a> extends to our complex inner product: i.e.,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/cor_self-adjoint_symmetric.html">
+\begin{equation*}
+\langle A\boldz, \boldw\rangle=\langle \boldz, A\boldw\rangle
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(\boldz, \boldw\in \C^n\text{.}\)</span> Thus</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/cor_self-adjoint_symmetric.html">
+\begin{align*}
+\langle A\boldz, \boldz\rangle  \amp=  \\
+\amp= \langle \boldz, A\boldz\rangle \\
+\amp = \langle \boldz, \lambda\boldz\rangle\\
+\amp =\overline{\lambda}\langle \boldz, \boldz\rangle \text{.}
+\end{align*}
+</div>
+<div class="para">(In the last equality we use the fact that our complex inner product satisfies <span class="process-math">\(\langle \boldz, \alpha\boldw\rangle=\overline{\alpha} \langle \boldz, \boldw\rangle\)</span> for any <span class="process-math">\(\alpha\in \C\)</span> and vectors <span class="process-math">\(\boldz, \boldw\in \C^n\text{.}\)</span>) It follows that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/cor_self-adjoint_symmetric.html">
+\begin{equation*}
+\lambda\langle \boldz, \boldz\rangle=\overline{\lambda}\langle \boldz, \boldz\rangle\text{.}
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(\boldz\ne \boldzero\text{,}\)</span> we have <span class="process-math">\(\langle \boldz, \boldz\rangle\ne 0\)</span> (another property of our complex inner product), and thus <span class="process-math">\(\lambda=\overline{\lambda}\text{.}\)</span> Since a complex number <span class="process-math">\(z=a+bi\)</span> satisfies <span class="process-math">\(\overline{z}=z\)</span> if and only if <span class="process-math">\(b=0\)</span> if and only if <span class="process-math">\(z\)</span> is real, we conclude that <span class="process-math">\(\lambda\)</span> is a real number, as claimed.</div>
+</div>
+<span class="incontext"><a href="s_spectral_theorem.html#p-3729" class="internal">in-context</a></span>
+</body>
+</html>

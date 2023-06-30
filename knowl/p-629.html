@@ -11,36 +11,29 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h3 class="heading"><span class="type">Paragraph</span></h3>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
 <div class="para logical">
-<div class="para">This is a good place to point out that to prove an identity does not hold, it suffices to provide a single counterexample to that effect. We do so for each failed identity of <a href="" class="xref" data-knowl="./knowl/th_matrix_abnormalities.html" title="Theorem 2.2.8: Matrix algebra abnormalities">Theorem 2.2.8</a> in turn. There is no significance to the particular counterexamples chosen here, and indeed there are infinitely many counterexamples to choose from in both cases.</div>
-<ol class="decimal">
-<li><div class="para logical">
-<div class="para">We have</div>
+<div class="para">Otherwise, let <span class="process-math">\(x_{i_1}, x_{i_2},\dots , x_{i_r}\)</span> be the leading variables of <span class="process-math">\(L'\text{,}\)</span> and let <span class="process-math">\(x_{j_1},x_{j_2},\dots, x_{j_s}\)</span> be the free variables. Back-substitution allows us to express each leading variable in terms of the free variables. In other words, we can write</div>
 <div class="displaymath process-math">
 \begin{align*}
-\begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix} \begin{bmatrix}0\amp 1\\ 0\amp 0 \end{bmatrix}\amp = \begin{bmatrix} 0\amp 1 \\ 0 \amp 0\end{bmatrix}\\
-\begin{bmatrix}0\amp 1\\ 0\amp 0 \end{bmatrix} \begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix} \amp = \begin{bmatrix} 0\amp 0\\ 0\amp 0 \end{bmatrix} 
+x_{i_1}\amp=F_1(x_{j_1},x_{j_2},\dots, x_{j_s}) \\
+x_{i_2}\amp =F_2(x_{j_1},x_{j_2},\dots, x_{j_s}) \\
+\vdots \amp \\
+x_{i_r} \amp =F_s(x_{j_1},x_{j_2},\dots, x_{j_s})\text{,}
 \end{align*}
 </div>
-<div class="para">and thus</div>
+<div class="para">where each <span class="process-math">\(F_i(x_{j_1},x_{j_2},\dots, x_{j_s})\)</span> is a linear expression in the free variables. Each solution of <span class="process-math">\(L\)</span> thus corresponds to a <em class="emphasis">unique</em> variable assignment of the form</div>
 <div class="displaymath process-math">
-\begin{equation*}
-\begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix} \begin{bmatrix}0\amp 1\\ 0\amp 0 \end{bmatrix} \ne \begin{bmatrix}0\amp 1\\ 0\amp 0 \end{bmatrix} \begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix}\text{.}
-\end{equation*}
+\begin{align*}
+\text{Free variables: } x_{j_1}\amp=t_{1}, \ x_{j_2}=t_{2},\dots, x_{j_s}=t_{s}\\
+\text{Leading variables: } x_{i_1}\amp =F_1(t_1,t_2,\dots, t_s) \\
+x_{i_2}\amp =F_2(t_1,t_2,\dots, t_s) \\
+\vdots \amp \\
+x_{i_r} \amp =F_s(t_1,t_2,\dots, t_s)\text{,}
+\end{align*}
 </div>
-</div></li>
-<li><div class="para logical">
-<div class="para">Observe that</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\begin{bmatrix}0\amp 1\\ 0\amp 0 \end{bmatrix} \begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix} =\begin{bmatrix}0\amp 0\\ 0\amp 0 \end{bmatrix} \text{.}
-\end{equation*}
+<div class="para">where <span class="process-math">\(t_1,t_2,\dots, t_s\)</span> are any real numbers.</div>
 </div>
-<div class="para">This is an example of two nonzero matrices whose product is the zero matrix.</div>
-</div></li>
-</ol>
-</div>
-<span class="incontext"><a href="s_algebraic.html#p-629" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_solving.html#p-629" class="internal">in-context</a></span>
 </body>
 </html>

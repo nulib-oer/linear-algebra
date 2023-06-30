@@ -10,47 +10,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><div class="solution solution-like">
-<ol class="decimal">
-<li><div class="para logical">
-<div class="para">According to <a href="" class="xref" data-knowl="./knowl/th_matrixreps_matrixtransforms.html" title="Theorem 5.2.3: Standard matrix as a matrix representation">Theorem 5.2.3</a>, since <span class="process-math">\(B\)</span> is the standard basis <span class="process-math">\([T]_B\)</span> is the matrix <span class="process-math">\(A\)</span> such that <span class="process-math">\(T=T_A\text{:}\)</span>
-</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_matrixreps_matrixtransforms.html">
-\begin{align*}
-[T]_B\amp=\begin{bmatrix}
-\vert \amp \vert \\
-T(\bolde_1)\amp T(\bolde_2)\\
-\vert \amp \vert
-\end{bmatrix} \\
-\amp= \begin{amatrix}[rr]
-4\amp -3\\
-2\amp -1
-\end{amatrix} \text{.}
-\end{align*}
-</div>
-</div></li>
-<li><div class="para logical">
-<div class="para">We have</div>
+<body class="ignore-math"><div class="solution solution-like"><div class="para logical">
+<div class="para">Let <span class="process-math">\(p(x)=x^2-1\text{,}\)</span> <span class="process-math">\(q(x)=x^2+2x+1\text{.}\)</span> We have</div>
 <div class="displaymath process-math">
-\begin{align*}
-[T]_{B'}=[T]_{B'}^{B'} \amp = \begin{bmatrix}
-\vert\amp \vert\\
-[T((1,1))]_{B'}\amp [T(1,-1)]_{B'}\\
-\vert \amp \vert
-\end{bmatrix} \\
-\amp = \begin{bmatrix}
-\vert\amp \vert\\
-[(1,1)]_{B'}\amp [(7,3)]_{B'}\\
-\vert \amp \vert
-\end{bmatrix}\\
-\amp = \begin{amatrix}[rr]
-1\amp 5\\
-0\amp 2
-\end{amatrix}\text{,}
-\end{align*}
+\begin{equation*}
+\langle p(x), q(x)  \rangle=p(-1)q(-1)+p(0)q(0)+p(1)q(1)=0+(-1)1+0=-1
+\end{equation*}
 </div>
-<div class="para">where the last equality uses the fact that <span class="process-math">\([(1,1)]_{B'}=(1,0)\)</span> and <span class="process-math">\([(7,3)]_{B'}=(5,2)\text{,}\)</span> as you can verify yourself.</div>
-</div></li>
-</ol> <div class="para">So we have <span class="process-math">\([T]_B=\begin{amatrix}[rr]4\amp -1\\ 2\amp -1  \end{amatrix}\)</span> and <span class="process-math">\([T]_{B'}=\begin{amatrix}[rr]1\amp 5\\ 0\amp 2  \end{amatrix}\text{.}\)</span> Moral: different choices of bases yield different matrix representations.</div>
-</div></body>
+<div class="para">and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\langle p(x), p(x) \rangle =p(-1)^2+p(0)^2+p(1)^2=0+(-1)^2+0=1\text{.}
+\end{equation*}
+</div>
+</div></div></body>
 </html>

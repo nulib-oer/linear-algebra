@@ -11,29 +11,24 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<article class="li"><h5 class="heading"><span class="title">Step 4</span></h5>
-<div class="para">If there are no free variables, solve for each unknown using back-substitution. In this case, there is a unique solution to <span class="process-math">\(L\text{:}\)</span> i.e., <span class="process-math">\(S=\{(s_1,s_2,\dots, s_n)\}\)</span> contains exactly one element.</div>
+<article class="li"><h6 class="heading">
+<span class="type">Item</span><span class="space"> </span><span class="codenumber">1.1.3.8.b</span><span class="period">.</span>
+</h6>
 <div class="para logical">
-<div class="para">Otherwise, let <span class="process-math">\(x_{i_1}, x_{i_2},\dots , x_{i_r}\)</span> be the leading variables of <span class="process-math">\(L'\text{,}\)</span> and let <span class="process-math">\(x_{j_1},x_{j_2},\dots, x_{j_s}\)</span> be the free variables. Back-substitution allows us to express each leading variable in terms of the free variables. In other words, we can write</div>
+<div class="para">Now consider a more general system</div>
 <div class="displaymath process-math">
-\begin{align*}
-x_{i_1}\amp=F_1(x_{j_1},x_{j_2},\dots, x_{j_s}) \\
-x_{i_2}\amp =F_2(x_{j_1},x_{j_2},\dots, x_{j_s}) \\
-\vdots \amp \\
-x_{i_r} \amp =F_s(x_{j_1},x_{j_2},\dots, x_{j_s})\text{,}
-\end{align*}
+\begin{equation}
+\begin{linsys}{2}
+x^2\amp +\amp y^2\amp =\amp 1\\
+ax\amp +\amp by \amp =\amp c,
+\end{linsys}\tag{1.1.4}
+\end{equation}
 </div>
-<div class="para">where each <span class="process-math">\(F_i(x_{j_1},x_{j_2},\dots, x_{j_s})\)</span> is a linear expression in the free variables. Each solution of <span class="process-math">\(L\)</span> thus corresponds to a <em class="emphasis">unique</em> variable assignment of the form</div>
-<div class="displaymath process-math">
-\begin{align*}
-\text{Free variables: } x_{j_1}\amp=t_{1}, \ x_{j_2}=t_{2},\dots, x_{j_s}=t_{s}\\
-\text{Leading variables: } x_{i_1}\amp =F_1(t_1,t_2,\dots, t_s) \\
-x_{i_2}\amp =F_2(t_1,t_2,\dots, t_s) \\
-\vdots \amp \\
-x_{i_r} \amp =F_s(t_1,t_2,\dots, t_s)\text{,}
-\end{align*}
+<div class="para">where <span class="process-math">\(a,b,c\in\R\)</span> are fixed constants and at least one of <span class="process-math">\(a\)</span> or <span class="process-math">\(b\)</span> is nonzero.</div>
 </div>
-<div class="para">where <span class="process-math">\(t_1,t_2,\dots, t_s\)</span> are any real numbers.</div>
-</div></article><span class="incontext"><a href="s_solving.html#li-130" class="internal">in-context</a></span>
+<ol class="lower-roman">
+<li><div class="para">Explain geometrically what a solution to the system corresponds to in terms of the graphs of its two equations.</div></li>
+<li><div class="para">Use your geometric interpretation in (i) to argue that the system <a href="" class="xref" data-knowl="./knowl/eq_general_nonlinear.html" title="Equation 1.1.4">(1.1.4)</a> has either 0, 1, or 2 solutions. Give explicit examples of such systems corresponding to each of these three cases.</div></li>
+</ol></article><span class="incontext"><a href="s_systems.html#li-130" class="internal">in-context</a></span>
 </body>
 </html>

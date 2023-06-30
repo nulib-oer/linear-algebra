@@ -12,33 +12,8 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para logical">
-<div class="para">We now show that <span class="process-math">\(T\)</span> is linear. Given <span class="process-math">\(\boldv, \boldv'\in V\)</span> we can find a common collection of elements <span class="process-math">\(\boldu_1,\boldu_2,\dots, \boldu_r\in B\)</span> for which</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_bases_transformations.html">
-\begin{align*}
-\boldv \amp = c_1\boldu_1+c_2\boldu_2+\cdots +c_r\boldu_r\\
-\boldv'\amp=d_1\boldu_1+d_2\boldu_2+\cdots +d_r\boldu_r 
-\end{align*}
+<div class="para">The zero vector <span class="process-math">\(F(X,\R)\)</span> is the constant function <span class="process-math">\(O_X\)</span> that assigns a value of 0 to all elements of <span class="process-math">\(X\text{:}\)</span> i.e., <span class="process-math">\(0_X(x)=0\)</span> for all <span class="process-math">\(x\in X\text{.}\)</span>
 </div>
-<div class="para">for some <span class="process-math">\(c_i, d_i\in \R\text{.}\)</span> We can no longer assume that <span class="process-math">\(c_i\ne 0\)</span> and <span class="process-math">\(d_i\ne 0\)</span> for all <span class="process-math">\(1\leq i\leq r\text{,}\)</span> but as observed above we still have</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_bases_transformations.html">
-\begin{align*}
-T(\boldv) \amp = c_1T(\boldu_1)+c_2T(\boldu_2)+\cdots +c_rT(\boldu_r)\\
-T(\boldv')\amp=d_1T(\boldu_1)+d_2T(\boldu_2)+\cdots +d_rT(\boldu_r) \text{.}
-\end{align*}
-</div>
-<div class="para">Given any <span class="process-math">\(c, d\in \R\text{,}\)</span> we have</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_bases_transformations.html">
-\begin{align*}
-T(c\boldv+d\boldv')\amp=T(cc_1\boldu_1+cc_2\boldu_2+\cdots +cc_r\boldu_r+dd_1\boldu_1+dd_2\boldu_2+\cdots +dd_r\boldu_r) \\
-\amp= T\left((cc_1+dd_1)\boldu_1+(cc_2+dd_2)\boldu_2+\cdots +(cc_r+dd_r)\boldu_r\right) \\
-\amp =(cc_1+dd_1)T(\boldu_1)+(cc_2+dd_2)T(\boldu_2)+\cdots +(cc_r+dd_r)T(\boldu_r) \amp (\knowl{./knowl/eq_bases_transformations.html}{\text{(3.6.2)}}) \\
-\amp= c(c_1T(\boldu_1)+c_2T(\boldu_2)+\cdots +c_rT(\boldu_r))+d(d_1T(\boldu_1)+d_2T(\boldu_2)+\cdots +d_rT(\boldu_r)\\
-\amp =cT(\boldv)+dT(\boldv')\text{.}
-\end{align*}
-</div>
-<div class="para">Thus <span class="process-math">\(T\)</span> is a linear transformation.</div>
-</div>
-<span class="incontext"><a href="s_basis.html#p-1638" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_vectorspace.html#p-1638" class="internal">in-context</a></span>
 </body>
 </html>

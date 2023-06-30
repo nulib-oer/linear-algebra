@@ -12,7 +12,17 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">It is clear that <span class="process-math">\(\Span B''\subseteq \im T\)</span> since <span class="process-math">\(T(\boldv_i)\in \im T\)</span> for all <span class="process-math">\(k+1\leq i\leq n\)</span> and <span class="process-math">\(\im T\)</span> is closed under linear combinations.</div>
-<span class="incontext"><a href="s_rank_nullity.html#p-1795" class="internal">in-context</a></span>
+<div class="para logical">
+<div class="para">We must show <span class="process-math">\(f(cA+dB)=cf(A)+df(B)\)</span> for all scalars <span class="process-math">\(c,d\in\R\)</span> and all matrices <span class="process-math">\(A, B\in M_{mn}\text{.}\)</span> This follows easily from properties of transpose:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_trans_props.html ./knowl/th_trans_props.html">
+\begin{align*}
+f(cA+dB)\amp =(cA+dB)^T \amp \text{ (by def.) }\\
+\amp =(cA)^T+(dB)^T \amp (\knowl{./knowl/th_trans_props.html}{\text{Theorem 2.2.11}})\\
+\amp =cA^T+dB^T \amp (\knowl{./knowl/th_trans_props.html}{\text{Theorem 2.2.11}})\\
+\amp =cf(A)+df(B)
+\end{align*}
+</div>
+</div>
+<span class="incontext"><a href="s_transformation.html#p-1795" class="internal">in-context</a></span>
 </body>
 </html>

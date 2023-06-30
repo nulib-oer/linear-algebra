@@ -15,19 +15,20 @@
 <span class="type">Item</span><span class="space"> </span><span class="codenumber">2</span><span class="period">.</span>
 </h5>
 <div class="para logical">
-<div class="para">Suppose <span class="process-math">\(\boldv, \boldw\in S\text{.}\)</span> By definition we have</div>
-<div class="displaymath process-math">
-\begin{align*}
-\boldv \amp =c_1\boldv_1+c_2\boldv_2+\cdots +c_r\boldv_r \amp \boldw \amp = c_{r+1}\boldv_{r+1}+c_{r+2}\boldv_{r+2}+\cdots +c_{r+s}\boldv_{r+s}
-\end{align*}
-</div>
-<div class="para">for some vectors <span class="process-math">\(\boldv_1, \boldv_2, \dots, \boldv_{r+s}\in S\)</span> and scalars <span class="process-math">\(c_1,c_2,\dots, c_{r+s}\text{.}\)</span> Then for any <span class="process-math">\(c,d\in \R\)</span> we have</div>
-<div class="displaymath process-math">
+<div class="para">The augmented matrix <span class="process-math">\(\begin{amatrix}[c|c]A\amp\boldzero \end{amatrix}\)</span> row reduces to</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/proc_solveSystem.html">
 \begin{equation*}
-c\boldv+d\boldw=cc_1\boldv_1+cc_2\boldv_2+\cdots +cc_r\boldv_r+dc_{r+1}\boldv_{r+1}+dc_{r+2}\boldv_{r+2}+\cdots +dc_{r+s}\boldv_{r+s}\text{,}
+U=\begin{amatrix}[rrr|r]\boxed{1}\amp 2\amp 3\amp 0\\ 0 \amp \boxed{1}\amp 1\amp 0  \end{amatrix}\text{.}
 \end{equation*}
 </div>
-<div class="para">which is clearly a linear combination of elements of <span class="process-math">\(S\text{.}\)</span> Thus <span class="process-math">\(c\boldv+d\boldw\in \Span S\text{,}\)</span> as desired.</div>
-</div></article><span class="incontext"><a href="s_span_independence.html#li-435" class="internal">in-context</a></span>
+<div class="para">Following <a href="" class="xref" data-knowl="./knowl/proc_solveSystem.html" title="Procedure 1.3.5: Solving linear systems">Procedure 1.3.5</a> we conclude that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/proc_solveSystem.html">
+\begin{equation*}
+W=\{(-t,-2t,t)\colon t\in \R\}\text{.}
+\end{equation*}
+</div>
+<div class="para">Geometrically this is the line in <span class="process-math">\(\R^3\)</span> passing through <span class="process-math">\((0,0,0)\)</span> with direction vector <span class="process-math">\((1,2,-1)\text{.}\)</span>
+</div>
+</div></article><span class="incontext"><a href="s_subspace.html#li-435" class="internal">in-context</a></span>
 </body>
 </html>

@@ -12,9 +12,18 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">
-<span class="process-math">\(\Span S\)</span> is the set of all scalar multiples of the nonzero vector <span class="process-math">\((a,b)\text{.}\)</span> Geometrically, this is the line that passes through the the origin and the point <span class="process-math">\((a,b)\text{.}\)</span>
+<div class="para logical">
+<div class="para">In this case we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/d_adjoint.html">
+\begin{align*}
+[A\, \adj A]_{ii} \amp =\sum_{k=1}^na_{ik}[\adj A]_{ki}  \\
+\amp =\sum_{k=1}^n a_{ik}((-1)^{i+k}M_{ik}) \amp (\knowl{./knowl/d_adjoint.html}{\text{Definition 2.5.15}} )\\
+\amp =\sum_{k=1}^n(-1)^{i+k}a_{ik}M_{ik} \\
+\amp =\det A \text{.}
+\end{align*}
 </div>
-<span class="incontext"><a href="s_span_independence.html#p-1475" class="internal">in-context</a></span>
+<div class="para">A similar argument shows that <span class="process-math">\((\adj A\, A)_{ii}=\det A\text{,}\)</span> though in this case we use expansion along a column.</div>
+</div>
+<span class="incontext"><a href="s_det.html#p-1475" class="internal">in-context</a></span>
 </body>
 </html>

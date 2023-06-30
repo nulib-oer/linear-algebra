@@ -11,17 +11,28 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h6 class="heading"><span class="type">Paragraph</span></h6>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
 <div class="para logical">
-<div class="para">If <span class="process-math">\(W\subseteq V\)</span> is a subspace, then</div>
-<ol class="lower-alpha">
-<li><div class="para">
-<span class="process-math">\(\dim W\leq \dim V\text{,}\)</span> and</div></li>
-<li><div class="para">
-<span class="process-math">\(\dim W=\dim V\)</span> if and only if <span class="process-math">\(W=V\text{.}\)</span>
-</div></li>
-</ol>
+<div class="para">We employ some similar trickery to what was done in the proof of <a href="" class="xref" data-knowl="./knowl/th_vectorspace_props.html" title="Theorem 3.1.13: Basic vector space properties">Theorem 3.1.13</a>. Assuming <span class="process-math">\(T\)</span> is linear:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_vectorspace_props.html ./knowl/d_linear_transform.html">
+\begin{align*}
+T(\boldzero_V)  \amp= T(\boldzero_V+\boldzero_V)\\
+\amp =T(\boldzero_V)+T(\boldzero_V) \amp (\knowl{./knowl/d_linear_transform.html}{\text{Definition 3.2.1}}) \text{.}
+\end{align*}
 </div>
-<span class="incontext"><a href="s_dimension.html#p-1756" class="internal">in-context</a></span>
+<div class="para">Thus, whatever <span class="process-math">\(T(\boldzero_V)\in W\)</span> may be, it satisfies</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_vectorspace_props.html ./knowl/d_linear_transform.html">
+\begin{equation*}
+T(\boldzero_V)=T(\boldzero_V)+T(\boldzero_V)\text{.}
+\end{equation*}
+</div>
+<div class="para">Canceling <span class="process-math">\(T(\boldzero_V)\)</span> on both sides using <span class="process-math">\(-T(\boldzero_V)\text{,}\)</span> we conclude</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_vectorspace_props.html ./knowl/d_linear_transform.html">
+\begin{equation*}
+\boldzero_W=T(\boldzero_V)\text{.}
+\end{equation*}
+</div>
+</div>
+<span class="incontext"><a href="s_transformation.html#p-1756" class="internal">in-context</a></span>
 </body>
 </html>

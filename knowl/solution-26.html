@@ -12,32 +12,18 @@
 </head>
 <body class="ignore-math">
 <div class="solution solution-like">
-<h6 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">2.4.7.11.1</span><span class="period">.</span>
-</h6>
-<div class="para logical">
-<div class="para">We use the inverse algorithm:</div>
-<div class="displaymath process-math">
-\begin{align*}
-\begin{amatrix}[rrr|rrr]1/5\amp 1/5\amp -2/5\amp 1\amp 0\amp 0\\ 1/5\amp 1/5\amp 1/10\amp 0\amp 1\amp 0\\ 1/5\amp -4/5\amp 1/10\amp 0\amp 0\amp 1 \end{amatrix} \amp \xrightarrow[]{r_2 - r_1} \begin{amatrix}[rrr|rrr]1/5\amp 1/5\amp -2/5\amp 1\amp 0\amp 0\\ 0\amp 0\amp 1/2\amp -1\amp 1\amp 0\\ 1/5\amp -4/5\amp 1/10\amp 0\amp 0\amp 1 \end{amatrix}\\
-\amp \xrightarrow[]{r_3 - r_1} \begin{amatrix}[rrr|rrr]1/5\amp 1/5\amp -2/5\amp 1\amp 0\amp 0\\ 0\amp 0\amp 1/2\amp -1\amp 1\amp 0\\ 0\amp -1\amp 1/2\amp -1\amp 0\amp 1 \end{amatrix}\\
-\amp \xrightarrow[]{5r_1} \begin{amatrix}[rrr|rrr]1\amp 1\amp -2\amp 5\amp 0\amp 0\\0\amp 0\amp 1/2\amp -1\amp 1\amp 0\\  0\amp -1\amp 1/2\amp -1\amp 0\amp 1 \end{amatrix}\\
-\amp \xrightarrow[]{r_2 \leftrightarrow r_3} \begin{amatrix}[rrr|rrr]1\amp 1\amp -2\amp 5\amp 0\amp 0\\  0\amp -1\amp 1/2\amp -1\amp 0\amp 1\\ 0\amp 0\amp 1/2\amp -1\amp 1\amp 0 \end{amatrix}\\
-\amp \xrightarrow[]{(-1)r_2} \begin{amatrix}[rrr|rrr]1\amp 1\amp -2\amp 5\amp 0\amp 0\\  0\amp 1\amp -1/2\amp 1\amp 0\amp -1\\ 0\amp 0\amp 1/2\amp -1\amp 1\amp 0 \end{amatrix}\\
-\amp \xrightarrow[]{r_1- r_2} \begin{amatrix}[rrr|rrr]1\amp 0\amp -3/2\amp 4\amp 0\amp 1\\ 0\amp 1\amp -1/2\amp 1\amp 0\amp -1\\ 0\amp 0\amp 1/2\amp -1\amp 1\amp 0 \end{amatrix}\\
-\amp \xrightarrow[]{2r_3} \begin{amatrix}[rrr|rrr]1\amp 0\amp -3/2\amp 4\amp 0\amp 1\\ 0\amp 1\amp -1/2\amp 1\amp 0\amp -1\\ 0\amp 0\amp 1\amp -2\amp 2\amp 0 \end{amatrix}\\
-\amp \xrightarrow[]{r_2 + \frac{1}{2}r_3} \begin{amatrix}[rrr|rrr]1\amp 0\amp -3/2\amp 4\amp 0\amp 1\\ 0\amp 1\amp 0\amp 0\amp 1\amp -1\\ 0\amp 0\amp 1\amp -2\amp 2\amp 0 \end{amatrix}\\
-\amp \xrightarrow[]{r_1 + \frac{3}{2}r_3} \begin{amatrix}[rrr|rrr]1\amp 0\amp 0\amp 1\amp 3\amp 1\\ 0\amp 1\amp 0\amp 0\amp 1\amp -1\\ 0\amp 0\amp 1\amp -2\amp 2\amp 0 \end{amatrix}\text{.}
-\end{align*}
-</div>
-<div class="para">We conclude that</div>
+<h5 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">2.1.6.8.1</span><span class="period">.</span>
+</h5>
+<div class="para logical"><ol class="lower-alpha"><li><div class="para logical">
+<div class="para">Using expansion by columns, the first column of <span class="process-math">\(AB\)</span> is given by <span class="process-math">\(A\)</span> times the first column of <span class="process-math">\(B\text{.}\)</span> We compute</div>
 <div class="displaymath process-math">
 \begin{equation*}
-A^{-1}=\begin{amatrix}[rrr] 1\amp 3\amp 1\\ 0\amp 1\amp -1\\ -2\amp 2\amp 0\end{amatrix}\text{.}
+\begin{bmatrix}3\amp -2\amp 7\\ 6\amp 5\amp 4\\ 0\amp 4\amp 9 \end{bmatrix} \begin{bmatrix}6\\ 0\\ 7 \end{bmatrix} = 6 \begin{amatrix}[r]3 \\ 6 \\ 0  \end{amatrix}+0 \begin{amatrix}[r]-2 \\ 5 \\ 4  \end{amatrix}+7\begin{amatrix}[r]7 \\ 4 \\ 9  \end{amatrix}= \begin{bmatrix}67\\ 64\\ 63 \end{bmatrix}
 \end{equation*}
 </div>
+</div></li></ol></div>
 </div>
-</div>
-<span class="incontext"><a href="s_invertibility_theorem.html#solution-26" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_matrix.html#solution-26" class="internal">in-context</a></span>
 </body>
 </html>

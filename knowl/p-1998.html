@@ -12,9 +12,17 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">
-<span class="process-math">\(V=\R^3\)</span> with the dot product, <span class="process-math">\(\boldx=(x_1,x_2,x_3)\text{,}\)</span> <span class="process-math">\(\boldy=(y_1,y_2,y_3)\)</span>
+<div class="para logical">
+<div class="para">Linearity is an easy consequence of transpose properties. For any <span class="process-math">\(A_1, A_2\in M_{nn}\)</span> and <span class="process-math">\(c_1,c_2\in \R\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eg_transform_transpose.html">
+\begin{align*}
+S(c_1A_1+c_2A_2)  \amp= (c_1A_1+c_2A_2)^T-(c_1A_1+c_2A_2)  \\
+\amp = c_1A_1^T+c_2A_2^T-c_1A_1-c_2A_2\amp (\knowl{./knowl/eg_transform_transpose.html}{\text{3.2.20}}) \\
+\amp =c_1(A_1^T-A_1)+c_2(A_2^T-A_2)\\
+\amp =c_1S(A_1)+c_2S(A_2)\text{.}
+\end{align*}
 </div>
-<span class="incontext"><a href="s_innerproducts.html#p-1998" class="internal">in-context</a></span>
+</div>
+<span class="incontext"><a href="s_nullspace_image.html#p-1998" class="internal">in-context</a></span>
 </body>
 </html>

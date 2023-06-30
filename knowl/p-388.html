@@ -12,7 +12,27 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">Sage has its own row reduction method, <code class="code-inline tex2jax_ignore">rref</code>, which transforms a matrix to <em class="emphasis">reduced</em> row echelon form. Let’s compare the outputs of these two algorithms.</div>
-<span class="incontext"><a href="s_ge.html#p-388" class="internal">in-context</a></span>
+<div class="para logical">
+<div class="para">Below you find two systems of three equations in three unknowns.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{ccc} \text{ System } L \amp \hspace{5pt}\amp \text{ System } L' \\ \hline \begin{linsys}{3} 2x\amp +\amp 3y\amp +\amp -z\amp =\amp 18\\ x\amp +\amp 2y\amp -\amp 2z\amp =\amp 8\\ -\frac{1}{2}x\amp +\amp -\frac{1}{2}y\amp +\amp \frac{1}{2}z\amp =\amp -3 \end{linsys} \amp  \amp \begin{linsys}{3} x\amp +\amp y\amp +\amp z\amp =\amp 10\\ \amp \amp y\amp -\amp 3z\amp =\amp -2\\ \amp \amp \amp \amp z\amp =\amp 2 \end{linsys} \end{array}
+\end{equation*}
+</div>
+<div class="para">The staircase pattern of <span class="process-math">\(L'\)</span> allows us to solve easily by <em class="emphasis">backwards substitution</em>. In more detail:</div>
+<ol class="decimal">
+<li><div class="para">Equation 3 in <span class="process-math">\(L'\)</span> tells us that <span class="process-math">\(z=2\text{.}\)</span>
+</div></li>
+<li><div class="para">Now substitute <span class="process-math">\(z=2\)</span> into Equation 2 of <span class="process-math">\(L'\)</span> and solve for <span class="process-math">\(y\)</span> to get <span class="process-math">\(y=4\text{.}\)</span>
+</div></li>
+<li><div class="para">Finally, substitute <span class="process-math">\(y=4\)</span> and <span class="process-math">\(z=2\)</span> into Equation 1 of <span class="process-math">\(L'\)</span>and solve for <span class="process-math">\(x\)</span> to get <span class="process-math">\(x=4\text{.}\)</span> We conclude that <span class="process-math">\((x,y,z)=(4,4,2)\)</span> is a solution to <span class="process-math">\(L'\text{.}\)</span>
+</div></li>
+<li><div class="para">Furthermore, since at each step we had no choice in the matter (<span class="process-math">\(z\)</span> must be equal to 2, <span class="process-math">\(y\)</span> then must be equal to 4, etc.), we see that in fact <span class="process-math">\((4,4,2)\)</span> is the <em class="emphasis">only</em> solution to <span class="process-math">\(L'\text{.}\)</span>
+</div></li>
+</ol>
+<div class="para">Our method for solving a more complicated system, like <span class="process-math">\(L\)</span> above, will be to <em class="emphasis">transform</em> it to a simpler system like <span class="process-math">\(L'\text{.}\)</span>
+</div>
+</div>
+<span class="incontext"><a href="s_systems.html#p-388" class="internal">in-context</a></span>
 </body>
 </html>

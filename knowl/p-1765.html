@@ -12,8 +12,18 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">Compute <span class="process-math">\(\dim W\text{.}\)</span>
+<div class="para logical">
+<div class="para">We use the one-step technique. For any <span class="process-math">\(c,d\in \R\)</span> and <span class="process-math">\(\boldx_1, \boldx_2\in \R^n\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_matrix_alg_props.html ./knowl/th_matrix_alg_props.html">
+\begin{align*}
+T_A(c\boldx_1+d\boldx_2) \amp =A(c\boldx_1+d\boldx_2)\\
+\amp =A(c\boldx_1)+A(d\boldx_2) \amp (\knowl{./knowl/th_matrix_alg_props.html}{\text{Theorem 2.2.1}}) \\
+\amp =cA\boldx_1+dA\boldx_2 \amp (\knowl{./knowl/th_matrix_alg_props.html}{\text{Theorem 2.2.1}})\\
+\amp =cT_A(\boldx_1)+dT_A(\boldx_2)\text{.}
+\end{align*}
 </div>
-<span class="incontext"><a href="s_dimension.html#p-1765" class="internal">in-context</a></span>
+<div class="para">This proves <span class="process-math">\(T_A\)</span> is a linear transformation.</div>
+</div>
+<span class="incontext"><a href="s_transformation.html#p-1765" class="internal">in-context</a></span>
 </body>
 </html>

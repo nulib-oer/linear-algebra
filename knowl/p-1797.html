@@ -12,8 +12,18 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">Verify the rank-nullity theorem for the linear transformation <span class="process-math">\(T\colon \R^3\rightarrow \R^2\)</span> defined as <span class="process-math">\(T(x,y,z)=(x+y+z,x+y+z)\text{.}\)</span>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(\boldv=(a_i)_{i=1}^\infty\)</span> and <span class="process-math">\(\boldw=(b_i)_{i=1}^\infty\)</span> be two infinite sequences in <span class="process-math">\(\R^\infty\text{.}\)</span> For any <span class="process-math">\(c,d\in\R\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex_vs_infinitesequences.html ./knowl/ex_vs_infinitesequences.html">
+\begin{align*}
+T_\ell(c\boldv+d\boldw) \amp=T_\ell\left((ca_i+db_i)_{i=1}^\infty \right)\amp (\knowl{./knowl/ex_vs_infinitesequences.html}{\text{Definition 3.1.7}}) \\
+\amp= (ca_{i+1}+db_{i+1})_{i=1}^\infty \amp (\text{by def.})\\
+\amp=c(a_{i+1})_{i=1}^\infty+d(b_{i+1})_{i=1}^\infty \amp (\knowl{./knowl/ex_vs_infinitesequences.html}{\text{Definition 3.1.7}})\\
+\amp=cT_\ell(\boldv)+dT_\ell(\boldw)\amp (\text{by def.}) \text{.}
+\end{align*}
 </div>
-<span class="incontext"><a href="s_rank_nullity.html#p-1797" class="internal">in-context</a></span>
+<div class="para">This proves <span class="process-math">\(T_\ell\)</span> is a linear transformation.</div>
+</div>
+<span class="incontext"><a href="s_transformation.html#p-1797" class="internal">in-context</a></span>
 </body>
 </html>

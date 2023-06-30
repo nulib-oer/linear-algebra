@@ -12,7 +12,20 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">Alternatively, we can obtain a list of all rows or columns of <span class="process-math">\(A\)</span> using the the methods <code class="code-inline tex2jax_ignore">rows()</code> and <code class="code-inline tex2jax_ignore">columns()</code>.</div>
-<span class="incontext"><a href="s_matrix.html#p-507" class="internal">in-context</a></span>
+<div class="para logical">
+<div class="para">Below you find the matrix with leading ones boxed. This matrix is in row echelon form: the zero rows (rows 4 and 5) are grouped at the bottom; each nonzero row has a leading one (boxed in the matrix below); the leading ones step strictly to the right as we move down the rows.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix}\boxed{1}\amp 0\amp 0\amp -3\amp -7\\
+0\amp 0\amp \boxed{1}\amp 2\amp 0\\
+0\amp 0\amp 0\amp 0\amp \boxed{1}\\
+0\amp 0\amp 0\amp 0\amp 0\\
+0\amp 0\amp 0\amp 0\amp 0
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">The matrix is <em class="emphasis">not</em> in reduced row echelon form, as the last column contains a leading one in its third row, and a nonzero entry in its first row.</div>
+</div>
+<span class="incontext"><a href="s_ge.html#p-507" class="internal">in-context</a></span>
 </body>
 </html>

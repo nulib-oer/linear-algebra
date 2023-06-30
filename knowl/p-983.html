@@ -11,8 +11,36 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para">Suppose the square matrix <span class="process-math">\(A\)</span> can be row reduced to <span class="process-math">\(B\)</span> via  sequence of row operations. In general we do not have <span class="process-math">\(\det A=\det B\text{,}\)</span> but we can compute <span class="process-math">\(\det A\)</span> from <span class="process-math">\(\det B\)</span> by keeping track of which operations are used.</div>
-<span class="incontext"><a href="s_det.html#p-983" class="internal">in-context</a></span>
+<h3 class="heading"><span class="type">Paragraph</span></h3>
+<div class="para logical">
+<div class="para">This is a good place to point out that to prove an identity does not hold, it suffices to provide a single counterexample to that effect. We do so for each failed identity of <a href="" class="xref" data-knowl="./knowl/th_matrix_abnormalities.html" title="Theorem 2.2.8: Matrix algebra abnormalities">Theorem 2.2.8</a> in turn. There is no significance to the particular counterexamples chosen here, and indeed there are infinitely many counterexamples to choose from in both cases.</div>
+<ol class="decimal">
+<li><div class="para logical">
+<div class="para">We have</div>
+<div class="displaymath process-math">
+\begin{align*}
+\begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix} \begin{bmatrix}0\amp 1\\ 0\amp 0 \end{bmatrix}\amp = \begin{bmatrix} 0\amp 1 \\ 0 \amp 0\end{bmatrix}\\
+\begin{bmatrix}0\amp 1\\ 0\amp 0 \end{bmatrix} \begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix} \amp = \begin{bmatrix} 0\amp 0\\ 0\amp 0 \end{bmatrix} 
+\end{align*}
+</div>
+<div class="para">and thus</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix} \begin{bmatrix}0\amp 1\\ 0\amp 0 \end{bmatrix} \ne \begin{bmatrix}0\amp 1\\ 0\amp 0 \end{bmatrix} \begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">Observe that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix}0\amp 1\\ 0\amp 0 \end{bmatrix} \begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix} =\begin{bmatrix}0\amp 0\\ 0\amp 0 \end{bmatrix} \text{.}
+\end{equation*}
+</div>
+<div class="para">This is an example of two nonzero matrices whose product is the zero matrix.</div>
+</div></li>
+</ol>
+</div>
+<span class="incontext"><a href="s_algebraic.html#p-983" class="internal">in-context</a></span>
 </body>
 </html>

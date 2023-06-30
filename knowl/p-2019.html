@@ -11,28 +11,33 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h4 class="heading"><span class="type">Paragraph</span></h4>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
 <div class="para logical">
-<div class="para">Let <span class="process-math">\((V, \langle ,  \rangle )\)</span> be an inner product space. For any <em class="emphasis">nonzero</em> vectors <span class="process-math">\(\boldv, \boldw\text{,}\)</span> the Cauchy-Schwarz inequality tells us that</div>
-<div class="displaymath process-math">
+<div class="para">By definition <span class="process-math">\(\im T_A\)</span> is the set</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/proc_solveSystem.html ./knowl/proc_solveSystem.html">
 \begin{equation*}
-\val{\langle \boldv, \boldw \rangle }\leq \norm{\boldv}\, \norm{\boldw}\text{,}
+\{\boldy\in\R^3\colon \boldy=T_A(\boldx) \text{ for some \(\boldx\in \R^3\) } \}=\left\{\boldy\colon \boldy=A\boldx \text{ for some \(\boldx\in\R^2\) } \right\}\text{.}
 \end{equation*}
 </div>
-<div class="para">or equivalently,</div>
-<div class="displaymath process-math">
+<div class="para">Thus to compute <span class="process-math">\(\im T_A\)</span> we must determine which choice of <span class="process-math">\(\boldy=(a,b,c)\)</span> makes the system <span class="process-math">\(A\boldx=\boldy\)</span> consistent. We answer this using our old friend <a href="" class="xref" data-knowl="./knowl/proc_solveSystem.html" title="Procedure 1.3.5: Solving linear systems">Procedure 1.3.5</a>:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/proc_solveSystem.html ./knowl/proc_solveSystem.html">
+\begin{align*}
+\begin{amatrix}[rr|r] 1\amp 1\amp a\\ 2\amp 1\amp b\\ 3\amp 5\amp c \end{amatrix} \amp \xrightarrow[r_3-3r_1]{r_2-2r_1} \begin{amatrix}[rr|r] 1\amp 1\amp a\\ 0\amp 1\amp 2a-b\\ 0\amp 0\amp -7a+2b+c \end{amatrix}\text{.}
+\end{align*}
+</div>
+<div class="para">Thus for the system to be consistent we need <span class="process-math">\(-7a+2b+c=0\text{,}\)</span> and we conclude</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/proc_solveSystem.html ./knowl/proc_solveSystem.html">
 \begin{equation*}
--1\leq \frac{\langle \boldv, \boldw \rangle}{\norm{\boldv}\, \norm{\boldw}} \leq 1\text{.}
+\im T_A=\{(a,b,c)\colon 7a+2b+c=0\}\text{.}
 \end{equation*}
 </div>
-<div class="para">It follows that there is a unique real number <span class="process-math">\(\theta\in [0,\pi]\)</span> satisfying</div>
-<div class="displaymath process-math">
+<div class="para">Geometrically we recognize this as the plane passing through <span class="process-math">\((0,0,0)\)</span> with normal vector <span class="process-math">\(\boldn=(-7,2,1)\text{.}\)</span> To describe it parametrically we can use <a href="" class="xref" data-knowl="./knowl/proc_solveSystem.html" title="Procedure 1.3.5: Solving linear systems">Procedure 1.3.5</a> again on the equation <span class="process-math">\(7a+2b+c=0\text{.}\)</span> The unknowns <span class="process-math">\(b\)</span> and <span class="process-math">\(c\)</span> are free here, and we see that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/proc_solveSystem.html ./knowl/proc_solveSystem.html">
 \begin{equation*}
-\cos\theta=\frac{\langle \boldv, \boldw \rangle}{\norm{\boldv}\, \norm{\boldw}}\text{.}
+\im T=\{(a,b,c)\colon 7a+2b+c=0\}=\left\{\left(\frac{1}{7}(-2r-s), r,s \right)\colon r,s\in\R\right\}\text{.}
 \end{equation*}
 </div>
-<div class="para">We call <span class="process-math">\(\theta\)</span> the <em class="emphasis">angle between <span class="process-math">\(\boldv\)</span> and <span class="process-math">\(\boldw\)</span></em>.</div>
 </div>
-<span class="incontext"><a href="s_innerproducts.html#p-2019" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_nullspace_image.html#p-2019" class="internal">in-context</a></span>
 </body>
 </html>

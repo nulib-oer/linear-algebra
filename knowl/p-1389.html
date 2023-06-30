@@ -11,18 +11,17 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
 <div class="para logical">
-<div class="para">We have</div>
+<div class="para">Row reduce <span class="process-math">\(A\)</span> to the identity matrix:</div>
 <div class="displaymath process-math">
 \begin{align*}
-\NS S \amp= \{A\in M_{nn}\colon S(A)=\boldzero\} \\
-\amp=\{A\in M_{22}\colon A^T-A=\boldzero\} \\
-\amp=\{A\in M_{22}\colon A^T=A\} \text{.}
+\begin{amatrix}[rr]0\amp 1\\2\amp -5 \end{amatrix} \amp \xrightarrow[]{r_1\leftrightarrow r_1} \begin{amatrix}[rr]2\amp -5 \\0\amp 1 \end{amatrix}\\
+\amp \xrightarrow[]{\frac{1}{2}r_1} \begin{amatrix}[rr]1\amp -5/2\\ 0\amp 1 \end{amatrix}\\
+\amp \xrightarrow[]{r_1+\frac{5}{2}r_2} \begin{amatrix}[rr]1\amp 0\\ 0\amp 1 \end{amatrix} 
 \end{align*}
 </div>
-<div class="para">Thus <span class="process-math">\(\NS S\)</span> is the subspace of symmetric <span class="process-math">\(n\times n\)</span> matrices!</div>
 </div>
-<span class="incontext"><a href="s_nullspace_image.html#p-1389" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_invertibility_theorem.html#p-1389" class="internal">in-context</a></span>
 </body>
 </html>

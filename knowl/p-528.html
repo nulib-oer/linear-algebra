@@ -11,21 +11,17 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
 <div class="para logical">
-<div class="para">In more detail, for the product of <span class="process-math">\(A_{mn}\)</span> and <span class="process-math">\(B_{pr}\)</span> to be defined, we need <span class="process-math">\(n=p\text{.}\)</span> In other words we need the “inner” dimensions of <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> to be equal:</div>
+<div class="para">Continuing our previous example:</div>
 <div class="displaymath process-math">
-\begin{equation*}
-\underset{m\times \boxed{n}}{A}\hspace{5pt} \underset{\boxed{n}\times r}{B}\text{.}
-\end{equation*}
-</div>
-<div class="para">If this condition is met, the dimension of the resulting matrix <span class="process-math">\(AB\)</span> is determined by the “outer” dimensions of <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{.}\)</span> Schematically, you can think of the inner dimensions as being “canceled out”:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\underset{\boxed{m}\times\cancel{n}}{A}\hspace{5pt}\underset{\cancel{n}\times\boxed{r}}{B}=\underset{m\times r}{AB}.
-\end{equation*}
+\begin{align*}
+\begin{bmatrix}1\amp 2\amp -5\amp 3\amp 6\amp 14\\ 0\amp 0\amp 1\amp 0\amp -7/2\amp -6\\ 0\amp 0\amp 0\amp 0\amp 1\amp 2 \end{bmatrix} .  \amp \xrightarrow[\hspace{35pt}]{r_2+7/2r_3}\amp \begin{bmatrix}1\amp 2\amp -5\amp 3\amp 6\amp 14\\ 0\amp 0\amp 1\amp 0\amp 0\amp 1\\ 0\amp 0\amp 0\amp 0\amp 1\amp 2 \end{bmatrix} .\\
+\amp \xrightarrow[\hspace{35pt}]{r_1-6r_3}\amp \begin{bmatrix}1\amp 2\amp -5\amp 3\amp 0\amp 2\\ 0\amp 0\amp 1\amp 0\amp 0\amp 1\\ 0\amp 0\amp 0\amp 0\amp 1\amp 2 \end{bmatrix} .\\
+\amp \xrightarrow[\hspace{35pt}]{r_1+5r_2}\amp \begin{bmatrix}1\amp 2\amp 0\amp 3\amp 0\amp 7\\ 0\amp 0\amp 1\amp 0\amp 0\amp 1\\ 0\amp 0\amp 0\amp 0\amp 1\amp 2 \end{bmatrix} \text{.}
+\end{align*}
 </div>
 </div>
-<span class="incontext"><a href="s_matrix.html#p-528" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_ge.html#p-528" class="internal">in-context</a></span>
 </body>
 </html>

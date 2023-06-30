@@ -12,7 +12,22 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">You may wonder just how random these elements of <span class="process-math">\(S\)</span> are, considering that the entries always seem to be integers! Indeed, soliciting information about <code class="code-inline tex2jax_ignore">NS</code> from Sage, we see that it has the structure of a “free module” defined over the the “Integer Ring”.</div>
-<span class="incontext"><a href="s_nullspace_image.html#p-1425" class="internal">in-context</a></span>
+<div class="para logical">
+<div class="para">Given</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A=\begin{amatrix}[ccc]a\amp b\amp c\\ d\amp e\amp f\\ g\amp h\amp i  \end{amatrix}\text{,}
+\end{equation*}
+</div>
+<div class="para">we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+\det A \amp =a\det A_{11}-b\det A _{12}+c\det A_{13} \amp \text{(recursive case)}\\
+\amp =a\det \abcdmatrix{e}{f}{h}{i}-b\det\abcdmatrix{d}{f}{g}{i}+c\det\abcdmatrix{d}{e}{g}{h}\\
+\amp = a(ei-fh)-b(di-fg)+c(dh-eg) \amp \text{(\(n=2\) case)}\text{.}
+\end{align*}
+</div>
+</div>
+<span class="incontext"><a href="s_det.html#p-1425" class="internal">in-context</a></span>
 </body>
 </html>

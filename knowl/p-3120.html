@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<div class="para logical">
+<div class="para">In statistics we often wish to approximate a scatter plot of points <span class="process-math">\(P_i=(X_i, Y_i)\text{,}\)</span> <span class="process-math">\(1\leq i\leq m\text{,}\)</span> with a line <span class="process-math">\(\ell\colon y=mx+b\)</span> that “best fits” the data. “Finding” this line amounts to finding the appropriate slope <span class="process-math">\(m\)</span> and <span class="process-math">\(y\)</span>-intercept <span class="process-math">\(b\text{:}\)</span> i.e., in this setup, the points <span class="process-math">\(P_i=(X_i, Y_i)\)</span> are given, and <span class="process-math">\(m\)</span> and <span class="process-math">\(b\)</span> are the unknowns we wish to find. For the line to perfectly fit the data, we would want</div>
+<div class="displaymath process-math">
+\begin{equation*}
+Y_i=mX_i+b \text{ for all } 1\leq i\leq m\text{.}
+\end{equation*}
+</div>
+<div class="para">In other words <span class="process-math">\((m,b)\)</span> would be a solution to the matrix equation <span class="process-math">\(A\boldx=\boldy\text{,}\)</span> where</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\boldx=\begin{bmatrix}m \\ b\end{bmatrix},A=\begin{bmatrix} X_1\amp 1\\ X_2\amp 1\\ \vdots \amp \vdots \\ X_m\amp 1  \end{bmatrix},  \boldy=\begin{bmatrix} Y_1\\ Y_2\\ \vdots \\ Y_m\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">Of course in most situations the provided points do not lie on a line, and thus there is no solution <span class="process-math">\(\boldx\)</span> to the given matrix equation <span class="process-math">\(A\boldx=\boldy\text{.}\)</span> When this is the case we can use the theory of orthogonal projection to find what is called a <em class="emphasis">least-squares</em> solution, which we now describe in detail.</div>
+</div>
+<span class="incontext"><a href="s_orthogonal_projection.html#p-3120" class="internal">in-context</a></span>
+</body>
+</html>

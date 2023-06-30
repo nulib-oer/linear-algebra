@@ -761,7 +761,7 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="s_coordinatevectors"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">5.1</span> <span class="title">Coordinate vectors</span>
 </h2>
-<section class="introduction" id="introduction-70"><div class="para logical" id="p-2215">
+<section class="introduction" id="introduction-70"><div class="para logical" id="p-3151">
 <div class="para">Suppose <span class="process-math">\(V\)</span> is an <span class="process-math">\(n\)</span>-dimensional vector space. Once we choose a basis <span class="process-math">\(B=\{\boldv_1, \boldv_2, \dots, \boldv_n\}\)</span> of <span class="process-math">\(V\text{,}\)</span> we know from <a href="" class="xref" data-knowl="./knowl/th_basis_equivalence.html" title="Theorem 3.6.7: Basis equivalence">Theorem 3.6.7</a> that any <span class="process-math">\(\boldv\in V\)</span> can be expressed <em class="emphasis">in a unique way</em> as</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/th_basis_equivalence.html ./knowl/eq_coordinate_correspondence.html ./knowl/eq_coordinate_correspondence.html ./knowl/eq_coordinate_correspondence.html ./knowl/eq_coordinate_correspondence.html">
 \begin{equation*}
@@ -777,23 +777,23 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 </div>
 <div class="para">We will use the correspondence <a href="" class="xref" data-knowl="./knowl/eq_coordinate_correspondence.html" title="Equation 5.1.1">(5.1.1)</a> in two distinct ways, as described below.</div>
 <ol class="decimal">
-<li id="li-760"><div class="para" id="p-2216">Given an <span class="process-math">\(n\)</span>-dimensional vector space <span class="process-math">\(V\)</span> and basis <span class="process-math">\(B\text{,}\)</span> the correspondence <a href="" class="xref" data-knowl="./knowl/eq_coordinate_correspondence.html" title="Equation 5.1.1">(5.1.1)</a> allow us to treat elements of the abstract space <span class="process-math">\(V\)</span> as if they were elements of <span class="process-math">\(\R^n\text{,}\)</span> and to then make use of our wealth of computational procedures related to <span class="process-math">\(n\)</span>-tuples.</div></li>
-<li id="li-761"><div class="para" id="p-2217">The correspondence <a href="" class="xref" data-knowl="./knowl/eq_coordinate_correspondence.html" title="Equation 5.1.1">(5.1.1)</a> is also useful when working in <span class="process-math">\(\R^n\)</span> itself. Namely, there will be situations where it is convenient to represent vectors with a particular nonstandard basis <span class="process-math">\(B\text{,}\)</span> as opposed to the standard basis <span class="process-math">\(\{\bolde_1, \bolde_2, \dots, \bolde_n\}\text{.}\)</span> In this setting the correspondence <a href="" class="xref" data-knowl="./knowl/eq_coordinate_correspondence.html" title="Equation 5.1.1">(5.1.1)</a> will be used as a “change of coordinates” technique.</div></li>
+<li id="li-939"><div class="para" id="p-3152">Given an <span class="process-math">\(n\)</span>-dimensional vector space <span class="process-math">\(V\)</span> and basis <span class="process-math">\(B\text{,}\)</span> the correspondence <a href="" class="xref" data-knowl="./knowl/eq_coordinate_correspondence.html" title="Equation 5.1.1">(5.1.1)</a> allow us to treat elements of the abstract space <span class="process-math">\(V\)</span> as if they were elements of <span class="process-math">\(\R^n\text{,}\)</span> and to then make use of our wealth of computational procedures related to <span class="process-math">\(n\)</span>-tuples.</div></li>
+<li id="li-940"><div class="para" id="p-3153">The correspondence <a href="" class="xref" data-knowl="./knowl/eq_coordinate_correspondence.html" title="Equation 5.1.1">(5.1.1)</a> is also useful when working in <span class="process-math">\(\R^n\)</span> itself. Namely, there will be situations where it is convenient to represent vectors with a particular nonstandard basis <span class="process-math">\(B\text{,}\)</span> as opposed to the standard basis <span class="process-math">\(\{\bolde_1, \bolde_2, \dots, \bolde_n\}\text{.}\)</span> In this setting the correspondence <a href="" class="xref" data-knowl="./knowl/eq_coordinate_correspondence.html" title="Equation 5.1.1">(5.1.1)</a> will be used as a “change of coordinates” technique.</div></li>
 </ol>
 </div></section><section class="subsection" id="ss_coordinate_vectors"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">5.1.1</span> <span class="title">Coordinate vectors</span>
 </h3>
-<div class="para" id="p-2218">Before we can define coordinate vectors we need to define an <em class="emphasis">ordered basis</em>. As the name suggests this is nothing more than a basis along with a particular choice of ordering of its elements: i.e. first element, second element, etc.. In other words, an ordered basis will be a <em class="emphasis">sequence</em> of vectors, as opposed to a  <em class="emphasis">set</em> of vectors.</div>
+<div class="para" id="p-3154">Before we can define coordinate vectors we need to define an <em class="emphasis">ordered basis</em>. As the name suggests this is nothing more than a basis along with a particular choice of ordering of its elements: i.e. first element, second element, etc.. In other words, an ordered basis will be a <em class="emphasis">sequence</em> of vectors, as opposed to a  <em class="emphasis">set</em> of vectors.</div>
 <article class="definition definition-like" id="d_ordered_basis"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Ordered bases.</span>
-</h4>  <div class="para" id="p-2219">Let <span class="process-math">\(V\)</span> be a finite-dimensional vector space. An <dfn class="terminology">ordered basis</dfn> of <span class="process-math">\(V\)</span> is a sequence of distinct vectors <span class="process-math">\(B=(\boldv_1, \boldv_2, \dots, \boldv_n)\)</span> whose underlying set <span class="process-math">\(\{\boldv_1, \boldv_2, \dots, \boldv_n\}\)</span> is a basis of <span class="process-math">\(V\text{.}\)</span>
+</h4>  <div class="para" id="p-3155">Let <span class="process-math">\(V\)</span> be a finite-dimensional vector space. An <dfn class="terminology">ordered basis</dfn> of <span class="process-math">\(V\)</span> is a sequence of distinct vectors <span class="process-math">\(B=(\boldv_1, \boldv_2, \dots, \boldv_n)\)</span> whose underlying set <span class="process-math">\(\{\boldv_1, \boldv_2, \dots, \boldv_n\}\)</span> is a basis of <span class="process-math">\(V\text{.}\)</span>
 </div></article><article class="remark remark-like" id="rm_orthogonal_ordered_basis"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.1.2</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-2220">If <span class="process-math">\(V\)</span> is further given the structure of a (finite-dimensional) inner product space, then we say an ordered basis <span class="process-math">\(B=(\boldv_1, \boldv_2, \dots, \boldv_n)\)</span> is orthogonal (resp., orthonormal) if its underlying set is orthogonal (resp. orthonormal).</div></article><article class="remark remark-like" id="remark-79"><h4 class="heading">
+<div class="para" id="p-3156">If <span class="process-math">\(V\)</span> is further given the structure of a (finite-dimensional) inner product space, then we say an ordered basis <span class="process-math">\(B=(\boldv_1, \boldv_2, \dots, \boldv_n)\)</span> is orthogonal (resp., orthonormal) if its underlying set is orthogonal (resp. orthonormal).</div></article><article class="remark remark-like" id="remark-79"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.1.3</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-2221">A single (unordered) basis <span class="process-math">\(B=\{\boldv_1, \boldv_2, \dots, \boldv_n\}\)</span> of an <span class="process-math">\(n\)</span>-dimensional vector space gives rise to <span class="process-math">\(n!\)</span> different ordered bases: you have <span class="process-math">\(n\)</span> choices for the first element of the ordered basis, <span class="process-math">\((n-1)\)</span> choices for the second element, etc..</div> <div class="para logical" id="p-2222">
+<div class="para" id="p-3157">A single (unordered) basis <span class="process-math">\(B=\{\boldv_1, \boldv_2, \dots, \boldv_n\}\)</span> of an <span class="process-math">\(n\)</span>-dimensional vector space gives rise to <span class="process-math">\(n!\)</span> different ordered bases: you have <span class="process-math">\(n\)</span> choices for the first element of the ordered basis, <span class="process-math">\((n-1)\)</span> choices for the second element, etc..</div> <div class="para logical" id="p-3158">
 <div class="para">For example the standard basis <span class="process-math">\(B=\{\bolde_1, \bolde_2, \bolde_3\}\)</span> of <span class="process-math">\(\R^3\)</span> gives rise to <span class="process-math">\(3!=6\)</span> different ordered bases of <span class="process-math">\(\R^3\text{:}\)</span>
 </div>
 <div class="displaymath process-math" id="md-218">
@@ -803,10 +803,10 @@ B_3\amp=(\bolde_2, \bolde_1, \bolde_3) \amp B_4\amp =(\bolde_2, \bolde_3, \bolde
 B_5 \amp =(\bolde_3, \bolde_1, \bolde_2) \amp B_6\amp =(\bolde_3, \bolde_2, \bolde_1)\text{.}
 \end{align*}
 </div>
-</div> <div class="para" id="p-2223">By a slight abuse of language we will use “standard basis” to describe both one of our standard unordered bases and the corresponding ordered basis obtained by choosing the implicit ordering of the set descriptions in <a href="" class="xref" data-knowl="./knowl/rm_standard_bases.html" title="Remark 3.6.2: Some standard bases">Remark 3.6.2</a>. For example, <span class="process-math">\(\{x^2, x, 1\}\)</span> and <span class="process-math">\((x^2, x, 1)\)</span> will both be called the standard basis of <span class="process-math">\(P_2\text{.}\)</span>
+</div> <div class="para" id="p-3159">By a slight abuse of language we will use “standard basis” to describe both one of our standard unordered bases and the corresponding ordered basis obtained by choosing the implicit ordering of the set descriptions in <a href="" class="xref" data-knowl="./knowl/rm_standard_bases.html" title="Remark 3.6.2: Some standard bases">Remark 3.6.2</a>. For example, <span class="process-math">\(\{x^2, x, 1\}\)</span> and <span class="process-math">\((x^2, x, 1)\)</span> will both be called the standard basis of <span class="process-math">\(P_2\text{.}\)</span>
 </div></article><article class="definition definition-like" id="d_coordinatevector"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">Coordinate vectors.</span>
-</h4> <div class="para logical" id="p-2224">
+</h4> <div class="para logical" id="p-3160">
 <div class="para">Let <span class="process-math">\(B=(\boldv_1, \boldv_2,\dots , \boldv_n)\)</span> be an ordered basis for the vector space <span class="process-math">\(V\text{.}\)</span> According to <a href="" class="xref" data-knowl="./knowl/th_basis_equivalence.html" title="Theorem 3.6.7: Basis equivalence">Theorem 3.6.7</a>, for any <span class="process-math">\(\boldv\in V\)</span> there is a <em class="emphasis">unique</em> choice of scalars <span class="process-math">\(c_i\in \R\)</span> satisfying</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/th_basis_equivalence.html">
 \begin{equation*}
@@ -819,7 +819,7 @@ B_5 \amp =(\bolde_3, \bolde_1, \bolde_2) \amp B_6\amp =(\bolde_3, \bolde_2, \bol
 [\boldv]_B=(c_1,c_2,\dots, c_n)\text{.}
 \end{equation*}
 </div>
-</div></article><div class="para logical" id="p-2225">
+</div></article><div class="para logical" id="p-3161">
 <div class="para">To compute the coordinate vector of an element <span class="process-math">\(\boldv\in V\)</span> relative to a given ordered basis <span class="process-math">\(B=(\boldv_1,\boldv_2,\dots, \boldv_n)\)</span> we must <em class="emphasis">find</em> the scalars <span class="process-math">\(c_1, c_2, \dots, c_n\)</span> that satisfy the vector equation</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -828,15 +828,15 @@ B_5 \amp =(\bolde_3, \bolde_1, \bolde_2) \amp B_6\amp =(\bolde_3, \bolde_2, \bol
 </div>
 <div class="para">Usually this is accomplished by reducing this vector equation to an equivalent system of linear equations in the unknowns <span class="process-math">\(c_i\)</span> and solving using the method of Gaussian elimination. However, there are some cases when we can easily produce the <span class="process-math">\(c_i\)</span> by inspection: for example when computing with standard bases as the first example below illustrates.</div>
 </div>
-<div class="para" id="p-2226">Furthermore, if the given basis happens to be orthogonal (or orthonormal) with respect to some inner product, <a href="" class="xref" data-knowl="./knowl/th_coordinates_orthogonal.html" title="Theorem 5.1.9: Coordinate vectors for orthogonal bases">Theorem 5.1.9</a> provides an inner product formula for computing the <span class="process-math">\(c_i\text{.}\)</span>
+<div class="para" id="p-3162">Furthermore, if the given basis happens to be orthogonal (or orthonormal) with respect to some inner product, <a href="" class="xref" data-knowl="./knowl/th_coordinates_orthogonal.html" title="Theorem 5.1.9: Coordinate vectors for orthogonal bases">Theorem 5.1.9</a> provides an inner product formula for computing the <span class="process-math">\(c_i\text{.}\)</span>
 </div>
 <article class="example example-like" id="eg_coordinatevector_standard"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">Standard bases.</span>
 </h4>
-<div class="para" id="p-2227">Computing coordinate vectors relative to one of our standard bases for <span class="process-math">\(\R^n\text{,}\)</span> <span class="process-math">\(M_{mn}\text{,}\)</span> or <span class="process-math">\(P_{n}\)</span> amounts to just listing the coefficients or entries used to specify the given vector. The examples below serve to illustrate the general method in this setting.</div> <ol class="decimal">
-<li id="li-762"><div class="para" id="p-2228">Let <span class="process-math">\(V=\R^3\)</span> and <span class="process-math">\(B=(\bolde_1, \bolde_2, \bolde_3)\text{.}\)</span> For any <span class="process-math">\(\boldv=(a,b,c)\in \R^3\)</span> we have <span class="process-math">\([\boldv]_{B}=(a,b,c)\text{,}\)</span> since <span class="process-math">\((a,b,c)=a\bolde_1+b\bolde_2+c\bolde_3\text{.}\)</span>
+<div class="para" id="p-3163">Computing coordinate vectors relative to one of our standard bases for <span class="process-math">\(\R^n\text{,}\)</span> <span class="process-math">\(M_{mn}\text{,}\)</span> or <span class="process-math">\(P_{n}\)</span> amounts to just listing the coefficients or entries used to specify the given vector. The examples below serve to illustrate the general method in this setting.</div> <ol class="decimal">
+<li id="li-941"><div class="para" id="p-3164">Let <span class="process-math">\(V=\R^3\)</span> and <span class="process-math">\(B=(\bolde_1, \bolde_2, \bolde_3)\text{.}\)</span> For any <span class="process-math">\(\boldv=(a,b,c)\in \R^3\)</span> we have <span class="process-math">\([\boldv]_{B}=(a,b,c)\text{,}\)</span> since <span class="process-math">\((a,b,c)=a\bolde_1+b\bolde_2+c\bolde_3\text{.}\)</span>
 </div></li>
-<li id="li-763"><div class="para logical" id="p-2229">
+<li id="li-942"><div class="para logical" id="p-3165">
 <div class="para">Let <span class="process-math">\(V=M_{22}\)</span> and <span class="process-math">\(B=(E_{11}, E_{12}, E_{21}, E_{22})\text{.}\)</span> For any <span class="process-math">\(A=\begin{amatrix}[rr]a\amp b\\ c\amp d \end{amatrix}\)</span> we have <span class="process-math">\([A]_B=(a,b,c,d)\)</span> since</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -847,8 +847,8 @@ A=aE_{11}+bE_{12}+cE_{21}+dE_{22}\text{.}
 </ol></article><article class="example example-like" id="example-101"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.6</span><span class="period">.</span><span class="space"> </span><span class="title">Reorderings of standard bases.</span>
 </h4>
-<div class="para" id="p-2230">If we choose an alternate ordering of one of the standard bases, the entries of the coordinate vector are reordered accordingly, as illustrated by the examples below.</div> <ol class="decimal">
-<li id="li-764"><div class="para logical" id="p-2231">
+<div class="para" id="p-3166">If we choose an alternate ordering of one of the standard bases, the entries of the coordinate vector are reordered accordingly, as illustrated by the examples below.</div> <ol class="decimal">
+<li id="li-943"><div class="para logical" id="p-3167">
 <div class="para">Let <span class="process-math">\(V=\R^3\)</span> and <span class="process-math">\(B=(\bolde_2, \bolde_1, \bolde_3)\text{.}\)</span> Given <span class="process-math">\(\boldv=(a,b,c)\in \R^3\)</span> we have <span class="process-math">\([\boldv]_B=(b,a,c)\text{,}\)</span> since</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -856,7 +856,7 @@ A=aE_{11}+bE_{12}+cE_{21}+dE_{22}\text{.}
 \end{equation*}
 </div>
 </div></li>
-<li id="li-765"><div class="para logical" id="p-2232">
+<li id="li-944"><div class="para logical" id="p-3168">
 <div class="para">Let <span class="process-math">\(P=P_3\)</span> and <span class="process-math">\(B=(1,x,x^2, x^3)\text{.}\)</span> Given <span class="process-math">\(p(x)=ax^3+bx^2+cx+d\)</span> we have <span class="process-math">\([p(x)]_B=(d, c, b, a)\text{,}\)</span> since</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -867,15 +867,15 @@ p(x)=(d)1+cx+bx^2+ax^3\text{.}
 </ol></article><article class="example example-like" id="example-102"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.7</span><span class="period">.</span><span class="space"> </span><span class="title">Nonstandard bases.</span>
 </h4>
-<div class="para" id="p-2233">For a nonstandard ordered basis, we compute coordinate vectors by solving a relevant system of linear equations, as the examples below illustrate.</div> <ol class="decimal">
-<li id="li-766"><div class="para" id="p-2234">Let <span class="process-math">\(V=\R^2\text{,}\)</span> <span class="process-math">\(B=((1,2),(1,1))\text{,}\)</span> and <span class="process-math">\(\boldv=(3,3)\text{.}\)</span> Compute <span class="process-math">\([\boldv]_B\text{.}\)</span> More generally, compute <span class="process-math">\([(a,b)]_B\)</span> for an arbitrary <span class="process-math">\((a,b)\in \R^2\text{.}\)</span>
+<div class="para" id="p-3169">For a nonstandard ordered basis, we compute coordinate vectors by solving a relevant system of linear equations, as the examples below illustrate.</div> <ol class="decimal">
+<li id="li-945"><div class="para" id="p-3170">Let <span class="process-math">\(V=\R^2\text{,}\)</span> <span class="process-math">\(B=((1,2),(1,1))\text{,}\)</span> and <span class="process-math">\(\boldv=(3,3)\text{.}\)</span> Compute <span class="process-math">\([\boldv]_B\text{.}\)</span> More generally, compute <span class="process-math">\([(a,b)]_B\)</span> for an arbitrary <span class="process-math">\((a,b)\in \R^2\text{.}\)</span>
 </div></li>
-<li id="li-767"><div class="para" id="p-2235">Let <span class="process-math">\(V=P_2\text{,}\)</span> <span class="process-math">\(B=(x^2+x+1, x^2-x, x^2-1)\text{,}\)</span> and <span class="process-math">\(p(x)=x^2\text{.}\)</span> Compute <span class="process-math">\([p(x)]_B\text{.}\)</span> More generally, compute <span class="process-math">\([ax^2+bx+c]\)</span> for an arbitrary element <span class="process-math">\(ax^2+bx+c\in P_2\text{.}\)</span>
+<li id="li-946"><div class="para" id="p-3171">Let <span class="process-math">\(V=P_2\text{,}\)</span> <span class="process-math">\(B=(x^2+x+1, x^2-x, x^2-1)\text{,}\)</span> and <span class="process-math">\(p(x)=x^2\text{.}\)</span> Compute <span class="process-math">\([p(x)]_B\text{.}\)</span> More generally, compute <span class="process-math">\([ax^2+bx+c]\)</span> for an arbitrary element <span class="process-math">\(ax^2+bx+c\in P_2\text{.}\)</span>
 </div></li>
 </ol>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-75" id="solution-75"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-75"><div class="solution solution-like"><ol class="decimal">
-<li id="li-768"><div class="para logical" id="p-2236">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-98" id="solution-98"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-98"><div class="solution solution-like"><ol class="decimal">
+<li id="li-947"><div class="para logical" id="p-3172">
 <div class="para">To compute <span class="process-math">\([(3,3)]_B\)</span> we must find the unique pair <span class="process-math">\((c_1, c_2)\)</span> satisfying</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -912,7 +912,7 @@ c_1\amp +\amp c_2 \amp =\amp a\\
 <div class="para">for <span class="process-math">\(\boldv=(a,b)\text{.}\)</span>
 </div>
 </div></li>
-<li id="li-769"><div class="para logical" id="p-2237">
+<li id="li-948"><div class="para logical" id="p-3173">
 <div class="para">To compute <span class="process-math">\([x^2]_B\)</span> we must find the unique triple <span class="process-math">\((c_1,c_2,c_3)\)</span> satisfying</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -944,7 +944,7 @@ c_1\amp \amp \amp -\amp c_3\amp =\amp 0\\
 </div></li>
 </ol></div></div>
 </div></article><section class="paragraphs" id="ss_vid_eg_coordinatevec"><h4 class="heading"><span class="title">Video example: coordinate vectors.</span></h4> <figure class="figure figure-like" id="fig_vid_coordvecs"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="vid_coordvecs" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/QOIogczPF0c?&amp;modestbranding=1&amp;rel=0"></iframe></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.1.8<span class="period">.</span></span><span class="space"> </span>Video: coordinate vectors</figcaption></figure></section><div class="para logical" id="p-2238">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.1.8<span class="period">.</span></span><span class="space"> </span>Video: coordinate vectors</figcaption></figure></section><div class="para logical" id="p-3174">
 <div class="para">When <span class="process-math">\(B=(\boldv_1, \boldv_2, \dots, \boldv_n)\)</span> is an orthogonal basis with respect to some inner product <span class="process-math">\(\langle , \rangle \text{,}\)</span> then by <a href="" class="xref" data-knowl="./knowl/th_orthogonal_basis_formula.html" title="Theorem 4.2.7: Calculating with orthogonal bases">Theorem 4.2.7</a> we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/th_orthogonal_basis_formula.html">
 \begin{equation*}
@@ -962,7 +962,7 @@ c_1\amp \amp \amp -\amp c_3\amp =\amp 0\\
 <article class="theorem theorem-like" id="th_coordinates_orthogonal"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.1.9</span><span class="period">.</span><span class="space"> </span><span class="title">Coordinate vectors for orthogonal bases.</span>
 </h4>
-<div class="para logical" id="p-2239">
+<div class="para logical" id="p-3175">
 <div class="para">Let <span class="process-math">\((V,\langle , \rangle )\)</span> be an inner product space, and suppose the ordered basis <span class="process-math">\(B=(\boldv_1, \boldv_2, \dots, \boldv_n)\)</span> is orthogonal with respect to <span class="process-math">\(\langle , \rangle \text{.}\)</span> For all <span class="process-math">\(\boldv\in V\)</span> we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -972,7 +972,7 @@ c_1\amp \amp \amp -\amp c_3\amp =\amp 0\\
 </div></article><article class="example example-like" id="example-103"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.10</span><span class="period">.</span><span class="space"> </span><span class="title">Orthogonal bases.</span>
 </h4>
-<div class="para logical" id="p-2240">
+<div class="para logical" id="p-3176">
 <div class="para">Let <span class="process-math">\(V=\R^2\)</span> and <span class="process-math">\(B=((1,1),(-1,2))\text{.}\)</span> Find a general formula for <span class="process-math">\([(a,b)]_B\text{.}\)</span> Note: <span class="process-math">\(B\)</span> is orthogonal with respect to the weighted dot product</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -981,7 +981,7 @@ c_1\amp \amp \amp -\amp c_3\amp =\amp 0\\
 </div>
 </div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-76" id="solution-76"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-76"><div class="solution solution-like"><div class="para logical" id="p-2241">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-99" id="solution-99"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-99"><div class="solution solution-like"><div class="para logical" id="p-3177">
 <div class="para">Applying <a href="" class="xref" data-knowl="./knowl/th_coordinates_orthogonal.html" title="Theorem 5.1.9: Coordinate vectors for orthogonal bases">Theorem 5.1.9</a> to <span class="process-math">\(B\)</span> and the dot product with weights <span class="process-math">\(2, 1\text{,}\)</span> for any <span class="process-math">\(\boldv=(a,b)\)</span> we compute</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/th_coordinates_orthogonal.html" id="md-219">
 \begin{align*}
@@ -999,7 +999,7 @@ c_1\amp \amp \amp -\amp c_3\amp =\amp 0\\
 </div></article></section><section class="subsection" id="ss_coordinate_transformation"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">5.1.2</span> <span class="title">Coordinate vector transformation</span>
 </h3>
-<div class="para logical" id="p-2242">
+<div class="para logical" id="p-3178">
 <div class="para">The next theorem is the key to understanding the tremendous computational value of coordinate vectors. Here we treat the coordinate vector operation as a function</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/s_isom.html ./knowl/d_isomorphism.html" id="md-220">
 \begin{align*}
@@ -1018,33 +1018,33 @@ c_1\amp \amp \amp -\amp c_3\amp =\amp 0\\
 <article class="principle theorem-like" id="mantra_coordinate_vectors"><h4 class="heading">
 <span class="type">Mantra</span><span class="space"> </span><span class="codenumber">5.1.11</span><span class="period">.</span><span class="space"> </span><span class="title">Coordinate vector mantra.</span>
 </h4>
-<div class="para" id="p-2243">Coordinate vectors allow us to treat any <span class="process-math">\(n\)</span>-dimensional vector space as if it were <span class="process-math">\(\R^n\text{.}\)</span>
+<div class="para" id="p-3179">Coordinate vectors allow us to treat any <span class="process-math">\(n\)</span>-dimensional vector space as if it were <span class="process-math">\(\R^n\text{.}\)</span>
 </div></article><article class="theorem theorem-like" id="th_coordinates"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.1.12</span><span class="period">.</span><span class="space"> </span><span class="title">Coordinate vector transformation.</span>
 </h4>
-<div class="para logical" id="p-2244">
+<div class="para logical" id="p-3180">
 <div class="para">Let <span class="process-math">\(B=(\boldv_1,\boldv_2,\dots, \boldv_n)\)</span> be an ordered basis for the vector space <span class="process-math">\(V\text{.}\)</span>
 </div>
 <ol class="decimal">
-<li id="li-770"><div class="para" id="p-2245">The function <span class="process-math">\(T\colon V\rightarrow \R^n\)</span> defined as <span class="process-math">\(T(\boldv)=[\boldv]_B\)</span> is a linear transformation. We call <span class="process-math">\(T\)</span> the <dfn class="terminology">coordinate vector transformation</dfn> with respect to <span class="process-math">\(B\text{.}\)</span>
+<li id="li-949"><div class="para" id="p-3181">The function <span class="process-math">\(T\colon V\rightarrow \R^n\)</span> defined as <span class="process-math">\(T(\boldv)=[\boldv]_B\)</span> is a linear transformation. We call <span class="process-math">\(T\)</span> the <dfn class="terminology">coordinate vector transformation</dfn> with respect to <span class="process-math">\(B\text{.}\)</span>
 </div></li>
-<li id="li-771"><div class="para" id="p-2246">We have <span class="process-math">\([\boldv]_B=[\boldw]_B\)</span> if and only if <span class="process-math">\(\boldv=\boldw\text{:}\)</span> i.e.,  <span class="process-math">\(T\)</span> is <a href="" class="xref" data-knowl="./knowl/d_injective_surjective_bijective.html" title="Definition 0.2.7: Injective, surjective, bijective">injective</a>.</div></li>
-<li id="li-772"><div class="para" id="p-2247">For all <span class="process-math">\(\boldx=(c_1,c_2,\dots, c_n)\in \R^n\text{,}\)</span> there is <span class="process-math">\(\boldv\in V\)</span> with <span class="process-math">\([\boldv]_B=\boldx\)</span> : i.e., <span class="process-math">\(T\)</span> is <a href="" class="xref" data-knowl="./knowl/d_injective_surjective_bijective.html" title="Definition 0.2.7: Injective, surjective, bijective">surjective</a>.</div></li>
-<li id="li-773"><div class="para logical" id="p-2248">
+<li id="li-950"><div class="para" id="p-3182">We have <span class="process-math">\([\boldv]_B=[\boldw]_B\)</span> if and only if <span class="process-math">\(\boldv=\boldw\text{:}\)</span> i.e.,  <span class="process-math">\(T\)</span> is <a href="" class="xref" data-knowl="./knowl/d_injective_surjective_bijective.html" title="Definition 0.2.7: Injective, surjective, bijective">injective</a>.</div></li>
+<li id="li-951"><div class="para" id="p-3183">For all <span class="process-math">\(\boldx=(c_1,c_2,\dots, c_n)\in \R^n\text{,}\)</span> there is <span class="process-math">\(\boldv\in V\)</span> with <span class="process-math">\([\boldv]_B=\boldx\)</span> : i.e., <span class="process-math">\(T\)</span> is <a href="" class="xref" data-knowl="./knowl/d_injective_surjective_bijective.html" title="Definition 0.2.7: Injective, surjective, bijective">surjective</a>.</div></li>
+<li id="li-952"><div class="para logical" id="p-3184">
 <div class="para">Given a subset <span class="process-math">\(S=\{\boldv_1,\boldv_2,\dots,
 \boldv_r\}\subseteq V\text{,}\)</span> let <span class="process-math">\(S'=T(S)=\{[\boldv_1]_B,[\boldv_2]_B,\dots,
 [\boldv_r]_B\}\subseteq \R^n\text{.}\)</span> We have the following equivalences:</div>
 <ol class="lower-alpha">
-<li id="li-774"><div class="para" id="p-2249">
+<li id="li-953"><div class="para" id="p-3185">
 <span class="process-math">\(\boldv\in\Span S\)</span> if and only if <span class="process-math">\([\boldv]_{B}\in \Span S'\text{;}\)</span>
 </div></li>
-<li id="li-775"><div class="para" id="p-2250">
+<li id="li-954"><div class="para" id="p-3186">
 <span class="process-math">\(S\)</span> is linearly independent if and only if <span class="process-math">\(S'\)</span> is linearly independent.</div></li>
 </ol>
 </div></li>
 </ol>
 </div></article><article class="hiddenproof" id="proof-85"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-85"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-85"><article class="hiddenproof"><ol class="decimal">
-<li id="li-776"><div class="para logical" id="p-2251">
+<li id="li-955"><div class="para logical" id="p-3187">
 <div class="para">Suppose <span class="process-math">\(T(\boldv)=[\boldv]_B=(a_1,a_2,\dots, a_n), T(\boldw)=[\boldw]_B=(b_1, b_2, \dots, b_n)\text{.}\)</span> By definition this means</div>
 <div class="displaymath process-math" id="md-221">
 \begin{align*}
@@ -1069,7 +1069,7 @@ T(c\boldv+d\boldw)\amp =[c\boldv+d\boldw]_B \amp (\text{def. of } [\phantom{\bol
 </div>
 <div class="para">This proves <span class="process-math">\(T\)</span> is linear.</div>
 </div></li>
-<li id="li-777"><div class="para logical" id="p-2252">
+<li id="li-956"><div class="para logical" id="p-3188">
 <div class="para">Clearly, if <span class="process-math">\(\boldv=\boldw\text{,}\)</span> then <span class="process-math">\([\boldv]_B=[\boldw]_B\text{.}\)</span> If <span class="process-math">\(T(\boldv)=T(\boldw)=(c_1,c_2,\dots, c_n)\text{,}\)</span> then by definition of <span class="process-math">\([\phantom{\boldv}]_B\)</span> we must have</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1077,7 +1077,7 @@ T(c\boldv+d\boldw)\amp =[c\boldv+d\boldw]_B \amp (\text{def. of } [\phantom{\bol
 \end{equation*}
 </div>
 </div></li>
-<li id="li-778"><div class="para logical" id="p-2253">
+<li id="li-957"><div class="para logical" id="p-3189">
 <div class="para">Given any <span class="process-math">\(\boldb=(b_1,b_2,\dots, b_n)\in \R^n\text{,}\)</span> we have <span class="process-math">\(\boldb=T(\boldv)\text{,}\)</span> where</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1087,8 +1087,8 @@ T(c\boldv+d\boldw)\amp =[c\boldv+d\boldw]_B \amp (\text{def. of } [\phantom{\bol
 <div class="para">This proves <span class="process-math">\(\im T=\R^n\text{.}\)</span>
 </div>
 </div></li>
-<li id="li-779">
-<div class="para logical" id="p-2254">
+<li id="li-958">
+<div class="para logical" id="p-3190">
 <div class="para">We have</div>
 <div class="displaymath process-math" id="md-223">
 \begin{align*}
@@ -1099,7 +1099,7 @@ T(c\boldv+d\boldw)\amp =[c\boldv+d\boldw]_B \amp (\text{def. of } [\phantom{\bol
 \end{align*}
 </div>
 </div>
-<div class="para logical" id="p-2255">
+<div class="para logical" id="p-3191">
 <div class="para">Similarly, we have</div>
 <div class="displaymath process-math" id="md-224">
 \begin{align*}
@@ -1114,40 +1114,40 @@ T(c\boldv+d\boldw)\amp =[c\boldv+d\boldw]_B \amp (\text{def. of } [\phantom{\bol
 <article class="remark remark-like" id="rm_coordinate_transform_invertible"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.1.13</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-2256">Statements (2) and (3) of <a href="" class="xref" data-knowl="./knowl/th_coordinates.html" title="Theorem 5.1.12: Coordinate vector transformation">Theorem 5.1.12</a> tell us that the coordinate transformation is injective (or one-to-one) and surjective (or onto), respectively. (See <a href="" class="xref" data-knowl="./knowl/d_injective_surjective_bijective.html" title="Definition 0.2.7: Injective, surjective, bijective">Definition 0.2.7</a>).</div></article><div class="para" id="p-2257">As an illustration of the <a href="" class="xref" data-knowl="./knowl/mantra_coordinate_vectors.html" title="Mantra 5.1.11: Coordinate vector mantra">coordinate vector mantra</a>, we describe a general method of contracting and extending subsets of a general finite-dimensional vector space <span class="process-math">\(V\)</span> to bases. The method translates the problem into <span class="process-math">\(\R^n\)</span> using the coordinate transformation, applies the relevant algorithm available to us for subsets of <span class="process-math">\(\R^n\text{,}\)</span> and then “lifts” the results back to <span class="process-math">\(V\)</span> using the coordinate transformation again.</div>
+<div class="para" id="p-3192">Statements (2) and (3) of <a href="" class="xref" data-knowl="./knowl/th_coordinates.html" title="Theorem 5.1.12: Coordinate vector transformation">Theorem 5.1.12</a> tell us that the coordinate transformation is injective (or one-to-one) and surjective (or onto), respectively. (See <a href="" class="xref" data-knowl="./knowl/d_injective_surjective_bijective.html" title="Definition 0.2.7: Injective, surjective, bijective">Definition 0.2.7</a>).</div></article><div class="para" id="p-3193">As an illustration of the <a href="" class="xref" data-knowl="./knowl/mantra_coordinate_vectors.html" title="Mantra 5.1.11: Coordinate vector mantra">coordinate vector mantra</a>, we describe a general method of contracting and extending subsets of a general finite-dimensional vector space <span class="process-math">\(V\)</span> to bases. The method translates the problem into <span class="process-math">\(\R^n\)</span> using the coordinate transformation, applies the relevant algorithm available to us for subsets of <span class="process-math">\(\R^n\text{,}\)</span> and then “lifts” the results back to <span class="process-math">\(V\)</span> using the coordinate transformation again.</div>
 <article class="algorithm theorem-like" id="proc_contract_extend_general"><h4 class="heading">
 <span class="type">Procedure</span><span class="space"> </span><span class="codenumber">5.1.14</span><span class="period">.</span><span class="space"> </span><span class="title">Contracting and extending to bases in general spaces.</span>
 </h4>
-<div class="para" id="p-2258">Let <span class="process-math">\(V\)</span> be a vector space of dimension <span class="process-math">\(n\text{,}\)</span> and let <span class="process-math">\(S=\{\boldv_1, \boldv_2,\dots, \boldv_r\}\subseteq V\text{.}\)</span>
+<div class="para" id="p-3194">Let <span class="process-math">\(V\)</span> be a vector space of dimension <span class="process-math">\(n\text{,}\)</span> and let <span class="process-math">\(S=\{\boldv_1, \boldv_2,\dots, \boldv_r\}\subseteq V\text{.}\)</span>
 </div> <dl class="description-list">
-<dt id="li-780">Contracting to a basis</dt>
+<dt id="li-959">Contracting to a basis</dt>
 <dd>
-<div class="para" id="p-2259">Let <span class="process-math">\(W=\Span S\text{.}\)</span> To contract <span class="process-math">\(S\)</span> to a basis <span class="process-math">\(W\text{,}\)</span> proceed as follows.</div>
+<div class="para" id="p-3195">Let <span class="process-math">\(W=\Span S\text{.}\)</span> To contract <span class="process-math">\(S\)</span> to a basis <span class="process-math">\(W\text{,}\)</span> proceed as follows.</div>
 <ol class="decimal">
-<li id="li-781"><div class="para" id="p-2260">Pick any ordered basis <span class="process-math">\(B\)</span> of <span class="process-math">\(V\)</span> and let <span class="process-math">\(S'=\{[\boldv_1]_B, [\boldv_2]_B, \dots, [\boldv_r]_B\}\subseteq \R^n\text{.}\)</span>
+<li id="li-960"><div class="para" id="p-3196">Pick any ordered basis <span class="process-math">\(B\)</span> of <span class="process-math">\(V\)</span> and let <span class="process-math">\(S'=\{[\boldv_1]_B, [\boldv_2]_B, \dots, [\boldv_r]_B\}\subseteq \R^n\text{.}\)</span>
 </div></li>
-<li id="li-782"><div class="para" id="p-2261">Use the relevant procedure of <a href="" class="xref" data-knowl="./knowl/proc_contract_extend.html" title="Procedure 3.8.13: Contracting and extending to bases of \R^n">Procedure 3.8.13</a> to contract <span class="process-math">\(S'\)</span> to a basis <span class="process-math">\(T'=\{[\boldv_{i_1}]_B, [\boldv_{i_2}]_B, \dots, [\boldv_{i_k}]_B\}\)</span> of <span class="process-math">\(\Span S'\text{.}\)</span>
+<li id="li-961"><div class="para" id="p-3197">Use the relevant procedure of <a href="" class="xref" data-knowl="./knowl/proc_contract_extend.html" title="Procedure 3.8.13: Contracting and extending to bases of \R^n">Procedure 3.8.13</a> to contract <span class="process-math">\(S'\)</span> to a basis <span class="process-math">\(T'=\{[\boldv_{i_1}]_B, [\boldv_{i_2}]_B, \dots, [\boldv_{i_k}]_B\}\)</span> of <span class="process-math">\(\Span S'\text{.}\)</span>
 </div></li>
-<li id="li-783"><div class="para" id="p-2262">The set <span class="process-math">\(T=\{\boldv_{i_1}, \boldv_{i_2}, \dots, \boldv_{i_k}\}\subseteq S\)</span> is a basis for <span class="process-math">\(W=\Span S\text{.}\)</span>
+<li id="li-962"><div class="para" id="p-3198">The set <span class="process-math">\(T=\{\boldv_{i_1}, \boldv_{i_2}, \dots, \boldv_{i_k}\}\subseteq S\)</span> is a basis for <span class="process-math">\(W=\Span S\text{.}\)</span>
 </div></li>
 </ol>
 </dd>
-<dt id="li-784">Extending to a basis</dt>
+<dt id="li-963">Extending to a basis</dt>
 <dd>
-<div class="para" id="p-2263">Assume <span class="process-math">\(S\)</span> is linearly independent. To extend <span class="process-math">\(S\)</span> to a basis of <span class="process-math">\(V\)</span> proceed as follows.</div>
+<div class="para" id="p-3199">Assume <span class="process-math">\(S\)</span> is linearly independent. To extend <span class="process-math">\(S\)</span> to a basis of <span class="process-math">\(V\)</span> proceed as follows.</div>
 <ol class="decimal">
-<li id="li-785"><div class="para" id="p-2264">Pick any ordered basis <span class="process-math">\(B\)</span> of <span class="process-math">\(V\)</span> and let <span class="process-math">\(S'=\{[\boldv_1]_B, [\boldv_2]_B, \dots, [\boldv_r]_B\}\subseteq \R^n\text{.}\)</span>
+<li id="li-964"><div class="para" id="p-3200">Pick any ordered basis <span class="process-math">\(B\)</span> of <span class="process-math">\(V\)</span> and let <span class="process-math">\(S'=\{[\boldv_1]_B, [\boldv_2]_B, \dots, [\boldv_r]_B\}\subseteq \R^n\text{.}\)</span>
 </div></li>
-<li id="li-786"><div class="para" id="p-2265">Use the relevant procedure of <a href="" class="xref" data-knowl="./knowl/proc_contract_extend.html" title="Procedure 3.8.13: Contracting and extending to bases of \R^n">Procedure 3.8.13</a> to extend <span class="process-math">\(S'\)</span> to a basis <span class="process-math">\(T'=\{[\boldv_1]_B, [\boldv_2]_B, \dots, [\boldv_r]_B, \boldx_{r+1}, \dots, \boldx_n \}\)</span> of <span class="process-math">\(\R^n\text{.}\)</span>
+<li id="li-965"><div class="para" id="p-3201">Use the relevant procedure of <a href="" class="xref" data-knowl="./knowl/proc_contract_extend.html" title="Procedure 3.8.13: Contracting and extending to bases of \R^n">Procedure 3.8.13</a> to extend <span class="process-math">\(S'\)</span> to a basis <span class="process-math">\(T'=\{[\boldv_1]_B, [\boldv_2]_B, \dots, [\boldv_r]_B, \boldx_{r+1}, \dots, \boldx_n \}\)</span> of <span class="process-math">\(\R^n\text{.}\)</span>
 </div></li>
-<li id="li-787"><div class="para" id="p-2266">By (3) of <a href="" class="xref" data-knowl="./knowl/th_coordinates.html" title="Theorem 5.1.12: Coordinate vector transformation">Theorem 5.1.12</a>, for all <span class="process-math">\(r+1\leq i\leq n\)</span> there are vectors <span class="process-math">\(\boldv_{i}\in V\)</span> satisfying <span class="process-math">\([\boldv_i]_B=\boldx_i\text{.}\)</span> The set <span class="process-math">\(T=\{\boldv_1,\dots, \boldv_r,\boldv_{r+1},\dots,\boldv_n\}\)</span> is a basis of <span class="process-math">\(V\)</span> containing <span class="process-math">\(S\text{.}\)</span>
+<li id="li-966"><div class="para" id="p-3202">By (3) of <a href="" class="xref" data-knowl="./knowl/th_coordinates.html" title="Theorem 5.1.12: Coordinate vector transformation">Theorem 5.1.12</a>, for all <span class="process-math">\(r+1\leq i\leq n\)</span> there are vectors <span class="process-math">\(\boldv_{i}\in V\)</span> satisfying <span class="process-math">\([\boldv_i]_B=\boldx_i\text{.}\)</span> The set <span class="process-math">\(T=\{\boldv_1,\dots, \boldv_r,\boldv_{r+1},\dots,\boldv_n\}\)</span> is a basis of <span class="process-math">\(V\)</span> containing <span class="process-math">\(S\text{.}\)</span>
 </div></li>
 </ol>
 </dd>
 </dl></article><article class="example example-like" id="example-104"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.15</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-2267">
+<div class="para logical" id="p-3203">
 <div class="para">The set</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1158,10 +1158,10 @@ S=\left \{ A_1=\begin{bmatrix}2\amp 1\\ 0\amp -2 \end{bmatrix} , A_2=\begin{bmat
 </div>
 </div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-29" id="hint-29"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-29"><div class="hint solution-like"><div class="para" id="p-2268">Choose an ordered basis <span class="process-math">\(B\)</span> of <span class="process-math">\(M_{22}\)</span> and use the coordinate vector map to translate to a question about subspaces of <span class="process-math">\(\R^4\text{.}\)</span> Answer this question and translate back to <span class="process-math">\(M_{22}\text{.}\)</span>
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-29" id="hint-29"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-29"><div class="hint solution-like"><div class="para" id="p-3204">Choose an ordered basis <span class="process-math">\(B\)</span> of <span class="process-math">\(M_{22}\)</span> and use the coordinate vector map to translate to a question about subspaces of <span class="process-math">\(\R^4\text{.}\)</span> Answer this question and translate back to <span class="process-math">\(M_{22}\text{.}\)</span>
 </div></div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-77" id="solution-77"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-77"><div class="solution solution-like">
-<div class="para logical" id="p-2269">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-100" id="solution-100"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-100"><div class="solution solution-like">
+<div class="para logical" id="p-3205">
 <div class="para">Let <span class="process-math">\(B=(E_{11}, E_{12}, E_{21}, E_{22})\)</span> be the standard basis of <span class="process-math">\(M_{22}\text{.}\)</span> Apply <span class="process-math">\([\phantom{\boldv}]_B\)</span> to the elements of the given <span class="process-math">\(S\)</span> to get a corresponding set <span class="process-math">\(S'\subseteq\R^4\text{:}\)</span>
 </div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/proc_contract_extend.html">
@@ -1183,7 +1183,7 @@ B=\{A_1, A_2\}
 </div>
 <div class="para">is a basis for <span class="process-math">\(W'=\Span S\text{.}\)</span> We conclude that <span class="process-math">\(\dim W'=2 \text{.}\)</span>
 </div>
-</div> <div class="para logical" id="p-2270">
+</div> <div class="para logical" id="p-3206">
 <div class="para">Lastly the space <span class="process-math">\(W\)</span> of all trace-zero matrices is easily seen to have basis</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1203,49 +1203,49 @@ B=\{A_1, A_2\}
 </h3>
 <div class="exercisegroup" id="exercisegroup-31">
 <h4 class="heading"><span class="title">Coordinate vectors in <span class="process-math">\(\R^n\)</span>.</span></h4>
-<div class="introduction" id="introduction-71"><div class="para" id="p-2271">In each exercise an ordered basis <span class="process-math">\(B\)</span> is given for <span class="process-math">\(\R^3\text{.}\)</span> Compute <span class="process-math">\([\boldx]_B\)</span> for the given <span class="process-math">\(\boldx\in \R^3\text{.}\)</span>
+<div class="introduction" id="introduction-71"><div class="para" id="p-3207">In each exercise an ordered basis <span class="process-math">\(B\)</span> is given for <span class="process-math">\(\R^3\text{.}\)</span> Compute <span class="process-math">\([\boldx]_B\)</span> for the given <span class="process-math">\(\boldx\in \R^3\text{.}\)</span>
 </div></div>
 <div class="exercisegroup-exercises">
 <article class="exercise exercise-like" id="exercise-351"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
-<div class="para" id="p-2272">
+<div class="para" id="p-3208">
 <span class="process-math">\(B=\left((1,0,0), (2,2,0), (3,3,3) \right)\text{,}\)</span> <span class="process-math">\(\boldx=(2,-1,3)\)</span>
 </div></article><article class="exercise exercise-like" id="exercise-352"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
-<div class="para" id="p-2273">
+<div class="para" id="p-3209">
 <span class="process-math">\(B=\left((5,-12,3), (1,2,3), (-4,5,6) \right)\text{,}\)</span> <span class="process-math">\(\boldx=(2,-1,3)\)</span>
 </div></article>
 </div>
 </div>
 <div class="exercisegroup" id="exercisegroup-32">
 <h4 class="heading"><span class="title">Coordinate vectors in <span class="process-math">\(P_n\)</span>.</span></h4>
-<div class="introduction" id="introduction-72"><div class="para" id="p-2274">In each exercise an ordered basis <span class="process-math">\(B\)</span> is given for <span class="process-math">\(P_2\text{.}\)</span> Compute <span class="process-math">\([p]_B\)</span> for the given polynomial <span class="process-math">\(p\in P_2\text{.}\)</span>
+<div class="introduction" id="introduction-72"><div class="para" id="p-3210">In each exercise an ordered basis <span class="process-math">\(B\)</span> is given for <span class="process-math">\(P_2\text{.}\)</span> Compute <span class="process-math">\([p]_B\)</span> for the given polynomial <span class="process-math">\(p\in P_2\text{.}\)</span>
 </div></div>
 <div class="exercisegroup-exercises">
 <article class="exercise exercise-like" id="exercise-353"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
-<div class="para" id="p-2275">
+<div class="para" id="p-3211">
 <span class="process-math">\(B=(1,x,x^2)\text{,}\)</span> <span class="process-math">\(p(x)=-2x^2+3x-5\)</span>
 </div></article><article class="exercise exercise-like" id="exercise-354"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
-<div class="para" id="p-2276">
+<div class="para" id="p-3212">
 <span class="process-math">\(B=(x^2+1, x+1, x^2+x)\text{,}\)</span> <span class="process-math">\(p(x)=x^2-x+2\)</span>
 </div></article>
 </div>
 </div>
 <div class="exercisegroup" id="exercisegroup-33">
 <h4 class="heading"><span class="title">Coordinate vectors: orthogonal basis.</span></h4>
-<div class="introduction" id="introduction-73"><div class="para" id="p-2277">In each exercise an inner product space <span class="process-math">\((V,\langle\, \rangle)\)</span> and <em class="emphasis">orthogonal</em> ordered basis is given. Use <a href="" class="xref" data-knowl="./knowl/th_coordinates_orthogonal.html" title="Theorem 5.1.9: Coordinate vectors for orthogonal bases">Theorem 5.1.9</a> to compute the requested coordinate vector.</div></div>
+<div class="introduction" id="introduction-73"><div class="para" id="p-3213">In each exercise an inner product space <span class="process-math">\((V,\langle\, \rangle)\)</span> and <em class="emphasis">orthogonal</em> ordered basis is given. Use <a href="" class="xref" data-knowl="./knowl/th_coordinates_orthogonal.html" title="Theorem 5.1.9: Coordinate vectors for orthogonal bases">Theorem 5.1.9</a> to compute the requested coordinate vector.</div></div>
 <div class="exercisegroup-exercises">
 <article class="exercise exercise-like" id="exercise-355"><h5 class="heading"><span class="codenumber">5<span class="period">.</span></span></h5>
-<div class="para" id="p-2278">
+<div class="para" id="p-3214">
 <span class="process-math">\(V=\R^3\)</span> with dot product; <span class="process-math">\(B=\left((1,1,1),(1,-1,0),(1,1,-2)\right)\text{.}\)</span> Compute <span class="process-math">\([(-3,2,4)]_B\text{.}\)</span>
 </div></article><article class="exercise exercise-like" id="exercise-356"><h5 class="heading"><span class="codenumber">6<span class="period">.</span></span></h5>
-<div class="para" id="p-2279">
+<div class="para" id="p-3215">
 <span class="process-math">\(V=\R^3\)</span> with dot product with weights <span class="process-math">\(k_1=1, k_2=2, k_3=2\text{;}\)</span> <span class="process-math">\(B=\left((1,1,1),(2,1,-2),(4,-3,1)\right)\text{.}\)</span> Compute <span class="process-math">\([(0,1,0)]_B\text{.}\)</span>
 </div></article><article class="exercise exercise-like" id="exercise-357"><h5 class="heading"><span class="codenumber">7<span class="period">.</span></span></h5>
-<div class="para" id="p-2280">
+<div class="para" id="p-3216">
 <span class="process-math">\(V=\Span\{\cos x, \cos 2x, \cos 3x\}\subseteq C([0,2\pi])\)</span> with integral inner product <span class="process-math">\(\langle f, g\rangle=\int_0^{2\pi}f(x)g(x)\, dx\text{;}\)</span> <span class="process-math">\(B=(\cos x, \cos 2x, \cos 3x)\text{.}\)</span> Compute <span class="process-math">\([\cos^3 x]_B\text{.}\)</span> (Yes, <span class="process-math">\(\cos^3(x)\)</span> can indeed be written as a linear combination of <span class="process-math">\(\cos x, \cos 2x, \cos 3x\text{.}\)</span> In this exercise you will discover what the corresponding identity is using inner products!)</div></article>
 </div>
 </div>
 <article class="exercise exercise-like" id="exercise-358"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
-<div class="para logical" id="p-2281">
+<div class="para logical" id="p-3217">
 <div class="para">Let <span class="process-math">\(B=(A_1,A_2,A_3,A_4)\)</span> where</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1263,31 +1263,31 @@ A_1=\begin{bmatrix}
 <div class="para">You may take for granted that <span class="process-math">\(B\)</span> is an ordered basis of <span class="process-math">\(M_{22}\text{.}\)</span>
 </div>
 </div> <ol class="lower-alpha">
-<li id="li-788"><div class="para" id="p-2282">Compute <span class="process-math">\(\left [ \begin{bmatrix}
+<li id="li-967"><div class="para" id="p-3218">Compute <span class="process-math">\(\left [ \begin{bmatrix}
 6\amp 2\\ 5\amp 3
 \end{bmatrix}\right]_B\text{.}\)</span>
 </div></li>
-<li id="li-789"><div class="para" id="p-2283">Compute <span class="process-math">\([A]_B\)</span> for an arbitrary matrix <span class="process-math">\(\begin{bmatrix}
+<li id="li-968"><div class="para" id="p-3219">Compute <span class="process-math">\([A]_B\)</span> for an arbitrary matrix <span class="process-math">\(\begin{bmatrix}
 a\amp b\\ c\amp d
 \end{bmatrix}\in M_{22}\text{.}\)</span>
 </div></li>
 </ol></article><article class="exercise exercise-like" id="exercise-359"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
-<div class="para" id="p-2284">Let <span class="process-math">\(S=\{p_1(x)=2x^2+x+1, p_2(x)=x-1, p_3(x)=x^2+1, p_4(x)=x^2-x-1\}\subseteq P_2 \text{.}\)</span>
+<div class="para" id="p-3220">Let <span class="process-math">\(S=\{p_1(x)=2x^2+x+1, p_2(x)=x-1, p_3(x)=x^2+1, p_4(x)=x^2-x-1\}\subseteq P_2 \text{.}\)</span>
 </div> <ol class="lower-alpha">
-<li id="li-790"><div class="para" id="p-2285">Use one of the techniques described in <a href="" class="xref" data-knowl="./knowl/proc_contract_extend_general.html" title="Procedure 5.1.14: Contracting and extending to bases in general spaces">Procedure 5.1.14</a> to contract <span class="process-math">\(S\)</span> to a basis of <span class="process-math">\(W=\Span S\text{.}\)</span> To begin, choose your favorite ordered basis of <span class="process-math">\(P_2\text{.}\)</span>
+<li id="li-969"><div class="para" id="p-3221">Use one of the techniques described in <a href="" class="xref" data-knowl="./knowl/proc_contract_extend_general.html" title="Procedure 5.1.14: Contracting and extending to bases in general spaces">Procedure 5.1.14</a> to contract <span class="process-math">\(S\)</span> to a basis of <span class="process-math">\(W=\Span S\text{.}\)</span> To begin, choose your favorite ordered basis of <span class="process-math">\(P_2\text{.}\)</span>
 </div></li>
-<li id="li-791"><div class="para" id="p-2286">Use your result in (a) to describe <span class="process-math">\(W\)</span> is as simple a manner as possible.</div></li>
+<li id="li-970"><div class="para" id="p-3222">Use your result in (a) to describe <span class="process-math">\(W\)</span> is as simple a manner as possible.</div></li>
 </ol></article><article class="exercise exercise-like" id="exercise-360"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
-<div class="para" id="p-2287">Let <span class="process-math">\(S=\{ p_1=x^3+1, p_2=2x^3+x+1, p_3=3x^3+2x+1, p_4=2x^3+x^2+x+1\}\subseteq P_3\text{.}\)</span>
+<div class="para" id="p-3223">Let <span class="process-math">\(S=\{ p_1=x^3+1, p_2=2x^3+x+1, p_3=3x^3+2x+1, p_4=2x^3+x^2+x+1\}\subseteq P_3\text{.}\)</span>
 </div> <ol class="lower-alpha">
-<li id="li-792"><div class="para" id="p-2288">Use one of the techniques described in <a href="" class="xref" data-knowl="./knowl/proc_contract_extend_general.html" title="Procedure 5.1.14: Contracting and extending to bases in general spaces">Procedure 5.1.14</a> to contract <span class="process-math">\(S\)</span> to a basis of <span class="process-math">\(W=\Span S\text{.}\)</span> To begin, choose your favorite ordered basis of <span class="process-math">\(P_3\text{.}\)</span>
+<li id="li-971"><div class="para" id="p-3224">Use one of the techniques described in <a href="" class="xref" data-knowl="./knowl/proc_contract_extend_general.html" title="Procedure 5.1.14: Contracting and extending to bases in general spaces">Procedure 5.1.14</a> to contract <span class="process-math">\(S\)</span> to a basis of <span class="process-math">\(W=\Span S\text{.}\)</span> To begin, choose your favorite ordered basis of <span class="process-math">\(P_3\text{.}\)</span>
 </div></li>
-<li id="li-793"><div class="para" id="p-2289">Using your result in (a) to decide whether <span class="process-math">\(W=P_3\text{.}\)</span>
+<li id="li-972"><div class="para" id="p-3225">Using your result in (a) to decide whether <span class="process-math">\(W=P_3\text{.}\)</span>
 </div></li>
 </ol></article><article class="exercise exercise-like" id="exercise-361"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
-<div class="para" id="p-2290">Let <span class="process-math">\(S=\{p_1(x)=x^2+x+1, p_2(x)=3x^2+6x\}\subseteq P_2\text{.}\)</span> Use one of the techniques described in <a href="" class="xref" data-knowl="./knowl/proc_contract_extend_general.html" title="Procedure 5.1.14: Contracting and extending to bases in general spaces">Procedure 5.1.14</a> to extend <span class="process-math">\(S\)</span> to a basis of <span class="process-math">\(P_2\text{.}\)</span>
+<div class="para" id="p-3226">Let <span class="process-math">\(S=\{p_1(x)=x^2+x+1, p_2(x)=3x^2+6x\}\subseteq P_2\text{.}\)</span> Use one of the techniques described in <a href="" class="xref" data-knowl="./knowl/proc_contract_extend_general.html" title="Procedure 5.1.14: Contracting and extending to bases in general spaces">Procedure 5.1.14</a> to extend <span class="process-math">\(S\)</span> to a basis of <span class="process-math">\(P_2\text{.}\)</span>
 </div></article><article class="exercise exercise-like" id="exercise-362"><h4 class="heading"><span class="codenumber">12<span class="period">.</span></span></h4>
-<div class="para logical" id="p-2291">
+<div class="para logical" id="p-3227">
 <div class="para">Let</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/proc_contract_extend_general.html">
 \begin{equation*}
@@ -1295,9 +1295,9 @@ S=\left\{A_1=\begin{amatrix}[rr]1\amp 2\\1\amp 1 \end{amatrix}, \ A_2=\begin{ama
 \end{equation*}
 </div>
 <ol class="lower-alpha">
-<li id="li-794"><div class="para" id="p-2292">Use one of the techniques described in <a href="" class="xref" data-knowl="./knowl/proc_contract_extend_general.html" title="Procedure 5.1.14: Contracting and extending to bases in general spaces">Procedure 5.1.14</a> to contract <span class="process-math">\(S\)</span> to a basis of <span class="process-math">\(W=\Span S\text{.}\)</span>
+<li id="li-973"><div class="para" id="p-3228">Use one of the techniques described in <a href="" class="xref" data-knowl="./knowl/proc_contract_extend_general.html" title="Procedure 5.1.14: Contracting and extending to bases in general spaces">Procedure 5.1.14</a> to contract <span class="process-math">\(S\)</span> to a basis of <span class="process-math">\(W=\Span S\text{.}\)</span>
 </div></li>
-<li id="li-795"><div class="para logical" id="p-2293">
+<li id="li-974"><div class="para logical" id="p-3229">
 <div class="para">Show that</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1310,9 +1310,9 @@ W=\{\begin{bmatrix}a\amp b\\ c\amp a\end{bmatrix}\colon a,b,c\in \R\}.
 </div></article><article class="exercise exercise-like" id="ex_coordinates_orthonormal"><h4 class="heading">
 <span class="codenumber">13<span class="period">.</span></span><span class="space"> </span><span class="title">Orthonormal coordinate vectors.</span>
 </h4>
-<div class="para" id="p-2294">Let <span class="process-math">\((V, \langle\, , \rangle)\)</span> be an inner product space, and suppose <span class="process-math">\(B=(\boldv_1, \boldv_2, \dots, \boldv_n)\)</span> is an orthonormal ordered basis of <span class="process-math">\(V\text{.}\)</span>
+<div class="para" id="p-3230">Let <span class="process-math">\((V, \langle\, , \rangle)\)</span> be an inner product space, and suppose <span class="process-math">\(B=(\boldv_1, \boldv_2, \dots, \boldv_n)\)</span> is an orthonormal ordered basis of <span class="process-math">\(V\text{.}\)</span>
 </div> <ol class="lower-alpha">
-<li id="li-796"><div class="para logical" id="p-2295">
+<li id="li-975"><div class="para logical" id="p-3231">
 <div class="para">Prove that</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1322,7 +1322,7 @@ W=\{\begin{bmatrix}a\amp b\\ c\amp a\end{bmatrix}\colon a,b,c\in \R\}.
 <div class="para">for all <span class="process-math">\(\boldv, \boldw\in V\text{.}\)</span> In other words we can compute the inner product of vectors by computing the dot product of their coordinate vectors with respect to the orthonormal basis <span class="process-math">\(B\text{.}\)</span>
 </div>
 </div></li>
-<li id="li-797"><div class="para" id="p-2296">Prove that a set <span class="process-math">\(S=\{\boldw_1, \boldw_2, \dots, \boldw_r\}\subseteq V\)</span> is orthogonal (resp. orthonormal) with respect to <span class="process-math">\(\langle\, , \rangle\)</span> if and only if <span class="process-math">\(S'=\{[\boldw_1]_B, [\boldw_2]_B, \dots, [\boldw_r]_B\subseteq \R^n\)</span> is orthogonal (resp. orthonormal) with respect to the dot product.</div></li>
+<li id="li-976"><div class="para" id="p-3232">Prove that a set <span class="process-math">\(S=\{\boldw_1, \boldw_2, \dots, \boldw_r\}\subseteq V\)</span> is orthogonal (resp. orthonormal) with respect to <span class="process-math">\(\langle\, , \rangle\)</span> if and only if <span class="process-math">\(S'=\{[\boldw_1]_B, [\boldw_2]_B, \dots, [\boldw_r]_B\subseteq \R^n\)</span> is orthogonal (resp. orthonormal) with respect to the dot product.</div></li>
 </ol></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="c_transbasis.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="s_matrixreps.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>

@@ -13,25 +13,15 @@
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
 <div class="para logical">
-<div class="para">The eigenvalues of <span class="process-math">\(A\)</span> are <span class="process-math">\(1\)</span> and <span class="process-math">\(-1\text{,}\)</span> and each has algebraic multiplicity <span class="process-math">\(2\text{.}\)</span> Thus <span class="process-math">\(1\leq\dim W_1, \dim W_{-1}\leq 2\text{,}\)</span> and <span class="process-math">\(A\)</span> is diagonalizable if and only if</div>
+<div class="para">In this exercise we will show that for any <span class="process-math">\((a,b,c,d)\in \R^4\text{,}\)</span> there is a polynomial <span class="process-math">\(p(x)\in P_3\)</span> satisfying</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\dim W_1=\dim W_{-1}=2\text{.}
+p(-1)=a, p(0)=b, p(1)=c, p(2)=d\text{.}
 \end{equation*}
 </div>
-<div class="para">By inspection we see that <span class="process-math">\((1,0,0,0)\)</span> and <span class="process-math">\((0,1,0,0)\)</span> are <span class="process-math">\(1\)</span>-eigenvectors, and thus we must have <span class="process-math">\(\dim W_1=2\text{.}\)</span> Next we have <span class="process-math">\(W_{-1}=\NS(-I-A)\)</span> where</div>
-<div class="displaymath process-math">
-\begin{equation*}
--I-A=\begin{amatrix}[rrrr]
--2 \amp 0 \amp 3 \amp -1 \\
-0 \amp -2 \amp -1 \amp -1 \\
-0 \amp 0 \amp 1 \amp -1 \\
-0 \amp 0 \amp 1 \amp -1
-\end{amatrix}\text{.}
-\end{equation*}
+<div class="para">In other words given any list of values <span class="process-math">\(a, b, c, d\text{,}\)</span> we can find a polynomial that evaluates to these values at the inputs <span class="process-math">\(x=-1, 0, 1, 2\text{.}\)</span>
 </div>
-<div class="para">It is not difficult to see (either using Gaussian elimination or inspection) that this matrix has rank 3, and hence nullity 1. We conclude that <span class="process-math">\(\dim W_{-1}=1\lt 2\text{,}\)</span> and hence <span class="process-math">\(A\)</span> is not diagonalizable.</div>
 </div>
-<span class="incontext"><a href="s_diagonalization.html#p-2745" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_rank_nullity.html#p-2745" class="internal">in-context</a></span>
 </body>
 </html>

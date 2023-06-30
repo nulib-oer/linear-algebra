@@ -13,17 +13,32 @@
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
 <div class="para logical">
-<div class="para">Let <span class="process-math">\(L\)</span> be the linear system in the unknowns <span class="process-math">\(x_1, x_2, x_3, x_4\)</span> with augmented matrix</div>
+<div class="para">We transform the system as as follows:</div>
 <div class="displaymath process-math">
-\begin{equation*}
-A=\begin{amatrix}[cccc|r]\boxed{1}\amp1\amp3\amp2\amp4\\
-0\amp\boxed{1}\amp1\amp2\amp3\\
-0\amp0\amp0\amp\boxed{1}\amp-5
-\end{amatrix}\text{.}
-\end{equation*}
+\begin{align*}
+\begin{linsys}{3} 2x\amp +\amp 3y\amp +\amp -z\amp =\amp 18\\ x\amp +\amp 2y\amp -\amp 2z\amp =\amp 8\\ -\frac{1}{2}x\amp +\amp -\frac{1}{2}y\amp +\amp \frac{1}{2}z\amp =\amp -3 \end{linsys}
+\amp \xrightarrow[\hspace{15pt}]{2e_3}\amp \begin{linsys}{3} 2x\amp +\amp 3y\amp +\amp -z\amp =\amp 18\\
+x\amp +\amp 2y\amp -\amp 2z\amp =\amp 8\\
+-x\amp +\amp -y\amp +\amp z\amp =\amp -6 \end{linsys}\\
+\amp \\
+\amp \xrightarrow[\hspace{10pt}]{e_1-e_2}\amp \begin{linsys}{3} x\amp +\amp y\amp +\amp z\amp =\amp 10\\
+x\amp +\amp 2y\amp -\amp 2z\amp =\amp 8\\
+-x\amp +\amp -y\amp +\amp z\amp =\amp -6 \end{linsys}\\
+\amp \\
+\amp \xrightarrow[\hspace{10pt}]{e_2-e_1}\amp  \begin{linsys}{3} x\amp +\amp y\amp +\amp z\amp =\amp 10\\
+\amp \amp y\amp -\amp 3z\amp =\amp -2\\
+\amp \amp \amp \amp 2z\amp =\amp 4 \end{linsys}\\
+\amp \\
+\amp \xrightarrow[\hspace{10pt}]{e_3+e_1}\amp  \begin{linsys}{3} x\amp +\amp y\amp +\amp z\amp =\amp 10\\
+\amp \amp y\amp -\amp 3z\amp =\amp -2\\
+\amp \amp \amp \amp 2z\amp =\amp 4 \end{linsys}\\
+\amp \\
+\amp \xrightarrow[]{\frac{1}{2}e_3}\amp  \begin{linsys}{3} x\amp +\amp y\amp +\amp z\amp =\amp 10\\
+\amp \amp y\amp -\amp 3z\amp =\amp -2\\
+\amp \amp \amp \amp z\amp =\amp 2 \end{linsys}
+\end{align*}
 </div>
-<div class="para">Then <span class="process-math">\(x_1, x_2, x_4\)</span> are leading variables, since the first, second, and fourth columns of <span class="process-math">\(A\)</span> have leading ones, as indicated by the boxes. The variable <span class="process-math">\(x_3\)</span> is free since the third column of <span class="process-math">\(A\)</span> has no leading one.</div>
 </div>
-<span class="incontext"><a href="s_solving.html#p-409" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_systems.html#p-409" class="internal">in-context</a></span>
 </body>
 </html>

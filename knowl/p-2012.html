@@ -11,34 +11,16 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h4 class="heading"><span class="type">Paragraph</span></h4>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
 <div class="para logical">
-<div class="para">Fix vectors <span class="process-math">\(\boldv\)</span> and <span class="process-math">\(\boldw\text{.}\)</span> For any <span class="process-math">\(t\in\R\)</span> we have by positivity</div>
-<div class="displaymath process-math">
+<div class="para">In the special case where <span class="process-math">\(T=T_A\)</span> is the matrix transformation of an <span class="process-math">\(m\times n\)</span> matrix <span class="process-math">\(A\text{,}\)</span> <a href="" class="xref" data-knowl="./knowl/th_nullspace_image.html" title="Theorem 3.4.8: Null space and image">Theorem 3.4.8</a> tells us that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_nullspace_image.html ./knowl/th_subspace_matrix_solutions.html ./knowl/th_nullspace_image.html">
 \begin{equation*}
-0\leq \langle t\boldv-\boldw,t\boldv-\boldw\rangle=\langle\boldv,\boldv\rangle t^2-2\langle\boldv,\boldw\rangle t+\langle\boldw,\boldw\rangle=at^2-2bt+c\text{,}
+\NS A=\{\boldx\in \R^n\colon A\boldx=\boldzero\}
 \end{equation*}
 </div>
-<div class="para">where</div>
-<div class="displaymath process-math">
-\begin{equation}
-a=\langle\boldv,\boldv\rangle, \ b=\langle\boldv,\boldw\rangle, \   c=\langle\boldw,\boldw\rangle=\norm{w}^2\text{.}\tag{4.1.1}
-\end{equation}
+<div class="para">is a subspace. We knew this already from <a href="" class="xref" data-knowl="./knowl/th_subspace_matrix_solutions.html" title="Theorem 3.3.10: Solutions to A\boldx=\boldzero form a subspace">Theorem 3.3.10</a>, which we now understand as a special instance of <a href="" class="xref" data-knowl="./knowl/th_nullspace_image.html" title="Theorem 3.4.8: Null space and image">Theorem 3.4.8</a>.</div>
 </div>
-<div class="para">Since <span class="process-math">\(at^2-2b\,t+c\geq 0\)</span> for all <span class="process-math">\(t\in \R\)</span> the quadratic polynomial <span class="process-math">\(p(t)=at^2-2b\,t+c\)</span> has <em class="emphasis">at most</em> one root. Using the quadratic formula we conclude that we must have <span class="process-math">\(4b^2-4ac\leq 0\text{,}\)</span> since otherwise <span class="process-math">\(p(t)\)</span> would have two distinct roots. It follows that</div>
-<div class="displaymath process-math">
-\begin{equation*}
-4\langle \boldv, \boldw\rangle^2-4\norm{\boldv}^2\norm{\boldw}^2\leq 0\text{,}
-\end{equation*}
-</div>
-<div class="para">or equivalently</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\langle\boldv,\boldw\rangle^2\leq \norm{\boldv}^2\norm{\boldw}^2\text{.}
-\end{equation*}
-</div>
-<div class="para">Taking square-roots yields the desired inequality.</div>
-</div>
-<span class="incontext"><a href="s_innerproducts.html#p-2012" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_nullspace_image.html#p-2012" class="internal">in-context</a></span>
 </body>
 </html>

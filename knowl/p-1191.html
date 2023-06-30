@@ -11,47 +11,16 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para logical"><ol class="decimal">
-<li><div class="para logical">
-<div class="para">We employ some similar trickery to what was done in the proof of <a href="" class="xref" data-knowl="./knowl/th_vectorspace_props.html" title="Theorem 3.1.13: Basic vector space properties">Theorem 3.1.13</a>. Assuming <span class="process-math">\(T\)</span> is linear:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_vectorspace_props.html ./knowl/d_linear_transform.html">
-\begin{align*}
-T(\boldzero_V)  \amp= T(\boldzero_V+\boldzero_V)\\
-\amp =T(\boldzero_V)+T(\boldzero_V) \amp (\knowl{./knowl/d_linear_transform.html}{\text{Definition 3.2.1}}) \text{.}
-\end{align*}
-</div>
-<div class="para">Thus, whatever <span class="process-math">\(T(\boldzero_V)\in W\)</span> may be, it satisfies</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_vectorspace_props.html ./knowl/d_linear_transform.html">
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<div class="para logical">
+<div class="para">Show that <span class="process-math">\((A-I)\)</span> is invertible, and that in fact</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex_expand_matrix_prod.html ./knowl/ex_poly_inA_commute.html">
 \begin{equation*}
-T(\boldzero_V)=T(\boldzero_V)+T(\boldzero_V)\text{.}
+(A-I)^{-1}=-(A^{r-1}+A^{r-2}+\cdots +A+I)\text{.}
 \end{equation*}
 </div>
-<div class="para">Canceling <span class="process-math">\(T(\boldzero_V)\)</span> on both sides using <span class="process-math">\(-T(\boldzero_V)\text{,}\)</span> we conclude</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_vectorspace_props.html ./knowl/d_linear_transform.html">
-\begin{equation*}
-\boldzero_W=T(\boldzero_V)\text{.}
-\end{equation*}
+<div class="para">You may use the results of <a href="" class="xref" data-knowl="./knowl/ex_expand_matrix_prod.html" title="Exercise 2.3.3.14: Expanding matrix products">Exercise 2.3.3.14</a> and/or <a href="" class="xref" data-knowl="./knowl/ex_poly_inA_commute.html" title="Exercise 2.3.3.15: Polynomial expressions of A commute">Exercise 2.3.3.15</a>. .</div>
 </div>
-</div></li>
-<li><div class="para logical">
-<div class="para">The argument is similar:</div>
-<div class="displaymath process-math">
-\begin{align*}
-\boldzero_W \amp= T(\boldzero_V) \amp (\text{by (1)})\\
-\amp =T(-\boldv+\boldv)\\
-\amp = T(-\boldv)+T(\boldv)\text{.}
-\end{align*}
-</div>
-<div class="para">Since <span class="process-math">\(\boldzero_W=T(-\boldv)+T(\boldv)\text{,}\)</span> adding <span class="process-math">\(-T(\boldv)\)</span> to both sides of the equation yields</div>
-<div class="displaymath process-math">
-\begin{equation*}
--T(\boldv)=T(-\boldv)\text{.}
-\end{equation*}
-</div>
-</div></li>
-<li><div class="para">This is an easy proof by induction using the two defining properties of a linear transformation in tandem.</div></li>
-</ol></div>
-<span class="incontext"><a href="s_transformation.html#p-1191" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_invertible_matrices.html#p-1191" class="internal">in-context</a></span>
 </body>
 </html>

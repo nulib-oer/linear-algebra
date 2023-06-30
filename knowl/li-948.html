@@ -12,24 +12,37 @@
 </head>
 <body class="ignore-math">
 <article class="li"><h5 class="heading">
-<span class="type">Item</span><span class="space"> </span><span class="codenumber">4</span><span class="period">.</span>
+<span class="type">Item</span><span class="space"> </span><span class="codenumber">2</span><span class="period">.</span>
 </h5>
 <div class="para logical">
-<div class="para">“Lifting” the basis <span class="process-math">\(B'\)</span> back to <span class="process-math">\(V\)</span> via the coordinate transformation <span class="process-math">\([\phantom{\boldv}]_B\)</span> yields an eigenbasis <span class="process-math">\(B''\)</span> of <span class="process-math">\(T\text{.}\)</span> The matrix <span class="process-math">\([T]_{B''}\)</span> is diagonal, of the form</div>
+<div class="para">To compute <span class="process-math">\([x^2]_B\)</span> we must find the unique triple <span class="process-math">\((c_1,c_2,c_3)\)</span> satisfying</div>
 <div class="displaymath process-math">
 \begin{equation*}
-[T]_{B''}=
-\begin{bmatrix}
-\lambda_1 \amp \amp  \amp \amp \amp \amp   \\
-\amp \ddots \amp \amp \amp \amp     \\
-\amp   \amp   \lambda_2 \amp  \amp \amp   \\
-\amp  \amp  \amp     \ddots \amp  \amp    \\
-\amp  \amp  \amp    \amp   \lambda_r \amp   \\
-\amp  \amp  \amp    \amp  \amp   \ddots    \\
-\amp  \amp  \amp    \amp  \amp  \amp   \lambda_r
-\end{bmatrix}\text{.}
+x^2=c_1(x^2+x+1)+c_2(x^2-x)+c_3(x^2-1)\text{.}
 \end{equation*}
 </div>
-</div></article><span class="incontext"><a href="s_diagonalization.html#li-948" class="internal">in-context</a></span>
+<div class="para">The equivalent linear system once we combine like terms and equate coefficients is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{linsys}{3}
+c_1\amp +\amp c_2\amp +\amp c_3\amp =\amp 1\\
+c_1\amp -\amp c_2\amp \amp \amp =\amp 0\\
+c_1\amp \amp \amp -\amp c_3\amp =\amp 0\\
+\end{linsys}\text{.}
+\end{equation*}
+</div>
+<div class="para">The unique solution to this system is <span class="process-math">\((c_1,c_2,c_3)=(1/3, 1/3, 1/3)\text{.}\)</span> We conclude</div>
+<div class="displaymath process-math">
+\begin{equation*}
+[x^2]_B=\frac{1}{3}(1, 1, 1)\text{.}
+\end{equation*}
+</div>
+<div class="para">The same reasoning shows that more generally, given polynomial <span class="process-math">\(p(x)=ax^2+bx+c\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+[p(x)]_B=\frac{1}{3}(a+b+c, a-2b+c, a+b-2)\text{.}
+\end{equation*}
+</div>
+</div></article><span class="incontext"><a href="s_coordinatevectors.html#li-948" class="internal">in-context</a></span>
 </body>
 </html>

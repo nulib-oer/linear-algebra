@@ -10,23 +10,27 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><div class="solution solution-like">
-<div class="para">I’ll just describe the row method here.</div> <div class="para logical">
-<div class="para">Note that the rows of <span class="process-math">\(A\)</span> are all identical, and equal to <span class="process-math">\(\begin{bmatrix}1 \amp -1 \amp 1 \amp -1 \amp 1 \end{bmatrix}\text{.}\)</span> From the row method it follows that each row of <span class="process-math">\(AB\)</span> is given by</div>
-<div class="displaymath process-math">
+<body class="ignore-math"><div class="solution solution-like"><div class="para logical">
+<div class="para">We saw in <a href="" class="xref" data-knowl="./knowl/s_ge_equivsys.html" title="Exercise 1.2.3.7">Exercise 1.2.3.7</a> that the system is equivalent to a system <span class="process-math">\(L'\)</span> with augmented matrix</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/s_ge_equivsys.html">
 \begin{equation*}
-\begin{bmatrix}1 \amp -1 \amp 1 \amp -1 \amp 1 \end{bmatrix} B\text{.}
+\begin{amatrix}[rrrr|r]\boxed{1}\amp 2\amp -1\amp -1\amp 3\\ 0\amp 0\amp \boxed{1}\amp 7\amp -1\\ 0\amp 0\amp 0\amp \boxed{1}\amp -\frac{3}{7} \end{amatrix}\text{.}
 \end{equation*}
 </div>
-</div> <div class="para logical">
-<div class="para">Thus the rows of <span class="process-math">\(AB\)</span> are all identical, and the row method computes the product above by taking the corresponding alternating sum of the rows of <span class="process-math">\(B\text{:}\)</span>
+<div class="para">The row echelon matrix tells us that <span class="process-math">\(x_2=t\)</span> is the only free variable of <span class="process-math">\(L'\text{.}\)</span> Back substitution then yields the parametric equation description:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/s_ge_equivsys.html">
+\begin{align*}
+x_1\amp = \frac{32}{7}-2t\\
+x_2\amp = t\\
+x_3\amp = 2\\
+x_4\amp = -\frac{3}{7}\text{.}
+\end{align*}
 </div>
-<div class="displaymath process-math">
+<div class="para">Thus the set of solutions is</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/s_ge_equivsys.html">
 \begin{equation*}
-\begin{bmatrix}1 \amp -1 \amp 1 \amp -1 \amp 1 \end{bmatrix} B=\begin{bmatrix}2\amp 2\amp -1\amp 4 \end{bmatrix}\text{.}
+\left\{ \left(\frac{32}{7}-2t, t, 2, -\frac{3}{7}\right)\colon t\in \R\right\}\text{.}
 \end{equation*}
 </div>
-</div> <div class="para">Thus <span class="process-math">\(AB\)</span> is the the <span class="process-math">\(5\times 4\)</span> matrix, all of whose rows are <span class="process-math">\(\begin{bmatrix}2\amp 2\amp -1\amp 4 \end{bmatrix}\text{.}\)</span>
-</div>
-</div></body>
+</div></div></body>
 </html>

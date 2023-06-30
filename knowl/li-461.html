@@ -12,20 +12,18 @@
 </head>
 <body class="ignore-math">
 <article class="li"><h5 class="heading">
-<span class="type">Item</span><span class="space"> </span><span class="codenumber">3</span><span class="period">.</span>
+<span class="type">Item</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
 </h5>
 <div class="para logical">
-<div class="para">We have</div>
-<div class="displaymath process-math">
+<div class="para">Linearity is an easy consequence of transpose properties. For any <span class="process-math">\(A_1, A_2\in M_{nn}\)</span> and <span class="process-math">\(c_1,c_2\in \R\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eg_transform_transpose.html">
 \begin{align*}
-a\begin{bmatrix}3\amp 1\\ 2\amp -3 \end{bmatrix} +b\begin{bmatrix}0\amp 4\\ 2\amp 0 \end{bmatrix} +c\begin{bmatrix}-2\amp -2\\ -2\amp 2 \end{bmatrix}= \begin{bmatrix}0\amp 0\\0\amp 0 \end{bmatrix}
-\amp \iff
-\begin{bmatrix}3a-2c\amp a+4b-2c\\ 2a+2b-2c\amp -3a+2c \end{bmatrix}=\begin{bmatrix}0\amp 0\\0\amp 0 \end{bmatrix}\\
-\amp \\
-\amp \iff \begin{linsys}{3} 3a\amp \amp \amp -\amp 2c\amp =\amp 0\\ a\amp +\amp 4b\amp -\amp 2c\amp =\amp 0\\ 2a\amp +\amp 2b \amp -\amp 2c \amp =\amp 0\\ -3a\amp \amp \amp +\amp 2c\amp =\amp 0 \end{linsys} \text{.}
+S(c_1A_1+c_2A_2)  \amp= (c_1A_1+c_2A_2)^T-(c_1A_1+c_2A_2)  \\
+\amp = c_1A_1^T+c_2A_2^T-c_1A_1-c_2A_2\amp (\knowl{./knowl/eg_transform_transpose.html}{\text{3.2.20}}) \\
+\amp =c_1(A_1^T-A_1)+c_2(A_2^T-A_2)\\
+\amp =c_1S(A_1)+c_2S(A_2)\text{.}
 \end{align*}
 </div>
-<div class="para">Row reduction reveals that this last linear system has a free variable, and hence that there are infinitely many solutions to this system: e.g., <span class="process-math">\((a,b,c)=(2,1,3)\text{.}\)</span> We conclude that <span class="process-math">\(S\)</span> is linearly dependent.</div>
-</div></article><span class="incontext"><a href="s_span_independence.html#li-461" class="internal">in-context</a></span>
+</div></article><span class="incontext"><a href="s_nullspace_image.html#li-461" class="internal">in-context</a></span>
 </body>
 </html>

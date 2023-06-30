@@ -762,25 +762,25 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <section class="section" id="s_diagonalization"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">5.5</span> <span class="title">Diagonalization</span>
 </h2>
-<section class="introduction" id="introduction-83"><div class="para" id="p-2648">Our treatment of eigenvectors in <a href="s_eigenvectors.html" class="internal" title="Section 5.4: Eigenvectors and eigenvalues">Section 5.4</a> was motivated in part by the objective of finding particularly simple matrix representations <span class="process-math">\([T]_B\)</span> of a linear transformation <span class="process-math">\(T\colon V\rightarrow V\text{.}\)</span> The simplest situation we could hope for is that there is a choice of basis <span class="process-math">\(B\)</span> for which <span class="process-math">\([T]_B\)</span> is diagonal. We say that the basis <span class="process-math">\(B\)</span> <em class="emphasis">diagonalizes</em> the transformation <span class="process-math">\(T\)</span> in this case, and that <span class="process-math">\(T\)</span> is <em class="emphasis">diagonalizable</em>. In this section we develop theoretical and computational tools for determining whether a linear transformation <span class="process-math">\(T\)</span> is diagonalizable, and for finding a diagonalizing basis <span class="process-math">\(B\)</span> when <span class="process-math">\(T\)</span> is in fact diagonalizable.</div></section><section class="subsection" id="ss_diagonalizable"><h3 class="heading hide-type">
+<section class="introduction" id="introduction-83"><div class="para" id="p-3584">Our treatment of eigenvectors in <a href="s_eigenvectors.html" class="internal" title="Section 5.4: Eigenvectors and eigenvalues">Section 5.4</a> was motivated in part by the objective of finding particularly simple matrix representations <span class="process-math">\([T]_B\)</span> of a linear transformation <span class="process-math">\(T\colon V\rightarrow V\text{.}\)</span> The simplest situation we could hope for is that there is a choice of basis <span class="process-math">\(B\)</span> for which <span class="process-math">\([T]_B\)</span> is diagonal. We say that the basis <span class="process-math">\(B\)</span> <em class="emphasis">diagonalizes</em> the transformation <span class="process-math">\(T\)</span> in this case, and that <span class="process-math">\(T\)</span> is <em class="emphasis">diagonalizable</em>. In this section we develop theoretical and computational tools for determining whether a linear transformation <span class="process-math">\(T\)</span> is diagonalizable, and for finding a diagonalizing basis <span class="process-math">\(B\)</span> when <span class="process-math">\(T\)</span> is in fact diagonalizable.</div></section><section class="subsection" id="ss_diagonalizable"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">5.5.1</span> <span class="title">Diagonalizable transformations</span>
 </h3>
 <article class="definition definition-like" id="d_diagonalizable"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.5.1</span><span class="period">.</span><span class="space"> </span><span class="title">Diagonalizable.</span>
-</h4>  <div class="para" id="p-2649">Let <span class="process-math">\(V\)</span> be a finite-dimensional vector space. A linear transformation <span class="process-math">\(T\colon V\rightarrow V\)</span> is <dfn class="terminology">diagonalizable</dfn> if there exists an ordered basis <span class="process-math">\(B\)</span> of <span class="process-math">\(V\)</span> for which <span class="process-math">\([T]_B\)</span> is a diagonal matrix. In this case, we say the basis <span class="process-math">\(B\)</span> <dfn class="terminology">diagonalizes</dfn> <span class="process-math">\(T\text{.}\)</span>
-</div> <div class="para" id="p-2650">An <span class="process-math">\(n\times n\)</span> matrix <span class="process-math">\(A\)</span> is <dfn class="terminology">diagonalizable</dfn> if the matrix transformation <span class="process-math">\(T_A\colon \R^n\rightarrow \R^n\)</span> is diagonalizable.</div></article><div class="para" id="p-2651">As was already laid out in <a href="s_eigenvectors.html" class="internal" title="Section 5.4: Eigenvectors and eigenvalues">Section 5.4</a> a matrix representation <span class="process-math">\([T]_B\)</span> is diagonal if the elements of <span class="process-math">\(B\)</span> are eigenvectors of <span class="process-math">\(T\text{.}\)</span> According to <a href="" class="xref" data-knowl="./knowl/th_diagonalizability_eigenbasis.html" title="Theorem 5.5.2: Diagonalizabilty: basis of eigenvectors">Theorem 5.5.2</a>, the converse is also true.</div>
+</h4>  <div class="para" id="p-3585">Let <span class="process-math">\(V\)</span> be a finite-dimensional vector space. A linear transformation <span class="process-math">\(T\colon V\rightarrow V\)</span> is <dfn class="terminology">diagonalizable</dfn> if there exists an ordered basis <span class="process-math">\(B\)</span> of <span class="process-math">\(V\)</span> for which <span class="process-math">\([T]_B\)</span> is a diagonal matrix. In this case, we say the basis <span class="process-math">\(B\)</span> <dfn class="terminology">diagonalizes</dfn> <span class="process-math">\(T\text{.}\)</span>
+</div> <div class="para" id="p-3586">An <span class="process-math">\(n\times n\)</span> matrix <span class="process-math">\(A\)</span> is <dfn class="terminology">diagonalizable</dfn> if the matrix transformation <span class="process-math">\(T_A\colon \R^n\rightarrow \R^n\)</span> is diagonalizable.</div></article><div class="para" id="p-3587">As was already laid out in <a href="s_eigenvectors.html" class="internal" title="Section 5.4: Eigenvectors and eigenvalues">Section 5.4</a> a matrix representation <span class="process-math">\([T]_B\)</span> is diagonal if the elements of <span class="process-math">\(B\)</span> are eigenvectors of <span class="process-math">\(T\text{.}\)</span> According to <a href="" class="xref" data-knowl="./knowl/th_diagonalizability_eigenbasis.html" title="Theorem 5.5.2: Diagonalizabilty: basis of eigenvectors">Theorem 5.5.2</a>, the converse is also true.</div>
 <article class="theorem theorem-like" id="th_diagonalizability_eigenbasis"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.5.2</span><span class="period">.</span><span class="space"> </span><span class="title">Diagonalizabilty: basis of eigenvectors.</span>
 </h4>
-<div class="para" id="p-2652">Let <span class="process-math">\(T\colon V\rightarrow V\)</span> be a linear transformation, and let <span class="process-math">\(B=(\boldv_1, \boldv_2, \dots, \boldv_n)\)</span> be an ordered basis of <span class="process-math">\(V\text{.}\)</span>
+<div class="para" id="p-3588">Let <span class="process-math">\(T\colon V\rightarrow V\)</span> be a linear transformation, and let <span class="process-math">\(B=(\boldv_1, \boldv_2, \dots, \boldv_n)\)</span> be an ordered basis of <span class="process-math">\(V\text{.}\)</span>
 </div> <ol class="decimal">
-<li id="li-942"><div class="para" id="p-2653">The matrix <span class="process-math">\([T]_B\)</span> is diagonal if and only if <span class="process-math">\(B\)</span> consists of eigenvectors of <span class="process-math">\(T\text{.}\)</span>
+<li id="li-1121"><div class="para" id="p-3589">The matrix <span class="process-math">\([T]_B\)</span> is diagonal if and only if <span class="process-math">\(B\)</span> consists of eigenvectors of <span class="process-math">\(T\text{.}\)</span>
 </div></li>
-<li id="li-943"><div class="para" id="p-2654">If <span class="process-math">\([T]_B\)</span> is diagonal, then the <span class="process-math">\(j\)</span>-th diagonal entry of <span class="process-math">\([T]_B\)</span> is the eigenvalue <span class="process-math">\(\lambda_j\)</span> associated to the eigenvector <span class="process-math">\(\boldv_j\text{.}\)</span>
+<li id="li-1122"><div class="para" id="p-3590">If <span class="process-math">\([T]_B\)</span> is diagonal, then the <span class="process-math">\(j\)</span>-th diagonal entry of <span class="process-math">\([T]_B\)</span> is the eigenvalue <span class="process-math">\(\lambda_j\)</span> associated to the eigenvector <span class="process-math">\(\boldv_j\text{.}\)</span>
 </div></li>
-<li id="li-944"><div class="para" id="p-2655">The transformation <span class="process-math">\(T\)</span> is diagonalizable if and only if there is an ordered basis of <span class="process-math">\(V\)</span> consisting of eigenvectors of <span class="process-math">\(T\text{.}\)</span>
+<li id="li-1123"><div class="para" id="p-3591">The transformation <span class="process-math">\(T\)</span> is diagonalizable if and only if there is an ordered basis of <span class="process-math">\(V\)</span> consisting of eigenvectors of <span class="process-math">\(T\text{.}\)</span>
 </div></li>
-</ol></article><article class="hiddenproof" id="proof-105"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-105"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-105"><article class="hiddenproof"><div class="para logical" id="p-2656">
+</ol></article><article class="hiddenproof" id="proof-105"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-105"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-105"><article class="hiddenproof"><div class="para logical" id="p-3592">
 <div class="para">Let <span class="process-math">\(B=(\boldv_1, \boldv_2, \dots, \boldv_n)\)</span> be an ordered basis of <span class="process-math">\(V\text{.}\)</span> The matrix <span class="process-math">\([T]_B\)</span> will be diagonal if and only if for each <span class="process-math">\(1\leq j\leq n\)</span> the <span class="process-math">\(j\)</span>-th column of <span class="process-math">\(A\)</span> is of the form</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/d_matrix_representation.html ./knowl/d_diagonalizable.html">
 \begin{equation*}
@@ -795,14 +795,14 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 </div>
 <div class="para">We conclude that <span class="process-math">\([T]_B\)</span> is diagonal if and only if <span class="process-math">\(\boldv_j\)</span> is an eigenvector of <span class="process-math">\(T\)</span> for all <span class="process-math">\(1\leq j\leq n\text{.}\)</span> Furthermore, when this is the case, we see that the <span class="process-math">\(j\)</span>-th diagonal entry of <span class="process-math">\([T]_B\)</span> is the corresponding eigenvalue <span class="process-math">\(\lambda_j\text{.}\)</span> This proves statements (1) and (2). Statement (3) follows from (1) and <a href="" class="xref" data-knowl="./knowl/d_diagonalizable.html" title="Definition 5.5.1: Diagonalizable">Definition 5.5.1</a>.</div>
 </div></article></div>
-<div class="para" id="p-2657">The phrase “an ordered basis consisting of eigenvectors of <span class="process-math">\(T\)</span>” is a bit of a mouthful. The definition below allows us to shorten this to simply “an eigenbasis of <span class="process-math">\(T\)</span>”.</div>
+<div class="para" id="p-3593">The phrase “an ordered basis consisting of eigenvectors of <span class="process-math">\(T\)</span>” is a bit of a mouthful. The definition below allows us to shorten this to simply “an eigenbasis of <span class="process-math">\(T\)</span>”.</div>
 <article class="definition definition-like" id="d_eigenbasis"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.5.3</span><span class="period">.</span><span class="space"> </span><span class="title">Eigenbasis.</span>
-</h4>  <div class="para" id="p-2658">Let <span class="process-math">\(T\colon V\rightarrow V\)</span> be a linear transformation. An ordered basis <span class="process-math">\(B=(\boldv_1, \boldv_2,\dots, \boldv_n)\)</span> is an <dfn class="terminology">eigenbasis</dfn> of <span class="process-math">\(T\)</span> if <span class="process-math">\(\boldv_j\)</span> is an eigenvector of <span class="process-math">\(T\)</span> for all <span class="process-math">\(1\leq j\leq n\text{.}\)</span>
+</h4>  <div class="para" id="p-3594">Let <span class="process-math">\(T\colon V\rightarrow V\)</span> be a linear transformation. An ordered basis <span class="process-math">\(B=(\boldv_1, \boldv_2,\dots, \boldv_n)\)</span> is an <dfn class="terminology">eigenbasis</dfn> of <span class="process-math">\(T\)</span> if <span class="process-math">\(\boldv_j\)</span> is an eigenvector of <span class="process-math">\(T\)</span> for all <span class="process-math">\(1\leq j\leq n\text{.}\)</span>
 </div></article><article class="example example-like" id="eg_diagonalizable_matrix"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.5.4</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-2659">
+<div class="para logical" id="p-3595">
 <div class="para">Let <span class="process-math">\(T=T_A\text{,}\)</span> where</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/eg_eigenvector_adhoc_reflection.html ./knowl/th_diagonalizability_eigenbasis.html">
 \begin{equation*}
@@ -819,7 +819,7 @@ A=\frac{1}{5}\begin{amatrix}[rr]-3\amp 4\\ 4\amp 3 \end{amatrix}\text{.}
 </div></article><article class="example example-like" id="example-129"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.5.5</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-2660">
+<div class="para logical" id="p-3596">
 <div class="para">Let <span class="process-math">\(T\colon \R^2\rightarrow \R^2\)</span> be rotation by <span class="process-math">\(\pi/4\text{:}\)</span> i.e., <span class="process-math">\(T=T_A\text{,}\)</span> where</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/eg_eigenvector_adhoc_rotation.html">
 \begin{equation*}
@@ -830,7 +830,7 @@ A=\frac{1}{2}\begin{amatrix}[rr]\sqrt{2}\amp -\sqrt{2}\\ \sqrt{2}\amp \sqrt{2} \
 </div></article><article class="example example-like" id="example-130"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.5.6</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-2661">
+<div class="para logical" id="p-3597">
 <div class="para">Let <span class="process-math">\(T=T_A\text{,}\)</span> where</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -841,11 +841,11 @@ A=\begin{amatrix}[rr] 2\amp 1\\ 0\amp 2 \end{amatrix}\text{.}
 </div></article></section><section class="subsection" id="ss_diagonalizable_independent_eigenvectors"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">5.5.2</span> <span class="title">Linear independence of eigenvectors</span>
 </h3>
-<div class="para" id="p-2662">Roughly put, <a href="" class="xref" data-knowl="./knowl/th_diagonalizability_eigenbasis.html" title="Theorem 5.5.2: Diagonalizabilty: basis of eigenvectors">Theorem 5.5.2</a> tells us that <span class="process-math">\(T\)</span> is diagonalizable if it has “enough” eigenvectors: more precisely, if we can find a large enough collection of <em class="emphasis">linearly independent</em> eigenvectors. So when exactly can we do this? Our first examples were deceptively simple in this regard due to their low-dimensional setting. For transformations of higher-dimensional spaces we need more theory, which we now develop. <a href="" class="xref" data-knowl="./knowl/th_independent_eigenvectors.html" title="Theorem 5.5.7: Linear independence of eigenvectors">Theorem 5.5.7</a> will serve as one of the key results for our purposes. It tells us that eigenvectors chosen from different eigenspaces are linearly independent.</div>
+<div class="para" id="p-3598">Roughly put, <a href="" class="xref" data-knowl="./knowl/th_diagonalizability_eigenbasis.html" title="Theorem 5.5.2: Diagonalizabilty: basis of eigenvectors">Theorem 5.5.2</a> tells us that <span class="process-math">\(T\)</span> is diagonalizable if it has “enough” eigenvectors: more precisely, if we can find a large enough collection of <em class="emphasis">linearly independent</em> eigenvectors. So when exactly can we do this? Our first examples were deceptively simple in this regard due to their low-dimensional setting. For transformations of higher-dimensional spaces we need more theory, which we now develop. <a href="" class="xref" data-knowl="./knowl/th_independent_eigenvectors.html" title="Theorem 5.5.7: Linear independence of eigenvectors">Theorem 5.5.7</a> will serve as one of the key results for our purposes. It tells us that eigenvectors chosen from different eigenspaces are linearly independent.</div>
 <article class="theorem theorem-like" id="th_independent_eigenvectors"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.5.7</span><span class="period">.</span><span class="space"> </span><span class="title">Linear independence of eigenvectors.</span>
 </h4>
-<div class="para" id="p-2663">Let <span class="process-math">\(T\colon V\rightarrow V\)</span> be a linear transformation, and let <span class="process-math">\(S=\{\boldv_1,\dots, \boldv_r\}\)</span> be a set of eigenvectors of <span class="process-math">\(T\)</span> satisfying <span class="process-math">\(T\boldv_i=\lambda_i\boldv_i\text{.}\)</span> If the eigenvalues <span class="process-math">\(\lambda_i\)</span> are distinct (i.e., <span class="process-math">\(\lambda_i\ne \lambda_j\)</span>  for <span class="process-math">\(i\ne j\)</span>), then <span class="process-math">\(S\)</span> is linearly independent.</div></article><article class="hiddenproof" id="proof-106"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-106"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-106"><article class="hiddenproof"><div class="para" id="p-2664">We prove the result by contradiction. Suppose we can find a finite set of eigenvectors with distinct eigenvalues that is linearly dependent. It follows that we can find such a set of <em class="emphasis">minimum cardinality</em>. In other words, there is positive integer <span class="process-math">\(r\)</span> satisfying the following properties: (i) we can find a linearly dependent set of <span class="process-math">\(r\)</span> eigenvectors of <span class="process-math">\(T\)</span> with distinct eigenvalues; (ii) for all <span class="process-math">\(k\lt r\text{,}\)</span> any set of <span class="process-math">\(k\)</span> eigenvectors of <span class="process-math">\(T\)</span> with distinct eigenvalues is linearly independent<a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-8" id="fn-8"><sup> 1 </sup></a>.</div> <div class="para logical" id="p-2665">
+<div class="para" id="p-3599">Let <span class="process-math">\(T\colon V\rightarrow V\)</span> be a linear transformation, and let <span class="process-math">\(S=\{\boldv_1,\dots, \boldv_r\}\)</span> be a set of eigenvectors of <span class="process-math">\(T\)</span> satisfying <span class="process-math">\(T\boldv_i=\lambda_i\boldv_i\text{.}\)</span> If the eigenvalues <span class="process-math">\(\lambda_i\)</span> are distinct (i.e., <span class="process-math">\(\lambda_i\ne \lambda_j\)</span>  for <span class="process-math">\(i\ne j\)</span>), then <span class="process-math">\(S\)</span> is linearly independent.</div></article><article class="hiddenproof" id="proof-106"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-106"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-106"><article class="hiddenproof"><div class="para" id="p-3600">We prove the result by contradiction. Suppose we can find a finite set of eigenvectors with distinct eigenvalues that is linearly dependent. It follows that we can find such a set of <em class="emphasis">minimum cardinality</em>. In other words, there is positive integer <span class="process-math">\(r\)</span> satisfying the following properties: (i) we can find a linearly dependent set of <span class="process-math">\(r\)</span> eigenvectors of <span class="process-math">\(T\)</span> with distinct eigenvalues; (ii) for all <span class="process-math">\(k\lt r\text{,}\)</span> any set of <span class="process-math">\(k\)</span> eigenvectors of <span class="process-math">\(T\)</span> with distinct eigenvalues is linearly independent<a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-9" id="fn-9"><sup> 1 </sup></a>.</div> <div class="para logical" id="p-3601">
 <div class="para">Now assume <span class="process-math">\(S=\{\boldv_1, \boldv_2, \dots, \boldv_r\}\)</span> is a set of minimal cardinality satisfying <span class="process-math">\(T(\boldv_i)=\lambda_i\boldv_i\)</span> for all <span class="process-math">\(1\leq i\leq n\)</span> and <span class="process-math">\(\lambda_i\ne \lambda j\)</span> for all <span class="process-math">\(1\leq i\lt j\leq n\text{.}\)</span> First observe that we must have <span class="process-math">\(r\gt 1\text{:}\)</span> eigenvectors are nonzero by definition, and thus any set consisting of a single eigenvector is linearly independent. Next, since <span class="process-math">\(S\)</span> is linearly dependent we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_independent_eigenvectors_A.html ./knowl/eq_independent_eigenvectors_A.html ./knowl/eq_independent_eigenvectors_B.html ./knowl/eq_independent_eigenvectors_C.html" id="eq_independent_eigenvectors_A">
 \begin{equation}
@@ -877,11 +877,11 @@ c_1(\lambda_r-\lambda_1)\boldv_1+\cdots +c_{r-1}(\lambda_r-\lambda_{r-1})+\cance
 <article class="corollary theorem-like" id="cor_independent_eigenvectors"><h4 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">5.5.8</span><span class="period">.</span><span class="space"> </span><span class="title">Diagonalizable if distinct eigenvalues.</span>
 </h4>
-<div class="para" id="p-2666">Let <span class="process-math">\(T\colon V\rightarrow V\)</span> be a linear transformation, and suppose <span class="process-math">\(\dim V=n\text{.}\)</span> If <span class="process-math">\(T\)</span> has <span class="process-math">\(n\)</span> distinct eigenvalues, then <span class="process-math">\(T\)</span> is diagonalizable.</div></article><article class="hiddenproof" id="proof-107"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-107"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-107"><article class="hiddenproof"><div class="para" id="p-2667">Let <span class="process-math">\(S=\{\boldv_1, \boldv_2,\dots, \boldv_n\}\)</span> be a set eigenvectors of <span class="process-math">\(T\)</span> with distinct eigenvalues. According to <a href="" class="xref" data-knowl="./knowl/th_independent_eigenvectors.html" title="Theorem 5.5.7: Linear independence of eigenvectors">Theorem 5.5.7</a>  the set <span class="process-math">\(S\)</span> is linearly independent. Since <span class="process-math">\(\val{S}=n=\dim V\)</span> it follows that <span class="process-math">\(B=(\boldv_1,\boldv_2,\dots, \boldv_n)\)</span> is an eigenbasis for <span class="process-math">\(T\)</span> and hence <span class="process-math">\(T\)</span> is diagonalizable.</div></article></div>
+<div class="para" id="p-3602">Let <span class="process-math">\(T\colon V\rightarrow V\)</span> be a linear transformation, and suppose <span class="process-math">\(\dim V=n\text{.}\)</span> If <span class="process-math">\(T\)</span> has <span class="process-math">\(n\)</span> distinct eigenvalues, then <span class="process-math">\(T\)</span> is diagonalizable.</div></article><article class="hiddenproof" id="proof-107"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-107"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-107"><article class="hiddenproof"><div class="para" id="p-3603">Let <span class="process-math">\(S=\{\boldv_1, \boldv_2,\dots, \boldv_n\}\)</span> be a set eigenvectors of <span class="process-math">\(T\)</span> with distinct eigenvalues. According to <a href="" class="xref" data-knowl="./knowl/th_independent_eigenvectors.html" title="Theorem 5.5.7: Linear independence of eigenvectors">Theorem 5.5.7</a>  the set <span class="process-math">\(S\)</span> is linearly independent. Since <span class="process-math">\(\val{S}=n=\dim V\)</span> it follows that <span class="process-math">\(B=(\boldv_1,\boldv_2,\dots, \boldv_n)\)</span> is an eigenbasis for <span class="process-math">\(T\)</span> and hence <span class="process-math">\(T\)</span> is diagonalizable.</div></article></div>
 <article class="example example-like" id="example-131"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.5.9</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-2668">
+<div class="para logical" id="p-3604">
 <div class="para">Let <span class="process-math">\(T=T_A\text{,}\)</span> where</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -908,7 +908,7 @@ p(t)=t^{3} - 3 t^{2} - 4 t + 12=(t+2)(t-2)(t-3)\text{.}
 </div></article><article class="remark remark-like" id="rm_independent_eigenvectors"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.5.10</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-2669">
+<div class="para logical" id="p-3605">
 <div class="para">Let <span class="process-math">\(T\colon V\rightarrow V\)</span> be a linear transformation, <span class="process-math">\(\dim V=n\text{.}\)</span> It cannot be stressed enough that having <span class="process-math">\(n\)</span> distinct eigenvalues is a <em class="emphasis">sufficient</em>, but not <em class="emphasis">necessary</em> condition for <span class="process-math">\(T\)</span> to be diagonalizable. In other words we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -923,15 +923,15 @@ T \text{ diagonalizable }\;\not\!\!\!\!\!\implies T \text{ has  distinct eigenva
 </div>
 <div class="para">A good counterexample to keep in mind is <span class="process-math">\(T_I\colon \R^n\rightarrow \R^n\text{,}\)</span> where <span class="process-math">\(I=I_n\)</span> is the <span class="process-math">\(n\times n\)</span> identity matrix. The transformation is clearly diagonalizable since <span class="process-math">\([T]_B=I\text{,}\)</span> where <span class="process-math">\(B=(\bolde_1, \bolde_2,\dots, \bolde_n)\)</span> is the standard basis; and yet <span class="process-math">\(\lambda=1\)</span> is the only eigenvalue of <span class="process-math">\(T\text{.}\)</span>
 </div>
-</div></article><div class="para" id="p-2670">
+</div></article><div class="para" id="p-3606">
 <a href="" class="xref" data-knowl="./knowl/th_independent_eigenvectors.html" title="Theorem 5.5.7: Linear independence of eigenvectors">Theorem 5.5.7</a> makes no assumption about the dimension of <span class="process-math">\(V\)</span> and can thus can be applied to linear transformations of infinite-dimensional spaces. The differential operator <span class="process-math">\(T(f)=f'\)</span> provides an interesting example.</div>
 <article class="example example-like" id="example-132"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.5.11</span><span class="period">.</span>
-</h4> <div class="para" id="p-2671">Let <span class="process-math">\(V=C^\infty(\R)\text{,}\)</span> and let <span class="process-math">\(T\colon V\rightarrow V\)</span> be defined as <span class="process-math">\(T(f)=f'\text{.}\)</span> For each <span class="process-math">\(\lambda\in \R\)</span> let <span class="process-math">\(f_{\lambda}(x)=e^{\lambda x}\text{.}\)</span> In <a href="" class="xref" data-knowl="./knowl/eg_eigenvectors_adhoc_derivative.html" title="Example 5.4.12: Differentiation">Example 5.4.12</a> we saw that the functions <span class="process-math">\(f_\lambda\)</span> are eigenvectors of <span class="process-math">\(T\)</span> with eigenvalue <span class="process-math">\(\lambda\text{:}\)</span> i.e., <span class="process-math">\(T(f_\lambda)=\lambda f_\lambda\text{.}\)</span> It follows from <a href="" class="xref" data-knowl="./knowl/cor_independent_eigenvectors.html" title="Corollary 5.5.8: Diagonalizable if distinct eigenvalues">Corollary 5.5.8</a> that for any distinct values <span class="process-math">\(\lambda_1, \lambda_2, \dots, \lambda_r\)</span> the set <span class="process-math">\(\{e^{\lambda_1x}, e^{\lambda_2x}, \dots, e^{\lambda_rx}\}\)</span> is linearly independent, and thus that the (uncountably) infinite set  <span class="process-math">\(S=\{e^{\lambda x}\colon \lambda\in \R\}\subseteq C^{\infty}(\R)\)</span> is linearly independent.</div></article><div class="para" id="p-2672">The next corollary is a useful strengthening of <a href="" class="xref" data-knowl="./knowl/th_independent_eigenvectors.html" title="Theorem 5.5.7: Linear independence of eigenvectors">Theorem 5.5.7</a>, and will be used to prove <a href="" class="xref" data-knowl="./knowl/th_diagonalizability_eigenspaces.html" title="Theorem 5.5.13: Diagonalizability: dimension of eigenspaces">Theorem 5.5.13</a>. Roughly speaking, it says that eigenspaces associated to distinct eigenvalues are “linearly independent”. Be careful: the phrase in quotes currently has no real meaning for us. We know what it means for <em class="emphasis">vectors</em> to be linearly independent, but not <em class="emphasis">subspaces</em>. However, it is a decent shorthand for the precise statement of <a href="" class="xref" data-knowl="./knowl/cor_independent_eigenspaces.html" title="Corollary 5.5.12">Corollary 5.5.12</a>.</div>
+</h4> <div class="para" id="p-3607">Let <span class="process-math">\(V=C^\infty(\R)\text{,}\)</span> and let <span class="process-math">\(T\colon V\rightarrow V\)</span> be defined as <span class="process-math">\(T(f)=f'\text{.}\)</span> For each <span class="process-math">\(\lambda\in \R\)</span> let <span class="process-math">\(f_{\lambda}(x)=e^{\lambda x}\text{.}\)</span> In <a href="" class="xref" data-knowl="./knowl/eg_eigenvectors_adhoc_derivative.html" title="Example 5.4.12: Differentiation">Example 5.4.12</a> we saw that the functions <span class="process-math">\(f_\lambda\)</span> are eigenvectors of <span class="process-math">\(T\)</span> with eigenvalue <span class="process-math">\(\lambda\text{:}\)</span> i.e., <span class="process-math">\(T(f_\lambda)=\lambda f_\lambda\text{.}\)</span> It follows from <a href="" class="xref" data-knowl="./knowl/cor_independent_eigenvectors.html" title="Corollary 5.5.8: Diagonalizable if distinct eigenvalues">Corollary 5.5.8</a> that for any distinct values <span class="process-math">\(\lambda_1, \lambda_2, \dots, \lambda_r\)</span> the set <span class="process-math">\(\{e^{\lambda_1x}, e^{\lambda_2x}, \dots, e^{\lambda_rx}\}\)</span> is linearly independent, and thus that the (uncountably) infinite set  <span class="process-math">\(S=\{e^{\lambda x}\colon \lambda\in \R\}\subseteq C^{\infty}(\R)\)</span> is linearly independent.</div></article><div class="para" id="p-3608">The next corollary is a useful strengthening of <a href="" class="xref" data-knowl="./knowl/th_independent_eigenvectors.html" title="Theorem 5.5.7: Linear independence of eigenvectors">Theorem 5.5.7</a>, and will be used to prove <a href="" class="xref" data-knowl="./knowl/th_diagonalizability_eigenspaces.html" title="Theorem 5.5.13: Diagonalizability: dimension of eigenspaces">Theorem 5.5.13</a>. Roughly speaking, it says that eigenspaces associated to distinct eigenvalues are “linearly independent”. Be careful: the phrase in quotes currently has no real meaning for us. We know what it means for <em class="emphasis">vectors</em> to be linearly independent, but not <em class="emphasis">subspaces</em>. However, it is a decent shorthand for the precise statement of <a href="" class="xref" data-knowl="./knowl/cor_independent_eigenspaces.html" title="Corollary 5.5.12">Corollary 5.5.12</a>.</div>
 <article class="corollary theorem-like" id="cor_independent_eigenspaces"><h4 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">5.5.12</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-2673">
+<div class="para logical" id="p-3609">
 <div class="para">Let <span class="process-math">\(T\colon V\rightarrow V\)</span> be a linear transformation, where <span class="process-math">\(\dim V=n\text{.}\)</span> Let <span class="process-math">\(\lambda_1, \lambda_2, \dots, \lambda_r\)</span> be distinct eigenvalues of <span class="process-math">\(T\text{,}\)</span> and for each <span class="process-math">\(1\leq i\leq r\)</span> let <span class="process-math">\(W_{\lambda_i}\)</span> be the <span class="process-math">\(\lambda_i\)</span>-eigenspace. If</div>
 <div class="displaymath process-math" id="eq_independent_eigenspaces">
 \begin{equation}
@@ -940,7 +940,7 @@ T \text{ diagonalizable }\;\not\!\!\!\!\!\implies T \text{ has  distinct eigenva
 </div>
 <div class="para">where <span class="process-math">\(\boldw_i\in W_{\lambda_i}\text{,}\)</span> then <span class="process-math">\(\boldw_i=\boldzero\)</span> for all <span class="process-math">\(i\text{.}\)</span>
 </div>
-</div></article><article class="hiddenproof" id="proof-108"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-108"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-108"><article class="hiddenproof"><div class="para" id="p-2674">Before proving the result, we point out one subtlety here: although the <span class="process-math">\(\boldw_i\in W_{\lambda_i}\)</span> for all <span class="process-math">\(i\text{,}\)</span> we cannot assume that each <span class="process-math">\(\boldw_i\)</span> is an eigenvector. Indeed, <span class="process-math">\(\boldw_i\)</span> is an eigenvector in this case if and only if <span class="process-math">\(\boldw_i\ne 0\text{.}\)</span> This observation guides the proof that follows.</div> <div class="para logical" id="p-2675">
+</div></article><article class="hiddenproof" id="proof-108"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-108"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-108"><article class="hiddenproof"><div class="para" id="p-3610">Before proving the result, we point out one subtlety here: although the <span class="process-math">\(\boldw_i\in W_{\lambda_i}\)</span> for all <span class="process-math">\(i\text{,}\)</span> we cannot assume that each <span class="process-math">\(\boldw_i\)</span> is an eigenvector. Indeed, <span class="process-math">\(\boldw_i\)</span> is an eigenvector in this case if and only if <span class="process-math">\(\boldw_i\ne 0\text{.}\)</span> This observation guides the proof that follows.</div> <div class="para logical" id="p-3611">
 <div class="para">To pick out the terms of <a href="" class="xref" data-knowl="./knowl/eq_independent_eigenspaces.html" title="Equation 5.5.6">(5.5.6)</a> that are nonzero (if any), we define</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_independent_eigenspaces.html ./knowl/th_independent_eigenvectors.html">
 \begin{equation*}
@@ -962,11 +962,11 @@ J=\{j \colon \boldw_j\ne 0\}=\{j_1, j_2,\dots, j_k\}\text{.}
 </div>
 <div class="para">would be a nontrivial linear combination of the eigenvectors <span class="process-math">\(\boldw_{j_i}\)</span> equal to <span class="process-math">\(\boldzero\text{.}\)</span> Since the eigenvectors <span class="process-math">\(\boldw_{j_i}\)</span> have distinct eigenvalues, this contradicts <a href="" class="xref" data-knowl="./knowl/th_independent_eigenvectors.html" title="Theorem 5.5.7: Linear independence of eigenvectors">Theorem 5.5.7</a>. Thus <span class="process-math">\(J=\{\, \}\text{.}\)</span> Equivalently, <span class="process-math">\(\boldw_i=\boldzero\)</span> for all <span class="process-math">\(1\leq i\leq r\text{,}\)</span> as desired.</div>
 </div></article></div>
-<div class="para" id="p-2676">At last we are ready to state and prove what will be our main tool for determining whether a linear transformation is diagonalizable.</div>
+<div class="para" id="p-3612">At last we are ready to state and prove what will be our main tool for determining whether a linear transformation is diagonalizable.</div>
 <article class="theorem theorem-like" id="th_diagonalizability_eigenspaces"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.5.13</span><span class="period">.</span><span class="space"> </span><span class="title">Diagonalizability: dimension of eigenspaces.</span>
 </h4>
-<div class="para logical" id="p-2677">
+<div class="para logical" id="p-3613">
 <div class="para">Let <span class="process-math">\(T\colon V\rightarrow V\)</span> be a linear transformation, where <span class="process-math">\(\dim V=n\text{.}\)</span> Let <span class="process-math">\(\lambda_1, \lambda_2, \dots, \lambda_r\)</span> be the distinct eigenvalues of <span class="process-math">\(T\text{,}\)</span> and for each <span class="process-math">\(1\leq i\leq r\text{,}\)</span> let <span class="process-math">\(W_{\lambda_i}\)</span> be the <span class="process-math">\(\lambda_i\)</span>-eigenspace. We have</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -977,7 +977,7 @@ T \text{ is diagonalizable } \iff \sum_{i=1}^r\dim W_{\lambda_i}=n\text{.}
 \begin{equation*}
 T \text{ is diagonalizable} \iff T \text{ has an eigenbasis } B\text{,}
 \end{equation*}
-</div>proved in <a href="" class="xref" data-knowl="./knowl/th_diagonalizability_eigenbasis.html" title="Theorem 5.5.2: Diagonalizabilty: basis of eigenvectors">Theorem 5.5.2</a>. <article class="hiddenproof" id="proof-110"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-110"><h5 class="heading"><span class="title">Proof: <span class="process-math">\(T\)</span> diagonalizable <span class="process-math">\(\implies \sum_{i=1}^r\dim W_{\lambda_i}=n\)</span>.</span></h5></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-110"><article class="hiddenproof"> <div class="para logical" id="p-2678">
+</div>proved in <a href="" class="xref" data-knowl="./knowl/th_diagonalizability_eigenbasis.html" title="Theorem 5.5.2: Diagonalizabilty: basis of eigenvectors">Theorem 5.5.2</a>. <article class="hiddenproof" id="proof-110"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-110"><h5 class="heading"><span class="title">Proof: <span class="process-math">\(T\)</span> diagonalizable <span class="process-math">\(\implies \sum_{i=1}^r\dim W_{\lambda_i}=n\)</span>.</span></h5></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-110"><article class="hiddenproof"> <div class="para logical" id="p-3614">
 <div class="para">Assume <span class="process-math">\(T\)</span> is diagonalizable. From <a href="" class="xref" data-knowl="./knowl/th_diagonalizability_eigenbasis.html" title="Theorem 5.5.2: Diagonalizabilty: basis of eigenvectors">Theorem 5.5.2</a>, there is an eigenbasis <span class="process-math">\(B\)</span> of <span class="process-math">\(T\text{.}\)</span> After reordering we may assume that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/th_diagonalizability_eigenbasis.html ./knowl/cor_independent_eigenspaces.html">
 \begin{equation*}
@@ -1031,7 +1031,7 @@ n=n_1+n_2+\cdots+n_r\text{.}
 \end{equation*}
 </div>
 <div class="para">showing that <span class="process-math">\(\boldv\in \Span S_{\lambda_i}\text{,}\)</span> as desired.</div>
-</div></article></div> <article class="hiddenproof" id="proof-111"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-111"><h5 class="heading"><span class="title">Proof: <span class="process-math">\(\sum_{i=1}^r\dim W_{\lambda_i}=n\implies T\)</span> is diagonalizable.</span></h5></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-111"><article class="hiddenproof"> <div class="para logical" id="p-2679">
+</div></article></div> <article class="hiddenproof" id="proof-111"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-111"><h5 class="heading"><span class="title">Proof: <span class="process-math">\(\sum_{i=1}^r\dim W_{\lambda_i}=n\implies T\)</span> is diagonalizable.</span></h5></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-111"><article class="hiddenproof"> <div class="para logical" id="p-3615">
 <div class="para">Let <span class="process-math">\(n_i=\dim W_{\lambda_i}\)</span>  for all <span class="process-math">\(1\leq i\leq r\)</span> . We assume that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/cor_independent_eigenspaces.html">
 \begin{equation*}
@@ -1085,14 +1085,14 @@ S_{\lambda_i}=\{\boldv_{\lambda_i, 1}, \boldv_{\lambda_i,2},\dots, \boldv_{\lamb
 </div>
 <div class="para">is linearly independent for each <span class="process-math">\(i\text{,}\)</span> we must have <span class="process-math">\(c_{i,j}=0\)</span> for all <span class="process-math">\(1\leq i\leq r\)</span> and <span class="process-math">\(1\leq j\leq n_i\text{.}\)</span> This proves that <span class="process-math">\(B\)</span> is linearly independent, hence a basis.</div>
 </div></article></div></article></div>
-<div class="para" id="p-2680">We now collect our various results about diagonalizability into one procedure that (a) decides whether a linear transformation <span class="process-math">\(T\)</span> is diagonalizable, and (b) if it is, computes an eigenbasis for <span class="process-math">\(T\text{.}\)</span> The procedure applies to any linear transformation of a finite-dimensional vector space, not just matrix transformations. As usual, the first step is to choose a matrix representation <span class="process-math">\(A=[T]_B\)</span> for <span class="process-math">\(T\text{.}\)</span>
+<div class="para" id="p-3616">We now collect our various results about diagonalizability into one procedure that (a) decides whether a linear transformation <span class="process-math">\(T\)</span> is diagonalizable, and (b) if it is, computes an eigenbasis for <span class="process-math">\(T\text{.}\)</span> The procedure applies to any linear transformation of a finite-dimensional vector space, not just matrix transformations. As usual, the first step is to choose a matrix representation <span class="process-math">\(A=[T]_B\)</span> for <span class="process-math">\(T\text{.}\)</span>
 </div>
 <article class="algorithm theorem-like" id="proc_diagonalize"><h4 class="heading">
 <span class="type">Procedure</span><span class="space"> </span><span class="codenumber">5.5.14</span><span class="period">.</span><span class="space"> </span><span class="title">Deciding whether a linear transformation is diagonalizable.</span>
 </h4>
-<div class="para" id="p-2681">Let <span class="process-math">\(T\colon V\rightarrow V\)</span> be a linear transformation, where <span class="process-math">\(\dim V=n\text{.}\)</span> To decide whether <span class="process-math">\(T\)</span> is diagonalizable proceed as follows.</div> <ol class="decimal">
-<li id="li-945"><div class="para" id="p-2682">Pick any ordered basis <span class="process-math">\(B\)</span> of <span class="process-math">\(V\)</span> and compute <span class="process-math">\(A=[T]_B\text{.}\)</span> We have <span class="process-math">\(T\)</span> diagonalizable if and only if <span class="process-math">\(A\)</span> diagonalizable.</div></li>
-<li id="li-946"><div class="para logical" id="p-2683">
+<div class="para" id="p-3617">Let <span class="process-math">\(T\colon V\rightarrow V\)</span> be a linear transformation, where <span class="process-math">\(\dim V=n\text{.}\)</span> To decide whether <span class="process-math">\(T\)</span> is diagonalizable proceed as follows.</div> <ol class="decimal">
+<li id="li-1124"><div class="para" id="p-3618">Pick any ordered basis <span class="process-math">\(B\)</span> of <span class="process-math">\(V\)</span> and compute <span class="process-math">\(A=[T]_B\text{.}\)</span> We have <span class="process-math">\(T\)</span> diagonalizable if and only if <span class="process-math">\(A\)</span> diagonalizable.</div></li>
+<li id="li-1125"><div class="para logical" id="p-3619">
 <div class="para">Let <span class="process-math">\(\lambda_1, \lambda_2, \dots, \lambda_r\)</span> be the distinct eigenvalues of <span class="process-math">\(A\text{.}\)</span> Compute <span class="process-math">\(n_i=\dim W_{\lambda_i}\)</span> for each <span class="process-math">\(1\leq i\leq r\text{.}\)</span> We have</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1100,7 +1100,7 @@ A \text{ diagonalizable }\iff \sum_{i=1}^r\dim W_{\lambda_i}=n\text{.}
 \end{equation*}
 </div>
 </div></li>
-<li id="li-947"><div class="para logical" id="p-2684">
+<li id="li-1126"><div class="para logical" id="p-3620">
 <div class="para">Assume <span class="process-math">\(A\)</span> is diagonalizable according to Step (2). For each <span class="process-math">\(1\leq i\leq r\)</span> compute a basis <span class="process-math">\(S_{\lambda_i}=\{\boldv_{\lambda_i, 1}, \boldv_{\lambda_i,2},\dots, \boldv_{\lambda_i, n_i} \}\)</span> of <span class="process-math">\(W_{\lambda_i}\text{.}\)</span> The ordered list</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1110,7 +1110,7 @@ B'=(\boldv_{\lambda_1,1},\dots, \boldv_{\lambda_1,n_1},\boldv_{\lambda_2,1},\dot
 <div class="para">is an eigenbasis of <span class="process-math">\(A\text{.}\)</span>
 </div>
 </div></li>
-<li id="li-948"><div class="para logical" id="p-2685">
+<li id="li-1127"><div class="para logical" id="p-3621">
 <div class="para">“Lifting” the basis <span class="process-math">\(B'\)</span> back to <span class="process-math">\(V\)</span> via the coordinate transformation <span class="process-math">\([\phantom{\boldv}]_B\)</span> yields an eigenbasis <span class="process-math">\(B''\)</span> of <span class="process-math">\(T\text{.}\)</span> The matrix <span class="process-math">\([T]_{B''}\)</span> is diagonal, of the form</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1127,18 +1127,18 @@ B'=(\boldv_{\lambda_1,1},\dots, \boldv_{\lambda_1,n_1},\boldv_{\lambda_2,1},\dot
 \end{equation*}
 </div>
 </div></li>
-</ol></article><article class="hiddenproof" id="proof-112"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-112"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-112"><article class="hiddenproof"><div class="para logical" id="p-2686">
+</ol></article><article class="hiddenproof" id="proof-112"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-112"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-112"><article class="hiddenproof"><div class="para logical" id="p-3622">
 <div class="para">For the most part the validity of this procedure is a direct consequence of <a href="" class="xref" data-knowl="./knowl/th_diagonalizability_eigenbasis.html" title="Theorem 5.5.2: Diagonalizabilty: basis of eigenvectors">Theorem 5.5.2</a> and <a href="" class="xref" data-knowl="./knowl/th_diagonalizability_eigenspaces.html" title="Theorem 5.5.13: Diagonalizability: dimension of eigenspaces">Theorem 5.5.13</a>. However, there are two details that need to be pointed out.</div>
 <ul class="disc">
-<li id="li-949"><div class="para" id="p-2687">That <span class="process-math">\(T\)</span> is diagonalizable if and only if <span class="process-math">\(A=[T]_B\)</span> is diagonalizable follows from the fact that a basis of the <span class="process-math">\(\lambda\)</span>-eigenspace of <span class="process-math">\(A\)</span> to a basis of the <span class="process-math">\(\lambda\)</span>-eigenspace of <span class="process-math">\(T\)</span> using the coordinate vector transformation <span class="process-math">\([\phantom{v}]_B\text{.}\)</span>
+<li id="li-1128"><div class="para" id="p-3623">That <span class="process-math">\(T\)</span> is diagonalizable if and only if <span class="process-math">\(A=[T]_B\)</span> is diagonalizable follows from the fact that a basis of the <span class="process-math">\(\lambda\)</span>-eigenspace of <span class="process-math">\(A\)</span> to a basis of the <span class="process-math">\(\lambda\)</span>-eigenspace of <span class="process-math">\(T\)</span> using the coordinate vector transformation <span class="process-math">\([\phantom{v}]_B\text{.}\)</span>
 </div></li>
-<li id="li-950"><div class="para" id="p-2688">That the ordered list <span class="process-math">\(B'\)</span> described in Step 3 is in fact a basis is shown in the proof of <a href="" class="xref" data-knowl="./knowl/th_diagonalizability_eigenspaces.html" title="Theorem 5.5.13: Diagonalizability: dimension of eigenspaces">Theorem 5.5.13</a>.</div></li>
+<li id="li-1129"><div class="para" id="p-3624">That the ordered list <span class="process-math">\(B'\)</span> described in Step 3 is in fact a basis is shown in the proof of <a href="" class="xref" data-knowl="./knowl/th_diagonalizability_eigenspaces.html" title="Theorem 5.5.13: Diagonalizability: dimension of eigenspaces">Theorem 5.5.13</a>.</div></li>
 </ul>
 </div></article></div>
 <article class="example example-like" id="eg_diagonalizable_uppertriang"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.5.15</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-2689">
+<div class="para logical" id="p-3625">
 <div class="para">Let <span class="process-math">\(T=T_A\text{,}\)</span> where</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1153,7 +1153,7 @@ A=\begin{amatrix}[rrr]
 </div>
 </div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-94" id="solution-94"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-94"><div class="solution solution-like"><div class="para logical" id="p-2690">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-117" id="solution-117"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-117"><div class="solution solution-like"><div class="para logical" id="p-3626">
 <div class="para">Note first that <span class="process-math">\(A=[T]_B\)</span> where <span class="process-math">\(B\)</span> is the standard basis of <span class="process-math">\(\R^3\text{.}\)</span> (See <a href="" class="xref" data-knowl="./knowl/th_matrixreps_matrixtransforms.html" title="Theorem 5.2.3: Standard matrix as a matrix representation">Theorem 5.2.3</a>.) Since <span class="process-math">\(A\)</span> is upper triangular, we easily see that its characteristic polynomial is <span class="process-math">\(p(t)=(t-1)(t-3)^2\text{.}\)</span> Next we investigate the eigenspaces:</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/th_matrixreps_matrixtransforms.html">
 \begin{equation*}
@@ -1163,14 +1163,14 @@ W_3=\NS(3I-A)=\NS \begin{amatrix}[rrr]-1\amp -1\amp -1\\ 0\amp 0\amp -2\\ 0\amp 
 </div>
 <div class="para">By inspection we see that both <span class="process-math">\(2I-A\)</span> and <span class="process-math">\(3I-A\)</span> have rank 2, and hence nullity <span class="process-math">\(3-2=1\)</span> by the rank-nullity theorem. Thus both eigenspaces have dimension one, and we have <span class="process-math">\(\dim W_2+\dim W_3=1+1=2\lt 3\text{.}\)</span> We conclude that <span class="process-math">\(A\text{,}\)</span> and hence <span class="process-math">\(T_A\text{,}\)</span> is not diagonalizable.</div>
 </div></div></div>
-</div></article><div class="para" id="p-2691">The diagonalizability examples in this text will focus largely on the special case of matrix transformations <span class="process-math">\(T_A\colon \R^n\rightarrow \R^n\text{.}\)</span> However, our conscience demands that we give at least one full example of a more abstract linear transformation.</div>
+</div></article><div class="para" id="p-3627">The diagonalizability examples in this text will focus largely on the special case of matrix transformations <span class="process-math">\(T_A\colon \R^n\rightarrow \R^n\text{.}\)</span> However, our conscience demands that we give at least one full example of a more abstract linear transformation.</div>
 <article class="example example-like" id="eg_diagonalizable_transposition"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.5.16</span><span class="period">.</span><span class="space"> </span><span class="title">Transposition.</span>
 </h4>
-<div class="para" id="p-2692">Let <span class="process-math">\(S\colon M_{22}\rightarrow M_{22}\)</span> be the linear transformation defined as <span class="process-math">\(S(A)=A^T\text{.}\)</span> Decide whether <span class="process-math">\(S\)</span> is diagonalizable. If yes, find an eigenbasis for <span class="process-math">\(S\)</span> and compute the corresponding matrix representing <span class="process-math">\(S\text{.}\)</span>
+<div class="para" id="p-3628">Let <span class="process-math">\(S\colon M_{22}\rightarrow M_{22}\)</span> be the linear transformation defined as <span class="process-math">\(S(A)=A^T\text{.}\)</span> Decide whether <span class="process-math">\(S\)</span> is diagonalizable. If yes, find an eigenbasis for <span class="process-math">\(S\)</span> and compute the corresponding matrix representing <span class="process-math">\(S\text{.}\)</span>
 </div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-95" id="solution-95"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-95"><div class="solution solution-like"><div class="para logical" id="p-2693">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-118" id="solution-118"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-118"><div class="solution solution-like"><div class="para logical" id="p-3629">
 <div class="para">We saw in <a href="" class="xref" data-knowl="./knowl/eg_eigenvector_systematic_transposition.html" title="Example 5.4.24: Transposition (again)">Example 5.4.24</a> that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/eg_eigenvector_systematic_transposition.html">
 \begin{equation*}
@@ -1217,7 +1217,7 @@ B''=\left\{
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.5.17<span class="period">.</span></span><span class="space"> </span>Video: deciding if diagonalizable</figcaption></figure></section></section><section class="subsection" id="ss_diagonalizable_matrices"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">5.5.3</span> <span class="title">Diagonalizable matrices</span>
 </h3>
-<div class="para logical" id="p-2694">
+<div class="para logical" id="p-3630">
 <div class="para">In this subsection we will focus on matrix transformations <span class="process-math">\(T_A\colon \R^n\rightarrow \R^n\text{.}\)</span> Recall (<a href="" class="xref" data-knowl="./knowl/th_matrixreps_matrixtransforms.html" title="Theorem 5.2.3: Standard matrix as a matrix representation">5.2.3</a>) that in this situation we have <span class="process-math">\(A=[T]_B\)</span> where <span class="process-math">\(B\)</span> is the <em class="emphasis">standard basis</em> of <span class="process-math">\(\R^n\text{.}\)</span> As such <a href="" class="xref" data-knowl="./knowl/proc_diagonalize.html" title="Procedure 5.5.14: Deciding whether a linear transformation is diagonalizable">Procedure 5.5.14</a> boils down to steps (2)-(3), and the eigenbasis <span class="process-math">\(B'\)</span> of <span class="process-math">\(A\)</span> found in (3) is itself an eigenbasis for <span class="process-math">\(T=T_A\text{.}\)</span> Letting <span class="process-math">\(D=[T]_{B'}\)</span> the change of basis formula (<a href="" class="xref" data-knowl="./knowl/th_change_of_basis_transformations.html" title="Theorem 5.3.20: Change of basis for transformations">5.3.20</a>) yields</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/th_matrixreps_matrixtransforms.html ./knowl/proc_diagonalize.html ./knowl/th_change_of_basis_transformations.html">
 \begin{equation*}
@@ -1229,8 +1229,8 @@ D=P^{-1}AP\text{,}
 <article class="algorithm theorem-like" id="proc_diagonalize_matrixtransform"><h4 class="heading">
 <span class="type">Procedure</span><span class="space"> </span><span class="codenumber">5.5.18</span><span class="period">.</span><span class="space"> </span><span class="title">Deciding whether a matrix is diagonalizable.</span>
 </h4>
-<div class="para" id="p-2695">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(n\times n\)</span> matrix, and let <span class="process-math">\(T=T_A\)</span> be its corresponding matrix transformation. To decide whether <span class="process-math">\(A\)</span> is diagonalizable, proceed as follows.</div> <ol class="decimal">
-<li id="li-951"><div class="para logical" id="p-2696">
+<div class="para" id="p-3631">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(n\times n\)</span> matrix, and let <span class="process-math">\(T=T_A\)</span> be its corresponding matrix transformation. To decide whether <span class="process-math">\(A\)</span> is diagonalizable, proceed as follows.</div> <ol class="decimal">
+<li id="li-1130"><div class="para logical" id="p-3632">
 <div class="para">Let <span class="process-math">\(W_1, W_2, \dots, W_r\)</span> be the nonzero eigenspaces of <span class="process-math">\(A\text{.}\)</span> We have</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1238,7 +1238,7 @@ A \text{ diagonalizable}\iff \sum_{i=1}^r\dim W_i=n\text{.}
 \end{equation*}
 </div>
 </div></li>
-<li id="li-952"><div class="para logical" id="p-2697">
+<li id="li-1131"><div class="para logical" id="p-3633">
 <div class="para">Assume <span class="process-math">\(A\)</span> is diagonalizable and let <span class="process-math">\(B'=(\boldv_1, \boldv_2, \dots, \boldv_n)\)</span> be an eigenbasis of <span class="process-math">\(A\)</span> satisfying <span class="process-math">\(A\boldv_i=\lambda_i\boldv_i\)</span> for all <span class="process-math">\(1\leq i\leq n\text{.}\)</span> (We do not assume the <span class="process-math">\(\lambda_i\)</span> are distinct here.) Letting</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1260,11 +1260,11 @@ D=P^{-1}AP\text{.}\tag{5.5.7}
 \end{equation}
 </div>
 </div></li>
-</ol></article><div class="para" id="p-2698">The process of finding <span class="process-math">\(P\)</span> and <span class="process-math">\(D\)</span> satisfying <a href="" class="xref" data-knowl="./knowl/eq_diagonalize_matrix.html" title="Equation 5.5.7">(5.5.7)</a> is called <em class="emphasis">diagonalizing</em> the matrix <span class="process-math">\(A\text{;}\)</span> and we say that the matrix <span class="process-math">\(P\)</span> <em class="emphasis">diagonalizes</em> <span class="process-math">\(A\)</span> in this case. (Of course this is possible if and only if <span class="process-math">\(A\)</span> is diagonalizable.)</div>
+</ol></article><div class="para" id="p-3634">The process of finding <span class="process-math">\(P\)</span> and <span class="process-math">\(D\)</span> satisfying <a href="" class="xref" data-knowl="./knowl/eq_diagonalize_matrix.html" title="Equation 5.5.7">(5.5.7)</a> is called <em class="emphasis">diagonalizing</em> the matrix <span class="process-math">\(A\text{;}\)</span> and we say that the matrix <span class="process-math">\(P\)</span> <em class="emphasis">diagonalizes</em> <span class="process-math">\(A\)</span> in this case. (Of course this is possible if and only if <span class="process-math">\(A\)</span> is diagonalizable.)</div>
 <article class="example example-like" id="eg_diagonalizable_big"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.5.19</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-2699">
+<div class="para logical" id="p-3635">
 <div class="para">The matrix</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1275,7 +1275,7 @@ A=\begin{amatrix}[rrrr]14 \amp 21 \amp 3 \amp -39 \\ 12 \amp 25 \amp 3 \amp -41 
 </div>
 </div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-96" id="solution-96"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-96"><div class="solution solution-like"><div class="para logical" id="p-2700">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-119" id="solution-119"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-119"><div class="solution solution-like"><div class="para logical" id="p-3636">
 <div class="para">To factor <span class="process-math">\(p(t)\text{,}\)</span> we first look for integer roots dividing the constant term <span class="process-math">\(-12\text{:}\)</span> i.e., we test whether any of <span class="process-math">\(\pm 1, \pm 2, \pm 3, \pm 4, \pm 6, \pm 12\)</span> are roots. Luckily, we see that <span class="process-math">\(-1\)</span> is a root of <span class="process-math">\(p(t)\text{.}\)</span> Doing polynomial division of <span class="process-math">\(p(t)\)</span> by <span class="process-math">\((t+1)\)</span> yields</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/proc_fund_spaces.html">
 \begin{equation*}
@@ -1337,40 +1337,40 @@ D=\begin{amatrix}[rrrr]
 \end{equation*}
 </div>
 </div></div></div>
-</div></article><div class="para" id="p-2701">Recall that two square matrices <span class="process-math">\(A\)</span> and <span class="process-math">\(A'\)</span> are similar if <span class="process-math">\(A'=P^{-1}AP\)</span> for some invertible matrix <span class="process-math">\(P\)</span> (<a href="" class="xref" data-knowl="./knowl/d_similar.html" title="Definition 5.3.27">5.3.27</a>). From the foregoing discussion it follows that a matrix <span class="process-math">\(A\)</span> is diagonalizable if and only if it is similar to a diagonal matrix.</div>
+</div></article><div class="para" id="p-3637">Recall that two square matrices <span class="process-math">\(A\)</span> and <span class="process-math">\(A'\)</span> are similar if <span class="process-math">\(A'=P^{-1}AP\)</span> for some invertible matrix <span class="process-math">\(P\)</span> (<a href="" class="xref" data-knowl="./knowl/d_similar.html" title="Definition 5.3.27">5.3.27</a>). From the foregoing discussion it follows that a matrix <span class="process-math">\(A\)</span> is diagonalizable if and only if it is similar to a diagonal matrix.</div>
 <article class="corollary theorem-like" id="cor_diagonalizable_matrix"><h4 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">5.5.20</span><span class="period">.</span><span class="space"> </span><span class="title">Diagonalizabilty and similarity.</span>
 </h4>
-<div class="para logical" id="p-2702">
+<div class="para logical" id="p-3638">
 <div class="para">An <span class="process-math">\(n\times n\)</span> matrix <span class="process-math">\(A\)</span> is diagonalizable if and only if it is similar to a diagonal matrix: i.e., if and only if there is an invertible matrix <span class="process-math">\(P\)</span> and a diagonal matrix <span class="process-math">\(D\)</span> such that</div>
 <div class="displaymath process-math">
 \begin{equation*}
 D=P^{-1}AP\text{.}
 \end{equation*}
 </div>
-</div></article><article class="hiddenproof" id="proof-113"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-113"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-113"><article class="hiddenproof"><div class="para" id="p-2703">According to <a href="" class="xref" data-knowl="./knowl/th_similarity_matrixreps.html" title="Theorem 5.3.28: Similarity and matrix representations">Theorem 5.3.28</a> the matrix <span class="process-math">\(A\)</span> is similar to a diagonal matrix <span class="process-math">\(D\)</span> if and only if there is a linear transformation <span class="process-math">\(T\colon \R^n\rightarrow \R^n\)</span> and ordered bases <span class="process-math">\(B, B'\)</span> of <span class="process-math">\(\R^n\)</span> such that <span class="process-math">\([T]_B=A\)</span> and <span class="process-math">\([T]_{B'}=D\text{.}\)</span> By definition such a <span class="process-math">\(T\)</span> would be diagonalizable, since <span class="process-math">\([T]_{B'}=D\)</span> is diagonal. Since <span class="process-math">\(T\)</span> is diagonalizable if and only if <span class="process-math">\(A=[T]_B\)</span> is diagonalizable, we conclude that <span class="process-math">\(A\)</span> is similar to a diagonal matrix <span class="process-math">\(D\)</span> if and only if <span class="process-math">\(A\)</span> is diagonalizable.</div></article></div>
-<div class="para" id="p-2704">We know from <a href="" class="xref" data-knowl="./knowl/th_similarity_matrixreps.html" title="Theorem 5.3.28: Similarity and matrix representations">Theorem 5.3.28</a> that similar matrices can be thought of as two matrix representations of the same overlying linear transformation <span class="process-math">\(T\text{.}\)</span> As such similar matrices share many of the same algebraic properties, as <a href="" class="xref" data-knowl="./knowl/th_similarity.html" title="Theorem 5.5.21: Properties of similarity">Theorem 5.5.21</a> details.</div>
+</div></article><article class="hiddenproof" id="proof-113"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-113"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-113"><article class="hiddenproof"><div class="para" id="p-3639">According to <a href="" class="xref" data-knowl="./knowl/th_similarity_matrixreps.html" title="Theorem 5.3.28: Similarity and matrix representations">Theorem 5.3.28</a> the matrix <span class="process-math">\(A\)</span> is similar to a diagonal matrix <span class="process-math">\(D\)</span> if and only if there is a linear transformation <span class="process-math">\(T\colon \R^n\rightarrow \R^n\)</span> and ordered bases <span class="process-math">\(B, B'\)</span> of <span class="process-math">\(\R^n\)</span> such that <span class="process-math">\([T]_B=A\)</span> and <span class="process-math">\([T]_{B'}=D\text{.}\)</span> By definition such a <span class="process-math">\(T\)</span> would be diagonalizable, since <span class="process-math">\([T]_{B'}=D\)</span> is diagonal. Since <span class="process-math">\(T\)</span> is diagonalizable if and only if <span class="process-math">\(A=[T]_B\)</span> is diagonalizable, we conclude that <span class="process-math">\(A\)</span> is similar to a diagonal matrix <span class="process-math">\(D\)</span> if and only if <span class="process-math">\(A\)</span> is diagonalizable.</div></article></div>
+<div class="para" id="p-3640">We know from <a href="" class="xref" data-knowl="./knowl/th_similarity_matrixreps.html" title="Theorem 5.3.28: Similarity and matrix representations">Theorem 5.3.28</a> that similar matrices can be thought of as two matrix representations of the same overlying linear transformation <span class="process-math">\(T\text{.}\)</span> As such similar matrices share many of the same algebraic properties, as <a href="" class="xref" data-knowl="./knowl/th_similarity.html" title="Theorem 5.5.21: Properties of similarity">Theorem 5.5.21</a> details.</div>
 <article class="theorem theorem-like" id="th_similarity"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.5.21</span><span class="period">.</span><span class="space"> </span><span class="title">Properties of similarity.</span>
 </h4>
-<div class="para logical" id="p-2705">
+<div class="para logical" id="p-3641">
 <div class="para">Suppose <span class="process-math">\(A\)</span> is similar to <span class="process-math">\(A'\text{:}\)</span> i.e., there is an invertible matrix <span class="process-math">\(P\)</span> such that <span class="process-math">\(A'=P^{-1}AP\text{.}\)</span> The following hold:</div>
 <ol class="decimal">
-<li id="li-953"><div class="para" id="p-2706">
+<li id="li-1132"><div class="para" id="p-3642">
 <span class="process-math">\(A'\)</span> is similar to <span class="process-math">\(A\text{:}\)</span> i.e., there is an invertible matrix <span class="process-math">\(Q\)</span> such that <span class="process-math">\(A=Q^{-1}AQ\text{.}\)</span>
 </div></li>
-<li id="li-954"><div class="para" id="p-2707">
+<li id="li-1133"><div class="para" id="p-3643">
 <span class="process-math">\(A\)</span> and <span class="process-math">\(A'\)</span> have the same characteristic polynomial.</div></li>
-<li id="li-955"><div class="para" id="p-2708">
+<li id="li-1134"><div class="para" id="p-3644">
 <span class="process-math">\(A\)</span> and <span class="process-math">\(A'\)</span> have the same eigenvalues.</div></li>
-<li id="li-956"><div class="para" id="p-2709">
+<li id="li-1135"><div class="para" id="p-3645">
 <span class="process-math">\(A\)</span> and <span class="process-math">\(A'\)</span> have the same trace and determinant.</div></li>
-<li id="li-957"><div class="para" id="p-2710">
+<li id="li-1136"><div class="para" id="p-3646">
 <span class="process-math">\(A\)</span> and <span class="process-math">\(A'\)</span> have the same rank.</div></li>
-<li id="li-958"><div class="para" id="p-2711">For any <span class="process-math">\(\lambda\in \R\)</span> we have <span class="process-math">\(\dim W_{\lambda}=\dim W_{\lambda}'\text{,}\)</span> where <span class="process-math">\(W_\lambda, W_\lambda'\)</span> are the <span class="process-math">\(\lambda\)</span>-eigenspaces of <span class="process-math">\(A\)</span> and <span class="process-math">\(A'\text{,}\)</span> respectively.</div></li>
+<li id="li-1137"><div class="para" id="p-3647">For any <span class="process-math">\(\lambda\in \R\)</span> we have <span class="process-math">\(\dim W_{\lambda}=\dim W_{\lambda}'\text{,}\)</span> where <span class="process-math">\(W_\lambda, W_\lambda'\)</span> are the <span class="process-math">\(\lambda\)</span>-eigenspaces of <span class="process-math">\(A\)</span> and <span class="process-math">\(A'\text{,}\)</span> respectively.</div></li>
 </ol>
-</div></article><article class="hiddenproof" id="proof-114"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-114"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-114"><article class="hiddenproof"><div class="para" id="p-2712">Statement (1) follows by taking <span class="process-math">\(Q=P^{-1}\text{.}\)</span>
-</div> <div class="para logical" id="p-2713">
+</div></article><article class="hiddenproof" id="proof-114"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-114"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-114"><article class="hiddenproof"><div class="para" id="p-3648">Statement (1) follows by taking <span class="process-math">\(Q=P^{-1}\text{.}\)</span>
+</div> <div class="para logical" id="p-3649">
 <div class="para">Let <span class="process-math">\(p_A(t)\)</span> and <span class="process-math">\(p_{A'}(t)\)</span> be the characteristic polynomials of <span class="process-math">\(A\)</span> and <span class="process-math">\(A'\text{,}\)</span> repsectively. We have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/th_det_mult.html" id="md-272">
 \begin{align*}
@@ -1384,12 +1384,12 @@ p_{A'}(t)\amp =\det(tI-A')\\
 \end{align*}
 </div>
 <div class="para">This proves statement (2).</div>
-</div> <div class="para" id="p-2714">Statement (3) follows from (2) since the eigenvalues of a matrix are the real roots of its characteristic polynomial. Furthermore, by <a href="" class="xref" data-knowl="./knowl/th_characteristic_polynomial.html" title="Theorem 5.4.25: Characteristic polynomial">Theorem 5.4.25</a> the trace and determinant of a matrix are equal to the sum and product of the roots of its characteristic polynomial. Thus (4) also follows from (2).</div> <div class="para" id="p-2715">The proofs of statements (5)-(6) are left as exercises.</div></article></div>
-<div class="para" id="p-2716">A diagonalizable matrix is similar to a diagonal matrix (<a href="" class="xref" data-knowl="./knowl/cor_diagonalizable_matrix.html" title="Corollary 5.5.20: Diagonalizabilty and similarity">5.5.20</a>) and similar matrices share many essential properties (<a href="" class="xref" data-knowl="./knowl/th_similarity_matrixreps.html" title="Theorem 5.3.28: Similarity and matrix representations">5.3.28</a>, <a href="" class="xref" data-knowl="./knowl/th_similarity.html" title="Theorem 5.5.21: Properties of similarity">5.5.21</a>) In this spirit, a good way of thinking about a diagonalizable matrix is that it is “as good as diagonal”.</div>
+</div> <div class="para" id="p-3650">Statement (3) follows from (2) since the eigenvalues of a matrix are the real roots of its characteristic polynomial. Furthermore, by <a href="" class="xref" data-knowl="./knowl/th_characteristic_polynomial.html" title="Theorem 5.4.25: Characteristic polynomial">Theorem 5.4.25</a> the trace and determinant of a matrix are equal to the sum and product of the roots of its characteristic polynomial. Thus (4) also follows from (2).</div> <div class="para" id="p-3651">The proofs of statements (5)-(6) are left as exercises.</div></article></div>
+<div class="para" id="p-3652">A diagonalizable matrix is similar to a diagonal matrix (<a href="" class="xref" data-knowl="./knowl/cor_diagonalizable_matrix.html" title="Corollary 5.5.20: Diagonalizabilty and similarity">5.5.20</a>) and similar matrices share many essential properties (<a href="" class="xref" data-knowl="./knowl/th_similarity_matrixreps.html" title="Theorem 5.3.28: Similarity and matrix representations">5.3.28</a>, <a href="" class="xref" data-knowl="./knowl/th_similarity.html" title="Theorem 5.5.21: Properties of similarity">5.5.21</a>) In this spirit, a good way of thinking about a diagonalizable matrix is that it is “as good as diagonal”.</div>
 <article class="principle theorem-like" id="mantra_diagonalizable"><h4 class="heading">
 <span class="type">Mantra</span><span class="space"> </span><span class="codenumber">5.5.22</span><span class="period">.</span><span class="space"> </span><span class="title">Diagonalizable mantra.</span>
 </h4>
-<div class="para" id="p-2717">A diagonalizable matrix is as good as diagonal.</div></article><div class="para logical" id="p-2718">
+<div class="para" id="p-3653">A diagonalizable matrix is as good as diagonal.</div></article><div class="para logical" id="p-3654">
 <div class="para">In practical terms, if <span class="process-math">\(A\)</span> is diagonalizable, then we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_diagonalize_matrix_2.html" id="mdn-9">
 \begin{align}
@@ -1402,15 +1402,15 @@ D\amp=P^{-1}AP \amp A\amp=PDP^{-1} \tag{5.5.8}
 <article class="theorem theorem-like" id="th_conjugation"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.5.23</span><span class="period">.</span><span class="space"> </span><span class="title">Properties of conjugation.</span>
 </h4>
-<div class="para logical" id="p-2719">
+<div class="para logical" id="p-3655">
 <div class="para">Let <span class="process-math">\(P\)</span> be an invertible <span class="process-math">\(n\times n\)</span> matrix.</div>
 <ol class="decimal">
-<li id="li-959">
-<span class="heading"><span class="title">Conjugation is linear.</span></span><div class="para" id="p-2720">For all <span class="process-math">\(A_1,A_2\in M_{nn}\)</span> and <span class="process-math">\(c_1,c_2\in \R\text{,}\)</span> we have <span class="process-math">\(P^{-1}(c_1A_1+c_2A_2)P=c_1P^{-1}A_1P+c_2P^{-1}A_2P\text{.}\)</span>
+<li id="li-1138">
+<span class="heading"><span class="title">Conjugation is linear.</span></span><div class="para" id="p-3656">For all <span class="process-math">\(A_1,A_2\in M_{nn}\)</span> and <span class="process-math">\(c_1,c_2\in \R\text{,}\)</span> we have <span class="process-math">\(P^{-1}(c_1A_1+c_2A_2)P=c_1P^{-1}A_1P+c_2P^{-1}A_2P\text{.}\)</span>
 </div>
 </li>
-<li id="li-960">
-<span class="heading"><span class="title">Conjugation commutes with powers.</span></span><div class="para logical" id="p-2721">
+<li id="li-1139">
+<span class="heading"><span class="title">Conjugation commutes with powers.</span></span><div class="para logical" id="p-3657">
 <div class="para">For all <span class="process-math">\(A\in M_{nn}\)</span> and integers <span class="process-math">\(k\geq 0\text{,}\)</span> we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1421,8 +1421,8 @@ D\amp=P^{-1}AP \amp A\amp=PDP^{-1} \tag{5.5.8}
 </div>
 </div>
 </li>
-<li id="li-961">
-<span class="heading"><span class="title">Conjugation commutes with polynomials.</span></span><div class="para logical" id="p-2722">
+<li id="li-1140">
+<span class="heading"><span class="title">Conjugation commutes with polynomials.</span></span><div class="para logical" id="p-3658">
 <div class="para">Given any polynomial <span class="process-math">\(f(x)=a_rx^r+a_{r-1}x^{r-1}+\cdots +a_1x+a_0\)</span> with real coefficients, we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1432,11 +1432,11 @@ f(P^{-1}AP)=P^{-1}f(A)P\text{.}
 </div>
 </li>
 </ol>
-</div></article><article class="hiddenproof" id="proof-115"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-115"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-115"><article class="hiddenproof"><div class="para" id="p-2723">The proof is left as an exercise.</div></article></div>
+</div></article><article class="hiddenproof" id="proof-115"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-115"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-115"><article class="hiddenproof"><div class="para" id="p-3659">The proof is left as an exercise.</div></article></div>
 <article class="example example-like" id="eg_diagonalizable_matrix_powers"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.5.24</span><span class="period">.</span><span class="space"> </span><span class="title">Diagonalizable: matrix powers.</span>
 </h4>
-<div class="para logical" id="p-2724">
+<div class="para logical" id="p-3660">
 <div class="para">Assume <span class="process-math">\(D=P^{-1}AP\text{,}\)</span> where <span class="process-math">\(D\)</span> is diagonal. The normally difficult computation <span class="process-math">\(A^{k}\)</span> can be accomplished by first computing <span class="process-math">\(D^{k}\)</span> (easy) and then observing that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/th_conjugation.html" id="md-273">
 \begin{align*}
@@ -1467,7 +1467,7 @@ A^k \amp=PD^kP^{-1} \\
 </div></article><article class="example example-like" id="eg_diagonalizable_matrix_polynomials"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.5.25</span><span class="period">.</span><span class="space"> </span><span class="title">Diagonalizable: matrix polynomials.</span>
 </h4>
-<div class="para logical" id="p-2725">
+<div class="para logical" id="p-3661">
 <div class="para">Assume <span class="process-math">\(D=P^{-1}AP\text{,}\)</span> where <span class="process-math">\(D\)</span> is a diagonal <span class="process-math">\(n\times n\)</span> matrix. Let <span class="process-math">\([D]_{ii}=d_{i}\text{.}\)</span> Given any polynomial <span class="process-math">\(f(x)=\anpoly\text{,}\)</span> we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/th_conjugation.html" id="md-275">
 \begin{align*}
@@ -1477,7 +1477,7 @@ f(A) \amp= f(PDP^{-1}) \\
 </div>
 <div class="para">Furthermore, since <span class="process-math">\(D\)</span> is diagonal, it follows that <span class="process-math">\(f(D)\)</span> is also diagonal, and in fact its diagonal entries are given by <span class="process-math">\(f(d_i)\text{.}\)</span> This gives us an easy method of computing arbitrary polynomials of the matrix <span class="process-math">\(A\text{.}\)</span>
 </div>
-</div> <div class="para logical" id="p-2726">
+</div> <div class="para logical" id="p-3662">
 <div class="para">Consider again the matrix <span class="process-math">\(A\)</span> (and <span class="process-math">\(P\)</span> and <span class="process-math">\(D\)</span>) from  <a href="" class="xref" data-knowl="./knowl/eg_diagonalizable_matrix_powers.html" title="Example 5.5.24: Diagonalizable: matrix powers">Example 5.5.24</a>.  Let <span class="process-math">\(f(x)=x^2 -4\text{.}\)</span> Since <span class="process-math">\(f(2)=f(-2)=0\text{,}\)</span> it follows that <span class="process-math">\(f(D)=D^2-4I=\boldzero\text{.}\)</span> We conclude that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/eg_diagonalizable_matrix_powers.html">
 \begin{equation*}
@@ -1488,7 +1488,7 @@ f(A)=A^2-4I=Pf(D)P^{-1}=P\boldzero P^{-1}=\boldzero\text{,}
 </div></article><article class="example example-like" id="example-138"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.5.26</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-2727">
+<div class="para logical" id="p-3663">
 <div class="para">A <em class="emphasis">square-root</em> of an <span class="process-math">\(n\times n\)</span> matrix <span class="process-math">\(A\)</span> is a matrix <span class="process-math">\(B\)</span> such that <span class="process-math">\(B^2=A\text{.}\)</span> If <span class="process-math">\(A\)</span> and <span class="process-math">\(A'\)</span> are similar matrices, satisfying <span class="process-math">\(A'=P^{-1}AP\text{,}\)</span> then <span class="process-math">\(A\)</span> has a square-root if and only if <span class="process-math">\(A'\)</span> has a square-root. Indeed, if <span class="process-math">\(B\)</span> satisfies <span class="process-math">\(B^2=A\text{,}\)</span> then  <span class="process-math">\(C=P^{-1}BP\)</span> satisfies</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1528,7 +1528,7 @@ B=PCP^{-1}=\begin{amatrix}[rr]2-\sqrt{2}\amp 2-2\sqrt{2}\\ -1+\sqrt{2}\amp -1+2\
 </div>
 <div class="para">is a square-root of <span class="process-math">\(A\text{.}\)</span>
 </div>
-</div> <div class="para logical" id="p-2728">
+</div> <div class="para logical" id="p-3664">
 <div class="para">So when exactly does a diagonal matrix <span class="process-math">\(D\)</span> have a square-root? Clearly, it is <em class="emphasis">sufficient</em>  that the diagonal entries <span class="process-math">\(d_i\)</span> satisfy <span class="process-math">\(d_i\geq 0\)</span> for all <span class="process-math">\(i\text{,}\)</span> as in the example above. Interestingly, this is not a necessary condition! Indeed, consider the following example:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1538,10 +1538,10 @@ B=PCP^{-1}=\begin{amatrix}[rr]2-\sqrt{2}\amp 2-2\sqrt{2}\\ -1+\sqrt{2}\amp -1+2\
 </div></article></section><section class="subsection" id="subsection-86"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">5.5.4</span> <span class="title">Algebraic and geometric multiplicity</span>
 </h3>
-<div class="para" id="p-2729">We end this section with a deeper look at what the characteristic polynomial reveals about eigenspaces. To begin with, we first define the characteristic polynomial of a general linear transformation <span class="process-math">\(T\colon V\rightarrow V\text{,}\)</span> where <span class="process-math">\(V\)</span> is a finite-dimensional vector space.</div>
+<div class="para" id="p-3665">We end this section with a deeper look at what the characteristic polynomial reveals about eigenspaces. To begin with, we first define the characteristic polynomial of a general linear transformation <span class="process-math">\(T\colon V\rightarrow V\text{,}\)</span> where <span class="process-math">\(V\)</span> is a finite-dimensional vector space.</div>
 <article class="definition definition-like" id="d_char_poly_transform"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.5.27</span><span class="period">.</span><span class="space"> </span><span class="title">Characteristic polynomial of a transformation.</span>
-</h4> <div class="para logical" id="p-2730">
+</h4> <div class="para logical" id="p-3666">
 <div class="para">Let <span class="process-math">\(T\colon V\rightarrow V\)</span> be a linear transformation, where <span class="process-math">\(V\)</span> is finite-dimensional. Let <span class="process-math">\(B\)</span> be an ordered basis of <span class="process-math">\(V\text{,}\)</span> and let <span class="process-math">\(A=[T]_B\text{.}\)</span> We define the <dfn class="terminology">characteristic polynomial</dfn> of <span class="process-math">\(T\)</span> to be the characteristic polynomial of <span class="process-math">\(A\text{:}\)</span> i.e., the characteristic polynomial of <span class="process-math">\(T\)</span> is</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1551,16 +1551,16 @@ p(t)=\det(tI-A)\text{.}
 </div></article><article class="remark remark-like" id="rm_char_poly_transform"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.5.28</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-2731">For the characteristic polynomial of a linear transformation <span class="process-math">\(T\colon V\rightarrow V\)</span> to be well-defined, it should not depend on the choice of basis. This is true thanks to <a href="" class="xref" data-knowl="./knowl/th_similarity.html" title="Theorem 5.5.21: Properties of similarity">Theorem 5.5.21</a> and <a href="" class="xref" data-knowl="./knowl/th_change_of_basis_transformations.html" title="Theorem 5.3.20: Change of basis for transformations">Theorem 5.3.20</a>. Indeed, given two choice of ordered bases <span class="process-math">\(B, B'\)</span> of <span class="process-math">\(V\text{,}\)</span> the matrices <span class="process-math">\(A=[T]_B\)</span> and <span class="process-math">\(A'=[T]_{B'}\)</span> are similar (<a href="" class="xref" data-knowl="./knowl/th_change_of_basis_transformations.html" title="Theorem 5.3.20: Change of basis for transformations">5.3.20</a>), and thus their characteristic polynomials are equal (<a href="" class="xref" data-knowl="./knowl/th_similarity.html" title="Theorem 5.5.21: Properties of similarity">5.5.21</a>,(2)).</div></article><div class="para" id="p-2732">Let <span class="process-math">\(T\colon V\rightarrow V\)</span> be a linear transformation, where <span class="process-math">\(V\)</span> is finite-dimensional. If <span class="process-math">\(\lambda\in \R\)</span> is an eigenvalue of <span class="process-math">\(T\text{,}\)</span> then we can factor the chacteristic polynomial <span class="process-math">\(p(t)\)</span> of <span class="process-math">\(T\)</span> as <span class="process-math">\(p(t)=(t-\lambda)^mq(t)\text{,}\)</span> where <span class="process-math">\(\lambda\)</span> is not a root of <span class="process-math">\(q(t)\text{.}\)</span> As we will see, the exponent <span class="process-math">\(m\)</span> is an upper bound for the dimension of <span class="process-math">\(W_\lambda\text{.}\)</span> We call <span class="process-math">\(m\)</span> the <em class="emphasis">algebraic multiplicity</em> of the eigenvalue <span class="process-math">\(\lambda\text{.}\)</span>
+<div class="para" id="p-3667">For the characteristic polynomial of a linear transformation <span class="process-math">\(T\colon V\rightarrow V\)</span> to be well-defined, it should not depend on the choice of basis. This is true thanks to <a href="" class="xref" data-knowl="./knowl/th_similarity.html" title="Theorem 5.5.21: Properties of similarity">Theorem 5.5.21</a> and <a href="" class="xref" data-knowl="./knowl/th_change_of_basis_transformations.html" title="Theorem 5.3.20: Change of basis for transformations">Theorem 5.3.20</a>. Indeed, given two choice of ordered bases <span class="process-math">\(B, B'\)</span> of <span class="process-math">\(V\text{,}\)</span> the matrices <span class="process-math">\(A=[T]_B\)</span> and <span class="process-math">\(A'=[T]_{B'}\)</span> are similar (<a href="" class="xref" data-knowl="./knowl/th_change_of_basis_transformations.html" title="Theorem 5.3.20: Change of basis for transformations">5.3.20</a>), and thus their characteristic polynomials are equal (<a href="" class="xref" data-knowl="./knowl/th_similarity.html" title="Theorem 5.5.21: Properties of similarity">5.5.21</a>,(2)).</div></article><div class="para" id="p-3668">Let <span class="process-math">\(T\colon V\rightarrow V\)</span> be a linear transformation, where <span class="process-math">\(V\)</span> is finite-dimensional. If <span class="process-math">\(\lambda\in \R\)</span> is an eigenvalue of <span class="process-math">\(T\text{,}\)</span> then we can factor the chacteristic polynomial <span class="process-math">\(p(t)\)</span> of <span class="process-math">\(T\)</span> as <span class="process-math">\(p(t)=(t-\lambda)^mq(t)\text{,}\)</span> where <span class="process-math">\(\lambda\)</span> is not a root of <span class="process-math">\(q(t)\text{.}\)</span> As we will see, the exponent <span class="process-math">\(m\)</span> is an upper bound for the dimension of <span class="process-math">\(W_\lambda\text{.}\)</span> We call <span class="process-math">\(m\)</span> the <em class="emphasis">algebraic multiplicity</em> of the eigenvalue <span class="process-math">\(\lambda\text{.}\)</span>
 </div>
 <article class="definition definition-like" id="d_alg_geom_mult"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.5.29</span><span class="period">.</span><span class="space"> </span><span class="title">Algebraic/geometric multiplicity.</span>
-</h4>  <div class="para" id="p-2733">Let <span class="process-math">\(T\colon V\rightarrow V\)</span> be a linear transformation, where <span class="process-math">\(V\)</span> is finite-dimensional, and let <span class="process-math">\(p(t)\)</span> be the characteristic polynomial of <span class="process-math">\(T\text{.}\)</span> Given an eigenvalue <span class="process-math">\(\lambda\in \R\)</span> of <span class="process-math">\(T\text{,}\)</span> we can factor <span class="process-math">\(p(t)\)</span> as <span class="process-math">\(p(t)=(t-\lambda)^mq(t)
+</h4>  <div class="para" id="p-3669">Let <span class="process-math">\(T\colon V\rightarrow V\)</span> be a linear transformation, where <span class="process-math">\(V\)</span> is finite-dimensional, and let <span class="process-math">\(p(t)\)</span> be the characteristic polynomial of <span class="process-math">\(T\text{.}\)</span> Given an eigenvalue <span class="process-math">\(\lambda\in \R\)</span> of <span class="process-math">\(T\text{,}\)</span> we can factor <span class="process-math">\(p(t)\)</span> as <span class="process-math">\(p(t)=(t-\lambda)^mq(t)
 \text{,}\)</span> where <span class="process-math">\(\lambda\)</span> is not a root of the polynomial <span class="process-math">\(q(t)\text{:}\)</span> i.e., <span class="process-math">\(q(\lambda)\ne 0\text{.}\)</span> We call <span class="process-math">\(m\)</span> the <dfn class="terminology">geometric multiplicity</dfn> of the eigenvalue <span class="process-math">\(\lambda\text{,}\)</span> and we call <span class="process-math">\(\dim W_\lambda\)</span> its <dfn class="terminology">geometric multiplicity</dfn>. If <span class="process-math">\(m\gt 1\text{,}\)</span> we say <span class="process-math">\(\lambda\)</span> is a <dfn class="terminology">repeated</dfn> eigenvalue of <span class="process-math">\(T\text{.}\)</span>
 </div></article><article class="theorem theorem-like" id="th_alg_geom_mult"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.5.30</span><span class="period">.</span><span class="space"> </span><span class="title">Algebraic and geometric multiplicity.</span>
 </h4>
-<div class="para logical" id="p-2734">
+<div class="para logical" id="p-3670">
 <div class="para">Let <span class="process-math">\(T\colon V\rightarrow V\)</span> be a linear transformation, where <span class="process-math">\(dim V=n\text{,}\)</span> let <span class="process-math">\(p(t)\)</span> be the characteristic polynomial of <span class="process-math">\(T\text{,}\)</span> and suppose <span class="process-math">\(\lambda\in\R\)</span> is an eigenvalue of <span class="process-math">\(T\)</span> of algebraic multiplicity <span class="process-math">\(m\geq 1\text{:}\)</span> i.e., <span class="process-math">\(p(t)=(t-\lambda)^mq(t)\)</span> and <span class="process-math">\(q(\lambda)\ne 0\text{.}\)</span> We have</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1568,7 +1568,7 @@ p(t)=\det(tI-A)\text{.}
 \end{equation*}
 </div>
 <div class="para">In other words, the geometric multiplicity of an eigenvalue is bounded above by its algebraic multiplicity.</div>
-</div></article><article class="hiddenproof" id="proof-116"><a href="" data-knowl="" class="id-ref proof-knowl original has-image" data-refid="hk-proof-116"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-116"><article class="hiddenproof"><div class="para logical" id="p-2735">
+</div></article><article class="hiddenproof" id="proof-116"><a href="" data-knowl="" class="id-ref proof-knowl original has-image" data-refid="hk-proof-116"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-116"><article class="hiddenproof"><div class="para logical" id="p-3671">
 <div class="para">Since <span class="process-math">\(\lambda\)</span> is an eigenvalue, we have <span class="process-math">\(W_\lambda\ne \{\boldzero\}\text{,}\)</span> and thus <span class="process-math">\(\dim W_\lambda\geq 1\text{.}\)</span> Assume by contradiction that <span class="process-math">\(\dim W_{\lambda}\gt m\text{.}\)</span> Let <span class="process-math">\(m'=\dim W_{\lambda}\text{,}\)</span> and let <span class="process-math">\(S_{\lambda}=\{\boldv_1,\boldv_2,\dots, \boldv_{m'}\}\)</span> be a basis for <span class="process-math">\(W_{\lambda}\text{.}\)</span> We can extend <span class="process-math">\(S_{\lambda}\)</span> to an ordered basis</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1592,7 +1592,7 @@ B=(\boldv_1, \dots, \boldv_{m'}, \boldv_{m'+1},\dots, \boldv_n)
 <article class="corollary theorem-like" id="cor_alg_geom_mult"><h4 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">5.5.31</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-2736">
+<div class="para logical" id="p-3672">
 <div class="para">Let <span class="process-math">\(T\colon V\rightarrow V\)</span> be a linear transformation, where <span class="process-math">\(\dim V=n\text{,}\)</span> and suppose the characteristic polynomial of <span class="process-math">\(T\)</span> factors over <span class="process-math">\(\mathbb{C}\)</span> as</div>
 <div class="displaymath process-math" id="eq_cor_alg_geom_mult">
 \begin{equation}
@@ -1601,13 +1601,13 @@ p(t)=(t-\lambda_1)^{m_1}(t-\lambda_2)^{m_2}\cdots (t-\lambda_r)^{m_r}\text{,}\ta
 </div>
 <div class="para">where <span class="process-math">\(\lambda_i\ne \lambda_j\)</span> for all <span class="process-math">\(1\leq i\lt j\leq n\text{.}\)</span> The following are equivalent:</div>
 <ol class="decimal">
-<li id="li-962"><div class="para" id="p-2737">
+<li id="li-1141"><div class="para" id="p-3673">
 <span class="process-math">\(T\)</span> is diagonalizable.</div></li>
-<li id="li-963"><div class="para" id="p-2738">For all <span class="process-math">\(1\leq i\leq n\)</span> we have <span class="process-math">\(\lambda_i\in \R\)</span> and <span class="process-math">\(\dim W_{\lambda_i}=m_i\text{.}\)</span>
+<li id="li-1142"><div class="para" id="p-3674">For all <span class="process-math">\(1\leq i\leq n\)</span> we have <span class="process-math">\(\lambda_i\in \R\)</span> and <span class="process-math">\(\dim W_{\lambda_i}=m_i\text{.}\)</span>
 </div></li>
 </ol>
 <div class="para">In other words, <span class="process-math">\(T\)</span> is diagonalizable if and only if all roots of <span class="process-math">\(p(t)\)</span> are real, and the geometric multiplicity of each eigenvalue is equal to its algebraic multiplicity.</div>
-</div></article><article class="hiddenproof" id="proof-117"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-117"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-117"><article class="hiddenproof"><article class="case" id="case-104"><h5 class="heading">Implication: <span class="process-math">\((2)\implies (1)\)</span>.</h5> <div class="para logical" id="p-2739">
+</div></article><article class="hiddenproof" id="proof-117"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-117"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-117"><article class="hiddenproof"><article class="case" id="case-104"><h5 class="heading">Implication: <span class="process-math">\((2)\implies (1)\)</span>.</h5> <div class="para logical" id="p-3675">
 <div class="para">If (2) is true, then each <span class="process-math">\(\lambda_i\)</span> is an eigenvalue of <span class="process-math">\(T\)</span> and we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_cor_alg_geom_mult.html ./knowl/th_diagonalizability_eigenbasis.html">
 \begin{equation*}
@@ -1615,7 +1615,7 @@ p(t)=(t-\lambda_1)^{m_1}(t-\lambda_2)^{m_2}\cdots (t-\lambda_r)^{m_r}\text{,}\ta
 \end{equation*}
 </div>
 <div class="para">by counting degrees in <a href="" class="xref" data-knowl="./knowl/eq_cor_alg_geom_mult.html" title="Equation 5.5.9">(5.5.9)</a>. It follows from <a href="" class="xref" data-knowl="./knowl/th_diagonalizability_eigenbasis.html" title="Theorem 5.5.2: Diagonalizabilty: basis of eigenvectors">Theorem 5.5.2</a> that <span class="process-math">\(T\)</span> is diagonalizable.</div>
-</div></article> <article class="case" id="case-105"><h5 class="heading">Implication: <span class="process-math">\((1)\implies (2)\)</span>.</h5> <div class="para logical" id="p-2740">
+</div></article> <article class="case" id="case-105"><h5 class="heading">Implication: <span class="process-math">\((1)\implies (2)\)</span>.</h5> <div class="para logical" id="p-3676">
 <div class="para">If <span class="process-math">\(T\)</span> is diagonalizable, then there is an ordered basis <span class="process-math">\(B\)</span> of <span class="process-math">\(V\)</span> for which <span class="process-math">\(D=[T]_B\)</span> is diagonal. Letting <span class="process-math">\(d_i\)</span> be the <span class="process-math">\(i\)</span>-th diagonal element of <span class="process-math">\(D\text{,}\)</span> we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/th_diagonalizability_eigenspaces.html ./knowl/th_alg_geom_mult.html ./knowl/eq_cor_alg_geom_mult.html ./knowl/eq_cor_alg_geom_mult_proof.html">
 \begin{equation*}
@@ -1630,11 +1630,11 @@ p(t)=\det(tI-D)=(t-d_1)(t-d_2)\dots (t-d_n)\text{.}
 </div>
 <div class="para">Since <span class="process-math">\(\dim W_{\lambda_i}\leq m_i\)</span> for all <span class="process-math">\(1\leq i\leq n\)</span> (<a href="" class="xref" data-knowl="./knowl/th_alg_geom_mult.html" title="Theorem 5.5.30: Algebraic and geometric multiplicity">5.5.30</a>), and since <span class="process-math">\(\sum_{i=1}^rm_i=n\)</span> (counting degrees in <a href="" class="xref" data-knowl="./knowl/eq_cor_alg_geom_mult.html" title="Equation 5.5.9">(5.5.9)</a>), for the equality <a href="" class="xref" data-knowl="./knowl/eq_cor_alg_geom_mult_proof.html" title="Equation 5.5.10">(5.5.10)</a> to hold we must have <span class="process-math">\(\dim W_{\lambda_i}=m_i\)</span> for all <span class="process-math">\(1\leq i\leq r\text{,}\)</span> as desired.</div>
 </div></article></article></div>
-<div class="para" id="p-2741">From <a href="" class="xref" data-knowl="./knowl/th_alg_geom_mult.html" title="Theorem 5.5.30: Algebraic and geometric multiplicity">Theorem 5.5.30</a> and <a href="" class="xref" data-knowl="./knowl/cor_alg_geom_mult.html" title="Corollary 5.5.31">Corollary 5.5.31</a> we can deduce a much finer picture of the eigenspaces of a linear transformation from its factored characteristic polynomial. This often reduces our workload when treating questions of diagonalizability, as the next examples illustrate.</div>
+<div class="para" id="p-3677">From <a href="" class="xref" data-knowl="./knowl/th_alg_geom_mult.html" title="Theorem 5.5.30: Algebraic and geometric multiplicity">Theorem 5.5.30</a> and <a href="" class="xref" data-knowl="./knowl/cor_alg_geom_mult.html" title="Corollary 5.5.31">Corollary 5.5.31</a> we can deduce a much finer picture of the eigenspaces of a linear transformation from its factored characteristic polynomial. This often reduces our workload when treating questions of diagonalizability, as the next examples illustrate.</div>
 <article class="example example-like" id="eg_alg_geom_1"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.5.32</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-2742">
+<div class="para logical" id="p-3678">
 <div class="para">The matrix</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1649,7 +1649,7 @@ A=\begin{amatrix}[rrrr]
 <div class="para">has characteristic polynomial <span class="process-math">\(p(t)=(t-1)(t+2)(t-2)^2\text{.}\)</span> Decide whether <span class="process-math">\(A\)</span> is diagonalizable.</div>
 </div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-97" id="solution-97"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-97"><div class="solution solution-like"><div class="para logical" id="p-2743">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-120" id="solution-120"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-120"><div class="solution solution-like"><div class="para logical" id="p-3679">
 <div class="para">The eigenvalues of <span class="process-math">\(A\)</span> are <span class="process-math">\(1,-2, 2\text{.}\)</span> Since the eigenvalues <span class="process-math">\(1\)</span> and <span class="process-math">\(-2\)</span> both have algebraic multiplicity <span class="process-math">\(1\text{,}\)</span> we have by <a href="" class="xref" data-knowl="./knowl/th_alg_geom_mult.html" title="Theorem 5.5.30: Algebraic and geometric multiplicity">Theorem 5.5.30</a>
 </div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/th_alg_geom_mult.html">
@@ -1680,7 +1680,7 @@ A=\begin{amatrix}[rrrr]
 </div></article><article class="example example-like" id="eg_alg_geom_2"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.5.33</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-2744">
+<div class="para logical" id="p-3680">
 <div class="para">The matrix</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1694,7 +1694,7 @@ A=\begin{amatrix}[rrrr]
 <div class="para">has characterisic polynomial <span class="process-math">\(p(t)=(t-1)^2(t+1)^2\text{.}\)</span> Decide whether <span class="process-math">\(A\)</span> is diagonalizable.</div>
 </div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-98" id="solution-98"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-98"><div class="solution solution-like"><div class="para logical" id="p-2745">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-121" id="solution-121"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-121"><div class="solution solution-like"><div class="para logical" id="p-3681">
 <div class="para">The eigenvalues of <span class="process-math">\(A\)</span> are <span class="process-math">\(1\)</span> and <span class="process-math">\(-1\text{,}\)</span> and each has algebraic multiplicity <span class="process-math">\(2\text{.}\)</span> Thus <span class="process-math">\(1\leq\dim W_1, \dim W_{-1}\leq 2\text{,}\)</span> and <span class="process-math">\(A\)</span> is diagonalizable if and only if</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1719,22 +1719,22 @@ A=\begin{amatrix}[rrrr]
 </h3>
 <div class="exercisegroup" id="exercisegroup-39">
 <h4 class="heading"><span class="title">Exercise Group.</span></h4>
-<div class="introduction" id="introduction-84"><div class="para" id="p-2746">For each matrix <span class="process-math">\(A\)</span> use <a href="" class="xref" data-knowl="./knowl/proc_diagonalize.html" title="Procedure 5.5.14: Deciding whether a linear transformation is diagonalizable">Procedure 5.5.14</a> to determine whether it is diagonalizable. If yes, then produce an invertible matrix <span class="process-math">\(P\)</span> and diagonal matrix <span class="process-math">\(D\)</span> satisfying <span class="process-math">\(D=P^{-1}AP\text{.}\)</span> For the last matrix the characteristic polynomial <span class="process-math">\(p(t)\)</span> is provided for convenience.</div></div>
+<div class="introduction" id="introduction-84"><div class="para" id="p-3682">For each matrix <span class="process-math">\(A\)</span> use <a href="" class="xref" data-knowl="./knowl/proc_diagonalize.html" title="Procedure 5.5.14: Deciding whether a linear transformation is diagonalizable">Procedure 5.5.14</a> to determine whether it is diagonalizable. If yes, then produce an invertible matrix <span class="process-math">\(P\)</span> and diagonal matrix <span class="process-math">\(D\)</span> satisfying <span class="process-math">\(D=P^{-1}AP\text{.}\)</span> For the last matrix the characteristic polynomial <span class="process-math">\(p(t)\)</span> is provided for convenience.</div></div>
 <div class="exercisegroup-exercises">
 <article class="exercise exercise-like" id="exercise-407"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
-<div class="para" id="p-2747"><span class="process-math">\(A=\begin{amatrix}[rrr]
+<div class="para" id="p-3683"><span class="process-math">\(A=\begin{amatrix}[rrr]
 3\amp 0\amp 0 \\ 0\amp 2\amp 0\\ 0\amp 1\amp 2
 \end{amatrix}\)</span></div></article><article class="exercise exercise-like" id="exercise-408"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
-<div class="para" id="p-2748"><span class="process-math">\(A=\begin{amatrix}[rrr]
+<div class="para" id="p-3684"><span class="process-math">\(A=\begin{amatrix}[rrr]
 -1\amp 4\amp -2\\ -3\amp 4\amp 0\\ -3\amp 1\amp 3
 \end{amatrix}\)</span></div></article><article class="exercise exercise-like" id="exercise-409"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
-<div class="para" id="p-2749"><span class="process-math">\(A=\begin{amatrix}[rrr]
+<div class="para" id="p-3685"><span class="process-math">\(A=\begin{amatrix}[rrr]
 0\amp 0\amp 0\\ 0\amp 0\amp 0 \\ 3\amp 0\amp 1
 \end{amatrix}\)</span></div></article><article class="exercise exercise-like" id="exercise-410"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
-<div class="para" id="p-2750"><span class="process-math">\(A=\begin{amatrix}[rrr]
+<div class="para" id="p-3686"><span class="process-math">\(A=\begin{amatrix}[rrr]
 5\amp 0\amp 0\\ 1\amp 5\amp 0 \\ 0\amp 1\amp 5
 \end{amatrix}\)</span></div></article><article class="exercise exercise-like" id="exercise-411"><h5 class="heading"><span class="codenumber">5<span class="period">.</span></span></h5>
-<div class="para" id="p-2751">
+<div class="para" id="p-3687">
 <span class="process-math">\(A=\begin{amatrix}[rrr]
 19\amp -9\amp -6\\ 25\amp -11\amp -9\\ 17\amp -9\amp -4
 \end{amatrix}
@@ -1743,40 +1743,40 @@ A=\begin{amatrix}[rrrr]
 </div>
 </div>
 <article class="exercise exercise-like" id="exercise-412"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
-<div class="para" id="p-2752">Let <span class="process-math">\(A=\begin{bmatrix} a \amp b \\ c \amp d\end{bmatrix} \text{.}\)</span> Show that <span class="process-math">\(A\)</span> is diagonalizable if and only if either <span class="process-math">\((a-d)^2+4bc\gt 0\)</span> or <span class="process-math">\(A=aI\)</span> (i.e., <span class="process-math">\(a=d\)</span> and <span class="process-math">\(b=c=0\)</span>).</div></article><article class="exercise exercise-like" id="exercise-413"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
-<div class="para" id="p-2753">Prove <a href="" class="xref" data-knowl="./knowl/th_similarity.html" title="Theorem 5.5.21: Properties of similarity">Theorem 5.5.21</a>.</div>
+<div class="para" id="p-3688">Let <span class="process-math">\(A=\begin{bmatrix} a \amp b \\ c \amp d\end{bmatrix} \text{.}\)</span> Show that <span class="process-math">\(A\)</span> is diagonalizable if and only if either <span class="process-math">\((a-d)^2+4bc\gt 0\)</span> or <span class="process-math">\(A=aI\)</span> (i.e., <span class="process-math">\(a=d\)</span> and <span class="process-math">\(b=c=0\)</span>).</div></article><article class="exercise exercise-like" id="exercise-413"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<div class="para" id="p-3689">Prove <a href="" class="xref" data-knowl="./knowl/th_similarity.html" title="Theorem 5.5.21: Properties of similarity">Theorem 5.5.21</a>.</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-33" id="hint-33"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-33"><div class="hint solution-like"><div class="para" id="p-2754">Show that for any <span class="process-math">\(c\in \R\)</span> we have <span class="process-math">\(cI-P^{-1}AP=P^{-1}(cI-A)P\text{.}\)</span>
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-33" id="hint-33"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-33"><div class="hint solution-like"><div class="para" id="p-3690">Show that for any <span class="process-math">\(c\in \R\)</span> we have <span class="process-math">\(cI-P^{-1}AP=P^{-1}(cI-A)P\text{.}\)</span>
 </div></div></div>
 </div></article><div class="exercisegroup" id="exercisegroup-40">
 <h4 class="heading"><span class="title">Exercise Group.</span></h4>
-<div class="introduction" id="introduction-85"><div class="para" id="p-2755">For each exercise construct a <span class="process-math">\(3\times 3\)</span> matrix <span class="process-math">\(A\)</span> satisfying the given conditions. Begin by showing that the given <span class="process-math">\(A\)</span> must be diagonalizable.</div></div>
+<div class="introduction" id="introduction-85"><div class="para" id="p-3691">For each exercise construct a <span class="process-math">\(3\times 3\)</span> matrix <span class="process-math">\(A\)</span> satisfying the given conditions. Begin by showing that the given <span class="process-math">\(A\)</span> must be diagonalizable.</div></div>
 <div class="exercisegroup-exercises">
 <article class="exercise exercise-like" id="exercise-414"><h5 class="heading"><span class="codenumber">8<span class="period">.</span></span></h5>
-<div class="para" id="p-2756">
+<div class="para" id="p-3692">
 <span class="process-math">\(A\)</span> has eigenspaces <span class="process-math">\(W_2=\Span\{(1,0,1),(1,1,1)\)</span> and <span class="process-math">\(W_{-1}=\Span\{(1,0,-1)\}\text{.}\)</span>
 </div></article><article class="exercise exercise-like" id="exercise-415"><h5 class="heading"><span class="codenumber">9<span class="period">.</span></span></h5>
-<div class="para" id="p-2757">
+<div class="para" id="p-3693">
 <span class="process-math">\(A\boldw=\boldw\)</span> for all <span class="process-math">\(\boldw\in W=\{(x,y,z)\colon x+y+z=0\}\text{,}\)</span> <span class="process-math">\(A\boldx=\boldzero\)</span> for <span class="process-math">\(\boldx=(1,1,1)\text{.}\)</span>
 </div></article>
 </div>
 </div>
 <article class="exercise exercise-like" id="exercise-416"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
-<div class="para" id="p-2758">Assume <span class="process-math">\(A\)</span> is a <span class="process-math">\(3\times 3\)</span> matrix with eigenvalues <span class="process-math">\(0\text{,}\)</span> <span class="process-math">\(1\text{,}\)</span> and <span class="process-math">\(-1\text{.}\)</span>
+<div class="para" id="p-3694">Assume <span class="process-math">\(A\)</span> is a <span class="process-math">\(3\times 3\)</span> matrix with eigenvalues <span class="process-math">\(0\text{,}\)</span> <span class="process-math">\(1\text{,}\)</span> and <span class="process-math">\(-1\text{.}\)</span>
 </div> <ol class="lower-alpha">
-<li id="li-964"><div class="para" id="p-2759">Show that <span class="process-math">\(A\)</span> is diagonalizable. Provide an explicit diagonal matrix <span class="process-math">\(D\)</span> that <span class="process-math">\(A\)</span> is similar to.</div></li>
-<li id="li-965"><div class="para" id="p-2760">Prove that <span class="process-math">\(A^n=A\)</span> for all odd integers <span class="process-math">\(n\geq 1\text{.}\)</span>
+<li id="li-1143"><div class="para" id="p-3695">Show that <span class="process-math">\(A\)</span> is diagonalizable. Provide an explicit diagonal matrix <span class="process-math">\(D\)</span> that <span class="process-math">\(A\)</span> is similar to.</div></li>
+<li id="li-1144"><div class="para" id="p-3696">Prove that <span class="process-math">\(A^n=A\)</span> for all odd integers <span class="process-math">\(n\geq 1\text{.}\)</span>
 </div></li>
 </ol></article><article class="exercise exercise-like" id="exercise-417"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
-<div class="para" id="p-2761">Prove statement (5) of <a href="" class="xref" data-knowl="./knowl/th_characteristic_polynomial.html" title="Theorem 5.4.25: Characteristic polynomial">Theorem 5.4.25</a>.</div>
+<div class="para" id="p-3697">Prove statement (5) of <a href="" class="xref" data-knowl="./knowl/th_characteristic_polynomial.html" title="Theorem 5.4.25: Characteristic polynomial">Theorem 5.4.25</a>.</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-34" id="hint-34"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-34"><div class="hint solution-like"><div class="para" id="p-2762">Use <a href="" class="xref" data-knowl="./knowl/th_similarity_matrixreps.html" title="Theorem 5.3.28: Similarity and matrix representations">Theorem 5.3.28</a> and <a href="" class="xref" data-knowl="./knowl/th_matrixreps_model.html" title="Theorem 5.2.9: Computing with matrix representations">Theorem 5.2.9</a>.</div></div></div>
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-34" id="hint-34"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-34"><div class="hint solution-like"><div class="para" id="p-3698">Use <a href="" class="xref" data-knowl="./knowl/th_similarity_matrixreps.html" title="Theorem 5.3.28: Similarity and matrix representations">Theorem 5.3.28</a> and <a href="" class="xref" data-knowl="./knowl/th_matrixreps_model.html" title="Theorem 5.2.9: Computing with matrix representations">Theorem 5.2.9</a>.</div></div></div>
 </div></article><article class="exercise exercise-like" id="exercise-418"><h4 class="heading"><span class="codenumber">12<span class="period">.</span></span></h4>
-<div class="para" id="p-2763">Prove statement (6) of <a href="" class="xref" data-knowl="./knowl/th_characteristic_polynomial.html" title="Theorem 5.4.25: Characteristic polynomial">Theorem 5.4.25</a>.</div>
+<div class="para" id="p-3699">Prove statement (6) of <a href="" class="xref" data-knowl="./knowl/th_characteristic_polynomial.html" title="Theorem 5.4.25: Characteristic polynomial">Theorem 5.4.25</a>.</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-35" id="hint-35"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-35"><div class="hint solution-like"><div class="para" id="p-2764">Use <a href="" class="xref" data-knowl="./knowl/th_similarity_matrixreps.html" title="Theorem 5.3.28: Similarity and matrix representations">Theorem 5.3.28</a> and <a href="" class="xref" data-knowl="./knowl/proc_eigenspaces_transformation.html" title="Procedure 5.4.23: Computing eigenspaces of a linear transformation">Procedure 5.4.23</a>.</div></div></div>
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-35" id="hint-35"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-35"><div class="hint solution-like"><div class="para" id="p-3700">Use <a href="" class="xref" data-knowl="./knowl/th_similarity_matrixreps.html" title="Theorem 5.3.28: Similarity and matrix representations">Theorem 5.3.28</a> and <a href="" class="xref" data-knowl="./knowl/proc_eigenspaces_transformation.html" title="Procedure 5.4.23: Computing eigenspaces of a linear transformation">Procedure 5.4.23</a>.</div></div></div>
 </div></article><article class="exercise exercise-like" id="exercise-419"><h4 class="heading"><span class="codenumber">13<span class="period">.</span></span></h4>
-<div class="para logical" id="p-2765">
+<div class="para logical" id="p-3701">
 <div class="para">According to <a href="" class="xref" data-knowl="./knowl/th_similarity.html" title="Theorem 5.5.21: Properties of similarity">Theorem 5.5.21</a> if <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are similar, then they have the same rank. Show that the converse is false by showing that the matrices</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/th_similarity.html">
 \begin{equation*}
@@ -1789,7 +1789,7 @@ A=\begin{amatrix}[rr]
 </div>
 <div class="para">have the same rank, but are not similar.</div>
 </div></article><article class="exercise exercise-like" id="exercise-420"><h4 class="heading"><span class="codenumber">14<span class="period">.</span></span></h4>
-<div class="para logical" id="p-2766">
+<div class="para logical" id="p-3702">
 <div class="para">According to <a href="" class="xref" data-knowl="./knowl/th_similarity.html" title="Theorem 5.5.21: Properties of similarity">Theorem 5.5.21</a> if <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are similar, then they have the same characteristic polynomial. Show that the converse is false by showing that the matrices</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/th_similarity.html">
 \begin{equation*}
@@ -1802,33 +1802,33 @@ A=\begin{amatrix}[rr]
 </div>
 <div class="para">have the same characteristic polynomial, but are not similar.</div>
 </div></article><article class="exercise exercise-like" id="exercise-421"><h4 class="heading"><span class="codenumber">15<span class="period">.</span></span></h4>
-<div class="para" id="p-2767">Prove all statements of <a href="" class="xref" data-knowl="./knowl/th_conjugation.html" title="Theorem 5.5.23: Properties of conjugation">Theorem 5.5.23</a>.</div></article><article class="exercise exercise-like" id="exercise-422"><h4 class="heading"><span class="codenumber">16<span class="period">.</span></span></h4>
+<div class="para" id="p-3703">Prove all statements of <a href="" class="xref" data-knowl="./knowl/th_conjugation.html" title="Theorem 5.5.23: Properties of conjugation">Theorem 5.5.23</a>.</div></article><article class="exercise exercise-like" id="exercise-422"><h4 class="heading"><span class="codenumber">16<span class="period">.</span></span></h4>
 <article class="task exercise-like" id="task-18"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<div class="para" id="p-2769">
+<div class="para" id="p-3705">
 <span class="process-math">\(A\in M_{33}\text{,}\)</span> <span class="process-math">\(p(t)=\det(tI-A)=t^3-t^2\text{,}\)</span> <span class="process-math">\(\nullity A=2\)</span>
 </div></article><article class="task exercise-like" id="task-19"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<div class="para" id="p-2770">
+<div class="para" id="p-3706">
 <span class="process-math">\(A\in M_{33}\text{,}\)</span> <span class="process-math">\(p(t)=\det(tI-A)=t^3+t^2-t\)</span>
 </div></article><article class="task exercise-like" id="task-20"><h5 class="heading"><span class="codenumber">(c)</span></h5>
-<div class="para" id="p-2771">
+<div class="para" id="p-3707">
 <span class="process-math">\(A\in M_{22}\text{,}\)</span> <span class="process-math">\(\tr A=4\text{,}\)</span> <span class="process-math">\(\det A=3\)</span>
 </div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-36" id="hint-36"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-36"><div class="hint solution-like"><div class="para" id="p-2772">See <a href="" class="xref" data-knowl="./knowl/rm_char_poly_trick.html" title="Remark 5.4.26: Characteristic polynomial for 2\times 2 matrices">Remark 5.4.26</a>.</div></div></div>
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-36" id="hint-36"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-36"><div class="hint solution-like"><div class="para" id="p-3708">See <a href="" class="xref" data-knowl="./knowl/rm_char_poly_trick.html" title="Remark 5.4.26: Characteristic polynomial for 2\times 2 matrices">Remark 5.4.26</a>.</div></div></div>
 </div></article></article><article class="exercise exercise-like" id="ex_diagonalization"><h4 class="heading"><span class="codenumber">17<span class="period">.</span></span></h4>
-<div class="para logical" id="p-2773">
+<div class="para logical" id="p-3709">
 <div class="para">Each matrix <span class="process-math">\(A\)</span> below has characteristic polynomial <span class="process-math">\(p(t)=t^3-3t+2\text{.}\)</span> Use <a href="" class="xref" data-knowl="./knowl/proc_diagonalize.html" title="Procedure 5.5.14: Deciding whether a linear transformation is diagonalizable">Procedure 5.5.14</a> to decide whether <span class="process-math">\(A\)</span> is diagonalizable. If yes, provide an inverible <span class="process-math">\(P\)</span> and diagonal <span class="process-math">\(D\)</span> satisfying <span class="process-math">\(D=P^{-1}AP\text{.}\)</span>
 </div>
 <ol class="lower-alpha">
-<li id="li-966"><div class="para" id="p-2774"><span class="process-math">\(\displaystyle A=\begin{amatrix}[rrr]
+<li id="li-1145"><div class="para" id="p-3710"><span class="process-math">\(\displaystyle A=\begin{amatrix}[rrr]
 -5\amp 0\amp 3\\ -6\amp 1\amp 3\\ -6\amp 0\amp 4
 \end{amatrix}\)</span></div></li>
-<li id="li-967"><div class="para" id="p-2775"><span class="process-math">\(\displaystyle A=\begin{amatrix}[rrr]
+<li id="li-1146"><div class="para" id="p-3711"><span class="process-math">\(\displaystyle A=\begin{amatrix}[rrr]
 -2\amp -3\amp -3\\ -3\amp -3\amp 4\\ -3\amp -4\amp 5
 \end{amatrix}\)</span></div></li>
 </ol>
 </div></article><article class="exercise exercise-like" id="exercise-424"><h4 class="heading"><span class="codenumber">18<span class="period">.</span></span></h4>
-<div class="para logical" id="p-2776">
+<div class="para logical" id="p-3712">
 <div class="para">Let</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/ex_diagonalization.html">
 \begin{equation*}
@@ -1839,7 +1839,7 @@ A=\begin{amatrix}[rrr]
 </div>
 <div class="para">Use your work from <a href="" class="xref" data-knowl="./knowl/ex_diagonalization.html" title="Exercise 5.5.5.17">Exercise 5.5.5.17</a> to find a matrix <span class="process-math">\(C\)</span> satisfying <span class="process-math">\(C^3=A\text{.}\)</span>
 </div>
-</div></article></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-8"><div class="fn">That we can find a minimal <span class="process-math">\(r\)</span> in this sense is plausible enough, but we are secretly using the well-ordering principle of the integers here.</div></div>
+</div></article></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-9"><div class="fn">That we can find a minimal <span class="process-math">\(r\)</span> in this sense is plausible enough, but we are secretly using the well-ordering principle of the integers here.</div></div>
 </div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="s_eigenvectors.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="s_spectral_theorem.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>

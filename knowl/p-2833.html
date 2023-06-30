@@ -11,8 +11,20 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para">Do not overlook the reverse implication of equivalence <a href="" class="xref" data-knowl="./knowl/eq_self_adjoint.html" title="Equation 5.6.2">(5.6.2)</a>. As the next example illustrates, we can show an operator is self-adjoint by examining the geometry of its eigenspaces.</div>
-<span class="incontext"><a href="s_spectral_theorem.html#p-2833" class="internal">in-context</a></span>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<div class="para logical">
+<div class="para">We will have many opportunities to “expand out” an inner product of two linear combinations of vectors. Using axioms (i) and (ii) in series, this process resembles the procedure for multiplying two polynomials. For example, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/d_innerproduct.html ./knowl/d_innerproduct.html ./knowl/d_innerproduct.html">
+\begin{align*}
+\langle c\boldv+d\boldw, e\boldv+f\boldw\rangle
+\amp = c \langle \boldv,  e\boldv+f\boldw \rangle +d \langle \boldw, e\boldv+f\boldw \rangle \amp (\knowl{./knowl/d_innerproduct.html}{\text{4.1.1}}, \text{(ii)})\\
+\amp=ce \langle \boldv, \boldv\rangle+cf\langle \boldv,\boldw \rangle +de \langle \boldw, \boldv\rangle+df\langle \boldw, \boldw\rangle \amp (\knowl{./knowl/d_innerproduct.html}{\text{4.1.1}}, \text{(ii)}) \\
+\amp = ce\langle \boldv, \boldv\rangle +(cf+de)\langle \boldv, \boldw\rangle +df\langle \boldw, \boldw\rangle
+\amp (\knowl{./knowl/d_innerproduct.html}{\text{4.1.1}}, \text{(i)})\text{.}
+\end{align*}
+</div>
+<div class="para">Note how in the last step we are able to group the “cross terms”, <span class="process-math">\(\langle \boldv, \boldw\rangle=\langle \boldw, \boldv\rangle\)</span> using the symmetry axiom.</div>
+</div>
+<span class="incontext"><a href="s_innerproducts.html#p-2833" class="internal">in-context</a></span>
 </body>
 </html>

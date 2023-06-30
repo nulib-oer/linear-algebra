@@ -11,13 +11,18 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<div class="para logical"><div class="displaymath process-math">
-\begin{equation*}
-A=\begin{amatrix}[rrr]1\amp 2\amp 1 \\ 1\amp 1\amp -3 \\ 1\amp 0\amp -1  \end{amatrix},
-\boldb=(1,1,1)
-\end{equation*}
-</div></div>
-<span class="incontext"><a href="s_nullspace_image.html#p-1451" class="internal">in-context</a></span>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<div class="para logical">
+<div class="para">For any <span class="process-math">\(1\leq j\leq n\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/d_transpose.html ./knowl/d_det.html ./knowl/th_det_transpose.html">
+\begin{align*}
+\sum_{k=1}^n(-1)^{k+j}a_{kj}M_{kj}\amp =\sum_{k=1}^n(-1)^{k+j}(A^T)_{jk}\det A_{kj} \amp (\knowl{./knowl/d_transpose.html}{\text{Definition 2.1.29}})\\
+\amp = \sum_{k=1}^n(-1)^{k+j}(A^T)_{jk}\det (A^T)_{jk} \amp ( (A^T)_{ij}= A_{ji}) \\
+\amp= \det A^T  \amp (\knowl{./knowl/d_det.html}{\text{Definition 2.5.3}})\\
+\amp=\det A \amp (\knowl{./knowl/th_det_transpose.html}{\text{Theorem 2.5.9}}) \text{.}
+\end{align*}
+</div>
+</div>
+<span class="incontext"><a href="s_det.html#p-1451" class="internal">in-context</a></span>
 </body>
 </html>

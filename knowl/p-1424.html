@@ -13,15 +13,16 @@
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
 <div class="para logical">
-<div class="para">We get the entire set of solutions <span class="process-math">\(S\)</span> by translating <span class="process-math">\(\NS A\)</span> by the particular solution <span class="process-math">\(\boldx_p\text{:}\)</span>
+<div class="para">Given <span class="process-math">\(A=\abcdmatrix{a}{b}{c}{d}\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+\det A\amp = (-1)^{1+1}a\det A_{11}+(-1)^{1+2}b\det A_{12}\amp \text{(recursive case)}\\
+\amp =a\det [d]-b\det [c] \amp \text{(base case)}\\
+\amp =ad-bc \text{.}
+\end{align*}
 </div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_sage_matrix_eqn.html">
-\begin{equation*}
-S=\{\boldx_p+\boldu\colon \boldu\in \NS A\}=\boldx_p+\NS A\text{.}
-\end{equation*}
+<div class="para">The formula for the <span class="process-math">\(n=2\)</span> case is simple enough to serve as a “second base case”, allowing us to end the recursive process of computing a general <span class="process-math">\(n\times n\)</span> matrix once we get to expressions involving <span class="process-math">\(2\times 2\)</span> matrices.</div>
 </div>
-<div class="para">We can illustrate this in Sage by taking random elements of <span class="process-math">\(\NS A\)</span> (computed using <code class="code-inline tex2jax_ignore">right_kernel</code>), adding them to <code class="code-inline tex2jax_ignore">xp</code>, and verifying that the result is a solution to <a href="" class="xref" data-knowl="./knowl/eq_sage_matrix_eqn.html" title="Equation 3.4.5">(3.4.5)</a>. Each time you evaluate the cell below, a randomly generated element of <span class="process-math">\(S\)</span> will be outputted.</div>
-</div>
-<span class="incontext"><a href="s_nullspace_image.html#p-1424" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_det.html#p-1424" class="internal">in-context</a></span>
 </body>
 </html>

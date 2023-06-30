@@ -11,13 +11,31 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math"><div class="solution solution-like"><div class="para logical">
-<div class="para">An eigenvector of <span class="process-math">\(T\)</span> is a nonzero function <span class="process-math">\(f\)</span> satisfying <span class="process-math">\(T(f)=\lambda f\)</span> for some <span class="process-math">\(\lambda\text{.}\)</span> By definition, this means</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_eigenvectors_adhoc_derivative.html ./knowl/eq_eigenvectors_adhoc_derivative.html">
-\begin{equation}
-f'=\lambda f\tag{5.4.5}
-\end{equation}
+<div class="para">First observe that</div>
+<div class="displaymath process-math">
+\begin{align*}
+\angvec{1,1} \amp = \int_0^{2\pi} 1\, dx=2\pi \\
+\angvec{1, \cos n x} \amp= \int_0^{2\pi}\cos n x\, dx=0 \\
+\angvec{1, \sin n x} \amp= \int_0^{2\pi}\sin n x\, dx=0 
+\end{align*}
 </div>
-<div class="para">for some <span class="process-math">\(\lambda\in\R\text{.}\)</span> Thus <span class="process-math">\(\lambda\)</span> is an eigenvalue of <span class="process-math">\(T\)</span> if and only if the differential equation <a href="" class="xref" data-knowl="./knowl/eq_eigenvectors_adhoc_derivative.html" title="Equation 5.4.5">(5.4.5)</a> has a nonzero solution. This is true for all <span class="process-math">\(\lambda\in \R\text{!}\)</span> Indeed for any <span class="process-math">\(\lambda\)</span> the exponential function <span class="process-math">\(f(x)=e^{\lambda x}\)</span> satisfies <span class="process-math">\(f'(x)=\lambda e^{\lambda x}=\lambda f(x)\)</span> for all <span class="process-math">\(x\in \R\text{.}\)</span> Furthermore, any solution to <a href="" class="xref" data-knowl="./knowl/eq_eigenvectors_adhoc_derivative.html" title="Equation 5.4.5">(5.4.5)</a> is of the form <span class="process-math">\(f(x)=Ce^{\lambda x}\)</span> for some <span class="process-math">\(C\in \R\text{.}\)</span> We conclude that (a) every <span class="process-math">\(\lambda\in \R\)</span> is an eigenvalue of <span class="process-math">\(T\text{,}\)</span> and (b) for a given <span class="process-math">\(\lambda\text{,}\)</span> the <span class="process-math">\(\lambda\)</span>-eigenvectors of <span class="process-math">\(T\)</span> are precisely the functions of the form <span class="process-math">\(f(x)=Ce^{\lambda x}\)</span> for some <span class="process-math">\(C\ne 0\text{.}\)</span>
+<div class="para">for all <span class="process-math">\(n\text{.}\)</span> (Note: since <span class="process-math">\(\angvec{1,1}=2\pi\ne 1\text{,}\)</span> the set <span class="process-math">\(S\)</span> is not orthonormal. ) Next, using the trigonometric identities</div>
+<div class="displaymath process-math">
+\begin{align*}
+\cos\alpha\cos\beta \amp =\frac{1}{2}(\cos(\alpha-\beta)+\cos(\alpha+\beta))\\
+\sin\alpha\sin\beta  \amp=\frac{1}{2}(\cos(\alpha-\beta)-\cos(\alpha+\beta)) \\
+\sin\alpha\cos\beta \amp =\frac{1}{2}(\sin(\alpha-\beta)+\sin(\alpha+\beta)) 
+\end{align*}
+</div>
+<div class="para">it follows that</div>
+<div class="displaymath process-math">
+\begin{align*}
+\langle \cos(nx),\cos(mx)\rangle=\int_0^{2\pi}\cos(nx)\cos(mx)\, dx\amp =\begin{cases} 0\amp  \text{ if \(n\ne m\) }\\
+\pi\amp  \text{ if \(n=m\) }  \end{cases}\\
+\langle \sin(nx),\sin(mx)\rangle=\int_0^{2\pi}\sin(nx)\sin(mx)\, dx\amp =\begin{cases} 0\amp  \text{ if \(n\ne m\) }\\
+\pi\amp  \text{ if \(n=m\) }  \end{cases}\\
+\langle \cos(nx),\sin(mx)\rangle=\int_0^{2\pi}\cos(nx)\sin(mx)\, dx\amp =0 \text{ for any \(n,m\) }\text{.}
+\end{align*}
 </div>
 </div></div></body>
 </html>

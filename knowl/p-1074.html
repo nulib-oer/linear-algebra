@@ -11,15 +11,21 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h6 class="heading"><span class="type">Paragraph</span></h6>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
 <div class="para logical">
-<div class="para">For all <span class="process-math">\(c, d\in \R\)</span> and <span class="process-math">\(\boldv\in V\text{,}\)</span> we have</div>
-<div class="displaymath process-math">
+<div class="para">The matrix <span class="process-math">\(A= \begin{amatrix}[rrr]
+1\amp 1 \amp 1\\
+1\amp 1 \amp 1\\
+1\amp 1\amp 1
+\end{amatrix}\)</span> is not invertible. Indeed, using the <a href="" class="xref" data-knowl="./knowl/th_row_method.html" title="Theorem 2.1.26: Row method of matrix multiplication">row method of matrix multiplication</a>, we see that given any matrix <span class="process-math">\(B\text{,}\)</span> each row of <span class="process-math">\(AB\)</span> is given by</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_row_method.html">
 \begin{equation*}
-(c+d)\boldv=c\boldv+d\boldv
+\begin{amatrix}1\amp 1\amp 1
+\end{amatrix}\,B \text{.}
 \end{equation*}
 </div>
+<div class="para">It follows that all the rows of <span class="process-math">\(AB\)</span> are identical, and hence that we cannot have <span class="process-math">\(AB=I_3\text{,}\)</span> since the rows of <span class="process-math">\(I_3\)</span> are not identical.</div>
 </div>
-<span class="incontext"><a href="s_vectorspace.html#p-1074" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_invertible_matrices.html#p-1074" class="internal">in-context</a></span>
 </body>
 </html>

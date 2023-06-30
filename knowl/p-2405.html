@@ -11,16 +11,49 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h4 class="heading"><span class="type">Paragraph</span></h4>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
 <div class="para logical">
-<div class="para">Let <span class="process-math">\(B\)</span> and <span class="process-math">\(B'\)</span> be ordered bases of an <span class="process-math">\(n\)</span>-dimensional inner product space <span class="process-math">\((V,\langle\, , \rangle)\text{.}\)</span> Not surprisingly, if one or more of <span class="process-math">\(B\)</span> and <span class="process-math">\(B'\)</span> are orthornormal, our change of basis computations are simplified significantly. For example, if <span class="process-math">\(B'\)</span> is orthonormal (or even orthogonal), the coordinate vector computations necessary to compute <span class="process-math">\(\underset{B\rightarrow B'}{P}\)</span> can be done using the inner product formula of <a href="" class="xref" data-knowl="./knowl/th_coordinates_orthogonal.html" title="Theorem 5.1.9: Coordinate vectors for orthogonal bases">Theorem 5.1.9</a>. Furthermore, as we see below, if both <span class="process-math">\(B\)</span> and <span class="process-math">\(B'\)</span> are orthonormal, then the columns of <span class="process-math">\(\underset{B\rightarrow B'}{P}\)</span> form an orthonormal basis of <span class="process-math">\(\R^n\text{,}\)</span> in which case we can compute <span class="process-math">\(\underset{B'\rightarrow B}{P}\)</span> as</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_coordinates_orthogonal.html">
+<div class="para">Take an arbitrary element <span class="process-math">\(ax+b\in P_1\)</span> and consider the polynomial equation</div>
+<div class="displaymath process-math">
 \begin{equation*}
-\underset{B'\rightarrow B}{P}=\left(\underset{B\rightarrow B'}{P}\right)^{-1}=\left(\underset{B\rightarrow B'}{P}\right)^T\text{.}
+c_1p(x)+c_2q(x)=ax+b
 \end{equation*}
 </div>
-<div class="para">In other words, when <span class="process-math">\(B\)</span> and <span class="process-math">\(B'\)</span> are orthonormal bases, the change of basis matrix is what we call an <em class="emphasis">orthogonal matrix</em>.</div>
+<div class="para">The usual remark about polynomial equality implies that this is equivalent to the matrix equation</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix}
+2\amp 1\\ 1\amp 1
+\end{bmatrix}
+\begin{bmatrix}
+c_1 \\ c_2
+\end{bmatrix}
+=
+\begin{bmatrix}
+a\\ b
+\end{bmatrix}
+=\boldy\text{.}
+\end{equation*}
 </div>
-<span class="incontext"><a href="s_changeofbasis.html#p-2405" class="internal">in-context</a></span>
+<div class="para">The matrix on the left is invertible, allowing us to solve:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix}
+c_1 \\ c_2
+\end{bmatrix}
+=\begin{bmatrix}
+1\amp -1\\ -1\amp 2
+\end{bmatrix}
+\begin{bmatrix}
+a\\ b
+\end{bmatrix}
+=\begin{bmatrix}
+a-b\\ -a+2b
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">We conclude that any <span class="process-math">\(ax+b\in P_1\)</span> can be written as <span class="process-math">\(c_1p+c_2q\)</span> in a unique way: namely, with <span class="process-math">\(c_1=a-b\)</span> and <span class="process-math">\(c_2=-a+2b\text{.}\)</span> Thus <span class="process-math">\(S\)</span> is a basis.</div>
+</div>
+<span class="incontext"><a href="s_basis.html#p-2405" class="internal">in-context</a></span>
 </body>
 </html>

@@ -11,30 +11,22 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math"><div class="solution solution-like">
-<div class="para logical">
-<div class="para">Row reduce <span class="process-math">\(A\)</span> to the identity matrix:</div>
+<div class="para">I’ll just describe the row method here.</div> <div class="para logical">
+<div class="para">Note that the rows of <span class="process-math">\(A\)</span> are all identical, and equal to <span class="process-math">\(\begin{bmatrix}1 \amp -1 \amp 1 \amp -1 \amp 1 \end{bmatrix}\text{.}\)</span> From the row method it follows that each row of <span class="process-math">\(AB\)</span> is given by</div>
 <div class="displaymath process-math">
-\begin{align*}
-\begin{amatrix}[rr]0\amp 1\\2\amp -5 \end{amatrix} \amp \xrightarrow[]{r_1\leftrightarrow r_1} \begin{amatrix}[rr]2\amp -5 \\0\amp 1 \end{amatrix}\\
-\amp \xrightarrow[]{\frac{1}{2}r_1} \begin{amatrix}[rr]1\amp -5/2\\ 0\amp 1 \end{amatrix}\\
-\amp \xrightarrow[]{r_1+\frac{5}{2}r_2} \begin{amatrix}[rr]1\amp 0\\ 0\amp 1 \end{amatrix} 
-\end{align*}
+\begin{equation*}
+\begin{bmatrix}1 \amp -1 \amp 1 \amp -1 \amp 1 \end{bmatrix} B\text{.}
+\end{equation*}
 </div>
 </div> <div class="para logical">
-<div class="para">The corresponding elementary matrices are</div>
+<div class="para">Thus the rows of <span class="process-math">\(AB\)</span> are all identical, and the row method computes the product above by taking the corresponding alternating sum of the rows of <span class="process-math">\(B\text{:}\)</span>
+</div>
 <div class="displaymath process-math">
 \begin{equation*}
-E_1 = \begin{amatrix}[rr]0\amp 1\\ 1\amp 0 \end{amatrix} , E_2 = \begin{amatrix}[rr]1/2\amp 0\\ 0\amp 1 \end{amatrix}, E_3=\begin{amatrix}[rr]1\amp 5/2\\ 0\amp 1 \end{amatrix}\text{.}
+\begin{bmatrix}1 \amp -1 \amp 1 \amp -1 \amp 1 \end{bmatrix} B=\begin{bmatrix}2\amp 2\amp -1\amp 4 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<div class="para">It follows that <span class="process-math">\(E_3E_2E_1A=I\text{,}\)</span> and hence that</div>
-<div class="displaymath process-math">
-\begin{equation*}
-A=E_1^{-1}E_{2}^{-1}E_3^{-1}=\begin{amatrix}[rr]0\amp 1\\ 1\amp 0 \end{amatrix}
-\begin{amatrix}[rr]2\amp 0\\ 0\amp 1 \end{amatrix}
-\begin{amatrix}[rr]1\amp -5/2\\ 0\amp 1 \end{amatrix}\text{.}
-\end{equation*}
-</div>
+</div> <div class="para">Thus <span class="process-math">\(AB\)</span> is the the <span class="process-math">\(5\times 4\)</span> matrix, all of whose rows are <span class="process-math">\(\begin{bmatrix}2\amp 2\amp -1\amp 4 \end{bmatrix}\text{.}\)</span>
 </div>
 </div></body>
 </html>

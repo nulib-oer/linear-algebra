@@ -10,14 +10,47 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><div class="solution solution-like"><div class="para logical">
-<div class="para">By <a href="" class="xref" data-knowl="./knowl/th_spectral.html" title="Theorem 5.6.8: Spectral theorem for self-adjoint operators">Theorem 5.6.8</a> it suffices to show that <span class="process-math">\(T\)</span> is orthogonally diagonalizable. According to <a href="" class="xref" data-knowl="./knowl/ex_orthoproj_props.html" title="Exercise 4.3.6.12">Exercise 4.3.6.12</a> we have</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_spectral.html ./knowl/ex_orthoproj_props.html">
+<body class="ignore-math"><div class="solution solution-like">
+<ol class="decimal">
+<li><div class="para logical">
+<div class="para">According to <a href="" class="xref" data-knowl="./knowl/th_matrixreps_matrixtransforms.html" title="Theorem 5.2.3: Standard matrix as a matrix representation">Theorem 5.2.3</a>, since <span class="process-math">\(B\)</span> is the standard basis <span class="process-math">\([T]_B\)</span> is the matrix <span class="process-math">\(A\)</span> such that <span class="process-math">\(T=T_A\text{:}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_matrixreps_matrixtransforms.html">
 \begin{align*}
-\boldv\in W \amp \iff T(\boldv)=\boldv\\
-\boldv\in W^\perp \amp \iff T(\boldv)=\boldzero\text{.}
+[T]_B\amp=\begin{bmatrix}
+\vert \amp \vert \\
+T(\bolde_1)\amp T(\bolde_2)\\
+\vert \amp \vert
+\end{bmatrix} \\
+\amp= \begin{amatrix}[rr]
+4\amp -3\\
+2\amp -1
+\end{amatrix} \text{.}
 \end{align*}
 </div>
-<div class="para">Equivalently, <span class="process-math">\(W=W_1\)</span> and <span class="process-math">\(W^\perp=W_0\)</span> are the 1- and 0-eigenspaces of <span class="process-math">\(T\text{,}\)</span> respectively. Since <span class="process-math">\(\dim W+\dim W^\perp=\dim V\)</span> we conclude that <span class="process-math">\(T\)</span> is diagonalizable. Since clearly <span class="process-math">\(W\)</span> and <span class="process-math">\(W^\perp\)</span> are orthogonal, we conclude that <span class="process-math">\(T\)</span> is in fact othogonally diagonalizable, hence self-adjoint.</div>
-</div></div></body>
+</div></li>
+<li><div class="para logical">
+<div class="para">We have</div>
+<div class="displaymath process-math">
+\begin{align*}
+[T]_{B'}=[T]_{B'}^{B'} \amp = \begin{bmatrix}
+\vert\amp \vert\\
+[T((1,1))]_{B'}\amp [T(1,-1)]_{B'}\\
+\vert \amp \vert
+\end{bmatrix} \\
+\amp = \begin{bmatrix}
+\vert\amp \vert\\
+[(1,1)]_{B'}\amp [(7,3)]_{B'}\\
+\vert \amp \vert
+\end{bmatrix}\\
+\amp = \begin{amatrix}[rr]
+1\amp 5\\
+0\amp 2
+\end{amatrix}\text{,}
+\end{align*}
+</div>
+<div class="para">where the last equality uses the fact that <span class="process-math">\([(1,1)]_{B'}=(1,0)\)</span> and <span class="process-math">\([(7,3)]_{B'}=(5,2)\text{,}\)</span> as you can verify yourself.</div>
+</div></li>
+</ol> <div class="para">So we have <span class="process-math">\([T]_B=\begin{amatrix}[rr]4\amp -1\\ 2\amp -1  \end{amatrix}\)</span> and <span class="process-math">\([T]_{B'}=\begin{amatrix}[rr]1\amp 5\\ 0\amp 2  \end{amatrix}\text{.}\)</span> Moral: different choices of bases yield different matrix representations.</div>
+</div></body>
 </html>

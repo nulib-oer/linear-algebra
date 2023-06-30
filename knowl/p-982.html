@@ -12,7 +12,14 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">Before you get too excited about the adjoint matrix formula, you should know that as <span class="process-math">\(n\)</span> grows, this procedure becomes much more costly in terms of number of arithmetic operations involved than our inverse algorithm based on Gauss-Jordan elimination. You get a sense of this already from the previous <span class="process-math">\(3\times 3\)</span> example. In general, the Gauss-Jordan inverse algorithm is the way to go.</div>
-<span class="incontext"><a href="s_det.html#p-982" class="internal">in-context</a></span>
+<div class="para logical">
+<div class="para">If the product of two matrices is the zero matrix, we <em class="emphasis">cannot</em> conclude that one of matrices is the zero matrix. In logical notation:</div>
+<div class="displaymath process-math">
+\begin{equation}
+\underset{m\times n}{A}\, \underset{n\times r}{B}=\boldzero_{m\times r}\;\not\!\!\!\!\implies A=\boldzero_{m\times n} \text{ or }  B=\boldzero_{n\times r}\text{.}\tag{2.2.1}
+\end{equation}
+</div>
+</div>
+<span class="incontext"><a href="s_algebraic.html#p-982" class="internal">in-context</a></span>
 </body>
 </html>

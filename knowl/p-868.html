@@ -11,8 +11,16 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para">Lastly, we provide at last the proof of the third statement of <a href="" class="xref" data-knowl="./knowl/th_matrixforms.html" title="Theorem 1.2.10: Row equivalent matrix forms">Theorem 1.2.10</a> promised back in <a href="s_ge.html" class="internal" title="Section 1.2: Gaussian elimination">Section 1.2</a>. This proof is due to Thomas Yuster<a href="" class="fn-knowl original" data-knowl="./knowl/fn-3-hidden.html" title="Footnote 2.4.1"><sup> 1 </sup></a>.</div>
-<span class="incontext"><a href="s_invertibility_theorem.html#p-868" class="internal">in-context</a></span>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<div class="para logical">
+<div class="para">We must show <span class="process-math">\(AB=C\text{,}\)</span> where</div>
+<div class="displaymath process-math">
+\begin{equation*}
+C=\begin{bmatrix}\vert \amp \vert \amp  \amp \vert \\ A\boldb_1\amp A\boldb_2\amp \cdots\amp A\boldb_r\\ \vert \amp  \vert \amp  \amp  \vert \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">First we show <span class="process-math">\(AB\)</span> and <span class="process-math">\(C\)</span> have the same size. By definition of matrix multiplication, <span class="process-math">\(AB\)</span> is <span class="process-math">\(m\times r\text{.}\)</span> By construction <span class="process-math">\(C\)</span> has <span class="process-math">\(r\)</span> columns and its <span class="process-math">\(j\)</span>-th column is <span class="process-math">\(A\boldb_j\text{.}\)</span> Since <span class="process-math">\(A\)</span> and <span class="process-math">\(\boldb_j\)</span> have size <span class="process-math">\(m\times n\)</span> and <span class="process-math">\(n\times 1\text{,}\)</span> respectively, <span class="process-math">\(A\boldb_j\)</span> has size <span class="process-math">\(m\times 1\text{.}\)</span> Thus each of the <span class="process-math">\(r\)</span> columns of <span class="process-math">\(C\)</span> is an <span class="process-math">\(m\times 1\)</span> column vector. It follows that <span class="process-math">\(C\)</span> is <span class="process-math">\(m\times r\text{,}\)</span> as desired.</div>
+</div>
+<span class="incontext"><a href="s_matrix.html#p-868" class="internal">in-context</a></span>
 </body>
 </html>

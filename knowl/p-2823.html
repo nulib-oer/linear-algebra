@@ -13,13 +13,18 @@
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
 <div class="para logical">
-<div class="para">There exists an <a href="" class="xref" data-knowl="./knowl/d_orthogonal_matrix.html" title="Definition 5.3.12: Orthogonal matrices">orthogonal matrix</a> <span class="process-math">\(Q\)</span> and diagonal matrix <span class="process-math">\(D\)</span> such that</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/d_orthogonal_matrix.html">
-\begin{equation}
-D=Q^{-1}AQ=Q^TAQ\text{.}\tag{5.6.3}
-\end{equation}
+<div class="para">Now assume <span class="process-math">\(\NS T=\{\boldzero_V\}\text{.}\)</span> Then</div>
+<div class="displaymath process-math">
+\begin{align*}
+T(\boldv)=T(\boldv') \amp\implies T(\boldv)-T(\boldv')=\boldzero_W \\
+\amp\implies T(\boldv-\boldv')=\boldzero_W \\
+\amp \implies \boldv-\boldv'\in \NS T=\{\boldzero_V\}\\
+\amp\implies \boldv-\boldv'=\boldzero_V \\
+\amp \implies \boldv=\boldv'\text{.}
+\end{align*}
 </div>
+<div class="para">Thus <span class="process-math">\(T\)</span> is injective.</div>
 </div>
-<span class="incontext"><a href="s_spectral_theorem.html#p-2823" class="internal">in-context</a></span>
+<span class="incontext"><a href="s_isom.html#p-2823" class="internal">in-context</a></span>
 </body>
 </html>

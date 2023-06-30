@@ -11,37 +11,9 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math"><div class="solution solution-like">
-<div class="para logical">
-<div class="para">First compute</div>
-<div class="displaymath process-math">
-\begin{align*}
-p(t) \amp = \det (tI-A)\\
-\amp = \det \begin{amatrix}[rrr]t-2\amp 1\amp 1\\ 1\amp t-2\amp 1\\ 1\amp 1\amp t-2 \end{amatrix} \\
-\amp = t^3-6t^2+9t\\
-\amp = t(t^2-6t+9)\\
-\amp = t(t-3)^2\text{.}
-\end{align*}
-</div>
-<div class="para">We see that the eigenvalues of <span class="process-math">\(A\)</span> are <span class="process-math">\(\lambda=0\)</span> and <span class="process-math">\(\lambda=3\text{.}\)</span> Now compute bases for their corresponding eigenspaces.</div>
-</div> <article class="case"><h5 class="heading">Basis of <span class="process-math">\(W_0\)</span>.</h5> <div class="para logical">
-<div class="para">We have</div>
-<div class="displaymath process-math">
-\begin{align*}
-W_0 \amp = \NS(0I-A)\\
-\amp = \NS \begin{amatrix}[rrr]-2\amp 1\amp 1\\ 1\amp -2\amp 1\\ 1\amp 1\amp -2 \end{amatrix}  \\
-\amp = \Span\{(1,1,1)\text{.}
-\end{align*}
-</div>
-<div class="para">(We have skipped the Gaussian elimination steps involved in computing a basis for <span class="process-math">\(\NS(-A)\text{.}\)</span>)</div>
-</div></article> <article class="case"><h5 class="heading">Basis of <span class="process-math">\(W_3\)</span>.</h5> <div class="para logical">
-<div class="para">We have</div>
-<div class="displaymath process-math">
-\begin{align*}
-W_3 \amp = \NS(3I-A)\\
-\amp= \NS \begin{amatrix}[rrr]1\amp 1\amp 1\\ 1\amp 1\amp 1\\ 1\amp 1\amp 1 \end{amatrix} \\
-\amp = \Span\{ (1,-1,0),(1,0,-1)\}\text{.}
-\end{align*}
-</div>
-</div></article> We conclude that the <span class="process-math">\(0\)</span>-eigenvectors of <span class="process-math">\(A\)</span> are the nonzero scalar multiples of <span class="process-math">\((1,1,1)\text{,}\)</span> and that the <span class="process-math">\(3\)</span>-eigenvectors are all nonzero vectors of the form <span class="process-math">\(\boldx=c_1(1,-1,0)+c_2(1,0,-1)\text{.}\)</span>
+<div class="para">
+<em class="alert">Solution:</em> One checks by direct computation that</div> <div class="para">
+<span class="process-math">\(a = 0\text{,}\)</span> <span class="process-math">\(b = -78\text{,}\)</span> <span class="process-math">\(c = 0\)</span>
+</div> <div class="para">must hold.</div>
 </div></body>
 </html>

@@ -11,21 +11,22 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
+<h3 class="heading"><span class="type">Paragraph</span></h3>
 <div class="para logical">
-<div class="para">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(n\times n\)</span> matrix. Using the notation from <a href="" class="xref" data-knowl="./knowl/d_elementary_matrix.html" title="Definition 2.4.1: Elementary matrices">Definition 2.4.1</a> we have:</div>
-<ol class="decimal">
-<li><div class="para"><span class="process-math">\(\displaystyle \det(\underset{c\cdot r_i}{E}\, A)=c\det(A)\)</span></div></li>
-<li><div class="para"><span class="process-math">\(\displaystyle \det(\underset{r_i\leftrightarrow r_j}{E}\, A)=-\det(A)\)</span></div></li>
-<li><div class="para"><span class="process-math">\(\det(\underset{r_i+cr_j}{E}\, A)=\det(A)\text{.}\)</span></div></li>
-</ol>
-<div class="para">In particular, taking <span class="process-math">\(A=I\text{,}\)</span> we have</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/d_elementary_matrix.html">
+<div class="para">We have</div>
+<div class="displaymath process-math">
 \begin{align*}
-\det\underset{c\cdot r_i}{E}\amp =c \amp \det\underset{r_i\leftrightarrow r_j}{E}\amp =-1 \amp \det \underset{r_i+cr_j}{E}\amp =1  \text{.}
+\begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix} \begin{bmatrix}0\amp 1\\ 0\amp 0 \end{bmatrix}\amp = \begin{bmatrix} 0\amp 1 \\ 0 \amp 0\end{bmatrix}\\
+\begin{bmatrix}0\amp 1\\ 0\amp 0 \end{bmatrix} \begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix} \amp = \begin{bmatrix} 0\amp 0\\ 0\amp 0 \end{bmatrix} 
 \end{align*}
 </div>
+<div class="para">and thus</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix} \begin{bmatrix}0\amp 1\\ 0\amp 0 \end{bmatrix} \ne \begin{bmatrix}0\amp 1\\ 0\amp 0 \end{bmatrix} \begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix}\text{.}
+\end{equation*}
 </div>
-<span class="incontext"><a href="s_det.html#p-984" class="internal">in-context</a></span>
+</div>
+<span class="incontext"><a href="s_algebraic.html#p-984" class="internal">in-context</a></span>
 </body>
 </html>

@@ -13,21 +13,37 @@
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
 <div class="para logical">
-<div class="para">First we easily compute <span class="process-math">\([\boldx]_{B}=(1, 3)\text{,}\)</span> again using <a href="" class="xref" data-knowl="./knowl/th_coordinates_orthogonal.html" title="Theorem 5.1.9: Coordinate vectors for orthogonal bases">Theorem 5.1.9</a>. Now use <a href="" class="xref" data-knowl="./knowl/eq_changebasis_matrix_prop.html" title="Equation 5.3.1">(5.3.1)</a>:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_coordinates_orthogonal.html ./knowl/eq_changebasis_matrix_prop.html">
-\begin{align*}
-[\boldx]_{B'} \amp =\underset{B\rightarrow B'}{P}[\boldx]_B \\
-\amp = \begin{bmatrix}\frac{3}{5}\amp -\frac{1}{5}\\ \frac{1}{5}\amp \frac{3}{5} \end{bmatrix} \begin{amatrix}[c]1 \\ 3  \end{amatrix}\\
-\amp = \begin{amatrix}[r]0\\ 2   \end{amatrix}\text{.}
-\end{align*}
-</div>
-<div class="para">This should come as now surprise since</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/th_coordinates_orthogonal.html ./knowl/eq_changebasis_matrix_prop.html">
+<div class="para">To show <span class="process-math">\(B\)</span> spans <span class="process-math">\(P_2\)</span> we must show that for any <span class="process-math">\(dx^2+ex+f\in P_2\)</span> we can find <span class="process-math">\(a,b,c\in\R\)</span> such that</div>
+<div class="displaymath process-math">
 \begin{equation*}
-\boldx=(4,-2)=2(2,-1)=0\boldw_1+2\boldw_2\text{.}
+a(x^2+x+1)+b(x^2-x)+c(x^2-1)=dx^2+ex+f\text{,}
 \end{equation*}
 </div>
+<div class="para">or</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(a+b+c)x^2+(a-b)x+(a-1)=dx^2+ex+f\text{.}
+\end{equation*}
 </div>
-<span class="incontext"><a href="s_changeofbasis.html#p-2383" class="internal">in-context</a></span>
+<div class="para">Equating coefficients yields the system of equations</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{linsys}{3}
+a\amp +\amp b\amp +\amp c\amp = d\\
+a\amp -\amp b\amp \amp \amp =e\\
+a\amp  \amp  \amp -\amp c\amp =f
+\end{linsys}\text{,}
+\end{equation*}
+</div>
+<div class="para">which corresponds to the matrix equation</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\underset{A}{\begin{amatrix}[rrr]1\amp 1\amp 1\\ 1\amp -1\amp 0\\ 1\amp 0\amp -1\end{amatrix}}\underset{\boldx}{\begin{bmatrix} a\\ b\\ c\end{bmatrix}}=\underset{\boldy}{\begin{bmatrix} d\\ e\\ f\end{bmatrix}}\text{.}
+\end{equation*}
+</div>
+<div class="para">An easy computation shows <span class="process-math">\(\det A=3\text{,}\)</span> and thus that <span class="process-math">\(A\)</span> is invertible. We conclude that the system can be solved for <span class="process-math">\((a,b,c)\)</span> (set <span class="process-math">\(\boldx=A^{-1}\boldy\)</span>), and thus that <span class="process-math">\(B\)</span> spans <span class="process-math">\(P_2\text{.}\)</span>
+</div>
+</div>
+<span class="incontext"><a href="s_basis.html#p-2383" class="internal">in-context</a></span>
 </body>
 </html>

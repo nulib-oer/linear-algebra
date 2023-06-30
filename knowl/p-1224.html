@@ -11,8 +11,24 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">Move or alter the triangle as you see fit.</div>
-<span class="incontext"><a href="s_transformation.html#p-1224" class="internal">in-context</a></span>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(\rho_i\)</span> correspond to the elementary matrix <span class="process-math">\(E_i\text{.}\)</span> Then we represent this same sequence using matrix multiplication:</div>
+<div class="displaymath process-math">
+\begin{equation}
+\begin{array}{c} A\boldx=\boldb\\  E_1A\boldx=E_1\boldb\\  E_2E_1A\boldx=E_2E_1\boldb\\  \vdots \\ E_rE_{r-1}\cdots E_2E_1A\boldx=E_rE_{r-1}\cdots E_2E_1\boldb \\
+U\boldx=\boldb' \end{array}\text{.}\tag{2.4.3}
+\end{equation}
+</div>
+<div class="para">This depiction of row reduction in terms of successive left-multiplication by elementary matrices will be useful to us in many ways. In particular, it follows from this discussion that two matrices <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are row equivalent if and only if we have</div>
+<div class="displaymath process-math">
+\begin{equation}
+B=E_rE_{r-1}\cdots E_2E_1A\tag{2.4.4}
+\end{equation}
+</div>
+<div class="para">for some collection of elementary matrices <span class="process-math">\(E_i\text{.}\)</span>
+</div>
+</div>
+<span class="incontext"><a href="s_invertibility_theorem.html#p-1224" class="internal">in-context</a></span>
 </body>
 </html>

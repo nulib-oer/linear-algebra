@@ -12,11 +12,15 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para logical"><div class="displaymath process-math">
-\begin{equation*}
-A= \begin{bmatrix}1\amp 2\amp 4\amp 5\\ 0\amp 1\amp -3\amp 0\\ 0\amp 0\amp 1\amp -3\\ 0\amp 0\amp 0\amp 0 \end{bmatrix}
-\end{equation*}
-</div></div>
-<span class="incontext"><a href="s_rank_nullity.html#p-1891" class="internal">in-context</a></span>
+<div class="para logical">
+<div class="para">The “existential axioms” (iii) and (iv) of <a href="" class="xref" data-knowl="./knowl/d_vector_space.html" title="Definition 3.1.1: Vector space">Definition 3.1.1</a>, however, require special consideration. By definition, a subspace <span class="process-math">\(W\)</span> contains the zero vector of <span class="process-math">\(V\text{,}\)</span> and clearly this still acts as the zero vector when we restrict the vector operations to <span class="process-math">\(W\text{.}\)</span> What about vector inverses? We know that for any <span class="process-math">\(\boldv\in W\)</span> there is a vector inverse <span class="process-math">\(-\boldv\)</span> lying somewhere in <span class="process-math">\(V\text{.}\)</span> We must show that in fact <span class="process-math">\(-\boldv\)</span> lies in <span class="process-math">\(W\text{:}\)</span> i.e. we need to show that the operation of taking the vector inverse is well-defined on <span class="process-math">\(W\text{.}\)</span> We prove this as follows:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/d_vector_space.html ./knowl/d_subspace.html ./knowl/th_vectorspace_props.html">
+\begin{align*}
+\boldv\in W \amp\implies (-1)\boldv\in W \amp (\knowl{./knowl/d_subspace.html}{\text{Definition 3.3.1}}, \text{(iii) } )\\
+\amp\implies -\boldv\in W \amp (\knowl{./knowl/th_vectorspace_props.html}{\text{Theorem 3.1.13}}, (iii)) \text{.}
+\end{align*}
+</div>
+</div>
+<span class="incontext"><a href="s_subspace.html#p-1891" class="internal">in-context</a></span>
 </body>
 </html>
